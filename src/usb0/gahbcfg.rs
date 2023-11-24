@@ -39,8 +39,8 @@ impl GLBL_INTR_MSK_R {
     }
 }
 #[doc = "Field `GlblIntrMsk` writer - Global Interrupt Mask"]
-pub type GLBL_INTR_MSK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GLBL_INTR_MSK_A>;
-impl<'a, REG, const O: u8> GLBL_INTR_MSK_W<'a, REG, O>
+pub type GLBL_INTR_MSK_W<'a, REG> = crate::BitWriter<'a, REG, GLBL_INTR_MSK_A>;
+impl<'a, REG> GLBL_INTR_MSK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -121,8 +121,8 @@ impl HBST_LEN_R {
     }
 }
 #[doc = "Field `HBstLen` writer - Burst Length/Type"]
-pub type HBST_LEN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, HBST_LEN_A>;
-impl<'a, REG, const O: u8> HBST_LEN_W<'a, REG, O>
+pub type HBST_LEN_W<'a, REG> = crate::FieldWriter<'a, REG, 4, HBST_LEN_A>;
+impl<'a, REG> HBST_LEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -190,8 +190,8 @@ impl DMAEN_R {
     }
 }
 #[doc = "Field `DMAEn` writer - DMA Enable"]
-pub type DMAEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DMAEN_A>;
-impl<'a, REG, const O: u8> DMAEN_W<'a, REG, O>
+pub type DMAEN_W<'a, REG> = crate::BitWriter<'a, REG, DMAEN_A>;
+impl<'a, REG> DMAEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -243,8 +243,8 @@ impl NPTX_FEMP_LVL_R {
     }
 }
 #[doc = "Field `NPTxFEmpLvl` writer - Non-Periodic TxFIFO Empty Level"]
-pub type NPTX_FEMP_LVL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NPTX_FEMP_LVL_A>;
-impl<'a, REG, const O: u8> NPTX_FEMP_LVL_W<'a, REG, O>
+pub type NPTX_FEMP_LVL_W<'a, REG> = crate::BitWriter<'a, REG, NPTX_FEMP_LVL_A>;
+impl<'a, REG> NPTX_FEMP_LVL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -296,8 +296,8 @@ impl PTX_FEMP_LVL_R {
     }
 }
 #[doc = "Field `PTxFEmpLvl` writer - Periodic TxFIFO Empty Level"]
-pub type PTX_FEMP_LVL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PTX_FEMP_LVL_A>;
-impl<'a, REG, const O: u8> PTX_FEMP_LVL_W<'a, REG, O>
+pub type PTX_FEMP_LVL_W<'a, REG> = crate::BitWriter<'a, REG, PTX_FEMP_LVL_A>;
+impl<'a, REG> PTX_FEMP_LVL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -349,8 +349,8 @@ impl AHBSINGLE_R {
     }
 }
 #[doc = "Field `AHBSingle` writer - AHB Single Support"]
-pub type AHBSINGLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AHBSINGLE_A>;
-impl<'a, REG, const O: u8> AHBSINGLE_W<'a, REG, O>
+pub type AHBSINGLE_W<'a, REG> = crate::BitWriter<'a, REG, AHBSINGLE_A>;
+impl<'a, REG> AHBSINGLE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -401,38 +401,38 @@ impl W {
     #[doc = "Bit 0 - Global Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn glbl_intr_msk(&mut self) -> GLBL_INTR_MSK_W<GAHBCFG_SPEC, 0> {
-        GLBL_INTR_MSK_W::new(self)
+    pub fn glbl_intr_msk(&mut self) -> GLBL_INTR_MSK_W<GAHBCFG_SPEC> {
+        GLBL_INTR_MSK_W::new(self, 0)
     }
     #[doc = "Bits 1:4 - Burst Length/Type"]
     #[inline(always)]
     #[must_use]
-    pub fn hbst_len(&mut self) -> HBST_LEN_W<GAHBCFG_SPEC, 1> {
-        HBST_LEN_W::new(self)
+    pub fn hbst_len(&mut self) -> HBST_LEN_W<GAHBCFG_SPEC> {
+        HBST_LEN_W::new(self, 1)
     }
     #[doc = "Bit 5 - DMA Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dmaen(&mut self) -> DMAEN_W<GAHBCFG_SPEC, 5> {
-        DMAEN_W::new(self)
+    pub fn dmaen(&mut self) -> DMAEN_W<GAHBCFG_SPEC> {
+        DMAEN_W::new(self, 5)
     }
     #[doc = "Bit 7 - Non-Periodic TxFIFO Empty Level"]
     #[inline(always)]
     #[must_use]
-    pub fn nptx_femp_lvl(&mut self) -> NPTX_FEMP_LVL_W<GAHBCFG_SPEC, 7> {
-        NPTX_FEMP_LVL_W::new(self)
+    pub fn nptx_femp_lvl(&mut self) -> NPTX_FEMP_LVL_W<GAHBCFG_SPEC> {
+        NPTX_FEMP_LVL_W::new(self, 7)
     }
     #[doc = "Bit 8 - Periodic TxFIFO Empty Level"]
     #[inline(always)]
     #[must_use]
-    pub fn ptx_femp_lvl(&mut self) -> PTX_FEMP_LVL_W<GAHBCFG_SPEC, 8> {
-        PTX_FEMP_LVL_W::new(self)
+    pub fn ptx_femp_lvl(&mut self) -> PTX_FEMP_LVL_W<GAHBCFG_SPEC> {
+        PTX_FEMP_LVL_W::new(self, 8)
     }
     #[doc = "Bit 23 - AHB Single Support"]
     #[inline(always)]
     #[must_use]
-    pub fn ahbsingle(&mut self) -> AHBSINGLE_W<GAHBCFG_SPEC, 23> {
-        AHBSINGLE_W::new(self)
+    pub fn ahbsingle(&mut self) -> AHBSINGLE_W<GAHBCFG_SPEC> {
+        AHBSINGLE_W::new(self, 23)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

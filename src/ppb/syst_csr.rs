@@ -39,8 +39,8 @@ impl ENABLE_R {
     }
 }
 #[doc = "Field `ENABLE` writer - Enable"]
-pub type ENABLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENABLE_A>;
-impl<'a, REG, const O: u8> ENABLE_W<'a, REG, O>
+pub type ENABLE_W<'a, REG> = crate::BitWriter<'a, REG, ENABLE_A>;
+impl<'a, REG> ENABLE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl TICKINT_R {
     }
 }
 #[doc = "Field `TICKINT` writer - Tick Interrupt Enable"]
-pub type TICKINT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TICKINT_A>;
-impl<'a, REG, const O: u8> TICKINT_W<'a, REG, O>
+pub type TICKINT_W<'a, REG> = crate::BitWriter<'a, REG, TICKINT_A>;
+impl<'a, REG> TICKINT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl CLKSOURCE_R {
     }
 }
 #[doc = "Field `CLKSOURCE` writer - Indicates the clock source:"]
-pub type CLKSOURCE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CLKSOURCE_A>;
-impl<'a, REG, const O: u8> CLKSOURCE_W<'a, REG, O>
+pub type CLKSOURCE_W<'a, REG> = crate::BitWriter<'a, REG, CLKSOURCE_A>;
+impl<'a, REG> CLKSOURCE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -164,7 +164,7 @@ where
 #[doc = "Field `COUNTFLAG` reader - Counter Flag"]
 pub type COUNTFLAG_R = crate::BitReader;
 #[doc = "Field `COUNTFLAG` writer - Counter Flag"]
-pub type COUNTFLAG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type COUNTFLAG_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
@@ -191,26 +191,26 @@ impl W {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn enable(&mut self) -> ENABLE_W<SYST_CSR_SPEC, 0> {
-        ENABLE_W::new(self)
+    pub fn enable(&mut self) -> ENABLE_W<SYST_CSR_SPEC> {
+        ENABLE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Tick Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tickint(&mut self) -> TICKINT_W<SYST_CSR_SPEC, 1> {
-        TICKINT_W::new(self)
+    pub fn tickint(&mut self) -> TICKINT_W<SYST_CSR_SPEC> {
+        TICKINT_W::new(self, 1)
     }
     #[doc = "Bit 2 - Indicates the clock source:"]
     #[inline(always)]
     #[must_use]
-    pub fn clksource(&mut self) -> CLKSOURCE_W<SYST_CSR_SPEC, 2> {
-        CLKSOURCE_W::new(self)
+    pub fn clksource(&mut self) -> CLKSOURCE_W<SYST_CSR_SPEC> {
+        CLKSOURCE_W::new(self, 2)
     }
     #[doc = "Bit 16 - Counter Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn countflag(&mut self) -> COUNTFLAG_W<SYST_CSR_SPEC, 16> {
-        COUNTFLAG_W::new(self)
+    pub fn countflag(&mut self) -> COUNTFLAG_W<SYST_CSR_SPEC> {
+        COUNTFLAG_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

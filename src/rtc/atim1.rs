@@ -5,11 +5,11 @@ pub type W = crate::W<ATIM1_SPEC>;
 #[doc = "Field `AMO` reader - Alarm Month Compare Value"]
 pub type AMO_R = crate::FieldReader;
 #[doc = "Field `AMO` writer - Alarm Month Compare Value"]
-pub type AMO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type AMO_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `AYE` reader - Alarm Year Compare Value"]
 pub type AYE_R = crate::FieldReader<u16>;
 #[doc = "Field `AYE` writer - Alarm Year Compare Value"]
-pub type AYE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type AYE_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 8:11 - Alarm Month Compare Value"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 8:11 - Alarm Month Compare Value"]
     #[inline(always)]
     #[must_use]
-    pub fn amo(&mut self) -> AMO_W<ATIM1_SPEC, 8> {
-        AMO_W::new(self)
+    pub fn amo(&mut self) -> AMO_W<ATIM1_SPEC> {
+        AMO_W::new(self, 8)
     }
     #[doc = "Bits 16:31 - Alarm Year Compare Value"]
     #[inline(always)]
     #[must_use]
-    pub fn aye(&mut self) -> AYE_W<ATIM1_SPEC, 16> {
-        AYE_W::new(self)
+    pub fn aye(&mut self) -> AYE_W<ATIM1_SPEC> {
+        AYE_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

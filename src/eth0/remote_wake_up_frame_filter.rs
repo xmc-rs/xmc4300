@@ -5,7 +5,7 @@ pub type W = crate::W<REMOTE_WAKE_UP_FRAME_FILTER_SPEC>;
 #[doc = "Field `WKUPFRMFTR` reader - Remote Wake-Up Frame Filter"]
 pub type WKUPFRMFTR_R = crate::FieldReader<u32>;
 #[doc = "Field `WKUPFRMFTR` writer - Remote Wake-Up Frame Filter"]
-pub type WKUPFRMFTR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type WKUPFRMFTR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Remote Wake-Up Frame Filter"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Remote Wake-Up Frame Filter"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupfrmftr(&mut self) -> WKUPFRMFTR_W<REMOTE_WAKE_UP_FRAME_FILTER_SPEC, 0> {
-        WKUPFRMFTR_W::new(self)
+    pub fn wkupfrmftr(&mut self) -> WKUPFRMFTR_W<REMOTE_WAKE_UP_FRAME_FILTER_SPEC> {
+        WKUPFRMFTR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

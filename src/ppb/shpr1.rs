@@ -5,15 +5,15 @@ pub type W = crate::W<SHPR1_SPEC>;
 #[doc = "Field `PRI_4` reader - Priority of system handler 4, MemManage"]
 pub type PRI_4_R = crate::FieldReader;
 #[doc = "Field `PRI_4` writer - Priority of system handler 4, MemManage"]
-pub type PRI_4_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PRI_4_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PRI_5` reader - Priority of system handler 5, BusFault"]
 pub type PRI_5_R = crate::FieldReader;
 #[doc = "Field `PRI_5` writer - Priority of system handler 5, BusFault"]
-pub type PRI_5_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PRI_5_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PRI_6` reader - Priority of system handler 6, UsageFault"]
 pub type PRI_6_R = crate::FieldReader;
 #[doc = "Field `PRI_6` writer - Priority of system handler 6, UsageFault"]
-pub type PRI_6_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PRI_6_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Priority of system handler 4, MemManage"]
     #[inline(always)]
@@ -35,20 +35,20 @@ impl W {
     #[doc = "Bits 0:7 - Priority of system handler 4, MemManage"]
     #[inline(always)]
     #[must_use]
-    pub fn pri_4(&mut self) -> PRI_4_W<SHPR1_SPEC, 0> {
-        PRI_4_W::new(self)
+    pub fn pri_4(&mut self) -> PRI_4_W<SHPR1_SPEC> {
+        PRI_4_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Priority of system handler 5, BusFault"]
     #[inline(always)]
     #[must_use]
-    pub fn pri_5(&mut self) -> PRI_5_W<SHPR1_SPEC, 8> {
-        PRI_5_W::new(self)
+    pub fn pri_5(&mut self) -> PRI_5_W<SHPR1_SPEC> {
+        PRI_5_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Priority of system handler 6, UsageFault"]
     #[inline(always)]
     #[must_use]
-    pub fn pri_6(&mut self) -> PRI_6_W<SHPR1_SPEC, 16> {
-        PRI_6_W::new(self)
+    pub fn pri_6(&mut self) -> PRI_6_W<SHPR1_SPEC> {
+        PRI_6_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<SYST_CVR_SPEC>;
 #[doc = "Field `CURRENT` reader - Current Value"]
 pub type CURRENT_R = crate::FieldReader<u32>;
 #[doc = "Field `CURRENT` writer - Current Value"]
-pub type CURRENT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 24, O, u32>;
+pub type CURRENT_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     #[doc = "Bits 0:23 - Current Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:23 - Current Value"]
     #[inline(always)]
     #[must_use]
-    pub fn current(&mut self) -> CURRENT_W<SYST_CVR_SPEC, 0> {
-        CURRENT_W::new(self)
+    pub fn current(&mut self) -> CURRENT_W<SYST_CVR_SPEC> {
+        CURRENT_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

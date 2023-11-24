@@ -43,7 +43,7 @@ pub type RXTYP2COE_R = crate::BitReader;
 #[doc = "Field `RXFIFOSIZE` reader - Rx FIFO > 2,048 Bytes"]
 pub type RXFIFOSIZE_R = crate::BitReader;
 #[doc = "Field `RXFIFOSIZE` writer - Rx FIFO > 2,048 Bytes"]
-pub type RXFIFOSIZE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RXFIFOSIZE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RXCHCNT` reader - Number of additional Rx channels"]
 pub type RXCHCNT_R = crate::FieldReader;
 #[doc = "Field `TXCHCNT` reader - Number of additional Tx channels"]
@@ -199,8 +199,8 @@ impl W {
     #[doc = "Bit 19 - Rx FIFO > 2,048 Bytes"]
     #[inline(always)]
     #[must_use]
-    pub fn rxfifosize(&mut self) -> RXFIFOSIZE_W<HW_FEATURE_SPEC, 19> {
-        RXFIFOSIZE_W::new(self)
+    pub fn rxfifosize(&mut self) -> RXFIFOSIZE_W<HW_FEATURE_SPEC> {
+        RXFIFOSIZE_W::new(self, 19)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

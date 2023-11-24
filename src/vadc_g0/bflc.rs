@@ -60,8 +60,8 @@ impl BFM0_R {
     }
 }
 #[doc = "Field `BFM0` writer - Boundary Flag y Mode Control"]
-pub type BFM0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BFM0_A>;
-impl<'a, REG, const O: u8> BFM0_W<'a, REG, O>
+pub type BFM0_W<'a, REG> = crate::FieldWriter<'a, REG, 4, BFM0_A>;
+impl<'a, REG> BFM0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,8 +145,8 @@ impl BFM1_R {
     }
 }
 #[doc = "Field `BFM1` writer - Boundary Flag y Mode Control"]
-pub type BFM1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BFM1_A>;
-impl<'a, REG, const O: u8> BFM1_W<'a, REG, O>
+pub type BFM1_W<'a, REG> = crate::FieldWriter<'a, REG, 4, BFM1_A>;
+impl<'a, REG> BFM1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -230,8 +230,8 @@ impl BFM2_R {
     }
 }
 #[doc = "Field `BFM2` writer - Boundary Flag y Mode Control"]
-pub type BFM2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BFM2_A>;
-impl<'a, REG, const O: u8> BFM2_W<'a, REG, O>
+pub type BFM2_W<'a, REG> = crate::FieldWriter<'a, REG, 4, BFM2_A>;
+impl<'a, REG> BFM2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -315,8 +315,8 @@ impl BFM3_R {
     }
 }
 #[doc = "Field `BFM3` writer - Boundary Flag y Mode Control"]
-pub type BFM3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BFM3_A>;
-impl<'a, REG, const O: u8> BFM3_W<'a, REG, O>
+pub type BFM3_W<'a, REG> = crate::FieldWriter<'a, REG, 4, BFM3_A>;
+impl<'a, REG> BFM3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -368,26 +368,26 @@ impl W {
     #[doc = "Bits 0:3 - Boundary Flag y Mode Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bfm0(&mut self) -> BFM0_W<BFLC_SPEC, 0> {
-        BFM0_W::new(self)
+    pub fn bfm0(&mut self) -> BFM0_W<BFLC_SPEC> {
+        BFM0_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Boundary Flag y Mode Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bfm1(&mut self) -> BFM1_W<BFLC_SPEC, 4> {
-        BFM1_W::new(self)
+    pub fn bfm1(&mut self) -> BFM1_W<BFLC_SPEC> {
+        BFM1_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Boundary Flag y Mode Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bfm2(&mut self) -> BFM2_W<BFLC_SPEC, 8> {
-        BFM2_W::new(self)
+    pub fn bfm2(&mut self) -> BFM2_W<BFLC_SPEC> {
+        BFM2_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Boundary Flag y Mode Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bfm3(&mut self) -> BFM3_W<BFLC_SPEC, 12> {
-        BFM3_W::new(self)
+    pub fn bfm3(&mut self) -> BFM3_W<BFLC_SPEC> {
+        BFM3_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

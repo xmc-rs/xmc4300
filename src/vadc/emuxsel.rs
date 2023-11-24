@@ -5,11 +5,11 @@ pub type W = crate::W<EMUXSEL_SPEC>;
 #[doc = "Field `EMUXGRP0` reader - External Multiplexer Group for Interface x"]
 pub type EMUXGRP0_R = crate::FieldReader;
 #[doc = "Field `EMUXGRP0` writer - External Multiplexer Group for Interface x"]
-pub type EMUXGRP0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type EMUXGRP0_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `EMUXGRP1` reader - External Multiplexer Group for Interface x"]
 pub type EMUXGRP1_R = crate::FieldReader;
 #[doc = "Field `EMUXGRP1` writer - External Multiplexer Group for Interface x"]
-pub type EMUXGRP1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type EMUXGRP1_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3 - External Multiplexer Group for Interface x"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:3 - External Multiplexer Group for Interface x"]
     #[inline(always)]
     #[must_use]
-    pub fn emuxgrp0(&mut self) -> EMUXGRP0_W<EMUXSEL_SPEC, 0> {
-        EMUXGRP0_W::new(self)
+    pub fn emuxgrp0(&mut self) -> EMUXGRP0_W<EMUXSEL_SPEC> {
+        EMUXGRP0_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - External Multiplexer Group for Interface x"]
     #[inline(always)]
     #[must_use]
-    pub fn emuxgrp1(&mut self) -> EMUXGRP1_W<EMUXSEL_SPEC, 4> {
-        EMUXGRP1_W::new(self)
+    pub fn emuxgrp1(&mut self) -> EMUXGRP1_W<EMUXSEL_SPEC> {
+        EMUXGRP1_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

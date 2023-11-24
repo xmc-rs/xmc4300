@@ -5,7 +5,7 @@ pub type W = crate::W<MII_PHY_ADR_SPEC>;
 #[doc = "Field `PHY_ADDR` reader - PHY Address"]
 pub type PHY_ADDR_R = crate::FieldReader;
 #[doc = "Field `PHY_ADDR` writer - PHY Address"]
-pub type PHY_ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PHY_ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PHY_CADDR` reader - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
 of this register (valid values are 0-3)"]
 pub type PHY_CADDR_R = crate::BitReader<PHY_CADDR_A>;
@@ -46,8 +46,8 @@ impl PHY_CADDR_R {
 }
 #[doc = "Field `PHY_CADDR` writer - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
 of this register (valid values are 0-3)"]
-pub type PHY_CADDR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PHY_CADDR_A>;
-impl<'a, REG, const O: u8> PHY_CADDR_W<'a, REG, O>
+pub type PHY_CADDR_W<'a, REG> = crate::BitWriter<'a, REG, PHY_CADDR_A>;
+impl<'a, REG> PHY_CADDR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -79,15 +79,15 @@ impl W {
     #[doc = "Bits 0:4 - PHY Address"]
     #[inline(always)]
     #[must_use]
-    pub fn phy_addr(&mut self) -> PHY_ADDR_W<MII_PHY_ADR_SPEC, 0> {
-        PHY_ADDR_W::new(self)
+    pub fn phy_addr(&mut self) -> PHY_ADDR_W<MII_PHY_ADR_SPEC> {
+        PHY_ADDR_W::new(self, 0)
     }
     #[doc = "Bit 7 - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
 of this register (valid values are 0-3)"]
     #[inline(always)]
     #[must_use]
-    pub fn phy_caddr(&mut self) -> PHY_CADDR_W<MII_PHY_ADR_SPEC, 7> {
-        PHY_CADDR_W::new(self)
+    pub fn phy_caddr(&mut self) -> PHY_CADDR_W<MII_PHY_ADR_SPEC> {
+        PHY_CADDR_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -52,8 +52,8 @@ impl ECKSEL_R {
     }
 }
 #[doc = "Field `ECKSEL` writer - External Clock Selection Value"]
-pub type ECKSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, ECKSEL_A>;
-impl<'a, REG, const O: u8> ECKSEL_W<'a, REG, O>
+pub type ECKSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, ECKSEL_A>;
+impl<'a, REG> ECKSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -77,7 +77,7 @@ where
 #[doc = "Field `ECKDIV` reader - External Clock Divider Value"]
 pub type ECKDIV_R = crate::FieldReader<u16>;
 #[doc = "Field `ECKDIV` writer - External Clock Divider Value"]
-pub type ECKDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 9, O, u16>;
+pub type ECKDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 impl R {
     #[doc = "Bits 0:1 - External Clock Selection Value"]
     #[inline(always)]
@@ -94,14 +94,14 @@ impl W {
     #[doc = "Bits 0:1 - External Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ecksel(&mut self) -> ECKSEL_W<EXTCLKCR_SPEC, 0> {
-        ECKSEL_W::new(self)
+    pub fn ecksel(&mut self) -> ECKSEL_W<EXTCLKCR_SPEC> {
+        ECKSEL_W::new(self, 0)
     }
     #[doc = "Bits 16:24 - External Clock Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn eckdiv(&mut self) -> ECKDIV_W<EXTCLKCR_SPEC, 16> {
-        ECKDIV_W::new(self)
+    pub fn eckdiv(&mut self) -> ECKDIV_W<EXTCLKCR_SPEC> {
+        ECKDIV_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

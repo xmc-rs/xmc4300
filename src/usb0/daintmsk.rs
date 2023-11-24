@@ -5,11 +5,11 @@ pub type W = crate::W<DAINTMSK_SPEC>;
 #[doc = "Field `InEpMsk` reader - IN EP Interrupt Mask Bits"]
 pub type IN_EP_MSK_R = crate::FieldReader<u16>;
 #[doc = "Field `InEpMsk` writer - IN EP Interrupt Mask Bits"]
-pub type IN_EP_MSK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type IN_EP_MSK_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `OutEpMsk` reader - OUT EP Interrupt Mask Bits"]
 pub type OUT_EP_MSK_R = crate::FieldReader<u16>;
 #[doc = "Field `OutEpMsk` writer - OUT EP Interrupt Mask Bits"]
-pub type OUT_EP_MSK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type OUT_EP_MSK_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - IN EP Interrupt Mask Bits"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:15 - IN EP Interrupt Mask Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn in_ep_msk(&mut self) -> IN_EP_MSK_W<DAINTMSK_SPEC, 0> {
-        IN_EP_MSK_W::new(self)
+    pub fn in_ep_msk(&mut self) -> IN_EP_MSK_W<DAINTMSK_SPEC> {
+        IN_EP_MSK_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - OUT EP Interrupt Mask Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn out_ep_msk(&mut self) -> OUT_EP_MSK_W<DAINTMSK_SPEC, 16> {
-        OUT_EP_MSK_W::new(self)
+    pub fn out_ep_msk(&mut self) -> OUT_EP_MSK_W<DAINTMSK_SPEC> {
+        OUT_EP_MSK_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

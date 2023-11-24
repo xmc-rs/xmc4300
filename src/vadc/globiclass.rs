@@ -5,7 +5,7 @@ pub type W = crate::W<GLOBICLASS_SPEC>;
 #[doc = "Field `STCS` reader - Sample Time Control for Standard Conversions"]
 pub type STCS_R = crate::FieldReader;
 #[doc = "Field `STCS` writer - Sample Time Control for Standard Conversions"]
-pub type STCS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type STCS_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `CMS` reader - Conversion Mode for Standard Conversions"]
 pub type CMS_R = crate::FieldReader<CMS_A>;
 #[doc = "Conversion Mode for Standard Conversions\n\nValue on reset: 0"]
@@ -64,8 +64,8 @@ impl CMS_R {
     }
 }
 #[doc = "Field `CMS` writer - Conversion Mode for Standard Conversions"]
-pub type CMS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, CMS_A>;
-impl<'a, REG, const O: u8> CMS_W<'a, REG, O>
+pub type CMS_W<'a, REG> = crate::FieldWriter<'a, REG, 3, CMS_A>;
+impl<'a, REG> CMS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -94,7 +94,7 @@ where
 #[doc = "Field `STCE` reader - Sample Time Control for EMUX Conversions"]
 pub type STCE_R = crate::FieldReader;
 #[doc = "Field `STCE` writer - Sample Time Control for EMUX Conversions"]
-pub type STCE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type STCE_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `CME` reader - Conversion Mode for EMUX Conversions"]
 pub type CME_R = crate::FieldReader<CME_A>;
 #[doc = "Conversion Mode for EMUX Conversions\n\nValue on reset: 0"]
@@ -153,8 +153,8 @@ impl CME_R {
     }
 }
 #[doc = "Field `CME` writer - Conversion Mode for EMUX Conversions"]
-pub type CME_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, CME_A>;
-impl<'a, REG, const O: u8> CME_W<'a, REG, O>
+pub type CME_W<'a, REG> = crate::FieldWriter<'a, REG, 3, CME_A>;
+impl<'a, REG> CME_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -206,26 +206,26 @@ impl W {
     #[doc = "Bits 0:4 - Sample Time Control for Standard Conversions"]
     #[inline(always)]
     #[must_use]
-    pub fn stcs(&mut self) -> STCS_W<GLOBICLASS_SPEC, 0> {
-        STCS_W::new(self)
+    pub fn stcs(&mut self) -> STCS_W<GLOBICLASS_SPEC> {
+        STCS_W::new(self, 0)
     }
     #[doc = "Bits 8:10 - Conversion Mode for Standard Conversions"]
     #[inline(always)]
     #[must_use]
-    pub fn cms(&mut self) -> CMS_W<GLOBICLASS_SPEC, 8> {
-        CMS_W::new(self)
+    pub fn cms(&mut self) -> CMS_W<GLOBICLASS_SPEC> {
+        CMS_W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Sample Time Control for EMUX Conversions"]
     #[inline(always)]
     #[must_use]
-    pub fn stce(&mut self) -> STCE_W<GLOBICLASS_SPEC, 16> {
-        STCE_W::new(self)
+    pub fn stce(&mut self) -> STCE_W<GLOBICLASS_SPEC> {
+        STCE_W::new(self, 16)
     }
     #[doc = "Bits 24:26 - Conversion Mode for EMUX Conversions"]
     #[inline(always)]
     #[must_use]
-    pub fn cme(&mut self) -> CME_W<GLOBICLASS_SPEC, 24> {
-        CME_W::new(self)
+    pub fn cme(&mut self) -> CME_W<GLOBICLASS_SPEC> {
+        CME_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

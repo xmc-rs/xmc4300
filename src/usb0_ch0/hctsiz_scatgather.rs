@@ -5,11 +5,11 @@ pub type W = crate::W<HCTSIZ_SCATGATHER_SPEC>;
 #[doc = "Field `SCHED_INFO` reader - Schedule information"]
 pub type SCHED_INFO_R = crate::FieldReader;
 #[doc = "Field `SCHED_INFO` writer - Schedule information"]
-pub type SCHED_INFO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SCHED_INFO_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `NTD` reader - Number of Transfer Descriptors: 0=1 descriptor, 63=64 descriptors, 1=2 descriptors, 3=4 descriptors, 7=8 descriptors, 15=16 descriptors, 31=32 descriptors, 63=64 descriptors,"]
 pub type NTD_R = crate::FieldReader;
 #[doc = "Field `NTD` writer - Number of Transfer Descriptors: 0=1 descriptor, 63=64 descriptors, 1=2 descriptors, 3=4 descriptors, 7=8 descriptors, 15=16 descriptors, 31=32 descriptors, 63=64 descriptors,"]
-pub type NTD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type NTD_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `Pid` reader - PID"]
 pub type PID_R = crate::FieldReader<PID_A>;
 #[doc = "PID\n\nValue on reset: 0"]
@@ -68,8 +68,8 @@ impl PID_R {
     }
 }
 #[doc = "Field `Pid` writer - PID"]
-pub type PID_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PID_A>;
-impl<'a, REG, const O: u8> PID_W<'a, REG, O>
+pub type PID_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PID_A>;
+impl<'a, REG> PID_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -116,20 +116,20 @@ impl W {
     #[doc = "Bits 0:7 - Schedule information"]
     #[inline(always)]
     #[must_use]
-    pub fn sched_info(&mut self) -> SCHED_INFO_W<HCTSIZ_SCATGATHER_SPEC, 0> {
-        SCHED_INFO_W::new(self)
+    pub fn sched_info(&mut self) -> SCHED_INFO_W<HCTSIZ_SCATGATHER_SPEC> {
+        SCHED_INFO_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Number of Transfer Descriptors: 0=1 descriptor, 63=64 descriptors, 1=2 descriptors, 3=4 descriptors, 7=8 descriptors, 15=16 descriptors, 31=32 descriptors, 63=64 descriptors,"]
     #[inline(always)]
     #[must_use]
-    pub fn ntd(&mut self) -> NTD_W<HCTSIZ_SCATGATHER_SPEC, 8> {
-        NTD_W::new(self)
+    pub fn ntd(&mut self) -> NTD_W<HCTSIZ_SCATGATHER_SPEC> {
+        NTD_W::new(self, 8)
     }
     #[doc = "Bits 29:30 - PID"]
     #[inline(always)]
     #[must_use]
-    pub fn pid(&mut self) -> PID_W<HCTSIZ_SCATGATHER_SPEC, 29> {
-        PID_W::new(self)
+    pub fn pid(&mut self) -> PID_W<HCTSIZ_SCATGATHER_SPEC> {
+        PID_W::new(self, 29)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -39,8 +39,8 @@ impl ACCESS_R {
     }
 }
 #[doc = "Field `ACCESS` writer - Access to EEPROM"]
-pub type ACCESS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ACCESS_A>;
-impl<'a, REG, const O: u8> ACCESS_W<'a, REG, O>
+pub type ACCESS_W<'a, REG> = crate::BitWriter<'a, REG, ACCESS_A>;
+impl<'a, REG> ACCESS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,8 +66,8 @@ impl W {
     #[doc = "Bit 0 - Access to EEPROM"]
     #[inline(always)]
     #[must_use]
-    pub fn access(&mut self) -> ACCESS_W<EEP_STATE_SPEC, 0> {
-        ACCESS_W::new(self)
+    pub fn access(&mut self) -> ACCESS_W<EEP_STATE_SPEC> {
+        ACCESS_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -2,22 +2,52 @@
 #[repr(C)]
 pub struct RegisterBlock {
     _reserved0: [u8; 0x1008],
-    #[doc = "0x1008 - Flash Module Identification Register"]
-    pub id: ID,
+    id: ID,
     _reserved1: [u8; 0x04],
-    #[doc = "0x1010 - Flash Status Register"]
-    pub fsr: FSR,
-    #[doc = "0x1014 - Flash Configuration Register"]
-    pub fcon: FCON,
-    #[doc = "0x1018 - Margin Control Register PFLASH"]
-    pub marp: MARP,
+    fsr: FSR,
+    fcon: FCON,
+    marp: MARP,
     _reserved4: [u8; 0x04],
+    procon0: PROCON0,
+    procon1: PROCON1,
+    procon2: PROCON2,
+}
+impl RegisterBlock {
+    #[doc = "0x1008 - Flash Module Identification Register"]
+    #[inline(always)]
+    pub const fn id(&self) -> &ID {
+        &self.id
+    }
+    #[doc = "0x1010 - Flash Status Register"]
+    #[inline(always)]
+    pub const fn fsr(&self) -> &FSR {
+        &self.fsr
+    }
+    #[doc = "0x1014 - Flash Configuration Register"]
+    #[inline(always)]
+    pub const fn fcon(&self) -> &FCON {
+        &self.fcon
+    }
+    #[doc = "0x1018 - Margin Control Register PFLASH"]
+    #[inline(always)]
+    pub const fn marp(&self) -> &MARP {
+        &self.marp
+    }
     #[doc = "0x1020 - Flash Protection Configuration Register User 0"]
-    pub procon0: PROCON0,
+    #[inline(always)]
+    pub const fn procon0(&self) -> &PROCON0 {
+        &self.procon0
+    }
     #[doc = "0x1024 - Flash Protection Configuration Register User 1"]
-    pub procon1: PROCON1,
+    #[inline(always)]
+    pub const fn procon1(&self) -> &PROCON1 {
+        &self.procon1
+    }
     #[doc = "0x1028 - Flash Protection Configuration Register User 2"]
-    pub procon2: PROCON2,
+    #[inline(always)]
+    pub const fn procon2(&self) -> &PROCON2 {
+        &self.procon2
+    }
 }
 #[doc = "ID (r) register accessor: Flash Module Identification Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@id`]
 module"]

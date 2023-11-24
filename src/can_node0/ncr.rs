@@ -39,8 +39,8 @@ impl INIT_R {
     }
 }
 #[doc = "Field `INIT` writer - Node Initialization"]
-pub type INIT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, INIT_A>;
-impl<'a, REG, const O: u8> INIT_W<'a, REG, O>
+pub type INIT_W<'a, REG> = crate::BitWriter<'a, REG, INIT_A>;
+impl<'a, REG> INIT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl TRIE_R {
     }
 }
 #[doc = "Field `TRIE` writer - Transfer Interrupt Enable"]
-pub type TRIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TRIE_A>;
-impl<'a, REG, const O: u8> TRIE_W<'a, REG, O>
+pub type TRIE_W<'a, REG> = crate::BitWriter<'a, REG, TRIE_A>;
+impl<'a, REG> TRIE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl LECIE_R {
     }
 }
 #[doc = "Field `LECIE` writer - LEC Indicated Error Interrupt Enable"]
-pub type LECIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LECIE_A>;
-impl<'a, REG, const O: u8> LECIE_W<'a, REG, O>
+pub type LECIE_W<'a, REG> = crate::BitWriter<'a, REG, LECIE_A>;
+impl<'a, REG> LECIE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl ALIE_R {
     }
 }
 #[doc = "Field `ALIE` writer - Alert Interrupt Enable"]
-pub type ALIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALIE_A>;
-impl<'a, REG, const O: u8> ALIE_W<'a, REG, O>
+pub type ALIE_W<'a, REG> = crate::BitWriter<'a, REG, ALIE_A>;
+impl<'a, REG> ALIE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -217,11 +217,11 @@ where
 #[doc = "Field `CANDIS` reader - CAN Disable"]
 pub type CANDIS_R = crate::BitReader;
 #[doc = "Field `CANDIS` writer - CAN Disable"]
-pub type CANDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CANDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TXDIS` reader - Transmit Disable"]
 pub type TXDIS_R = crate::BitReader;
 #[doc = "Field `TXDIS` writer - Transmit Disable"]
-pub type TXDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CCE` reader - Configuration Change Enable"]
 pub type CCE_R = crate::BitReader<CCE_A>;
 #[doc = "Configuration Change Enable\n\nValue on reset: 1"]
@@ -259,8 +259,8 @@ impl CCE_R {
     }
 }
 #[doc = "Field `CCE` writer - Configuration Change Enable"]
-pub type CCE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCE_A>;
-impl<'a, REG, const O: u8> CCE_W<'a, REG, O>
+pub type CCE_W<'a, REG> = crate::BitWriter<'a, REG, CCE_A>;
+impl<'a, REG> CCE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -278,7 +278,7 @@ where
 #[doc = "Field `CALM` reader - CAN Analyzer Mode"]
 pub type CALM_R = crate::BitReader;
 #[doc = "Field `CALM` writer - CAN Analyzer Mode"]
-pub type CALM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CALM_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Node Initialization"]
     #[inline(always)]
@@ -325,50 +325,50 @@ impl W {
     #[doc = "Bit 0 - Node Initialization"]
     #[inline(always)]
     #[must_use]
-    pub fn init(&mut self) -> INIT_W<NCR_SPEC, 0> {
-        INIT_W::new(self)
+    pub fn init(&mut self) -> INIT_W<NCR_SPEC> {
+        INIT_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transfer Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn trie(&mut self) -> TRIE_W<NCR_SPEC, 1> {
-        TRIE_W::new(self)
+    pub fn trie(&mut self) -> TRIE_W<NCR_SPEC> {
+        TRIE_W::new(self, 1)
     }
     #[doc = "Bit 2 - LEC Indicated Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn lecie(&mut self) -> LECIE_W<NCR_SPEC, 2> {
-        LECIE_W::new(self)
+    pub fn lecie(&mut self) -> LECIE_W<NCR_SPEC> {
+        LECIE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Alert Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn alie(&mut self) -> ALIE_W<NCR_SPEC, 3> {
-        ALIE_W::new(self)
+    pub fn alie(&mut self) -> ALIE_W<NCR_SPEC> {
+        ALIE_W::new(self, 3)
     }
     #[doc = "Bit 4 - CAN Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn candis(&mut self) -> CANDIS_W<NCR_SPEC, 4> {
-        CANDIS_W::new(self)
+    pub fn candis(&mut self) -> CANDIS_W<NCR_SPEC> {
+        CANDIS_W::new(self, 4)
     }
     #[doc = "Bit 5 - Transmit Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn txdis(&mut self) -> TXDIS_W<NCR_SPEC, 5> {
-        TXDIS_W::new(self)
+    pub fn txdis(&mut self) -> TXDIS_W<NCR_SPEC> {
+        TXDIS_W::new(self, 5)
     }
     #[doc = "Bit 6 - Configuration Change Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cce(&mut self) -> CCE_W<NCR_SPEC, 6> {
-        CCE_W::new(self)
+    pub fn cce(&mut self) -> CCE_W<NCR_SPEC> {
+        CCE_W::new(self, 6)
     }
     #[doc = "Bit 7 - CAN Analyzer Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn calm(&mut self) -> CALM_W<NCR_SPEC, 7> {
-        CALM_W::new(self)
+    pub fn calm(&mut self) -> CALM_W<NCR_SPEC> {
+        CALM_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -52,8 +52,8 @@ impl DAT_TIMEOUT_CNT_VAL_R {
     }
 }
 #[doc = "Field `DAT_TIMEOUT_CNT_VAL` writer - Data Timeout Counter Value"]
-pub type DAT_TIMEOUT_CNT_VAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, DAT_TIMEOUT_CNT_VAL_A>;
-impl<'a, REG, const O: u8> DAT_TIMEOUT_CNT_VAL_W<'a, REG, O>
+pub type DAT_TIMEOUT_CNT_VAL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, DAT_TIMEOUT_CNT_VAL_A>;
+impl<'a, REG> DAT_TIMEOUT_CNT_VAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -85,8 +85,8 @@ impl W {
     #[doc = "Bits 0:3 - Data Timeout Counter Value"]
     #[inline(always)]
     #[must_use]
-    pub fn dat_timeout_cnt_val(&mut self) -> DAT_TIMEOUT_CNT_VAL_W<TIMEOUT_CTRL_SPEC, 0> {
-        DAT_TIMEOUT_CNT_VAL_W::new(self)
+    pub fn dat_timeout_cnt_val(&mut self) -> DAT_TIMEOUT_CNT_VAL_W<TIMEOUT_CTRL_SPEC> {
+        DAT_TIMEOUT_CNT_VAL_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

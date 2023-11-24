@@ -39,8 +39,8 @@ impl VCOBYP_R {
     }
 }
 #[doc = "Field `VCOBYP` writer - VCO Bypass"]
-pub type VCOBYP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VCOBYP_A>;
-impl<'a, REG, const O: u8> VCOBYP_W<'a, REG, O>
+pub type VCOBYP_W<'a, REG> = crate::BitWriter<'a, REG, VCOBYP_A>;
+impl<'a, REG> VCOBYP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl VCOPWD_R {
     }
 }
 #[doc = "Field `VCOPWD` writer - VCO Power Saving Mode"]
-pub type VCOPWD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VCOPWD_A>;
-impl<'a, REG, const O: u8> VCOPWD_W<'a, REG, O>
+pub type VCOPWD_W<'a, REG> = crate::BitWriter<'a, REG, VCOPWD_A>;
+impl<'a, REG> VCOPWD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl VCOTR_R {
     }
 }
 #[doc = "Field `VCOTR` writer - VCO Trim Control"]
-pub type VCOTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VCOTR_A>;
-impl<'a, REG, const O: u8> VCOTR_W<'a, REG, O>
+pub type VCOTR_W<'a, REG> = crate::BitWriter<'a, REG, VCOTR_A>;
+impl<'a, REG> VCOTR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl FINDIS_R {
     }
 }
 #[doc = "Field `FINDIS` writer - Disconnect Oscillator from VCO"]
-pub type FINDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FINDIS_A>;
-impl<'a, REG, const O: u8> FINDIS_W<'a, REG, O>
+pub type FINDIS_W<'a, REG> = crate::BitWriter<'a, REG, FINDIS_A>;
+impl<'a, REG> FINDIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl OSCDISCDIS_R {
     }
 }
 #[doc = "Field `OSCDISCDIS` writer - Oscillator Disconnect Disable"]
-pub type OSCDISCDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OSCDISCDIS_A>;
-impl<'a, REG, const O: u8> OSCDISCDIS_W<'a, REG, O>
+pub type OSCDISCDIS_W<'a, REG> = crate::BitWriter<'a, REG, OSCDISCDIS_A>;
+impl<'a, REG> OSCDISCDIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -270,7 +270,7 @@ where
 #[doc = "Field `NDIV` reader - N-Divider Value"]
 pub type NDIV_R = crate::FieldReader;
 #[doc = "Field `NDIV` writer - N-Divider Value"]
-pub type NDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type NDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `PLLPWD` reader - PLL Power Saving Mode"]
 pub type PLLPWD_R = crate::BitReader<PLLPWD_A>;
 #[doc = "PLL Power Saving Mode\n\nValue on reset: 1"]
@@ -308,8 +308,8 @@ impl PLLPWD_R {
     }
 }
 #[doc = "Field `PLLPWD` writer - PLL Power Saving Mode"]
-pub type PLLPWD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PLLPWD_A>;
-impl<'a, REG, const O: u8> PLLPWD_W<'a, REG, O>
+pub type PLLPWD_W<'a, REG> = crate::BitWriter<'a, REG, PLLPWD_A>;
+impl<'a, REG> PLLPWD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -325,11 +325,11 @@ where
     }
 }
 #[doc = "Field `RESLD` writer - Restart VCO Lock Detection"]
-pub type RESLD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RESLD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PDIV` reader - P-Divider Value"]
 pub type PDIV_R = crate::FieldReader;
 #[doc = "Field `PDIV` writer - P-Divider Value"]
-pub type PDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - VCO Bypass"]
     #[inline(always)]
@@ -376,56 +376,56 @@ impl W {
     #[doc = "Bit 0 - VCO Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn vcobyp(&mut self) -> VCOBYP_W<USBPLLCON_SPEC, 0> {
-        VCOBYP_W::new(self)
+    pub fn vcobyp(&mut self) -> VCOBYP_W<USBPLLCON_SPEC> {
+        VCOBYP_W::new(self, 0)
     }
     #[doc = "Bit 1 - VCO Power Saving Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn vcopwd(&mut self) -> VCOPWD_W<USBPLLCON_SPEC, 1> {
-        VCOPWD_W::new(self)
+    pub fn vcopwd(&mut self) -> VCOPWD_W<USBPLLCON_SPEC> {
+        VCOPWD_W::new(self, 1)
     }
     #[doc = "Bit 2 - VCO Trim Control"]
     #[inline(always)]
     #[must_use]
-    pub fn vcotr(&mut self) -> VCOTR_W<USBPLLCON_SPEC, 2> {
-        VCOTR_W::new(self)
+    pub fn vcotr(&mut self) -> VCOTR_W<USBPLLCON_SPEC> {
+        VCOTR_W::new(self, 2)
     }
     #[doc = "Bit 4 - Disconnect Oscillator from VCO"]
     #[inline(always)]
     #[must_use]
-    pub fn findis(&mut self) -> FINDIS_W<USBPLLCON_SPEC, 4> {
-        FINDIS_W::new(self)
+    pub fn findis(&mut self) -> FINDIS_W<USBPLLCON_SPEC> {
+        FINDIS_W::new(self, 4)
     }
     #[doc = "Bit 6 - Oscillator Disconnect Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<USBPLLCON_SPEC, 6> {
-        OSCDISCDIS_W::new(self)
+    pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<USBPLLCON_SPEC> {
+        OSCDISCDIS_W::new(self, 6)
     }
     #[doc = "Bits 8:14 - N-Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ndiv(&mut self) -> NDIV_W<USBPLLCON_SPEC, 8> {
-        NDIV_W::new(self)
+    pub fn ndiv(&mut self) -> NDIV_W<USBPLLCON_SPEC> {
+        NDIV_W::new(self, 8)
     }
     #[doc = "Bit 16 - PLL Power Saving Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn pllpwd(&mut self) -> PLLPWD_W<USBPLLCON_SPEC, 16> {
-        PLLPWD_W::new(self)
+    pub fn pllpwd(&mut self) -> PLLPWD_W<USBPLLCON_SPEC> {
+        PLLPWD_W::new(self, 16)
     }
     #[doc = "Bit 18 - Restart VCO Lock Detection"]
     #[inline(always)]
     #[must_use]
-    pub fn resld(&mut self) -> RESLD_W<USBPLLCON_SPEC, 18> {
-        RESLD_W::new(self)
+    pub fn resld(&mut self) -> RESLD_W<USBPLLCON_SPEC> {
+        RESLD_W::new(self, 18)
     }
     #[doc = "Bits 24:27 - P-Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn pdiv(&mut self) -> PDIV_W<USBPLLCON_SPEC, 24> {
-        PDIV_W::new(self)
+    pub fn pdiv(&mut self) -> PDIV_W<USBPLLCON_SPEC> {
+        PDIV_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

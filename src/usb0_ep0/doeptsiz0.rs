@@ -5,11 +5,11 @@ pub type W = crate::W<DOEPTSIZ0_SPEC>;
 #[doc = "Field `XferSize` reader - Transfer Size"]
 pub type XFER_SIZE_R = crate::FieldReader;
 #[doc = "Field `XferSize` writer - Transfer Size"]
-pub type XFER_SIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type XFER_SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `PktCnt` reader - Packet Count"]
 pub type PKT_CNT_R = crate::FieldReader;
 #[doc = "Field `PktCnt` writer - Packet Count"]
-pub type PKT_CNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type PKT_CNT_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `SUPCnt` reader - SETUP Packet Count"]
 pub type SUPCNT_R = crate::FieldReader<SUPCNT_A>;
 #[doc = "SETUP Packet Count\n\nValue on reset: 0"]
@@ -60,8 +60,8 @@ impl SUPCNT_R {
     }
 }
 #[doc = "Field `SUPCnt` writer - SETUP Packet Count"]
-pub type SUPCNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SUPCNT_A>;
-impl<'a, REG, const O: u8> SUPCNT_W<'a, REG, O>
+pub type SUPCNT_W<'a, REG> = crate::FieldWriter<'a, REG, 2, SUPCNT_A>;
+impl<'a, REG> SUPCNT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -103,20 +103,20 @@ impl W {
     #[doc = "Bits 0:6 - Transfer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn xfer_size(&mut self) -> XFER_SIZE_W<DOEPTSIZ0_SPEC, 0> {
-        XFER_SIZE_W::new(self)
+    pub fn xfer_size(&mut self) -> XFER_SIZE_W<DOEPTSIZ0_SPEC> {
+        XFER_SIZE_W::new(self, 0)
     }
     #[doc = "Bits 19:20 - Packet Count"]
     #[inline(always)]
     #[must_use]
-    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<DOEPTSIZ0_SPEC, 19> {
-        PKT_CNT_W::new(self)
+    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<DOEPTSIZ0_SPEC> {
+        PKT_CNT_W::new(self, 19)
     }
     #[doc = "Bits 29:30 - SETUP Packet Count"]
     #[inline(always)]
     #[must_use]
-    pub fn supcnt(&mut self) -> SUPCNT_W<DOEPTSIZ0_SPEC, 29> {
-        SUPCNT_W::new(self)
+    pub fn supcnt(&mut self) -> SUPCNT_W<DOEPTSIZ0_SPEC> {
+        SUPCNT_W::new(self, 29)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

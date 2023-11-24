@@ -5,7 +5,7 @@ pub type W = crate::W<FDR_SPEC>;
 #[doc = "Field `STEP` reader - Step Value"]
 pub type STEP_R = crate::FieldReader<u16>;
 #[doc = "Field `STEP` writer - Step Value"]
-pub type STEP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 10, O, u16>;
+pub type STEP_W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "Field `DM` reader - Divider Mode"]
 pub type DM_R = crate::FieldReader<DM_A>;
 #[doc = "Divider Mode\n\nValue on reset: 0"]
@@ -64,8 +64,8 @@ impl DM_R {
     }
 }
 #[doc = "Field `DM` writer - Divider Mode"]
-pub type DM_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, DM_A>;
-impl<'a, REG, const O: u8> DM_W<'a, REG, O>
+pub type DM_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, DM_A>;
+impl<'a, REG> DM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -114,14 +114,14 @@ impl W {
     #[doc = "Bits 0:9 - Step Value"]
     #[inline(always)]
     #[must_use]
-    pub fn step(&mut self) -> STEP_W<FDR_SPEC, 0> {
-        STEP_W::new(self)
+    pub fn step(&mut self) -> STEP_W<FDR_SPEC> {
+        STEP_W::new(self, 0)
     }
     #[doc = "Bits 14:15 - Divider Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn dm(&mut self) -> DM_W<FDR_SPEC, 14> {
-        DM_W::new(self)
+    pub fn dm(&mut self) -> DM_W<FDR_SPEC> {
+        DM_W::new(self, 14)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

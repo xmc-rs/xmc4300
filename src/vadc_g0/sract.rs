@@ -15,8 +15,8 @@ impl From<AGSR0_AW> for bool {
     }
 }
 #[doc = "Field `AGSR0` writer - Activate Group Service Request Node 0"]
-pub type AGSR0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AGSR0_AW>;
-impl<'a, REG, const O: u8> AGSR0_W<'a, REG, O>
+pub type AGSR0_W<'a, REG> = crate::BitWriter<'a, REG, AGSR0_AW>;
+impl<'a, REG> AGSR0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<AGSR1_AW> for bool {
     }
 }
 #[doc = "Field `AGSR1` writer - Activate Group Service Request Node 1"]
-pub type AGSR1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AGSR1_AW>;
-impl<'a, REG, const O: u8> AGSR1_W<'a, REG, O>
+pub type AGSR1_W<'a, REG> = crate::BitWriter<'a, REG, AGSR1_AW>;
+impl<'a, REG> AGSR1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<AGSR2_AW> for bool {
     }
 }
 #[doc = "Field `AGSR2` writer - Activate Group Service Request Node 2"]
-pub type AGSR2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AGSR2_AW>;
-impl<'a, REG, const O: u8> AGSR2_W<'a, REG, O>
+pub type AGSR2_W<'a, REG> = crate::BitWriter<'a, REG, AGSR2_AW>;
+impl<'a, REG> AGSR2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<AGSR3_AW> for bool {
     }
 }
 #[doc = "Field `AGSR3` writer - Activate Group Service Request Node 3"]
-pub type AGSR3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AGSR3_AW>;
-impl<'a, REG, const O: u8> AGSR3_W<'a, REG, O>
+pub type AGSR3_W<'a, REG> = crate::BitWriter<'a, REG, AGSR3_AW>;
+impl<'a, REG> AGSR3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<ASSR0_AW> for bool {
     }
 }
 #[doc = "Field `ASSR0` writer - Activate Shared Service Request Node 0"]
-pub type ASSR0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASSR0_AW>;
-impl<'a, REG, const O: u8> ASSR0_W<'a, REG, O>
+pub type ASSR0_W<'a, REG> = crate::BitWriter<'a, REG, ASSR0_AW>;
+impl<'a, REG> ASSR0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<ASSR1_AW> for bool {
     }
 }
 #[doc = "Field `ASSR1` writer - Activate Shared Service Request Node 1"]
-pub type ASSR1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASSR1_AW>;
-impl<'a, REG, const O: u8> ASSR1_W<'a, REG, O>
+pub type ASSR1_W<'a, REG> = crate::BitWriter<'a, REG, ASSR1_AW>;
+impl<'a, REG> ASSR1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -201,8 +201,8 @@ impl From<ASSR2_AW> for bool {
     }
 }
 #[doc = "Field `ASSR2` writer - Activate Shared Service Request Node 2"]
-pub type ASSR2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASSR2_AW>;
-impl<'a, REG, const O: u8> ASSR2_W<'a, REG, O>
+pub type ASSR2_W<'a, REG> = crate::BitWriter<'a, REG, ASSR2_AW>;
+impl<'a, REG> ASSR2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -232,8 +232,8 @@ impl From<ASSR3_AW> for bool {
     }
 }
 #[doc = "Field `ASSR3` writer - Activate Shared Service Request Node 3"]
-pub type ASSR3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASSR3_AW>;
-impl<'a, REG, const O: u8> ASSR3_W<'a, REG, O>
+pub type ASSR3_W<'a, REG> = crate::BitWriter<'a, REG, ASSR3_AW>;
+impl<'a, REG> ASSR3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -252,50 +252,50 @@ impl W {
     #[doc = "Bit 0 - Activate Group Service Request Node 0"]
     #[inline(always)]
     #[must_use]
-    pub fn agsr0(&mut self) -> AGSR0_W<SRACT_SPEC, 0> {
-        AGSR0_W::new(self)
+    pub fn agsr0(&mut self) -> AGSR0_W<SRACT_SPEC> {
+        AGSR0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Activate Group Service Request Node 1"]
     #[inline(always)]
     #[must_use]
-    pub fn agsr1(&mut self) -> AGSR1_W<SRACT_SPEC, 1> {
-        AGSR1_W::new(self)
+    pub fn agsr1(&mut self) -> AGSR1_W<SRACT_SPEC> {
+        AGSR1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Activate Group Service Request Node 2"]
     #[inline(always)]
     #[must_use]
-    pub fn agsr2(&mut self) -> AGSR2_W<SRACT_SPEC, 2> {
-        AGSR2_W::new(self)
+    pub fn agsr2(&mut self) -> AGSR2_W<SRACT_SPEC> {
+        AGSR2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Activate Group Service Request Node 3"]
     #[inline(always)]
     #[must_use]
-    pub fn agsr3(&mut self) -> AGSR3_W<SRACT_SPEC, 3> {
-        AGSR3_W::new(self)
+    pub fn agsr3(&mut self) -> AGSR3_W<SRACT_SPEC> {
+        AGSR3_W::new(self, 3)
     }
     #[doc = "Bit 8 - Activate Shared Service Request Node 0"]
     #[inline(always)]
     #[must_use]
-    pub fn assr0(&mut self) -> ASSR0_W<SRACT_SPEC, 8> {
-        ASSR0_W::new(self)
+    pub fn assr0(&mut self) -> ASSR0_W<SRACT_SPEC> {
+        ASSR0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Activate Shared Service Request Node 1"]
     #[inline(always)]
     #[must_use]
-    pub fn assr1(&mut self) -> ASSR1_W<SRACT_SPEC, 9> {
-        ASSR1_W::new(self)
+    pub fn assr1(&mut self) -> ASSR1_W<SRACT_SPEC> {
+        ASSR1_W::new(self, 9)
     }
     #[doc = "Bit 10 - Activate Shared Service Request Node 2"]
     #[inline(always)]
     #[must_use]
-    pub fn assr2(&mut self) -> ASSR2_W<SRACT_SPEC, 10> {
-        ASSR2_W::new(self)
+    pub fn assr2(&mut self) -> ASSR2_W<SRACT_SPEC> {
+        ASSR2_W::new(self, 10)
     }
     #[doc = "Bit 11 - Activate Shared Service Request Node 3"]
     #[inline(always)]
     #[must_use]
-    pub fn assr3(&mut self) -> ASSR3_W<SRACT_SPEC, 11> {
-        ASSR3_W::new(self)
+    pub fn assr3(&mut self) -> ASSR3_W<SRACT_SPEC> {
+        ASSR3_W::new(self, 11)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

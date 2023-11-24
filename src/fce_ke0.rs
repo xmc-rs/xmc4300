@@ -1,22 +1,56 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    ir: IR,
+    res: RES,
+    cfg: CFG,
+    sts: STS,
+    length: LENGTH,
+    check: CHECK,
+    crc: CRC,
+    ctr: CTR,
+}
+impl RegisterBlock {
     #[doc = "0x00 - Input Register"]
-    pub ir: IR,
+    #[inline(always)]
+    pub const fn ir(&self) -> &IR {
+        &self.ir
+    }
     #[doc = "0x04 - CRC Result Register"]
-    pub res: RES,
+    #[inline(always)]
+    pub const fn res(&self) -> &RES {
+        &self.res
+    }
     #[doc = "0x08 - CRC Configuration Register"]
-    pub cfg: CFG,
+    #[inline(always)]
+    pub const fn cfg(&self) -> &CFG {
+        &self.cfg
+    }
     #[doc = "0x0c - CRC Status Register"]
-    pub sts: STS,
+    #[inline(always)]
+    pub const fn sts(&self) -> &STS {
+        &self.sts
+    }
     #[doc = "0x10 - CRC Length Register"]
-    pub length: LENGTH,
+    #[inline(always)]
+    pub const fn length(&self) -> &LENGTH {
+        &self.length
+    }
     #[doc = "0x14 - CRC Check Register"]
-    pub check: CHECK,
+    #[inline(always)]
+    pub const fn check(&self) -> &CHECK {
+        &self.check
+    }
     #[doc = "0x18 - CRC Register"]
-    pub crc: CRC,
+    #[inline(always)]
+    pub const fn crc(&self) -> &CRC {
+        &self.crc
+    }
     #[doc = "0x1c - CRC Test Register"]
-    pub ctr: CTR,
+    #[inline(always)]
+    pub const fn ctr(&self) -> &CTR {
+        &self.ctr
+    }
 }
 #[doc = "IR (rw) register accessor: Input Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ir::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ir::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ir`]
 module"]

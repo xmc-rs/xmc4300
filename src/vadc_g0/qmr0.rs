@@ -60,8 +60,8 @@ impl ENGT_R {
     }
 }
 #[doc = "Field `ENGT` writer - Enable Gate"]
-pub type ENGT_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ENGT_A>;
-impl<'a, REG, const O: u8> ENGT_W<'a, REG, O>
+pub type ENGT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ENGT_A>;
+impl<'a, REG> ENGT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -124,8 +124,8 @@ impl ENTR_R {
     }
 }
 #[doc = "Field `ENTR` writer - Enable External Trigger"]
-pub type ENTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENTR_A>;
-impl<'a, REG, const O: u8> ENTR_W<'a, REG, O>
+pub type ENTR_W<'a, REG> = crate::BitWriter<'a, REG, ENTR_A>;
+impl<'a, REG> ENTR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -155,8 +155,8 @@ impl From<CLRV_AW> for bool {
     }
 }
 #[doc = "Field `CLRV` writer - Clear Valid Bit"]
-pub type CLRV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CLRV_AW>;
-impl<'a, REG, const O: u8> CLRV_W<'a, REG, O>
+pub type CLRV_W<'a, REG> = crate::BitWriter<'a, REG, CLRV_AW>;
+impl<'a, REG> CLRV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -186,8 +186,8 @@ impl From<TREV_AW> for bool {
     }
 }
 #[doc = "Field `TREV` writer - Trigger Event"]
-pub type TREV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TREV_AW>;
-impl<'a, REG, const O: u8> TREV_W<'a, REG, O>
+pub type TREV_W<'a, REG> = crate::BitWriter<'a, REG, TREV_AW>;
+impl<'a, REG> TREV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -217,8 +217,8 @@ impl From<FLUSH_AW> for bool {
     }
 }
 #[doc = "Field `FLUSH` writer - Flush Queue"]
-pub type FLUSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FLUSH_AW>;
-impl<'a, REG, const O: u8> FLUSH_W<'a, REG, O>
+pub type FLUSH_W<'a, REG> = crate::BitWriter<'a, REG, FLUSH_AW>;
+impl<'a, REG> FLUSH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -248,8 +248,8 @@ impl From<CEV_AW> for bool {
     }
 }
 #[doc = "Field `CEV` writer - Clear Event Flag"]
-pub type CEV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV_AW>;
-impl<'a, REG, const O: u8> CEV_W<'a, REG, O>
+pub type CEV_W<'a, REG> = crate::BitWriter<'a, REG, CEV_AW>;
+impl<'a, REG> CEV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -301,8 +301,8 @@ impl RPTDIS_R {
     }
 }
 #[doc = "Field `RPTDIS` writer - Repeat Disable"]
-pub type RPTDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RPTDIS_A>;
-impl<'a, REG, const O: u8> RPTDIS_W<'a, REG, O>
+pub type RPTDIS_W<'a, REG> = crate::BitWriter<'a, REG, RPTDIS_A>;
+impl<'a, REG> RPTDIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -338,44 +338,44 @@ impl W {
     #[doc = "Bits 0:1 - Enable Gate"]
     #[inline(always)]
     #[must_use]
-    pub fn engt(&mut self) -> ENGT_W<QMR0_SPEC, 0> {
-        ENGT_W::new(self)
+    pub fn engt(&mut self) -> ENGT_W<QMR0_SPEC> {
+        ENGT_W::new(self, 0)
     }
     #[doc = "Bit 2 - Enable External Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn entr(&mut self) -> ENTR_W<QMR0_SPEC, 2> {
-        ENTR_W::new(self)
+    pub fn entr(&mut self) -> ENTR_W<QMR0_SPEC> {
+        ENTR_W::new(self, 2)
     }
     #[doc = "Bit 8 - Clear Valid Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn clrv(&mut self) -> CLRV_W<QMR0_SPEC, 8> {
-        CLRV_W::new(self)
+    pub fn clrv(&mut self) -> CLRV_W<QMR0_SPEC> {
+        CLRV_W::new(self, 8)
     }
     #[doc = "Bit 9 - Trigger Event"]
     #[inline(always)]
     #[must_use]
-    pub fn trev(&mut self) -> TREV_W<QMR0_SPEC, 9> {
-        TREV_W::new(self)
+    pub fn trev(&mut self) -> TREV_W<QMR0_SPEC> {
+        TREV_W::new(self, 9)
     }
     #[doc = "Bit 10 - Flush Queue"]
     #[inline(always)]
     #[must_use]
-    pub fn flush(&mut self) -> FLUSH_W<QMR0_SPEC, 10> {
-        FLUSH_W::new(self)
+    pub fn flush(&mut self) -> FLUSH_W<QMR0_SPEC> {
+        FLUSH_W::new(self, 10)
     }
     #[doc = "Bit 11 - Clear Event Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cev(&mut self) -> CEV_W<QMR0_SPEC, 11> {
-        CEV_W::new(self)
+    pub fn cev(&mut self) -> CEV_W<QMR0_SPEC> {
+        CEV_W::new(self, 11)
     }
     #[doc = "Bit 16 - Repeat Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn rptdis(&mut self) -> RPTDIS_W<QMR0_SPEC, 16> {
-        RPTDIS_W::new(self)
+    pub fn rptdis(&mut self) -> RPTDIS_W<QMR0_SPEC> {
+        RPTDIS_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

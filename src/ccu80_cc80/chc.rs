@@ -39,8 +39,8 @@ impl ASE_R {
     }
 }
 #[doc = "Field `ASE` writer - Asymmetric PWM mode Enable"]
-pub type ASE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASE_A>;
-impl<'a, REG, const O: u8> ASE_W<'a, REG, O>
+pub type ASE_W<'a, REG> = crate::BitWriter<'a, REG, ASE_A>;
+impl<'a, REG> ASE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl OCS1_R {
     }
 }
 #[doc = "Field `OCS1` writer - Output selector for CCU8x.OUTy0"]
-pub type OCS1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OCS1_A>;
-impl<'a, REG, const O: u8> OCS1_W<'a, REG, O>
+pub type OCS1_W<'a, REG> = crate::BitWriter<'a, REG, OCS1_A>;
+impl<'a, REG> OCS1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl OCS2_R {
     }
 }
 #[doc = "Field `OCS2` writer - Output selector for CCU8x.OUTy1"]
-pub type OCS2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OCS2_A>;
-impl<'a, REG, const O: u8> OCS2_W<'a, REG, O>
+pub type OCS2_W<'a, REG> = crate::BitWriter<'a, REG, OCS2_A>;
+impl<'a, REG> OCS2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl OCS3_R {
     }
 }
 #[doc = "Field `OCS3` writer - Output selector for CCU8x.OUTy2"]
-pub type OCS3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OCS3_A>;
-impl<'a, REG, const O: u8> OCS3_W<'a, REG, O>
+pub type OCS3_W<'a, REG> = crate::BitWriter<'a, REG, OCS3_A>;
+impl<'a, REG> OCS3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl OCS4_R {
     }
 }
 #[doc = "Field `OCS4` writer - Output selector for CCU8x.OUTy3"]
-pub type OCS4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OCS4_A>;
-impl<'a, REG, const O: u8> OCS4_W<'a, REG, O>
+pub type OCS4_W<'a, REG> = crate::BitWriter<'a, REG, OCS4_A>;
+impl<'a, REG> OCS4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -298,32 +298,32 @@ impl W {
     #[doc = "Bit 0 - Asymmetric PWM mode Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ase(&mut self) -> ASE_W<CHC_SPEC, 0> {
-        ASE_W::new(self)
+    pub fn ase(&mut self) -> ASE_W<CHC_SPEC> {
+        ASE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Output selector for CCU8x.OUTy0"]
     #[inline(always)]
     #[must_use]
-    pub fn ocs1(&mut self) -> OCS1_W<CHC_SPEC, 1> {
-        OCS1_W::new(self)
+    pub fn ocs1(&mut self) -> OCS1_W<CHC_SPEC> {
+        OCS1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Output selector for CCU8x.OUTy1"]
     #[inline(always)]
     #[must_use]
-    pub fn ocs2(&mut self) -> OCS2_W<CHC_SPEC, 2> {
-        OCS2_W::new(self)
+    pub fn ocs2(&mut self) -> OCS2_W<CHC_SPEC> {
+        OCS2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Output selector for CCU8x.OUTy2"]
     #[inline(always)]
     #[must_use]
-    pub fn ocs3(&mut self) -> OCS3_W<CHC_SPEC, 3> {
-        OCS3_W::new(self)
+    pub fn ocs3(&mut self) -> OCS3_W<CHC_SPEC> {
+        OCS3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Output selector for CCU8x.OUTy3"]
     #[inline(always)]
     #[must_use]
-    pub fn ocs4(&mut self) -> OCS4_W<CHC_SPEC, 4> {
-        OCS4_W::new(self)
+    pub fn ocs4(&mut self) -> OCS4_W<CHC_SPEC> {
+        OCS4_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

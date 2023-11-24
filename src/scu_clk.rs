@@ -1,54 +1,148 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Clock Status Register"]
-    pub clkstat: CLKSTAT,
-    #[doc = "0x04 - CLK Set Register"]
-    pub clkset: CLKSET,
-    #[doc = "0x08 - CLK Clear Register"]
-    pub clkclr: CLKCLR,
-    #[doc = "0x0c - System Clock Control Register"]
-    pub sysclkcr: SYSCLKCR,
-    #[doc = "0x10 - CPU Clock Control Register"]
-    pub cpuclkcr: CPUCLKCR,
-    #[doc = "0x14 - Peripheral Bus Clock Control Register"]
-    pub pbclkcr: PBCLKCR,
-    #[doc = "0x18 - USB Clock Control Register"]
-    pub usbclkcr: USBCLKCR,
+    clkstat: CLKSTAT,
+    clkset: CLKSET,
+    clkclr: CLKCLR,
+    sysclkcr: SYSCLKCR,
+    cpuclkcr: CPUCLKCR,
+    pbclkcr: PBCLKCR,
+    usbclkcr: USBCLKCR,
     _reserved7: [u8; 0x04],
-    #[doc = "0x20 - CCU Clock Control Register"]
-    pub ccuclkcr: CCUCLKCR,
-    #[doc = "0x24 - WDT Clock Control Register"]
-    pub wdtclkcr: WDTCLKCR,
-    #[doc = "0x28 - External Clock Control"]
-    pub extclkcr: EXTCLKCR,
-    #[doc = "0x2c - Multi-Link Clock Control"]
-    pub mlinkclkcr: MLINKCLKCR,
-    #[doc = "0x30 - Sleep Control Register"]
-    pub sleepcr: SLEEPCR,
-    #[doc = "0x34 - Deep Sleep Control Register"]
-    pub dsleepcr: DSLEEPCR,
-    #[doc = "0x38 - EtherCAT Clock Control Register"]
-    pub ecatclkcr: ECATCLKCR,
+    ccuclkcr: CCUCLKCR,
+    wdtclkcr: WDTCLKCR,
+    extclkcr: EXTCLKCR,
+    mlinkclkcr: MLINKCLKCR,
+    sleepcr: SLEEPCR,
+    dsleepcr: DSLEEPCR,
+    ecatclkcr: ECATCLKCR,
     _reserved14: [u8; 0x04],
+    cgatstat0: CGATSTAT0,
+    cgatset0: CGATSET0,
+    cgatclr0: CGATCLR0,
+    cgatstat1: CGATSTAT1,
+    cgatset1: CGATSET1,
+    cgatclr1: CGATCLR1,
+    cgatstat2: CGATSTAT2,
+    cgatset2: CGATSET2,
+    cgatclr2: CGATCLR2,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Clock Status Register"]
+    #[inline(always)]
+    pub const fn clkstat(&self) -> &CLKSTAT {
+        &self.clkstat
+    }
+    #[doc = "0x04 - CLK Set Register"]
+    #[inline(always)]
+    pub const fn clkset(&self) -> &CLKSET {
+        &self.clkset
+    }
+    #[doc = "0x08 - CLK Clear Register"]
+    #[inline(always)]
+    pub const fn clkclr(&self) -> &CLKCLR {
+        &self.clkclr
+    }
+    #[doc = "0x0c - System Clock Control Register"]
+    #[inline(always)]
+    pub const fn sysclkcr(&self) -> &SYSCLKCR {
+        &self.sysclkcr
+    }
+    #[doc = "0x10 - CPU Clock Control Register"]
+    #[inline(always)]
+    pub const fn cpuclkcr(&self) -> &CPUCLKCR {
+        &self.cpuclkcr
+    }
+    #[doc = "0x14 - Peripheral Bus Clock Control Register"]
+    #[inline(always)]
+    pub const fn pbclkcr(&self) -> &PBCLKCR {
+        &self.pbclkcr
+    }
+    #[doc = "0x18 - USB Clock Control Register"]
+    #[inline(always)]
+    pub const fn usbclkcr(&self) -> &USBCLKCR {
+        &self.usbclkcr
+    }
+    #[doc = "0x20 - CCU Clock Control Register"]
+    #[inline(always)]
+    pub const fn ccuclkcr(&self) -> &CCUCLKCR {
+        &self.ccuclkcr
+    }
+    #[doc = "0x24 - WDT Clock Control Register"]
+    #[inline(always)]
+    pub const fn wdtclkcr(&self) -> &WDTCLKCR {
+        &self.wdtclkcr
+    }
+    #[doc = "0x28 - External Clock Control"]
+    #[inline(always)]
+    pub const fn extclkcr(&self) -> &EXTCLKCR {
+        &self.extclkcr
+    }
+    #[doc = "0x2c - Multi-Link Clock Control"]
+    #[inline(always)]
+    pub const fn mlinkclkcr(&self) -> &MLINKCLKCR {
+        &self.mlinkclkcr
+    }
+    #[doc = "0x30 - Sleep Control Register"]
+    #[inline(always)]
+    pub const fn sleepcr(&self) -> &SLEEPCR {
+        &self.sleepcr
+    }
+    #[doc = "0x34 - Deep Sleep Control Register"]
+    #[inline(always)]
+    pub const fn dsleepcr(&self) -> &DSLEEPCR {
+        &self.dsleepcr
+    }
+    #[doc = "0x38 - EtherCAT Clock Control Register"]
+    #[inline(always)]
+    pub const fn ecatclkcr(&self) -> &ECATCLKCR {
+        &self.ecatclkcr
+    }
     #[doc = "0x40 - Peripheral 0 Clock Gating Status"]
-    pub cgatstat0: CGATSTAT0,
+    #[inline(always)]
+    pub const fn cgatstat0(&self) -> &CGATSTAT0 {
+        &self.cgatstat0
+    }
     #[doc = "0x44 - Peripheral 0 Clock Gating Set"]
-    pub cgatset0: CGATSET0,
+    #[inline(always)]
+    pub const fn cgatset0(&self) -> &CGATSET0 {
+        &self.cgatset0
+    }
     #[doc = "0x48 - Peripheral 0 Clock Gating Clear"]
-    pub cgatclr0: CGATCLR0,
+    #[inline(always)]
+    pub const fn cgatclr0(&self) -> &CGATCLR0 {
+        &self.cgatclr0
+    }
     #[doc = "0x4c - Peripheral 1 Clock Gating Status"]
-    pub cgatstat1: CGATSTAT1,
+    #[inline(always)]
+    pub const fn cgatstat1(&self) -> &CGATSTAT1 {
+        &self.cgatstat1
+    }
     #[doc = "0x50 - Peripheral 1 Clock Gating Set"]
-    pub cgatset1: CGATSET1,
+    #[inline(always)]
+    pub const fn cgatset1(&self) -> &CGATSET1 {
+        &self.cgatset1
+    }
     #[doc = "0x54 - Peripheral 1 Clock Gating Clear"]
-    pub cgatclr1: CGATCLR1,
+    #[inline(always)]
+    pub const fn cgatclr1(&self) -> &CGATCLR1 {
+        &self.cgatclr1
+    }
     #[doc = "0x58 - Peripheral 2 Clock Gating Status"]
-    pub cgatstat2: CGATSTAT2,
+    #[inline(always)]
+    pub const fn cgatstat2(&self) -> &CGATSTAT2 {
+        &self.cgatstat2
+    }
     #[doc = "0x5c - Peripheral 2 Clock Gating Set"]
-    pub cgatset2: CGATSET2,
+    #[inline(always)]
+    pub const fn cgatset2(&self) -> &CGATSET2 {
+        &self.cgatset2
+    }
     #[doc = "0x60 - Peripheral 2 Clock Gating Clear"]
-    pub cgatclr2: CGATCLR2,
+    #[inline(always)]
+    pub const fn cgatclr2(&self) -> &CGATCLR2 {
+        &self.cgatclr2
+    }
 }
 #[doc = "CLKSTAT (r) register accessor: Clock Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkstat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clkstat`]
 module"]

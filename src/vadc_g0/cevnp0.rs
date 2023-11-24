@@ -60,8 +60,8 @@ impl CEV0NP_R {
     }
 }
 #[doc = "Field `CEV0NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV0NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CEV0NP_A>;
-impl<'a, REG, const O: u8> CEV0NP_W<'a, REG, O>
+pub type CEV0NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV0NP_A>;
+impl<'a, REG> CEV0NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,8 +145,8 @@ impl CEV1NP_R {
     }
 }
 #[doc = "Field `CEV1NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV1NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CEV1NP_A>;
-impl<'a, REG, const O: u8> CEV1NP_W<'a, REG, O>
+pub type CEV1NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV1NP_A>;
+impl<'a, REG> CEV1NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -230,8 +230,8 @@ impl CEV2NP_R {
     }
 }
 #[doc = "Field `CEV2NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV2NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CEV2NP_A>;
-impl<'a, REG, const O: u8> CEV2NP_W<'a, REG, O>
+pub type CEV2NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV2NP_A>;
+impl<'a, REG> CEV2NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -315,8 +315,8 @@ impl CEV3NP_R {
     }
 }
 #[doc = "Field `CEV3NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV3NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CEV3NP_A>;
-impl<'a, REG, const O: u8> CEV3NP_W<'a, REG, O>
+pub type CEV3NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV3NP_A>;
+impl<'a, REG> CEV3NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -400,8 +400,8 @@ impl CEV4NP_R {
     }
 }
 #[doc = "Field `CEV4NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV4NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CEV4NP_A>;
-impl<'a, REG, const O: u8> CEV4NP_W<'a, REG, O>
+pub type CEV4NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV4NP_A>;
+impl<'a, REG> CEV4NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -485,8 +485,8 @@ impl CEV5NP_R {
     }
 }
 #[doc = "Field `CEV5NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV5NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CEV5NP_A>;
-impl<'a, REG, const O: u8> CEV5NP_W<'a, REG, O>
+pub type CEV5NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV5NP_A>;
+impl<'a, REG> CEV5NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -570,8 +570,8 @@ impl CEV6NP_R {
     }
 }
 #[doc = "Field `CEV6NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV6NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CEV6NP_A>;
-impl<'a, REG, const O: u8> CEV6NP_W<'a, REG, O>
+pub type CEV6NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV6NP_A>;
+impl<'a, REG> CEV6NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -655,8 +655,8 @@ impl CEV7NP_R {
     }
 }
 #[doc = "Field `CEV7NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV7NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CEV7NP_A>;
-impl<'a, REG, const O: u8> CEV7NP_W<'a, REG, O>
+pub type CEV7NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CEV7NP_A>;
+impl<'a, REG> CEV7NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -728,50 +728,50 @@ impl W {
     #[doc = "Bits 0:3 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev0np(&mut self) -> CEV0NP_W<CEVNP0_SPEC, 0> {
-        CEV0NP_W::new(self)
+    pub fn cev0np(&mut self) -> CEV0NP_W<CEVNP0_SPEC> {
+        CEV0NP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev1np(&mut self) -> CEV1NP_W<CEVNP0_SPEC, 4> {
-        CEV1NP_W::new(self)
+    pub fn cev1np(&mut self) -> CEV1NP_W<CEVNP0_SPEC> {
+        CEV1NP_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev2np(&mut self) -> CEV2NP_W<CEVNP0_SPEC, 8> {
-        CEV2NP_W::new(self)
+    pub fn cev2np(&mut self) -> CEV2NP_W<CEVNP0_SPEC> {
+        CEV2NP_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev3np(&mut self) -> CEV3NP_W<CEVNP0_SPEC, 12> {
-        CEV3NP_W::new(self)
+    pub fn cev3np(&mut self) -> CEV3NP_W<CEVNP0_SPEC> {
+        CEV3NP_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev4np(&mut self) -> CEV4NP_W<CEVNP0_SPEC, 16> {
-        CEV4NP_W::new(self)
+    pub fn cev4np(&mut self) -> CEV4NP_W<CEVNP0_SPEC> {
+        CEV4NP_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev5np(&mut self) -> CEV5NP_W<CEVNP0_SPEC, 20> {
-        CEV5NP_W::new(self)
+    pub fn cev5np(&mut self) -> CEV5NP_W<CEVNP0_SPEC> {
+        CEV5NP_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev6np(&mut self) -> CEV6NP_W<CEVNP0_SPEC, 24> {
-        CEV6NP_W::new(self)
+    pub fn cev6np(&mut self) -> CEV6NP_W<CEVNP0_SPEC> {
+        CEV6NP_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn cev7np(&mut self) -> CEV7NP_W<CEVNP0_SPEC, 28> {
-        CEV7NP_W::new(self)
+    pub fn cev7np(&mut self) -> CEV7NP_W<CEVNP0_SPEC> {
+        CEV7NP_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -15,8 +15,8 @@ impl From<USBCDI_AW> for bool {
     }
 }
 #[doc = "Field `USBCDI` writer - USB Clock Disable"]
-pub type USBCDI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USBCDI_AW>;
-impl<'a, REG, const O: u8> USBCDI_W<'a, REG, O>
+pub type USBCDI_W<'a, REG> = crate::BitWriter<'a, REG, USBCDI_AW>;
+impl<'a, REG> USBCDI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<MMCCDI_AW> for bool {
     }
 }
 #[doc = "Field `MMCCDI` writer - MMC Clock Disable"]
-pub type MMCCDI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MMCCDI_AW>;
-impl<'a, REG, const O: u8> MMCCDI_W<'a, REG, O>
+pub type MMCCDI_W<'a, REG> = crate::BitWriter<'a, REG, MMCCDI_AW>;
+impl<'a, REG> MMCCDI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<ETH0CDI_AW> for bool {
     }
 }
 #[doc = "Field `ETH0CDI` writer - Ethernet Clock Disable"]
-pub type ETH0CDI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ETH0CDI_AW>;
-impl<'a, REG, const O: u8> ETH0CDI_W<'a, REG, O>
+pub type ETH0CDI_W<'a, REG> = crate::BitWriter<'a, REG, ETH0CDI_AW>;
+impl<'a, REG> ETH0CDI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<CCUCDI_AW> for bool {
     }
 }
 #[doc = "Field `CCUCDI` writer - CCU Clock Disable"]
-pub type CCUCDI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCUCDI_AW>;
-impl<'a, REG, const O: u8> CCUCDI_W<'a, REG, O>
+pub type CCUCDI_W<'a, REG> = crate::BitWriter<'a, REG, CCUCDI_AW>;
+impl<'a, REG> CCUCDI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<WDTCDI_AW> for bool {
     }
 }
 #[doc = "Field `WDTCDI` writer - WDT Clock Disable"]
-pub type WDTCDI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WDTCDI_AW>;
-impl<'a, REG, const O: u8> WDTCDI_W<'a, REG, O>
+pub type WDTCDI_W<'a, REG> = crate::BitWriter<'a, REG, WDTCDI_AW>;
+impl<'a, REG> WDTCDI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -159,32 +159,32 @@ impl W {
     #[doc = "Bit 0 - USB Clock Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn usbcdi(&mut self) -> USBCDI_W<CLKCLR_SPEC, 0> {
-        USBCDI_W::new(self)
+    pub fn usbcdi(&mut self) -> USBCDI_W<CLKCLR_SPEC> {
+        USBCDI_W::new(self, 0)
     }
     #[doc = "Bit 1 - MMC Clock Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn mmccdi(&mut self) -> MMCCDI_W<CLKCLR_SPEC, 1> {
-        MMCCDI_W::new(self)
+    pub fn mmccdi(&mut self) -> MMCCDI_W<CLKCLR_SPEC> {
+        MMCCDI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Ethernet Clock Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn eth0cdi(&mut self) -> ETH0CDI_W<CLKCLR_SPEC, 2> {
-        ETH0CDI_W::new(self)
+    pub fn eth0cdi(&mut self) -> ETH0CDI_W<CLKCLR_SPEC> {
+        ETH0CDI_W::new(self, 2)
     }
     #[doc = "Bit 4 - CCU Clock Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn ccucdi(&mut self) -> CCUCDI_W<CLKCLR_SPEC, 4> {
-        CCUCDI_W::new(self)
+    pub fn ccucdi(&mut self) -> CCUCDI_W<CLKCLR_SPEC> {
+        CCUCDI_W::new(self, 4)
     }
     #[doc = "Bit 5 - WDT Clock Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn wdtcdi(&mut self) -> WDTCDI_W<CLKCLR_SPEC, 5> {
-        WDTCDI_W::new(self)
+    pub fn wdtcdi(&mut self) -> WDTCDI_W<CLKCLR_SPEC> {
+        WDTCDI_W::new(self, 5)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

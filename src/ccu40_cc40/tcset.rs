@@ -1,13 +1,13 @@
 #[doc = "Register `TCSET` writer"]
 pub type W = crate::W<TCSET_SPEC>;
 #[doc = "Field `TRBS` writer - Timer Run Bit set"]
-pub type TRBS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TRBS_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Timer Run Bit set"]
     #[inline(always)]
     #[must_use]
-    pub fn trbs(&mut self) -> TRBS_W<TCSET_SPEC, 0> {
-        TRBS_W::new(self)
+    pub fn trbs(&mut self) -> TRBS_W<TCSET_SPEC> {
+        TRBS_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

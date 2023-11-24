@@ -39,8 +39,8 @@ impl ASSCH0_R {
     }
 }
 #[doc = "Field `ASSCH0` writer - Assignment for Channel 0"]
-pub type ASSCH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASSCH0_A>;
-impl<'a, REG, const O: u8> ASSCH0_W<'a, REG, O>
+pub type ASSCH0_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH0_A>;
+impl<'a, REG> ASSCH0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl ASSCH1_R {
     }
 }
 #[doc = "Field `ASSCH1` writer - Assignment for Channel 1"]
-pub type ASSCH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASSCH1_A>;
-impl<'a, REG, const O: u8> ASSCH1_W<'a, REG, O>
+pub type ASSCH1_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH1_A>;
+impl<'a, REG> ASSCH1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl ASSCH2_R {
     }
 }
 #[doc = "Field `ASSCH2` writer - Assignment for Channel 2"]
-pub type ASSCH2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASSCH2_A>;
-impl<'a, REG, const O: u8> ASSCH2_W<'a, REG, O>
+pub type ASSCH2_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH2_A>;
+impl<'a, REG> ASSCH2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl ASSCH3_R {
     }
 }
 #[doc = "Field `ASSCH3` writer - Assignment for Channel 3"]
-pub type ASSCH3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASSCH3_A>;
-impl<'a, REG, const O: u8> ASSCH3_W<'a, REG, O>
+pub type ASSCH3_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH3_A>;
+impl<'a, REG> ASSCH3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl ASSCH4_R {
     }
 }
 #[doc = "Field `ASSCH4` writer - Assignment for Channel 4"]
-pub type ASSCH4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASSCH4_A>;
-impl<'a, REG, const O: u8> ASSCH4_W<'a, REG, O>
+pub type ASSCH4_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH4_A>;
+impl<'a, REG> ASSCH4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl ASSCH5_R {
     }
 }
 #[doc = "Field `ASSCH5` writer - Assignment for Channel 5"]
-pub type ASSCH5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASSCH5_A>;
-impl<'a, REG, const O: u8> ASSCH5_W<'a, REG, O>
+pub type ASSCH5_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH5_A>;
+impl<'a, REG> ASSCH5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl ASSCH6_R {
     }
 }
 #[doc = "Field `ASSCH6` writer - Assignment for Channel 6"]
-pub type ASSCH6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASSCH6_A>;
-impl<'a, REG, const O: u8> ASSCH6_W<'a, REG, O>
+pub type ASSCH6_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH6_A>;
+impl<'a, REG> ASSCH6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl ASSCH7_R {
     }
 }
 #[doc = "Field `ASSCH7` writer - Assignment for Channel 7"]
-pub type ASSCH7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASSCH7_A>;
-impl<'a, REG, const O: u8> ASSCH7_W<'a, REG, O>
+pub type ASSCH7_W<'a, REG> = crate::BitWriter<'a, REG, ASSCH7_A>;
+impl<'a, REG> ASSCH7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -472,50 +472,50 @@ impl W {
     #[doc = "Bit 0 - Assignment for Channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn assch0(&mut self) -> ASSCH0_W<CHASS_SPEC, 0> {
-        ASSCH0_W::new(self)
+    pub fn assch0(&mut self) -> ASSCH0_W<CHASS_SPEC> {
+        ASSCH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Assignment for Channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn assch1(&mut self) -> ASSCH1_W<CHASS_SPEC, 1> {
-        ASSCH1_W::new(self)
+    pub fn assch1(&mut self) -> ASSCH1_W<CHASS_SPEC> {
+        ASSCH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Assignment for Channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn assch2(&mut self) -> ASSCH2_W<CHASS_SPEC, 2> {
-        ASSCH2_W::new(self)
+    pub fn assch2(&mut self) -> ASSCH2_W<CHASS_SPEC> {
+        ASSCH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Assignment for Channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn assch3(&mut self) -> ASSCH3_W<CHASS_SPEC, 3> {
-        ASSCH3_W::new(self)
+    pub fn assch3(&mut self) -> ASSCH3_W<CHASS_SPEC> {
+        ASSCH3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Assignment for Channel 4"]
     #[inline(always)]
     #[must_use]
-    pub fn assch4(&mut self) -> ASSCH4_W<CHASS_SPEC, 4> {
-        ASSCH4_W::new(self)
+    pub fn assch4(&mut self) -> ASSCH4_W<CHASS_SPEC> {
+        ASSCH4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Assignment for Channel 5"]
     #[inline(always)]
     #[must_use]
-    pub fn assch5(&mut self) -> ASSCH5_W<CHASS_SPEC, 5> {
-        ASSCH5_W::new(self)
+    pub fn assch5(&mut self) -> ASSCH5_W<CHASS_SPEC> {
+        ASSCH5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Assignment for Channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn assch6(&mut self) -> ASSCH6_W<CHASS_SPEC, 6> {
-        ASSCH6_W::new(self)
+    pub fn assch6(&mut self) -> ASSCH6_W<CHASS_SPEC> {
+        ASSCH6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Assignment for Channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn assch7(&mut self) -> ASSCH7_W<CHASS_SPEC, 7> {
-        ASSCH7_W::new(self)
+    pub fn assch7(&mut self) -> ASSCH7_W<CHASS_SPEC> {
+        ASSCH7_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

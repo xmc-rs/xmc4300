@@ -5,7 +5,7 @@ pub type W = crate::W<RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC>;
 #[doc = "Field `RIWT` reader - RI Watchdog Timer Count"]
 pub type RIWT_R = crate::FieldReader;
 #[doc = "Field `RIWT` writer - RI Watchdog Timer Count"]
-pub type RIWT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type RIWT_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - RI Watchdog Timer Count"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - RI Watchdog Timer Count"]
     #[inline(always)]
     #[must_use]
-    pub fn riwt(&mut self) -> RIWT_W<RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC, 0> {
-        RIWT_W::new(self)
+    pub fn riwt(&mut self) -> RIWT_W<RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC> {
+        RIWT_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

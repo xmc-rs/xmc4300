@@ -1,18 +1,44 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    srstat: SRSTAT,
+    srraw: SRRAW,
+    srmsk: SRMSK,
+    srclr: SRCLR,
+    srset: SRSET,
+    nmireqen: NMIREQEN,
+}
+impl RegisterBlock {
     #[doc = "0x00 - SCU Service Request Status"]
-    pub srstat: SRSTAT,
+    #[inline(always)]
+    pub const fn srstat(&self) -> &SRSTAT {
+        &self.srstat
+    }
     #[doc = "0x04 - SCU Raw Service Request Status"]
-    pub srraw: SRRAW,
+    #[inline(always)]
+    pub const fn srraw(&self) -> &SRRAW {
+        &self.srraw
+    }
     #[doc = "0x08 - SCU Service Request Mask"]
-    pub srmsk: SRMSK,
+    #[inline(always)]
+    pub const fn srmsk(&self) -> &SRMSK {
+        &self.srmsk
+    }
     #[doc = "0x0c - SCU Service Request Clear"]
-    pub srclr: SRCLR,
+    #[inline(always)]
+    pub const fn srclr(&self) -> &SRCLR {
+        &self.srclr
+    }
     #[doc = "0x10 - SCU Service Request Set"]
-    pub srset: SRSET,
+    #[inline(always)]
+    pub const fn srset(&self) -> &SRSET {
+        &self.srset
+    }
     #[doc = "0x14 - SCU Service Request Mask"]
-    pub nmireqen: NMIREQEN,
+    #[inline(always)]
+    pub const fn nmireqen(&self) -> &NMIREQEN {
+        &self.nmireqen
+    }
 }
 #[doc = "SRSTAT (r) register accessor: SCU Service Request Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`srstat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@srstat`]
 module"]

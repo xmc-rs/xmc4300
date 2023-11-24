@@ -5,15 +5,15 @@ pub type W = crate::W<CTR_SPEC>;
 #[doc = "Field `FCM` reader - Force CRC Mismatch"]
 pub type FCM_R = crate::BitReader;
 #[doc = "Field `FCM` writer - Force CRC Mismatch"]
-pub type FCM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FCM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FRM_CFG` reader - Force CFG Register Mismatch"]
 pub type FRM_CFG_R = crate::BitReader;
 #[doc = "Field `FRM_CFG` writer - Force CFG Register Mismatch"]
-pub type FRM_CFG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FRM_CFG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FRM_CHECK` reader - Force Check Register Mismatch"]
 pub type FRM_CHECK_R = crate::BitReader;
 #[doc = "Field `FRM_CHECK` writer - Force Check Register Mismatch"]
-pub type FRM_CHECK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FRM_CHECK_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Force CRC Mismatch"]
     #[inline(always)]
@@ -35,20 +35,20 @@ impl W {
     #[doc = "Bit 0 - Force CRC Mismatch"]
     #[inline(always)]
     #[must_use]
-    pub fn fcm(&mut self) -> FCM_W<CTR_SPEC, 0> {
-        FCM_W::new(self)
+    pub fn fcm(&mut self) -> FCM_W<CTR_SPEC> {
+        FCM_W::new(self, 0)
     }
     #[doc = "Bit 1 - Force CFG Register Mismatch"]
     #[inline(always)]
     #[must_use]
-    pub fn frm_cfg(&mut self) -> FRM_CFG_W<CTR_SPEC, 1> {
-        FRM_CFG_W::new(self)
+    pub fn frm_cfg(&mut self) -> FRM_CFG_W<CTR_SPEC> {
+        FRM_CFG_W::new(self, 1)
     }
     #[doc = "Bit 2 - Force Check Register Mismatch"]
     #[inline(always)]
     #[must_use]
-    pub fn frm_check(&mut self) -> FRM_CHECK_W<CTR_SPEC, 2> {
-        FRM_CHECK_W::new(self)
+    pub fn frm_check(&mut self) -> FRM_CHECK_W<CTR_SPEC> {
+        FRM_CHECK_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

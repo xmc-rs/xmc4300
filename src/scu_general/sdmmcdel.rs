@@ -39,8 +39,8 @@ impl TAPEN_R {
     }
 }
 #[doc = "Field `TAPEN` writer - Enable delay on the CMD/DAT out lines"]
-pub type TAPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TAPEN_A>;
-impl<'a, REG, const O: u8> TAPEN_W<'a, REG, O>
+pub type TAPEN_W<'a, REG> = crate::BitWriter<'a, REG, TAPEN_A>;
+impl<'a, REG> TAPEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -58,7 +58,7 @@ where
 #[doc = "Field `TAPDEL` reader - Number of Delay Elements Select"]
 pub type TAPDEL_R = crate::FieldReader;
 #[doc = "Field `TAPDEL` writer - Number of Delay Elements Select"]
-pub type TAPDEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TAPDEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - Enable delay on the CMD/DAT out lines"]
     #[inline(always)]
@@ -75,14 +75,14 @@ impl W {
     #[doc = "Bit 0 - Enable delay on the CMD/DAT out lines"]
     #[inline(always)]
     #[must_use]
-    pub fn tapen(&mut self) -> TAPEN_W<SDMMCDEL_SPEC, 0> {
-        TAPEN_W::new(self)
+    pub fn tapen(&mut self) -> TAPEN_W<SDMMCDEL_SPEC> {
+        TAPEN_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Number of Delay Elements Select"]
     #[inline(always)]
     #[must_use]
-    pub fn tapdel(&mut self) -> TAPDEL_W<SDMMCDEL_SPEC, 4> {
-        TAPDEL_W::new(self)
+    pub fn tapdel(&mut self) -> TAPDEL_W<SDMMCDEL_SPEC> {
+        TAPDEL_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

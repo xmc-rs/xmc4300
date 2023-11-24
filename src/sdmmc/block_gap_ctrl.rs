@@ -39,8 +39,8 @@ impl STOP_AT_BLOCK_GAP_R {
     }
 }
 #[doc = "Field `STOP_AT_BLOCK_GAP` writer - Stop At Block Gap Request"]
-pub type STOP_AT_BLOCK_GAP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STOP_AT_BLOCK_GAP_A>;
-impl<'a, REG, const O: u8> STOP_AT_BLOCK_GAP_W<'a, REG, O>
+pub type STOP_AT_BLOCK_GAP_W<'a, REG> = crate::BitWriter<'a, REG, STOP_AT_BLOCK_GAP_A>;
+impl<'a, REG> STOP_AT_BLOCK_GAP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl CONTINUE_REQ_R {
     }
 }
 #[doc = "Field `CONTINUE_REQ` writer - Continue Request"]
-pub type CONTINUE_REQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CONTINUE_REQ_A>;
-impl<'a, REG, const O: u8> CONTINUE_REQ_W<'a, REG, O>
+pub type CONTINUE_REQ_W<'a, REG> = crate::BitWriter<'a, REG, CONTINUE_REQ_A>;
+impl<'a, REG> CONTINUE_REQ_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl READ_WAIT_CTRL_R {
     }
 }
 #[doc = "Field `READ_WAIT_CTRL` writer - Read Wait Control"]
-pub type READ_WAIT_CTRL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, READ_WAIT_CTRL_A>;
-impl<'a, REG, const O: u8> READ_WAIT_CTRL_W<'a, REG, O>
+pub type READ_WAIT_CTRL_W<'a, REG> = crate::BitWriter<'a, REG, READ_WAIT_CTRL_A>;
+impl<'a, REG> READ_WAIT_CTRL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -164,7 +164,7 @@ where
 #[doc = "Field `INT_AT_BLOCK_GAP` reader - Interrupt At Block Gap"]
 pub type INT_AT_BLOCK_GAP_R = crate::BitReader;
 #[doc = "Field `INT_AT_BLOCK_GAP` writer - Interrupt At Block Gap"]
-pub type INT_AT_BLOCK_GAP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INT_AT_BLOCK_GAP_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Stop At Block Gap Request"]
     #[inline(always)]
@@ -191,26 +191,26 @@ impl W {
     #[doc = "Bit 0 - Stop At Block Gap Request"]
     #[inline(always)]
     #[must_use]
-    pub fn stop_at_block_gap(&mut self) -> STOP_AT_BLOCK_GAP_W<BLOCK_GAP_CTRL_SPEC, 0> {
-        STOP_AT_BLOCK_GAP_W::new(self)
+    pub fn stop_at_block_gap(&mut self) -> STOP_AT_BLOCK_GAP_W<BLOCK_GAP_CTRL_SPEC> {
+        STOP_AT_BLOCK_GAP_W::new(self, 0)
     }
     #[doc = "Bit 1 - Continue Request"]
     #[inline(always)]
     #[must_use]
-    pub fn continue_req(&mut self) -> CONTINUE_REQ_W<BLOCK_GAP_CTRL_SPEC, 1> {
-        CONTINUE_REQ_W::new(self)
+    pub fn continue_req(&mut self) -> CONTINUE_REQ_W<BLOCK_GAP_CTRL_SPEC> {
+        CONTINUE_REQ_W::new(self, 1)
     }
     #[doc = "Bit 2 - Read Wait Control"]
     #[inline(always)]
     #[must_use]
-    pub fn read_wait_ctrl(&mut self) -> READ_WAIT_CTRL_W<BLOCK_GAP_CTRL_SPEC, 2> {
-        READ_WAIT_CTRL_W::new(self)
+    pub fn read_wait_ctrl(&mut self) -> READ_WAIT_CTRL_W<BLOCK_GAP_CTRL_SPEC> {
+        READ_WAIT_CTRL_W::new(self, 2)
     }
     #[doc = "Bit 3 - Interrupt At Block Gap"]
     #[inline(always)]
     #[must_use]
-    pub fn int_at_block_gap(&mut self) -> INT_AT_BLOCK_GAP_W<BLOCK_GAP_CTRL_SPEC, 3> {
-        INT_AT_BLOCK_GAP_W::new(self)
+    pub fn int_at_block_gap(&mut self) -> INT_AT_BLOCK_GAP_W<BLOCK_GAP_CTRL_SPEC> {
+        INT_AT_BLOCK_GAP_W::new(self, 3)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

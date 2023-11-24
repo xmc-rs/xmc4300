@@ -39,8 +39,8 @@ impl CMI_R {
     }
 }
 #[doc = "Field `CMI` writer - CRC Mismatch Interrupt"]
-pub type CMI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMI_A>;
-impl<'a, REG, const O: u8> CMI_W<'a, REG, O>
+pub type CMI_W<'a, REG> = crate::BitWriter<'a, REG, CMI_A>;
+impl<'a, REG> CMI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl CEI_R {
     }
 }
 #[doc = "Field `CEI` writer - Configuration Error Interrupt"]
-pub type CEI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEI_A>;
-impl<'a, REG, const O: u8> CEI_W<'a, REG, O>
+pub type CEI_W<'a, REG> = crate::BitWriter<'a, REG, CEI_A>;
+impl<'a, REG> CEI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl LEI_R {
     }
 }
 #[doc = "Field `LEI` writer - Length Error Interrupt"]
-pub type LEI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LEI_A>;
-impl<'a, REG, const O: u8> LEI_W<'a, REG, O>
+pub type LEI_W<'a, REG> = crate::BitWriter<'a, REG, LEI_A>;
+impl<'a, REG> LEI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl BEI_R {
     }
 }
 #[doc = "Field `BEI` writer - Bus Error Interrupt"]
-pub type BEI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BEI_A>;
-impl<'a, REG, const O: u8> BEI_W<'a, REG, O>
+pub type BEI_W<'a, REG> = crate::BitWriter<'a, REG, BEI_A>;
+impl<'a, REG> BEI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl CCE_R {
     }
 }
 #[doc = "Field `CCE` writer - CRC Check Comparison"]
-pub type CCE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCE_A>;
-impl<'a, REG, const O: u8> CCE_W<'a, REG, O>
+pub type CCE_W<'a, REG> = crate::BitWriter<'a, REG, CCE_A>;
+impl<'a, REG> CCE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl ALR_R {
     }
 }
 #[doc = "Field `ALR` writer - Automatic Length Reload"]
-pub type ALR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALR_A>;
-impl<'a, REG, const O: u8> ALR_W<'a, REG, O>
+pub type ALR_W<'a, REG> = crate::BitWriter<'a, REG, ALR_A>;
+impl<'a, REG> ALR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl REFIN_R {
     }
 }
 #[doc = "Field `REFIN` writer - IR Byte Wise Reflection"]
-pub type REFIN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REFIN_A>;
-impl<'a, REG, const O: u8> REFIN_W<'a, REG, O>
+pub type REFIN_W<'a, REG> = crate::BitWriter<'a, REG, REFIN_A>;
+impl<'a, REG> REFIN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl REFOUT_R {
     }
 }
 #[doc = "Field `REFOUT` writer - CRC 32-Bit Wise Reflection"]
-pub type REFOUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REFOUT_A>;
-impl<'a, REG, const O: u8> REFOUT_W<'a, REG, O>
+pub type REFOUT_W<'a, REG> = crate::BitWriter<'a, REG, REFOUT_A>;
+impl<'a, REG> REFOUT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl XSEL_R {
     }
 }
 #[doc = "Field `XSEL` writer - Selects the value to be xored with the final CRC"]
-pub type XSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, XSEL_A>;
-impl<'a, REG, const O: u8> XSEL_W<'a, REG, O>
+pub type XSEL_W<'a, REG> = crate::BitWriter<'a, REG, XSEL_A>;
+impl<'a, REG> XSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -530,56 +530,56 @@ impl W {
     #[doc = "Bit 0 - CRC Mismatch Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn cmi(&mut self) -> CMI_W<CFG_SPEC, 0> {
-        CMI_W::new(self)
+    pub fn cmi(&mut self) -> CMI_W<CFG_SPEC> {
+        CMI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Configuration Error Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn cei(&mut self) -> CEI_W<CFG_SPEC, 1> {
-        CEI_W::new(self)
+    pub fn cei(&mut self) -> CEI_W<CFG_SPEC> {
+        CEI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Length Error Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn lei(&mut self) -> LEI_W<CFG_SPEC, 2> {
-        LEI_W::new(self)
+    pub fn lei(&mut self) -> LEI_W<CFG_SPEC> {
+        LEI_W::new(self, 2)
     }
     #[doc = "Bit 3 - Bus Error Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn bei(&mut self) -> BEI_W<CFG_SPEC, 3> {
-        BEI_W::new(self)
+    pub fn bei(&mut self) -> BEI_W<CFG_SPEC> {
+        BEI_W::new(self, 3)
     }
     #[doc = "Bit 4 - CRC Check Comparison"]
     #[inline(always)]
     #[must_use]
-    pub fn cce(&mut self) -> CCE_W<CFG_SPEC, 4> {
-        CCE_W::new(self)
+    pub fn cce(&mut self) -> CCE_W<CFG_SPEC> {
+        CCE_W::new(self, 4)
     }
     #[doc = "Bit 5 - Automatic Length Reload"]
     #[inline(always)]
     #[must_use]
-    pub fn alr(&mut self) -> ALR_W<CFG_SPEC, 5> {
-        ALR_W::new(self)
+    pub fn alr(&mut self) -> ALR_W<CFG_SPEC> {
+        ALR_W::new(self, 5)
     }
     #[doc = "Bit 8 - IR Byte Wise Reflection"]
     #[inline(always)]
     #[must_use]
-    pub fn refin(&mut self) -> REFIN_W<CFG_SPEC, 8> {
-        REFIN_W::new(self)
+    pub fn refin(&mut self) -> REFIN_W<CFG_SPEC> {
+        REFIN_W::new(self, 8)
     }
     #[doc = "Bit 9 - CRC 32-Bit Wise Reflection"]
     #[inline(always)]
     #[must_use]
-    pub fn refout(&mut self) -> REFOUT_W<CFG_SPEC, 9> {
-        REFOUT_W::new(self)
+    pub fn refout(&mut self) -> REFOUT_W<CFG_SPEC> {
+        REFOUT_W::new(self, 9)
     }
     #[doc = "Bit 10 - Selects the value to be xored with the final CRC"]
     #[inline(always)]
     #[must_use]
-    pub fn xsel(&mut self) -> XSEL_W<CFG_SPEC, 10> {
-        XSEL_W::new(self)
+    pub fn xsel(&mut self) -> XSEL_W<CFG_SPEC> {
+        XSEL_W::new(self, 10)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

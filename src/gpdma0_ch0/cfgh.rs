@@ -39,8 +39,8 @@ impl FCMODE_R {
     }
 }
 #[doc = "Field `FCMODE` writer - Flow Control Mode"]
-pub type FCMODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FCMODE_A>;
-impl<'a, REG, const O: u8> FCMODE_W<'a, REG, O>
+pub type FCMODE_W<'a, REG> = crate::BitWriter<'a, REG, FCMODE_A>;
+impl<'a, REG> FCMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl FIFO_MODE_R {
     }
 }
 #[doc = "Field `FIFO_MODE` writer - FIFO Mode Select"]
-pub type FIFO_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FIFO_MODE_A>;
-impl<'a, REG, const O: u8> FIFO_MODE_W<'a, REG, O>
+pub type FIFO_MODE_W<'a, REG> = crate::BitWriter<'a, REG, FIFO_MODE_A>;
+impl<'a, REG> FIFO_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -111,23 +111,23 @@ where
 #[doc = "Field `PROTCTL` reader - Protection Control"]
 pub type PROTCTL_R = crate::FieldReader;
 #[doc = "Field `PROTCTL` writer - Protection Control"]
-pub type PROTCTL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PROTCTL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `DS_UPD_EN` reader - Destination Status Update Enable"]
 pub type DS_UPD_EN_R = crate::BitReader;
 #[doc = "Field `DS_UPD_EN` writer - Destination Status Update Enable"]
-pub type DS_UPD_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DS_UPD_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SS_UPD_EN` reader - Source Status Update Enable"]
 pub type SS_UPD_EN_R = crate::BitReader;
 #[doc = "Field `SS_UPD_EN` writer - Source Status Update Enable"]
-pub type SS_UPD_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SS_UPD_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SRC_PER` reader - Source Peripheral"]
 pub type SRC_PER_R = crate::FieldReader;
 #[doc = "Field `SRC_PER` writer - Source Peripheral"]
-pub type SRC_PER_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type SRC_PER_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DEST_PER` reader - Destination Peripheral"]
 pub type DEST_PER_R = crate::FieldReader;
 #[doc = "Field `DEST_PER` writer - Destination Peripheral"]
-pub type DEST_PER_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type DEST_PER_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - Flow Control Mode"]
     #[inline(always)]
@@ -169,44 +169,44 @@ impl W {
     #[doc = "Bit 0 - Flow Control Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn fcmode(&mut self) -> FCMODE_W<CFGH_SPEC, 0> {
-        FCMODE_W::new(self)
+    pub fn fcmode(&mut self) -> FCMODE_W<CFGH_SPEC> {
+        FCMODE_W::new(self, 0)
     }
     #[doc = "Bit 1 - FIFO Mode Select"]
     #[inline(always)]
     #[must_use]
-    pub fn fifo_mode(&mut self) -> FIFO_MODE_W<CFGH_SPEC, 1> {
-        FIFO_MODE_W::new(self)
+    pub fn fifo_mode(&mut self) -> FIFO_MODE_W<CFGH_SPEC> {
+        FIFO_MODE_W::new(self, 1)
     }
     #[doc = "Bits 2:4 - Protection Control"]
     #[inline(always)]
     #[must_use]
-    pub fn protctl(&mut self) -> PROTCTL_W<CFGH_SPEC, 2> {
-        PROTCTL_W::new(self)
+    pub fn protctl(&mut self) -> PROTCTL_W<CFGH_SPEC> {
+        PROTCTL_W::new(self, 2)
     }
     #[doc = "Bit 5 - Destination Status Update Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ds_upd_en(&mut self) -> DS_UPD_EN_W<CFGH_SPEC, 5> {
-        DS_UPD_EN_W::new(self)
+    pub fn ds_upd_en(&mut self) -> DS_UPD_EN_W<CFGH_SPEC> {
+        DS_UPD_EN_W::new(self, 5)
     }
     #[doc = "Bit 6 - Source Status Update Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ss_upd_en(&mut self) -> SS_UPD_EN_W<CFGH_SPEC, 6> {
-        SS_UPD_EN_W::new(self)
+    pub fn ss_upd_en(&mut self) -> SS_UPD_EN_W<CFGH_SPEC> {
+        SS_UPD_EN_W::new(self, 6)
     }
     #[doc = "Bits 7:10 - Source Peripheral"]
     #[inline(always)]
     #[must_use]
-    pub fn src_per(&mut self) -> SRC_PER_W<CFGH_SPEC, 7> {
-        SRC_PER_W::new(self)
+    pub fn src_per(&mut self) -> SRC_PER_W<CFGH_SPEC> {
+        SRC_PER_W::new(self, 7)
     }
     #[doc = "Bits 11:14 - Destination Peripheral"]
     #[inline(always)]
     #[must_use]
-    pub fn dest_per(&mut self) -> DEST_PER_W<CFGH_SPEC, 11> {
-        DEST_PER_W::new(self)
+    pub fn dest_per(&mut self) -> DEST_PER_W<CFGH_SPEC> {
+        DEST_PER_W::new(self, 11)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

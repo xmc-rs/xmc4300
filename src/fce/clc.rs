@@ -5,7 +5,7 @@ pub type W = crate::W<CLC_SPEC>;
 #[doc = "Field `DISR` reader - Module Disable Request Bit"]
 pub type DISR_R = crate::BitReader;
 #[doc = "Field `DISR` writer - Module Disable Request Bit"]
-pub type DISR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DISR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DISS` reader - Module Disable Status Bit"]
 pub type DISS_R = crate::BitReader;
 impl R {
@@ -24,8 +24,8 @@ impl W {
     #[doc = "Bit 0 - Module Disable Request Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn disr(&mut self) -> DISR_W<CLC_SPEC, 0> {
-        DISR_W::new(self)
+    pub fn disr(&mut self) -> DISR_W<CLC_SPEC> {
+        DISR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

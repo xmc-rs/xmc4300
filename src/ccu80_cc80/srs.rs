@@ -60,8 +60,8 @@ impl POSR_R {
     }
 }
 #[doc = "Field `POSR` writer - Period/One match Service request selector"]
-pub type POSR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, POSR_A>;
-impl<'a, REG, const O: u8> POSR_W<'a, REG, O>
+pub type POSR_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, POSR_A>;
+impl<'a, REG> POSR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,8 +145,8 @@ impl CM1SR_R {
     }
 }
 #[doc = "Field `CM1SR` writer - Channel 1 Compare match Service request selector"]
-pub type CM1SR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CM1SR_A>;
-impl<'a, REG, const O: u8> CM1SR_W<'a, REG, O>
+pub type CM1SR_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CM1SR_A>;
+impl<'a, REG> CM1SR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -230,8 +230,8 @@ impl CM2SR_R {
     }
 }
 #[doc = "Field `CM2SR` writer - Channel 2 Compare match Service request selector"]
-pub type CM2SR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CM2SR_A>;
-impl<'a, REG, const O: u8> CM2SR_W<'a, REG, O>
+pub type CM2SR_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CM2SR_A>;
+impl<'a, REG> CM2SR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -315,8 +315,8 @@ impl E0SR_R {
     }
 }
 #[doc = "Field `E0SR` writer - Event 0 Service request selector"]
-pub type E0SR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, E0SR_A>;
-impl<'a, REG, const O: u8> E0SR_W<'a, REG, O>
+pub type E0SR_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, E0SR_A>;
+impl<'a, REG> E0SR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -400,8 +400,8 @@ impl E1SR_R {
     }
 }
 #[doc = "Field `E1SR` writer - Event 1 Service request selector"]
-pub type E1SR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, E1SR_A>;
-impl<'a, REG, const O: u8> E1SR_W<'a, REG, O>
+pub type E1SR_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, E1SR_A>;
+impl<'a, REG> E1SR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -485,8 +485,8 @@ impl E2SR_R {
     }
 }
 #[doc = "Field `E2SR` writer - Event 2 Service request selector"]
-pub type E2SR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, E2SR_A>;
-impl<'a, REG, const O: u8> E2SR_W<'a, REG, O>
+pub type E2SR_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, E2SR_A>;
+impl<'a, REG> E2SR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -548,38 +548,38 @@ impl W {
     #[doc = "Bits 0:1 - Period/One match Service request selector"]
     #[inline(always)]
     #[must_use]
-    pub fn posr(&mut self) -> POSR_W<SRS_SPEC, 0> {
-        POSR_W::new(self)
+    pub fn posr(&mut self) -> POSR_W<SRS_SPEC> {
+        POSR_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Channel 1 Compare match Service request selector"]
     #[inline(always)]
     #[must_use]
-    pub fn cm1sr(&mut self) -> CM1SR_W<SRS_SPEC, 2> {
-        CM1SR_W::new(self)
+    pub fn cm1sr(&mut self) -> CM1SR_W<SRS_SPEC> {
+        CM1SR_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Channel 2 Compare match Service request selector"]
     #[inline(always)]
     #[must_use]
-    pub fn cm2sr(&mut self) -> CM2SR_W<SRS_SPEC, 4> {
-        CM2SR_W::new(self)
+    pub fn cm2sr(&mut self) -> CM2SR_W<SRS_SPEC> {
+        CM2SR_W::new(self, 4)
     }
     #[doc = "Bits 8:9 - Event 0 Service request selector"]
     #[inline(always)]
     #[must_use]
-    pub fn e0sr(&mut self) -> E0SR_W<SRS_SPEC, 8> {
-        E0SR_W::new(self)
+    pub fn e0sr(&mut self) -> E0SR_W<SRS_SPEC> {
+        E0SR_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Event 1 Service request selector"]
     #[inline(always)]
     #[must_use]
-    pub fn e1sr(&mut self) -> E1SR_W<SRS_SPEC, 10> {
-        E1SR_W::new(self)
+    pub fn e1sr(&mut self) -> E1SR_W<SRS_SPEC> {
+        E1SR_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Event 2 Service request selector"]
     #[inline(always)]
     #[must_use]
-    pub fn e2sr(&mut self) -> E2SR_W<SRS_SPEC, 12> {
-        E2SR_W::new(self)
+    pub fn e2sr(&mut self) -> E2SR_W<SRS_SPEC> {
+        E2SR_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

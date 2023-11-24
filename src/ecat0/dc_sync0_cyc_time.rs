@@ -36,8 +36,8 @@ impl TIME_BETWEEN_SYNC0_R {
     }
 }
 #[doc = "Field `TIME_BETWEEN_SYNC0` writer - Time between two consecutive SYNC0 pulses"]
-pub type TIME_BETWEEN_SYNC0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, TIME_BETWEEN_SYNC0_A>;
-impl<'a, REG, const O: u8> TIME_BETWEEN_SYNC0_W<'a, REG, O>
+pub type TIME_BETWEEN_SYNC0_W<'a, REG> = crate::FieldWriter<'a, REG, 32, TIME_BETWEEN_SYNC0_A>;
+impl<'a, REG> TIME_BETWEEN_SYNC0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
@@ -59,8 +59,8 @@ impl W {
     #[doc = "Bits 0:31 - Time between two consecutive SYNC0 pulses"]
     #[inline(always)]
     #[must_use]
-    pub fn time_between_sync0(&mut self) -> TIME_BETWEEN_SYNC0_W<DC_SYNC0_CYC_TIME_SPEC, 0> {
-        TIME_BETWEEN_SYNC0_W::new(self)
+    pub fn time_between_sync0(&mut self) -> TIME_BETWEEN_SYNC0_W<DC_SYNC0_CYC_TIME_SPEC> {
+        TIME_BETWEEN_SYNC0_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -183,8 +183,8 @@ impl BFA0_R {
     }
 }
 #[doc = "Field `BFA0` writer - Boundary Flag 0 Activation Select"]
-pub type BFA0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFA0_A>;
-impl<'a, REG, const O: u8> BFA0_W<'a, REG, O>
+pub type BFA0_W<'a, REG> = crate::BitWriter<'a, REG, BFA0_A>;
+impl<'a, REG> BFA0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -236,8 +236,8 @@ impl BFA1_R {
     }
 }
 #[doc = "Field `BFA1` writer - Boundary Flag 1 Activation Select"]
-pub type BFA1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFA1_A>;
-impl<'a, REG, const O: u8> BFA1_W<'a, REG, O>
+pub type BFA1_W<'a, REG> = crate::BitWriter<'a, REG, BFA1_A>;
+impl<'a, REG> BFA1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -289,8 +289,8 @@ impl BFA2_R {
     }
 }
 #[doc = "Field `BFA2` writer - Boundary Flag 2 Activation Select"]
-pub type BFA2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFA2_A>;
-impl<'a, REG, const O: u8> BFA2_W<'a, REG, O>
+pub type BFA2_W<'a, REG> = crate::BitWriter<'a, REG, BFA2_A>;
+impl<'a, REG> BFA2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -342,8 +342,8 @@ impl BFA3_R {
     }
 }
 #[doc = "Field `BFA3` writer - Boundary Flag 3 Activation Select"]
-pub type BFA3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFA3_A>;
-impl<'a, REG, const O: u8> BFA3_W<'a, REG, O>
+pub type BFA3_W<'a, REG> = crate::BitWriter<'a, REG, BFA3_A>;
+impl<'a, REG> BFA3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -395,8 +395,8 @@ impl BFI0_R {
     }
 }
 #[doc = "Field `BFI0` writer - Boundary Flag 0 Inversion Control"]
-pub type BFI0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFI0_A>;
-impl<'a, REG, const O: u8> BFI0_W<'a, REG, O>
+pub type BFI0_W<'a, REG> = crate::BitWriter<'a, REG, BFI0_A>;
+impl<'a, REG> BFI0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -448,8 +448,8 @@ impl BFI1_R {
     }
 }
 #[doc = "Field `BFI1` writer - Boundary Flag 1 Inversion Control"]
-pub type BFI1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFI1_A>;
-impl<'a, REG, const O: u8> BFI1_W<'a, REG, O>
+pub type BFI1_W<'a, REG> = crate::BitWriter<'a, REG, BFI1_A>;
+impl<'a, REG> BFI1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -501,8 +501,8 @@ impl BFI2_R {
     }
 }
 #[doc = "Field `BFI2` writer - Boundary Flag 2 Inversion Control"]
-pub type BFI2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFI2_A>;
-impl<'a, REG, const O: u8> BFI2_W<'a, REG, O>
+pub type BFI2_W<'a, REG> = crate::BitWriter<'a, REG, BFI2_A>;
+impl<'a, REG> BFI2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -554,8 +554,8 @@ impl BFI3_R {
     }
 }
 #[doc = "Field `BFI3` writer - Boundary Flag 3 Inversion Control"]
-pub type BFI3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFI3_A>;
-impl<'a, REG, const O: u8> BFI3_W<'a, REG, O>
+pub type BFI3_W<'a, REG> = crate::BitWriter<'a, REG, BFI3_A>;
+impl<'a, REG> BFI3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -636,50 +636,50 @@ impl W {
     #[doc = "Bit 8 - Boundary Flag 0 Activation Select"]
     #[inline(always)]
     #[must_use]
-    pub fn bfa0(&mut self) -> BFA0_W<BFL_SPEC, 8> {
-        BFA0_W::new(self)
+    pub fn bfa0(&mut self) -> BFA0_W<BFL_SPEC> {
+        BFA0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Boundary Flag 1 Activation Select"]
     #[inline(always)]
     #[must_use]
-    pub fn bfa1(&mut self) -> BFA1_W<BFL_SPEC, 9> {
-        BFA1_W::new(self)
+    pub fn bfa1(&mut self) -> BFA1_W<BFL_SPEC> {
+        BFA1_W::new(self, 9)
     }
     #[doc = "Bit 10 - Boundary Flag 2 Activation Select"]
     #[inline(always)]
     #[must_use]
-    pub fn bfa2(&mut self) -> BFA2_W<BFL_SPEC, 10> {
-        BFA2_W::new(self)
+    pub fn bfa2(&mut self) -> BFA2_W<BFL_SPEC> {
+        BFA2_W::new(self, 10)
     }
     #[doc = "Bit 11 - Boundary Flag 3 Activation Select"]
     #[inline(always)]
     #[must_use]
-    pub fn bfa3(&mut self) -> BFA3_W<BFL_SPEC, 11> {
-        BFA3_W::new(self)
+    pub fn bfa3(&mut self) -> BFA3_W<BFL_SPEC> {
+        BFA3_W::new(self, 11)
     }
     #[doc = "Bit 16 - Boundary Flag 0 Inversion Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bfi0(&mut self) -> BFI0_W<BFL_SPEC, 16> {
-        BFI0_W::new(self)
+    pub fn bfi0(&mut self) -> BFI0_W<BFL_SPEC> {
+        BFI0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Boundary Flag 1 Inversion Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bfi1(&mut self) -> BFI1_W<BFL_SPEC, 17> {
-        BFI1_W::new(self)
+    pub fn bfi1(&mut self) -> BFI1_W<BFL_SPEC> {
+        BFI1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Boundary Flag 2 Inversion Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bfi2(&mut self) -> BFI2_W<BFL_SPEC, 18> {
-        BFI2_W::new(self)
+    pub fn bfi2(&mut self) -> BFI2_W<BFL_SPEC> {
+        BFI2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Boundary Flag 3 Inversion Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bfi3(&mut self) -> BFI3_W<BFL_SPEC, 19> {
-        BFI3_W::new(self)
+    pub fn bfi3(&mut self) -> BFI3_W<BFL_SPEC> {
+        BFI3_W::new(self, 19)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

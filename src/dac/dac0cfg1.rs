@@ -92,8 +92,8 @@ impl SCALE_R {
     }
 }
 #[doc = "Field `SCALE` writer - Scale value for up- or downscale of the DAC0 input data in steps by the power of 2 (=shift operation)"]
-pub type SCALE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, SCALE_A>;
-impl<'a, REG, const O: u8> SCALE_W<'a, REG, O>
+pub type SCALE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, SCALE_A>;
+impl<'a, REG> SCALE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -176,8 +176,8 @@ impl MULDIV_R {
     }
 }
 #[doc = "Field `MULDIV` writer - Switch between up- and downscale of the DAC0 input data values"]
-pub type MULDIV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MULDIV_A>;
-impl<'a, REG, const O: u8> MULDIV_W<'a, REG, O>
+pub type MULDIV_W<'a, REG> = crate::BitWriter<'a, REG, MULDIV_A>;
+impl<'a, REG> MULDIV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -195,11 +195,11 @@ where
 #[doc = "Field `OFFS` reader - 8-bit offset value addition"]
 pub type OFFS_R = crate::FieldReader;
 #[doc = "Field `OFFS` writer - 8-bit offset value addition"]
-pub type OFFS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type OFFS_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `TRIGSEL` reader - Selects one of the eight external trigger sources for DAC0"]
 pub type TRIGSEL_R = crate::FieldReader;
 #[doc = "Field `TRIGSEL` writer - Selects one of the eight external trigger sources for DAC0"]
-pub type TRIGSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type TRIGSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `DATMOD` reader - Switch between independent or simultaneous DAC mode and select the input data register for DAC0 and DAC1"]
 pub type DATMOD_R = crate::BitReader<DATMOD_A>;
 #[doc = "Switch between independent or simultaneous DAC mode and select the input data register for DAC0 and DAC1\n\nValue on reset: 0"]
@@ -237,8 +237,8 @@ impl DATMOD_R {
     }
 }
 #[doc = "Field `DATMOD` writer - Switch between independent or simultaneous DAC mode and select the input data register for DAC0 and DAC1"]
-pub type DATMOD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DATMOD_A>;
-impl<'a, REG, const O: u8> DATMOD_W<'a, REG, O>
+pub type DATMOD_W<'a, REG> = crate::BitWriter<'a, REG, DATMOD_A>;
+impl<'a, REG> DATMOD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -256,7 +256,7 @@ where
 #[doc = "Field `SWTRIG` reader - Software Trigger"]
 pub type SWTRIG_R = crate::BitReader;
 #[doc = "Field `SWTRIG` writer - Software Trigger"]
-pub type SWTRIG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SWTRIG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TRIGMOD` reader - Select the trigger source for channel 0"]
 pub type TRIGMOD_R = crate::FieldReader<TRIGMOD_A>;
 #[doc = "Select the trigger source for channel 0\n\nValue on reset: 0"]
@@ -307,8 +307,8 @@ impl TRIGMOD_R {
     }
 }
 #[doc = "Field `TRIGMOD` writer - Select the trigger source for channel 0"]
-pub type TRIGMOD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, TRIGMOD_A>;
-impl<'a, REG, const O: u8> TRIGMOD_W<'a, REG, O>
+pub type TRIGMOD_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TRIGMOD_A>;
+impl<'a, REG> TRIGMOD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -332,7 +332,7 @@ where
 #[doc = "Field `ANACFG` reader - DAC0 analog configuration/calibration parameters"]
 pub type ANACFG_R = crate::FieldReader;
 #[doc = "Field `ANACFG` writer - DAC0 analog configuration/calibration parameters"]
-pub type ANACFG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type ANACFG_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `ANAEN` reader - Enable analog DAC for channel 0"]
 pub type ANAEN_R = crate::BitReader<ANAEN_A>;
 #[doc = "Enable analog DAC for channel 0\n\nValue on reset: 0"]
@@ -370,8 +370,8 @@ impl ANAEN_R {
     }
 }
 #[doc = "Field `ANAEN` writer - Enable analog DAC for channel 0"]
-pub type ANAEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ANAEN_A>;
-impl<'a, REG, const O: u8> ANAEN_W<'a, REG, O>
+pub type ANAEN_W<'a, REG> = crate::BitWriter<'a, REG, ANAEN_A>;
+impl<'a, REG> ANAEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -389,7 +389,7 @@ where
 #[doc = "Field `REFCFGL` reader - Lower 4 band-gap configuration/calibration parameters"]
 pub type REFCFGL_R = crate::FieldReader;
 #[doc = "Field `REFCFGL` writer - Lower 4 band-gap configuration/calibration parameters"]
-pub type REFCFGL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type REFCFGL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:2 - Scale value for up- or downscale of the DAC0 input data in steps by the power of 2 (=shift operation)"]
     #[inline(always)]
@@ -446,62 +446,62 @@ impl W {
     #[doc = "Bits 0:2 - Scale value for up- or downscale of the DAC0 input data in steps by the power of 2 (=shift operation)"]
     #[inline(always)]
     #[must_use]
-    pub fn scale(&mut self) -> SCALE_W<DAC0CFG1_SPEC, 0> {
-        SCALE_W::new(self)
+    pub fn scale(&mut self) -> SCALE_W<DAC0CFG1_SPEC> {
+        SCALE_W::new(self, 0)
     }
     #[doc = "Bit 3 - Switch between up- and downscale of the DAC0 input data values"]
     #[inline(always)]
     #[must_use]
-    pub fn muldiv(&mut self) -> MULDIV_W<DAC0CFG1_SPEC, 3> {
-        MULDIV_W::new(self)
+    pub fn muldiv(&mut self) -> MULDIV_W<DAC0CFG1_SPEC> {
+        MULDIV_W::new(self, 3)
     }
     #[doc = "Bits 4:11 - 8-bit offset value addition"]
     #[inline(always)]
     #[must_use]
-    pub fn offs(&mut self) -> OFFS_W<DAC0CFG1_SPEC, 4> {
-        OFFS_W::new(self)
+    pub fn offs(&mut self) -> OFFS_W<DAC0CFG1_SPEC> {
+        OFFS_W::new(self, 4)
     }
     #[doc = "Bits 12:14 - Selects one of the eight external trigger sources for DAC0"]
     #[inline(always)]
     #[must_use]
-    pub fn trigsel(&mut self) -> TRIGSEL_W<DAC0CFG1_SPEC, 12> {
-        TRIGSEL_W::new(self)
+    pub fn trigsel(&mut self) -> TRIGSEL_W<DAC0CFG1_SPEC> {
+        TRIGSEL_W::new(self, 12)
     }
     #[doc = "Bit 15 - Switch between independent or simultaneous DAC mode and select the input data register for DAC0 and DAC1"]
     #[inline(always)]
     #[must_use]
-    pub fn datmod(&mut self) -> DATMOD_W<DAC0CFG1_SPEC, 15> {
-        DATMOD_W::new(self)
+    pub fn datmod(&mut self) -> DATMOD_W<DAC0CFG1_SPEC> {
+        DATMOD_W::new(self, 15)
     }
     #[doc = "Bit 16 - Software Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn swtrig(&mut self) -> SWTRIG_W<DAC0CFG1_SPEC, 16> {
-        SWTRIG_W::new(self)
+    pub fn swtrig(&mut self) -> SWTRIG_W<DAC0CFG1_SPEC> {
+        SWTRIG_W::new(self, 16)
     }
     #[doc = "Bits 17:18 - Select the trigger source for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn trigmod(&mut self) -> TRIGMOD_W<DAC0CFG1_SPEC, 17> {
-        TRIGMOD_W::new(self)
+    pub fn trigmod(&mut self) -> TRIGMOD_W<DAC0CFG1_SPEC> {
+        TRIGMOD_W::new(self, 17)
     }
     #[doc = "Bits 19:23 - DAC0 analog configuration/calibration parameters"]
     #[inline(always)]
     #[must_use]
-    pub fn anacfg(&mut self) -> ANACFG_W<DAC0CFG1_SPEC, 19> {
-        ANACFG_W::new(self)
+    pub fn anacfg(&mut self) -> ANACFG_W<DAC0CFG1_SPEC> {
+        ANACFG_W::new(self, 19)
     }
     #[doc = "Bit 24 - Enable analog DAC for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn anaen(&mut self) -> ANAEN_W<DAC0CFG1_SPEC, 24> {
-        ANAEN_W::new(self)
+    pub fn anaen(&mut self) -> ANAEN_W<DAC0CFG1_SPEC> {
+        ANAEN_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Lower 4 band-gap configuration/calibration parameters"]
     #[inline(always)]
     #[must_use]
-    pub fn refcfgl(&mut self) -> REFCFGL_W<DAC0CFG1_SPEC, 28> {
-        REFCFGL_W::new(self)
+    pub fn refcfgl(&mut self) -> REFCFGL_W<DAC0CFG1_SPEC> {
+        REFCFGL_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

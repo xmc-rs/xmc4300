@@ -5,19 +5,19 @@ pub type W = crate::W<IOCR8_SPEC>;
 #[doc = "Field `PC8` reader - Port Control for Port n Pin 8 to 11"]
 pub type PC8_R = crate::FieldReader;
 #[doc = "Field `PC8` writer - Port Control for Port n Pin 8 to 11"]
-pub type PC8_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PC8_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PC9` reader - Port Control for Port n Pin 8 to 11"]
 pub type PC9_R = crate::FieldReader;
 #[doc = "Field `PC9` writer - Port Control for Port n Pin 8 to 11"]
-pub type PC9_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PC9_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PC10` reader - Port Control for Port n Pin 8 to 11"]
 pub type PC10_R = crate::FieldReader;
 #[doc = "Field `PC10` writer - Port Control for Port n Pin 8 to 11"]
-pub type PC10_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PC10_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PC11` reader - Port Control for Port n Pin 8 to 11"]
 pub type PC11_R = crate::FieldReader;
 #[doc = "Field `PC11` writer - Port Control for Port n Pin 8 to 11"]
-pub type PC11_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PC11_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bits 3:7 - Port Control for Port n Pin 8 to 11"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 3:7 - Port Control for Port n Pin 8 to 11"]
     #[inline(always)]
     #[must_use]
-    pub fn pc8(&mut self) -> PC8_W<IOCR8_SPEC, 3> {
-        PC8_W::new(self)
+    pub fn pc8(&mut self) -> PC8_W<IOCR8_SPEC> {
+        PC8_W::new(self, 3)
     }
     #[doc = "Bits 11:15 - Port Control for Port n Pin 8 to 11"]
     #[inline(always)]
     #[must_use]
-    pub fn pc9(&mut self) -> PC9_W<IOCR8_SPEC, 11> {
-        PC9_W::new(self)
+    pub fn pc9(&mut self) -> PC9_W<IOCR8_SPEC> {
+        PC9_W::new(self, 11)
     }
     #[doc = "Bits 19:23 - Port Control for Port n Pin 8 to 11"]
     #[inline(always)]
     #[must_use]
-    pub fn pc10(&mut self) -> PC10_W<IOCR8_SPEC, 19> {
-        PC10_W::new(self)
+    pub fn pc10(&mut self) -> PC10_W<IOCR8_SPEC> {
+        PC10_W::new(self, 19)
     }
     #[doc = "Bits 27:31 - Port Control for Port n Pin 8 to 11"]
     #[inline(always)]
     #[must_use]
-    pub fn pc11(&mut self) -> PC11_W<IOCR8_SPEC, 27> {
-        PC11_W::new(self)
+    pub fn pc11(&mut self) -> PC11_W<IOCR8_SPEC> {
+        PC11_W::new(self, 27)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -15,8 +15,8 @@ impl From<SOSCWDGT_AW> for bool {
     }
 }
 #[doc = "Field `SOSCWDGT` writer - OSC_HP Oscillator Watchdog Trap Set"]
-pub type SOSCWDGT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SOSCWDGT_AW>;
-impl<'a, REG, const O: u8> SOSCWDGT_W<'a, REG, O>
+pub type SOSCWDGT_W<'a, REG> = crate::BitWriter<'a, REG, SOSCWDGT_AW>;
+impl<'a, REG> SOSCWDGT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<SVCOLCKT_AW> for bool {
     }
 }
 #[doc = "Field `SVCOLCKT` writer - System VCO Lock Trap Set"]
-pub type SVCOLCKT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SVCOLCKT_AW>;
-impl<'a, REG, const O: u8> SVCOLCKT_W<'a, REG, O>
+pub type SVCOLCKT_W<'a, REG> = crate::BitWriter<'a, REG, SVCOLCKT_AW>;
+impl<'a, REG> SVCOLCKT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<UVCOLCKT_AW> for bool {
     }
 }
 #[doc = "Field `UVCOLCKT` writer - USB VCO Lock Trap Set"]
-pub type UVCOLCKT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, UVCOLCKT_AW>;
-impl<'a, REG, const O: u8> UVCOLCKT_W<'a, REG, O>
+pub type UVCOLCKT_W<'a, REG> = crate::BitWriter<'a, REG, UVCOLCKT_AW>;
+impl<'a, REG> UVCOLCKT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<PET_AW> for bool {
     }
 }
 #[doc = "Field `PET` writer - Parity Error Trap Set"]
-pub type PET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PET_AW>;
-impl<'a, REG, const O: u8> PET_W<'a, REG, O>
+pub type PET_W<'a, REG> = crate::BitWriter<'a, REG, PET_AW>;
+impl<'a, REG> PET_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<BRWNT_AW> for bool {
     }
 }
 #[doc = "Field `BRWNT` writer - Brown Out Trap Set"]
-pub type BRWNT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BRWNT_AW>;
-impl<'a, REG, const O: u8> BRWNT_W<'a, REG, O>
+pub type BRWNT_W<'a, REG> = crate::BitWriter<'a, REG, BRWNT_AW>;
+impl<'a, REG> BRWNT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<ULPWDT_AW> for bool {
     }
 }
 #[doc = "Field `ULPWDT` writer - OSC_ULP Oscillator Watchdog Trap Set"]
-pub type ULPWDT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ULPWDT_AW>;
-impl<'a, REG, const O: u8> ULPWDT_W<'a, REG, O>
+pub type ULPWDT_W<'a, REG> = crate::BitWriter<'a, REG, ULPWDT_AW>;
+impl<'a, REG> ULPWDT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -201,8 +201,8 @@ impl From<BWERR0T_AW> for bool {
     }
 }
 #[doc = "Field `BWERR0T` writer - Peripheral Bridge 0 Trap Set"]
-pub type BWERR0T_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BWERR0T_AW>;
-impl<'a, REG, const O: u8> BWERR0T_W<'a, REG, O>
+pub type BWERR0T_W<'a, REG> = crate::BitWriter<'a, REG, BWERR0T_AW>;
+impl<'a, REG> BWERR0T_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -232,8 +232,8 @@ impl From<BWERR1T_AW> for bool {
     }
 }
 #[doc = "Field `BWERR1T` writer - Peripheral Bridge 1 Trap Set"]
-pub type BWERR1T_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BWERR1T_AW>;
-impl<'a, REG, const O: u8> BWERR1T_W<'a, REG, O>
+pub type BWERR1T_W<'a, REG> = crate::BitWriter<'a, REG, BWERR1T_AW>;
+impl<'a, REG> BWERR1T_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -263,8 +263,8 @@ impl From<ECAT0RST_AW> for bool {
     }
 }
 #[doc = "Field `ECAT0RST` writer - EtherCat Reset 0 Trap Set"]
-pub type ECAT0RST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ECAT0RST_AW>;
-impl<'a, REG, const O: u8> ECAT0RST_W<'a, REG, O>
+pub type ECAT0RST_W<'a, REG> = crate::BitWriter<'a, REG, ECAT0RST_AW>;
+impl<'a, REG> ECAT0RST_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -283,56 +283,56 @@ impl W {
     #[doc = "Bit 0 - OSC_HP Oscillator Watchdog Trap Set"]
     #[inline(always)]
     #[must_use]
-    pub fn soscwdgt(&mut self) -> SOSCWDGT_W<TRAPSET_SPEC, 0> {
-        SOSCWDGT_W::new(self)
+    pub fn soscwdgt(&mut self) -> SOSCWDGT_W<TRAPSET_SPEC> {
+        SOSCWDGT_W::new(self, 0)
     }
     #[doc = "Bit 2 - System VCO Lock Trap Set"]
     #[inline(always)]
     #[must_use]
-    pub fn svcolckt(&mut self) -> SVCOLCKT_W<TRAPSET_SPEC, 2> {
-        SVCOLCKT_W::new(self)
+    pub fn svcolckt(&mut self) -> SVCOLCKT_W<TRAPSET_SPEC> {
+        SVCOLCKT_W::new(self, 2)
     }
     #[doc = "Bit 3 - USB VCO Lock Trap Set"]
     #[inline(always)]
     #[must_use]
-    pub fn uvcolckt(&mut self) -> UVCOLCKT_W<TRAPSET_SPEC, 3> {
-        UVCOLCKT_W::new(self)
+    pub fn uvcolckt(&mut self) -> UVCOLCKT_W<TRAPSET_SPEC> {
+        UVCOLCKT_W::new(self, 3)
     }
     #[doc = "Bit 4 - Parity Error Trap Set"]
     #[inline(always)]
     #[must_use]
-    pub fn pet(&mut self) -> PET_W<TRAPSET_SPEC, 4> {
-        PET_W::new(self)
+    pub fn pet(&mut self) -> PET_W<TRAPSET_SPEC> {
+        PET_W::new(self, 4)
     }
     #[doc = "Bit 5 - Brown Out Trap Set"]
     #[inline(always)]
     #[must_use]
-    pub fn brwnt(&mut self) -> BRWNT_W<TRAPSET_SPEC, 5> {
-        BRWNT_W::new(self)
+    pub fn brwnt(&mut self) -> BRWNT_W<TRAPSET_SPEC> {
+        BRWNT_W::new(self, 5)
     }
     #[doc = "Bit 6 - OSC_ULP Oscillator Watchdog Trap Set"]
     #[inline(always)]
     #[must_use]
-    pub fn ulpwdt(&mut self) -> ULPWDT_W<TRAPSET_SPEC, 6> {
-        ULPWDT_W::new(self)
+    pub fn ulpwdt(&mut self) -> ULPWDT_W<TRAPSET_SPEC> {
+        ULPWDT_W::new(self, 6)
     }
     #[doc = "Bit 7 - Peripheral Bridge 0 Trap Set"]
     #[inline(always)]
     #[must_use]
-    pub fn bwerr0t(&mut self) -> BWERR0T_W<TRAPSET_SPEC, 7> {
-        BWERR0T_W::new(self)
+    pub fn bwerr0t(&mut self) -> BWERR0T_W<TRAPSET_SPEC> {
+        BWERR0T_W::new(self, 7)
     }
     #[doc = "Bit 8 - Peripheral Bridge 1 Trap Set"]
     #[inline(always)]
     #[must_use]
-    pub fn bwerr1t(&mut self) -> BWERR1T_W<TRAPSET_SPEC, 8> {
-        BWERR1T_W::new(self)
+    pub fn bwerr1t(&mut self) -> BWERR1T_W<TRAPSET_SPEC> {
+        BWERR1T_W::new(self, 8)
     }
     #[doc = "Bit 16 - EtherCat Reset 0 Trap Set"]
     #[inline(always)]
     #[must_use]
-    pub fn ecat0rst(&mut self) -> ECAT0RST_W<TRAPSET_SPEC, 16> {
-        ECAT0RST_W::new(self)
+    pub fn ecat0rst(&mut self) -> ECAT0RST_W<TRAPSET_SPEC> {
+        ECAT0RST_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

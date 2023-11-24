@@ -1,30 +1,80 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    rststat: RSTSTAT,
+    rstset: RSTSET,
+    rstclr: RSTCLR,
+    prstat0: PRSTAT0,
+    prset0: PRSET0,
+    prclr0: PRCLR0,
+    prstat1: PRSTAT1,
+    prset1: PRSET1,
+    prclr1: PRCLR1,
+    prstat2: PRSTAT2,
+    prset2: PRSET2,
+    prclr2: PRCLR2,
+}
+impl RegisterBlock {
     #[doc = "0x00 - RCU Reset Status"]
-    pub rststat: RSTSTAT,
+    #[inline(always)]
+    pub const fn rststat(&self) -> &RSTSTAT {
+        &self.rststat
+    }
     #[doc = "0x04 - RCU Reset Set Register"]
-    pub rstset: RSTSET,
+    #[inline(always)]
+    pub const fn rstset(&self) -> &RSTSET {
+        &self.rstset
+    }
     #[doc = "0x08 - RCU Reset Clear Register"]
-    pub rstclr: RSTCLR,
+    #[inline(always)]
+    pub const fn rstclr(&self) -> &RSTCLR {
+        &self.rstclr
+    }
     #[doc = "0x0c - RCU Peripheral 0 Reset Status"]
-    pub prstat0: PRSTAT0,
+    #[inline(always)]
+    pub const fn prstat0(&self) -> &PRSTAT0 {
+        &self.prstat0
+    }
     #[doc = "0x10 - RCU Peripheral 0 Reset Set"]
-    pub prset0: PRSET0,
+    #[inline(always)]
+    pub const fn prset0(&self) -> &PRSET0 {
+        &self.prset0
+    }
     #[doc = "0x14 - RCU Peripheral 0 Reset Clear"]
-    pub prclr0: PRCLR0,
+    #[inline(always)]
+    pub const fn prclr0(&self) -> &PRCLR0 {
+        &self.prclr0
+    }
     #[doc = "0x18 - RCU Peripheral 1 Reset Status"]
-    pub prstat1: PRSTAT1,
+    #[inline(always)]
+    pub const fn prstat1(&self) -> &PRSTAT1 {
+        &self.prstat1
+    }
     #[doc = "0x1c - RCU Peripheral 1 Reset Set"]
-    pub prset1: PRSET1,
+    #[inline(always)]
+    pub const fn prset1(&self) -> &PRSET1 {
+        &self.prset1
+    }
     #[doc = "0x20 - RCU Peripheral 1 Reset Clear"]
-    pub prclr1: PRCLR1,
+    #[inline(always)]
+    pub const fn prclr1(&self) -> &PRCLR1 {
+        &self.prclr1
+    }
     #[doc = "0x24 - RCU Peripheral 2 Reset Status"]
-    pub prstat2: PRSTAT2,
+    #[inline(always)]
+    pub const fn prstat2(&self) -> &PRSTAT2 {
+        &self.prstat2
+    }
     #[doc = "0x28 - RCU Peripheral 2 Reset Set"]
-    pub prset2: PRSET2,
+    #[inline(always)]
+    pub const fn prset2(&self) -> &PRSET2 {
+        &self.prset2
+    }
     #[doc = "0x2c - RCU Peripheral 2 Reset Clear"]
-    pub prclr2: PRCLR2,
+    #[inline(always)]
+    pub const fn prclr2(&self) -> &PRCLR2 {
+        &self.prclr2
+    }
 }
 #[doc = "RSTSTAT (r) register accessor: RCU Reset Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rststat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rststat`]
 module"]

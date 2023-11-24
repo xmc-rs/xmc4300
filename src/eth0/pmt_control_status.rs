@@ -5,15 +5,15 @@ pub type W = crate::W<PMT_CONTROL_STATUS_SPEC>;
 #[doc = "Field `PWRDWN` reader - Power Down"]
 pub type PWRDWN_R = crate::BitReader;
 #[doc = "Field `PWRDWN` writer - Power Down"]
-pub type PWRDWN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PWRDWN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MGKPKTEN` reader - Magic Packet Enable"]
 pub type MGKPKTEN_R = crate::BitReader;
 #[doc = "Field `MGKPKTEN` writer - Magic Packet Enable"]
-pub type MGKPKTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MGKPKTEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RWKPKTEN` reader - Wake-Up Frame Enable"]
 pub type RWKPKTEN_R = crate::BitReader;
 #[doc = "Field `RWKPKTEN` writer - Wake-Up Frame Enable"]
-pub type RWKPKTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RWKPKTEN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MGKPRCVD` reader - Magic Packet Received"]
 pub type MGKPRCVD_R = crate::BitReader;
 #[doc = "Field `RWKPRCVD` reader - Wake-Up Frame Received"]
@@ -21,11 +21,11 @@ pub type RWKPRCVD_R = crate::BitReader;
 #[doc = "Field `GLBLUCAST` reader - Global Unicast"]
 pub type GLBLUCAST_R = crate::BitReader;
 #[doc = "Field `GLBLUCAST` writer - Global Unicast"]
-pub type GLBLUCAST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type GLBLUCAST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RWKFILTRST` reader - Wake-Up Frame Filter Register Pointer Reset"]
 pub type RWKFILTRST_R = crate::BitReader;
 #[doc = "Field `RWKFILTRST` writer - Wake-Up Frame Filter Register Pointer Reset"]
-pub type RWKFILTRST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RWKFILTRST_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Power Down"]
     #[inline(always)]
@@ -67,32 +67,32 @@ impl W {
     #[doc = "Bit 0 - Power Down"]
     #[inline(always)]
     #[must_use]
-    pub fn pwrdwn(&mut self) -> PWRDWN_W<PMT_CONTROL_STATUS_SPEC, 0> {
-        PWRDWN_W::new(self)
+    pub fn pwrdwn(&mut self) -> PWRDWN_W<PMT_CONTROL_STATUS_SPEC> {
+        PWRDWN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Magic Packet Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mgkpkten(&mut self) -> MGKPKTEN_W<PMT_CONTROL_STATUS_SPEC, 1> {
-        MGKPKTEN_W::new(self)
+    pub fn mgkpkten(&mut self) -> MGKPKTEN_W<PMT_CONTROL_STATUS_SPEC> {
+        MGKPKTEN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Wake-Up Frame Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rwkpkten(&mut self) -> RWKPKTEN_W<PMT_CONTROL_STATUS_SPEC, 2> {
-        RWKPKTEN_W::new(self)
+    pub fn rwkpkten(&mut self) -> RWKPKTEN_W<PMT_CONTROL_STATUS_SPEC> {
+        RWKPKTEN_W::new(self, 2)
     }
     #[doc = "Bit 9 - Global Unicast"]
     #[inline(always)]
     #[must_use]
-    pub fn glblucast(&mut self) -> GLBLUCAST_W<PMT_CONTROL_STATUS_SPEC, 9> {
-        GLBLUCAST_W::new(self)
+    pub fn glblucast(&mut self) -> GLBLUCAST_W<PMT_CONTROL_STATUS_SPEC> {
+        GLBLUCAST_W::new(self, 9)
     }
     #[doc = "Bit 31 - Wake-Up Frame Filter Register Pointer Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn rwkfiltrst(&mut self) -> RWKFILTRST_W<PMT_CONTROL_STATUS_SPEC, 31> {
-        RWKFILTRST_W::new(self)
+    pub fn rwkfiltrst(&mut self) -> RWKFILTRST_W<PMT_CONTROL_STATUS_SPEC> {
+        RWKFILTRST_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

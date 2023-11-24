@@ -39,8 +39,8 @@ impl WERR_R {
     }
 }
 #[doc = "Field `WERR` writer - Bufferable Write Access Error"]
-pub type WERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WERR_A>;
-impl<'a, REG, const O: u8> WERR_W<'a, REG, O>
+pub type WERR_W<'a, REG> = crate::BitWriter<'a, REG, WERR_A>;
+impl<'a, REG> WERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,8 +66,8 @@ impl W {
     #[doc = "Bit 0 - Bufferable Write Access Error"]
     #[inline(always)]
     #[must_use]
-    pub fn werr(&mut self) -> WERR_W<STS_SPEC, 0> {
-        WERR_W::new(self)
+    pub fn werr(&mut self) -> WERR_W<STS_SPEC> {
+        WERR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

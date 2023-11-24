@@ -15,8 +15,8 @@ impl From<CST0_AW> for bool {
     }
 }
 #[doc = "Field `CST0` writer - Clear Status Flag 0 in PSR"]
-pub type CST0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CST0_AW>;
-impl<'a, REG, const O: u8> CST0_W<'a, REG, O>
+pub type CST0_W<'a, REG> = crate::BitWriter<'a, REG, CST0_AW>;
+impl<'a, REG> CST0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<CST1_AW> for bool {
     }
 }
 #[doc = "Field `CST1` writer - Clear Status Flag 1 in PSR"]
-pub type CST1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CST1_AW>;
-impl<'a, REG, const O: u8> CST1_W<'a, REG, O>
+pub type CST1_W<'a, REG> = crate::BitWriter<'a, REG, CST1_AW>;
+impl<'a, REG> CST1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<CST2_AW> for bool {
     }
 }
 #[doc = "Field `CST2` writer - Clear Status Flag 2 in PSR"]
-pub type CST2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CST2_AW>;
-impl<'a, REG, const O: u8> CST2_W<'a, REG, O>
+pub type CST2_W<'a, REG> = crate::BitWriter<'a, REG, CST2_AW>;
+impl<'a, REG> CST2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<CST3_AW> for bool {
     }
 }
 #[doc = "Field `CST3` writer - Clear Status Flag 3 in PSR"]
-pub type CST3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CST3_AW>;
-impl<'a, REG, const O: u8> CST3_W<'a, REG, O>
+pub type CST3_W<'a, REG> = crate::BitWriter<'a, REG, CST3_AW>;
+impl<'a, REG> CST3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<CST4_AW> for bool {
     }
 }
 #[doc = "Field `CST4` writer - Clear Status Flag 4 in PSR"]
-pub type CST4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CST4_AW>;
-impl<'a, REG, const O: u8> CST4_W<'a, REG, O>
+pub type CST4_W<'a, REG> = crate::BitWriter<'a, REG, CST4_AW>;
+impl<'a, REG> CST4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<CST5_AW> for bool {
     }
 }
 #[doc = "Field `CST5` writer - Clear Status Flag 5 in PSR"]
-pub type CST5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CST5_AW>;
-impl<'a, REG, const O: u8> CST5_W<'a, REG, O>
+pub type CST5_W<'a, REG> = crate::BitWriter<'a, REG, CST5_AW>;
+impl<'a, REG> CST5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -201,8 +201,8 @@ impl From<CST6_AW> for bool {
     }
 }
 #[doc = "Field `CST6` writer - Clear Status Flag 6 in PSR"]
-pub type CST6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CST6_AW>;
-impl<'a, REG, const O: u8> CST6_W<'a, REG, O>
+pub type CST6_W<'a, REG> = crate::BitWriter<'a, REG, CST6_AW>;
+impl<'a, REG> CST6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -232,8 +232,8 @@ impl From<CST7_AW> for bool {
     }
 }
 #[doc = "Field `CST7` writer - Clear Status Flag 7 in PSR"]
-pub type CST7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CST7_AW>;
-impl<'a, REG, const O: u8> CST7_W<'a, REG, O>
+pub type CST7_W<'a, REG> = crate::BitWriter<'a, REG, CST7_AW>;
+impl<'a, REG> CST7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -263,8 +263,8 @@ impl From<CST8_AW> for bool {
     }
 }
 #[doc = "Field `CST8` writer - Clear Status Flag 8 in PSR"]
-pub type CST8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CST8_AW>;
-impl<'a, REG, const O: u8> CST8_W<'a, REG, O>
+pub type CST8_W<'a, REG> = crate::BitWriter<'a, REG, CST8_AW>;
+impl<'a, REG> CST8_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -294,8 +294,8 @@ impl From<CST9_AW> for bool {
     }
 }
 #[doc = "Field `CST9` writer - Clear Status Flag 9 in PSR"]
-pub type CST9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CST9_AW>;
-impl<'a, REG, const O: u8> CST9_W<'a, REG, O>
+pub type CST9_W<'a, REG> = crate::BitWriter<'a, REG, CST9_AW>;
+impl<'a, REG> CST9_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -325,8 +325,8 @@ impl From<CRSIF_AW> for bool {
     }
 }
 #[doc = "Field `CRSIF` writer - Clear Receiver Start Indication Flag"]
-pub type CRSIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CRSIF_AW>;
-impl<'a, REG, const O: u8> CRSIF_W<'a, REG, O>
+pub type CRSIF_W<'a, REG> = crate::BitWriter<'a, REG, CRSIF_AW>;
+impl<'a, REG> CRSIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -356,8 +356,8 @@ impl From<CDLIF_AW> for bool {
     }
 }
 #[doc = "Field `CDLIF` writer - Clear Data Lost Indication Flag"]
-pub type CDLIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CDLIF_AW>;
-impl<'a, REG, const O: u8> CDLIF_W<'a, REG, O>
+pub type CDLIF_W<'a, REG> = crate::BitWriter<'a, REG, CDLIF_AW>;
+impl<'a, REG> CDLIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -387,8 +387,8 @@ impl From<CTSIF_AW> for bool {
     }
 }
 #[doc = "Field `CTSIF` writer - Clear Transmit Shift Indication Flag"]
-pub type CTSIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CTSIF_AW>;
-impl<'a, REG, const O: u8> CTSIF_W<'a, REG, O>
+pub type CTSIF_W<'a, REG> = crate::BitWriter<'a, REG, CTSIF_AW>;
+impl<'a, REG> CTSIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -418,8 +418,8 @@ impl From<CTBIF_AW> for bool {
     }
 }
 #[doc = "Field `CTBIF` writer - Clear Transmit Buffer Indication Flag"]
-pub type CTBIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CTBIF_AW>;
-impl<'a, REG, const O: u8> CTBIF_W<'a, REG, O>
+pub type CTBIF_W<'a, REG> = crate::BitWriter<'a, REG, CTBIF_AW>;
+impl<'a, REG> CTBIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -449,8 +449,8 @@ impl From<CRIF_AW> for bool {
     }
 }
 #[doc = "Field `CRIF` writer - Clear Receive Indication Flag"]
-pub type CRIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CRIF_AW>;
-impl<'a, REG, const O: u8> CRIF_W<'a, REG, O>
+pub type CRIF_W<'a, REG> = crate::BitWriter<'a, REG, CRIF_AW>;
+impl<'a, REG> CRIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -480,8 +480,8 @@ impl From<CAIF_AW> for bool {
     }
 }
 #[doc = "Field `CAIF` writer - Clear Alternative Receive Indication Flag"]
-pub type CAIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CAIF_AW>;
-impl<'a, REG, const O: u8> CAIF_W<'a, REG, O>
+pub type CAIF_W<'a, REG> = crate::BitWriter<'a, REG, CAIF_AW>;
+impl<'a, REG> CAIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -511,8 +511,8 @@ impl From<CBRGIF_AW> for bool {
     }
 }
 #[doc = "Field `CBRGIF` writer - Clear Baud Rate Generator Indication Flag"]
-pub type CBRGIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CBRGIF_AW>;
-impl<'a, REG, const O: u8> CBRGIF_W<'a, REG, O>
+pub type CBRGIF_W<'a, REG> = crate::BitWriter<'a, REG, CBRGIF_AW>;
+impl<'a, REG> CBRGIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -531,104 +531,104 @@ impl W {
     #[doc = "Bit 0 - Clear Status Flag 0 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst0(&mut self) -> CST0_W<PSCR_SPEC, 0> {
-        CST0_W::new(self)
+    pub fn cst0(&mut self) -> CST0_W<PSCR_SPEC> {
+        CST0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Status Flag 1 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst1(&mut self) -> CST1_W<PSCR_SPEC, 1> {
-        CST1_W::new(self)
+    pub fn cst1(&mut self) -> CST1_W<PSCR_SPEC> {
+        CST1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Status Flag 2 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst2(&mut self) -> CST2_W<PSCR_SPEC, 2> {
-        CST2_W::new(self)
+    pub fn cst2(&mut self) -> CST2_W<PSCR_SPEC> {
+        CST2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Clear Status Flag 3 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst3(&mut self) -> CST3_W<PSCR_SPEC, 3> {
-        CST3_W::new(self)
+    pub fn cst3(&mut self) -> CST3_W<PSCR_SPEC> {
+        CST3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Clear Status Flag 4 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst4(&mut self) -> CST4_W<PSCR_SPEC, 4> {
-        CST4_W::new(self)
+    pub fn cst4(&mut self) -> CST4_W<PSCR_SPEC> {
+        CST4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Clear Status Flag 5 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst5(&mut self) -> CST5_W<PSCR_SPEC, 5> {
-        CST5_W::new(self)
+    pub fn cst5(&mut self) -> CST5_W<PSCR_SPEC> {
+        CST5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Clear Status Flag 6 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst6(&mut self) -> CST6_W<PSCR_SPEC, 6> {
-        CST6_W::new(self)
+    pub fn cst6(&mut self) -> CST6_W<PSCR_SPEC> {
+        CST6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Clear Status Flag 7 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst7(&mut self) -> CST7_W<PSCR_SPEC, 7> {
-        CST7_W::new(self)
+    pub fn cst7(&mut self) -> CST7_W<PSCR_SPEC> {
+        CST7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Clear Status Flag 8 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst8(&mut self) -> CST8_W<PSCR_SPEC, 8> {
-        CST8_W::new(self)
+    pub fn cst8(&mut self) -> CST8_W<PSCR_SPEC> {
+        CST8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear Status Flag 9 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst9(&mut self) -> CST9_W<PSCR_SPEC, 9> {
-        CST9_W::new(self)
+    pub fn cst9(&mut self) -> CST9_W<PSCR_SPEC> {
+        CST9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Clear Receiver Start Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn crsif(&mut self) -> CRSIF_W<PSCR_SPEC, 10> {
-        CRSIF_W::new(self)
+    pub fn crsif(&mut self) -> CRSIF_W<PSCR_SPEC> {
+        CRSIF_W::new(self, 10)
     }
     #[doc = "Bit 11 - Clear Data Lost Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cdlif(&mut self) -> CDLIF_W<PSCR_SPEC, 11> {
-        CDLIF_W::new(self)
+    pub fn cdlif(&mut self) -> CDLIF_W<PSCR_SPEC> {
+        CDLIF_W::new(self, 11)
     }
     #[doc = "Bit 12 - Clear Transmit Shift Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn ctsif(&mut self) -> CTSIF_W<PSCR_SPEC, 12> {
-        CTSIF_W::new(self)
+    pub fn ctsif(&mut self) -> CTSIF_W<PSCR_SPEC> {
+        CTSIF_W::new(self, 12)
     }
     #[doc = "Bit 13 - Clear Transmit Buffer Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn ctbif(&mut self) -> CTBIF_W<PSCR_SPEC, 13> {
-        CTBIF_W::new(self)
+    pub fn ctbif(&mut self) -> CTBIF_W<PSCR_SPEC> {
+        CTBIF_W::new(self, 13)
     }
     #[doc = "Bit 14 - Clear Receive Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn crif(&mut self) -> CRIF_W<PSCR_SPEC, 14> {
-        CRIF_W::new(self)
+    pub fn crif(&mut self) -> CRIF_W<PSCR_SPEC> {
+        CRIF_W::new(self, 14)
     }
     #[doc = "Bit 15 - Clear Alternative Receive Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn caif(&mut self) -> CAIF_W<PSCR_SPEC, 15> {
-        CAIF_W::new(self)
+    pub fn caif(&mut self) -> CAIF_W<PSCR_SPEC> {
+        CAIF_W::new(self, 15)
     }
     #[doc = "Bit 16 - Clear Baud Rate Generator Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cbrgif(&mut self) -> CBRGIF_W<PSCR_SPEC, 16> {
-        CBRGIF_W::new(self)
+    pub fn cbrgif(&mut self) -> CBRGIF_W<PSCR_SPEC> {
+        CBRGIF_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

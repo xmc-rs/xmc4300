@@ -39,8 +39,8 @@ impl MODEN_R {
     }
 }
 #[doc = "Field `MODEN` writer - Module Enable"]
-pub type MODEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MODEN_A>;
-impl<'a, REG, const O: u8> MODEN_W<'a, REG, O>
+pub type MODEN_W<'a, REG> = crate::BitWriter<'a, REG, MODEN_A>;
+impl<'a, REG> MODEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -70,8 +70,8 @@ impl From<BPMODEN_AW> for bool {
     }
 }
 #[doc = "Field `BPMODEN` writer - Bit Protection for MODEN"]
-pub type BPMODEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BPMODEN_AW>;
-impl<'a, REG, const O: u8> BPMODEN_W<'a, REG, O>
+pub type BPMODEN_W<'a, REG> = crate::BitWriter<'a, REG, BPMODEN_AW>;
+impl<'a, REG> BPMODEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -144,8 +144,8 @@ impl NOMCFG_R {
     }
 }
 #[doc = "Field `NOMCFG` writer - Normal Operation Mode Configuration"]
-pub type NOMCFG_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, NOMCFG_A>;
-impl<'a, REG, const O: u8> NOMCFG_W<'a, REG, O>
+pub type NOMCFG_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, NOMCFG_A>;
+impl<'a, REG> NOMCFG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -186,8 +186,8 @@ impl From<BPNOM_AW> for bool {
     }
 }
 #[doc = "Field `BPNOM` writer - Bit Protection for NOMCFG"]
-pub type BPNOM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BPNOM_AW>;
-impl<'a, REG, const O: u8> BPNOM_W<'a, REG, O>
+pub type BPNOM_W<'a, REG> = crate::BitWriter<'a, REG, BPNOM_AW>;
+impl<'a, REG> BPNOM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -205,7 +205,7 @@ where
 #[doc = "Field `SUMCFG` reader - Suspend Mode Configuration"]
 pub type SUMCFG_R = crate::FieldReader;
 #[doc = "Field `SUMCFG` writer - Suspend Mode Configuration"]
-pub type SUMCFG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type SUMCFG_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Bit Protection for SUMCFG\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BPSUM_AW {
@@ -221,8 +221,8 @@ impl From<BPSUM_AW> for bool {
     }
 }
 #[doc = "Field `BPSUM` writer - Bit Protection for SUMCFG"]
-pub type BPSUM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BPSUM_AW>;
-impl<'a, REG, const O: u8> BPSUM_W<'a, REG, O>
+pub type BPSUM_W<'a, REG> = crate::BitWriter<'a, REG, BPSUM_AW>;
+impl<'a, REG> BPSUM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -258,38 +258,38 @@ impl W {
     #[doc = "Bit 0 - Module Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn moden(&mut self) -> MODEN_W<KSCFG_SPEC, 0> {
-        MODEN_W::new(self)
+    pub fn moden(&mut self) -> MODEN_W<KSCFG_SPEC> {
+        MODEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Bit Protection for MODEN"]
     #[inline(always)]
     #[must_use]
-    pub fn bpmoden(&mut self) -> BPMODEN_W<KSCFG_SPEC, 1> {
-        BPMODEN_W::new(self)
+    pub fn bpmoden(&mut self) -> BPMODEN_W<KSCFG_SPEC> {
+        BPMODEN_W::new(self, 1)
     }
     #[doc = "Bits 4:5 - Normal Operation Mode Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn nomcfg(&mut self) -> NOMCFG_W<KSCFG_SPEC, 4> {
-        NOMCFG_W::new(self)
+    pub fn nomcfg(&mut self) -> NOMCFG_W<KSCFG_SPEC> {
+        NOMCFG_W::new(self, 4)
     }
     #[doc = "Bit 7 - Bit Protection for NOMCFG"]
     #[inline(always)]
     #[must_use]
-    pub fn bpnom(&mut self) -> BPNOM_W<KSCFG_SPEC, 7> {
-        BPNOM_W::new(self)
+    pub fn bpnom(&mut self) -> BPNOM_W<KSCFG_SPEC> {
+        BPNOM_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Suspend Mode Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn sumcfg(&mut self) -> SUMCFG_W<KSCFG_SPEC, 8> {
-        SUMCFG_W::new(self)
+    pub fn sumcfg(&mut self) -> SUMCFG_W<KSCFG_SPEC> {
+        SUMCFG_W::new(self, 8)
     }
     #[doc = "Bit 11 - Bit Protection for SUMCFG"]
     #[inline(always)]
     #[must_use]
-    pub fn bpsum(&mut self) -> BPSUM_W<KSCFG_SPEC, 11> {
-        BPSUM_W::new(self)
+    pub fn bpsum(&mut self) -> BPSUM_W<KSCFG_SPEC> {
+        BPSUM_W::new(self, 11)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

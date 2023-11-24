@@ -39,8 +39,8 @@ impl ACS_MII_BY_PDI_R {
     }
 }
 #[doc = "Field `ACS_MII_BY_PDI` writer - Access to MII management"]
-pub type ACS_MII_BY_PDI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ACS_MII_BY_PDI_A>;
-impl<'a, REG, const O: u8> ACS_MII_BY_PDI_W<'a, REG, O>
+pub type ACS_MII_BY_PDI_W<'a, REG> = crate::BitWriter<'a, REG, ACS_MII_BY_PDI_A>;
+impl<'a, REG> ACS_MII_BY_PDI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -107,8 +107,8 @@ impl W {
     #[doc = "Bit 0 - Access to MII management"]
     #[inline(always)]
     #[must_use]
-    pub fn acs_mii_by_pdi(&mut self) -> ACS_MII_BY_PDI_W<MII_PDI_ACS_STATE_SPEC, 0> {
-        ACS_MII_BY_PDI_W::new(self)
+    pub fn acs_mii_by_pdi(&mut self) -> ACS_MII_BY_PDI_W<MII_PDI_ACS_STATE_SPEC> {
+        ACS_MII_BY_PDI_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

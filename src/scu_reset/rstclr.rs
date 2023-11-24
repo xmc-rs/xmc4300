@@ -15,8 +15,8 @@ impl From<RSCLR_AW> for bool {
     }
 }
 #[doc = "Field `RSCLR` writer - Clear Reset Status"]
-pub type RSCLR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RSCLR_AW>;
-impl<'a, REG, const O: u8> RSCLR_W<'a, REG, O>
+pub type RSCLR_W<'a, REG> = crate::BitWriter<'a, REG, RSCLR_AW>;
+impl<'a, REG> RSCLR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<HIBWK_AW> for bool {
     }
 }
 #[doc = "Field `HIBWK` writer - Clear Hibernate Wake-up Reset Status"]
-pub type HIBWK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HIBWK_AW>;
-impl<'a, REG, const O: u8> HIBWK_W<'a, REG, O>
+pub type HIBWK_W<'a, REG> = crate::BitWriter<'a, REG, HIBWK_AW>;
+impl<'a, REG> HIBWK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<HIBRS_AW> for bool {
     }
 }
 #[doc = "Field `HIBRS` writer - Clear Hibernate Reset"]
-pub type HIBRS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HIBRS_AW>;
-impl<'a, REG, const O: u8> HIBRS_W<'a, REG, O>
+pub type HIBRS_W<'a, REG> = crate::BitWriter<'a, REG, HIBRS_AW>;
+impl<'a, REG> HIBRS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<LCKEN_AW> for bool {
     }
 }
 #[doc = "Field `LCKEN` writer - Enable Lockup Reset"]
-pub type LCKEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LCKEN_AW>;
-impl<'a, REG, const O: u8> LCKEN_W<'a, REG, O>
+pub type LCKEN_W<'a, REG> = crate::BitWriter<'a, REG, LCKEN_AW>;
+impl<'a, REG> LCKEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<ECAT0RS_AW> for bool {
     }
 }
 #[doc = "Field `ECAT0RS` writer - ECAT0 Reset Status Information"]
-pub type ECAT0RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ECAT0RS_AW>;
-impl<'a, REG, const O: u8> ECAT0RS_W<'a, REG, O>
+pub type ECAT0RS_W<'a, REG> = crate::BitWriter<'a, REG, ECAT0RS_AW>;
+impl<'a, REG> ECAT0RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -159,32 +159,32 @@ impl W {
     #[doc = "Bit 0 - Clear Reset Status"]
     #[inline(always)]
     #[must_use]
-    pub fn rsclr(&mut self) -> RSCLR_W<RSTCLR_SPEC, 0> {
-        RSCLR_W::new(self)
+    pub fn rsclr(&mut self) -> RSCLR_W<RSTCLR_SPEC> {
+        RSCLR_W::new(self, 0)
     }
     #[doc = "Bit 8 - Clear Hibernate Wake-up Reset Status"]
     #[inline(always)]
     #[must_use]
-    pub fn hibwk(&mut self) -> HIBWK_W<RSTCLR_SPEC, 8> {
-        HIBWK_W::new(self)
+    pub fn hibwk(&mut self) -> HIBWK_W<RSTCLR_SPEC> {
+        HIBWK_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear Hibernate Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn hibrs(&mut self) -> HIBRS_W<RSTCLR_SPEC, 9> {
-        HIBRS_W::new(self)
+    pub fn hibrs(&mut self) -> HIBRS_W<RSTCLR_SPEC> {
+        HIBRS_W::new(self, 9)
     }
     #[doc = "Bit 10 - Enable Lockup Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn lcken(&mut self) -> LCKEN_W<RSTCLR_SPEC, 10> {
-        LCKEN_W::new(self)
+    pub fn lcken(&mut self) -> LCKEN_W<RSTCLR_SPEC> {
+        LCKEN_W::new(self, 10)
     }
     #[doc = "Bit 12 - ECAT0 Reset Status Information"]
     #[inline(always)]
     #[must_use]
-    pub fn ecat0rs(&mut self) -> ECAT0RS_W<RSTCLR_SPEC, 12> {
-        ECAT0RS_W::new(self)
+    pub fn ecat0rs(&mut self) -> ECAT0RS_W<RSTCLR_SPEC> {
+        ECAT0RS_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

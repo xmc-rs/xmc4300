@@ -39,8 +39,8 @@ impl RDWR_R {
     }
 }
 #[doc = "Field `RDWR` writer - Hibernate Retention Memory Register Update Control"]
-pub type RDWR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RDWR_A>;
-impl<'a, REG, const O: u8> RDWR_W<'a, REG, O>
+pub type RDWR_W<'a, REG> = crate::BitWriter<'a, REG, RDWR_A>;
+impl<'a, REG> RDWR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -58,7 +58,7 @@ where
 #[doc = "Field `ADDR` reader - Hibernate Retention Memory Register Address Select"]
 pub type ADDR_R = crate::FieldReader;
 #[doc = "Field `ADDR` writer - Hibernate Retention Memory Register Address Select"]
-pub type ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - Hibernate Retention Memory Register Update Control"]
     #[inline(always)]
@@ -75,14 +75,14 @@ impl W {
     #[doc = "Bit 0 - Hibernate Retention Memory Register Update Control"]
     #[inline(always)]
     #[must_use]
-    pub fn rdwr(&mut self) -> RDWR_W<RMACR_SPEC, 0> {
-        RDWR_W::new(self)
+    pub fn rdwr(&mut self) -> RDWR_W<RMACR_SPEC> {
+        RDWR_W::new(self, 0)
     }
     #[doc = "Bits 16:19 - Hibernate Retention Memory Register Address Select"]
     #[inline(always)]
     #[must_use]
-    pub fn addr(&mut self) -> ADDR_W<RMACR_SPEC, 16> {
-        ADDR_W::new(self)
+    pub fn addr(&mut self) -> ADDR_W<RMACR_SPEC> {
+        ADDR_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

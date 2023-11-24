@@ -1,15 +1,33 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Overrun Status"]
-    pub ovrstat: OVRSTAT,
-    #[doc = "0x04 - Overrun Clear"]
-    pub ovrclr: OVRCLR,
-    #[doc = "0x08 - Service Request Selection 0"]
-    pub srsel0: SRSEL0,
+    ovrstat: OVRSTAT,
+    ovrclr: OVRCLR,
+    srsel0: SRSEL0,
     _reserved3: [u8; 0x04],
+    lnen: LNEN,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Overrun Status"]
+    #[inline(always)]
+    pub const fn ovrstat(&self) -> &OVRSTAT {
+        &self.ovrstat
+    }
+    #[doc = "0x04 - Overrun Clear"]
+    #[inline(always)]
+    pub const fn ovrclr(&self) -> &OVRCLR {
+        &self.ovrclr
+    }
+    #[doc = "0x08 - Service Request Selection 0"]
+    #[inline(always)]
+    pub const fn srsel0(&self) -> &SRSEL0 {
+        &self.srsel0
+    }
     #[doc = "0x10 - Line Enable"]
-    pub lnen: LNEN,
+    #[inline(always)]
+    pub const fn lnen(&self) -> &LNEN {
+        &self.lnen
+    }
 }
 #[doc = "OVRSTAT (r) register accessor: Overrun Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ovrstat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ovrstat`]
 module"]

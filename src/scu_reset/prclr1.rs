@@ -15,8 +15,8 @@ impl From<LEDTSCU0RS_AW> for bool {
     }
 }
 #[doc = "Field `LEDTSCU0RS` writer - LEDTS Reset Clear"]
-pub type LEDTSCU0RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LEDTSCU0RS_AW>;
-impl<'a, REG, const O: u8> LEDTSCU0RS_W<'a, REG, O>
+pub type LEDTSCU0RS_W<'a, REG> = crate::BitWriter<'a, REG, LEDTSCU0RS_AW>;
+impl<'a, REG> LEDTSCU0RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<MCAN0RS_AW> for bool {
     }
 }
 #[doc = "Field `MCAN0RS` writer - MultiCAN Reset Clear"]
-pub type MCAN0RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MCAN0RS_AW>;
-impl<'a, REG, const O: u8> MCAN0RS_W<'a, REG, O>
+pub type MCAN0RS_W<'a, REG> = crate::BitWriter<'a, REG, MCAN0RS_AW>;
+impl<'a, REG> MCAN0RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<DACRS_AW> for bool {
     }
 }
 #[doc = "Field `DACRS` writer - DAC Reset Clear"]
-pub type DACRS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DACRS_AW>;
-impl<'a, REG, const O: u8> DACRS_W<'a, REG, O>
+pub type DACRS_W<'a, REG> = crate::BitWriter<'a, REG, DACRS_AW>;
+impl<'a, REG> DACRS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<MMCIRS_AW> for bool {
     }
 }
 #[doc = "Field `MMCIRS` writer - MMC Interface Reset Clear"]
-pub type MMCIRS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MMCIRS_AW>;
-impl<'a, REG, const O: u8> MMCIRS_W<'a, REG, O>
+pub type MMCIRS_W<'a, REG> = crate::BitWriter<'a, REG, MMCIRS_AW>;
+impl<'a, REG> MMCIRS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<USIC1RS_AW> for bool {
     }
 }
 #[doc = "Field `USIC1RS` writer - USIC1 Reset Clear"]
-pub type USIC1RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USIC1RS_AW>;
-impl<'a, REG, const O: u8> USIC1RS_W<'a, REG, O>
+pub type USIC1RS_W<'a, REG> = crate::BitWriter<'a, REG, USIC1RS_AW>;
+impl<'a, REG> USIC1RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<PPORTSRS_AW> for bool {
     }
 }
 #[doc = "Field `PPORTSRS` writer - PORTS Reset Clear"]
-pub type PPORTSRS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPORTSRS_AW>;
-impl<'a, REG, const O: u8> PPORTSRS_W<'a, REG, O>
+pub type PPORTSRS_W<'a, REG> = crate::BitWriter<'a, REG, PPORTSRS_AW>;
+impl<'a, REG> PPORTSRS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -190,38 +190,38 @@ impl W {
     #[doc = "Bit 3 - LEDTS Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ledtscu0rs(&mut self) -> LEDTSCU0RS_W<PRCLR1_SPEC, 3> {
-        LEDTSCU0RS_W::new(self)
+    pub fn ledtscu0rs(&mut self) -> LEDTSCU0RS_W<PRCLR1_SPEC> {
+        LEDTSCU0RS_W::new(self, 3)
     }
     #[doc = "Bit 4 - MultiCAN Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn mcan0rs(&mut self) -> MCAN0RS_W<PRCLR1_SPEC, 4> {
-        MCAN0RS_W::new(self)
+    pub fn mcan0rs(&mut self) -> MCAN0RS_W<PRCLR1_SPEC> {
+        MCAN0RS_W::new(self, 4)
     }
     #[doc = "Bit 5 - DAC Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn dacrs(&mut self) -> DACRS_W<PRCLR1_SPEC, 5> {
-        DACRS_W::new(self)
+    pub fn dacrs(&mut self) -> DACRS_W<PRCLR1_SPEC> {
+        DACRS_W::new(self, 5)
     }
     #[doc = "Bit 6 - MMC Interface Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn mmcirs(&mut self) -> MMCIRS_W<PRCLR1_SPEC, 6> {
-        MMCIRS_W::new(self)
+    pub fn mmcirs(&mut self) -> MMCIRS_W<PRCLR1_SPEC> {
+        MMCIRS_W::new(self, 6)
     }
     #[doc = "Bit 7 - USIC1 Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn usic1rs(&mut self) -> USIC1RS_W<PRCLR1_SPEC, 7> {
-        USIC1RS_W::new(self)
+    pub fn usic1rs(&mut self) -> USIC1RS_W<PRCLR1_SPEC> {
+        USIC1RS_W::new(self, 7)
     }
     #[doc = "Bit 9 - PORTS Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn pportsrs(&mut self) -> PPORTSRS_W<PRCLR1_SPEC, 9> {
-        PPORTSRS_W::new(self)
+    pub fn pportsrs(&mut self) -> PPORTSRS_W<PRCLR1_SPEC> {
+        PPORTSRS_W::new(self, 9)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

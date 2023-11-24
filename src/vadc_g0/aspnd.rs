@@ -39,8 +39,8 @@ impl CHPND0_R {
     }
 }
 #[doc = "Field `CHPND0` writer - Channels Pending"]
-pub type CHPND0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPND0_A>;
-impl<'a, REG, const O: u8> CHPND0_W<'a, REG, O>
+pub type CHPND0_W<'a, REG> = crate::BitWriter<'a, REG, CHPND0_A>;
+impl<'a, REG> CHPND0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl CHPND1_R {
     }
 }
 #[doc = "Field `CHPND1` writer - Channels Pending"]
-pub type CHPND1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPND1_A>;
-impl<'a, REG, const O: u8> CHPND1_W<'a, REG, O>
+pub type CHPND1_W<'a, REG> = crate::BitWriter<'a, REG, CHPND1_A>;
+impl<'a, REG> CHPND1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl CHPND2_R {
     }
 }
 #[doc = "Field `CHPND2` writer - Channels Pending"]
-pub type CHPND2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPND2_A>;
-impl<'a, REG, const O: u8> CHPND2_W<'a, REG, O>
+pub type CHPND2_W<'a, REG> = crate::BitWriter<'a, REG, CHPND2_A>;
+impl<'a, REG> CHPND2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl CHPND3_R {
     }
 }
 #[doc = "Field `CHPND3` writer - Channels Pending"]
-pub type CHPND3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPND3_A>;
-impl<'a, REG, const O: u8> CHPND3_W<'a, REG, O>
+pub type CHPND3_W<'a, REG> = crate::BitWriter<'a, REG, CHPND3_A>;
+impl<'a, REG> CHPND3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl CHPND4_R {
     }
 }
 #[doc = "Field `CHPND4` writer - Channels Pending"]
-pub type CHPND4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPND4_A>;
-impl<'a, REG, const O: u8> CHPND4_W<'a, REG, O>
+pub type CHPND4_W<'a, REG> = crate::BitWriter<'a, REG, CHPND4_A>;
+impl<'a, REG> CHPND4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl CHPND5_R {
     }
 }
 #[doc = "Field `CHPND5` writer - Channels Pending"]
-pub type CHPND5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPND5_A>;
-impl<'a, REG, const O: u8> CHPND5_W<'a, REG, O>
+pub type CHPND5_W<'a, REG> = crate::BitWriter<'a, REG, CHPND5_A>;
+impl<'a, REG> CHPND5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl CHPND6_R {
     }
 }
 #[doc = "Field `CHPND6` writer - Channels Pending"]
-pub type CHPND6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPND6_A>;
-impl<'a, REG, const O: u8> CHPND6_W<'a, REG, O>
+pub type CHPND6_W<'a, REG> = crate::BitWriter<'a, REG, CHPND6_A>;
+impl<'a, REG> CHPND6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl CHPND7_R {
     }
 }
 #[doc = "Field `CHPND7` writer - Channels Pending"]
-pub type CHPND7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPND7_A>;
-impl<'a, REG, const O: u8> CHPND7_W<'a, REG, O>
+pub type CHPND7_W<'a, REG> = crate::BitWriter<'a, REG, CHPND7_A>;
+impl<'a, REG> CHPND7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -472,50 +472,50 @@ impl W {
     #[doc = "Bit 0 - Channels Pending"]
     #[inline(always)]
     #[must_use]
-    pub fn chpnd0(&mut self) -> CHPND0_W<ASPND_SPEC, 0> {
-        CHPND0_W::new(self)
+    pub fn chpnd0(&mut self) -> CHPND0_W<ASPND_SPEC> {
+        CHPND0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channels Pending"]
     #[inline(always)]
     #[must_use]
-    pub fn chpnd1(&mut self) -> CHPND1_W<ASPND_SPEC, 1> {
-        CHPND1_W::new(self)
+    pub fn chpnd1(&mut self) -> CHPND1_W<ASPND_SPEC> {
+        CHPND1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channels Pending"]
     #[inline(always)]
     #[must_use]
-    pub fn chpnd2(&mut self) -> CHPND2_W<ASPND_SPEC, 2> {
-        CHPND2_W::new(self)
+    pub fn chpnd2(&mut self) -> CHPND2_W<ASPND_SPEC> {
+        CHPND2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channels Pending"]
     #[inline(always)]
     #[must_use]
-    pub fn chpnd3(&mut self) -> CHPND3_W<ASPND_SPEC, 3> {
-        CHPND3_W::new(self)
+    pub fn chpnd3(&mut self) -> CHPND3_W<ASPND_SPEC> {
+        CHPND3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Channels Pending"]
     #[inline(always)]
     #[must_use]
-    pub fn chpnd4(&mut self) -> CHPND4_W<ASPND_SPEC, 4> {
-        CHPND4_W::new(self)
+    pub fn chpnd4(&mut self) -> CHPND4_W<ASPND_SPEC> {
+        CHPND4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Channels Pending"]
     #[inline(always)]
     #[must_use]
-    pub fn chpnd5(&mut self) -> CHPND5_W<ASPND_SPEC, 5> {
-        CHPND5_W::new(self)
+    pub fn chpnd5(&mut self) -> CHPND5_W<ASPND_SPEC> {
+        CHPND5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Channels Pending"]
     #[inline(always)]
     #[must_use]
-    pub fn chpnd6(&mut self) -> CHPND6_W<ASPND_SPEC, 6> {
-        CHPND6_W::new(self)
+    pub fn chpnd6(&mut self) -> CHPND6_W<ASPND_SPEC> {
+        CHPND6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Channels Pending"]
     #[inline(always)]
     #[must_use]
-    pub fn chpnd7(&mut self) -> CHPND7_W<ASPND_SPEC, 7> {
-        CHPND7_W::new(self)
+    pub fn chpnd7(&mut self) -> CHPND7_W<ASPND_SPEC> {
+        CHPND7_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

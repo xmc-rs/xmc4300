@@ -1,13 +1,27 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Event Input Select"]
-    pub exisel: EXISEL,
+    exisel: EXISEL,
     _reserved1: [u8; 0x0c],
+    exicon: [EXICON; 4],
+    exocon: [EXOCON; 4],
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Event Input Select"]
+    #[inline(always)]
+    pub const fn exisel(&self) -> &EXISEL {
+        &self.exisel
+    }
     #[doc = "0x10..0x20 - Event Input Control"]
-    pub exicon: [EXICON; 4],
+    #[inline(always)]
+    pub const fn exicon(&self, n: usize) -> &EXICON {
+        &self.exicon[n]
+    }
     #[doc = "0x20..0x30 - Event Output Trigger Control"]
-    pub exocon: [EXOCON; 4],
+    #[inline(always)]
+    pub const fn exocon(&self, n: usize) -> &EXOCON {
+        &self.exocon[n]
+    }
 }
 #[doc = "EXISEL (rw) register accessor: Event Input Select\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`exisel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`exisel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@exisel`]
 module"]

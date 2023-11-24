@@ -5,7 +5,7 @@ pub type W = crate::W<CFGL_SPEC>;
 #[doc = "Field `CH_PRIOR` reader - Channel priority"]
 pub type CH_PRIOR_R = crate::FieldReader;
 #[doc = "Field `CH_PRIOR` writer - Channel priority"]
-pub type CH_PRIOR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type CH_PRIOR_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `CH_SUSP` reader - Channel Suspend"]
 pub type CH_SUSP_R = crate::BitReader<CH_SUSP_A>;
 #[doc = "Channel Suspend\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl CH_SUSP_R {
     }
 }
 #[doc = "Field `CH_SUSP` writer - Channel Suspend"]
-pub type CH_SUSP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH_SUSP_A>;
-impl<'a, REG, const O: u8> CH_SUSP_W<'a, REG, O>
+pub type CH_SUSP_W<'a, REG> = crate::BitWriter<'a, REG, CH_SUSP_A>;
+impl<'a, REG> CH_SUSP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -132,8 +132,8 @@ impl HS_SEL_DST_R {
     }
 }
 #[doc = "Field `HS_SEL_DST` writer - Destination Software or Hardware Handshaking Select"]
-pub type HS_SEL_DST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HS_SEL_DST_A>;
-impl<'a, REG, const O: u8> HS_SEL_DST_W<'a, REG, O>
+pub type HS_SEL_DST_W<'a, REG> = crate::BitWriter<'a, REG, HS_SEL_DST_A>;
+impl<'a, REG> HS_SEL_DST_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -185,8 +185,8 @@ impl HS_SEL_SRC_R {
     }
 }
 #[doc = "Field `HS_SEL_SRC` writer - Source Software or Hardware Handshaking Select"]
-pub type HS_SEL_SRC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HS_SEL_SRC_A>;
-impl<'a, REG, const O: u8> HS_SEL_SRC_W<'a, REG, O>
+pub type HS_SEL_SRC_W<'a, REG> = crate::BitWriter<'a, REG, HS_SEL_SRC_A>;
+impl<'a, REG> HS_SEL_SRC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl LOCK_CH_L_R {
     }
 }
 #[doc = "Field `LOCK_CH_L` writer - Channel Lock Level"]
-pub type LOCK_CH_L_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, LOCK_CH_L_A>;
-impl<'a, REG, const O: u8> LOCK_CH_L_W<'a, REG, O>
+pub type LOCK_CH_L_W<'a, REG> = crate::FieldWriter<'a, REG, 2, LOCK_CH_L_A>;
+impl<'a, REG> LOCK_CH_L_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -323,8 +323,8 @@ impl LOCK_B_L_R {
     }
 }
 #[doc = "Field `LOCK_B_L` writer - Bus Lock Level"]
-pub type LOCK_B_L_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, LOCK_B_L_A>;
-impl<'a, REG, const O: u8> LOCK_B_L_W<'a, REG, O>
+pub type LOCK_B_L_W<'a, REG> = crate::FieldWriter<'a, REG, 2, LOCK_B_L_A>;
+impl<'a, REG> LOCK_B_L_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -348,11 +348,11 @@ where
 #[doc = "Field `LOCK_CH` reader - Channel Lock Bit"]
 pub type LOCK_CH_R = crate::BitReader;
 #[doc = "Field `LOCK_CH` writer - Channel Lock Bit"]
-pub type LOCK_CH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LOCK_CH_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LOCK_B` reader - Bus Lock Bit"]
 pub type LOCK_B_R = crate::BitReader;
 #[doc = "Field `LOCK_B` writer - Bus Lock Bit"]
-pub type LOCK_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LOCK_B_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DST_HS_POL` reader - Destination Handshaking Interface Polarity"]
 pub type DST_HS_POL_R = crate::BitReader<DST_HS_POL_A>;
 #[doc = "Destination Handshaking Interface Polarity\n\nValue on reset: 0"]
@@ -390,8 +390,8 @@ impl DST_HS_POL_R {
     }
 }
 #[doc = "Field `DST_HS_POL` writer - Destination Handshaking Interface Polarity"]
-pub type DST_HS_POL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DST_HS_POL_A>;
-impl<'a, REG, const O: u8> DST_HS_POL_W<'a, REG, O>
+pub type DST_HS_POL_W<'a, REG> = crate::BitWriter<'a, REG, DST_HS_POL_A>;
+impl<'a, REG> DST_HS_POL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -443,8 +443,8 @@ impl SRC_HS_POL_R {
     }
 }
 #[doc = "Field `SRC_HS_POL` writer - Source Handshaking Interface Polarity"]
-pub type SRC_HS_POL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRC_HS_POL_A>;
-impl<'a, REG, const O: u8> SRC_HS_POL_W<'a, REG, O>
+pub type SRC_HS_POL_W<'a, REG> = crate::BitWriter<'a, REG, SRC_HS_POL_A>;
+impl<'a, REG> SRC_HS_POL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -462,7 +462,7 @@ where
 #[doc = "Field `MAX_ABRST` reader - Maximum AMBA Burst Length"]
 pub type MAX_ABRST_R = crate::FieldReader<u16>;
 #[doc = "Field `MAX_ABRST` writer - Maximum AMBA Burst Length"]
-pub type MAX_ABRST_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 10, O, u16>;
+pub type MAX_ABRST_W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
     #[doc = "Bits 5:7 - Channel priority"]
     #[inline(always)]
@@ -529,68 +529,68 @@ impl W {
     #[doc = "Bits 5:7 - Channel priority"]
     #[inline(always)]
     #[must_use]
-    pub fn ch_prior(&mut self) -> CH_PRIOR_W<CFGL_SPEC, 5> {
-        CH_PRIOR_W::new(self)
+    pub fn ch_prior(&mut self) -> CH_PRIOR_W<CFGL_SPEC> {
+        CH_PRIOR_W::new(self, 5)
     }
     #[doc = "Bit 8 - Channel Suspend"]
     #[inline(always)]
     #[must_use]
-    pub fn ch_susp(&mut self) -> CH_SUSP_W<CFGL_SPEC, 8> {
-        CH_SUSP_W::new(self)
+    pub fn ch_susp(&mut self) -> CH_SUSP_W<CFGL_SPEC> {
+        CH_SUSP_W::new(self, 8)
     }
     #[doc = "Bit 10 - Destination Software or Hardware Handshaking Select"]
     #[inline(always)]
     #[must_use]
-    pub fn hs_sel_dst(&mut self) -> HS_SEL_DST_W<CFGL_SPEC, 10> {
-        HS_SEL_DST_W::new(self)
+    pub fn hs_sel_dst(&mut self) -> HS_SEL_DST_W<CFGL_SPEC> {
+        HS_SEL_DST_W::new(self, 10)
     }
     #[doc = "Bit 11 - Source Software or Hardware Handshaking Select"]
     #[inline(always)]
     #[must_use]
-    pub fn hs_sel_src(&mut self) -> HS_SEL_SRC_W<CFGL_SPEC, 11> {
-        HS_SEL_SRC_W::new(self)
+    pub fn hs_sel_src(&mut self) -> HS_SEL_SRC_W<CFGL_SPEC> {
+        HS_SEL_SRC_W::new(self, 11)
     }
     #[doc = "Bits 12:13 - Channel Lock Level"]
     #[inline(always)]
     #[must_use]
-    pub fn lock_ch_l(&mut self) -> LOCK_CH_L_W<CFGL_SPEC, 12> {
-        LOCK_CH_L_W::new(self)
+    pub fn lock_ch_l(&mut self) -> LOCK_CH_L_W<CFGL_SPEC> {
+        LOCK_CH_L_W::new(self, 12)
     }
     #[doc = "Bits 14:15 - Bus Lock Level"]
     #[inline(always)]
     #[must_use]
-    pub fn lock_b_l(&mut self) -> LOCK_B_L_W<CFGL_SPEC, 14> {
-        LOCK_B_L_W::new(self)
+    pub fn lock_b_l(&mut self) -> LOCK_B_L_W<CFGL_SPEC> {
+        LOCK_B_L_W::new(self, 14)
     }
     #[doc = "Bit 16 - Channel Lock Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn lock_ch(&mut self) -> LOCK_CH_W<CFGL_SPEC, 16> {
-        LOCK_CH_W::new(self)
+    pub fn lock_ch(&mut self) -> LOCK_CH_W<CFGL_SPEC> {
+        LOCK_CH_W::new(self, 16)
     }
     #[doc = "Bit 17 - Bus Lock Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn lock_b(&mut self) -> LOCK_B_W<CFGL_SPEC, 17> {
-        LOCK_B_W::new(self)
+    pub fn lock_b(&mut self) -> LOCK_B_W<CFGL_SPEC> {
+        LOCK_B_W::new(self, 17)
     }
     #[doc = "Bit 18 - Destination Handshaking Interface Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn dst_hs_pol(&mut self) -> DST_HS_POL_W<CFGL_SPEC, 18> {
-        DST_HS_POL_W::new(self)
+    pub fn dst_hs_pol(&mut self) -> DST_HS_POL_W<CFGL_SPEC> {
+        DST_HS_POL_W::new(self, 18)
     }
     #[doc = "Bit 19 - Source Handshaking Interface Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn src_hs_pol(&mut self) -> SRC_HS_POL_W<CFGL_SPEC, 19> {
-        SRC_HS_POL_W::new(self)
+    pub fn src_hs_pol(&mut self) -> SRC_HS_POL_W<CFGL_SPEC> {
+        SRC_HS_POL_W::new(self, 19)
     }
     #[doc = "Bits 20:29 - Maximum AMBA Burst Length"]
     #[inline(always)]
     #[must_use]
-    pub fn max_abrst(&mut self) -> MAX_ABRST_W<CFGL_SPEC, 20> {
-        MAX_ABRST_W::new(self)
+    pub fn max_abrst(&mut self) -> MAX_ABRST_W<CFGL_SPEC> {
+        MAX_ABRST_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<PMTPR_SPEC>;
 #[doc = "Field `PWR` reader - Parity Write Values for Memory Test"]
 pub type PWR_R = crate::FieldReader;
 #[doc = "Field `PWR` writer - Parity Write Values for Memory Test"]
-pub type PWR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PWR_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PRD` reader - Parity Read Values for Memory Test"]
 pub type PRD_R = crate::FieldReader;
 impl R {
@@ -24,8 +24,8 @@ impl W {
     #[doc = "Bits 0:7 - Parity Write Values for Memory Test"]
     #[inline(always)]
     #[must_use]
-    pub fn pwr(&mut self) -> PWR_W<PMTPR_SPEC, 0> {
-        PWR_W::new(self)
+    pub fn pwr(&mut self) -> PWR_W<PMTPR_SPEC> {
+        PWR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

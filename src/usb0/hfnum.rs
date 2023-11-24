@@ -5,7 +5,7 @@ pub type W = crate::W<HFNUM_SPEC>;
 #[doc = "Field `FrNum` reader - Frame Number"]
 pub type FR_NUM_R = crate::FieldReader<u16>;
 #[doc = "Field `FrNum` writer - Frame Number"]
-pub type FR_NUM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type FR_NUM_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `FrRem` reader - Frame Time Remaining"]
 pub type FR_REM_R = crate::FieldReader<u16>;
 impl R {
@@ -24,8 +24,8 @@ impl W {
     #[doc = "Bits 0:15 - Frame Number"]
     #[inline(always)]
     #[must_use]
-    pub fn fr_num(&mut self) -> FR_NUM_W<HFNUM_SPEC, 0> {
-        FR_NUM_W::new(self)
+    pub fn fr_num(&mut self) -> FR_NUM_W<HFNUM_SPEC> {
+        FR_NUM_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,11 +5,11 @@ pub type W = crate::W<NFCR_SPEC>;
 #[doc = "Field `CFC` reader - CAN Frame Counter"]
 pub type CFC_R = crate::FieldReader<u16>;
 #[doc = "Field `CFC` writer - CAN Frame Counter"]
-pub type CFC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type CFC_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `CFSEL` reader - CAN Frame Count Selection"]
 pub type CFSEL_R = crate::FieldReader;
 #[doc = "Field `CFSEL` writer - CAN Frame Count Selection"]
-pub type CFSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type CFSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `CFMOD` reader - CAN Frame Counter Mode"]
 pub type CFMOD_R = crate::FieldReader<CFMOD_A>;
 #[doc = "CAN Frame Counter Mode\n\nValue on reset: 0"]
@@ -68,8 +68,8 @@ impl CFMOD_R {
     }
 }
 #[doc = "Field `CFMOD` writer - CAN Frame Counter Mode"]
-pub type CFMOD_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CFMOD_A>;
-impl<'a, REG, const O: u8> CFMOD_W<'a, REG, O>
+pub type CFMOD_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CFMOD_A>;
+impl<'a, REG> CFMOD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -132,8 +132,8 @@ impl CFCIE_R {
     }
 }
 #[doc = "Field `CFCIE` writer - CAN Frame Count Interrupt Enable"]
-pub type CFCIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CFCIE_A>;
-impl<'a, REG, const O: u8> CFCIE_W<'a, REG, O>
+pub type CFCIE_W<'a, REG> = crate::BitWriter<'a, REG, CFCIE_A>;
+impl<'a, REG> CFCIE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -185,8 +185,8 @@ impl CFCOV_R {
     }
 }
 #[doc = "Field `CFCOV` writer - CAN Frame Counter Overflow Flag"]
-pub type CFCOV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CFCOV_A>;
-impl<'a, REG, const O: u8> CFCOV_W<'a, REG, O>
+pub type CFCOV_W<'a, REG> = crate::BitWriter<'a, REG, CFCOV_A>;
+impl<'a, REG> CFCOV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -232,32 +232,32 @@ impl W {
     #[doc = "Bits 0:15 - CAN Frame Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn cfc(&mut self) -> CFC_W<NFCR_SPEC, 0> {
-        CFC_W::new(self)
+    pub fn cfc(&mut self) -> CFC_W<NFCR_SPEC> {
+        CFC_W::new(self, 0)
     }
     #[doc = "Bits 16:18 - CAN Frame Count Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn cfsel(&mut self) -> CFSEL_W<NFCR_SPEC, 16> {
-        CFSEL_W::new(self)
+    pub fn cfsel(&mut self) -> CFSEL_W<NFCR_SPEC> {
+        CFSEL_W::new(self, 16)
     }
     #[doc = "Bits 19:20 - CAN Frame Counter Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn cfmod(&mut self) -> CFMOD_W<NFCR_SPEC, 19> {
-        CFMOD_W::new(self)
+    pub fn cfmod(&mut self) -> CFMOD_W<NFCR_SPEC> {
+        CFMOD_W::new(self, 19)
     }
     #[doc = "Bit 22 - CAN Frame Count Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cfcie(&mut self) -> CFCIE_W<NFCR_SPEC, 22> {
-        CFCIE_W::new(self)
+    pub fn cfcie(&mut self) -> CFCIE_W<NFCR_SPEC> {
+        CFCIE_W::new(self, 22)
     }
     #[doc = "Bit 23 - CAN Frame Counter Overflow Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cfcov(&mut self) -> CFCOV_W<NFCR_SPEC, 23> {
-        CFCOV_W::new(self)
+    pub fn cfcov(&mut self) -> CFCOV_W<NFCR_SPEC> {
+        CFCOV_W::new(self, 23)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

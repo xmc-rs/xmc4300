@@ -5,7 +5,7 @@ pub type W = crate::W<FPCS_SPEC>;
 #[doc = "Field `PCMP` reader - Floating Prescaler Shadow Compare Value"]
 pub type PCMP_R = crate::FieldReader;
 #[doc = "Field `PCMP` writer - Floating Prescaler Shadow Compare Value"]
-pub type PCMP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PCMP_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3 - Floating Prescaler Shadow Compare Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:3 - Floating Prescaler Shadow Compare Value"]
     #[inline(always)]
     #[must_use]
-    pub fn pcmp(&mut self) -> PCMP_W<FPCS_SPEC, 0> {
-        PCMP_W::new(self)
+    pub fn pcmp(&mut self) -> PCMP_W<FPCS_SPEC> {
+        PCMP_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

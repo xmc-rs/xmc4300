@@ -5,7 +5,7 @@ pub type W = crate::W<TBUF_SPEC>;
 #[doc = "Field `TDATA` reader - Transmit Data"]
 pub type TDATA_R = crate::FieldReader<u16>;
 #[doc = "Field `TDATA` writer - Transmit Data"]
-pub type TDATA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type TDATA_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]
     #[must_use]
-    pub fn tdata(&mut self) -> TDATA_W<TBUF_SPEC, 0> {
-        TDATA_W::new(self)
+    pub fn tdata(&mut self) -> TDATA_W<TBUF_SPEC> {
+        TDATA_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

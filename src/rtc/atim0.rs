@@ -5,19 +5,19 @@ pub type W = crate::W<ATIM0_SPEC>;
 #[doc = "Field `ASE` reader - Alarm Seconds Compare Value"]
 pub type ASE_R = crate::FieldReader;
 #[doc = "Field `ASE` writer - Alarm Seconds Compare Value"]
-pub type ASE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type ASE_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `AMI` reader - Alarm Minutes Compare Value"]
 pub type AMI_R = crate::FieldReader;
 #[doc = "Field `AMI` writer - Alarm Minutes Compare Value"]
-pub type AMI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type AMI_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `AHO` reader - Alarm Hours Compare Value"]
 pub type AHO_R = crate::FieldReader;
 #[doc = "Field `AHO` writer - Alarm Hours Compare Value"]
-pub type AHO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type AHO_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `ADA` reader - Alarm Days Compare Value"]
 pub type ADA_R = crate::FieldReader;
 #[doc = "Field `ADA` writer - Alarm Days Compare Value"]
-pub type ADA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type ADA_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bits 0:5 - Alarm Seconds Compare Value"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:5 - Alarm Seconds Compare Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ase(&mut self) -> ASE_W<ATIM0_SPEC, 0> {
-        ASE_W::new(self)
+    pub fn ase(&mut self) -> ASE_W<ATIM0_SPEC> {
+        ASE_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - Alarm Minutes Compare Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ami(&mut self) -> AMI_W<ATIM0_SPEC, 8> {
-        AMI_W::new(self)
+    pub fn ami(&mut self) -> AMI_W<ATIM0_SPEC> {
+        AMI_W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Alarm Hours Compare Value"]
     #[inline(always)]
     #[must_use]
-    pub fn aho(&mut self) -> AHO_W<ATIM0_SPEC, 16> {
-        AHO_W::new(self)
+    pub fn aho(&mut self) -> AHO_W<ATIM0_SPEC> {
+        AHO_W::new(self, 16)
     }
     #[doc = "Bits 24:28 - Alarm Days Compare Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ada(&mut self) -> ADA_W<ATIM0_SPEC, 24> {
-        ADA_W::new(self)
+    pub fn ada(&mut self) -> ADA_W<ATIM0_SPEC> {
+        ADA_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

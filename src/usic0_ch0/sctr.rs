@@ -39,8 +39,8 @@ impl SDIR_R {
     }
 }
 #[doc = "Field `SDIR` writer - Shift Direction"]
-pub type SDIR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SDIR_A>;
-impl<'a, REG, const O: u8> SDIR_W<'a, REG, O>
+pub type SDIR_W<'a, REG> = crate::BitWriter<'a, REG, SDIR_A>;
+impl<'a, REG> SDIR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl PDL_R {
     }
 }
 #[doc = "Field `PDL` writer - Passive Data Level"]
-pub type PDL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PDL_A>;
-impl<'a, REG, const O: u8> PDL_W<'a, REG, O>
+pub type PDL_W<'a, REG> = crate::BitWriter<'a, REG, PDL_A>;
+impl<'a, REG> PDL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -162,8 +162,8 @@ respectively."]
     }
 }
 #[doc = "Field `DSM` writer - Data Shift Mode"]
-pub type DSM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DSM_A>;
-impl<'a, REG, const O: u8> DSM_W<'a, REG, O>
+pub type DSM_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DSM_A>;
+impl<'a, REG> DSM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -223,8 +223,8 @@ impl HPCDIR_R {
     }
 }
 #[doc = "Field `HPCDIR` writer - Port Control Direction"]
-pub type HPCDIR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HPCDIR_A>;
-impl<'a, REG, const O: u8> HPCDIR_W<'a, REG, O>
+pub type HPCDIR_W<'a, REG> = crate::BitWriter<'a, REG, HPCDIR_A>;
+impl<'a, REG> HPCDIR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -281,8 +281,8 @@ impl DOCFG_R {
     }
 }
 #[doc = "Field `DOCFG` writer - Data Output Configuration"]
-pub type DOCFG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DOCFG_A>;
-impl<'a, REG, const O: u8> DOCFG_W<'a, REG, O>
+pub type DOCFG_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DOCFG_A>;
+impl<'a, REG> DOCFG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -356,8 +356,8 @@ impl TRM_R {
     }
 }
 #[doc = "Field `TRM` writer - Transmission Mode"]
-pub type TRM_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, TRM_A>;
-impl<'a, REG, const O: u8> TRM_W<'a, REG, O>
+pub type TRM_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TRM_A>;
+impl<'a, REG> TRM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -386,7 +386,7 @@ where
 #[doc = "Field `FLE` reader - Frame Length"]
 pub type FLE_R = crate::FieldReader;
 #[doc = "Field `FLE` writer - Frame Length"]
-pub type FLE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type FLE_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `WLE` reader - Word Length"]
 pub type WLE_R = crate::FieldReader<WLE_A>;
 #[doc = "Word Length\n\nValue on reset: 0"]
@@ -445,8 +445,8 @@ impl WLE_R {
     }
 }
 #[doc = "Field `WLE` writer - Word Length"]
-pub type WLE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, WLE_A>;
-impl<'a, REG, const O: u8> WLE_W<'a, REG, O>
+pub type WLE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, WLE_A>;
+impl<'a, REG> WLE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -518,50 +518,50 @@ impl W {
     #[doc = "Bit 0 - Shift Direction"]
     #[inline(always)]
     #[must_use]
-    pub fn sdir(&mut self) -> SDIR_W<SCTR_SPEC, 0> {
-        SDIR_W::new(self)
+    pub fn sdir(&mut self) -> SDIR_W<SCTR_SPEC> {
+        SDIR_W::new(self, 0)
     }
     #[doc = "Bit 1 - Passive Data Level"]
     #[inline(always)]
     #[must_use]
-    pub fn pdl(&mut self) -> PDL_W<SCTR_SPEC, 1> {
-        PDL_W::new(self)
+    pub fn pdl(&mut self) -> PDL_W<SCTR_SPEC> {
+        PDL_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - Data Shift Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn dsm(&mut self) -> DSM_W<SCTR_SPEC, 2> {
-        DSM_W::new(self)
+    pub fn dsm(&mut self) -> DSM_W<SCTR_SPEC> {
+        DSM_W::new(self, 2)
     }
     #[doc = "Bit 4 - Port Control Direction"]
     #[inline(always)]
     #[must_use]
-    pub fn hpcdir(&mut self) -> HPCDIR_W<SCTR_SPEC, 4> {
-        HPCDIR_W::new(self)
+    pub fn hpcdir(&mut self) -> HPCDIR_W<SCTR_SPEC> {
+        HPCDIR_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Data Output Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn docfg(&mut self) -> DOCFG_W<SCTR_SPEC, 6> {
-        DOCFG_W::new(self)
+    pub fn docfg(&mut self) -> DOCFG_W<SCTR_SPEC> {
+        DOCFG_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Transmission Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn trm(&mut self) -> TRM_W<SCTR_SPEC, 8> {
-        TRM_W::new(self)
+    pub fn trm(&mut self) -> TRM_W<SCTR_SPEC> {
+        TRM_W::new(self, 8)
     }
     #[doc = "Bits 16:21 - Frame Length"]
     #[inline(always)]
     #[must_use]
-    pub fn fle(&mut self) -> FLE_W<SCTR_SPEC, 16> {
-        FLE_W::new(self)
+    pub fn fle(&mut self) -> FLE_W<SCTR_SPEC> {
+        FLE_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - Word Length"]
     #[inline(always)]
     #[must_use]
-    pub fn wle(&mut self) -> WLE_W<SCTR_SPEC, 24> {
-        WLE_W::new(self)
+    pub fn wle(&mut self) -> WLE_W<SCTR_SPEC> {
+        WLE_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

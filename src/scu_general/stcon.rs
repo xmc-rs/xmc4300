@@ -149,8 +149,8 @@ impl SWCON_R {
     }
 }
 #[doc = "Field `SWCON` writer - SW Configuration"]
-pub type SWCON_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, SWCON_A>;
-impl<'a, REG, const O: u8> SWCON_W<'a, REG, O>
+pub type SWCON_W<'a, REG> = crate::FieldWriter<'a, REG, 4, SWCON_A>;
+impl<'a, REG> SWCON_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -212,8 +212,8 @@ impl W {
     #[doc = "Bits 8:11 - SW Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn swcon(&mut self) -> SWCON_W<STCON_SPEC, 8> {
-        SWCON_W::new(self)
+    pub fn swcon(&mut self) -> SWCON_W<STCON_SPEC> {
+        SWCON_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

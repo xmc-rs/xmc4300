@@ -5,11 +5,11 @@ pub type W = crate::W<DIEPTSIZ0_SPEC>;
 #[doc = "Field `XferSize` reader - Transfer Size"]
 pub type XFER_SIZE_R = crate::FieldReader;
 #[doc = "Field `XferSize` writer - Transfer Size"]
-pub type XFER_SIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type XFER_SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `PktCnt` reader - Packet Count"]
 pub type PKT_CNT_R = crate::FieldReader;
 #[doc = "Field `PktCnt` writer - Packet Count"]
-pub type PKT_CNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type PKT_CNT_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bits 0:6 - Transfer Size"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:6 - Transfer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn xfer_size(&mut self) -> XFER_SIZE_W<DIEPTSIZ0_SPEC, 0> {
-        XFER_SIZE_W::new(self)
+    pub fn xfer_size(&mut self) -> XFER_SIZE_W<DIEPTSIZ0_SPEC> {
+        XFER_SIZE_W::new(self, 0)
     }
     #[doc = "Bits 19:20 - Packet Count"]
     #[inline(always)]
     #[must_use]
-    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<DIEPTSIZ0_SPEC, 19> {
-        PKT_CNT_W::new(self)
+    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<DIEPTSIZ0_SPEC> {
+        PKT_CNT_W::new(self, 19)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

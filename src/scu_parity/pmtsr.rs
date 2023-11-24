@@ -39,8 +39,8 @@ impl MTENPS_R {
     }
 }
 #[doc = "Field `MTENPS` writer - Test Enable Control for PSRAM"]
-pub type MTENPS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTENPS_A>;
-impl<'a, REG, const O: u8> MTENPS_W<'a, REG, O>
+pub type MTENPS_W<'a, REG> = crate::BitWriter<'a, REG, MTENPS_A>;
+impl<'a, REG> MTENPS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl MTENDS1_R {
     }
 }
 #[doc = "Field `MTENDS1` writer - Test Enable Control for DSRAM1"]
-pub type MTENDS1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTENDS1_A>;
-impl<'a, REG, const O: u8> MTENDS1_W<'a, REG, O>
+pub type MTENDS1_W<'a, REG> = crate::BitWriter<'a, REG, MTENDS1_A>;
+impl<'a, REG> MTENDS1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl MTEU0_R {
     }
 }
 #[doc = "Field `MTEU0` writer - Test Enable Control for USIC0 Memory"]
-pub type MTEU0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTEU0_A>;
-impl<'a, REG, const O: u8> MTEU0_W<'a, REG, O>
+pub type MTEU0_W<'a, REG> = crate::BitWriter<'a, REG, MTEU0_A>;
+impl<'a, REG> MTEU0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl MTEU1_R {
     }
 }
 #[doc = "Field `MTEU1` writer - Test Enable Control for USIC1 Memory"]
-pub type MTEU1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTEU1_A>;
-impl<'a, REG, const O: u8> MTEU1_W<'a, REG, O>
+pub type MTEU1_W<'a, REG> = crate::BitWriter<'a, REG, MTEU1_A>;
+impl<'a, REG> MTEU1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl MTEMC_R {
     }
 }
 #[doc = "Field `MTEMC` writer - Test Enable Control for MultiCAN Memory"]
-pub type MTEMC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTEMC_A>;
-impl<'a, REG, const O: u8> MTEMC_W<'a, REG, O>
+pub type MTEMC_W<'a, REG> = crate::BitWriter<'a, REG, MTEMC_A>;
+impl<'a, REG> MTEMC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl MTEPPRF_R {
     }
 }
 #[doc = "Field `MTEPPRF` writer - Test Enable Control for PMU Prefetch Memory"]
-pub type MTEPPRF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTEPPRF_A>;
-impl<'a, REG, const O: u8> MTEPPRF_W<'a, REG, O>
+pub type MTEPPRF_W<'a, REG> = crate::BitWriter<'a, REG, MTEPPRF_A>;
+impl<'a, REG> MTEPPRF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl MTUSB_R {
     }
 }
 #[doc = "Field `MTUSB` writer - Test Enable Control for USB Memory"]
-pub type MTUSB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTUSB_A>;
-impl<'a, REG, const O: u8> MTUSB_W<'a, REG, O>
+pub type MTUSB_W<'a, REG> = crate::BitWriter<'a, REG, MTUSB_A>;
+impl<'a, REG> MTUSB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl MTETH0TX_R {
     }
 }
 #[doc = "Field `MTETH0TX` writer - Test Enable Control for ETH TX Memory"]
-pub type MTETH0TX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTETH0TX_A>;
-impl<'a, REG, const O: u8> MTETH0TX_W<'a, REG, O>
+pub type MTETH0TX_W<'a, REG> = crate::BitWriter<'a, REG, MTETH0TX_A>;
+impl<'a, REG> MTETH0TX_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl MTETH0RX_R {
     }
 }
 #[doc = "Field `MTETH0RX` writer - Test Enable Control for ETH RX Memory"]
-pub type MTETH0RX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTETH0RX_A>;
-impl<'a, REG, const O: u8> MTETH0RX_W<'a, REG, O>
+pub type MTETH0RX_W<'a, REG> = crate::BitWriter<'a, REG, MTETH0RX_A>;
+impl<'a, REG> MTETH0RX_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -516,8 +516,8 @@ impl MTSD0_R {
     }
 }
 #[doc = "Field `MTSD0` writer - Test Enable Control for SDMMC Memory 0"]
-pub type MTSD0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTSD0_A>;
-impl<'a, REG, const O: u8> MTSD0_W<'a, REG, O>
+pub type MTSD0_W<'a, REG> = crate::BitWriter<'a, REG, MTSD0_A>;
+impl<'a, REG> MTSD0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -569,8 +569,8 @@ impl MTSD1_R {
     }
 }
 #[doc = "Field `MTSD1` writer - Test Enable Control for SDMMC Memory 1"]
-pub type MTSD1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTSD1_A>;
-impl<'a, REG, const O: u8> MTSD1_W<'a, REG, O>
+pub type MTSD1_W<'a, REG> = crate::BitWriter<'a, REG, MTSD1_A>;
+impl<'a, REG> MTSD1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -622,8 +622,8 @@ impl MTECAT0_R {
     }
 }
 #[doc = "Field `MTECAT0` writer - Test Enable Control for ECAT0 Memory"]
-pub type MTECAT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTECAT0_A>;
-impl<'a, REG, const O: u8> MTECAT0_W<'a, REG, O>
+pub type MTECAT0_W<'a, REG> = crate::BitWriter<'a, REG, MTECAT0_A>;
+impl<'a, REG> MTECAT0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -704,74 +704,74 @@ impl W {
     #[doc = "Bit 0 - Test Enable Control for PSRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn mtenps(&mut self) -> MTENPS_W<PMTSR_SPEC, 0> {
-        MTENPS_W::new(self)
+    pub fn mtenps(&mut self) -> MTENPS_W<PMTSR_SPEC> {
+        MTENPS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Test Enable Control for DSRAM1"]
     #[inline(always)]
     #[must_use]
-    pub fn mtends1(&mut self) -> MTENDS1_W<PMTSR_SPEC, 1> {
-        MTENDS1_W::new(self)
+    pub fn mtends1(&mut self) -> MTENDS1_W<PMTSR_SPEC> {
+        MTENDS1_W::new(self, 1)
     }
     #[doc = "Bit 8 - Test Enable Control for USIC0 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mteu0(&mut self) -> MTEU0_W<PMTSR_SPEC, 8> {
-        MTEU0_W::new(self)
+    pub fn mteu0(&mut self) -> MTEU0_W<PMTSR_SPEC> {
+        MTEU0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Test Enable Control for USIC1 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mteu1(&mut self) -> MTEU1_W<PMTSR_SPEC, 9> {
-        MTEU1_W::new(self)
+    pub fn mteu1(&mut self) -> MTEU1_W<PMTSR_SPEC> {
+        MTEU1_W::new(self, 9)
     }
     #[doc = "Bit 12 - Test Enable Control for MultiCAN Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mtemc(&mut self) -> MTEMC_W<PMTSR_SPEC, 12> {
-        MTEMC_W::new(self)
+    pub fn mtemc(&mut self) -> MTEMC_W<PMTSR_SPEC> {
+        MTEMC_W::new(self, 12)
     }
     #[doc = "Bit 13 - Test Enable Control for PMU Prefetch Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mtepprf(&mut self) -> MTEPPRF_W<PMTSR_SPEC, 13> {
-        MTEPPRF_W::new(self)
+    pub fn mtepprf(&mut self) -> MTEPPRF_W<PMTSR_SPEC> {
+        MTEPPRF_W::new(self, 13)
     }
     #[doc = "Bit 16 - Test Enable Control for USB Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mtusb(&mut self) -> MTUSB_W<PMTSR_SPEC, 16> {
-        MTUSB_W::new(self)
+    pub fn mtusb(&mut self) -> MTUSB_W<PMTSR_SPEC> {
+        MTUSB_W::new(self, 16)
     }
     #[doc = "Bit 17 - Test Enable Control for ETH TX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mteth0tx(&mut self) -> MTETH0TX_W<PMTSR_SPEC, 17> {
-        MTETH0TX_W::new(self)
+    pub fn mteth0tx(&mut self) -> MTETH0TX_W<PMTSR_SPEC> {
+        MTETH0TX_W::new(self, 17)
     }
     #[doc = "Bit 18 - Test Enable Control for ETH RX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mteth0rx(&mut self) -> MTETH0RX_W<PMTSR_SPEC, 18> {
-        MTETH0RX_W::new(self)
+    pub fn mteth0rx(&mut self) -> MTETH0RX_W<PMTSR_SPEC> {
+        MTETH0RX_W::new(self, 18)
     }
     #[doc = "Bit 19 - Test Enable Control for SDMMC Memory 0"]
     #[inline(always)]
     #[must_use]
-    pub fn mtsd0(&mut self) -> MTSD0_W<PMTSR_SPEC, 19> {
-        MTSD0_W::new(self)
+    pub fn mtsd0(&mut self) -> MTSD0_W<PMTSR_SPEC> {
+        MTSD0_W::new(self, 19)
     }
     #[doc = "Bit 20 - Test Enable Control for SDMMC Memory 1"]
     #[inline(always)]
     #[must_use]
-    pub fn mtsd1(&mut self) -> MTSD1_W<PMTSR_SPEC, 20> {
-        MTSD1_W::new(self)
+    pub fn mtsd1(&mut self) -> MTSD1_W<PMTSR_SPEC> {
+        MTSD1_W::new(self, 20)
     }
     #[doc = "Bit 24 - Test Enable Control for ECAT0 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mtecat0(&mut self) -> MTECAT0_W<PMTSR_SPEC, 24> {
-        MTECAT0_W::new(self)
+    pub fn mtecat0(&mut self) -> MTECAT0_W<PMTSR_SPEC> {
+        MTECAT0_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

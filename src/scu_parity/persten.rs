@@ -39,8 +39,8 @@ impl RSEN_R {
     }
 }
 #[doc = "Field `RSEN` writer - System Reset Enable upon Parity Error Trap"]
-pub type RSEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RSEN_A>;
-impl<'a, REG, const O: u8> RSEN_W<'a, REG, O>
+pub type RSEN_W<'a, REG> = crate::BitWriter<'a, REG, RSEN_A>;
+impl<'a, REG> RSEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,8 +66,8 @@ impl W {
     #[doc = "Bit 0 - System Reset Enable upon Parity Error Trap"]
     #[inline(always)]
     #[must_use]
-    pub fn rsen(&mut self) -> RSEN_W<PERSTEN_SPEC, 0> {
-        RSEN_W::new(self)
+    pub fn rsen(&mut self) -> RSEN_W<PERSTEN_SPEC> {
+        RSEN_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

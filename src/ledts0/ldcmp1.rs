@@ -5,19 +5,19 @@ pub type W = crate::W<LDCMP1_SPEC>;
 #[doc = "Field `CMP_LD4` reader - Compare Value for LED COL\\[x\\]"]
 pub type CMP_LD4_R = crate::FieldReader;
 #[doc = "Field `CMP_LD4` writer - Compare Value for LED COL\\[x\\]"]
-pub type CMP_LD4_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CMP_LD4_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CMP_LD5` reader - Compare Value for LED COL\\[x\\]"]
 pub type CMP_LD5_R = crate::FieldReader;
 #[doc = "Field `CMP_LD5` writer - Compare Value for LED COL\\[x\\]"]
-pub type CMP_LD5_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CMP_LD5_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CMP_LD6` reader - Compare Value for LED COL\\[x\\]"]
 pub type CMP_LD6_R = crate::FieldReader;
 #[doc = "Field `CMP_LD6` writer - Compare Value for LED COL\\[x\\]"]
-pub type CMP_LD6_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CMP_LD6_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CMP_LDA_TSCOM` reader - Compare Value for LED COLA / Common Compare Value for Touch-sense Pad Turns"]
 pub type CMP_LDA_TSCOM_R = crate::FieldReader;
 #[doc = "Field `CMP_LDA_TSCOM` writer - Compare Value for LED COLA / Common Compare Value for Touch-sense Pad Turns"]
-pub type CMP_LDA_TSCOM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CMP_LDA_TSCOM_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:7 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn cmp_ld4(&mut self) -> CMP_LD4_W<LDCMP1_SPEC, 0> {
-        CMP_LD4_W::new(self)
+    pub fn cmp_ld4(&mut self) -> CMP_LD4_W<LDCMP1_SPEC> {
+        CMP_LD4_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn cmp_ld5(&mut self) -> CMP_LD5_W<LDCMP1_SPEC, 8> {
-        CMP_LD5_W::new(self)
+    pub fn cmp_ld5(&mut self) -> CMP_LD5_W<LDCMP1_SPEC> {
+        CMP_LD5_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn cmp_ld6(&mut self) -> CMP_LD6_W<LDCMP1_SPEC, 16> {
-        CMP_LD6_W::new(self)
+    pub fn cmp_ld6(&mut self) -> CMP_LD6_W<LDCMP1_SPEC> {
+        CMP_LD6_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Compare Value for LED COLA / Common Compare Value for Touch-sense Pad Turns"]
     #[inline(always)]
     #[must_use]
-    pub fn cmp_lda_tscom(&mut self) -> CMP_LDA_TSCOM_W<LDCMP1_SPEC, 24> {
-        CMP_LDA_TSCOM_W::new(self)
+    pub fn cmp_lda_tscom(&mut self) -> CMP_LDA_TSCOM_W<LDCMP1_SPEC> {
+        CMP_LDA_TSCOM_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

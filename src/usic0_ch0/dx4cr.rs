@@ -92,8 +92,8 @@ impl DSEL_R {
     }
 }
 #[doc = "Field `DSEL` writer - Data Selection for Input Signal"]
-pub type DSEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, DSEL_A>;
-impl<'a, REG, const O: u8> DSEL_W<'a, REG, O>
+pub type DSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, DSEL_A>;
+impl<'a, REG> DSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -176,8 +176,8 @@ impl INSW_R {
     }
 }
 #[doc = "Field `INSW` writer - Input Switch"]
-pub type INSW_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, INSW_A>;
-impl<'a, REG, const O: u8> INSW_W<'a, REG, O>
+pub type INSW_W<'a, REG> = crate::BitWriter<'a, REG, INSW_A>;
+impl<'a, REG> INSW_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -229,8 +229,8 @@ impl DFEN_R {
     }
 }
 #[doc = "Field `DFEN` writer - Digital Filter Enable"]
-pub type DFEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DFEN_A>;
-impl<'a, REG, const O: u8> DFEN_W<'a, REG, O>
+pub type DFEN_W<'a, REG> = crate::BitWriter<'a, REG, DFEN_A>;
+impl<'a, REG> DFEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -282,8 +282,8 @@ impl DSEN_R {
     }
 }
 #[doc = "Field `DSEN` writer - Data Synchronization Enable"]
-pub type DSEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DSEN_A>;
-impl<'a, REG, const O: u8> DSEN_W<'a, REG, O>
+pub type DSEN_W<'a, REG> = crate::BitWriter<'a, REG, DSEN_A>;
+impl<'a, REG> DSEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -335,8 +335,8 @@ impl DPOL_R {
     }
 }
 #[doc = "Field `DPOL` writer - Data Polarity for DXn"]
-pub type DPOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DPOL_A>;
-impl<'a, REG, const O: u8> DPOL_W<'a, REG, O>
+pub type DPOL_W<'a, REG> = crate::BitWriter<'a, REG, DPOL_A>;
+impl<'a, REG> DPOL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -388,8 +388,8 @@ impl SFSEL_R {
     }
 }
 #[doc = "Field `SFSEL` writer - Sampling Frequency Selection"]
-pub type SFSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SFSEL_A>;
-impl<'a, REG, const O: u8> SFSEL_W<'a, REG, O>
+pub type SFSEL_W<'a, REG> = crate::BitWriter<'a, REG, SFSEL_A>;
+impl<'a, REG> SFSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -462,8 +462,8 @@ impl CM_R {
     }
 }
 #[doc = "Field `CM` writer - Combination Mode"]
-pub type CM_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CM_A>;
-impl<'a, REG, const O: u8> CM_W<'a, REG, O>
+pub type CM_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CM_A>;
+impl<'a, REG> CM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -571,44 +571,44 @@ impl W {
     #[doc = "Bits 0:2 - Data Selection for Input Signal"]
     #[inline(always)]
     #[must_use]
-    pub fn dsel(&mut self) -> DSEL_W<DX4CR_SPEC, 0> {
-        DSEL_W::new(self)
+    pub fn dsel(&mut self) -> DSEL_W<DX4CR_SPEC> {
+        DSEL_W::new(self, 0)
     }
     #[doc = "Bit 4 - Input Switch"]
     #[inline(always)]
     #[must_use]
-    pub fn insw(&mut self) -> INSW_W<DX4CR_SPEC, 4> {
-        INSW_W::new(self)
+    pub fn insw(&mut self) -> INSW_W<DX4CR_SPEC> {
+        INSW_W::new(self, 4)
     }
     #[doc = "Bit 5 - Digital Filter Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dfen(&mut self) -> DFEN_W<DX4CR_SPEC, 5> {
-        DFEN_W::new(self)
+    pub fn dfen(&mut self) -> DFEN_W<DX4CR_SPEC> {
+        DFEN_W::new(self, 5)
     }
     #[doc = "Bit 6 - Data Synchronization Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dsen(&mut self) -> DSEN_W<DX4CR_SPEC, 6> {
-        DSEN_W::new(self)
+    pub fn dsen(&mut self) -> DSEN_W<DX4CR_SPEC> {
+        DSEN_W::new(self, 6)
     }
     #[doc = "Bit 8 - Data Polarity for DXn"]
     #[inline(always)]
     #[must_use]
-    pub fn dpol(&mut self) -> DPOL_W<DX4CR_SPEC, 8> {
-        DPOL_W::new(self)
+    pub fn dpol(&mut self) -> DPOL_W<DX4CR_SPEC> {
+        DPOL_W::new(self, 8)
     }
     #[doc = "Bit 9 - Sampling Frequency Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn sfsel(&mut self) -> SFSEL_W<DX4CR_SPEC, 9> {
-        SFSEL_W::new(self)
+    pub fn sfsel(&mut self) -> SFSEL_W<DX4CR_SPEC> {
+        SFSEL_W::new(self, 9)
     }
     #[doc = "Bits 10:11 - Combination Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn cm(&mut self) -> CM_W<DX4CR_SPEC, 10> {
-        CM_W::new(self)
+    pub fn cm(&mut self) -> CM_W<DX4CR_SPEC> {
+        CM_W::new(self, 10)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

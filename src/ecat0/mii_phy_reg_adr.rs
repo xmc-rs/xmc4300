@@ -5,7 +5,7 @@ pub type W = crate::W<MII_PHY_REG_ADR_SPEC>;
 #[doc = "Field `PHY_REG_ADDR` reader - Address of PHY Register that shall beread/written"]
 pub type PHY_REG_ADDR_R = crate::FieldReader;
 #[doc = "Field `PHY_REG_ADDR` writer - Address of PHY Register that shall beread/written"]
-pub type PHY_REG_ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PHY_REG_ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bits 0:4 - Address of PHY Register that shall beread/written"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:4 - Address of PHY Register that shall beread/written"]
     #[inline(always)]
     #[must_use]
-    pub fn phy_reg_addr(&mut self) -> PHY_REG_ADDR_W<MII_PHY_REG_ADR_SPEC, 0> {
-        PHY_REG_ADDR_W::new(self)
+    pub fn phy_reg_addr(&mut self) -> PHY_REG_ADDR_W<MII_PHY_REG_ADR_SPEC> {
+        PHY_REG_ADDR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

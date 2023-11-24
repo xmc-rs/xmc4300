@@ -5,11 +5,11 @@ pub type W = crate::W<PCGCCTL_SPEC>;
 #[doc = "Field `StopPclk` reader - Stop Pclk"]
 pub type STOP_PCLK_R = crate::BitReader;
 #[doc = "Field `StopPclk` writer - Stop Pclk"]
-pub type STOP_PCLK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STOP_PCLK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `GateHclk` reader - Gate Hclk"]
 pub type GATE_HCLK_R = crate::BitReader;
 #[doc = "Field `GateHclk` writer - Gate Hclk"]
-pub type GATE_HCLK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type GATE_HCLK_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Stop Pclk"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bit 0 - Stop Pclk"]
     #[inline(always)]
     #[must_use]
-    pub fn stop_pclk(&mut self) -> STOP_PCLK_W<PCGCCTL_SPEC, 0> {
-        STOP_PCLK_W::new(self)
+    pub fn stop_pclk(&mut self) -> STOP_PCLK_W<PCGCCTL_SPEC> {
+        STOP_PCLK_W::new(self, 0)
     }
     #[doc = "Bit 1 - Gate Hclk"]
     #[inline(always)]
     #[must_use]
-    pub fn gate_hclk(&mut self) -> GATE_HCLK_W<PCGCCTL_SPEC, 1> {
-        GATE_HCLK_W::new(self)
+    pub fn gate_hclk(&mut self) -> GATE_HCLK_W<PCGCCTL_SPEC> {
+        GATE_HCLK_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -68,8 +68,8 @@ impl LED_CODE_R {
     }
 }
 #[doc = "Field `LED_CODE` writer - LED Code"]
-pub type LED_CODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, LED_CODE_A>;
-impl<'a, REG, const O: u8> LED_CODE_W<'a, REG, O>
+pub type LED_CODE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, LED_CODE_A>;
+impl<'a, REG> LED_CODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -137,8 +137,8 @@ impl EN_OVERR_R {
     }
 }
 #[doc = "Field `EN_OVERR` writer - Enable Override"]
-pub type EN_OVERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EN_OVERR_A>;
-impl<'a, REG, const O: u8> EN_OVERR_W<'a, REG, O>
+pub type EN_OVERR_W<'a, REG> = crate::BitWriter<'a, REG, EN_OVERR_A>;
+impl<'a, REG> EN_OVERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -169,14 +169,14 @@ impl W {
     #[doc = "Bits 0:3 - LED Code"]
     #[inline(always)]
     #[must_use]
-    pub fn led_code(&mut self) -> LED_CODE_W<RUN_LED_SPEC, 0> {
-        LED_CODE_W::new(self)
+    pub fn led_code(&mut self) -> LED_CODE_W<RUN_LED_SPEC> {
+        LED_CODE_W::new(self, 0)
     }
     #[doc = "Bit 4 - Enable Override"]
     #[inline(always)]
     #[must_use]
-    pub fn en_overr(&mut self) -> EN_OVERR_W<RUN_LED_SPEC, 4> {
-        EN_OVERR_W::new(self)
+    pub fn en_overr(&mut self) -> EN_OVERR_W<RUN_LED_SPEC> {
+        EN_OVERR_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -68,8 +68,8 @@ impl WSPFLASH_R {
     }
 }
 #[doc = "Field `WSPFLASH` writer - Wait States for read access to PFLASH"]
-pub type WSPFLASH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, WSPFLASH_A>;
-impl<'a, REG, const O: u8> WSPFLASH_W<'a, REG, O>
+pub type WSPFLASH_W<'a, REG> = crate::FieldWriter<'a, REG, 4, WSPFLASH_A>;
+impl<'a, REG> WSPFLASH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -137,8 +137,8 @@ impl WSECPF_R {
     }
 }
 #[doc = "Field `WSECPF` writer - Wait State for Error Correction of PFLASH"]
-pub type WSECPF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WSECPF_A>;
-impl<'a, REG, const O: u8> WSECPF_W<'a, REG, O>
+pub type WSECPF_W<'a, REG> = crate::BitWriter<'a, REG, WSECPF_A>;
+impl<'a, REG> WSECPF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -190,8 +190,8 @@ impl IDLE_R {
     }
 }
 #[doc = "Field `IDLE` writer - Dynamic Flash Idle"]
-pub type IDLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IDLE_A>;
-impl<'a, REG, const O: u8> IDLE_W<'a, REG, O>
+pub type IDLE_W<'a, REG> = crate::BitWriter<'a, REG, IDLE_A>;
+impl<'a, REG> IDLE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -243,8 +243,8 @@ impl ESLDIS_R {
     }
 }
 #[doc = "Field `ESLDIS` writer - External Sleep Request Disable"]
-pub type ESLDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ESLDIS_A>;
-impl<'a, REG, const O: u8> ESLDIS_W<'a, REG, O>
+pub type ESLDIS_W<'a, REG> = crate::BitWriter<'a, REG, ESLDIS_A>;
+impl<'a, REG> ESLDIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -296,8 +296,8 @@ impl SLEEP_R {
     }
 }
 #[doc = "Field `SLEEP` writer - Flash SLEEP"]
-pub type SLEEP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SLEEP_A>;
-impl<'a, REG, const O: u8> SLEEP_W<'a, REG, O>
+pub type SLEEP_W<'a, REG> = crate::BitWriter<'a, REG, SLEEP_A>;
+impl<'a, REG> SLEEP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -385,8 +385,8 @@ impl DCF_R {
     }
 }
 #[doc = "Field `DCF` writer - Disable Code Fetch from Flash Memory"]
-pub type DCF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DCF_A>;
-impl<'a, REG, const O: u8> DCF_W<'a, REG, O>
+pub type DCF_W<'a, REG> = crate::BitWriter<'a, REG, DCF_A>;
+impl<'a, REG> DCF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -438,8 +438,8 @@ impl DDF_R {
     }
 }
 #[doc = "Field `DDF` writer - Disable Any Data Fetch from Flash"]
-pub type DDF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DDF_A>;
-impl<'a, REG, const O: u8> DDF_W<'a, REG, O>
+pub type DDF_W<'a, REG> = crate::BitWriter<'a, REG, DDF_A>;
+impl<'a, REG> DDF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -491,8 +491,8 @@ impl VOPERM_R {
     }
 }
 #[doc = "Field `VOPERM` writer - Verify and Operation Error Interrupt Mask"]
-pub type VOPERM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VOPERM_A>;
-impl<'a, REG, const O: u8> VOPERM_W<'a, REG, O>
+pub type VOPERM_W<'a, REG> = crate::BitWriter<'a, REG, VOPERM_A>;
+impl<'a, REG> VOPERM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -544,8 +544,8 @@ impl SQERM_R {
     }
 }
 #[doc = "Field `SQERM` writer - Command Sequence Error Interrupt Mask"]
-pub type SQERM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SQERM_A>;
-impl<'a, REG, const O: u8> SQERM_W<'a, REG, O>
+pub type SQERM_W<'a, REG> = crate::BitWriter<'a, REG, SQERM_A>;
+impl<'a, REG> SQERM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -597,8 +597,8 @@ impl PROERM_R {
     }
 }
 #[doc = "Field `PROERM` writer - Protection Error Interrupt Mask"]
-pub type PROERM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PROERM_A>;
-impl<'a, REG, const O: u8> PROERM_W<'a, REG, O>
+pub type PROERM_W<'a, REG> = crate::BitWriter<'a, REG, PROERM_A>;
+impl<'a, REG> PROERM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -650,8 +650,8 @@ impl PFSBERM_R {
     }
 }
 #[doc = "Field `PFSBERM` writer - PFLASH Single-Bit Error Interrupt Mask"]
-pub type PFSBERM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PFSBERM_A>;
-impl<'a, REG, const O: u8> PFSBERM_W<'a, REG, O>
+pub type PFSBERM_W<'a, REG> = crate::BitWriter<'a, REG, PFSBERM_A>;
+impl<'a, REG> PFSBERM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -703,8 +703,8 @@ impl PFDBERM_R {
     }
 }
 #[doc = "Field `PFDBERM` writer - PFLASH Double-Bit Error Interrupt Mask"]
-pub type PFDBERM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PFDBERM_A>;
-impl<'a, REG, const O: u8> PFDBERM_W<'a, REG, O>
+pub type PFDBERM_W<'a, REG> = crate::BitWriter<'a, REG, PFDBERM_A>;
+impl<'a, REG> PFDBERM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -756,8 +756,8 @@ impl EOBM_R {
     }
 }
 #[doc = "Field `EOBM` writer - End of Busy Interrupt Mask"]
-pub type EOBM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EOBM_A>;
-impl<'a, REG, const O: u8> EOBM_W<'a, REG, O>
+pub type EOBM_W<'a, REG> = crate::BitWriter<'a, REG, EOBM_A>;
+impl<'a, REG> EOBM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -848,80 +848,80 @@ impl W {
     #[doc = "Bits 0:3 - Wait States for read access to PFLASH"]
     #[inline(always)]
     #[must_use]
-    pub fn wspflash(&mut self) -> WSPFLASH_W<FCON_SPEC, 0> {
-        WSPFLASH_W::new(self)
+    pub fn wspflash(&mut self) -> WSPFLASH_W<FCON_SPEC> {
+        WSPFLASH_W::new(self, 0)
     }
     #[doc = "Bit 4 - Wait State for Error Correction of PFLASH"]
     #[inline(always)]
     #[must_use]
-    pub fn wsecpf(&mut self) -> WSECPF_W<FCON_SPEC, 4> {
-        WSECPF_W::new(self)
+    pub fn wsecpf(&mut self) -> WSECPF_W<FCON_SPEC> {
+        WSECPF_W::new(self, 4)
     }
     #[doc = "Bit 13 - Dynamic Flash Idle"]
     #[inline(always)]
     #[must_use]
-    pub fn idle(&mut self) -> IDLE_W<FCON_SPEC, 13> {
-        IDLE_W::new(self)
+    pub fn idle(&mut self) -> IDLE_W<FCON_SPEC> {
+        IDLE_W::new(self, 13)
     }
     #[doc = "Bit 14 - External Sleep Request Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn esldis(&mut self) -> ESLDIS_W<FCON_SPEC, 14> {
-        ESLDIS_W::new(self)
+    pub fn esldis(&mut self) -> ESLDIS_W<FCON_SPEC> {
+        ESLDIS_W::new(self, 14)
     }
     #[doc = "Bit 15 - Flash SLEEP"]
     #[inline(always)]
     #[must_use]
-    pub fn sleep(&mut self) -> SLEEP_W<FCON_SPEC, 15> {
-        SLEEP_W::new(self)
+    pub fn sleep(&mut self) -> SLEEP_W<FCON_SPEC> {
+        SLEEP_W::new(self, 15)
     }
     #[doc = "Bit 17 - Disable Code Fetch from Flash Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn dcf(&mut self) -> DCF_W<FCON_SPEC, 17> {
-        DCF_W::new(self)
+    pub fn dcf(&mut self) -> DCF_W<FCON_SPEC> {
+        DCF_W::new(self, 17)
     }
     #[doc = "Bit 18 - Disable Any Data Fetch from Flash"]
     #[inline(always)]
     #[must_use]
-    pub fn ddf(&mut self) -> DDF_W<FCON_SPEC, 18> {
-        DDF_W::new(self)
+    pub fn ddf(&mut self) -> DDF_W<FCON_SPEC> {
+        DDF_W::new(self, 18)
     }
     #[doc = "Bit 24 - Verify and Operation Error Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn voperm(&mut self) -> VOPERM_W<FCON_SPEC, 24> {
-        VOPERM_W::new(self)
+    pub fn voperm(&mut self) -> VOPERM_W<FCON_SPEC> {
+        VOPERM_W::new(self, 24)
     }
     #[doc = "Bit 25 - Command Sequence Error Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn sqerm(&mut self) -> SQERM_W<FCON_SPEC, 25> {
-        SQERM_W::new(self)
+    pub fn sqerm(&mut self) -> SQERM_W<FCON_SPEC> {
+        SQERM_W::new(self, 25)
     }
     #[doc = "Bit 26 - Protection Error Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn proerm(&mut self) -> PROERM_W<FCON_SPEC, 26> {
-        PROERM_W::new(self)
+    pub fn proerm(&mut self) -> PROERM_W<FCON_SPEC> {
+        PROERM_W::new(self, 26)
     }
     #[doc = "Bit 27 - PFLASH Single-Bit Error Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn pfsberm(&mut self) -> PFSBERM_W<FCON_SPEC, 27> {
-        PFSBERM_W::new(self)
+    pub fn pfsberm(&mut self) -> PFSBERM_W<FCON_SPEC> {
+        PFSBERM_W::new(self, 27)
     }
     #[doc = "Bit 29 - PFLASH Double-Bit Error Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn pfdberm(&mut self) -> PFDBERM_W<FCON_SPEC, 29> {
-        PFDBERM_W::new(self)
+    pub fn pfdberm(&mut self) -> PFDBERM_W<FCON_SPEC> {
+        PFDBERM_W::new(self, 29)
     }
     #[doc = "Bit 31 - End of Busy Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn eobm(&mut self) -> EOBM_W<FCON_SPEC, 31> {
-        EOBM_W::new(self)
+    pub fn eobm(&mut self) -> EOBM_W<FCON_SPEC> {
+        EOBM_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

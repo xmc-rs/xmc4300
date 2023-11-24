@@ -5,15 +5,15 @@ pub type W = crate::W<CCUCON_SPEC>;
 #[doc = "Field `GSC40` reader - Global Start Control CCU40"]
 pub type GSC40_R = crate::BitReader;
 #[doc = "Field `GSC40` writer - Global Start Control CCU40"]
-pub type GSC40_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type GSC40_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `GSC41` reader - Global Start Control CCU41"]
 pub type GSC41_R = crate::BitReader;
 #[doc = "Field `GSC41` writer - Global Start Control CCU41"]
-pub type GSC41_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type GSC41_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `GSC80` reader - Global Start Control CCU80"]
 pub type GSC80_R = crate::BitReader;
 #[doc = "Field `GSC80` writer - Global Start Control CCU80"]
-pub type GSC80_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type GSC80_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Global Start Control CCU40"]
     #[inline(always)]
@@ -35,20 +35,20 @@ impl W {
     #[doc = "Bit 0 - Global Start Control CCU40"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc40(&mut self) -> GSC40_W<CCUCON_SPEC, 0> {
-        GSC40_W::new(self)
+    pub fn gsc40(&mut self) -> GSC40_W<CCUCON_SPEC> {
+        GSC40_W::new(self, 0)
     }
     #[doc = "Bit 1 - Global Start Control CCU41"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc41(&mut self) -> GSC41_W<CCUCON_SPEC, 1> {
-        GSC41_W::new(self)
+    pub fn gsc41(&mut self) -> GSC41_W<CCUCON_SPEC> {
+        GSC41_W::new(self, 1)
     }
     #[doc = "Bit 8 - Global Start Control CCU80"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc80(&mut self) -> GSC80_W<CCUCON_SPEC, 8> {
-        GSC80_W::new(self)
+    pub fn gsc80(&mut self) -> GSC80_W<CCUCON_SPEC> {
+        GSC80_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

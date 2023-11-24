@@ -39,8 +39,8 @@ impl VF0_R {
     }
 }
 #[doc = "Field `VF0` writer - Valid Flag of Result Register x"]
-pub type VF0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF0_A>;
-impl<'a, REG, const O: u8> VF0_W<'a, REG, O>
+pub type VF0_W<'a, REG> = crate::BitWriter<'a, REG, VF0_A>;
+impl<'a, REG> VF0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl VF1_R {
     }
 }
 #[doc = "Field `VF1` writer - Valid Flag of Result Register x"]
-pub type VF1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF1_A>;
-impl<'a, REG, const O: u8> VF1_W<'a, REG, O>
+pub type VF1_W<'a, REG> = crate::BitWriter<'a, REG, VF1_A>;
+impl<'a, REG> VF1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl VF2_R {
     }
 }
 #[doc = "Field `VF2` writer - Valid Flag of Result Register x"]
-pub type VF2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF2_A>;
-impl<'a, REG, const O: u8> VF2_W<'a, REG, O>
+pub type VF2_W<'a, REG> = crate::BitWriter<'a, REG, VF2_A>;
+impl<'a, REG> VF2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl VF3_R {
     }
 }
 #[doc = "Field `VF3` writer - Valid Flag of Result Register x"]
-pub type VF3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF3_A>;
-impl<'a, REG, const O: u8> VF3_W<'a, REG, O>
+pub type VF3_W<'a, REG> = crate::BitWriter<'a, REG, VF3_A>;
+impl<'a, REG> VF3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl VF4_R {
     }
 }
 #[doc = "Field `VF4` writer - Valid Flag of Result Register x"]
-pub type VF4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF4_A>;
-impl<'a, REG, const O: u8> VF4_W<'a, REG, O>
+pub type VF4_W<'a, REG> = crate::BitWriter<'a, REG, VF4_A>;
+impl<'a, REG> VF4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl VF5_R {
     }
 }
 #[doc = "Field `VF5` writer - Valid Flag of Result Register x"]
-pub type VF5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF5_A>;
-impl<'a, REG, const O: u8> VF5_W<'a, REG, O>
+pub type VF5_W<'a, REG> = crate::BitWriter<'a, REG, VF5_A>;
+impl<'a, REG> VF5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl VF6_R {
     }
 }
 #[doc = "Field `VF6` writer - Valid Flag of Result Register x"]
-pub type VF6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF6_A>;
-impl<'a, REG, const O: u8> VF6_W<'a, REG, O>
+pub type VF6_W<'a, REG> = crate::BitWriter<'a, REG, VF6_A>;
+impl<'a, REG> VF6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl VF7_R {
     }
 }
 #[doc = "Field `VF7` writer - Valid Flag of Result Register x"]
-pub type VF7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF7_A>;
-impl<'a, REG, const O: u8> VF7_W<'a, REG, O>
+pub type VF7_W<'a, REG> = crate::BitWriter<'a, REG, VF7_A>;
+impl<'a, REG> VF7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl VF8_R {
     }
 }
 #[doc = "Field `VF8` writer - Valid Flag of Result Register x"]
-pub type VF8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF8_A>;
-impl<'a, REG, const O: u8> VF8_W<'a, REG, O>
+pub type VF8_W<'a, REG> = crate::BitWriter<'a, REG, VF8_A>;
+impl<'a, REG> VF8_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -516,8 +516,8 @@ impl VF9_R {
     }
 }
 #[doc = "Field `VF9` writer - Valid Flag of Result Register x"]
-pub type VF9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF9_A>;
-impl<'a, REG, const O: u8> VF9_W<'a, REG, O>
+pub type VF9_W<'a, REG> = crate::BitWriter<'a, REG, VF9_A>;
+impl<'a, REG> VF9_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -569,8 +569,8 @@ impl VF10_R {
     }
 }
 #[doc = "Field `VF10` writer - Valid Flag of Result Register x"]
-pub type VF10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF10_A>;
-impl<'a, REG, const O: u8> VF10_W<'a, REG, O>
+pub type VF10_W<'a, REG> = crate::BitWriter<'a, REG, VF10_A>;
+impl<'a, REG> VF10_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -622,8 +622,8 @@ impl VF11_R {
     }
 }
 #[doc = "Field `VF11` writer - Valid Flag of Result Register x"]
-pub type VF11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF11_A>;
-impl<'a, REG, const O: u8> VF11_W<'a, REG, O>
+pub type VF11_W<'a, REG> = crate::BitWriter<'a, REG, VF11_A>;
+impl<'a, REG> VF11_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -675,8 +675,8 @@ impl VF12_R {
     }
 }
 #[doc = "Field `VF12` writer - Valid Flag of Result Register x"]
-pub type VF12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF12_A>;
-impl<'a, REG, const O: u8> VF12_W<'a, REG, O>
+pub type VF12_W<'a, REG> = crate::BitWriter<'a, REG, VF12_A>;
+impl<'a, REG> VF12_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -728,8 +728,8 @@ impl VF13_R {
     }
 }
 #[doc = "Field `VF13` writer - Valid Flag of Result Register x"]
-pub type VF13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF13_A>;
-impl<'a, REG, const O: u8> VF13_W<'a, REG, O>
+pub type VF13_W<'a, REG> = crate::BitWriter<'a, REG, VF13_A>;
+impl<'a, REG> VF13_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -781,8 +781,8 @@ impl VF14_R {
     }
 }
 #[doc = "Field `VF14` writer - Valid Flag of Result Register x"]
-pub type VF14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF14_A>;
-impl<'a, REG, const O: u8> VF14_W<'a, REG, O>
+pub type VF14_W<'a, REG> = crate::BitWriter<'a, REG, VF14_A>;
+impl<'a, REG> VF14_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -834,8 +834,8 @@ impl VF15_R {
     }
 }
 #[doc = "Field `VF15` writer - Valid Flag of Result Register x"]
-pub type VF15_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF15_A>;
-impl<'a, REG, const O: u8> VF15_W<'a, REG, O>
+pub type VF15_W<'a, REG> = crate::BitWriter<'a, REG, VF15_A>;
+impl<'a, REG> VF15_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -936,98 +936,98 @@ impl W {
     #[doc = "Bit 0 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf0(&mut self) -> VF0_W<VFR_SPEC, 0> {
-        VF0_W::new(self)
+    pub fn vf0(&mut self) -> VF0_W<VFR_SPEC> {
+        VF0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf1(&mut self) -> VF1_W<VFR_SPEC, 1> {
-        VF1_W::new(self)
+    pub fn vf1(&mut self) -> VF1_W<VFR_SPEC> {
+        VF1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf2(&mut self) -> VF2_W<VFR_SPEC, 2> {
-        VF2_W::new(self)
+    pub fn vf2(&mut self) -> VF2_W<VFR_SPEC> {
+        VF2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf3(&mut self) -> VF3_W<VFR_SPEC, 3> {
-        VF3_W::new(self)
+    pub fn vf3(&mut self) -> VF3_W<VFR_SPEC> {
+        VF3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf4(&mut self) -> VF4_W<VFR_SPEC, 4> {
-        VF4_W::new(self)
+    pub fn vf4(&mut self) -> VF4_W<VFR_SPEC> {
+        VF4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf5(&mut self) -> VF5_W<VFR_SPEC, 5> {
-        VF5_W::new(self)
+    pub fn vf5(&mut self) -> VF5_W<VFR_SPEC> {
+        VF5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf6(&mut self) -> VF6_W<VFR_SPEC, 6> {
-        VF6_W::new(self)
+    pub fn vf6(&mut self) -> VF6_W<VFR_SPEC> {
+        VF6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf7(&mut self) -> VF7_W<VFR_SPEC, 7> {
-        VF7_W::new(self)
+    pub fn vf7(&mut self) -> VF7_W<VFR_SPEC> {
+        VF7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf8(&mut self) -> VF8_W<VFR_SPEC, 8> {
-        VF8_W::new(self)
+    pub fn vf8(&mut self) -> VF8_W<VFR_SPEC> {
+        VF8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf9(&mut self) -> VF9_W<VFR_SPEC, 9> {
-        VF9_W::new(self)
+    pub fn vf9(&mut self) -> VF9_W<VFR_SPEC> {
+        VF9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf10(&mut self) -> VF10_W<VFR_SPEC, 10> {
-        VF10_W::new(self)
+    pub fn vf10(&mut self) -> VF10_W<VFR_SPEC> {
+        VF10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf11(&mut self) -> VF11_W<VFR_SPEC, 11> {
-        VF11_W::new(self)
+    pub fn vf11(&mut self) -> VF11_W<VFR_SPEC> {
+        VF11_W::new(self, 11)
     }
     #[doc = "Bit 12 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf12(&mut self) -> VF12_W<VFR_SPEC, 12> {
-        VF12_W::new(self)
+    pub fn vf12(&mut self) -> VF12_W<VFR_SPEC> {
+        VF12_W::new(self, 12)
     }
     #[doc = "Bit 13 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf13(&mut self) -> VF13_W<VFR_SPEC, 13> {
-        VF13_W::new(self)
+    pub fn vf13(&mut self) -> VF13_W<VFR_SPEC> {
+        VF13_W::new(self, 13)
     }
     #[doc = "Bit 14 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf14(&mut self) -> VF14_W<VFR_SPEC, 14> {
-        VF14_W::new(self)
+    pub fn vf14(&mut self) -> VF14_W<VFR_SPEC> {
+        VF14_W::new(self, 14)
     }
     #[doc = "Bit 15 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf15(&mut self) -> VF15_W<VFR_SPEC, 15> {
-        VF15_W::new(self)
+    pub fn vf15(&mut self) -> VF15_W<VFR_SPEC> {
+        VF15_W::new(self, 15)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

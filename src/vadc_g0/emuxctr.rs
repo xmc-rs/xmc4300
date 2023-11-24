@@ -5,13 +5,13 @@ pub type W = crate::W<EMUXCTR_SPEC>;
 #[doc = "Field `EMUXSET` reader - External Multiplexer Start Selection"]
 pub type EMUXSET_R = crate::FieldReader;
 #[doc = "Field `EMUXSET` writer - External Multiplexer Start Selection"]
-pub type EMUXSET_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type EMUXSET_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `EMUXACT` reader - External Multiplexer Actual Selection"]
 pub type EMUXACT_R = crate::FieldReader;
 #[doc = "Field `EMUXCH` reader - External Multiplexer Channel Select"]
 pub type EMUXCH_R = crate::FieldReader<u16>;
 #[doc = "Field `EMUXCH` writer - External Multiplexer Channel Select"]
-pub type EMUXCH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 10, O, u16>;
+pub type EMUXCH_W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "Field `EMUXMODE` reader - External Multiplexer Mode"]
 pub type EMUXMODE_R = crate::FieldReader<EMUXMODE_A>;
 #[doc = "External Multiplexer Mode\n\nValue on reset: 0"]
@@ -70,8 +70,8 @@ impl EMUXMODE_R {
     }
 }
 #[doc = "Field `EMUXMODE` writer - External Multiplexer Mode"]
-pub type EMUXMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EMUXMODE_A>;
-impl<'a, REG, const O: u8> EMUXMODE_W<'a, REG, O>
+pub type EMUXMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EMUXMODE_A>;
+impl<'a, REG> EMUXMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -134,8 +134,8 @@ impl EMXCOD_R {
     }
 }
 #[doc = "Field `EMXCOD` writer - External Multiplexer Coding Scheme"]
-pub type EMXCOD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EMXCOD_A>;
-impl<'a, REG, const O: u8> EMXCOD_W<'a, REG, O>
+pub type EMXCOD_W<'a, REG> = crate::BitWriter<'a, REG, EMXCOD_A>;
+impl<'a, REG> EMXCOD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -187,8 +187,8 @@ impl EMXST_R {
     }
 }
 #[doc = "Field `EMXST` writer - External Multiplexer Sample Time Control"]
-pub type EMXST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EMXST_A>;
-impl<'a, REG, const O: u8> EMXST_W<'a, REG, O>
+pub type EMXST_W<'a, REG> = crate::BitWriter<'a, REG, EMXST_A>;
+impl<'a, REG> EMXST_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -254,8 +254,8 @@ impl From<EMXWC_AW> for bool {
     }
 }
 #[doc = "Field `EMXWC` writer - Write Control for EMUX Configuration"]
-pub type EMXWC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EMXWC_AW>;
-impl<'a, REG, const O: u8> EMXWC_W<'a, REG, O>
+pub type EMXWC_W<'a, REG> = crate::BitWriter<'a, REG, EMXWC_AW>;
+impl<'a, REG> EMXWC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -311,38 +311,38 @@ impl W {
     #[doc = "Bits 0:2 - External Multiplexer Start Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn emuxset(&mut self) -> EMUXSET_W<EMUXCTR_SPEC, 0> {
-        EMUXSET_W::new(self)
+    pub fn emuxset(&mut self) -> EMUXSET_W<EMUXCTR_SPEC> {
+        EMUXSET_W::new(self, 0)
     }
     #[doc = "Bits 16:25 - External Multiplexer Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn emuxch(&mut self) -> EMUXCH_W<EMUXCTR_SPEC, 16> {
-        EMUXCH_W::new(self)
+    pub fn emuxch(&mut self) -> EMUXCH_W<EMUXCTR_SPEC> {
+        EMUXCH_W::new(self, 16)
     }
     #[doc = "Bits 26:27 - External Multiplexer Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn emuxmode(&mut self) -> EMUXMODE_W<EMUXCTR_SPEC, 26> {
-        EMUXMODE_W::new(self)
+    pub fn emuxmode(&mut self) -> EMUXMODE_W<EMUXCTR_SPEC> {
+        EMUXMODE_W::new(self, 26)
     }
     #[doc = "Bit 28 - External Multiplexer Coding Scheme"]
     #[inline(always)]
     #[must_use]
-    pub fn emxcod(&mut self) -> EMXCOD_W<EMUXCTR_SPEC, 28> {
-        EMXCOD_W::new(self)
+    pub fn emxcod(&mut self) -> EMXCOD_W<EMUXCTR_SPEC> {
+        EMXCOD_W::new(self, 28)
     }
     #[doc = "Bit 29 - External Multiplexer Sample Time Control"]
     #[inline(always)]
     #[must_use]
-    pub fn emxst(&mut self) -> EMXST_W<EMUXCTR_SPEC, 29> {
-        EMXST_W::new(self)
+    pub fn emxst(&mut self) -> EMXST_W<EMUXCTR_SPEC> {
+        EMXST_W::new(self, 29)
     }
     #[doc = "Bit 31 - Write Control for EMUX Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn emxwc(&mut self) -> EMXWC_W<EMUXCTR_SPEC, 31> {
-        EMXWC_W::new(self)
+    pub fn emxwc(&mut self) -> EMXWC_W<EMUXCTR_SPEC> {
+        EMXWC_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

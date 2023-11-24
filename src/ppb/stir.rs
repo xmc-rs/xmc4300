@@ -1,13 +1,13 @@
 #[doc = "Register `STIR` writer"]
 pub type W = crate::W<STIR_SPEC>;
 #[doc = "Field `INTID` writer - Interrupt ID of the interrupt to trigger"]
-pub type INTID_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 9, O, u16>;
+pub type INTID_W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 impl W {
     #[doc = "Bits 0:8 - Interrupt ID of the interrupt to trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn intid(&mut self) -> INTID_W<STIR_SPEC, 0> {
-        INTID_W::new(self)
+    pub fn intid(&mut self) -> INTID_W<STIR_SPEC> {
+        INTID_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

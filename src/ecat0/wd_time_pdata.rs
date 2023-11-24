@@ -5,7 +5,7 @@ pub type W = crate::W<WD_TIME_PDATA_SPEC>;
 #[doc = "Field `WD_TIME_PD` reader - Watchdog Time Process Data"]
 pub type WD_TIME_PD_R = crate::FieldReader<u16>;
 #[doc = "Field `WD_TIME_PD` writer - Watchdog Time Process Data"]
-pub type WD_TIME_PD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type WD_TIME_PD_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Watchdog Time Process Data"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Watchdog Time Process Data"]
     #[inline(always)]
     #[must_use]
-    pub fn wd_time_pd(&mut self) -> WD_TIME_PD_W<WD_TIME_PDATA_SPEC, 0> {
-        WD_TIME_PD_W::new(self)
+    pub fn wd_time_pd(&mut self) -> WD_TIME_PD_W<WD_TIME_PDATA_SPEC> {
+        WD_TIME_PD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

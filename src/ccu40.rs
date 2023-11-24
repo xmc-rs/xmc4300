@@ -1,23 +1,57 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Global Control Register"]
-    pub gctrl: GCTRL,
-    #[doc = "0x04 - Global Status Register"]
-    pub gstat: GSTAT,
-    #[doc = "0x08 - Global Idle Set"]
-    pub gidls: GIDLS,
-    #[doc = "0x0c - Global Idle Clear"]
-    pub gidlc: GIDLC,
-    #[doc = "0x10 - Global Channel Set"]
-    pub gcss: GCSS,
-    #[doc = "0x14 - Global Channel Clear"]
-    pub gcsc: GCSC,
-    #[doc = "0x18 - Global Channel Status"]
-    pub gcst: GCST,
+    gctrl: GCTRL,
+    gstat: GSTAT,
+    gidls: GIDLS,
+    gidlc: GIDLC,
+    gcss: GCSS,
+    gcsc: GCSC,
+    gcst: GCST,
     _reserved7: [u8; 0x64],
+    midr: MIDR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Global Control Register"]
+    #[inline(always)]
+    pub const fn gctrl(&self) -> &GCTRL {
+        &self.gctrl
+    }
+    #[doc = "0x04 - Global Status Register"]
+    #[inline(always)]
+    pub const fn gstat(&self) -> &GSTAT {
+        &self.gstat
+    }
+    #[doc = "0x08 - Global Idle Set"]
+    #[inline(always)]
+    pub const fn gidls(&self) -> &GIDLS {
+        &self.gidls
+    }
+    #[doc = "0x0c - Global Idle Clear"]
+    #[inline(always)]
+    pub const fn gidlc(&self) -> &GIDLC {
+        &self.gidlc
+    }
+    #[doc = "0x10 - Global Channel Set"]
+    #[inline(always)]
+    pub const fn gcss(&self) -> &GCSS {
+        &self.gcss
+    }
+    #[doc = "0x14 - Global Channel Clear"]
+    #[inline(always)]
+    pub const fn gcsc(&self) -> &GCSC {
+        &self.gcsc
+    }
+    #[doc = "0x18 - Global Channel Status"]
+    #[inline(always)]
+    pub const fn gcst(&self) -> &GCST {
+        &self.gcst
+    }
     #[doc = "0x80 - Module Identification"]
-    pub midr: MIDR,
+    #[inline(always)]
+    pub const fn midr(&self) -> &MIDR {
+        &self.midr
+    }
 }
 #[doc = "GCTRL (rw) register accessor: Global Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gctrl`]
 module"]

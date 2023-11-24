@@ -60,8 +60,8 @@ impl ISS_R {
     }
 }
 #[doc = "Field `ISS` writer - Internal Trigger Source Selection"]
-pub type ISS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ISS_A>;
-impl<'a, REG, const O: u8> ISS_W<'a, REG, O>
+pub type ISS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ISS_A>;
+impl<'a, REG> ISS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -124,8 +124,8 @@ impl GEEN_R {
     }
 }
 #[doc = "Field `GEEN` writer - Gating Event Enable"]
-pub type GEEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GEEN_A>;
-impl<'a, REG, const O: u8> GEEN_W<'a, REG, O>
+pub type GEEN_W<'a, REG> = crate::BitWriter<'a, REG, GEEN_A>;
+impl<'a, REG> GEEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -234,8 +234,8 @@ impl GP_R {
     }
 }
 #[doc = "Field `GP` writer - Gating Selection for Pattern Detection Result"]
-pub type GP_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, GP_A>;
-impl<'a, REG, const O: u8> GP_W<'a, REG, O>
+pub type GP_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, GP_A>;
+impl<'a, REG> GP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -298,8 +298,8 @@ impl IPEN0_R {
     }
 }
 #[doc = "Field `IPEN0` writer - Pattern Detection Enable for ETL0"]
-pub type IPEN0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IPEN0_A>;
-impl<'a, REG, const O: u8> IPEN0_W<'a, REG, O>
+pub type IPEN0_W<'a, REG> = crate::BitWriter<'a, REG, IPEN0_A>;
+impl<'a, REG> IPEN0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -351,8 +351,8 @@ impl IPEN1_R {
     }
 }
 #[doc = "Field `IPEN1` writer - Pattern Detection Enable for ETL1"]
-pub type IPEN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IPEN1_A>;
-impl<'a, REG, const O: u8> IPEN1_W<'a, REG, O>
+pub type IPEN1_W<'a, REG> = crate::BitWriter<'a, REG, IPEN1_A>;
+impl<'a, REG> IPEN1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -404,8 +404,8 @@ impl IPEN2_R {
     }
 }
 #[doc = "Field `IPEN2` writer - Pattern Detection Enable for ETL2"]
-pub type IPEN2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IPEN2_A>;
-impl<'a, REG, const O: u8> IPEN2_W<'a, REG, O>
+pub type IPEN2_W<'a, REG> = crate::BitWriter<'a, REG, IPEN2_A>;
+impl<'a, REG> IPEN2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -457,8 +457,8 @@ impl IPEN3_R {
     }
 }
 #[doc = "Field `IPEN3` writer - Pattern Detection Enable for ETL3"]
-pub type IPEN3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IPEN3_A>;
-impl<'a, REG, const O: u8> IPEN3_W<'a, REG, O>
+pub type IPEN3_W<'a, REG> = crate::BitWriter<'a, REG, IPEN3_A>;
+impl<'a, REG> IPEN3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -519,44 +519,44 @@ impl W {
     #[doc = "Bits 0:1 - Internal Trigger Source Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn iss(&mut self) -> ISS_W<EXOCON_SPEC, 0> {
-        ISS_W::new(self)
+    pub fn iss(&mut self) -> ISS_W<EXOCON_SPEC> {
+        ISS_W::new(self, 0)
     }
     #[doc = "Bit 2 - Gating Event Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn geen(&mut self) -> GEEN_W<EXOCON_SPEC, 2> {
-        GEEN_W::new(self)
+    pub fn geen(&mut self) -> GEEN_W<EXOCON_SPEC> {
+        GEEN_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Gating Selection for Pattern Detection Result"]
     #[inline(always)]
     #[must_use]
-    pub fn gp(&mut self) -> GP_W<EXOCON_SPEC, 4> {
-        GP_W::new(self)
+    pub fn gp(&mut self) -> GP_W<EXOCON_SPEC> {
+        GP_W::new(self, 4)
     }
     #[doc = "Bit 12 - Pattern Detection Enable for ETL0"]
     #[inline(always)]
     #[must_use]
-    pub fn ipen0(&mut self) -> IPEN0_W<EXOCON_SPEC, 12> {
-        IPEN0_W::new(self)
+    pub fn ipen0(&mut self) -> IPEN0_W<EXOCON_SPEC> {
+        IPEN0_W::new(self, 12)
     }
     #[doc = "Bit 13 - Pattern Detection Enable for ETL1"]
     #[inline(always)]
     #[must_use]
-    pub fn ipen1(&mut self) -> IPEN1_W<EXOCON_SPEC, 13> {
-        IPEN1_W::new(self)
+    pub fn ipen1(&mut self) -> IPEN1_W<EXOCON_SPEC> {
+        IPEN1_W::new(self, 13)
     }
     #[doc = "Bit 14 - Pattern Detection Enable for ETL2"]
     #[inline(always)]
     #[must_use]
-    pub fn ipen2(&mut self) -> IPEN2_W<EXOCON_SPEC, 14> {
-        IPEN2_W::new(self)
+    pub fn ipen2(&mut self) -> IPEN2_W<EXOCON_SPEC> {
+        IPEN2_W::new(self, 14)
     }
     #[doc = "Bit 15 - Pattern Detection Enable for ETL3"]
     #[inline(always)]
     #[must_use]
-    pub fn ipen3(&mut self) -> IPEN3_W<EXOCON_SPEC, 15> {
-        IPEN3_W::new(self)
+    pub fn ipen3(&mut self) -> IPEN3_W<EXOCON_SPEC> {
+        IPEN3_W::new(self, 15)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

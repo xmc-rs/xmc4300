@@ -39,8 +39,8 @@ impl DMA_EN_R {
     }
 }
 #[doc = "Field `DMA_EN` writer - GPDMA Enable bit."]
-pub type DMA_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DMA_EN_A>;
-impl<'a, REG, const O: u8> DMA_EN_W<'a, REG, O>
+pub type DMA_EN_W<'a, REG> = crate::BitWriter<'a, REG, DMA_EN_A>;
+impl<'a, REG> DMA_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,8 +66,8 @@ impl W {
     #[doc = "Bit 0 - GPDMA Enable bit."]
     #[inline(always)]
     #[must_use]
-    pub fn dma_en(&mut self) -> DMA_EN_W<DMACFGREG_SPEC, 0> {
-        DMA_EN_W::new(self)
+    pub fn dma_en(&mut self) -> DMA_EN_W<DMACFGREG_SPEC> {
+        DMA_EN_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

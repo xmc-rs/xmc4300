@@ -44,8 +44,8 @@ impl SETPEND_R {
     }
 }
 #[doc = "Field `SETPEND` writer - Interrupt set-pending bits."]
-pub type SETPEND_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, SETPEND_A>;
-impl<'a, REG, const O: u8> SETPEND_W<'a, REG, O>
+pub type SETPEND_W<'a, REG> = crate::FieldWriter<'a, REG, 32, SETPEND_A>;
+impl<'a, REG> SETPEND_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
@@ -72,8 +72,8 @@ impl W {
     #[doc = "Bits 0:31 - Interrupt set-pending bits."]
     #[inline(always)]
     #[must_use]
-    pub fn setpend(&mut self) -> SETPEND_W<NVIC_ISPR2_SPEC, 0> {
-        SETPEND_W::new(self)
+    pub fn setpend(&mut self) -> SETPEND_W<NVIC_ISPR2_SPEC> {
+        SETPEND_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

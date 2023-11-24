@@ -5,7 +5,7 @@ pub type W = crate::W<MSIMASK_SPEC>;
 #[doc = "Field `IM` reader - Message Index Mask"]
 pub type IM_R = crate::FieldReader<u32>;
 #[doc = "Field `IM` writer - Message Index Mask"]
-pub type IM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type IM_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Message Index Mask"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Message Index Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn im(&mut self) -> IM_W<MSIMASK_SPEC, 0> {
-        IM_W::new(self)
+    pub fn im(&mut self) -> IM_W<MSIMASK_SPEC> {
+        IM_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

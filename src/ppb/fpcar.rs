@@ -5,7 +5,7 @@ pub type W = crate::W<FPCAR_SPEC>;
 #[doc = "Field `ADDRESS` reader - Address"]
 pub type ADDRESS_R = crate::FieldReader<u32>;
 #[doc = "Field `ADDRESS` writer - Address"]
-pub type ADDRESS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 29, O, u32>;
+pub type ADDRESS_W<'a, REG> = crate::FieldWriter<'a, REG, 29, u32>;
 impl R {
     #[doc = "Bits 3:31 - Address"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 3:31 - Address"]
     #[inline(always)]
     #[must_use]
-    pub fn address(&mut self) -> ADDRESS_W<FPCAR_SPEC, 3> {
-        ADDRESS_W::new(self)
+    pub fn address(&mut self) -> ADDRESS_W<FPCAR_SPEC> {
+        ADDRESS_W::new(self, 3)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

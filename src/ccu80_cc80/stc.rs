@@ -39,8 +39,8 @@ impl CSE_R {
     }
 }
 #[doc = "Field `CSE` writer - Cascaded shadow transfer enable"]
-pub type CSE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CSE_A>;
-impl<'a, REG, const O: u8> CSE_W<'a, REG, O>
+pub type CSE_W<'a, REG> = crate::BitWriter<'a, REG, CSE_A>;
+impl<'a, REG> CSE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -105,8 +105,8 @@ impl STM_R {
     }
 }
 #[doc = "Field `STM` writer - Shadow transfer mode"]
-pub type STM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, STM_A>;
-impl<'a, REG, const O: u8> STM_W<'a, REG, O>
+pub type STM_W<'a, REG> = crate::FieldWriter<'a, REG, 2, STM_A>;
+impl<'a, REG> STM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -143,14 +143,14 @@ impl W {
     #[doc = "Bit 0 - Cascaded shadow transfer enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cse(&mut self) -> CSE_W<STC_SPEC, 0> {
-        CSE_W::new(self)
+    pub fn cse(&mut self) -> CSE_W<STC_SPEC> {
+        CSE_W::new(self, 0)
     }
     #[doc = "Bits 1:2 - Shadow transfer mode"]
     #[inline(always)]
     #[must_use]
-    pub fn stm(&mut self) -> STM_W<STC_SPEC, 1> {
-        STM_W::new(self)
+    pub fn stm(&mut self) -> STM_W<STC_SPEC> {
+        STM_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

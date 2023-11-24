@@ -15,8 +15,8 @@ impl From<USBCEN_AW> for bool {
     }
 }
 #[doc = "Field `USBCEN` writer - USB Clock Enable"]
-pub type USBCEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USBCEN_AW>;
-impl<'a, REG, const O: u8> USBCEN_W<'a, REG, O>
+pub type USBCEN_W<'a, REG> = crate::BitWriter<'a, REG, USBCEN_AW>;
+impl<'a, REG> USBCEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<MMCCEN_AW> for bool {
     }
 }
 #[doc = "Field `MMCCEN` writer - MMC Clock Enable"]
-pub type MMCCEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MMCCEN_AW>;
-impl<'a, REG, const O: u8> MMCCEN_W<'a, REG, O>
+pub type MMCCEN_W<'a, REG> = crate::BitWriter<'a, REG, MMCCEN_AW>;
+impl<'a, REG> MMCCEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<ETH0CEN_AW> for bool {
     }
 }
 #[doc = "Field `ETH0CEN` writer - Ethernet Clock Enable"]
-pub type ETH0CEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ETH0CEN_AW>;
-impl<'a, REG, const O: u8> ETH0CEN_W<'a, REG, O>
+pub type ETH0CEN_W<'a, REG> = crate::BitWriter<'a, REG, ETH0CEN_AW>;
+impl<'a, REG> ETH0CEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<CCUCEN_AW> for bool {
     }
 }
 #[doc = "Field `CCUCEN` writer - CCU Clock Enable"]
-pub type CCUCEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCUCEN_AW>;
-impl<'a, REG, const O: u8> CCUCEN_W<'a, REG, O>
+pub type CCUCEN_W<'a, REG> = crate::BitWriter<'a, REG, CCUCEN_AW>;
+impl<'a, REG> CCUCEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<WDTCEN_AW> for bool {
     }
 }
 #[doc = "Field `WDTCEN` writer - WDT Clock Enable"]
-pub type WDTCEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WDTCEN_AW>;
-impl<'a, REG, const O: u8> WDTCEN_W<'a, REG, O>
+pub type WDTCEN_W<'a, REG> = crate::BitWriter<'a, REG, WDTCEN_AW>;
+impl<'a, REG> WDTCEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -159,32 +159,32 @@ impl W {
     #[doc = "Bit 0 - USB Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn usbcen(&mut self) -> USBCEN_W<CLKSET_SPEC, 0> {
-        USBCEN_W::new(self)
+    pub fn usbcen(&mut self) -> USBCEN_W<CLKSET_SPEC> {
+        USBCEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - MMC Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mmccen(&mut self) -> MMCCEN_W<CLKSET_SPEC, 1> {
-        MMCCEN_W::new(self)
+    pub fn mmccen(&mut self) -> MMCCEN_W<CLKSET_SPEC> {
+        MMCCEN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Ethernet Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn eth0cen(&mut self) -> ETH0CEN_W<CLKSET_SPEC, 2> {
-        ETH0CEN_W::new(self)
+    pub fn eth0cen(&mut self) -> ETH0CEN_W<CLKSET_SPEC> {
+        ETH0CEN_W::new(self, 2)
     }
     #[doc = "Bit 4 - CCU Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ccucen(&mut self) -> CCUCEN_W<CLKSET_SPEC, 4> {
-        CCUCEN_W::new(self)
+    pub fn ccucen(&mut self) -> CCUCEN_W<CLKSET_SPEC> {
+        CCUCEN_W::new(self, 4)
     }
     #[doc = "Bit 5 - WDT Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wdtcen(&mut self) -> WDTCEN_W<CLKSET_SPEC, 5> {
-        WDTCEN_W::new(self)
+    pub fn wdtcen(&mut self) -> WDTCEN_W<CLKSET_SPEC> {
+        WDTCEN_W::new(self, 5)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

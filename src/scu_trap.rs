@@ -1,16 +1,38 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    trapstat: TRAPSTAT,
+    trapraw: TRAPRAW,
+    trapdis: TRAPDIS,
+    trapclr: TRAPCLR,
+    trapset: TRAPSET,
+}
+impl RegisterBlock {
     #[doc = "0x00 - Trap Status Register"]
-    pub trapstat: TRAPSTAT,
+    #[inline(always)]
+    pub const fn trapstat(&self) -> &TRAPSTAT {
+        &self.trapstat
+    }
     #[doc = "0x04 - Trap Raw Status Register"]
-    pub trapraw: TRAPRAW,
+    #[inline(always)]
+    pub const fn trapraw(&self) -> &TRAPRAW {
+        &self.trapraw
+    }
     #[doc = "0x08 - Trap Disable Register"]
-    pub trapdis: TRAPDIS,
+    #[inline(always)]
+    pub const fn trapdis(&self) -> &TRAPDIS {
+        &self.trapdis
+    }
     #[doc = "0x0c - Trap Clear Register"]
-    pub trapclr: TRAPCLR,
+    #[inline(always)]
+    pub const fn trapclr(&self) -> &TRAPCLR {
+        &self.trapclr
+    }
     #[doc = "0x10 - Trap Set Register"]
-    pub trapset: TRAPSET,
+    #[inline(always)]
+    pub const fn trapset(&self) -> &TRAPSET {
+        &self.trapset
+    }
 }
 #[doc = "TRAPSTAT (r) register accessor: Trap Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`trapstat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@trapstat`]
 module"]

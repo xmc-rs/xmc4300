@@ -44,8 +44,8 @@ impl CH_R {
     }
 }
 #[doc = "Field `CH` writer - Enables/Disables the channel"]
-pub type CH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, CH_A>;
-impl<'a, REG, const O: u8> CH_W<'a, REG, O>
+pub type CH_W<'a, REG> = crate::FieldWriter<'a, REG, 8, CH_A>;
+impl<'a, REG> CH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -62,7 +62,7 @@ where
     }
 }
 #[doc = "Field `WE_CH` writer - Channel enable write enable"]
-pub type WE_CH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type WE_CH_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Enables/Disables the channel"]
     #[inline(always)]
@@ -74,14 +74,14 @@ impl W {
     #[doc = "Bits 0:7 - Enables/Disables the channel"]
     #[inline(always)]
     #[must_use]
-    pub fn ch(&mut self) -> CH_W<CHENREG_SPEC, 0> {
-        CH_W::new(self)
+    pub fn ch(&mut self) -> CH_W<CHENREG_SPEC> {
+        CH_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Channel enable write enable"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch(&mut self) -> WE_CH_W<CHENREG_SPEC, 8> {
-        WE_CH_W::new(self)
+    pub fn we_ch(&mut self) -> WE_CH_W<CHENREG_SPEC> {
+        WE_CH_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

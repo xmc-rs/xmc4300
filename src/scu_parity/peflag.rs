@@ -39,8 +39,8 @@ impl PEFPS_R {
     }
 }
 #[doc = "Field `PEFPS` writer - Parity Error Flag for PSRAM"]
-pub type PEFPS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEFPS_A>;
-impl<'a, REG, const O: u8> PEFPS_W<'a, REG, O>
+pub type PEFPS_W<'a, REG> = crate::BitWriter<'a, REG, PEFPS_A>;
+impl<'a, REG> PEFPS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl PEFDS1_R {
     }
 }
 #[doc = "Field `PEFDS1` writer - Parity Error Flag for DSRAM1"]
-pub type PEFDS1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEFDS1_A>;
-impl<'a, REG, const O: u8> PEFDS1_W<'a, REG, O>
+pub type PEFDS1_W<'a, REG> = crate::BitWriter<'a, REG, PEFDS1_A>;
+impl<'a, REG> PEFDS1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl PEFU0_R {
     }
 }
 #[doc = "Field `PEFU0` writer - Parity Error Flag for USIC0 Memory"]
-pub type PEFU0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEFU0_A>;
-impl<'a, REG, const O: u8> PEFU0_W<'a, REG, O>
+pub type PEFU0_W<'a, REG> = crate::BitWriter<'a, REG, PEFU0_A>;
+impl<'a, REG> PEFU0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl PEFU1_R {
     }
 }
 #[doc = "Field `PEFU1` writer - Parity Error Flag for USIC1 Memory"]
-pub type PEFU1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEFU1_A>;
-impl<'a, REG, const O: u8> PEFU1_W<'a, REG, O>
+pub type PEFU1_W<'a, REG> = crate::BitWriter<'a, REG, PEFU1_A>;
+impl<'a, REG> PEFU1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl PEFMC_R {
     }
 }
 #[doc = "Field `PEFMC` writer - Parity Error Flag for MultiCAN Memory"]
-pub type PEFMC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEFMC_A>;
-impl<'a, REG, const O: u8> PEFMC_W<'a, REG, O>
+pub type PEFMC_W<'a, REG> = crate::BitWriter<'a, REG, PEFMC_A>;
+impl<'a, REG> PEFMC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl PEFPPRF_R {
     }
 }
 #[doc = "Field `PEFPPRF` writer - Parity Error Flag for PMU Prefetch Memory"]
-pub type PEFPPRF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEFPPRF_A>;
-impl<'a, REG, const O: u8> PEFPPRF_W<'a, REG, O>
+pub type PEFPPRF_W<'a, REG> = crate::BitWriter<'a, REG, PEFPPRF_A>;
+impl<'a, REG> PEFPPRF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl PEUSB_R {
     }
 }
 #[doc = "Field `PEUSB` writer - Parity Error Flag for USB Memory"]
-pub type PEUSB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEUSB_A>;
-impl<'a, REG, const O: u8> PEUSB_W<'a, REG, O>
+pub type PEUSB_W<'a, REG> = crate::BitWriter<'a, REG, PEUSB_A>;
+impl<'a, REG> PEUSB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl PEETH0TX_R {
     }
 }
 #[doc = "Field `PEETH0TX` writer - Parity Error Flag for ETH TX Memory"]
-pub type PEETH0TX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEETH0TX_A>;
-impl<'a, REG, const O: u8> PEETH0TX_W<'a, REG, O>
+pub type PEETH0TX_W<'a, REG> = crate::BitWriter<'a, REG, PEETH0TX_A>;
+impl<'a, REG> PEETH0TX_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl PEETH0RX_R {
     }
 }
 #[doc = "Field `PEETH0RX` writer - Parity Error Flag for ETH RX Memory"]
-pub type PEETH0RX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEETH0RX_A>;
-impl<'a, REG, const O: u8> PEETH0RX_W<'a, REG, O>
+pub type PEETH0RX_W<'a, REG> = crate::BitWriter<'a, REG, PEETH0RX_A>;
+impl<'a, REG> PEETH0RX_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -516,8 +516,8 @@ impl PESD0_R {
     }
 }
 #[doc = "Field `PESD0` writer - Parity Error Flag for SDMMC Memory 0"]
-pub type PESD0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PESD0_A>;
-impl<'a, REG, const O: u8> PESD0_W<'a, REG, O>
+pub type PESD0_W<'a, REG> = crate::BitWriter<'a, REG, PESD0_A>;
+impl<'a, REG> PESD0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -569,8 +569,8 @@ impl PESD1_R {
     }
 }
 #[doc = "Field `PESD1` writer - Parity Error Flag for SDMMC Memory 1"]
-pub type PESD1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PESD1_A>;
-impl<'a, REG, const O: u8> PESD1_W<'a, REG, O>
+pub type PESD1_W<'a, REG> = crate::BitWriter<'a, REG, PESD1_A>;
+impl<'a, REG> PESD1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -622,8 +622,8 @@ impl PEECAT0_R {
     }
 }
 #[doc = "Field `PEECAT0` writer - Parity Error Flag for ECAT0 Memory"]
-pub type PEECAT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEECAT0_A>;
-impl<'a, REG, const O: u8> PEECAT0_W<'a, REG, O>
+pub type PEECAT0_W<'a, REG> = crate::BitWriter<'a, REG, PEECAT0_A>;
+impl<'a, REG> PEECAT0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -704,74 +704,74 @@ impl W {
     #[doc = "Bit 0 - Parity Error Flag for PSRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn pefps(&mut self) -> PEFPS_W<PEFLAG_SPEC, 0> {
-        PEFPS_W::new(self)
+    pub fn pefps(&mut self) -> PEFPS_W<PEFLAG_SPEC> {
+        PEFPS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Parity Error Flag for DSRAM1"]
     #[inline(always)]
     #[must_use]
-    pub fn pefds1(&mut self) -> PEFDS1_W<PEFLAG_SPEC, 1> {
-        PEFDS1_W::new(self)
+    pub fn pefds1(&mut self) -> PEFDS1_W<PEFLAG_SPEC> {
+        PEFDS1_W::new(self, 1)
     }
     #[doc = "Bit 8 - Parity Error Flag for USIC0 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn pefu0(&mut self) -> PEFU0_W<PEFLAG_SPEC, 8> {
-        PEFU0_W::new(self)
+    pub fn pefu0(&mut self) -> PEFU0_W<PEFLAG_SPEC> {
+        PEFU0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Parity Error Flag for USIC1 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn pefu1(&mut self) -> PEFU1_W<PEFLAG_SPEC, 9> {
-        PEFU1_W::new(self)
+    pub fn pefu1(&mut self) -> PEFU1_W<PEFLAG_SPEC> {
+        PEFU1_W::new(self, 9)
     }
     #[doc = "Bit 12 - Parity Error Flag for MultiCAN Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn pefmc(&mut self) -> PEFMC_W<PEFLAG_SPEC, 12> {
-        PEFMC_W::new(self)
+    pub fn pefmc(&mut self) -> PEFMC_W<PEFLAG_SPEC> {
+        PEFMC_W::new(self, 12)
     }
     #[doc = "Bit 13 - Parity Error Flag for PMU Prefetch Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn pefpprf(&mut self) -> PEFPPRF_W<PEFLAG_SPEC, 13> {
-        PEFPPRF_W::new(self)
+    pub fn pefpprf(&mut self) -> PEFPPRF_W<PEFLAG_SPEC> {
+        PEFPPRF_W::new(self, 13)
     }
     #[doc = "Bit 16 - Parity Error Flag for USB Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peusb(&mut self) -> PEUSB_W<PEFLAG_SPEC, 16> {
-        PEUSB_W::new(self)
+    pub fn peusb(&mut self) -> PEUSB_W<PEFLAG_SPEC> {
+        PEUSB_W::new(self, 16)
     }
     #[doc = "Bit 17 - Parity Error Flag for ETH TX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peeth0tx(&mut self) -> PEETH0TX_W<PEFLAG_SPEC, 17> {
-        PEETH0TX_W::new(self)
+    pub fn peeth0tx(&mut self) -> PEETH0TX_W<PEFLAG_SPEC> {
+        PEETH0TX_W::new(self, 17)
     }
     #[doc = "Bit 18 - Parity Error Flag for ETH RX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peeth0rx(&mut self) -> PEETH0RX_W<PEFLAG_SPEC, 18> {
-        PEETH0RX_W::new(self)
+    pub fn peeth0rx(&mut self) -> PEETH0RX_W<PEFLAG_SPEC> {
+        PEETH0RX_W::new(self, 18)
     }
     #[doc = "Bit 19 - Parity Error Flag for SDMMC Memory 0"]
     #[inline(always)]
     #[must_use]
-    pub fn pesd0(&mut self) -> PESD0_W<PEFLAG_SPEC, 19> {
-        PESD0_W::new(self)
+    pub fn pesd0(&mut self) -> PESD0_W<PEFLAG_SPEC> {
+        PESD0_W::new(self, 19)
     }
     #[doc = "Bit 20 - Parity Error Flag for SDMMC Memory 1"]
     #[inline(always)]
     #[must_use]
-    pub fn pesd1(&mut self) -> PESD1_W<PEFLAG_SPEC, 20> {
-        PESD1_W::new(self)
+    pub fn pesd1(&mut self) -> PESD1_W<PEFLAG_SPEC> {
+        PESD1_W::new(self, 20)
     }
     #[doc = "Bit 24 - Parity Error Flag for ECAT0 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peecat0(&mut self) -> PEECAT0_W<PEFLAG_SPEC, 24> {
-        PEECAT0_W::new(self)
+    pub fn peecat0(&mut self) -> PEECAT0_W<PEFLAG_SPEC> {
+        PEECAT0_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

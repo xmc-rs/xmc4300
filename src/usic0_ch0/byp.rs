@@ -5,7 +5,7 @@ pub type W = crate::W<BYP_SPEC>;
 #[doc = "Field `BDATA` reader - Bypass Data"]
 pub type BDATA_R = crate::FieldReader<u16>;
 #[doc = "Field `BDATA` writer - Bypass Data"]
-pub type BDATA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type BDATA_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Bypass Data"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Bypass Data"]
     #[inline(always)]
     #[must_use]
-    pub fn bdata(&mut self) -> BDATA_W<BYP_SPEC, 0> {
-        BDATA_W::new(self)
+    pub fn bdata(&mut self) -> BDATA_W<BYP_SPEC> {
+        BDATA_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

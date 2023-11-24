@@ -5,7 +5,7 @@ pub type W = crate::W<CRS_SPEC>;
 #[doc = "Field `CRS` reader - Compare Register"]
 pub type CRS_R = crate::FieldReader<u16>;
 #[doc = "Field `CRS` writer - Compare Register"]
-pub type CRS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type CRS_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Compare Register"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Compare Register"]
     #[inline(always)]
     #[must_use]
-    pub fn crs(&mut self) -> CRS_W<CRS_SPEC, 0> {
-        CRS_W::new(self)
+    pub fn crs(&mut self) -> CRS_W<CRS_SPEC> {
+        CRS_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

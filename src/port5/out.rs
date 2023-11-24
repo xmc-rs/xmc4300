@@ -39,8 +39,8 @@ impl P0_R {
     }
 }
 #[doc = "Field `P0` writer - Port n Output Bit 0"]
-pub type P0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P0_A>;
-impl<'a, REG, const O: u8> P0_W<'a, REG, O>
+pub type P0_W<'a, REG> = crate::BitWriter<'a, REG, P0_A>;
+impl<'a, REG> P0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl P1_R {
     }
 }
 #[doc = "Field `P1` writer - Port n Output Bit 1"]
-pub type P1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P1_A>;
-impl<'a, REG, const O: u8> P1_W<'a, REG, O>
+pub type P1_W<'a, REG> = crate::BitWriter<'a, REG, P1_A>;
+impl<'a, REG> P1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl P2_R {
     }
 }
 #[doc = "Field `P2` writer - Port n Output Bit 2"]
-pub type P2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P2_A>;
-impl<'a, REG, const O: u8> P2_W<'a, REG, O>
+pub type P2_W<'a, REG> = crate::BitWriter<'a, REG, P2_A>;
+impl<'a, REG> P2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl P3_R {
     }
 }
 #[doc = "Field `P3` writer - Port n Output Bit 3"]
-pub type P3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P3_A>;
-impl<'a, REG, const O: u8> P3_W<'a, REG, O>
+pub type P3_W<'a, REG> = crate::BitWriter<'a, REG, P3_A>;
+impl<'a, REG> P3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl P4_R {
     }
 }
 #[doc = "Field `P4` writer - Port n Output Bit 4"]
-pub type P4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P4_A>;
-impl<'a, REG, const O: u8> P4_W<'a, REG, O>
+pub type P4_W<'a, REG> = crate::BitWriter<'a, REG, P4_A>;
+impl<'a, REG> P4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl P5_R {
     }
 }
 #[doc = "Field `P5` writer - Port n Output Bit 5"]
-pub type P5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P5_A>;
-impl<'a, REG, const O: u8> P5_W<'a, REG, O>
+pub type P5_W<'a, REG> = crate::BitWriter<'a, REG, P5_A>;
+impl<'a, REG> P5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl P6_R {
     }
 }
 #[doc = "Field `P6` writer - Port n Output Bit 6"]
-pub type P6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P6_A>;
-impl<'a, REG, const O: u8> P6_W<'a, REG, O>
+pub type P6_W<'a, REG> = crate::BitWriter<'a, REG, P6_A>;
+impl<'a, REG> P6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl P7_R {
     }
 }
 #[doc = "Field `P7` writer - Port n Output Bit 7"]
-pub type P7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P7_A>;
-impl<'a, REG, const O: u8> P7_W<'a, REG, O>
+pub type P7_W<'a, REG> = crate::BitWriter<'a, REG, P7_A>;
+impl<'a, REG> P7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl P8_R {
     }
 }
 #[doc = "Field `P8` writer - Port n Output Bit 8"]
-pub type P8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P8_A>;
-impl<'a, REG, const O: u8> P8_W<'a, REG, O>
+pub type P8_W<'a, REG> = crate::BitWriter<'a, REG, P8_A>;
+impl<'a, REG> P8_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -516,8 +516,8 @@ impl P9_R {
     }
 }
 #[doc = "Field `P9` writer - Port n Output Bit 9"]
-pub type P9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P9_A>;
-impl<'a, REG, const O: u8> P9_W<'a, REG, O>
+pub type P9_W<'a, REG> = crate::BitWriter<'a, REG, P9_A>;
+impl<'a, REG> P9_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -569,8 +569,8 @@ impl P10_R {
     }
 }
 #[doc = "Field `P10` writer - Port n Output Bit 10"]
-pub type P10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P10_A>;
-impl<'a, REG, const O: u8> P10_W<'a, REG, O>
+pub type P10_W<'a, REG> = crate::BitWriter<'a, REG, P10_A>;
+impl<'a, REG> P10_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -622,8 +622,8 @@ impl P11_R {
     }
 }
 #[doc = "Field `P11` writer - Port n Output Bit 11"]
-pub type P11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P11_A>;
-impl<'a, REG, const O: u8> P11_W<'a, REG, O>
+pub type P11_W<'a, REG> = crate::BitWriter<'a, REG, P11_A>;
+impl<'a, REG> P11_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -675,8 +675,8 @@ impl P12_R {
     }
 }
 #[doc = "Field `P12` writer - Port n Output Bit 12"]
-pub type P12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P12_A>;
-impl<'a, REG, const O: u8> P12_W<'a, REG, O>
+pub type P12_W<'a, REG> = crate::BitWriter<'a, REG, P12_A>;
+impl<'a, REG> P12_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -728,8 +728,8 @@ impl P13_R {
     }
 }
 #[doc = "Field `P13` writer - Port n Output Bit 13"]
-pub type P13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P13_A>;
-impl<'a, REG, const O: u8> P13_W<'a, REG, O>
+pub type P13_W<'a, REG> = crate::BitWriter<'a, REG, P13_A>;
+impl<'a, REG> P13_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -781,8 +781,8 @@ impl P14_R {
     }
 }
 #[doc = "Field `P14` writer - Port n Output Bit 14"]
-pub type P14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P14_A>;
-impl<'a, REG, const O: u8> P14_W<'a, REG, O>
+pub type P14_W<'a, REG> = crate::BitWriter<'a, REG, P14_A>;
+impl<'a, REG> P14_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -834,8 +834,8 @@ impl P15_R {
     }
 }
 #[doc = "Field `P15` writer - Port n Output Bit 15"]
-pub type P15_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, P15_A>;
-impl<'a, REG, const O: u8> P15_W<'a, REG, O>
+pub type P15_W<'a, REG> = crate::BitWriter<'a, REG, P15_A>;
+impl<'a, REG> P15_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -936,98 +936,98 @@ impl W {
     #[doc = "Bit 0 - Port n Output Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn p0(&mut self) -> P0_W<OUT_SPEC, 0> {
-        P0_W::new(self)
+    pub fn p0(&mut self) -> P0_W<OUT_SPEC> {
+        P0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Port n Output Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn p1(&mut self) -> P1_W<OUT_SPEC, 1> {
-        P1_W::new(self)
+    pub fn p1(&mut self) -> P1_W<OUT_SPEC> {
+        P1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Port n Output Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn p2(&mut self) -> P2_W<OUT_SPEC, 2> {
-        P2_W::new(self)
+    pub fn p2(&mut self) -> P2_W<OUT_SPEC> {
+        P2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Port n Output Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn p3(&mut self) -> P3_W<OUT_SPEC, 3> {
-        P3_W::new(self)
+    pub fn p3(&mut self) -> P3_W<OUT_SPEC> {
+        P3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Port n Output Bit 4"]
     #[inline(always)]
     #[must_use]
-    pub fn p4(&mut self) -> P4_W<OUT_SPEC, 4> {
-        P4_W::new(self)
+    pub fn p4(&mut self) -> P4_W<OUT_SPEC> {
+        P4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Port n Output Bit 5"]
     #[inline(always)]
     #[must_use]
-    pub fn p5(&mut self) -> P5_W<OUT_SPEC, 5> {
-        P5_W::new(self)
+    pub fn p5(&mut self) -> P5_W<OUT_SPEC> {
+        P5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Port n Output Bit 6"]
     #[inline(always)]
     #[must_use]
-    pub fn p6(&mut self) -> P6_W<OUT_SPEC, 6> {
-        P6_W::new(self)
+    pub fn p6(&mut self) -> P6_W<OUT_SPEC> {
+        P6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Port n Output Bit 7"]
     #[inline(always)]
     #[must_use]
-    pub fn p7(&mut self) -> P7_W<OUT_SPEC, 7> {
-        P7_W::new(self)
+    pub fn p7(&mut self) -> P7_W<OUT_SPEC> {
+        P7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Port n Output Bit 8"]
     #[inline(always)]
     #[must_use]
-    pub fn p8(&mut self) -> P8_W<OUT_SPEC, 8> {
-        P8_W::new(self)
+    pub fn p8(&mut self) -> P8_W<OUT_SPEC> {
+        P8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Port n Output Bit 9"]
     #[inline(always)]
     #[must_use]
-    pub fn p9(&mut self) -> P9_W<OUT_SPEC, 9> {
-        P9_W::new(self)
+    pub fn p9(&mut self) -> P9_W<OUT_SPEC> {
+        P9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Port n Output Bit 10"]
     #[inline(always)]
     #[must_use]
-    pub fn p10(&mut self) -> P10_W<OUT_SPEC, 10> {
-        P10_W::new(self)
+    pub fn p10(&mut self) -> P10_W<OUT_SPEC> {
+        P10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Port n Output Bit 11"]
     #[inline(always)]
     #[must_use]
-    pub fn p11(&mut self) -> P11_W<OUT_SPEC, 11> {
-        P11_W::new(self)
+    pub fn p11(&mut self) -> P11_W<OUT_SPEC> {
+        P11_W::new(self, 11)
     }
     #[doc = "Bit 12 - Port n Output Bit 12"]
     #[inline(always)]
     #[must_use]
-    pub fn p12(&mut self) -> P12_W<OUT_SPEC, 12> {
-        P12_W::new(self)
+    pub fn p12(&mut self) -> P12_W<OUT_SPEC> {
+        P12_W::new(self, 12)
     }
     #[doc = "Bit 13 - Port n Output Bit 13"]
     #[inline(always)]
     #[must_use]
-    pub fn p13(&mut self) -> P13_W<OUT_SPEC, 13> {
-        P13_W::new(self)
+    pub fn p13(&mut self) -> P13_W<OUT_SPEC> {
+        P13_W::new(self, 13)
     }
     #[doc = "Bit 14 - Port n Output Bit 14"]
     #[inline(always)]
     #[must_use]
-    pub fn p14(&mut self) -> P14_W<OUT_SPEC, 14> {
-        P14_W::new(self)
+    pub fn p14(&mut self) -> P14_W<OUT_SPEC> {
+        P14_W::new(self, 14)
     }
     #[doc = "Bit 15 - Port n Output Bit 15"]
     #[inline(always)]
     #[must_use]
-    pub fn p15(&mut self) -> P15_W<OUT_SPEC, 15> {
-        P15_W::new(self)
+    pub fn p15(&mut self) -> P15_W<OUT_SPEC> {
+        P15_W::new(self, 15)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

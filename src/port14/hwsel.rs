@@ -52,8 +52,8 @@ impl HW0_R {
     }
 }
 #[doc = "Field `HW0` writer - Port n Pin Hardware Select Bit 0"]
-pub type HW0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW0_A>;
-impl<'a, REG, const O: u8> HW0_W<'a, REG, O>
+pub type HW0_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW0_A>;
+impl<'a, REG> HW0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -124,8 +124,8 @@ impl HW1_R {
     }
 }
 #[doc = "Field `HW1` writer - Port n Pin Hardware Select Bit 1"]
-pub type HW1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW1_A>;
-impl<'a, REG, const O: u8> HW1_W<'a, REG, O>
+pub type HW1_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW1_A>;
+impl<'a, REG> HW1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -196,8 +196,8 @@ impl HW2_R {
     }
 }
 #[doc = "Field `HW2` writer - Port n Pin Hardware Select Bit 2"]
-pub type HW2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW2_A>;
-impl<'a, REG, const O: u8> HW2_W<'a, REG, O>
+pub type HW2_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW2_A>;
+impl<'a, REG> HW2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -268,8 +268,8 @@ impl HW3_R {
     }
 }
 #[doc = "Field `HW3` writer - Port n Pin Hardware Select Bit 3"]
-pub type HW3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW3_A>;
-impl<'a, REG, const O: u8> HW3_W<'a, REG, O>
+pub type HW3_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW3_A>;
+impl<'a, REG> HW3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -340,8 +340,8 @@ impl HW4_R {
     }
 }
 #[doc = "Field `HW4` writer - Port n Pin Hardware Select Bit 4"]
-pub type HW4_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW4_A>;
-impl<'a, REG, const O: u8> HW4_W<'a, REG, O>
+pub type HW4_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW4_A>;
+impl<'a, REG> HW4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -412,8 +412,8 @@ impl HW5_R {
     }
 }
 #[doc = "Field `HW5` writer - Port n Pin Hardware Select Bit 5"]
-pub type HW5_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW5_A>;
-impl<'a, REG, const O: u8> HW5_W<'a, REG, O>
+pub type HW5_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW5_A>;
+impl<'a, REG> HW5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -484,8 +484,8 @@ impl HW6_R {
     }
 }
 #[doc = "Field `HW6` writer - Port n Pin Hardware Select Bit 6"]
-pub type HW6_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW6_A>;
-impl<'a, REG, const O: u8> HW6_W<'a, REG, O>
+pub type HW6_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW6_A>;
+impl<'a, REG> HW6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -556,8 +556,8 @@ impl HW7_R {
     }
 }
 #[doc = "Field `HW7` writer - Port n Pin Hardware Select Bit 7"]
-pub type HW7_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW7_A>;
-impl<'a, REG, const O: u8> HW7_W<'a, REG, O>
+pub type HW7_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW7_A>;
+impl<'a, REG> HW7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -628,8 +628,8 @@ impl HW8_R {
     }
 }
 #[doc = "Field `HW8` writer - Port n Pin Hardware Select Bit 8"]
-pub type HW8_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW8_A>;
-impl<'a, REG, const O: u8> HW8_W<'a, REG, O>
+pub type HW8_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW8_A>;
+impl<'a, REG> HW8_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -700,8 +700,8 @@ impl HW9_R {
     }
 }
 #[doc = "Field `HW9` writer - Port n Pin Hardware Select Bit 9"]
-pub type HW9_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW9_A>;
-impl<'a, REG, const O: u8> HW9_W<'a, REG, O>
+pub type HW9_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW9_A>;
+impl<'a, REG> HW9_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -772,8 +772,8 @@ impl HW10_R {
     }
 }
 #[doc = "Field `HW10` writer - Port n Pin Hardware Select Bit 10"]
-pub type HW10_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW10_A>;
-impl<'a, REG, const O: u8> HW10_W<'a, REG, O>
+pub type HW10_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW10_A>;
+impl<'a, REG> HW10_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -844,8 +844,8 @@ impl HW11_R {
     }
 }
 #[doc = "Field `HW11` writer - Port n Pin Hardware Select Bit 11"]
-pub type HW11_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW11_A>;
-impl<'a, REG, const O: u8> HW11_W<'a, REG, O>
+pub type HW11_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW11_A>;
+impl<'a, REG> HW11_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -916,8 +916,8 @@ impl HW12_R {
     }
 }
 #[doc = "Field `HW12` writer - Port n Pin Hardware Select Bit 12"]
-pub type HW12_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW12_A>;
-impl<'a, REG, const O: u8> HW12_W<'a, REG, O>
+pub type HW12_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW12_A>;
+impl<'a, REG> HW12_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -988,8 +988,8 @@ impl HW13_R {
     }
 }
 #[doc = "Field `HW13` writer - Port n Pin Hardware Select Bit 13"]
-pub type HW13_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW13_A>;
-impl<'a, REG, const O: u8> HW13_W<'a, REG, O>
+pub type HW13_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW13_A>;
+impl<'a, REG> HW13_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1060,8 +1060,8 @@ impl HW14_R {
     }
 }
 #[doc = "Field `HW14` writer - Port n Pin Hardware Select Bit 14"]
-pub type HW14_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW14_A>;
-impl<'a, REG, const O: u8> HW14_W<'a, REG, O>
+pub type HW14_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW14_A>;
+impl<'a, REG> HW14_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1132,8 +1132,8 @@ impl HW15_R {
     }
 }
 #[doc = "Field `HW15` writer - Port n Pin Hardware Select Bit 15"]
-pub type HW15_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW15_A>;
-impl<'a, REG, const O: u8> HW15_W<'a, REG, O>
+pub type HW15_W<'a, REG> = crate::FieldWriter<'a, REG, 2, HW15_A>;
+impl<'a, REG> HW15_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1240,98 +1240,98 @@ impl W {
     #[doc = "Bits 0:1 - Port n Pin Hardware Select Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn hw0(&mut self) -> HW0_W<HWSEL_SPEC, 0> {
-        HW0_W::new(self)
+    pub fn hw0(&mut self) -> HW0_W<HWSEL_SPEC> {
+        HW0_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Port n Pin Hardware Select Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn hw1(&mut self) -> HW1_W<HWSEL_SPEC, 2> {
-        HW1_W::new(self)
+    pub fn hw1(&mut self) -> HW1_W<HWSEL_SPEC> {
+        HW1_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Port n Pin Hardware Select Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn hw2(&mut self) -> HW2_W<HWSEL_SPEC, 4> {
-        HW2_W::new(self)
+    pub fn hw2(&mut self) -> HW2_W<HWSEL_SPEC> {
+        HW2_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Port n Pin Hardware Select Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn hw3(&mut self) -> HW3_W<HWSEL_SPEC, 6> {
-        HW3_W::new(self)
+    pub fn hw3(&mut self) -> HW3_W<HWSEL_SPEC> {
+        HW3_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Port n Pin Hardware Select Bit 4"]
     #[inline(always)]
     #[must_use]
-    pub fn hw4(&mut self) -> HW4_W<HWSEL_SPEC, 8> {
-        HW4_W::new(self)
+    pub fn hw4(&mut self) -> HW4_W<HWSEL_SPEC> {
+        HW4_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Port n Pin Hardware Select Bit 5"]
     #[inline(always)]
     #[must_use]
-    pub fn hw5(&mut self) -> HW5_W<HWSEL_SPEC, 10> {
-        HW5_W::new(self)
+    pub fn hw5(&mut self) -> HW5_W<HWSEL_SPEC> {
+        HW5_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Port n Pin Hardware Select Bit 6"]
     #[inline(always)]
     #[must_use]
-    pub fn hw6(&mut self) -> HW6_W<HWSEL_SPEC, 12> {
-        HW6_W::new(self)
+    pub fn hw6(&mut self) -> HW6_W<HWSEL_SPEC> {
+        HW6_W::new(self, 12)
     }
     #[doc = "Bits 14:15 - Port n Pin Hardware Select Bit 7"]
     #[inline(always)]
     #[must_use]
-    pub fn hw7(&mut self) -> HW7_W<HWSEL_SPEC, 14> {
-        HW7_W::new(self)
+    pub fn hw7(&mut self) -> HW7_W<HWSEL_SPEC> {
+        HW7_W::new(self, 14)
     }
     #[doc = "Bits 16:17 - Port n Pin Hardware Select Bit 8"]
     #[inline(always)]
     #[must_use]
-    pub fn hw8(&mut self) -> HW8_W<HWSEL_SPEC, 16> {
-        HW8_W::new(self)
+    pub fn hw8(&mut self) -> HW8_W<HWSEL_SPEC> {
+        HW8_W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Port n Pin Hardware Select Bit 9"]
     #[inline(always)]
     #[must_use]
-    pub fn hw9(&mut self) -> HW9_W<HWSEL_SPEC, 18> {
-        HW9_W::new(self)
+    pub fn hw9(&mut self) -> HW9_W<HWSEL_SPEC> {
+        HW9_W::new(self, 18)
     }
     #[doc = "Bits 20:21 - Port n Pin Hardware Select Bit 10"]
     #[inline(always)]
     #[must_use]
-    pub fn hw10(&mut self) -> HW10_W<HWSEL_SPEC, 20> {
-        HW10_W::new(self)
+    pub fn hw10(&mut self) -> HW10_W<HWSEL_SPEC> {
+        HW10_W::new(self, 20)
     }
     #[doc = "Bits 22:23 - Port n Pin Hardware Select Bit 11"]
     #[inline(always)]
     #[must_use]
-    pub fn hw11(&mut self) -> HW11_W<HWSEL_SPEC, 22> {
-        HW11_W::new(self)
+    pub fn hw11(&mut self) -> HW11_W<HWSEL_SPEC> {
+        HW11_W::new(self, 22)
     }
     #[doc = "Bits 24:25 - Port n Pin Hardware Select Bit 12"]
     #[inline(always)]
     #[must_use]
-    pub fn hw12(&mut self) -> HW12_W<HWSEL_SPEC, 24> {
-        HW12_W::new(self)
+    pub fn hw12(&mut self) -> HW12_W<HWSEL_SPEC> {
+        HW12_W::new(self, 24)
     }
     #[doc = "Bits 26:27 - Port n Pin Hardware Select Bit 13"]
     #[inline(always)]
     #[must_use]
-    pub fn hw13(&mut self) -> HW13_W<HWSEL_SPEC, 26> {
-        HW13_W::new(self)
+    pub fn hw13(&mut self) -> HW13_W<HWSEL_SPEC> {
+        HW13_W::new(self, 26)
     }
     #[doc = "Bits 28:29 - Port n Pin Hardware Select Bit 14"]
     #[inline(always)]
     #[must_use]
-    pub fn hw14(&mut self) -> HW14_W<HWSEL_SPEC, 28> {
-        HW14_W::new(self)
+    pub fn hw14(&mut self) -> HW14_W<HWSEL_SPEC> {
+        HW14_W::new(self, 28)
     }
     #[doc = "Bits 30:31 - Port n Pin Hardware Select Bit 15"]
     #[inline(always)]
     #[must_use]
-    pub fn hw15(&mut self) -> HW15_W<HWSEL_SPEC, 30> {
-        HW15_W::new(self)
+    pub fn hw15(&mut self) -> HW15_W<HWSEL_SPEC> {
+        HW15_W::new(self, 30)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

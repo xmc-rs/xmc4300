@@ -39,8 +39,8 @@ impl ENABLE_R {
     }
 }
 #[doc = "Field `ENABLE` writer - Enable MPU"]
-pub type ENABLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENABLE_A>;
-impl<'a, REG, const O: u8> ENABLE_W<'a, REG, O>
+pub type ENABLE_W<'a, REG> = crate::BitWriter<'a, REG, ENABLE_A>;
+impl<'a, REG> ENABLE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl HFNMIENA_R {
     }
 }
 #[doc = "Field `HFNMIENA` writer - Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers"]
-pub type HFNMIENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HFNMIENA_A>;
-impl<'a, REG, const O: u8> HFNMIENA_W<'a, REG, O>
+pub type HFNMIENA_W<'a, REG> = crate::BitWriter<'a, REG, HFNMIENA_A>;
+impl<'a, REG> HFNMIENA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl PRIVDEFENA_R {
     }
 }
 #[doc = "Field `PRIVDEFENA` writer - Enables privileged software access to the default memory map"]
-pub type PRIVDEFENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PRIVDEFENA_A>;
-impl<'a, REG, const O: u8> PRIVDEFENA_W<'a, REG, O>
+pub type PRIVDEFENA_W<'a, REG> = crate::BitWriter<'a, REG, PRIVDEFENA_A>;
+impl<'a, REG> PRIVDEFENA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -182,20 +182,20 @@ impl W {
     #[doc = "Bit 0 - Enable MPU"]
     #[inline(always)]
     #[must_use]
-    pub fn enable(&mut self) -> ENABLE_W<MPU_CTRL_SPEC, 0> {
-        ENABLE_W::new(self)
+    pub fn enable(&mut self) -> ENABLE_W<MPU_CTRL_SPEC> {
+        ENABLE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers"]
     #[inline(always)]
     #[must_use]
-    pub fn hfnmiena(&mut self) -> HFNMIENA_W<MPU_CTRL_SPEC, 1> {
-        HFNMIENA_W::new(self)
+    pub fn hfnmiena(&mut self) -> HFNMIENA_W<MPU_CTRL_SPEC> {
+        HFNMIENA_W::new(self, 1)
     }
     #[doc = "Bit 2 - Enables privileged software access to the default memory map"]
     #[inline(always)]
     #[must_use]
-    pub fn privdefena(&mut self) -> PRIVDEFENA_W<MPU_CTRL_SPEC, 2> {
-        PRIVDEFENA_W::new(self)
+    pub fn privdefena(&mut self) -> PRIVDEFENA_W<MPU_CTRL_SPEC> {
+        PRIVDEFENA_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

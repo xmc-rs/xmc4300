@@ -44,8 +44,8 @@ impl TGS_R {
     }
 }
 #[doc = "Field `TGS` writer - Trigger Set for OTGB0/1"]
-pub type TGS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, TGS_A>;
-impl<'a, REG, const O: u8> TGS_W<'a, REG, O>
+pub type TGS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TGS_A>;
+impl<'a, REG> TGS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -98,8 +98,8 @@ impl TGB_R {
     }
 }
 #[doc = "Field `TGB` writer - OTGB0/1 Bus Select"]
-pub type TGB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TGB_A>;
-impl<'a, REG, const O: u8> TGB_W<'a, REG, O>
+pub type TGB_W<'a, REG> = crate::BitWriter<'a, REG, TGB_A>;
+impl<'a, REG> TGB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -115,7 +115,7 @@ where
     }
 }
 #[doc = "Field `TG_P` writer - TGS, TGB Write Protection"]
-pub type TG_P_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TG_P_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SUS` reader - OCDS Suspend Control"]
 pub type SUS_R = crate::FieldReader<SUS_A>;
 #[doc = "OCDS Suspend Control\n\nValue on reset: 0"]
@@ -174,8 +174,8 @@ impl SUS_R {
     }
 }
 #[doc = "Field `SUS` writer - OCDS Suspend Control"]
-pub type SUS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, SUS_A>;
-impl<'a, REG, const O: u8> SUS_W<'a, REG, O>
+pub type SUS_W<'a, REG> = crate::FieldWriter<'a, REG, 4, SUS_A>;
+impl<'a, REG> SUS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -202,7 +202,7 @@ where
     }
 }
 #[doc = "Field `SUS_P` writer - SUS Write Protection"]
-pub type SUS_P_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SUS_P_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SUSSTA` reader - Suspend State"]
 pub type SUSSTA_R = crate::BitReader<SUSSTA_A>;
 #[doc = "Suspend State\n\nValue on reset: 0"]
@@ -265,32 +265,32 @@ impl W {
     #[doc = "Bits 0:1 - Trigger Set for OTGB0/1"]
     #[inline(always)]
     #[must_use]
-    pub fn tgs(&mut self) -> TGS_W<OCS_SPEC, 0> {
-        TGS_W::new(self)
+    pub fn tgs(&mut self) -> TGS_W<OCS_SPEC> {
+        TGS_W::new(self, 0)
     }
     #[doc = "Bit 2 - OTGB0/1 Bus Select"]
     #[inline(always)]
     #[must_use]
-    pub fn tgb(&mut self) -> TGB_W<OCS_SPEC, 2> {
-        TGB_W::new(self)
+    pub fn tgb(&mut self) -> TGB_W<OCS_SPEC> {
+        TGB_W::new(self, 2)
     }
     #[doc = "Bit 3 - TGS, TGB Write Protection"]
     #[inline(always)]
     #[must_use]
-    pub fn tg_p(&mut self) -> TG_P_W<OCS_SPEC, 3> {
-        TG_P_W::new(self)
+    pub fn tg_p(&mut self) -> TG_P_W<OCS_SPEC> {
+        TG_P_W::new(self, 3)
     }
     #[doc = "Bits 24:27 - OCDS Suspend Control"]
     #[inline(always)]
     #[must_use]
-    pub fn sus(&mut self) -> SUS_W<OCS_SPEC, 24> {
-        SUS_W::new(self)
+    pub fn sus(&mut self) -> SUS_W<OCS_SPEC> {
+        SUS_W::new(self, 24)
     }
     #[doc = "Bit 28 - SUS Write Protection"]
     #[inline(always)]
     #[must_use]
-    pub fn sus_p(&mut self) -> SUS_P_W<OCS_SPEC, 28> {
-        SUS_P_W::new(self)
+    pub fn sus_p(&mut self) -> SUS_P_W<OCS_SPEC> {
+        SUS_P_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

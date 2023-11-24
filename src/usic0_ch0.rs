@@ -2,130 +2,266 @@
 #[repr(C)]
 pub struct RegisterBlock {
     _reserved0: [u8; 0x04],
-    #[doc = "0x04 - Channel Configuration Register"]
-    pub ccfg: CCFG,
+    ccfg: CCFG,
     _reserved1: [u8; 0x04],
-    #[doc = "0x0c - Kernel State Configuration Register"]
-    pub kscfg: KSCFG,
-    #[doc = "0x10 - Fractional Divider Register"]
-    pub fdr: FDR,
-    #[doc = "0x14 - Baud Rate Generator Register"]
-    pub brg: BRG,
-    #[doc = "0x18 - Interrupt Node Pointer Register"]
-    pub inpr: INPR,
-    #[doc = "0x1c - Input Control Register 0"]
-    pub dx0cr: DX0CR,
-    #[doc = "0x20 - Input Control Register 1"]
-    pub dx1cr: DX1CR,
-    #[doc = "0x24 - Input Control Register 2"]
-    pub dx2cr: DX2CR,
-    #[doc = "0x28 - Input Control Register 3"]
-    pub dx3cr: DX3CR,
-    #[doc = "0x2c - Input Control Register 4"]
-    pub dx4cr: DX4CR,
-    #[doc = "0x30 - Input Control Register 5"]
-    pub dx5cr: DX5CR,
-    #[doc = "0x34 - Shift Control Register"]
-    pub sctr: SCTR,
-    #[doc = "0x38 - Transmit Control/Status Register"]
-    pub tcsr: TCSR,
+    kscfg: KSCFG,
+    fdr: FDR,
+    brg: BRG,
+    inpr: INPR,
+    dx0cr: DX0CR,
+    dx1cr: DX1CR,
+    dx2cr: DX2CR,
+    dx3cr: DX3CR,
+    dx4cr: DX4CR,
+    dx5cr: DX5CR,
+    sctr: SCTR,
+    tcsr: TCSR,
     _reserved_13_pcr: [u8; 0x04],
-    #[doc = "0x40 - Channel Control Register"]
-    pub ccr: CCR,
-    #[doc = "0x44 - Capture Mode Timer Register"]
-    pub cmtr: CMTR,
+    ccr: CCR,
+    cmtr: CMTR,
     _reserved_16_psr: [u8; 0x04],
-    #[doc = "0x4c - Protocol Status Clear Register"]
-    pub pscr: PSCR,
-    #[doc = "0x50 - Receiver Buffer Status Register"]
-    pub rbufsr: RBUFSR,
-    #[doc = "0x54 - Receiver Buffer Register"]
-    pub rbuf: RBUF,
-    #[doc = "0x58 - Receiver Buffer Register for Debugger"]
-    pub rbufd: RBUFD,
-    #[doc = "0x5c - Receiver Buffer Register 0"]
-    pub rbuf0: RBUF0,
-    #[doc = "0x60 - Receiver Buffer Register 1"]
-    pub rbuf1: RBUF1,
-    #[doc = "0x64 - Receiver Buffer 01 Status Register"]
-    pub rbuf01sr: RBUF01SR,
-    #[doc = "0x68 - Flag Modification Register"]
-    pub fmr: FMR,
+    pscr: PSCR,
+    rbufsr: RBUFSR,
+    rbuf: RBUF,
+    rbufd: RBUFD,
+    rbuf0: RBUF0,
+    rbuf1: RBUF1,
+    rbuf01sr: RBUF01SR,
+    fmr: FMR,
     _reserved25: [u8; 0x14],
-    #[doc = "0x80..0x100 - Transmit Buffer"]
-    pub tbuf: [TBUF; 32],
-    #[doc = "0x100 - Bypass Data Register"]
-    pub byp: BYP,
-    #[doc = "0x104 - Bypass Control Register"]
-    pub bypcr: BYPCR,
-    #[doc = "0x108 - Transmitter Buffer Control Register"]
-    pub tbctr: TBCTR,
-    #[doc = "0x10c - Receiver Buffer Control Register"]
-    pub rbctr: RBCTR,
-    #[doc = "0x110 - Transmit/Receive Buffer Pointer Register"]
-    pub trbptr: TRBPTR,
-    #[doc = "0x114 - Transmit/Receive Buffer Status Register"]
-    pub trbsr: TRBSR,
-    #[doc = "0x118 - Transmit/Receive Buffer Status Clear Register"]
-    pub trbscr: TRBSCR,
-    #[doc = "0x11c - Receiver Buffer Output Register"]
-    pub outr: OUTR,
-    #[doc = "0x120 - Receiver Buffer Output Register L for Debugger"]
-    pub outdr: OUTDR,
+    tbuf: [TBUF; 32],
+    byp: BYP,
+    bypcr: BYPCR,
+    tbctr: TBCTR,
+    rbctr: RBCTR,
+    trbptr: TRBPTR,
+    trbsr: TRBSR,
+    trbscr: TRBSCR,
+    outr: OUTR,
+    outdr: OUTDR,
     _reserved35: [u8; 0x5c],
-    #[doc = "0x180..0x200 - Transmit FIFO Buffer"]
-    pub in_: [IN; 32],
+    in_: [IN; 32],
 }
 impl RegisterBlock {
+    #[doc = "0x04 - Channel Configuration Register"]
+    #[inline(always)]
+    pub const fn ccfg(&self) -> &CCFG {
+        &self.ccfg
+    }
+    #[doc = "0x0c - Kernel State Configuration Register"]
+    #[inline(always)]
+    pub const fn kscfg(&self) -> &KSCFG {
+        &self.kscfg
+    }
+    #[doc = "0x10 - Fractional Divider Register"]
+    #[inline(always)]
+    pub const fn fdr(&self) -> &FDR {
+        &self.fdr
+    }
+    #[doc = "0x14 - Baud Rate Generator Register"]
+    #[inline(always)]
+    pub const fn brg(&self) -> &BRG {
+        &self.brg
+    }
+    #[doc = "0x18 - Interrupt Node Pointer Register"]
+    #[inline(always)]
+    pub const fn inpr(&self) -> &INPR {
+        &self.inpr
+    }
+    #[doc = "0x1c - Input Control Register 0"]
+    #[inline(always)]
+    pub const fn dx0cr(&self) -> &DX0CR {
+        &self.dx0cr
+    }
+    #[doc = "0x20 - Input Control Register 1"]
+    #[inline(always)]
+    pub const fn dx1cr(&self) -> &DX1CR {
+        &self.dx1cr
+    }
+    #[doc = "0x24 - Input Control Register 2"]
+    #[inline(always)]
+    pub const fn dx2cr(&self) -> &DX2CR {
+        &self.dx2cr
+    }
+    #[doc = "0x28 - Input Control Register 3"]
+    #[inline(always)]
+    pub const fn dx3cr(&self) -> &DX3CR {
+        &self.dx3cr
+    }
+    #[doc = "0x2c - Input Control Register 4"]
+    #[inline(always)]
+    pub const fn dx4cr(&self) -> &DX4CR {
+        &self.dx4cr
+    }
+    #[doc = "0x30 - Input Control Register 5"]
+    #[inline(always)]
+    pub const fn dx5cr(&self) -> &DX5CR {
+        &self.dx5cr
+    }
+    #[doc = "0x34 - Shift Control Register"]
+    #[inline(always)]
+    pub const fn sctr(&self) -> &SCTR {
+        &self.sctr
+    }
+    #[doc = "0x38 - Transmit Control/Status Register"]
+    #[inline(always)]
+    pub const fn tcsr(&self) -> &TCSR {
+        &self.tcsr
+    }
     #[doc = "0x3c - Protocol Control Register \\[IIS Mode\\]"]
     #[inline(always)]
     pub const fn pcr_iismode(&self) -> &PCR_IISMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(60usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(60).cast() }
     }
     #[doc = "0x3c - Protocol Control Register \\[IIC Mode\\]"]
     #[inline(always)]
     pub const fn pcr_iicmode(&self) -> &PCR_IICMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(60usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(60).cast() }
     }
     #[doc = "0x3c - Protocol Control Register \\[SSC Mode\\]"]
     #[inline(always)]
     pub const fn pcr_sscmode(&self) -> &PCR_SSCMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(60usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(60).cast() }
     }
     #[doc = "0x3c - Protocol Control Register \\[ASC Mode\\]"]
     #[inline(always)]
     pub const fn pcr_ascmode(&self) -> &PCR_ASCMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(60usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(60).cast() }
     }
     #[doc = "0x3c - Protocol Control Register"]
     #[inline(always)]
     pub const fn pcr(&self) -> &PCR {
-        unsafe { &*(self as *const Self).cast::<u8>().add(60usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(60).cast() }
+    }
+    #[doc = "0x40 - Channel Control Register"]
+    #[inline(always)]
+    pub const fn ccr(&self) -> &CCR {
+        &self.ccr
+    }
+    #[doc = "0x44 - Capture Mode Timer Register"]
+    #[inline(always)]
+    pub const fn cmtr(&self) -> &CMTR {
+        &self.cmtr
     }
     #[doc = "0x48 - Protocol Status Register \\[IIS Mode\\]"]
     #[inline(always)]
     pub const fn psr_iismode(&self) -> &PSR_IISMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(72usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(72).cast() }
     }
     #[doc = "0x48 - Protocol Status Register \\[IIC Mode\\]"]
     #[inline(always)]
     pub const fn psr_iicmode(&self) -> &PSR_IICMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(72usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(72).cast() }
     }
     #[doc = "0x48 - Protocol Status Register \\[SSC Mode\\]"]
     #[inline(always)]
     pub const fn psr_sscmode(&self) -> &PSR_SSCMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(72usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(72).cast() }
     }
     #[doc = "0x48 - Protocol Status Register \\[ASC Mode\\]"]
     #[inline(always)]
     pub const fn psr_ascmode(&self) -> &PSR_ASCMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(72usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(72).cast() }
     }
     #[doc = "0x48 - Protocol Status Register"]
     #[inline(always)]
     pub const fn psr(&self) -> &PSR {
-        unsafe { &*(self as *const Self).cast::<u8>().add(72usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(72).cast() }
+    }
+    #[doc = "0x4c - Protocol Status Clear Register"]
+    #[inline(always)]
+    pub const fn pscr(&self) -> &PSCR {
+        &self.pscr
+    }
+    #[doc = "0x50 - Receiver Buffer Status Register"]
+    #[inline(always)]
+    pub const fn rbufsr(&self) -> &RBUFSR {
+        &self.rbufsr
+    }
+    #[doc = "0x54 - Receiver Buffer Register"]
+    #[inline(always)]
+    pub const fn rbuf(&self) -> &RBUF {
+        &self.rbuf
+    }
+    #[doc = "0x58 - Receiver Buffer Register for Debugger"]
+    #[inline(always)]
+    pub const fn rbufd(&self) -> &RBUFD {
+        &self.rbufd
+    }
+    #[doc = "0x5c - Receiver Buffer Register 0"]
+    #[inline(always)]
+    pub const fn rbuf0(&self) -> &RBUF0 {
+        &self.rbuf0
+    }
+    #[doc = "0x60 - Receiver Buffer Register 1"]
+    #[inline(always)]
+    pub const fn rbuf1(&self) -> &RBUF1 {
+        &self.rbuf1
+    }
+    #[doc = "0x64 - Receiver Buffer 01 Status Register"]
+    #[inline(always)]
+    pub const fn rbuf01sr(&self) -> &RBUF01SR {
+        &self.rbuf01sr
+    }
+    #[doc = "0x68 - Flag Modification Register"]
+    #[inline(always)]
+    pub const fn fmr(&self) -> &FMR {
+        &self.fmr
+    }
+    #[doc = "0x80..0x100 - Transmit Buffer"]
+    #[inline(always)]
+    pub const fn tbuf(&self, n: usize) -> &TBUF {
+        &self.tbuf[n]
+    }
+    #[doc = "0x100 - Bypass Data Register"]
+    #[inline(always)]
+    pub const fn byp(&self) -> &BYP {
+        &self.byp
+    }
+    #[doc = "0x104 - Bypass Control Register"]
+    #[inline(always)]
+    pub const fn bypcr(&self) -> &BYPCR {
+        &self.bypcr
+    }
+    #[doc = "0x108 - Transmitter Buffer Control Register"]
+    #[inline(always)]
+    pub const fn tbctr(&self) -> &TBCTR {
+        &self.tbctr
+    }
+    #[doc = "0x10c - Receiver Buffer Control Register"]
+    #[inline(always)]
+    pub const fn rbctr(&self) -> &RBCTR {
+        &self.rbctr
+    }
+    #[doc = "0x110 - Transmit/Receive Buffer Pointer Register"]
+    #[inline(always)]
+    pub const fn trbptr(&self) -> &TRBPTR {
+        &self.trbptr
+    }
+    #[doc = "0x114 - Transmit/Receive Buffer Status Register"]
+    #[inline(always)]
+    pub const fn trbsr(&self) -> &TRBSR {
+        &self.trbsr
+    }
+    #[doc = "0x118 - Transmit/Receive Buffer Status Clear Register"]
+    #[inline(always)]
+    pub const fn trbscr(&self) -> &TRBSCR {
+        &self.trbscr
+    }
+    #[doc = "0x11c - Receiver Buffer Output Register"]
+    #[inline(always)]
+    pub const fn outr(&self) -> &OUTR {
+        &self.outr
+    }
+    #[doc = "0x120 - Receiver Buffer Output Register L for Debugger"]
+    #[inline(always)]
+    pub const fn outdr(&self) -> &OUTDR {
+        &self.outdr
+    }
+    #[doc = "0x180..0x200 - Transmit FIFO Buffer"]
+    #[inline(always)]
+    pub const fn in_(&self, n: usize) -> &IN {
+        &self.in_[n]
     }
 }
 #[doc = "CCFG (r) register accessor: Channel Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccfg::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ccfg`]

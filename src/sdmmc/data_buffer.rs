@@ -5,7 +5,7 @@ pub type W = crate::W<DATA_BUFFER_SPEC>;
 #[doc = "Field `DATA_BUFFER` reader - Data Buffer"]
 pub type DATA_BUFFER_R = crate::FieldReader<u32>;
 #[doc = "Field `DATA_BUFFER` writer - Data Buffer"]
-pub type DATA_BUFFER_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type DATA_BUFFER_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Data Buffer"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Data Buffer"]
     #[inline(always)]
     #[must_use]
-    pub fn data_buffer(&mut self) -> DATA_BUFFER_W<DATA_BUFFER_SPEC, 0> {
-        DATA_BUFFER_W::new(self)
+    pub fn data_buffer(&mut self) -> DATA_BUFFER_W<DATA_BUFFER_SPEC> {
+        DATA_BUFFER_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

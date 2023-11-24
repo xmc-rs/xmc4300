@@ -5,19 +5,19 @@ pub type W = crate::W<VLAN_TAG_SPEC>;
 #[doc = "Field `VL` reader - VLAN Tag Identifier for Receive Frames"]
 pub type VL_R = crate::FieldReader<u16>;
 #[doc = "Field `VL` writer - VLAN Tag Identifier for Receive Frames"]
-pub type VL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type VL_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `ETV` reader - Enable 12-Bit VLAN Tag Comparison"]
 pub type ETV_R = crate::BitReader;
 #[doc = "Field `ETV` writer - Enable 12-Bit VLAN Tag Comparison"]
-pub type ETV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ETV_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `VTIM` reader - VLAN Tag Inverse Match Enable"]
 pub type VTIM_R = crate::BitReader;
 #[doc = "Field `VTIM` writer - VLAN Tag Inverse Match Enable"]
-pub type VTIM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type VTIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ESVL` reader - Enable S-VLAN"]
 pub type ESVL_R = crate::BitReader;
 #[doc = "Field `ESVL` writer - Enable S-VLAN"]
-pub type ESVL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ESVL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `VTHM` reader - VLAN Tag Hash Table Match Enable"]
 pub type VTHM_R = crate::BitReader;
 impl R {
@@ -51,26 +51,26 @@ impl W {
     #[doc = "Bits 0:15 - VLAN Tag Identifier for Receive Frames"]
     #[inline(always)]
     #[must_use]
-    pub fn vl(&mut self) -> VL_W<VLAN_TAG_SPEC, 0> {
-        VL_W::new(self)
+    pub fn vl(&mut self) -> VL_W<VLAN_TAG_SPEC> {
+        VL_W::new(self, 0)
     }
     #[doc = "Bit 16 - Enable 12-Bit VLAN Tag Comparison"]
     #[inline(always)]
     #[must_use]
-    pub fn etv(&mut self) -> ETV_W<VLAN_TAG_SPEC, 16> {
-        ETV_W::new(self)
+    pub fn etv(&mut self) -> ETV_W<VLAN_TAG_SPEC> {
+        ETV_W::new(self, 16)
     }
     #[doc = "Bit 17 - VLAN Tag Inverse Match Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn vtim(&mut self) -> VTIM_W<VLAN_TAG_SPEC, 17> {
-        VTIM_W::new(self)
+    pub fn vtim(&mut self) -> VTIM_W<VLAN_TAG_SPEC> {
+        VTIM_W::new(self, 17)
     }
     #[doc = "Bit 18 - Enable S-VLAN"]
     #[inline(always)]
     #[must_use]
-    pub fn esvl(&mut self) -> ESVL_W<VLAN_TAG_SPEC, 18> {
-        ESVL_W::new(self)
+    pub fn esvl(&mut self) -> ESVL_W<VLAN_TAG_SPEC> {
+        ESVL_W::new(self, 18)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

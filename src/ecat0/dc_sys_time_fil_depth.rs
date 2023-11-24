@@ -5,7 +5,7 @@ pub type W = crate::W<DC_SYS_TIME_FIL_DEPTH_SPEC>;
 #[doc = "Field `FILTER_DEPTH` reader - Filter depth for averaging the received System Time deviation"]
 pub type FILTER_DEPTH_R = crate::FieldReader;
 #[doc = "Field `FILTER_DEPTH` writer - Filter depth for averaging the received System Time deviation"]
-pub type FILTER_DEPTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type FILTER_DEPTH_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3 - Filter depth for averaging the received System Time deviation"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:3 - Filter depth for averaging the received System Time deviation"]
     #[inline(always)]
     #[must_use]
-    pub fn filter_depth(&mut self) -> FILTER_DEPTH_W<DC_SYS_TIME_FIL_DEPTH_SPEC, 0> {
-        FILTER_DEPTH_W::new(self)
+    pub fn filter_depth(&mut self) -> FILTER_DEPTH_W<DC_SYS_TIME_FIL_DEPTH_SPEC> {
+        FILTER_DEPTH_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

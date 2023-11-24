@@ -5,27 +5,27 @@ pub type W = crate::W<DAC0PATL_SPEC>;
 #[doc = "Field `PAT0` reader - Pattern Number 0 for PATGEN of DAC0"]
 pub type PAT0_R = crate::FieldReader;
 #[doc = "Field `PAT0` writer - Pattern Number 0 for PATGEN of DAC0"]
-pub type PAT0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PAT0_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PAT1` reader - Pattern Number 1 for PATGEN of DAC0"]
 pub type PAT1_R = crate::FieldReader;
 #[doc = "Field `PAT1` writer - Pattern Number 1 for PATGEN of DAC0"]
-pub type PAT1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PAT1_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PAT2` reader - Pattern Number 2 for PATGEN of DAC0"]
 pub type PAT2_R = crate::FieldReader;
 #[doc = "Field `PAT2` writer - Pattern Number 2 for PATGEN of DAC0"]
-pub type PAT2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PAT2_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PAT3` reader - Pattern Number 3 for PATGEN of DAC0"]
 pub type PAT3_R = crate::FieldReader;
 #[doc = "Field `PAT3` writer - Pattern Number 3 for PATGEN of DAC0"]
-pub type PAT3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PAT3_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PAT4` reader - Pattern Number 4 for PATGEN of DAC0"]
 pub type PAT4_R = crate::FieldReader;
 #[doc = "Field `PAT4` writer - Pattern Number 4 for PATGEN of DAC0"]
-pub type PAT4_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PAT4_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PAT5` reader - Pattern Number 5 for PATGEN of DAC0"]
 pub type PAT5_R = crate::FieldReader;
 #[doc = "Field `PAT5` writer - Pattern Number 5 for PATGEN of DAC0"]
-pub type PAT5_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PAT5_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bits 0:4 - Pattern Number 0 for PATGEN of DAC0"]
     #[inline(always)]
@@ -62,38 +62,38 @@ impl W {
     #[doc = "Bits 0:4 - Pattern Number 0 for PATGEN of DAC0"]
     #[inline(always)]
     #[must_use]
-    pub fn pat0(&mut self) -> PAT0_W<DAC0PATL_SPEC, 0> {
-        PAT0_W::new(self)
+    pub fn pat0(&mut self) -> PAT0_W<DAC0PATL_SPEC> {
+        PAT0_W::new(self, 0)
     }
     #[doc = "Bits 5:9 - Pattern Number 1 for PATGEN of DAC0"]
     #[inline(always)]
     #[must_use]
-    pub fn pat1(&mut self) -> PAT1_W<DAC0PATL_SPEC, 5> {
-        PAT1_W::new(self)
+    pub fn pat1(&mut self) -> PAT1_W<DAC0PATL_SPEC> {
+        PAT1_W::new(self, 5)
     }
     #[doc = "Bits 10:14 - Pattern Number 2 for PATGEN of DAC0"]
     #[inline(always)]
     #[must_use]
-    pub fn pat2(&mut self) -> PAT2_W<DAC0PATL_SPEC, 10> {
-        PAT2_W::new(self)
+    pub fn pat2(&mut self) -> PAT2_W<DAC0PATL_SPEC> {
+        PAT2_W::new(self, 10)
     }
     #[doc = "Bits 15:19 - Pattern Number 3 for PATGEN of DAC0"]
     #[inline(always)]
     #[must_use]
-    pub fn pat3(&mut self) -> PAT3_W<DAC0PATL_SPEC, 15> {
-        PAT3_W::new(self)
+    pub fn pat3(&mut self) -> PAT3_W<DAC0PATL_SPEC> {
+        PAT3_W::new(self, 15)
     }
     #[doc = "Bits 20:24 - Pattern Number 4 for PATGEN of DAC0"]
     #[inline(always)]
     #[must_use]
-    pub fn pat4(&mut self) -> PAT4_W<DAC0PATL_SPEC, 20> {
-        PAT4_W::new(self)
+    pub fn pat4(&mut self) -> PAT4_W<DAC0PATL_SPEC> {
+        PAT4_W::new(self, 20)
     }
     #[doc = "Bits 25:29 - Pattern Number 5 for PATGEN of DAC0"]
     #[inline(always)]
     #[must_use]
-    pub fn pat5(&mut self) -> PAT5_W<DAC0PATL_SPEC, 25> {
-        PAT5_W::new(self)
+    pub fn pat5(&mut self) -> PAT5_W<DAC0PATL_SPEC> {
+        PAT5_W::new(self, 25)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

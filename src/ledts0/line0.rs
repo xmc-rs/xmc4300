@@ -5,19 +5,19 @@ pub type W = crate::W<LINE0_SPEC>;
 #[doc = "Field `LINE_0` reader - Output on LINE\\[x\\]"]
 pub type LINE_0_R = crate::FieldReader;
 #[doc = "Field `LINE_0` writer - Output on LINE\\[x\\]"]
-pub type LINE_0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type LINE_0_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `LINE_1` reader - Output on LINE\\[x\\]"]
 pub type LINE_1_R = crate::FieldReader;
 #[doc = "Field `LINE_1` writer - Output on LINE\\[x\\]"]
-pub type LINE_1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type LINE_1_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `LINE_2` reader - Output on LINE\\[x\\]"]
 pub type LINE_2_R = crate::FieldReader;
 #[doc = "Field `LINE_2` writer - Output on LINE\\[x\\]"]
-pub type LINE_2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type LINE_2_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `LINE_3` reader - Output on LINE\\[x\\]"]
 pub type LINE_3_R = crate::FieldReader;
 #[doc = "Field `LINE_3` writer - Output on LINE\\[x\\]"]
-pub type LINE_3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type LINE_3_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Output on LINE\\[x\\]"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:7 - Output on LINE\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn line_0(&mut self) -> LINE_0_W<LINE0_SPEC, 0> {
-        LINE_0_W::new(self)
+    pub fn line_0(&mut self) -> LINE_0_W<LINE0_SPEC> {
+        LINE_0_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Output on LINE\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn line_1(&mut self) -> LINE_1_W<LINE0_SPEC, 8> {
-        LINE_1_W::new(self)
+    pub fn line_1(&mut self) -> LINE_1_W<LINE0_SPEC> {
+        LINE_1_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Output on LINE\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn line_2(&mut self) -> LINE_2_W<LINE0_SPEC, 16> {
-        LINE_2_W::new(self)
+    pub fn line_2(&mut self) -> LINE_2_W<LINE0_SPEC> {
+        LINE_2_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Output on LINE\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn line_3(&mut self) -> LINE_3_W<LINE0_SPEC, 24> {
-        LINE_3_W::new(self)
+    pub fn line_3(&mut self) -> LINE_3_W<LINE0_SPEC> {
+        LINE_3_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -44,8 +44,8 @@ impl CLRENA_R {
     }
 }
 #[doc = "Field `CLRENA` writer - Interrupt clear-enable bits."]
-pub type CLRENA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, CLRENA_A>;
-impl<'a, REG, const O: u8> CLRENA_W<'a, REG, O>
+pub type CLRENA_W<'a, REG> = crate::FieldWriter<'a, REG, 32, CLRENA_A>;
+impl<'a, REG> CLRENA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
@@ -72,8 +72,8 @@ impl W {
     #[doc = "Bits 0:31 - Interrupt clear-enable bits."]
     #[inline(always)]
     #[must_use]
-    pub fn clrena(&mut self) -> CLRENA_W<NVIC_ICER1_SPEC, 0> {
-        CLRENA_W::new(self)
+    pub fn clrena(&mut self) -> CLRENA_W<NVIC_ICER1_SPEC> {
+        CLRENA_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

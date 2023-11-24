@@ -15,8 +15,8 @@ impl From<WDT_AW> for bool {
     }
 }
 #[doc = "Field `WDT` writer - WDT Gating Clear"]
-pub type WDT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WDT_AW>;
-impl<'a, REG, const O: u8> WDT_W<'a, REG, O>
+pub type WDT_W<'a, REG> = crate::BitWriter<'a, REG, WDT_AW>;
+impl<'a, REG> WDT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<ETH0_AW> for bool {
     }
 }
 #[doc = "Field `ETH0` writer - ETH0 Gating Clear"]
-pub type ETH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ETH0_AW>;
-impl<'a, REG, const O: u8> ETH0_W<'a, REG, O>
+pub type ETH0_W<'a, REG> = crate::BitWriter<'a, REG, ETH0_AW>;
+impl<'a, REG> ETH0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<DMA0_AW> for bool {
     }
 }
 #[doc = "Field `DMA0` writer - DMA0 Gating Clear"]
-pub type DMA0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DMA0_AW>;
-impl<'a, REG, const O: u8> DMA0_W<'a, REG, O>
+pub type DMA0_W<'a, REG> = crate::BitWriter<'a, REG, DMA0_AW>;
+impl<'a, REG> DMA0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<FCE_AW> for bool {
     }
 }
 #[doc = "Field `FCE` writer - FCE Gating Clear"]
-pub type FCE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FCE_AW>;
-impl<'a, REG, const O: u8> FCE_W<'a, REG, O>
+pub type FCE_W<'a, REG> = crate::BitWriter<'a, REG, FCE_AW>;
+impl<'a, REG> FCE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<USB_AW> for bool {
     }
 }
 #[doc = "Field `USB` writer - USB Gating Clear"]
-pub type USB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USB_AW>;
-impl<'a, REG, const O: u8> USB_W<'a, REG, O>
+pub type USB_W<'a, REG> = crate::BitWriter<'a, REG, USB_AW>;
+impl<'a, REG> USB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<ECAT0_AW> for bool {
     }
 }
 #[doc = "Field `ECAT0` writer - ECAT0 Gating Clear"]
-pub type ECAT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ECAT0_AW>;
-impl<'a, REG, const O: u8> ECAT0_W<'a, REG, O>
+pub type ECAT0_W<'a, REG> = crate::BitWriter<'a, REG, ECAT0_AW>;
+impl<'a, REG> ECAT0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -190,38 +190,38 @@ impl W {
     #[doc = "Bit 1 - WDT Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn wdt(&mut self) -> WDT_W<CGATCLR2_SPEC, 1> {
-        WDT_W::new(self)
+    pub fn wdt(&mut self) -> WDT_W<CGATCLR2_SPEC> {
+        WDT_W::new(self, 1)
     }
     #[doc = "Bit 2 - ETH0 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn eth0(&mut self) -> ETH0_W<CGATCLR2_SPEC, 2> {
-        ETH0_W::new(self)
+    pub fn eth0(&mut self) -> ETH0_W<CGATCLR2_SPEC> {
+        ETH0_W::new(self, 2)
     }
     #[doc = "Bit 4 - DMA0 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn dma0(&mut self) -> DMA0_W<CGATCLR2_SPEC, 4> {
-        DMA0_W::new(self)
+    pub fn dma0(&mut self) -> DMA0_W<CGATCLR2_SPEC> {
+        DMA0_W::new(self, 4)
     }
     #[doc = "Bit 6 - FCE Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn fce(&mut self) -> FCE_W<CGATCLR2_SPEC, 6> {
-        FCE_W::new(self)
+    pub fn fce(&mut self) -> FCE_W<CGATCLR2_SPEC> {
+        FCE_W::new(self, 6)
     }
     #[doc = "Bit 7 - USB Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn usb(&mut self) -> USB_W<CGATCLR2_SPEC, 7> {
-        USB_W::new(self)
+    pub fn usb(&mut self) -> USB_W<CGATCLR2_SPEC> {
+        USB_W::new(self, 7)
     }
     #[doc = "Bit 10 - ECAT0 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ecat0(&mut self) -> ECAT0_W<CGATCLR2_SPEC, 10> {
-        ECAT0_W::new(self)
+    pub fn ecat0(&mut self) -> ECAT0_W<CGATCLR2_SPEC> {
+        ECAT0_W::new(self, 10)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

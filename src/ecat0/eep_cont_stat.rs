@@ -204,8 +204,8 @@ impl CMD_REG_R {
     }
 }
 #[doc = "Field `CMD_REG` writer - Command register"]
-pub type CMD_REG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, CMD_REG_A>;
-impl<'a, REG, const O: u8> CMD_REG_W<'a, REG, O>
+pub type CMD_REG_W<'a, REG> = crate::FieldWriter<'a, REG, 3, CMD_REG_A>;
+impl<'a, REG> CMD_REG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -340,8 +340,8 @@ impl ERROR_AC_R {
     }
 }
 #[doc = "Field `ERROR_AC` writer - Error Acknowledge/Command"]
-pub type ERROR_AC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERROR_AC_A>;
-impl<'a, REG, const O: u8> ERROR_AC_W<'a, REG, O>
+pub type ERROR_AC_W<'a, REG> = crate::BitWriter<'a, REG, ERROR_AC_A>;
+impl<'a, REG> ERROR_AC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -484,14 +484,14 @@ impl W {
     #[doc = "Bits 8:10 - Command register"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_reg(&mut self) -> CMD_REG_W<EEP_CONT_STAT_SPEC, 8> {
-        CMD_REG_W::new(self)
+    pub fn cmd_reg(&mut self) -> CMD_REG_W<EEP_CONT_STAT_SPEC> {
+        CMD_REG_W::new(self, 8)
     }
     #[doc = "Bit 13 - Error Acknowledge/Command"]
     #[inline(always)]
     #[must_use]
-    pub fn error_ac(&mut self) -> ERROR_AC_W<EEP_CONT_STAT_SPEC, 13> {
-        ERROR_AC_W::new(self)
+    pub fn error_ac(&mut self) -> ERROR_AC_W<EEP_CONT_STAT_SPEC> {
+        ERROR_AC_W::new(self, 13)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

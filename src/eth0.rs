@@ -1,289 +1,835 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - MAC Configuration Register"]
-    pub mac_configuration: MAC_CONFIGURATION,
-    #[doc = "0x04 - MAC Frame Filter"]
-    pub mac_frame_filter: MAC_FRAME_FILTER,
-    #[doc = "0x08 - Hash Table High Register"]
-    pub hash_table_high: HASH_TABLE_HIGH,
-    #[doc = "0x0c - Hash Table Low Register"]
-    pub hash_table_low: HASH_TABLE_LOW,
-    #[doc = "0x10 - MII Address Register"]
-    pub gmii_address: GMII_ADDRESS,
-    #[doc = "0x14 - MII Data Register"]
-    pub gmii_data: GMII_DATA,
-    #[doc = "0x18 - Flow Control Register"]
-    pub flow_control: FLOW_CONTROL,
-    #[doc = "0x1c - VLAN Tag Register"]
-    pub vlan_tag: VLAN_TAG,
-    #[doc = "0x20 - Version Register"]
-    pub version: VERSION,
-    #[doc = "0x24 - Debug Register"]
-    pub debug: DEBUG,
-    #[doc = "0x28 - Remote Wake Up Frame Filter Register"]
-    pub remote_wake_up_frame_filter: REMOTE_WAKE_UP_FRAME_FILTER,
-    #[doc = "0x2c - PMT Control and Status Register"]
-    pub pmt_control_status: PMT_CONTROL_STATUS,
+    mac_configuration: MAC_CONFIGURATION,
+    mac_frame_filter: MAC_FRAME_FILTER,
+    hash_table_high: HASH_TABLE_HIGH,
+    hash_table_low: HASH_TABLE_LOW,
+    gmii_address: GMII_ADDRESS,
+    gmii_data: GMII_DATA,
+    flow_control: FLOW_CONTROL,
+    vlan_tag: VLAN_TAG,
+    version: VERSION,
+    debug: DEBUG,
+    remote_wake_up_frame_filter: REMOTE_WAKE_UP_FRAME_FILTER,
+    pmt_control_status: PMT_CONTROL_STATUS,
     _reserved12: [u8; 0x08],
-    #[doc = "0x38 - Interrupt Register"]
-    pub interrupt_status: INTERRUPT_STATUS,
-    #[doc = "0x3c - Interrupt Mask Register"]
-    pub interrupt_mask: INTERRUPT_MASK,
-    #[doc = "0x40 - MAC Address0 High Register"]
-    pub mac_address0_high: MAC_ADDRESS0_HIGH,
-    #[doc = "0x44 - MAC Address0 Low Register"]
-    pub mac_address0_low: MAC_ADDRESS0_LOW,
-    #[doc = "0x48 - MAC Address1 High Register"]
-    pub mac_address1_high: MAC_ADDRESS1_HIGH,
-    #[doc = "0x4c - MAC Address1 Low Register"]
-    pub mac_address1_low: MAC_ADDRESS1_LOW,
-    #[doc = "0x50 - MAC Address2 High Register"]
-    pub mac_address2_high: MAC_ADDRESS2_HIGH,
-    #[doc = "0x54 - MAC Address2 Low Register"]
-    pub mac_address2_low: MAC_ADDRESS2_LOW,
-    #[doc = "0x58 - MAC Address3 High Register"]
-    pub mac_address3_high: MAC_ADDRESS3_HIGH,
-    #[doc = "0x5c - MAC Address3 Low Register"]
-    pub mac_address3_low: MAC_ADDRESS3_LOW,
+    interrupt_status: INTERRUPT_STATUS,
+    interrupt_mask: INTERRUPT_MASK,
+    mac_address0_high: MAC_ADDRESS0_HIGH,
+    mac_address0_low: MAC_ADDRESS0_LOW,
+    mac_address1_high: MAC_ADDRESS1_HIGH,
+    mac_address1_low: MAC_ADDRESS1_LOW,
+    mac_address2_high: MAC_ADDRESS2_HIGH,
+    mac_address2_low: MAC_ADDRESS2_LOW,
+    mac_address3_high: MAC_ADDRESS3_HIGH,
+    mac_address3_low: MAC_ADDRESS3_LOW,
     _reserved22: [u8; 0xa0],
-    #[doc = "0x100 - MMC Control Register"]
-    pub mmc_control: MMC_CONTROL,
-    #[doc = "0x104 - MMC Receive Interrupt Register"]
-    pub mmc_receive_interrupt: MMC_RECEIVE_INTERRUPT,
-    #[doc = "0x108 - MMC Transmit Interrupt Register"]
-    pub mmc_transmit_interrupt: MMC_TRANSMIT_INTERRUPT,
-    #[doc = "0x10c - MMC Reveive Interrupt Mask Register"]
-    pub mmc_receive_interrupt_mask: MMC_RECEIVE_INTERRUPT_MASK,
-    #[doc = "0x110 - MMC Transmit Interrupt Mask Register"]
-    pub mmc_transmit_interrupt_mask: MMC_TRANSMIT_INTERRUPT_MASK,
-    #[doc = "0x114 - Transmit Octet Count for Good and Bad Frames Register"]
-    pub tx_octet_count_good_bad: TX_OCTET_COUNT_GOOD_BAD,
-    #[doc = "0x118 - Transmit Frame Count for Goodand Bad Frames Register"]
-    pub tx_frame_count_good_bad: TX_FRAME_COUNT_GOOD_BAD,
-    #[doc = "0x11c - Transmit Frame Count for Good Broadcast Frames"]
-    pub tx_broadcast_frames_good: TX_BROADCAST_FRAMES_GOOD,
-    #[doc = "0x120 - Transmit Frame Count for Good Multicast Frames"]
-    pub tx_multicast_frames_good: TX_MULTICAST_FRAMES_GOOD,
-    #[doc = "0x124 - Transmit Octet Count for Good and Bad 64 Byte Frames"]
-    pub tx_64octets_frames_good_bad: TX_64OCTETS_FRAMES_GOOD_BAD,
-    #[doc = "0x128 - Transmit Octet Count for Good and Bad 65 to 127 Bytes Frames"]
-    pub tx_65to127octets_frames_good_bad: TX_65TO127OCTETS_FRAMES_GOOD_BAD,
-    #[doc = "0x12c - Transmit Octet Count for Good and Bad 128 to 255 Bytes Frames"]
-    pub tx_128to255octets_frames_good_bad: TX_128TO255OCTETS_FRAMES_GOOD_BAD,
-    #[doc = "0x130 - Transmit Octet Count for Good and Bad 256 to 511 Bytes Frames"]
-    pub tx_256to511octets_frames_good_bad: TX_256TO511OCTETS_FRAMES_GOOD_BAD,
-    #[doc = "0x134 - Transmit Octet Count for Good and Bad 512 to 1023 Bytes Frames"]
-    pub tx_512to1023octets_frames_good_bad: TX_512TO1023OCTETS_FRAMES_GOOD_BAD,
-    #[doc = "0x138 - Transmit Octet Count for Good and Bad 1024 to Maxsize Bytes Frames"]
-    pub tx_1024tomaxoctets_frames_good_bad: TX_1024TOMAXOCTETS_FRAMES_GOOD_BAD,
-    #[doc = "0x13c - Transmit Frame Count for Good and Bad Unicast Frames"]
-    pub tx_unicast_frames_good_bad: TX_UNICAST_FRAMES_GOOD_BAD,
-    #[doc = "0x140 - Transmit Frame Count for Good and Bad Multicast Frames"]
-    pub tx_multicast_frames_good_bad: TX_MULTICAST_FRAMES_GOOD_BAD,
-    #[doc = "0x144 - Transmit Frame Count for Good and Bad Broadcast Frames"]
-    pub tx_broadcast_frames_good_bad: TX_BROADCAST_FRAMES_GOOD_BAD,
-    #[doc = "0x148 - Transmit Frame Count for Underflow Error Frames"]
-    pub tx_underflow_error_frames: TX_UNDERFLOW_ERROR_FRAMES,
-    #[doc = "0x14c - Transmit Frame Count for Frames Transmitted after Single Collision"]
-    pub tx_single_collision_good_frames: TX_SINGLE_COLLISION_GOOD_FRAMES,
-    #[doc = "0x150 - Transmit Frame Count for Frames Transmitted after Multiple Collision"]
-    pub tx_multiple_collision_good_frames: TX_MULTIPLE_COLLISION_GOOD_FRAMES,
-    #[doc = "0x154 - Tx Deferred Frames Register"]
-    pub tx_deferred_frames: TX_DEFERRED_FRAMES,
-    #[doc = "0x158 - Transmit Frame Count for Late Collision Error Frames"]
-    pub tx_late_collision_frames: TX_LATE_COLLISION_FRAMES,
-    #[doc = "0x15c - Transmit Frame Count for Excessive Collision Error Frames"]
-    pub tx_excessive_collision_frames: TX_EXCESSIVE_COLLISION_FRAMES,
-    #[doc = "0x160 - Transmit Frame Count for Carrier Sense Error Frames"]
-    pub tx_carrier_error_frames: TX_CARRIER_ERROR_FRAMES,
-    #[doc = "0x164 - Tx Octet Count Good Register"]
-    pub tx_octet_count_good: TX_OCTET_COUNT_GOOD,
-    #[doc = "0x168 - Tx Frame Count Good Register"]
-    pub tx_frame_count_good: TX_FRAME_COUNT_GOOD,
-    #[doc = "0x16c - Transmit Frame Count for Excessive Deferral Error Frames"]
-    pub tx_excessive_deferral_error: TX_EXCESSIVE_DEFERRAL_ERROR,
-    #[doc = "0x170 - Transmit Frame Count for Good PAUSE Frames"]
-    pub tx_pause_frames: TX_PAUSE_FRAMES,
-    #[doc = "0x174 - Transmit Frame Count for Good VLAN Frames"]
-    pub tx_vlan_frames_good: TX_VLAN_FRAMES_GOOD,
-    #[doc = "0x178 - Transmit Frame Count for Good Oversize Frames"]
-    pub tx_osize_frames_good: TX_OSIZE_FRAMES_GOOD,
+    mmc_control: MMC_CONTROL,
+    mmc_receive_interrupt: MMC_RECEIVE_INTERRUPT,
+    mmc_transmit_interrupt: MMC_TRANSMIT_INTERRUPT,
+    mmc_receive_interrupt_mask: MMC_RECEIVE_INTERRUPT_MASK,
+    mmc_transmit_interrupt_mask: MMC_TRANSMIT_INTERRUPT_MASK,
+    tx_octet_count_good_bad: TX_OCTET_COUNT_GOOD_BAD,
+    tx_frame_count_good_bad: TX_FRAME_COUNT_GOOD_BAD,
+    tx_broadcast_frames_good: TX_BROADCAST_FRAMES_GOOD,
+    tx_multicast_frames_good: TX_MULTICAST_FRAMES_GOOD,
+    tx_64octets_frames_good_bad: TX_64OCTETS_FRAMES_GOOD_BAD,
+    tx_65to127octets_frames_good_bad: TX_65TO127OCTETS_FRAMES_GOOD_BAD,
+    tx_128to255octets_frames_good_bad: TX_128TO255OCTETS_FRAMES_GOOD_BAD,
+    tx_256to511octets_frames_good_bad: TX_256TO511OCTETS_FRAMES_GOOD_BAD,
+    tx_512to1023octets_frames_good_bad: TX_512TO1023OCTETS_FRAMES_GOOD_BAD,
+    tx_1024tomaxoctets_frames_good_bad: TX_1024TOMAXOCTETS_FRAMES_GOOD_BAD,
+    tx_unicast_frames_good_bad: TX_UNICAST_FRAMES_GOOD_BAD,
+    tx_multicast_frames_good_bad: TX_MULTICAST_FRAMES_GOOD_BAD,
+    tx_broadcast_frames_good_bad: TX_BROADCAST_FRAMES_GOOD_BAD,
+    tx_underflow_error_frames: TX_UNDERFLOW_ERROR_FRAMES,
+    tx_single_collision_good_frames: TX_SINGLE_COLLISION_GOOD_FRAMES,
+    tx_multiple_collision_good_frames: TX_MULTIPLE_COLLISION_GOOD_FRAMES,
+    tx_deferred_frames: TX_DEFERRED_FRAMES,
+    tx_late_collision_frames: TX_LATE_COLLISION_FRAMES,
+    tx_excessive_collision_frames: TX_EXCESSIVE_COLLISION_FRAMES,
+    tx_carrier_error_frames: TX_CARRIER_ERROR_FRAMES,
+    tx_octet_count_good: TX_OCTET_COUNT_GOOD,
+    tx_frame_count_good: TX_FRAME_COUNT_GOOD,
+    tx_excessive_deferral_error: TX_EXCESSIVE_DEFERRAL_ERROR,
+    tx_pause_frames: TX_PAUSE_FRAMES,
+    tx_vlan_frames_good: TX_VLAN_FRAMES_GOOD,
+    tx_osize_frames_good: TX_OSIZE_FRAMES_GOOD,
     _reserved53: [u8; 0x04],
-    #[doc = "0x180 - Receive Frame Count for Good and Bad Frames"]
-    pub rx_frames_count_good_bad: RX_FRAMES_COUNT_GOOD_BAD,
-    #[doc = "0x184 - Receive Octet Count for Good and Bad Frames"]
-    pub rx_octet_count_good_bad: RX_OCTET_COUNT_GOOD_BAD,
-    #[doc = "0x188 - Rx Octet Count Good Register"]
-    pub rx_octet_count_good: RX_OCTET_COUNT_GOOD,
-    #[doc = "0x18c - Receive Frame Count for Good Broadcast Frames"]
-    pub rx_broadcast_frames_good: RX_BROADCAST_FRAMES_GOOD,
-    #[doc = "0x190 - Receive Frame Count for Good Multicast Frames"]
-    pub rx_multicast_frames_good: RX_MULTICAST_FRAMES_GOOD,
-    #[doc = "0x194 - Receive Frame Count for CRC Error Frames"]
-    pub rx_crc_error_frames: RX_CRC_ERROR_FRAMES,
-    #[doc = "0x198 - Receive Frame Count for Alignment Error Frames"]
-    pub rx_alignment_error_frames: RX_ALIGNMENT_ERROR_FRAMES,
-    #[doc = "0x19c - Receive Frame Count for Runt Error Frames"]
-    pub rx_runt_error_frames: RX_RUNT_ERROR_FRAMES,
-    #[doc = "0x1a0 - Receive Frame Count for Jabber Error Frames"]
-    pub rx_jabber_error_frames: RX_JABBER_ERROR_FRAMES,
-    #[doc = "0x1a4 - Receive Frame Count for Undersize Frames"]
-    pub rx_undersize_frames_good: RX_UNDERSIZE_FRAMES_GOOD,
-    #[doc = "0x1a8 - Rx Oversize Frames Good Register"]
-    pub rx_oversize_frames_good: RX_OVERSIZE_FRAMES_GOOD,
-    #[doc = "0x1ac - Receive Frame Count for Good and Bad 64 Byte Frames"]
-    pub rx_64octets_frames_good_bad: RX_64OCTETS_FRAMES_GOOD_BAD,
-    #[doc = "0x1b0 - Receive Frame Count for Good and Bad 65 to 127 Bytes Frames"]
-    pub rx_65to127octets_frames_good_bad: RX_65TO127OCTETS_FRAMES_GOOD_BAD,
-    #[doc = "0x1b4 - Receive Frame Count for Good and Bad 128 to 255 Bytes Frames"]
-    pub rx_128to255octets_frames_good_bad: RX_128TO255OCTETS_FRAMES_GOOD_BAD,
-    #[doc = "0x1b8 - Receive Frame Count for Good and Bad 256 to 511 Bytes Frames"]
-    pub rx_256to511octets_frames_good_bad: RX_256TO511OCTETS_FRAMES_GOOD_BAD,
-    #[doc = "0x1bc - Receive Frame Count for Good and Bad 512 to 1,023 Bytes Frames"]
-    pub rx_512to1023octets_frames_good_bad: RX_512TO1023OCTETS_FRAMES_GOOD_BAD,
-    #[doc = "0x1c0 - Receive Frame Count for Good and Bad 1,024 to Maxsize Bytes Frames"]
-    pub rx_1024tomaxoctets_frames_good_bad: RX_1024TOMAXOCTETS_FRAMES_GOOD_BAD,
-    #[doc = "0x1c4 - Receive Frame Count for Good Unicast Frames"]
-    pub rx_unicast_frames_good: RX_UNICAST_FRAMES_GOOD,
-    #[doc = "0x1c8 - Receive Frame Count for Length Error Frames"]
-    pub rx_length_error_frames: RX_LENGTH_ERROR_FRAMES,
-    #[doc = "0x1cc - Receive Frame Count for Out of Range Frames"]
-    pub rx_out_of_range_type_frames: RX_OUT_OF_RANGE_TYPE_FRAMES,
-    #[doc = "0x1d0 - Receive Frame Count for PAUSE Frames"]
-    pub rx_pause_frames: RX_PAUSE_FRAMES,
-    #[doc = "0x1d4 - Receive Frame Count for FIFO Overflow Frames"]
-    pub rx_fifo_overflow_frames: RX_FIFO_OVERFLOW_FRAMES,
-    #[doc = "0x1d8 - Receive Frame Count for Good and Bad VLAN Frames"]
-    pub rx_vlan_frames_good_bad: RX_VLAN_FRAMES_GOOD_BAD,
-    #[doc = "0x1dc - Receive Frame Count for Watchdog Error Frames"]
-    pub rx_watchdog_error_frames: RX_WATCHDOG_ERROR_FRAMES,
-    #[doc = "0x1e0 - Receive Frame Count for Receive Error Frames"]
-    pub rx_receive_error_frames: RX_RECEIVE_ERROR_FRAMES,
-    #[doc = "0x1e4 - Receive Frame Count for Good Control Frames Frames"]
-    pub rx_control_frames_good: RX_CONTROL_FRAMES_GOOD,
+    rx_frames_count_good_bad: RX_FRAMES_COUNT_GOOD_BAD,
+    rx_octet_count_good_bad: RX_OCTET_COUNT_GOOD_BAD,
+    rx_octet_count_good: RX_OCTET_COUNT_GOOD,
+    rx_broadcast_frames_good: RX_BROADCAST_FRAMES_GOOD,
+    rx_multicast_frames_good: RX_MULTICAST_FRAMES_GOOD,
+    rx_crc_error_frames: RX_CRC_ERROR_FRAMES,
+    rx_alignment_error_frames: RX_ALIGNMENT_ERROR_FRAMES,
+    rx_runt_error_frames: RX_RUNT_ERROR_FRAMES,
+    rx_jabber_error_frames: RX_JABBER_ERROR_FRAMES,
+    rx_undersize_frames_good: RX_UNDERSIZE_FRAMES_GOOD,
+    rx_oversize_frames_good: RX_OVERSIZE_FRAMES_GOOD,
+    rx_64octets_frames_good_bad: RX_64OCTETS_FRAMES_GOOD_BAD,
+    rx_65to127octets_frames_good_bad: RX_65TO127OCTETS_FRAMES_GOOD_BAD,
+    rx_128to255octets_frames_good_bad: RX_128TO255OCTETS_FRAMES_GOOD_BAD,
+    rx_256to511octets_frames_good_bad: RX_256TO511OCTETS_FRAMES_GOOD_BAD,
+    rx_512to1023octets_frames_good_bad: RX_512TO1023OCTETS_FRAMES_GOOD_BAD,
+    rx_1024tomaxoctets_frames_good_bad: RX_1024TOMAXOCTETS_FRAMES_GOOD_BAD,
+    rx_unicast_frames_good: RX_UNICAST_FRAMES_GOOD,
+    rx_length_error_frames: RX_LENGTH_ERROR_FRAMES,
+    rx_out_of_range_type_frames: RX_OUT_OF_RANGE_TYPE_FRAMES,
+    rx_pause_frames: RX_PAUSE_FRAMES,
+    rx_fifo_overflow_frames: RX_FIFO_OVERFLOW_FRAMES,
+    rx_vlan_frames_good_bad: RX_VLAN_FRAMES_GOOD_BAD,
+    rx_watchdog_error_frames: RX_WATCHDOG_ERROR_FRAMES,
+    rx_receive_error_frames: RX_RECEIVE_ERROR_FRAMES,
+    rx_control_frames_good: RX_CONTROL_FRAMES_GOOD,
     _reserved79: [u8; 0x18],
-    #[doc = "0x200 - MMC Receive Checksum Offload Interrupt Mask Register"]
-    pub mmc_ipc_receive_interrupt_mask: MMC_IPC_RECEIVE_INTERRUPT_MASK,
+    mmc_ipc_receive_interrupt_mask: MMC_IPC_RECEIVE_INTERRUPT_MASK,
     _reserved80: [u8; 0x04],
-    #[doc = "0x208 - MMC Receive Checksum Offload Interrupt Register"]
-    pub mmc_ipc_receive_interrupt: MMC_IPC_RECEIVE_INTERRUPT,
+    mmc_ipc_receive_interrupt: MMC_IPC_RECEIVE_INTERRUPT,
     _reserved81: [u8; 0x04],
-    #[doc = "0x210 - RxIPv4 Good Frames Register"]
-    pub rxipv4_good_frames: RXIPV4_GOOD_FRAMES,
-    #[doc = "0x214 - Receive IPV4 Header Error Frame Counter Register"]
-    pub rxipv4_header_error_frames: RXIPV4_HEADER_ERROR_FRAMES,
-    #[doc = "0x218 - Receive IPV4 No Payload Frame Counter Register"]
-    pub rxipv4_no_payload_frames: RXIPV4_NO_PAYLOAD_FRAMES,
-    #[doc = "0x21c - Receive IPV4 Fragmented Frame Counter Register"]
-    pub rxipv4_fragmented_frames: RXIPV4_FRAGMENTED_FRAMES,
-    #[doc = "0x220 - Receive IPV4 UDP Checksum Disabled Frame Counter Register"]
-    pub rxipv4_udp_checksum_disabled_frames: RXIPV4_UDP_CHECKSUM_DISABLED_FRAMES,
-    #[doc = "0x224 - RxIPv6 Good Frames Register"]
-    pub rxipv6_good_frames: RXIPV6_GOOD_FRAMES,
-    #[doc = "0x228 - Receive IPV6 Header Error Frame Counter Register"]
-    pub rxipv6_header_error_frames: RXIPV6_HEADER_ERROR_FRAMES,
-    #[doc = "0x22c - Receive IPV6 No Payload Frame Counter Register"]
-    pub rxipv6_no_payload_frames: RXIPV6_NO_PAYLOAD_FRAMES,
-    #[doc = "0x230 - RxUDP Good Frames Register"]
-    pub rxudp_good_frames: RXUDP_GOOD_FRAMES,
-    #[doc = "0x234 - RxUDP Error Frames Register"]
-    pub rxudp_error_frames: RXUDP_ERROR_FRAMES,
-    #[doc = "0x238 - RxTCP Good Frames Register"]
-    pub rxtcp_good_frames: RXTCP_GOOD_FRAMES,
-    #[doc = "0x23c - RxTCP Error Frames Register"]
-    pub rxtcp_error_frames: RXTCP_ERROR_FRAMES,
-    #[doc = "0x240 - RxICMP Good Frames Register"]
-    pub rxicmp_good_frames: RXICMP_GOOD_FRAMES,
-    #[doc = "0x244 - RxICMP Error Frames Register"]
-    pub rxicmp_error_frames: RXICMP_ERROR_FRAMES,
+    rxipv4_good_frames: RXIPV4_GOOD_FRAMES,
+    rxipv4_header_error_frames: RXIPV4_HEADER_ERROR_FRAMES,
+    rxipv4_no_payload_frames: RXIPV4_NO_PAYLOAD_FRAMES,
+    rxipv4_fragmented_frames: RXIPV4_FRAGMENTED_FRAMES,
+    rxipv4_udp_checksum_disabled_frames: RXIPV4_UDP_CHECKSUM_DISABLED_FRAMES,
+    rxipv6_good_frames: RXIPV6_GOOD_FRAMES,
+    rxipv6_header_error_frames: RXIPV6_HEADER_ERROR_FRAMES,
+    rxipv6_no_payload_frames: RXIPV6_NO_PAYLOAD_FRAMES,
+    rxudp_good_frames: RXUDP_GOOD_FRAMES,
+    rxudp_error_frames: RXUDP_ERROR_FRAMES,
+    rxtcp_good_frames: RXTCP_GOOD_FRAMES,
+    rxtcp_error_frames: RXTCP_ERROR_FRAMES,
+    rxicmp_good_frames: RXICMP_GOOD_FRAMES,
+    rxicmp_error_frames: RXICMP_ERROR_FRAMES,
     _reserved95: [u8; 0x08],
-    #[doc = "0x250 - RxIPv4 Good Octets Register"]
-    pub rxipv4_good_octets: RXIPV4_GOOD_OCTETS,
-    #[doc = "0x254 - Receive IPV4 Header Error Octet Counter Register"]
-    pub rxipv4_header_error_octets: RXIPV4_HEADER_ERROR_OCTETS,
-    #[doc = "0x258 - Receive IPV4 No Payload Octet Counter Register"]
-    pub rxipv4_no_payload_octets: RXIPV4_NO_PAYLOAD_OCTETS,
-    #[doc = "0x25c - Receive IPV4 Fragmented Octet Counter Register"]
-    pub rxipv4_fragmented_octets: RXIPV4_FRAGMENTED_OCTETS,
-    #[doc = "0x260 - Receive IPV4 Fragmented Octet Counter Register"]
-    pub rxipv4_udp_checksum_disable_octets: RXIPV4_UDP_CHECKSUM_DISABLE_OCTETS,
-    #[doc = "0x264 - RxIPv6 Good Octets Register"]
-    pub rxipv6_good_octets: RXIPV6_GOOD_OCTETS,
-    #[doc = "0x268 - Receive IPV6 Header Error Octet Counter Register"]
-    pub rxipv6_header_error_octets: RXIPV6_HEADER_ERROR_OCTETS,
-    #[doc = "0x26c - Receive IPV6 No Payload Octet Counter Register"]
-    pub rxipv6_no_payload_octets: RXIPV6_NO_PAYLOAD_OCTETS,
-    #[doc = "0x270 - Receive UDP Good Octets Register"]
-    pub rxudp_good_octets: RXUDP_GOOD_OCTETS,
-    #[doc = "0x274 - Receive UDP Error Octets Register"]
-    pub rxudp_error_octets: RXUDP_ERROR_OCTETS,
-    #[doc = "0x278 - Receive TCP Good Octets Register"]
-    pub rxtcp_good_octets: RXTCP_GOOD_OCTETS,
-    #[doc = "0x27c - Receive TCP Error Octets Register"]
-    pub rxtcp_error_octets: RXTCP_ERROR_OCTETS,
-    #[doc = "0x280 - Receive ICMP Good Octets Register"]
-    pub rxicmp_good_octets: RXICMP_GOOD_OCTETS,
-    #[doc = "0x284 - Receive ICMP Error Octets Register"]
-    pub rxicmp_error_octets: RXICMP_ERROR_OCTETS,
+    rxipv4_good_octets: RXIPV4_GOOD_OCTETS,
+    rxipv4_header_error_octets: RXIPV4_HEADER_ERROR_OCTETS,
+    rxipv4_no_payload_octets: RXIPV4_NO_PAYLOAD_OCTETS,
+    rxipv4_fragmented_octets: RXIPV4_FRAGMENTED_OCTETS,
+    rxipv4_udp_checksum_disable_octets: RXIPV4_UDP_CHECKSUM_DISABLE_OCTETS,
+    rxipv6_good_octets: RXIPV6_GOOD_OCTETS,
+    rxipv6_header_error_octets: RXIPV6_HEADER_ERROR_OCTETS,
+    rxipv6_no_payload_octets: RXIPV6_NO_PAYLOAD_OCTETS,
+    rxudp_good_octets: RXUDP_GOOD_OCTETS,
+    rxudp_error_octets: RXUDP_ERROR_OCTETS,
+    rxtcp_good_octets: RXTCP_GOOD_OCTETS,
+    rxtcp_error_octets: RXTCP_ERROR_OCTETS,
+    rxicmp_good_octets: RXICMP_GOOD_OCTETS,
+    rxicmp_error_octets: RXICMP_ERROR_OCTETS,
     _reserved109: [u8; 0x0478],
-    #[doc = "0x700 - Timestamp Control Register"]
-    pub timestamp_control: TIMESTAMP_CONTROL,
-    #[doc = "0x704 - Sub-Second Increment Register"]
-    pub sub_second_increment: SUB_SECOND_INCREMENT,
-    #[doc = "0x708 - System Time - Seconds Register"]
-    pub system_time_seconds: SYSTEM_TIME_SECONDS,
-    #[doc = "0x70c - System Time Nanoseconds Register"]
-    pub system_time_nanoseconds: SYSTEM_TIME_NANOSECONDS,
-    #[doc = "0x710 - System Time - Seconds Update Register"]
-    pub system_time_seconds_update: SYSTEM_TIME_SECONDS_UPDATE,
-    #[doc = "0x714 - System Time Nanoseconds Update Register"]
-    pub system_time_nanoseconds_update: SYSTEM_TIME_NANOSECONDS_UPDATE,
-    #[doc = "0x718 - Timestamp Addend Register"]
-    pub timestamp_addend: TIMESTAMP_ADDEND,
-    #[doc = "0x71c - Target Time Seconds Register"]
-    pub target_time_seconds: TARGET_TIME_SECONDS,
-    #[doc = "0x720 - Target Time Nanoseconds Register"]
-    pub target_time_nanoseconds: TARGET_TIME_NANOSECONDS,
-    #[doc = "0x724 - System Time - Higher Word Seconds Register"]
-    pub system_time_higher_word_seconds: SYSTEM_TIME_HIGHER_WORD_SECONDS,
-    #[doc = "0x728 - Timestamp Status Register"]
-    pub timestamp_status: TIMESTAMP_STATUS,
+    timestamp_control: TIMESTAMP_CONTROL,
+    sub_second_increment: SUB_SECOND_INCREMENT,
+    system_time_seconds: SYSTEM_TIME_SECONDS,
+    system_time_nanoseconds: SYSTEM_TIME_NANOSECONDS,
+    system_time_seconds_update: SYSTEM_TIME_SECONDS_UPDATE,
+    system_time_nanoseconds_update: SYSTEM_TIME_NANOSECONDS_UPDATE,
+    timestamp_addend: TIMESTAMP_ADDEND,
+    target_time_seconds: TARGET_TIME_SECONDS,
+    target_time_nanoseconds: TARGET_TIME_NANOSECONDS,
+    system_time_higher_word_seconds: SYSTEM_TIME_HIGHER_WORD_SECONDS,
+    timestamp_status: TIMESTAMP_STATUS,
     _reserved120: [u8; 0x08d4],
-    #[doc = "0x1000 - Bus Mode Register"]
-    pub bus_mode: BUS_MODE,
-    #[doc = "0x1004 - Transmit Poll Demand Register"]
-    pub transmit_poll_demand: TRANSMIT_POLL_DEMAND,
-    #[doc = "0x1008 - Receive Poll Demand Register"]
-    pub receive_poll_demand: RECEIVE_POLL_DEMAND,
-    #[doc = "0x100c - Receive Descriptor Address Register"]
-    pub receive_descriptor_list_address: RECEIVE_DESCRIPTOR_LIST_ADDRESS,
-    #[doc = "0x1010 - Transmit descripter Address Register"]
-    pub transmit_descriptor_list_address: TRANSMIT_DESCRIPTOR_LIST_ADDRESS,
-    #[doc = "0x1014 - Status Register"]
-    pub status: STATUS,
-    #[doc = "0x1018 - Operation Mode Register"]
-    pub operation_mode: OPERATION_MODE,
-    #[doc = "0x101c - Interrupt Enable Register"]
-    pub interrupt_enable: INTERRUPT_ENABLE,
-    #[doc = "0x1020 - Missed Frame and Buffer Overflow Counter Register"]
-    pub missed_frame_and_buffer_overflow_counter: MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER,
-    #[doc = "0x1024 - Receive Interrupt Watchdog Timer Register"]
-    pub receive_interrupt_watchdog_timer: RECEIVE_INTERRUPT_WATCHDOG_TIMER,
+    bus_mode: BUS_MODE,
+    transmit_poll_demand: TRANSMIT_POLL_DEMAND,
+    receive_poll_demand: RECEIVE_POLL_DEMAND,
+    receive_descriptor_list_address: RECEIVE_DESCRIPTOR_LIST_ADDRESS,
+    transmit_descriptor_list_address: TRANSMIT_DESCRIPTOR_LIST_ADDRESS,
+    status: STATUS,
+    operation_mode: OPERATION_MODE,
+    interrupt_enable: INTERRUPT_ENABLE,
+    missed_frame_and_buffer_overflow_counter: MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER,
+    receive_interrupt_watchdog_timer: RECEIVE_INTERRUPT_WATCHDOG_TIMER,
     _reserved130: [u8; 0x04],
-    #[doc = "0x102c - AHB Status Register"]
-    pub ahb_status: AHB_STATUS,
+    ahb_status: AHB_STATUS,
     _reserved131: [u8; 0x18],
+    current_host_transmit_descriptor: CURRENT_HOST_TRANSMIT_DESCRIPTOR,
+    current_host_receive_descriptor: CURRENT_HOST_RECEIVE_DESCRIPTOR,
+    current_host_transmit_buffer_address: CURRENT_HOST_TRANSMIT_BUFFER_ADDRESS,
+    current_host_receive_buffer_address: CURRENT_HOST_RECEIVE_BUFFER_ADDRESS,
+    hw_feature: HW_FEATURE,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - MAC Configuration Register"]
+    #[inline(always)]
+    pub const fn mac_configuration(&self) -> &MAC_CONFIGURATION {
+        &self.mac_configuration
+    }
+    #[doc = "0x04 - MAC Frame Filter"]
+    #[inline(always)]
+    pub const fn mac_frame_filter(&self) -> &MAC_FRAME_FILTER {
+        &self.mac_frame_filter
+    }
+    #[doc = "0x08 - Hash Table High Register"]
+    #[inline(always)]
+    pub const fn hash_table_high(&self) -> &HASH_TABLE_HIGH {
+        &self.hash_table_high
+    }
+    #[doc = "0x0c - Hash Table Low Register"]
+    #[inline(always)]
+    pub const fn hash_table_low(&self) -> &HASH_TABLE_LOW {
+        &self.hash_table_low
+    }
+    #[doc = "0x10 - MII Address Register"]
+    #[inline(always)]
+    pub const fn gmii_address(&self) -> &GMII_ADDRESS {
+        &self.gmii_address
+    }
+    #[doc = "0x14 - MII Data Register"]
+    #[inline(always)]
+    pub const fn gmii_data(&self) -> &GMII_DATA {
+        &self.gmii_data
+    }
+    #[doc = "0x18 - Flow Control Register"]
+    #[inline(always)]
+    pub const fn flow_control(&self) -> &FLOW_CONTROL {
+        &self.flow_control
+    }
+    #[doc = "0x1c - VLAN Tag Register"]
+    #[inline(always)]
+    pub const fn vlan_tag(&self) -> &VLAN_TAG {
+        &self.vlan_tag
+    }
+    #[doc = "0x20 - Version Register"]
+    #[inline(always)]
+    pub const fn version(&self) -> &VERSION {
+        &self.version
+    }
+    #[doc = "0x24 - Debug Register"]
+    #[inline(always)]
+    pub const fn debug(&self) -> &DEBUG {
+        &self.debug
+    }
+    #[doc = "0x28 - Remote Wake Up Frame Filter Register"]
+    #[inline(always)]
+    pub const fn remote_wake_up_frame_filter(&self) -> &REMOTE_WAKE_UP_FRAME_FILTER {
+        &self.remote_wake_up_frame_filter
+    }
+    #[doc = "0x2c - PMT Control and Status Register"]
+    #[inline(always)]
+    pub const fn pmt_control_status(&self) -> &PMT_CONTROL_STATUS {
+        &self.pmt_control_status
+    }
+    #[doc = "0x38 - Interrupt Register"]
+    #[inline(always)]
+    pub const fn interrupt_status(&self) -> &INTERRUPT_STATUS {
+        &self.interrupt_status
+    }
+    #[doc = "0x3c - Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn interrupt_mask(&self) -> &INTERRUPT_MASK {
+        &self.interrupt_mask
+    }
+    #[doc = "0x40 - MAC Address0 High Register"]
+    #[inline(always)]
+    pub const fn mac_address0_high(&self) -> &MAC_ADDRESS0_HIGH {
+        &self.mac_address0_high
+    }
+    #[doc = "0x44 - MAC Address0 Low Register"]
+    #[inline(always)]
+    pub const fn mac_address0_low(&self) -> &MAC_ADDRESS0_LOW {
+        &self.mac_address0_low
+    }
+    #[doc = "0x48 - MAC Address1 High Register"]
+    #[inline(always)]
+    pub const fn mac_address1_high(&self) -> &MAC_ADDRESS1_HIGH {
+        &self.mac_address1_high
+    }
+    #[doc = "0x4c - MAC Address1 Low Register"]
+    #[inline(always)]
+    pub const fn mac_address1_low(&self) -> &MAC_ADDRESS1_LOW {
+        &self.mac_address1_low
+    }
+    #[doc = "0x50 - MAC Address2 High Register"]
+    #[inline(always)]
+    pub const fn mac_address2_high(&self) -> &MAC_ADDRESS2_HIGH {
+        &self.mac_address2_high
+    }
+    #[doc = "0x54 - MAC Address2 Low Register"]
+    #[inline(always)]
+    pub const fn mac_address2_low(&self) -> &MAC_ADDRESS2_LOW {
+        &self.mac_address2_low
+    }
+    #[doc = "0x58 - MAC Address3 High Register"]
+    #[inline(always)]
+    pub const fn mac_address3_high(&self) -> &MAC_ADDRESS3_HIGH {
+        &self.mac_address3_high
+    }
+    #[doc = "0x5c - MAC Address3 Low Register"]
+    #[inline(always)]
+    pub const fn mac_address3_low(&self) -> &MAC_ADDRESS3_LOW {
+        &self.mac_address3_low
+    }
+    #[doc = "0x100 - MMC Control Register"]
+    #[inline(always)]
+    pub const fn mmc_control(&self) -> &MMC_CONTROL {
+        &self.mmc_control
+    }
+    #[doc = "0x104 - MMC Receive Interrupt Register"]
+    #[inline(always)]
+    pub const fn mmc_receive_interrupt(&self) -> &MMC_RECEIVE_INTERRUPT {
+        &self.mmc_receive_interrupt
+    }
+    #[doc = "0x108 - MMC Transmit Interrupt Register"]
+    #[inline(always)]
+    pub const fn mmc_transmit_interrupt(&self) -> &MMC_TRANSMIT_INTERRUPT {
+        &self.mmc_transmit_interrupt
+    }
+    #[doc = "0x10c - MMC Reveive Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn mmc_receive_interrupt_mask(&self) -> &MMC_RECEIVE_INTERRUPT_MASK {
+        &self.mmc_receive_interrupt_mask
+    }
+    #[doc = "0x110 - MMC Transmit Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn mmc_transmit_interrupt_mask(&self) -> &MMC_TRANSMIT_INTERRUPT_MASK {
+        &self.mmc_transmit_interrupt_mask
+    }
+    #[doc = "0x114 - Transmit Octet Count for Good and Bad Frames Register"]
+    #[inline(always)]
+    pub const fn tx_octet_count_good_bad(&self) -> &TX_OCTET_COUNT_GOOD_BAD {
+        &self.tx_octet_count_good_bad
+    }
+    #[doc = "0x118 - Transmit Frame Count for Goodand Bad Frames Register"]
+    #[inline(always)]
+    pub const fn tx_frame_count_good_bad(&self) -> &TX_FRAME_COUNT_GOOD_BAD {
+        &self.tx_frame_count_good_bad
+    }
+    #[doc = "0x11c - Transmit Frame Count for Good Broadcast Frames"]
+    #[inline(always)]
+    pub const fn tx_broadcast_frames_good(&self) -> &TX_BROADCAST_FRAMES_GOOD {
+        &self.tx_broadcast_frames_good
+    }
+    #[doc = "0x120 - Transmit Frame Count for Good Multicast Frames"]
+    #[inline(always)]
+    pub const fn tx_multicast_frames_good(&self) -> &TX_MULTICAST_FRAMES_GOOD {
+        &self.tx_multicast_frames_good
+    }
+    #[doc = "0x124 - Transmit Octet Count for Good and Bad 64 Byte Frames"]
+    #[inline(always)]
+    pub const fn tx_64octets_frames_good_bad(&self) -> &TX_64OCTETS_FRAMES_GOOD_BAD {
+        &self.tx_64octets_frames_good_bad
+    }
+    #[doc = "0x128 - Transmit Octet Count for Good and Bad 65 to 127 Bytes Frames"]
+    #[inline(always)]
+    pub const fn tx_65to127octets_frames_good_bad(&self) -> &TX_65TO127OCTETS_FRAMES_GOOD_BAD {
+        &self.tx_65to127octets_frames_good_bad
+    }
+    #[doc = "0x12c - Transmit Octet Count for Good and Bad 128 to 255 Bytes Frames"]
+    #[inline(always)]
+    pub const fn tx_128to255octets_frames_good_bad(&self) -> &TX_128TO255OCTETS_FRAMES_GOOD_BAD {
+        &self.tx_128to255octets_frames_good_bad
+    }
+    #[doc = "0x130 - Transmit Octet Count for Good and Bad 256 to 511 Bytes Frames"]
+    #[inline(always)]
+    pub const fn tx_256to511octets_frames_good_bad(&self) -> &TX_256TO511OCTETS_FRAMES_GOOD_BAD {
+        &self.tx_256to511octets_frames_good_bad
+    }
+    #[doc = "0x134 - Transmit Octet Count for Good and Bad 512 to 1023 Bytes Frames"]
+    #[inline(always)]
+    pub const fn tx_512to1023octets_frames_good_bad(&self) -> &TX_512TO1023OCTETS_FRAMES_GOOD_BAD {
+        &self.tx_512to1023octets_frames_good_bad
+    }
+    #[doc = "0x138 - Transmit Octet Count for Good and Bad 1024 to Maxsize Bytes Frames"]
+    #[inline(always)]
+    pub const fn tx_1024tomaxoctets_frames_good_bad(&self) -> &TX_1024TOMAXOCTETS_FRAMES_GOOD_BAD {
+        &self.tx_1024tomaxoctets_frames_good_bad
+    }
+    #[doc = "0x13c - Transmit Frame Count for Good and Bad Unicast Frames"]
+    #[inline(always)]
+    pub const fn tx_unicast_frames_good_bad(&self) -> &TX_UNICAST_FRAMES_GOOD_BAD {
+        &self.tx_unicast_frames_good_bad
+    }
+    #[doc = "0x140 - Transmit Frame Count for Good and Bad Multicast Frames"]
+    #[inline(always)]
+    pub const fn tx_multicast_frames_good_bad(&self) -> &TX_MULTICAST_FRAMES_GOOD_BAD {
+        &self.tx_multicast_frames_good_bad
+    }
+    #[doc = "0x144 - Transmit Frame Count for Good and Bad Broadcast Frames"]
+    #[inline(always)]
+    pub const fn tx_broadcast_frames_good_bad(&self) -> &TX_BROADCAST_FRAMES_GOOD_BAD {
+        &self.tx_broadcast_frames_good_bad
+    }
+    #[doc = "0x148 - Transmit Frame Count for Underflow Error Frames"]
+    #[inline(always)]
+    pub const fn tx_underflow_error_frames(&self) -> &TX_UNDERFLOW_ERROR_FRAMES {
+        &self.tx_underflow_error_frames
+    }
+    #[doc = "0x14c - Transmit Frame Count for Frames Transmitted after Single Collision"]
+    #[inline(always)]
+    pub const fn tx_single_collision_good_frames(&self) -> &TX_SINGLE_COLLISION_GOOD_FRAMES {
+        &self.tx_single_collision_good_frames
+    }
+    #[doc = "0x150 - Transmit Frame Count for Frames Transmitted after Multiple Collision"]
+    #[inline(always)]
+    pub const fn tx_multiple_collision_good_frames(&self) -> &TX_MULTIPLE_COLLISION_GOOD_FRAMES {
+        &self.tx_multiple_collision_good_frames
+    }
+    #[doc = "0x154 - Tx Deferred Frames Register"]
+    #[inline(always)]
+    pub const fn tx_deferred_frames(&self) -> &TX_DEFERRED_FRAMES {
+        &self.tx_deferred_frames
+    }
+    #[doc = "0x158 - Transmit Frame Count for Late Collision Error Frames"]
+    #[inline(always)]
+    pub const fn tx_late_collision_frames(&self) -> &TX_LATE_COLLISION_FRAMES {
+        &self.tx_late_collision_frames
+    }
+    #[doc = "0x15c - Transmit Frame Count for Excessive Collision Error Frames"]
+    #[inline(always)]
+    pub const fn tx_excessive_collision_frames(&self) -> &TX_EXCESSIVE_COLLISION_FRAMES {
+        &self.tx_excessive_collision_frames
+    }
+    #[doc = "0x160 - Transmit Frame Count for Carrier Sense Error Frames"]
+    #[inline(always)]
+    pub const fn tx_carrier_error_frames(&self) -> &TX_CARRIER_ERROR_FRAMES {
+        &self.tx_carrier_error_frames
+    }
+    #[doc = "0x164 - Tx Octet Count Good Register"]
+    #[inline(always)]
+    pub const fn tx_octet_count_good(&self) -> &TX_OCTET_COUNT_GOOD {
+        &self.tx_octet_count_good
+    }
+    #[doc = "0x168 - Tx Frame Count Good Register"]
+    #[inline(always)]
+    pub const fn tx_frame_count_good(&self) -> &TX_FRAME_COUNT_GOOD {
+        &self.tx_frame_count_good
+    }
+    #[doc = "0x16c - Transmit Frame Count for Excessive Deferral Error Frames"]
+    #[inline(always)]
+    pub const fn tx_excessive_deferral_error(&self) -> &TX_EXCESSIVE_DEFERRAL_ERROR {
+        &self.tx_excessive_deferral_error
+    }
+    #[doc = "0x170 - Transmit Frame Count for Good PAUSE Frames"]
+    #[inline(always)]
+    pub const fn tx_pause_frames(&self) -> &TX_PAUSE_FRAMES {
+        &self.tx_pause_frames
+    }
+    #[doc = "0x174 - Transmit Frame Count for Good VLAN Frames"]
+    #[inline(always)]
+    pub const fn tx_vlan_frames_good(&self) -> &TX_VLAN_FRAMES_GOOD {
+        &self.tx_vlan_frames_good
+    }
+    #[doc = "0x178 - Transmit Frame Count for Good Oversize Frames"]
+    #[inline(always)]
+    pub const fn tx_osize_frames_good(&self) -> &TX_OSIZE_FRAMES_GOOD {
+        &self.tx_osize_frames_good
+    }
+    #[doc = "0x180 - Receive Frame Count for Good and Bad Frames"]
+    #[inline(always)]
+    pub const fn rx_frames_count_good_bad(&self) -> &RX_FRAMES_COUNT_GOOD_BAD {
+        &self.rx_frames_count_good_bad
+    }
+    #[doc = "0x184 - Receive Octet Count for Good and Bad Frames"]
+    #[inline(always)]
+    pub const fn rx_octet_count_good_bad(&self) -> &RX_OCTET_COUNT_GOOD_BAD {
+        &self.rx_octet_count_good_bad
+    }
+    #[doc = "0x188 - Rx Octet Count Good Register"]
+    #[inline(always)]
+    pub const fn rx_octet_count_good(&self) -> &RX_OCTET_COUNT_GOOD {
+        &self.rx_octet_count_good
+    }
+    #[doc = "0x18c - Receive Frame Count for Good Broadcast Frames"]
+    #[inline(always)]
+    pub const fn rx_broadcast_frames_good(&self) -> &RX_BROADCAST_FRAMES_GOOD {
+        &self.rx_broadcast_frames_good
+    }
+    #[doc = "0x190 - Receive Frame Count for Good Multicast Frames"]
+    #[inline(always)]
+    pub const fn rx_multicast_frames_good(&self) -> &RX_MULTICAST_FRAMES_GOOD {
+        &self.rx_multicast_frames_good
+    }
+    #[doc = "0x194 - Receive Frame Count for CRC Error Frames"]
+    #[inline(always)]
+    pub const fn rx_crc_error_frames(&self) -> &RX_CRC_ERROR_FRAMES {
+        &self.rx_crc_error_frames
+    }
+    #[doc = "0x198 - Receive Frame Count for Alignment Error Frames"]
+    #[inline(always)]
+    pub const fn rx_alignment_error_frames(&self) -> &RX_ALIGNMENT_ERROR_FRAMES {
+        &self.rx_alignment_error_frames
+    }
+    #[doc = "0x19c - Receive Frame Count for Runt Error Frames"]
+    #[inline(always)]
+    pub const fn rx_runt_error_frames(&self) -> &RX_RUNT_ERROR_FRAMES {
+        &self.rx_runt_error_frames
+    }
+    #[doc = "0x1a0 - Receive Frame Count for Jabber Error Frames"]
+    #[inline(always)]
+    pub const fn rx_jabber_error_frames(&self) -> &RX_JABBER_ERROR_FRAMES {
+        &self.rx_jabber_error_frames
+    }
+    #[doc = "0x1a4 - Receive Frame Count for Undersize Frames"]
+    #[inline(always)]
+    pub const fn rx_undersize_frames_good(&self) -> &RX_UNDERSIZE_FRAMES_GOOD {
+        &self.rx_undersize_frames_good
+    }
+    #[doc = "0x1a8 - Rx Oversize Frames Good Register"]
+    #[inline(always)]
+    pub const fn rx_oversize_frames_good(&self) -> &RX_OVERSIZE_FRAMES_GOOD {
+        &self.rx_oversize_frames_good
+    }
+    #[doc = "0x1ac - Receive Frame Count for Good and Bad 64 Byte Frames"]
+    #[inline(always)]
+    pub const fn rx_64octets_frames_good_bad(&self) -> &RX_64OCTETS_FRAMES_GOOD_BAD {
+        &self.rx_64octets_frames_good_bad
+    }
+    #[doc = "0x1b0 - Receive Frame Count for Good and Bad 65 to 127 Bytes Frames"]
+    #[inline(always)]
+    pub const fn rx_65to127octets_frames_good_bad(&self) -> &RX_65TO127OCTETS_FRAMES_GOOD_BAD {
+        &self.rx_65to127octets_frames_good_bad
+    }
+    #[doc = "0x1b4 - Receive Frame Count for Good and Bad 128 to 255 Bytes Frames"]
+    #[inline(always)]
+    pub const fn rx_128to255octets_frames_good_bad(&self) -> &RX_128TO255OCTETS_FRAMES_GOOD_BAD {
+        &self.rx_128to255octets_frames_good_bad
+    }
+    #[doc = "0x1b8 - Receive Frame Count for Good and Bad 256 to 511 Bytes Frames"]
+    #[inline(always)]
+    pub const fn rx_256to511octets_frames_good_bad(&self) -> &RX_256TO511OCTETS_FRAMES_GOOD_BAD {
+        &self.rx_256to511octets_frames_good_bad
+    }
+    #[doc = "0x1bc - Receive Frame Count for Good and Bad 512 to 1,023 Bytes Frames"]
+    #[inline(always)]
+    pub const fn rx_512to1023octets_frames_good_bad(&self) -> &RX_512TO1023OCTETS_FRAMES_GOOD_BAD {
+        &self.rx_512to1023octets_frames_good_bad
+    }
+    #[doc = "0x1c0 - Receive Frame Count for Good and Bad 1,024 to Maxsize Bytes Frames"]
+    #[inline(always)]
+    pub const fn rx_1024tomaxoctets_frames_good_bad(&self) -> &RX_1024TOMAXOCTETS_FRAMES_GOOD_BAD {
+        &self.rx_1024tomaxoctets_frames_good_bad
+    }
+    #[doc = "0x1c4 - Receive Frame Count for Good Unicast Frames"]
+    #[inline(always)]
+    pub const fn rx_unicast_frames_good(&self) -> &RX_UNICAST_FRAMES_GOOD {
+        &self.rx_unicast_frames_good
+    }
+    #[doc = "0x1c8 - Receive Frame Count for Length Error Frames"]
+    #[inline(always)]
+    pub const fn rx_length_error_frames(&self) -> &RX_LENGTH_ERROR_FRAMES {
+        &self.rx_length_error_frames
+    }
+    #[doc = "0x1cc - Receive Frame Count for Out of Range Frames"]
+    #[inline(always)]
+    pub const fn rx_out_of_range_type_frames(&self) -> &RX_OUT_OF_RANGE_TYPE_FRAMES {
+        &self.rx_out_of_range_type_frames
+    }
+    #[doc = "0x1d0 - Receive Frame Count for PAUSE Frames"]
+    #[inline(always)]
+    pub const fn rx_pause_frames(&self) -> &RX_PAUSE_FRAMES {
+        &self.rx_pause_frames
+    }
+    #[doc = "0x1d4 - Receive Frame Count for FIFO Overflow Frames"]
+    #[inline(always)]
+    pub const fn rx_fifo_overflow_frames(&self) -> &RX_FIFO_OVERFLOW_FRAMES {
+        &self.rx_fifo_overflow_frames
+    }
+    #[doc = "0x1d8 - Receive Frame Count for Good and Bad VLAN Frames"]
+    #[inline(always)]
+    pub const fn rx_vlan_frames_good_bad(&self) -> &RX_VLAN_FRAMES_GOOD_BAD {
+        &self.rx_vlan_frames_good_bad
+    }
+    #[doc = "0x1dc - Receive Frame Count for Watchdog Error Frames"]
+    #[inline(always)]
+    pub const fn rx_watchdog_error_frames(&self) -> &RX_WATCHDOG_ERROR_FRAMES {
+        &self.rx_watchdog_error_frames
+    }
+    #[doc = "0x1e0 - Receive Frame Count for Receive Error Frames"]
+    #[inline(always)]
+    pub const fn rx_receive_error_frames(&self) -> &RX_RECEIVE_ERROR_FRAMES {
+        &self.rx_receive_error_frames
+    }
+    #[doc = "0x1e4 - Receive Frame Count for Good Control Frames Frames"]
+    #[inline(always)]
+    pub const fn rx_control_frames_good(&self) -> &RX_CONTROL_FRAMES_GOOD {
+        &self.rx_control_frames_good
+    }
+    #[doc = "0x200 - MMC Receive Checksum Offload Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn mmc_ipc_receive_interrupt_mask(&self) -> &MMC_IPC_RECEIVE_INTERRUPT_MASK {
+        &self.mmc_ipc_receive_interrupt_mask
+    }
+    #[doc = "0x208 - MMC Receive Checksum Offload Interrupt Register"]
+    #[inline(always)]
+    pub const fn mmc_ipc_receive_interrupt(&self) -> &MMC_IPC_RECEIVE_INTERRUPT {
+        &self.mmc_ipc_receive_interrupt
+    }
+    #[doc = "0x210 - RxIPv4 Good Frames Register"]
+    #[inline(always)]
+    pub const fn rxipv4_good_frames(&self) -> &RXIPV4_GOOD_FRAMES {
+        &self.rxipv4_good_frames
+    }
+    #[doc = "0x214 - Receive IPV4 Header Error Frame Counter Register"]
+    #[inline(always)]
+    pub const fn rxipv4_header_error_frames(&self) -> &RXIPV4_HEADER_ERROR_FRAMES {
+        &self.rxipv4_header_error_frames
+    }
+    #[doc = "0x218 - Receive IPV4 No Payload Frame Counter Register"]
+    #[inline(always)]
+    pub const fn rxipv4_no_payload_frames(&self) -> &RXIPV4_NO_PAYLOAD_FRAMES {
+        &self.rxipv4_no_payload_frames
+    }
+    #[doc = "0x21c - Receive IPV4 Fragmented Frame Counter Register"]
+    #[inline(always)]
+    pub const fn rxipv4_fragmented_frames(&self) -> &RXIPV4_FRAGMENTED_FRAMES {
+        &self.rxipv4_fragmented_frames
+    }
+    #[doc = "0x220 - Receive IPV4 UDP Checksum Disabled Frame Counter Register"]
+    #[inline(always)]
+    pub const fn rxipv4_udp_checksum_disabled_frames(&self) -> &RXIPV4_UDP_CHECKSUM_DISABLED_FRAMES {
+        &self.rxipv4_udp_checksum_disabled_frames
+    }
+    #[doc = "0x224 - RxIPv6 Good Frames Register"]
+    #[inline(always)]
+    pub const fn rxipv6_good_frames(&self) -> &RXIPV6_GOOD_FRAMES {
+        &self.rxipv6_good_frames
+    }
+    #[doc = "0x228 - Receive IPV6 Header Error Frame Counter Register"]
+    #[inline(always)]
+    pub const fn rxipv6_header_error_frames(&self) -> &RXIPV6_HEADER_ERROR_FRAMES {
+        &self.rxipv6_header_error_frames
+    }
+    #[doc = "0x22c - Receive IPV6 No Payload Frame Counter Register"]
+    #[inline(always)]
+    pub const fn rxipv6_no_payload_frames(&self) -> &RXIPV6_NO_PAYLOAD_FRAMES {
+        &self.rxipv6_no_payload_frames
+    }
+    #[doc = "0x230 - RxUDP Good Frames Register"]
+    #[inline(always)]
+    pub const fn rxudp_good_frames(&self) -> &RXUDP_GOOD_FRAMES {
+        &self.rxudp_good_frames
+    }
+    #[doc = "0x234 - RxUDP Error Frames Register"]
+    #[inline(always)]
+    pub const fn rxudp_error_frames(&self) -> &RXUDP_ERROR_FRAMES {
+        &self.rxudp_error_frames
+    }
+    #[doc = "0x238 - RxTCP Good Frames Register"]
+    #[inline(always)]
+    pub const fn rxtcp_good_frames(&self) -> &RXTCP_GOOD_FRAMES {
+        &self.rxtcp_good_frames
+    }
+    #[doc = "0x23c - RxTCP Error Frames Register"]
+    #[inline(always)]
+    pub const fn rxtcp_error_frames(&self) -> &RXTCP_ERROR_FRAMES {
+        &self.rxtcp_error_frames
+    }
+    #[doc = "0x240 - RxICMP Good Frames Register"]
+    #[inline(always)]
+    pub const fn rxicmp_good_frames(&self) -> &RXICMP_GOOD_FRAMES {
+        &self.rxicmp_good_frames
+    }
+    #[doc = "0x244 - RxICMP Error Frames Register"]
+    #[inline(always)]
+    pub const fn rxicmp_error_frames(&self) -> &RXICMP_ERROR_FRAMES {
+        &self.rxicmp_error_frames
+    }
+    #[doc = "0x250 - RxIPv4 Good Octets Register"]
+    #[inline(always)]
+    pub const fn rxipv4_good_octets(&self) -> &RXIPV4_GOOD_OCTETS {
+        &self.rxipv4_good_octets
+    }
+    #[doc = "0x254 - Receive IPV4 Header Error Octet Counter Register"]
+    #[inline(always)]
+    pub const fn rxipv4_header_error_octets(&self) -> &RXIPV4_HEADER_ERROR_OCTETS {
+        &self.rxipv4_header_error_octets
+    }
+    #[doc = "0x258 - Receive IPV4 No Payload Octet Counter Register"]
+    #[inline(always)]
+    pub const fn rxipv4_no_payload_octets(&self) -> &RXIPV4_NO_PAYLOAD_OCTETS {
+        &self.rxipv4_no_payload_octets
+    }
+    #[doc = "0x25c - Receive IPV4 Fragmented Octet Counter Register"]
+    #[inline(always)]
+    pub const fn rxipv4_fragmented_octets(&self) -> &RXIPV4_FRAGMENTED_OCTETS {
+        &self.rxipv4_fragmented_octets
+    }
+    #[doc = "0x260 - Receive IPV4 Fragmented Octet Counter Register"]
+    #[inline(always)]
+    pub const fn rxipv4_udp_checksum_disable_octets(&self) -> &RXIPV4_UDP_CHECKSUM_DISABLE_OCTETS {
+        &self.rxipv4_udp_checksum_disable_octets
+    }
+    #[doc = "0x264 - RxIPv6 Good Octets Register"]
+    #[inline(always)]
+    pub const fn rxipv6_good_octets(&self) -> &RXIPV6_GOOD_OCTETS {
+        &self.rxipv6_good_octets
+    }
+    #[doc = "0x268 - Receive IPV6 Header Error Octet Counter Register"]
+    #[inline(always)]
+    pub const fn rxipv6_header_error_octets(&self) -> &RXIPV6_HEADER_ERROR_OCTETS {
+        &self.rxipv6_header_error_octets
+    }
+    #[doc = "0x26c - Receive IPV6 No Payload Octet Counter Register"]
+    #[inline(always)]
+    pub const fn rxipv6_no_payload_octets(&self) -> &RXIPV6_NO_PAYLOAD_OCTETS {
+        &self.rxipv6_no_payload_octets
+    }
+    #[doc = "0x270 - Receive UDP Good Octets Register"]
+    #[inline(always)]
+    pub const fn rxudp_good_octets(&self) -> &RXUDP_GOOD_OCTETS {
+        &self.rxudp_good_octets
+    }
+    #[doc = "0x274 - Receive UDP Error Octets Register"]
+    #[inline(always)]
+    pub const fn rxudp_error_octets(&self) -> &RXUDP_ERROR_OCTETS {
+        &self.rxudp_error_octets
+    }
+    #[doc = "0x278 - Receive TCP Good Octets Register"]
+    #[inline(always)]
+    pub const fn rxtcp_good_octets(&self) -> &RXTCP_GOOD_OCTETS {
+        &self.rxtcp_good_octets
+    }
+    #[doc = "0x27c - Receive TCP Error Octets Register"]
+    #[inline(always)]
+    pub const fn rxtcp_error_octets(&self) -> &RXTCP_ERROR_OCTETS {
+        &self.rxtcp_error_octets
+    }
+    #[doc = "0x280 - Receive ICMP Good Octets Register"]
+    #[inline(always)]
+    pub const fn rxicmp_good_octets(&self) -> &RXICMP_GOOD_OCTETS {
+        &self.rxicmp_good_octets
+    }
+    #[doc = "0x284 - Receive ICMP Error Octets Register"]
+    #[inline(always)]
+    pub const fn rxicmp_error_octets(&self) -> &RXICMP_ERROR_OCTETS {
+        &self.rxicmp_error_octets
+    }
+    #[doc = "0x700 - Timestamp Control Register"]
+    #[inline(always)]
+    pub const fn timestamp_control(&self) -> &TIMESTAMP_CONTROL {
+        &self.timestamp_control
+    }
+    #[doc = "0x704 - Sub-Second Increment Register"]
+    #[inline(always)]
+    pub const fn sub_second_increment(&self) -> &SUB_SECOND_INCREMENT {
+        &self.sub_second_increment
+    }
+    #[doc = "0x708 - System Time - Seconds Register"]
+    #[inline(always)]
+    pub const fn system_time_seconds(&self) -> &SYSTEM_TIME_SECONDS {
+        &self.system_time_seconds
+    }
+    #[doc = "0x70c - System Time Nanoseconds Register"]
+    #[inline(always)]
+    pub const fn system_time_nanoseconds(&self) -> &SYSTEM_TIME_NANOSECONDS {
+        &self.system_time_nanoseconds
+    }
+    #[doc = "0x710 - System Time - Seconds Update Register"]
+    #[inline(always)]
+    pub const fn system_time_seconds_update(&self) -> &SYSTEM_TIME_SECONDS_UPDATE {
+        &self.system_time_seconds_update
+    }
+    #[doc = "0x714 - System Time Nanoseconds Update Register"]
+    #[inline(always)]
+    pub const fn system_time_nanoseconds_update(&self) -> &SYSTEM_TIME_NANOSECONDS_UPDATE {
+        &self.system_time_nanoseconds_update
+    }
+    #[doc = "0x718 - Timestamp Addend Register"]
+    #[inline(always)]
+    pub const fn timestamp_addend(&self) -> &TIMESTAMP_ADDEND {
+        &self.timestamp_addend
+    }
+    #[doc = "0x71c - Target Time Seconds Register"]
+    #[inline(always)]
+    pub const fn target_time_seconds(&self) -> &TARGET_TIME_SECONDS {
+        &self.target_time_seconds
+    }
+    #[doc = "0x720 - Target Time Nanoseconds Register"]
+    #[inline(always)]
+    pub const fn target_time_nanoseconds(&self) -> &TARGET_TIME_NANOSECONDS {
+        &self.target_time_nanoseconds
+    }
+    #[doc = "0x724 - System Time - Higher Word Seconds Register"]
+    #[inline(always)]
+    pub const fn system_time_higher_word_seconds(&self) -> &SYSTEM_TIME_HIGHER_WORD_SECONDS {
+        &self.system_time_higher_word_seconds
+    }
+    #[doc = "0x728 - Timestamp Status Register"]
+    #[inline(always)]
+    pub const fn timestamp_status(&self) -> &TIMESTAMP_STATUS {
+        &self.timestamp_status
+    }
+    #[doc = "0x1000 - Bus Mode Register"]
+    #[inline(always)]
+    pub const fn bus_mode(&self) -> &BUS_MODE {
+        &self.bus_mode
+    }
+    #[doc = "0x1004 - Transmit Poll Demand Register"]
+    #[inline(always)]
+    pub const fn transmit_poll_demand(&self) -> &TRANSMIT_POLL_DEMAND {
+        &self.transmit_poll_demand
+    }
+    #[doc = "0x1008 - Receive Poll Demand Register"]
+    #[inline(always)]
+    pub const fn receive_poll_demand(&self) -> &RECEIVE_POLL_DEMAND {
+        &self.receive_poll_demand
+    }
+    #[doc = "0x100c - Receive Descriptor Address Register"]
+    #[inline(always)]
+    pub const fn receive_descriptor_list_address(&self) -> &RECEIVE_DESCRIPTOR_LIST_ADDRESS {
+        &self.receive_descriptor_list_address
+    }
+    #[doc = "0x1010 - Transmit descripter Address Register"]
+    #[inline(always)]
+    pub const fn transmit_descriptor_list_address(&self) -> &TRANSMIT_DESCRIPTOR_LIST_ADDRESS {
+        &self.transmit_descriptor_list_address
+    }
+    #[doc = "0x1014 - Status Register"]
+    #[inline(always)]
+    pub const fn status(&self) -> &STATUS {
+        &self.status
+    }
+    #[doc = "0x1018 - Operation Mode Register"]
+    #[inline(always)]
+    pub const fn operation_mode(&self) -> &OPERATION_MODE {
+        &self.operation_mode
+    }
+    #[doc = "0x101c - Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn interrupt_enable(&self) -> &INTERRUPT_ENABLE {
+        &self.interrupt_enable
+    }
+    #[doc = "0x1020 - Missed Frame and Buffer Overflow Counter Register"]
+    #[inline(always)]
+    pub const fn missed_frame_and_buffer_overflow_counter(&self) -> &MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER {
+        &self.missed_frame_and_buffer_overflow_counter
+    }
+    #[doc = "0x1024 - Receive Interrupt Watchdog Timer Register"]
+    #[inline(always)]
+    pub const fn receive_interrupt_watchdog_timer(&self) -> &RECEIVE_INTERRUPT_WATCHDOG_TIMER {
+        &self.receive_interrupt_watchdog_timer
+    }
+    #[doc = "0x102c - AHB Status Register"]
+    #[inline(always)]
+    pub const fn ahb_status(&self) -> &AHB_STATUS {
+        &self.ahb_status
+    }
     #[doc = "0x1048 - Current Host Transmit Descriptor Register"]
-    pub current_host_transmit_descriptor: CURRENT_HOST_TRANSMIT_DESCRIPTOR,
+    #[inline(always)]
+    pub const fn current_host_transmit_descriptor(&self) -> &CURRENT_HOST_TRANSMIT_DESCRIPTOR {
+        &self.current_host_transmit_descriptor
+    }
     #[doc = "0x104c - Current Host Receive Descriptor Register"]
-    pub current_host_receive_descriptor: CURRENT_HOST_RECEIVE_DESCRIPTOR,
+    #[inline(always)]
+    pub const fn current_host_receive_descriptor(&self) -> &CURRENT_HOST_RECEIVE_DESCRIPTOR {
+        &self.current_host_receive_descriptor
+    }
     #[doc = "0x1050 - Current Host Transmit Buffer Address Register"]
-    pub current_host_transmit_buffer_address: CURRENT_HOST_TRANSMIT_BUFFER_ADDRESS,
+    #[inline(always)]
+    pub const fn current_host_transmit_buffer_address(&self) -> &CURRENT_HOST_TRANSMIT_BUFFER_ADDRESS {
+        &self.current_host_transmit_buffer_address
+    }
     #[doc = "0x1054 - Current Host Receive Buffer Address Register"]
-    pub current_host_receive_buffer_address: CURRENT_HOST_RECEIVE_BUFFER_ADDRESS,
+    #[inline(always)]
+    pub const fn current_host_receive_buffer_address(&self) -> &CURRENT_HOST_RECEIVE_BUFFER_ADDRESS {
+        &self.current_host_receive_buffer_address
+    }
     #[doc = "0x1058 - HW Feature Register"]
-    pub hw_feature: HW_FEATURE,
+    #[inline(always)]
+    pub const fn hw_feature(&self) -> &HW_FEATURE {
+        &self.hw_feature
+    }
 }
 #[doc = "MAC_CONFIGURATION (rw) register accessor: MAC Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mac_configuration::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mac_configuration::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mac_configuration`]
 module"]

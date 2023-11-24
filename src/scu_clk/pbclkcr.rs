@@ -39,8 +39,8 @@ impl PBDIV_R {
     }
 }
 #[doc = "Field `PBDIV` writer - PB Clock Divider Enable"]
-pub type PBDIV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PBDIV_A>;
-impl<'a, REG, const O: u8> PBDIV_W<'a, REG, O>
+pub type PBDIV_W<'a, REG> = crate::BitWriter<'a, REG, PBDIV_A>;
+impl<'a, REG> PBDIV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,8 +66,8 @@ impl W {
     #[doc = "Bit 0 - PB Clock Divider Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pbdiv(&mut self) -> PBDIV_W<PBCLKCR_SPEC, 0> {
-        PBDIV_W::new(self)
+    pub fn pbdiv(&mut self) -> PBDIV_W<PBCLKCR_SPEC> {
+        PBDIV_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

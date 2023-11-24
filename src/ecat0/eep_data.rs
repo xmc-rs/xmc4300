@@ -5,7 +5,7 @@ pub type W = crate::W<EEP_DATA_SPEC>;
 #[doc = "Field `EEP_DATA` reader - EEPROM Data"]
 pub type EEP_DATA_R = crate::FieldReader<u32>;
 #[doc = "Field `EEP_DATA` writer - EEPROM Data"]
-pub type EEP_DATA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type EEP_DATA_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - EEPROM Data"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - EEPROM Data"]
     #[inline(always)]
     #[must_use]
-    pub fn eep_data(&mut self) -> EEP_DATA_W<EEP_DATA_SPEC, 0> {
-        EEP_DATA_W::new(self)
+    pub fn eep_data(&mut self) -> EEP_DATA_W<EEP_DATA_SPEC> {
+        EEP_DATA_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

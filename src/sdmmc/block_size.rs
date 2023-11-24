@@ -5,11 +5,11 @@ pub type W = crate::W<BLOCK_SIZE_SPEC>;
 #[doc = "Field `TX_BLOCK_SIZE` reader - Transfer Block Size"]
 pub type TX_BLOCK_SIZE_R = crate::FieldReader<u16>;
 #[doc = "Field `TX_BLOCK_SIZE` writer - Transfer Block Size"]
-pub type TX_BLOCK_SIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type TX_BLOCK_SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "Field `TX_BLOCK_SIZE_12` reader - Transfer Block Size 12th bit."]
 pub type TX_BLOCK_SIZE_12_R = crate::BitReader;
 #[doc = "Field `TX_BLOCK_SIZE_12` writer - Transfer Block Size 12th bit."]
-pub type TX_BLOCK_SIZE_12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TX_BLOCK_SIZE_12_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:11 - Transfer Block Size"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:11 - Transfer Block Size"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_block_size(&mut self) -> TX_BLOCK_SIZE_W<BLOCK_SIZE_SPEC, 0> {
-        TX_BLOCK_SIZE_W::new(self)
+    pub fn tx_block_size(&mut self) -> TX_BLOCK_SIZE_W<BLOCK_SIZE_SPEC> {
+        TX_BLOCK_SIZE_W::new(self, 0)
     }
     #[doc = "Bit 15 - Transfer Block Size 12th bit."]
     #[inline(always)]
     #[must_use]
-    pub fn tx_block_size_12(&mut self) -> TX_BLOCK_SIZE_12_W<BLOCK_SIZE_SPEC, 15> {
-        TX_BLOCK_SIZE_12_W::new(self)
+    pub fn tx_block_size_12(&mut self) -> TX_BLOCK_SIZE_12_W<BLOCK_SIZE_SPEC> {
+        TX_BLOCK_SIZE_12_W::new(self, 15)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

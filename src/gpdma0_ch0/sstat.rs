@@ -5,7 +5,7 @@ pub type W = crate::W<SSTAT_SPEC>;
 #[doc = "Field `SSTAT` reader - Source Status"]
 pub type SSTAT_R = crate::FieldReader<u32>;
 #[doc = "Field `SSTAT` writer - Source Status"]
-pub type SSTAT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type SSTAT_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Source Status"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Source Status"]
     #[inline(always)]
     #[must_use]
-    pub fn sstat(&mut self) -> SSTAT_W<SSTAT_SPEC, 0> {
-        SSTAT_W::new(self)
+    pub fn sstat(&mut self) -> SSTAT_W<SSTAT_SPEC> {
+        SSTAT_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

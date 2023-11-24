@@ -60,8 +60,8 @@ impl STRTS_R {
     }
 }
 #[doc = "Field `STRTS` writer - External Start Functionality Selector"]
-pub type STRTS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, STRTS_A>;
-impl<'a, REG, const O: u8> STRTS_W<'a, REG, O>
+pub type STRTS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, STRTS_A>;
+impl<'a, REG> STRTS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,8 +145,8 @@ impl ENDS_R {
     }
 }
 #[doc = "Field `ENDS` writer - External Stop Functionality Selector"]
-pub type ENDS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ENDS_A>;
-impl<'a, REG, const O: u8> ENDS_W<'a, REG, O>
+pub type ENDS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ENDS_A>;
+impl<'a, REG> ENDS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -230,8 +230,8 @@ impl CAP0S_R {
     }
 }
 #[doc = "Field `CAP0S` writer - External Capture 0 Functionality Selector"]
-pub type CAP0S_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CAP0S_A>;
-impl<'a, REG, const O: u8> CAP0S_W<'a, REG, O>
+pub type CAP0S_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CAP0S_A>;
+impl<'a, REG> CAP0S_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -315,8 +315,8 @@ impl CAP1S_R {
     }
 }
 #[doc = "Field `CAP1S` writer - External Capture 1 Functionality Selector"]
-pub type CAP1S_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CAP1S_A>;
-impl<'a, REG, const O: u8> CAP1S_W<'a, REG, O>
+pub type CAP1S_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CAP1S_A>;
+impl<'a, REG> CAP1S_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -400,8 +400,8 @@ impl GATES_R {
     }
 }
 #[doc = "Field `GATES` writer - External Gate Functionality Selector"]
-pub type GATES_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, GATES_A>;
-impl<'a, REG, const O: u8> GATES_W<'a, REG, O>
+pub type GATES_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, GATES_A>;
+impl<'a, REG> GATES_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -485,8 +485,8 @@ impl UDS_R {
     }
 }
 #[doc = "Field `UDS` writer - External Up/Down Functionality Selector"]
-pub type UDS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, UDS_A>;
-impl<'a, REG, const O: u8> UDS_W<'a, REG, O>
+pub type UDS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, UDS_A>;
+impl<'a, REG> UDS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -515,7 +515,7 @@ where
 #[doc = "Field `LDS` reader - External Timer Load Functionality Selector"]
 pub type LDS_R = crate::FieldReader;
 #[doc = "Field `LDS` writer - External Timer Load Functionality Selector"]
-pub type LDS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type LDS_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `CNTS` reader - External Count Selector"]
 pub type CNTS_R = crate::FieldReader<CNTS_A>;
 #[doc = "External Count Selector\n\nValue on reset: 0"]
@@ -574,8 +574,8 @@ impl CNTS_R {
     }
 }
 #[doc = "Field `CNTS` writer - External Count Selector"]
-pub type CNTS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CNTS_A>;
-impl<'a, REG, const O: u8> CNTS_W<'a, REG, O>
+pub type CNTS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CNTS_A>;
+impl<'a, REG> CNTS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -638,8 +638,8 @@ impl OFS_R {
     }
 }
 #[doc = "Field `OFS` writer - Override Function Selector"]
-pub type OFS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OFS_A>;
-impl<'a, REG, const O: u8> OFS_W<'a, REG, O>
+pub type OFS_W<'a, REG> = crate::BitWriter<'a, REG, OFS_A>;
+impl<'a, REG> OFS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -691,8 +691,8 @@ impl TS_R {
     }
 }
 #[doc = "Field `TS` writer - Trap Function Selector"]
-pub type TS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TS_A>;
-impl<'a, REG, const O: u8> TS_W<'a, REG, O>
+pub type TS_W<'a, REG> = crate::BitWriter<'a, REG, TS_A>;
+impl<'a, REG> TS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -710,7 +710,7 @@ where
 #[doc = "Field `MOS` reader - External Modulation Functionality Selector"]
 pub type MOS_R = crate::FieldReader;
 #[doc = "Field `MOS` writer - External Modulation Functionality Selector"]
-pub type MOS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type MOS_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `TCE` reader - Timer Concatenation Enable"]
 pub type TCE_R = crate::BitReader<TCE_A>;
 #[doc = "Timer Concatenation Enable\n\nValue on reset: 0"]
@@ -748,8 +748,8 @@ impl TCE_R {
     }
 }
 #[doc = "Field `TCE` writer - Timer Concatenation Enable"]
-pub type TCE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TCE_A>;
-impl<'a, REG, const O: u8> TCE_W<'a, REG, O>
+pub type TCE_W<'a, REG> = crate::BitWriter<'a, REG, TCE_A>;
+impl<'a, REG> TCE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -830,74 +830,74 @@ impl W {
     #[doc = "Bits 0:1 - External Start Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn strts(&mut self) -> STRTS_W<CMC_SPEC, 0> {
-        STRTS_W::new(self)
+    pub fn strts(&mut self) -> STRTS_W<CMC_SPEC> {
+        STRTS_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - External Stop Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn ends(&mut self) -> ENDS_W<CMC_SPEC, 2> {
-        ENDS_W::new(self)
+    pub fn ends(&mut self) -> ENDS_W<CMC_SPEC> {
+        ENDS_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - External Capture 0 Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn cap0s(&mut self) -> CAP0S_W<CMC_SPEC, 4> {
-        CAP0S_W::new(self)
+    pub fn cap0s(&mut self) -> CAP0S_W<CMC_SPEC> {
+        CAP0S_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - External Capture 1 Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn cap1s(&mut self) -> CAP1S_W<CMC_SPEC, 6> {
-        CAP1S_W::new(self)
+    pub fn cap1s(&mut self) -> CAP1S_W<CMC_SPEC> {
+        CAP1S_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - External Gate Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn gates(&mut self) -> GATES_W<CMC_SPEC, 8> {
-        GATES_W::new(self)
+    pub fn gates(&mut self) -> GATES_W<CMC_SPEC> {
+        GATES_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - External Up/Down Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn uds(&mut self) -> UDS_W<CMC_SPEC, 10> {
-        UDS_W::new(self)
+    pub fn uds(&mut self) -> UDS_W<CMC_SPEC> {
+        UDS_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - External Timer Load Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn lds(&mut self) -> LDS_W<CMC_SPEC, 12> {
-        LDS_W::new(self)
+    pub fn lds(&mut self) -> LDS_W<CMC_SPEC> {
+        LDS_W::new(self, 12)
     }
     #[doc = "Bits 14:15 - External Count Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn cnts(&mut self) -> CNTS_W<CMC_SPEC, 14> {
-        CNTS_W::new(self)
+    pub fn cnts(&mut self) -> CNTS_W<CMC_SPEC> {
+        CNTS_W::new(self, 14)
     }
     #[doc = "Bit 16 - Override Function Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn ofs(&mut self) -> OFS_W<CMC_SPEC, 16> {
-        OFS_W::new(self)
+    pub fn ofs(&mut self) -> OFS_W<CMC_SPEC> {
+        OFS_W::new(self, 16)
     }
     #[doc = "Bit 17 - Trap Function Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn ts(&mut self) -> TS_W<CMC_SPEC, 17> {
-        TS_W::new(self)
+    pub fn ts(&mut self) -> TS_W<CMC_SPEC> {
+        TS_W::new(self, 17)
     }
     #[doc = "Bits 18:19 - External Modulation Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn mos(&mut self) -> MOS_W<CMC_SPEC, 18> {
-        MOS_W::new(self)
+    pub fn mos(&mut self) -> MOS_W<CMC_SPEC> {
+        MOS_W::new(self, 18)
     }
     #[doc = "Bit 20 - Timer Concatenation Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tce(&mut self) -> TCE_W<CMC_SPEC, 20> {
-        TCE_W::new(self)
+    pub fn tce(&mut self) -> TCE_W<CMC_SPEC> {
+        TCE_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

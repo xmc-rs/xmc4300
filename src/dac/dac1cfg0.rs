@@ -5,7 +5,7 @@ pub type W = crate::W<DAC1CFG0_SPEC>;
 #[doc = "Field `FREQ` reader - Integer Frequency Divider Value"]
 pub type FREQ_R = crate::FieldReader<u32>;
 #[doc = "Field `FREQ` writer - Integer Frequency Divider Value"]
-pub type FREQ_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 20, O, u32>;
+pub type FREQ_W<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 #[doc = "Field `MODE` reader - Enables and sets the Mode for DAC1"]
 pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "Enables and sets the Mode for DAC1\n\nValue on reset: 0"]
@@ -96,8 +96,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Enables and sets the Mode for DAC1"]
-pub type MODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, MODE_A>;
-impl<'a, REG, const O: u8> MODE_W<'a, REG, O>
+pub type MODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, MODE_A>;
+impl<'a, REG> MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -180,8 +180,8 @@ impl SIGN_R {
     }
 }
 #[doc = "Field `SIGN` writer - Selects between signed and unsigned DAC1 mode"]
-pub type SIGN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIGN_A>;
-impl<'a, REG, const O: u8> SIGN_W<'a, REG, O>
+pub type SIGN_W<'a, REG> = crate::BitWriter<'a, REG, SIGN_A>;
+impl<'a, REG> SIGN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -307,8 +307,8 @@ impl NEGATE_R {
     }
 }
 #[doc = "Field `NEGATE` writer - Negates the DAC1 output"]
-pub type NEGATE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NEGATE_A>;
-impl<'a, REG, const O: u8> NEGATE_W<'a, REG, O>
+pub type NEGATE_W<'a, REG> = crate::BitWriter<'a, REG, NEGATE_A>;
+impl<'a, REG> NEGATE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -360,8 +360,8 @@ impl SIGNEN_R {
     }
 }
 #[doc = "Field `SIGNEN` writer - Enable sign output of DAC1 pattern generator"]
-pub type SIGNEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIGNEN_A>;
-impl<'a, REG, const O: u8> SIGNEN_W<'a, REG, O>
+pub type SIGNEN_W<'a, REG> = crate::BitWriter<'a, REG, SIGNEN_A>;
+impl<'a, REG> SIGNEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -413,8 +413,8 @@ impl SREN_R {
     }
 }
 #[doc = "Field `SREN` writer - Enable DAC1 service request interrupt generation"]
-pub type SREN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SREN_A>;
-impl<'a, REG, const O: u8> SREN_W<'a, REG, O>
+pub type SREN_W<'a, REG> = crate::BitWriter<'a, REG, SREN_A>;
+impl<'a, REG> SREN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -521,38 +521,38 @@ impl W {
     #[doc = "Bits 0:19 - Integer Frequency Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn freq(&mut self) -> FREQ_W<DAC1CFG0_SPEC, 0> {
-        FREQ_W::new(self)
+    pub fn freq(&mut self) -> FREQ_W<DAC1CFG0_SPEC> {
+        FREQ_W::new(self, 0)
     }
     #[doc = "Bits 20:22 - Enables and sets the Mode for DAC1"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<DAC1CFG0_SPEC, 20> {
-        MODE_W::new(self)
+    pub fn mode(&mut self) -> MODE_W<DAC1CFG0_SPEC> {
+        MODE_W::new(self, 20)
     }
     #[doc = "Bit 23 - Selects between signed and unsigned DAC1 mode"]
     #[inline(always)]
     #[must_use]
-    pub fn sign(&mut self) -> SIGN_W<DAC1CFG0_SPEC, 23> {
-        SIGN_W::new(self)
+    pub fn sign(&mut self) -> SIGN_W<DAC1CFG0_SPEC> {
+        SIGN_W::new(self, 23)
     }
     #[doc = "Bit 28 - Negates the DAC1 output"]
     #[inline(always)]
     #[must_use]
-    pub fn negate(&mut self) -> NEGATE_W<DAC1CFG0_SPEC, 28> {
-        NEGATE_W::new(self)
+    pub fn negate(&mut self) -> NEGATE_W<DAC1CFG0_SPEC> {
+        NEGATE_W::new(self, 28)
     }
     #[doc = "Bit 29 - Enable sign output of DAC1 pattern generator"]
     #[inline(always)]
     #[must_use]
-    pub fn signen(&mut self) -> SIGNEN_W<DAC1CFG0_SPEC, 29> {
-        SIGNEN_W::new(self)
+    pub fn signen(&mut self) -> SIGNEN_W<DAC1CFG0_SPEC> {
+        SIGNEN_W::new(self, 29)
     }
     #[doc = "Bit 30 - Enable DAC1 service request interrupt generation"]
     #[inline(always)]
     #[must_use]
-    pub fn sren(&mut self) -> SREN_W<DAC1CFG0_SPEC, 30> {
-        SREN_W::new(self)
+    pub fn sren(&mut self) -> SREN_W<DAC1CFG0_SPEC> {
+        SREN_W::new(self, 30)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

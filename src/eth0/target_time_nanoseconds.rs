@@ -5,7 +5,7 @@ pub type W = crate::W<TARGET_TIME_NANOSECONDS_SPEC>;
 #[doc = "Field `TTSLO` reader - Target Timestamp Low Register"]
 pub type TTSLO_R = crate::FieldReader<u32>;
 #[doc = "Field `TTSLO` writer - Target Timestamp Low Register"]
-pub type TTSLO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 31, O, u32>;
+pub type TTSLO_W<'a, REG> = crate::FieldWriter<'a, REG, 31, u32>;
 #[doc = "Field `TRGTBUSY` reader - Target Time Register Busy"]
 pub type TRGTBUSY_R = crate::BitReader;
 impl R {
@@ -24,8 +24,8 @@ impl W {
     #[doc = "Bits 0:30 - Target Timestamp Low Register"]
     #[inline(always)]
     #[must_use]
-    pub fn ttslo(&mut self) -> TTSLO_W<TARGET_TIME_NANOSECONDS_SPEC, 0> {
-        TTSLO_W::new(self)
+    pub fn ttslo(&mut self) -> TTSLO_W<TARGET_TIME_NANOSECONDS_SPEC> {
+        TTSLO_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

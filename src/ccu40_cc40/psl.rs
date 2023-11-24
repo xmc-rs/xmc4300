@@ -39,8 +39,8 @@ impl PSL_R {
     }
 }
 #[doc = "Field `PSL` writer - Output Passive Level"]
-pub type PSL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PSL_A>;
-impl<'a, REG, const O: u8> PSL_W<'a, REG, O>
+pub type PSL_W<'a, REG> = crate::BitWriter<'a, REG, PSL_A>;
+impl<'a, REG> PSL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,8 +66,8 @@ impl W {
     #[doc = "Bit 0 - Output Passive Level"]
     #[inline(always)]
     #[must_use]
-    pub fn psl(&mut self) -> PSL_W<PSL_SPEC, 0> {
-        PSL_W::new(self)
+    pub fn psl(&mut self) -> PSL_W<PSL_SPEC> {
+        PSL_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

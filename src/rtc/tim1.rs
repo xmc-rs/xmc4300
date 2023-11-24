@@ -5,15 +5,15 @@ pub type W = crate::W<TIM1_SPEC>;
 #[doc = "Field `DAWE` reader - Days of Week Time Value"]
 pub type DAWE_R = crate::FieldReader;
 #[doc = "Field `DAWE` writer - Days of Week Time Value"]
-pub type DAWE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type DAWE_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `MO` reader - Month Time Value"]
 pub type MO_R = crate::FieldReader;
 #[doc = "Field `MO` writer - Month Time Value"]
-pub type MO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type MO_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `YE` reader - Year Time Value"]
 pub type YE_R = crate::FieldReader<u16>;
 #[doc = "Field `YE` writer - Year Time Value"]
-pub type YE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type YE_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:2 - Days of Week Time Value"]
     #[inline(always)]
@@ -35,20 +35,20 @@ impl W {
     #[doc = "Bits 0:2 - Days of Week Time Value"]
     #[inline(always)]
     #[must_use]
-    pub fn dawe(&mut self) -> DAWE_W<TIM1_SPEC, 0> {
-        DAWE_W::new(self)
+    pub fn dawe(&mut self) -> DAWE_W<TIM1_SPEC> {
+        DAWE_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - Month Time Value"]
     #[inline(always)]
     #[must_use]
-    pub fn mo(&mut self) -> MO_W<TIM1_SPEC, 8> {
-        MO_W::new(self)
+    pub fn mo(&mut self) -> MO_W<TIM1_SPEC> {
+        MO_W::new(self, 8)
     }
     #[doc = "Bits 16:31 - Year Time Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ye(&mut self) -> YE_W<TIM1_SPEC, 16> {
-        YE_W::new(self)
+    pub fn ye(&mut self) -> YE_W<TIM1_SPEC> {
+        YE_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

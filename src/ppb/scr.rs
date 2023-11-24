@@ -39,8 +39,8 @@ impl SLEEPONEXIT_R {
     }
 }
 #[doc = "Field `SLEEPONEXIT` writer - Sleep on Exit"]
-pub type SLEEPONEXIT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SLEEPONEXIT_A>;
-impl<'a, REG, const O: u8> SLEEPONEXIT_W<'a, REG, O>
+pub type SLEEPONEXIT_W<'a, REG> = crate::BitWriter<'a, REG, SLEEPONEXIT_A>;
+impl<'a, REG> SLEEPONEXIT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl SLEEPDEEP_R {
     }
 }
 #[doc = "Field `SLEEPDEEP` writer - Sleep or Deep Sleep"]
-pub type SLEEPDEEP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SLEEPDEEP_A>;
-impl<'a, REG, const O: u8> SLEEPDEEP_W<'a, REG, O>
+pub type SLEEPDEEP_W<'a, REG> = crate::BitWriter<'a, REG, SLEEPDEEP_A>;
+impl<'a, REG> SLEEPDEEP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl SEVONPEND_R {
     }
 }
 #[doc = "Field `SEVONPEND` writer - Send Event on Pending bit:"]
-pub type SEVONPEND_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SEVONPEND_A>;
-impl<'a, REG, const O: u8> SEVONPEND_W<'a, REG, O>
+pub type SEVONPEND_W<'a, REG> = crate::BitWriter<'a, REG, SEVONPEND_A>;
+impl<'a, REG> SEVONPEND_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -182,20 +182,20 @@ impl W {
     #[doc = "Bit 1 - Sleep on Exit"]
     #[inline(always)]
     #[must_use]
-    pub fn sleeponexit(&mut self) -> SLEEPONEXIT_W<SCR_SPEC, 1> {
-        SLEEPONEXIT_W::new(self)
+    pub fn sleeponexit(&mut self) -> SLEEPONEXIT_W<SCR_SPEC> {
+        SLEEPONEXIT_W::new(self, 1)
     }
     #[doc = "Bit 2 - Sleep or Deep Sleep"]
     #[inline(always)]
     #[must_use]
-    pub fn sleepdeep(&mut self) -> SLEEPDEEP_W<SCR_SPEC, 2> {
-        SLEEPDEEP_W::new(self)
+    pub fn sleepdeep(&mut self) -> SLEEPDEEP_W<SCR_SPEC> {
+        SLEEPDEEP_W::new(self, 2)
     }
     #[doc = "Bit 4 - Send Event on Pending bit:"]
     #[inline(always)]
     #[must_use]
-    pub fn sevonpend(&mut self) -> SEVONPEND_W<SCR_SPEC, 4> {
-        SEVONPEND_W::new(self)
+    pub fn sevonpend(&mut self) -> SEVONPEND_W<SCR_SPEC> {
+        SEVONPEND_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,7 +1,7 @@
 #[doc = "Register `QINR0` writer"]
 pub type W = crate::W<QINR0_SPEC>;
 #[doc = "Field `REQCHNR` writer - Request Channel Number"]
-pub type REQCHNR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type REQCHNR_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Refill\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_AW {
@@ -17,8 +17,8 @@ impl From<RF_AW> for bool {
     }
 }
 #[doc = "Field `RF` writer - Refill"]
-pub type RF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RF_AW>;
-impl<'a, REG, const O: u8> RF_W<'a, REG, O>
+pub type RF_W<'a, REG> = crate::BitWriter<'a, REG, RF_AW>;
+impl<'a, REG> RF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -48,8 +48,8 @@ impl From<ENSI_AW> for bool {
     }
 }
 #[doc = "Field `ENSI` writer - Enable Source Interrupt"]
-pub type ENSI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENSI_AW>;
-impl<'a, REG, const O: u8> ENSI_W<'a, REG, O>
+pub type ENSI_W<'a, REG> = crate::BitWriter<'a, REG, ENSI_AW>;
+impl<'a, REG> ENSI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -79,8 +79,8 @@ impl From<EXTR_AW> for bool {
     }
 }
 #[doc = "Field `EXTR` writer - External Trigger"]
-pub type EXTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EXTR_AW>;
-impl<'a, REG, const O: u8> EXTR_W<'a, REG, O>
+pub type EXTR_W<'a, REG> = crate::BitWriter<'a, REG, EXTR_AW>;
+impl<'a, REG> EXTR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -99,26 +99,26 @@ impl W {
     #[doc = "Bits 0:4 - Request Channel Number"]
     #[inline(always)]
     #[must_use]
-    pub fn reqchnr(&mut self) -> REQCHNR_W<QINR0_SPEC, 0> {
-        REQCHNR_W::new(self)
+    pub fn reqchnr(&mut self) -> REQCHNR_W<QINR0_SPEC> {
+        REQCHNR_W::new(self, 0)
     }
     #[doc = "Bit 5 - Refill"]
     #[inline(always)]
     #[must_use]
-    pub fn rf(&mut self) -> RF_W<QINR0_SPEC, 5> {
-        RF_W::new(self)
+    pub fn rf(&mut self) -> RF_W<QINR0_SPEC> {
+        RF_W::new(self, 5)
     }
     #[doc = "Bit 6 - Enable Source Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn ensi(&mut self) -> ENSI_W<QINR0_SPEC, 6> {
-        ENSI_W::new(self)
+    pub fn ensi(&mut self) -> ENSI_W<QINR0_SPEC> {
+        ENSI_W::new(self, 6)
     }
     #[doc = "Bit 7 - External Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn extr(&mut self) -> EXTR_W<QINR0_SPEC, 7> {
-        EXTR_W::new(self)
+    pub fn extr(&mut self) -> EXTR_W<QINR0_SPEC> {
+        EXTR_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

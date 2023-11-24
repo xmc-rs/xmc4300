@@ -5,7 +5,7 @@ pub type W = crate::W<SYST_CALIB_SPEC>;
 #[doc = "Field `TENMS` reader - Ten Milliseconds Reload Value"]
 pub type TENMS_R = crate::FieldReader<u32>;
 #[doc = "Field `TENMS` writer - Ten Milliseconds Reload Value"]
-pub type TENMS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 24, O, u32>;
+pub type TENMS_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 #[doc = "Field `SKEW` reader - Ten Milliseconds Skewed"]
 pub type SKEW_R = crate::BitReader<SKEW_A>;
 #[doc = "Ten Milliseconds Skewed\n\nValue on reset: 1"]
@@ -43,8 +43,8 @@ impl SKEW_R {
     }
 }
 #[doc = "Field `SKEW` writer - Ten Milliseconds Skewed"]
-pub type SKEW_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SKEW_A>;
-impl<'a, REG, const O: u8> SKEW_W<'a, REG, O>
+pub type SKEW_W<'a, REG> = crate::BitWriter<'a, REG, SKEW_A>;
+impl<'a, REG> SKEW_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -96,8 +96,8 @@ impl NOREF_R {
     }
 }
 #[doc = "Field `NOREF` writer - No Reference Clock"]
-pub type NOREF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NOREF_A>;
-impl<'a, REG, const O: u8> NOREF_W<'a, REG, O>
+pub type NOREF_W<'a, REG> = crate::BitWriter<'a, REG, NOREF_A>;
+impl<'a, REG> NOREF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -133,20 +133,20 @@ impl W {
     #[doc = "Bits 0:23 - Ten Milliseconds Reload Value"]
     #[inline(always)]
     #[must_use]
-    pub fn tenms(&mut self) -> TENMS_W<SYST_CALIB_SPEC, 0> {
-        TENMS_W::new(self)
+    pub fn tenms(&mut self) -> TENMS_W<SYST_CALIB_SPEC> {
+        TENMS_W::new(self, 0)
     }
     #[doc = "Bit 30 - Ten Milliseconds Skewed"]
     #[inline(always)]
     #[must_use]
-    pub fn skew(&mut self) -> SKEW_W<SYST_CALIB_SPEC, 30> {
-        SKEW_W::new(self)
+    pub fn skew(&mut self) -> SKEW_W<SYST_CALIB_SPEC> {
+        SKEW_W::new(self, 30)
     }
     #[doc = "Bit 31 - No Reference Clock"]
     #[inline(always)]
     #[must_use]
-    pub fn noref(&mut self) -> NOREF_W<SYST_CALIB_SPEC, 31> {
-        NOREF_W::new(self)
+    pub fn noref(&mut self) -> NOREF_W<SYST_CALIB_SPEC> {
+        NOREF_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

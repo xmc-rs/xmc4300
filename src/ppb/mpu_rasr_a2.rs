@@ -5,11 +5,11 @@ pub type W = crate::W<MPU_RASR_A2_SPEC>;
 #[doc = "Field `ENABLE` reader - Region enable bit."]
 pub type ENABLE_R = crate::BitReader;
 #[doc = "Field `ENABLE` writer - Region enable bit."]
-pub type ENABLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ENABLE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SIZE` reader - MPU protection region size"]
 pub type SIZE_R = crate::FieldReader;
 #[doc = "Field `SIZE` writer - MPU protection region size"]
-pub type SIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `SRD` reader - Subregion disable bits"]
 pub type SRD_R = crate::FieldReader<SRD_A>;
 #[doc = "Subregion disable bits\n\nValue on reset: 0"]
@@ -52,8 +52,8 @@ impl SRD_R {
     }
 }
 #[doc = "Field `SRD` writer - Subregion disable bits"]
-pub type SRD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, SRD_A>;
-impl<'a, REG, const O: u8> SRD_W<'a, REG, O>
+pub type SRD_W<'a, REG> = crate::FieldWriter<'a, REG, 8, SRD_A>;
+impl<'a, REG> SRD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -72,23 +72,23 @@ where
 #[doc = "Field `B` reader - Memory access attribute"]
 pub type B_R = crate::BitReader;
 #[doc = "Field `B` writer - Memory access attribute"]
-pub type B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type B_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `C` reader - Memory access attribute"]
 pub type C_R = crate::BitReader;
 #[doc = "Field `C` writer - Memory access attribute"]
-pub type C_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type C_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `S` reader - Shareable bit"]
 pub type S_R = crate::BitReader;
 #[doc = "Field `S` writer - Shareable bit"]
-pub type S_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type S_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TEX` reader - Memory access attribute"]
 pub type TEX_R = crate::FieldReader;
 #[doc = "Field `TEX` writer - Memory access attribute"]
-pub type TEX_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type TEX_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `AP` reader - Access permission field"]
 pub type AP_R = crate::FieldReader;
 #[doc = "Field `AP` writer - Access permission field"]
-pub type AP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type AP_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `XN` reader - Instruction access disable bit"]
 pub type XN_R = crate::BitReader<XN_A>;
 #[doc = "Instruction access disable bit\n\nValue on reset: 0"]
@@ -126,8 +126,8 @@ impl XN_R {
     }
 }
 #[doc = "Field `XN` writer - Instruction access disable bit"]
-pub type XN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, XN_A>;
-impl<'a, REG, const O: u8> XN_W<'a, REG, O>
+pub type XN_W<'a, REG> = crate::BitWriter<'a, REG, XN_A>;
+impl<'a, REG> XN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -193,56 +193,56 @@ impl W {
     #[doc = "Bit 0 - Region enable bit."]
     #[inline(always)]
     #[must_use]
-    pub fn enable(&mut self) -> ENABLE_W<MPU_RASR_A2_SPEC, 0> {
-        ENABLE_W::new(self)
+    pub fn enable(&mut self) -> ENABLE_W<MPU_RASR_A2_SPEC> {
+        ENABLE_W::new(self, 0)
     }
     #[doc = "Bits 1:5 - MPU protection region size"]
     #[inline(always)]
     #[must_use]
-    pub fn size(&mut self) -> SIZE_W<MPU_RASR_A2_SPEC, 1> {
-        SIZE_W::new(self)
+    pub fn size(&mut self) -> SIZE_W<MPU_RASR_A2_SPEC> {
+        SIZE_W::new(self, 1)
     }
     #[doc = "Bits 8:15 - Subregion disable bits"]
     #[inline(always)]
     #[must_use]
-    pub fn srd(&mut self) -> SRD_W<MPU_RASR_A2_SPEC, 8> {
-        SRD_W::new(self)
+    pub fn srd(&mut self) -> SRD_W<MPU_RASR_A2_SPEC> {
+        SRD_W::new(self, 8)
     }
     #[doc = "Bit 16 - Memory access attribute"]
     #[inline(always)]
     #[must_use]
-    pub fn b(&mut self) -> B_W<MPU_RASR_A2_SPEC, 16> {
-        B_W::new(self)
+    pub fn b(&mut self) -> B_W<MPU_RASR_A2_SPEC> {
+        B_W::new(self, 16)
     }
     #[doc = "Bit 17 - Memory access attribute"]
     #[inline(always)]
     #[must_use]
-    pub fn c(&mut self) -> C_W<MPU_RASR_A2_SPEC, 17> {
-        C_W::new(self)
+    pub fn c(&mut self) -> C_W<MPU_RASR_A2_SPEC> {
+        C_W::new(self, 17)
     }
     #[doc = "Bit 18 - Shareable bit"]
     #[inline(always)]
     #[must_use]
-    pub fn s(&mut self) -> S_W<MPU_RASR_A2_SPEC, 18> {
-        S_W::new(self)
+    pub fn s(&mut self) -> S_W<MPU_RASR_A2_SPEC> {
+        S_W::new(self, 18)
     }
     #[doc = "Bits 19:21 - Memory access attribute"]
     #[inline(always)]
     #[must_use]
-    pub fn tex(&mut self) -> TEX_W<MPU_RASR_A2_SPEC, 19> {
-        TEX_W::new(self)
+    pub fn tex(&mut self) -> TEX_W<MPU_RASR_A2_SPEC> {
+        TEX_W::new(self, 19)
     }
     #[doc = "Bits 24:26 - Access permission field"]
     #[inline(always)]
     #[must_use]
-    pub fn ap(&mut self) -> AP_W<MPU_RASR_A2_SPEC, 24> {
-        AP_W::new(self)
+    pub fn ap(&mut self) -> AP_W<MPU_RASR_A2_SPEC> {
+        AP_W::new(self, 24)
     }
     #[doc = "Bit 28 - Instruction access disable bit"]
     #[inline(always)]
     #[must_use]
-    pub fn xn(&mut self) -> XN_W<MPU_RASR_A2_SPEC, 28> {
-        XN_W::new(self)
+    pub fn xn(&mut self) -> XN_W<MPU_RASR_A2_SPEC> {
+        XN_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

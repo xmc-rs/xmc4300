@@ -39,8 +39,8 @@ impl VCOBYP_R {
     }
 }
 #[doc = "Field `VCOBYP` writer - VCO Bypass"]
-pub type VCOBYP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VCOBYP_A>;
-impl<'a, REG, const O: u8> VCOBYP_W<'a, REG, O>
+pub type VCOBYP_W<'a, REG> = crate::BitWriter<'a, REG, VCOBYP_A>;
+impl<'a, REG> VCOBYP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl VCOPWD_R {
     }
 }
 #[doc = "Field `VCOPWD` writer - VCO Power Saving Mode"]
-pub type VCOPWD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VCOPWD_A>;
-impl<'a, REG, const O: u8> VCOPWD_W<'a, REG, O>
+pub type VCOPWD_W<'a, REG> = crate::BitWriter<'a, REG, VCOPWD_A>;
+impl<'a, REG> VCOPWD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl VCOTR_R {
     }
 }
 #[doc = "Field `VCOTR` writer - VCO Trim Control"]
-pub type VCOTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VCOTR_A>;
-impl<'a, REG, const O: u8> VCOTR_W<'a, REG, O>
+pub type VCOTR_W<'a, REG> = crate::BitWriter<'a, REG, VCOTR_A>;
+impl<'a, REG> VCOTR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl FINDIS_R {
     }
 }
 #[doc = "Field `FINDIS` writer - Disconnect Oscillator from VCO"]
-pub type FINDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FINDIS_A>;
-impl<'a, REG, const O: u8> FINDIS_W<'a, REG, O>
+pub type FINDIS_W<'a, REG> = crate::BitWriter<'a, REG, FINDIS_A>;
+impl<'a, REG> FINDIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl OSCDISCDIS_R {
     }
 }
 #[doc = "Field `OSCDISCDIS` writer - Oscillator Disconnect Disable"]
-pub type OSCDISCDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OSCDISCDIS_A>;
-impl<'a, REG, const O: u8> OSCDISCDIS_W<'a, REG, O>
+pub type OSCDISCDIS_W<'a, REG> = crate::BitWriter<'a, REG, OSCDISCDIS_A>;
+impl<'a, REG> OSCDISCDIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl PLLPWD_R {
     }
 }
 #[doc = "Field `PLLPWD` writer - PLL Power Saving Mode"]
-pub type PLLPWD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PLLPWD_A>;
-impl<'a, REG, const O: u8> PLLPWD_W<'a, REG, O>
+pub type PLLPWD_W<'a, REG> = crate::BitWriter<'a, REG, PLLPWD_A>;
+impl<'a, REG> PLLPWD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl OSCRES_R {
     }
 }
 #[doc = "Field `OSCRES` writer - Oscillator Watchdog Reset"]
-pub type OSCRES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OSCRES_A>;
-impl<'a, REG, const O: u8> OSCRES_W<'a, REG, O>
+pub type OSCRES_W<'a, REG> = crate::BitWriter<'a, REG, OSCRES_A>;
+impl<'a, REG> OSCRES_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -374,7 +374,7 @@ where
     }
 }
 #[doc = "Field `RESLD` writer - Restart VCO Lock Detection"]
-pub type RESLD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RESLD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `AOTREN` reader - Automatic Oscillator Calibration Enable"]
 pub type AOTREN_R = crate::BitReader<AOTREN_A>;
 #[doc = "Automatic Oscillator Calibration Enable\n\nValue on reset: 0"]
@@ -412,8 +412,8 @@ impl AOTREN_R {
     }
 }
 #[doc = "Field `AOTREN` writer - Automatic Oscillator Calibration Enable"]
-pub type AOTREN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AOTREN_A>;
-impl<'a, REG, const O: u8> AOTREN_W<'a, REG, O>
+pub type AOTREN_W<'a, REG> = crate::BitWriter<'a, REG, AOTREN_A>;
+impl<'a, REG> AOTREN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -465,8 +465,8 @@ impl FOTR_R {
     }
 }
 #[doc = "Field `FOTR` writer - Factory Oscillator Calibration"]
-pub type FOTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FOTR_A>;
-impl<'a, REG, const O: u8> FOTR_W<'a, REG, O>
+pub type FOTR_W<'a, REG> = crate::BitWriter<'a, REG, FOTR_A>;
+impl<'a, REG> FOTR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -532,62 +532,62 @@ impl W {
     #[doc = "Bit 0 - VCO Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn vcobyp(&mut self) -> VCOBYP_W<PLLCON0_SPEC, 0> {
-        VCOBYP_W::new(self)
+    pub fn vcobyp(&mut self) -> VCOBYP_W<PLLCON0_SPEC> {
+        VCOBYP_W::new(self, 0)
     }
     #[doc = "Bit 1 - VCO Power Saving Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn vcopwd(&mut self) -> VCOPWD_W<PLLCON0_SPEC, 1> {
-        VCOPWD_W::new(self)
+    pub fn vcopwd(&mut self) -> VCOPWD_W<PLLCON0_SPEC> {
+        VCOPWD_W::new(self, 1)
     }
     #[doc = "Bit 2 - VCO Trim Control"]
     #[inline(always)]
     #[must_use]
-    pub fn vcotr(&mut self) -> VCOTR_W<PLLCON0_SPEC, 2> {
-        VCOTR_W::new(self)
+    pub fn vcotr(&mut self) -> VCOTR_W<PLLCON0_SPEC> {
+        VCOTR_W::new(self, 2)
     }
     #[doc = "Bit 4 - Disconnect Oscillator from VCO"]
     #[inline(always)]
     #[must_use]
-    pub fn findis(&mut self) -> FINDIS_W<PLLCON0_SPEC, 4> {
-        FINDIS_W::new(self)
+    pub fn findis(&mut self) -> FINDIS_W<PLLCON0_SPEC> {
+        FINDIS_W::new(self, 4)
     }
     #[doc = "Bit 6 - Oscillator Disconnect Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<PLLCON0_SPEC, 6> {
-        OSCDISCDIS_W::new(self)
+    pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<PLLCON0_SPEC> {
+        OSCDISCDIS_W::new(self, 6)
     }
     #[doc = "Bit 16 - PLL Power Saving Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn pllpwd(&mut self) -> PLLPWD_W<PLLCON0_SPEC, 16> {
-        PLLPWD_W::new(self)
+    pub fn pllpwd(&mut self) -> PLLPWD_W<PLLCON0_SPEC> {
+        PLLPWD_W::new(self, 16)
     }
     #[doc = "Bit 17 - Oscillator Watchdog Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn oscres(&mut self) -> OSCRES_W<PLLCON0_SPEC, 17> {
-        OSCRES_W::new(self)
+    pub fn oscres(&mut self) -> OSCRES_W<PLLCON0_SPEC> {
+        OSCRES_W::new(self, 17)
     }
     #[doc = "Bit 18 - Restart VCO Lock Detection"]
     #[inline(always)]
     #[must_use]
-    pub fn resld(&mut self) -> RESLD_W<PLLCON0_SPEC, 18> {
-        RESLD_W::new(self)
+    pub fn resld(&mut self) -> RESLD_W<PLLCON0_SPEC> {
+        RESLD_W::new(self, 18)
     }
     #[doc = "Bit 19 - Automatic Oscillator Calibration Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn aotren(&mut self) -> AOTREN_W<PLLCON0_SPEC, 19> {
-        AOTREN_W::new(self)
+    pub fn aotren(&mut self) -> AOTREN_W<PLLCON0_SPEC> {
+        AOTREN_W::new(self, 19)
     }
     #[doc = "Bit 20 - Factory Oscillator Calibration"]
     #[inline(always)]
     #[must_use]
-    pub fn fotr(&mut self) -> FOTR_W<PLLCON0_SPEC, 20> {
-        FOTR_W::new(self)
+    pub fn fotr(&mut self) -> FOTR_W<PLLCON0_SPEC> {
+        FOTR_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

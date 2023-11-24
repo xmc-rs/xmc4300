@@ -39,8 +39,8 @@ impl CMD_COMPLETE_EN_R {
     }
 }
 #[doc = "Field `CMD_COMPLETE_EN` writer - Command Complete Status Enable"]
-pub type CMD_COMPLETE_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_COMPLETE_EN_A>;
-impl<'a, REG, const O: u8> CMD_COMPLETE_EN_W<'a, REG, O>
+pub type CMD_COMPLETE_EN_W<'a, REG> = crate::BitWriter<'a, REG, CMD_COMPLETE_EN_A>;
+impl<'a, REG> CMD_COMPLETE_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl TX_COMPLETE_EN_R {
     }
 }
 #[doc = "Field `TX_COMPLETE_EN` writer - Transfer Complete Status Enable"]
-pub type TX_COMPLETE_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_COMPLETE_EN_A>;
-impl<'a, REG, const O: u8> TX_COMPLETE_EN_W<'a, REG, O>
+pub type TX_COMPLETE_EN_W<'a, REG> = crate::BitWriter<'a, REG, TX_COMPLETE_EN_A>;
+impl<'a, REG> TX_COMPLETE_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl BLOCK_GAP_EVENT_EN_R {
     }
 }
 #[doc = "Field `BLOCK_GAP_EVENT_EN` writer - Block Gap Event Status Enable"]
-pub type BLOCK_GAP_EVENT_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BLOCK_GAP_EVENT_EN_A>;
-impl<'a, REG, const O: u8> BLOCK_GAP_EVENT_EN_W<'a, REG, O>
+pub type BLOCK_GAP_EVENT_EN_W<'a, REG> = crate::BitWriter<'a, REG, BLOCK_GAP_EVENT_EN_A>;
+impl<'a, REG> BLOCK_GAP_EVENT_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl BUFF_WRITE_READY_EN_R {
     }
 }
 #[doc = "Field `BUFF_WRITE_READY_EN` writer - Buffer Write Ready Status Enable"]
-pub type BUFF_WRITE_READY_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BUFF_WRITE_READY_EN_A>;
-impl<'a, REG, const O: u8> BUFF_WRITE_READY_EN_W<'a, REG, O>
+pub type BUFF_WRITE_READY_EN_W<'a, REG> = crate::BitWriter<'a, REG, BUFF_WRITE_READY_EN_A>;
+impl<'a, REG> BUFF_WRITE_READY_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl BUFF_READ_READY_EN_R {
     }
 }
 #[doc = "Field `BUFF_READ_READY_EN` writer - Buffer Read Ready Status Enable"]
-pub type BUFF_READ_READY_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BUFF_READ_READY_EN_A>;
-impl<'a, REG, const O: u8> BUFF_READ_READY_EN_W<'a, REG, O>
+pub type BUFF_READ_READY_EN_W<'a, REG> = crate::BitWriter<'a, REG, BUFF_READ_READY_EN_A>;
+impl<'a, REG> BUFF_READ_READY_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl CARD_INS_EN_R {
     }
 }
 #[doc = "Field `CARD_INS_EN` writer - Card Insertion Status Enable"]
-pub type CARD_INS_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CARD_INS_EN_A>;
-impl<'a, REG, const O: u8> CARD_INS_EN_W<'a, REG, O>
+pub type CARD_INS_EN_W<'a, REG> = crate::BitWriter<'a, REG, CARD_INS_EN_A>;
+impl<'a, REG> CARD_INS_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl CARD_REMOVAL_EN_R {
     }
 }
 #[doc = "Field `CARD_REMOVAL_EN` writer - Card Removal Status Enable"]
-pub type CARD_REMOVAL_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CARD_REMOVAL_EN_A>;
-impl<'a, REG, const O: u8> CARD_REMOVAL_EN_W<'a, REG, O>
+pub type CARD_REMOVAL_EN_W<'a, REG> = crate::BitWriter<'a, REG, CARD_REMOVAL_EN_A>;
+impl<'a, REG> CARD_REMOVAL_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl CARD_INT_EN_R {
     }
 }
 #[doc = "Field `CARD_INT_EN` writer - Card Interrupt Status Enable"]
-pub type CARD_INT_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CARD_INT_EN_A>;
-impl<'a, REG, const O: u8> CARD_INT_EN_W<'a, REG, O>
+pub type CARD_INT_EN_W<'a, REG> = crate::BitWriter<'a, REG, CARD_INT_EN_A>;
+impl<'a, REG> CARD_INT_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -479,50 +479,50 @@ impl W {
     #[doc = "Bit 0 - Command Complete Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_complete_en(&mut self) -> CMD_COMPLETE_EN_W<EN_INT_STATUS_NORM_SPEC, 0> {
-        CMD_COMPLETE_EN_W::new(self)
+    pub fn cmd_complete_en(&mut self) -> CMD_COMPLETE_EN_W<EN_INT_STATUS_NORM_SPEC> {
+        CMD_COMPLETE_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transfer Complete Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_complete_en(&mut self) -> TX_COMPLETE_EN_W<EN_INT_STATUS_NORM_SPEC, 1> {
-        TX_COMPLETE_EN_W::new(self)
+    pub fn tx_complete_en(&mut self) -> TX_COMPLETE_EN_W<EN_INT_STATUS_NORM_SPEC> {
+        TX_COMPLETE_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Block Gap Event Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn block_gap_event_en(&mut self) -> BLOCK_GAP_EVENT_EN_W<EN_INT_STATUS_NORM_SPEC, 2> {
-        BLOCK_GAP_EVENT_EN_W::new(self)
+    pub fn block_gap_event_en(&mut self) -> BLOCK_GAP_EVENT_EN_W<EN_INT_STATUS_NORM_SPEC> {
+        BLOCK_GAP_EVENT_EN_W::new(self, 2)
     }
     #[doc = "Bit 4 - Buffer Write Ready Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_write_ready_en(&mut self) -> BUFF_WRITE_READY_EN_W<EN_INT_STATUS_NORM_SPEC, 4> {
-        BUFF_WRITE_READY_EN_W::new(self)
+    pub fn buff_write_ready_en(&mut self) -> BUFF_WRITE_READY_EN_W<EN_INT_STATUS_NORM_SPEC> {
+        BUFF_WRITE_READY_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Buffer Read Ready Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_read_ready_en(&mut self) -> BUFF_READ_READY_EN_W<EN_INT_STATUS_NORM_SPEC, 5> {
-        BUFF_READ_READY_EN_W::new(self)
+    pub fn buff_read_ready_en(&mut self) -> BUFF_READ_READY_EN_W<EN_INT_STATUS_NORM_SPEC> {
+        BUFF_READ_READY_EN_W::new(self, 5)
     }
     #[doc = "Bit 6 - Card Insertion Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn card_ins_en(&mut self) -> CARD_INS_EN_W<EN_INT_STATUS_NORM_SPEC, 6> {
-        CARD_INS_EN_W::new(self)
+    pub fn card_ins_en(&mut self) -> CARD_INS_EN_W<EN_INT_STATUS_NORM_SPEC> {
+        CARD_INS_EN_W::new(self, 6)
     }
     #[doc = "Bit 7 - Card Removal Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn card_removal_en(&mut self) -> CARD_REMOVAL_EN_W<EN_INT_STATUS_NORM_SPEC, 7> {
-        CARD_REMOVAL_EN_W::new(self)
+    pub fn card_removal_en(&mut self) -> CARD_REMOVAL_EN_W<EN_INT_STATUS_NORM_SPEC> {
+        CARD_REMOVAL_EN_W::new(self, 7)
     }
     #[doc = "Bit 8 - Card Interrupt Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn card_int_en(&mut self) -> CARD_INT_EN_W<EN_INT_STATUS_NORM_SPEC, 8> {
-        CARD_INT_EN_W::new(self)
+    pub fn card_int_en(&mut self) -> CARD_INT_EN_W<EN_INT_STATUS_NORM_SPEC> {
+        CARD_INT_EN_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

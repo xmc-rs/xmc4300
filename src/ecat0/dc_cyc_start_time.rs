@@ -5,7 +5,7 @@ pub type W = crate::W<DC_CYC_START_TIME_SPEC>;
 #[doc = "Field `DC_CYC_START_TIME` reader - Start Time Cyclic Operation"]
 pub type DC_CYC_START_TIME_R = crate::FieldReader<u32>;
 #[doc = "Field `DC_CYC_START_TIME` writer - Start Time Cyclic Operation"]
-pub type DC_CYC_START_TIME_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type DC_CYC_START_TIME_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Start Time Cyclic Operation"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Start Time Cyclic Operation"]
     #[inline(always)]
     #[must_use]
-    pub fn dc_cyc_start_time(&mut self) -> DC_CYC_START_TIME_W<DC_CYC_START_TIME_SPEC, 0> {
-        DC_CYC_START_TIME_W::new(self)
+    pub fn dc_cyc_start_time(&mut self) -> DC_CYC_START_TIME_W<DC_CYC_START_TIME_SPEC> {
+        DC_CYC_START_TIME_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

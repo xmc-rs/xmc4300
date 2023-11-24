@@ -5,19 +5,19 @@ pub type W = crate::W<MOFGPR_SPEC>;
 #[doc = "Field `BOT` reader - Bottom Pointer"]
 pub type BOT_R = crate::FieldReader;
 #[doc = "Field `BOT` writer - Bottom Pointer"]
-pub type BOT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type BOT_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `TOP` reader - Top Pointer"]
 pub type TOP_R = crate::FieldReader;
 #[doc = "Field `TOP` writer - Top Pointer"]
-pub type TOP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type TOP_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CUR` reader - Current Object Pointer"]
 pub type CUR_R = crate::FieldReader;
 #[doc = "Field `CUR` writer - Current Object Pointer"]
-pub type CUR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CUR_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `SEL` reader - Object Select Pointer"]
 pub type SEL_R = crate::FieldReader;
 #[doc = "Field `SEL` writer - Object Select Pointer"]
-pub type SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Bottom Pointer"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:7 - Bottom Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn bot(&mut self) -> BOT_W<MOFGPR_SPEC, 0> {
-        BOT_W::new(self)
+    pub fn bot(&mut self) -> BOT_W<MOFGPR_SPEC> {
+        BOT_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Top Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn top(&mut self) -> TOP_W<MOFGPR_SPEC, 8> {
-        TOP_W::new(self)
+    pub fn top(&mut self) -> TOP_W<MOFGPR_SPEC> {
+        TOP_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Current Object Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn cur(&mut self) -> CUR_W<MOFGPR_SPEC, 16> {
-        CUR_W::new(self)
+    pub fn cur(&mut self) -> CUR_W<MOFGPR_SPEC> {
+        CUR_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Object Select Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn sel(&mut self) -> SEL_W<MOFGPR_SPEC, 24> {
-        SEL_W::new(self)
+    pub fn sel(&mut self) -> SEL_W<MOFGPR_SPEC> {
+        SEL_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

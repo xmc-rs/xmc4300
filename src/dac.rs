@@ -1,30 +1,80 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    id: ID,
+    dac0cfg0: DAC0CFG0,
+    dac0cfg1: DAC0CFG1,
+    dac1cfg0: DAC1CFG0,
+    dac1cfg1: DAC1CFG1,
+    dac0data: DAC0DATA,
+    dac1data: DAC1DATA,
+    dac01data: DAC01DATA,
+    dac0patl: DAC0PATL,
+    dac0path: DAC0PATH,
+    dac1patl: DAC1PATL,
+    dac1path: DAC1PATH,
+}
+impl RegisterBlock {
     #[doc = "0x00 - Module Identification Register"]
-    pub id: ID,
+    #[inline(always)]
+    pub const fn id(&self) -> &ID {
+        &self.id
+    }
     #[doc = "0x04 - DAC0 Configuration Register 0"]
-    pub dac0cfg0: DAC0CFG0,
+    #[inline(always)]
+    pub const fn dac0cfg0(&self) -> &DAC0CFG0 {
+        &self.dac0cfg0
+    }
     #[doc = "0x08 - DAC0 Configuration Register 1"]
-    pub dac0cfg1: DAC0CFG1,
+    #[inline(always)]
+    pub const fn dac0cfg1(&self) -> &DAC0CFG1 {
+        &self.dac0cfg1
+    }
     #[doc = "0x0c - DAC1 Configuration Register 0"]
-    pub dac1cfg0: DAC1CFG0,
+    #[inline(always)]
+    pub const fn dac1cfg0(&self) -> &DAC1CFG0 {
+        &self.dac1cfg0
+    }
     #[doc = "0x10 - DAC1 Configuration Register 1"]
-    pub dac1cfg1: DAC1CFG1,
+    #[inline(always)]
+    pub const fn dac1cfg1(&self) -> &DAC1CFG1 {
+        &self.dac1cfg1
+    }
     #[doc = "0x14 - DAC0 Data Register"]
-    pub dac0data: DAC0DATA,
+    #[inline(always)]
+    pub const fn dac0data(&self) -> &DAC0DATA {
+        &self.dac0data
+    }
     #[doc = "0x18 - DAC1 Data Register"]
-    pub dac1data: DAC1DATA,
+    #[inline(always)]
+    pub const fn dac1data(&self) -> &DAC1DATA {
+        &self.dac1data
+    }
     #[doc = "0x1c - DAC01 Data Register"]
-    pub dac01data: DAC01DATA,
+    #[inline(always)]
+    pub const fn dac01data(&self) -> &DAC01DATA {
+        &self.dac01data
+    }
     #[doc = "0x20 - DAC0 Lower Pattern Register"]
-    pub dac0patl: DAC0PATL,
+    #[inline(always)]
+    pub const fn dac0patl(&self) -> &DAC0PATL {
+        &self.dac0patl
+    }
     #[doc = "0x24 - DAC0 Higher Pattern Register"]
-    pub dac0path: DAC0PATH,
+    #[inline(always)]
+    pub const fn dac0path(&self) -> &DAC0PATH {
+        &self.dac0path
+    }
     #[doc = "0x28 - DAC1 Lower Pattern Register"]
-    pub dac1patl: DAC1PATL,
+    #[inline(always)]
+    pub const fn dac1patl(&self) -> &DAC1PATL {
+        &self.dac1patl
+    }
     #[doc = "0x2c - DAC1 Higher Pattern Register"]
-    pub dac1path: DAC1PATH,
+    #[inline(always)]
+    pub const fn dac1path(&self) -> &DAC1PATH {
+        &self.dac1path
+    }
 }
 #[doc = "ID (r) register accessor: Module Identification Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@id`]
 module"]

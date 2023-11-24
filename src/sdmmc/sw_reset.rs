@@ -5,7 +5,7 @@ pub type W = crate::W<SW_RESET_SPEC>;
 #[doc = "Field `SW_RST_ALL` reader - Software Reset for All"]
 pub type SW_RST_ALL_R = crate::BitReader;
 #[doc = "Field `SW_RST_ALL` writer - Software Reset for All"]
-pub type SW_RST_ALL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SW_RST_ALL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SW_RST_CMD_LINE` reader - Software Reset for CMD Line"]
 pub type SW_RST_CMD_LINE_R = crate::BitReader<SW_RST_CMD_LINE_A>;
 #[doc = "Software Reset for CMD Line\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl SW_RST_CMD_LINE_R {
     }
 }
 #[doc = "Field `SW_RST_CMD_LINE` writer - Software Reset for CMD Line"]
-pub type SW_RST_CMD_LINE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SW_RST_CMD_LINE_A>;
-impl<'a, REG, const O: u8> SW_RST_CMD_LINE_W<'a, REG, O>
+pub type SW_RST_CMD_LINE_W<'a, REG> = crate::BitWriter<'a, REG, SW_RST_CMD_LINE_A>;
+impl<'a, REG> SW_RST_CMD_LINE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -96,8 +96,8 @@ impl SW_RST_DAT_LINE_R {
     }
 }
 #[doc = "Field `SW_RST_DAT_LINE` writer - Software Reset for DAT Line"]
-pub type SW_RST_DAT_LINE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SW_RST_DAT_LINE_A>;
-impl<'a, REG, const O: u8> SW_RST_DAT_LINE_W<'a, REG, O>
+pub type SW_RST_DAT_LINE_W<'a, REG> = crate::BitWriter<'a, REG, SW_RST_DAT_LINE_A>;
+impl<'a, REG> SW_RST_DAT_LINE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -133,20 +133,20 @@ impl W {
     #[doc = "Bit 0 - Software Reset for All"]
     #[inline(always)]
     #[must_use]
-    pub fn sw_rst_all(&mut self) -> SW_RST_ALL_W<SW_RESET_SPEC, 0> {
-        SW_RST_ALL_W::new(self)
+    pub fn sw_rst_all(&mut self) -> SW_RST_ALL_W<SW_RESET_SPEC> {
+        SW_RST_ALL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Software Reset for CMD Line"]
     #[inline(always)]
     #[must_use]
-    pub fn sw_rst_cmd_line(&mut self) -> SW_RST_CMD_LINE_W<SW_RESET_SPEC, 1> {
-        SW_RST_CMD_LINE_W::new(self)
+    pub fn sw_rst_cmd_line(&mut self) -> SW_RST_CMD_LINE_W<SW_RESET_SPEC> {
+        SW_RST_CMD_LINE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Software Reset for DAT Line"]
     #[inline(always)]
     #[must_use]
-    pub fn sw_rst_dat_line(&mut self) -> SW_RST_DAT_LINE_W<SW_RESET_SPEC, 2> {
-        SW_RST_DAT_LINE_W::new(self)
+    pub fn sw_rst_dat_line(&mut self) -> SW_RST_DAT_LINE_W<SW_RESET_SPEC> {
+        SW_RST_DAT_LINE_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

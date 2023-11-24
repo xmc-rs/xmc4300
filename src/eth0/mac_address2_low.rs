@@ -5,7 +5,7 @@ pub type W = crate::W<MAC_ADDRESS2_LOW_SPEC>;
 #[doc = "Field `ADDRLO` reader - MAC Address2 \\[31:0\\]"]
 pub type ADDRLO_R = crate::FieldReader<u32>;
 #[doc = "Field `ADDRLO` writer - MAC Address2 \\[31:0\\]"]
-pub type ADDRLO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type ADDRLO_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - MAC Address2 \\[31:0\\]"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - MAC Address2 \\[31:0\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn addrlo(&mut self) -> ADDRLO_W<MAC_ADDRESS2_LOW_SPEC, 0> {
-        ADDRLO_W::new(self)
+    pub fn addrlo(&mut self) -> ADDRLO_W<MAC_ADDRESS2_LOW_SPEC> {
+        ADDRLO_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

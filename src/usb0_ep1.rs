@@ -3,60 +3,92 @@
 pub struct RegisterBlock {
     _reserved_0_diepctl: [u8; 0x04],
     _reserved1: [u8; 0x04],
-    #[doc = "0x08 - Device Endpoint Interrupt Register"]
-    pub diepint: DIEPINT,
+    diepint: DIEPINT,
     _reserved2: [u8; 0x04],
-    #[doc = "0x10 - Device Endpoint Transfer Size Register"]
-    pub dieptsiz: DIEPTSIZ,
-    #[doc = "0x14 - Device Endpoint DMA Address Register"]
-    pub diepdma: DIEPDMA,
-    #[doc = "0x18 - Device IN Endpoint Transmit FIFO Status Register"]
-    pub dtxfsts: DTXFSTS,
-    #[doc = "0x1c - Device Endpoint DMA Buffer Address Register"]
-    pub diepdmab: DIEPDMAB,
+    dieptsiz: DIEPTSIZ,
+    diepdma: DIEPDMA,
+    dtxfsts: DTXFSTS,
+    diepdmab: DIEPDMAB,
     _reserved6: [u8; 0x01e0],
     _reserved_6_doepctl: [u8; 0x04],
     _reserved7: [u8; 0x04],
-    #[doc = "0x208 - Device Endpoint Interrupt Register"]
-    pub doepint: DOEPINT,
+    doepint: DOEPINT,
     _reserved8: [u8; 0x04],
     _reserved_8_doeptsiz: [u8; 0x04],
-    #[doc = "0x214 - Device Endpoint DMA Address Register"]
-    pub doepdma: DOEPDMA,
+    doepdma: DOEPDMA,
     _reserved10: [u8; 0x04],
-    #[doc = "0x21c - Device Endpoint DMA Buffer Address Register"]
-    pub doepdmab: DOEPDMAB,
+    doepdmab: DOEPDMAB,
 }
 impl RegisterBlock {
     #[doc = "0x00 - Device Endpoint Control Register \\[INTBULK\\]"]
     #[inline(always)]
     pub const fn diepctl_intbulk(&self) -> &DIEPCTL_INTBULK {
-        unsafe { &*(self as *const Self).cast::<u8>().add(0usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(0).cast() }
     }
     #[doc = "0x00 - Device Endpoint Control Register \\[ISOCONT\\]"]
     #[inline(always)]
     pub const fn diepctl_isocont(&self) -> &DIEPCTL_ISOCONT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(0usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(0).cast() }
+    }
+    #[doc = "0x08 - Device Endpoint Interrupt Register"]
+    #[inline(always)]
+    pub const fn diepint(&self) -> &DIEPINT {
+        &self.diepint
+    }
+    #[doc = "0x10 - Device Endpoint Transfer Size Register"]
+    #[inline(always)]
+    pub const fn dieptsiz(&self) -> &DIEPTSIZ {
+        &self.dieptsiz
+    }
+    #[doc = "0x14 - Device Endpoint DMA Address Register"]
+    #[inline(always)]
+    pub const fn diepdma(&self) -> &DIEPDMA {
+        &self.diepdma
+    }
+    #[doc = "0x18 - Device IN Endpoint Transmit FIFO Status Register"]
+    #[inline(always)]
+    pub const fn dtxfsts(&self) -> &DTXFSTS {
+        &self.dtxfsts
+    }
+    #[doc = "0x1c - Device Endpoint DMA Buffer Address Register"]
+    #[inline(always)]
+    pub const fn diepdmab(&self) -> &DIEPDMAB {
+        &self.diepdmab
     }
     #[doc = "0x200 - Device Endpoint Control Register \\[INTBULK\\]"]
     #[inline(always)]
     pub const fn doepctl_intbulk(&self) -> &DOEPCTL_INTBULK {
-        unsafe { &*(self as *const Self).cast::<u8>().add(512usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(512).cast() }
     }
     #[doc = "0x200 - Device Endpoint Control Register \\[ISOCONT\\]"]
     #[inline(always)]
     pub const fn doepctl_isocont(&self) -> &DOEPCTL_ISOCONT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(512usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(512).cast() }
+    }
+    #[doc = "0x208 - Device Endpoint Interrupt Register"]
+    #[inline(always)]
+    pub const fn doepint(&self) -> &DOEPINT {
+        &self.doepint
     }
     #[doc = "0x210 - Device Endpoint Transfer Size Register \\[CONT\\]"]
     #[inline(always)]
     pub const fn doeptsiz_control(&self) -> &DOEPTSIZ_CONTROL {
-        unsafe { &*(self as *const Self).cast::<u8>().add(528usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(528).cast() }
     }
     #[doc = "0x210 - Device Endpoint Transfer Size Register \\[ISO\\]"]
     #[inline(always)]
     pub const fn doeptsiz_iso(&self) -> &DOEPTSIZ_ISO {
-        unsafe { &*(self as *const Self).cast::<u8>().add(528usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(528).cast() }
+    }
+    #[doc = "0x214 - Device Endpoint DMA Address Register"]
+    #[inline(always)]
+    pub const fn doepdma(&self) -> &DOEPDMA {
+        &self.doepdma
+    }
+    #[doc = "0x21c - Device Endpoint DMA Buffer Address Register"]
+    #[inline(always)]
+    pub const fn doepdmab(&self) -> &DOEPDMAB {
+        &self.doepdmab
     }
 }
 #[doc = "DIEPCTL_ISOCONT (rw) register accessor: Device Endpoint Control Register \\[ISOCONT\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`diepctl_isocont::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`diepctl_isocont::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@diepctl_isocont`]

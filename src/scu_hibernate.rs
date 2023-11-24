@@ -1,21 +1,51 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Hibernate Domain Status Register"]
-    pub hdstat: HDSTAT,
-    #[doc = "0x04 - Hibernate Domain Status Clear Register"]
-    pub hdclr: HDCLR,
-    #[doc = "0x08 - Hibernate Domain Status Set Register"]
-    pub hdset: HDSET,
-    #[doc = "0x0c - Hibernate Domain Control Register"]
-    pub hdcr: HDCR,
+    hdstat: HDSTAT,
+    hdclr: HDCLR,
+    hdset: HDSET,
+    hdcr: HDCR,
     _reserved4: [u8; 0x04],
+    oscsictrl: OSCSICTRL,
+    osculstat: OSCULSTAT,
+    osculctrl: OSCULCTRL,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Hibernate Domain Status Register"]
+    #[inline(always)]
+    pub const fn hdstat(&self) -> &HDSTAT {
+        &self.hdstat
+    }
+    #[doc = "0x04 - Hibernate Domain Status Clear Register"]
+    #[inline(always)]
+    pub const fn hdclr(&self) -> &HDCLR {
+        &self.hdclr
+    }
+    #[doc = "0x08 - Hibernate Domain Status Set Register"]
+    #[inline(always)]
+    pub const fn hdset(&self) -> &HDSET {
+        &self.hdset
+    }
+    #[doc = "0x0c - Hibernate Domain Control Register"]
+    #[inline(always)]
+    pub const fn hdcr(&self) -> &HDCR {
+        &self.hdcr
+    }
     #[doc = "0x14 - fOSI Control Register"]
-    pub oscsictrl: OSCSICTRL,
+    #[inline(always)]
+    pub const fn oscsictrl(&self) -> &OSCSICTRL {
+        &self.oscsictrl
+    }
     #[doc = "0x18 - OSC_ULP Status Register"]
-    pub osculstat: OSCULSTAT,
+    #[inline(always)]
+    pub const fn osculstat(&self) -> &OSCULSTAT {
+        &self.osculstat
+    }
     #[doc = "0x1c - OSC_ULP Control Register"]
-    pub osculctrl: OSCULCTRL,
+    #[inline(always)]
+    pub const fn osculctrl(&self) -> &OSCULCTRL {
+        &self.osculctrl
+    }
 }
 #[doc = "HDSTAT (r) register accessor: Hibernate Domain Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdstat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hdstat`]
 module"]

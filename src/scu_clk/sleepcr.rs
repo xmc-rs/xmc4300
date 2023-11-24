@@ -39,8 +39,8 @@ impl SYSSEL_R {
     }
 }
 #[doc = "Field `SYSSEL` writer - System Clock Selection Value"]
-pub type SYSSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SYSSEL_A>;
-impl<'a, REG, const O: u8> SYSSEL_W<'a, REG, O>
+pub type SYSSEL_W<'a, REG> = crate::BitWriter<'a, REG, SYSSEL_A>;
+impl<'a, REG> SYSSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl USBCR_R {
     }
 }
 #[doc = "Field `USBCR` writer - USB Clock Control in Sleep Mode"]
-pub type USBCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USBCR_A>;
-impl<'a, REG, const O: u8> USBCR_W<'a, REG, O>
+pub type USBCR_W<'a, REG> = crate::BitWriter<'a, REG, USBCR_A>;
+impl<'a, REG> USBCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl MMCCR_R {
     }
 }
 #[doc = "Field `MMCCR` writer - MMC Clock Control in Sleep Mode"]
-pub type MMCCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MMCCR_A>;
-impl<'a, REG, const O: u8> MMCCR_W<'a, REG, O>
+pub type MMCCR_W<'a, REG> = crate::BitWriter<'a, REG, MMCCR_A>;
+impl<'a, REG> MMCCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl ETH0CR_R {
     }
 }
 #[doc = "Field `ETH0CR` writer - Ethernet Clock Control in Sleep Mode"]
-pub type ETH0CR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ETH0CR_A>;
-impl<'a, REG, const O: u8> ETH0CR_W<'a, REG, O>
+pub type ETH0CR_W<'a, REG> = crate::BitWriter<'a, REG, ETH0CR_A>;
+impl<'a, REG> ETH0CR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl CCUCR_R {
     }
 }
 #[doc = "Field `CCUCR` writer - CCU Clock Control in Sleep Mode"]
-pub type CCUCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCUCR_A>;
-impl<'a, REG, const O: u8> CCUCR_W<'a, REG, O>
+pub type CCUCR_W<'a, REG> = crate::BitWriter<'a, REG, CCUCR_A>;
+impl<'a, REG> CCUCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl WDTCR_R {
     }
 }
 #[doc = "Field `WDTCR` writer - WDT Clock Control in Sleep Mode"]
-pub type WDTCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WDTCR_A>;
-impl<'a, REG, const O: u8> WDTCR_W<'a, REG, O>
+pub type WDTCR_W<'a, REG> = crate::BitWriter<'a, REG, WDTCR_A>;
+impl<'a, REG> WDTCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -356,38 +356,38 @@ impl W {
     #[doc = "Bit 0 - System Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn syssel(&mut self) -> SYSSEL_W<SLEEPCR_SPEC, 0> {
-        SYSSEL_W::new(self)
+    pub fn syssel(&mut self) -> SYSSEL_W<SLEEPCR_SPEC> {
+        SYSSEL_W::new(self, 0)
     }
     #[doc = "Bit 16 - USB Clock Control in Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn usbcr(&mut self) -> USBCR_W<SLEEPCR_SPEC, 16> {
-        USBCR_W::new(self)
+    pub fn usbcr(&mut self) -> USBCR_W<SLEEPCR_SPEC> {
+        USBCR_W::new(self, 16)
     }
     #[doc = "Bit 17 - MMC Clock Control in Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mmccr(&mut self) -> MMCCR_W<SLEEPCR_SPEC, 17> {
-        MMCCR_W::new(self)
+    pub fn mmccr(&mut self) -> MMCCR_W<SLEEPCR_SPEC> {
+        MMCCR_W::new(self, 17)
     }
     #[doc = "Bit 18 - Ethernet Clock Control in Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn eth0cr(&mut self) -> ETH0CR_W<SLEEPCR_SPEC, 18> {
-        ETH0CR_W::new(self)
+    pub fn eth0cr(&mut self) -> ETH0CR_W<SLEEPCR_SPEC> {
+        ETH0CR_W::new(self, 18)
     }
     #[doc = "Bit 20 - CCU Clock Control in Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ccucr(&mut self) -> CCUCR_W<SLEEPCR_SPEC, 20> {
-        CCUCR_W::new(self)
+    pub fn ccucr(&mut self) -> CCUCR_W<SLEEPCR_SPEC> {
+        CCUCR_W::new(self, 20)
     }
     #[doc = "Bit 21 - WDT Clock Control in Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn wdtcr(&mut self) -> WDTCR_W<SLEEPCR_SPEC, 21> {
-        WDTCR_W::new(self)
+    pub fn wdtcr(&mut self) -> WDTCR_W<SLEEPCR_SPEC> {
+        WDTCR_W::new(self, 21)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

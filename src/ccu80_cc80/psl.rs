@@ -39,8 +39,8 @@ impl PSL11_R {
     }
 }
 #[doc = "Field `PSL11` writer - Output Passive Level for CCU8x.OUTy0"]
-pub type PSL11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PSL11_A>;
-impl<'a, REG, const O: u8> PSL11_W<'a, REG, O>
+pub type PSL11_W<'a, REG> = crate::BitWriter<'a, REG, PSL11_A>;
+impl<'a, REG> PSL11_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl PSL12_R {
     }
 }
 #[doc = "Field `PSL12` writer - Output Passive Level for CCU8x.OUTy1"]
-pub type PSL12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PSL12_A>;
-impl<'a, REG, const O: u8> PSL12_W<'a, REG, O>
+pub type PSL12_W<'a, REG> = crate::BitWriter<'a, REG, PSL12_A>;
+impl<'a, REG> PSL12_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl PSL21_R {
     }
 }
 #[doc = "Field `PSL21` writer - Output Passive Level for CCU8x.OUTy2"]
-pub type PSL21_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PSL21_A>;
-impl<'a, REG, const O: u8> PSL21_W<'a, REG, O>
+pub type PSL21_W<'a, REG> = crate::BitWriter<'a, REG, PSL21_A>;
+impl<'a, REG> PSL21_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl PSL22_R {
     }
 }
 #[doc = "Field `PSL22` writer - Output Passive Level for CCU8x.OUTy3"]
-pub type PSL22_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PSL22_A>;
-impl<'a, REG, const O: u8> PSL22_W<'a, REG, O>
+pub type PSL22_W<'a, REG> = crate::BitWriter<'a, REG, PSL22_A>;
+impl<'a, REG> PSL22_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -240,26 +240,26 @@ impl W {
     #[doc = "Bit 0 - Output Passive Level for CCU8x.OUTy0"]
     #[inline(always)]
     #[must_use]
-    pub fn psl11(&mut self) -> PSL11_W<PSL_SPEC, 0> {
-        PSL11_W::new(self)
+    pub fn psl11(&mut self) -> PSL11_W<PSL_SPEC> {
+        PSL11_W::new(self, 0)
     }
     #[doc = "Bit 1 - Output Passive Level for CCU8x.OUTy1"]
     #[inline(always)]
     #[must_use]
-    pub fn psl12(&mut self) -> PSL12_W<PSL_SPEC, 1> {
-        PSL12_W::new(self)
+    pub fn psl12(&mut self) -> PSL12_W<PSL_SPEC> {
+        PSL12_W::new(self, 1)
     }
     #[doc = "Bit 2 - Output Passive Level for CCU8x.OUTy2"]
     #[inline(always)]
     #[must_use]
-    pub fn psl21(&mut self) -> PSL21_W<PSL_SPEC, 2> {
-        PSL21_W::new(self)
+    pub fn psl21(&mut self) -> PSL21_W<PSL_SPEC> {
+        PSL21_W::new(self, 2)
     }
     #[doc = "Bit 3 - Output Passive Level for CCU8x.OUTy3"]
     #[inline(always)]
     #[must_use]
-    pub fn psl22(&mut self) -> PSL22_W<PSL_SPEC, 3> {
-        PSL22_W::new(self)
+    pub fn psl22(&mut self) -> PSL22_W<PSL_SPEC> {
+        PSL22_W::new(self, 3)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

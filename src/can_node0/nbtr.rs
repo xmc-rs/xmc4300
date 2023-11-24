@@ -5,19 +5,19 @@ pub type W = crate::W<NBTR_SPEC>;
 #[doc = "Field `BRP` reader - Baud Rate Prescaler"]
 pub type BRP_R = crate::FieldReader;
 #[doc = "Field `BRP` writer - Baud Rate Prescaler"]
-pub type BRP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type BRP_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `SJW` reader - (Re) Synchronization Jump Width"]
 pub type SJW_R = crate::FieldReader;
 #[doc = "Field `SJW` writer - (Re) Synchronization Jump Width"]
-pub type SJW_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type SJW_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `TSEG1` reader - Time Segment Before Sample Point"]
 pub type TSEG1_R = crate::FieldReader;
 #[doc = "Field `TSEG1` writer - Time Segment Before Sample Point"]
-pub type TSEG1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TSEG1_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `TSEG2` reader - Time Segment After Sample Point"]
 pub type TSEG2_R = crate::FieldReader;
 #[doc = "Field `TSEG2` writer - Time Segment After Sample Point"]
-pub type TSEG2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type TSEG2_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `DIV8` reader - Divide Prescaler Clock by 8"]
 pub type DIV8_R = crate::BitReader<DIV8_A>;
 #[doc = "Divide Prescaler Clock by 8\n\nValue on reset: 0"]
@@ -55,8 +55,8 @@ impl DIV8_R {
     }
 }
 #[doc = "Field `DIV8` writer - Divide Prescaler Clock by 8"]
-pub type DIV8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DIV8_A>;
-impl<'a, REG, const O: u8> DIV8_W<'a, REG, O>
+pub type DIV8_W<'a, REG> = crate::BitWriter<'a, REG, DIV8_A>;
+impl<'a, REG> DIV8_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -102,32 +102,32 @@ impl W {
     #[doc = "Bits 0:5 - Baud Rate Prescaler"]
     #[inline(always)]
     #[must_use]
-    pub fn brp(&mut self) -> BRP_W<NBTR_SPEC, 0> {
-        BRP_W::new(self)
+    pub fn brp(&mut self) -> BRP_W<NBTR_SPEC> {
+        BRP_W::new(self, 0)
     }
     #[doc = "Bits 6:7 - (Re) Synchronization Jump Width"]
     #[inline(always)]
     #[must_use]
-    pub fn sjw(&mut self) -> SJW_W<NBTR_SPEC, 6> {
-        SJW_W::new(self)
+    pub fn sjw(&mut self) -> SJW_W<NBTR_SPEC> {
+        SJW_W::new(self, 6)
     }
     #[doc = "Bits 8:11 - Time Segment Before Sample Point"]
     #[inline(always)]
     #[must_use]
-    pub fn tseg1(&mut self) -> TSEG1_W<NBTR_SPEC, 8> {
-        TSEG1_W::new(self)
+    pub fn tseg1(&mut self) -> TSEG1_W<NBTR_SPEC> {
+        TSEG1_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - Time Segment After Sample Point"]
     #[inline(always)]
     #[must_use]
-    pub fn tseg2(&mut self) -> TSEG2_W<NBTR_SPEC, 12> {
-        TSEG2_W::new(self)
+    pub fn tseg2(&mut self) -> TSEG2_W<NBTR_SPEC> {
+        TSEG2_W::new(self, 12)
     }
     #[doc = "Bit 15 - Divide Prescaler Clock by 8"]
     #[inline(always)]
     #[must_use]
-    pub fn div8(&mut self) -> DIV8_W<NBTR_SPEC, 15> {
-        DIV8_W::new(self)
+    pub fn div8(&mut self) -> DIV8_W<NBTR_SPEC> {
+        DIV8_W::new(self, 15)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

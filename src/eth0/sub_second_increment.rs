@@ -5,7 +5,7 @@ pub type W = crate::W<SUB_SECOND_INCREMENT_SPEC>;
 #[doc = "Field `SSINC` reader - Sub-second Increment Value"]
 pub type SSINC_R = crate::FieldReader;
 #[doc = "Field `SSINC` writer - Sub-second Increment Value"]
-pub type SSINC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SSINC_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Sub-second Increment Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Sub-second Increment Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ssinc(&mut self) -> SSINC_W<SUB_SECOND_INCREMENT_SPEC, 0> {
-        SSINC_W::new(self)
+    pub fn ssinc(&mut self) -> SSINC_W<SUB_SECOND_INCREMENT_SPEC> {
+        SSINC_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

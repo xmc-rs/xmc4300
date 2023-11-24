@@ -5,7 +5,7 @@ pub type W = crate::W<PCR_IICMODE_SPEC>;
 #[doc = "Field `SLAD` reader - Slave Address"]
 pub type SLAD_R = crate::FieldReader<u16>;
 #[doc = "Field `SLAD` writer - Slave Address"]
-pub type SLAD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type SLAD_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `ACK00` reader - Acknowledge 00H"]
 pub type ACK00_R = crate::BitReader<ACK00_A>;
 #[doc = "Acknowledge 00H\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl ACK00_R {
     }
 }
 #[doc = "Field `ACK00` writer - Acknowledge 00H"]
-pub type ACK00_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ACK00_A>;
-impl<'a, REG, const O: u8> ACK00_W<'a, REG, O>
+pub type ACK00_W<'a, REG> = crate::BitWriter<'a, REG, ACK00_A>;
+impl<'a, REG> ACK00_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -96,8 +96,8 @@ impl STIM_R {
     }
 }
 #[doc = "Field `STIM` writer - Symbol Timing"]
-pub type STIM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STIM_A>;
-impl<'a, REG, const O: u8> STIM_W<'a, REG, O>
+pub type STIM_W<'a, REG> = crate::BitWriter<'a, REG, STIM_A>;
+impl<'a, REG> STIM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -149,8 +149,8 @@ impl SCRIEN_R {
     }
 }
 #[doc = "Field `SCRIEN` writer - Start Condition Received Interrupt Enable"]
-pub type SCRIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SCRIEN_A>;
-impl<'a, REG, const O: u8> SCRIEN_W<'a, REG, O>
+pub type SCRIEN_W<'a, REG> = crate::BitWriter<'a, REG, SCRIEN_A>;
+impl<'a, REG> SCRIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -202,8 +202,8 @@ impl RSCRIEN_R {
     }
 }
 #[doc = "Field `RSCRIEN` writer - Repeated Start Condition Received Interrupt Enable"]
-pub type RSCRIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RSCRIEN_A>;
-impl<'a, REG, const O: u8> RSCRIEN_W<'a, REG, O>
+pub type RSCRIEN_W<'a, REG> = crate::BitWriter<'a, REG, RSCRIEN_A>;
+impl<'a, REG> RSCRIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -255,8 +255,8 @@ impl PCRIEN_R {
     }
 }
 #[doc = "Field `PCRIEN` writer - Stop Condition Received Interrupt Enable"]
-pub type PCRIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PCRIEN_A>;
-impl<'a, REG, const O: u8> PCRIEN_W<'a, REG, O>
+pub type PCRIEN_W<'a, REG> = crate::BitWriter<'a, REG, PCRIEN_A>;
+impl<'a, REG> PCRIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -308,8 +308,8 @@ impl NACKIEN_R {
     }
 }
 #[doc = "Field `NACKIEN` writer - Non-Acknowledge Interrupt Enable"]
-pub type NACKIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NACKIEN_A>;
-impl<'a, REG, const O: u8> NACKIEN_W<'a, REG, O>
+pub type NACKIEN_W<'a, REG> = crate::BitWriter<'a, REG, NACKIEN_A>;
+impl<'a, REG> NACKIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -361,8 +361,8 @@ impl ARLIEN_R {
     }
 }
 #[doc = "Field `ARLIEN` writer - Arbitration Lost Interrupt Enable"]
-pub type ARLIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ARLIEN_A>;
-impl<'a, REG, const O: u8> ARLIEN_W<'a, REG, O>
+pub type ARLIEN_W<'a, REG> = crate::BitWriter<'a, REG, ARLIEN_A>;
+impl<'a, REG> ARLIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -414,8 +414,8 @@ impl SRRIEN_R {
     }
 }
 #[doc = "Field `SRRIEN` writer - Slave Read Request Interrupt Enable"]
-pub type SRRIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRRIEN_A>;
-impl<'a, REG, const O: u8> SRRIEN_W<'a, REG, O>
+pub type SRRIEN_W<'a, REG> = crate::BitWriter<'a, REG, SRRIEN_A>;
+impl<'a, REG> SRRIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -467,8 +467,8 @@ impl ERRIEN_R {
     }
 }
 #[doc = "Field `ERRIEN` writer - Error Interrupt Enable"]
-pub type ERRIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERRIEN_A>;
-impl<'a, REG, const O: u8> ERRIEN_W<'a, REG, O>
+pub type ERRIEN_W<'a, REG> = crate::BitWriter<'a, REG, ERRIEN_A>;
+impl<'a, REG> ERRIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -520,8 +520,8 @@ impl SACKDIS_R {
     }
 }
 #[doc = "Field `SACKDIS` writer - Slave Acknowledge Disable"]
-pub type SACKDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SACKDIS_A>;
-impl<'a, REG, const O: u8> SACKDIS_W<'a, REG, O>
+pub type SACKDIS_W<'a, REG> = crate::BitWriter<'a, REG, SACKDIS_A>;
+impl<'a, REG> SACKDIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -539,7 +539,7 @@ where
 #[doc = "Field `HDEL` reader - Hardware Delay"]
 pub type HDEL_R = crate::FieldReader;
 #[doc = "Field `HDEL` writer - Hardware Delay"]
-pub type HDEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type HDEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `ACKIEN` reader - Acknowledge Interrupt Enable"]
 pub type ACKIEN_R = crate::BitReader<ACKIEN_A>;
 #[doc = "Acknowledge Interrupt Enable\n\nValue on reset: 0"]
@@ -577,8 +577,8 @@ impl ACKIEN_R {
     }
 }
 #[doc = "Field `ACKIEN` writer - Acknowledge Interrupt Enable"]
-pub type ACKIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ACKIEN_A>;
-impl<'a, REG, const O: u8> ACKIEN_W<'a, REG, O>
+pub type ACKIEN_W<'a, REG> = crate::BitWriter<'a, REG, ACKIEN_A>;
+impl<'a, REG> ACKIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -630,8 +630,8 @@ impl MCLK_R {
     }
 }
 #[doc = "Field `MCLK` writer - Master Clock Enable"]
-pub type MCLK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MCLK_A>;
-impl<'a, REG, const O: u8> MCLK_W<'a, REG, O>
+pub type MCLK_W<'a, REG> = crate::BitWriter<'a, REG, MCLK_A>;
+impl<'a, REG> MCLK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -722,86 +722,86 @@ impl W {
     #[doc = "Bits 0:15 - Slave Address"]
     #[inline(always)]
     #[must_use]
-    pub fn slad(&mut self) -> SLAD_W<PCR_IICMODE_SPEC, 0> {
-        SLAD_W::new(self)
+    pub fn slad(&mut self) -> SLAD_W<PCR_IICMODE_SPEC> {
+        SLAD_W::new(self, 0)
     }
     #[doc = "Bit 16 - Acknowledge 00H"]
     #[inline(always)]
     #[must_use]
-    pub fn ack00(&mut self) -> ACK00_W<PCR_IICMODE_SPEC, 16> {
-        ACK00_W::new(self)
+    pub fn ack00(&mut self) -> ACK00_W<PCR_IICMODE_SPEC> {
+        ACK00_W::new(self, 16)
     }
     #[doc = "Bit 17 - Symbol Timing"]
     #[inline(always)]
     #[must_use]
-    pub fn stim(&mut self) -> STIM_W<PCR_IICMODE_SPEC, 17> {
-        STIM_W::new(self)
+    pub fn stim(&mut self) -> STIM_W<PCR_IICMODE_SPEC> {
+        STIM_W::new(self, 17)
     }
     #[doc = "Bit 18 - Start Condition Received Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn scrien(&mut self) -> SCRIEN_W<PCR_IICMODE_SPEC, 18> {
-        SCRIEN_W::new(self)
+    pub fn scrien(&mut self) -> SCRIEN_W<PCR_IICMODE_SPEC> {
+        SCRIEN_W::new(self, 18)
     }
     #[doc = "Bit 19 - Repeated Start Condition Received Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rscrien(&mut self) -> RSCRIEN_W<PCR_IICMODE_SPEC, 19> {
-        RSCRIEN_W::new(self)
+    pub fn rscrien(&mut self) -> RSCRIEN_W<PCR_IICMODE_SPEC> {
+        RSCRIEN_W::new(self, 19)
     }
     #[doc = "Bit 20 - Stop Condition Received Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pcrien(&mut self) -> PCRIEN_W<PCR_IICMODE_SPEC, 20> {
-        PCRIEN_W::new(self)
+    pub fn pcrien(&mut self) -> PCRIEN_W<PCR_IICMODE_SPEC> {
+        PCRIEN_W::new(self, 20)
     }
     #[doc = "Bit 21 - Non-Acknowledge Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn nackien(&mut self) -> NACKIEN_W<PCR_IICMODE_SPEC, 21> {
-        NACKIEN_W::new(self)
+    pub fn nackien(&mut self) -> NACKIEN_W<PCR_IICMODE_SPEC> {
+        NACKIEN_W::new(self, 21)
     }
     #[doc = "Bit 22 - Arbitration Lost Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn arlien(&mut self) -> ARLIEN_W<PCR_IICMODE_SPEC, 22> {
-        ARLIEN_W::new(self)
+    pub fn arlien(&mut self) -> ARLIEN_W<PCR_IICMODE_SPEC> {
+        ARLIEN_W::new(self, 22)
     }
     #[doc = "Bit 23 - Slave Read Request Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn srrien(&mut self) -> SRRIEN_W<PCR_IICMODE_SPEC, 23> {
-        SRRIEN_W::new(self)
+    pub fn srrien(&mut self) -> SRRIEN_W<PCR_IICMODE_SPEC> {
+        SRRIEN_W::new(self, 23)
     }
     #[doc = "Bit 24 - Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn errien(&mut self) -> ERRIEN_W<PCR_IICMODE_SPEC, 24> {
-        ERRIEN_W::new(self)
+    pub fn errien(&mut self) -> ERRIEN_W<PCR_IICMODE_SPEC> {
+        ERRIEN_W::new(self, 24)
     }
     #[doc = "Bit 25 - Slave Acknowledge Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn sackdis(&mut self) -> SACKDIS_W<PCR_IICMODE_SPEC, 25> {
-        SACKDIS_W::new(self)
+    pub fn sackdis(&mut self) -> SACKDIS_W<PCR_IICMODE_SPEC> {
+        SACKDIS_W::new(self, 25)
     }
     #[doc = "Bits 26:29 - Hardware Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn hdel(&mut self) -> HDEL_W<PCR_IICMODE_SPEC, 26> {
-        HDEL_W::new(self)
+    pub fn hdel(&mut self) -> HDEL_W<PCR_IICMODE_SPEC> {
+        HDEL_W::new(self, 26)
     }
     #[doc = "Bit 30 - Acknowledge Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ackien(&mut self) -> ACKIEN_W<PCR_IICMODE_SPEC, 30> {
-        ACKIEN_W::new(self)
+    pub fn ackien(&mut self) -> ACKIEN_W<PCR_IICMODE_SPEC> {
+        ACKIEN_W::new(self, 30)
     }
     #[doc = "Bit 31 - Master Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mclk(&mut self) -> MCLK_W<PCR_IICMODE_SPEC, 31> {
-        MCLK_W::new(self)
+    pub fn mclk(&mut self) -> MCLK_W<PCR_IICMODE_SPEC> {
+        MCLK_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

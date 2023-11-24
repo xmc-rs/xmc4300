@@ -5,7 +5,7 @@ pub type W = crate::W<DCTL_SPEC>;
 #[doc = "Field `RmtWkUpSig` reader - Remote Wakeup Signaling"]
 pub type RMT_WK_UP_SIG_R = crate::BitReader;
 #[doc = "Field `RmtWkUpSig` writer - Remote Wakeup Signaling"]
-pub type RMT_WK_UP_SIG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RMT_WK_UP_SIG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SftDiscon` reader - Soft Disconnect"]
 pub type SFT_DISCON_R = crate::BitReader<SFT_DISCON_A>;
 #[doc = "Soft Disconnect\n\nValue on reset: 1"]
@@ -43,8 +43,8 @@ impl SFT_DISCON_R {
     }
 }
 #[doc = "Field `SftDiscon` writer - Soft Disconnect"]
-pub type SFT_DISCON_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SFT_DISCON_A>;
-impl<'a, REG, const O: u8> SFT_DISCON_W<'a, REG, O>
+pub type SFT_DISCON_W<'a, REG> = crate::BitWriter<'a, REG, SFT_DISCON_A>;
+impl<'a, REG> SFT_DISCON_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -132,13 +132,13 @@ impl GOUTNAK_STS_R {
     }
 }
 #[doc = "Field `SGNPInNak` writer - Set Global Non-periodic IN NAK"]
-pub type SGNPIN_NAK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SGNPIN_NAK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CGNPInNak` writer - Clear Global Non-periodic IN NAK"]
-pub type CGNPIN_NAK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CGNPIN_NAK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SGOUTNak` writer - Set Global OUT NAK"]
-pub type SGOUTNAK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SGOUTNAK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CGOUTNak` writer - Clear Global OUT NAK"]
-pub type CGOUTNAK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CGOUTNAK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `GMC` reader - Global Multi Count"]
 pub type GMC_R = crate::FieldReader<GMC_A>;
 #[doc = "Global Multi Count\n\nValue on reset: 0"]
@@ -197,8 +197,8 @@ impl GMC_R {
     }
 }
 #[doc = "Field `GMC` writer - Global Multi Count"]
-pub type GMC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, GMC_A>;
-impl<'a, REG, const O: u8> GMC_W<'a, REG, O>
+pub type GMC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, GMC_A>;
+impl<'a, REG> GMC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -261,8 +261,8 @@ impl IGNR_FRM_NUM_R {
     }
 }
 #[doc = "Field `IgnrFrmNum` writer - Ignore frame number for isochronous endpoints in case of Scatter/Gather DMA"]
-pub type IGNR_FRM_NUM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IGNR_FRM_NUM_A>;
-impl<'a, REG, const O: u8> IGNR_FRM_NUM_W<'a, REG, O>
+pub type IGNR_FRM_NUM_W<'a, REG> = crate::BitWriter<'a, REG, IGNR_FRM_NUM_A>;
+impl<'a, REG> IGNR_FRM_NUM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -280,7 +280,7 @@ where
 #[doc = "Field `NakOnBble` reader - Set NAK automatically on babble"]
 pub type NAK_ON_BBLE_R = crate::BitReader;
 #[doc = "Field `NakOnBble` writer - Set NAK automatically on babble"]
-pub type NAK_ON_BBLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NAK_ON_BBLE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EnContOnBNA` reader - Enable continue on BNA"]
 pub type EN_CONT_ON_BNA_R = crate::BitReader<EN_CONT_ON_BNA_A>;
 #[doc = "Enable continue on BNA\n\nValue on reset: 0"]
@@ -318,8 +318,8 @@ impl EN_CONT_ON_BNA_R {
     }
 }
 #[doc = "Field `EnContOnBNA` writer - Enable continue on BNA"]
-pub type EN_CONT_ON_BNA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EN_CONT_ON_BNA_A>;
-impl<'a, REG, const O: u8> EN_CONT_ON_BNA_W<'a, REG, O>
+pub type EN_CONT_ON_BNA_W<'a, REG> = crate::BitWriter<'a, REG, EN_CONT_ON_BNA_A>;
+impl<'a, REG> EN_CONT_ON_BNA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -380,62 +380,62 @@ impl W {
     #[doc = "Bit 0 - Remote Wakeup Signaling"]
     #[inline(always)]
     #[must_use]
-    pub fn rmt_wk_up_sig(&mut self) -> RMT_WK_UP_SIG_W<DCTL_SPEC, 0> {
-        RMT_WK_UP_SIG_W::new(self)
+    pub fn rmt_wk_up_sig(&mut self) -> RMT_WK_UP_SIG_W<DCTL_SPEC> {
+        RMT_WK_UP_SIG_W::new(self, 0)
     }
     #[doc = "Bit 1 - Soft Disconnect"]
     #[inline(always)]
     #[must_use]
-    pub fn sft_discon(&mut self) -> SFT_DISCON_W<DCTL_SPEC, 1> {
-        SFT_DISCON_W::new(self)
+    pub fn sft_discon(&mut self) -> SFT_DISCON_W<DCTL_SPEC> {
+        SFT_DISCON_W::new(self, 1)
     }
     #[doc = "Bit 7 - Set Global Non-periodic IN NAK"]
     #[inline(always)]
     #[must_use]
-    pub fn sgnpin_nak(&mut self) -> SGNPIN_NAK_W<DCTL_SPEC, 7> {
-        SGNPIN_NAK_W::new(self)
+    pub fn sgnpin_nak(&mut self) -> SGNPIN_NAK_W<DCTL_SPEC> {
+        SGNPIN_NAK_W::new(self, 7)
     }
     #[doc = "Bit 8 - Clear Global Non-periodic IN NAK"]
     #[inline(always)]
     #[must_use]
-    pub fn cgnpin_nak(&mut self) -> CGNPIN_NAK_W<DCTL_SPEC, 8> {
-        CGNPIN_NAK_W::new(self)
+    pub fn cgnpin_nak(&mut self) -> CGNPIN_NAK_W<DCTL_SPEC> {
+        CGNPIN_NAK_W::new(self, 8)
     }
     #[doc = "Bit 9 - Set Global OUT NAK"]
     #[inline(always)]
     #[must_use]
-    pub fn sgoutnak(&mut self) -> SGOUTNAK_W<DCTL_SPEC, 9> {
-        SGOUTNAK_W::new(self)
+    pub fn sgoutnak(&mut self) -> SGOUTNAK_W<DCTL_SPEC> {
+        SGOUTNAK_W::new(self, 9)
     }
     #[doc = "Bit 10 - Clear Global OUT NAK"]
     #[inline(always)]
     #[must_use]
-    pub fn cgoutnak(&mut self) -> CGOUTNAK_W<DCTL_SPEC, 10> {
-        CGOUTNAK_W::new(self)
+    pub fn cgoutnak(&mut self) -> CGOUTNAK_W<DCTL_SPEC> {
+        CGOUTNAK_W::new(self, 10)
     }
     #[doc = "Bits 13:14 - Global Multi Count"]
     #[inline(always)]
     #[must_use]
-    pub fn gmc(&mut self) -> GMC_W<DCTL_SPEC, 13> {
-        GMC_W::new(self)
+    pub fn gmc(&mut self) -> GMC_W<DCTL_SPEC> {
+        GMC_W::new(self, 13)
     }
     #[doc = "Bit 15 - Ignore frame number for isochronous endpoints in case of Scatter/Gather DMA"]
     #[inline(always)]
     #[must_use]
-    pub fn ignr_frm_num(&mut self) -> IGNR_FRM_NUM_W<DCTL_SPEC, 15> {
-        IGNR_FRM_NUM_W::new(self)
+    pub fn ignr_frm_num(&mut self) -> IGNR_FRM_NUM_W<DCTL_SPEC> {
+        IGNR_FRM_NUM_W::new(self, 15)
     }
     #[doc = "Bit 16 - Set NAK automatically on babble"]
     #[inline(always)]
     #[must_use]
-    pub fn nak_on_bble(&mut self) -> NAK_ON_BBLE_W<DCTL_SPEC, 16> {
-        NAK_ON_BBLE_W::new(self)
+    pub fn nak_on_bble(&mut self) -> NAK_ON_BBLE_W<DCTL_SPEC> {
+        NAK_ON_BBLE_W::new(self, 16)
     }
     #[doc = "Bit 17 - Enable continue on BNA"]
     #[inline(always)]
     #[must_use]
-    pub fn en_cont_on_bna(&mut self) -> EN_CONT_ON_BNA_W<DCTL_SPEC, 17> {
-        EN_CONT_ON_BNA_W::new(self)
+    pub fn en_cont_on_bna(&mut self) -> EN_CONT_ON_BNA_W<DCTL_SPEC> {
+        EN_CONT_ON_BNA_W::new(self, 17)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

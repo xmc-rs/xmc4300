@@ -1,21 +1,47 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Source Address Register"]
-    pub sar: SAR,
+    sar: SAR,
     _reserved1: [u8; 0x04],
-    #[doc = "0x08 - Destination Address Register"]
-    pub dar: DAR,
+    dar: DAR,
     _reserved2: [u8; 0x0c],
-    #[doc = "0x18 - Control Register Low"]
-    pub ctll: CTLL,
-    #[doc = "0x1c - Control Register High"]
-    pub ctlh: CTLH,
+    ctll: CTLL,
+    ctlh: CTLH,
     _reserved4: [u8; 0x20],
+    cfgl: CFGL,
+    cfgh: CFGH,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Source Address Register"]
+    #[inline(always)]
+    pub const fn sar(&self) -> &SAR {
+        &self.sar
+    }
+    #[doc = "0x08 - Destination Address Register"]
+    #[inline(always)]
+    pub const fn dar(&self) -> &DAR {
+        &self.dar
+    }
+    #[doc = "0x18 - Control Register Low"]
+    #[inline(always)]
+    pub const fn ctll(&self) -> &CTLL {
+        &self.ctll
+    }
+    #[doc = "0x1c - Control Register High"]
+    #[inline(always)]
+    pub const fn ctlh(&self) -> &CTLH {
+        &self.ctlh
+    }
     #[doc = "0x40 - Configuration Register Low"]
-    pub cfgl: CFGL,
+    #[inline(always)]
+    pub const fn cfgl(&self) -> &CFGL {
+        &self.cfgl
+    }
     #[doc = "0x44 - Configuration Register High"]
-    pub cfgh: CFGH,
+    #[inline(always)]
+    pub const fn cfgh(&self) -> &CFGH {
+        &self.cfgh
+    }
 }
 #[doc = "SAR (rw) register accessor: Source Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sar::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sar::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sar`]
 module"]

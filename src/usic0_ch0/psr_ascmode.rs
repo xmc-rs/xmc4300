@@ -39,8 +39,8 @@ impl TXIDLE_R {
     }
 }
 #[doc = "Field `TXIDLE` writer - Transmission Idle"]
-pub type TXIDLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TXIDLE_A>;
-impl<'a, REG, const O: u8> TXIDLE_W<'a, REG, O>
+pub type TXIDLE_W<'a, REG> = crate::BitWriter<'a, REG, TXIDLE_A>;
+impl<'a, REG> TXIDLE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl RXIDLE_R {
     }
 }
 #[doc = "Field `RXIDLE` writer - Reception Idle"]
-pub type RXIDLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RXIDLE_A>;
-impl<'a, REG, const O: u8> RXIDLE_W<'a, REG, O>
+pub type RXIDLE_W<'a, REG> = crate::BitWriter<'a, REG, RXIDLE_A>;
+impl<'a, REG> RXIDLE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl SBD_R {
     }
 }
 #[doc = "Field `SBD` writer - Synchronization Break Detected"]
-pub type SBD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SBD_A>;
-impl<'a, REG, const O: u8> SBD_W<'a, REG, O>
+pub type SBD_W<'a, REG> = crate::BitWriter<'a, REG, SBD_A>;
+impl<'a, REG> SBD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl COL_R {
     }
 }
 #[doc = "Field `COL` writer - Collision Detected"]
-pub type COL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, COL_A>;
-impl<'a, REG, const O: u8> COL_W<'a, REG, O>
+pub type COL_W<'a, REG> = crate::BitWriter<'a, REG, COL_A>;
+impl<'a, REG> COL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl RNS_R {
     }
 }
 #[doc = "Field `RNS` writer - Receiver Noise Detected"]
-pub type RNS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RNS_A>;
-impl<'a, REG, const O: u8> RNS_W<'a, REG, O>
+pub type RNS_W<'a, REG> = crate::BitWriter<'a, REG, RNS_A>;
+impl<'a, REG> RNS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl FER0_R {
     }
 }
 #[doc = "Field `FER0` writer - Format Error in Stop Bit 0"]
-pub type FER0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FER0_A>;
-impl<'a, REG, const O: u8> FER0_W<'a, REG, O>
+pub type FER0_W<'a, REG> = crate::BitWriter<'a, REG, FER0_A>;
+impl<'a, REG> FER0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl FER1_R {
     }
 }
 #[doc = "Field `FER1` writer - Format Error in Stop Bit 1"]
-pub type FER1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FER1_A>;
-impl<'a, REG, const O: u8> FER1_W<'a, REG, O>
+pub type FER1_W<'a, REG> = crate::BitWriter<'a, REG, FER1_A>;
+impl<'a, REG> FER1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl RFF_R {
     }
 }
 #[doc = "Field `RFF` writer - Receive Frame Finished"]
-pub type RFF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RFF_A>;
-impl<'a, REG, const O: u8> RFF_W<'a, REG, O>
+pub type RFF_W<'a, REG> = crate::BitWriter<'a, REG, RFF_A>;
+impl<'a, REG> RFF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl TFF_R {
     }
 }
 #[doc = "Field `TFF` writer - Transmitter Frame Finished"]
-pub type TFF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TFF_A>;
-impl<'a, REG, const O: u8> TFF_W<'a, REG, O>
+pub type TFF_W<'a, REG> = crate::BitWriter<'a, REG, TFF_A>;
+impl<'a, REG> TFF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -552,8 +552,8 @@ impl RSIF_R {
     }
 }
 #[doc = "Field `RSIF` writer - Receiver Start Indication Flag"]
-pub type RSIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RSIF_A>;
-impl<'a, REG, const O: u8> RSIF_W<'a, REG, O>
+pub type RSIF_W<'a, REG> = crate::BitWriter<'a, REG, RSIF_A>;
+impl<'a, REG> RSIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -605,8 +605,8 @@ impl DLIF_R {
     }
 }
 #[doc = "Field `DLIF` writer - Data Lost Indication Flag"]
-pub type DLIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DLIF_A>;
-impl<'a, REG, const O: u8> DLIF_W<'a, REG, O>
+pub type DLIF_W<'a, REG> = crate::BitWriter<'a, REG, DLIF_A>;
+impl<'a, REG> DLIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -658,8 +658,8 @@ impl TSIF_R {
     }
 }
 #[doc = "Field `TSIF` writer - Transmit Shift Indication Flag"]
-pub type TSIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSIF_A>;
-impl<'a, REG, const O: u8> TSIF_W<'a, REG, O>
+pub type TSIF_W<'a, REG> = crate::BitWriter<'a, REG, TSIF_A>;
+impl<'a, REG> TSIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -711,8 +711,8 @@ impl TBIF_R {
     }
 }
 #[doc = "Field `TBIF` writer - Transmit Buffer Indication Flag"]
-pub type TBIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TBIF_A>;
-impl<'a, REG, const O: u8> TBIF_W<'a, REG, O>
+pub type TBIF_W<'a, REG> = crate::BitWriter<'a, REG, TBIF_A>;
+impl<'a, REG> TBIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -764,8 +764,8 @@ impl RIF_R {
     }
 }
 #[doc = "Field `RIF` writer - Receive Indication Flag"]
-pub type RIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RIF_A>;
-impl<'a, REG, const O: u8> RIF_W<'a, REG, O>
+pub type RIF_W<'a, REG> = crate::BitWriter<'a, REG, RIF_A>;
+impl<'a, REG> RIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -817,8 +817,8 @@ impl AIF_R {
     }
 }
 #[doc = "Field `AIF` writer - Alternative Receive Indication Flag"]
-pub type AIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AIF_A>;
-impl<'a, REG, const O: u8> AIF_W<'a, REG, O>
+pub type AIF_W<'a, REG> = crate::BitWriter<'a, REG, AIF_A>;
+impl<'a, REG> AIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -870,8 +870,8 @@ impl BRGIF_R {
     }
 }
 #[doc = "Field `BRGIF` writer - Baud Rate Generator Indication Flag"]
-pub type BRGIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BRGIF_A>;
-impl<'a, REG, const O: u8> BRGIF_W<'a, REG, O>
+pub type BRGIF_W<'a, REG> = crate::BitWriter<'a, REG, BRGIF_A>;
+impl<'a, REG> BRGIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -977,98 +977,98 @@ impl W {
     #[doc = "Bit 0 - Transmission Idle"]
     #[inline(always)]
     #[must_use]
-    pub fn txidle(&mut self) -> TXIDLE_W<PSR_ASCMODE_SPEC, 0> {
-        TXIDLE_W::new(self)
+    pub fn txidle(&mut self) -> TXIDLE_W<PSR_ASCMODE_SPEC> {
+        TXIDLE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Reception Idle"]
     #[inline(always)]
     #[must_use]
-    pub fn rxidle(&mut self) -> RXIDLE_W<PSR_ASCMODE_SPEC, 1> {
-        RXIDLE_W::new(self)
+    pub fn rxidle(&mut self) -> RXIDLE_W<PSR_ASCMODE_SPEC> {
+        RXIDLE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Synchronization Break Detected"]
     #[inline(always)]
     #[must_use]
-    pub fn sbd(&mut self) -> SBD_W<PSR_ASCMODE_SPEC, 2> {
-        SBD_W::new(self)
+    pub fn sbd(&mut self) -> SBD_W<PSR_ASCMODE_SPEC> {
+        SBD_W::new(self, 2)
     }
     #[doc = "Bit 3 - Collision Detected"]
     #[inline(always)]
     #[must_use]
-    pub fn col(&mut self) -> COL_W<PSR_ASCMODE_SPEC, 3> {
-        COL_W::new(self)
+    pub fn col(&mut self) -> COL_W<PSR_ASCMODE_SPEC> {
+        COL_W::new(self, 3)
     }
     #[doc = "Bit 4 - Receiver Noise Detected"]
     #[inline(always)]
     #[must_use]
-    pub fn rns(&mut self) -> RNS_W<PSR_ASCMODE_SPEC, 4> {
-        RNS_W::new(self)
+    pub fn rns(&mut self) -> RNS_W<PSR_ASCMODE_SPEC> {
+        RNS_W::new(self, 4)
     }
     #[doc = "Bit 5 - Format Error in Stop Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn fer0(&mut self) -> FER0_W<PSR_ASCMODE_SPEC, 5> {
-        FER0_W::new(self)
+    pub fn fer0(&mut self) -> FER0_W<PSR_ASCMODE_SPEC> {
+        FER0_W::new(self, 5)
     }
     #[doc = "Bit 6 - Format Error in Stop Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn fer1(&mut self) -> FER1_W<PSR_ASCMODE_SPEC, 6> {
-        FER1_W::new(self)
+    pub fn fer1(&mut self) -> FER1_W<PSR_ASCMODE_SPEC> {
+        FER1_W::new(self, 6)
     }
     #[doc = "Bit 7 - Receive Frame Finished"]
     #[inline(always)]
     #[must_use]
-    pub fn rff(&mut self) -> RFF_W<PSR_ASCMODE_SPEC, 7> {
-        RFF_W::new(self)
+    pub fn rff(&mut self) -> RFF_W<PSR_ASCMODE_SPEC> {
+        RFF_W::new(self, 7)
     }
     #[doc = "Bit 8 - Transmitter Frame Finished"]
     #[inline(always)]
     #[must_use]
-    pub fn tff(&mut self) -> TFF_W<PSR_ASCMODE_SPEC, 8> {
-        TFF_W::new(self)
+    pub fn tff(&mut self) -> TFF_W<PSR_ASCMODE_SPEC> {
+        TFF_W::new(self, 8)
     }
     #[doc = "Bit 10 - Receiver Start Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn rsif(&mut self) -> RSIF_W<PSR_ASCMODE_SPEC, 10> {
-        RSIF_W::new(self)
+    pub fn rsif(&mut self) -> RSIF_W<PSR_ASCMODE_SPEC> {
+        RSIF_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data Lost Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn dlif(&mut self) -> DLIF_W<PSR_ASCMODE_SPEC, 11> {
-        DLIF_W::new(self)
+    pub fn dlif(&mut self) -> DLIF_W<PSR_ASCMODE_SPEC> {
+        DLIF_W::new(self, 11)
     }
     #[doc = "Bit 12 - Transmit Shift Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn tsif(&mut self) -> TSIF_W<PSR_ASCMODE_SPEC, 12> {
-        TSIF_W::new(self)
+    pub fn tsif(&mut self) -> TSIF_W<PSR_ASCMODE_SPEC> {
+        TSIF_W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit Buffer Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn tbif(&mut self) -> TBIF_W<PSR_ASCMODE_SPEC, 13> {
-        TBIF_W::new(self)
+    pub fn tbif(&mut self) -> TBIF_W<PSR_ASCMODE_SPEC> {
+        TBIF_W::new(self, 13)
     }
     #[doc = "Bit 14 - Receive Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn rif(&mut self) -> RIF_W<PSR_ASCMODE_SPEC, 14> {
-        RIF_W::new(self)
+    pub fn rif(&mut self) -> RIF_W<PSR_ASCMODE_SPEC> {
+        RIF_W::new(self, 14)
     }
     #[doc = "Bit 15 - Alternative Receive Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn aif(&mut self) -> AIF_W<PSR_ASCMODE_SPEC, 15> {
-        AIF_W::new(self)
+    pub fn aif(&mut self) -> AIF_W<PSR_ASCMODE_SPEC> {
+        AIF_W::new(self, 15)
     }
     #[doc = "Bit 16 - Baud Rate Generator Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn brgif(&mut self) -> BRGIF_W<PSR_ASCMODE_SPEC, 16> {
-        BRGIF_W::new(self)
+    pub fn brgif(&mut self) -> BRGIF_W<PSR_ASCMODE_SPEC> {
+        BRGIF_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

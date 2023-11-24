@@ -68,8 +68,8 @@ impl MMC_R {
     }
 }
 #[doc = "Field `MMC` writer - Message Mode Control"]
-pub type MMC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, MMC_A>;
-impl<'a, REG, const O: u8> MMC_W<'a, REG, O>
+pub type MMC_W<'a, REG> = crate::FieldWriter<'a, REG, 4, MMC_A>;
+impl<'a, REG> MMC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -137,8 +137,8 @@ impl RXTOE_R {
     }
 }
 #[doc = "Field `RXTOE` writer - Receive Time-Out Enable"]
-pub type RXTOE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RXTOE_A>;
-impl<'a, REG, const O: u8> RXTOE_W<'a, REG, O>
+pub type RXTOE_W<'a, REG> = crate::BitWriter<'a, REG, RXTOE_A>;
+impl<'a, REG> RXTOE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -190,8 +190,8 @@ impl GDFS_R {
     }
 }
 #[doc = "Field `GDFS` writer - Gateway Data Frame Send"]
-pub type GDFS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GDFS_A>;
-impl<'a, REG, const O: u8> GDFS_W<'a, REG, O>
+pub type GDFS_W<'a, REG> = crate::BitWriter<'a, REG, GDFS_A>;
+impl<'a, REG> GDFS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -243,8 +243,8 @@ impl IDC_R {
     }
 }
 #[doc = "Field `IDC` writer - Identifier Copy"]
-pub type IDC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IDC_A>;
-impl<'a, REG, const O: u8> IDC_W<'a, REG, O>
+pub type IDC_W<'a, REG> = crate::BitWriter<'a, REG, IDC_A>;
+impl<'a, REG> IDC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -296,8 +296,8 @@ impl DLCC_R {
     }
 }
 #[doc = "Field `DLCC` writer - Data Length Code Copy"]
-pub type DLCC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DLCC_A>;
-impl<'a, REG, const O: u8> DLCC_W<'a, REG, O>
+pub type DLCC_W<'a, REG> = crate::BitWriter<'a, REG, DLCC_A>;
+impl<'a, REG> DLCC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -349,8 +349,8 @@ impl DATC_R {
     }
 }
 #[doc = "Field `DATC` writer - Data Copy"]
-pub type DATC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DATC_A>;
-impl<'a, REG, const O: u8> DATC_W<'a, REG, O>
+pub type DATC_W<'a, REG> = crate::BitWriter<'a, REG, DATC_A>;
+impl<'a, REG> DATC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -402,8 +402,8 @@ impl RXIE_R {
     }
 }
 #[doc = "Field `RXIE` writer - Receive Interrupt Enable"]
-pub type RXIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RXIE_A>;
-impl<'a, REG, const O: u8> RXIE_W<'a, REG, O>
+pub type RXIE_W<'a, REG> = crate::BitWriter<'a, REG, RXIE_A>;
+impl<'a, REG> RXIE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -455,8 +455,8 @@ impl TXIE_R {
     }
 }
 #[doc = "Field `TXIE` writer - Transmit Interrupt Enable"]
-pub type TXIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TXIE_A>;
-impl<'a, REG, const O: u8> TXIE_W<'a, REG, O>
+pub type TXIE_W<'a, REG> = crate::BitWriter<'a, REG, TXIE_A>;
+impl<'a, REG> TXIE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -508,8 +508,8 @@ impl OVIE_R {
     }
 }
 #[doc = "Field `OVIE` writer - Overflow Interrupt Enable"]
-pub type OVIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OVIE_A>;
-impl<'a, REG, const O: u8> OVIE_W<'a, REG, O>
+pub type OVIE_W<'a, REG> = crate::BitWriter<'a, REG, OVIE_A>;
+impl<'a, REG> OVIE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -561,8 +561,8 @@ impl FRREN_R {
     }
 }
 #[doc = "Field `FRREN` writer - Foreign Remote Request Enable"]
-pub type FRREN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FRREN_A>;
-impl<'a, REG, const O: u8> FRREN_W<'a, REG, O>
+pub type FRREN_W<'a, REG> = crate::BitWriter<'a, REG, FRREN_A>;
+impl<'a, REG> FRREN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -614,8 +614,8 @@ impl RMM_R {
     }
 }
 #[doc = "Field `RMM` writer - Transmit Object Remote Monitoring"]
-pub type RMM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RMM_A>;
-impl<'a, REG, const O: u8> RMM_W<'a, REG, O>
+pub type RMM_W<'a, REG> = crate::BitWriter<'a, REG, RMM_A>;
+impl<'a, REG> RMM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -633,15 +633,15 @@ where
 #[doc = "Field `SDT` reader - Single Data Transfer"]
 pub type SDT_R = crate::BitReader;
 #[doc = "Field `SDT` writer - Single Data Transfer"]
-pub type SDT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SDT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STT` reader - Single Transmit Trial"]
 pub type STT_R = crate::BitReader;
 #[doc = "Field `STT` writer - Single Transmit Trial"]
-pub type STT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DLC` reader - Data Length Code"]
 pub type DLC_R = crate::FieldReader;
 #[doc = "Field `DLC` writer - Data Length Code"]
-pub type DLC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type DLC_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3 - Message Mode Control"]
     #[inline(always)]
@@ -718,86 +718,86 @@ impl W {
     #[doc = "Bits 0:3 - Message Mode Control"]
     #[inline(always)]
     #[must_use]
-    pub fn mmc(&mut self) -> MMC_W<MOFCR_SPEC, 0> {
-        MMC_W::new(self)
+    pub fn mmc(&mut self) -> MMC_W<MOFCR_SPEC> {
+        MMC_W::new(self, 0)
     }
     #[doc = "Bit 4 - Receive Time-Out Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxtoe(&mut self) -> RXTOE_W<MOFCR_SPEC, 4> {
-        RXTOE_W::new(self)
+    pub fn rxtoe(&mut self) -> RXTOE_W<MOFCR_SPEC> {
+        RXTOE_W::new(self, 4)
     }
     #[doc = "Bit 8 - Gateway Data Frame Send"]
     #[inline(always)]
     #[must_use]
-    pub fn gdfs(&mut self) -> GDFS_W<MOFCR_SPEC, 8> {
-        GDFS_W::new(self)
+    pub fn gdfs(&mut self) -> GDFS_W<MOFCR_SPEC> {
+        GDFS_W::new(self, 8)
     }
     #[doc = "Bit 9 - Identifier Copy"]
     #[inline(always)]
     #[must_use]
-    pub fn idc(&mut self) -> IDC_W<MOFCR_SPEC, 9> {
-        IDC_W::new(self)
+    pub fn idc(&mut self) -> IDC_W<MOFCR_SPEC> {
+        IDC_W::new(self, 9)
     }
     #[doc = "Bit 10 - Data Length Code Copy"]
     #[inline(always)]
     #[must_use]
-    pub fn dlcc(&mut self) -> DLCC_W<MOFCR_SPEC, 10> {
-        DLCC_W::new(self)
+    pub fn dlcc(&mut self) -> DLCC_W<MOFCR_SPEC> {
+        DLCC_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data Copy"]
     #[inline(always)]
     #[must_use]
-    pub fn datc(&mut self) -> DATC_W<MOFCR_SPEC, 11> {
-        DATC_W::new(self)
+    pub fn datc(&mut self) -> DATC_W<MOFCR_SPEC> {
+        DATC_W::new(self, 11)
     }
     #[doc = "Bit 16 - Receive Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxie(&mut self) -> RXIE_W<MOFCR_SPEC, 16> {
-        RXIE_W::new(self)
+    pub fn rxie(&mut self) -> RXIE_W<MOFCR_SPEC> {
+        RXIE_W::new(self, 16)
     }
     #[doc = "Bit 17 - Transmit Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn txie(&mut self) -> TXIE_W<MOFCR_SPEC, 17> {
-        TXIE_W::new(self)
+    pub fn txie(&mut self) -> TXIE_W<MOFCR_SPEC> {
+        TXIE_W::new(self, 17)
     }
     #[doc = "Bit 18 - Overflow Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ovie(&mut self) -> OVIE_W<MOFCR_SPEC, 18> {
-        OVIE_W::new(self)
+    pub fn ovie(&mut self) -> OVIE_W<MOFCR_SPEC> {
+        OVIE_W::new(self, 18)
     }
     #[doc = "Bit 20 - Foreign Remote Request Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn frren(&mut self) -> FRREN_W<MOFCR_SPEC, 20> {
-        FRREN_W::new(self)
+    pub fn frren(&mut self) -> FRREN_W<MOFCR_SPEC> {
+        FRREN_W::new(self, 20)
     }
     #[doc = "Bit 21 - Transmit Object Remote Monitoring"]
     #[inline(always)]
     #[must_use]
-    pub fn rmm(&mut self) -> RMM_W<MOFCR_SPEC, 21> {
-        RMM_W::new(self)
+    pub fn rmm(&mut self) -> RMM_W<MOFCR_SPEC> {
+        RMM_W::new(self, 21)
     }
     #[doc = "Bit 22 - Single Data Transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn sdt(&mut self) -> SDT_W<MOFCR_SPEC, 22> {
-        SDT_W::new(self)
+    pub fn sdt(&mut self) -> SDT_W<MOFCR_SPEC> {
+        SDT_W::new(self, 22)
     }
     #[doc = "Bit 23 - Single Transmit Trial"]
     #[inline(always)]
     #[must_use]
-    pub fn stt(&mut self) -> STT_W<MOFCR_SPEC, 23> {
-        STT_W::new(self)
+    pub fn stt(&mut self) -> STT_W<MOFCR_SPEC> {
+        STT_W::new(self, 23)
     }
     #[doc = "Bits 24:27 - Data Length Code"]
     #[inline(always)]
     #[must_use]
-    pub fn dlc(&mut self) -> DLC_W<MOFCR_SPEC, 24> {
-        DLC_W::new(self)
+    pub fn dlc(&mut self) -> DLC_W<MOFCR_SPEC> {
+        DLC_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

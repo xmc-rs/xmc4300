@@ -5,43 +5,43 @@ pub type W = crate::W<PSR_SPEC>;
 #[doc = "Field `ST0` reader - Protocol Status Flag 0"]
 pub type ST0_R = crate::BitReader;
 #[doc = "Field `ST0` writer - Protocol Status Flag 0"]
-pub type ST0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ST0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ST1` reader - Protocol Status Flag 1"]
 pub type ST1_R = crate::BitReader;
 #[doc = "Field `ST1` writer - Protocol Status Flag 1"]
-pub type ST1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ST1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ST2` reader - Protocol Status Flag 2"]
 pub type ST2_R = crate::BitReader;
 #[doc = "Field `ST2` writer - Protocol Status Flag 2"]
-pub type ST2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ST2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ST3` reader - Protocol Status Flag 3"]
 pub type ST3_R = crate::BitReader;
 #[doc = "Field `ST3` writer - Protocol Status Flag 3"]
-pub type ST3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ST3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ST4` reader - Protocol Status Flag 4"]
 pub type ST4_R = crate::BitReader;
 #[doc = "Field `ST4` writer - Protocol Status Flag 4"]
-pub type ST4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ST4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ST5` reader - Protocol Status Flag 5"]
 pub type ST5_R = crate::BitReader;
 #[doc = "Field `ST5` writer - Protocol Status Flag 5"]
-pub type ST5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ST5_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ST6` reader - Protocol Status Flag 6"]
 pub type ST6_R = crate::BitReader;
 #[doc = "Field `ST6` writer - Protocol Status Flag 6"]
-pub type ST6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ST6_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ST7` reader - Protocol Status Flag 7"]
 pub type ST7_R = crate::BitReader;
 #[doc = "Field `ST7` writer - Protocol Status Flag 7"]
-pub type ST7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ST7_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ST8` reader - Protocol Status Flag 8"]
 pub type ST8_R = crate::BitReader;
 #[doc = "Field `ST8` writer - Protocol Status Flag 8"]
-pub type ST8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ST8_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ST9` reader - Protocol Status Flag 9"]
 pub type ST9_R = crate::BitReader;
 #[doc = "Field `ST9` writer - Protocol Status Flag 9"]
-pub type ST9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ST9_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RSIF` reader - Receiver Start Indication Flag"]
 pub type RSIF_R = crate::BitReader<RSIF_A>;
 #[doc = "Receiver Start Indication Flag\n\nValue on reset: 0"]
@@ -79,8 +79,8 @@ impl RSIF_R {
     }
 }
 #[doc = "Field `RSIF` writer - Receiver Start Indication Flag"]
-pub type RSIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RSIF_A>;
-impl<'a, REG, const O: u8> RSIF_W<'a, REG, O>
+pub type RSIF_W<'a, REG> = crate::BitWriter<'a, REG, RSIF_A>;
+impl<'a, REG> RSIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -132,8 +132,8 @@ impl DLIF_R {
     }
 }
 #[doc = "Field `DLIF` writer - Data Lost Indication Flag"]
-pub type DLIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DLIF_A>;
-impl<'a, REG, const O: u8> DLIF_W<'a, REG, O>
+pub type DLIF_W<'a, REG> = crate::BitWriter<'a, REG, DLIF_A>;
+impl<'a, REG> DLIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -185,8 +185,8 @@ impl TSIF_R {
     }
 }
 #[doc = "Field `TSIF` writer - Transmit Shift Indication Flag"]
-pub type TSIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSIF_A>;
-impl<'a, REG, const O: u8> TSIF_W<'a, REG, O>
+pub type TSIF_W<'a, REG> = crate::BitWriter<'a, REG, TSIF_A>;
+impl<'a, REG> TSIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -238,8 +238,8 @@ impl TBIF_R {
     }
 }
 #[doc = "Field `TBIF` writer - Transmit Buffer Indication Flag"]
-pub type TBIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TBIF_A>;
-impl<'a, REG, const O: u8> TBIF_W<'a, REG, O>
+pub type TBIF_W<'a, REG> = crate::BitWriter<'a, REG, TBIF_A>;
+impl<'a, REG> TBIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -291,8 +291,8 @@ impl RIF_R {
     }
 }
 #[doc = "Field `RIF` writer - Receive Indication Flag"]
-pub type RIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RIF_A>;
-impl<'a, REG, const O: u8> RIF_W<'a, REG, O>
+pub type RIF_W<'a, REG> = crate::BitWriter<'a, REG, RIF_A>;
+impl<'a, REG> RIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -344,8 +344,8 @@ impl AIF_R {
     }
 }
 #[doc = "Field `AIF` writer - Alternative Receive Indication Flag"]
-pub type AIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AIF_A>;
-impl<'a, REG, const O: u8> AIF_W<'a, REG, O>
+pub type AIF_W<'a, REG> = crate::BitWriter<'a, REG, AIF_A>;
+impl<'a, REG> AIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -397,8 +397,8 @@ impl BRGIF_R {
     }
 }
 #[doc = "Field `BRGIF` writer - Baud Rate Generator Indication Flag"]
-pub type BRGIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BRGIF_A>;
-impl<'a, REG, const O: u8> BRGIF_W<'a, REG, O>
+pub type BRGIF_W<'a, REG> = crate::BitWriter<'a, REG, BRGIF_A>;
+impl<'a, REG> BRGIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -504,104 +504,104 @@ impl W {
     #[doc = "Bit 0 - Protocol Status Flag 0"]
     #[inline(always)]
     #[must_use]
-    pub fn st0(&mut self) -> ST0_W<PSR_SPEC, 0> {
-        ST0_W::new(self)
+    pub fn st0(&mut self) -> ST0_W<PSR_SPEC> {
+        ST0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Protocol Status Flag 1"]
     #[inline(always)]
     #[must_use]
-    pub fn st1(&mut self) -> ST1_W<PSR_SPEC, 1> {
-        ST1_W::new(self)
+    pub fn st1(&mut self) -> ST1_W<PSR_SPEC> {
+        ST1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Protocol Status Flag 2"]
     #[inline(always)]
     #[must_use]
-    pub fn st2(&mut self) -> ST2_W<PSR_SPEC, 2> {
-        ST2_W::new(self)
+    pub fn st2(&mut self) -> ST2_W<PSR_SPEC> {
+        ST2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Protocol Status Flag 3"]
     #[inline(always)]
     #[must_use]
-    pub fn st3(&mut self) -> ST3_W<PSR_SPEC, 3> {
-        ST3_W::new(self)
+    pub fn st3(&mut self) -> ST3_W<PSR_SPEC> {
+        ST3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Protocol Status Flag 4"]
     #[inline(always)]
     #[must_use]
-    pub fn st4(&mut self) -> ST4_W<PSR_SPEC, 4> {
-        ST4_W::new(self)
+    pub fn st4(&mut self) -> ST4_W<PSR_SPEC> {
+        ST4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Protocol Status Flag 5"]
     #[inline(always)]
     #[must_use]
-    pub fn st5(&mut self) -> ST5_W<PSR_SPEC, 5> {
-        ST5_W::new(self)
+    pub fn st5(&mut self) -> ST5_W<PSR_SPEC> {
+        ST5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Protocol Status Flag 6"]
     #[inline(always)]
     #[must_use]
-    pub fn st6(&mut self) -> ST6_W<PSR_SPEC, 6> {
-        ST6_W::new(self)
+    pub fn st6(&mut self) -> ST6_W<PSR_SPEC> {
+        ST6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Protocol Status Flag 7"]
     #[inline(always)]
     #[must_use]
-    pub fn st7(&mut self) -> ST7_W<PSR_SPEC, 7> {
-        ST7_W::new(self)
+    pub fn st7(&mut self) -> ST7_W<PSR_SPEC> {
+        ST7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Protocol Status Flag 8"]
     #[inline(always)]
     #[must_use]
-    pub fn st8(&mut self) -> ST8_W<PSR_SPEC, 8> {
-        ST8_W::new(self)
+    pub fn st8(&mut self) -> ST8_W<PSR_SPEC> {
+        ST8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Protocol Status Flag 9"]
     #[inline(always)]
     #[must_use]
-    pub fn st9(&mut self) -> ST9_W<PSR_SPEC, 9> {
-        ST9_W::new(self)
+    pub fn st9(&mut self) -> ST9_W<PSR_SPEC> {
+        ST9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Receiver Start Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn rsif(&mut self) -> RSIF_W<PSR_SPEC, 10> {
-        RSIF_W::new(self)
+    pub fn rsif(&mut self) -> RSIF_W<PSR_SPEC> {
+        RSIF_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data Lost Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn dlif(&mut self) -> DLIF_W<PSR_SPEC, 11> {
-        DLIF_W::new(self)
+    pub fn dlif(&mut self) -> DLIF_W<PSR_SPEC> {
+        DLIF_W::new(self, 11)
     }
     #[doc = "Bit 12 - Transmit Shift Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn tsif(&mut self) -> TSIF_W<PSR_SPEC, 12> {
-        TSIF_W::new(self)
+    pub fn tsif(&mut self) -> TSIF_W<PSR_SPEC> {
+        TSIF_W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit Buffer Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn tbif(&mut self) -> TBIF_W<PSR_SPEC, 13> {
-        TBIF_W::new(self)
+    pub fn tbif(&mut self) -> TBIF_W<PSR_SPEC> {
+        TBIF_W::new(self, 13)
     }
     #[doc = "Bit 14 - Receive Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn rif(&mut self) -> RIF_W<PSR_SPEC, 14> {
-        RIF_W::new(self)
+    pub fn rif(&mut self) -> RIF_W<PSR_SPEC> {
+        RIF_W::new(self, 14)
     }
     #[doc = "Bit 15 - Alternative Receive Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn aif(&mut self) -> AIF_W<PSR_SPEC, 15> {
-        AIF_W::new(self)
+    pub fn aif(&mut self) -> AIF_W<PSR_SPEC> {
+        AIF_W::new(self, 15)
     }
     #[doc = "Bit 16 - Baud Rate Generator Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn brgif(&mut self) -> BRGIF_W<PSR_SPEC, 16> {
-        BRGIF_W::new(self)
+    pub fn brgif(&mut self) -> BRGIF_W<PSR_SPEC> {
+        BRGIF_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

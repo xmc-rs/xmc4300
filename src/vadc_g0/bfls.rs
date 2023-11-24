@@ -15,8 +15,8 @@ impl From<BFC0_AW> for bool {
     }
 }
 #[doc = "Field `BFC0` writer - Boundary Flag 0 Clear"]
-pub type BFC0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFC0_AW>;
-impl<'a, REG, const O: u8> BFC0_W<'a, REG, O>
+pub type BFC0_W<'a, REG> = crate::BitWriter<'a, REG, BFC0_AW>;
+impl<'a, REG> BFC0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<BFC1_AW> for bool {
     }
 }
 #[doc = "Field `BFC1` writer - Boundary Flag 1 Clear"]
-pub type BFC1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFC1_AW>;
-impl<'a, REG, const O: u8> BFC1_W<'a, REG, O>
+pub type BFC1_W<'a, REG> = crate::BitWriter<'a, REG, BFC1_AW>;
+impl<'a, REG> BFC1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<BFC2_AW> for bool {
     }
 }
 #[doc = "Field `BFC2` writer - Boundary Flag 2 Clear"]
-pub type BFC2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFC2_AW>;
-impl<'a, REG, const O: u8> BFC2_W<'a, REG, O>
+pub type BFC2_W<'a, REG> = crate::BitWriter<'a, REG, BFC2_AW>;
+impl<'a, REG> BFC2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<BFC3_AW> for bool {
     }
 }
 #[doc = "Field `BFC3` writer - Boundary Flag 3 Clear"]
-pub type BFC3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFC3_AW>;
-impl<'a, REG, const O: u8> BFC3_W<'a, REG, O>
+pub type BFC3_W<'a, REG> = crate::BitWriter<'a, REG, BFC3_AW>;
+impl<'a, REG> BFC3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<BFS0_AW> for bool {
     }
 }
 #[doc = "Field `BFS0` writer - Boundary Flag 0 Set"]
-pub type BFS0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFS0_AW>;
-impl<'a, REG, const O: u8> BFS0_W<'a, REG, O>
+pub type BFS0_W<'a, REG> = crate::BitWriter<'a, REG, BFS0_AW>;
+impl<'a, REG> BFS0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<BFS1_AW> for bool {
     }
 }
 #[doc = "Field `BFS1` writer - Boundary Flag 1 Set"]
-pub type BFS1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFS1_AW>;
-impl<'a, REG, const O: u8> BFS1_W<'a, REG, O>
+pub type BFS1_W<'a, REG> = crate::BitWriter<'a, REG, BFS1_AW>;
+impl<'a, REG> BFS1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -201,8 +201,8 @@ impl From<BFS2_AW> for bool {
     }
 }
 #[doc = "Field `BFS2` writer - Boundary Flag 2 Set"]
-pub type BFS2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFS2_AW>;
-impl<'a, REG, const O: u8> BFS2_W<'a, REG, O>
+pub type BFS2_W<'a, REG> = crate::BitWriter<'a, REG, BFS2_AW>;
+impl<'a, REG> BFS2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -232,8 +232,8 @@ impl From<BFS3_AW> for bool {
     }
 }
 #[doc = "Field `BFS3` writer - Boundary Flag 3 Set"]
-pub type BFS3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFS3_AW>;
-impl<'a, REG, const O: u8> BFS3_W<'a, REG, O>
+pub type BFS3_W<'a, REG> = crate::BitWriter<'a, REG, BFS3_AW>;
+impl<'a, REG> BFS3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -252,50 +252,50 @@ impl W {
     #[doc = "Bit 0 - Boundary Flag 0 Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn bfc0(&mut self) -> BFC0_W<BFLS_SPEC, 0> {
-        BFC0_W::new(self)
+    pub fn bfc0(&mut self) -> BFC0_W<BFLS_SPEC> {
+        BFC0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Boundary Flag 1 Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn bfc1(&mut self) -> BFC1_W<BFLS_SPEC, 1> {
-        BFC1_W::new(self)
+    pub fn bfc1(&mut self) -> BFC1_W<BFLS_SPEC> {
+        BFC1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Boundary Flag 2 Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn bfc2(&mut self) -> BFC2_W<BFLS_SPEC, 2> {
-        BFC2_W::new(self)
+    pub fn bfc2(&mut self) -> BFC2_W<BFLS_SPEC> {
+        BFC2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Boundary Flag 3 Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn bfc3(&mut self) -> BFC3_W<BFLS_SPEC, 3> {
-        BFC3_W::new(self)
+    pub fn bfc3(&mut self) -> BFC3_W<BFLS_SPEC> {
+        BFC3_W::new(self, 3)
     }
     #[doc = "Bit 16 - Boundary Flag 0 Set"]
     #[inline(always)]
     #[must_use]
-    pub fn bfs0(&mut self) -> BFS0_W<BFLS_SPEC, 16> {
-        BFS0_W::new(self)
+    pub fn bfs0(&mut self) -> BFS0_W<BFLS_SPEC> {
+        BFS0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Boundary Flag 1 Set"]
     #[inline(always)]
     #[must_use]
-    pub fn bfs1(&mut self) -> BFS1_W<BFLS_SPEC, 17> {
-        BFS1_W::new(self)
+    pub fn bfs1(&mut self) -> BFS1_W<BFLS_SPEC> {
+        BFS1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Boundary Flag 2 Set"]
     #[inline(always)]
     #[must_use]
-    pub fn bfs2(&mut self) -> BFS2_W<BFLS_SPEC, 18> {
-        BFS2_W::new(self)
+    pub fn bfs2(&mut self) -> BFS2_W<BFLS_SPEC> {
+        BFS2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Boundary Flag 3 Set"]
     #[inline(always)]
     #[must_use]
-    pub fn bfs3(&mut self) -> BFS3_W<BFLS_SPEC, 19> {
-        BFS3_W::new(self)
+    pub fn bfs3(&mut self) -> BFS3_W<BFLS_SPEC> {
+        BFS3_W::new(self, 19)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

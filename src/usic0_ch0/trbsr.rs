@@ -39,8 +39,8 @@ impl SRBI_R {
     }
 }
 #[doc = "Field `SRBI` writer - Standard Receive Buffer Event"]
-pub type SRBI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRBI_A>;
-impl<'a, REG, const O: u8> SRBI_W<'a, REG, O>
+pub type SRBI_W<'a, REG> = crate::BitWriter<'a, REG, SRBI_A>;
+impl<'a, REG> SRBI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl RBERI_R {
     }
 }
 #[doc = "Field `RBERI` writer - Receive Buffer Error Event"]
-pub type RBERI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RBERI_A>;
-impl<'a, REG, const O: u8> RBERI_W<'a, REG, O>
+pub type RBERI_W<'a, REG> = crate::BitWriter<'a, REG, RBERI_A>;
+impl<'a, REG> RBERI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl ARBI_R {
     }
 }
 #[doc = "Field `ARBI` writer - Alternative Receive Buffer Event"]
-pub type ARBI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ARBI_A>;
-impl<'a, REG, const O: u8> ARBI_W<'a, REG, O>
+pub type ARBI_W<'a, REG> = crate::BitWriter<'a, REG, ARBI_A>;
+impl<'a, REG> ARBI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -342,8 +342,8 @@ impl STBI_R {
     }
 }
 #[doc = "Field `STBI` writer - Standard Transmit Buffer Event"]
-pub type STBI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STBI_A>;
-impl<'a, REG, const O: u8> STBI_W<'a, REG, O>
+pub type STBI_W<'a, REG> = crate::BitWriter<'a, REG, STBI_A>;
+impl<'a, REG> STBI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -395,8 +395,8 @@ impl TBERI_R {
     }
 }
 #[doc = "Field `TBERI` writer - Transmit Buffer Error Event"]
-pub type TBERI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TBERI_A>;
-impl<'a, REG, const O: u8> TBERI_W<'a, REG, O>
+pub type TBERI_W<'a, REG> = crate::BitWriter<'a, REG, TBERI_A>;
+impl<'a, REG> TBERI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -640,32 +640,32 @@ impl W {
     #[doc = "Bit 0 - Standard Receive Buffer Event"]
     #[inline(always)]
     #[must_use]
-    pub fn srbi(&mut self) -> SRBI_W<TRBSR_SPEC, 0> {
-        SRBI_W::new(self)
+    pub fn srbi(&mut self) -> SRBI_W<TRBSR_SPEC> {
+        SRBI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Receive Buffer Error Event"]
     #[inline(always)]
     #[must_use]
-    pub fn rberi(&mut self) -> RBERI_W<TRBSR_SPEC, 1> {
-        RBERI_W::new(self)
+    pub fn rberi(&mut self) -> RBERI_W<TRBSR_SPEC> {
+        RBERI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Alternative Receive Buffer Event"]
     #[inline(always)]
     #[must_use]
-    pub fn arbi(&mut self) -> ARBI_W<TRBSR_SPEC, 2> {
-        ARBI_W::new(self)
+    pub fn arbi(&mut self) -> ARBI_W<TRBSR_SPEC> {
+        ARBI_W::new(self, 2)
     }
     #[doc = "Bit 8 - Standard Transmit Buffer Event"]
     #[inline(always)]
     #[must_use]
-    pub fn stbi(&mut self) -> STBI_W<TRBSR_SPEC, 8> {
-        STBI_W::new(self)
+    pub fn stbi(&mut self) -> STBI_W<TRBSR_SPEC> {
+        STBI_W::new(self, 8)
     }
     #[doc = "Bit 9 - Transmit Buffer Error Event"]
     #[inline(always)]
     #[must_use]
-    pub fn tberi(&mut self) -> TBERI_W<TRBSR_SPEC, 9> {
-        TBERI_W::new(self)
+    pub fn tberi(&mut self) -> TBERI_W<TRBSR_SPEC> {
+        TBERI_W::new(self, 9)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

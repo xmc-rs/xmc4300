@@ -5,35 +5,35 @@ pub type W = crate::W<SGLREQSRCREG_SPEC>;
 #[doc = "Field `CH0` reader - Source request for channel 0"]
 pub type CH0_R = crate::BitReader;
 #[doc = "Field `CH0` writer - Source request for channel 0"]
-pub type CH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH1` reader - Source request for channel 1"]
 pub type CH1_R = crate::BitReader;
 #[doc = "Field `CH1` writer - Source request for channel 1"]
-pub type CH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH2` reader - Source request for channel 2"]
 pub type CH2_R = crate::BitReader;
 #[doc = "Field `CH2` writer - Source request for channel 2"]
-pub type CH2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH3` reader - Source request for channel 3"]
 pub type CH3_R = crate::BitReader;
 #[doc = "Field `CH3` writer - Source request for channel 3"]
-pub type CH3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH4` reader - Source request for channel 4"]
 pub type CH4_R = crate::BitReader;
 #[doc = "Field `CH4` writer - Source request for channel 4"]
-pub type CH4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH4_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH5` reader - Source request for channel 5"]
 pub type CH5_R = crate::BitReader;
 #[doc = "Field `CH5` writer - Source request for channel 5"]
-pub type CH5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH5_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH6` reader - Source request for channel 6"]
 pub type CH6_R = crate::BitReader;
 #[doc = "Field `CH6` writer - Source request for channel 6"]
-pub type CH6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH6_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH7` reader - Source request for channel 7"]
 pub type CH7_R = crate::BitReader;
 #[doc = "Field `CH7` writer - Source request for channel 7"]
-pub type CH7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH7_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Source request write enable for channel 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WE_CH0_AW {
@@ -49,8 +49,8 @@ impl From<WE_CH0_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH0` writer - Source request write enable for channel 0"]
-pub type WE_CH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WE_CH0_AW>;
-impl<'a, REG, const O: u8> WE_CH0_W<'a, REG, O>
+pub type WE_CH0_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH0_AW>;
+impl<'a, REG> WE_CH0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -80,8 +80,8 @@ impl From<WE_CH1_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH1` writer - Source request write enable for channel 1"]
-pub type WE_CH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WE_CH1_AW>;
-impl<'a, REG, const O: u8> WE_CH1_W<'a, REG, O>
+pub type WE_CH1_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH1_AW>;
+impl<'a, REG> WE_CH1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -111,8 +111,8 @@ impl From<WE_CH2_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH2` writer - Source request write enable for channel 2"]
-pub type WE_CH2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WE_CH2_AW>;
-impl<'a, REG, const O: u8> WE_CH2_W<'a, REG, O>
+pub type WE_CH2_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH2_AW>;
+impl<'a, REG> WE_CH2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -142,8 +142,8 @@ impl From<WE_CH3_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH3` writer - Source request write enable for channel 3"]
-pub type WE_CH3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WE_CH3_AW>;
-impl<'a, REG, const O: u8> WE_CH3_W<'a, REG, O>
+pub type WE_CH3_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH3_AW>;
+impl<'a, REG> WE_CH3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -173,8 +173,8 @@ impl From<WE_CH4_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH4` writer - Source request write enable for channel 4"]
-pub type WE_CH4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WE_CH4_AW>;
-impl<'a, REG, const O: u8> WE_CH4_W<'a, REG, O>
+pub type WE_CH4_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH4_AW>;
+impl<'a, REG> WE_CH4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -204,8 +204,8 @@ impl From<WE_CH5_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH5` writer - Source request write enable for channel 5"]
-pub type WE_CH5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WE_CH5_AW>;
-impl<'a, REG, const O: u8> WE_CH5_W<'a, REG, O>
+pub type WE_CH5_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH5_AW>;
+impl<'a, REG> WE_CH5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -235,8 +235,8 @@ impl From<WE_CH6_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH6` writer - Source request write enable for channel 6"]
-pub type WE_CH6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WE_CH6_AW>;
-impl<'a, REG, const O: u8> WE_CH6_W<'a, REG, O>
+pub type WE_CH6_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH6_AW>;
+impl<'a, REG> WE_CH6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -266,8 +266,8 @@ impl From<WE_CH7_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH7` writer - Source request write enable for channel 7"]
-pub type WE_CH7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WE_CH7_AW>;
-impl<'a, REG, const O: u8> WE_CH7_W<'a, REG, O>
+pub type WE_CH7_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH7_AW>;
+impl<'a, REG> WE_CH7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -328,98 +328,98 @@ impl W {
     #[doc = "Bit 0 - Source request for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0(&mut self) -> CH0_W<SGLREQSRCREG_SPEC, 0> {
-        CH0_W::new(self)
+    pub fn ch0(&mut self) -> CH0_W<SGLREQSRCREG_SPEC> {
+        CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Source request for channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1(&mut self) -> CH1_W<SGLREQSRCREG_SPEC, 1> {
-        CH1_W::new(self)
+    pub fn ch1(&mut self) -> CH1_W<SGLREQSRCREG_SPEC> {
+        CH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Source request for channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn ch2(&mut self) -> CH2_W<SGLREQSRCREG_SPEC, 2> {
-        CH2_W::new(self)
+    pub fn ch2(&mut self) -> CH2_W<SGLREQSRCREG_SPEC> {
+        CH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Source request for channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ch3(&mut self) -> CH3_W<SGLREQSRCREG_SPEC, 3> {
-        CH3_W::new(self)
+    pub fn ch3(&mut self) -> CH3_W<SGLREQSRCREG_SPEC> {
+        CH3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Source request for channel 4"]
     #[inline(always)]
     #[must_use]
-    pub fn ch4(&mut self) -> CH4_W<SGLREQSRCREG_SPEC, 4> {
-        CH4_W::new(self)
+    pub fn ch4(&mut self) -> CH4_W<SGLREQSRCREG_SPEC> {
+        CH4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Source request for channel 5"]
     #[inline(always)]
     #[must_use]
-    pub fn ch5(&mut self) -> CH5_W<SGLREQSRCREG_SPEC, 5> {
-        CH5_W::new(self)
+    pub fn ch5(&mut self) -> CH5_W<SGLREQSRCREG_SPEC> {
+        CH5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Source request for channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn ch6(&mut self) -> CH6_W<SGLREQSRCREG_SPEC, 6> {
-        CH6_W::new(self)
+    pub fn ch6(&mut self) -> CH6_W<SGLREQSRCREG_SPEC> {
+        CH6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Source request for channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn ch7(&mut self) -> CH7_W<SGLREQSRCREG_SPEC, 7> {
-        CH7_W::new(self)
+    pub fn ch7(&mut self) -> CH7_W<SGLREQSRCREG_SPEC> {
+        CH7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Source request write enable for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch0(&mut self) -> WE_CH0_W<SGLREQSRCREG_SPEC, 8> {
-        WE_CH0_W::new(self)
+    pub fn we_ch0(&mut self) -> WE_CH0_W<SGLREQSRCREG_SPEC> {
+        WE_CH0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Source request write enable for channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch1(&mut self) -> WE_CH1_W<SGLREQSRCREG_SPEC, 9> {
-        WE_CH1_W::new(self)
+    pub fn we_ch1(&mut self) -> WE_CH1_W<SGLREQSRCREG_SPEC> {
+        WE_CH1_W::new(self, 9)
     }
     #[doc = "Bit 10 - Source request write enable for channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch2(&mut self) -> WE_CH2_W<SGLREQSRCREG_SPEC, 10> {
-        WE_CH2_W::new(self)
+    pub fn we_ch2(&mut self) -> WE_CH2_W<SGLREQSRCREG_SPEC> {
+        WE_CH2_W::new(self, 10)
     }
     #[doc = "Bit 11 - Source request write enable for channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch3(&mut self) -> WE_CH3_W<SGLREQSRCREG_SPEC, 11> {
-        WE_CH3_W::new(self)
+    pub fn we_ch3(&mut self) -> WE_CH3_W<SGLREQSRCREG_SPEC> {
+        WE_CH3_W::new(self, 11)
     }
     #[doc = "Bit 12 - Source request write enable for channel 4"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch4(&mut self) -> WE_CH4_W<SGLREQSRCREG_SPEC, 12> {
-        WE_CH4_W::new(self)
+    pub fn we_ch4(&mut self) -> WE_CH4_W<SGLREQSRCREG_SPEC> {
+        WE_CH4_W::new(self, 12)
     }
     #[doc = "Bit 13 - Source request write enable for channel 5"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch5(&mut self) -> WE_CH5_W<SGLREQSRCREG_SPEC, 13> {
-        WE_CH5_W::new(self)
+    pub fn we_ch5(&mut self) -> WE_CH5_W<SGLREQSRCREG_SPEC> {
+        WE_CH5_W::new(self, 13)
     }
     #[doc = "Bit 14 - Source request write enable for channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch6(&mut self) -> WE_CH6_W<SGLREQSRCREG_SPEC, 14> {
-        WE_CH6_W::new(self)
+    pub fn we_ch6(&mut self) -> WE_CH6_W<SGLREQSRCREG_SPEC> {
+        WE_CH6_W::new(self, 14)
     }
     #[doc = "Bit 15 - Source request write enable for channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch7(&mut self) -> WE_CH7_W<SGLREQSRCREG_SPEC, 15> {
-        WE_CH7_W::new(self)
+    pub fn we_ch7(&mut self) -> WE_CH7_W<SGLREQSRCREG_SPEC> {
+        WE_CH7_W::new(self, 15)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

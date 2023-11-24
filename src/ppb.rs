@@ -2,187 +2,525 @@
 #[repr(C)]
 pub struct RegisterBlock {
     _reserved0: [u8; 0x08],
-    #[doc = "0x08 - Auxiliary Control Register"]
-    pub actlr: ACTLR,
+    actlr: ACTLR,
     _reserved1: [u8; 0x04],
-    #[doc = "0x10 - SysTick Control and Status Register"]
-    pub syst_csr: SYST_CSR,
-    #[doc = "0x14 - SysTick Reload Value Register"]
-    pub syst_rvr: SYST_RVR,
-    #[doc = "0x18 - SysTick Current Value Register"]
-    pub syst_cvr: SYST_CVR,
-    #[doc = "0x1c - SysTick Calibration Value Register r"]
-    pub syst_calib: SYST_CALIB,
+    syst_csr: SYST_CSR,
+    syst_rvr: SYST_RVR,
+    syst_cvr: SYST_CVR,
+    syst_calib: SYST_CALIB,
     _reserved5: [u8; 0xe0],
-    #[doc = "0x100 - Interrupt Set-enable Register 0"]
-    pub nvic_iser0: NVIC_ISER0,
-    #[doc = "0x104 - Interrupt Set-enable Register 1"]
-    pub nvic_iser1: NVIC_ISER1,
-    #[doc = "0x108 - Interrupt Set-enable Register 2"]
-    pub nvic_iser2: NVIC_ISER2,
-    #[doc = "0x10c - Interrupt Set-enable Register 3"]
-    pub nvic_iser3: NVIC_ISER3,
+    nvic_iser0: NVIC_ISER0,
+    nvic_iser1: NVIC_ISER1,
+    nvic_iser2: NVIC_ISER2,
+    nvic_iser3: NVIC_ISER3,
     _reserved9: [u8; 0x70],
-    #[doc = "0x180 - Interrupt Clear-enable Register 0"]
-    pub nvic_icer0: NVIC_ICER0,
-    #[doc = "0x184 - Interrupt Clear-enable Register 1"]
-    pub nvic_icer1: NVIC_ICER1,
-    #[doc = "0x188 - Interrupt Clear-enable Register 2"]
-    pub nvic_icer2: NVIC_ICER2,
-    #[doc = "0x18c - Interrupt Clear-enable Register 3"]
-    pub nvic_icer3: NVIC_ICER3,
+    nvic_icer0: NVIC_ICER0,
+    nvic_icer1: NVIC_ICER1,
+    nvic_icer2: NVIC_ICER2,
+    nvic_icer3: NVIC_ICER3,
     _reserved13: [u8; 0x70],
-    #[doc = "0x200 - Interrupt Set-pending Register 0"]
-    pub nvic_ispr0: NVIC_ISPR0,
-    #[doc = "0x204 - Interrupt Set-pending Register 1"]
-    pub nvic_ispr1: NVIC_ISPR1,
-    #[doc = "0x208 - Interrupt Set-pending Register 2"]
-    pub nvic_ispr2: NVIC_ISPR2,
-    #[doc = "0x20c - Interrupt Set-pending Register 3"]
-    pub nvic_ispr3: NVIC_ISPR3,
+    nvic_ispr0: NVIC_ISPR0,
+    nvic_ispr1: NVIC_ISPR1,
+    nvic_ispr2: NVIC_ISPR2,
+    nvic_ispr3: NVIC_ISPR3,
     _reserved17: [u8; 0x70],
-    #[doc = "0x280 - Interrupt Clear-pending Register 0"]
-    pub nvic_icpr0: NVIC_ICPR0,
-    #[doc = "0x284 - Interrupt Clear-pending Register 1"]
-    pub nvic_icpr1: NVIC_ICPR1,
-    #[doc = "0x288 - Interrupt Clear-pending Register 2"]
-    pub nvic_icpr2: NVIC_ICPR2,
-    #[doc = "0x28c - Interrupt Clear-pending Register 3"]
-    pub nvic_icpr3: NVIC_ICPR3,
+    nvic_icpr0: NVIC_ICPR0,
+    nvic_icpr1: NVIC_ICPR1,
+    nvic_icpr2: NVIC_ICPR2,
+    nvic_icpr3: NVIC_ICPR3,
     _reserved21: [u8; 0x70],
-    #[doc = "0x300 - Interrupt Active Bit Register 0"]
-    pub nvic_iabr0: NVIC_IABR0,
-    #[doc = "0x304 - Interrupt Active Bit Register 1"]
-    pub nvic_iabr1: NVIC_IABR1,
-    #[doc = "0x308 - Interrupt Active Bit Register 2"]
-    pub nvic_iabr2: NVIC_IABR2,
-    #[doc = "0x30c - Interrupt Active Bit Register 3"]
-    pub nvic_iabr3: NVIC_IABR3,
+    nvic_iabr0: NVIC_IABR0,
+    nvic_iabr1: NVIC_IABR1,
+    nvic_iabr2: NVIC_IABR2,
+    nvic_iabr3: NVIC_IABR3,
     _reserved25: [u8; 0xf0],
-    #[doc = "0x400 - Interrupt Priority Register 0"]
-    pub nvic_ipr0: NVIC_IPR0,
-    #[doc = "0x404 - Interrupt Priority Register 1"]
-    pub nvic_ipr1: NVIC_IPR1,
-    #[doc = "0x408 - Interrupt Priority Register 2"]
-    pub nvic_ipr2: NVIC_IPR2,
-    #[doc = "0x40c - Interrupt Priority Register 3"]
-    pub nvic_ipr3: NVIC_IPR3,
-    #[doc = "0x410 - Interrupt Priority Register 4"]
-    pub nvic_ipr4: NVIC_IPR4,
-    #[doc = "0x414 - Interrupt Priority Register 5"]
-    pub nvic_ipr5: NVIC_IPR5,
-    #[doc = "0x418 - Interrupt Priority Register 6"]
-    pub nvic_ipr6: NVIC_IPR6,
-    #[doc = "0x41c - Interrupt Priority Register 7"]
-    pub nvic_ipr7: NVIC_IPR7,
-    #[doc = "0x420 - Interrupt Priority Register 8"]
-    pub nvic_ipr8: NVIC_IPR8,
-    #[doc = "0x424 - Interrupt Priority Register 9"]
-    pub nvic_ipr9: NVIC_IPR9,
-    #[doc = "0x428 - Interrupt Priority Register 10"]
-    pub nvic_ipr10: NVIC_IPR10,
-    #[doc = "0x42c - Interrupt Priority Register 11"]
-    pub nvic_ipr11: NVIC_IPR11,
-    #[doc = "0x430 - Interrupt Priority Register 12"]
-    pub nvic_ipr12: NVIC_IPR12,
-    #[doc = "0x434 - Interrupt Priority Register 13"]
-    pub nvic_ipr13: NVIC_IPR13,
-    #[doc = "0x438 - Interrupt Priority Register 14"]
-    pub nvic_ipr14: NVIC_IPR14,
-    #[doc = "0x43c - Interrupt Priority Register 15"]
-    pub nvic_ipr15: NVIC_IPR15,
-    #[doc = "0x440 - Interrupt Priority Register 16"]
-    pub nvic_ipr16: NVIC_IPR16,
-    #[doc = "0x444 - Interrupt Priority Register 17"]
-    pub nvic_ipr17: NVIC_IPR17,
-    #[doc = "0x448 - Interrupt Priority Register 18"]
-    pub nvic_ipr18: NVIC_IPR18,
-    #[doc = "0x44c - Interrupt Priority Register 19"]
-    pub nvic_ipr19: NVIC_IPR19,
-    #[doc = "0x450 - Interrupt Priority Register 20"]
-    pub nvic_ipr20: NVIC_IPR20,
-    #[doc = "0x454 - Interrupt Priority Register 21"]
-    pub nvic_ipr21: NVIC_IPR21,
-    #[doc = "0x458 - Interrupt Priority Register 22"]
-    pub nvic_ipr22: NVIC_IPR22,
-    #[doc = "0x45c - Interrupt Priority Register 23"]
-    pub nvic_ipr23: NVIC_IPR23,
-    #[doc = "0x460 - Interrupt Priority Register 24"]
-    pub nvic_ipr24: NVIC_IPR24,
-    #[doc = "0x464 - Interrupt Priority Register 25"]
-    pub nvic_ipr25: NVIC_IPR25,
-    #[doc = "0x468 - Interrupt Priority Register 26"]
-    pub nvic_ipr26: NVIC_IPR26,
-    #[doc = "0x46c - Interrupt Priority Register 27"]
-    pub nvic_ipr27: NVIC_IPR27,
+    nvic_ipr0: NVIC_IPR0,
+    nvic_ipr1: NVIC_IPR1,
+    nvic_ipr2: NVIC_IPR2,
+    nvic_ipr3: NVIC_IPR3,
+    nvic_ipr4: NVIC_IPR4,
+    nvic_ipr5: NVIC_IPR5,
+    nvic_ipr6: NVIC_IPR6,
+    nvic_ipr7: NVIC_IPR7,
+    nvic_ipr8: NVIC_IPR8,
+    nvic_ipr9: NVIC_IPR9,
+    nvic_ipr10: NVIC_IPR10,
+    nvic_ipr11: NVIC_IPR11,
+    nvic_ipr12: NVIC_IPR12,
+    nvic_ipr13: NVIC_IPR13,
+    nvic_ipr14: NVIC_IPR14,
+    nvic_ipr15: NVIC_IPR15,
+    nvic_ipr16: NVIC_IPR16,
+    nvic_ipr17: NVIC_IPR17,
+    nvic_ipr18: NVIC_IPR18,
+    nvic_ipr19: NVIC_IPR19,
+    nvic_ipr20: NVIC_IPR20,
+    nvic_ipr21: NVIC_IPR21,
+    nvic_ipr22: NVIC_IPR22,
+    nvic_ipr23: NVIC_IPR23,
+    nvic_ipr24: NVIC_IPR24,
+    nvic_ipr25: NVIC_IPR25,
+    nvic_ipr26: NVIC_IPR26,
+    nvic_ipr27: NVIC_IPR27,
     _reserved53: [u8; 0x0890],
-    #[doc = "0xd00 - CPUID Base Register"]
-    pub cpuid: CPUID,
-    #[doc = "0xd04 - Interrupt Control and State Register"]
-    pub icsr: ICSR,
-    #[doc = "0xd08 - Vector Table Offset Register"]
-    pub vtor: VTOR,
-    #[doc = "0xd0c - Application Interrupt and Reset Control Register"]
-    pub aircr: AIRCR,
-    #[doc = "0xd10 - System Control Register"]
-    pub scr: SCR,
-    #[doc = "0xd14 - Configuration and Control Register"]
-    pub ccr: CCR,
-    #[doc = "0xd18 - System Handler Priority Register 1"]
-    pub shpr1: SHPR1,
-    #[doc = "0xd1c - System Handler Priority Register 2"]
-    pub shpr2: SHPR2,
-    #[doc = "0xd20 - System Handler Priority Register 3"]
-    pub shpr3: SHPR3,
-    #[doc = "0xd24 - System Handler Control and State Register"]
-    pub shcsr: SHCSR,
-    #[doc = "0xd28 - Configurable Fault Status Register"]
-    pub cfsr: CFSR,
-    #[doc = "0xd2c - HardFault Status Register"]
-    pub hfsr: HFSR,
+    cpuid: CPUID,
+    icsr: ICSR,
+    vtor: VTOR,
+    aircr: AIRCR,
+    scr: SCR,
+    ccr: CCR,
+    shpr1: SHPR1,
+    shpr2: SHPR2,
+    shpr3: SHPR3,
+    shcsr: SHCSR,
+    cfsr: CFSR,
+    hfsr: HFSR,
     _reserved65: [u8; 0x04],
-    #[doc = "0xd34 - MemManage Fault Address Register"]
-    pub mmfar: MMFAR,
-    #[doc = "0xd38 - BusFault Address Register"]
-    pub bfar: BFAR,
-    #[doc = "0xd3c - Auxiliary Fault Status Register"]
-    pub afsr: AFSR,
+    mmfar: MMFAR,
+    bfar: BFAR,
+    afsr: AFSR,
     _reserved68: [u8; 0x48],
-    #[doc = "0xd88 - Coprocessor Access Control Register"]
-    pub cpacr: CPACR,
+    cpacr: CPACR,
     _reserved69: [u8; 0x04],
-    #[doc = "0xd90 - MPU Type Register"]
-    pub mpu_type: MPU_TYPE,
-    #[doc = "0xd94 - MPU Control Register"]
-    pub mpu_ctrl: MPU_CTRL,
-    #[doc = "0xd98 - MPU Region Number Register"]
-    pub mpu_rnr: MPU_RNR,
-    #[doc = "0xd9c - MPU Region Base Address Register"]
-    pub mpu_rbar: MPU_RBAR,
-    #[doc = "0xda0 - MPU Region Attribute and Size Register"]
-    pub mpu_rasr: MPU_RASR,
-    #[doc = "0xda4 - MPU Region Base Address Register A1"]
-    pub mpu_rbar_a1: MPU_RBAR_A1,
-    #[doc = "0xda8 - MPU Region Attribute and Size Register A1"]
-    pub mpu_rasr_a1: MPU_RASR_A1,
-    #[doc = "0xdac - MPU Region Base Address Register A2"]
-    pub mpu_rbar_a2: MPU_RBAR_A2,
-    #[doc = "0xdb0 - MPU Region Attribute and Size Register A2"]
-    pub mpu_rasr_a2: MPU_RASR_A2,
-    #[doc = "0xdb4 - MPU Region Base Address Register A3"]
-    pub mpu_rbar_a3: MPU_RBAR_A3,
-    #[doc = "0xdb8 - MPU Region Attribute and Size Register A3"]
-    pub mpu_rasr_a3: MPU_RASR_A3,
+    mpu_type: MPU_TYPE,
+    mpu_ctrl: MPU_CTRL,
+    mpu_rnr: MPU_RNR,
+    mpu_rbar: MPU_RBAR,
+    mpu_rasr: MPU_RASR,
+    mpu_rbar_a1: MPU_RBAR_A1,
+    mpu_rasr_a1: MPU_RASR_A1,
+    mpu_rbar_a2: MPU_RBAR_A2,
+    mpu_rasr_a2: MPU_RASR_A2,
+    mpu_rbar_a3: MPU_RBAR_A3,
+    mpu_rasr_a3: MPU_RASR_A3,
     _reserved80: [u8; 0x0144],
-    #[doc = "0xf00 - Software Trigger Interrupt Register"]
-    pub stir: STIR,
+    stir: STIR,
     _reserved81: [u8; 0x30],
+    fpccr: FPCCR,
+    fpcar: FPCAR,
+    fpdscr: FPDSCR,
+}
+impl RegisterBlock {
+    #[doc = "0x08 - Auxiliary Control Register"]
+    #[inline(always)]
+    pub const fn actlr(&self) -> &ACTLR {
+        &self.actlr
+    }
+    #[doc = "0x10 - SysTick Control and Status Register"]
+    #[inline(always)]
+    pub const fn syst_csr(&self) -> &SYST_CSR {
+        &self.syst_csr
+    }
+    #[doc = "0x14 - SysTick Reload Value Register"]
+    #[inline(always)]
+    pub const fn syst_rvr(&self) -> &SYST_RVR {
+        &self.syst_rvr
+    }
+    #[doc = "0x18 - SysTick Current Value Register"]
+    #[inline(always)]
+    pub const fn syst_cvr(&self) -> &SYST_CVR {
+        &self.syst_cvr
+    }
+    #[doc = "0x1c - SysTick Calibration Value Register r"]
+    #[inline(always)]
+    pub const fn syst_calib(&self) -> &SYST_CALIB {
+        &self.syst_calib
+    }
+    #[doc = "0x100 - Interrupt Set-enable Register 0"]
+    #[inline(always)]
+    pub const fn nvic_iser0(&self) -> &NVIC_ISER0 {
+        &self.nvic_iser0
+    }
+    #[doc = "0x104 - Interrupt Set-enable Register 1"]
+    #[inline(always)]
+    pub const fn nvic_iser1(&self) -> &NVIC_ISER1 {
+        &self.nvic_iser1
+    }
+    #[doc = "0x108 - Interrupt Set-enable Register 2"]
+    #[inline(always)]
+    pub const fn nvic_iser2(&self) -> &NVIC_ISER2 {
+        &self.nvic_iser2
+    }
+    #[doc = "0x10c - Interrupt Set-enable Register 3"]
+    #[inline(always)]
+    pub const fn nvic_iser3(&self) -> &NVIC_ISER3 {
+        &self.nvic_iser3
+    }
+    #[doc = "0x180 - Interrupt Clear-enable Register 0"]
+    #[inline(always)]
+    pub const fn nvic_icer0(&self) -> &NVIC_ICER0 {
+        &self.nvic_icer0
+    }
+    #[doc = "0x184 - Interrupt Clear-enable Register 1"]
+    #[inline(always)]
+    pub const fn nvic_icer1(&self) -> &NVIC_ICER1 {
+        &self.nvic_icer1
+    }
+    #[doc = "0x188 - Interrupt Clear-enable Register 2"]
+    #[inline(always)]
+    pub const fn nvic_icer2(&self) -> &NVIC_ICER2 {
+        &self.nvic_icer2
+    }
+    #[doc = "0x18c - Interrupt Clear-enable Register 3"]
+    #[inline(always)]
+    pub const fn nvic_icer3(&self) -> &NVIC_ICER3 {
+        &self.nvic_icer3
+    }
+    #[doc = "0x200 - Interrupt Set-pending Register 0"]
+    #[inline(always)]
+    pub const fn nvic_ispr0(&self) -> &NVIC_ISPR0 {
+        &self.nvic_ispr0
+    }
+    #[doc = "0x204 - Interrupt Set-pending Register 1"]
+    #[inline(always)]
+    pub const fn nvic_ispr1(&self) -> &NVIC_ISPR1 {
+        &self.nvic_ispr1
+    }
+    #[doc = "0x208 - Interrupt Set-pending Register 2"]
+    #[inline(always)]
+    pub const fn nvic_ispr2(&self) -> &NVIC_ISPR2 {
+        &self.nvic_ispr2
+    }
+    #[doc = "0x20c - Interrupt Set-pending Register 3"]
+    #[inline(always)]
+    pub const fn nvic_ispr3(&self) -> &NVIC_ISPR3 {
+        &self.nvic_ispr3
+    }
+    #[doc = "0x280 - Interrupt Clear-pending Register 0"]
+    #[inline(always)]
+    pub const fn nvic_icpr0(&self) -> &NVIC_ICPR0 {
+        &self.nvic_icpr0
+    }
+    #[doc = "0x284 - Interrupt Clear-pending Register 1"]
+    #[inline(always)]
+    pub const fn nvic_icpr1(&self) -> &NVIC_ICPR1 {
+        &self.nvic_icpr1
+    }
+    #[doc = "0x288 - Interrupt Clear-pending Register 2"]
+    #[inline(always)]
+    pub const fn nvic_icpr2(&self) -> &NVIC_ICPR2 {
+        &self.nvic_icpr2
+    }
+    #[doc = "0x28c - Interrupt Clear-pending Register 3"]
+    #[inline(always)]
+    pub const fn nvic_icpr3(&self) -> &NVIC_ICPR3 {
+        &self.nvic_icpr3
+    }
+    #[doc = "0x300 - Interrupt Active Bit Register 0"]
+    #[inline(always)]
+    pub const fn nvic_iabr0(&self) -> &NVIC_IABR0 {
+        &self.nvic_iabr0
+    }
+    #[doc = "0x304 - Interrupt Active Bit Register 1"]
+    #[inline(always)]
+    pub const fn nvic_iabr1(&self) -> &NVIC_IABR1 {
+        &self.nvic_iabr1
+    }
+    #[doc = "0x308 - Interrupt Active Bit Register 2"]
+    #[inline(always)]
+    pub const fn nvic_iabr2(&self) -> &NVIC_IABR2 {
+        &self.nvic_iabr2
+    }
+    #[doc = "0x30c - Interrupt Active Bit Register 3"]
+    #[inline(always)]
+    pub const fn nvic_iabr3(&self) -> &NVIC_IABR3 {
+        &self.nvic_iabr3
+    }
+    #[doc = "0x400 - Interrupt Priority Register 0"]
+    #[inline(always)]
+    pub const fn nvic_ipr0(&self) -> &NVIC_IPR0 {
+        &self.nvic_ipr0
+    }
+    #[doc = "0x404 - Interrupt Priority Register 1"]
+    #[inline(always)]
+    pub const fn nvic_ipr1(&self) -> &NVIC_IPR1 {
+        &self.nvic_ipr1
+    }
+    #[doc = "0x408 - Interrupt Priority Register 2"]
+    #[inline(always)]
+    pub const fn nvic_ipr2(&self) -> &NVIC_IPR2 {
+        &self.nvic_ipr2
+    }
+    #[doc = "0x40c - Interrupt Priority Register 3"]
+    #[inline(always)]
+    pub const fn nvic_ipr3(&self) -> &NVIC_IPR3 {
+        &self.nvic_ipr3
+    }
+    #[doc = "0x410 - Interrupt Priority Register 4"]
+    #[inline(always)]
+    pub const fn nvic_ipr4(&self) -> &NVIC_IPR4 {
+        &self.nvic_ipr4
+    }
+    #[doc = "0x414 - Interrupt Priority Register 5"]
+    #[inline(always)]
+    pub const fn nvic_ipr5(&self) -> &NVIC_IPR5 {
+        &self.nvic_ipr5
+    }
+    #[doc = "0x418 - Interrupt Priority Register 6"]
+    #[inline(always)]
+    pub const fn nvic_ipr6(&self) -> &NVIC_IPR6 {
+        &self.nvic_ipr6
+    }
+    #[doc = "0x41c - Interrupt Priority Register 7"]
+    #[inline(always)]
+    pub const fn nvic_ipr7(&self) -> &NVIC_IPR7 {
+        &self.nvic_ipr7
+    }
+    #[doc = "0x420 - Interrupt Priority Register 8"]
+    #[inline(always)]
+    pub const fn nvic_ipr8(&self) -> &NVIC_IPR8 {
+        &self.nvic_ipr8
+    }
+    #[doc = "0x424 - Interrupt Priority Register 9"]
+    #[inline(always)]
+    pub const fn nvic_ipr9(&self) -> &NVIC_IPR9 {
+        &self.nvic_ipr9
+    }
+    #[doc = "0x428 - Interrupt Priority Register 10"]
+    #[inline(always)]
+    pub const fn nvic_ipr10(&self) -> &NVIC_IPR10 {
+        &self.nvic_ipr10
+    }
+    #[doc = "0x42c - Interrupt Priority Register 11"]
+    #[inline(always)]
+    pub const fn nvic_ipr11(&self) -> &NVIC_IPR11 {
+        &self.nvic_ipr11
+    }
+    #[doc = "0x430 - Interrupt Priority Register 12"]
+    #[inline(always)]
+    pub const fn nvic_ipr12(&self) -> &NVIC_IPR12 {
+        &self.nvic_ipr12
+    }
+    #[doc = "0x434 - Interrupt Priority Register 13"]
+    #[inline(always)]
+    pub const fn nvic_ipr13(&self) -> &NVIC_IPR13 {
+        &self.nvic_ipr13
+    }
+    #[doc = "0x438 - Interrupt Priority Register 14"]
+    #[inline(always)]
+    pub const fn nvic_ipr14(&self) -> &NVIC_IPR14 {
+        &self.nvic_ipr14
+    }
+    #[doc = "0x43c - Interrupt Priority Register 15"]
+    #[inline(always)]
+    pub const fn nvic_ipr15(&self) -> &NVIC_IPR15 {
+        &self.nvic_ipr15
+    }
+    #[doc = "0x440 - Interrupt Priority Register 16"]
+    #[inline(always)]
+    pub const fn nvic_ipr16(&self) -> &NVIC_IPR16 {
+        &self.nvic_ipr16
+    }
+    #[doc = "0x444 - Interrupt Priority Register 17"]
+    #[inline(always)]
+    pub const fn nvic_ipr17(&self) -> &NVIC_IPR17 {
+        &self.nvic_ipr17
+    }
+    #[doc = "0x448 - Interrupt Priority Register 18"]
+    #[inline(always)]
+    pub const fn nvic_ipr18(&self) -> &NVIC_IPR18 {
+        &self.nvic_ipr18
+    }
+    #[doc = "0x44c - Interrupt Priority Register 19"]
+    #[inline(always)]
+    pub const fn nvic_ipr19(&self) -> &NVIC_IPR19 {
+        &self.nvic_ipr19
+    }
+    #[doc = "0x450 - Interrupt Priority Register 20"]
+    #[inline(always)]
+    pub const fn nvic_ipr20(&self) -> &NVIC_IPR20 {
+        &self.nvic_ipr20
+    }
+    #[doc = "0x454 - Interrupt Priority Register 21"]
+    #[inline(always)]
+    pub const fn nvic_ipr21(&self) -> &NVIC_IPR21 {
+        &self.nvic_ipr21
+    }
+    #[doc = "0x458 - Interrupt Priority Register 22"]
+    #[inline(always)]
+    pub const fn nvic_ipr22(&self) -> &NVIC_IPR22 {
+        &self.nvic_ipr22
+    }
+    #[doc = "0x45c - Interrupt Priority Register 23"]
+    #[inline(always)]
+    pub const fn nvic_ipr23(&self) -> &NVIC_IPR23 {
+        &self.nvic_ipr23
+    }
+    #[doc = "0x460 - Interrupt Priority Register 24"]
+    #[inline(always)]
+    pub const fn nvic_ipr24(&self) -> &NVIC_IPR24 {
+        &self.nvic_ipr24
+    }
+    #[doc = "0x464 - Interrupt Priority Register 25"]
+    #[inline(always)]
+    pub const fn nvic_ipr25(&self) -> &NVIC_IPR25 {
+        &self.nvic_ipr25
+    }
+    #[doc = "0x468 - Interrupt Priority Register 26"]
+    #[inline(always)]
+    pub const fn nvic_ipr26(&self) -> &NVIC_IPR26 {
+        &self.nvic_ipr26
+    }
+    #[doc = "0x46c - Interrupt Priority Register 27"]
+    #[inline(always)]
+    pub const fn nvic_ipr27(&self) -> &NVIC_IPR27 {
+        &self.nvic_ipr27
+    }
+    #[doc = "0xd00 - CPUID Base Register"]
+    #[inline(always)]
+    pub const fn cpuid(&self) -> &CPUID {
+        &self.cpuid
+    }
+    #[doc = "0xd04 - Interrupt Control and State Register"]
+    #[inline(always)]
+    pub const fn icsr(&self) -> &ICSR {
+        &self.icsr
+    }
+    #[doc = "0xd08 - Vector Table Offset Register"]
+    #[inline(always)]
+    pub const fn vtor(&self) -> &VTOR {
+        &self.vtor
+    }
+    #[doc = "0xd0c - Application Interrupt and Reset Control Register"]
+    #[inline(always)]
+    pub const fn aircr(&self) -> &AIRCR {
+        &self.aircr
+    }
+    #[doc = "0xd10 - System Control Register"]
+    #[inline(always)]
+    pub const fn scr(&self) -> &SCR {
+        &self.scr
+    }
+    #[doc = "0xd14 - Configuration and Control Register"]
+    #[inline(always)]
+    pub const fn ccr(&self) -> &CCR {
+        &self.ccr
+    }
+    #[doc = "0xd18 - System Handler Priority Register 1"]
+    #[inline(always)]
+    pub const fn shpr1(&self) -> &SHPR1 {
+        &self.shpr1
+    }
+    #[doc = "0xd1c - System Handler Priority Register 2"]
+    #[inline(always)]
+    pub const fn shpr2(&self) -> &SHPR2 {
+        &self.shpr2
+    }
+    #[doc = "0xd20 - System Handler Priority Register 3"]
+    #[inline(always)]
+    pub const fn shpr3(&self) -> &SHPR3 {
+        &self.shpr3
+    }
+    #[doc = "0xd24 - System Handler Control and State Register"]
+    #[inline(always)]
+    pub const fn shcsr(&self) -> &SHCSR {
+        &self.shcsr
+    }
+    #[doc = "0xd28 - Configurable Fault Status Register"]
+    #[inline(always)]
+    pub const fn cfsr(&self) -> &CFSR {
+        &self.cfsr
+    }
+    #[doc = "0xd2c - HardFault Status Register"]
+    #[inline(always)]
+    pub const fn hfsr(&self) -> &HFSR {
+        &self.hfsr
+    }
+    #[doc = "0xd34 - MemManage Fault Address Register"]
+    #[inline(always)]
+    pub const fn mmfar(&self) -> &MMFAR {
+        &self.mmfar
+    }
+    #[doc = "0xd38 - BusFault Address Register"]
+    #[inline(always)]
+    pub const fn bfar(&self) -> &BFAR {
+        &self.bfar
+    }
+    #[doc = "0xd3c - Auxiliary Fault Status Register"]
+    #[inline(always)]
+    pub const fn afsr(&self) -> &AFSR {
+        &self.afsr
+    }
+    #[doc = "0xd88 - Coprocessor Access Control Register"]
+    #[inline(always)]
+    pub const fn cpacr(&self) -> &CPACR {
+        &self.cpacr
+    }
+    #[doc = "0xd90 - MPU Type Register"]
+    #[inline(always)]
+    pub const fn mpu_type(&self) -> &MPU_TYPE {
+        &self.mpu_type
+    }
+    #[doc = "0xd94 - MPU Control Register"]
+    #[inline(always)]
+    pub const fn mpu_ctrl(&self) -> &MPU_CTRL {
+        &self.mpu_ctrl
+    }
+    #[doc = "0xd98 - MPU Region Number Register"]
+    #[inline(always)]
+    pub const fn mpu_rnr(&self) -> &MPU_RNR {
+        &self.mpu_rnr
+    }
+    #[doc = "0xd9c - MPU Region Base Address Register"]
+    #[inline(always)]
+    pub const fn mpu_rbar(&self) -> &MPU_RBAR {
+        &self.mpu_rbar
+    }
+    #[doc = "0xda0 - MPU Region Attribute and Size Register"]
+    #[inline(always)]
+    pub const fn mpu_rasr(&self) -> &MPU_RASR {
+        &self.mpu_rasr
+    }
+    #[doc = "0xda4 - MPU Region Base Address Register A1"]
+    #[inline(always)]
+    pub const fn mpu_rbar_a1(&self) -> &MPU_RBAR_A1 {
+        &self.mpu_rbar_a1
+    }
+    #[doc = "0xda8 - MPU Region Attribute and Size Register A1"]
+    #[inline(always)]
+    pub const fn mpu_rasr_a1(&self) -> &MPU_RASR_A1 {
+        &self.mpu_rasr_a1
+    }
+    #[doc = "0xdac - MPU Region Base Address Register A2"]
+    #[inline(always)]
+    pub const fn mpu_rbar_a2(&self) -> &MPU_RBAR_A2 {
+        &self.mpu_rbar_a2
+    }
+    #[doc = "0xdb0 - MPU Region Attribute and Size Register A2"]
+    #[inline(always)]
+    pub const fn mpu_rasr_a2(&self) -> &MPU_RASR_A2 {
+        &self.mpu_rasr_a2
+    }
+    #[doc = "0xdb4 - MPU Region Base Address Register A3"]
+    #[inline(always)]
+    pub const fn mpu_rbar_a3(&self) -> &MPU_RBAR_A3 {
+        &self.mpu_rbar_a3
+    }
+    #[doc = "0xdb8 - MPU Region Attribute and Size Register A3"]
+    #[inline(always)]
+    pub const fn mpu_rasr_a3(&self) -> &MPU_RASR_A3 {
+        &self.mpu_rasr_a3
+    }
+    #[doc = "0xf00 - Software Trigger Interrupt Register"]
+    #[inline(always)]
+    pub const fn stir(&self) -> &STIR {
+        &self.stir
+    }
     #[doc = "0xf34 - Floating-point Context Control Register"]
-    pub fpccr: FPCCR,
+    #[inline(always)]
+    pub const fn fpccr(&self) -> &FPCCR {
+        &self.fpccr
+    }
     #[doc = "0xf38 - Floating-point Context Address Register"]
-    pub fpcar: FPCAR,
+    #[inline(always)]
+    pub const fn fpcar(&self) -> &FPCAR {
+        &self.fpcar
+    }
     #[doc = "0xf3c - Floating-point Default Status Control Register"]
-    pub fpdscr: FPDSCR,
+    #[inline(always)]
+    pub const fn fpdscr(&self) -> &FPDSCR {
+        &self.fpdscr
+    }
 }
 #[doc = "ACTLR (rw) register accessor: Auxiliary Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`actlr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`actlr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@actlr`]
 module"]

@@ -68,8 +68,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Operating Mode"]
-pub type MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, MODE_A>;
-impl<'a, REG, const O: u8> MODE_W<'a, REG, O>
+pub type MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, MODE_A>;
+impl<'a, REG> MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -160,8 +160,8 @@ and DOUT\\[3:0\\]."]
     }
 }
 #[doc = "Field `HPCEN` writer - Hardware Port Control Enable"]
-pub type HPCEN_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, HPCEN_A>;
-impl<'a, REG, const O: u8> HPCEN_W<'a, REG, O>
+pub type HPCEN_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, HPCEN_A>;
+impl<'a, REG> HPCEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -238,8 +238,8 @@ impl PM_R {
     }
 }
 #[doc = "Field `PM` writer - Parity Mode"]
-pub type PM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, PM_A>;
-impl<'a, REG, const O: u8> PM_W<'a, REG, O>
+pub type PM_W<'a, REG> = crate::FieldWriter<'a, REG, 2, PM_A>;
+impl<'a, REG> PM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -297,8 +297,8 @@ impl RSIEN_R {
     }
 }
 #[doc = "Field `RSIEN` writer - Receiver Start Interrupt Enable"]
-pub type RSIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RSIEN_A>;
-impl<'a, REG, const O: u8> RSIEN_W<'a, REG, O>
+pub type RSIEN_W<'a, REG> = crate::BitWriter<'a, REG, RSIEN_A>;
+impl<'a, REG> RSIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -350,8 +350,8 @@ impl DLIEN_R {
     }
 }
 #[doc = "Field `DLIEN` writer - Data Lost Interrupt Enable"]
-pub type DLIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DLIEN_A>;
-impl<'a, REG, const O: u8> DLIEN_W<'a, REG, O>
+pub type DLIEN_W<'a, REG> = crate::BitWriter<'a, REG, DLIEN_A>;
+impl<'a, REG> DLIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -403,8 +403,8 @@ impl TSIEN_R {
     }
 }
 #[doc = "Field `TSIEN` writer - Transmit Shift Interrupt Enable"]
-pub type TSIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSIEN_A>;
-impl<'a, REG, const O: u8> TSIEN_W<'a, REG, O>
+pub type TSIEN_W<'a, REG> = crate::BitWriter<'a, REG, TSIEN_A>;
+impl<'a, REG> TSIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -456,8 +456,8 @@ impl TBIEN_R {
     }
 }
 #[doc = "Field `TBIEN` writer - Transmit Buffer Interrupt Enable"]
-pub type TBIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TBIEN_A>;
-impl<'a, REG, const O: u8> TBIEN_W<'a, REG, O>
+pub type TBIEN_W<'a, REG> = crate::BitWriter<'a, REG, TBIEN_A>;
+impl<'a, REG> TBIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -509,8 +509,8 @@ impl RIEN_R {
     }
 }
 #[doc = "Field `RIEN` writer - Receive Interrupt Enable"]
-pub type RIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RIEN_A>;
-impl<'a, REG, const O: u8> RIEN_W<'a, REG, O>
+pub type RIEN_W<'a, REG> = crate::BitWriter<'a, REG, RIEN_A>;
+impl<'a, REG> RIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -562,8 +562,8 @@ impl AIEN_R {
     }
 }
 #[doc = "Field `AIEN` writer - Alternative Receive Interrupt Enable"]
-pub type AIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AIEN_A>;
-impl<'a, REG, const O: u8> AIEN_W<'a, REG, O>
+pub type AIEN_W<'a, REG> = crate::BitWriter<'a, REG, AIEN_A>;
+impl<'a, REG> AIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -615,8 +615,8 @@ impl BRGIEN_R {
     }
 }
 #[doc = "Field `BRGIEN` writer - Baud Rate Generator Interrupt Enable"]
-pub type BRGIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BRGIEN_A>;
-impl<'a, REG, const O: u8> BRGIEN_W<'a, REG, O>
+pub type BRGIEN_W<'a, REG> = crate::BitWriter<'a, REG, BRGIEN_A>;
+impl<'a, REG> BRGIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -687,62 +687,62 @@ impl W {
     #[doc = "Bits 0:3 - Operating Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<CCR_SPEC, 0> {
-        MODE_W::new(self)
+    pub fn mode(&mut self) -> MODE_W<CCR_SPEC> {
+        MODE_W::new(self, 0)
     }
     #[doc = "Bits 6:7 - Hardware Port Control Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hpcen(&mut self) -> HPCEN_W<CCR_SPEC, 6> {
-        HPCEN_W::new(self)
+    pub fn hpcen(&mut self) -> HPCEN_W<CCR_SPEC> {
+        HPCEN_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Parity Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn pm(&mut self) -> PM_W<CCR_SPEC, 8> {
-        PM_W::new(self)
+    pub fn pm(&mut self) -> PM_W<CCR_SPEC> {
+        PM_W::new(self, 8)
     }
     #[doc = "Bit 10 - Receiver Start Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rsien(&mut self) -> RSIEN_W<CCR_SPEC, 10> {
-        RSIEN_W::new(self)
+    pub fn rsien(&mut self) -> RSIEN_W<CCR_SPEC> {
+        RSIEN_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data Lost Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dlien(&mut self) -> DLIEN_W<CCR_SPEC, 11> {
-        DLIEN_W::new(self)
+    pub fn dlien(&mut self) -> DLIEN_W<CCR_SPEC> {
+        DLIEN_W::new(self, 11)
     }
     #[doc = "Bit 12 - Transmit Shift Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tsien(&mut self) -> TSIEN_W<CCR_SPEC, 12> {
-        TSIEN_W::new(self)
+    pub fn tsien(&mut self) -> TSIEN_W<CCR_SPEC> {
+        TSIEN_W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit Buffer Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tbien(&mut self) -> TBIEN_W<CCR_SPEC, 13> {
-        TBIEN_W::new(self)
+    pub fn tbien(&mut self) -> TBIEN_W<CCR_SPEC> {
+        TBIEN_W::new(self, 13)
     }
     #[doc = "Bit 14 - Receive Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rien(&mut self) -> RIEN_W<CCR_SPEC, 14> {
-        RIEN_W::new(self)
+    pub fn rien(&mut self) -> RIEN_W<CCR_SPEC> {
+        RIEN_W::new(self, 14)
     }
     #[doc = "Bit 15 - Alternative Receive Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn aien(&mut self) -> AIEN_W<CCR_SPEC, 15> {
-        AIEN_W::new(self)
+    pub fn aien(&mut self) -> AIEN_W<CCR_SPEC> {
+        AIEN_W::new(self, 15)
     }
     #[doc = "Bit 16 - Baud Rate Generator Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn brgien(&mut self) -> BRGIEN_W<CCR_SPEC, 16> {
-        BRGIEN_W::new(self)
+    pub fn brgien(&mut self) -> BRGIEN_W<CCR_SPEC> {
+        BRGIEN_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

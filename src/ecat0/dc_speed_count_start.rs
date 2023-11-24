@@ -5,7 +5,7 @@ pub type W = crate::W<DC_SPEED_COUNT_START_SPEC>;
 #[doc = "Field `COUNT_START` reader - Bandwidth for adjustment of local copy of System Time"]
 pub type COUNT_START_R = crate::FieldReader<u16>;
 #[doc = "Field `COUNT_START` writer - Bandwidth for adjustment of local copy of System Time"]
-pub type COUNT_START_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 15, O, u16>;
+pub type COUNT_START_W<'a, REG> = crate::FieldWriter<'a, REG, 15, u16>;
 impl R {
     #[doc = "Bits 0:14 - Bandwidth for adjustment of local copy of System Time"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:14 - Bandwidth for adjustment of local copy of System Time"]
     #[inline(always)]
     #[must_use]
-    pub fn count_start(&mut self) -> COUNT_START_W<DC_SPEED_COUNT_START_SPEC, 0> {
-        COUNT_START_W::new(self)
+    pub fn count_start(&mut self) -> COUNT_START_W<DC_SPEED_COUNT_START_SPEC> {
+        COUNT_START_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

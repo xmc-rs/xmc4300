@@ -7,7 +7,7 @@ pub type TSCTRVALR_R = crate::FieldReader<u16>;
 #[doc = "Field `TSCTRVAL` reader - TS-Counter Value"]
 pub type TSCTRVAL_R = crate::FieldReader<u16>;
 #[doc = "Field `TSCTRVAL` writer - TS-Counter Value"]
-pub type TSCTRVAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type TSCTRVAL_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Shadow TS-Counter (Read)"]
     #[inline(always)]
@@ -24,8 +24,8 @@ impl W {
     #[doc = "Bits 16:31 - TS-Counter Value"]
     #[inline(always)]
     #[must_use]
-    pub fn tsctrval(&mut self) -> TSCTRVAL_W<TSVAL_SPEC, 16> {
-        TSCTRVAL_W::new(self)
+    pub fn tsctrval(&mut self) -> TSCTRVAL_W<TSVAL_SPEC> {
+        TSCTRVAL_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

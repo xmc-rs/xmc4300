@@ -295,8 +295,8 @@ impl SMI_2_R {
     }
 }
 #[doc = "Field `SMI_2` writer - SyncManager interrupt"]
-pub type SMI_2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_2_A>;
-impl<'a, REG, const O: u8> SMI_2_W<'a, REG, O>
+pub type SMI_2_W<'a, REG> = crate::BitWriter<'a, REG, SMI_2_A>;
+impl<'a, REG> SMI_2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -348,8 +348,8 @@ impl SMI_3_R {
     }
 }
 #[doc = "Field `SMI_3` writer - SyncManager interrupt"]
-pub type SMI_3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_3_A>;
-impl<'a, REG, const O: u8> SMI_3_W<'a, REG, O>
+pub type SMI_3_W<'a, REG> = crate::BitWriter<'a, REG, SMI_3_A>;
+impl<'a, REG> SMI_3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -401,8 +401,8 @@ impl SMI_4_R {
     }
 }
 #[doc = "Field `SMI_4` writer - SyncManager interrupt"]
-pub type SMI_4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_4_A>;
-impl<'a, REG, const O: u8> SMI_4_W<'a, REG, O>
+pub type SMI_4_W<'a, REG> = crate::BitWriter<'a, REG, SMI_4_A>;
+impl<'a, REG> SMI_4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -454,8 +454,8 @@ impl SMI_5_R {
     }
 }
 #[doc = "Field `SMI_5` writer - SyncManager interrupt"]
-pub type SMI_5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_5_A>;
-impl<'a, REG, const O: u8> SMI_5_W<'a, REG, O>
+pub type SMI_5_W<'a, REG> = crate::BitWriter<'a, REG, SMI_5_A>;
+impl<'a, REG> SMI_5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -507,8 +507,8 @@ impl SMI_6_R {
     }
 }
 #[doc = "Field `SMI_6` writer - SyncManager interrupt"]
-pub type SMI_6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_6_A>;
-impl<'a, REG, const O: u8> SMI_6_W<'a, REG, O>
+pub type SMI_6_W<'a, REG> = crate::BitWriter<'a, REG, SMI_6_A>;
+impl<'a, REG> SMI_6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -560,8 +560,8 @@ impl SMI_7_R {
     }
 }
 #[doc = "Field `SMI_7` writer - SyncManager interrupt"]
-pub type SMI_7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_7_A>;
-impl<'a, REG, const O: u8> SMI_7_W<'a, REG, O>
+pub type SMI_7_W<'a, REG> = crate::BitWriter<'a, REG, SMI_7_A>;
+impl<'a, REG> SMI_7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -613,8 +613,8 @@ impl SMI_8_R {
     }
 }
 #[doc = "Field `SMI_8` writer - SyncManager interrupt"]
-pub type SMI_8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_8_A>;
-impl<'a, REG, const O: u8> SMI_8_W<'a, REG, O>
+pub type SMI_8_W<'a, REG> = crate::BitWriter<'a, REG, SMI_8_A>;
+impl<'a, REG> SMI_8_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -666,8 +666,8 @@ impl SMI_9_R {
     }
 }
 #[doc = "Field `SMI_9` writer - SyncManager interrupt"]
-pub type SMI_9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_9_A>;
-impl<'a, REG, const O: u8> SMI_9_W<'a, REG, O>
+pub type SMI_9_W<'a, REG> = crate::BitWriter<'a, REG, SMI_9_A>;
+impl<'a, REG> SMI_9_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -719,8 +719,8 @@ impl SMI_10_R {
     }
 }
 #[doc = "Field `SMI_10` writer - SyncManager interrupt"]
-pub type SMI_10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_10_A>;
-impl<'a, REG, const O: u8> SMI_10_W<'a, REG, O>
+pub type SMI_10_W<'a, REG> = crate::BitWriter<'a, REG, SMI_10_A>;
+impl<'a, REG> SMI_10_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -772,8 +772,8 @@ impl SMI_11_R {
     }
 }
 #[doc = "Field `SMI_11` writer - SyncManager interrupt"]
-pub type SMI_11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_11_A>;
-impl<'a, REG, const O: u8> SMI_11_W<'a, REG, O>
+pub type SMI_11_W<'a, REG> = crate::BitWriter<'a, REG, SMI_11_A>;
+impl<'a, REG> SMI_11_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -825,8 +825,8 @@ impl SMI_12_R {
     }
 }
 #[doc = "Field `SMI_12` writer - SyncManager interrupt"]
-pub type SMI_12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_12_A>;
-impl<'a, REG, const O: u8> SMI_12_W<'a, REG, O>
+pub type SMI_12_W<'a, REG> = crate::BitWriter<'a, REG, SMI_12_A>;
+impl<'a, REG> SMI_12_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -878,8 +878,8 @@ impl SMI_13_R {
     }
 }
 #[doc = "Field `SMI_13` writer - SyncManager interrupt"]
-pub type SMI_13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_13_A>;
-impl<'a, REG, const O: u8> SMI_13_W<'a, REG, O>
+pub type SMI_13_W<'a, REG> = crate::BitWriter<'a, REG, SMI_13_A>;
+impl<'a, REG> SMI_13_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -931,8 +931,8 @@ impl SMI_14_R {
     }
 }
 #[doc = "Field `SMI_14` writer - SyncManager interrupt"]
-pub type SMI_14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_14_A>;
-impl<'a, REG, const O: u8> SMI_14_W<'a, REG, O>
+pub type SMI_14_W<'a, REG> = crate::BitWriter<'a, REG, SMI_14_A>;
+impl<'a, REG> SMI_14_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1104,80 +1104,80 @@ impl W {
     #[doc = "Bit 10 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_2(&mut self) -> SMI_2_W<AL_EVENT_REQ_SPEC, 10> {
-        SMI_2_W::new(self)
+    pub fn smi_2(&mut self) -> SMI_2_W<AL_EVENT_REQ_SPEC> {
+        SMI_2_W::new(self, 10)
     }
     #[doc = "Bit 11 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_3(&mut self) -> SMI_3_W<AL_EVENT_REQ_SPEC, 11> {
-        SMI_3_W::new(self)
+    pub fn smi_3(&mut self) -> SMI_3_W<AL_EVENT_REQ_SPEC> {
+        SMI_3_W::new(self, 11)
     }
     #[doc = "Bit 12 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_4(&mut self) -> SMI_4_W<AL_EVENT_REQ_SPEC, 12> {
-        SMI_4_W::new(self)
+    pub fn smi_4(&mut self) -> SMI_4_W<AL_EVENT_REQ_SPEC> {
+        SMI_4_W::new(self, 12)
     }
     #[doc = "Bit 13 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_5(&mut self) -> SMI_5_W<AL_EVENT_REQ_SPEC, 13> {
-        SMI_5_W::new(self)
+    pub fn smi_5(&mut self) -> SMI_5_W<AL_EVENT_REQ_SPEC> {
+        SMI_5_W::new(self, 13)
     }
     #[doc = "Bit 14 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_6(&mut self) -> SMI_6_W<AL_EVENT_REQ_SPEC, 14> {
-        SMI_6_W::new(self)
+    pub fn smi_6(&mut self) -> SMI_6_W<AL_EVENT_REQ_SPEC> {
+        SMI_6_W::new(self, 14)
     }
     #[doc = "Bit 15 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_7(&mut self) -> SMI_7_W<AL_EVENT_REQ_SPEC, 15> {
-        SMI_7_W::new(self)
+    pub fn smi_7(&mut self) -> SMI_7_W<AL_EVENT_REQ_SPEC> {
+        SMI_7_W::new(self, 15)
     }
     #[doc = "Bit 16 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_8(&mut self) -> SMI_8_W<AL_EVENT_REQ_SPEC, 16> {
-        SMI_8_W::new(self)
+    pub fn smi_8(&mut self) -> SMI_8_W<AL_EVENT_REQ_SPEC> {
+        SMI_8_W::new(self, 16)
     }
     #[doc = "Bit 17 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_9(&mut self) -> SMI_9_W<AL_EVENT_REQ_SPEC, 17> {
-        SMI_9_W::new(self)
+    pub fn smi_9(&mut self) -> SMI_9_W<AL_EVENT_REQ_SPEC> {
+        SMI_9_W::new(self, 17)
     }
     #[doc = "Bit 18 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_10(&mut self) -> SMI_10_W<AL_EVENT_REQ_SPEC, 18> {
-        SMI_10_W::new(self)
+    pub fn smi_10(&mut self) -> SMI_10_W<AL_EVENT_REQ_SPEC> {
+        SMI_10_W::new(self, 18)
     }
     #[doc = "Bit 19 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_11(&mut self) -> SMI_11_W<AL_EVENT_REQ_SPEC, 19> {
-        SMI_11_W::new(self)
+    pub fn smi_11(&mut self) -> SMI_11_W<AL_EVENT_REQ_SPEC> {
+        SMI_11_W::new(self, 19)
     }
     #[doc = "Bit 20 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_12(&mut self) -> SMI_12_W<AL_EVENT_REQ_SPEC, 20> {
-        SMI_12_W::new(self)
+    pub fn smi_12(&mut self) -> SMI_12_W<AL_EVENT_REQ_SPEC> {
+        SMI_12_W::new(self, 20)
     }
     #[doc = "Bit 21 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_13(&mut self) -> SMI_13_W<AL_EVENT_REQ_SPEC, 21> {
-        SMI_13_W::new(self)
+    pub fn smi_13(&mut self) -> SMI_13_W<AL_EVENT_REQ_SPEC> {
+        SMI_13_W::new(self, 21)
     }
     #[doc = "Bit 22 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_14(&mut self) -> SMI_14_W<AL_EVENT_REQ_SPEC, 22> {
-        SMI_14_W::new(self)
+    pub fn smi_14(&mut self) -> SMI_14_W<AL_EVENT_REQ_SPEC> {
+        SMI_14_W::new(self, 22)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

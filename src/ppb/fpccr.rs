@@ -39,8 +39,8 @@ impl LSPACT_R {
     }
 }
 #[doc = "Field `LSPACT` writer - Lazy State Preservation Active"]
-pub type LSPACT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LSPACT_A>;
-impl<'a, REG, const O: u8> LSPACT_W<'a, REG, O>
+pub type LSPACT_W<'a, REG> = crate::BitWriter<'a, REG, LSPACT_A>;
+impl<'a, REG> LSPACT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl USER_R {
     }
 }
 #[doc = "Field `USER` writer - User allocated Stack Frame"]
-pub type USER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USER_A>;
-impl<'a, REG, const O: u8> USER_W<'a, REG, O>
+pub type USER_W<'a, REG> = crate::BitWriter<'a, REG, USER_A>;
+impl<'a, REG> USER_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl THREAD_R {
     }
 }
 #[doc = "Field `THREAD` writer - Thread Mode allocated Stack Frame"]
-pub type THREAD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, THREAD_A>;
-impl<'a, REG, const O: u8> THREAD_W<'a, REG, O>
+pub type THREAD_W<'a, REG> = crate::BitWriter<'a, REG, THREAD_A>;
+impl<'a, REG> THREAD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl HFRDY_R {
     }
 }
 #[doc = "Field `HFRDY` writer - HardFault Ready"]
-pub type HFRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HFRDY_A>;
-impl<'a, REG, const O: u8> HFRDY_W<'a, REG, O>
+pub type HFRDY_W<'a, REG> = crate::BitWriter<'a, REG, HFRDY_A>;
+impl<'a, REG> HFRDY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl MMRDY_R {
     }
 }
 #[doc = "Field `MMRDY` writer - MemManage Ready"]
-pub type MMRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MMRDY_A>;
-impl<'a, REG, const O: u8> MMRDY_W<'a, REG, O>
+pub type MMRDY_W<'a, REG> = crate::BitWriter<'a, REG, MMRDY_A>;
+impl<'a, REG> MMRDY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl BFRDY_R {
     }
 }
 #[doc = "Field `BFRDY` writer - BusFault Ready"]
-pub type BFRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFRDY_A>;
-impl<'a, REG, const O: u8> BFRDY_W<'a, REG, O>
+pub type BFRDY_W<'a, REG> = crate::BitWriter<'a, REG, BFRDY_A>;
+impl<'a, REG> BFRDY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl MONRDY_R {
     }
 }
 #[doc = "Field `MONRDY` writer - Monitor Ready"]
-pub type MONRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MONRDY_A>;
-impl<'a, REG, const O: u8> MONRDY_W<'a, REG, O>
+pub type MONRDY_W<'a, REG> = crate::BitWriter<'a, REG, MONRDY_A>;
+impl<'a, REG> MONRDY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl LSPEN_R {
     }
 }
 #[doc = "Field `LSPEN` writer - Lazy State Preservation Enabled"]
-pub type LSPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LSPEN_A>;
-impl<'a, REG, const O: u8> LSPEN_W<'a, REG, O>
+pub type LSPEN_W<'a, REG> = crate::BitWriter<'a, REG, LSPEN_A>;
+impl<'a, REG> LSPEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl ASPEN_R {
     }
 }
 #[doc = "Field `ASPEN` writer - Automatic State Preservation"]
-pub type ASPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASPEN_A>;
-impl<'a, REG, const O: u8> ASPEN_W<'a, REG, O>
+pub type ASPEN_W<'a, REG> = crate::BitWriter<'a, REG, ASPEN_A>;
+impl<'a, REG> ASPEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -530,56 +530,56 @@ impl W {
     #[doc = "Bit 0 - Lazy State Preservation Active"]
     #[inline(always)]
     #[must_use]
-    pub fn lspact(&mut self) -> LSPACT_W<FPCCR_SPEC, 0> {
-        LSPACT_W::new(self)
+    pub fn lspact(&mut self) -> LSPACT_W<FPCCR_SPEC> {
+        LSPACT_W::new(self, 0)
     }
     #[doc = "Bit 1 - User allocated Stack Frame"]
     #[inline(always)]
     #[must_use]
-    pub fn user(&mut self) -> USER_W<FPCCR_SPEC, 1> {
-        USER_W::new(self)
+    pub fn user(&mut self) -> USER_W<FPCCR_SPEC> {
+        USER_W::new(self, 1)
     }
     #[doc = "Bit 3 - Thread Mode allocated Stack Frame"]
     #[inline(always)]
     #[must_use]
-    pub fn thread(&mut self) -> THREAD_W<FPCCR_SPEC, 3> {
-        THREAD_W::new(self)
+    pub fn thread(&mut self) -> THREAD_W<FPCCR_SPEC> {
+        THREAD_W::new(self, 3)
     }
     #[doc = "Bit 4 - HardFault Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn hfrdy(&mut self) -> HFRDY_W<FPCCR_SPEC, 4> {
-        HFRDY_W::new(self)
+    pub fn hfrdy(&mut self) -> HFRDY_W<FPCCR_SPEC> {
+        HFRDY_W::new(self, 4)
     }
     #[doc = "Bit 5 - MemManage Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn mmrdy(&mut self) -> MMRDY_W<FPCCR_SPEC, 5> {
-        MMRDY_W::new(self)
+    pub fn mmrdy(&mut self) -> MMRDY_W<FPCCR_SPEC> {
+        MMRDY_W::new(self, 5)
     }
     #[doc = "Bit 6 - BusFault Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn bfrdy(&mut self) -> BFRDY_W<FPCCR_SPEC, 6> {
-        BFRDY_W::new(self)
+    pub fn bfrdy(&mut self) -> BFRDY_W<FPCCR_SPEC> {
+        BFRDY_W::new(self, 6)
     }
     #[doc = "Bit 8 - Monitor Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn monrdy(&mut self) -> MONRDY_W<FPCCR_SPEC, 8> {
-        MONRDY_W::new(self)
+    pub fn monrdy(&mut self) -> MONRDY_W<FPCCR_SPEC> {
+        MONRDY_W::new(self, 8)
     }
     #[doc = "Bit 30 - Lazy State Preservation Enabled"]
     #[inline(always)]
     #[must_use]
-    pub fn lspen(&mut self) -> LSPEN_W<FPCCR_SPEC, 30> {
-        LSPEN_W::new(self)
+    pub fn lspen(&mut self) -> LSPEN_W<FPCCR_SPEC> {
+        LSPEN_W::new(self, 30)
     }
     #[doc = "Bit 31 - Automatic State Preservation"]
     #[inline(always)]
     #[must_use]
-    pub fn aspen(&mut self) -> ASPEN_W<FPCCR_SPEC, 31> {
-        ASPEN_W::new(self)
+    pub fn aspen(&mut self) -> ASPEN_W<FPCCR_SPEC> {
+        ASPEN_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

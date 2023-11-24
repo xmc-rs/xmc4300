@@ -5,7 +5,7 @@ pub type W = crate::W<PSC_SPEC>;
 #[doc = "Field `PSIV` reader - Prescaler Initial Value"]
 pub type PSIV_R = crate::FieldReader;
 #[doc = "Field `PSIV` writer - Prescaler Initial Value"]
-pub type PSIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PSIV_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3 - Prescaler Initial Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:3 - Prescaler Initial Value"]
     #[inline(always)]
     #[must_use]
-    pub fn psiv(&mut self) -> PSIV_W<PSC_SPEC, 0> {
-        PSIV_W::new(self)
+    pub fn psiv(&mut self) -> PSIV_W<PSC_SPEC> {
+        PSIV_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

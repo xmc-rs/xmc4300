@@ -5,7 +5,7 @@ pub type W = crate::W<AL_STATUS_CODE_SPEC>;
 #[doc = "Field `AL_S_CODE` reader - AL Status Code"]
 pub type AL_S_CODE_R = crate::FieldReader<u16>;
 #[doc = "Field `AL_S_CODE` writer - AL Status Code"]
-pub type AL_S_CODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type AL_S_CODE_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - AL Status Code"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - AL Status Code"]
     #[inline(always)]
     #[must_use]
-    pub fn al_s_code(&mut self) -> AL_S_CODE_W<AL_STATUS_CODE_SPEC, 0> {
-        AL_S_CODE_W::new(self)
+    pub fn al_s_code(&mut self) -> AL_S_CODE_W<AL_STATUS_CODE_SPEC> {
+        AL_S_CODE_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

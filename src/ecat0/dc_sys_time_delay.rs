@@ -5,7 +5,7 @@ pub type W = crate::W<DC_SYS_TIME_DELAY_SPEC>;
 #[doc = "Field `CLK_DELAY` reader - Delay between Reference Clock and the ESC"]
 pub type CLK_DELAY_R = crate::FieldReader<u32>;
 #[doc = "Field `CLK_DELAY` writer - Delay between Reference Clock and the ESC"]
-pub type CLK_DELAY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type CLK_DELAY_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Delay between Reference Clock and the ESC"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Delay between Reference Clock and the ESC"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_delay(&mut self) -> CLK_DELAY_W<DC_SYS_TIME_DELAY_SPEC, 0> {
-        CLK_DELAY_W::new(self)
+    pub fn clk_delay(&mut self) -> CLK_DELAY_W<DC_SYS_TIME_DELAY_SPEC> {
+        CLK_DELAY_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

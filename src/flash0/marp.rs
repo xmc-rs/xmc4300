@@ -52,8 +52,8 @@ impl MARGIN_R {
     }
 }
 #[doc = "Field `MARGIN` writer - PFLASH Margin Selection"]
-pub type MARGIN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, MARGIN_A>;
-impl<'a, REG, const O: u8> MARGIN_W<'a, REG, O>
+pub type MARGIN_W<'a, REG> = crate::FieldWriter<'a, REG, 4, MARGIN_A>;
+impl<'a, REG> MARGIN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -111,8 +111,8 @@ impl TRAPDIS_R {
     }
 }
 #[doc = "Field `TRAPDIS` writer - PFLASH Double-Bit Error Trap Disable"]
-pub type TRAPDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TRAPDIS_A>;
-impl<'a, REG, const O: u8> TRAPDIS_W<'a, REG, O>
+pub type TRAPDIS_W<'a, REG> = crate::BitWriter<'a, REG, TRAPDIS_A>;
+impl<'a, REG> TRAPDIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -143,14 +143,14 @@ impl W {
     #[doc = "Bits 0:3 - PFLASH Margin Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn margin(&mut self) -> MARGIN_W<MARP_SPEC, 0> {
-        MARGIN_W::new(self)
+    pub fn margin(&mut self) -> MARGIN_W<MARP_SPEC> {
+        MARGIN_W::new(self, 0)
     }
     #[doc = "Bit 15 - PFLASH Double-Bit Error Trap Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn trapdis(&mut self) -> TRAPDIS_W<MARP_SPEC, 15> {
-        TRAPDIS_W::new(self)
+    pub fn trapdis(&mut self) -> TRAPDIS_W<MARP_SPEC> {
+        TRAPDIS_W::new(self, 15)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

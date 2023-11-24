@@ -5,11 +5,11 @@ pub type W = crate::W<ALIAS_SPEC>;
 #[doc = "Field `ALIAS0` reader - Alias Value for CH0 Conversion Requests"]
 pub type ALIAS0_R = crate::FieldReader;
 #[doc = "Field `ALIAS0` writer - Alias Value for CH0 Conversion Requests"]
-pub type ALIAS0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type ALIAS0_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `ALIAS1` reader - Alias Value for CH1 Conversion Requests"]
 pub type ALIAS1_R = crate::FieldReader;
 #[doc = "Field `ALIAS1` writer - Alias Value for CH1 Conversion Requests"]
-pub type ALIAS1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type ALIAS1_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bits 0:4 - Alias Value for CH0 Conversion Requests"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:4 - Alias Value for CH0 Conversion Requests"]
     #[inline(always)]
     #[must_use]
-    pub fn alias0(&mut self) -> ALIAS0_W<ALIAS_SPEC, 0> {
-        ALIAS0_W::new(self)
+    pub fn alias0(&mut self) -> ALIAS0_W<ALIAS_SPEC> {
+        ALIAS0_W::new(self, 0)
     }
     #[doc = "Bits 8:12 - Alias Value for CH1 Conversion Requests"]
     #[inline(always)]
     #[must_use]
-    pub fn alias1(&mut self) -> ALIAS1_W<ALIAS_SPEC, 8> {
-        ALIAS1_W::new(self)
+    pub fn alias1(&mut self) -> ALIAS1_W<ALIAS_SPEC> {
+        ALIAS1_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

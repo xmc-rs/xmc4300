@@ -5,7 +5,7 @@ pub type W = crate::W<MPU_RBAR_A2_SPEC>;
 #[doc = "Field `REGION` reader - MPU region field"]
 pub type REGION_R = crate::FieldReader;
 #[doc = "Field `REGION` writer - MPU region field"]
-pub type REGION_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type REGION_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `VALID` reader - MPU Region Number valid bit"]
 pub type VALID_R = crate::BitReader<VALID_A>;
 #[doc = "MPU Region Number valid bit\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl VALID_R {
     }
 }
 #[doc = "Field `VALID` writer - MPU Region Number valid bit"]
-pub type VALID_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VALID_A>;
-impl<'a, REG, const O: u8> VALID_W<'a, REG, O>
+pub type VALID_W<'a, REG> = crate::BitWriter<'a, REG, VALID_A>;
+impl<'a, REG> VALID_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -62,7 +62,7 @@ where
 #[doc = "Field `ADDR` reader - Region base address field"]
 pub type ADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `ADDR` writer - Region base address field"]
-pub type ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 23, O, u32>;
+pub type ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     #[doc = "Bits 0:3 - MPU region field"]
     #[inline(always)]
@@ -84,20 +84,20 @@ impl W {
     #[doc = "Bits 0:3 - MPU region field"]
     #[inline(always)]
     #[must_use]
-    pub fn region(&mut self) -> REGION_W<MPU_RBAR_A2_SPEC, 0> {
-        REGION_W::new(self)
+    pub fn region(&mut self) -> REGION_W<MPU_RBAR_A2_SPEC> {
+        REGION_W::new(self, 0)
     }
     #[doc = "Bit 4 - MPU Region Number valid bit"]
     #[inline(always)]
     #[must_use]
-    pub fn valid(&mut self) -> VALID_W<MPU_RBAR_A2_SPEC, 4> {
-        VALID_W::new(self)
+    pub fn valid(&mut self) -> VALID_W<MPU_RBAR_A2_SPEC> {
+        VALID_W::new(self, 4)
     }
     #[doc = "Bits 9:31 - Region base address field"]
     #[inline(always)]
     #[must_use]
-    pub fn addr(&mut self) -> ADDR_W<MPU_RBAR_A2_SPEC, 9> {
-        ADDR_W::new(self)
+    pub fn addr(&mut self) -> ADDR_W<MPU_RBAR_A2_SPEC> {
+        ADDR_W::new(self, 9)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

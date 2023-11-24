@@ -5,19 +5,19 @@ pub type W = crate::W<TIM0_SPEC>;
 #[doc = "Field `SE` reader - Seconds Time Value"]
 pub type SE_R = crate::FieldReader;
 #[doc = "Field `SE` writer - Seconds Time Value"]
-pub type SE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type SE_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `MI` reader - Minutes Time Value"]
 pub type MI_R = crate::FieldReader;
 #[doc = "Field `MI` writer - Minutes Time Value"]
-pub type MI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type MI_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `HO` reader - Hours Time Value"]
 pub type HO_R = crate::FieldReader;
 #[doc = "Field `HO` writer - Hours Time Value"]
-pub type HO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type HO_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `DA` reader - Days Time Value"]
 pub type DA_R = crate::FieldReader;
 #[doc = "Field `DA` writer - Days Time Value"]
-pub type DA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type DA_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bits 0:5 - Seconds Time Value"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:5 - Seconds Time Value"]
     #[inline(always)]
     #[must_use]
-    pub fn se(&mut self) -> SE_W<TIM0_SPEC, 0> {
-        SE_W::new(self)
+    pub fn se(&mut self) -> SE_W<TIM0_SPEC> {
+        SE_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - Minutes Time Value"]
     #[inline(always)]
     #[must_use]
-    pub fn mi(&mut self) -> MI_W<TIM0_SPEC, 8> {
-        MI_W::new(self)
+    pub fn mi(&mut self) -> MI_W<TIM0_SPEC> {
+        MI_W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Hours Time Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ho(&mut self) -> HO_W<TIM0_SPEC, 16> {
-        HO_W::new(self)
+    pub fn ho(&mut self) -> HO_W<TIM0_SPEC> {
+        HO_W::new(self, 16)
     }
     #[doc = "Bits 24:28 - Days Time Value"]
     #[inline(always)]
     #[must_use]
-    pub fn da(&mut self) -> DA_W<TIM0_SPEC, 24> {
-        DA_W::new(self)
+    pub fn da(&mut self) -> DA_W<TIM0_SPEC> {
+        DA_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

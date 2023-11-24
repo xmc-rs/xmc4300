@@ -60,8 +60,8 @@ impl ENGT_R {
     }
 }
 #[doc = "Field `ENGT` writer - Enable Gate"]
-pub type ENGT_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ENGT_A>;
-impl<'a, REG, const O: u8> ENGT_W<'a, REG, O>
+pub type ENGT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ENGT_A>;
+impl<'a, REG> ENGT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -124,8 +124,8 @@ impl ENTR_R {
     }
 }
 #[doc = "Field `ENTR` writer - Enable External Trigger"]
-pub type ENTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENTR_A>;
-impl<'a, REG, const O: u8> ENTR_W<'a, REG, O>
+pub type ENTR_W<'a, REG> = crate::BitWriter<'a, REG, ENTR_A>;
+impl<'a, REG> ENTR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -177,8 +177,8 @@ impl ENSI_R {
     }
 }
 #[doc = "Field `ENSI` writer - Enable Source Interrupt"]
-pub type ENSI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENSI_A>;
-impl<'a, REG, const O: u8> ENSI_W<'a, REG, O>
+pub type ENSI_W<'a, REG> = crate::BitWriter<'a, REG, ENSI_A>;
+impl<'a, REG> ENSI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -230,8 +230,8 @@ impl SCAN_R {
     }
 }
 #[doc = "Field `SCAN` writer - Autoscan Enable"]
-pub type SCAN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SCAN_A>;
-impl<'a, REG, const O: u8> SCAN_W<'a, REG, O>
+pub type SCAN_W<'a, REG> = crate::BitWriter<'a, REG, SCAN_A>;
+impl<'a, REG> SCAN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -283,8 +283,8 @@ impl LDM_R {
     }
 }
 #[doc = "Field `LDM` writer - Autoscan Source Load Event Mode"]
-pub type LDM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LDM_A>;
-impl<'a, REG, const O: u8> LDM_W<'a, REG, O>
+pub type LDM_W<'a, REG> = crate::BitWriter<'a, REG, LDM_A>;
+impl<'a, REG> LDM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -350,8 +350,8 @@ impl From<CLRPND_AW> for bool {
     }
 }
 #[doc = "Field `CLRPND` writer - Clear Pending Bits"]
-pub type CLRPND_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CLRPND_AW>;
-impl<'a, REG, const O: u8> CLRPND_W<'a, REG, O>
+pub type CLRPND_W<'a, REG> = crate::BitWriter<'a, REG, CLRPND_AW>;
+impl<'a, REG> CLRPND_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -381,8 +381,8 @@ impl From<LDEV_AW> for bool {
     }
 }
 #[doc = "Field `LDEV` writer - Generate Load Event"]
-pub type LDEV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LDEV_AW>;
-impl<'a, REG, const O: u8> LDEV_W<'a, REG, O>
+pub type LDEV_W<'a, REG> = crate::BitWriter<'a, REG, LDEV_AW>;
+impl<'a, REG> LDEV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -434,8 +434,8 @@ impl RPTDIS_R {
     }
 }
 #[doc = "Field `RPTDIS` writer - Repeat Disable"]
-pub type RPTDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RPTDIS_A>;
-impl<'a, REG, const O: u8> RPTDIS_W<'a, REG, O>
+pub type RPTDIS_W<'a, REG> = crate::BitWriter<'a, REG, RPTDIS_A>;
+impl<'a, REG> RPTDIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -491,50 +491,50 @@ impl W {
     #[doc = "Bits 0:1 - Enable Gate"]
     #[inline(always)]
     #[must_use]
-    pub fn engt(&mut self) -> ENGT_W<BRSMR_SPEC, 0> {
-        ENGT_W::new(self)
+    pub fn engt(&mut self) -> ENGT_W<BRSMR_SPEC> {
+        ENGT_W::new(self, 0)
     }
     #[doc = "Bit 2 - Enable External Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn entr(&mut self) -> ENTR_W<BRSMR_SPEC, 2> {
-        ENTR_W::new(self)
+    pub fn entr(&mut self) -> ENTR_W<BRSMR_SPEC> {
+        ENTR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable Source Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn ensi(&mut self) -> ENSI_W<BRSMR_SPEC, 3> {
-        ENSI_W::new(self)
+    pub fn ensi(&mut self) -> ENSI_W<BRSMR_SPEC> {
+        ENSI_W::new(self, 3)
     }
     #[doc = "Bit 4 - Autoscan Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn scan(&mut self) -> SCAN_W<BRSMR_SPEC, 4> {
-        SCAN_W::new(self)
+    pub fn scan(&mut self) -> SCAN_W<BRSMR_SPEC> {
+        SCAN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Autoscan Source Load Event Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ldm(&mut self) -> LDM_W<BRSMR_SPEC, 5> {
-        LDM_W::new(self)
+    pub fn ldm(&mut self) -> LDM_W<BRSMR_SPEC> {
+        LDM_W::new(self, 5)
     }
     #[doc = "Bit 8 - Clear Pending Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn clrpnd(&mut self) -> CLRPND_W<BRSMR_SPEC, 8> {
-        CLRPND_W::new(self)
+    pub fn clrpnd(&mut self) -> CLRPND_W<BRSMR_SPEC> {
+        CLRPND_W::new(self, 8)
     }
     #[doc = "Bit 9 - Generate Load Event"]
     #[inline(always)]
     #[must_use]
-    pub fn ldev(&mut self) -> LDEV_W<BRSMR_SPEC, 9> {
-        LDEV_W::new(self)
+    pub fn ldev(&mut self) -> LDEV_W<BRSMR_SPEC> {
+        LDEV_W::new(self, 9)
     }
     #[doc = "Bit 16 - Repeat Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn rptdis(&mut self) -> RPTDIS_W<BRSMR_SPEC, 16> {
-        RPTDIS_W::new(self)
+    pub fn rptdis(&mut self) -> RPTDIS_W<BRSMR_SPEC> {
+        RPTDIS_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

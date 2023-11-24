@@ -36,8 +36,8 @@ impl DEV_SPD_R {
     }
 }
 #[doc = "Field `DevSpd` writer - Device Speed"]
-pub type DEV_SPD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DEV_SPD_A>;
-impl<'a, REG, const O: u8> DEV_SPD_W<'a, REG, O>
+pub type DEV_SPD_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DEV_SPD_A>;
+impl<'a, REG> DEV_SPD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -85,8 +85,8 @@ impl NZSTS_OUTHSHK_R {
     }
 }
 #[doc = "Field `NZStsOUTHShk` writer - Non-Zero-Length Status OUT Handshake"]
-pub type NZSTS_OUTHSHK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NZSTS_OUTHSHK_A>;
-impl<'a, REG, const O: u8> NZSTS_OUTHSHK_W<'a, REG, O>
+pub type NZSTS_OUTHSHK_W<'a, REG> = crate::BitWriter<'a, REG, NZSTS_OUTHSHK_A>;
+impl<'a, REG> NZSTS_OUTHSHK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -104,7 +104,7 @@ where
 #[doc = "Field `DevAddr` reader - Device Address"]
 pub type DEV_ADDR_R = crate::FieldReader;
 #[doc = "Field `DevAddr` writer - Device Address"]
-pub type DEV_ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type DEV_ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `PerFrInt` reader - Periodic Frame Interval"]
 pub type PER_FR_INT_R = crate::FieldReader<PER_FR_INT_A>;
 #[doc = "Periodic Frame Interval\n\nValue on reset: 0"]
@@ -163,8 +163,8 @@ impl PER_FR_INT_R {
     }
 }
 #[doc = "Field `PerFrInt` writer - Periodic Frame Interval"]
-pub type PER_FR_INT_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PER_FR_INT_A>;
-impl<'a, REG, const O: u8> PER_FR_INT_W<'a, REG, O>
+pub type PER_FR_INT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PER_FR_INT_A>;
+impl<'a, REG> PER_FR_INT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -193,7 +193,7 @@ where
 #[doc = "Field `DescDMA` reader - Enable Scatter/Gather DMA in Device mode."]
 pub type DESC_DMA_R = crate::BitReader;
 #[doc = "Field `DescDMA` writer - Enable Scatter/Gather DMA in Device mode."]
-pub type DESC_DMA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DESC_DMA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PerSchIntvl` reader - Periodic Scheduling Interval"]
 pub type PER_SCH_INTVL_R = crate::FieldReader<PER_SCH_INTVL_A>;
 #[doc = "Periodic Scheduling Interval\n\nValue on reset: 0"]
@@ -244,8 +244,8 @@ impl PER_SCH_INTVL_R {
     }
 }
 #[doc = "Field `PerSchIntvl` writer - Periodic Scheduling Interval"]
-pub type PER_SCH_INTVL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, PER_SCH_INTVL_A>;
-impl<'a, REG, const O: u8> PER_SCH_INTVL_W<'a, REG, O>
+pub type PER_SCH_INTVL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, PER_SCH_INTVL_A>;
+impl<'a, REG> PER_SCH_INTVL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -302,38 +302,38 @@ impl W {
     #[doc = "Bits 0:1 - Device Speed"]
     #[inline(always)]
     #[must_use]
-    pub fn dev_spd(&mut self) -> DEV_SPD_W<DCFG_SPEC, 0> {
-        DEV_SPD_W::new(self)
+    pub fn dev_spd(&mut self) -> DEV_SPD_W<DCFG_SPEC> {
+        DEV_SPD_W::new(self, 0)
     }
     #[doc = "Bit 2 - Non-Zero-Length Status OUT Handshake"]
     #[inline(always)]
     #[must_use]
-    pub fn nzsts_outhshk(&mut self) -> NZSTS_OUTHSHK_W<DCFG_SPEC, 2> {
-        NZSTS_OUTHSHK_W::new(self)
+    pub fn nzsts_outhshk(&mut self) -> NZSTS_OUTHSHK_W<DCFG_SPEC> {
+        NZSTS_OUTHSHK_W::new(self, 2)
     }
     #[doc = "Bits 4:10 - Device Address"]
     #[inline(always)]
     #[must_use]
-    pub fn dev_addr(&mut self) -> DEV_ADDR_W<DCFG_SPEC, 4> {
-        DEV_ADDR_W::new(self)
+    pub fn dev_addr(&mut self) -> DEV_ADDR_W<DCFG_SPEC> {
+        DEV_ADDR_W::new(self, 4)
     }
     #[doc = "Bits 11:12 - Periodic Frame Interval"]
     #[inline(always)]
     #[must_use]
-    pub fn per_fr_int(&mut self) -> PER_FR_INT_W<DCFG_SPEC, 11> {
-        PER_FR_INT_W::new(self)
+    pub fn per_fr_int(&mut self) -> PER_FR_INT_W<DCFG_SPEC> {
+        PER_FR_INT_W::new(self, 11)
     }
     #[doc = "Bit 23 - Enable Scatter/Gather DMA in Device mode."]
     #[inline(always)]
     #[must_use]
-    pub fn desc_dma(&mut self) -> DESC_DMA_W<DCFG_SPEC, 23> {
-        DESC_DMA_W::new(self)
+    pub fn desc_dma(&mut self) -> DESC_DMA_W<DCFG_SPEC> {
+        DESC_DMA_W::new(self, 23)
     }
     #[doc = "Bits 24:25 - Periodic Scheduling Interval"]
     #[inline(always)]
     #[must_use]
-    pub fn per_sch_intvl(&mut self) -> PER_SCH_INTVL_W<DCFG_SPEC, 24> {
-        PER_SCH_INTVL_W::new(self)
+    pub fn per_sch_intvl(&mut self) -> PER_SCH_INTVL_W<DCFG_SPEC> {
+        PER_SCH_INTVL_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

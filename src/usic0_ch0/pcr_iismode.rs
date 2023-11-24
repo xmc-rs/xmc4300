@@ -39,8 +39,8 @@ impl WAGEN_R {
     }
 }
 #[doc = "Field `WAGEN` writer - WA Generation Enable"]
-pub type WAGEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WAGEN_A>;
-impl<'a, REG, const O: u8> WAGEN_W<'a, REG, O>
+pub type WAGEN_W<'a, REG> = crate::BitWriter<'a, REG, WAGEN_A>;
+impl<'a, REG> WAGEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl DTEN_R {
     }
 }
 #[doc = "Field `DTEN` writer - Data Transfers Enable"]
-pub type DTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DTEN_A>;
-impl<'a, REG, const O: u8> DTEN_W<'a, REG, O>
+pub type DTEN_W<'a, REG> = crate::BitWriter<'a, REG, DTEN_A>;
+impl<'a, REG> DTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl SELINV_R {
     }
 }
 #[doc = "Field `SELINV` writer - Select Inversion"]
-pub type SELINV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELINV_A>;
-impl<'a, REG, const O: u8> SELINV_W<'a, REG, O>
+pub type SELINV_W<'a, REG> = crate::BitWriter<'a, REG, SELINV_A>;
+impl<'a, REG> SELINV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl WAFEIEN_R {
     }
 }
 #[doc = "Field `WAFEIEN` writer - WA Falling Edge Interrupt Enable"]
-pub type WAFEIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WAFEIEN_A>;
-impl<'a, REG, const O: u8> WAFEIEN_W<'a, REG, O>
+pub type WAFEIEN_W<'a, REG> = crate::BitWriter<'a, REG, WAFEIEN_A>;
+impl<'a, REG> WAFEIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl WAREIEN_R {
     }
 }
 #[doc = "Field `WAREIEN` writer - WA Rising Edge Interrupt Enable"]
-pub type WAREIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WAREIEN_A>;
-impl<'a, REG, const O: u8> WAREIEN_W<'a, REG, O>
+pub type WAREIEN_W<'a, REG> = crate::BitWriter<'a, REG, WAREIEN_A>;
+impl<'a, REG> WAREIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl ENDIEN_R {
     }
 }
 #[doc = "Field `ENDIEN` writer - END Interrupt Enable"]
-pub type ENDIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENDIEN_A>;
-impl<'a, REG, const O: u8> ENDIEN_W<'a, REG, O>
+pub type ENDIEN_W<'a, REG> = crate::BitWriter<'a, REG, ENDIEN_A>;
+impl<'a, REG> ENDIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl DX2TIEN_R {
     }
 }
 #[doc = "Field `DX2TIEN` writer - DX2T Interrupt Enable"]
-pub type DX2TIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DX2TIEN_A>;
-impl<'a, REG, const O: u8> DX2TIEN_W<'a, REG, O>
+pub type DX2TIEN_W<'a, REG> = crate::BitWriter<'a, REG, DX2TIEN_A>;
+impl<'a, REG> DX2TIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -376,7 +376,7 @@ where
 #[doc = "Field `TDEL` reader - Transfer Delay"]
 pub type TDEL_R = crate::FieldReader;
 #[doc = "Field `TDEL` writer - Transfer Delay"]
-pub type TDEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type TDEL_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `MCLK` reader - Master Clock Enable"]
 pub type MCLK_R = crate::BitReader<MCLK_A>;
 #[doc = "Master Clock Enable\n\nValue on reset: 0"]
@@ -414,8 +414,8 @@ impl MCLK_R {
     }
 }
 #[doc = "Field `MCLK` writer - Master Clock Enable"]
-pub type MCLK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MCLK_A>;
-impl<'a, REG, const O: u8> MCLK_W<'a, REG, O>
+pub type MCLK_W<'a, REG> = crate::BitWriter<'a, REG, MCLK_A>;
+impl<'a, REG> MCLK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -481,56 +481,56 @@ impl W {
     #[doc = "Bit 0 - WA Generation Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wagen(&mut self) -> WAGEN_W<PCR_IISMODE_SPEC, 0> {
-        WAGEN_W::new(self)
+    pub fn wagen(&mut self) -> WAGEN_W<PCR_IISMODE_SPEC> {
+        WAGEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Data Transfers Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dten(&mut self) -> DTEN_W<PCR_IISMODE_SPEC, 1> {
-        DTEN_W::new(self)
+    pub fn dten(&mut self) -> DTEN_W<PCR_IISMODE_SPEC> {
+        DTEN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Select Inversion"]
     #[inline(always)]
     #[must_use]
-    pub fn selinv(&mut self) -> SELINV_W<PCR_IISMODE_SPEC, 2> {
-        SELINV_W::new(self)
+    pub fn selinv(&mut self) -> SELINV_W<PCR_IISMODE_SPEC> {
+        SELINV_W::new(self, 2)
     }
     #[doc = "Bit 4 - WA Falling Edge Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wafeien(&mut self) -> WAFEIEN_W<PCR_IISMODE_SPEC, 4> {
-        WAFEIEN_W::new(self)
+    pub fn wafeien(&mut self) -> WAFEIEN_W<PCR_IISMODE_SPEC> {
+        WAFEIEN_W::new(self, 4)
     }
     #[doc = "Bit 5 - WA Rising Edge Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wareien(&mut self) -> WAREIEN_W<PCR_IISMODE_SPEC, 5> {
-        WAREIEN_W::new(self)
+    pub fn wareien(&mut self) -> WAREIEN_W<PCR_IISMODE_SPEC> {
+        WAREIEN_W::new(self, 5)
     }
     #[doc = "Bit 6 - END Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn endien(&mut self) -> ENDIEN_W<PCR_IISMODE_SPEC, 6> {
-        ENDIEN_W::new(self)
+    pub fn endien(&mut self) -> ENDIEN_W<PCR_IISMODE_SPEC> {
+        ENDIEN_W::new(self, 6)
     }
     #[doc = "Bit 15 - DX2T Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dx2tien(&mut self) -> DX2TIEN_W<PCR_IISMODE_SPEC, 15> {
-        DX2TIEN_W::new(self)
+    pub fn dx2tien(&mut self) -> DX2TIEN_W<PCR_IISMODE_SPEC> {
+        DX2TIEN_W::new(self, 15)
     }
     #[doc = "Bits 16:21 - Transfer Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn tdel(&mut self) -> TDEL_W<PCR_IISMODE_SPEC, 16> {
-        TDEL_W::new(self)
+    pub fn tdel(&mut self) -> TDEL_W<PCR_IISMODE_SPEC> {
+        TDEL_W::new(self, 16)
     }
     #[doc = "Bit 31 - Master Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mclk(&mut self) -> MCLK_W<PCR_IISMODE_SPEC, 31> {
-        MCLK_W::new(self)
+    pub fn mclk(&mut self) -> MCLK_W<PCR_IISMODE_SPEC> {
+        MCLK_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

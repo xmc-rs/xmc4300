@@ -39,8 +39,8 @@ impl PWD_R {
     }
 }
 #[doc = "Field `PWD` writer - Turn OFF the fOSI Clock Source"]
-pub type PWD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PWD_A>;
-impl<'a, REG, const O: u8> PWD_W<'a, REG, O>
+pub type PWD_W<'a, REG> = crate::BitWriter<'a, REG, PWD_A>;
+impl<'a, REG> PWD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,8 +66,8 @@ impl W {
     #[doc = "Bit 0 - Turn OFF the fOSI Clock Source"]
     #[inline(always)]
     #[must_use]
-    pub fn pwd(&mut self) -> PWD_W<OSCSICTRL_SPEC, 0> {
-        PWD_W::new(self)
+    pub fn pwd(&mut self) -> PWD_W<OSCSICTRL_SPEC> {
+        PWD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -15,8 +15,8 @@ impl From<FE_CMD_TIMEOUT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CMD_TIMEOUT_ERR` writer - Force Event for Command Timeout Error"]
-pub type FE_CMD_TIMEOUT_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_CMD_TIMEOUT_ERR_AW>;
-impl<'a, REG, const O: u8> FE_CMD_TIMEOUT_ERR_W<'a, REG, O>
+pub type FE_CMD_TIMEOUT_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_CMD_TIMEOUT_ERR_AW>;
+impl<'a, REG> FE_CMD_TIMEOUT_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<FE_CMD_CRC_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CMD_CRC_ERR` writer - Force Event for Command CRC Error"]
-pub type FE_CMD_CRC_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_CMD_CRC_ERR_AW>;
-impl<'a, REG, const O: u8> FE_CMD_CRC_ERR_W<'a, REG, O>
+pub type FE_CMD_CRC_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_CMD_CRC_ERR_AW>;
+impl<'a, REG> FE_CMD_CRC_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<FE_CMD_END_BIT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CMD_END_BIT_ERR` writer - Force Event for Command End Bit Error"]
-pub type FE_CMD_END_BIT_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_CMD_END_BIT_ERR_AW>;
-impl<'a, REG, const O: u8> FE_CMD_END_BIT_ERR_W<'a, REG, O>
+pub type FE_CMD_END_BIT_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_CMD_END_BIT_ERR_AW>;
+impl<'a, REG> FE_CMD_END_BIT_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<FE_CMD_IND_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CMD_IND_ERR` writer - Force Event for Command Index Error"]
-pub type FE_CMD_IND_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_CMD_IND_ERR_AW>;
-impl<'a, REG, const O: u8> FE_CMD_IND_ERR_W<'a, REG, O>
+pub type FE_CMD_IND_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_CMD_IND_ERR_AW>;
+impl<'a, REG> FE_CMD_IND_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<FE_DATA_TIMEOUT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_DATA_TIMEOUT_ERR` writer - Force Event for Data Timeout Error"]
-pub type FE_DATA_TIMEOUT_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_DATA_TIMEOUT_ERR_AW>;
-impl<'a, REG, const O: u8> FE_DATA_TIMEOUT_ERR_W<'a, REG, O>
+pub type FE_DATA_TIMEOUT_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_DATA_TIMEOUT_ERR_AW>;
+impl<'a, REG> FE_DATA_TIMEOUT_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<FE_DATA_CRC_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_DATA_CRC_ERR` writer - Force Event for Data CRC Error"]
-pub type FE_DATA_CRC_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_DATA_CRC_ERR_AW>;
-impl<'a, REG, const O: u8> FE_DATA_CRC_ERR_W<'a, REG, O>
+pub type FE_DATA_CRC_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_DATA_CRC_ERR_AW>;
+impl<'a, REG> FE_DATA_CRC_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -201,8 +201,8 @@ impl From<FE_DATA_END_BIT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_DATA_END_BIT_ERR` writer - Force Event for Data End Bit Error"]
-pub type FE_DATA_END_BIT_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_DATA_END_BIT_ERR_AW>;
-impl<'a, REG, const O: u8> FE_DATA_END_BIT_ERR_W<'a, REG, O>
+pub type FE_DATA_END_BIT_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_DATA_END_BIT_ERR_AW>;
+impl<'a, REG> FE_DATA_END_BIT_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -232,8 +232,8 @@ impl From<FE_CURRENT_LIMIT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CURRENT_LIMIT_ERR` writer - Force Event for Current Limit Error"]
-pub type FE_CURRENT_LIMIT_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_CURRENT_LIMIT_ERR_AW>;
-impl<'a, REG, const O: u8> FE_CURRENT_LIMIT_ERR_W<'a, REG, O>
+pub type FE_CURRENT_LIMIT_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_CURRENT_LIMIT_ERR_AW>;
+impl<'a, REG> FE_CURRENT_LIMIT_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -263,8 +263,8 @@ impl From<FE_ACMD12_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_ACMD12_ERR` writer - Force Event for Auto CMD Error"]
-pub type FE_ACMD12_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_ACMD12_ERR_AW>;
-impl<'a, REG, const O: u8> FE_ACMD12_ERR_W<'a, REG, O>
+pub type FE_ACMD12_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_ACMD12_ERR_AW>;
+impl<'a, REG> FE_ACMD12_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -294,8 +294,8 @@ impl From<FE_TARGET_RESPONSE_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_TARGET_RESPONSE_ERR` writer - Force event for Target Response Error"]
-pub type FE_TARGET_RESPONSE_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_TARGET_RESPONSE_ERR_AW>;
-impl<'a, REG, const O: u8> FE_TARGET_RESPONSE_ERR_W<'a, REG, O>
+pub type FE_TARGET_RESPONSE_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_TARGET_RESPONSE_ERR_AW>;
+impl<'a, REG> FE_TARGET_RESPONSE_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -325,8 +325,8 @@ impl From<FE_CEATA_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CEATA_ERR` writer - Force Event for Ceata Error"]
-pub type FE_CEATA_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_CEATA_ERR_AW>;
-impl<'a, REG, const O: u8> FE_CEATA_ERR_W<'a, REG, O>
+pub type FE_CEATA_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_CEATA_ERR_AW>;
+impl<'a, REG> FE_CEATA_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -345,68 +345,68 @@ impl W {
     #[doc = "Bit 0 - Force Event for Command Timeout Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_cmd_timeout_err(&mut self) -> FE_CMD_TIMEOUT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC, 0> {
-        FE_CMD_TIMEOUT_ERR_W::new(self)
+    pub fn fe_cmd_timeout_err(&mut self) -> FE_CMD_TIMEOUT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+        FE_CMD_TIMEOUT_ERR_W::new(self, 0)
     }
     #[doc = "Bit 1 - Force Event for Command CRC Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_cmd_crc_err(&mut self) -> FE_CMD_CRC_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC, 1> {
-        FE_CMD_CRC_ERR_W::new(self)
+    pub fn fe_cmd_crc_err(&mut self) -> FE_CMD_CRC_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+        FE_CMD_CRC_ERR_W::new(self, 1)
     }
     #[doc = "Bit 2 - Force Event for Command End Bit Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_cmd_end_bit_err(&mut self) -> FE_CMD_END_BIT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC, 2> {
-        FE_CMD_END_BIT_ERR_W::new(self)
+    pub fn fe_cmd_end_bit_err(&mut self) -> FE_CMD_END_BIT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+        FE_CMD_END_BIT_ERR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Force Event for Command Index Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_cmd_ind_err(&mut self) -> FE_CMD_IND_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC, 3> {
-        FE_CMD_IND_ERR_W::new(self)
+    pub fn fe_cmd_ind_err(&mut self) -> FE_CMD_IND_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+        FE_CMD_IND_ERR_W::new(self, 3)
     }
     #[doc = "Bit 4 - Force Event for Data Timeout Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_data_timeout_err(&mut self) -> FE_DATA_TIMEOUT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC, 4> {
-        FE_DATA_TIMEOUT_ERR_W::new(self)
+    pub fn fe_data_timeout_err(&mut self) -> FE_DATA_TIMEOUT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+        FE_DATA_TIMEOUT_ERR_W::new(self, 4)
     }
     #[doc = "Bit 5 - Force Event for Data CRC Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_data_crc_err(&mut self) -> FE_DATA_CRC_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC, 5> {
-        FE_DATA_CRC_ERR_W::new(self)
+    pub fn fe_data_crc_err(&mut self) -> FE_DATA_CRC_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+        FE_DATA_CRC_ERR_W::new(self, 5)
     }
     #[doc = "Bit 6 - Force Event for Data End Bit Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_data_end_bit_err(&mut self) -> FE_DATA_END_BIT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC, 6> {
-        FE_DATA_END_BIT_ERR_W::new(self)
+    pub fn fe_data_end_bit_err(&mut self) -> FE_DATA_END_BIT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+        FE_DATA_END_BIT_ERR_W::new(self, 6)
     }
     #[doc = "Bit 7 - Force Event for Current Limit Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_current_limit_err(&mut self) -> FE_CURRENT_LIMIT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC, 7> {
-        FE_CURRENT_LIMIT_ERR_W::new(self)
+    pub fn fe_current_limit_err(&mut self) -> FE_CURRENT_LIMIT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+        FE_CURRENT_LIMIT_ERR_W::new(self, 7)
     }
     #[doc = "Bit 8 - Force Event for Auto CMD Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_acmd12_err(&mut self) -> FE_ACMD12_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC, 8> {
-        FE_ACMD12_ERR_W::new(self)
+    pub fn fe_acmd12_err(&mut self) -> FE_ACMD12_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+        FE_ACMD12_ERR_W::new(self, 8)
     }
     #[doc = "Bit 12 - Force event for Target Response Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_target_response_err(&mut self) -> FE_TARGET_RESPONSE_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC, 12> {
-        FE_TARGET_RESPONSE_ERR_W::new(self)
+    pub fn fe_target_response_err(&mut self) -> FE_TARGET_RESPONSE_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+        FE_TARGET_RESPONSE_ERR_W::new(self, 12)
     }
     #[doc = "Bit 13 - Force Event for Ceata Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_ceata_err(&mut self) -> FE_CEATA_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC, 13> {
-        FE_CEATA_ERR_W::new(self)
+    pub fn fe_ceata_err(&mut self) -> FE_CEATA_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+        FE_CEATA_ERR_W::new(self, 13)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

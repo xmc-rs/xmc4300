@@ -39,8 +39,8 @@ impl PWD_R {
     }
 }
 #[doc = "Field `PWD` writer - Sensor Power Down"]
-pub type PWD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PWD_A>;
-impl<'a, REG, const O: u8> PWD_W<'a, REG, O>
+pub type PWD_W<'a, REG> = crate::BitWriter<'a, REG, PWD_A>;
+impl<'a, REG> PWD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -70,8 +70,8 @@ impl From<START_AW> for bool {
     }
 }
 #[doc = "Field `START` writer - Sensor Measurement Start"]
-pub type START_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, START_AW>;
-impl<'a, REG, const O: u8> START_W<'a, REG, O>
+pub type START_W<'a, REG> = crate::BitWriter<'a, REG, START_AW>;
+impl<'a, REG> START_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -89,19 +89,19 @@ where
 #[doc = "Field `OFFSET` reader - Offset Calibration Value"]
 pub type OFFSET_R = crate::FieldReader;
 #[doc = "Field `OFFSET` writer - Offset Calibration Value"]
-pub type OFFSET_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type OFFSET_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `GAIN` reader - Gain Calibration Value"]
 pub type GAIN_R = crate::FieldReader;
 #[doc = "Field `GAIN` writer - Gain Calibration Value"]
-pub type GAIN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type GAIN_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `REFTRIM` reader - Reference Trim Calibration Value"]
 pub type REFTRIM_R = crate::FieldReader;
 #[doc = "Field `REFTRIM` writer - Reference Trim Calibration Value"]
-pub type REFTRIM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type REFTRIM_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `BGTRIM` reader - Bandgap Trim Calibration Value"]
 pub type BGTRIM_R = crate::FieldReader;
 #[doc = "Field `BGTRIM` writer - Bandgap Trim Calibration Value"]
-pub type BGTRIM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type BGTRIM_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - Sensor Power Down"]
     #[inline(always)]
@@ -133,38 +133,38 @@ impl W {
     #[doc = "Bit 0 - Sensor Power Down"]
     #[inline(always)]
     #[must_use]
-    pub fn pwd(&mut self) -> PWD_W<DTSCON_SPEC, 0> {
-        PWD_W::new(self)
+    pub fn pwd(&mut self) -> PWD_W<DTSCON_SPEC> {
+        PWD_W::new(self, 0)
     }
     #[doc = "Bit 1 - Sensor Measurement Start"]
     #[inline(always)]
     #[must_use]
-    pub fn start(&mut self) -> START_W<DTSCON_SPEC, 1> {
-        START_W::new(self)
+    pub fn start(&mut self) -> START_W<DTSCON_SPEC> {
+        START_W::new(self, 1)
     }
     #[doc = "Bits 4:10 - Offset Calibration Value"]
     #[inline(always)]
     #[must_use]
-    pub fn offset(&mut self) -> OFFSET_W<DTSCON_SPEC, 4> {
-        OFFSET_W::new(self)
+    pub fn offset(&mut self) -> OFFSET_W<DTSCON_SPEC> {
+        OFFSET_W::new(self, 4)
     }
     #[doc = "Bits 11:16 - Gain Calibration Value"]
     #[inline(always)]
     #[must_use]
-    pub fn gain(&mut self) -> GAIN_W<DTSCON_SPEC, 11> {
-        GAIN_W::new(self)
+    pub fn gain(&mut self) -> GAIN_W<DTSCON_SPEC> {
+        GAIN_W::new(self, 11)
     }
     #[doc = "Bits 17:19 - Reference Trim Calibration Value"]
     #[inline(always)]
     #[must_use]
-    pub fn reftrim(&mut self) -> REFTRIM_W<DTSCON_SPEC, 17> {
-        REFTRIM_W::new(self)
+    pub fn reftrim(&mut self) -> REFTRIM_W<DTSCON_SPEC> {
+        REFTRIM_W::new(self, 17)
     }
     #[doc = "Bits 20:23 - Bandgap Trim Calibration Value"]
     #[inline(always)]
     #[must_use]
-    pub fn bgtrim(&mut self) -> BGTRIM_W<DTSCON_SPEC, 20> {
-        BGTRIM_W::new(self)
+    pub fn bgtrim(&mut self) -> BGTRIM_W<DTSCON_SPEC> {
+        BGTRIM_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -39,8 +39,8 @@ impl SMD_R {
     }
 }
 #[doc = "Field `SMD` writer - Sample Mode"]
-pub type SMD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMD_A>;
-impl<'a, REG, const O: u8> SMD_W<'a, REG, O>
+pub type SMD_W<'a, REG> = crate::BitWriter<'a, REG, SMD_A>;
+impl<'a, REG> SMD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl STPB_R {
     }
 }
 #[doc = "Field `STPB` writer - Stop Bits"]
-pub type STPB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STPB_A>;
-impl<'a, REG, const O: u8> STPB_W<'a, REG, O>
+pub type STPB_W<'a, REG> = crate::BitWriter<'a, REG, STPB_A>;
+impl<'a, REG> STPB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl IDM_R {
     }
 }
 #[doc = "Field `IDM` writer - Idle Detection Mode"]
-pub type IDM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IDM_A>;
-impl<'a, REG, const O: u8> IDM_W<'a, REG, O>
+pub type IDM_W<'a, REG> = crate::BitWriter<'a, REG, IDM_A>;
+impl<'a, REG> IDM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl SBIEN_R {
     }
 }
 #[doc = "Field `SBIEN` writer - Synchronization Break Interrupt Enable"]
-pub type SBIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SBIEN_A>;
-impl<'a, REG, const O: u8> SBIEN_W<'a, REG, O>
+pub type SBIEN_W<'a, REG> = crate::BitWriter<'a, REG, SBIEN_A>;
+impl<'a, REG> SBIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl CDEN_R {
     }
 }
 #[doc = "Field `CDEN` writer - Collision Detection Enable"]
-pub type CDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CDEN_A>;
-impl<'a, REG, const O: u8> CDEN_W<'a, REG, O>
+pub type CDEN_W<'a, REG> = crate::BitWriter<'a, REG, CDEN_A>;
+impl<'a, REG> CDEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl RNIEN_R {
     }
 }
 #[doc = "Field `RNIEN` writer - Receiver Noise Detection Interrupt Enable"]
-pub type RNIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RNIEN_A>;
-impl<'a, REG, const O: u8> RNIEN_W<'a, REG, O>
+pub type RNIEN_W<'a, REG> = crate::BitWriter<'a, REG, RNIEN_A>;
+impl<'a, REG> RNIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl FEIEN_R {
     }
 }
 #[doc = "Field `FEIEN` writer - Format Error Interrupt Enable"]
-pub type FEIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FEIEN_A>;
-impl<'a, REG, const O: u8> FEIEN_W<'a, REG, O>
+pub type FEIEN_W<'a, REG> = crate::BitWriter<'a, REG, FEIEN_A>;
+impl<'a, REG> FEIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl FFIEN_R {
     }
 }
 #[doc = "Field `FFIEN` writer - Frame Finished Interrupt Enable"]
-pub type FFIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FFIEN_A>;
-impl<'a, REG, const O: u8> FFIEN_W<'a, REG, O>
+pub type FFIEN_W<'a, REG> = crate::BitWriter<'a, REG, FFIEN_A>;
+impl<'a, REG> FFIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -429,7 +429,7 @@ where
 #[doc = "Field `SP` reader - Sample Point"]
 pub type SP_R = crate::FieldReader;
 #[doc = "Field `SP` writer - Sample Point"]
-pub type SP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type SP_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PL` reader - Pulse Length"]
 pub type PL_R = crate::FieldReader<PL_A>;
 #[doc = "Pulse Length\n\nValue on reset: 0"]
@@ -488,8 +488,8 @@ impl PL_R {
     }
 }
 #[doc = "Field `PL` writer - Pulse Length"]
-pub type PL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PL_A>;
-impl<'a, REG, const O: u8> PL_W<'a, REG, O>
+pub type PL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PL_A>;
+impl<'a, REG> PL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -556,8 +556,8 @@ is set during the complete reception of a frame."]
     }
 }
 #[doc = "Field `RSTEN` writer - Receiver Status Enable"]
-pub type RSTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RSTEN_A>;
-impl<'a, REG, const O: u8> RSTEN_W<'a, REG, O>
+pub type RSTEN_W<'a, REG> = crate::BitWriter<'a, REG, RSTEN_A>;
+impl<'a, REG> RSTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -615,8 +615,8 @@ is set during the complete transmission of a frame."]
     }
 }
 #[doc = "Field `TSTEN` writer - Transmitter Status Enable"]
-pub type TSTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSTEN_A>;
-impl<'a, REG, const O: u8> TSTEN_W<'a, REG, O>
+pub type TSTEN_W<'a, REG> = crate::BitWriter<'a, REG, TSTEN_A>;
+impl<'a, REG> TSTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -670,8 +670,8 @@ impl MCLK_R {
     }
 }
 #[doc = "Field `MCLK` writer - Master Clock Enable"]
-pub type MCLK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MCLK_A>;
-impl<'a, REG, const O: u8> MCLK_W<'a, REG, O>
+pub type MCLK_W<'a, REG> = crate::BitWriter<'a, REG, MCLK_A>;
+impl<'a, REG> MCLK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -757,80 +757,80 @@ impl W {
     #[doc = "Bit 0 - Sample Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn smd(&mut self) -> SMD_W<PCR_ASCMODE_SPEC, 0> {
-        SMD_W::new(self)
+    pub fn smd(&mut self) -> SMD_W<PCR_ASCMODE_SPEC> {
+        SMD_W::new(self, 0)
     }
     #[doc = "Bit 1 - Stop Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn stpb(&mut self) -> STPB_W<PCR_ASCMODE_SPEC, 1> {
-        STPB_W::new(self)
+    pub fn stpb(&mut self) -> STPB_W<PCR_ASCMODE_SPEC> {
+        STPB_W::new(self, 1)
     }
     #[doc = "Bit 2 - Idle Detection Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn idm(&mut self) -> IDM_W<PCR_ASCMODE_SPEC, 2> {
-        IDM_W::new(self)
+    pub fn idm(&mut self) -> IDM_W<PCR_ASCMODE_SPEC> {
+        IDM_W::new(self, 2)
     }
     #[doc = "Bit 3 - Synchronization Break Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn sbien(&mut self) -> SBIEN_W<PCR_ASCMODE_SPEC, 3> {
-        SBIEN_W::new(self)
+    pub fn sbien(&mut self) -> SBIEN_W<PCR_ASCMODE_SPEC> {
+        SBIEN_W::new(self, 3)
     }
     #[doc = "Bit 4 - Collision Detection Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cden(&mut self) -> CDEN_W<PCR_ASCMODE_SPEC, 4> {
-        CDEN_W::new(self)
+    pub fn cden(&mut self) -> CDEN_W<PCR_ASCMODE_SPEC> {
+        CDEN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Receiver Noise Detection Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rnien(&mut self) -> RNIEN_W<PCR_ASCMODE_SPEC, 5> {
-        RNIEN_W::new(self)
+    pub fn rnien(&mut self) -> RNIEN_W<PCR_ASCMODE_SPEC> {
+        RNIEN_W::new(self, 5)
     }
     #[doc = "Bit 6 - Format Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn feien(&mut self) -> FEIEN_W<PCR_ASCMODE_SPEC, 6> {
-        FEIEN_W::new(self)
+    pub fn feien(&mut self) -> FEIEN_W<PCR_ASCMODE_SPEC> {
+        FEIEN_W::new(self, 6)
     }
     #[doc = "Bit 7 - Frame Finished Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ffien(&mut self) -> FFIEN_W<PCR_ASCMODE_SPEC, 7> {
-        FFIEN_W::new(self)
+    pub fn ffien(&mut self) -> FFIEN_W<PCR_ASCMODE_SPEC> {
+        FFIEN_W::new(self, 7)
     }
     #[doc = "Bits 8:12 - Sample Point"]
     #[inline(always)]
     #[must_use]
-    pub fn sp(&mut self) -> SP_W<PCR_ASCMODE_SPEC, 8> {
-        SP_W::new(self)
+    pub fn sp(&mut self) -> SP_W<PCR_ASCMODE_SPEC> {
+        SP_W::new(self, 8)
     }
     #[doc = "Bits 13:15 - Pulse Length"]
     #[inline(always)]
     #[must_use]
-    pub fn pl(&mut self) -> PL_W<PCR_ASCMODE_SPEC, 13> {
-        PL_W::new(self)
+    pub fn pl(&mut self) -> PL_W<PCR_ASCMODE_SPEC> {
+        PL_W::new(self, 13)
     }
     #[doc = "Bit 16 - Receiver Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rsten(&mut self) -> RSTEN_W<PCR_ASCMODE_SPEC, 16> {
-        RSTEN_W::new(self)
+    pub fn rsten(&mut self) -> RSTEN_W<PCR_ASCMODE_SPEC> {
+        RSTEN_W::new(self, 16)
     }
     #[doc = "Bit 17 - Transmitter Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tsten(&mut self) -> TSTEN_W<PCR_ASCMODE_SPEC, 17> {
-        TSTEN_W::new(self)
+    pub fn tsten(&mut self) -> TSTEN_W<PCR_ASCMODE_SPEC> {
+        TSTEN_W::new(self, 17)
     }
     #[doc = "Bit 31 - Master Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mclk(&mut self) -> MCLK_W<PCR_ASCMODE_SPEC, 31> {
-        MCLK_W::new(self)
+    pub fn mclk(&mut self) -> MCLK_W<PCR_ASCMODE_SPEC> {
+        MCLK_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

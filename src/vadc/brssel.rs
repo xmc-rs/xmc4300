@@ -39,8 +39,8 @@ impl CHSELG0_R {
     }
 }
 #[doc = "Field `CHSELG0` writer - Channel Selection Group x"]
-pub type CHSELG0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSELG0_A>;
-impl<'a, REG, const O: u8> CHSELG0_W<'a, REG, O>
+pub type CHSELG0_W<'a, REG> = crate::BitWriter<'a, REG, CHSELG0_A>;
+impl<'a, REG> CHSELG0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl CHSELG1_R {
     }
 }
 #[doc = "Field `CHSELG1` writer - Channel Selection Group x"]
-pub type CHSELG1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSELG1_A>;
-impl<'a, REG, const O: u8> CHSELG1_W<'a, REG, O>
+pub type CHSELG1_W<'a, REG> = crate::BitWriter<'a, REG, CHSELG1_A>;
+impl<'a, REG> CHSELG1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl CHSELG2_R {
     }
 }
 #[doc = "Field `CHSELG2` writer - Channel Selection Group x"]
-pub type CHSELG2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSELG2_A>;
-impl<'a, REG, const O: u8> CHSELG2_W<'a, REG, O>
+pub type CHSELG2_W<'a, REG> = crate::BitWriter<'a, REG, CHSELG2_A>;
+impl<'a, REG> CHSELG2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl CHSELG3_R {
     }
 }
 #[doc = "Field `CHSELG3` writer - Channel Selection Group x"]
-pub type CHSELG3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSELG3_A>;
-impl<'a, REG, const O: u8> CHSELG3_W<'a, REG, O>
+pub type CHSELG3_W<'a, REG> = crate::BitWriter<'a, REG, CHSELG3_A>;
+impl<'a, REG> CHSELG3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl CHSELG4_R {
     }
 }
 #[doc = "Field `CHSELG4` writer - Channel Selection Group x"]
-pub type CHSELG4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSELG4_A>;
-impl<'a, REG, const O: u8> CHSELG4_W<'a, REG, O>
+pub type CHSELG4_W<'a, REG> = crate::BitWriter<'a, REG, CHSELG4_A>;
+impl<'a, REG> CHSELG4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl CHSELG5_R {
     }
 }
 #[doc = "Field `CHSELG5` writer - Channel Selection Group x"]
-pub type CHSELG5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSELG5_A>;
-impl<'a, REG, const O: u8> CHSELG5_W<'a, REG, O>
+pub type CHSELG5_W<'a, REG> = crate::BitWriter<'a, REG, CHSELG5_A>;
+impl<'a, REG> CHSELG5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl CHSELG6_R {
     }
 }
 #[doc = "Field `CHSELG6` writer - Channel Selection Group x"]
-pub type CHSELG6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSELG6_A>;
-impl<'a, REG, const O: u8> CHSELG6_W<'a, REG, O>
+pub type CHSELG6_W<'a, REG> = crate::BitWriter<'a, REG, CHSELG6_A>;
+impl<'a, REG> CHSELG6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl CHSELG7_R {
     }
 }
 #[doc = "Field `CHSELG7` writer - Channel Selection Group x"]
-pub type CHSELG7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSELG7_A>;
-impl<'a, REG, const O: u8> CHSELG7_W<'a, REG, O>
+pub type CHSELG7_W<'a, REG> = crate::BitWriter<'a, REG, CHSELG7_A>;
+impl<'a, REG> CHSELG7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -472,50 +472,50 @@ impl W {
     #[doc = "Bit 0 - Channel Selection Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chselg0(&mut self) -> CHSELG0_W<BRSSEL_SPEC, 0> {
-        CHSELG0_W::new(self)
+    pub fn chselg0(&mut self) -> CHSELG0_W<BRSSEL_SPEC> {
+        CHSELG0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel Selection Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chselg1(&mut self) -> CHSELG1_W<BRSSEL_SPEC, 1> {
-        CHSELG1_W::new(self)
+    pub fn chselg1(&mut self) -> CHSELG1_W<BRSSEL_SPEC> {
+        CHSELG1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channel Selection Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chselg2(&mut self) -> CHSELG2_W<BRSSEL_SPEC, 2> {
-        CHSELG2_W::new(self)
+    pub fn chselg2(&mut self) -> CHSELG2_W<BRSSEL_SPEC> {
+        CHSELG2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channel Selection Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chselg3(&mut self) -> CHSELG3_W<BRSSEL_SPEC, 3> {
-        CHSELG3_W::new(self)
+    pub fn chselg3(&mut self) -> CHSELG3_W<BRSSEL_SPEC> {
+        CHSELG3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Channel Selection Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chselg4(&mut self) -> CHSELG4_W<BRSSEL_SPEC, 4> {
-        CHSELG4_W::new(self)
+    pub fn chselg4(&mut self) -> CHSELG4_W<BRSSEL_SPEC> {
+        CHSELG4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Channel Selection Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chselg5(&mut self) -> CHSELG5_W<BRSSEL_SPEC, 5> {
-        CHSELG5_W::new(self)
+    pub fn chselg5(&mut self) -> CHSELG5_W<BRSSEL_SPEC> {
+        CHSELG5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Channel Selection Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chselg6(&mut self) -> CHSELG6_W<BRSSEL_SPEC, 6> {
-        CHSELG6_W::new(self)
+    pub fn chselg6(&mut self) -> CHSELG6_W<BRSSEL_SPEC> {
+        CHSELG6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Channel Selection Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chselg7(&mut self) -> CHSELG7_W<BRSSEL_SPEC, 7> {
-        CHSELG7_W::new(self)
+    pub fn chselg7(&mut self) -> CHSELG7_W<BRSSEL_SPEC> {
+        CHSELG7_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

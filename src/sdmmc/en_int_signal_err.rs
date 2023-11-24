@@ -39,8 +39,8 @@ impl CMD_TIMEOUT_ERR_EN_R {
     }
 }
 #[doc = "Field `CMD_TIMEOUT_ERR_EN` writer - Command Timeout Error Signal Enable"]
-pub type CMD_TIMEOUT_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_TIMEOUT_ERR_EN_A>;
-impl<'a, REG, const O: u8> CMD_TIMEOUT_ERR_EN_W<'a, REG, O>
+pub type CMD_TIMEOUT_ERR_EN_W<'a, REG> = crate::BitWriter<'a, REG, CMD_TIMEOUT_ERR_EN_A>;
+impl<'a, REG> CMD_TIMEOUT_ERR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl CMD_CRC_ERR_EN_R {
     }
 }
 #[doc = "Field `CMD_CRC_ERR_EN` writer - Command CRC Error Signal Enable"]
-pub type CMD_CRC_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_CRC_ERR_EN_A>;
-impl<'a, REG, const O: u8> CMD_CRC_ERR_EN_W<'a, REG, O>
+pub type CMD_CRC_ERR_EN_W<'a, REG> = crate::BitWriter<'a, REG, CMD_CRC_ERR_EN_A>;
+impl<'a, REG> CMD_CRC_ERR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl CMD_END_BIT_ERR_EN_R {
     }
 }
 #[doc = "Field `CMD_END_BIT_ERR_EN` writer - Command End Bit Error Signal Enable"]
-pub type CMD_END_BIT_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_END_BIT_ERR_EN_A>;
-impl<'a, REG, const O: u8> CMD_END_BIT_ERR_EN_W<'a, REG, O>
+pub type CMD_END_BIT_ERR_EN_W<'a, REG> = crate::BitWriter<'a, REG, CMD_END_BIT_ERR_EN_A>;
+impl<'a, REG> CMD_END_BIT_ERR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl CMD_IND_ERR_EN_R {
     }
 }
 #[doc = "Field `CMD_IND_ERR_EN` writer - Command Index Error Signal Enable"]
-pub type CMD_IND_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_IND_ERR_EN_A>;
-impl<'a, REG, const O: u8> CMD_IND_ERR_EN_W<'a, REG, O>
+pub type CMD_IND_ERR_EN_W<'a, REG> = crate::BitWriter<'a, REG, CMD_IND_ERR_EN_A>;
+impl<'a, REG> CMD_IND_ERR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl DATA_TIMEOUT_ERR_EN_R {
     }
 }
 #[doc = "Field `DATA_TIMEOUT_ERR_EN` writer - Data Timeout Error Signal Enable"]
-pub type DATA_TIMEOUT_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DATA_TIMEOUT_ERR_EN_A>;
-impl<'a, REG, const O: u8> DATA_TIMEOUT_ERR_EN_W<'a, REG, O>
+pub type DATA_TIMEOUT_ERR_EN_W<'a, REG> = crate::BitWriter<'a, REG, DATA_TIMEOUT_ERR_EN_A>;
+impl<'a, REG> DATA_TIMEOUT_ERR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl DATA_CRC_ERR_EN_R {
     }
 }
 #[doc = "Field `DATA_CRC_ERR_EN` writer - Data CRC Error Signal Enable"]
-pub type DATA_CRC_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DATA_CRC_ERR_EN_A>;
-impl<'a, REG, const O: u8> DATA_CRC_ERR_EN_W<'a, REG, O>
+pub type DATA_CRC_ERR_EN_W<'a, REG> = crate::BitWriter<'a, REG, DATA_CRC_ERR_EN_A>;
+impl<'a, REG> DATA_CRC_ERR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl DATA_END_BIT_ERR_EN_R {
     }
 }
 #[doc = "Field `DATA_END_BIT_ERR_EN` writer - Data End Bit Error Signal Enable"]
-pub type DATA_END_BIT_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DATA_END_BIT_ERR_EN_A>;
-impl<'a, REG, const O: u8> DATA_END_BIT_ERR_EN_W<'a, REG, O>
+pub type DATA_END_BIT_ERR_EN_W<'a, REG> = crate::BitWriter<'a, REG, DATA_END_BIT_ERR_EN_A>;
+impl<'a, REG> DATA_END_BIT_ERR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl CURRENT_LIMIT_ERR_EN_R {
     }
 }
 #[doc = "Field `CURRENT_LIMIT_ERR_EN` writer - Current Limit Error Signal Enable"]
-pub type CURRENT_LIMIT_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CURRENT_LIMIT_ERR_EN_A>;
-impl<'a, REG, const O: u8> CURRENT_LIMIT_ERR_EN_W<'a, REG, O>
+pub type CURRENT_LIMIT_ERR_EN_W<'a, REG> = crate::BitWriter<'a, REG, CURRENT_LIMIT_ERR_EN_A>;
+impl<'a, REG> CURRENT_LIMIT_ERR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl ACMD_ERR_EN_R {
     }
 }
 #[doc = "Field `ACMD_ERR_EN` writer - Auto CMD12 Error Signal Enable"]
-pub type ACMD_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ACMD_ERR_EN_A>;
-impl<'a, REG, const O: u8> ACMD_ERR_EN_W<'a, REG, O>
+pub type ACMD_ERR_EN_W<'a, REG> = crate::BitWriter<'a, REG, ACMD_ERR_EN_A>;
+impl<'a, REG> ACMD_ERR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -516,8 +516,8 @@ impl TARGET_RESP_ERR_EN_R {
     }
 }
 #[doc = "Field `TARGET_RESP_ERR_EN` writer - Target Response Error Signal Enable"]
-pub type TARGET_RESP_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TARGET_RESP_ERR_EN_A>;
-impl<'a, REG, const O: u8> TARGET_RESP_ERR_EN_W<'a, REG, O>
+pub type TARGET_RESP_ERR_EN_W<'a, REG> = crate::BitWriter<'a, REG, TARGET_RESP_ERR_EN_A>;
+impl<'a, REG> TARGET_RESP_ERR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -569,8 +569,8 @@ impl CEATA_ERR_EN_R {
     }
 }
 #[doc = "Field `CEATA_ERR_EN` writer - Ceata Error Signal Enable"]
-pub type CEATA_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEATA_ERR_EN_A>;
-impl<'a, REG, const O: u8> CEATA_ERR_EN_W<'a, REG, O>
+pub type CEATA_ERR_EN_W<'a, REG> = crate::BitWriter<'a, REG, CEATA_ERR_EN_A>;
+impl<'a, REG> CEATA_ERR_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -646,68 +646,68 @@ impl W {
     #[doc = "Bit 0 - Command Timeout Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_timeout_err_en(&mut self) -> CMD_TIMEOUT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 0> {
-        CMD_TIMEOUT_ERR_EN_W::new(self)
+    pub fn cmd_timeout_err_en(&mut self) -> CMD_TIMEOUT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC> {
+        CMD_TIMEOUT_ERR_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Command CRC Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_crc_err_en(&mut self) -> CMD_CRC_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 1> {
-        CMD_CRC_ERR_EN_W::new(self)
+    pub fn cmd_crc_err_en(&mut self) -> CMD_CRC_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC> {
+        CMD_CRC_ERR_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Command End Bit Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_end_bit_err_en(&mut self) -> CMD_END_BIT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 2> {
-        CMD_END_BIT_ERR_EN_W::new(self)
+    pub fn cmd_end_bit_err_en(&mut self) -> CMD_END_BIT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC> {
+        CMD_END_BIT_ERR_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - Command Index Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_ind_err_en(&mut self) -> CMD_IND_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 3> {
-        CMD_IND_ERR_EN_W::new(self)
+    pub fn cmd_ind_err_en(&mut self) -> CMD_IND_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC> {
+        CMD_IND_ERR_EN_W::new(self, 3)
     }
     #[doc = "Bit 4 - Data Timeout Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn data_timeout_err_en(&mut self) -> DATA_TIMEOUT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 4> {
-        DATA_TIMEOUT_ERR_EN_W::new(self)
+    pub fn data_timeout_err_en(&mut self) -> DATA_TIMEOUT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC> {
+        DATA_TIMEOUT_ERR_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Data CRC Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn data_crc_err_en(&mut self) -> DATA_CRC_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 5> {
-        DATA_CRC_ERR_EN_W::new(self)
+    pub fn data_crc_err_en(&mut self) -> DATA_CRC_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC> {
+        DATA_CRC_ERR_EN_W::new(self, 5)
     }
     #[doc = "Bit 6 - Data End Bit Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn data_end_bit_err_en(&mut self) -> DATA_END_BIT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 6> {
-        DATA_END_BIT_ERR_EN_W::new(self)
+    pub fn data_end_bit_err_en(&mut self) -> DATA_END_BIT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC> {
+        DATA_END_BIT_ERR_EN_W::new(self, 6)
     }
     #[doc = "Bit 7 - Current Limit Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn current_limit_err_en(&mut self) -> CURRENT_LIMIT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 7> {
-        CURRENT_LIMIT_ERR_EN_W::new(self)
+    pub fn current_limit_err_en(&mut self) -> CURRENT_LIMIT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC> {
+        CURRENT_LIMIT_ERR_EN_W::new(self, 7)
     }
     #[doc = "Bit 8 - Auto CMD12 Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn acmd_err_en(&mut self) -> ACMD_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 8> {
-        ACMD_ERR_EN_W::new(self)
+    pub fn acmd_err_en(&mut self) -> ACMD_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC> {
+        ACMD_ERR_EN_W::new(self, 8)
     }
     #[doc = "Bit 12 - Target Response Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn target_resp_err_en(&mut self) -> TARGET_RESP_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 12> {
-        TARGET_RESP_ERR_EN_W::new(self)
+    pub fn target_resp_err_en(&mut self) -> TARGET_RESP_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC> {
+        TARGET_RESP_ERR_EN_W::new(self, 12)
     }
     #[doc = "Bit 13 - Ceata Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ceata_err_en(&mut self) -> CEATA_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 13> {
-        CEATA_ERR_EN_W::new(self)
+    pub fn ceata_err_en(&mut self) -> CEATA_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC> {
+        CEATA_ERR_EN_W::new(self, 13)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

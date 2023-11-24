@@ -5,51 +5,51 @@ pub type W = crate::W<DOEPINT_SPEC>;
 #[doc = "Field `XferCompl` reader - Transfer Completed Interrupt"]
 pub type XFER_COMPL_R = crate::BitReader;
 #[doc = "Field `XferCompl` writer - Transfer Completed Interrupt"]
-pub type XFER_COMPL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type XFER_COMPL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPDisbld` reader - Endpoint Disabled Interrupt"]
 pub type EPDISBLD_R = crate::BitReader;
 #[doc = "Field `EPDisbld` writer - Endpoint Disabled Interrupt"]
-pub type EPDISBLD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPDISBLD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `AHBErr` reader - AHB Error"]
 pub type AHBERR_R = crate::BitReader;
 #[doc = "Field `AHBErr` writer - AHB Error"]
-pub type AHBERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type AHBERR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SetUp` reader - SETUP Phase Done"]
 pub type SET_UP_R = crate::BitReader;
 #[doc = "Field `SetUp` writer - SETUP Phase Done"]
-pub type SET_UP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SET_UP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OUTTknEPdis` reader - OUT Token Received When Endpoint Disabled"]
 pub type OUTTKN_EPDIS_R = crate::BitReader;
 #[doc = "Field `OUTTknEPdis` writer - OUT Token Received When Endpoint Disabled"]
-pub type OUTTKN_EPDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OUTTKN_EPDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `StsPhseRcvd` reader - Status Phase Received For Control Write"]
 pub type STS_PHSE_RCVD_R = crate::BitReader;
 #[doc = "Field `StsPhseRcvd` writer - Status Phase Received For Control Write"]
-pub type STS_PHSE_RCVD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STS_PHSE_RCVD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `Back2BackSETup` reader - Back-to-Back SETUP Packets Received"]
 pub type BACK2BACK_SETUP_R = crate::BitReader;
 #[doc = "Field `Back2BackSETup` writer - Back-to-Back SETUP Packets Received"]
-pub type BACK2BACK_SETUP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BACK2BACK_SETUP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BNAIntr` reader - BNA (Buffer Not Available) Interrupt"]
 pub type BNAINTR_R = crate::BitReader;
 #[doc = "Field `BNAIntr` writer - BNA (Buffer Not Available) Interrupt"]
-pub type BNAINTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BNAINTR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PktDrpSts` reader - Packet Dropped Status"]
 pub type PKT_DRP_STS_R = crate::BitReader;
 #[doc = "Field `PktDrpSts` writer - Packet Dropped Status"]
-pub type PKT_DRP_STS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PKT_DRP_STS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BbleErrIntrpt` reader - BbleErr (Babble Error) interrupt"]
 pub type BBLE_ERR_INTRPT_R = crate::BitReader;
 #[doc = "Field `BbleErrIntrpt` writer - BbleErr (Babble Error) interrupt"]
-pub type BBLE_ERR_INTRPT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BBLE_ERR_INTRPT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NAKIntrpt` reader - NAK interrupt"]
 pub type NAKINTRPT_R = crate::BitReader;
 #[doc = "Field `NAKIntrpt` writer - NAK interrupt"]
-pub type NAKINTRPT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NAKINTRPT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NYETIntrpt` reader - NYET interrupt"]
 pub type NYETINTRPT_R = crate::BitReader;
 #[doc = "Field `NYETIntrpt` writer - NYET interrupt"]
-pub type NYETINTRPT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NYETINTRPT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Transfer Completed Interrupt"]
     #[inline(always)]
@@ -116,74 +116,74 @@ impl W {
     #[doc = "Bit 0 - Transfer Completed Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn xfer_compl(&mut self) -> XFER_COMPL_W<DOEPINT_SPEC, 0> {
-        XFER_COMPL_W::new(self)
+    pub fn xfer_compl(&mut self) -> XFER_COMPL_W<DOEPINT_SPEC> {
+        XFER_COMPL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Endpoint Disabled Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn epdisbld(&mut self) -> EPDISBLD_W<DOEPINT_SPEC, 1> {
-        EPDISBLD_W::new(self)
+    pub fn epdisbld(&mut self) -> EPDISBLD_W<DOEPINT_SPEC> {
+        EPDISBLD_W::new(self, 1)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
     #[must_use]
-    pub fn ahberr(&mut self) -> AHBERR_W<DOEPINT_SPEC, 2> {
-        AHBERR_W::new(self)
+    pub fn ahberr(&mut self) -> AHBERR_W<DOEPINT_SPEC> {
+        AHBERR_W::new(self, 2)
     }
     #[doc = "Bit 3 - SETUP Phase Done"]
     #[inline(always)]
     #[must_use]
-    pub fn set_up(&mut self) -> SET_UP_W<DOEPINT_SPEC, 3> {
-        SET_UP_W::new(self)
+    pub fn set_up(&mut self) -> SET_UP_W<DOEPINT_SPEC> {
+        SET_UP_W::new(self, 3)
     }
     #[doc = "Bit 4 - OUT Token Received When Endpoint Disabled"]
     #[inline(always)]
     #[must_use]
-    pub fn outtkn_epdis(&mut self) -> OUTTKN_EPDIS_W<DOEPINT_SPEC, 4> {
-        OUTTKN_EPDIS_W::new(self)
+    pub fn outtkn_epdis(&mut self) -> OUTTKN_EPDIS_W<DOEPINT_SPEC> {
+        OUTTKN_EPDIS_W::new(self, 4)
     }
     #[doc = "Bit 5 - Status Phase Received For Control Write"]
     #[inline(always)]
     #[must_use]
-    pub fn sts_phse_rcvd(&mut self) -> STS_PHSE_RCVD_W<DOEPINT_SPEC, 5> {
-        STS_PHSE_RCVD_W::new(self)
+    pub fn sts_phse_rcvd(&mut self) -> STS_PHSE_RCVD_W<DOEPINT_SPEC> {
+        STS_PHSE_RCVD_W::new(self, 5)
     }
     #[doc = "Bit 6 - Back-to-Back SETUP Packets Received"]
     #[inline(always)]
     #[must_use]
-    pub fn back2back_setup(&mut self) -> BACK2BACK_SETUP_W<DOEPINT_SPEC, 6> {
-        BACK2BACK_SETUP_W::new(self)
+    pub fn back2back_setup(&mut self) -> BACK2BACK_SETUP_W<DOEPINT_SPEC> {
+        BACK2BACK_SETUP_W::new(self, 6)
     }
     #[doc = "Bit 9 - BNA (Buffer Not Available) Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn bnaintr(&mut self) -> BNAINTR_W<DOEPINT_SPEC, 9> {
-        BNAINTR_W::new(self)
+    pub fn bnaintr(&mut self) -> BNAINTR_W<DOEPINT_SPEC> {
+        BNAINTR_W::new(self, 9)
     }
     #[doc = "Bit 11 - Packet Dropped Status"]
     #[inline(always)]
     #[must_use]
-    pub fn pkt_drp_sts(&mut self) -> PKT_DRP_STS_W<DOEPINT_SPEC, 11> {
-        PKT_DRP_STS_W::new(self)
+    pub fn pkt_drp_sts(&mut self) -> PKT_DRP_STS_W<DOEPINT_SPEC> {
+        PKT_DRP_STS_W::new(self, 11)
     }
     #[doc = "Bit 12 - BbleErr (Babble Error) interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn bble_err_intrpt(&mut self) -> BBLE_ERR_INTRPT_W<DOEPINT_SPEC, 12> {
-        BBLE_ERR_INTRPT_W::new(self)
+    pub fn bble_err_intrpt(&mut self) -> BBLE_ERR_INTRPT_W<DOEPINT_SPEC> {
+        BBLE_ERR_INTRPT_W::new(self, 12)
     }
     #[doc = "Bit 13 - NAK interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn nakintrpt(&mut self) -> NAKINTRPT_W<DOEPINT_SPEC, 13> {
-        NAKINTRPT_W::new(self)
+    pub fn nakintrpt(&mut self) -> NAKINTRPT_W<DOEPINT_SPEC> {
+        NAKINTRPT_W::new(self, 13)
     }
     #[doc = "Bit 14 - NYET interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn nyetintrpt(&mut self) -> NYETINTRPT_W<DOEPINT_SPEC, 14> {
-        NYETINTRPT_W::new(self)
+    pub fn nyetintrpt(&mut self) -> NYETINTRPT_W<DOEPINT_SPEC> {
+        NYETINTRPT_W::new(self, 14)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

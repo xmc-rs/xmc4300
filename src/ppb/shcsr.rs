@@ -5,59 +5,59 @@ pub type W = crate::W<SHCSR_SPEC>;
 #[doc = "Field `MEMFAULTACT` reader - MemManage exception active bit"]
 pub type MEMFAULTACT_R = crate::BitReader;
 #[doc = "Field `MEMFAULTACT` writer - MemManage exception active bit"]
-pub type MEMFAULTACT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MEMFAULTACT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BUSFAULTACT` reader - BusFault exception active bit"]
 pub type BUSFAULTACT_R = crate::BitReader;
 #[doc = "Field `BUSFAULTACT` writer - BusFault exception active bit"]
-pub type BUSFAULTACT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BUSFAULTACT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `USGFAULTACT` reader - UsageFault exception active bit"]
 pub type USGFAULTACT_R = crate::BitReader;
 #[doc = "Field `USGFAULTACT` writer - UsageFault exception active bit"]
-pub type USGFAULTACT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type USGFAULTACT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SVCALLACT` reader - SVCall active bit"]
 pub type SVCALLACT_R = crate::BitReader;
 #[doc = "Field `SVCALLACT` writer - SVCall active bit"]
-pub type SVCALLACT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SVCALLACT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MONITORACT` reader - Debug monitor active bit"]
 pub type MONITORACT_R = crate::BitReader;
 #[doc = "Field `MONITORACT` writer - Debug monitor active bit"]
-pub type MONITORACT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MONITORACT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PENDSVACT` reader - PendSV exception active bit"]
 pub type PENDSVACT_R = crate::BitReader;
 #[doc = "Field `PENDSVACT` writer - PendSV exception active bit"]
-pub type PENDSVACT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PENDSVACT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SYSTICKACT` reader - SysTick exception active bit"]
 pub type SYSTICKACT_R = crate::BitReader;
 #[doc = "Field `SYSTICKACT` writer - SysTick exception active bit"]
-pub type SYSTICKACT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SYSTICKACT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `USGFAULTPENDED` reader - UsageFault exception pending bit"]
 pub type USGFAULTPENDED_R = crate::BitReader;
 #[doc = "Field `USGFAULTPENDED` writer - UsageFault exception pending bit"]
-pub type USGFAULTPENDED_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type USGFAULTPENDED_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MEMFAULTPENDED` reader - MemManage exception pending bit"]
 pub type MEMFAULTPENDED_R = crate::BitReader;
 #[doc = "Field `MEMFAULTPENDED` writer - MemManage exception pending bit"]
-pub type MEMFAULTPENDED_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MEMFAULTPENDED_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BUSFAULTPENDED` reader - BusFault exception pending bit"]
 pub type BUSFAULTPENDED_R = crate::BitReader;
 #[doc = "Field `BUSFAULTPENDED` writer - BusFault exception pending bit"]
-pub type BUSFAULTPENDED_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BUSFAULTPENDED_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SVCALLPENDED` reader - SVCall pending bit"]
 pub type SVCALLPENDED_R = crate::BitReader;
 #[doc = "Field `SVCALLPENDED` writer - SVCall pending bit"]
-pub type SVCALLPENDED_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SVCALLPENDED_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MEMFAULTENA` reader - MemManage enable bit"]
 pub type MEMFAULTENA_R = crate::BitReader;
 #[doc = "Field `MEMFAULTENA` writer - MemManage enable bit"]
-pub type MEMFAULTENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MEMFAULTENA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BUSFAULTENA` reader - BusFault enable bit"]
 pub type BUSFAULTENA_R = crate::BitReader;
 #[doc = "Field `BUSFAULTENA` writer - BusFault enable bit"]
-pub type BUSFAULTENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BUSFAULTENA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `USGFAULTENA` reader - UsageFault enable bit"]
 pub type USGFAULTENA_R = crate::BitReader;
 #[doc = "Field `USGFAULTENA` writer - UsageFault enable bit"]
-pub type USGFAULTENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type USGFAULTENA_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - MemManage exception active bit"]
     #[inline(always)]
@@ -134,86 +134,86 @@ impl W {
     #[doc = "Bit 0 - MemManage exception active bit"]
     #[inline(always)]
     #[must_use]
-    pub fn memfaultact(&mut self) -> MEMFAULTACT_W<SHCSR_SPEC, 0> {
-        MEMFAULTACT_W::new(self)
+    pub fn memfaultact(&mut self) -> MEMFAULTACT_W<SHCSR_SPEC> {
+        MEMFAULTACT_W::new(self, 0)
     }
     #[doc = "Bit 1 - BusFault exception active bit"]
     #[inline(always)]
     #[must_use]
-    pub fn busfaultact(&mut self) -> BUSFAULTACT_W<SHCSR_SPEC, 1> {
-        BUSFAULTACT_W::new(self)
+    pub fn busfaultact(&mut self) -> BUSFAULTACT_W<SHCSR_SPEC> {
+        BUSFAULTACT_W::new(self, 1)
     }
     #[doc = "Bit 3 - UsageFault exception active bit"]
     #[inline(always)]
     #[must_use]
-    pub fn usgfaultact(&mut self) -> USGFAULTACT_W<SHCSR_SPEC, 3> {
-        USGFAULTACT_W::new(self)
+    pub fn usgfaultact(&mut self) -> USGFAULTACT_W<SHCSR_SPEC> {
+        USGFAULTACT_W::new(self, 3)
     }
     #[doc = "Bit 7 - SVCall active bit"]
     #[inline(always)]
     #[must_use]
-    pub fn svcallact(&mut self) -> SVCALLACT_W<SHCSR_SPEC, 7> {
-        SVCALLACT_W::new(self)
+    pub fn svcallact(&mut self) -> SVCALLACT_W<SHCSR_SPEC> {
+        SVCALLACT_W::new(self, 7)
     }
     #[doc = "Bit 8 - Debug monitor active bit"]
     #[inline(always)]
     #[must_use]
-    pub fn monitoract(&mut self) -> MONITORACT_W<SHCSR_SPEC, 8> {
-        MONITORACT_W::new(self)
+    pub fn monitoract(&mut self) -> MONITORACT_W<SHCSR_SPEC> {
+        MONITORACT_W::new(self, 8)
     }
     #[doc = "Bit 10 - PendSV exception active bit"]
     #[inline(always)]
     #[must_use]
-    pub fn pendsvact(&mut self) -> PENDSVACT_W<SHCSR_SPEC, 10> {
-        PENDSVACT_W::new(self)
+    pub fn pendsvact(&mut self) -> PENDSVACT_W<SHCSR_SPEC> {
+        PENDSVACT_W::new(self, 10)
     }
     #[doc = "Bit 11 - SysTick exception active bit"]
     #[inline(always)]
     #[must_use]
-    pub fn systickact(&mut self) -> SYSTICKACT_W<SHCSR_SPEC, 11> {
-        SYSTICKACT_W::new(self)
+    pub fn systickact(&mut self) -> SYSTICKACT_W<SHCSR_SPEC> {
+        SYSTICKACT_W::new(self, 11)
     }
     #[doc = "Bit 12 - UsageFault exception pending bit"]
     #[inline(always)]
     #[must_use]
-    pub fn usgfaultpended(&mut self) -> USGFAULTPENDED_W<SHCSR_SPEC, 12> {
-        USGFAULTPENDED_W::new(self)
+    pub fn usgfaultpended(&mut self) -> USGFAULTPENDED_W<SHCSR_SPEC> {
+        USGFAULTPENDED_W::new(self, 12)
     }
     #[doc = "Bit 13 - MemManage exception pending bit"]
     #[inline(always)]
     #[must_use]
-    pub fn memfaultpended(&mut self) -> MEMFAULTPENDED_W<SHCSR_SPEC, 13> {
-        MEMFAULTPENDED_W::new(self)
+    pub fn memfaultpended(&mut self) -> MEMFAULTPENDED_W<SHCSR_SPEC> {
+        MEMFAULTPENDED_W::new(self, 13)
     }
     #[doc = "Bit 14 - BusFault exception pending bit"]
     #[inline(always)]
     #[must_use]
-    pub fn busfaultpended(&mut self) -> BUSFAULTPENDED_W<SHCSR_SPEC, 14> {
-        BUSFAULTPENDED_W::new(self)
+    pub fn busfaultpended(&mut self) -> BUSFAULTPENDED_W<SHCSR_SPEC> {
+        BUSFAULTPENDED_W::new(self, 14)
     }
     #[doc = "Bit 15 - SVCall pending bit"]
     #[inline(always)]
     #[must_use]
-    pub fn svcallpended(&mut self) -> SVCALLPENDED_W<SHCSR_SPEC, 15> {
-        SVCALLPENDED_W::new(self)
+    pub fn svcallpended(&mut self) -> SVCALLPENDED_W<SHCSR_SPEC> {
+        SVCALLPENDED_W::new(self, 15)
     }
     #[doc = "Bit 16 - MemManage enable bit"]
     #[inline(always)]
     #[must_use]
-    pub fn memfaultena(&mut self) -> MEMFAULTENA_W<SHCSR_SPEC, 16> {
-        MEMFAULTENA_W::new(self)
+    pub fn memfaultena(&mut self) -> MEMFAULTENA_W<SHCSR_SPEC> {
+        MEMFAULTENA_W::new(self, 16)
     }
     #[doc = "Bit 17 - BusFault enable bit"]
     #[inline(always)]
     #[must_use]
-    pub fn busfaultena(&mut self) -> BUSFAULTENA_W<SHCSR_SPEC, 17> {
-        BUSFAULTENA_W::new(self)
+    pub fn busfaultena(&mut self) -> BUSFAULTENA_W<SHCSR_SPEC> {
+        BUSFAULTENA_W::new(self, 17)
     }
     #[doc = "Bit 18 - UsageFault enable bit"]
     #[inline(always)]
     #[must_use]
-    pub fn usgfaultena(&mut self) -> USGFAULTENA_W<SHCSR_SPEC, 18> {
-        USGFAULTENA_W::new(self)
+    pub fn usgfaultena(&mut self) -> USGFAULTENA_W<SHCSR_SPEC> {
+        USGFAULTENA_W::new(self, 18)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

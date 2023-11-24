@@ -39,8 +39,8 @@ impl PINSEL_R {
     }
 }
 #[doc = "Field `PINSEL` writer - P-Divider Input Selection"]
-pub type PINSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PINSEL_A>;
-impl<'a, REG, const O: u8> PINSEL_W<'a, REG, O>
+pub type PINSEL_W<'a, REG> = crate::BitWriter<'a, REG, PINSEL_A>;
+impl<'a, REG> PINSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl K1INSEL_R {
     }
 }
 #[doc = "Field `K1INSEL` writer - K1-Divider Input Selection"]
-pub type K1INSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, K1INSEL_A>;
-impl<'a, REG, const O: u8> K1INSEL_W<'a, REG, O>
+pub type K1INSEL_W<'a, REG> = crate::BitWriter<'a, REG, K1INSEL_A>;
+impl<'a, REG> K1INSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -124,14 +124,14 @@ impl W {
     #[doc = "Bit 0 - P-Divider Input Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn pinsel(&mut self) -> PINSEL_W<PLLCON2_SPEC, 0> {
-        PINSEL_W::new(self)
+    pub fn pinsel(&mut self) -> PINSEL_W<PLLCON2_SPEC> {
+        PINSEL_W::new(self, 0)
     }
     #[doc = "Bit 8 - K1-Divider Input Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn k1insel(&mut self) -> K1INSEL_W<PLLCON2_SPEC, 8> {
-        K1INSEL_W::new(self)
+    pub fn k1insel(&mut self) -> K1INSEL_W<PLLCON2_SPEC> {
+        K1INSEL_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

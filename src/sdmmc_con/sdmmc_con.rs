@@ -39,8 +39,8 @@ impl WPSEL_R {
     }
 }
 #[doc = "Field `WPSEL` writer - SDMMC Write Protection Input Multiplexer Control"]
-pub type WPSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WPSEL_A>;
-impl<'a, REG, const O: u8> WPSEL_W<'a, REG, O>
+pub type WPSEL_W<'a, REG> = crate::BitWriter<'a, REG, WPSEL_A>;
+impl<'a, REG> WPSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl WPSVAL_R {
     }
 }
 #[doc = "Field `WPSVAL` writer - SDMMC Write Protect Software Control"]
-pub type WPSVAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WPSVAL_A>;
-impl<'a, REG, const O: u8> WPSVAL_W<'a, REG, O>
+pub type WPSVAL_W<'a, REG> = crate::BitWriter<'a, REG, WPSVAL_A>;
+impl<'a, REG> WPSVAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl CDSEL_R {
     }
 }
 #[doc = "Field `CDSEL` writer - SDMMC Card Detection Control"]
-pub type CDSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CDSEL_A>;
-impl<'a, REG, const O: u8> CDSEL_W<'a, REG, O>
+pub type CDSEL_W<'a, REG> = crate::BitWriter<'a, REG, CDSEL_A>;
+impl<'a, REG> CDSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl CDSVAL_R {
     }
 }
 #[doc = "Field `CDSVAL` writer - SDMMC Write Protect Software Control"]
-pub type CDSVAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CDSVAL_A>;
-impl<'a, REG, const O: u8> CDSVAL_W<'a, REG, O>
+pub type CDSVAL_W<'a, REG> = crate::BitWriter<'a, REG, CDSVAL_A>;
+impl<'a, REG> CDSVAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -240,26 +240,26 @@ impl W {
     #[doc = "Bit 0 - SDMMC Write Protection Input Multiplexer Control"]
     #[inline(always)]
     #[must_use]
-    pub fn wpsel(&mut self) -> WPSEL_W<SDMMC_CON_SPEC, 0> {
-        WPSEL_W::new(self)
+    pub fn wpsel(&mut self) -> WPSEL_W<SDMMC_CON_SPEC> {
+        WPSEL_W::new(self, 0)
     }
     #[doc = "Bit 4 - SDMMC Write Protect Software Control"]
     #[inline(always)]
     #[must_use]
-    pub fn wpsval(&mut self) -> WPSVAL_W<SDMMC_CON_SPEC, 4> {
-        WPSVAL_W::new(self)
+    pub fn wpsval(&mut self) -> WPSVAL_W<SDMMC_CON_SPEC> {
+        WPSVAL_W::new(self, 4)
     }
     #[doc = "Bit 16 - SDMMC Card Detection Control"]
     #[inline(always)]
     #[must_use]
-    pub fn cdsel(&mut self) -> CDSEL_W<SDMMC_CON_SPEC, 16> {
-        CDSEL_W::new(self)
+    pub fn cdsel(&mut self) -> CDSEL_W<SDMMC_CON_SPEC> {
+        CDSEL_W::new(self, 16)
     }
     #[doc = "Bit 20 - SDMMC Write Protect Software Control"]
     #[inline(always)]
     #[must_use]
-    pub fn cdsval(&mut self) -> CDSVAL_W<SDMMC_CON_SPEC, 20> {
-        CDSVAL_W::new(self)
+    pub fn cdsval(&mut self) -> CDSVAL_W<SDMMC_CON_SPEC> {
+        CDSVAL_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

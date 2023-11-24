@@ -39,8 +39,8 @@ impl SELPS_R {
     }
 }
 #[doc = "Field `SELPS` writer - Select Memory Check for PSRAM"]
-pub type SELPS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELPS_A>;
-impl<'a, REG, const O: u8> SELPS_W<'a, REG, O>
+pub type SELPS_W<'a, REG> = crate::BitWriter<'a, REG, SELPS_A>;
+impl<'a, REG> SELPS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl SELDS1_R {
     }
 }
 #[doc = "Field `SELDS1` writer - Select Memory Check for DSRAM1"]
-pub type SELDS1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELDS1_A>;
-impl<'a, REG, const O: u8> SELDS1_W<'a, REG, O>
+pub type SELDS1_W<'a, REG> = crate::BitWriter<'a, REG, SELDS1_A>;
+impl<'a, REG> SELDS1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl USIC0DRA_R {
     }
 }
 #[doc = "Field `USIC0DRA` writer - Select Memory Check for USIC0"]
-pub type USIC0DRA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USIC0DRA_A>;
-impl<'a, REG, const O: u8> USIC0DRA_W<'a, REG, O>
+pub type USIC0DRA_W<'a, REG> = crate::BitWriter<'a, REG, USIC0DRA_A>;
+impl<'a, REG> USIC0DRA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl USIC1DRA_R {
     }
 }
 #[doc = "Field `USIC1DRA` writer - Select Memory Check for USIC1"]
-pub type USIC1DRA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USIC1DRA_A>;
-impl<'a, REG, const O: u8> USIC1DRA_W<'a, REG, O>
+pub type USIC1DRA_W<'a, REG> = crate::BitWriter<'a, REG, USIC1DRA_A>;
+impl<'a, REG> USIC1DRA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl MCANDRA_R {
     }
 }
 #[doc = "Field `MCANDRA` writer - Select Memory Check for MultiCAN"]
-pub type MCANDRA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MCANDRA_A>;
-impl<'a, REG, const O: u8> MCANDRA_W<'a, REG, O>
+pub type MCANDRA_W<'a, REG> = crate::BitWriter<'a, REG, MCANDRA_A>;
+impl<'a, REG> MCANDRA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl PPRFDRA_R {
     }
 }
 #[doc = "Field `PPRFDRA` writer - Select Memory Check for PMU"]
-pub type PPRFDRA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPRFDRA_A>;
-impl<'a, REG, const O: u8> PPRFDRA_W<'a, REG, O>
+pub type PPRFDRA_W<'a, REG> = crate::BitWriter<'a, REG, PPRFDRA_A>;
+impl<'a, REG> PPRFDRA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl SELUSB_R {
     }
 }
 #[doc = "Field `SELUSB` writer - Select Memory Check for USB SRAM"]
-pub type SELUSB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELUSB_A>;
-impl<'a, REG, const O: u8> SELUSB_W<'a, REG, O>
+pub type SELUSB_W<'a, REG> = crate::BitWriter<'a, REG, SELUSB_A>;
+impl<'a, REG> SELUSB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl SELETH0TX_R {
     }
 }
 #[doc = "Field `SELETH0TX` writer - Select Memory Check for ETH0 TX SRAM"]
-pub type SELETH0TX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELETH0TX_A>;
-impl<'a, REG, const O: u8> SELETH0TX_W<'a, REG, O>
+pub type SELETH0TX_W<'a, REG> = crate::BitWriter<'a, REG, SELETH0TX_A>;
+impl<'a, REG> SELETH0TX_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl SELETH0RX_R {
     }
 }
 #[doc = "Field `SELETH0RX` writer - Select Memory Check for ETH0 RX SRAM"]
-pub type SELETH0RX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELETH0RX_A>;
-impl<'a, REG, const O: u8> SELETH0RX_W<'a, REG, O>
+pub type SELETH0RX_W<'a, REG> = crate::BitWriter<'a, REG, SELETH0RX_A>;
+impl<'a, REG> SELETH0RX_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -516,8 +516,8 @@ impl SELSD0_R {
     }
 }
 #[doc = "Field `SELSD0` writer - Select Memory Check for SDMMC SRAM 0"]
-pub type SELSD0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELSD0_A>;
-impl<'a, REG, const O: u8> SELSD0_W<'a, REG, O>
+pub type SELSD0_W<'a, REG> = crate::BitWriter<'a, REG, SELSD0_A>;
+impl<'a, REG> SELSD0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -569,8 +569,8 @@ impl SELSD1_R {
     }
 }
 #[doc = "Field `SELSD1` writer - Select Memory Check for SDMMC SRAM 1"]
-pub type SELSD1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELSD1_A>;
-impl<'a, REG, const O: u8> SELSD1_W<'a, REG, O>
+pub type SELSD1_W<'a, REG> = crate::BitWriter<'a, REG, SELSD1_A>;
+impl<'a, REG> SELSD1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -622,8 +622,8 @@ impl SELECAT0_R {
     }
 }
 #[doc = "Field `SELECAT0` writer - Select Memory Check for ECAT0 SRAM 1"]
-pub type SELECAT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELECAT0_A>;
-impl<'a, REG, const O: u8> SELECAT0_W<'a, REG, O>
+pub type SELECAT0_W<'a, REG> = crate::BitWriter<'a, REG, SELECAT0_A>;
+impl<'a, REG> SELECAT0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -704,74 +704,74 @@ impl W {
     #[doc = "Bit 0 - Select Memory Check for PSRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn selps(&mut self) -> SELPS_W<MCHKCON_SPEC, 0> {
-        SELPS_W::new(self)
+    pub fn selps(&mut self) -> SELPS_W<MCHKCON_SPEC> {
+        SELPS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Select Memory Check for DSRAM1"]
     #[inline(always)]
     #[must_use]
-    pub fn selds1(&mut self) -> SELDS1_W<MCHKCON_SPEC, 1> {
-        SELDS1_W::new(self)
+    pub fn selds1(&mut self) -> SELDS1_W<MCHKCON_SPEC> {
+        SELDS1_W::new(self, 1)
     }
     #[doc = "Bit 8 - Select Memory Check for USIC0"]
     #[inline(always)]
     #[must_use]
-    pub fn usic0dra(&mut self) -> USIC0DRA_W<MCHKCON_SPEC, 8> {
-        USIC0DRA_W::new(self)
+    pub fn usic0dra(&mut self) -> USIC0DRA_W<MCHKCON_SPEC> {
+        USIC0DRA_W::new(self, 8)
     }
     #[doc = "Bit 9 - Select Memory Check for USIC1"]
     #[inline(always)]
     #[must_use]
-    pub fn usic1dra(&mut self) -> USIC1DRA_W<MCHKCON_SPEC, 9> {
-        USIC1DRA_W::new(self)
+    pub fn usic1dra(&mut self) -> USIC1DRA_W<MCHKCON_SPEC> {
+        USIC1DRA_W::new(self, 9)
     }
     #[doc = "Bit 12 - Select Memory Check for MultiCAN"]
     #[inline(always)]
     #[must_use]
-    pub fn mcandra(&mut self) -> MCANDRA_W<MCHKCON_SPEC, 12> {
-        MCANDRA_W::new(self)
+    pub fn mcandra(&mut self) -> MCANDRA_W<MCHKCON_SPEC> {
+        MCANDRA_W::new(self, 12)
     }
     #[doc = "Bit 13 - Select Memory Check for PMU"]
     #[inline(always)]
     #[must_use]
-    pub fn pprfdra(&mut self) -> PPRFDRA_W<MCHKCON_SPEC, 13> {
-        PPRFDRA_W::new(self)
+    pub fn pprfdra(&mut self) -> PPRFDRA_W<MCHKCON_SPEC> {
+        PPRFDRA_W::new(self, 13)
     }
     #[doc = "Bit 16 - Select Memory Check for USB SRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn selusb(&mut self) -> SELUSB_W<MCHKCON_SPEC, 16> {
-        SELUSB_W::new(self)
+    pub fn selusb(&mut self) -> SELUSB_W<MCHKCON_SPEC> {
+        SELUSB_W::new(self, 16)
     }
     #[doc = "Bit 17 - Select Memory Check for ETH0 TX SRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn seleth0tx(&mut self) -> SELETH0TX_W<MCHKCON_SPEC, 17> {
-        SELETH0TX_W::new(self)
+    pub fn seleth0tx(&mut self) -> SELETH0TX_W<MCHKCON_SPEC> {
+        SELETH0TX_W::new(self, 17)
     }
     #[doc = "Bit 18 - Select Memory Check for ETH0 RX SRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn seleth0rx(&mut self) -> SELETH0RX_W<MCHKCON_SPEC, 18> {
-        SELETH0RX_W::new(self)
+    pub fn seleth0rx(&mut self) -> SELETH0RX_W<MCHKCON_SPEC> {
+        SELETH0RX_W::new(self, 18)
     }
     #[doc = "Bit 19 - Select Memory Check for SDMMC SRAM 0"]
     #[inline(always)]
     #[must_use]
-    pub fn selsd0(&mut self) -> SELSD0_W<MCHKCON_SPEC, 19> {
-        SELSD0_W::new(self)
+    pub fn selsd0(&mut self) -> SELSD0_W<MCHKCON_SPEC> {
+        SELSD0_W::new(self, 19)
     }
     #[doc = "Bit 20 - Select Memory Check for SDMMC SRAM 1"]
     #[inline(always)]
     #[must_use]
-    pub fn selsd1(&mut self) -> SELSD1_W<MCHKCON_SPEC, 20> {
-        SELSD1_W::new(self)
+    pub fn selsd1(&mut self) -> SELSD1_W<MCHKCON_SPEC> {
+        SELSD1_W::new(self, 20)
     }
     #[doc = "Bit 24 - Select Memory Check for ECAT0 SRAM 1"]
     #[inline(always)]
     #[must_use]
-    pub fn selecat0(&mut self) -> SELECAT0_W<MCHKCON_SPEC, 24> {
-        SELECAT0_W::new(self)
+    pub fn selecat0(&mut self) -> SELECAT0_W<MCHKCON_SPEC> {
+        SELECAT0_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -36,8 +36,8 @@ impl FSLSPCLK_SEL_R {
     }
 }
 #[doc = "Field `FSLSPclkSel` writer - FS PHY Clock Select"]
-pub type FSLSPCLK_SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, FSLSPCLK_SEL_A>;
-impl<'a, REG, const O: u8> FSLSPCLK_SEL_W<'a, REG, O>
+pub type FSLSPCLK_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, FSLSPCLK_SEL_A>;
+impl<'a, REG> FSLSPCLK_SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -85,8 +85,8 @@ impl FSLSSUPP_R {
     }
 }
 #[doc = "Field `FSLSSupp` writer - FS-Only Support"]
-pub type FSLSSUPP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FSLSSUPP_A>;
-impl<'a, REG, const O: u8> FSLSSUPP_W<'a, REG, O>
+pub type FSLSSUPP_W<'a, REG> = crate::BitWriter<'a, REG, FSLSSUPP_A>;
+impl<'a, REG> FSLSSUPP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -104,7 +104,7 @@ where
 #[doc = "Field `DescDMA` reader - Enable Scatter/gather DMA in Host mode"]
 pub type DESC_DMA_R = crate::BitReader;
 #[doc = "Field `DescDMA` writer - Enable Scatter/gather DMA in Host mode"]
-pub type DESC_DMA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DESC_DMA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FrListEn` reader - Frame List Entries"]
 pub type FR_LIST_EN_R = crate::FieldReader<FR_LIST_EN_A>;
 #[doc = "Frame List Entries\n\nValue on reset: 0"]
@@ -163,8 +163,8 @@ impl FR_LIST_EN_R {
     }
 }
 #[doc = "Field `FrListEn` writer - Frame List Entries"]
-pub type FR_LIST_EN_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, FR_LIST_EN_A>;
-impl<'a, REG, const O: u8> FR_LIST_EN_W<'a, REG, O>
+pub type FR_LIST_EN_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, FR_LIST_EN_A>;
+impl<'a, REG> FR_LIST_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -193,7 +193,7 @@ where
 #[doc = "Field `PerSchedEna` reader - Enable Periodic Scheduling"]
 pub type PER_SCHED_ENA_R = crate::BitReader;
 #[doc = "Field `PerSchedEna` writer - Enable Periodic Scheduling"]
-pub type PER_SCHED_ENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PER_SCHED_ENA_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:1 - FS PHY Clock Select"]
     #[inline(always)]
@@ -225,32 +225,32 @@ impl W {
     #[doc = "Bits 0:1 - FS PHY Clock Select"]
     #[inline(always)]
     #[must_use]
-    pub fn fslspclk_sel(&mut self) -> FSLSPCLK_SEL_W<HCFG_SPEC, 0> {
-        FSLSPCLK_SEL_W::new(self)
+    pub fn fslspclk_sel(&mut self) -> FSLSPCLK_SEL_W<HCFG_SPEC> {
+        FSLSPCLK_SEL_W::new(self, 0)
     }
     #[doc = "Bit 2 - FS-Only Support"]
     #[inline(always)]
     #[must_use]
-    pub fn fslssupp(&mut self) -> FSLSSUPP_W<HCFG_SPEC, 2> {
-        FSLSSUPP_W::new(self)
+    pub fn fslssupp(&mut self) -> FSLSSUPP_W<HCFG_SPEC> {
+        FSLSSUPP_W::new(self, 2)
     }
     #[doc = "Bit 23 - Enable Scatter/gather DMA in Host mode"]
     #[inline(always)]
     #[must_use]
-    pub fn desc_dma(&mut self) -> DESC_DMA_W<HCFG_SPEC, 23> {
-        DESC_DMA_W::new(self)
+    pub fn desc_dma(&mut self) -> DESC_DMA_W<HCFG_SPEC> {
+        DESC_DMA_W::new(self, 23)
     }
     #[doc = "Bits 24:25 - Frame List Entries"]
     #[inline(always)]
     #[must_use]
-    pub fn fr_list_en(&mut self) -> FR_LIST_EN_W<HCFG_SPEC, 24> {
-        FR_LIST_EN_W::new(self)
+    pub fn fr_list_en(&mut self) -> FR_LIST_EN_W<HCFG_SPEC> {
+        FR_LIST_EN_W::new(self, 24)
     }
     #[doc = "Bit 26 - Enable Periodic Scheduling"]
     #[inline(always)]
     #[must_use]
-    pub fn per_sched_ena(&mut self) -> PER_SCHED_ENA_W<HCFG_SPEC, 26> {
-        PER_SCHED_ENA_W::new(self)
+    pub fn per_sched_ena(&mut self) -> PER_SCHED_ENA_W<HCFG_SPEC> {
+        PER_SCHED_ENA_W::new(self, 26)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,30 +1,72 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - CAN Clock Control Register"]
-    pub clc: CLC,
+    clc: CLC,
     _reserved1: [u8; 0x04],
-    #[doc = "0x08 - Module Identification Register"]
-    pub id: ID,
-    #[doc = "0x0c - CAN Fractional Divider Register"]
-    pub fdr: FDR,
+    id: ID,
+    fdr: FDR,
     _reserved3: [u8; 0xf0],
-    #[doc = "0x100..0x140 - List Register"]
-    pub list: [LIST; 16],
-    #[doc = "0x140..0x160 - Message Pending Register"]
-    pub mspnd: [MSPND; 8],
+    list: [LIST; 16],
+    mspnd: [MSPND; 8],
     _reserved5: [u8; 0x20],
-    #[doc = "0x180..0x1a0 - Message Index Register"]
-    pub msid: [MSID; 8],
+    msid: [MSID; 8],
     _reserved6: [u8; 0x20],
+    msimask: MSIMASK,
+    panctr: PANCTR,
+    mcr: MCR,
+    mitr: MITR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - CAN Clock Control Register"]
+    #[inline(always)]
+    pub const fn clc(&self) -> &CLC {
+        &self.clc
+    }
+    #[doc = "0x08 - Module Identification Register"]
+    #[inline(always)]
+    pub const fn id(&self) -> &ID {
+        &self.id
+    }
+    #[doc = "0x0c - CAN Fractional Divider Register"]
+    #[inline(always)]
+    pub const fn fdr(&self) -> &FDR {
+        &self.fdr
+    }
+    #[doc = "0x100..0x140 - List Register"]
+    #[inline(always)]
+    pub const fn list(&self, n: usize) -> &LIST {
+        &self.list[n]
+    }
+    #[doc = "0x140..0x160 - Message Pending Register"]
+    #[inline(always)]
+    pub const fn mspnd(&self, n: usize) -> &MSPND {
+        &self.mspnd[n]
+    }
+    #[doc = "0x180..0x1a0 - Message Index Register"]
+    #[inline(always)]
+    pub const fn msid(&self, n: usize) -> &MSID {
+        &self.msid[n]
+    }
     #[doc = "0x1c0 - Message Index Mask Register"]
-    pub msimask: MSIMASK,
+    #[inline(always)]
+    pub const fn msimask(&self) -> &MSIMASK {
+        &self.msimask
+    }
     #[doc = "0x1c4 - Panel Control Register"]
-    pub panctr: PANCTR,
+    #[inline(always)]
+    pub const fn panctr(&self) -> &PANCTR {
+        &self.panctr
+    }
     #[doc = "0x1c8 - Module Control Register"]
-    pub mcr: MCR,
+    #[inline(always)]
+    pub const fn mcr(&self) -> &MCR {
+        &self.mcr
+    }
     #[doc = "0x1cc - Module Interrupt Trigger Register"]
-    pub mitr: MITR,
+    #[inline(always)]
+    pub const fn mitr(&self) -> &MITR {
+        &self.mitr
+    }
 }
 #[doc = "CLC (rw) register accessor: CAN Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clc::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clc::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clc`]
 module"]
