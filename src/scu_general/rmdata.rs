@@ -5,7 +5,7 @@ pub type W = crate::W<RMDATA_SPEC>;
 #[doc = "Field `DATA` reader - Hibernate Retention Memory Data"]
 pub type DATA_R = crate::FieldReader<u32>;
 #[doc = "Field `DATA` writer - Hibernate Retention Memory Data"]
-pub type DATA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type DATA_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Hibernate Retention Memory Data"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Hibernate Retention Memory Data"]
     #[inline(always)]
     #[must_use]
-    pub fn data(&mut self) -> DATA_W<RMDATA_SPEC, 0> {
-        DATA_W::new(self)
+    pub fn data(&mut self) -> DATA_W<RMDATA_SPEC> {
+        DATA_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,18 +1,44 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    sm_p_start_adr: SM_P_START_ADR,
+    sm_len: SM_LEN,
+    sm_control: SM_CONTROL,
+    sm_status: SM_STATUS,
+    sm_act: SM_ACT,
+    sm_pdi_ctr: SM_PDI_CTR,
+}
+impl RegisterBlock {
     #[doc = "0x00 - Physical Start Address SyncManager 0"]
-    pub sm_p_start_adr: SM_P_START_ADR,
+    #[inline(always)]
+    pub const fn sm_p_start_adr(&self) -> &SM_P_START_ADR {
+        &self.sm_p_start_adr
+    }
     #[doc = "0x02 - Length SyncManager 0"]
-    pub sm_len: SM_LEN,
+    #[inline(always)]
+    pub const fn sm_len(&self) -> &SM_LEN {
+        &self.sm_len
+    }
     #[doc = "0x04 - Control Register SyncManager 0"]
-    pub sm_control: SM_CONTROL,
+    #[inline(always)]
+    pub const fn sm_control(&self) -> &SM_CONTROL {
+        &self.sm_control
+    }
     #[doc = "0x05 - Status Register SyncManager 0"]
-    pub sm_status: SM_STATUS,
+    #[inline(always)]
+    pub const fn sm_status(&self) -> &SM_STATUS {
+        &self.sm_status
+    }
     #[doc = "0x06 - Activate SyncManager 0"]
-    pub sm_act: SM_ACT,
+    #[inline(always)]
+    pub const fn sm_act(&self) -> &SM_ACT {
+        &self.sm_act
+    }
     #[doc = "0x07 - PDI Control SyncManager 0"]
-    pub sm_pdi_ctr: SM_PDI_CTR,
+    #[inline(always)]
+    pub const fn sm_pdi_ctr(&self) -> &SM_PDI_CTR {
+        &self.sm_pdi_ctr
+    }
 }
 #[doc = "SM_P_START_ADR (r) register accessor: Physical Start Address SyncManager 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sm_p_start_adr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sm_p_start_adr`]
 module"]

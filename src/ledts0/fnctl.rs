@@ -44,8 +44,8 @@ impl PADT_R {
     }
 }
 #[doc = "Field `PADT` writer - Touch-Sense TSIN Pad Turn"]
-pub type PADT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PADT_A>;
-impl<'a, REG, const O: u8> PADT_W<'a, REG, O>
+pub type PADT_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PADT_A>;
+impl<'a, REG> PADT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -98,8 +98,8 @@ impl PADTSW_R {
     }
 }
 #[doc = "Field `PADTSW` writer - Software Control for Touch-Sense Pad Turn"]
-pub type PADTSW_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PADTSW_A>;
-impl<'a, REG, const O: u8> PADTSW_W<'a, REG, O>
+pub type PADTSW_W<'a, REG> = crate::BitWriter<'a, REG, PADTSW_A>;
+impl<'a, REG> PADTSW_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -153,8 +153,8 @@ for set duration in touch-sense time slice. With this setting, it is not specifi
     }
 }
 #[doc = "Field `EPULL` writer - Enable External Pull-up Configuration on Pin COLA"]
-pub type EPULL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EPULL_A>;
-impl<'a, REG, const O: u8> EPULL_W<'a, REG, O>
+pub type EPULL_W<'a, REG> = crate::BitWriter<'a, REG, EPULL_A>;
+impl<'a, REG> EPULL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -222,8 +222,8 @@ impl ACCCNT_R {
     }
 }
 #[doc = "Field `ACCCNT` writer - Accumulate Count on Touch-Sense Input"]
-pub type ACCCNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, ACCCNT_A>;
-impl<'a, REG, const O: u8> ACCCNT_W<'a, REG, O>
+pub type ACCCNT_W<'a, REG> = crate::FieldWriter<'a, REG, 4, ACCCNT_A>;
+impl<'a, REG> ACCCNT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -281,8 +281,8 @@ impl TSCCMP_R {
     }
 }
 #[doc = "Field `TSCCMP` writer - Common Compare Enable for Touch-Sense"]
-pub type TSCCMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSCCMP_A>;
-impl<'a, REG, const O: u8> TSCCMP_W<'a, REG, O>
+pub type TSCCMP_W<'a, REG> = crate::BitWriter<'a, REG, TSCCMP_A>;
+impl<'a, REG> TSCCMP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -355,8 +355,8 @@ impl TSOEXT_R {
     }
 }
 #[doc = "Field `TSOEXT` writer - Extension for Touch-Sense Output for Pin-Low-Level"]
-pub type TSOEXT_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, TSOEXT_A>;
-impl<'a, REG, const O: u8> TSOEXT_W<'a, REG, O>
+pub type TSOEXT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TSOEXT_A>;
+impl<'a, REG> TSOEXT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -419,8 +419,8 @@ impl TSCTRR_R {
     }
 }
 #[doc = "Field `TSCTRR` writer - TS-Counter Auto Reset"]
-pub type TSCTRR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSCTRR_A>;
-impl<'a, REG, const O: u8> TSCTRR_W<'a, REG, O>
+pub type TSCTRR_W<'a, REG> = crate::BitWriter<'a, REG, TSCTRR_A>;
+impl<'a, REG> TSCTRR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -472,8 +472,8 @@ impl TSCTRSAT_R {
     }
 }
 #[doc = "Field `TSCTRSAT` writer - Saturation of TS-Counter"]
-pub type TSCTRSAT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSCTRSAT_A>;
-impl<'a, REG, const O: u8> TSCTRSAT_W<'a, REG, O>
+pub type TSCTRSAT_W<'a, REG> = crate::BitWriter<'a, REG, TSCTRSAT_A>;
+impl<'a, REG> TSCTRSAT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -530,8 +530,8 @@ impl NR_TSIN_R {
     }
 }
 #[doc = "Field `NR_TSIN` writer - Number of Touch-Sense Input"]
-pub type NR_TSIN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, NR_TSIN_A>;
-impl<'a, REG, const O: u8> NR_TSIN_W<'a, REG, O>
+pub type NR_TSIN_W<'a, REG> = crate::FieldWriter<'a, REG, 3, NR_TSIN_A>;
+impl<'a, REG> NR_TSIN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -584,8 +584,8 @@ impl COLLEV_R {
     }
 }
 #[doc = "Field `COLLEV` writer - Active Level of LED Column"]
-pub type COLLEV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, COLLEV_A>;
-impl<'a, REG, const O: u8> COLLEV_W<'a, REG, O>
+pub type COLLEV_W<'a, REG> = crate::BitWriter<'a, REG, COLLEV_A>;
+impl<'a, REG> COLLEV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -690,8 +690,8 @@ impl NR_LEDCOL_R {
     }
 }
 #[doc = "Field `NR_LEDCOL` writer - Number of LED Columns"]
-pub type NR_LEDCOL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, NR_LEDCOL_A>;
-impl<'a, REG, const O: u8> NR_LEDCOL_W<'a, REG, O>
+pub type NR_LEDCOL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, NR_LEDCOL_A>;
+impl<'a, REG> NR_LEDCOL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -803,68 +803,68 @@ impl W {
     #[doc = "Bits 0:2 - Touch-Sense TSIN Pad Turn"]
     #[inline(always)]
     #[must_use]
-    pub fn padt(&mut self) -> PADT_W<FNCTL_SPEC, 0> {
-        PADT_W::new(self)
+    pub fn padt(&mut self) -> PADT_W<FNCTL_SPEC> {
+        PADT_W::new(self, 0)
     }
     #[doc = "Bit 3 - Software Control for Touch-Sense Pad Turn"]
     #[inline(always)]
     #[must_use]
-    pub fn padtsw(&mut self) -> PADTSW_W<FNCTL_SPEC, 3> {
-        PADTSW_W::new(self)
+    pub fn padtsw(&mut self) -> PADTSW_W<FNCTL_SPEC> {
+        PADTSW_W::new(self, 3)
     }
     #[doc = "Bit 4 - Enable External Pull-up Configuration on Pin COLA"]
     #[inline(always)]
     #[must_use]
-    pub fn epull(&mut self) -> EPULL_W<FNCTL_SPEC, 4> {
-        EPULL_W::new(self)
+    pub fn epull(&mut self) -> EPULL_W<FNCTL_SPEC> {
+        EPULL_W::new(self, 4)
     }
     #[doc = "Bits 16:19 - Accumulate Count on Touch-Sense Input"]
     #[inline(always)]
     #[must_use]
-    pub fn acccnt(&mut self) -> ACCCNT_W<FNCTL_SPEC, 16> {
-        ACCCNT_W::new(self)
+    pub fn acccnt(&mut self) -> ACCCNT_W<FNCTL_SPEC> {
+        ACCCNT_W::new(self, 16)
     }
     #[doc = "Bit 20 - Common Compare Enable for Touch-Sense"]
     #[inline(always)]
     #[must_use]
-    pub fn tsccmp(&mut self) -> TSCCMP_W<FNCTL_SPEC, 20> {
-        TSCCMP_W::new(self)
+    pub fn tsccmp(&mut self) -> TSCCMP_W<FNCTL_SPEC> {
+        TSCCMP_W::new(self, 20)
     }
     #[doc = "Bits 21:22 - Extension for Touch-Sense Output for Pin-Low-Level"]
     #[inline(always)]
     #[must_use]
-    pub fn tsoext(&mut self) -> TSOEXT_W<FNCTL_SPEC, 21> {
-        TSOEXT_W::new(self)
+    pub fn tsoext(&mut self) -> TSOEXT_W<FNCTL_SPEC> {
+        TSOEXT_W::new(self, 21)
     }
     #[doc = "Bit 23 - TS-Counter Auto Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn tsctrr(&mut self) -> TSCTRR_W<FNCTL_SPEC, 23> {
-        TSCTRR_W::new(self)
+    pub fn tsctrr(&mut self) -> TSCTRR_W<FNCTL_SPEC> {
+        TSCTRR_W::new(self, 23)
     }
     #[doc = "Bit 24 - Saturation of TS-Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn tsctrsat(&mut self) -> TSCTRSAT_W<FNCTL_SPEC, 24> {
-        TSCTRSAT_W::new(self)
+    pub fn tsctrsat(&mut self) -> TSCTRSAT_W<FNCTL_SPEC> {
+        TSCTRSAT_W::new(self, 24)
     }
     #[doc = "Bits 25:27 - Number of Touch-Sense Input"]
     #[inline(always)]
     #[must_use]
-    pub fn nr_tsin(&mut self) -> NR_TSIN_W<FNCTL_SPEC, 25> {
-        NR_TSIN_W::new(self)
+    pub fn nr_tsin(&mut self) -> NR_TSIN_W<FNCTL_SPEC> {
+        NR_TSIN_W::new(self, 25)
     }
     #[doc = "Bit 28 - Active Level of LED Column"]
     #[inline(always)]
     #[must_use]
-    pub fn collev(&mut self) -> COLLEV_W<FNCTL_SPEC, 28> {
-        COLLEV_W::new(self)
+    pub fn collev(&mut self) -> COLLEV_W<FNCTL_SPEC> {
+        COLLEV_W::new(self, 28)
     }
     #[doc = "Bits 29:31 - Number of LED Columns"]
     #[inline(always)]
     #[must_use]
-    pub fn nr_ledcol(&mut self) -> NR_LEDCOL_W<FNCTL_SPEC, 29> {
-        NR_LEDCOL_W::new(self)
+    pub fn nr_ledcol(&mut self) -> NR_LEDCOL_W<FNCTL_SPEC> {
+        NR_LEDCOL_W::new(self, 29)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

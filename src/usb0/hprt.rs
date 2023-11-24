@@ -41,7 +41,7 @@ impl PRT_CONN_STS_R {
 #[doc = "Field `PrtConnDet` reader - Port Connect Detected"]
 pub type PRT_CONN_DET_R = crate::BitReader;
 #[doc = "Field `PrtConnDet` writer - Port Connect Detected"]
-pub type PRT_CONN_DET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PRT_CONN_DET_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PrtEna` reader - Port Enable"]
 pub type PRT_ENA_R = crate::BitReader<PRT_ENA_A>;
 #[doc = "Port Enable\n\nValue on reset: 0"]
@@ -79,8 +79,8 @@ impl PRT_ENA_R {
     }
 }
 #[doc = "Field `PrtEna` writer - Port Enable"]
-pub type PRT_ENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PRT_ENA_A>;
-impl<'a, REG, const O: u8> PRT_ENA_W<'a, REG, O>
+pub type PRT_ENA_W<'a, REG> = crate::BitWriter<'a, REG, PRT_ENA_A>;
+impl<'a, REG> PRT_ENA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -98,7 +98,7 @@ where
 #[doc = "Field `PrtEnChng` reader - Port Enable/Disable Change"]
 pub type PRT_EN_CHNG_R = crate::BitReader;
 #[doc = "Field `PrtEnChng` writer - Port Enable/Disable Change"]
-pub type PRT_EN_CHNG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PRT_EN_CHNG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PrtOvrCurrAct` reader - Port Overcurrent Active"]
 pub type PRT_OVR_CURR_ACT_R = crate::BitReader<PRT_OVR_CURR_ACT_A>;
 #[doc = "Port Overcurrent Active\n\nValue on reset: 0"]
@@ -138,7 +138,7 @@ impl PRT_OVR_CURR_ACT_R {
 #[doc = "Field `PrtOvrCurrChng` reader - Port Overcurrent Change"]
 pub type PRT_OVR_CURR_CHNG_R = crate::BitReader;
 #[doc = "Field `PrtOvrCurrChng` writer - Port Overcurrent Change"]
-pub type PRT_OVR_CURR_CHNG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PRT_OVR_CURR_CHNG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PrtRes` reader - Port Resume"]
 pub type PRT_RES_R = crate::BitReader<PRT_RES_A>;
 #[doc = "Port Resume\n\nValue on reset: 0"]
@@ -176,8 +176,8 @@ impl PRT_RES_R {
     }
 }
 #[doc = "Field `PrtRes` writer - Port Resume"]
-pub type PRT_RES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PRT_RES_A>;
-impl<'a, REG, const O: u8> PRT_RES_W<'a, REG, O>
+pub type PRT_RES_W<'a, REG> = crate::BitWriter<'a, REG, PRT_RES_A>;
+impl<'a, REG> PRT_RES_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -229,8 +229,8 @@ impl PRT_SUSP_R {
     }
 }
 #[doc = "Field `PrtSusp` writer - Port Suspend"]
-pub type PRT_SUSP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PRT_SUSP_A>;
-impl<'a, REG, const O: u8> PRT_SUSP_W<'a, REG, O>
+pub type PRT_SUSP_W<'a, REG> = crate::BitWriter<'a, REG, PRT_SUSP_A>;
+impl<'a, REG> PRT_SUSP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -282,8 +282,8 @@ impl PRT_RST_R {
     }
 }
 #[doc = "Field `PrtRst` writer - Port Reset"]
-pub type PRT_RST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PRT_RST_A>;
-impl<'a, REG, const O: u8> PRT_RST_W<'a, REG, O>
+pub type PRT_RST_W<'a, REG> = crate::BitWriter<'a, REG, PRT_RST_A>;
+impl<'a, REG> PRT_RST_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -337,8 +337,8 @@ impl PRT_PWR_R {
     }
 }
 #[doc = "Field `PrtPwr` writer - Port Power"]
-pub type PRT_PWR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PRT_PWR_A>;
-impl<'a, REG, const O: u8> PRT_PWR_W<'a, REG, O>
+pub type PRT_PWR_W<'a, REG> = crate::BitWriter<'a, REG, PRT_PWR_A>;
+impl<'a, REG> PRT_PWR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -452,50 +452,50 @@ impl W {
     #[doc = "Bit 1 - Port Connect Detected"]
     #[inline(always)]
     #[must_use]
-    pub fn prt_conn_det(&mut self) -> PRT_CONN_DET_W<HPRT_SPEC, 1> {
-        PRT_CONN_DET_W::new(self)
+    pub fn prt_conn_det(&mut self) -> PRT_CONN_DET_W<HPRT_SPEC> {
+        PRT_CONN_DET_W::new(self, 1)
     }
     #[doc = "Bit 2 - Port Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn prt_ena(&mut self) -> PRT_ENA_W<HPRT_SPEC, 2> {
-        PRT_ENA_W::new(self)
+    pub fn prt_ena(&mut self) -> PRT_ENA_W<HPRT_SPEC> {
+        PRT_ENA_W::new(self, 2)
     }
     #[doc = "Bit 3 - Port Enable/Disable Change"]
     #[inline(always)]
     #[must_use]
-    pub fn prt_en_chng(&mut self) -> PRT_EN_CHNG_W<HPRT_SPEC, 3> {
-        PRT_EN_CHNG_W::new(self)
+    pub fn prt_en_chng(&mut self) -> PRT_EN_CHNG_W<HPRT_SPEC> {
+        PRT_EN_CHNG_W::new(self, 3)
     }
     #[doc = "Bit 5 - Port Overcurrent Change"]
     #[inline(always)]
     #[must_use]
-    pub fn prt_ovr_curr_chng(&mut self) -> PRT_OVR_CURR_CHNG_W<HPRT_SPEC, 5> {
-        PRT_OVR_CURR_CHNG_W::new(self)
+    pub fn prt_ovr_curr_chng(&mut self) -> PRT_OVR_CURR_CHNG_W<HPRT_SPEC> {
+        PRT_OVR_CURR_CHNG_W::new(self, 5)
     }
     #[doc = "Bit 6 - Port Resume"]
     #[inline(always)]
     #[must_use]
-    pub fn prt_res(&mut self) -> PRT_RES_W<HPRT_SPEC, 6> {
-        PRT_RES_W::new(self)
+    pub fn prt_res(&mut self) -> PRT_RES_W<HPRT_SPEC> {
+        PRT_RES_W::new(self, 6)
     }
     #[doc = "Bit 7 - Port Suspend"]
     #[inline(always)]
     #[must_use]
-    pub fn prt_susp(&mut self) -> PRT_SUSP_W<HPRT_SPEC, 7> {
-        PRT_SUSP_W::new(self)
+    pub fn prt_susp(&mut self) -> PRT_SUSP_W<HPRT_SPEC> {
+        PRT_SUSP_W::new(self, 7)
     }
     #[doc = "Bit 8 - Port Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn prt_rst(&mut self) -> PRT_RST_W<HPRT_SPEC, 8> {
-        PRT_RST_W::new(self)
+    pub fn prt_rst(&mut self) -> PRT_RST_W<HPRT_SPEC> {
+        PRT_RST_W::new(self, 8)
     }
     #[doc = "Bit 12 - Port Power"]
     #[inline(always)]
     #[must_use]
-    pub fn prt_pwr(&mut self) -> PRT_PWR_W<HPRT_SPEC, 12> {
-        PRT_PWR_W::new(self)
+    pub fn prt_pwr(&mut self) -> PRT_PWR_W<HPRT_SPEC> {
+        PRT_PWR_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

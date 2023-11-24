@@ -1,29 +1,67 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Port 3 Output Register"]
-    pub out: OUT,
-    #[doc = "0x04 - Port 3 Output Modification Register"]
-    pub omr: OMR,
+    out: OUT,
+    omr: OMR,
     _reserved2: [u8; 0x08],
-    #[doc = "0x10 - Port 3 Input/Output Control Register 0"]
-    pub iocr0: IOCR0,
-    #[doc = "0x14 - Port 3 Input/Output Control Register 4"]
-    pub iocr4: IOCR4,
+    iocr0: IOCR0,
+    iocr4: IOCR4,
     _reserved4: [u8; 0x0c],
-    #[doc = "0x24 - Port 3 Input Register"]
-    pub in_: IN,
+    in_: IN,
     _reserved5: [u8; 0x18],
-    #[doc = "0x40 - Port 3 Pad Driver Mode 0 Register"]
-    pub pdr0: PDR0,
+    pdr0: PDR0,
     _reserved6: [u8; 0x1c],
-    #[doc = "0x60 - Port 3 Pin Function Decision Control Register"]
-    pub pdisc: PDISC,
+    pdisc: PDISC,
     _reserved7: [u8; 0x0c],
+    pps: PPS,
+    hwsel: HWSEL,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Port 3 Output Register"]
+    #[inline(always)]
+    pub const fn out(&self) -> &OUT {
+        &self.out
+    }
+    #[doc = "0x04 - Port 3 Output Modification Register"]
+    #[inline(always)]
+    pub const fn omr(&self) -> &OMR {
+        &self.omr
+    }
+    #[doc = "0x10 - Port 3 Input/Output Control Register 0"]
+    #[inline(always)]
+    pub const fn iocr0(&self) -> &IOCR0 {
+        &self.iocr0
+    }
+    #[doc = "0x14 - Port 3 Input/Output Control Register 4"]
+    #[inline(always)]
+    pub const fn iocr4(&self) -> &IOCR4 {
+        &self.iocr4
+    }
+    #[doc = "0x24 - Port 3 Input Register"]
+    #[inline(always)]
+    pub const fn in_(&self) -> &IN {
+        &self.in_
+    }
+    #[doc = "0x40 - Port 3 Pad Driver Mode 0 Register"]
+    #[inline(always)]
+    pub const fn pdr0(&self) -> &PDR0 {
+        &self.pdr0
+    }
+    #[doc = "0x60 - Port 3 Pin Function Decision Control Register"]
+    #[inline(always)]
+    pub const fn pdisc(&self) -> &PDISC {
+        &self.pdisc
+    }
     #[doc = "0x70 - Port 3 Pin Power Save Register"]
-    pub pps: PPS,
+    #[inline(always)]
+    pub const fn pps(&self) -> &PPS {
+        &self.pps
+    }
     #[doc = "0x74 - Port 3 Pin Hardware Select Register"]
-    pub hwsel: HWSEL,
+    #[inline(always)]
+    pub const fn hwsel(&self) -> &HWSEL {
+        &self.hwsel
+    }
 }
 #[doc = "OUT (rw) register accessor: Port 3 Output Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`out::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`out::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@out`]
 module"]

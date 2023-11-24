@@ -5,7 +5,7 @@ pub type W = crate::W<WD_DIVIDE_SPEC>;
 #[doc = "Field `WD_DIV` reader - Watchdog divider"]
 pub type WD_DIV_R = crate::FieldReader<u16>;
 #[doc = "Field `WD_DIV` writer - Watchdog divider"]
-pub type WD_DIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type WD_DIV_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Watchdog divider"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Watchdog divider"]
     #[inline(always)]
     #[must_use]
-    pub fn wd_div(&mut self) -> WD_DIV_W<WD_DIVIDE_SPEC, 0> {
-        WD_DIV_W::new(self)
+    pub fn wd_div(&mut self) -> WD_DIV_W<WD_DIVIDE_SPEC> {
+        WD_DIV_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

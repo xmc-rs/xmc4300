@@ -39,8 +39,8 @@ impl IACCVIOL_R {
     }
 }
 #[doc = "Field `IACCVIOL` writer - Instruction access violation flag"]
-pub type IACCVIOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IACCVIOL_A>;
-impl<'a, REG, const O: u8> IACCVIOL_W<'a, REG, O>
+pub type IACCVIOL_W<'a, REG> = crate::BitWriter<'a, REG, IACCVIOL_A>;
+impl<'a, REG> IACCVIOL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl DACCVIOL_R {
     }
 }
 #[doc = "Field `DACCVIOL` writer - Data access violation flag"]
-pub type DACCVIOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DACCVIOL_A>;
-impl<'a, REG, const O: u8> DACCVIOL_W<'a, REG, O>
+pub type DACCVIOL_W<'a, REG> = crate::BitWriter<'a, REG, DACCVIOL_A>;
+impl<'a, REG> DACCVIOL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl MUNSTKERR_R {
     }
 }
 #[doc = "Field `MUNSTKERR` writer - MemManage fault on unstacking for a return from exception"]
-pub type MUNSTKERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MUNSTKERR_A>;
-impl<'a, REG, const O: u8> MUNSTKERR_W<'a, REG, O>
+pub type MUNSTKERR_W<'a, REG> = crate::BitWriter<'a, REG, MUNSTKERR_A>;
+impl<'a, REG> MUNSTKERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl MSTKERR_R {
     }
 }
 #[doc = "Field `MSTKERR` writer - MemManage fault on stacking for exception entry"]
-pub type MSTKERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MSTKERR_A>;
-impl<'a, REG, const O: u8> MSTKERR_W<'a, REG, O>
+pub type MSTKERR_W<'a, REG> = crate::BitWriter<'a, REG, MSTKERR_A>;
+impl<'a, REG> MSTKERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl MLSPERR_R {
     }
 }
 #[doc = "Field `MLSPERR` writer - MemManage fault during floating point lazy state preservation"]
-pub type MLSPERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MLSPERR_A>;
-impl<'a, REG, const O: u8> MLSPERR_W<'a, REG, O>
+pub type MLSPERR_W<'a, REG> = crate::BitWriter<'a, REG, MLSPERR_A>;
+impl<'a, REG> MLSPERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl MMARVALID_R {
     }
 }
 #[doc = "Field `MMARVALID` writer - MemManage Fault Address Register (MMFAR) valid flag"]
-pub type MMARVALID_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MMARVALID_A>;
-impl<'a, REG, const O: u8> MMARVALID_W<'a, REG, O>
+pub type MMARVALID_W<'a, REG> = crate::BitWriter<'a, REG, MMARVALID_A>;
+impl<'a, REG> MMARVALID_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl IBUSERR_R {
     }
 }
 #[doc = "Field `IBUSERR` writer - Instruction bus error"]
-pub type IBUSERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IBUSERR_A>;
-impl<'a, REG, const O: u8> IBUSERR_W<'a, REG, O>
+pub type IBUSERR_W<'a, REG> = crate::BitWriter<'a, REG, IBUSERR_A>;
+impl<'a, REG> IBUSERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl PRECISERR_R {
     }
 }
 #[doc = "Field `PRECISERR` writer - Precise data bus error"]
-pub type PRECISERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PRECISERR_A>;
-impl<'a, REG, const O: u8> PRECISERR_W<'a, REG, O>
+pub type PRECISERR_W<'a, REG> = crate::BitWriter<'a, REG, PRECISERR_A>;
+impl<'a, REG> PRECISERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl IMPRECISERR_R {
     }
 }
 #[doc = "Field `IMPRECISERR` writer - Imprecise data bus error"]
-pub type IMPRECISERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IMPRECISERR_A>;
-impl<'a, REG, const O: u8> IMPRECISERR_W<'a, REG, O>
+pub type IMPRECISERR_W<'a, REG> = crate::BitWriter<'a, REG, IMPRECISERR_A>;
+impl<'a, REG> IMPRECISERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -516,8 +516,8 @@ impl UNSTKERR_R {
     }
 }
 #[doc = "Field `UNSTKERR` writer - BusFault on unstacking for a return from exception"]
-pub type UNSTKERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, UNSTKERR_A>;
-impl<'a, REG, const O: u8> UNSTKERR_W<'a, REG, O>
+pub type UNSTKERR_W<'a, REG> = crate::BitWriter<'a, REG, UNSTKERR_A>;
+impl<'a, REG> UNSTKERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -569,8 +569,8 @@ impl STKERR_R {
     }
 }
 #[doc = "Field `STKERR` writer - BusFault on stacking for exception entry"]
-pub type STKERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STKERR_A>;
-impl<'a, REG, const O: u8> STKERR_W<'a, REG, O>
+pub type STKERR_W<'a, REG> = crate::BitWriter<'a, REG, STKERR_A>;
+impl<'a, REG> STKERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -622,8 +622,8 @@ impl LSPERR_R {
     }
 }
 #[doc = "Field `LSPERR` writer - BusFault during floating point lazy state preservation"]
-pub type LSPERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LSPERR_A>;
-impl<'a, REG, const O: u8> LSPERR_W<'a, REG, O>
+pub type LSPERR_W<'a, REG> = crate::BitWriter<'a, REG, LSPERR_A>;
+impl<'a, REG> LSPERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -675,8 +675,8 @@ impl BFARVALID_R {
     }
 }
 #[doc = "Field `BFARVALID` writer - BusFault Address Register (BFAR) valid flag"]
-pub type BFARVALID_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFARVALID_A>;
-impl<'a, REG, const O: u8> BFARVALID_W<'a, REG, O>
+pub type BFARVALID_W<'a, REG> = crate::BitWriter<'a, REG, BFARVALID_A>;
+impl<'a, REG> BFARVALID_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -728,8 +728,8 @@ impl UNDEFINSTR_R {
     }
 }
 #[doc = "Field `UNDEFINSTR` writer - Undefined instruction UsageFault"]
-pub type UNDEFINSTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, UNDEFINSTR_A>;
-impl<'a, REG, const O: u8> UNDEFINSTR_W<'a, REG, O>
+pub type UNDEFINSTR_W<'a, REG> = crate::BitWriter<'a, REG, UNDEFINSTR_A>;
+impl<'a, REG> UNDEFINSTR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -781,8 +781,8 @@ impl INVSTATE_R {
     }
 }
 #[doc = "Field `INVSTATE` writer - Invalid state UsageFault"]
-pub type INVSTATE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, INVSTATE_A>;
-impl<'a, REG, const O: u8> INVSTATE_W<'a, REG, O>
+pub type INVSTATE_W<'a, REG> = crate::BitWriter<'a, REG, INVSTATE_A>;
+impl<'a, REG> INVSTATE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -834,8 +834,8 @@ impl INVPC_R {
     }
 }
 #[doc = "Field `INVPC` writer - Invalid PC load UsageFault"]
-pub type INVPC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, INVPC_A>;
-impl<'a, REG, const O: u8> INVPC_W<'a, REG, O>
+pub type INVPC_W<'a, REG> = crate::BitWriter<'a, REG, INVPC_A>;
+impl<'a, REG> INVPC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -887,8 +887,8 @@ impl NOCP_R {
     }
 }
 #[doc = "Field `NOCP` writer - No coprocessor UsageFault"]
-pub type NOCP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NOCP_A>;
-impl<'a, REG, const O: u8> NOCP_W<'a, REG, O>
+pub type NOCP_W<'a, REG> = crate::BitWriter<'a, REG, NOCP_A>;
+impl<'a, REG> NOCP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -940,8 +940,8 @@ impl UNALIGNED_R {
     }
 }
 #[doc = "Field `UNALIGNED` writer - Unaligned access UsageFault"]
-pub type UNALIGNED_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, UNALIGNED_A>;
-impl<'a, REG, const O: u8> UNALIGNED_W<'a, REG, O>
+pub type UNALIGNED_W<'a, REG> = crate::BitWriter<'a, REG, UNALIGNED_A>;
+impl<'a, REG> UNALIGNED_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -993,8 +993,8 @@ impl DIVBYZERO_R {
     }
 }
 #[doc = "Field `DIVBYZERO` writer - Divide by zero UsageFault"]
-pub type DIVBYZERO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DIVBYZERO_A>;
-impl<'a, REG, const O: u8> DIVBYZERO_W<'a, REG, O>
+pub type DIVBYZERO_W<'a, REG> = crate::BitWriter<'a, REG, DIVBYZERO_A>;
+impl<'a, REG> DIVBYZERO_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1110,116 +1110,116 @@ impl W {
     #[doc = "Bit 0 - Instruction access violation flag"]
     #[inline(always)]
     #[must_use]
-    pub fn iaccviol(&mut self) -> IACCVIOL_W<CFSR_SPEC, 0> {
-        IACCVIOL_W::new(self)
+    pub fn iaccviol(&mut self) -> IACCVIOL_W<CFSR_SPEC> {
+        IACCVIOL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Data access violation flag"]
     #[inline(always)]
     #[must_use]
-    pub fn daccviol(&mut self) -> DACCVIOL_W<CFSR_SPEC, 1> {
-        DACCVIOL_W::new(self)
+    pub fn daccviol(&mut self) -> DACCVIOL_W<CFSR_SPEC> {
+        DACCVIOL_W::new(self, 1)
     }
     #[doc = "Bit 3 - MemManage fault on unstacking for a return from exception"]
     #[inline(always)]
     #[must_use]
-    pub fn munstkerr(&mut self) -> MUNSTKERR_W<CFSR_SPEC, 3> {
-        MUNSTKERR_W::new(self)
+    pub fn munstkerr(&mut self) -> MUNSTKERR_W<CFSR_SPEC> {
+        MUNSTKERR_W::new(self, 3)
     }
     #[doc = "Bit 4 - MemManage fault on stacking for exception entry"]
     #[inline(always)]
     #[must_use]
-    pub fn mstkerr(&mut self) -> MSTKERR_W<CFSR_SPEC, 4> {
-        MSTKERR_W::new(self)
+    pub fn mstkerr(&mut self) -> MSTKERR_W<CFSR_SPEC> {
+        MSTKERR_W::new(self, 4)
     }
     #[doc = "Bit 5 - MemManage fault during floating point lazy state preservation"]
     #[inline(always)]
     #[must_use]
-    pub fn mlsperr(&mut self) -> MLSPERR_W<CFSR_SPEC, 5> {
-        MLSPERR_W::new(self)
+    pub fn mlsperr(&mut self) -> MLSPERR_W<CFSR_SPEC> {
+        MLSPERR_W::new(self, 5)
     }
     #[doc = "Bit 7 - MemManage Fault Address Register (MMFAR) valid flag"]
     #[inline(always)]
     #[must_use]
-    pub fn mmarvalid(&mut self) -> MMARVALID_W<CFSR_SPEC, 7> {
-        MMARVALID_W::new(self)
+    pub fn mmarvalid(&mut self) -> MMARVALID_W<CFSR_SPEC> {
+        MMARVALID_W::new(self, 7)
     }
     #[doc = "Bit 8 - Instruction bus error"]
     #[inline(always)]
     #[must_use]
-    pub fn ibuserr(&mut self) -> IBUSERR_W<CFSR_SPEC, 8> {
-        IBUSERR_W::new(self)
+    pub fn ibuserr(&mut self) -> IBUSERR_W<CFSR_SPEC> {
+        IBUSERR_W::new(self, 8)
     }
     #[doc = "Bit 9 - Precise data bus error"]
     #[inline(always)]
     #[must_use]
-    pub fn preciserr(&mut self) -> PRECISERR_W<CFSR_SPEC, 9> {
-        PRECISERR_W::new(self)
+    pub fn preciserr(&mut self) -> PRECISERR_W<CFSR_SPEC> {
+        PRECISERR_W::new(self, 9)
     }
     #[doc = "Bit 10 - Imprecise data bus error"]
     #[inline(always)]
     #[must_use]
-    pub fn impreciserr(&mut self) -> IMPRECISERR_W<CFSR_SPEC, 10> {
-        IMPRECISERR_W::new(self)
+    pub fn impreciserr(&mut self) -> IMPRECISERR_W<CFSR_SPEC> {
+        IMPRECISERR_W::new(self, 10)
     }
     #[doc = "Bit 11 - BusFault on unstacking for a return from exception"]
     #[inline(always)]
     #[must_use]
-    pub fn unstkerr(&mut self) -> UNSTKERR_W<CFSR_SPEC, 11> {
-        UNSTKERR_W::new(self)
+    pub fn unstkerr(&mut self) -> UNSTKERR_W<CFSR_SPEC> {
+        UNSTKERR_W::new(self, 11)
     }
     #[doc = "Bit 12 - BusFault on stacking for exception entry"]
     #[inline(always)]
     #[must_use]
-    pub fn stkerr(&mut self) -> STKERR_W<CFSR_SPEC, 12> {
-        STKERR_W::new(self)
+    pub fn stkerr(&mut self) -> STKERR_W<CFSR_SPEC> {
+        STKERR_W::new(self, 12)
     }
     #[doc = "Bit 13 - BusFault during floating point lazy state preservation"]
     #[inline(always)]
     #[must_use]
-    pub fn lsperr(&mut self) -> LSPERR_W<CFSR_SPEC, 13> {
-        LSPERR_W::new(self)
+    pub fn lsperr(&mut self) -> LSPERR_W<CFSR_SPEC> {
+        LSPERR_W::new(self, 13)
     }
     #[doc = "Bit 15 - BusFault Address Register (BFAR) valid flag"]
     #[inline(always)]
     #[must_use]
-    pub fn bfarvalid(&mut self) -> BFARVALID_W<CFSR_SPEC, 15> {
-        BFARVALID_W::new(self)
+    pub fn bfarvalid(&mut self) -> BFARVALID_W<CFSR_SPEC> {
+        BFARVALID_W::new(self, 15)
     }
     #[doc = "Bit 16 - Undefined instruction UsageFault"]
     #[inline(always)]
     #[must_use]
-    pub fn undefinstr(&mut self) -> UNDEFINSTR_W<CFSR_SPEC, 16> {
-        UNDEFINSTR_W::new(self)
+    pub fn undefinstr(&mut self) -> UNDEFINSTR_W<CFSR_SPEC> {
+        UNDEFINSTR_W::new(self, 16)
     }
     #[doc = "Bit 17 - Invalid state UsageFault"]
     #[inline(always)]
     #[must_use]
-    pub fn invstate(&mut self) -> INVSTATE_W<CFSR_SPEC, 17> {
-        INVSTATE_W::new(self)
+    pub fn invstate(&mut self) -> INVSTATE_W<CFSR_SPEC> {
+        INVSTATE_W::new(self, 17)
     }
     #[doc = "Bit 18 - Invalid PC load UsageFault"]
     #[inline(always)]
     #[must_use]
-    pub fn invpc(&mut self) -> INVPC_W<CFSR_SPEC, 18> {
-        INVPC_W::new(self)
+    pub fn invpc(&mut self) -> INVPC_W<CFSR_SPEC> {
+        INVPC_W::new(self, 18)
     }
     #[doc = "Bit 19 - No coprocessor UsageFault"]
     #[inline(always)]
     #[must_use]
-    pub fn nocp(&mut self) -> NOCP_W<CFSR_SPEC, 19> {
-        NOCP_W::new(self)
+    pub fn nocp(&mut self) -> NOCP_W<CFSR_SPEC> {
+        NOCP_W::new(self, 19)
     }
     #[doc = "Bit 24 - Unaligned access UsageFault"]
     #[inline(always)]
     #[must_use]
-    pub fn unaligned(&mut self) -> UNALIGNED_W<CFSR_SPEC, 24> {
-        UNALIGNED_W::new(self)
+    pub fn unaligned(&mut self) -> UNALIGNED_W<CFSR_SPEC> {
+        UNALIGNED_W::new(self, 24)
     }
     #[doc = "Bit 25 - Divide by zero UsageFault"]
     #[inline(always)]
     #[must_use]
-    pub fn divbyzero(&mut self) -> DIVBYZERO_W<CFSR_SPEC, 25> {
-        DIVBYZERO_W::new(self)
+    pub fn divbyzero(&mut self) -> DIVBYZERO_W<CFSR_SPEC> {
+        DIVBYZERO_W::new(self, 25)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

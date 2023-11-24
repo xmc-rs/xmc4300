@@ -5,7 +5,7 @@ pub type W = crate::W<MII_PHY_DATA_SPEC>;
 #[doc = "Field `PHY_RW_DATA` reader - PHY Read/Write Data"]
 pub type PHY_RW_DATA_R = crate::FieldReader<u16>;
 #[doc = "Field `PHY_RW_DATA` writer - PHY Read/Write Data"]
-pub type PHY_RW_DATA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type PHY_RW_DATA_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - PHY Read/Write Data"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - PHY Read/Write Data"]
     #[inline(always)]
     #[must_use]
-    pub fn phy_rw_data(&mut self) -> PHY_RW_DATA_W<MII_PHY_DATA_SPEC, 0> {
-        PHY_RW_DATA_W::new(self)
+    pub fn phy_rw_data(&mut self) -> PHY_RW_DATA_W<MII_PHY_DATA_SPEC> {
+        PHY_RW_DATA_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

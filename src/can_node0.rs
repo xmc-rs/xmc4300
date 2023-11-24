@@ -1,20 +1,50 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    ncr: NCR,
+    nsr: NSR,
+    nipr: NIPR,
+    npcr: NPCR,
+    nbtr: NBTR,
+    necnt: NECNT,
+    nfcr: NFCR,
+}
+impl RegisterBlock {
     #[doc = "0x00 - Node Control Register"]
-    pub ncr: NCR,
+    #[inline(always)]
+    pub const fn ncr(&self) -> &NCR {
+        &self.ncr
+    }
     #[doc = "0x04 - Node Status Register"]
-    pub nsr: NSR,
+    #[inline(always)]
+    pub const fn nsr(&self) -> &NSR {
+        &self.nsr
+    }
     #[doc = "0x08 - Node Interrupt Pointer Register"]
-    pub nipr: NIPR,
+    #[inline(always)]
+    pub const fn nipr(&self) -> &NIPR {
+        &self.nipr
+    }
     #[doc = "0x0c - Node Port Control Register"]
-    pub npcr: NPCR,
+    #[inline(always)]
+    pub const fn npcr(&self) -> &NPCR {
+        &self.npcr
+    }
     #[doc = "0x10 - Node Bit Timing Register"]
-    pub nbtr: NBTR,
+    #[inline(always)]
+    pub const fn nbtr(&self) -> &NBTR {
+        &self.nbtr
+    }
     #[doc = "0x14 - Node Error Counter Register"]
-    pub necnt: NECNT,
+    #[inline(always)]
+    pub const fn necnt(&self) -> &NECNT {
+        &self.necnt
+    }
     #[doc = "0x18 - Node Frame Counter Register"]
-    pub nfcr: NFCR,
+    #[inline(always)]
+    pub const fn nfcr(&self) -> &NFCR {
+        &self.nfcr
+    }
 }
 #[doc = "NCR (rw) register accessor: Node Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ncr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ncr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ncr`]
 module"]

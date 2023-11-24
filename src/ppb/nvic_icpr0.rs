@@ -44,8 +44,8 @@ impl CLRPEND_R {
     }
 }
 #[doc = "Field `CLRPEND` writer - Interrupt set-pending bits."]
-pub type CLRPEND_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, CLRPEND_A>;
-impl<'a, REG, const O: u8> CLRPEND_W<'a, REG, O>
+pub type CLRPEND_W<'a, REG> = crate::FieldWriter<'a, REG, 32, CLRPEND_A>;
+impl<'a, REG> CLRPEND_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
@@ -72,8 +72,8 @@ impl W {
     #[doc = "Bits 0:31 - Interrupt set-pending bits."]
     #[inline(always)]
     #[must_use]
-    pub fn clrpend(&mut self) -> CLRPEND_W<NVIC_ICPR0_SPEC, 0> {
-        CLRPEND_W::new(self)
+    pub fn clrpend(&mut self) -> CLRPEND_W<NVIC_ICPR0_SPEC> {
+        CLRPEND_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

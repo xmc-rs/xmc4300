@@ -5,7 +5,7 @@ pub type W = crate::W<MLINKCLKCR_SPEC>;
 #[doc = "Field `SYSDIV` reader - System Clock Division Value"]
 pub type SYSDIV_R = crate::FieldReader;
 #[doc = "Field `SYSDIV` writer - System Clock Division Value"]
-pub type SYSDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SYSDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `SYSSEL` reader - System Clock Selection Value"]
 pub type SYSSEL_R = crate::BitReader<SYSSEL_A>;
 #[doc = "System Clock Selection Value\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl SYSSEL_R {
     }
 }
 #[doc = "Field `SYSSEL` writer - System Clock Selection Value"]
-pub type SYSSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SYSSEL_A>;
-impl<'a, REG, const O: u8> SYSSEL_W<'a, REG, O>
+pub type SYSSEL_W<'a, REG> = crate::BitWriter<'a, REG, SYSSEL_A>;
+impl<'a, REG> SYSSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -96,8 +96,8 @@ impl CPUDIV_R {
     }
 }
 #[doc = "Field `CPUDIV` writer - CPU Clock Divider Enable"]
-pub type CPUDIV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CPUDIV_A>;
-impl<'a, REG, const O: u8> CPUDIV_W<'a, REG, O>
+pub type CPUDIV_W<'a, REG> = crate::BitWriter<'a, REG, CPUDIV_A>;
+impl<'a, REG> CPUDIV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -149,8 +149,8 @@ impl PBDIV_R {
     }
 }
 #[doc = "Field `PBDIV` writer - PB Clock Divider Enable"]
-pub type PBDIV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PBDIV_A>;
-impl<'a, REG, const O: u8> PBDIV_W<'a, REG, O>
+pub type PBDIV_W<'a, REG> = crate::BitWriter<'a, REG, PBDIV_A>;
+impl<'a, REG> PBDIV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -202,8 +202,8 @@ impl CCUDIV_R {
     }
 }
 #[doc = "Field `CCUDIV` writer - CCU Clock Divider Enable"]
-pub type CCUDIV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCUDIV_A>;
-impl<'a, REG, const O: u8> CCUDIV_W<'a, REG, O>
+pub type CCUDIV_W<'a, REG> = crate::BitWriter<'a, REG, CCUDIV_A>;
+impl<'a, REG> CCUDIV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -221,7 +221,7 @@ where
 #[doc = "Field `WDTDIV` reader - WDT Clock Divider Value"]
 pub type WDTDIV_R = crate::FieldReader;
 #[doc = "Field `WDTDIV` writer - WDT Clock Divider Value"]
-pub type WDTDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type WDTDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `WDTSEL` reader - WDT Clock Selection Value"]
 pub type WDTSEL_R = crate::FieldReader<WDTSEL_A>;
 #[doc = "WDT Clock Selection Value\n\nValue on reset: 0"]
@@ -272,8 +272,8 @@ impl WDTSEL_R {
     }
 }
 #[doc = "Field `WDTSEL` writer - WDT Clock Selection Value"]
-pub type WDTSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, WDTSEL_A>;
-impl<'a, REG, const O: u8> WDTSEL_W<'a, REG, O>
+pub type WDTSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, WDTSEL_A>;
+impl<'a, REG> WDTSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -335,44 +335,44 @@ impl W {
     #[doc = "Bits 0:7 - System Clock Division Value"]
     #[inline(always)]
     #[must_use]
-    pub fn sysdiv(&mut self) -> SYSDIV_W<MLINKCLKCR_SPEC, 0> {
-        SYSDIV_W::new(self)
+    pub fn sysdiv(&mut self) -> SYSDIV_W<MLINKCLKCR_SPEC> {
+        SYSDIV_W::new(self, 0)
     }
     #[doc = "Bit 8 - System Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn syssel(&mut self) -> SYSSEL_W<MLINKCLKCR_SPEC, 8> {
-        SYSSEL_W::new(self)
+    pub fn syssel(&mut self) -> SYSSEL_W<MLINKCLKCR_SPEC> {
+        SYSSEL_W::new(self, 8)
     }
     #[doc = "Bit 10 - CPU Clock Divider Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cpudiv(&mut self) -> CPUDIV_W<MLINKCLKCR_SPEC, 10> {
-        CPUDIV_W::new(self)
+    pub fn cpudiv(&mut self) -> CPUDIV_W<MLINKCLKCR_SPEC> {
+        CPUDIV_W::new(self, 10)
     }
     #[doc = "Bit 12 - PB Clock Divider Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pbdiv(&mut self) -> PBDIV_W<MLINKCLKCR_SPEC, 12> {
-        PBDIV_W::new(self)
+    pub fn pbdiv(&mut self) -> PBDIV_W<MLINKCLKCR_SPEC> {
+        PBDIV_W::new(self, 12)
     }
     #[doc = "Bit 14 - CCU Clock Divider Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ccudiv(&mut self) -> CCUDIV_W<MLINKCLKCR_SPEC, 14> {
-        CCUDIV_W::new(self)
+    pub fn ccudiv(&mut self) -> CCUDIV_W<MLINKCLKCR_SPEC> {
+        CCUDIV_W::new(self, 14)
     }
     #[doc = "Bits 16:23 - WDT Clock Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn wdtdiv(&mut self) -> WDTDIV_W<MLINKCLKCR_SPEC, 16> {
-        WDTDIV_W::new(self)
+    pub fn wdtdiv(&mut self) -> WDTDIV_W<MLINKCLKCR_SPEC> {
+        WDTDIV_W::new(self, 16)
     }
     #[doc = "Bits 24:25 - WDT Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn wdtsel(&mut self) -> WDTSEL_W<MLINKCLKCR_SPEC, 24> {
-        WDTSEL_W::new(self)
+    pub fn wdtsel(&mut self) -> WDTSEL_W<MLINKCLKCR_SPEC> {
+        WDTSEL_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

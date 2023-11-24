@@ -5,7 +5,7 @@ pub type W = crate::W<WDTCLKCR_SPEC>;
 #[doc = "Field `WDTDIV` reader - WDT Clock Divider Value"]
 pub type WDTDIV_R = crate::FieldReader;
 #[doc = "Field `WDTDIV` writer - WDT Clock Divider Value"]
-pub type WDTDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type WDTDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `WDTSEL` reader - WDT Clock Selection Value"]
 pub type WDTSEL_R = crate::FieldReader<WDTSEL_A>;
 #[doc = "WDT Clock Selection Value\n\nValue on reset: 0"]
@@ -56,8 +56,8 @@ impl WDTSEL_R {
     }
 }
 #[doc = "Field `WDTSEL` writer - WDT Clock Selection Value"]
-pub type WDTSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, WDTSEL_A>;
-impl<'a, REG, const O: u8> WDTSEL_W<'a, REG, O>
+pub type WDTSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, WDTSEL_A>;
+impl<'a, REG> WDTSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -94,14 +94,14 @@ impl W {
     #[doc = "Bits 0:7 - WDT Clock Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn wdtdiv(&mut self) -> WDTDIV_W<WDTCLKCR_SPEC, 0> {
-        WDTDIV_W::new(self)
+    pub fn wdtdiv(&mut self) -> WDTDIV_W<WDTCLKCR_SPEC> {
+        WDTDIV_W::new(self, 0)
     }
     #[doc = "Bits 16:17 - WDT Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn wdtsel(&mut self) -> WDTSEL_W<WDTCLKCR_SPEC, 16> {
-        WDTSEL_W::new(self)
+    pub fn wdtsel(&mut self) -> WDTSEL_W<WDTCLKCR_SPEC> {
+        WDTSEL_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,15 +5,15 @@ pub type W = crate::W<NECNT_SPEC>;
 #[doc = "Field `REC` reader - Receive Error Counter"]
 pub type REC_R = crate::FieldReader;
 #[doc = "Field `REC` writer - Receive Error Counter"]
-pub type REC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type REC_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `TEC` reader - Transmit Error Counter"]
 pub type TEC_R = crate::FieldReader;
 #[doc = "Field `TEC` writer - Transmit Error Counter"]
-pub type TEC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type TEC_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `EWRNLVL` reader - Error Warning Level"]
 pub type EWRNLVL_R = crate::FieldReader;
 #[doc = "Field `EWRNLVL` writer - Error Warning Level"]
-pub type EWRNLVL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type EWRNLVL_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `LETD` reader - Last Error Transfer Direction"]
 pub type LETD_R = crate::BitReader<LETD_A>;
 #[doc = "Last Error Transfer Direction\n\nValue on reset: 0"]
@@ -117,20 +117,20 @@ impl W {
     #[doc = "Bits 0:7 - Receive Error Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn rec(&mut self) -> REC_W<NECNT_SPEC, 0> {
-        REC_W::new(self)
+    pub fn rec(&mut self) -> REC_W<NECNT_SPEC> {
+        REC_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Transmit Error Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn tec(&mut self) -> TEC_W<NECNT_SPEC, 8> {
-        TEC_W::new(self)
+    pub fn tec(&mut self) -> TEC_W<NECNT_SPEC> {
+        TEC_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Error Warning Level"]
     #[inline(always)]
     #[must_use]
-    pub fn ewrnlvl(&mut self) -> EWRNLVL_W<NECNT_SPEC, 16> {
-        EWRNLVL_W::new(self)
+    pub fn ewrnlvl(&mut self) -> EWRNLVL_W<NECNT_SPEC> {
+        EWRNLVL_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

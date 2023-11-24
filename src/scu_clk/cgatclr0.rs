@@ -15,8 +15,8 @@ impl From<VADC_AW> for bool {
     }
 }
 #[doc = "Field `VADC` writer - VADC Gating Clear"]
-pub type VADC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VADC_AW>;
-impl<'a, REG, const O: u8> VADC_W<'a, REG, O>
+pub type VADC_W<'a, REG> = crate::BitWriter<'a, REG, VADC_AW>;
+impl<'a, REG> VADC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<CCU40_AW> for bool {
     }
 }
 #[doc = "Field `CCU40` writer - CCU40 Gating Clear"]
-pub type CCU40_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCU40_AW>;
-impl<'a, REG, const O: u8> CCU40_W<'a, REG, O>
+pub type CCU40_W<'a, REG> = crate::BitWriter<'a, REG, CCU40_AW>;
+impl<'a, REG> CCU40_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<CCU41_AW> for bool {
     }
 }
 #[doc = "Field `CCU41` writer - CCU41 Gating Clear"]
-pub type CCU41_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCU41_AW>;
-impl<'a, REG, const O: u8> CCU41_W<'a, REG, O>
+pub type CCU41_W<'a, REG> = crate::BitWriter<'a, REG, CCU41_AW>;
+impl<'a, REG> CCU41_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<CCU80_AW> for bool {
     }
 }
 #[doc = "Field `CCU80` writer - CCU80 Gating Clear"]
-pub type CCU80_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCU80_AW>;
-impl<'a, REG, const O: u8> CCU80_W<'a, REG, O>
+pub type CCU80_W<'a, REG> = crate::BitWriter<'a, REG, CCU80_AW>;
+impl<'a, REG> CCU80_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<POSIF0_AW> for bool {
     }
 }
 #[doc = "Field `POSIF0` writer - POSIF0 Gating Clear"]
-pub type POSIF0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, POSIF0_AW>;
-impl<'a, REG, const O: u8> POSIF0_W<'a, REG, O>
+pub type POSIF0_W<'a, REG> = crate::BitWriter<'a, REG, POSIF0_AW>;
+impl<'a, REG> POSIF0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<USIC0_AW> for bool {
     }
 }
 #[doc = "Field `USIC0` writer - USIC0 Gating Clear"]
-pub type USIC0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USIC0_AW>;
-impl<'a, REG, const O: u8> USIC0_W<'a, REG, O>
+pub type USIC0_W<'a, REG> = crate::BitWriter<'a, REG, USIC0_AW>;
+impl<'a, REG> USIC0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -201,8 +201,8 @@ impl From<ERU1_AW> for bool {
     }
 }
 #[doc = "Field `ERU1` writer - ERU1 Gating Clear"]
-pub type ERU1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERU1_AW>;
-impl<'a, REG, const O: u8> ERU1_W<'a, REG, O>
+pub type ERU1_W<'a, REG> = crate::BitWriter<'a, REG, ERU1_AW>;
+impl<'a, REG> ERU1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -221,44 +221,44 @@ impl W {
     #[doc = "Bit 0 - VADC Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn vadc(&mut self) -> VADC_W<CGATCLR0_SPEC, 0> {
-        VADC_W::new(self)
+    pub fn vadc(&mut self) -> VADC_W<CGATCLR0_SPEC> {
+        VADC_W::new(self, 0)
     }
     #[doc = "Bit 2 - CCU40 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ccu40(&mut self) -> CCU40_W<CGATCLR0_SPEC, 2> {
-        CCU40_W::new(self)
+    pub fn ccu40(&mut self) -> CCU40_W<CGATCLR0_SPEC> {
+        CCU40_W::new(self, 2)
     }
     #[doc = "Bit 3 - CCU41 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ccu41(&mut self) -> CCU41_W<CGATCLR0_SPEC, 3> {
-        CCU41_W::new(self)
+    pub fn ccu41(&mut self) -> CCU41_W<CGATCLR0_SPEC> {
+        CCU41_W::new(self, 3)
     }
     #[doc = "Bit 7 - CCU80 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ccu80(&mut self) -> CCU80_W<CGATCLR0_SPEC, 7> {
-        CCU80_W::new(self)
+    pub fn ccu80(&mut self) -> CCU80_W<CGATCLR0_SPEC> {
+        CCU80_W::new(self, 7)
     }
     #[doc = "Bit 9 - POSIF0 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn posif0(&mut self) -> POSIF0_W<CGATCLR0_SPEC, 9> {
-        POSIF0_W::new(self)
+    pub fn posif0(&mut self) -> POSIF0_W<CGATCLR0_SPEC> {
+        POSIF0_W::new(self, 9)
     }
     #[doc = "Bit 11 - USIC0 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn usic0(&mut self) -> USIC0_W<CGATCLR0_SPEC, 11> {
-        USIC0_W::new(self)
+    pub fn usic0(&mut self) -> USIC0_W<CGATCLR0_SPEC> {
+        USIC0_W::new(self, 11)
     }
     #[doc = "Bit 16 - ERU1 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn eru1(&mut self) -> ERU1_W<CGATCLR0_SPEC, 16> {
-        ERU1_W::new(self)
+    pub fn eru1(&mut self) -> ERU1_W<CGATCLR0_SPEC> {
+        ERU1_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

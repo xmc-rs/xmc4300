@@ -2,109 +2,253 @@
 #[repr(C)]
 pub struct RegisterBlock {
     _reserved0: [u8; 0x80],
-    #[doc = "0x80 - Arbitration Configuration Register"]
-    pub arbcfg: ARBCFG,
-    #[doc = "0x84 - Arbitration Priority Register"]
-    pub arbpr: ARBPR,
-    #[doc = "0x88 - Channel Assignment Register"]
-    pub chass: CHASS,
+    arbcfg: ARBCFG,
+    arbpr: ARBPR,
+    chass: CHASS,
     _reserved3: [u8; 0x14],
-    #[doc = "0xa0..0xa8 - Input Class Register"]
-    pub iclass: [ICLASS; 2],
+    iclass: [ICLASS; 2],
     _reserved4: [u8; 0x08],
-    #[doc = "0xb0 - Alias Register"]
-    pub alias: ALIAS,
+    alias: ALIAS,
     _reserved5: [u8; 0x04],
-    #[doc = "0xb8 - Boundary Select Register"]
-    pub bound: BOUND,
+    bound: BOUND,
     _reserved6: [u8; 0x04],
-    #[doc = "0xc0 - Synchronization Control Register"]
-    pub synctr: SYNCTR,
+    synctr: SYNCTR,
     _reserved7: [u8; 0x04],
-    #[doc = "0xc8 - Boundary Flag Register"]
-    pub bfl: BFL,
-    #[doc = "0xcc - Boundary Flag Software Register"]
-    pub bfls: BFLS,
-    #[doc = "0xd0 - Boundary Flag Control Register"]
-    pub bflc: BFLC,
-    #[doc = "0xd4 - Boundary Flag Node Pointer Register"]
-    pub bflnp: BFLNP,
+    bfl: BFL,
+    bfls: BFLS,
+    bflc: BFLC,
+    bflnp: BFLNP,
     _reserved11: [u8; 0x28],
-    #[doc = "0x100 - Queue 0 Source Control Register"]
-    pub qctrl0: QCTRL0,
-    #[doc = "0x104 - Queue 0 Mode Register"]
-    pub qmr0: QMR0,
-    #[doc = "0x108 - Queue 0 Status Register"]
-    pub qsr0: QSR0,
-    #[doc = "0x10c - Queue 0 Register 0"]
-    pub q0r0: Q0R0,
+    qctrl0: QCTRL0,
+    qmr0: QMR0,
+    qsr0: QSR0,
+    q0r0: Q0R0,
     _reserved_15_qbur0: [u8; 0x04],
     _reserved16: [u8; 0x0c],
-    #[doc = "0x120 - Autoscan Source Control Register"]
-    pub asctrl: ASCTRL,
-    #[doc = "0x124 - Autoscan Source Mode Register"]
-    pub asmr: ASMR,
-    #[doc = "0x128 - Autoscan Source Channel Select Register"]
-    pub assel: ASSEL,
-    #[doc = "0x12c - Autoscan Source Pending Register"]
-    pub aspnd: ASPND,
+    asctrl: ASCTRL,
+    asmr: ASMR,
+    assel: ASSEL,
+    aspnd: ASPND,
     _reserved20: [u8; 0x50],
-    #[doc = "0x180 - Channel Event Flag Register"]
-    pub ceflag: CEFLAG,
-    #[doc = "0x184 - Result Event Flag Register"]
-    pub reflag: REFLAG,
-    #[doc = "0x188 - Source Event Flag Register"]
-    pub seflag: SEFLAG,
+    ceflag: CEFLAG,
+    reflag: REFLAG,
+    seflag: SEFLAG,
     _reserved23: [u8; 0x04],
-    #[doc = "0x190 - Channel Event Flag Clear Register"]
-    pub cefclr: CEFCLR,
-    #[doc = "0x194 - Result Event Flag Clear Register"]
-    pub refclr: REFCLR,
-    #[doc = "0x198 - Source Event Flag Clear Register"]
-    pub sefclr: SEFCLR,
+    cefclr: CEFCLR,
+    refclr: REFCLR,
+    sefclr: SEFCLR,
     _reserved26: [u8; 0x04],
-    #[doc = "0x1a0 - Channel Event Node Pointer Register 0"]
-    pub cevnp0: CEVNP0,
+    cevnp0: CEVNP0,
     _reserved27: [u8; 0x0c],
-    #[doc = "0x1b0 - Result Event Node Pointer Register 0"]
-    pub revnp0: REVNP0,
-    #[doc = "0x1b4 - Result Event Node Pointer Register 1"]
-    pub revnp1: REVNP1,
+    revnp0: REVNP0,
+    revnp1: REVNP1,
     _reserved29: [u8; 0x08],
-    #[doc = "0x1c0 - Source Event Node Pointer Register"]
-    pub sevnp: SEVNP,
+    sevnp: SEVNP,
     _reserved30: [u8; 0x04],
-    #[doc = "0x1c8 - Service Request Software Activation Trigger"]
-    pub sract: SRACT,
+    sract: SRACT,
     _reserved31: [u8; 0x24],
-    #[doc = "0x1f0 - E0ternal Multiplexer Control Register"]
-    pub emuxctr: EMUXCTR,
+    emuxctr: EMUXCTR,
     _reserved32: [u8; 0x04],
-    #[doc = "0x1f8 - Valid Flag Register"]
-    pub vfr: VFR,
+    vfr: VFR,
     _reserved33: [u8; 0x04],
-    #[doc = "0x200..0x220 - Channel Ctrl. Reg."]
-    pub chctr: [CHCTR; 8],
+    chctr: [CHCTR; 8],
     _reserved34: [u8; 0x60],
-    #[doc = "0x280..0x2c0 - Result Control Register"]
-    pub rcr: [RCR; 16],
+    rcr: [RCR; 16],
     _reserved35: [u8; 0x40],
-    #[doc = "0x300..0x340 - Result Register"]
-    pub res: [RES; 16],
+    res: [RES; 16],
     _reserved36: [u8; 0x40],
-    #[doc = "0x380..0x3c0 - Result Register, Debug"]
-    pub resd: [RESD; 16],
+    resd: [RESD; 16],
 }
 impl RegisterBlock {
+    #[doc = "0x80 - Arbitration Configuration Register"]
+    #[inline(always)]
+    pub const fn arbcfg(&self) -> &ARBCFG {
+        &self.arbcfg
+    }
+    #[doc = "0x84 - Arbitration Priority Register"]
+    #[inline(always)]
+    pub const fn arbpr(&self) -> &ARBPR {
+        &self.arbpr
+    }
+    #[doc = "0x88 - Channel Assignment Register"]
+    #[inline(always)]
+    pub const fn chass(&self) -> &CHASS {
+        &self.chass
+    }
+    #[doc = "0xa0..0xa8 - Input Class Register"]
+    #[inline(always)]
+    pub const fn iclass(&self, n: usize) -> &ICLASS {
+        &self.iclass[n]
+    }
+    #[doc = "0xb0 - Alias Register"]
+    #[inline(always)]
+    pub const fn alias(&self) -> &ALIAS {
+        &self.alias
+    }
+    #[doc = "0xb8 - Boundary Select Register"]
+    #[inline(always)]
+    pub const fn bound(&self) -> &BOUND {
+        &self.bound
+    }
+    #[doc = "0xc0 - Synchronization Control Register"]
+    #[inline(always)]
+    pub const fn synctr(&self) -> &SYNCTR {
+        &self.synctr
+    }
+    #[doc = "0xc8 - Boundary Flag Register"]
+    #[inline(always)]
+    pub const fn bfl(&self) -> &BFL {
+        &self.bfl
+    }
+    #[doc = "0xcc - Boundary Flag Software Register"]
+    #[inline(always)]
+    pub const fn bfls(&self) -> &BFLS {
+        &self.bfls
+    }
+    #[doc = "0xd0 - Boundary Flag Control Register"]
+    #[inline(always)]
+    pub const fn bflc(&self) -> &BFLC {
+        &self.bflc
+    }
+    #[doc = "0xd4 - Boundary Flag Node Pointer Register"]
+    #[inline(always)]
+    pub const fn bflnp(&self) -> &BFLNP {
+        &self.bflnp
+    }
+    #[doc = "0x100 - Queue 0 Source Control Register"]
+    #[inline(always)]
+    pub const fn qctrl0(&self) -> &QCTRL0 {
+        &self.qctrl0
+    }
+    #[doc = "0x104 - Queue 0 Mode Register"]
+    #[inline(always)]
+    pub const fn qmr0(&self) -> &QMR0 {
+        &self.qmr0
+    }
+    #[doc = "0x108 - Queue 0 Status Register"]
+    #[inline(always)]
+    pub const fn qsr0(&self) -> &QSR0 {
+        &self.qsr0
+    }
+    #[doc = "0x10c - Queue 0 Register 0"]
+    #[inline(always)]
+    pub const fn q0r0(&self) -> &Q0R0 {
+        &self.q0r0
+    }
     #[doc = "0x110 - Queue 0 Backup Register"]
     #[inline(always)]
     pub const fn qbur0(&self) -> &QBUR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(272usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(272).cast() }
     }
     #[doc = "0x110 - Queue 0 Input Register"]
     #[inline(always)]
     pub const fn qinr0(&self) -> &QINR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(272usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(272).cast() }
+    }
+    #[doc = "0x120 - Autoscan Source Control Register"]
+    #[inline(always)]
+    pub const fn asctrl(&self) -> &ASCTRL {
+        &self.asctrl
+    }
+    #[doc = "0x124 - Autoscan Source Mode Register"]
+    #[inline(always)]
+    pub const fn asmr(&self) -> &ASMR {
+        &self.asmr
+    }
+    #[doc = "0x128 - Autoscan Source Channel Select Register"]
+    #[inline(always)]
+    pub const fn assel(&self) -> &ASSEL {
+        &self.assel
+    }
+    #[doc = "0x12c - Autoscan Source Pending Register"]
+    #[inline(always)]
+    pub const fn aspnd(&self) -> &ASPND {
+        &self.aspnd
+    }
+    #[doc = "0x180 - Channel Event Flag Register"]
+    #[inline(always)]
+    pub const fn ceflag(&self) -> &CEFLAG {
+        &self.ceflag
+    }
+    #[doc = "0x184 - Result Event Flag Register"]
+    #[inline(always)]
+    pub const fn reflag(&self) -> &REFLAG {
+        &self.reflag
+    }
+    #[doc = "0x188 - Source Event Flag Register"]
+    #[inline(always)]
+    pub const fn seflag(&self) -> &SEFLAG {
+        &self.seflag
+    }
+    #[doc = "0x190 - Channel Event Flag Clear Register"]
+    #[inline(always)]
+    pub const fn cefclr(&self) -> &CEFCLR {
+        &self.cefclr
+    }
+    #[doc = "0x194 - Result Event Flag Clear Register"]
+    #[inline(always)]
+    pub const fn refclr(&self) -> &REFCLR {
+        &self.refclr
+    }
+    #[doc = "0x198 - Source Event Flag Clear Register"]
+    #[inline(always)]
+    pub const fn sefclr(&self) -> &SEFCLR {
+        &self.sefclr
+    }
+    #[doc = "0x1a0 - Channel Event Node Pointer Register 0"]
+    #[inline(always)]
+    pub const fn cevnp0(&self) -> &CEVNP0 {
+        &self.cevnp0
+    }
+    #[doc = "0x1b0 - Result Event Node Pointer Register 0"]
+    #[inline(always)]
+    pub const fn revnp0(&self) -> &REVNP0 {
+        &self.revnp0
+    }
+    #[doc = "0x1b4 - Result Event Node Pointer Register 1"]
+    #[inline(always)]
+    pub const fn revnp1(&self) -> &REVNP1 {
+        &self.revnp1
+    }
+    #[doc = "0x1c0 - Source Event Node Pointer Register"]
+    #[inline(always)]
+    pub const fn sevnp(&self) -> &SEVNP {
+        &self.sevnp
+    }
+    #[doc = "0x1c8 - Service Request Software Activation Trigger"]
+    #[inline(always)]
+    pub const fn sract(&self) -> &SRACT {
+        &self.sract
+    }
+    #[doc = "0x1f0 - E0ternal Multiplexer Control Register"]
+    #[inline(always)]
+    pub const fn emuxctr(&self) -> &EMUXCTR {
+        &self.emuxctr
+    }
+    #[doc = "0x1f8 - Valid Flag Register"]
+    #[inline(always)]
+    pub const fn vfr(&self) -> &VFR {
+        &self.vfr
+    }
+    #[doc = "0x200..0x220 - Channel Ctrl. Reg."]
+    #[inline(always)]
+    pub const fn chctr(&self, n: usize) -> &CHCTR {
+        &self.chctr[n]
+    }
+    #[doc = "0x280..0x2c0 - Result Control Register"]
+    #[inline(always)]
+    pub const fn rcr(&self, n: usize) -> &RCR {
+        &self.rcr[n]
+    }
+    #[doc = "0x300..0x340 - Result Register"]
+    #[inline(always)]
+    pub const fn res(&self, n: usize) -> &RES {
+        &self.res[n]
+    }
+    #[doc = "0x380..0x3c0 - Result Register, Debug"]
+    #[inline(always)]
+    pub const fn resd(&self, n: usize) -> &RESD {
+        &self.resd[n]
     }
 }
 #[doc = "ARBCFG (rw) register accessor: Arbitration Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`arbcfg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`arbcfg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@arbcfg`]

@@ -5,39 +5,39 @@ pub type W = crate::W<DIEPMSK_SPEC>;
 #[doc = "Field `XferComplMsk` reader - Transfer Completed Interrupt Mask"]
 pub type XFER_COMPL_MSK_R = crate::BitReader;
 #[doc = "Field `XferComplMsk` writer - Transfer Completed Interrupt Mask"]
-pub type XFER_COMPL_MSK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type XFER_COMPL_MSK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPDisbldMsk` reader - Endpoint Disabled Interrupt Mask"]
 pub type EPDISBLD_MSK_R = crate::BitReader;
 #[doc = "Field `EPDisbldMsk` writer - Endpoint Disabled Interrupt Mask"]
-pub type EPDISBLD_MSK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPDISBLD_MSK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `AHBErrMsk` reader - AHB Error Mask"]
 pub type AHBERR_MSK_R = crate::BitReader;
 #[doc = "Field `AHBErrMsk` writer - AHB Error Mask"]
-pub type AHBERR_MSK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type AHBERR_MSK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TimeOUTMsk` reader - Timeout Condition Mask"]
 pub type TIME_OUTMSK_R = crate::BitReader;
 #[doc = "Field `TimeOUTMsk` writer - Timeout Condition Mask"]
-pub type TIME_OUTMSK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TIME_OUTMSK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INTknTXFEmpMsk` reader - IN Token Received When TxFIFO Empty Mask"]
 pub type INTKN_TXFEMP_MSK_R = crate::BitReader;
 #[doc = "Field `INTknTXFEmpMsk` writer - IN Token Received When TxFIFO Empty Mask"]
-pub type INTKN_TXFEMP_MSK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INTKN_TXFEMP_MSK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INEPNakEffMsk` reader - IN Endpoint NAK Effective Mask"]
 pub type INEPNAK_EFF_MSK_R = crate::BitReader;
 #[doc = "Field `INEPNakEffMsk` writer - IN Endpoint NAK Effective Mask"]
-pub type INEPNAK_EFF_MSK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INEPNAK_EFF_MSK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TxfifoUndrnMsk` reader - Fifo Underrun Mask"]
 pub type TXFIFO_UNDRN_MSK_R = crate::BitReader;
 #[doc = "Field `TxfifoUndrnMsk` writer - Fifo Underrun Mask"]
-pub type TXFIFO_UNDRN_MSK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TXFIFO_UNDRN_MSK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BNAInIntrMsk` reader - BNA Interrupt Mask"]
 pub type BNAIN_INTR_MSK_R = crate::BitReader;
 #[doc = "Field `BNAInIntrMsk` writer - BNA Interrupt Mask"]
-pub type BNAIN_INTR_MSK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BNAIN_INTR_MSK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NAKMsk` reader - NAK interrupt Mask"]
 pub type NAKMSK_R = crate::BitReader;
 #[doc = "Field `NAKMsk` writer - NAK interrupt Mask"]
-pub type NAKMSK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NAKMSK_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Transfer Completed Interrupt Mask"]
     #[inline(always)]
@@ -89,56 +89,56 @@ impl W {
     #[doc = "Bit 0 - Transfer Completed Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn xfer_compl_msk(&mut self) -> XFER_COMPL_MSK_W<DIEPMSK_SPEC, 0> {
-        XFER_COMPL_MSK_W::new(self)
+    pub fn xfer_compl_msk(&mut self) -> XFER_COMPL_MSK_W<DIEPMSK_SPEC> {
+        XFER_COMPL_MSK_W::new(self, 0)
     }
     #[doc = "Bit 1 - Endpoint Disabled Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn epdisbld_msk(&mut self) -> EPDISBLD_MSK_W<DIEPMSK_SPEC, 1> {
-        EPDISBLD_MSK_W::new(self)
+    pub fn epdisbld_msk(&mut self) -> EPDISBLD_MSK_W<DIEPMSK_SPEC> {
+        EPDISBLD_MSK_W::new(self, 1)
     }
     #[doc = "Bit 2 - AHB Error Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn ahberr_msk(&mut self) -> AHBERR_MSK_W<DIEPMSK_SPEC, 2> {
-        AHBERR_MSK_W::new(self)
+    pub fn ahberr_msk(&mut self) -> AHBERR_MSK_W<DIEPMSK_SPEC> {
+        AHBERR_MSK_W::new(self, 2)
     }
     #[doc = "Bit 3 - Timeout Condition Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn time_outmsk(&mut self) -> TIME_OUTMSK_W<DIEPMSK_SPEC, 3> {
-        TIME_OUTMSK_W::new(self)
+    pub fn time_outmsk(&mut self) -> TIME_OUTMSK_W<DIEPMSK_SPEC> {
+        TIME_OUTMSK_W::new(self, 3)
     }
     #[doc = "Bit 4 - IN Token Received When TxFIFO Empty Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn intkn_txfemp_msk(&mut self) -> INTKN_TXFEMP_MSK_W<DIEPMSK_SPEC, 4> {
-        INTKN_TXFEMP_MSK_W::new(self)
+    pub fn intkn_txfemp_msk(&mut self) -> INTKN_TXFEMP_MSK_W<DIEPMSK_SPEC> {
+        INTKN_TXFEMP_MSK_W::new(self, 4)
     }
     #[doc = "Bit 6 - IN Endpoint NAK Effective Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn inepnak_eff_msk(&mut self) -> INEPNAK_EFF_MSK_W<DIEPMSK_SPEC, 6> {
-        INEPNAK_EFF_MSK_W::new(self)
+    pub fn inepnak_eff_msk(&mut self) -> INEPNAK_EFF_MSK_W<DIEPMSK_SPEC> {
+        INEPNAK_EFF_MSK_W::new(self, 6)
     }
     #[doc = "Bit 8 - Fifo Underrun Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn txfifo_undrn_msk(&mut self) -> TXFIFO_UNDRN_MSK_W<DIEPMSK_SPEC, 8> {
-        TXFIFO_UNDRN_MSK_W::new(self)
+    pub fn txfifo_undrn_msk(&mut self) -> TXFIFO_UNDRN_MSK_W<DIEPMSK_SPEC> {
+        TXFIFO_UNDRN_MSK_W::new(self, 8)
     }
     #[doc = "Bit 9 - BNA Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn bnain_intr_msk(&mut self) -> BNAIN_INTR_MSK_W<DIEPMSK_SPEC, 9> {
-        BNAIN_INTR_MSK_W::new(self)
+    pub fn bnain_intr_msk(&mut self) -> BNAIN_INTR_MSK_W<DIEPMSK_SPEC> {
+        BNAIN_INTR_MSK_W::new(self, 9)
     }
     #[doc = "Bit 13 - NAK interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn nakmsk(&mut self) -> NAKMSK_W<DIEPMSK_SPEC, 13> {
-        NAKMSK_W::new(self)
+    pub fn nakmsk(&mut self) -> NAKMSK_W<DIEPMSK_SPEC> {
+        NAKMSK_W::new(self, 13)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

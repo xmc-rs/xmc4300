@@ -5,7 +5,7 @@ pub type W = crate::W<CMTR_SPEC>;
 #[doc = "Field `CTV` reader - Captured Timer Value"]
 pub type CTV_R = crate::FieldReader<u16>;
 #[doc = "Field `CTV` writer - Captured Timer Value"]
-pub type CTV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 10, O, u16>;
+pub type CTV_W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
     #[doc = "Bits 0:9 - Captured Timer Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:9 - Captured Timer Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ctv(&mut self) -> CTV_W<CMTR_SPEC, 0> {
-        CTV_W::new(self)
+    pub fn ctv(&mut self) -> CTV_W<CMTR_SPEC> {
+        CTV_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

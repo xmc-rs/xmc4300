@@ -3,11 +3,11 @@ pub type R = crate::R<TBCTR_SPEC>;
 #[doc = "Register `TBCTR` writer"]
 pub type W = crate::W<TBCTR_SPEC>;
 #[doc = "Field `DPTR` writer - Data Pointer"]
-pub type DPTR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type DPTR_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `LIMIT` reader - Limit For Interrupt Generation"]
 pub type LIMIT_R = crate::FieldReader;
 #[doc = "Field `LIMIT` writer - Limit For Interrupt Generation"]
-pub type LIMIT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type LIMIT_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `STBTM` reader - Standard Transmit Buffer Trigger Mode"]
 pub type STBTM_R = crate::BitReader<STBTM_A>;
 #[doc = "Standard Transmit Buffer Trigger Mode\n\nValue on reset: 0"]
@@ -45,8 +45,8 @@ impl STBTM_R {
     }
 }
 #[doc = "Field `STBTM` writer - Standard Transmit Buffer Trigger Mode"]
-pub type STBTM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STBTM_A>;
-impl<'a, REG, const O: u8> STBTM_W<'a, REG, O>
+pub type STBTM_W<'a, REG> = crate::BitWriter<'a, REG, STBTM_A>;
+impl<'a, REG> STBTM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -98,8 +98,8 @@ impl STBTEN_R {
     }
 }
 #[doc = "Field `STBTEN` writer - Standard Transmit Buffer Trigger Enable"]
-pub type STBTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STBTEN_A>;
-impl<'a, REG, const O: u8> STBTEN_W<'a, REG, O>
+pub type STBTEN_W<'a, REG> = crate::BitWriter<'a, REG, STBTEN_A>;
+impl<'a, REG> STBTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -188,8 +188,8 @@ impl STBINP_R {
     }
 }
 #[doc = "Field `STBINP` writer - Standard Transmit Buffer Interrupt Node Pointer"]
-pub type STBINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, STBINP_A>;
-impl<'a, REG, const O: u8> STBINP_W<'a, REG, O>
+pub type STBINP_W<'a, REG> = crate::FieldWriter<'a, REG, 3, STBINP_A>;
+impl<'a, REG> STBINP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -299,8 +299,8 @@ impl ATBINP_R {
     }
 }
 #[doc = "Field `ATBINP` writer - Alternative Transmit Buffer Interrupt Node Pointer"]
-pub type ATBINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, ATBINP_A>;
-impl<'a, REG, const O: u8> ATBINP_W<'a, REG, O>
+pub type ATBINP_W<'a, REG> = crate::FieldWriter<'a, REG, 3, ATBINP_A>;
+impl<'a, REG> ATBINP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -418,8 +418,8 @@ impl SIZE_R {
     }
 }
 #[doc = "Field `SIZE` writer - Buffer Size"]
-pub type SIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, SIZE_A>;
-impl<'a, REG, const O: u8> SIZE_W<'a, REG, O>
+pub type SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, SIZE_A>;
+impl<'a, REG> SIZE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -497,8 +497,8 @@ impl LOF_R {
     }
 }
 #[doc = "Field `LOF` writer - Buffer Event on Limit Overflow"]
-pub type LOF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LOF_A>;
-impl<'a, REG, const O: u8> LOF_W<'a, REG, O>
+pub type LOF_W<'a, REG> = crate::BitWriter<'a, REG, LOF_A>;
+impl<'a, REG> LOF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -550,8 +550,8 @@ impl STBIEN_R {
     }
 }
 #[doc = "Field `STBIEN` writer - Standard Transmit Buffer Interrupt Enable"]
-pub type STBIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STBIEN_A>;
-impl<'a, REG, const O: u8> STBIEN_W<'a, REG, O>
+pub type STBIEN_W<'a, REG> = crate::BitWriter<'a, REG, STBIEN_A>;
+impl<'a, REG> STBIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -603,8 +603,8 @@ impl TBERIEN_R {
     }
 }
 #[doc = "Field `TBERIEN` writer - Transmit Buffer Error Interrupt Enable"]
-pub type TBERIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TBERIEN_A>;
-impl<'a, REG, const O: u8> TBERIEN_W<'a, REG, O>
+pub type TBERIEN_W<'a, REG> = crate::BitWriter<'a, REG, TBERIEN_A>;
+impl<'a, REG> TBERIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -670,62 +670,62 @@ impl W {
     #[doc = "Bits 0:5 - Data Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn dptr(&mut self) -> DPTR_W<TBCTR_SPEC, 0> {
-        DPTR_W::new(self)
+    pub fn dptr(&mut self) -> DPTR_W<TBCTR_SPEC> {
+        DPTR_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - Limit For Interrupt Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn limit(&mut self) -> LIMIT_W<TBCTR_SPEC, 8> {
-        LIMIT_W::new(self)
+    pub fn limit(&mut self) -> LIMIT_W<TBCTR_SPEC> {
+        LIMIT_W::new(self, 8)
     }
     #[doc = "Bit 14 - Standard Transmit Buffer Trigger Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn stbtm(&mut self) -> STBTM_W<TBCTR_SPEC, 14> {
-        STBTM_W::new(self)
+    pub fn stbtm(&mut self) -> STBTM_W<TBCTR_SPEC> {
+        STBTM_W::new(self, 14)
     }
     #[doc = "Bit 15 - Standard Transmit Buffer Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn stbten(&mut self) -> STBTEN_W<TBCTR_SPEC, 15> {
-        STBTEN_W::new(self)
+    pub fn stbten(&mut self) -> STBTEN_W<TBCTR_SPEC> {
+        STBTEN_W::new(self, 15)
     }
     #[doc = "Bits 16:18 - Standard Transmit Buffer Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn stbinp(&mut self) -> STBINP_W<TBCTR_SPEC, 16> {
-        STBINP_W::new(self)
+    pub fn stbinp(&mut self) -> STBINP_W<TBCTR_SPEC> {
+        STBINP_W::new(self, 16)
     }
     #[doc = "Bits 19:21 - Alternative Transmit Buffer Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn atbinp(&mut self) -> ATBINP_W<TBCTR_SPEC, 19> {
-        ATBINP_W::new(self)
+    pub fn atbinp(&mut self) -> ATBINP_W<TBCTR_SPEC> {
+        ATBINP_W::new(self, 19)
     }
     #[doc = "Bits 24:26 - Buffer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn size(&mut self) -> SIZE_W<TBCTR_SPEC, 24> {
-        SIZE_W::new(self)
+    pub fn size(&mut self) -> SIZE_W<TBCTR_SPEC> {
+        SIZE_W::new(self, 24)
     }
     #[doc = "Bit 28 - Buffer Event on Limit Overflow"]
     #[inline(always)]
     #[must_use]
-    pub fn lof(&mut self) -> LOF_W<TBCTR_SPEC, 28> {
-        LOF_W::new(self)
+    pub fn lof(&mut self) -> LOF_W<TBCTR_SPEC> {
+        LOF_W::new(self, 28)
     }
     #[doc = "Bit 30 - Standard Transmit Buffer Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn stbien(&mut self) -> STBIEN_W<TBCTR_SPEC, 30> {
-        STBIEN_W::new(self)
+    pub fn stbien(&mut self) -> STBIEN_W<TBCTR_SPEC> {
+        STBIEN_W::new(self, 30)
     }
     #[doc = "Bit 31 - Transmit Buffer Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tberien(&mut self) -> TBERIEN_W<TBCTR_SPEC, 31> {
-        TBERIEN_W::new(self)
+    pub fn tberien(&mut self) -> TBERIEN_W<TBCTR_SPEC> {
+        TBERIEN_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

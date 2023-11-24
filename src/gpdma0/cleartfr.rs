@@ -15,8 +15,8 @@ impl From<CH0_AW> for bool {
     }
 }
 #[doc = "Field `CH0` writer - Clear Interrupt Status and Raw Status for channel 0"]
-pub type CH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH0_AW>;
-impl<'a, REG, const O: u8> CH0_W<'a, REG, O>
+pub type CH0_W<'a, REG> = crate::BitWriter<'a, REG, CH0_AW>;
+impl<'a, REG> CH0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<CH1_AW> for bool {
     }
 }
 #[doc = "Field `CH1` writer - Clear Interrupt Status and Raw Status for channel 1"]
-pub type CH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH1_AW>;
-impl<'a, REG, const O: u8> CH1_W<'a, REG, O>
+pub type CH1_W<'a, REG> = crate::BitWriter<'a, REG, CH1_AW>;
+impl<'a, REG> CH1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<CH2_AW> for bool {
     }
 }
 #[doc = "Field `CH2` writer - Clear Interrupt Status and Raw Status for channel 2"]
-pub type CH2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH2_AW>;
-impl<'a, REG, const O: u8> CH2_W<'a, REG, O>
+pub type CH2_W<'a, REG> = crate::BitWriter<'a, REG, CH2_AW>;
+impl<'a, REG> CH2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<CH3_AW> for bool {
     }
 }
 #[doc = "Field `CH3` writer - Clear Interrupt Status and Raw Status for channel 3"]
-pub type CH3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH3_AW>;
-impl<'a, REG, const O: u8> CH3_W<'a, REG, O>
+pub type CH3_W<'a, REG> = crate::BitWriter<'a, REG, CH3_AW>;
+impl<'a, REG> CH3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<CH4_AW> for bool {
     }
 }
 #[doc = "Field `CH4` writer - Clear Interrupt Status and Raw Status for channel 4"]
-pub type CH4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH4_AW>;
-impl<'a, REG, const O: u8> CH4_W<'a, REG, O>
+pub type CH4_W<'a, REG> = crate::BitWriter<'a, REG, CH4_AW>;
+impl<'a, REG> CH4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<CH5_AW> for bool {
     }
 }
 #[doc = "Field `CH5` writer - Clear Interrupt Status and Raw Status for channel 5"]
-pub type CH5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH5_AW>;
-impl<'a, REG, const O: u8> CH5_W<'a, REG, O>
+pub type CH5_W<'a, REG> = crate::BitWriter<'a, REG, CH5_AW>;
+impl<'a, REG> CH5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -201,8 +201,8 @@ impl From<CH6_AW> for bool {
     }
 }
 #[doc = "Field `CH6` writer - Clear Interrupt Status and Raw Status for channel 6"]
-pub type CH6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH6_AW>;
-impl<'a, REG, const O: u8> CH6_W<'a, REG, O>
+pub type CH6_W<'a, REG> = crate::BitWriter<'a, REG, CH6_AW>;
+impl<'a, REG> CH6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -232,8 +232,8 @@ impl From<CH7_AW> for bool {
     }
 }
 #[doc = "Field `CH7` writer - Clear Interrupt Status and Raw Status for channel 7"]
-pub type CH7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH7_AW>;
-impl<'a, REG, const O: u8> CH7_W<'a, REG, O>
+pub type CH7_W<'a, REG> = crate::BitWriter<'a, REG, CH7_AW>;
+impl<'a, REG> CH7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -252,50 +252,50 @@ impl W {
     #[doc = "Bit 0 - Clear Interrupt Status and Raw Status for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0(&mut self) -> CH0_W<CLEARTFR_SPEC, 0> {
-        CH0_W::new(self)
+    pub fn ch0(&mut self) -> CH0_W<CLEARTFR_SPEC> {
+        CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Interrupt Status and Raw Status for channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1(&mut self) -> CH1_W<CLEARTFR_SPEC, 1> {
-        CH1_W::new(self)
+    pub fn ch1(&mut self) -> CH1_W<CLEARTFR_SPEC> {
+        CH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Interrupt Status and Raw Status for channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn ch2(&mut self) -> CH2_W<CLEARTFR_SPEC, 2> {
-        CH2_W::new(self)
+    pub fn ch2(&mut self) -> CH2_W<CLEARTFR_SPEC> {
+        CH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Clear Interrupt Status and Raw Status for channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ch3(&mut self) -> CH3_W<CLEARTFR_SPEC, 3> {
-        CH3_W::new(self)
+    pub fn ch3(&mut self) -> CH3_W<CLEARTFR_SPEC> {
+        CH3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Clear Interrupt Status and Raw Status for channel 4"]
     #[inline(always)]
     #[must_use]
-    pub fn ch4(&mut self) -> CH4_W<CLEARTFR_SPEC, 4> {
-        CH4_W::new(self)
+    pub fn ch4(&mut self) -> CH4_W<CLEARTFR_SPEC> {
+        CH4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Clear Interrupt Status and Raw Status for channel 5"]
     #[inline(always)]
     #[must_use]
-    pub fn ch5(&mut self) -> CH5_W<CLEARTFR_SPEC, 5> {
-        CH5_W::new(self)
+    pub fn ch5(&mut self) -> CH5_W<CLEARTFR_SPEC> {
+        CH5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Clear Interrupt Status and Raw Status for channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn ch6(&mut self) -> CH6_W<CLEARTFR_SPEC, 6> {
-        CH6_W::new(self)
+    pub fn ch6(&mut self) -> CH6_W<CLEARTFR_SPEC> {
+        CH6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Clear Interrupt Status and Raw Status for channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn ch7(&mut self) -> CH7_W<CLEARTFR_SPEC, 7> {
-        CH7_W::new(self)
+    pub fn ch7(&mut self) -> CH7_W<CLEARTFR_SPEC> {
+        CH7_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

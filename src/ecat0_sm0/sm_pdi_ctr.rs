@@ -39,8 +39,8 @@ impl DEACT_R {
     }
 }
 #[doc = "Field `DEACT` writer - Deactivate SyncManager"]
-pub type DEACT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DEACT_A>;
-impl<'a, REG, const O: u8> DEACT_W<'a, REG, O>
+pub type DEACT_W<'a, REG> = crate::BitWriter<'a, REG, DEACT_A>;
+impl<'a, REG> DEACT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -58,7 +58,7 @@ where
 #[doc = "Field `REP_ACK` reader - Repeat Ack"]
 pub type REP_ACK_R = crate::BitReader;
 #[doc = "Field `REP_ACK` writer - Repeat Ack"]
-pub type REP_ACK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type REP_ACK_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Deactivate SyncManager"]
     #[inline(always)]
@@ -75,14 +75,14 @@ impl W {
     #[doc = "Bit 0 - Deactivate SyncManager"]
     #[inline(always)]
     #[must_use]
-    pub fn deact(&mut self) -> DEACT_W<SM_PDI_CTR_SPEC, 0> {
-        DEACT_W::new(self)
+    pub fn deact(&mut self) -> DEACT_W<SM_PDI_CTR_SPEC> {
+        DEACT_W::new(self, 0)
     }
     #[doc = "Bit 1 - Repeat Ack"]
     #[inline(always)]
     #[must_use]
-    pub fn rep_ack(&mut self) -> REP_ACK_W<SM_PDI_CTR_SPEC, 1> {
-        REP_ACK_W::new(self)
+    pub fn rep_ack(&mut self) -> REP_ACK_W<SM_PDI_CTR_SPEC> {
+        REP_ACK_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

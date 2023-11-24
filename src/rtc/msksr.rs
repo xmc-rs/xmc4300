@@ -5,31 +5,31 @@ pub type W = crate::W<MSKSR_SPEC>;
 #[doc = "Field `MPSE` reader - Periodic Seconds Interrupt Mask"]
 pub type MPSE_R = crate::BitReader;
 #[doc = "Field `MPSE` writer - Periodic Seconds Interrupt Mask"]
-pub type MPSE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MPSE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPMI` reader - Periodic Minutes Interrupt Mask"]
 pub type MPMI_R = crate::BitReader;
 #[doc = "Field `MPMI` writer - Periodic Minutes Interrupt Mask"]
-pub type MPMI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MPMI_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPHO` reader - Periodic Hours Interrupt Mask"]
 pub type MPHO_R = crate::BitReader;
 #[doc = "Field `MPHO` writer - Periodic Hours Interrupt Mask"]
-pub type MPHO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MPHO_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPDA` reader - Periodic Days Interrupt Mask"]
 pub type MPDA_R = crate::BitReader;
 #[doc = "Field `MPDA` writer - Periodic Days Interrupt Mask"]
-pub type MPDA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MPDA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPMO` reader - Periodic Months Interrupt Mask"]
 pub type MPMO_R = crate::BitReader;
 #[doc = "Field `MPMO` writer - Periodic Months Interrupt Mask"]
-pub type MPMO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MPMO_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPYE` reader - Periodic Years Interrupt Mask"]
 pub type MPYE_R = crate::BitReader;
 #[doc = "Field `MPYE` writer - Periodic Years Interrupt Mask"]
-pub type MPYE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MPYE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MAI` reader - Alarm Interrupt Mask"]
 pub type MAI_R = crate::BitReader;
 #[doc = "Field `MAI` writer - Alarm Interrupt Mask"]
-pub type MAI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MAI_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Periodic Seconds Interrupt Mask"]
     #[inline(always)]
@@ -71,44 +71,44 @@ impl W {
     #[doc = "Bit 0 - Periodic Seconds Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mpse(&mut self) -> MPSE_W<MSKSR_SPEC, 0> {
-        MPSE_W::new(self)
+    pub fn mpse(&mut self) -> MPSE_W<MSKSR_SPEC> {
+        MPSE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Periodic Minutes Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mpmi(&mut self) -> MPMI_W<MSKSR_SPEC, 1> {
-        MPMI_W::new(self)
+    pub fn mpmi(&mut self) -> MPMI_W<MSKSR_SPEC> {
+        MPMI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Periodic Hours Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mpho(&mut self) -> MPHO_W<MSKSR_SPEC, 2> {
-        MPHO_W::new(self)
+    pub fn mpho(&mut self) -> MPHO_W<MSKSR_SPEC> {
+        MPHO_W::new(self, 2)
     }
     #[doc = "Bit 3 - Periodic Days Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mpda(&mut self) -> MPDA_W<MSKSR_SPEC, 3> {
-        MPDA_W::new(self)
+    pub fn mpda(&mut self) -> MPDA_W<MSKSR_SPEC> {
+        MPDA_W::new(self, 3)
     }
     #[doc = "Bit 5 - Periodic Months Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mpmo(&mut self) -> MPMO_W<MSKSR_SPEC, 5> {
-        MPMO_W::new(self)
+    pub fn mpmo(&mut self) -> MPMO_W<MSKSR_SPEC> {
+        MPMO_W::new(self, 5)
     }
     #[doc = "Bit 6 - Periodic Years Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mpye(&mut self) -> MPYE_W<MSKSR_SPEC, 6> {
-        MPYE_W::new(self)
+    pub fn mpye(&mut self) -> MPYE_W<MSKSR_SPEC> {
+        MPYE_W::new(self, 6)
     }
     #[doc = "Bit 8 - Alarm Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn mai(&mut self) -> MAI_W<MSKSR_SPEC, 8> {
-        MAI_W::new(self)
+    pub fn mai(&mut self) -> MAI_W<MSKSR_SPEC> {
+        MAI_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

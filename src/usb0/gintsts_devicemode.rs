@@ -41,13 +41,13 @@ impl CUR_MOD_R {
 #[doc = "Field `ModeMis` reader - Mode Mismatch Interrupt"]
 pub type MODE_MIS_R = crate::BitReader;
 #[doc = "Field `ModeMis` writer - Mode Mismatch Interrupt"]
-pub type MODE_MIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MODE_MIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OTGInt` reader - OTG Interrupt"]
 pub type OTGINT_R = crate::BitReader;
 #[doc = "Field `Sof` reader - Start of Frame"]
 pub type SOF_R = crate::BitReader;
 #[doc = "Field `Sof` writer - Start of Frame"]
-pub type SOF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SOF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RxFLvl` reader - RxFIFO Non-Empty"]
 pub type RX_FLVL_R = crate::BitReader;
 #[doc = "Field `GINNakEff` reader - Global IN Non-Periodic NAK Effective"]
@@ -57,27 +57,27 @@ pub type GOUTNAK_EFF_R = crate::BitReader;
 #[doc = "Field `ErlySusp` reader - Early Suspend"]
 pub type ERLY_SUSP_R = crate::BitReader;
 #[doc = "Field `ErlySusp` writer - Early Suspend"]
-pub type ERLY_SUSP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ERLY_SUSP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `USBSusp` reader - USB Suspend"]
 pub type USBSUSP_R = crate::BitReader;
 #[doc = "Field `USBSusp` writer - USB Suspend"]
-pub type USBSUSP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type USBSUSP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `USBRst` reader - USB Reset"]
 pub type USBRST_R = crate::BitReader;
 #[doc = "Field `USBRst` writer - USB Reset"]
-pub type USBRST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type USBRST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EnumDone` reader - Enumeration Done"]
 pub type ENUM_DONE_R = crate::BitReader;
 #[doc = "Field `EnumDone` writer - Enumeration Done"]
-pub type ENUM_DONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ENUM_DONE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ISOOutDrop` reader - Isochronous OUT Packet Dropped Interrupt"]
 pub type ISOOUT_DROP_R = crate::BitReader;
 #[doc = "Field `ISOOutDrop` writer - Isochronous OUT Packet Dropped Interrupt"]
-pub type ISOOUT_DROP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ISOOUT_DROP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EOPF` reader - End of Periodic Frame Interrupt"]
 pub type EOPF_R = crate::BitReader;
 #[doc = "Field `EOPF` writer - End of Periodic Frame Interrupt"]
-pub type EOPF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EOPF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `IEPInt` reader - IN Endpoints Interrupt"]
 pub type IEPINT_R = crate::BitReader;
 #[doc = "Field `OEPInt` reader - OUT Endpoints Interrupt"]
@@ -85,23 +85,23 @@ pub type OEPINT_R = crate::BitReader;
 #[doc = "Field `incompISOIN` reader - Incomplete Isochronous IN Transfer"]
 pub type INCOMP_ISOIN_R = crate::BitReader;
 #[doc = "Field `incompISOIN` writer - Incomplete Isochronous IN Transfer"]
-pub type INCOMP_ISOIN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INCOMP_ISOIN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `incomplSOOUT` reader - Incomplete Isochronous OUT Transfer"]
 pub type INCOMPL_SOOUT_R = crate::BitReader;
 #[doc = "Field `incomplSOOUT` writer - Incomplete Isochronous OUT Transfer"]
-pub type INCOMPL_SOOUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INCOMPL_SOOUT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ConIDStsChng` reader - Connector ID Status Change"]
 pub type CON_IDSTS_CHNG_R = crate::BitReader;
 #[doc = "Field `ConIDStsChng` writer - Connector ID Status Change"]
-pub type CON_IDSTS_CHNG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CON_IDSTS_CHNG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SessReqInt` reader - Session Request/New Session Detected Interrupt"]
 pub type SESS_REQ_INT_R = crate::BitReader;
 #[doc = "Field `SessReqInt` writer - Session Request/New Session Detected Interrupt"]
-pub type SESS_REQ_INT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SESS_REQ_INT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WkUpInt` reader - Resume/Remote Wakeup Detected Interrupt"]
 pub type WK_UP_INT_R = crate::BitReader;
 #[doc = "Field `WkUpInt` writer - Resume/Remote Wakeup Detected Interrupt"]
-pub type WK_UP_INT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WK_UP_INT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Current Mode of Operation"]
     #[inline(always)]
@@ -208,80 +208,80 @@ impl W {
     #[doc = "Bit 1 - Mode Mismatch Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn mode_mis(&mut self) -> MODE_MIS_W<GINTSTS_DEVICEMODE_SPEC, 1> {
-        MODE_MIS_W::new(self)
+    pub fn mode_mis(&mut self) -> MODE_MIS_W<GINTSTS_DEVICEMODE_SPEC> {
+        MODE_MIS_W::new(self, 1)
     }
     #[doc = "Bit 3 - Start of Frame"]
     #[inline(always)]
     #[must_use]
-    pub fn sof(&mut self) -> SOF_W<GINTSTS_DEVICEMODE_SPEC, 3> {
-        SOF_W::new(self)
+    pub fn sof(&mut self) -> SOF_W<GINTSTS_DEVICEMODE_SPEC> {
+        SOF_W::new(self, 3)
     }
     #[doc = "Bit 10 - Early Suspend"]
     #[inline(always)]
     #[must_use]
-    pub fn erly_susp(&mut self) -> ERLY_SUSP_W<GINTSTS_DEVICEMODE_SPEC, 10> {
-        ERLY_SUSP_W::new(self)
+    pub fn erly_susp(&mut self) -> ERLY_SUSP_W<GINTSTS_DEVICEMODE_SPEC> {
+        ERLY_SUSP_W::new(self, 10)
     }
     #[doc = "Bit 11 - USB Suspend"]
     #[inline(always)]
     #[must_use]
-    pub fn usbsusp(&mut self) -> USBSUSP_W<GINTSTS_DEVICEMODE_SPEC, 11> {
-        USBSUSP_W::new(self)
+    pub fn usbsusp(&mut self) -> USBSUSP_W<GINTSTS_DEVICEMODE_SPEC> {
+        USBSUSP_W::new(self, 11)
     }
     #[doc = "Bit 12 - USB Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn usbrst(&mut self) -> USBRST_W<GINTSTS_DEVICEMODE_SPEC, 12> {
-        USBRST_W::new(self)
+    pub fn usbrst(&mut self) -> USBRST_W<GINTSTS_DEVICEMODE_SPEC> {
+        USBRST_W::new(self, 12)
     }
     #[doc = "Bit 13 - Enumeration Done"]
     #[inline(always)]
     #[must_use]
-    pub fn enum_done(&mut self) -> ENUM_DONE_W<GINTSTS_DEVICEMODE_SPEC, 13> {
-        ENUM_DONE_W::new(self)
+    pub fn enum_done(&mut self) -> ENUM_DONE_W<GINTSTS_DEVICEMODE_SPEC> {
+        ENUM_DONE_W::new(self, 13)
     }
     #[doc = "Bit 14 - Isochronous OUT Packet Dropped Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn isoout_drop(&mut self) -> ISOOUT_DROP_W<GINTSTS_DEVICEMODE_SPEC, 14> {
-        ISOOUT_DROP_W::new(self)
+    pub fn isoout_drop(&mut self) -> ISOOUT_DROP_W<GINTSTS_DEVICEMODE_SPEC> {
+        ISOOUT_DROP_W::new(self, 14)
     }
     #[doc = "Bit 15 - End of Periodic Frame Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn eopf(&mut self) -> EOPF_W<GINTSTS_DEVICEMODE_SPEC, 15> {
-        EOPF_W::new(self)
+    pub fn eopf(&mut self) -> EOPF_W<GINTSTS_DEVICEMODE_SPEC> {
+        EOPF_W::new(self, 15)
     }
     #[doc = "Bit 20 - Incomplete Isochronous IN Transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn incomp_isoin(&mut self) -> INCOMP_ISOIN_W<GINTSTS_DEVICEMODE_SPEC, 20> {
-        INCOMP_ISOIN_W::new(self)
+    pub fn incomp_isoin(&mut self) -> INCOMP_ISOIN_W<GINTSTS_DEVICEMODE_SPEC> {
+        INCOMP_ISOIN_W::new(self, 20)
     }
     #[doc = "Bit 21 - Incomplete Isochronous OUT Transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn incompl_soout(&mut self) -> INCOMPL_SOOUT_W<GINTSTS_DEVICEMODE_SPEC, 21> {
-        INCOMPL_SOOUT_W::new(self)
+    pub fn incompl_soout(&mut self) -> INCOMPL_SOOUT_W<GINTSTS_DEVICEMODE_SPEC> {
+        INCOMPL_SOOUT_W::new(self, 21)
     }
     #[doc = "Bit 28 - Connector ID Status Change"]
     #[inline(always)]
     #[must_use]
-    pub fn con_idsts_chng(&mut self) -> CON_IDSTS_CHNG_W<GINTSTS_DEVICEMODE_SPEC, 28> {
-        CON_IDSTS_CHNG_W::new(self)
+    pub fn con_idsts_chng(&mut self) -> CON_IDSTS_CHNG_W<GINTSTS_DEVICEMODE_SPEC> {
+        CON_IDSTS_CHNG_W::new(self, 28)
     }
     #[doc = "Bit 30 - Session Request/New Session Detected Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn sess_req_int(&mut self) -> SESS_REQ_INT_W<GINTSTS_DEVICEMODE_SPEC, 30> {
-        SESS_REQ_INT_W::new(self)
+    pub fn sess_req_int(&mut self) -> SESS_REQ_INT_W<GINTSTS_DEVICEMODE_SPEC> {
+        SESS_REQ_INT_W::new(self, 30)
     }
     #[doc = "Bit 31 - Resume/Remote Wakeup Detected Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn wk_up_int(&mut self) -> WK_UP_INT_W<GINTSTS_DEVICEMODE_SPEC, 31> {
-        WK_UP_INT_W::new(self)
+    pub fn wk_up_int(&mut self) -> WK_UP_INT_W<GINTSTS_DEVICEMODE_SPEC> {
+        WK_UP_INT_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

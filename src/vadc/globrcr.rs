@@ -36,8 +36,8 @@ impl DRCTR_R {
     }
 }
 #[doc = "Field `DRCTR` writer - Data Reduction Control"]
-pub type DRCTR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, DRCTR_A>;
-impl<'a, REG, const O: u8> DRCTR_W<'a, REG, O>
+pub type DRCTR_W<'a, REG> = crate::FieldWriter<'a, REG, 4, DRCTR_A>;
+impl<'a, REG> DRCTR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -85,8 +85,8 @@ impl WFR_R {
     }
 }
 #[doc = "Field `WFR` writer - Wait-for-Read Mode Enable"]
-pub type WFR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WFR_A>;
-impl<'a, REG, const O: u8> WFR_W<'a, REG, O>
+pub type WFR_W<'a, REG> = crate::BitWriter<'a, REG, WFR_A>;
+impl<'a, REG> WFR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -138,8 +138,8 @@ impl SRGEN_R {
     }
 }
 #[doc = "Field `SRGEN` writer - Service Request Generation Enable"]
-pub type SRGEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRGEN_A>;
-impl<'a, REG, const O: u8> SRGEN_W<'a, REG, O>
+pub type SRGEN_W<'a, REG> = crate::BitWriter<'a, REG, SRGEN_A>;
+impl<'a, REG> SRGEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -175,20 +175,20 @@ impl W {
     #[doc = "Bits 16:19 - Data Reduction Control"]
     #[inline(always)]
     #[must_use]
-    pub fn drctr(&mut self) -> DRCTR_W<GLOBRCR_SPEC, 16> {
-        DRCTR_W::new(self)
+    pub fn drctr(&mut self) -> DRCTR_W<GLOBRCR_SPEC> {
+        DRCTR_W::new(self, 16)
     }
     #[doc = "Bit 24 - Wait-for-Read Mode Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wfr(&mut self) -> WFR_W<GLOBRCR_SPEC, 24> {
-        WFR_W::new(self)
+    pub fn wfr(&mut self) -> WFR_W<GLOBRCR_SPEC> {
+        WFR_W::new(self, 24)
     }
     #[doc = "Bit 31 - Service Request Generation Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn srgen(&mut self) -> SRGEN_W<GLOBRCR_SPEC, 31> {
-        SRGEN_W::new(self)
+    pub fn srgen(&mut self) -> SRGEN_W<GLOBRCR_SPEC> {
+        SRGEN_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

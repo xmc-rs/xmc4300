@@ -5,11 +5,11 @@ pub type W = crate::W<GLOBBOUND_SPEC>;
 #[doc = "Field `BOUNDARY0` reader - Boundary Value 0 for Limit Checking"]
 pub type BOUNDARY0_R = crate::FieldReader<u16>;
 #[doc = "Field `BOUNDARY0` writer - Boundary Value 0 for Limit Checking"]
-pub type BOUNDARY0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type BOUNDARY0_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "Field `BOUNDARY1` reader - Boundary Value 1 for Limit Checking"]
 pub type BOUNDARY1_R = crate::FieldReader<u16>;
 #[doc = "Field `BOUNDARY1` writer - Boundary Value 1 for Limit Checking"]
-pub type BOUNDARY1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type BOUNDARY1_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     #[doc = "Bits 0:11 - Boundary Value 0 for Limit Checking"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:11 - Boundary Value 0 for Limit Checking"]
     #[inline(always)]
     #[must_use]
-    pub fn boundary0(&mut self) -> BOUNDARY0_W<GLOBBOUND_SPEC, 0> {
-        BOUNDARY0_W::new(self)
+    pub fn boundary0(&mut self) -> BOUNDARY0_W<GLOBBOUND_SPEC> {
+        BOUNDARY0_W::new(self, 0)
     }
     #[doc = "Bits 16:27 - Boundary Value 1 for Limit Checking"]
     #[inline(always)]
     #[must_use]
-    pub fn boundary1(&mut self) -> BOUNDARY1_W<GLOBBOUND_SPEC, 16> {
-        BOUNDARY1_W::new(self)
+    pub fn boundary1(&mut self) -> BOUNDARY1_W<GLOBBOUND_SPEC> {
+        BOUNDARY1_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

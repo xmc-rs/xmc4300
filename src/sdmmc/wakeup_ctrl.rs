@@ -39,8 +39,8 @@ impl WAKEUP_EVENT_EN_INT_R {
     }
 }
 #[doc = "Field `WAKEUP_EVENT_EN_INT` writer - Wakeup Event Enable On Card Interrupt"]
-pub type WAKEUP_EVENT_EN_INT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WAKEUP_EVENT_EN_INT_A>;
-impl<'a, REG, const O: u8> WAKEUP_EVENT_EN_INT_W<'a, REG, O>
+pub type WAKEUP_EVENT_EN_INT_W<'a, REG> = crate::BitWriter<'a, REG, WAKEUP_EVENT_EN_INT_A>;
+impl<'a, REG> WAKEUP_EVENT_EN_INT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl WAKEUP_EVENT_EN_INS_R {
     }
 }
 #[doc = "Field `WAKEUP_EVENT_EN_INS` writer - Wakeup Event Enable On SD Card Insertion"]
-pub type WAKEUP_EVENT_EN_INS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WAKEUP_EVENT_EN_INS_A>;
-impl<'a, REG, const O: u8> WAKEUP_EVENT_EN_INS_W<'a, REG, O>
+pub type WAKEUP_EVENT_EN_INS_W<'a, REG> = crate::BitWriter<'a, REG, WAKEUP_EVENT_EN_INS_A>;
+impl<'a, REG> WAKEUP_EVENT_EN_INS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl WAKEUP_EVENT_EN_REM_R {
     }
 }
 #[doc = "Field `WAKEUP_EVENT_EN_REM` writer - Wakeup Event Enable On SD Card Removal"]
-pub type WAKEUP_EVENT_EN_REM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WAKEUP_EVENT_EN_REM_A>;
-impl<'a, REG, const O: u8> WAKEUP_EVENT_EN_REM_W<'a, REG, O>
+pub type WAKEUP_EVENT_EN_REM_W<'a, REG> = crate::BitWriter<'a, REG, WAKEUP_EVENT_EN_REM_A>;
+impl<'a, REG> WAKEUP_EVENT_EN_REM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -182,20 +182,20 @@ impl W {
     #[doc = "Bit 0 - Wakeup Event Enable On Card Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn wakeup_event_en_int(&mut self) -> WAKEUP_EVENT_EN_INT_W<WAKEUP_CTRL_SPEC, 0> {
-        WAKEUP_EVENT_EN_INT_W::new(self)
+    pub fn wakeup_event_en_int(&mut self) -> WAKEUP_EVENT_EN_INT_W<WAKEUP_CTRL_SPEC> {
+        WAKEUP_EVENT_EN_INT_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wakeup Event Enable On SD Card Insertion"]
     #[inline(always)]
     #[must_use]
-    pub fn wakeup_event_en_ins(&mut self) -> WAKEUP_EVENT_EN_INS_W<WAKEUP_CTRL_SPEC, 1> {
-        WAKEUP_EVENT_EN_INS_W::new(self)
+    pub fn wakeup_event_en_ins(&mut self) -> WAKEUP_EVENT_EN_INS_W<WAKEUP_CTRL_SPEC> {
+        WAKEUP_EVENT_EN_INS_W::new(self, 1)
     }
     #[doc = "Bit 2 - Wakeup Event Enable On SD Card Removal"]
     #[inline(always)]
     #[must_use]
-    pub fn wakeup_event_en_rem(&mut self) -> WAKEUP_EVENT_EN_REM_W<WAKEUP_CTRL_SPEC, 2> {
-        WAKEUP_EVENT_EN_REM_W::new(self)
+    pub fn wakeup_event_en_rem(&mut self) -> WAKEUP_EVENT_EN_REM_W<WAKEUP_CTRL_SPEC> {
+        WAKEUP_EVENT_EN_REM_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

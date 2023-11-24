@@ -39,8 +39,8 @@ impl WKPEP_R {
     }
 }
 #[doc = "Field `WKPEP` writer - Wake-Up on Pin Event Positive Edge Enable"]
-pub type WKPEP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKPEP_A>;
-impl<'a, REG, const O: u8> WKPEP_W<'a, REG, O>
+pub type WKPEP_W<'a, REG> = crate::BitWriter<'a, REG, WKPEP_A>;
+impl<'a, REG> WKPEP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl WKPEN_R {
     }
 }
 #[doc = "Field `WKPEN` writer - Wake-up on Pin Event Negative Edge Enable"]
-pub type WKPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKPEN_A>;
-impl<'a, REG, const O: u8> WKPEN_W<'a, REG, O>
+pub type WKPEN_W<'a, REG> = crate::BitWriter<'a, REG, WKPEN_A>;
+impl<'a, REG> WKPEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl RTCE_R {
     }
 }
 #[doc = "Field `RTCE` writer - Wake-up on RTC Event Enable"]
-pub type RTCE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTCE_A>;
-impl<'a, REG, const O: u8> RTCE_W<'a, REG, O>
+pub type RTCE_W<'a, REG> = crate::BitWriter<'a, REG, RTCE_A>;
+impl<'a, REG> RTCE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl ULPWDGEN_R {
     }
 }
 #[doc = "Field `ULPWDGEN` writer - ULP WDG Alarm Enable"]
-pub type ULPWDGEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ULPWDGEN_A>;
-impl<'a, REG, const O: u8> ULPWDGEN_W<'a, REG, O>
+pub type ULPWDGEN_W<'a, REG> = crate::BitWriter<'a, REG, ULPWDGEN_A>;
+impl<'a, REG> ULPWDGEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl HIB_R {
     }
 }
 #[doc = "Field `HIB` writer - Hibernate Request Value Set"]
-pub type HIB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HIB_A>;
-impl<'a, REG, const O: u8> HIB_W<'a, REG, O>
+pub type HIB_W<'a, REG> = crate::BitWriter<'a, REG, HIB_A>;
+impl<'a, REG> HIB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl RCS_R {
     }
 }
 #[doc = "Field `RCS` writer - fRTC Clock Selection"]
-pub type RCS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RCS_A>;
-impl<'a, REG, const O: u8> RCS_W<'a, REG, O>
+pub type RCS_W<'a, REG> = crate::BitWriter<'a, REG, RCS_A>;
+impl<'a, REG> RCS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl STDBYSEL_R {
     }
 }
 #[doc = "Field `STDBYSEL` writer - fSTDBY Clock Selection"]
-pub type STDBYSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STDBYSEL_A>;
-impl<'a, REG, const O: u8> STDBYSEL_W<'a, REG, O>
+pub type STDBYSEL_W<'a, REG> = crate::BitWriter<'a, REG, STDBYSEL_A>;
+impl<'a, REG> STDBYSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl WKUPSEL_R {
     }
 }
 #[doc = "Field `WKUPSEL` writer - Wake-Up from Hibernate Trigger Input Selection"]
-pub type WKUPSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPSEL_A>;
-impl<'a, REG, const O: u8> WKUPSEL_W<'a, REG, O>
+pub type WKUPSEL_W<'a, REG> = crate::BitWriter<'a, REG, WKUPSEL_A>;
+impl<'a, REG> WKUPSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl GPI0SEL_R {
     }
 }
 #[doc = "Field `GPI0SEL` writer - General Purpose Input 0 Selection"]
-pub type GPI0SEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GPI0SEL_A>;
-impl<'a, REG, const O: u8> GPI0SEL_W<'a, REG, O>
+pub type GPI0SEL_W<'a, REG> = crate::BitWriter<'a, REG, GPI0SEL_A>;
+impl<'a, REG> GPI0SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -516,8 +516,8 @@ impl HIBIO0POL_R {
     }
 }
 #[doc = "Field `HIBIO0POL` writer - HIBIO0 Polarity Set"]
-pub type HIBIO0POL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HIBIO0POL_A>;
-impl<'a, REG, const O: u8> HIBIO0POL_W<'a, REG, O>
+pub type HIBIO0POL_W<'a, REG> = crate::BitWriter<'a, REG, HIBIO0POL_A>;
+impl<'a, REG> HIBIO0POL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -569,8 +569,8 @@ impl HIBIO1POL_R {
     }
 }
 #[doc = "Field `HIBIO1POL` writer - HIBIO1 Polarity Set"]
-pub type HIBIO1POL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HIBIO1POL_A>;
-impl<'a, REG, const O: u8> HIBIO1POL_W<'a, REG, O>
+pub type HIBIO1POL_W<'a, REG> = crate::BitWriter<'a, REG, HIBIO1POL_A>;
+impl<'a, REG> HIBIO1POL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -691,8 +691,8 @@ impl HIBIO0SEL_R {
     }
 }
 #[doc = "Field `HIBIO0SEL` writer - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
-pub type HIBIO0SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, HIBIO0SEL_A>;
-impl<'a, REG, const O: u8> HIBIO0SEL_W<'a, REG, O>
+pub type HIBIO0SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, HIBIO0SEL_A>;
+impl<'a, REG> HIBIO0SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -854,8 +854,8 @@ impl HIBIO1SEL_R {
     }
 }
 #[doc = "Field `HIBIO1SEL` writer - HIB_IO_1 Pin I/O Control (Default WKUP)"]
-pub type HIBIO1SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, HIBIO1SEL_A>;
-impl<'a, REG, const O: u8> HIBIO1SEL_W<'a, REG, O>
+pub type HIBIO1SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, HIBIO1SEL_A>;
+impl<'a, REG> HIBIO1SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -982,80 +982,80 @@ impl W {
     #[doc = "Bit 0 - Wake-Up on Pin Event Positive Edge Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wkpep(&mut self) -> WKPEP_W<HDCR_SPEC, 0> {
-        WKPEP_W::new(self)
+    pub fn wkpep(&mut self) -> WKPEP_W<HDCR_SPEC> {
+        WKPEP_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wake-up on Pin Event Negative Edge Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wkpen(&mut self) -> WKPEN_W<HDCR_SPEC, 1> {
-        WKPEN_W::new(self)
+    pub fn wkpen(&mut self) -> WKPEN_W<HDCR_SPEC> {
+        WKPEN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Wake-up on RTC Event Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rtce(&mut self) -> RTCE_W<HDCR_SPEC, 2> {
-        RTCE_W::new(self)
+    pub fn rtce(&mut self) -> RTCE_W<HDCR_SPEC> {
+        RTCE_W::new(self, 2)
     }
     #[doc = "Bit 3 - ULP WDG Alarm Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ulpwdgen(&mut self) -> ULPWDGEN_W<HDCR_SPEC, 3> {
-        ULPWDGEN_W::new(self)
+    pub fn ulpwdgen(&mut self) -> ULPWDGEN_W<HDCR_SPEC> {
+        ULPWDGEN_W::new(self, 3)
     }
     #[doc = "Bit 4 - Hibernate Request Value Set"]
     #[inline(always)]
     #[must_use]
-    pub fn hib(&mut self) -> HIB_W<HDCR_SPEC, 4> {
-        HIB_W::new(self)
+    pub fn hib(&mut self) -> HIB_W<HDCR_SPEC> {
+        HIB_W::new(self, 4)
     }
     #[doc = "Bit 6 - fRTC Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn rcs(&mut self) -> RCS_W<HDCR_SPEC, 6> {
-        RCS_W::new(self)
+    pub fn rcs(&mut self) -> RCS_W<HDCR_SPEC> {
+        RCS_W::new(self, 6)
     }
     #[doc = "Bit 7 - fSTDBY Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn stdbysel(&mut self) -> STDBYSEL_W<HDCR_SPEC, 7> {
-        STDBYSEL_W::new(self)
+    pub fn stdbysel(&mut self) -> STDBYSEL_W<HDCR_SPEC> {
+        STDBYSEL_W::new(self, 7)
     }
     #[doc = "Bit 8 - Wake-Up from Hibernate Trigger Input Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupsel(&mut self) -> WKUPSEL_W<HDCR_SPEC, 8> {
-        WKUPSEL_W::new(self)
+    pub fn wkupsel(&mut self) -> WKUPSEL_W<HDCR_SPEC> {
+        WKUPSEL_W::new(self, 8)
     }
     #[doc = "Bit 10 - General Purpose Input 0 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn gpi0sel(&mut self) -> GPI0SEL_W<HDCR_SPEC, 10> {
-        GPI0SEL_W::new(self)
+    pub fn gpi0sel(&mut self) -> GPI0SEL_W<HDCR_SPEC> {
+        GPI0SEL_W::new(self, 10)
     }
     #[doc = "Bit 12 - HIBIO0 Polarity Set"]
     #[inline(always)]
     #[must_use]
-    pub fn hibio0pol(&mut self) -> HIBIO0POL_W<HDCR_SPEC, 12> {
-        HIBIO0POL_W::new(self)
+    pub fn hibio0pol(&mut self) -> HIBIO0POL_W<HDCR_SPEC> {
+        HIBIO0POL_W::new(self, 12)
     }
     #[doc = "Bit 13 - HIBIO1 Polarity Set"]
     #[inline(always)]
     #[must_use]
-    pub fn hibio1pol(&mut self) -> HIBIO1POL_W<HDCR_SPEC, 13> {
-        HIBIO1POL_W::new(self)
+    pub fn hibio1pol(&mut self) -> HIBIO1POL_W<HDCR_SPEC> {
+        HIBIO1POL_W::new(self, 13)
     }
     #[doc = "Bits 16:19 - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
     #[inline(always)]
     #[must_use]
-    pub fn hibio0sel(&mut self) -> HIBIO0SEL_W<HDCR_SPEC, 16> {
-        HIBIO0SEL_W::new(self)
+    pub fn hibio0sel(&mut self) -> HIBIO0SEL_W<HDCR_SPEC> {
+        HIBIO0SEL_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - HIB_IO_1 Pin I/O Control (Default WKUP)"]
     #[inline(always)]
     #[must_use]
-    pub fn hibio1sel(&mut self) -> HIBIO1SEL_W<HDCR_SPEC, 20> {
-        HIBIO1SEL_W::new(self)
+    pub fn hibio1sel(&mut self) -> HIBIO1SEL_W<HDCR_SPEC> {
+        HIBIO1SEL_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

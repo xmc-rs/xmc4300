@@ -5,19 +5,19 @@ pub type W = crate::W<TSCMP0_SPEC>;
 #[doc = "Field `CMP_TS0` reader - Compare Value for Touch-Sense TSIN\\[x\\]"]
 pub type CMP_TS0_R = crate::FieldReader;
 #[doc = "Field `CMP_TS0` writer - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub type CMP_TS0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CMP_TS0_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CMP_TS1` reader - Compare Value for Touch-Sense TSIN\\[x\\]"]
 pub type CMP_TS1_R = crate::FieldReader;
 #[doc = "Field `CMP_TS1` writer - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub type CMP_TS1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CMP_TS1_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CMP_TS2` reader - Compare Value for Touch-Sense TSIN\\[x\\]"]
 pub type CMP_TS2_R = crate::FieldReader;
 #[doc = "Field `CMP_TS2` writer - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub type CMP_TS2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CMP_TS2_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CMP_TS3` reader - Compare Value for Touch-Sense TSIN\\[x\\]"]
 pub type CMP_TS3_R = crate::FieldReader;
 #[doc = "Field `CMP_TS3` writer - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub type CMP_TS3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CMP_TS3_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:7 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn cmp_ts0(&mut self) -> CMP_TS0_W<TSCMP0_SPEC, 0> {
-        CMP_TS0_W::new(self)
+    pub fn cmp_ts0(&mut self) -> CMP_TS0_W<TSCMP0_SPEC> {
+        CMP_TS0_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn cmp_ts1(&mut self) -> CMP_TS1_W<TSCMP0_SPEC, 8> {
-        CMP_TS1_W::new(self)
+    pub fn cmp_ts1(&mut self) -> CMP_TS1_W<TSCMP0_SPEC> {
+        CMP_TS1_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn cmp_ts2(&mut self) -> CMP_TS2_W<TSCMP0_SPEC, 16> {
-        CMP_TS2_W::new(self)
+    pub fn cmp_ts2(&mut self) -> CMP_TS2_W<TSCMP0_SPEC> {
+        CMP_TS2_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn cmp_ts3(&mut self) -> CMP_TS3_W<TSCMP0_SPEC, 24> {
-        CMP_TS3_W::new(self)
+    pub fn cmp_ts3(&mut self) -> CMP_TS3_W<TSCMP0_SPEC> {
+        CMP_TS3_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

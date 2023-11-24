@@ -39,8 +39,8 @@ impl BLOCK_COUNT_EN_R {
     }
 }
 #[doc = "Field `BLOCK_COUNT_EN` writer - Block Count Enable"]
-pub type BLOCK_COUNT_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BLOCK_COUNT_EN_A>;
-impl<'a, REG, const O: u8> BLOCK_COUNT_EN_W<'a, REG, O>
+pub type BLOCK_COUNT_EN_W<'a, REG> = crate::BitWriter<'a, REG, BLOCK_COUNT_EN_A>;
+impl<'a, REG> BLOCK_COUNT_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -97,8 +97,8 @@ impl ACMD_EN_R {
     }
 }
 #[doc = "Field `ACMD_EN` writer - Auto CMD Enable"]
-pub type ACMD_EN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, ACMD_EN_A>;
-impl<'a, REG, const O: u8> ACMD_EN_W<'a, REG, O>
+pub type ACMD_EN_W<'a, REG> = crate::FieldWriter<'a, REG, 2, ACMD_EN_A>;
+impl<'a, REG> ACMD_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -151,8 +151,8 @@ impl TX_DIR_SELECT_R {
     }
 }
 #[doc = "Field `TX_DIR_SELECT` writer - Data Transfer Direction Select"]
-pub type TX_DIR_SELECT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_DIR_SELECT_A>;
-impl<'a, REG, const O: u8> TX_DIR_SELECT_W<'a, REG, O>
+pub type TX_DIR_SELECT_W<'a, REG> = crate::BitWriter<'a, REG, TX_DIR_SELECT_A>;
+impl<'a, REG> TX_DIR_SELECT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -204,8 +204,8 @@ impl MULTI_BLOCK_SELECT_R {
     }
 }
 #[doc = "Field `MULTI_BLOCK_SELECT` writer - Multi / Single Block Select"]
-pub type MULTI_BLOCK_SELECT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MULTI_BLOCK_SELECT_A>;
-impl<'a, REG, const O: u8> MULTI_BLOCK_SELECT_W<'a, REG, O>
+pub type MULTI_BLOCK_SELECT_W<'a, REG> = crate::BitWriter<'a, REG, MULTI_BLOCK_SELECT_A>;
+impl<'a, REG> MULTI_BLOCK_SELECT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -257,8 +257,8 @@ impl CMD_COMP_ATA_R {
     }
 }
 #[doc = "Field `CMD_COMP_ATA` writer - Command Completion Signal Enable for CE-ATA Device"]
-pub type CMD_COMP_ATA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_COMP_ATA_A>;
-impl<'a, REG, const O: u8> CMD_COMP_ATA_W<'a, REG, O>
+pub type CMD_COMP_ATA_W<'a, REG> = crate::BitWriter<'a, REG, CMD_COMP_ATA_A>;
+impl<'a, REG> CMD_COMP_ATA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,32 +304,32 @@ impl W {
     #[doc = "Bit 1 - Block Count Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn block_count_en(&mut self) -> BLOCK_COUNT_EN_W<TRANSFER_MODE_SPEC, 1> {
-        BLOCK_COUNT_EN_W::new(self)
+    pub fn block_count_en(&mut self) -> BLOCK_COUNT_EN_W<TRANSFER_MODE_SPEC> {
+        BLOCK_COUNT_EN_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - Auto CMD Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn acmd_en(&mut self) -> ACMD_EN_W<TRANSFER_MODE_SPEC, 2> {
-        ACMD_EN_W::new(self)
+    pub fn acmd_en(&mut self) -> ACMD_EN_W<TRANSFER_MODE_SPEC> {
+        ACMD_EN_W::new(self, 2)
     }
     #[doc = "Bit 4 - Data Transfer Direction Select"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_dir_select(&mut self) -> TX_DIR_SELECT_W<TRANSFER_MODE_SPEC, 4> {
-        TX_DIR_SELECT_W::new(self)
+    pub fn tx_dir_select(&mut self) -> TX_DIR_SELECT_W<TRANSFER_MODE_SPEC> {
+        TX_DIR_SELECT_W::new(self, 4)
     }
     #[doc = "Bit 5 - Multi / Single Block Select"]
     #[inline(always)]
     #[must_use]
-    pub fn multi_block_select(&mut self) -> MULTI_BLOCK_SELECT_W<TRANSFER_MODE_SPEC, 5> {
-        MULTI_BLOCK_SELECT_W::new(self)
+    pub fn multi_block_select(&mut self) -> MULTI_BLOCK_SELECT_W<TRANSFER_MODE_SPEC> {
+        MULTI_BLOCK_SELECT_W::new(self, 5)
     }
     #[doc = "Bit 6 - Command Completion Signal Enable for CE-ATA Device"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_comp_ata(&mut self) -> CMD_COMP_ATA_W<TRANSFER_MODE_SPEC, 6> {
-        CMD_COMP_ATA_W::new(self)
+    pub fn cmd_comp_ata(&mut self) -> CMD_COMP_ATA_W<TRANSFER_MODE_SPEC> {
+        CMD_COMP_ATA_W::new(self, 6)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

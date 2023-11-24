@@ -5,11 +5,11 @@ pub type W = crate::W<DIEPCTL_ISOCONT_SPEC>;
 #[doc = "Field `MPS` reader - Maximum Packet Size"]
 pub type MPS_R = crate::FieldReader<u16>;
 #[doc = "Field `MPS` writer - Maximum Packet Size"]
-pub type MPS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 11, O, u16>;
+pub type MPS_W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 #[doc = "Field `USBActEP` reader - USB Active Endpoint"]
 pub type USBACT_EP_R = crate::BitReader;
 #[doc = "Field `USBActEP` writer - USB Active Endpoint"]
-pub type USBACT_EP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type USBACT_EP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EO_FrNum` reader - Even/Odd Frame"]
 pub type EO_FR_NUM_R = crate::BitReader<EO_FR_NUM_A>;
 #[doc = "Even/Odd Frame\n\nValue on reset: 0"]
@@ -140,8 +140,8 @@ impl EPTYPE_R {
     }
 }
 #[doc = "Field `EPType` writer - Endpoint Type"]
-pub type EPTYPE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EPTYPE_A>;
-impl<'a, REG, const O: u8> EPTYPE_W<'a, REG, O>
+pub type EPTYPE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EPTYPE_A>;
+impl<'a, REG> EPTYPE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -170,31 +170,31 @@ where
 #[doc = "Field `Snp` reader - Snoop Mode"]
 pub type SNP_R = crate::BitReader;
 #[doc = "Field `Snp` writer - Snoop Mode"]
-pub type SNP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SNP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `Stall` reader - STALL Handshake"]
 pub type STALL_R = crate::BitReader;
 #[doc = "Field `Stall` writer - STALL Handshake"]
-pub type STALL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STALL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TxFNum` reader - TxFIFO Number"]
 pub type TX_FNUM_R = crate::FieldReader;
 #[doc = "Field `TxFNum` writer - TxFIFO Number"]
-pub type TX_FNUM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TX_FNUM_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CNAK` writer - Clear NAK"]
-pub type CNAK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CNAK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SNAK` writer - Set NAK"]
-pub type SNAK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SNAK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SetEvenFr` writer - In non-Scatter/Gather DMA mode: Set Even frame"]
-pub type SET_EVEN_FR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SET_EVEN_FR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SetOddFr` writer - Set Odd frame"]
-pub type SET_ODD_FR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SET_ODD_FR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPDis` reader - Endpoint Disable"]
 pub type EPDIS_R = crate::BitReader;
 #[doc = "Field `EPDis` writer - Endpoint Disable"]
-pub type EPDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPEna` reader - Endpoint Enable"]
 pub type EPENA_R = crate::BitReader;
 #[doc = "Field `EPEna` writer - Endpoint Enable"]
-pub type EPENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPENA_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:10 - Maximum Packet Size"]
     #[inline(always)]
@@ -251,74 +251,74 @@ impl W {
     #[doc = "Bits 0:10 - Maximum Packet Size"]
     #[inline(always)]
     #[must_use]
-    pub fn mps(&mut self) -> MPS_W<DIEPCTL_ISOCONT_SPEC, 0> {
-        MPS_W::new(self)
+    pub fn mps(&mut self) -> MPS_W<DIEPCTL_ISOCONT_SPEC> {
+        MPS_W::new(self, 0)
     }
     #[doc = "Bit 15 - USB Active Endpoint"]
     #[inline(always)]
     #[must_use]
-    pub fn usbact_ep(&mut self) -> USBACT_EP_W<DIEPCTL_ISOCONT_SPEC, 15> {
-        USBACT_EP_W::new(self)
+    pub fn usbact_ep(&mut self) -> USBACT_EP_W<DIEPCTL_ISOCONT_SPEC> {
+        USBACT_EP_W::new(self, 15)
     }
     #[doc = "Bits 18:19 - Endpoint Type"]
     #[inline(always)]
     #[must_use]
-    pub fn eptype(&mut self) -> EPTYPE_W<DIEPCTL_ISOCONT_SPEC, 18> {
-        EPTYPE_W::new(self)
+    pub fn eptype(&mut self) -> EPTYPE_W<DIEPCTL_ISOCONT_SPEC> {
+        EPTYPE_W::new(self, 18)
     }
     #[doc = "Bit 20 - Snoop Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn snp(&mut self) -> SNP_W<DIEPCTL_ISOCONT_SPEC, 20> {
-        SNP_W::new(self)
+    pub fn snp(&mut self) -> SNP_W<DIEPCTL_ISOCONT_SPEC> {
+        SNP_W::new(self, 20)
     }
     #[doc = "Bit 21 - STALL Handshake"]
     #[inline(always)]
     #[must_use]
-    pub fn stall(&mut self) -> STALL_W<DIEPCTL_ISOCONT_SPEC, 21> {
-        STALL_W::new(self)
+    pub fn stall(&mut self) -> STALL_W<DIEPCTL_ISOCONT_SPEC> {
+        STALL_W::new(self, 21)
     }
     #[doc = "Bits 22:25 - TxFIFO Number"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_fnum(&mut self) -> TX_FNUM_W<DIEPCTL_ISOCONT_SPEC, 22> {
-        TX_FNUM_W::new(self)
+    pub fn tx_fnum(&mut self) -> TX_FNUM_W<DIEPCTL_ISOCONT_SPEC> {
+        TX_FNUM_W::new(self, 22)
     }
     #[doc = "Bit 26 - Clear NAK"]
     #[inline(always)]
     #[must_use]
-    pub fn cnak(&mut self) -> CNAK_W<DIEPCTL_ISOCONT_SPEC, 26> {
-        CNAK_W::new(self)
+    pub fn cnak(&mut self) -> CNAK_W<DIEPCTL_ISOCONT_SPEC> {
+        CNAK_W::new(self, 26)
     }
     #[doc = "Bit 27 - Set NAK"]
     #[inline(always)]
     #[must_use]
-    pub fn snak(&mut self) -> SNAK_W<DIEPCTL_ISOCONT_SPEC, 27> {
-        SNAK_W::new(self)
+    pub fn snak(&mut self) -> SNAK_W<DIEPCTL_ISOCONT_SPEC> {
+        SNAK_W::new(self, 27)
     }
     #[doc = "Bit 28 - In non-Scatter/Gather DMA mode: Set Even frame"]
     #[inline(always)]
     #[must_use]
-    pub fn set_even_fr(&mut self) -> SET_EVEN_FR_W<DIEPCTL_ISOCONT_SPEC, 28> {
-        SET_EVEN_FR_W::new(self)
+    pub fn set_even_fr(&mut self) -> SET_EVEN_FR_W<DIEPCTL_ISOCONT_SPEC> {
+        SET_EVEN_FR_W::new(self, 28)
     }
     #[doc = "Bit 29 - Set Odd frame"]
     #[inline(always)]
     #[must_use]
-    pub fn set_odd_fr(&mut self) -> SET_ODD_FR_W<DIEPCTL_ISOCONT_SPEC, 29> {
-        SET_ODD_FR_W::new(self)
+    pub fn set_odd_fr(&mut self) -> SET_ODD_FR_W<DIEPCTL_ISOCONT_SPEC> {
+        SET_ODD_FR_W::new(self, 29)
     }
     #[doc = "Bit 30 - Endpoint Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn epdis(&mut self) -> EPDIS_W<DIEPCTL_ISOCONT_SPEC, 30> {
-        EPDIS_W::new(self)
+    pub fn epdis(&mut self) -> EPDIS_W<DIEPCTL_ISOCONT_SPEC> {
+        EPDIS_W::new(self, 30)
     }
     #[doc = "Bit 31 - Endpoint Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epena(&mut self) -> EPENA_W<DIEPCTL_ISOCONT_SPEC, 31> {
-        EPENA_W::new(self)
+    pub fn epena(&mut self) -> EPENA_W<DIEPCTL_ISOCONT_SPEC> {
+        EPENA_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

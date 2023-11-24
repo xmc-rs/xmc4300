@@ -39,8 +39,8 @@ impl PETEPS_R {
     }
 }
 #[doc = "Field `PETEPS` writer - Parity Error Trap Enable for PSRAM"]
-pub type PETEPS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PETEPS_A>;
-impl<'a, REG, const O: u8> PETEPS_W<'a, REG, O>
+pub type PETEPS_W<'a, REG> = crate::BitWriter<'a, REG, PETEPS_A>;
+impl<'a, REG> PETEPS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl PETEDS1_R {
     }
 }
 #[doc = "Field `PETEDS1` writer - Parity Error Trap Enable for DSRAM1"]
-pub type PETEDS1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PETEDS1_A>;
-impl<'a, REG, const O: u8> PETEDS1_W<'a, REG, O>
+pub type PETEDS1_W<'a, REG> = crate::BitWriter<'a, REG, PETEDS1_A>;
+impl<'a, REG> PETEDS1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl PETEU0_R {
     }
 }
 #[doc = "Field `PETEU0` writer - Parity Error Trap Enable for USIC0 Memory"]
-pub type PETEU0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PETEU0_A>;
-impl<'a, REG, const O: u8> PETEU0_W<'a, REG, O>
+pub type PETEU0_W<'a, REG> = crate::BitWriter<'a, REG, PETEU0_A>;
+impl<'a, REG> PETEU0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl PETEU1_R {
     }
 }
 #[doc = "Field `PETEU1` writer - Parity Error Trap Enable for USIC1 Memory"]
-pub type PETEU1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PETEU1_A>;
-impl<'a, REG, const O: u8> PETEU1_W<'a, REG, O>
+pub type PETEU1_W<'a, REG> = crate::BitWriter<'a, REG, PETEU1_A>;
+impl<'a, REG> PETEU1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl PETEMC_R {
     }
 }
 #[doc = "Field `PETEMC` writer - Parity Error Trap Enable for MultiCAN Memory"]
-pub type PETEMC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PETEMC_A>;
-impl<'a, REG, const O: u8> PETEMC_W<'a, REG, O>
+pub type PETEMC_W<'a, REG> = crate::BitWriter<'a, REG, PETEMC_A>;
+impl<'a, REG> PETEMC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl PETEPPRF_R {
     }
 }
 #[doc = "Field `PETEPPRF` writer - Parity Error Trap Enable for PMU Prefetch Memory"]
-pub type PETEPPRF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PETEPPRF_A>;
-impl<'a, REG, const O: u8> PETEPPRF_W<'a, REG, O>
+pub type PETEPPRF_W<'a, REG> = crate::BitWriter<'a, REG, PETEPPRF_A>;
+impl<'a, REG> PETEPPRF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl PETEUSB_R {
     }
 }
 #[doc = "Field `PETEUSB` writer - Parity Error Trap Enable for USB Memory"]
-pub type PETEUSB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PETEUSB_A>;
-impl<'a, REG, const O: u8> PETEUSB_W<'a, REG, O>
+pub type PETEUSB_W<'a, REG> = crate::BitWriter<'a, REG, PETEUSB_A>;
+impl<'a, REG> PETEUSB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl PETEETH0TX_R {
     }
 }
 #[doc = "Field `PETEETH0TX` writer - Parity Error Trap Enable for ETH 0TX Memory"]
-pub type PETEETH0TX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PETEETH0TX_A>;
-impl<'a, REG, const O: u8> PETEETH0TX_W<'a, REG, O>
+pub type PETEETH0TX_W<'a, REG> = crate::BitWriter<'a, REG, PETEETH0TX_A>;
+impl<'a, REG> PETEETH0TX_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl PETEETH0RX_R {
     }
 }
 #[doc = "Field `PETEETH0RX` writer - Parity Error Trap Enable for ETH0 RX Memory"]
-pub type PETEETH0RX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PETEETH0RX_A>;
-impl<'a, REG, const O: u8> PETEETH0RX_W<'a, REG, O>
+pub type PETEETH0RX_W<'a, REG> = crate::BitWriter<'a, REG, PETEETH0RX_A>;
+impl<'a, REG> PETEETH0RX_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -516,8 +516,8 @@ impl PETESD0_R {
     }
 }
 #[doc = "Field `PETESD0` writer - Parity Error Trap Enable for SDMMC SRAM 0 Memory"]
-pub type PETESD0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PETESD0_A>;
-impl<'a, REG, const O: u8> PETESD0_W<'a, REG, O>
+pub type PETESD0_W<'a, REG> = crate::BitWriter<'a, REG, PETESD0_A>;
+impl<'a, REG> PETESD0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -569,8 +569,8 @@ impl PETESD1_R {
     }
 }
 #[doc = "Field `PETESD1` writer - Parity Error Trap Enable for SDMMC SRAM 1 Memory"]
-pub type PETESD1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PETESD1_A>;
-impl<'a, REG, const O: u8> PETESD1_W<'a, REG, O>
+pub type PETESD1_W<'a, REG> = crate::BitWriter<'a, REG, PETESD1_A>;
+impl<'a, REG> PETESD1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -622,8 +622,8 @@ impl PETEECAT0_R {
     }
 }
 #[doc = "Field `PETEECAT0` writer - Parity Error Trap Enable for ECAT0 SRAM Memory"]
-pub type PETEECAT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PETEECAT0_A>;
-impl<'a, REG, const O: u8> PETEECAT0_W<'a, REG, O>
+pub type PETEECAT0_W<'a, REG> = crate::BitWriter<'a, REG, PETEECAT0_A>;
+impl<'a, REG> PETEECAT0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -704,74 +704,74 @@ impl W {
     #[doc = "Bit 0 - Parity Error Trap Enable for PSRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn peteps(&mut self) -> PETEPS_W<PETE_SPEC, 0> {
-        PETEPS_W::new(self)
+    pub fn peteps(&mut self) -> PETEPS_W<PETE_SPEC> {
+        PETEPS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Parity Error Trap Enable for DSRAM1"]
     #[inline(always)]
     #[must_use]
-    pub fn peteds1(&mut self) -> PETEDS1_W<PETE_SPEC, 1> {
-        PETEDS1_W::new(self)
+    pub fn peteds1(&mut self) -> PETEDS1_W<PETE_SPEC> {
+        PETEDS1_W::new(self, 1)
     }
     #[doc = "Bit 8 - Parity Error Trap Enable for USIC0 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peteu0(&mut self) -> PETEU0_W<PETE_SPEC, 8> {
-        PETEU0_W::new(self)
+    pub fn peteu0(&mut self) -> PETEU0_W<PETE_SPEC> {
+        PETEU0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Parity Error Trap Enable for USIC1 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peteu1(&mut self) -> PETEU1_W<PETE_SPEC, 9> {
-        PETEU1_W::new(self)
+    pub fn peteu1(&mut self) -> PETEU1_W<PETE_SPEC> {
+        PETEU1_W::new(self, 9)
     }
     #[doc = "Bit 12 - Parity Error Trap Enable for MultiCAN Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn petemc(&mut self) -> PETEMC_W<PETE_SPEC, 12> {
-        PETEMC_W::new(self)
+    pub fn petemc(&mut self) -> PETEMC_W<PETE_SPEC> {
+        PETEMC_W::new(self, 12)
     }
     #[doc = "Bit 13 - Parity Error Trap Enable for PMU Prefetch Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn petepprf(&mut self) -> PETEPPRF_W<PETE_SPEC, 13> {
-        PETEPPRF_W::new(self)
+    pub fn petepprf(&mut self) -> PETEPPRF_W<PETE_SPEC> {
+        PETEPPRF_W::new(self, 13)
     }
     #[doc = "Bit 16 - Parity Error Trap Enable for USB Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peteusb(&mut self) -> PETEUSB_W<PETE_SPEC, 16> {
-        PETEUSB_W::new(self)
+    pub fn peteusb(&mut self) -> PETEUSB_W<PETE_SPEC> {
+        PETEUSB_W::new(self, 16)
     }
     #[doc = "Bit 17 - Parity Error Trap Enable for ETH 0TX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peteeth0tx(&mut self) -> PETEETH0TX_W<PETE_SPEC, 17> {
-        PETEETH0TX_W::new(self)
+    pub fn peteeth0tx(&mut self) -> PETEETH0TX_W<PETE_SPEC> {
+        PETEETH0TX_W::new(self, 17)
     }
     #[doc = "Bit 18 - Parity Error Trap Enable for ETH0 RX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peteeth0rx(&mut self) -> PETEETH0RX_W<PETE_SPEC, 18> {
-        PETEETH0RX_W::new(self)
+    pub fn peteeth0rx(&mut self) -> PETEETH0RX_W<PETE_SPEC> {
+        PETEETH0RX_W::new(self, 18)
     }
     #[doc = "Bit 19 - Parity Error Trap Enable for SDMMC SRAM 0 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn petesd0(&mut self) -> PETESD0_W<PETE_SPEC, 19> {
-        PETESD0_W::new(self)
+    pub fn petesd0(&mut self) -> PETESD0_W<PETE_SPEC> {
+        PETESD0_W::new(self, 19)
     }
     #[doc = "Bit 20 - Parity Error Trap Enable for SDMMC SRAM 1 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn petesd1(&mut self) -> PETESD1_W<PETE_SPEC, 20> {
-        PETESD1_W::new(self)
+    pub fn petesd1(&mut self) -> PETESD1_W<PETE_SPEC> {
+        PETESD1_W::new(self, 20)
     }
     #[doc = "Bit 24 - Parity Error Trap Enable for ECAT0 SRAM Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peteecat0(&mut self) -> PETEECAT0_W<PETE_SPEC, 24> {
-        PETEECAT0_W::new(self)
+    pub fn peteecat0(&mut self) -> PETEECAT0_W<PETE_SPEC> {
+        PETEECAT0_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

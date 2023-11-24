@@ -15,8 +15,8 @@ impl From<EPEV_AW> for bool {
     }
 }
 #[doc = "Field `EPEV` writer - Wake-up Pin Event Positive Edge Set"]
-pub type EPEV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EPEV_AW>;
-impl<'a, REG, const O: u8> EPEV_W<'a, REG, O>
+pub type EPEV_W<'a, REG> = crate::BitWriter<'a, REG, EPEV_AW>;
+impl<'a, REG> EPEV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<ENEV_AW> for bool {
     }
 }
 #[doc = "Field `ENEV` writer - Wake-up Pin Event Negative Edge Set"]
-pub type ENEV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENEV_AW>;
-impl<'a, REG, const O: u8> ENEV_W<'a, REG, O>
+pub type ENEV_W<'a, REG> = crate::BitWriter<'a, REG, ENEV_AW>;
+impl<'a, REG> ENEV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<RTCEV_AW> for bool {
     }
 }
 #[doc = "Field `RTCEV` writer - RTC Event Set"]
-pub type RTCEV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTCEV_AW>;
-impl<'a, REG, const O: u8> RTCEV_W<'a, REG, O>
+pub type RTCEV_W<'a, REG> = crate::BitWriter<'a, REG, RTCEV_AW>;
+impl<'a, REG> RTCEV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<ULPWDG_AW> for bool {
     }
 }
 #[doc = "Field `ULPWDG` writer - ULP WDG Alarm Set"]
-pub type ULPWDG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ULPWDG_AW>;
-impl<'a, REG, const O: u8> ULPWDG_W<'a, REG, O>
+pub type ULPWDG_W<'a, REG> = crate::BitWriter<'a, REG, ULPWDG_AW>;
+impl<'a, REG> ULPWDG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -128,26 +128,26 @@ impl W {
     #[doc = "Bit 0 - Wake-up Pin Event Positive Edge Set"]
     #[inline(always)]
     #[must_use]
-    pub fn epev(&mut self) -> EPEV_W<HDSET_SPEC, 0> {
-        EPEV_W::new(self)
+    pub fn epev(&mut self) -> EPEV_W<HDSET_SPEC> {
+        EPEV_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wake-up Pin Event Negative Edge Set"]
     #[inline(always)]
     #[must_use]
-    pub fn enev(&mut self) -> ENEV_W<HDSET_SPEC, 1> {
-        ENEV_W::new(self)
+    pub fn enev(&mut self) -> ENEV_W<HDSET_SPEC> {
+        ENEV_W::new(self, 1)
     }
     #[doc = "Bit 2 - RTC Event Set"]
     #[inline(always)]
     #[must_use]
-    pub fn rtcev(&mut self) -> RTCEV_W<HDSET_SPEC, 2> {
-        RTCEV_W::new(self)
+    pub fn rtcev(&mut self) -> RTCEV_W<HDSET_SPEC> {
+        RTCEV_W::new(self, 2)
     }
     #[doc = "Bit 3 - ULP WDG Alarm Set"]
     #[inline(always)]
     #[must_use]
-    pub fn ulpwdg(&mut self) -> ULPWDG_W<HDSET_SPEC, 3> {
-        ULPWDG_W::new(self)
+    pub fn ulpwdg(&mut self) -> ULPWDG_W<HDSET_SPEC> {
+        ULPWDG_W::new(self, 3)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

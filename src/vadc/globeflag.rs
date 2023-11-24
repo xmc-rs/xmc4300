@@ -39,8 +39,8 @@ impl SEVGLB_R {
     }
 }
 #[doc = "Field `SEVGLB` writer - Source Event (Background)"]
-pub type SEVGLB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SEVGLB_A>;
-impl<'a, REG, const O: u8> SEVGLB_W<'a, REG, O>
+pub type SEVGLB_W<'a, REG> = crate::BitWriter<'a, REG, SEVGLB_A>;
+impl<'a, REG> SEVGLB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl REVGLB_R {
     }
 }
 #[doc = "Field `REVGLB` writer - Global Result Event"]
-pub type REVGLB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REVGLB_A>;
-impl<'a, REG, const O: u8> REVGLB_W<'a, REG, O>
+pub type REVGLB_W<'a, REG> = crate::BitWriter<'a, REG, REVGLB_A>;
+impl<'a, REG> REVGLB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -123,8 +123,8 @@ impl From<SEVGLBCLR_AW> for bool {
     }
 }
 #[doc = "Field `SEVGLBCLR` writer - Clear Source Event (Background)"]
-pub type SEVGLBCLR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SEVGLBCLR_AW>;
-impl<'a, REG, const O: u8> SEVGLBCLR_W<'a, REG, O>
+pub type SEVGLBCLR_W<'a, REG> = crate::BitWriter<'a, REG, SEVGLBCLR_AW>;
+impl<'a, REG> SEVGLBCLR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -154,8 +154,8 @@ impl From<REVGLBCLR_AW> for bool {
     }
 }
 #[doc = "Field `REVGLBCLR` writer - Clear Global Result Event"]
-pub type REVGLBCLR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REVGLBCLR_AW>;
-impl<'a, REG, const O: u8> REVGLBCLR_W<'a, REG, O>
+pub type REVGLBCLR_W<'a, REG> = crate::BitWriter<'a, REG, REVGLBCLR_AW>;
+impl<'a, REG> REVGLBCLR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -186,26 +186,26 @@ impl W {
     #[doc = "Bit 0 - Source Event (Background)"]
     #[inline(always)]
     #[must_use]
-    pub fn sevglb(&mut self) -> SEVGLB_W<GLOBEFLAG_SPEC, 0> {
-        SEVGLB_W::new(self)
+    pub fn sevglb(&mut self) -> SEVGLB_W<GLOBEFLAG_SPEC> {
+        SEVGLB_W::new(self, 0)
     }
     #[doc = "Bit 8 - Global Result Event"]
     #[inline(always)]
     #[must_use]
-    pub fn revglb(&mut self) -> REVGLB_W<GLOBEFLAG_SPEC, 8> {
-        REVGLB_W::new(self)
+    pub fn revglb(&mut self) -> REVGLB_W<GLOBEFLAG_SPEC> {
+        REVGLB_W::new(self, 8)
     }
     #[doc = "Bit 16 - Clear Source Event (Background)"]
     #[inline(always)]
     #[must_use]
-    pub fn sevglbclr(&mut self) -> SEVGLBCLR_W<GLOBEFLAG_SPEC, 16> {
-        SEVGLBCLR_W::new(self)
+    pub fn sevglbclr(&mut self) -> SEVGLBCLR_W<GLOBEFLAG_SPEC> {
+        SEVGLBCLR_W::new(self, 16)
     }
     #[doc = "Bit 24 - Clear Global Result Event"]
     #[inline(always)]
     #[must_use]
-    pub fn revglbclr(&mut self) -> REVGLBCLR_W<GLOBEFLAG_SPEC, 24> {
-        REVGLBCLR_W::new(self)
+    pub fn revglbclr(&mut self) -> REVGLBCLR_W<GLOBEFLAG_SPEC> {
+        REVGLBCLR_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

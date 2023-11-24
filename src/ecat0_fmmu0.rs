@@ -1,22 +1,56 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    fmmu_l_start_adr: FMMU_L_START_ADR,
+    fmmu_len: FMMU_LEN,
+    fmmu_l_start_bit: FMMU_L_START_BIT,
+    fmmu_l_stop_bit: FMMU_L_STOP_BIT,
+    fmmu_p_start_adr: FMMU_P_START_ADR,
+    fmmu_p_start_bit: FMMU_P_START_BIT,
+    fmmu_type: FMMU_TYPE,
+    fmmu_act: FMMU_ACT,
+}
+impl RegisterBlock {
     #[doc = "0x00 - Logical Start address FMMU"]
-    pub fmmu_l_start_adr: FMMU_L_START_ADR,
+    #[inline(always)]
+    pub const fn fmmu_l_start_adr(&self) -> &FMMU_L_START_ADR {
+        &self.fmmu_l_start_adr
+    }
     #[doc = "0x04 - Length FMMU 0"]
-    pub fmmu_len: FMMU_LEN,
+    #[inline(always)]
+    pub const fn fmmu_len(&self) -> &FMMU_LEN {
+        &self.fmmu_len
+    }
     #[doc = "0x06 - Start bit FMMU 0 in logical address space"]
-    pub fmmu_l_start_bit: FMMU_L_START_BIT,
+    #[inline(always)]
+    pub const fn fmmu_l_start_bit(&self) -> &FMMU_L_START_BIT {
+        &self.fmmu_l_start_bit
+    }
     #[doc = "0x07 - Stop bit FMMU 0 in logical address space"]
-    pub fmmu_l_stop_bit: FMMU_L_STOP_BIT,
+    #[inline(always)]
+    pub const fn fmmu_l_stop_bit(&self) -> &FMMU_L_STOP_BIT {
+        &self.fmmu_l_stop_bit
+    }
     #[doc = "0x08 - Ph0sical Start address FMMU y"]
-    pub fmmu_p_start_adr: FMMU_P_START_ADR,
+    #[inline(always)]
+    pub const fn fmmu_p_start_adr(&self) -> &FMMU_P_START_ADR {
+        &self.fmmu_p_start_adr
+    }
     #[doc = "0x0a - Ph0sical Start bit FMMU y"]
-    pub fmmu_p_start_bit: FMMU_P_START_BIT,
+    #[inline(always)]
+    pub const fn fmmu_p_start_bit(&self) -> &FMMU_P_START_BIT {
+        &self.fmmu_p_start_bit
+    }
     #[doc = "0x0b - T0pe FMMU y"]
-    pub fmmu_type: FMMU_TYPE,
+    #[inline(always)]
+    pub const fn fmmu_type(&self) -> &FMMU_TYPE {
+        &self.fmmu_type
+    }
     #[doc = "0x0c - Activate FMMU 0"]
-    pub fmmu_act: FMMU_ACT,
+    #[inline(always)]
+    pub const fn fmmu_act(&self) -> &FMMU_ACT {
+        &self.fmmu_act
+    }
 }
 #[doc = "FMMU_L_START_ADR (r) register accessor: Logical Start address FMMU\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmmu_l_start_adr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fmmu_l_start_adr`]
 module"]

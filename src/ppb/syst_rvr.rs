@@ -5,7 +5,7 @@ pub type W = crate::W<SYST_RVR_SPEC>;
 #[doc = "Field `RELOAD` reader - Reload Value"]
 pub type RELOAD_R = crate::FieldReader<u32>;
 #[doc = "Field `RELOAD` writer - Reload Value"]
-pub type RELOAD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 24, O, u32>;
+pub type RELOAD_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     #[doc = "Bits 0:23 - Reload Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:23 - Reload Value"]
     #[inline(always)]
     #[must_use]
-    pub fn reload(&mut self) -> RELOAD_W<SYST_RVR_SPEC, 0> {
-        RELOAD_W::new(self)
+    pub fn reload(&mut self) -> RELOAD_W<SYST_RVR_SPEC> {
+        RELOAD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

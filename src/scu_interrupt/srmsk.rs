@@ -39,8 +39,8 @@ impl PRWARN_R {
     }
 }
 #[doc = "Field `PRWARN` writer - WDT pre-warning Interrupt Mask"]
-pub type PRWARN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PRWARN_A>;
-impl<'a, REG, const O: u8> PRWARN_W<'a, REG, O>
+pub type PRWARN_W<'a, REG> = crate::BitWriter<'a, REG, PRWARN_A>;
+impl<'a, REG> PRWARN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl PI_R {
     }
 }
 #[doc = "Field `PI` writer - RTC Periodic Interrupt Mask"]
-pub type PI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PI_A>;
-impl<'a, REG, const O: u8> PI_W<'a, REG, O>
+pub type PI_W<'a, REG> = crate::BitWriter<'a, REG, PI_A>;
+impl<'a, REG> PI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl AI_R {
     }
 }
 #[doc = "Field `AI` writer - RTC Alarm Interrupt Mask"]
-pub type AI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AI_A>;
-impl<'a, REG, const O: u8> AI_W<'a, REG, O>
+pub type AI_W<'a, REG> = crate::BitWriter<'a, REG, AI_A>;
+impl<'a, REG> AI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl DLROVR_R {
     }
 }
 #[doc = "Field `DLROVR` writer - DLR Request Overrun Interrupt Mask"]
-pub type DLROVR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DLROVR_A>;
-impl<'a, REG, const O: u8> DLROVR_W<'a, REG, O>
+pub type DLROVR_W<'a, REG> = crate::BitWriter<'a, REG, DLROVR_A>;
+impl<'a, REG> DLROVR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl HDCLR_R {
     }
 }
 #[doc = "Field `HDCLR` writer - HDCLR Mirror Register Update Mask"]
-pub type HDCLR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HDCLR_A>;
-impl<'a, REG, const O: u8> HDCLR_W<'a, REG, O>
+pub type HDCLR_W<'a, REG> = crate::BitWriter<'a, REG, HDCLR_A>;
+impl<'a, REG> HDCLR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl HDSET_R {
     }
 }
 #[doc = "Field `HDSET` writer - HDSET Mirror Register Update Mask"]
-pub type HDSET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HDSET_A>;
-impl<'a, REG, const O: u8> HDSET_W<'a, REG, O>
+pub type HDSET_W<'a, REG> = crate::BitWriter<'a, REG, HDSET_A>;
+impl<'a, REG> HDSET_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl HDCR_R {
     }
 }
 #[doc = "Field `HDCR` writer - HDCR Mirror Register Update Mask"]
-pub type HDCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HDCR_A>;
-impl<'a, REG, const O: u8> HDCR_W<'a, REG, O>
+pub type HDCR_W<'a, REG> = crate::BitWriter<'a, REG, HDCR_A>;
+impl<'a, REG> HDCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl OSCSICTRL_R {
     }
 }
 #[doc = "Field `OSCSICTRL` writer - OSCSICTRL Mirror Register Update Mask"]
-pub type OSCSICTRL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OSCSICTRL_A>;
-impl<'a, REG, const O: u8> OSCSICTRL_W<'a, REG, O>
+pub type OSCSICTRL_W<'a, REG> = crate::BitWriter<'a, REG, OSCSICTRL_A>;
+impl<'a, REG> OSCSICTRL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl OSCULCTRL_R {
     }
 }
 #[doc = "Field `OSCULCTRL` writer - OSCULCTRL Mirror Register Update Mask"]
-pub type OSCULCTRL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OSCULCTRL_A>;
-impl<'a, REG, const O: u8> OSCULCTRL_W<'a, REG, O>
+pub type OSCULCTRL_W<'a, REG> = crate::BitWriter<'a, REG, OSCULCTRL_A>;
+impl<'a, REG> OSCULCTRL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -516,8 +516,8 @@ impl RTC_CTR_R {
     }
 }
 #[doc = "Field `RTC_CTR` writer - RTC CTR Mirror Register Update Mask"]
-pub type RTC_CTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTC_CTR_A>;
-impl<'a, REG, const O: u8> RTC_CTR_W<'a, REG, O>
+pub type RTC_CTR_W<'a, REG> = crate::BitWriter<'a, REG, RTC_CTR_A>;
+impl<'a, REG> RTC_CTR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -569,8 +569,8 @@ impl RTC_ATIM0_R {
     }
 }
 #[doc = "Field `RTC_ATIM0` writer - RTC ATIM0 Mirror Register Update Mask"]
-pub type RTC_ATIM0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTC_ATIM0_A>;
-impl<'a, REG, const O: u8> RTC_ATIM0_W<'a, REG, O>
+pub type RTC_ATIM0_W<'a, REG> = crate::BitWriter<'a, REG, RTC_ATIM0_A>;
+impl<'a, REG> RTC_ATIM0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -622,8 +622,8 @@ impl RTC_ATIM1_R {
     }
 }
 #[doc = "Field `RTC_ATIM1` writer - RTC ATIM1 Mirror Register Update Mask"]
-pub type RTC_ATIM1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTC_ATIM1_A>;
-impl<'a, REG, const O: u8> RTC_ATIM1_W<'a, REG, O>
+pub type RTC_ATIM1_W<'a, REG> = crate::BitWriter<'a, REG, RTC_ATIM1_A>;
+impl<'a, REG> RTC_ATIM1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -675,8 +675,8 @@ impl RTC_TIM0_R {
     }
 }
 #[doc = "Field `RTC_TIM0` writer - RTC TIM0 Mirror Register Update Mask"]
-pub type RTC_TIM0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTC_TIM0_A>;
-impl<'a, REG, const O: u8> RTC_TIM0_W<'a, REG, O>
+pub type RTC_TIM0_W<'a, REG> = crate::BitWriter<'a, REG, RTC_TIM0_A>;
+impl<'a, REG> RTC_TIM0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -728,8 +728,8 @@ impl RTC_TIM1_R {
     }
 }
 #[doc = "Field `RTC_TIM1` writer - RTC TIM1 Mirror Register Update Mask"]
-pub type RTC_TIM1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTC_TIM1_A>;
-impl<'a, REG, const O: u8> RTC_TIM1_W<'a, REG, O>
+pub type RTC_TIM1_W<'a, REG> = crate::BitWriter<'a, REG, RTC_TIM1_A>;
+impl<'a, REG> RTC_TIM1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -781,8 +781,8 @@ impl RMX_R {
     }
 }
 #[doc = "Field `RMX` writer - Retention Memory Mirror Register Update Mask"]
-pub type RMX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RMX_A>;
-impl<'a, REG, const O: u8> RMX_W<'a, REG, O>
+pub type RMX_W<'a, REG> = crate::BitWriter<'a, REG, RMX_A>;
+impl<'a, REG> RMX_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -878,92 +878,92 @@ impl W {
     #[doc = "Bit 0 - WDT pre-warning Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn prwarn(&mut self) -> PRWARN_W<SRMSK_SPEC, 0> {
-        PRWARN_W::new(self)
+    pub fn prwarn(&mut self) -> PRWARN_W<SRMSK_SPEC> {
+        PRWARN_W::new(self, 0)
     }
     #[doc = "Bit 1 - RTC Periodic Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn pi(&mut self) -> PI_W<SRMSK_SPEC, 1> {
-        PI_W::new(self)
+    pub fn pi(&mut self) -> PI_W<SRMSK_SPEC> {
+        PI_W::new(self, 1)
     }
     #[doc = "Bit 2 - RTC Alarm Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn ai(&mut self) -> AI_W<SRMSK_SPEC, 2> {
-        AI_W::new(self)
+    pub fn ai(&mut self) -> AI_W<SRMSK_SPEC> {
+        AI_W::new(self, 2)
     }
     #[doc = "Bit 3 - DLR Request Overrun Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn dlrovr(&mut self) -> DLROVR_W<SRMSK_SPEC, 3> {
-        DLROVR_W::new(self)
+    pub fn dlrovr(&mut self) -> DLROVR_W<SRMSK_SPEC> {
+        DLROVR_W::new(self, 3)
     }
     #[doc = "Bit 17 - HDCLR Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn hdclr(&mut self) -> HDCLR_W<SRMSK_SPEC, 17> {
-        HDCLR_W::new(self)
+    pub fn hdclr(&mut self) -> HDCLR_W<SRMSK_SPEC> {
+        HDCLR_W::new(self, 17)
     }
     #[doc = "Bit 18 - HDSET Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn hdset(&mut self) -> HDSET_W<SRMSK_SPEC, 18> {
-        HDSET_W::new(self)
+    pub fn hdset(&mut self) -> HDSET_W<SRMSK_SPEC> {
+        HDSET_W::new(self, 18)
     }
     #[doc = "Bit 19 - HDCR Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn hdcr(&mut self) -> HDCR_W<SRMSK_SPEC, 19> {
-        HDCR_W::new(self)
+    pub fn hdcr(&mut self) -> HDCR_W<SRMSK_SPEC> {
+        HDCR_W::new(self, 19)
     }
     #[doc = "Bit 21 - OSCSICTRL Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn oscsictrl(&mut self) -> OSCSICTRL_W<SRMSK_SPEC, 21> {
-        OSCSICTRL_W::new(self)
+    pub fn oscsictrl(&mut self) -> OSCSICTRL_W<SRMSK_SPEC> {
+        OSCSICTRL_W::new(self, 21)
     }
     #[doc = "Bit 23 - OSCULCTRL Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn osculctrl(&mut self) -> OSCULCTRL_W<SRMSK_SPEC, 23> {
-        OSCULCTRL_W::new(self)
+    pub fn osculctrl(&mut self) -> OSCULCTRL_W<SRMSK_SPEC> {
+        OSCULCTRL_W::new(self, 23)
     }
     #[doc = "Bit 24 - RTC CTR Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_ctr(&mut self) -> RTC_CTR_W<SRMSK_SPEC, 24> {
-        RTC_CTR_W::new(self)
+    pub fn rtc_ctr(&mut self) -> RTC_CTR_W<SRMSK_SPEC> {
+        RTC_CTR_W::new(self, 24)
     }
     #[doc = "Bit 25 - RTC ATIM0 Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_atim0(&mut self) -> RTC_ATIM0_W<SRMSK_SPEC, 25> {
-        RTC_ATIM0_W::new(self)
+    pub fn rtc_atim0(&mut self) -> RTC_ATIM0_W<SRMSK_SPEC> {
+        RTC_ATIM0_W::new(self, 25)
     }
     #[doc = "Bit 26 - RTC ATIM1 Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_atim1(&mut self) -> RTC_ATIM1_W<SRMSK_SPEC, 26> {
-        RTC_ATIM1_W::new(self)
+    pub fn rtc_atim1(&mut self) -> RTC_ATIM1_W<SRMSK_SPEC> {
+        RTC_ATIM1_W::new(self, 26)
     }
     #[doc = "Bit 27 - RTC TIM0 Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_tim0(&mut self) -> RTC_TIM0_W<SRMSK_SPEC, 27> {
-        RTC_TIM0_W::new(self)
+    pub fn rtc_tim0(&mut self) -> RTC_TIM0_W<SRMSK_SPEC> {
+        RTC_TIM0_W::new(self, 27)
     }
     #[doc = "Bit 28 - RTC TIM1 Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_tim1(&mut self) -> RTC_TIM1_W<SRMSK_SPEC, 28> {
-        RTC_TIM1_W::new(self)
+    pub fn rtc_tim1(&mut self) -> RTC_TIM1_W<SRMSK_SPEC> {
+        RTC_TIM1_W::new(self, 28)
     }
     #[doc = "Bit 29 - Retention Memory Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn rmx(&mut self) -> RMX_W<SRMSK_SPEC, 29> {
-        RMX_W::new(self)
+    pub fn rmx(&mut self) -> RMX_W<SRMSK_SPEC> {
+        RMX_W::new(self, 29)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

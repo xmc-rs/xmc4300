@@ -39,8 +39,8 @@ impl VECTTBL_R {
     }
 }
 #[doc = "Field `VECTTBL` writer - BusFault on vector table read"]
-pub type VECTTBL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VECTTBL_A>;
-impl<'a, REG, const O: u8> VECTTBL_W<'a, REG, O>
+pub type VECTTBL_W<'a, REG> = crate::BitWriter<'a, REG, VECTTBL_A>;
+impl<'a, REG> VECTTBL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl FORCED_R {
     }
 }
 #[doc = "Field `FORCED` writer - Forced HardFault"]
-pub type FORCED_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FORCED_A>;
-impl<'a, REG, const O: u8> FORCED_W<'a, REG, O>
+pub type FORCED_W<'a, REG> = crate::BitWriter<'a, REG, FORCED_A>;
+impl<'a, REG> FORCED_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -111,7 +111,7 @@ where
 #[doc = "Field `DEBUGEVT` reader - Reserved for Debug use"]
 pub type DEBUGEVT_R = crate::BitReader;
 #[doc = "Field `DEBUGEVT` writer - Reserved for Debug use"]
-pub type DEBUGEVT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DEBUGEVT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 1 - BusFault on vector table read"]
     #[inline(always)]
@@ -133,20 +133,20 @@ impl W {
     #[doc = "Bit 1 - BusFault on vector table read"]
     #[inline(always)]
     #[must_use]
-    pub fn vecttbl(&mut self) -> VECTTBL_W<HFSR_SPEC, 1> {
-        VECTTBL_W::new(self)
+    pub fn vecttbl(&mut self) -> VECTTBL_W<HFSR_SPEC> {
+        VECTTBL_W::new(self, 1)
     }
     #[doc = "Bit 30 - Forced HardFault"]
     #[inline(always)]
     #[must_use]
-    pub fn forced(&mut self) -> FORCED_W<HFSR_SPEC, 30> {
-        FORCED_W::new(self)
+    pub fn forced(&mut self) -> FORCED_W<HFSR_SPEC> {
+        FORCED_W::new(self, 30)
     }
     #[doc = "Bit 31 - Reserved for Debug use"]
     #[inline(always)]
     #[must_use]
-    pub fn debugevt(&mut self) -> DEBUGEVT_W<HFSR_SPEC, 31> {
-        DEBUGEVT_W::new(self)
+    pub fn debugevt(&mut self) -> DEBUGEVT_W<HFSR_SPEC> {
+        DEBUGEVT_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

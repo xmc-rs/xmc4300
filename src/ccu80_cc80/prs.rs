@@ -5,7 +5,7 @@ pub type W = crate::W<PRS_SPEC>;
 #[doc = "Field `PRS` reader - Period Register"]
 pub type PRS_R = crate::FieldReader<u16>;
 #[doc = "Field `PRS` writer - Period Register"]
-pub type PRS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type PRS_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Period Register"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Period Register"]
     #[inline(always)]
     #[must_use]
-    pub fn prs(&mut self) -> PRS_W<PRS_SPEC, 0> {
-        PRS_W::new(self)
+    pub fn prs(&mut self) -> PRS_W<PRS_SPEC> {
+        PRS_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

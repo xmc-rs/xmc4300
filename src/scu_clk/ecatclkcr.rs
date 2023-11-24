@@ -5,7 +5,7 @@ pub type W = crate::W<ECATCLKCR_SPEC>;
 #[doc = "Field `ECADIV` reader - EtherCAT Clock Divider Value"]
 pub type ECADIV_R = crate::FieldReader;
 #[doc = "Field `ECADIV` writer - EtherCAT Clock Divider Value"]
-pub type ECADIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type ECADIV_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `ECATSEL` reader - EtherCAT Clock Selection Value"]
 pub type ECATSEL_R = crate::BitReader<ECATSEL_A>;
 #[doc = "EtherCAT Clock Selection Value\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl ECATSEL_R {
     }
 }
 #[doc = "Field `ECATSEL` writer - EtherCAT Clock Selection Value"]
-pub type ECATSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ECATSEL_A>;
-impl<'a, REG, const O: u8> ECATSEL_W<'a, REG, O>
+pub type ECATSEL_W<'a, REG> = crate::BitWriter<'a, REG, ECATSEL_A>;
+impl<'a, REG> ECATSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -75,14 +75,14 @@ impl W {
     #[doc = "Bits 0:1 - EtherCAT Clock Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ecadiv(&mut self) -> ECADIV_W<ECATCLKCR_SPEC, 0> {
-        ECADIV_W::new(self)
+    pub fn ecadiv(&mut self) -> ECADIV_W<ECATCLKCR_SPEC> {
+        ECADIV_W::new(self, 0)
     }
     #[doc = "Bit 16 - EtherCAT Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ecatsel(&mut self) -> ECATSEL_W<ECATCLKCR_SPEC, 16> {
-        ECATSEL_W::new(self)
+    pub fn ecatsel(&mut self) -> ECATSEL_W<ECATCLKCR_SPEC> {
+        ECATSEL_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

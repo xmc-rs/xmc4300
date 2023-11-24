@@ -68,8 +68,8 @@ impl PRBC_R {
     }
 }
 #[doc = "Field `PRBC` writer - Prescaler Clear Configuration"]
-pub type PRBC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PRBC_A>;
-impl<'a, REG, const O: u8> PRBC_W<'a, REG, O>
+pub type PRBC_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PRBC_A>;
+impl<'a, REG> PRBC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -158,8 +158,8 @@ impl PCIS_R {
     }
 }
 #[doc = "Field `PCIS` writer - Prescaler Input Clock Selection"]
-pub type PCIS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PCIS_A>;
-impl<'a, REG, const O: u8> PCIS_W<'a, REG, O>
+pub type PCIS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PCIS_A>;
+impl<'a, REG> PCIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -243,8 +243,8 @@ impl SUSCFG_R {
     }
 }
 #[doc = "Field `SUSCFG` writer - Suspend Mode Configuration"]
-pub type SUSCFG_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, SUSCFG_A>;
-impl<'a, REG, const O: u8> SUSCFG_W<'a, REG, O>
+pub type SUSCFG_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SUSCFG_A>;
+impl<'a, REG> SUSCFG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -307,8 +307,8 @@ impl MSE0_R {
     }
 }
 #[doc = "Field `MSE0` writer - Slice 0 Multi Channel shadow transfer enable"]
-pub type MSE0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MSE0_A>;
-impl<'a, REG, const O: u8> MSE0_W<'a, REG, O>
+pub type MSE0_W<'a, REG> = crate::BitWriter<'a, REG, MSE0_A>;
+impl<'a, REG> MSE0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -360,8 +360,8 @@ impl MSE1_R {
     }
 }
 #[doc = "Field `MSE1` writer - Slice 1 Multi Channel shadow transfer enable"]
-pub type MSE1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MSE1_A>;
-impl<'a, REG, const O: u8> MSE1_W<'a, REG, O>
+pub type MSE1_W<'a, REG> = crate::BitWriter<'a, REG, MSE1_A>;
+impl<'a, REG> MSE1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -413,8 +413,8 @@ impl MSE2_R {
     }
 }
 #[doc = "Field `MSE2` writer - Slice 2 Multi Channel shadow transfer enable"]
-pub type MSE2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MSE2_A>;
-impl<'a, REG, const O: u8> MSE2_W<'a, REG, O>
+pub type MSE2_W<'a, REG> = crate::BitWriter<'a, REG, MSE2_A>;
+impl<'a, REG> MSE2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -466,8 +466,8 @@ impl MSE3_R {
     }
 }
 #[doc = "Field `MSE3` writer - Slice 3 Multi Channel shadow transfer enable"]
-pub type MSE3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MSE3_A>;
-impl<'a, REG, const O: u8> MSE3_W<'a, REG, O>
+pub type MSE3_W<'a, REG> = crate::BitWriter<'a, REG, MSE3_A>;
+impl<'a, REG> MSE3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -532,8 +532,8 @@ impl MSDE_R {
     }
 }
 #[doc = "Field `MSDE` writer - Multi Channel shadow transfer request configuration"]
-pub type MSDE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, MSDE_A>;
-impl<'a, REG, const O: u8> MSDE_W<'a, REG, O>
+pub type MSDE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, MSDE_A>;
+impl<'a, REG> MSDE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -600,50 +600,50 @@ impl W {
     #[doc = "Bits 0:2 - Prescaler Clear Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn prbc(&mut self) -> PRBC_W<GCTRL_SPEC, 0> {
-        PRBC_W::new(self)
+    pub fn prbc(&mut self) -> PRBC_W<GCTRL_SPEC> {
+        PRBC_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Prescaler Input Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn pcis(&mut self) -> PCIS_W<GCTRL_SPEC, 4> {
-        PCIS_W::new(self)
+    pub fn pcis(&mut self) -> PCIS_W<GCTRL_SPEC> {
+        PCIS_W::new(self, 4)
     }
     #[doc = "Bits 8:9 - Suspend Mode Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn suscfg(&mut self) -> SUSCFG_W<GCTRL_SPEC, 8> {
-        SUSCFG_W::new(self)
+    pub fn suscfg(&mut self) -> SUSCFG_W<GCTRL_SPEC> {
+        SUSCFG_W::new(self, 8)
     }
     #[doc = "Bit 10 - Slice 0 Multi Channel shadow transfer enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mse0(&mut self) -> MSE0_W<GCTRL_SPEC, 10> {
-        MSE0_W::new(self)
+    pub fn mse0(&mut self) -> MSE0_W<GCTRL_SPEC> {
+        MSE0_W::new(self, 10)
     }
     #[doc = "Bit 11 - Slice 1 Multi Channel shadow transfer enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mse1(&mut self) -> MSE1_W<GCTRL_SPEC, 11> {
-        MSE1_W::new(self)
+    pub fn mse1(&mut self) -> MSE1_W<GCTRL_SPEC> {
+        MSE1_W::new(self, 11)
     }
     #[doc = "Bit 12 - Slice 2 Multi Channel shadow transfer enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mse2(&mut self) -> MSE2_W<GCTRL_SPEC, 12> {
-        MSE2_W::new(self)
+    pub fn mse2(&mut self) -> MSE2_W<GCTRL_SPEC> {
+        MSE2_W::new(self, 12)
     }
     #[doc = "Bit 13 - Slice 3 Multi Channel shadow transfer enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mse3(&mut self) -> MSE3_W<GCTRL_SPEC, 13> {
-        MSE3_W::new(self)
+    pub fn mse3(&mut self) -> MSE3_W<GCTRL_SPEC> {
+        MSE3_W::new(self, 13)
     }
     #[doc = "Bits 14:15 - Multi Channel shadow transfer request configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn msde(&mut self) -> MSDE_W<GCTRL_SPEC, 14> {
-        MSDE_W::new(self)
+    pub fn msde(&mut self) -> MSDE_W<GCTRL_SPEC> {
+        MSDE_W::new(self, 14)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -60,8 +60,8 @@ impl RXD0_R {
     }
 }
 #[doc = "Field `RXD0` writer - MAC Receive Input 0"]
-pub type RXD0_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RXD0_A>;
-impl<'a, REG, const O: u8> RXD0_W<'a, REG, O>
+pub type RXD0_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RXD0_A>;
+impl<'a, REG> RXD0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,8 +145,8 @@ impl RXD1_R {
     }
 }
 #[doc = "Field `RXD1` writer - MAC Receive Input 1"]
-pub type RXD1_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RXD1_A>;
-impl<'a, REG, const O: u8> RXD1_W<'a, REG, O>
+pub type RXD1_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RXD1_A>;
+impl<'a, REG> RXD1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -230,8 +230,8 @@ impl RXD2_R {
     }
 }
 #[doc = "Field `RXD2` writer - MAC Receive Input 2"]
-pub type RXD2_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RXD2_A>;
-impl<'a, REG, const O: u8> RXD2_W<'a, REG, O>
+pub type RXD2_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RXD2_A>;
+impl<'a, REG> RXD2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -315,8 +315,8 @@ impl RXD3_R {
     }
 }
 #[doc = "Field `RXD3` writer - MAC Receive Input 3"]
-pub type RXD3_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RXD3_A>;
-impl<'a, REG, const O: u8> RXD3_W<'a, REG, O>
+pub type RXD3_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RXD3_A>;
+impl<'a, REG> RXD3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -400,8 +400,8 @@ impl CLK_RMII_R {
     }
 }
 #[doc = "Field `CLK_RMII` writer - RMII clock input"]
-pub type CLK_RMII_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CLK_RMII_A>;
-impl<'a, REG, const O: u8> CLK_RMII_W<'a, REG, O>
+pub type CLK_RMII_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CLK_RMII_A>;
+impl<'a, REG> CLK_RMII_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -485,8 +485,8 @@ impl CRS_DV_R {
     }
 }
 #[doc = "Field `CRS_DV` writer - CRS_DV input"]
-pub type CRS_DV_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CRS_DV_A>;
-impl<'a, REG, const O: u8> CRS_DV_W<'a, REG, O>
+pub type CRS_DV_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CRS_DV_A>;
+impl<'a, REG> CRS_DV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -570,8 +570,8 @@ impl CRS_R {
     }
 }
 #[doc = "Field `CRS` writer - CRS input"]
-pub type CRS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CRS_A>;
-impl<'a, REG, const O: u8> CRS_W<'a, REG, O>
+pub type CRS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CRS_A>;
+impl<'a, REG> CRS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -655,8 +655,8 @@ impl RXER_R {
     }
 }
 #[doc = "Field `RXER` writer - RXER Input"]
-pub type RXER_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RXER_A>;
-impl<'a, REG, const O: u8> RXER_W<'a, REG, O>
+pub type RXER_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RXER_A>;
+impl<'a, REG> RXER_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -740,8 +740,8 @@ impl COL_R {
     }
 }
 #[doc = "Field `COL` writer - COL input"]
-pub type COL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, COL_A>;
-impl<'a, REG, const O: u8> COL_W<'a, REG, O>
+pub type COL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, COL_A>;
+impl<'a, REG> COL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -825,8 +825,8 @@ impl CLK_TX_R {
     }
 }
 #[doc = "Field `CLK_TX` writer - CLK_TX input"]
-pub type CLK_TX_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CLK_TX_A>;
-impl<'a, REG, const O: u8> CLK_TX_W<'a, REG, O>
+pub type CLK_TX_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CLK_TX_A>;
+impl<'a, REG> CLK_TX_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -910,8 +910,8 @@ impl MDIO_R {
     }
 }
 #[doc = "Field `MDIO` writer - MDIO Input Select"]
-pub type MDIO_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, MDIO_A>;
-impl<'a, REG, const O: u8> MDIO_W<'a, REG, O>
+pub type MDIO_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, MDIO_A>;
+impl<'a, REG> MDIO_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -974,8 +974,8 @@ impl INFSEL_R {
     }
 }
 #[doc = "Field `INFSEL` writer - Ethernet MAC Interface Selection"]
-pub type INFSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, INFSEL_A>;
-impl<'a, REG, const O: u8> INFSEL_W<'a, REG, O>
+pub type INFSEL_W<'a, REG> = crate::BitWriter<'a, REG, INFSEL_A>;
+impl<'a, REG> INFSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1056,74 +1056,74 @@ impl W {
     #[doc = "Bits 0:1 - MAC Receive Input 0"]
     #[inline(always)]
     #[must_use]
-    pub fn rxd0(&mut self) -> RXD0_W<ETH0_CON_SPEC, 0> {
-        RXD0_W::new(self)
+    pub fn rxd0(&mut self) -> RXD0_W<ETH0_CON_SPEC> {
+        RXD0_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - MAC Receive Input 1"]
     #[inline(always)]
     #[must_use]
-    pub fn rxd1(&mut self) -> RXD1_W<ETH0_CON_SPEC, 2> {
-        RXD1_W::new(self)
+    pub fn rxd1(&mut self) -> RXD1_W<ETH0_CON_SPEC> {
+        RXD1_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - MAC Receive Input 2"]
     #[inline(always)]
     #[must_use]
-    pub fn rxd2(&mut self) -> RXD2_W<ETH0_CON_SPEC, 4> {
-        RXD2_W::new(self)
+    pub fn rxd2(&mut self) -> RXD2_W<ETH0_CON_SPEC> {
+        RXD2_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - MAC Receive Input 3"]
     #[inline(always)]
     #[must_use]
-    pub fn rxd3(&mut self) -> RXD3_W<ETH0_CON_SPEC, 6> {
-        RXD3_W::new(self)
+    pub fn rxd3(&mut self) -> RXD3_W<ETH0_CON_SPEC> {
+        RXD3_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - RMII clock input"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_rmii(&mut self) -> CLK_RMII_W<ETH0_CON_SPEC, 8> {
-        CLK_RMII_W::new(self)
+    pub fn clk_rmii(&mut self) -> CLK_RMII_W<ETH0_CON_SPEC> {
+        CLK_RMII_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - CRS_DV input"]
     #[inline(always)]
     #[must_use]
-    pub fn crs_dv(&mut self) -> CRS_DV_W<ETH0_CON_SPEC, 10> {
-        CRS_DV_W::new(self)
+    pub fn crs_dv(&mut self) -> CRS_DV_W<ETH0_CON_SPEC> {
+        CRS_DV_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - CRS input"]
     #[inline(always)]
     #[must_use]
-    pub fn crs(&mut self) -> CRS_W<ETH0_CON_SPEC, 12> {
-        CRS_W::new(self)
+    pub fn crs(&mut self) -> CRS_W<ETH0_CON_SPEC> {
+        CRS_W::new(self, 12)
     }
     #[doc = "Bits 14:15 - RXER Input"]
     #[inline(always)]
     #[must_use]
-    pub fn rxer(&mut self) -> RXER_W<ETH0_CON_SPEC, 14> {
-        RXER_W::new(self)
+    pub fn rxer(&mut self) -> RXER_W<ETH0_CON_SPEC> {
+        RXER_W::new(self, 14)
     }
     #[doc = "Bits 16:17 - COL input"]
     #[inline(always)]
     #[must_use]
-    pub fn col(&mut self) -> COL_W<ETH0_CON_SPEC, 16> {
-        COL_W::new(self)
+    pub fn col(&mut self) -> COL_W<ETH0_CON_SPEC> {
+        COL_W::new(self, 16)
     }
     #[doc = "Bits 18:19 - CLK_TX input"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_tx(&mut self) -> CLK_TX_W<ETH0_CON_SPEC, 18> {
-        CLK_TX_W::new(self)
+    pub fn clk_tx(&mut self) -> CLK_TX_W<ETH0_CON_SPEC> {
+        CLK_TX_W::new(self, 18)
     }
     #[doc = "Bits 22:23 - MDIO Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn mdio(&mut self) -> MDIO_W<ETH0_CON_SPEC, 22> {
-        MDIO_W::new(self)
+    pub fn mdio(&mut self) -> MDIO_W<ETH0_CON_SPEC> {
+        MDIO_W::new(self, 22)
     }
     #[doc = "Bit 26 - Ethernet MAC Interface Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn infsel(&mut self) -> INFSEL_W<ETH0_CON_SPEC, 26> {
-        INFSEL_W::new(self)
+    pub fn infsel(&mut self) -> INFSEL_W<ETH0_CON_SPEC> {
+        INFSEL_W::new(self, 26)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

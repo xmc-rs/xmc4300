@@ -5,19 +5,19 @@ pub type W = crate::W<MAC_ADDRESS2_HIGH_SPEC>;
 #[doc = "Field `ADDRHI` reader - MAC Address2 \\[47:32\\]"]
 pub type ADDRHI_R = crate::FieldReader<u16>;
 #[doc = "Field `ADDRHI` writer - MAC Address2 \\[47:32\\]"]
-pub type ADDRHI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type ADDRHI_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `MBC` reader - Mask Byte Control"]
 pub type MBC_R = crate::FieldReader;
 #[doc = "Field `MBC` writer - Mask Byte Control"]
-pub type MBC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type MBC_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `SA` reader - Source Address"]
 pub type SA_R = crate::BitReader;
 #[doc = "Field `SA` writer - Source Address"]
-pub type SA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `AE` reader - Address Enable"]
 pub type AE_R = crate::BitReader;
 #[doc = "Field `AE` writer - Address Enable"]
-pub type AE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type AE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:15 - MAC Address2 \\[47:32\\]"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:15 - MAC Address2 \\[47:32\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn addrhi(&mut self) -> ADDRHI_W<MAC_ADDRESS2_HIGH_SPEC, 0> {
-        ADDRHI_W::new(self)
+    pub fn addrhi(&mut self) -> ADDRHI_W<MAC_ADDRESS2_HIGH_SPEC> {
+        ADDRHI_W::new(self, 0)
     }
     #[doc = "Bits 24:29 - Mask Byte Control"]
     #[inline(always)]
     #[must_use]
-    pub fn mbc(&mut self) -> MBC_W<MAC_ADDRESS2_HIGH_SPEC, 24> {
-        MBC_W::new(self)
+    pub fn mbc(&mut self) -> MBC_W<MAC_ADDRESS2_HIGH_SPEC> {
+        MBC_W::new(self, 24)
     }
     #[doc = "Bit 30 - Source Address"]
     #[inline(always)]
     #[must_use]
-    pub fn sa(&mut self) -> SA_W<MAC_ADDRESS2_HIGH_SPEC, 30> {
-        SA_W::new(self)
+    pub fn sa(&mut self) -> SA_W<MAC_ADDRESS2_HIGH_SPEC> {
+        SA_W::new(self, 30)
     }
     #[doc = "Bit 31 - Address Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ae(&mut self) -> AE_W<MAC_ADDRESS2_HIGH_SPEC, 31> {
-        AE_W::new(self)
+    pub fn ae(&mut self) -> AE_W<MAC_ADDRESS2_HIGH_SPEC> {
+        AE_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

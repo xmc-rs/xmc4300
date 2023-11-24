@@ -39,8 +39,8 @@ impl ECATRSTEN_R {
     }
 }
 #[doc = "Field `ECATRSTEN` writer - Enable EtherCAT Reset Request"]
-pub type ECATRSTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ECATRSTEN_A>;
-impl<'a, REG, const O: u8> ECATRSTEN_W<'a, REG, O>
+pub type ECATRSTEN_W<'a, REG> = crate::BitWriter<'a, REG, ECATRSTEN_A>;
+impl<'a, REG> ECATRSTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -113,8 +113,8 @@ impl LATCHIN0SEL_R {
     }
 }
 #[doc = "Field `LATCHIN0SEL` writer - LATCHIN0 Input Select"]
-pub type LATCHIN0SEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LATCHIN0SEL_A>;
-impl<'a, REG, const O: u8> LATCHIN0SEL_W<'a, REG, O>
+pub type LATCHIN0SEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, LATCHIN0SEL_A>;
+impl<'a, REG> LATCHIN0SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -200,8 +200,8 @@ impl LATCHIN1SEL_R {
     }
 }
 #[doc = "Field `LATCHIN1SEL` writer - LATCHIN1 Input Select"]
-pub type LATCHIN1SEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LATCHIN1SEL_A>;
-impl<'a, REG, const O: u8> LATCHIN1SEL_W<'a, REG, O>
+pub type LATCHIN1SEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, LATCHIN1SEL_A>;
+impl<'a, REG> LATCHIN1SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -232,7 +232,7 @@ pub type LATCHIN1_R = crate::BitReader;
 #[doc = "Field `PHYOFFSET` reader - Ethernet PHY Address Offset"]
 pub type PHYOFFSET_R = crate::FieldReader;
 #[doc = "Field `PHYOFFSET` writer - Ethernet PHY Address Offset"]
-pub type PHYOFFSET_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PHYOFFSET_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `MDIO` reader - MDIO Input Select"]
 pub type MDIO_R = crate::FieldReader<MDIO_A>;
 #[doc = "MDIO Input Select\n\nValue on reset: 0"]
@@ -291,8 +291,8 @@ impl MDIO_R {
     }
 }
 #[doc = "Field `MDIO` writer - MDIO Input Select"]
-pub type MDIO_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, MDIO_A>;
-impl<'a, REG, const O: u8> MDIO_W<'a, REG, O>
+pub type MDIO_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, MDIO_A>;
+impl<'a, REG> MDIO_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -359,32 +359,32 @@ impl W {
     #[doc = "Bit 0 - Enable EtherCAT Reset Request"]
     #[inline(always)]
     #[must_use]
-    pub fn ecatrsten(&mut self) -> ECATRSTEN_W<CON_SPEC, 0> {
-        ECATRSTEN_W::new(self)
+    pub fn ecatrsten(&mut self) -> ECATRSTEN_W<CON_SPEC> {
+        ECATRSTEN_W::new(self, 0)
     }
     #[doc = "Bits 8:9 - LATCHIN0 Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn latchin0sel(&mut self) -> LATCHIN0SEL_W<CON_SPEC, 8> {
-        LATCHIN0SEL_W::new(self)
+    pub fn latchin0sel(&mut self) -> LATCHIN0SEL_W<CON_SPEC> {
+        LATCHIN0SEL_W::new(self, 8)
     }
     #[doc = "Bits 12:13 - LATCHIN1 Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn latchin1sel(&mut self) -> LATCHIN1SEL_W<CON_SPEC, 12> {
-        LATCHIN1SEL_W::new(self)
+    pub fn latchin1sel(&mut self) -> LATCHIN1SEL_W<CON_SPEC> {
+        LATCHIN1SEL_W::new(self, 12)
     }
     #[doc = "Bits 16:20 - Ethernet PHY Address Offset"]
     #[inline(always)]
     #[must_use]
-    pub fn phyoffset(&mut self) -> PHYOFFSET_W<CON_SPEC, 16> {
-        PHYOFFSET_W::new(self)
+    pub fn phyoffset(&mut self) -> PHYOFFSET_W<CON_SPEC> {
+        PHYOFFSET_W::new(self, 16)
     }
     #[doc = "Bits 22:23 - MDIO Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn mdio(&mut self) -> MDIO_W<CON_SPEC, 22> {
-        MDIO_W::new(self)
+    pub fn mdio(&mut self) -> MDIO_W<CON_SPEC> {
+        MDIO_W::new(self, 22)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

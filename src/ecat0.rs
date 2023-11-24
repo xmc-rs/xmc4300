@@ -1,254 +1,612 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Type of EtherCAT Controller"]
-    pub type_: TYPE,
-    #[doc = "0x01 - Revision of EtherCAT Controller"]
-    pub revision: REVISION,
-    #[doc = "0x02 - Build Version"]
-    pub build: BUILD,
-    #[doc = "0x04 - FMMUs Supported"]
-    pub fmmu_num: FMMU_NUM,
-    #[doc = "0x05 - SyncManagers Supported"]
-    pub sync_manager: SYNC_MANAGER,
-    #[doc = "0x06 - RAM Size"]
-    pub ram_size: RAM_SIZE,
-    #[doc = "0x07 - Port Descriptor"]
-    pub port_desc: PORT_DESC,
-    #[doc = "0x08 - ESC Features Supported"]
-    pub feature: FEATURE,
+    type_: TYPE,
+    revision: REVISION,
+    build: BUILD,
+    fmmu_num: FMMU_NUM,
+    sync_manager: SYNC_MANAGER,
+    ram_size: RAM_SIZE,
+    port_desc: PORT_DESC,
+    feature: FEATURE,
     _reserved8: [u8; 0x06],
-    #[doc = "0x10 - Configured Station Address"]
-    pub station_adr: STATION_ADR,
-    #[doc = "0x12 - Configured Station Alias"]
-    pub station_alias: STATION_ALIAS,
+    station_adr: STATION_ADR,
+    station_alias: STATION_ALIAS,
     _reserved10: [u8; 0x0c],
-    #[doc = "0x20 - Write Register Enable"]
-    pub wr_reg_enable: WR_REG_ENABLE,
-    #[doc = "0x21 - Write Register Protection"]
-    pub wr_reg_protect: WR_REG_PROTECT,
+    wr_reg_enable: WR_REG_ENABLE,
+    wr_reg_protect: WR_REG_PROTECT,
     _reserved12: [u8; 0x0e],
-    #[doc = "0x30 - ESC Write Enable"]
-    pub esc_wr_enable: ESC_WR_ENABLE,
-    #[doc = "0x31 - ESC Write Protection"]
-    pub esc_wr_protect: ESC_WR_PROTECT,
+    esc_wr_enable: ESC_WR_ENABLE,
+    esc_wr_protect: ESC_WR_PROTECT,
     _reserved14: [u8; 0x0e],
     _reserved_14_readmode_esc_reset_ecat: [u8; 0x01],
     _reserved_15_readmode_esc_reset_pdi: [u8; 0x01],
     _reserved16: [u8; 0xbe],
-    #[doc = "0x100 - ESC DL Control"]
-    pub esc_dl_control: ESC_DL_CONTROL,
+    esc_dl_control: ESC_DL_CONTROL,
     _reserved17: [u8; 0x04],
-    #[doc = "0x108 - Physical Read/Write Offset"]
-    pub physical_rw_offset: PHYSICAL_RW_OFFSET,
+    physical_rw_offset: PHYSICAL_RW_OFFSET,
     _reserved18: [u8; 0x06],
-    #[doc = "0x110 - ESC DL Status"]
-    pub esc_dl_status: ESC_DL_STATUS,
+    esc_dl_status: ESC_DL_STATUS,
     _reserved19: [u8; 0x0e],
-    #[doc = "0x120 - AL Control"]
-    pub al_control: AL_CONTROL,
+    al_control: AL_CONTROL,
     _reserved20: [u8; 0x0e],
-    #[doc = "0x130 - AL Status"]
-    pub al_status: AL_STATUS,
+    al_status: AL_STATUS,
     _reserved21: [u8; 0x02],
-    #[doc = "0x134 - AL Status Code"]
-    pub al_status_code: AL_STATUS_CODE,
+    al_status_code: AL_STATUS_CODE,
     _reserved22: [u8; 0x02],
-    #[doc = "0x138 - RUN LED Override"]
-    pub run_led: RUN_LED,
-    #[doc = "0x139 - RUN ERR Override"]
-    pub err_led: ERR_LED,
+    run_led: RUN_LED,
+    err_led: ERR_LED,
     _reserved24: [u8; 0x06],
-    #[doc = "0x140 - PDI Control"]
-    pub pdi_control: PDI_CONTROL,
-    #[doc = "0x141 - ESC Configuration"]
-    pub esc_config: ESC_CONFIG,
+    pdi_control: PDI_CONTROL,
+    esc_config: ESC_CONFIG,
     _reserved26: [u8; 0x0e],
-    #[doc = "0x150 - PDI Control"]
-    pub pdi_config: PDI_CONFIG,
-    #[doc = "0x151 - Sync/Latch\\[1:0\\]
-PDI Configuration"]
-    pub sync_latch_config: SYNC_LATCH_CONFIG,
-    #[doc = "0x152 - PDI Synchronous Microcontroller extended Configuration"]
-    pub pdi_ext_config: PDI_EXT_CONFIG,
+    pdi_config: PDI_CONFIG,
+    sync_latch_config: SYNC_LATCH_CONFIG,
+    pdi_ext_config: PDI_EXT_CONFIG,
     _reserved29: [u8; 0xac],
-    #[doc = "0x200 - ECAT Event Mask"]
-    pub event_mask: EVENT_MASK,
+    event_mask: EVENT_MASK,
     _reserved30: [u8; 0x02],
-    #[doc = "0x204 - PDI AL Event Mask"]
-    pub al_event_mask: AL_EVENT_MASK,
+    al_event_mask: AL_EVENT_MASK,
     _reserved31: [u8; 0x08],
-    #[doc = "0x210 - ECAT Event Request"]
-    pub event_req: EVENT_REQ,
+    event_req: EVENT_REQ,
     _reserved32: [u8; 0x0e],
-    #[doc = "0x220 - AL Event Request"]
-    pub al_event_req: AL_EVENT_REQ,
+    al_event_req: AL_EVENT_REQ,
     _reserved33: [u8; 0xdc],
-    #[doc = "0x300 - RX Error Counter Port 0"]
-    pub rx_err_count0: RX_ERR_COUNT0,
-    #[doc = "0x302 - RX Error Counter Port 1"]
-    pub rx_err_count1: RX_ERR_COUNT1,
+    rx_err_count0: RX_ERR_COUNT0,
+    rx_err_count1: RX_ERR_COUNT1,
     _reserved35: [u8; 0x04],
-    #[doc = "0x308 - Forwarded RX Error Counter Port 0"]
-    pub fwd_rx_err_count0: FWD_RX_ERR_COUNT0,
-    #[doc = "0x309 - Forwarded RX Error Counter Port 1"]
-    pub fwd_rx_err_count1: FWD_RX_ERR_COUNT1,
+    fwd_rx_err_count0: FWD_RX_ERR_COUNT0,
+    fwd_rx_err_count1: FWD_RX_ERR_COUNT1,
     _reserved37: [u8; 0x02],
-    #[doc = "0x30c - ECAT Processing Unit Error Counter"]
-    pub proc_err_count: PROC_ERR_COUNT,
-    #[doc = "0x30d - PDI Error Counter"]
-    pub pdi_err_count: PDI_ERR_COUNT,
+    proc_err_count: PROC_ERR_COUNT,
+    pdi_err_count: PDI_ERR_COUNT,
     _reserved39: [u8; 0x02],
-    #[doc = "0x310 - Lost Link Counter Port 0"]
-    pub lost_link_count0: LOST_LINK_COUNT0,
-    #[doc = "0x311 - Lost Link Counter Port 1"]
-    pub lost_link_count1: LOST_LINK_COUNT1,
+    lost_link_count0: LOST_LINK_COUNT0,
+    lost_link_count1: LOST_LINK_COUNT1,
     _reserved41: [u8; 0xee],
-    #[doc = "0x400 - Watchdog Divider"]
-    pub wd_divide: WD_DIVIDE,
+    wd_divide: WD_DIVIDE,
     _reserved42: [u8; 0x0e],
-    #[doc = "0x410 - Watchdog Time PDI"]
-    pub wd_time_pdi: WD_TIME_PDI,
+    wd_time_pdi: WD_TIME_PDI,
     _reserved43: [u8; 0x0e],
-    #[doc = "0x420 - Watchdog Time Process Data"]
-    pub wd_time_pdata: WD_TIME_PDATA,
+    wd_time_pdata: WD_TIME_PDATA,
     _reserved44: [u8; 0x1e],
-    #[doc = "0x440 - Watchdog Status Process Data"]
-    pub wd_stat_pdata: WD_STAT_PDATA,
-    #[doc = "0x442 - Watchdog Counter Process Data"]
-    pub wd_count_pdata: WD_COUNT_PDATA,
-    #[doc = "0x443 - Watchdog Counter PDI"]
-    pub wd_count_pdi: WD_COUNT_PDI,
+    wd_stat_pdata: WD_STAT_PDATA,
+    wd_count_pdata: WD_COUNT_PDATA,
+    wd_count_pdi: WD_COUNT_PDI,
     _reserved47: [u8; 0xbc],
-    #[doc = "0x500 - EEPROM Configuration"]
-    pub eep_conf: EEP_CONF,
-    #[doc = "0x501 - EEPROM PDI Access State"]
-    pub eep_state: EEP_STATE,
-    #[doc = "0x502 - EEPROM Control/Status"]
-    pub eep_cont_stat: EEP_CONT_STAT,
-    #[doc = "0x504 - EEPROM Address"]
-    pub eep_adr: EEP_ADR,
-    #[doc = "0x508..0x510 - EEPROM Read/Write data"]
-    pub eep_data: [EEP_DATA; 2],
-    #[doc = "0x510 - MII Management Control/Status"]
-    pub mii_cont_stat: MII_CONT_STAT,
-    #[doc = "0x512 - PHY Address"]
-    pub mii_phy_adr: MII_PHY_ADR,
-    #[doc = "0x513 - PHY Register Address"]
-    pub mii_phy_reg_adr: MII_PHY_REG_ADR,
-    #[doc = "0x514 - PHY Data"]
-    pub mii_phy_data: MII_PHY_DATA,
-    #[doc = "0x516 - MII ECAT ACS STATE"]
-    pub mii_ecat_acs_state: MII_ECAT_ACS_STATE,
-    #[doc = "0x517 - MII PDI ACS STATE"]
-    pub mii_pdi_acs_state: MII_PDI_ACS_STATE,
+    eep_conf: EEP_CONF,
+    eep_state: EEP_STATE,
+    eep_cont_stat: EEP_CONT_STAT,
+    eep_adr: EEP_ADR,
+    eep_data: [EEP_DATA; 2],
+    mii_cont_stat: MII_CONT_STAT,
+    mii_phy_adr: MII_PHY_ADR,
+    mii_phy_reg_adr: MII_PHY_REG_ADR,
+    mii_phy_data: MII_PHY_DATA,
+    mii_ecat_acs_state: MII_ECAT_ACS_STATE,
+    mii_pdi_acs_state: MII_PDI_ACS_STATE,
     _reserved58: [u8; 0x03e8],
-    #[doc = "0x900 - Receive Time Port 0"]
-    pub dc_rcv_time_port0: DC_RCV_TIME_PORT0,
-    #[doc = "0x904 - Receive Time Port 1"]
-    pub dc_rcv_time_port1: DC_RCV_TIME_PORT1,
+    dc_rcv_time_port0: DC_RCV_TIME_PORT0,
+    dc_rcv_time_port1: DC_RCV_TIME_PORT1,
     _reserved60: [u8; 0x08],
     _reserved_60_readmode_dc_sys_time: [u8; 0x08],
-    #[doc = "0x918..0x920 - Local time of the beginning of a frame"]
-    pub receive_time_pu: [RECEIVE_TIME_PU; 2],
-    #[doc = "0x920..0x928 - Difference between local time and System Time"]
-    pub dc_sys_time_offset: [DC_SYS_TIME_OFFSET; 2],
-    #[doc = "0x928 - System Time Delay"]
-    pub dc_sys_time_delay: DC_SYS_TIME_DELAY,
-    #[doc = "0x92c - System Time Difference"]
-    pub dc_sys_time_diff: DC_SYS_TIME_DIFF,
-    #[doc = "0x930 - Speed Counter Start"]
-    pub dc_speed_count_start: DC_SPEED_COUNT_START,
-    #[doc = "0x932 - Speed Counter Diff"]
-    pub dc_speed_count_diff: DC_SPEED_COUNT_DIFF,
-    #[doc = "0x934 - System Time Difference Filter Depth"]
-    pub dc_sys_time_fil_depth: DC_SYS_TIME_FIL_DEPTH,
-    #[doc = "0x935 - Speed Counter Filter Depth"]
-    pub dc_speed_count_fil_depth: DC_SPEED_COUNT_FIL_DEPTH,
+    receive_time_pu: [RECEIVE_TIME_PU; 2],
+    dc_sys_time_offset: [DC_SYS_TIME_OFFSET; 2],
+    dc_sys_time_delay: DC_SYS_TIME_DELAY,
+    dc_sys_time_diff: DC_SYS_TIME_DIFF,
+    dc_speed_count_start: DC_SPEED_COUNT_START,
+    dc_speed_count_diff: DC_SPEED_COUNT_DIFF,
+    dc_sys_time_fil_depth: DC_SYS_TIME_FIL_DEPTH,
+    dc_speed_count_fil_depth: DC_SPEED_COUNT_FIL_DEPTH,
     _reserved69: [u8; 0x4a],
-    #[doc = "0x980 - Cyclic Unit Control"]
-    pub dc_cyc_cont: DC_CYC_CONT,
-    #[doc = "0x981 - Activation register"]
-    pub dc_act: DC_ACT,
-    #[doc = "0x982 - Pulse Length of SyncSignals"]
-    pub dc_pulse_len: DC_PULSE_LEN,
-    #[doc = "0x984 - Activation Status"]
-    pub dc_act_stat: DC_ACT_STAT,
+    dc_cyc_cont: DC_CYC_CONT,
+    dc_act: DC_ACT,
+    dc_pulse_len: DC_PULSE_LEN,
+    dc_act_stat: DC_ACT_STAT,
     _reserved73: [u8; 0x09],
-    #[doc = "0x98e - SYNC0 Status"]
-    pub dc_sync0_stat: DC_SYNC0_STAT,
-    #[doc = "0x98f - SYNC1 Status"]
-    pub dc_sync1_stat: DC_SYNC1_STAT,
-    #[doc = "0x990..0x998 - Start Time Cyclic Operation"]
-    pub dc_cyc_start_time: [DC_CYC_START_TIME; 2],
-    #[doc = "0x998..0x9a0 - System time of next SYNC1 pulse in ns"]
-    pub dc_next_sync1_pulse: [DC_NEXT_SYNC1_PULSE; 2],
-    #[doc = "0x9a0 - SYNC0 Cycle Time"]
-    pub dc_sync0_cyc_time: DC_SYNC0_CYC_TIME,
-    #[doc = "0x9a4 - SYNC1 Cycle Time"]
-    pub dc_sync1_cyc_time: DC_SYNC1_CYC_TIME,
-    #[doc = "0x9a8 - Latch0 Control"]
-    pub dc_latch0_cont: DC_LATCH0_CONT,
-    #[doc = "0x9a9 - Latch1 Control"]
-    pub dc_latch1_cont: DC_LATCH1_CONT,
+    dc_sync0_stat: DC_SYNC0_STAT,
+    dc_sync1_stat: DC_SYNC1_STAT,
+    dc_cyc_start_time: [DC_CYC_START_TIME; 2],
+    dc_next_sync1_pulse: [DC_NEXT_SYNC1_PULSE; 2],
+    dc_sync0_cyc_time: DC_SYNC0_CYC_TIME,
+    dc_sync1_cyc_time: DC_SYNC1_CYC_TIME,
+    dc_latch0_cont: DC_LATCH0_CONT,
+    dc_latch1_cont: DC_LATCH1_CONT,
     _reserved81: [u8; 0x04],
-    #[doc = "0x9ae - Latch0 Status"]
-    pub dc_latch0_stat: DC_LATCH0_STAT,
-    #[doc = "0x9af - Latch1 Status"]
-    pub dc_latch1_stat: DC_LATCH1_STAT,
-    #[doc = "0x9b0..0x9b8 - Register captures System time at the positive edge of the Latch0 signal"]
-    pub dc_latch0_time_pos: [DC_LATCH0_TIME_POS; 2],
-    #[doc = "0x9b8..0x9c0 - Register captures System time at the negative edge of the Latch0 signal"]
-    pub dc_latch0_time_neg: [DC_LATCH0_TIME_NEG; 2],
-    #[doc = "0x9c0..0x9c8 - Register captures System time at the positive edge of the Latch1 signal"]
-    pub dc_latch1_time_pos: [DC_LATCH1_TIME_POS; 2],
-    #[doc = "0x9c8..0x9d0 - Register captures System time at the negative edge of the Latch1 signal"]
-    pub dc_latch1_time_neg: [DC_LATCH1_TIME_NEG; 2],
+    dc_latch0_stat: DC_LATCH0_STAT,
+    dc_latch1_stat: DC_LATCH1_STAT,
+    dc_latch0_time_pos: [DC_LATCH0_TIME_POS; 2],
+    dc_latch0_time_neg: [DC_LATCH0_TIME_NEG; 2],
+    dc_latch1_time_pos: [DC_LATCH1_TIME_POS; 2],
+    dc_latch1_time_neg: [DC_LATCH1_TIME_NEG; 2],
     _reserved87: [u8; 0x20],
-    #[doc = "0x9f0 - EtherCAT Buffer Change Event Time"]
-    pub dc_ecat_cng_ev_time: DC_ECAT_CNG_EV_TIME,
+    dc_ecat_cng_ev_time: DC_ECAT_CNG_EV_TIME,
     _reserved88: [u8; 0x04],
-    #[doc = "0x9f8 - PDI Buffer Start Event Time"]
-    pub dc_pdi_start_ev_time: DC_PDI_START_EV_TIME,
-    #[doc = "0x9fc - PDI Buffer Change Event Time"]
-    pub dc_pdi_cng_ev_time: DC_PDI_CNG_EV_TIME,
+    dc_pdi_start_ev_time: DC_PDI_START_EV_TIME,
+    dc_pdi_cng_ev_time: DC_PDI_CNG_EV_TIME,
     _reserved90: [u8; 0x0400],
-    #[doc = "0xe00 - ECAT0 Module ID"]
-    pub id: ID,
+    id: ID,
     _reserved91: [u8; 0x04],
-    #[doc = "0xe08 - ECAT0 Status"]
-    pub status: STATUS,
+    status: STATUS,
 }
 impl RegisterBlock {
+    #[doc = "0x00 - Type of EtherCAT Controller"]
+    #[inline(always)]
+    pub const fn type_(&self) -> &TYPE {
+        &self.type_
+    }
+    #[doc = "0x01 - Revision of EtherCAT Controller"]
+    #[inline(always)]
+    pub const fn revision(&self) -> &REVISION {
+        &self.revision
+    }
+    #[doc = "0x02 - Build Version"]
+    #[inline(always)]
+    pub const fn build(&self) -> &BUILD {
+        &self.build
+    }
+    #[doc = "0x04 - FMMUs Supported"]
+    #[inline(always)]
+    pub const fn fmmu_num(&self) -> &FMMU_NUM {
+        &self.fmmu_num
+    }
+    #[doc = "0x05 - SyncManagers Supported"]
+    #[inline(always)]
+    pub const fn sync_manager(&self) -> &SYNC_MANAGER {
+        &self.sync_manager
+    }
+    #[doc = "0x06 - RAM Size"]
+    #[inline(always)]
+    pub const fn ram_size(&self) -> &RAM_SIZE {
+        &self.ram_size
+    }
+    #[doc = "0x07 - Port Descriptor"]
+    #[inline(always)]
+    pub const fn port_desc(&self) -> &PORT_DESC {
+        &self.port_desc
+    }
+    #[doc = "0x08 - ESC Features Supported"]
+    #[inline(always)]
+    pub const fn feature(&self) -> &FEATURE {
+        &self.feature
+    }
+    #[doc = "0x10 - Configured Station Address"]
+    #[inline(always)]
+    pub const fn station_adr(&self) -> &STATION_ADR {
+        &self.station_adr
+    }
+    #[doc = "0x12 - Configured Station Alias"]
+    #[inline(always)]
+    pub const fn station_alias(&self) -> &STATION_ALIAS {
+        &self.station_alias
+    }
+    #[doc = "0x20 - Write Register Enable"]
+    #[inline(always)]
+    pub const fn wr_reg_enable(&self) -> &WR_REG_ENABLE {
+        &self.wr_reg_enable
+    }
+    #[doc = "0x21 - Write Register Protection"]
+    #[inline(always)]
+    pub const fn wr_reg_protect(&self) -> &WR_REG_PROTECT {
+        &self.wr_reg_protect
+    }
+    #[doc = "0x30 - ESC Write Enable"]
+    #[inline(always)]
+    pub const fn esc_wr_enable(&self) -> &ESC_WR_ENABLE {
+        &self.esc_wr_enable
+    }
+    #[doc = "0x31 - ESC Write Protection"]
+    #[inline(always)]
+    pub const fn esc_wr_protect(&self) -> &ESC_WR_PROTECT {
+        &self.esc_wr_protect
+    }
     #[doc = "0x40 - ESC Reset ECAT \\[READ Mode\\]"]
     #[inline(always)]
     pub const fn readmode_esc_reset_ecat(&self) -> &READMODE_ESC_RESET_ECAT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(64usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(64).cast() }
     }
     #[doc = "0x40 - ESC Reset ECAT \\[WRITE Mode\\]"]
     #[inline(always)]
     pub const fn writemode_esc_reset_ecat(&self) -> &WRITEMODE_ESC_RESET_ECAT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(64usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(64).cast() }
     }
     #[doc = "0x41 - ESC Reset PDI \\[READ Mode\\]"]
     #[inline(always)]
     pub const fn readmode_esc_reset_pdi(&self) -> &READMODE_ESC_RESET_PDI {
-        unsafe { &*(self as *const Self).cast::<u8>().add(65usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(65).cast() }
     }
     #[doc = "0x41 - ESC Reset PDI \\[WRITE Mode\\]"]
     #[inline(always)]
     pub const fn writemode_esc_reset_pdi(&self) -> &WRITEMODE_ESC_RESET_PDI {
-        unsafe { &*(self as *const Self).cast::<u8>().add(65usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(65).cast() }
+    }
+    #[doc = "0x100 - ESC DL Control"]
+    #[inline(always)]
+    pub const fn esc_dl_control(&self) -> &ESC_DL_CONTROL {
+        &self.esc_dl_control
+    }
+    #[doc = "0x108 - Physical Read/Write Offset"]
+    #[inline(always)]
+    pub const fn physical_rw_offset(&self) -> &PHYSICAL_RW_OFFSET {
+        &self.physical_rw_offset
+    }
+    #[doc = "0x110 - ESC DL Status"]
+    #[inline(always)]
+    pub const fn esc_dl_status(&self) -> &ESC_DL_STATUS {
+        &self.esc_dl_status
+    }
+    #[doc = "0x120 - AL Control"]
+    #[inline(always)]
+    pub const fn al_control(&self) -> &AL_CONTROL {
+        &self.al_control
+    }
+    #[doc = "0x130 - AL Status"]
+    #[inline(always)]
+    pub const fn al_status(&self) -> &AL_STATUS {
+        &self.al_status
+    }
+    #[doc = "0x134 - AL Status Code"]
+    #[inline(always)]
+    pub const fn al_status_code(&self) -> &AL_STATUS_CODE {
+        &self.al_status_code
+    }
+    #[doc = "0x138 - RUN LED Override"]
+    #[inline(always)]
+    pub const fn run_led(&self) -> &RUN_LED {
+        &self.run_led
+    }
+    #[doc = "0x139 - RUN ERR Override"]
+    #[inline(always)]
+    pub const fn err_led(&self) -> &ERR_LED {
+        &self.err_led
+    }
+    #[doc = "0x140 - PDI Control"]
+    #[inline(always)]
+    pub const fn pdi_control(&self) -> &PDI_CONTROL {
+        &self.pdi_control
+    }
+    #[doc = "0x141 - ESC Configuration"]
+    #[inline(always)]
+    pub const fn esc_config(&self) -> &ESC_CONFIG {
+        &self.esc_config
+    }
+    #[doc = "0x150 - PDI Control"]
+    #[inline(always)]
+    pub const fn pdi_config(&self) -> &PDI_CONFIG {
+        &self.pdi_config
+    }
+    #[doc = "0x151 - Sync/Latch\\[1:0\\]
+PDI Configuration"]
+    #[inline(always)]
+    pub const fn sync_latch_config(&self) -> &SYNC_LATCH_CONFIG {
+        &self.sync_latch_config
+    }
+    #[doc = "0x152 - PDI Synchronous Microcontroller extended Configuration"]
+    #[inline(always)]
+    pub const fn pdi_ext_config(&self) -> &PDI_EXT_CONFIG {
+        &self.pdi_ext_config
+    }
+    #[doc = "0x200 - ECAT Event Mask"]
+    #[inline(always)]
+    pub const fn event_mask(&self) -> &EVENT_MASK {
+        &self.event_mask
+    }
+    #[doc = "0x204 - PDI AL Event Mask"]
+    #[inline(always)]
+    pub const fn al_event_mask(&self) -> &AL_EVENT_MASK {
+        &self.al_event_mask
+    }
+    #[doc = "0x210 - ECAT Event Request"]
+    #[inline(always)]
+    pub const fn event_req(&self) -> &EVENT_REQ {
+        &self.event_req
+    }
+    #[doc = "0x220 - AL Event Request"]
+    #[inline(always)]
+    pub const fn al_event_req(&self) -> &AL_EVENT_REQ {
+        &self.al_event_req
+    }
+    #[doc = "0x300 - RX Error Counter Port 0"]
+    #[inline(always)]
+    pub const fn rx_err_count0(&self) -> &RX_ERR_COUNT0 {
+        &self.rx_err_count0
+    }
+    #[doc = "0x302 - RX Error Counter Port 1"]
+    #[inline(always)]
+    pub const fn rx_err_count1(&self) -> &RX_ERR_COUNT1 {
+        &self.rx_err_count1
+    }
+    #[doc = "0x308 - Forwarded RX Error Counter Port 0"]
+    #[inline(always)]
+    pub const fn fwd_rx_err_count0(&self) -> &FWD_RX_ERR_COUNT0 {
+        &self.fwd_rx_err_count0
+    }
+    #[doc = "0x309 - Forwarded RX Error Counter Port 1"]
+    #[inline(always)]
+    pub const fn fwd_rx_err_count1(&self) -> &FWD_RX_ERR_COUNT1 {
+        &self.fwd_rx_err_count1
+    }
+    #[doc = "0x30c - ECAT Processing Unit Error Counter"]
+    #[inline(always)]
+    pub const fn proc_err_count(&self) -> &PROC_ERR_COUNT {
+        &self.proc_err_count
+    }
+    #[doc = "0x30d - PDI Error Counter"]
+    #[inline(always)]
+    pub const fn pdi_err_count(&self) -> &PDI_ERR_COUNT {
+        &self.pdi_err_count
+    }
+    #[doc = "0x310 - Lost Link Counter Port 0"]
+    #[inline(always)]
+    pub const fn lost_link_count0(&self) -> &LOST_LINK_COUNT0 {
+        &self.lost_link_count0
+    }
+    #[doc = "0x311 - Lost Link Counter Port 1"]
+    #[inline(always)]
+    pub const fn lost_link_count1(&self) -> &LOST_LINK_COUNT1 {
+        &self.lost_link_count1
+    }
+    #[doc = "0x400 - Watchdog Divider"]
+    #[inline(always)]
+    pub const fn wd_divide(&self) -> &WD_DIVIDE {
+        &self.wd_divide
+    }
+    #[doc = "0x410 - Watchdog Time PDI"]
+    #[inline(always)]
+    pub const fn wd_time_pdi(&self) -> &WD_TIME_PDI {
+        &self.wd_time_pdi
+    }
+    #[doc = "0x420 - Watchdog Time Process Data"]
+    #[inline(always)]
+    pub const fn wd_time_pdata(&self) -> &WD_TIME_PDATA {
+        &self.wd_time_pdata
+    }
+    #[doc = "0x440 - Watchdog Status Process Data"]
+    #[inline(always)]
+    pub const fn wd_stat_pdata(&self) -> &WD_STAT_PDATA {
+        &self.wd_stat_pdata
+    }
+    #[doc = "0x442 - Watchdog Counter Process Data"]
+    #[inline(always)]
+    pub const fn wd_count_pdata(&self) -> &WD_COUNT_PDATA {
+        &self.wd_count_pdata
+    }
+    #[doc = "0x443 - Watchdog Counter PDI"]
+    #[inline(always)]
+    pub const fn wd_count_pdi(&self) -> &WD_COUNT_PDI {
+        &self.wd_count_pdi
+    }
+    #[doc = "0x500 - EEPROM Configuration"]
+    #[inline(always)]
+    pub const fn eep_conf(&self) -> &EEP_CONF {
+        &self.eep_conf
+    }
+    #[doc = "0x501 - EEPROM PDI Access State"]
+    #[inline(always)]
+    pub const fn eep_state(&self) -> &EEP_STATE {
+        &self.eep_state
+    }
+    #[doc = "0x502 - EEPROM Control/Status"]
+    #[inline(always)]
+    pub const fn eep_cont_stat(&self) -> &EEP_CONT_STAT {
+        &self.eep_cont_stat
+    }
+    #[doc = "0x504 - EEPROM Address"]
+    #[inline(always)]
+    pub const fn eep_adr(&self) -> &EEP_ADR {
+        &self.eep_adr
+    }
+    #[doc = "0x508..0x510 - EEPROM Read/Write data"]
+    #[inline(always)]
+    pub const fn eep_data(&self, n: usize) -> &EEP_DATA {
+        &self.eep_data[n]
+    }
+    #[doc = "0x510 - MII Management Control/Status"]
+    #[inline(always)]
+    pub const fn mii_cont_stat(&self) -> &MII_CONT_STAT {
+        &self.mii_cont_stat
+    }
+    #[doc = "0x512 - PHY Address"]
+    #[inline(always)]
+    pub const fn mii_phy_adr(&self) -> &MII_PHY_ADR {
+        &self.mii_phy_adr
+    }
+    #[doc = "0x513 - PHY Register Address"]
+    #[inline(always)]
+    pub const fn mii_phy_reg_adr(&self) -> &MII_PHY_REG_ADR {
+        &self.mii_phy_reg_adr
+    }
+    #[doc = "0x514 - PHY Data"]
+    #[inline(always)]
+    pub const fn mii_phy_data(&self) -> &MII_PHY_DATA {
+        &self.mii_phy_data
+    }
+    #[doc = "0x516 - MII ECAT ACS STATE"]
+    #[inline(always)]
+    pub const fn mii_ecat_acs_state(&self) -> &MII_ECAT_ACS_STATE {
+        &self.mii_ecat_acs_state
+    }
+    #[doc = "0x517 - MII PDI ACS STATE"]
+    #[inline(always)]
+    pub const fn mii_pdi_acs_state(&self) -> &MII_PDI_ACS_STATE {
+        &self.mii_pdi_acs_state
+    }
+    #[doc = "0x900 - Receive Time Port 0"]
+    #[inline(always)]
+    pub const fn dc_rcv_time_port0(&self) -> &DC_RCV_TIME_PORT0 {
+        &self.dc_rcv_time_port0
+    }
+    #[doc = "0x904 - Receive Time Port 1"]
+    #[inline(always)]
+    pub const fn dc_rcv_time_port1(&self) -> &DC_RCV_TIME_PORT1 {
+        &self.dc_rcv_time_port1
     }
     #[doc = "0x910 - System Time \\[WRITE Mode\\]"]
     #[inline(always)]
     pub const fn writemode_dc_sys_time(&self) -> &WRITEMODE_DC_SYS_TIME {
-        unsafe { &*(self as *const Self).cast::<u8>().add(2320usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(2320).cast() }
     }
     #[doc = "0x910..0x918 - System Time read access"]
     #[inline(always)]
-    pub const fn readmode_dc_sys_time(&self) -> &[READMODE_DC_SYS_TIME; 2] {
-        unsafe { &*(self as *const Self).cast::<u8>().add(2320usize).cast() }
+    pub const fn readmode_dc_sys_time(&self, n: usize) -> &READMODE_DC_SYS_TIME {
+        #[allow(clippy::no_effect)]
+        [(); 2][n];
+        unsafe { &*(self as *const Self).cast::<u8>().add(2320).add(4 * n).cast() }
+    }
+    #[doc = "0x918..0x920 - Local time of the beginning of a frame"]
+    #[inline(always)]
+    pub const fn receive_time_pu(&self, n: usize) -> &RECEIVE_TIME_PU {
+        &self.receive_time_pu[n]
+    }
+    #[doc = "0x920..0x928 - Difference between local time and System Time"]
+    #[inline(always)]
+    pub const fn dc_sys_time_offset(&self, n: usize) -> &DC_SYS_TIME_OFFSET {
+        &self.dc_sys_time_offset[n]
+    }
+    #[doc = "0x928 - System Time Delay"]
+    #[inline(always)]
+    pub const fn dc_sys_time_delay(&self) -> &DC_SYS_TIME_DELAY {
+        &self.dc_sys_time_delay
+    }
+    #[doc = "0x92c - System Time Difference"]
+    #[inline(always)]
+    pub const fn dc_sys_time_diff(&self) -> &DC_SYS_TIME_DIFF {
+        &self.dc_sys_time_diff
+    }
+    #[doc = "0x930 - Speed Counter Start"]
+    #[inline(always)]
+    pub const fn dc_speed_count_start(&self) -> &DC_SPEED_COUNT_START {
+        &self.dc_speed_count_start
+    }
+    #[doc = "0x932 - Speed Counter Diff"]
+    #[inline(always)]
+    pub const fn dc_speed_count_diff(&self) -> &DC_SPEED_COUNT_DIFF {
+        &self.dc_speed_count_diff
+    }
+    #[doc = "0x934 - System Time Difference Filter Depth"]
+    #[inline(always)]
+    pub const fn dc_sys_time_fil_depth(&self) -> &DC_SYS_TIME_FIL_DEPTH {
+        &self.dc_sys_time_fil_depth
+    }
+    #[doc = "0x935 - Speed Counter Filter Depth"]
+    #[inline(always)]
+    pub const fn dc_speed_count_fil_depth(&self) -> &DC_SPEED_COUNT_FIL_DEPTH {
+        &self.dc_speed_count_fil_depth
+    }
+    #[doc = "0x980 - Cyclic Unit Control"]
+    #[inline(always)]
+    pub const fn dc_cyc_cont(&self) -> &DC_CYC_CONT {
+        &self.dc_cyc_cont
+    }
+    #[doc = "0x981 - Activation register"]
+    #[inline(always)]
+    pub const fn dc_act(&self) -> &DC_ACT {
+        &self.dc_act
+    }
+    #[doc = "0x982 - Pulse Length of SyncSignals"]
+    #[inline(always)]
+    pub const fn dc_pulse_len(&self) -> &DC_PULSE_LEN {
+        &self.dc_pulse_len
+    }
+    #[doc = "0x984 - Activation Status"]
+    #[inline(always)]
+    pub const fn dc_act_stat(&self) -> &DC_ACT_STAT {
+        &self.dc_act_stat
+    }
+    #[doc = "0x98e - SYNC0 Status"]
+    #[inline(always)]
+    pub const fn dc_sync0_stat(&self) -> &DC_SYNC0_STAT {
+        &self.dc_sync0_stat
+    }
+    #[doc = "0x98f - SYNC1 Status"]
+    #[inline(always)]
+    pub const fn dc_sync1_stat(&self) -> &DC_SYNC1_STAT {
+        &self.dc_sync1_stat
+    }
+    #[doc = "0x990..0x998 - Start Time Cyclic Operation"]
+    #[inline(always)]
+    pub const fn dc_cyc_start_time(&self, n: usize) -> &DC_CYC_START_TIME {
+        &self.dc_cyc_start_time[n]
+    }
+    #[doc = "0x998..0x9a0 - System time of next SYNC1 pulse in ns"]
+    #[inline(always)]
+    pub const fn dc_next_sync1_pulse(&self, n: usize) -> &DC_NEXT_SYNC1_PULSE {
+        &self.dc_next_sync1_pulse[n]
+    }
+    #[doc = "0x9a0 - SYNC0 Cycle Time"]
+    #[inline(always)]
+    pub const fn dc_sync0_cyc_time(&self) -> &DC_SYNC0_CYC_TIME {
+        &self.dc_sync0_cyc_time
+    }
+    #[doc = "0x9a4 - SYNC1 Cycle Time"]
+    #[inline(always)]
+    pub const fn dc_sync1_cyc_time(&self) -> &DC_SYNC1_CYC_TIME {
+        &self.dc_sync1_cyc_time
+    }
+    #[doc = "0x9a8 - Latch0 Control"]
+    #[inline(always)]
+    pub const fn dc_latch0_cont(&self) -> &DC_LATCH0_CONT {
+        &self.dc_latch0_cont
+    }
+    #[doc = "0x9a9 - Latch1 Control"]
+    #[inline(always)]
+    pub const fn dc_latch1_cont(&self) -> &DC_LATCH1_CONT {
+        &self.dc_latch1_cont
+    }
+    #[doc = "0x9ae - Latch0 Status"]
+    #[inline(always)]
+    pub const fn dc_latch0_stat(&self) -> &DC_LATCH0_STAT {
+        &self.dc_latch0_stat
+    }
+    #[doc = "0x9af - Latch1 Status"]
+    #[inline(always)]
+    pub const fn dc_latch1_stat(&self) -> &DC_LATCH1_STAT {
+        &self.dc_latch1_stat
+    }
+    #[doc = "0x9b0..0x9b8 - Register captures System time at the positive edge of the Latch0 signal"]
+    #[inline(always)]
+    pub const fn dc_latch0_time_pos(&self, n: usize) -> &DC_LATCH0_TIME_POS {
+        &self.dc_latch0_time_pos[n]
+    }
+    #[doc = "0x9b8..0x9c0 - Register captures System time at the negative edge of the Latch0 signal"]
+    #[inline(always)]
+    pub const fn dc_latch0_time_neg(&self, n: usize) -> &DC_LATCH0_TIME_NEG {
+        &self.dc_latch0_time_neg[n]
+    }
+    #[doc = "0x9c0..0x9c8 - Register captures System time at the positive edge of the Latch1 signal"]
+    #[inline(always)]
+    pub const fn dc_latch1_time_pos(&self, n: usize) -> &DC_LATCH1_TIME_POS {
+        &self.dc_latch1_time_pos[n]
+    }
+    #[doc = "0x9c8..0x9d0 - Register captures System time at the negative edge of the Latch1 signal"]
+    #[inline(always)]
+    pub const fn dc_latch1_time_neg(&self, n: usize) -> &DC_LATCH1_TIME_NEG {
+        &self.dc_latch1_time_neg[n]
+    }
+    #[doc = "0x9f0 - EtherCAT Buffer Change Event Time"]
+    #[inline(always)]
+    pub const fn dc_ecat_cng_ev_time(&self) -> &DC_ECAT_CNG_EV_TIME {
+        &self.dc_ecat_cng_ev_time
+    }
+    #[doc = "0x9f8 - PDI Buffer Start Event Time"]
+    #[inline(always)]
+    pub const fn dc_pdi_start_ev_time(&self) -> &DC_PDI_START_EV_TIME {
+        &self.dc_pdi_start_ev_time
+    }
+    #[doc = "0x9fc - PDI Buffer Change Event Time"]
+    #[inline(always)]
+    pub const fn dc_pdi_cng_ev_time(&self) -> &DC_PDI_CNG_EV_TIME {
+        &self.dc_pdi_cng_ev_time
+    }
+    #[doc = "0xe00 - ECAT0 Module ID"]
+    #[inline(always)]
+    pub const fn id(&self) -> &ID {
+        &self.id
+    }
+    #[doc = "0xe08 - ECAT0 Status"]
+    #[inline(always)]
+    pub const fn status(&self) -> &STATUS {
+        &self.status
     }
 }
 #[doc = "TYPE (r) register accessor: Type of EtherCAT Controller\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`type_::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@type_`]

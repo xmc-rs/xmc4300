@@ -1,13 +1,13 @@
 #[doc = "Register `WDTCLR` writer"]
 pub type W = crate::W<WDTCLR_SPEC>;
 #[doc = "Field `ALMC` writer - Pre-warning Alarm"]
-pub type ALMC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ALMC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Pre-warning Alarm"]
     #[inline(always)]
     #[must_use]
-    pub fn almc(&mut self) -> ALMC_W<WDTCLR_SPEC, 0> {
-        ALMC_W::new(self)
+    pub fn almc(&mut self) -> ALMC_W<WDTCLR_SPEC> {
+        ALMC_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

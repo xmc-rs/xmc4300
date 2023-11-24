@@ -5,7 +5,7 @@ pub type W = crate::W<GLOBTF_SPEC>;
 #[doc = "Field `CDGR` reader - Converter Diagnostics Group"]
 pub type CDGR_R = crate::FieldReader;
 #[doc = "Field `CDGR` writer - Converter Diagnostics Group"]
-pub type CDGR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CDGR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CDEN` reader - Converter Diagnostics Enable"]
 pub type CDEN_R = crate::BitReader<CDEN_A>;
 #[doc = "Converter Diagnostics Enable\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl CDEN_R {
     }
 }
 #[doc = "Field `CDEN` writer - Converter Diagnostics Enable"]
-pub type CDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CDEN_A>;
-impl<'a, REG, const O: u8> CDEN_W<'a, REG, O>
+pub type CDEN_W<'a, REG> = crate::BitWriter<'a, REG, CDEN_A>;
+impl<'a, REG> CDEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -117,8 +117,8 @@ impl CDSEL_R {
     }
 }
 #[doc = "Field `CDSEL` writer - Converter Diagnostics Pull-Devices Select"]
-pub type CDSEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CDSEL_A>;
-impl<'a, REG, const O: u8> CDSEL_W<'a, REG, O>
+pub type CDSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CDSEL_A>;
+impl<'a, REG> CDSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -159,8 +159,8 @@ impl From<CDWC_AW> for bool {
     }
 }
 #[doc = "Field `CDWC` writer - Write Control for Conversion Diagnostics"]
-pub type CDWC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CDWC_AW>;
-impl<'a, REG, const O: u8> CDWC_W<'a, REG, O>
+pub type CDWC_W<'a, REG> = crate::BitWriter<'a, REG, CDWC_AW>;
+impl<'a, REG> CDWC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -212,8 +212,8 @@ impl PDD_R {
     }
 }
 #[doc = "Field `PDD` writer - Pull-Down Diagnostics Enable"]
-pub type PDD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PDD_A>;
-impl<'a, REG, const O: u8> PDD_W<'a, REG, O>
+pub type PDD_W<'a, REG> = crate::BitWriter<'a, REG, PDD_A>;
+impl<'a, REG> PDD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -243,8 +243,8 @@ impl From<MDWC_AW> for bool {
     }
 }
 #[doc = "Field `MDWC` writer - Write Control for Multiplexer Diagnostics"]
-pub type MDWC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MDWC_AW>;
-impl<'a, REG, const O: u8> MDWC_W<'a, REG, O>
+pub type MDWC_W<'a, REG> = crate::BitWriter<'a, REG, MDWC_AW>;
+impl<'a, REG> MDWC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -285,38 +285,38 @@ impl W {
     #[doc = "Bits 4:7 - Converter Diagnostics Group"]
     #[inline(always)]
     #[must_use]
-    pub fn cdgr(&mut self) -> CDGR_W<GLOBTF_SPEC, 4> {
-        CDGR_W::new(self)
+    pub fn cdgr(&mut self) -> CDGR_W<GLOBTF_SPEC> {
+        CDGR_W::new(self, 4)
     }
     #[doc = "Bit 8 - Converter Diagnostics Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cden(&mut self) -> CDEN_W<GLOBTF_SPEC, 8> {
-        CDEN_W::new(self)
+    pub fn cden(&mut self) -> CDEN_W<GLOBTF_SPEC> {
+        CDEN_W::new(self, 8)
     }
     #[doc = "Bits 9:10 - Converter Diagnostics Pull-Devices Select"]
     #[inline(always)]
     #[must_use]
-    pub fn cdsel(&mut self) -> CDSEL_W<GLOBTF_SPEC, 9> {
-        CDSEL_W::new(self)
+    pub fn cdsel(&mut self) -> CDSEL_W<GLOBTF_SPEC> {
+        CDSEL_W::new(self, 9)
     }
     #[doc = "Bit 15 - Write Control for Conversion Diagnostics"]
     #[inline(always)]
     #[must_use]
-    pub fn cdwc(&mut self) -> CDWC_W<GLOBTF_SPEC, 15> {
-        CDWC_W::new(self)
+    pub fn cdwc(&mut self) -> CDWC_W<GLOBTF_SPEC> {
+        CDWC_W::new(self, 15)
     }
     #[doc = "Bit 16 - Pull-Down Diagnostics Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pdd(&mut self) -> PDD_W<GLOBTF_SPEC, 16> {
-        PDD_W::new(self)
+    pub fn pdd(&mut self) -> PDD_W<GLOBTF_SPEC> {
+        PDD_W::new(self, 16)
     }
     #[doc = "Bit 23 - Write Control for Multiplexer Diagnostics"]
     #[inline(always)]
     #[must_use]
-    pub fn mdwc(&mut self) -> MDWC_W<GLOBTF_SPEC, 23> {
-        MDWC_W::new(self)
+    pub fn mdwc(&mut self) -> MDWC_W<GLOBTF_SPEC> {
+        MDWC_W::new(self, 23)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

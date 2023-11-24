@@ -52,8 +52,8 @@ impl CP10_R {
     }
 }
 #[doc = "Field `CP10` writer - Access privileges for coprocessor 10"]
-pub type CP10_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, CP10_A>;
-impl<'a, REG, const O: u8> CP10_W<'a, REG, O>
+pub type CP10_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CP10_A>;
+impl<'a, REG> CP10_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -124,8 +124,8 @@ impl CP11_R {
     }
 }
 #[doc = "Field `CP11` writer - Access privileges for coprocessor 11"]
-pub type CP11_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, CP11_A>;
-impl<'a, REG, const O: u8> CP11_W<'a, REG, O>
+pub type CP11_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CP11_A>;
+impl<'a, REG> CP11_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -162,14 +162,14 @@ impl W {
     #[doc = "Bits 20:21 - Access privileges for coprocessor 10"]
     #[inline(always)]
     #[must_use]
-    pub fn cp10(&mut self) -> CP10_W<CPACR_SPEC, 20> {
-        CP10_W::new(self)
+    pub fn cp10(&mut self) -> CP10_W<CPACR_SPEC> {
+        CP10_W::new(self, 20)
     }
     #[doc = "Bits 22:23 - Access privileges for coprocessor 11"]
     #[inline(always)]
     #[must_use]
-    pub fn cp11(&mut self) -> CP11_W<CPACR_SPEC, 22> {
-        CP11_W::new(self)
+    pub fn cp11(&mut self) -> CP11_W<CPACR_SPEC> {
+        CP11_W::new(self, 22)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

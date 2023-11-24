@@ -155,8 +155,8 @@ impl From<PENDSTCLR_AW> for bool {
     }
 }
 #[doc = "Field `PENDSTCLR` writer - SysTick exception clear-pending bit"]
-pub type PENDSTCLR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PENDSTCLR_AW>;
-impl<'a, REG, const O: u8> PENDSTCLR_W<'a, REG, O>
+pub type PENDSTCLR_W<'a, REG> = crate::BitWriter<'a, REG, PENDSTCLR_AW>;
+impl<'a, REG> PENDSTCLR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -208,8 +208,8 @@ impl PENDSTSET_R {
     }
 }
 #[doc = "Field `PENDSTSET` writer - SysTick exception set-pending bit"]
-pub type PENDSTSET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PENDSTSET_A>;
-impl<'a, REG, const O: u8> PENDSTSET_W<'a, REG, O>
+pub type PENDSTSET_W<'a, REG> = crate::BitWriter<'a, REG, PENDSTSET_A>;
+impl<'a, REG> PENDSTSET_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -239,8 +239,8 @@ impl From<PENDSVCLR_AW> for bool {
     }
 }
 #[doc = "Field `PENDSVCLR` writer - PendSV clear-pending bit"]
-pub type PENDSVCLR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PENDSVCLR_AW>;
-impl<'a, REG, const O: u8> PENDSVCLR_W<'a, REG, O>
+pub type PENDSVCLR_W<'a, REG> = crate::BitWriter<'a, REG, PENDSVCLR_AW>;
+impl<'a, REG> PENDSVCLR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -258,11 +258,11 @@ where
 #[doc = "Field `PENDSVSET` reader - PendSV set-pending bit: 0b0=no effect, 0b1=changes PendSV exception state to pending., 0b0=PendSV exception is not pending, 0b1=PendSV exception is pending.,"]
 pub type PENDSVSET_R = crate::BitReader;
 #[doc = "Field `PENDSVSET` writer - PendSV set-pending bit: 0b0=no effect, 0b1=changes PendSV exception state to pending., 0b0=PendSV exception is not pending, 0b1=PendSV exception is pending.,"]
-pub type PENDSVSET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PENDSVSET_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NMIPENDSET` reader - NMI set-pending bit: 0b0=no effect, 0b1=changes NMI exception state to pending., 0b0=NMI exception is not pending, 0b1=NMI exception is pending.,"]
 pub type NMIPENDSET_R = crate::BitReader;
 #[doc = "Field `NMIPENDSET` writer - NMI set-pending bit: 0b0=no effect, 0b1=changes NMI exception state to pending., 0b0=NMI exception is not pending, 0b1=NMI exception is pending.,"]
-pub type NMIPENDSET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type NMIPENDSET_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:8 - Active exception number"]
     #[inline(always)]
@@ -304,32 +304,32 @@ impl W {
     #[doc = "Bit 25 - SysTick exception clear-pending bit"]
     #[inline(always)]
     #[must_use]
-    pub fn pendstclr(&mut self) -> PENDSTCLR_W<ICSR_SPEC, 25> {
-        PENDSTCLR_W::new(self)
+    pub fn pendstclr(&mut self) -> PENDSTCLR_W<ICSR_SPEC> {
+        PENDSTCLR_W::new(self, 25)
     }
     #[doc = "Bit 26 - SysTick exception set-pending bit"]
     #[inline(always)]
     #[must_use]
-    pub fn pendstset(&mut self) -> PENDSTSET_W<ICSR_SPEC, 26> {
-        PENDSTSET_W::new(self)
+    pub fn pendstset(&mut self) -> PENDSTSET_W<ICSR_SPEC> {
+        PENDSTSET_W::new(self, 26)
     }
     #[doc = "Bit 27 - PendSV clear-pending bit"]
     #[inline(always)]
     #[must_use]
-    pub fn pendsvclr(&mut self) -> PENDSVCLR_W<ICSR_SPEC, 27> {
-        PENDSVCLR_W::new(self)
+    pub fn pendsvclr(&mut self) -> PENDSVCLR_W<ICSR_SPEC> {
+        PENDSVCLR_W::new(self, 27)
     }
     #[doc = "Bit 28 - PendSV set-pending bit: 0b0=no effect, 0b1=changes PendSV exception state to pending., 0b0=PendSV exception is not pending, 0b1=PendSV exception is pending.,"]
     #[inline(always)]
     #[must_use]
-    pub fn pendsvset(&mut self) -> PENDSVSET_W<ICSR_SPEC, 28> {
-        PENDSVSET_W::new(self)
+    pub fn pendsvset(&mut self) -> PENDSVSET_W<ICSR_SPEC> {
+        PENDSVSET_W::new(self, 28)
     }
     #[doc = "Bit 31 - NMI set-pending bit: 0b0=no effect, 0b1=changes NMI exception state to pending., 0b0=NMI exception is not pending, 0b1=NMI exception is pending.,"]
     #[inline(always)]
     #[must_use]
-    pub fn nmipendset(&mut self) -> NMIPENDSET_W<ICSR_SPEC, 31> {
-        NMIPENDSET_W::new(self)
+    pub fn nmipendset(&mut self) -> NMIPENDSET_W<ICSR_SPEC> {
+        NMIPENDSET_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

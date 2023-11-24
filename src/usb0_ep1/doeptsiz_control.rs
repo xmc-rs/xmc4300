@@ -5,15 +5,15 @@ pub type W = crate::W<DOEPTSIZ_CONTROL_SPEC>;
 #[doc = "Field `XferSize` reader - Transfer Size"]
 pub type XFER_SIZE_R = crate::FieldReader<u32>;
 #[doc = "Field `XferSize` writer - Transfer Size"]
-pub type XFER_SIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 19, O, u32>;
+pub type XFER_SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 #[doc = "Field `PktCnt` reader - Packet Count"]
 pub type PKT_CNT_R = crate::FieldReader<u16>;
 #[doc = "Field `PktCnt` writer - Packet Count"]
-pub type PKT_CNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 10, O, u16>;
+pub type PKT_CNT_W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "Field `SUPCnt` reader - SETUP Packet Count: 0b00=1 packet, 0b00=2 packets, 0b00=3 packets,"]
 pub type SUPCNT_R = crate::FieldReader;
 #[doc = "Field `SUPCnt` writer - SETUP Packet Count: 0b00=1 packet, 0b00=2 packets, 0b00=3 packets,"]
-pub type SUPCNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type SUPCNT_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 impl R {
     #[doc = "Bits 0:18 - Transfer Size"]
     #[inline(always)]
@@ -35,20 +35,20 @@ impl W {
     #[doc = "Bits 0:18 - Transfer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn xfer_size(&mut self) -> XFER_SIZE_W<DOEPTSIZ_CONTROL_SPEC, 0> {
-        XFER_SIZE_W::new(self)
+    pub fn xfer_size(&mut self) -> XFER_SIZE_W<DOEPTSIZ_CONTROL_SPEC> {
+        XFER_SIZE_W::new(self, 0)
     }
     #[doc = "Bits 19:28 - Packet Count"]
     #[inline(always)]
     #[must_use]
-    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<DOEPTSIZ_CONTROL_SPEC, 19> {
-        PKT_CNT_W::new(self)
+    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<DOEPTSIZ_CONTROL_SPEC> {
+        PKT_CNT_W::new(self, 19)
     }
     #[doc = "Bits 29:30 - SETUP Packet Count: 0b00=1 packet, 0b00=2 packets, 0b00=3 packets,"]
     #[inline(always)]
     #[must_use]
-    pub fn supcnt(&mut self) -> SUPCNT_W<DOEPTSIZ_CONTROL_SPEC, 29> {
-        SUPCNT_W::new(self)
+    pub fn supcnt(&mut self) -> SUPCNT_W<DOEPTSIZ_CONTROL_SPEC> {
+        SUPCNT_W::new(self, 29)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

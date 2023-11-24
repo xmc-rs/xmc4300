@@ -44,8 +44,8 @@ impl SETENA_R {
     }
 }
 #[doc = "Field `SETENA` writer - Interrupt set-enable bits"]
-pub type SETENA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, SETENA_A>;
-impl<'a, REG, const O: u8> SETENA_W<'a, REG, O>
+pub type SETENA_W<'a, REG> = crate::FieldWriter<'a, REG, 32, SETENA_A>;
+impl<'a, REG> SETENA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
@@ -72,8 +72,8 @@ impl W {
     #[doc = "Bits 0:31 - Interrupt set-enable bits"]
     #[inline(always)]
     #[must_use]
-    pub fn setena(&mut self) -> SETENA_W<NVIC_ISER3_SPEC, 0> {
-        SETENA_W::new(self)
+    pub fn setena(&mut self) -> SETENA_W<NVIC_ISER3_SPEC> {
+        SETENA_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

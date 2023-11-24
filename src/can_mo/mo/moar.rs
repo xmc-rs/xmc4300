@@ -5,7 +5,7 @@ pub type W = crate::W<MOAR_SPEC>;
 #[doc = "Field `ID` reader - CAN Identifier of Message Object n"]
 pub type ID_R = crate::FieldReader<u32>;
 #[doc = "Field `ID` writer - CAN Identifier of Message Object n"]
-pub type ID_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 29, O, u32>;
+pub type ID_W<'a, REG> = crate::FieldWriter<'a, REG, 29, u32>;
 #[doc = "Field `IDE` reader - Identifier Extension Bit of Message Object n"]
 pub type IDE_R = crate::BitReader<IDE_A>;
 #[doc = "Identifier Extension Bit of Message Object n\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl IDE_R {
     }
 }
 #[doc = "Field `IDE` writer - Identifier Extension Bit of Message Object n"]
-pub type IDE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IDE_A>;
-impl<'a, REG, const O: u8> IDE_W<'a, REG, O>
+pub type IDE_W<'a, REG> = crate::BitWriter<'a, REG, IDE_A>;
+impl<'a, REG> IDE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -109,8 +109,8 @@ impl PRI_R {
     }
 }
 #[doc = "Field `PRI` writer - Priority Class"]
-pub type PRI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, PRI_A>;
-impl<'a, REG, const O: u8> PRI_W<'a, REG, O>
+pub type PRI_W<'a, REG> = crate::FieldWriter<'a, REG, 2, PRI_A>;
+impl<'a, REG> PRI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -152,20 +152,20 @@ impl W {
     #[doc = "Bits 0:28 - CAN Identifier of Message Object n"]
     #[inline(always)]
     #[must_use]
-    pub fn id(&mut self) -> ID_W<MOAR_SPEC, 0> {
-        ID_W::new(self)
+    pub fn id(&mut self) -> ID_W<MOAR_SPEC> {
+        ID_W::new(self, 0)
     }
     #[doc = "Bit 29 - Identifier Extension Bit of Message Object n"]
     #[inline(always)]
     #[must_use]
-    pub fn ide(&mut self) -> IDE_W<MOAR_SPEC, 29> {
-        IDE_W::new(self)
+    pub fn ide(&mut self) -> IDE_W<MOAR_SPEC> {
+        IDE_W::new(self, 29)
     }
     #[doc = "Bits 30:31 - Priority Class"]
     #[inline(always)]
     #[must_use]
-    pub fn pri(&mut self) -> PRI_W<MOAR_SPEC, 30> {
-        PRI_W::new(self)
+    pub fn pri(&mut self) -> PRI_W<MOAR_SPEC> {
+        PRI_W::new(self, 30)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

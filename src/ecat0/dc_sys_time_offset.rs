@@ -5,7 +5,7 @@ pub type W = crate::W<DC_SYS_TIME_OFFSET_SPEC>;
 #[doc = "Field `DC_SYS_TIME_OFFSET` reader - Difference between local time and System Time"]
 pub type DC_SYS_TIME_OFFSET_R = crate::FieldReader<u32>;
 #[doc = "Field `DC_SYS_TIME_OFFSET` writer - Difference between local time and System Time"]
-pub type DC_SYS_TIME_OFFSET_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type DC_SYS_TIME_OFFSET_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Difference between local time and System Time"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Difference between local time and System Time"]
     #[inline(always)]
     #[must_use]
-    pub fn dc_sys_time_offset(&mut self) -> DC_SYS_TIME_OFFSET_W<DC_SYS_TIME_OFFSET_SPEC, 0> {
-        DC_SYS_TIME_OFFSET_W::new(self)
+    pub fn dc_sys_time_offset(&mut self) -> DC_SYS_TIME_OFFSET_W<DC_SYS_TIME_OFFSET_SPEC> {
+        DC_SYS_TIME_OFFSET_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

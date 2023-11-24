@@ -5,7 +5,7 @@ pub type W = crate::W<SYSCLKCR_SPEC>;
 #[doc = "Field `SYSDIV` reader - System Clock Division Value"]
 pub type SYSDIV_R = crate::FieldReader;
 #[doc = "Field `SYSDIV` writer - System Clock Division Value"]
-pub type SYSDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SYSDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `SYSSEL` reader - System Clock Selection Value"]
 pub type SYSSEL_R = crate::BitReader<SYSSEL_A>;
 #[doc = "System Clock Selection Value\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl SYSSEL_R {
     }
 }
 #[doc = "Field `SYSSEL` writer - System Clock Selection Value"]
-pub type SYSSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SYSSEL_A>;
-impl<'a, REG, const O: u8> SYSSEL_W<'a, REG, O>
+pub type SYSSEL_W<'a, REG> = crate::BitWriter<'a, REG, SYSSEL_A>;
+impl<'a, REG> SYSSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -75,14 +75,14 @@ impl W {
     #[doc = "Bits 0:7 - System Clock Division Value"]
     #[inline(always)]
     #[must_use]
-    pub fn sysdiv(&mut self) -> SYSDIV_W<SYSCLKCR_SPEC, 0> {
-        SYSDIV_W::new(self)
+    pub fn sysdiv(&mut self) -> SYSDIV_W<SYSCLKCR_SPEC> {
+        SYSDIV_W::new(self, 0)
     }
     #[doc = "Bit 16 - System Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn syssel(&mut self) -> SYSSEL_W<SYSCLKCR_SPEC, 16> {
-        SYSSEL_W::new(self)
+    pub fn syssel(&mut self) -> SYSSEL_W<SYSCLKCR_SPEC> {
+        SYSSEL_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

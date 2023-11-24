@@ -75,8 +75,8 @@ impl SES_REQ_R {
     }
 }
 #[doc = "Field `SesReq` writer - Session Request"]
-pub type SES_REQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SES_REQ_A>;
-impl<'a, REG, const O: u8> SES_REQ_W<'a, REG, O>
+pub type SES_REQ_W<'a, REG> = crate::BitWriter<'a, REG, SES_REQ_A>;
+impl<'a, REG> SES_REQ_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -128,8 +128,8 @@ impl VBVALID_OV_EN_R {
     }
 }
 #[doc = "Field `VbvalidOvEn` writer - VBUS Valid Override Enable"]
-pub type VBVALID_OV_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VBVALID_OV_EN_A>;
-impl<'a, REG, const O: u8> VBVALID_OV_EN_W<'a, REG, O>
+pub type VBVALID_OV_EN_W<'a, REG> = crate::BitWriter<'a, REG, VBVALID_OV_EN_A>;
+impl<'a, REG> VBVALID_OV_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -181,8 +181,8 @@ impl VBVALID_OV_VAL_R {
     }
 }
 #[doc = "Field `VbvalidOvVal` writer - VBUS Valid Override Value"]
-pub type VBVALID_OV_VAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VBVALID_OV_VAL_A>;
-impl<'a, REG, const O: u8> VBVALID_OV_VAL_W<'a, REG, O>
+pub type VBVALID_OV_VAL_W<'a, REG> = crate::BitWriter<'a, REG, VBVALID_OV_VAL_A>;
+impl<'a, REG> VBVALID_OV_VAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -234,8 +234,8 @@ impl AVALID_OV_EN_R {
     }
 }
 #[doc = "Field `AvalidOvEn` writer - A-Peripheral Session Valid Override Enable"]
-pub type AVALID_OV_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AVALID_OV_EN_A>;
-impl<'a, REG, const O: u8> AVALID_OV_EN_W<'a, REG, O>
+pub type AVALID_OV_EN_W<'a, REG> = crate::BitWriter<'a, REG, AVALID_OV_EN_A>;
+impl<'a, REG> AVALID_OV_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -287,8 +287,8 @@ impl AVALID_OV_VAL_R {
     }
 }
 #[doc = "Field `AvalidOvVal` writer - A-Peripheral Session Valid Override Value"]
-pub type AVALID_OV_VAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AVALID_OV_VAL_A>;
-impl<'a, REG, const O: u8> AVALID_OV_VAL_W<'a, REG, O>
+pub type AVALID_OV_VAL_W<'a, REG> = crate::BitWriter<'a, REG, AVALID_OV_VAL_A>;
+impl<'a, REG> AVALID_OV_VAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -340,8 +340,8 @@ impl BVALID_OV_EN_R {
     }
 }
 #[doc = "Field `BvalidOvEn` writer - B-Peripheral Session Valid Override Enable"]
-pub type BVALID_OV_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BVALID_OV_EN_A>;
-impl<'a, REG, const O: u8> BVALID_OV_EN_W<'a, REG, O>
+pub type BVALID_OV_EN_W<'a, REG> = crate::BitWriter<'a, REG, BVALID_OV_EN_A>;
+impl<'a, REG> BVALID_OV_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -393,8 +393,8 @@ impl BVALID_OV_VAL_R {
     }
 }
 #[doc = "Field `BvalidOvVal` writer - B-Peripheral Session Valid Override Value"]
-pub type BVALID_OV_VAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BVALID_OV_VAL_A>;
-impl<'a, REG, const O: u8> BVALID_OV_VAL_W<'a, REG, O>
+pub type BVALID_OV_VAL_W<'a, REG> = crate::BitWriter<'a, REG, BVALID_OV_VAL_A>;
+impl<'a, REG> BVALID_OV_VAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -482,8 +482,8 @@ impl HNPREQ_R {
     }
 }
 #[doc = "Field `HNPReq` writer - HNP Request"]
-pub type HNPREQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HNPREQ_A>;
-impl<'a, REG, const O: u8> HNPREQ_W<'a, REG, O>
+pub type HNPREQ_W<'a, REG> = crate::BitWriter<'a, REG, HNPREQ_A>;
+impl<'a, REG> HNPREQ_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -535,8 +535,8 @@ impl HST_SET_HNPEN_R {
     }
 }
 #[doc = "Field `HstSetHNPEn` writer - Host Set HNP Enable"]
-pub type HST_SET_HNPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HST_SET_HNPEN_A>;
-impl<'a, REG, const O: u8> HST_SET_HNPEN_W<'a, REG, O>
+pub type HST_SET_HNPEN_W<'a, REG> = crate::BitWriter<'a, REG, HST_SET_HNPEN_A>;
+impl<'a, REG> HST_SET_HNPEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -588,8 +588,8 @@ impl DEV_HNPEN_R {
     }
 }
 #[doc = "Field `DevHNPEn` writer - Device HNP Enabled"]
-pub type DEV_HNPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DEV_HNPEN_A>;
-impl<'a, REG, const O: u8> DEV_HNPEN_W<'a, REG, O>
+pub type DEV_HNPEN_W<'a, REG> = crate::BitWriter<'a, REG, DEV_HNPEN_A>;
+impl<'a, REG> DEV_HNPEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -785,8 +785,8 @@ impl OTGVER_R {
     }
 }
 #[doc = "Field `OTGVer` writer - OTG Version"]
-pub type OTGVER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OTGVER_A>;
-impl<'a, REG, const O: u8> OTGVER_W<'a, REG, O>
+pub type OTGVER_W<'a, REG> = crate::BitWriter<'a, REG, OTGVER_A>;
+impl<'a, REG> OTGVER_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -892,68 +892,68 @@ impl W {
     #[doc = "Bit 1 - Session Request"]
     #[inline(always)]
     #[must_use]
-    pub fn ses_req(&mut self) -> SES_REQ_W<GOTGCTL_SPEC, 1> {
-        SES_REQ_W::new(self)
+    pub fn ses_req(&mut self) -> SES_REQ_W<GOTGCTL_SPEC> {
+        SES_REQ_W::new(self, 1)
     }
     #[doc = "Bit 2 - VBUS Valid Override Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn vbvalid_ov_en(&mut self) -> VBVALID_OV_EN_W<GOTGCTL_SPEC, 2> {
-        VBVALID_OV_EN_W::new(self)
+    pub fn vbvalid_ov_en(&mut self) -> VBVALID_OV_EN_W<GOTGCTL_SPEC> {
+        VBVALID_OV_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - VBUS Valid Override Value"]
     #[inline(always)]
     #[must_use]
-    pub fn vbvalid_ov_val(&mut self) -> VBVALID_OV_VAL_W<GOTGCTL_SPEC, 3> {
-        VBVALID_OV_VAL_W::new(self)
+    pub fn vbvalid_ov_val(&mut self) -> VBVALID_OV_VAL_W<GOTGCTL_SPEC> {
+        VBVALID_OV_VAL_W::new(self, 3)
     }
     #[doc = "Bit 4 - A-Peripheral Session Valid Override Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn avalid_ov_en(&mut self) -> AVALID_OV_EN_W<GOTGCTL_SPEC, 4> {
-        AVALID_OV_EN_W::new(self)
+    pub fn avalid_ov_en(&mut self) -> AVALID_OV_EN_W<GOTGCTL_SPEC> {
+        AVALID_OV_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - A-Peripheral Session Valid Override Value"]
     #[inline(always)]
     #[must_use]
-    pub fn avalid_ov_val(&mut self) -> AVALID_OV_VAL_W<GOTGCTL_SPEC, 5> {
-        AVALID_OV_VAL_W::new(self)
+    pub fn avalid_ov_val(&mut self) -> AVALID_OV_VAL_W<GOTGCTL_SPEC> {
+        AVALID_OV_VAL_W::new(self, 5)
     }
     #[doc = "Bit 6 - B-Peripheral Session Valid Override Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn bvalid_ov_en(&mut self) -> BVALID_OV_EN_W<GOTGCTL_SPEC, 6> {
-        BVALID_OV_EN_W::new(self)
+    pub fn bvalid_ov_en(&mut self) -> BVALID_OV_EN_W<GOTGCTL_SPEC> {
+        BVALID_OV_EN_W::new(self, 6)
     }
     #[doc = "Bit 7 - B-Peripheral Session Valid Override Value"]
     #[inline(always)]
     #[must_use]
-    pub fn bvalid_ov_val(&mut self) -> BVALID_OV_VAL_W<GOTGCTL_SPEC, 7> {
-        BVALID_OV_VAL_W::new(self)
+    pub fn bvalid_ov_val(&mut self) -> BVALID_OV_VAL_W<GOTGCTL_SPEC> {
+        BVALID_OV_VAL_W::new(self, 7)
     }
     #[doc = "Bit 9 - HNP Request"]
     #[inline(always)]
     #[must_use]
-    pub fn hnpreq(&mut self) -> HNPREQ_W<GOTGCTL_SPEC, 9> {
-        HNPREQ_W::new(self)
+    pub fn hnpreq(&mut self) -> HNPREQ_W<GOTGCTL_SPEC> {
+        HNPREQ_W::new(self, 9)
     }
     #[doc = "Bit 10 - Host Set HNP Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hst_set_hnpen(&mut self) -> HST_SET_HNPEN_W<GOTGCTL_SPEC, 10> {
-        HST_SET_HNPEN_W::new(self)
+    pub fn hst_set_hnpen(&mut self) -> HST_SET_HNPEN_W<GOTGCTL_SPEC> {
+        HST_SET_HNPEN_W::new(self, 10)
     }
     #[doc = "Bit 11 - Device HNP Enabled"]
     #[inline(always)]
     #[must_use]
-    pub fn dev_hnpen(&mut self) -> DEV_HNPEN_W<GOTGCTL_SPEC, 11> {
-        DEV_HNPEN_W::new(self)
+    pub fn dev_hnpen(&mut self) -> DEV_HNPEN_W<GOTGCTL_SPEC> {
+        DEV_HNPEN_W::new(self, 11)
     }
     #[doc = "Bit 20 - OTG Version"]
     #[inline(always)]
     #[must_use]
-    pub fn otgver(&mut self) -> OTGVER_W<GOTGCTL_SPEC, 20> {
-        OTGVER_W::new(self)
+    pub fn otgver(&mut self) -> OTGVER_W<GOTGCTL_SPEC> {
+        OTGVER_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

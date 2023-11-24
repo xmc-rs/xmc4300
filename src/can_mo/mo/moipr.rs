@@ -60,8 +60,8 @@ impl RXINP_R {
     }
 }
 #[doc = "Field `RXINP` writer - Receive Interrupt Node Pointer"]
-pub type RXINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, RXINP_A>;
-impl<'a, REG, const O: u8> RXINP_W<'a, REG, O>
+pub type RXINP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, RXINP_A>;
+impl<'a, REG> RXINP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,8 +145,8 @@ impl TXINP_R {
     }
 }
 #[doc = "Field `TXINP` writer - Transmit Interrupt Node Pointer"]
-pub type TXINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, TXINP_A>;
-impl<'a, REG, const O: u8> TXINP_W<'a, REG, O>
+pub type TXINP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, TXINP_A>;
+impl<'a, REG> TXINP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -175,11 +175,11 @@ where
 #[doc = "Field `MPN` reader - Message Pending Number"]
 pub type MPN_R = crate::FieldReader;
 #[doc = "Field `MPN` writer - Message Pending Number"]
-pub type MPN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type MPN_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CFCVAL` reader - CAN Frame Counter Value"]
 pub type CFCVAL_R = crate::FieldReader<u16>;
 #[doc = "Field `CFCVAL` writer - CAN Frame Counter Value"]
-pub type CFCVAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type CFCVAL_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:3 - Receive Interrupt Node Pointer"]
     #[inline(always)]
@@ -206,26 +206,26 @@ impl W {
     #[doc = "Bits 0:3 - Receive Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn rxinp(&mut self) -> RXINP_W<MOIPR_SPEC, 0> {
-        RXINP_W::new(self)
+    pub fn rxinp(&mut self) -> RXINP_W<MOIPR_SPEC> {
+        RXINP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Transmit Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn txinp(&mut self) -> TXINP_W<MOIPR_SPEC, 4> {
-        TXINP_W::new(self)
+    pub fn txinp(&mut self) -> TXINP_W<MOIPR_SPEC> {
+        TXINP_W::new(self, 4)
     }
     #[doc = "Bits 8:15 - Message Pending Number"]
     #[inline(always)]
     #[must_use]
-    pub fn mpn(&mut self) -> MPN_W<MOIPR_SPEC, 8> {
-        MPN_W::new(self)
+    pub fn mpn(&mut self) -> MPN_W<MOIPR_SPEC> {
+        MPN_W::new(self, 8)
     }
     #[doc = "Bits 16:31 - CAN Frame Counter Value"]
     #[inline(always)]
     #[must_use]
-    pub fn cfcval(&mut self) -> CFCVAL_W<MOIPR_SPEC, 16> {
-        CFCVAL_W::new(self)
+    pub fn cfcval(&mut self) -> CFCVAL_W<MOIPR_SPEC> {
+        CFCVAL_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

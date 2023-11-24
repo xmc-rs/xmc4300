@@ -1,28 +1,74 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    id: ID,
+    globctl: GLOBCTL,
+    fnctl: FNCTL,
+    evfr: EVFR,
+    tsval: TSVAL,
+    line0: LINE0,
+    line1: LINE1,
+    ldcmp0: LDCMP0,
+    ldcmp1: LDCMP1,
+    tscmp0: TSCMP0,
+    tscmp1: TSCMP1,
+}
+impl RegisterBlock {
     #[doc = "0x00 - Module Identification Register"]
-    pub id: ID,
+    #[inline(always)]
+    pub const fn id(&self) -> &ID {
+        &self.id
+    }
     #[doc = "0x04 - Global Control Register"]
-    pub globctl: GLOBCTL,
+    #[inline(always)]
+    pub const fn globctl(&self) -> &GLOBCTL {
+        &self.globctl
+    }
     #[doc = "0x08 - Function Control Register"]
-    pub fnctl: FNCTL,
+    #[inline(always)]
+    pub const fn fnctl(&self) -> &FNCTL {
+        &self.fnctl
+    }
     #[doc = "0x0c - Event Flag Register"]
-    pub evfr: EVFR,
+    #[inline(always)]
+    pub const fn evfr(&self) -> &EVFR {
+        &self.evfr
+    }
     #[doc = "0x10 - Touch-sense TS-Counter Value"]
-    pub tsval: TSVAL,
+    #[inline(always)]
+    pub const fn tsval(&self) -> &TSVAL {
+        &self.tsval
+    }
     #[doc = "0x14 - Line Pattern Register 0"]
-    pub line0: LINE0,
+    #[inline(always)]
+    pub const fn line0(&self) -> &LINE0 {
+        &self.line0
+    }
     #[doc = "0x18 - Line Pattern Register 1"]
-    pub line1: LINE1,
+    #[inline(always)]
+    pub const fn line1(&self) -> &LINE1 {
+        &self.line1
+    }
     #[doc = "0x1c - LED Compare Register 0"]
-    pub ldcmp0: LDCMP0,
+    #[inline(always)]
+    pub const fn ldcmp0(&self) -> &LDCMP0 {
+        &self.ldcmp0
+    }
     #[doc = "0x20 - LED Compare Register 1"]
-    pub ldcmp1: LDCMP1,
+    #[inline(always)]
+    pub const fn ldcmp1(&self) -> &LDCMP1 {
+        &self.ldcmp1
+    }
     #[doc = "0x24 - Touch-sense Compare Register 0"]
-    pub tscmp0: TSCMP0,
+    #[inline(always)]
+    pub const fn tscmp0(&self) -> &TSCMP0 {
+        &self.tscmp0
+    }
     #[doc = "0x28 - Touch-sense Compare Register 1"]
-    pub tscmp1: TSCMP1,
+    #[inline(always)]
+    pub const fn tscmp1(&self) -> &TSCMP1 {
+        &self.tscmp1
+    }
 }
 #[doc = "ID (r) register accessor: Module Identification Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@id`]
 module"]

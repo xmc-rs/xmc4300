@@ -60,8 +60,8 @@ impl SEV0NP_R {
     }
 }
 #[doc = "Field `SEV0NP` writer - Service Request Node Pointer Backgr. Source"]
-pub type SEV0NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, SEV0NP_A>;
-impl<'a, REG, const O: u8> SEV0NP_W<'a, REG, O>
+pub type SEV0NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, SEV0NP_A>;
+impl<'a, REG> SEV0NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,8 +145,8 @@ impl REV0NP_R {
     }
 }
 #[doc = "Field `REV0NP` writer - Service Request Node Pointer Backgr. Result"]
-pub type REV0NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV0NP_A>;
-impl<'a, REG, const O: u8> REV0NP_W<'a, REG, O>
+pub type REV0NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, REV0NP_A>;
+impl<'a, REG> REV0NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -188,14 +188,14 @@ impl W {
     #[doc = "Bits 0:3 - Service Request Node Pointer Backgr. Source"]
     #[inline(always)]
     #[must_use]
-    pub fn sev0np(&mut self) -> SEV0NP_W<GLOBEVNP_SPEC, 0> {
-        SEV0NP_W::new(self)
+    pub fn sev0np(&mut self) -> SEV0NP_W<GLOBEVNP_SPEC> {
+        SEV0NP_W::new(self, 0)
     }
     #[doc = "Bits 16:19 - Service Request Node Pointer Backgr. Result"]
     #[inline(always)]
     #[must_use]
-    pub fn rev0np(&mut self) -> REV0NP_W<GLOBEVNP_SPEC, 16> {
-        REV0NP_W::new(self)
+    pub fn rev0np(&mut self) -> REV0NP_W<GLOBEVNP_SPEC> {
+        REV0NP_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<VTOR_SPEC>;
 #[doc = "Field `TBLOFF` reader - Vector table base offset field"]
 pub type TBLOFF_R = crate::FieldReader<u32>;
 #[doc = "Field `TBLOFF` writer - Vector table base offset field"]
-pub type TBLOFF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 22, O, u32>;
+pub type TBLOFF_W<'a, REG> = crate::FieldWriter<'a, REG, 22, u32>;
 impl R {
     #[doc = "Bits 10:31 - Vector table base offset field"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 10:31 - Vector table base offset field"]
     #[inline(always)]
     #[must_use]
-    pub fn tbloff(&mut self) -> TBLOFF_W<VTOR_SPEC, 10> {
-        TBLOFF_W::new(self)
+    pub fn tbloff(&mut self) -> TBLOFF_W<VTOR_SPEC> {
+        TBLOFF_W::new(self, 10)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

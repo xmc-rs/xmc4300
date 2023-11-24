@@ -5,7 +5,7 @@ pub type W = crate::W<HFLBADDR_SPEC>;
 #[doc = "Field `Starting_Address` reader - Starting Address"]
 pub type STARTING_ADDRESS_R = crate::FieldReader<u32>;
 #[doc = "Field `Starting_Address` writer - Starting Address"]
-pub type STARTING_ADDRESS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type STARTING_ADDRESS_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Starting Address"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Starting Address"]
     #[inline(always)]
     #[must_use]
-    pub fn starting_address(&mut self) -> STARTING_ADDRESS_W<HFLBADDR_SPEC, 0> {
-        STARTING_ADDRESS_W::new(self)
+    pub fn starting_address(&mut self) -> STARTING_ADDRESS_W<HFLBADDR_SPEC> {
+        STARTING_ADDRESS_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

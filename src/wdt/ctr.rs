@@ -5,19 +5,19 @@ pub type W = crate::W<CTR_SPEC>;
 #[doc = "Field `ENB` reader - Enable"]
 pub type ENB_R = crate::BitReader;
 #[doc = "Field `ENB` writer - Enable"]
-pub type ENB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ENB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PRE` reader - Pre-warning"]
 pub type PRE_R = crate::BitReader;
 #[doc = "Field `PRE` writer - Pre-warning"]
-pub type PRE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PRE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DSP` reader - Debug Suspend"]
 pub type DSP_R = crate::BitReader;
 #[doc = "Field `DSP` writer - Debug Suspend"]
-pub type DSP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DSP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SPW` reader - Service Indication Pulse Width"]
 pub type SPW_R = crate::FieldReader;
 #[doc = "Field `SPW` writer - Service Indication Pulse Width"]
-pub type SPW_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SPW_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn enb(&mut self) -> ENB_W<CTR_SPEC, 0> {
-        ENB_W::new(self)
+    pub fn enb(&mut self) -> ENB_W<CTR_SPEC> {
+        ENB_W::new(self, 0)
     }
     #[doc = "Bit 1 - Pre-warning"]
     #[inline(always)]
     #[must_use]
-    pub fn pre(&mut self) -> PRE_W<CTR_SPEC, 1> {
-        PRE_W::new(self)
+    pub fn pre(&mut self) -> PRE_W<CTR_SPEC> {
+        PRE_W::new(self, 1)
     }
     #[doc = "Bit 4 - Debug Suspend"]
     #[inline(always)]
     #[must_use]
-    pub fn dsp(&mut self) -> DSP_W<CTR_SPEC, 4> {
-        DSP_W::new(self)
+    pub fn dsp(&mut self) -> DSP_W<CTR_SPEC> {
+        DSP_W::new(self, 4)
     }
     #[doc = "Bits 8:15 - Service Indication Pulse Width"]
     #[inline(always)]
     #[must_use]
-    pub fn spw(&mut self) -> SPW_W<CTR_SPEC, 8> {
-        SPW_W::new(self)
+    pub fn spw(&mut self) -> SPW_W<CTR_SPEC> {
+        SPW_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

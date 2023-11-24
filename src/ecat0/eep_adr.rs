@@ -44,8 +44,8 @@ impl EEPROM_ADDR_R {
     }
 }
 #[doc = "Field `EEPROM_ADDR` writer - EEPROM Address"]
-pub type EEPROM_ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, EEPROM_ADDR_A>;
-impl<'a, REG, const O: u8> EEPROM_ADDR_W<'a, REG, O>
+pub type EEPROM_ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, EEPROM_ADDR_A>;
+impl<'a, REG> EEPROM_ADDR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
@@ -72,8 +72,8 @@ impl W {
     #[doc = "Bits 0:31 - EEPROM Address"]
     #[inline(always)]
     #[must_use]
-    pub fn eeprom_addr(&mut self) -> EEPROM_ADDR_W<EEP_ADR_SPEC, 0> {
-        EEPROM_ADDR_W::new(self)
+    pub fn eeprom_addr(&mut self) -> EEPROM_ADDR_W<EEP_ADR_SPEC> {
+        EEPROM_ADDR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -39,8 +39,8 @@ impl SD_BUS_POWER_R {
     }
 }
 #[doc = "Field `SD_BUS_POWER` writer - SD Bus Power"]
-pub type SD_BUS_POWER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SD_BUS_POWER_A>;
-impl<'a, REG, const O: u8> SD_BUS_POWER_W<'a, REG, O>
+pub type SD_BUS_POWER_W<'a, REG> = crate::BitWriter<'a, REG, SD_BUS_POWER_A>;
+impl<'a, REG> SD_BUS_POWER_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -89,8 +89,8 @@ impl SD_BUS_VOLTAGE_SEL_R {
     }
 }
 #[doc = "Field `SD_BUS_VOLTAGE_SEL` writer - SD Bus Voltage Select"]
-pub type SD_BUS_VOLTAGE_SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, SD_BUS_VOLTAGE_SEL_A>;
-impl<'a, REG, const O: u8> SD_BUS_VOLTAGE_SEL_W<'a, REG, O>
+pub type SD_BUS_VOLTAGE_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, SD_BUS_VOLTAGE_SEL_A>;
+impl<'a, REG> SD_BUS_VOLTAGE_SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -104,7 +104,7 @@ where
 #[doc = "Field `HARDWARE_RESET` reader - Hardware reset"]
 pub type HARDWARE_RESET_R = crate::BitReader;
 #[doc = "Field `HARDWARE_RESET` writer - Hardware reset"]
-pub type HARDWARE_RESET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HARDWARE_RESET_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - SD Bus Power"]
     #[inline(always)]
@@ -126,20 +126,20 @@ impl W {
     #[doc = "Bit 0 - SD Bus Power"]
     #[inline(always)]
     #[must_use]
-    pub fn sd_bus_power(&mut self) -> SD_BUS_POWER_W<POWER_CTRL_SPEC, 0> {
-        SD_BUS_POWER_W::new(self)
+    pub fn sd_bus_power(&mut self) -> SD_BUS_POWER_W<POWER_CTRL_SPEC> {
+        SD_BUS_POWER_W::new(self, 0)
     }
     #[doc = "Bits 1:3 - SD Bus Voltage Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sd_bus_voltage_sel(&mut self) -> SD_BUS_VOLTAGE_SEL_W<POWER_CTRL_SPEC, 1> {
-        SD_BUS_VOLTAGE_SEL_W::new(self)
+    pub fn sd_bus_voltage_sel(&mut self) -> SD_BUS_VOLTAGE_SEL_W<POWER_CTRL_SPEC> {
+        SD_BUS_VOLTAGE_SEL_W::new(self, 1)
     }
     #[doc = "Bit 4 - Hardware reset"]
     #[inline(always)]
     #[must_use]
-    pub fn hardware_reset(&mut self) -> HARDWARE_RESET_W<POWER_CTRL_SPEC, 4> {
-        HARDWARE_RESET_W::new(self)
+    pub fn hardware_reset(&mut self) -> HARDWARE_RESET_W<POWER_CTRL_SPEC> {
+        HARDWARE_RESET_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

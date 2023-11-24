@@ -5,7 +5,7 @@ pub type W = crate::W<TIMESTAMP_ADDEND_SPEC>;
 #[doc = "Field `TSAR` reader - Timestamp Addend Register"]
 pub type TSAR_R = crate::FieldReader<u32>;
 #[doc = "Field `TSAR` writer - Timestamp Addend Register"]
-pub type TSAR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type TSAR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Timestamp Addend Register"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Timestamp Addend Register"]
     #[inline(always)]
     #[must_use]
-    pub fn tsar(&mut self) -> TSAR_W<TIMESTAMP_ADDEND_SPEC, 0> {
-        TSAR_W::new(self)
+    pub fn tsar(&mut self) -> TSAR_W<TIMESTAMP_ADDEND_SPEC> {
+        TSAR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

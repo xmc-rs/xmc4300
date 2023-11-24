@@ -1,21 +1,51 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - PLL Status Register"]
-    pub pllstat: PLLSTAT,
-    #[doc = "0x04 - PLL Configuration 0 Register"]
-    pub pllcon0: PLLCON0,
-    #[doc = "0x08 - PLL Configuration 1 Register"]
-    pub pllcon1: PLLCON1,
-    #[doc = "0x0c - PLL Configuration 2 Register"]
-    pub pllcon2: PLLCON2,
-    #[doc = "0x10 - USB PLL Status Register"]
-    pub usbpllstat: USBPLLSTAT,
-    #[doc = "0x14 - USB PLL Configuration Register"]
-    pub usbpllcon: USBPLLCON,
+    pllstat: PLLSTAT,
+    pllcon0: PLLCON0,
+    pllcon1: PLLCON1,
+    pllcon2: PLLCON2,
+    usbpllstat: USBPLLSTAT,
+    usbpllcon: USBPLLCON,
     _reserved6: [u8; 0x10],
+    clkmxstat: CLKMXSTAT,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - PLL Status Register"]
+    #[inline(always)]
+    pub const fn pllstat(&self) -> &PLLSTAT {
+        &self.pllstat
+    }
+    #[doc = "0x04 - PLL Configuration 0 Register"]
+    #[inline(always)]
+    pub const fn pllcon0(&self) -> &PLLCON0 {
+        &self.pllcon0
+    }
+    #[doc = "0x08 - PLL Configuration 1 Register"]
+    #[inline(always)]
+    pub const fn pllcon1(&self) -> &PLLCON1 {
+        &self.pllcon1
+    }
+    #[doc = "0x0c - PLL Configuration 2 Register"]
+    #[inline(always)]
+    pub const fn pllcon2(&self) -> &PLLCON2 {
+        &self.pllcon2
+    }
+    #[doc = "0x10 - USB PLL Status Register"]
+    #[inline(always)]
+    pub const fn usbpllstat(&self) -> &USBPLLSTAT {
+        &self.usbpllstat
+    }
+    #[doc = "0x14 - USB PLL Configuration Register"]
+    #[inline(always)]
+    pub const fn usbpllcon(&self) -> &USBPLLCON {
+        &self.usbpllcon
+    }
     #[doc = "0x28 - Clock Multiplexing Status Register"]
-    pub clkmxstat: CLKMXSTAT,
+    #[inline(always)]
+    pub const fn clkmxstat(&self) -> &CLKMXSTAT {
+        &self.clkmxstat
+    }
 }
 #[doc = "PLLSTAT (r) register accessor: PLL Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pllstat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pllstat`]
 module"]

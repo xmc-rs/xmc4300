@@ -15,8 +15,8 @@ impl From<CEV0_AW> for bool {
     }
 }
 #[doc = "Field `CEV0` writer - Clear Channel Event for Channel 0"]
-pub type CEV0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV0_AW>;
-impl<'a, REG, const O: u8> CEV0_W<'a, REG, O>
+pub type CEV0_W<'a, REG> = crate::BitWriter<'a, REG, CEV0_AW>;
+impl<'a, REG> CEV0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<CEV1_AW> for bool {
     }
 }
 #[doc = "Field `CEV1` writer - Clear Channel Event for Channel 1"]
-pub type CEV1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV1_AW>;
-impl<'a, REG, const O: u8> CEV1_W<'a, REG, O>
+pub type CEV1_W<'a, REG> = crate::BitWriter<'a, REG, CEV1_AW>;
+impl<'a, REG> CEV1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<CEV2_AW> for bool {
     }
 }
 #[doc = "Field `CEV2` writer - Clear Channel Event for Channel 2"]
-pub type CEV2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV2_AW>;
-impl<'a, REG, const O: u8> CEV2_W<'a, REG, O>
+pub type CEV2_W<'a, REG> = crate::BitWriter<'a, REG, CEV2_AW>;
+impl<'a, REG> CEV2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<CEV3_AW> for bool {
     }
 }
 #[doc = "Field `CEV3` writer - Clear Channel Event for Channel 3"]
-pub type CEV3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV3_AW>;
-impl<'a, REG, const O: u8> CEV3_W<'a, REG, O>
+pub type CEV3_W<'a, REG> = crate::BitWriter<'a, REG, CEV3_AW>;
+impl<'a, REG> CEV3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<CEV4_AW> for bool {
     }
 }
 #[doc = "Field `CEV4` writer - Clear Channel Event for Channel 4"]
-pub type CEV4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV4_AW>;
-impl<'a, REG, const O: u8> CEV4_W<'a, REG, O>
+pub type CEV4_W<'a, REG> = crate::BitWriter<'a, REG, CEV4_AW>;
+impl<'a, REG> CEV4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<CEV5_AW> for bool {
     }
 }
 #[doc = "Field `CEV5` writer - Clear Channel Event for Channel 5"]
-pub type CEV5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV5_AW>;
-impl<'a, REG, const O: u8> CEV5_W<'a, REG, O>
+pub type CEV5_W<'a, REG> = crate::BitWriter<'a, REG, CEV5_AW>;
+impl<'a, REG> CEV5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -201,8 +201,8 @@ impl From<CEV6_AW> for bool {
     }
 }
 #[doc = "Field `CEV6` writer - Clear Channel Event for Channel 6"]
-pub type CEV6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV6_AW>;
-impl<'a, REG, const O: u8> CEV6_W<'a, REG, O>
+pub type CEV6_W<'a, REG> = crate::BitWriter<'a, REG, CEV6_AW>;
+impl<'a, REG> CEV6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -232,8 +232,8 @@ impl From<CEV7_AW> for bool {
     }
 }
 #[doc = "Field `CEV7` writer - Clear Channel Event for Channel 7"]
-pub type CEV7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV7_AW>;
-impl<'a, REG, const O: u8> CEV7_W<'a, REG, O>
+pub type CEV7_W<'a, REG> = crate::BitWriter<'a, REG, CEV7_AW>;
+impl<'a, REG> CEV7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -252,50 +252,50 @@ impl W {
     #[doc = "Bit 0 - Clear Channel Event for Channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn cev0(&mut self) -> CEV0_W<CEFCLR_SPEC, 0> {
-        CEV0_W::new(self)
+    pub fn cev0(&mut self) -> CEV0_W<CEFCLR_SPEC> {
+        CEV0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Channel Event for Channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn cev1(&mut self) -> CEV1_W<CEFCLR_SPEC, 1> {
-        CEV1_W::new(self)
+    pub fn cev1(&mut self) -> CEV1_W<CEFCLR_SPEC> {
+        CEV1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Channel Event for Channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn cev2(&mut self) -> CEV2_W<CEFCLR_SPEC, 2> {
-        CEV2_W::new(self)
+    pub fn cev2(&mut self) -> CEV2_W<CEFCLR_SPEC> {
+        CEV2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Clear Channel Event for Channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn cev3(&mut self) -> CEV3_W<CEFCLR_SPEC, 3> {
-        CEV3_W::new(self)
+    pub fn cev3(&mut self) -> CEV3_W<CEFCLR_SPEC> {
+        CEV3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Clear Channel Event for Channel 4"]
     #[inline(always)]
     #[must_use]
-    pub fn cev4(&mut self) -> CEV4_W<CEFCLR_SPEC, 4> {
-        CEV4_W::new(self)
+    pub fn cev4(&mut self) -> CEV4_W<CEFCLR_SPEC> {
+        CEV4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Clear Channel Event for Channel 5"]
     #[inline(always)]
     #[must_use]
-    pub fn cev5(&mut self) -> CEV5_W<CEFCLR_SPEC, 5> {
-        CEV5_W::new(self)
+    pub fn cev5(&mut self) -> CEV5_W<CEFCLR_SPEC> {
+        CEV5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Clear Channel Event for Channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn cev6(&mut self) -> CEV6_W<CEFCLR_SPEC, 6> {
-        CEV6_W::new(self)
+    pub fn cev6(&mut self) -> CEV6_W<CEFCLR_SPEC> {
+        CEV6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Clear Channel Event for Channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn cev7(&mut self) -> CEV7_W<CEFCLR_SPEC, 7> {
-        CEV7_W::new(self)
+    pub fn cev7(&mut self) -> CEV7_W<CEFCLR_SPEC> {
+        CEV7_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

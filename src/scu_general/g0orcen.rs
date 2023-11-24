@@ -39,8 +39,8 @@ impl ENORC6_R {
     }
 }
 #[doc = "Field `ENORC6` writer - Enable Out of Range Comparator, Channel 6"]
-pub type ENORC6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENORC6_A>;
-impl<'a, REG, const O: u8> ENORC6_W<'a, REG, O>
+pub type ENORC6_W<'a, REG> = crate::BitWriter<'a, REG, ENORC6_A>;
+impl<'a, REG> ENORC6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl ENORC7_R {
     }
 }
 #[doc = "Field `ENORC7` writer - Enable Out of Range Comparator, Channel 7"]
-pub type ENORC7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENORC7_A>;
-impl<'a, REG, const O: u8> ENORC7_W<'a, REG, O>
+pub type ENORC7_W<'a, REG> = crate::BitWriter<'a, REG, ENORC7_A>;
+impl<'a, REG> ENORC7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -124,14 +124,14 @@ impl W {
     #[doc = "Bit 6 - Enable Out of Range Comparator, Channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn enorc6(&mut self) -> ENORC6_W<G0ORCEN_SPEC, 6> {
-        ENORC6_W::new(self)
+    pub fn enorc6(&mut self) -> ENORC6_W<G0ORCEN_SPEC> {
+        ENORC6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Enable Out of Range Comparator, Channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn enorc7(&mut self) -> ENORC7_W<G0ORCEN_SPEC, 7> {
-        ENORC7_W::new(self)
+    pub fn enorc7(&mut self) -> ENORC7_W<G0ORCEN_SPEC> {
+        ENORC7_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

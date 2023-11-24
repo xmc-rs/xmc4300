@@ -15,8 +15,8 @@ impl From<FE_ACMD_NOT_EXEC_AW> for bool {
     }
 }
 #[doc = "Field `FE_ACMD_NOT_EXEC` writer - Force Event for Auto CMD12 NOT Executed"]
-pub type FE_ACMD_NOT_EXEC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_ACMD_NOT_EXEC_AW>;
-impl<'a, REG, const O: u8> FE_ACMD_NOT_EXEC_W<'a, REG, O>
+pub type FE_ACMD_NOT_EXEC_W<'a, REG> = crate::BitWriter<'a, REG, FE_ACMD_NOT_EXEC_AW>;
+impl<'a, REG> FE_ACMD_NOT_EXEC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<FE_ACMD_TIMEOUT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_ACMD_TIMEOUT_ERR` writer - Force Event for Auto CMD timeout Error"]
-pub type FE_ACMD_TIMEOUT_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_ACMD_TIMEOUT_ERR_AW>;
-impl<'a, REG, const O: u8> FE_ACMD_TIMEOUT_ERR_W<'a, REG, O>
+pub type FE_ACMD_TIMEOUT_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_ACMD_TIMEOUT_ERR_AW>;
+impl<'a, REG> FE_ACMD_TIMEOUT_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<FE_ACMD_CRC_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_ACMD_CRC_ERR` writer - Force Event for Auto CMD CRC Error"]
-pub type FE_ACMD_CRC_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_ACMD_CRC_ERR_AW>;
-impl<'a, REG, const O: u8> FE_ACMD_CRC_ERR_W<'a, REG, O>
+pub type FE_ACMD_CRC_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_ACMD_CRC_ERR_AW>;
+impl<'a, REG> FE_ACMD_CRC_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<FE_ACMD_END_BIT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_ACMD_END_BIT_ERR` writer - Force Event for Auto CMD End bit Error"]
-pub type FE_ACMD_END_BIT_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_ACMD_END_BIT_ERR_AW>;
-impl<'a, REG, const O: u8> FE_ACMD_END_BIT_ERR_W<'a, REG, O>
+pub type FE_ACMD_END_BIT_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_ACMD_END_BIT_ERR_AW>;
+impl<'a, REG> FE_ACMD_END_BIT_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<FE_ACMD_IND_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_ACMD_IND_ERR` writer - Force Event for Auto CMD Index Error"]
-pub type FE_ACMD_IND_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_ACMD_IND_ERR_AW>;
-impl<'a, REG, const O: u8> FE_ACMD_IND_ERR_W<'a, REG, O>
+pub type FE_ACMD_IND_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_ACMD_IND_ERR_AW>;
+impl<'a, REG> FE_ACMD_IND_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<FE_CMD_NOT_ISSUED_ACMD12_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CMD_NOT_ISSUED_ACMD12_ERR` writer - Force Event for CMD not issued by Auto CMD12 Error"]
-pub type FE_CMD_NOT_ISSUED_ACMD12_ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_CMD_NOT_ISSUED_ACMD12_ERR_AW>;
-impl<'a, REG, const O: u8> FE_CMD_NOT_ISSUED_ACMD12_ERR_W<'a, REG, O>
+pub type FE_CMD_NOT_ISSUED_ACMD12_ERR_W<'a, REG> = crate::BitWriter<'a, REG, FE_CMD_NOT_ISSUED_ACMD12_ERR_AW>;
+impl<'a, REG> FE_CMD_NOT_ISSUED_ACMD12_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -190,38 +190,38 @@ impl W {
     #[doc = "Bit 0 - Force Event for Auto CMD12 NOT Executed"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_acmd_not_exec(&mut self) -> FE_ACMD_NOT_EXEC_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC, 0> {
-        FE_ACMD_NOT_EXEC_W::new(self)
+    pub fn fe_acmd_not_exec(&mut self) -> FE_ACMD_NOT_EXEC_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
+        FE_ACMD_NOT_EXEC_W::new(self, 0)
     }
     #[doc = "Bit 1 - Force Event for Auto CMD timeout Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_acmd_timeout_err(&mut self) -> FE_ACMD_TIMEOUT_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC, 1> {
-        FE_ACMD_TIMEOUT_ERR_W::new(self)
+    pub fn fe_acmd_timeout_err(&mut self) -> FE_ACMD_TIMEOUT_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
+        FE_ACMD_TIMEOUT_ERR_W::new(self, 1)
     }
     #[doc = "Bit 2 - Force Event for Auto CMD CRC Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_acmd_crc_err(&mut self) -> FE_ACMD_CRC_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC, 2> {
-        FE_ACMD_CRC_ERR_W::new(self)
+    pub fn fe_acmd_crc_err(&mut self) -> FE_ACMD_CRC_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
+        FE_ACMD_CRC_ERR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Force Event for Auto CMD End bit Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_acmd_end_bit_err(&mut self) -> FE_ACMD_END_BIT_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC, 3> {
-        FE_ACMD_END_BIT_ERR_W::new(self)
+    pub fn fe_acmd_end_bit_err(&mut self) -> FE_ACMD_END_BIT_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
+        FE_ACMD_END_BIT_ERR_W::new(self, 3)
     }
     #[doc = "Bit 4 - Force Event for Auto CMD Index Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_acmd_ind_err(&mut self) -> FE_ACMD_IND_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC, 4> {
-        FE_ACMD_IND_ERR_W::new(self)
+    pub fn fe_acmd_ind_err(&mut self) -> FE_ACMD_IND_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
+        FE_ACMD_IND_ERR_W::new(self, 4)
     }
     #[doc = "Bit 7 - Force Event for CMD not issued by Auto CMD12 Error"]
     #[inline(always)]
     #[must_use]
-    pub fn fe_cmd_not_issued_acmd12_err(&mut self) -> FE_CMD_NOT_ISSUED_ACMD12_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC, 7> {
-        FE_CMD_NOT_ISSUED_ACMD12_ERR_W::new(self)
+    pub fn fe_cmd_not_issued_acmd12_err(&mut self) -> FE_CMD_NOT_ISSUED_ACMD12_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
+        FE_CMD_NOT_ISSUED_ACMD12_ERR_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

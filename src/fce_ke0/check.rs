@@ -5,7 +5,7 @@ pub type W = crate::W<CHECK_SPEC>;
 #[doc = "Field `CHECK` reader - CHECK Register"]
 pub type CHECK_R = crate::FieldReader<u32>;
 #[doc = "Field `CHECK` writer - CHECK Register"]
-pub type CHECK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type CHECK_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - CHECK Register"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - CHECK Register"]
     #[inline(always)]
     #[must_use]
-    pub fn check(&mut self) -> CHECK_W<CHECK_SPEC, 0> {
-        CHECK_W::new(self)
+    pub fn check(&mut self) -> CHECK_W<CHECK_SPEC> {
+        CHECK_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

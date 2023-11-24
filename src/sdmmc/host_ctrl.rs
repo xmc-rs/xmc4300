@@ -39,8 +39,8 @@ impl LED_CTRL_R {
     }
 }
 #[doc = "Field `LED_CTRL` writer - LED Control"]
-pub type LED_CTRL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LED_CTRL_A>;
-impl<'a, REG, const O: u8> LED_CTRL_W<'a, REG, O>
+pub type LED_CTRL_W<'a, REG> = crate::BitWriter<'a, REG, LED_CTRL_A>;
+impl<'a, REG> LED_CTRL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl DATA_TX_WIDTH_R {
     }
 }
 #[doc = "Field `DATA_TX_WIDTH` writer - Data Transfer Width (SD1 or SD4)"]
-pub type DATA_TX_WIDTH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DATA_TX_WIDTH_A>;
-impl<'a, REG, const O: u8> DATA_TX_WIDTH_W<'a, REG, O>
+pub type DATA_TX_WIDTH_W<'a, REG> = crate::BitWriter<'a, REG, DATA_TX_WIDTH_A>;
+impl<'a, REG> DATA_TX_WIDTH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl HIGH_SPEED_EN_R {
     }
 }
 #[doc = "Field `HIGH_SPEED_EN` writer - High Speed Enable"]
-pub type HIGH_SPEED_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HIGH_SPEED_EN_A>;
-impl<'a, REG, const O: u8> HIGH_SPEED_EN_W<'a, REG, O>
+pub type HIGH_SPEED_EN_W<'a, REG> = crate::BitWriter<'a, REG, HIGH_SPEED_EN_A>;
+impl<'a, REG> HIGH_SPEED_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl SD_8BIT_MODE_R {
     }
 }
 #[doc = "Field `SD_8BIT_MODE` writer - Extended Data Transfer Width"]
-pub type SD_8BIT_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SD_8BIT_MODE_A>;
-impl<'a, REG, const O: u8> SD_8BIT_MODE_W<'a, REG, O>
+pub type SD_8BIT_MODE_W<'a, REG> = crate::BitWriter<'a, REG, SD_8BIT_MODE_A>;
+impl<'a, REG> SD_8BIT_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl CARD_DETECT_TEST_LEVEL_R {
     }
 }
 #[doc = "Field `CARD_DETECT_TEST_LEVEL` writer - Card Detect Test Level"]
-pub type CARD_DETECT_TEST_LEVEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CARD_DETECT_TEST_LEVEL_A>;
-impl<'a, REG, const O: u8> CARD_DETECT_TEST_LEVEL_W<'a, REG, O>
+pub type CARD_DETECT_TEST_LEVEL_W<'a, REG> = crate::BitWriter<'a, REG, CARD_DETECT_TEST_LEVEL_A>;
+impl<'a, REG> CARD_DETECT_TEST_LEVEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl CARD_DET_SIGNAL_DETECT_R {
     }
 }
 #[doc = "Field `CARD_DET_SIGNAL_DETECT` writer - Card detect signal detetction"]
-pub type CARD_DET_SIGNAL_DETECT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CARD_DET_SIGNAL_DETECT_A>;
-impl<'a, REG, const O: u8> CARD_DET_SIGNAL_DETECT_W<'a, REG, O>
+pub type CARD_DET_SIGNAL_DETECT_W<'a, REG> = crate::BitWriter<'a, REG, CARD_DET_SIGNAL_DETECT_A>;
+impl<'a, REG> CARD_DET_SIGNAL_DETECT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -356,38 +356,38 @@ impl W {
     #[doc = "Bit 0 - LED Control"]
     #[inline(always)]
     #[must_use]
-    pub fn led_ctrl(&mut self) -> LED_CTRL_W<HOST_CTRL_SPEC, 0> {
-        LED_CTRL_W::new(self)
+    pub fn led_ctrl(&mut self) -> LED_CTRL_W<HOST_CTRL_SPEC> {
+        LED_CTRL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Data Transfer Width (SD1 or SD4)"]
     #[inline(always)]
     #[must_use]
-    pub fn data_tx_width(&mut self) -> DATA_TX_WIDTH_W<HOST_CTRL_SPEC, 1> {
-        DATA_TX_WIDTH_W::new(self)
+    pub fn data_tx_width(&mut self) -> DATA_TX_WIDTH_W<HOST_CTRL_SPEC> {
+        DATA_TX_WIDTH_W::new(self, 1)
     }
     #[doc = "Bit 2 - High Speed Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn high_speed_en(&mut self) -> HIGH_SPEED_EN_W<HOST_CTRL_SPEC, 2> {
-        HIGH_SPEED_EN_W::new(self)
+    pub fn high_speed_en(&mut self) -> HIGH_SPEED_EN_W<HOST_CTRL_SPEC> {
+        HIGH_SPEED_EN_W::new(self, 2)
     }
     #[doc = "Bit 5 - Extended Data Transfer Width"]
     #[inline(always)]
     #[must_use]
-    pub fn sd_8bit_mode(&mut self) -> SD_8BIT_MODE_W<HOST_CTRL_SPEC, 5> {
-        SD_8BIT_MODE_W::new(self)
+    pub fn sd_8bit_mode(&mut self) -> SD_8BIT_MODE_W<HOST_CTRL_SPEC> {
+        SD_8BIT_MODE_W::new(self, 5)
     }
     #[doc = "Bit 6 - Card Detect Test Level"]
     #[inline(always)]
     #[must_use]
-    pub fn card_detect_test_level(&mut self) -> CARD_DETECT_TEST_LEVEL_W<HOST_CTRL_SPEC, 6> {
-        CARD_DETECT_TEST_LEVEL_W::new(self)
+    pub fn card_detect_test_level(&mut self) -> CARD_DETECT_TEST_LEVEL_W<HOST_CTRL_SPEC> {
+        CARD_DETECT_TEST_LEVEL_W::new(self, 6)
     }
     #[doc = "Bit 7 - Card detect signal detetction"]
     #[inline(always)]
     #[must_use]
-    pub fn card_det_signal_detect(&mut self) -> CARD_DET_SIGNAL_DETECT_W<HOST_CTRL_SPEC, 7> {
-        CARD_DET_SIGNAL_DETECT_W::new(self)
+    pub fn card_det_signal_detect(&mut self) -> CARD_DET_SIGNAL_DETECT_W<HOST_CTRL_SPEC> {
+        CARD_DET_SIGNAL_DETECT_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

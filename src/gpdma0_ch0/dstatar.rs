@@ -5,7 +5,7 @@ pub type W = crate::W<DSTATAR_SPEC>;
 #[doc = "Field `DSTATAR` reader - Destination Status Address"]
 pub type DSTATAR_R = crate::FieldReader<u32>;
 #[doc = "Field `DSTATAR` writer - Destination Status Address"]
-pub type DSTATAR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type DSTATAR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Destination Status Address"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Destination Status Address"]
     #[inline(always)]
     #[must_use]
-    pub fn dstatar(&mut self) -> DSTATAR_W<DSTATAR_SPEC, 0> {
-        DSTATAR_W::new(self)
+    pub fn dstatar(&mut self) -> DSTATAR_W<DSTATAR_SPEC> {
+        DSTATAR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

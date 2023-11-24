@@ -5,11 +5,11 @@ pub type W = crate::W<CTLH_SPEC>;
 #[doc = "Field `BLOCK_TS` reader - Block Transfer Size"]
 pub type BLOCK_TS_R = crate::FieldReader<u16>;
 #[doc = "Field `BLOCK_TS` writer - Block Transfer Size"]
-pub type BLOCK_TS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type BLOCK_TS_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "Field `DONE` reader - Done bit"]
 pub type DONE_R = crate::BitReader;
 #[doc = "Field `DONE` writer - Done bit"]
-pub type DONE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DONE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:11 - Block Transfer Size"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:11 - Block Transfer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn block_ts(&mut self) -> BLOCK_TS_W<CTLH_SPEC, 0> {
-        BLOCK_TS_W::new(self)
+    pub fn block_ts(&mut self) -> BLOCK_TS_W<CTLH_SPEC> {
+        BLOCK_TS_W::new(self, 0)
     }
     #[doc = "Bit 12 - Done bit"]
     #[inline(always)]
     #[must_use]
-    pub fn done(&mut self) -> DONE_W<CTLH_SPEC, 12> {
-        DONE_W::new(self)
+    pub fn done(&mut self) -> DONE_W<CTLH_SPEC> {
+        DONE_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

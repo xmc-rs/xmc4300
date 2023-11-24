@@ -1,21 +1,51 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Parity Error Enable Register"]
-    pub peen: PEEN,
-    #[doc = "0x04 - Memory Checking Control Register"]
-    pub mchkcon: MCHKCON,
-    #[doc = "0x08 - Parity Error Trap Enable Register"]
-    pub pete: PETE,
-    #[doc = "0x0c - Parity Error Reset Enable Register"]
-    pub persten: PERSTEN,
+    peen: PEEN,
+    mchkcon: MCHKCON,
+    pete: PETE,
+    persten: PERSTEN,
     _reserved4: [u8; 0x04],
+    peflag: PEFLAG,
+    pmtpr: PMTPR,
+    pmtsr: PMTSR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Parity Error Enable Register"]
+    #[inline(always)]
+    pub const fn peen(&self) -> &PEEN {
+        &self.peen
+    }
+    #[doc = "0x04 - Memory Checking Control Register"]
+    #[inline(always)]
+    pub const fn mchkcon(&self) -> &MCHKCON {
+        &self.mchkcon
+    }
+    #[doc = "0x08 - Parity Error Trap Enable Register"]
+    #[inline(always)]
+    pub const fn pete(&self) -> &PETE {
+        &self.pete
+    }
+    #[doc = "0x0c - Parity Error Reset Enable Register"]
+    #[inline(always)]
+    pub const fn persten(&self) -> &PERSTEN {
+        &self.persten
+    }
     #[doc = "0x14 - Parity Error Flag Register"]
-    pub peflag: PEFLAG,
+    #[inline(always)]
+    pub const fn peflag(&self) -> &PEFLAG {
+        &self.peflag
+    }
     #[doc = "0x18 - Parity Memory Test Pattern Register"]
-    pub pmtpr: PMTPR,
+    #[inline(always)]
+    pub const fn pmtpr(&self) -> &PMTPR {
+        &self.pmtpr
+    }
     #[doc = "0x1c - Parity Memory Test Select Register"]
-    pub pmtsr: PMTSR,
+    #[inline(always)]
+    pub const fn pmtsr(&self) -> &PMTSR {
+        &self.pmtsr
+    }
 }
 #[doc = "PEEN (rw) register accessor: Parity Error Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`peen::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`peen::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@peen`]
 module"]

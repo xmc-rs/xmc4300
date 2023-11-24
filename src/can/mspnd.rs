@@ -5,7 +5,7 @@ pub type W = crate::W<MSPND_SPEC>;
 #[doc = "Field `PND` reader - Message Pending"]
 pub type PND_R = crate::FieldReader<u32>;
 #[doc = "Field `PND` writer - Message Pending"]
-pub type PND_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type PND_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Message Pending"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Message Pending"]
     #[inline(always)]
     #[must_use]
-    pub fn pnd(&mut self) -> PND_W<MSPND_SPEC, 0> {
-        PND_W::new(self)
+    pub fn pnd(&mut self) -> PND_W<MSPND_SPEC> {
+        PND_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

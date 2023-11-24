@@ -39,8 +39,8 @@ impl SEV0_R {
     }
 }
 #[doc = "Field `SEV0` writer - Source Event 0/1"]
-pub type SEV0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SEV0_A>;
-impl<'a, REG, const O: u8> SEV0_W<'a, REG, O>
+pub type SEV0_W<'a, REG> = crate::BitWriter<'a, REG, SEV0_A>;
+impl<'a, REG> SEV0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl SEV1_R {
     }
 }
 #[doc = "Field `SEV1` writer - Source Event 0/1"]
-pub type SEV1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SEV1_A>;
-impl<'a, REG, const O: u8> SEV1_W<'a, REG, O>
+pub type SEV1_W<'a, REG> = crate::BitWriter<'a, REG, SEV1_A>;
+impl<'a, REG> SEV1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -124,14 +124,14 @@ impl W {
     #[doc = "Bit 0 - Source Event 0/1"]
     #[inline(always)]
     #[must_use]
-    pub fn sev0(&mut self) -> SEV0_W<SEFLAG_SPEC, 0> {
-        SEV0_W::new(self)
+    pub fn sev0(&mut self) -> SEV0_W<SEFLAG_SPEC> {
+        SEV0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Source Event 0/1"]
     #[inline(always)]
     #[must_use]
-    pub fn sev1(&mut self) -> SEV1_W<SEFLAG_SPEC, 1> {
-        SEV1_W::new(self)
+    pub fn sev1(&mut self) -> SEV1_W<SEFLAG_SPEC> {
+        SEV1_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

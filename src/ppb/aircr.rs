@@ -3,9 +3,9 @@ pub type R = crate::R<AIRCR_SPEC>;
 #[doc = "Register `AIRCR` writer"]
 pub type W = crate::W<AIRCR_SPEC>;
 #[doc = "Field `VECTRESET` writer - Reserved for Debug use."]
-pub type VECTRESET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type VECTRESET_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `VECTCLRACTIVE` writer - Reserved for Debug use."]
-pub type VECTCLRACTIVE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type VECTCLRACTIVE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "System reset request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYSRESETREQ_AW {
@@ -21,8 +21,8 @@ impl From<SYSRESETREQ_AW> for bool {
     }
 }
 #[doc = "Field `SYSRESETREQ` writer - System reset request"]
-pub type SYSRESETREQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SYSRESETREQ_AW>;
-impl<'a, REG, const O: u8> SYSRESETREQ_W<'a, REG, O>
+pub type SYSRESETREQ_W<'a, REG> = crate::BitWriter<'a, REG, SYSRESETREQ_AW>;
+impl<'a, REG> SYSRESETREQ_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -40,7 +40,7 @@ where
 #[doc = "Field `PRIGROUP` reader - Interrupt priority grouping field"]
 pub type PRIGROUP_R = crate::FieldReader;
 #[doc = "Field `PRIGROUP` writer - Interrupt priority grouping field"]
-pub type PRIGROUP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PRIGROUP_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `ENDIANNESS` reader - Data endianness bit"]
 pub type ENDIANNESS_R = crate::BitReader<ENDIANNESS_A>;
 #[doc = "Data endianness bit\n\nValue on reset: 0"]
@@ -80,7 +80,7 @@ impl ENDIANNESS_R {
 #[doc = "Field `VECTKEY` reader - Register key"]
 pub type VECTKEY_R = crate::FieldReader<u16>;
 #[doc = "Field `VECTKEY` writer - Register key"]
-pub type VECTKEY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type VECTKEY_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 8:10 - Interrupt priority grouping field"]
     #[inline(always)]
@@ -102,32 +102,32 @@ impl W {
     #[doc = "Bit 0 - Reserved for Debug use."]
     #[inline(always)]
     #[must_use]
-    pub fn vectreset(&mut self) -> VECTRESET_W<AIRCR_SPEC, 0> {
-        VECTRESET_W::new(self)
+    pub fn vectreset(&mut self) -> VECTRESET_W<AIRCR_SPEC> {
+        VECTRESET_W::new(self, 0)
     }
     #[doc = "Bit 1 - Reserved for Debug use."]
     #[inline(always)]
     #[must_use]
-    pub fn vectclractive(&mut self) -> VECTCLRACTIVE_W<AIRCR_SPEC, 1> {
-        VECTCLRACTIVE_W::new(self)
+    pub fn vectclractive(&mut self) -> VECTCLRACTIVE_W<AIRCR_SPEC> {
+        VECTCLRACTIVE_W::new(self, 1)
     }
     #[doc = "Bit 2 - System reset request"]
     #[inline(always)]
     #[must_use]
-    pub fn sysresetreq(&mut self) -> SYSRESETREQ_W<AIRCR_SPEC, 2> {
-        SYSRESETREQ_W::new(self)
+    pub fn sysresetreq(&mut self) -> SYSRESETREQ_W<AIRCR_SPEC> {
+        SYSRESETREQ_W::new(self, 2)
     }
     #[doc = "Bits 8:10 - Interrupt priority grouping field"]
     #[inline(always)]
     #[must_use]
-    pub fn prigroup(&mut self) -> PRIGROUP_W<AIRCR_SPEC, 8> {
-        PRIGROUP_W::new(self)
+    pub fn prigroup(&mut self) -> PRIGROUP_W<AIRCR_SPEC> {
+        PRIGROUP_W::new(self, 8)
     }
     #[doc = "Bits 16:31 - Register key"]
     #[inline(always)]
     #[must_use]
-    pub fn vectkey(&mut self) -> VECTKEY_W<AIRCR_SPEC, 16> {
-        VECTKEY_W::new(self)
+    pub fn vectkey(&mut self) -> VECTKEY_W<AIRCR_SPEC> {
+        VECTKEY_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

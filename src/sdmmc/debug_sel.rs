@@ -15,8 +15,8 @@ impl From<DEBUG_SEL_AW> for bool {
     }
 }
 #[doc = "Field `DEBUG_SEL` writer - Debug_sel"]
-pub type DEBUG_SEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DEBUG_SEL_AW>;
-impl<'a, REG, const O: u8> DEBUG_SEL_W<'a, REG, O>
+pub type DEBUG_SEL_W<'a, REG> = crate::BitWriter<'a, REG, DEBUG_SEL_AW>;
+impl<'a, REG> DEBUG_SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -35,8 +35,8 @@ impl W {
     #[doc = "Bit 0 - Debug_sel"]
     #[inline(always)]
     #[must_use]
-    pub fn debug_sel(&mut self) -> DEBUG_SEL_W<DEBUG_SEL_SPEC, 0> {
-        DEBUG_SEL_W::new(self)
+    pub fn debug_sel(&mut self) -> DEBUG_SEL_W<DEBUG_SEL_SPEC> {
+        DEBUG_SEL_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

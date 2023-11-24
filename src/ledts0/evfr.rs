@@ -59,8 +59,8 @@ impl From<CTSF_AW> for bool {
     }
 }
 #[doc = "Field `CTSF` writer - Clear Time Slice Interrupt Flag"]
-pub type CTSF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CTSF_AW>;
-impl<'a, REG, const O: u8> CTSF_W<'a, REG, O>
+pub type CTSF_W<'a, REG> = crate::BitWriter<'a, REG, CTSF_AW>;
+impl<'a, REG> CTSF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -90,8 +90,8 @@ impl From<CTFF_AW> for bool {
     }
 }
 #[doc = "Field `CTFF` writer - Clear (Extended) Time Frame Interrupt Flag"]
-pub type CTFF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CTFF_AW>;
-impl<'a, REG, const O: u8> CTFF_W<'a, REG, O>
+pub type CTFF_W<'a, REG> = crate::BitWriter<'a, REG, CTFF_AW>;
+impl<'a, REG> CTFF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -121,8 +121,8 @@ impl From<CTPF_AW> for bool {
     }
 }
 #[doc = "Field `CTPF` writer - Clear Autoscan Time Period Interrupt Flag"]
-pub type CTPF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CTPF_AW>;
-impl<'a, REG, const O: u8> CTPF_W<'a, REG, O>
+pub type CTPF_W<'a, REG> = crate::BitWriter<'a, REG, CTPF_AW>;
+impl<'a, REG> CTPF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -163,20 +163,20 @@ impl W {
     #[doc = "Bit 16 - Clear Time Slice Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn ctsf(&mut self) -> CTSF_W<EVFR_SPEC, 16> {
-        CTSF_W::new(self)
+    pub fn ctsf(&mut self) -> CTSF_W<EVFR_SPEC> {
+        CTSF_W::new(self, 16)
     }
     #[doc = "Bit 17 - Clear (Extended) Time Frame Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn ctff(&mut self) -> CTFF_W<EVFR_SPEC, 17> {
-        CTFF_W::new(self)
+    pub fn ctff(&mut self) -> CTFF_W<EVFR_SPEC> {
+        CTFF_W::new(self, 17)
     }
     #[doc = "Bit 18 - Clear Autoscan Time Period Interrupt Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn ctpf(&mut self) -> CTPF_W<EVFR_SPEC, 18> {
-        CTPF_W::new(self)
+    pub fn ctpf(&mut self) -> CTPF_W<EVFR_SPEC> {
+        CTPF_W::new(self, 18)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -2,74 +2,204 @@
 #[repr(C)]
 pub struct RegisterBlock {
     _reserved0: [u8; 0x04],
-    #[doc = "0x04 - Block Size Register"]
-    pub block_size: BLOCK_SIZE,
-    #[doc = "0x06 - Block Count Register"]
-    pub block_count: BLOCK_COUNT,
-    #[doc = "0x08 - Argument1 Register"]
-    pub argument1: ARGUMENT1,
-    #[doc = "0x0c - Transfer Mode Register"]
-    pub transfer_mode: TRANSFER_MODE,
-    #[doc = "0x0e - Command Register"]
-    pub command: COMMAND,
-    #[doc = "0x10 - Response 0 Register"]
-    pub response0: RESPONSE0,
-    #[doc = "0x14 - Response 2 Register"]
-    pub response2: RESPONSE2,
-    #[doc = "0x18 - Response 4 Register"]
-    pub response4: RESPONSE4,
-    #[doc = "0x1c - Response 6 Register"]
-    pub response6: RESPONSE6,
-    #[doc = "0x20 - Data Buffer Register"]
-    pub data_buffer: DATA_BUFFER,
-    #[doc = "0x24 - Present State Register"]
-    pub present_state: PRESENT_STATE,
-    #[doc = "0x28 - Host Control Register"]
-    pub host_ctrl: HOST_CTRL,
-    #[doc = "0x29 - Power Control Register"]
-    pub power_ctrl: POWER_CTRL,
-    #[doc = "0x2a - Block Gap Control Register"]
-    pub block_gap_ctrl: BLOCK_GAP_CTRL,
-    #[doc = "0x2b - Wake-up Control Register"]
-    pub wakeup_ctrl: WAKEUP_CTRL,
-    #[doc = "0x2c - Clock Control Register"]
-    pub clock_ctrl: CLOCK_CTRL,
-    #[doc = "0x2e - Timeout Control Register"]
-    pub timeout_ctrl: TIMEOUT_CTRL,
-    #[doc = "0x2f - Software Reset Register"]
-    pub sw_reset: SW_RESET,
-    #[doc = "0x30 - Normal Interrupt Status Register"]
-    pub int_status_norm: INT_STATUS_NORM,
-    #[doc = "0x32 - Error Interrupt Status Register"]
-    pub int_status_err: INT_STATUS_ERR,
-    #[doc = "0x34 - Normal Interrupt Status Enable Register"]
-    pub en_int_status_norm: EN_INT_STATUS_NORM,
-    #[doc = "0x36 - Error Interrupt Status Enable Register"]
-    pub en_int_status_err: EN_INT_STATUS_ERR,
-    #[doc = "0x38 - Normal Interrupt Signal Enable Register"]
-    pub en_int_signal_norm: EN_INT_SIGNAL_NORM,
-    #[doc = "0x3a - Error Interrupt Signal Enable Register"]
-    pub en_int_signal_err: EN_INT_SIGNAL_ERR,
-    #[doc = "0x3c - Auto CMD Error Status Register"]
-    pub acmd_err_status: ACMD_ERR_STATUS,
+    block_size: BLOCK_SIZE,
+    block_count: BLOCK_COUNT,
+    argument1: ARGUMENT1,
+    transfer_mode: TRANSFER_MODE,
+    command: COMMAND,
+    response0: RESPONSE0,
+    response2: RESPONSE2,
+    response4: RESPONSE4,
+    response6: RESPONSE6,
+    data_buffer: DATA_BUFFER,
+    present_state: PRESENT_STATE,
+    host_ctrl: HOST_CTRL,
+    power_ctrl: POWER_CTRL,
+    block_gap_ctrl: BLOCK_GAP_CTRL,
+    wakeup_ctrl: WAKEUP_CTRL,
+    clock_ctrl: CLOCK_CTRL,
+    timeout_ctrl: TIMEOUT_CTRL,
+    sw_reset: SW_RESET,
+    int_status_norm: INT_STATUS_NORM,
+    int_status_err: INT_STATUS_ERR,
+    en_int_status_norm: EN_INT_STATUS_NORM,
+    en_int_status_err: EN_INT_STATUS_ERR,
+    en_int_signal_norm: EN_INT_SIGNAL_NORM,
+    en_int_signal_err: EN_INT_SIGNAL_ERR,
+    acmd_err_status: ACMD_ERR_STATUS,
     _reserved25: [u8; 0x02],
-    #[doc = "0x40 - Capabilities Register"]
-    pub capabilities: CAPABILITIES,
-    #[doc = "0x44 - Capabilities Register High"]
-    pub capabilities_hi: CAPABILITIES_HI,
-    #[doc = "0x48 - Maximum Current Capabilities Register"]
-    pub max_current_cap: MAX_CURRENT_CAP,
+    capabilities: CAPABILITIES,
+    capabilities_hi: CAPABILITIES_HI,
+    max_current_cap: MAX_CURRENT_CAP,
     _reserved28: [u8; 0x04],
-    #[doc = "0x50 - Force Event Register for Auto CMD Error Status"]
-    pub force_event_acmd_err_status: FORCE_EVENT_ACMD_ERR_STATUS,
-    #[doc = "0x52 - Force Event Register for Error Interrupt Status"]
-    pub force_event_err_status: FORCE_EVENT_ERR_STATUS,
+    force_event_acmd_err_status: FORCE_EVENT_ACMD_ERR_STATUS,
+    force_event_err_status: FORCE_EVENT_ERR_STATUS,
     _reserved30: [u8; 0x20],
-    #[doc = "0x74 - Debug Selection Register"]
-    pub debug_sel: DEBUG_SEL,
+    debug_sel: DEBUG_SEL,
     _reserved31: [u8; 0x84],
+    slot_int_status: SLOT_INT_STATUS,
+}
+impl RegisterBlock {
+    #[doc = "0x04 - Block Size Register"]
+    #[inline(always)]
+    pub const fn block_size(&self) -> &BLOCK_SIZE {
+        &self.block_size
+    }
+    #[doc = "0x06 - Block Count Register"]
+    #[inline(always)]
+    pub const fn block_count(&self) -> &BLOCK_COUNT {
+        &self.block_count
+    }
+    #[doc = "0x08 - Argument1 Register"]
+    #[inline(always)]
+    pub const fn argument1(&self) -> &ARGUMENT1 {
+        &self.argument1
+    }
+    #[doc = "0x0c - Transfer Mode Register"]
+    #[inline(always)]
+    pub const fn transfer_mode(&self) -> &TRANSFER_MODE {
+        &self.transfer_mode
+    }
+    #[doc = "0x0e - Command Register"]
+    #[inline(always)]
+    pub const fn command(&self) -> &COMMAND {
+        &self.command
+    }
+    #[doc = "0x10 - Response 0 Register"]
+    #[inline(always)]
+    pub const fn response0(&self) -> &RESPONSE0 {
+        &self.response0
+    }
+    #[doc = "0x14 - Response 2 Register"]
+    #[inline(always)]
+    pub const fn response2(&self) -> &RESPONSE2 {
+        &self.response2
+    }
+    #[doc = "0x18 - Response 4 Register"]
+    #[inline(always)]
+    pub const fn response4(&self) -> &RESPONSE4 {
+        &self.response4
+    }
+    #[doc = "0x1c - Response 6 Register"]
+    #[inline(always)]
+    pub const fn response6(&self) -> &RESPONSE6 {
+        &self.response6
+    }
+    #[doc = "0x20 - Data Buffer Register"]
+    #[inline(always)]
+    pub const fn data_buffer(&self) -> &DATA_BUFFER {
+        &self.data_buffer
+    }
+    #[doc = "0x24 - Present State Register"]
+    #[inline(always)]
+    pub const fn present_state(&self) -> &PRESENT_STATE {
+        &self.present_state
+    }
+    #[doc = "0x28 - Host Control Register"]
+    #[inline(always)]
+    pub const fn host_ctrl(&self) -> &HOST_CTRL {
+        &self.host_ctrl
+    }
+    #[doc = "0x29 - Power Control Register"]
+    #[inline(always)]
+    pub const fn power_ctrl(&self) -> &POWER_CTRL {
+        &self.power_ctrl
+    }
+    #[doc = "0x2a - Block Gap Control Register"]
+    #[inline(always)]
+    pub const fn block_gap_ctrl(&self) -> &BLOCK_GAP_CTRL {
+        &self.block_gap_ctrl
+    }
+    #[doc = "0x2b - Wake-up Control Register"]
+    #[inline(always)]
+    pub const fn wakeup_ctrl(&self) -> &WAKEUP_CTRL {
+        &self.wakeup_ctrl
+    }
+    #[doc = "0x2c - Clock Control Register"]
+    #[inline(always)]
+    pub const fn clock_ctrl(&self) -> &CLOCK_CTRL {
+        &self.clock_ctrl
+    }
+    #[doc = "0x2e - Timeout Control Register"]
+    #[inline(always)]
+    pub const fn timeout_ctrl(&self) -> &TIMEOUT_CTRL {
+        &self.timeout_ctrl
+    }
+    #[doc = "0x2f - Software Reset Register"]
+    #[inline(always)]
+    pub const fn sw_reset(&self) -> &SW_RESET {
+        &self.sw_reset
+    }
+    #[doc = "0x30 - Normal Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn int_status_norm(&self) -> &INT_STATUS_NORM {
+        &self.int_status_norm
+    }
+    #[doc = "0x32 - Error Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn int_status_err(&self) -> &INT_STATUS_ERR {
+        &self.int_status_err
+    }
+    #[doc = "0x34 - Normal Interrupt Status Enable Register"]
+    #[inline(always)]
+    pub const fn en_int_status_norm(&self) -> &EN_INT_STATUS_NORM {
+        &self.en_int_status_norm
+    }
+    #[doc = "0x36 - Error Interrupt Status Enable Register"]
+    #[inline(always)]
+    pub const fn en_int_status_err(&self) -> &EN_INT_STATUS_ERR {
+        &self.en_int_status_err
+    }
+    #[doc = "0x38 - Normal Interrupt Signal Enable Register"]
+    #[inline(always)]
+    pub const fn en_int_signal_norm(&self) -> &EN_INT_SIGNAL_NORM {
+        &self.en_int_signal_norm
+    }
+    #[doc = "0x3a - Error Interrupt Signal Enable Register"]
+    #[inline(always)]
+    pub const fn en_int_signal_err(&self) -> &EN_INT_SIGNAL_ERR {
+        &self.en_int_signal_err
+    }
+    #[doc = "0x3c - Auto CMD Error Status Register"]
+    #[inline(always)]
+    pub const fn acmd_err_status(&self) -> &ACMD_ERR_STATUS {
+        &self.acmd_err_status
+    }
+    #[doc = "0x40 - Capabilities Register"]
+    #[inline(always)]
+    pub const fn capabilities(&self) -> &CAPABILITIES {
+        &self.capabilities
+    }
+    #[doc = "0x44 - Capabilities Register High"]
+    #[inline(always)]
+    pub const fn capabilities_hi(&self) -> &CAPABILITIES_HI {
+        &self.capabilities_hi
+    }
+    #[doc = "0x48 - Maximum Current Capabilities Register"]
+    #[inline(always)]
+    pub const fn max_current_cap(&self) -> &MAX_CURRENT_CAP {
+        &self.max_current_cap
+    }
+    #[doc = "0x50 - Force Event Register for Auto CMD Error Status"]
+    #[inline(always)]
+    pub const fn force_event_acmd_err_status(&self) -> &FORCE_EVENT_ACMD_ERR_STATUS {
+        &self.force_event_acmd_err_status
+    }
+    #[doc = "0x52 - Force Event Register for Error Interrupt Status"]
+    #[inline(always)]
+    pub const fn force_event_err_status(&self) -> &FORCE_EVENT_ERR_STATUS {
+        &self.force_event_err_status
+    }
+    #[doc = "0x74 - Debug Selection Register"]
+    #[inline(always)]
+    pub const fn debug_sel(&self) -> &DEBUG_SEL {
+        &self.debug_sel
+    }
     #[doc = "0xfc - Slot Interrupt Status Register"]
-    pub slot_int_status: SLOT_INT_STATUS,
+    #[inline(always)]
+    pub const fn slot_int_status(&self) -> &SLOT_INT_STATUS {
+        &self.slot_int_status
+    }
 }
 #[doc = "BLOCK_SIZE (rw) register accessor: Block Size Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`block_size::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`block_size::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@block_size`]
 module"]

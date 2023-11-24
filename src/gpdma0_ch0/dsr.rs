@@ -5,11 +5,11 @@ pub type W = crate::W<DSR_SPEC>;
 #[doc = "Field `DSI` reader - Destination scatter interval"]
 pub type DSI_R = crate::FieldReader<u32>;
 #[doc = "Field `DSI` writer - Destination scatter interval"]
-pub type DSI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 20, O, u32>;
+pub type DSI_W<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 #[doc = "Field `DSC` reader - Destination scatter count"]
 pub type DSC_R = crate::FieldReader<u16>;
 #[doc = "Field `DSC` writer - Destination scatter count"]
-pub type DSC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type DSC_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     #[doc = "Bits 0:19 - Destination scatter interval"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:19 - Destination scatter interval"]
     #[inline(always)]
     #[must_use]
-    pub fn dsi(&mut self) -> DSI_W<DSR_SPEC, 0> {
-        DSI_W::new(self)
+    pub fn dsi(&mut self) -> DSI_W<DSR_SPEC> {
+        DSI_W::new(self, 0)
     }
     #[doc = "Bits 20:31 - Destination scatter count"]
     #[inline(always)]
     #[must_use]
-    pub fn dsc(&mut self) -> DSC_W<DSR_SPEC, 20> {
-        DSC_W::new(self)
+    pub fn dsc(&mut self) -> DSC_W<DSR_SPEC> {
+        DSC_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

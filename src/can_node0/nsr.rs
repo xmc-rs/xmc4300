@@ -5,7 +5,7 @@ pub type W = crate::W<NSR_SPEC>;
 #[doc = "Field `LEC` reader - Last Error Code"]
 pub type LEC_R = crate::FieldReader;
 #[doc = "Field `LEC` writer - Last Error Code"]
-pub type LEC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type LEC_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `TXOK` reader - Message Transmitted Successfully"]
 pub type TXOK_R = crate::BitReader<TXOK_A>;
 #[doc = "Message Transmitted Successfully\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl TXOK_R {
     }
 }
 #[doc = "Field `TXOK` writer - Message Transmitted Successfully"]
-pub type TXOK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TXOK_A>;
-impl<'a, REG, const O: u8> TXOK_W<'a, REG, O>
+pub type TXOK_W<'a, REG> = crate::BitWriter<'a, REG, TXOK_A>;
+impl<'a, REG> TXOK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -96,8 +96,8 @@ impl RXOK_R {
     }
 }
 #[doc = "Field `RXOK` writer - Message Received Successfully"]
-pub type RXOK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RXOK_A>;
-impl<'a, REG, const O: u8> RXOK_W<'a, REG, O>
+pub type RXOK_W<'a, REG> = crate::BitWriter<'a, REG, RXOK_A>;
+impl<'a, REG> RXOK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -115,7 +115,7 @@ where
 #[doc = "Field `ALERT` reader - Alert Warning"]
 pub type ALERT_R = crate::BitReader;
 #[doc = "Field `ALERT` writer - Alert Warning"]
-pub type ALERT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ALERT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EWRN` reader - Error Warning Status"]
 pub type EWRN_R = crate::BitReader<EWRN_A>;
 #[doc = "Error Warning Status\n\nValue on reset: 0"]
@@ -225,8 +225,8 @@ impl LLE_R {
     }
 }
 #[doc = "Field `LLE` writer - List Length Error"]
-pub type LLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LLE_A>;
-impl<'a, REG, const O: u8> LLE_W<'a, REG, O>
+pub type LLE_W<'a, REG> = crate::BitWriter<'a, REG, LLE_A>;
+impl<'a, REG> LLE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -278,8 +278,8 @@ impl LOE_R {
     }
 }
 #[doc = "Field `LOE` writer - List Object Error"]
-pub type LOE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LOE_A>;
-impl<'a, REG, const O: u8> LOE_W<'a, REG, O>
+pub type LOE_W<'a, REG> = crate::BitWriter<'a, REG, LOE_A>;
+impl<'a, REG> LOE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -340,38 +340,38 @@ impl W {
     #[doc = "Bits 0:2 - Last Error Code"]
     #[inline(always)]
     #[must_use]
-    pub fn lec(&mut self) -> LEC_W<NSR_SPEC, 0> {
-        LEC_W::new(self)
+    pub fn lec(&mut self) -> LEC_W<NSR_SPEC> {
+        LEC_W::new(self, 0)
     }
     #[doc = "Bit 3 - Message Transmitted Successfully"]
     #[inline(always)]
     #[must_use]
-    pub fn txok(&mut self) -> TXOK_W<NSR_SPEC, 3> {
-        TXOK_W::new(self)
+    pub fn txok(&mut self) -> TXOK_W<NSR_SPEC> {
+        TXOK_W::new(self, 3)
     }
     #[doc = "Bit 4 - Message Received Successfully"]
     #[inline(always)]
     #[must_use]
-    pub fn rxok(&mut self) -> RXOK_W<NSR_SPEC, 4> {
-        RXOK_W::new(self)
+    pub fn rxok(&mut self) -> RXOK_W<NSR_SPEC> {
+        RXOK_W::new(self, 4)
     }
     #[doc = "Bit 5 - Alert Warning"]
     #[inline(always)]
     #[must_use]
-    pub fn alert(&mut self) -> ALERT_W<NSR_SPEC, 5> {
-        ALERT_W::new(self)
+    pub fn alert(&mut self) -> ALERT_W<NSR_SPEC> {
+        ALERT_W::new(self, 5)
     }
     #[doc = "Bit 8 - List Length Error"]
     #[inline(always)]
     #[must_use]
-    pub fn lle(&mut self) -> LLE_W<NSR_SPEC, 8> {
-        LLE_W::new(self)
+    pub fn lle(&mut self) -> LLE_W<NSR_SPEC> {
+        LLE_W::new(self, 8)
     }
     #[doc = "Bit 9 - List Object Error"]
     #[inline(always)]
     #[must_use]
-    pub fn loe(&mut self) -> LOE_W<NSR_SPEC, 9> {
-        LOE_W::new(self)
+    pub fn loe(&mut self) -> LOE_W<NSR_SPEC> {
+        LOE_W::new(self, 9)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<BLOCK_COUNT_SPEC>;
 #[doc = "Field `BLOCK_COUNT` reader - Blocks Count for Current Transfer"]
 pub type BLOCK_COUNT_R = crate::FieldReader<u16>;
 #[doc = "Field `BLOCK_COUNT` writer - Blocks Count for Current Transfer"]
-pub type BLOCK_COUNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type BLOCK_COUNT_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Blocks Count for Current Transfer"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Blocks Count for Current Transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn block_count(&mut self) -> BLOCK_COUNT_W<BLOCK_COUNT_SPEC, 0> {
-        BLOCK_COUNT_W::new(self)
+    pub fn block_count(&mut self) -> BLOCK_COUNT_W<BLOCK_COUNT_SPEC> {
+        BLOCK_COUNT_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

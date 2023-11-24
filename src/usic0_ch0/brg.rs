@@ -52,8 +52,8 @@ impl CLKSEL_R {
     }
 }
 #[doc = "Field `CLKSEL` writer - Clock Selection"]
-pub type CLKSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, CLKSEL_A>;
-impl<'a, REG, const O: u8> CLKSEL_W<'a, REG, O>
+pub type CLKSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CLKSEL_A>;
+impl<'a, REG> CLKSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -111,8 +111,8 @@ impl TMEN_R {
     }
 }
 #[doc = "Field `TMEN` writer - Timing Measurement Enable"]
-pub type TMEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TMEN_A>;
-impl<'a, REG, const O: u8> TMEN_W<'a, REG, O>
+pub type TMEN_W<'a, REG> = crate::BitWriter<'a, REG, TMEN_A>;
+impl<'a, REG> TMEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -164,8 +164,8 @@ impl PPPEN_R {
     }
 }
 #[doc = "Field `PPPEN` writer - Enable 2:1 Divider for fPPP"]
-pub type PPPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPPEN_A>;
-impl<'a, REG, const O: u8> PPPEN_W<'a, REG, O>
+pub type PPPEN_W<'a, REG> = crate::BitWriter<'a, REG, PPPEN_A>;
+impl<'a, REG> PPPEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -238,8 +238,8 @@ impl CTQSEL_R {
     }
 }
 #[doc = "Field `CTQSEL` writer - Input Selection for CTQ"]
-pub type CTQSEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CTQSEL_A>;
-impl<'a, REG, const O: u8> CTQSEL_W<'a, REG, O>
+pub type CTQSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CTQSEL_A>;
+impl<'a, REG> CTQSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -268,15 +268,15 @@ where
 #[doc = "Field `PCTQ` reader - Pre-Divider for Time Quanta Counter"]
 pub type PCTQ_R = crate::FieldReader;
 #[doc = "Field `PCTQ` writer - Pre-Divider for Time Quanta Counter"]
-pub type PCTQ_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type PCTQ_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `DCTQ` reader - Denominator for Time Quanta Counter"]
 pub type DCTQ_R = crate::FieldReader;
 #[doc = "Field `DCTQ` writer - Denominator for Time Quanta Counter"]
-pub type DCTQ_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type DCTQ_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PDIV` reader - Divider Mode: Divider Factor to Generate fPDIV"]
 pub type PDIV_R = crate::FieldReader<u16>;
 #[doc = "Field `PDIV` writer - Divider Mode: Divider Factor to Generate fPDIV"]
-pub type PDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 10, O, u16>;
+pub type PDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "Field `SCLKOSEL` reader - Shift Clock Output Select"]
 pub type SCLKOSEL_R = crate::BitReader<SCLKOSEL_A>;
 #[doc = "Shift Clock Output Select\n\nValue on reset: 0"]
@@ -314,8 +314,8 @@ impl SCLKOSEL_R {
     }
 }
 #[doc = "Field `SCLKOSEL` writer - Shift Clock Output Select"]
-pub type SCLKOSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SCLKOSEL_A>;
-impl<'a, REG, const O: u8> SCLKOSEL_W<'a, REG, O>
+pub type SCLKOSEL_W<'a, REG> = crate::BitWriter<'a, REG, SCLKOSEL_A>;
+impl<'a, REG> SCLKOSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -367,8 +367,8 @@ impl MCLKCFG_R {
     }
 }
 #[doc = "Field `MCLKCFG` writer - Master Clock Configuration"]
-pub type MCLKCFG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MCLKCFG_A>;
-impl<'a, REG, const O: u8> MCLKCFG_W<'a, REG, O>
+pub type MCLKCFG_W<'a, REG> = crate::BitWriter<'a, REG, MCLKCFG_A>;
+impl<'a, REG> MCLKCFG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -441,8 +441,8 @@ impl SCLKCFG_R {
     }
 }
 #[doc = "Field `SCLKCFG` writer - Shift Clock Output Configuration"]
-pub type SCLKCFG_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, SCLKCFG_A>;
-impl<'a, REG, const O: u8> SCLKCFG_W<'a, REG, O>
+pub type SCLKCFG_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SCLKCFG_A>;
+impl<'a, REG> SCLKCFG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -524,62 +524,62 @@ impl W {
     #[doc = "Bits 0:1 - Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn clksel(&mut self) -> CLKSEL_W<BRG_SPEC, 0> {
-        CLKSEL_W::new(self)
+    pub fn clksel(&mut self) -> CLKSEL_W<BRG_SPEC> {
+        CLKSEL_W::new(self, 0)
     }
     #[doc = "Bit 3 - Timing Measurement Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tmen(&mut self) -> TMEN_W<BRG_SPEC, 3> {
-        TMEN_W::new(self)
+    pub fn tmen(&mut self) -> TMEN_W<BRG_SPEC> {
+        TMEN_W::new(self, 3)
     }
     #[doc = "Bit 4 - Enable 2:1 Divider for fPPP"]
     #[inline(always)]
     #[must_use]
-    pub fn pppen(&mut self) -> PPPEN_W<BRG_SPEC, 4> {
-        PPPEN_W::new(self)
+    pub fn pppen(&mut self) -> PPPEN_W<BRG_SPEC> {
+        PPPEN_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Input Selection for CTQ"]
     #[inline(always)]
     #[must_use]
-    pub fn ctqsel(&mut self) -> CTQSEL_W<BRG_SPEC, 6> {
-        CTQSEL_W::new(self)
+    pub fn ctqsel(&mut self) -> CTQSEL_W<BRG_SPEC> {
+        CTQSEL_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Pre-Divider for Time Quanta Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn pctq(&mut self) -> PCTQ_W<BRG_SPEC, 8> {
-        PCTQ_W::new(self)
+    pub fn pctq(&mut self) -> PCTQ_W<BRG_SPEC> {
+        PCTQ_W::new(self, 8)
     }
     #[doc = "Bits 10:14 - Denominator for Time Quanta Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn dctq(&mut self) -> DCTQ_W<BRG_SPEC, 10> {
-        DCTQ_W::new(self)
+    pub fn dctq(&mut self) -> DCTQ_W<BRG_SPEC> {
+        DCTQ_W::new(self, 10)
     }
     #[doc = "Bits 16:25 - Divider Mode: Divider Factor to Generate fPDIV"]
     #[inline(always)]
     #[must_use]
-    pub fn pdiv(&mut self) -> PDIV_W<BRG_SPEC, 16> {
-        PDIV_W::new(self)
+    pub fn pdiv(&mut self) -> PDIV_W<BRG_SPEC> {
+        PDIV_W::new(self, 16)
     }
     #[doc = "Bit 28 - Shift Clock Output Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sclkosel(&mut self) -> SCLKOSEL_W<BRG_SPEC, 28> {
-        SCLKOSEL_W::new(self)
+    pub fn sclkosel(&mut self) -> SCLKOSEL_W<BRG_SPEC> {
+        SCLKOSEL_W::new(self, 28)
     }
     #[doc = "Bit 29 - Master Clock Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn mclkcfg(&mut self) -> MCLKCFG_W<BRG_SPEC, 29> {
-        MCLKCFG_W::new(self)
+    pub fn mclkcfg(&mut self) -> MCLKCFG_W<BRG_SPEC> {
+        MCLKCFG_W::new(self, 29)
     }
     #[doc = "Bits 30:31 - Shift Clock Output Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn sclkcfg(&mut self) -> SCLKCFG_W<BRG_SPEC, 30> {
-        SCLKCFG_W::new(self)
+    pub fn sclkcfg(&mut self) -> SCLKCFG_W<BRG_SPEC> {
+        SCLKCFG_W::new(self, 30)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

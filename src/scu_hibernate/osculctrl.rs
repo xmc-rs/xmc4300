@@ -39,8 +39,8 @@ impl X1DEN_R {
     }
 }
 #[doc = "Field `X1DEN` writer - XTAL1 Data General Purpose Input Enable"]
-pub type X1DEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, X1DEN_A>;
-impl<'a, REG, const O: u8> X1DEN_W<'a, REG, O>
+pub type X1DEN_W<'a, REG> = crate::BitWriter<'a, REG, X1DEN_A>;
+impl<'a, REG> X1DEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -113,8 +113,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Oscillator Mode"]
-pub type MODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, MODE_A>;
-impl<'a, REG, const O: u8> MODE_W<'a, REG, O>
+pub type MODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, MODE_A>;
+impl<'a, REG> MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -156,14 +156,14 @@ impl W {
     #[doc = "Bit 0 - XTAL1 Data General Purpose Input Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn x1den(&mut self) -> X1DEN_W<OSCULCTRL_SPEC, 0> {
-        X1DEN_W::new(self)
+    pub fn x1den(&mut self) -> X1DEN_W<OSCULCTRL_SPEC> {
+        X1DEN_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<OSCULCTRL_SPEC, 4> {
-        MODE_W::new(self)
+    pub fn mode(&mut self) -> MODE_W<OSCULCTRL_SPEC> {
+        MODE_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<GLOBRESD_SPEC>;
 #[doc = "Field `RESULT` reader - Result of most recent conversion"]
 pub type RESULT_R = crate::FieldReader<u16>;
 #[doc = "Field `RESULT` writer - Result of most recent conversion"]
-pub type RESULT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type RESULT_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `GNR` reader - Group Number"]
 pub type GNR_R = crate::FieldReader;
 #[doc = "Field `CHNR` reader - Channel Number"]
@@ -87,8 +87,8 @@ impl VF_R {
     }
 }
 #[doc = "Field `VF` writer - Valid Flag"]
-pub type VF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF_A>;
-impl<'a, REG, const O: u8> VF_W<'a, REG, O>
+pub type VF_W<'a, REG> = crate::BitWriter<'a, REG, VF_A>;
+impl<'a, REG> VF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -144,14 +144,14 @@ impl W {
     #[doc = "Bits 0:15 - Result of most recent conversion"]
     #[inline(always)]
     #[must_use]
-    pub fn result(&mut self) -> RESULT_W<GLOBRESD_SPEC, 0> {
-        RESULT_W::new(self)
+    pub fn result(&mut self) -> RESULT_W<GLOBRESD_SPEC> {
+        RESULT_W::new(self, 0)
     }
     #[doc = "Bit 31 - Valid Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn vf(&mut self) -> VF_W<GLOBRESD_SPEC, 31> {
-        VF_W::new(self)
+    pub fn vf(&mut self) -> VF_W<GLOBRESD_SPEC> {
+        VF_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

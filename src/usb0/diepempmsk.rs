@@ -5,7 +5,7 @@ pub type W = crate::W<DIEPEMPMSK_SPEC>;
 #[doc = "Field `InEpTxfEmpMsk` reader - IN EP Tx FIFO Empty Interrupt Mask Bits"]
 pub type IN_EP_TXF_EMP_MSK_R = crate::FieldReader<u16>;
 #[doc = "Field `InEpTxfEmpMsk` writer - IN EP Tx FIFO Empty Interrupt Mask Bits"]
-pub type IN_EP_TXF_EMP_MSK_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type IN_EP_TXF_EMP_MSK_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - IN EP Tx FIFO Empty Interrupt Mask Bits"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - IN EP Tx FIFO Empty Interrupt Mask Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn in_ep_txf_emp_msk(&mut self) -> IN_EP_TXF_EMP_MSK_W<DIEPEMPMSK_SPEC, 0> {
-        IN_EP_TXF_EMP_MSK_W::new(self)
+    pub fn in_ep_txf_emp_msk(&mut self) -> IN_EP_TXF_EMP_MSK_W<DIEPEMPMSK_SPEC> {
+        IN_EP_TXF_EMP_MSK_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

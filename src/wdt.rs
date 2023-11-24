@@ -1,22 +1,56 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    id: ID,
+    ctr: CTR,
+    srv: SRV,
+    tim: TIM,
+    wlb: WLB,
+    wub: WUB,
+    wdtsts: WDTSTS,
+    wdtclr: WDTCLR,
+}
+impl RegisterBlock {
     #[doc = "0x00 - WDT ID Register"]
-    pub id: ID,
+    #[inline(always)]
+    pub const fn id(&self) -> &ID {
+        &self.id
+    }
     #[doc = "0x04 - WDT Control Register"]
-    pub ctr: CTR,
+    #[inline(always)]
+    pub const fn ctr(&self) -> &CTR {
+        &self.ctr
+    }
     #[doc = "0x08 - WDT Service Register"]
-    pub srv: SRV,
+    #[inline(always)]
+    pub const fn srv(&self) -> &SRV {
+        &self.srv
+    }
     #[doc = "0x0c - WDT Timer Register"]
-    pub tim: TIM,
+    #[inline(always)]
+    pub const fn tim(&self) -> &TIM {
+        &self.tim
+    }
     #[doc = "0x10 - WDT Window Lower Bound Register"]
-    pub wlb: WLB,
+    #[inline(always)]
+    pub const fn wlb(&self) -> &WLB {
+        &self.wlb
+    }
     #[doc = "0x14 - WDT Window Upper Bound Register"]
-    pub wub: WUB,
+    #[inline(always)]
+    pub const fn wub(&self) -> &WUB {
+        &self.wub
+    }
     #[doc = "0x18 - WDT Status Register"]
-    pub wdtsts: WDTSTS,
+    #[inline(always)]
+    pub const fn wdtsts(&self) -> &WDTSTS {
+        &self.wdtsts
+    }
     #[doc = "0x1c - WDT Clear Register"]
-    pub wdtclr: WDTCLR,
+    #[inline(always)]
+    pub const fn wdtclr(&self) -> &WDTCLR {
+        &self.wdtclr
+    }
 }
 #[doc = "ID (r) register accessor: WDT ID Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@id`]
 module"]

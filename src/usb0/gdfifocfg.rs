@@ -5,11 +5,11 @@ pub type W = crate::W<GDFIFOCFG_SPEC>;
 #[doc = "Field `GDFIFOCfg` reader - GDFIFOCfg"]
 pub type GDFIFOCFG_R = crate::FieldReader<u16>;
 #[doc = "Field `GDFIFOCfg` writer - GDFIFOCfg"]
-pub type GDFIFOCFG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type GDFIFOCFG_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `EPInfoBaseAddr` reader - EPInfoBaseAddr"]
 pub type EPINFO_BASE_ADDR_R = crate::FieldReader<u16>;
 #[doc = "Field `EPInfoBaseAddr` writer - EPInfoBaseAddr"]
-pub type EPINFO_BASE_ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type EPINFO_BASE_ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - GDFIFOCfg"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:15 - GDFIFOCfg"]
     #[inline(always)]
     #[must_use]
-    pub fn gdfifocfg(&mut self) -> GDFIFOCFG_W<GDFIFOCFG_SPEC, 0> {
-        GDFIFOCFG_W::new(self)
+    pub fn gdfifocfg(&mut self) -> GDFIFOCFG_W<GDFIFOCFG_SPEC> {
+        GDFIFOCFG_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - EPInfoBaseAddr"]
     #[inline(always)]
     #[must_use]
-    pub fn epinfo_base_addr(&mut self) -> EPINFO_BASE_ADDR_W<GDFIFOCFG_SPEC, 16> {
-        EPINFO_BASE_ADDR_W::new(self)
+    pub fn epinfo_base_addr(&mut self) -> EPINFO_BASE_ADDR_W<GDFIFOCFG_SPEC> {
+        EPINFO_BASE_ADDR_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

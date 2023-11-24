@@ -5,19 +5,19 @@ pub type W = crate::W<NVIC_IPR27_SPEC>;
 #[doc = "Field `PRI_0` reader - Priority value 0"]
 pub type PRI_0_R = crate::FieldReader;
 #[doc = "Field `PRI_0` writer - Priority value 0"]
-pub type PRI_0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PRI_0_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PRI_1` reader - Priority value 1"]
 pub type PRI_1_R = crate::FieldReader;
 #[doc = "Field `PRI_1` writer - Priority value 1"]
-pub type PRI_1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PRI_1_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PRI_2` reader - Priority value 2"]
 pub type PRI_2_R = crate::FieldReader;
 #[doc = "Field `PRI_2` writer - Priority value 2"]
-pub type PRI_2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PRI_2_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PRI_3` reader - Priority value 3"]
 pub type PRI_3_R = crate::FieldReader;
 #[doc = "Field `PRI_3` writer - Priority value 3"]
-pub type PRI_3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PRI_3_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Priority value 0"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:7 - Priority value 0"]
     #[inline(always)]
     #[must_use]
-    pub fn pri_0(&mut self) -> PRI_0_W<NVIC_IPR27_SPEC, 0> {
-        PRI_0_W::new(self)
+    pub fn pri_0(&mut self) -> PRI_0_W<NVIC_IPR27_SPEC> {
+        PRI_0_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Priority value 1"]
     #[inline(always)]
     #[must_use]
-    pub fn pri_1(&mut self) -> PRI_1_W<NVIC_IPR27_SPEC, 8> {
-        PRI_1_W::new(self)
+    pub fn pri_1(&mut self) -> PRI_1_W<NVIC_IPR27_SPEC> {
+        PRI_1_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Priority value 2"]
     #[inline(always)]
     #[must_use]
-    pub fn pri_2(&mut self) -> PRI_2_W<NVIC_IPR27_SPEC, 16> {
-        PRI_2_W::new(self)
+    pub fn pri_2(&mut self) -> PRI_2_W<NVIC_IPR27_SPEC> {
+        PRI_2_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Priority value 3"]
     #[inline(always)]
     #[must_use]
-    pub fn pri_3(&mut self) -> PRI_3_W<NVIC_IPR27_SPEC, 24> {
-        PRI_3_W::new(self)
+    pub fn pri_3(&mut self) -> PRI_3_W<NVIC_IPR27_SPEC> {
+        PRI_3_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

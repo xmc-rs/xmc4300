@@ -3,11 +3,11 @@ pub type R = crate::R<RBCTR_SPEC>;
 #[doc = "Register `RBCTR` writer"]
 pub type W = crate::W<RBCTR_SPEC>;
 #[doc = "Field `DPTR` writer - Data Pointer"]
-pub type DPTR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type DPTR_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `LIMIT` reader - Limit For Interrupt Generation"]
 pub type LIMIT_R = crate::FieldReader;
 #[doc = "Field `LIMIT` writer - Limit For Interrupt Generation"]
-pub type LIMIT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type LIMIT_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `SRBTM` reader - Standard Receive Buffer Trigger Mode"]
 pub type SRBTM_R = crate::BitReader<SRBTM_A>;
 #[doc = "Standard Receive Buffer Trigger Mode\n\nValue on reset: 0"]
@@ -45,8 +45,8 @@ impl SRBTM_R {
     }
 }
 #[doc = "Field `SRBTM` writer - Standard Receive Buffer Trigger Mode"]
-pub type SRBTM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRBTM_A>;
-impl<'a, REG, const O: u8> SRBTM_W<'a, REG, O>
+pub type SRBTM_W<'a, REG> = crate::BitWriter<'a, REG, SRBTM_A>;
+impl<'a, REG> SRBTM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -98,8 +98,8 @@ impl SRBTEN_R {
     }
 }
 #[doc = "Field `SRBTEN` writer - Standard Receive Buffer Trigger Enable"]
-pub type SRBTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRBTEN_A>;
-impl<'a, REG, const O: u8> SRBTEN_W<'a, REG, O>
+pub type SRBTEN_W<'a, REG> = crate::BitWriter<'a, REG, SRBTEN_A>;
+impl<'a, REG> SRBTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -188,8 +188,8 @@ impl SRBINP_R {
     }
 }
 #[doc = "Field `SRBINP` writer - Standard Receive Buffer Interrupt Node Pointer"]
-pub type SRBINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, SRBINP_A>;
-impl<'a, REG, const O: u8> SRBINP_W<'a, REG, O>
+pub type SRBINP_W<'a, REG> = crate::FieldWriter<'a, REG, 3, SRBINP_A>;
+impl<'a, REG> SRBINP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -299,8 +299,8 @@ impl ARBINP_R {
     }
 }
 #[doc = "Field `ARBINP` writer - Alternative Receive Buffer Interrupt Node Pointer"]
-pub type ARBINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, ARBINP_A>;
-impl<'a, REG, const O: u8> ARBINP_W<'a, REG, O>
+pub type ARBINP_W<'a, REG> = crate::FieldWriter<'a, REG, 3, ARBINP_A>;
+impl<'a, REG> ARBINP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -414,8 +414,8 @@ impl RCIM_R {
     }
 }
 #[doc = "Field `RCIM` writer - Receiver Control Information Mode"]
-pub type RCIM_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RCIM_A>;
-impl<'a, REG, const O: u8> RCIM_W<'a, REG, O>
+pub type RCIM_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RCIM_A>;
+impl<'a, REG> RCIM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -533,8 +533,8 @@ impl SIZE_R {
     }
 }
 #[doc = "Field `SIZE` writer - Buffer Size"]
-pub type SIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, SIZE_A>;
-impl<'a, REG, const O: u8> SIZE_W<'a, REG, O>
+pub type SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, SIZE_A>;
+impl<'a, REG> SIZE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -616,8 +616,8 @@ impl RNM_R {
     }
 }
 #[doc = "Field `RNM` writer - Receiver Notification Mode"]
-pub type RNM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RNM_A>;
-impl<'a, REG, const O: u8> RNM_W<'a, REG, O>
+pub type RNM_W<'a, REG> = crate::BitWriter<'a, REG, RNM_A>;
+impl<'a, REG> RNM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -671,8 +671,8 @@ impl LOF_R {
     }
 }
 #[doc = "Field `LOF` writer - Buffer Event on Limit Overflow"]
-pub type LOF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LOF_A>;
-impl<'a, REG, const O: u8> LOF_W<'a, REG, O>
+pub type LOF_W<'a, REG> = crate::BitWriter<'a, REG, LOF_A>;
+impl<'a, REG> LOF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -724,8 +724,8 @@ impl ARBIEN_R {
     }
 }
 #[doc = "Field `ARBIEN` writer - Alternative Receive Buffer Interrupt Enable"]
-pub type ARBIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ARBIEN_A>;
-impl<'a, REG, const O: u8> ARBIEN_W<'a, REG, O>
+pub type ARBIEN_W<'a, REG> = crate::BitWriter<'a, REG, ARBIEN_A>;
+impl<'a, REG> ARBIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -777,8 +777,8 @@ impl SRBIEN_R {
     }
 }
 #[doc = "Field `SRBIEN` writer - Standard Receive Buffer Interrupt Enable"]
-pub type SRBIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRBIEN_A>;
-impl<'a, REG, const O: u8> SRBIEN_W<'a, REG, O>
+pub type SRBIEN_W<'a, REG> = crate::BitWriter<'a, REG, SRBIEN_A>;
+impl<'a, REG> SRBIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -830,8 +830,8 @@ impl RBERIEN_R {
     }
 }
 #[doc = "Field `RBERIEN` writer - Receive Buffer Error Interrupt Enable"]
-pub type RBERIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RBERIEN_A>;
-impl<'a, REG, const O: u8> RBERIEN_W<'a, REG, O>
+pub type RBERIEN_W<'a, REG> = crate::BitWriter<'a, REG, RBERIEN_A>;
+impl<'a, REG> RBERIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -912,80 +912,80 @@ impl W {
     #[doc = "Bits 0:5 - Data Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn dptr(&mut self) -> DPTR_W<RBCTR_SPEC, 0> {
-        DPTR_W::new(self)
+    pub fn dptr(&mut self) -> DPTR_W<RBCTR_SPEC> {
+        DPTR_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - Limit For Interrupt Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn limit(&mut self) -> LIMIT_W<RBCTR_SPEC, 8> {
-        LIMIT_W::new(self)
+    pub fn limit(&mut self) -> LIMIT_W<RBCTR_SPEC> {
+        LIMIT_W::new(self, 8)
     }
     #[doc = "Bit 14 - Standard Receive Buffer Trigger Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn srbtm(&mut self) -> SRBTM_W<RBCTR_SPEC, 14> {
-        SRBTM_W::new(self)
+    pub fn srbtm(&mut self) -> SRBTM_W<RBCTR_SPEC> {
+        SRBTM_W::new(self, 14)
     }
     #[doc = "Bit 15 - Standard Receive Buffer Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn srbten(&mut self) -> SRBTEN_W<RBCTR_SPEC, 15> {
-        SRBTEN_W::new(self)
+    pub fn srbten(&mut self) -> SRBTEN_W<RBCTR_SPEC> {
+        SRBTEN_W::new(self, 15)
     }
     #[doc = "Bits 16:18 - Standard Receive Buffer Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn srbinp(&mut self) -> SRBINP_W<RBCTR_SPEC, 16> {
-        SRBINP_W::new(self)
+    pub fn srbinp(&mut self) -> SRBINP_W<RBCTR_SPEC> {
+        SRBINP_W::new(self, 16)
     }
     #[doc = "Bits 19:21 - Alternative Receive Buffer Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn arbinp(&mut self) -> ARBINP_W<RBCTR_SPEC, 19> {
-        ARBINP_W::new(self)
+    pub fn arbinp(&mut self) -> ARBINP_W<RBCTR_SPEC> {
+        ARBINP_W::new(self, 19)
     }
     #[doc = "Bits 22:23 - Receiver Control Information Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn rcim(&mut self) -> RCIM_W<RBCTR_SPEC, 22> {
-        RCIM_W::new(self)
+    pub fn rcim(&mut self) -> RCIM_W<RBCTR_SPEC> {
+        RCIM_W::new(self, 22)
     }
     #[doc = "Bits 24:26 - Buffer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn size(&mut self) -> SIZE_W<RBCTR_SPEC, 24> {
-        SIZE_W::new(self)
+    pub fn size(&mut self) -> SIZE_W<RBCTR_SPEC> {
+        SIZE_W::new(self, 24)
     }
     #[doc = "Bit 27 - Receiver Notification Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn rnm(&mut self) -> RNM_W<RBCTR_SPEC, 27> {
-        RNM_W::new(self)
+    pub fn rnm(&mut self) -> RNM_W<RBCTR_SPEC> {
+        RNM_W::new(self, 27)
     }
     #[doc = "Bit 28 - Buffer Event on Limit Overflow"]
     #[inline(always)]
     #[must_use]
-    pub fn lof(&mut self) -> LOF_W<RBCTR_SPEC, 28> {
-        LOF_W::new(self)
+    pub fn lof(&mut self) -> LOF_W<RBCTR_SPEC> {
+        LOF_W::new(self, 28)
     }
     #[doc = "Bit 29 - Alternative Receive Buffer Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn arbien(&mut self) -> ARBIEN_W<RBCTR_SPEC, 29> {
-        ARBIEN_W::new(self)
+    pub fn arbien(&mut self) -> ARBIEN_W<RBCTR_SPEC> {
+        ARBIEN_W::new(self, 29)
     }
     #[doc = "Bit 30 - Standard Receive Buffer Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn srbien(&mut self) -> SRBIEN_W<RBCTR_SPEC, 30> {
-        SRBIEN_W::new(self)
+    pub fn srbien(&mut self) -> SRBIEN_W<RBCTR_SPEC> {
+        SRBIEN_W::new(self, 30)
     }
     #[doc = "Bit 31 - Receive Buffer Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rberien(&mut self) -> RBERIEN_W<RBCTR_SPEC, 31> {
-        RBERIEN_W::new(self)
+    pub fn rberien(&mut self) -> RBERIEN_W<RBCTR_SPEC> {
+        RBERIEN_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

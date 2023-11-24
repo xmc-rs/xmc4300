@@ -1,100 +1,230 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Raw IntTfr Status"]
-    pub rawtfr: RAWTFR,
+    rawtfr: RAWTFR,
     _reserved1: [u8; 0x04],
-    #[doc = "0x08 - Raw IntBlock Status"]
-    pub rawblock: RAWBLOCK,
+    rawblock: RAWBLOCK,
     _reserved2: [u8; 0x04],
-    #[doc = "0x10 - Raw IntSrcTran Status"]
-    pub rawsrctran: RAWSRCTRAN,
+    rawsrctran: RAWSRCTRAN,
     _reserved3: [u8; 0x04],
-    #[doc = "0x18 - Raw IntBlock Status"]
-    pub rawdsttran: RAWDSTTRAN,
+    rawdsttran: RAWDSTTRAN,
     _reserved4: [u8; 0x04],
-    #[doc = "0x20 - Raw IntErr Status"]
-    pub rawerr: RAWERR,
+    rawerr: RAWERR,
     _reserved5: [u8; 0x04],
-    #[doc = "0x28 - IntTfr Status"]
-    pub statustfr: STATUSTFR,
+    statustfr: STATUSTFR,
     _reserved6: [u8; 0x04],
-    #[doc = "0x30 - IntBlock Status"]
-    pub statusblock: STATUSBLOCK,
+    statusblock: STATUSBLOCK,
     _reserved7: [u8; 0x04],
-    #[doc = "0x38 - IntSrcTran Status"]
-    pub statussrctran: STATUSSRCTRAN,
+    statussrctran: STATUSSRCTRAN,
     _reserved8: [u8; 0x04],
-    #[doc = "0x40 - IntBlock Status"]
-    pub statusdsttran: STATUSDSTTRAN,
+    statusdsttran: STATUSDSTTRAN,
     _reserved9: [u8; 0x04],
-    #[doc = "0x48 - IntErr Status"]
-    pub statuserr: STATUSERR,
+    statuserr: STATUSERR,
     _reserved10: [u8; 0x04],
-    #[doc = "0x50 - Mask for Raw IntTfr Status"]
-    pub masktfr: MASKTFR,
+    masktfr: MASKTFR,
     _reserved11: [u8; 0x04],
-    #[doc = "0x58 - Mask for Raw IntBlock Status"]
-    pub maskblock: MASKBLOCK,
+    maskblock: MASKBLOCK,
     _reserved12: [u8; 0x04],
-    #[doc = "0x60 - Mask for Raw IntSrcTran Status"]
-    pub masksrctran: MASKSRCTRAN,
+    masksrctran: MASKSRCTRAN,
     _reserved13: [u8; 0x04],
-    #[doc = "0x68 - Mask for Raw IntBlock Status"]
-    pub maskdsttran: MASKDSTTRAN,
+    maskdsttran: MASKDSTTRAN,
     _reserved14: [u8; 0x04],
-    #[doc = "0x70 - Mask for Raw IntErr Status"]
-    pub maskerr: MASKERR,
+    maskerr: MASKERR,
     _reserved15: [u8; 0x04],
-    #[doc = "0x78 - IntTfr Status"]
-    pub cleartfr: CLEARTFR,
+    cleartfr: CLEARTFR,
     _reserved16: [u8; 0x04],
-    #[doc = "0x80 - IntBlock Status"]
-    pub clearblock: CLEARBLOCK,
+    clearblock: CLEARBLOCK,
     _reserved17: [u8; 0x04],
-    #[doc = "0x88 - IntSrcTran Status"]
-    pub clearsrctran: CLEARSRCTRAN,
+    clearsrctran: CLEARSRCTRAN,
     _reserved18: [u8; 0x04],
-    #[doc = "0x90 - IntBlock Status"]
-    pub cleardsttran: CLEARDSTTRAN,
+    cleardsttran: CLEARDSTTRAN,
     _reserved19: [u8; 0x04],
-    #[doc = "0x98 - IntErr Status"]
-    pub clearerr: CLEARERR,
+    clearerr: CLEARERR,
     _reserved20: [u8; 0x04],
-    #[doc = "0xa0 - Combined Interrupt Status Register"]
-    pub statusint: STATUSINT,
+    statusint: STATUSINT,
     _reserved21: [u8; 0x04],
-    #[doc = "0xa8 - Source Software Transaction Request Register"]
-    pub reqsrcreg: REQSRCREG,
+    reqsrcreg: REQSRCREG,
     _reserved22: [u8; 0x04],
-    #[doc = "0xb0 - Destination Software Transaction Request Register"]
-    pub reqdstreg: REQDSTREG,
+    reqdstreg: REQDSTREG,
     _reserved23: [u8; 0x04],
-    #[doc = "0xb8 - Single Source Transaction Request Register"]
-    pub sglreqsrcreg: SGLREQSRCREG,
+    sglreqsrcreg: SGLREQSRCREG,
     _reserved24: [u8; 0x04],
-    #[doc = "0xc0 - Single Destination Transaction Request Register"]
-    pub sglreqdstreg: SGLREQDSTREG,
+    sglreqdstreg: SGLREQDSTREG,
     _reserved25: [u8; 0x04],
-    #[doc = "0xc8 - Last Source Transaction Request Register"]
-    pub lstsrcreg: LSTSRCREG,
+    lstsrcreg: LSTSRCREG,
     _reserved26: [u8; 0x04],
-    #[doc = "0xd0 - Last Destination Transaction Request Register"]
-    pub lstdstreg: LSTDSTREG,
+    lstdstreg: LSTDSTREG,
     _reserved27: [u8; 0x04],
-    #[doc = "0xd8 - GPDMA Configuration Register"]
-    pub dmacfgreg: DMACFGREG,
+    dmacfgreg: DMACFGREG,
     _reserved28: [u8; 0x04],
-    #[doc = "0xe0 - GPDMA Channel Enable Register"]
-    pub chenreg: CHENREG,
+    chenreg: CHENREG,
     _reserved29: [u8; 0x04],
-    #[doc = "0xe8 - GPDMA0 ID Register"]
-    pub id: ID,
+    id: ID,
     _reserved30: [u8; 0x4c],
+    type_: TYPE,
+    version: VERSION,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Raw IntTfr Status"]
+    #[inline(always)]
+    pub const fn rawtfr(&self) -> &RAWTFR {
+        &self.rawtfr
+    }
+    #[doc = "0x08 - Raw IntBlock Status"]
+    #[inline(always)]
+    pub const fn rawblock(&self) -> &RAWBLOCK {
+        &self.rawblock
+    }
+    #[doc = "0x10 - Raw IntSrcTran Status"]
+    #[inline(always)]
+    pub const fn rawsrctran(&self) -> &RAWSRCTRAN {
+        &self.rawsrctran
+    }
+    #[doc = "0x18 - Raw IntBlock Status"]
+    #[inline(always)]
+    pub const fn rawdsttran(&self) -> &RAWDSTTRAN {
+        &self.rawdsttran
+    }
+    #[doc = "0x20 - Raw IntErr Status"]
+    #[inline(always)]
+    pub const fn rawerr(&self) -> &RAWERR {
+        &self.rawerr
+    }
+    #[doc = "0x28 - IntTfr Status"]
+    #[inline(always)]
+    pub const fn statustfr(&self) -> &STATUSTFR {
+        &self.statustfr
+    }
+    #[doc = "0x30 - IntBlock Status"]
+    #[inline(always)]
+    pub const fn statusblock(&self) -> &STATUSBLOCK {
+        &self.statusblock
+    }
+    #[doc = "0x38 - IntSrcTran Status"]
+    #[inline(always)]
+    pub const fn statussrctran(&self) -> &STATUSSRCTRAN {
+        &self.statussrctran
+    }
+    #[doc = "0x40 - IntBlock Status"]
+    #[inline(always)]
+    pub const fn statusdsttran(&self) -> &STATUSDSTTRAN {
+        &self.statusdsttran
+    }
+    #[doc = "0x48 - IntErr Status"]
+    #[inline(always)]
+    pub const fn statuserr(&self) -> &STATUSERR {
+        &self.statuserr
+    }
+    #[doc = "0x50 - Mask for Raw IntTfr Status"]
+    #[inline(always)]
+    pub const fn masktfr(&self) -> &MASKTFR {
+        &self.masktfr
+    }
+    #[doc = "0x58 - Mask for Raw IntBlock Status"]
+    #[inline(always)]
+    pub const fn maskblock(&self) -> &MASKBLOCK {
+        &self.maskblock
+    }
+    #[doc = "0x60 - Mask for Raw IntSrcTran Status"]
+    #[inline(always)]
+    pub const fn masksrctran(&self) -> &MASKSRCTRAN {
+        &self.masksrctran
+    }
+    #[doc = "0x68 - Mask for Raw IntBlock Status"]
+    #[inline(always)]
+    pub const fn maskdsttran(&self) -> &MASKDSTTRAN {
+        &self.maskdsttran
+    }
+    #[doc = "0x70 - Mask for Raw IntErr Status"]
+    #[inline(always)]
+    pub const fn maskerr(&self) -> &MASKERR {
+        &self.maskerr
+    }
+    #[doc = "0x78 - IntTfr Status"]
+    #[inline(always)]
+    pub const fn cleartfr(&self) -> &CLEARTFR {
+        &self.cleartfr
+    }
+    #[doc = "0x80 - IntBlock Status"]
+    #[inline(always)]
+    pub const fn clearblock(&self) -> &CLEARBLOCK {
+        &self.clearblock
+    }
+    #[doc = "0x88 - IntSrcTran Status"]
+    #[inline(always)]
+    pub const fn clearsrctran(&self) -> &CLEARSRCTRAN {
+        &self.clearsrctran
+    }
+    #[doc = "0x90 - IntBlock Status"]
+    #[inline(always)]
+    pub const fn cleardsttran(&self) -> &CLEARDSTTRAN {
+        &self.cleardsttran
+    }
+    #[doc = "0x98 - IntErr Status"]
+    #[inline(always)]
+    pub const fn clearerr(&self) -> &CLEARERR {
+        &self.clearerr
+    }
+    #[doc = "0xa0 - Combined Interrupt Status Register"]
+    #[inline(always)]
+    pub const fn statusint(&self) -> &STATUSINT {
+        &self.statusint
+    }
+    #[doc = "0xa8 - Source Software Transaction Request Register"]
+    #[inline(always)]
+    pub const fn reqsrcreg(&self) -> &REQSRCREG {
+        &self.reqsrcreg
+    }
+    #[doc = "0xb0 - Destination Software Transaction Request Register"]
+    #[inline(always)]
+    pub const fn reqdstreg(&self) -> &REQDSTREG {
+        &self.reqdstreg
+    }
+    #[doc = "0xb8 - Single Source Transaction Request Register"]
+    #[inline(always)]
+    pub const fn sglreqsrcreg(&self) -> &SGLREQSRCREG {
+        &self.sglreqsrcreg
+    }
+    #[doc = "0xc0 - Single Destination Transaction Request Register"]
+    #[inline(always)]
+    pub const fn sglreqdstreg(&self) -> &SGLREQDSTREG {
+        &self.sglreqdstreg
+    }
+    #[doc = "0xc8 - Last Source Transaction Request Register"]
+    #[inline(always)]
+    pub const fn lstsrcreg(&self) -> &LSTSRCREG {
+        &self.lstsrcreg
+    }
+    #[doc = "0xd0 - Last Destination Transaction Request Register"]
+    #[inline(always)]
+    pub const fn lstdstreg(&self) -> &LSTDSTREG {
+        &self.lstdstreg
+    }
+    #[doc = "0xd8 - GPDMA Configuration Register"]
+    #[inline(always)]
+    pub const fn dmacfgreg(&self) -> &DMACFGREG {
+        &self.dmacfgreg
+    }
+    #[doc = "0xe0 - GPDMA Channel Enable Register"]
+    #[inline(always)]
+    pub const fn chenreg(&self) -> &CHENREG {
+        &self.chenreg
+    }
+    #[doc = "0xe8 - GPDMA0 ID Register"]
+    #[inline(always)]
+    pub const fn id(&self) -> &ID {
+        &self.id
+    }
     #[doc = "0x138 - GPDMA Component Type"]
-    pub type_: TYPE,
+    #[inline(always)]
+    pub const fn type_(&self) -> &TYPE {
+        &self.type_
+    }
     #[doc = "0x13c - DMA Component Version"]
-    pub version: VERSION,
+    #[inline(always)]
+    pub const fn version(&self) -> &VERSION {
+        &self.version
+    }
 }
 #[doc = "RAWTFR (rw) register accessor: Raw IntTfr Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rawtfr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rawtfr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rawtfr`]
 module"]

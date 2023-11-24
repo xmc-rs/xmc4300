@@ -5,7 +5,7 @@ pub type W = crate::W<LLP_SPEC>;
 #[doc = "Field `LOC` reader - Starting Address In Memory"]
 pub type LOC_R = crate::FieldReader<u32>;
 #[doc = "Field `LOC` writer - Starting Address In Memory"]
-pub type LOC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 30, O, u32>;
+pub type LOC_W<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     #[doc = "Bits 2:31 - Starting Address In Memory"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 2:31 - Starting Address In Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn loc(&mut self) -> LOC_W<LLP_SPEC, 2> {
-        LOC_W::new(self)
+    pub fn loc(&mut self) -> LOC_W<LLP_SPEC> {
+        LOC_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

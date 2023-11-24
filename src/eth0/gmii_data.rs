@@ -5,7 +5,7 @@ pub type W = crate::W<GMII_DATA_SPEC>;
 #[doc = "Field `MD` reader - MII Data"]
 pub type MD_R = crate::FieldReader<u16>;
 #[doc = "Field `MD` writer - MII Data"]
-pub type MD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type MD_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - MII Data"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - MII Data"]
     #[inline(always)]
     #[must_use]
-    pub fn md(&mut self) -> MD_W<GMII_DATA_SPEC, 0> {
-        MD_W::new(self)
+    pub fn md(&mut self) -> MD_W<GMII_DATA_SPEC> {
+        MD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -39,8 +39,8 @@ impl DISR_R {
     }
 }
 #[doc = "Field `DISR` writer - Module Disable Request Bit"]
-pub type DISR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DISR_A>;
-impl<'a, REG, const O: u8> DISR_W<'a, REG, O>
+pub type DISR_W<'a, REG> = crate::BitWriter<'a, REG, DISR_A>;
+impl<'a, REG> DISR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -128,8 +128,8 @@ impl EDIS_R {
     }
 }
 #[doc = "Field `EDIS` writer - Sleep Mode Enable Control"]
-pub type EDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EDIS_A>;
-impl<'a, REG, const O: u8> EDIS_W<'a, REG, O>
+pub type EDIS_W<'a, REG> = crate::BitWriter<'a, REG, EDIS_A>;
+impl<'a, REG> EDIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -165,14 +165,14 @@ impl W {
     #[doc = "Bit 0 - Module Disable Request Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn disr(&mut self) -> DISR_W<CLC_SPEC, 0> {
-        DISR_W::new(self)
+    pub fn disr(&mut self) -> DISR_W<CLC_SPEC> {
+        DISR_W::new(self, 0)
     }
     #[doc = "Bit 3 - Sleep Mode Enable Control"]
     #[inline(always)]
     #[must_use]
-    pub fn edis(&mut self) -> EDIS_W<CLC_SPEC, 3> {
-        EDIS_W::new(self)
+    pub fn edis(&mut self) -> EDIS_W<CLC_SPEC> {
+        EDIS_W::new(self, 3)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,19 +5,19 @@ pub type W = crate::W<PLLCON1_SPEC>;
 #[doc = "Field `K1DIV` reader - K1-Divider Value"]
 pub type K1DIV_R = crate::FieldReader;
 #[doc = "Field `K1DIV` writer - K1-Divider Value"]
-pub type K1DIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type K1DIV_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `NDIV` reader - N-Divider Value"]
 pub type NDIV_R = crate::FieldReader;
 #[doc = "Field `NDIV` writer - N-Divider Value"]
-pub type NDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type NDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `K2DIV` reader - K2-Divider Value"]
 pub type K2DIV_R = crate::FieldReader;
 #[doc = "Field `K2DIV` writer - K2-Divider Value"]
-pub type K2DIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O>;
+pub type K2DIV_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `PDIV` reader - P-Divider Value"]
 pub type PDIV_R = crate::FieldReader;
 #[doc = "Field `PDIV` writer - P-Divider Value"]
-pub type PDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:6 - K1-Divider Value"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:6 - K1-Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn k1div(&mut self) -> K1DIV_W<PLLCON1_SPEC, 0> {
-        K1DIV_W::new(self)
+    pub fn k1div(&mut self) -> K1DIV_W<PLLCON1_SPEC> {
+        K1DIV_W::new(self, 0)
     }
     #[doc = "Bits 8:14 - N-Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ndiv(&mut self) -> NDIV_W<PLLCON1_SPEC, 8> {
-        NDIV_W::new(self)
+    pub fn ndiv(&mut self) -> NDIV_W<PLLCON1_SPEC> {
+        NDIV_W::new(self, 8)
     }
     #[doc = "Bits 16:22 - K2-Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn k2div(&mut self) -> K2DIV_W<PLLCON1_SPEC, 16> {
-        K2DIV_W::new(self)
+    pub fn k2div(&mut self) -> K2DIV_W<PLLCON1_SPEC> {
+        K2DIV_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - P-Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn pdiv(&mut self) -> PDIV_W<PLLCON1_SPEC, 24> {
-        PDIV_W::new(self)
+    pub fn pdiv(&mut self) -> PDIV_W<PLLCON1_SPEC> {
+        PDIV_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

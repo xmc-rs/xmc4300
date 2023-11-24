@@ -5,11 +5,11 @@ pub type W = crate::W<SGR_SPEC>;
 #[doc = "Field `SGI` reader - Source gather interval"]
 pub type SGI_R = crate::FieldReader<u32>;
 #[doc = "Field `SGI` writer - Source gather interval"]
-pub type SGI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 20, O, u32>;
+pub type SGI_W<'a, REG> = crate::FieldWriter<'a, REG, 20, u32>;
 #[doc = "Field `SGC` reader - Source gather count"]
 pub type SGC_R = crate::FieldReader<u16>;
 #[doc = "Field `SGC` writer - Source gather count"]
-pub type SGC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type SGC_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     #[doc = "Bits 0:19 - Source gather interval"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:19 - Source gather interval"]
     #[inline(always)]
     #[must_use]
-    pub fn sgi(&mut self) -> SGI_W<SGR_SPEC, 0> {
-        SGI_W::new(self)
+    pub fn sgi(&mut self) -> SGI_W<SGR_SPEC> {
+        SGI_W::new(self, 0)
     }
     #[doc = "Bits 20:31 - Source gather count"]
     #[inline(always)]
     #[must_use]
-    pub fn sgc(&mut self) -> SGC_W<SGR_SPEC, 20> {
-        SGC_W::new(self)
+    pub fn sgc(&mut self) -> SGC_W<SGR_SPEC> {
+        SGC_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

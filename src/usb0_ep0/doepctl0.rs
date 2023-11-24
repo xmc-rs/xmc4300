@@ -102,21 +102,21 @@ pub type EPTYPE_R = crate::FieldReader;
 #[doc = "Field `Snp` reader - Snoop Mode"]
 pub type SNP_R = crate::BitReader;
 #[doc = "Field `Snp` writer - Snoop Mode"]
-pub type SNP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SNP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `Stall` reader - STALL Handshake"]
 pub type STALL_R = crate::BitReader;
 #[doc = "Field `Stall` writer - STALL Handshake"]
-pub type STALL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STALL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CNAK` writer - Clear NAK"]
-pub type CNAK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CNAK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SNAK` writer - Set NAK"]
-pub type SNAK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SNAK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPDis` reader - Endpoint Disable"]
 pub type EPDIS_R = crate::BitReader;
 #[doc = "Field `EPEna` reader - Endpoint Enable"]
 pub type EPENA_R = crate::BitReader;
 #[doc = "Field `EPEna` writer - Endpoint Enable"]
-pub type EPENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPENA_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:1 - Maximum Packet Size"]
     #[inline(always)]
@@ -163,32 +163,32 @@ impl W {
     #[doc = "Bit 20 - Snoop Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn snp(&mut self) -> SNP_W<DOEPCTL0_SPEC, 20> {
-        SNP_W::new(self)
+    pub fn snp(&mut self) -> SNP_W<DOEPCTL0_SPEC> {
+        SNP_W::new(self, 20)
     }
     #[doc = "Bit 21 - STALL Handshake"]
     #[inline(always)]
     #[must_use]
-    pub fn stall(&mut self) -> STALL_W<DOEPCTL0_SPEC, 21> {
-        STALL_W::new(self)
+    pub fn stall(&mut self) -> STALL_W<DOEPCTL0_SPEC> {
+        STALL_W::new(self, 21)
     }
     #[doc = "Bit 26 - Clear NAK"]
     #[inline(always)]
     #[must_use]
-    pub fn cnak(&mut self) -> CNAK_W<DOEPCTL0_SPEC, 26> {
-        CNAK_W::new(self)
+    pub fn cnak(&mut self) -> CNAK_W<DOEPCTL0_SPEC> {
+        CNAK_W::new(self, 26)
     }
     #[doc = "Bit 27 - Set NAK"]
     #[inline(always)]
     #[must_use]
-    pub fn snak(&mut self) -> SNAK_W<DOEPCTL0_SPEC, 27> {
-        SNAK_W::new(self)
+    pub fn snak(&mut self) -> SNAK_W<DOEPCTL0_SPEC> {
+        SNAK_W::new(self, 27)
     }
     #[doc = "Bit 31 - Endpoint Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epena(&mut self) -> EPENA_W<DOEPCTL0_SPEC, 31> {
-        EPENA_W::new(self)
+    pub fn epena(&mut self) -> EPENA_W<DOEPCTL0_SPEC> {
+        EPENA_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -7,7 +7,7 @@ pub type PCMP_R = crate::FieldReader;
 #[doc = "Field `PVAL` reader - Actual Prescaler Value"]
 pub type PVAL_R = crate::FieldReader;
 #[doc = "Field `PVAL` writer - Actual Prescaler Value"]
-pub type PVAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PVAL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3 - Floating Prescaler Compare Value"]
     #[inline(always)]
@@ -24,8 +24,8 @@ impl W {
     #[doc = "Bits 8:11 - Actual Prescaler Value"]
     #[inline(always)]
     #[must_use]
-    pub fn pval(&mut self) -> PVAL_W<FPC_SPEC, 8> {
-        PVAL_W::new(self)
+    pub fn pval(&mut self) -> PVAL_W<FPC_SPEC> {
+        PVAL_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

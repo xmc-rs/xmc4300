@@ -5,11 +5,11 @@ pub type W = crate::W<DC1R_SPEC>;
 #[doc = "Field `DT1R` reader - Rise Value for Dead Time of Channel 1"]
 pub type DT1R_R = crate::FieldReader;
 #[doc = "Field `DT1R` writer - Rise Value for Dead Time of Channel 1"]
-pub type DT1R_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DT1R_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `DT1F` reader - Fall Value for Dead Time of Channel 1"]
 pub type DT1F_R = crate::FieldReader;
 #[doc = "Field `DT1F` writer - Fall Value for Dead Time of Channel 1"]
-pub type DT1F_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DT1F_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Rise Value for Dead Time of Channel 1"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:7 - Rise Value for Dead Time of Channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn dt1r(&mut self) -> DT1R_W<DC1R_SPEC, 0> {
-        DT1R_W::new(self)
+    pub fn dt1r(&mut self) -> DT1R_W<DC1R_SPEC> {
+        DT1R_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Fall Value for Dead Time of Channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn dt1f(&mut self) -> DT1F_W<DC1R_SPEC, 8> {
-        DT1F_W::new(self)
+    pub fn dt1f(&mut self) -> DT1F_W<DC1R_SPEC> {
+        DT1F_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -60,8 +60,8 @@ impl ICLSEL_R {
     }
 }
 #[doc = "Field `ICLSEL` writer - Input Class Select"]
-pub type ICLSEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ICLSEL_A>;
-impl<'a, REG, const O: u8> ICLSEL_W<'a, REG, O>
+pub type ICLSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ICLSEL_A>;
+impl<'a, REG> ICLSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,8 +145,8 @@ impl BNDSELL_R {
     }
 }
 #[doc = "Field `BNDSELL` writer - Lower Boundary Select"]
-pub type BNDSELL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BNDSELL_A>;
-impl<'a, REG, const O: u8> BNDSELL_W<'a, REG, O>
+pub type BNDSELL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BNDSELL_A>;
+impl<'a, REG> BNDSELL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -230,8 +230,8 @@ impl BNDSELU_R {
     }
 }
 #[doc = "Field `BNDSELU` writer - Upper Boundary Select"]
-pub type BNDSELU_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BNDSELU_A>;
-impl<'a, REG, const O: u8> BNDSELU_W<'a, REG, O>
+pub type BNDSELU_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BNDSELU_A>;
+impl<'a, REG> BNDSELU_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -315,8 +315,8 @@ impl CHEVMODE_R {
     }
 }
 #[doc = "Field `CHEVMODE` writer - Channel Event Mode"]
-pub type CHEVMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CHEVMODE_A>;
-impl<'a, REG, const O: u8> CHEVMODE_W<'a, REG, O>
+pub type CHEVMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CHEVMODE_A>;
+impl<'a, REG> CHEVMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -379,8 +379,8 @@ impl SYNC_R {
     }
 }
 #[doc = "Field `SYNC` writer - Synchronization Request"]
-pub type SYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SYNC_A>;
-impl<'a, REG, const O: u8> SYNC_W<'a, REG, O>
+pub type SYNC_W<'a, REG> = crate::BitWriter<'a, REG, SYNC_A>;
+impl<'a, REG> SYNC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -432,8 +432,8 @@ impl REFSEL_R {
     }
 }
 #[doc = "Field `REFSEL` writer - Reference Input Selection"]
-pub type REFSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REFSEL_A>;
-impl<'a, REG, const O: u8> REFSEL_W<'a, REG, O>
+pub type REFSEL_W<'a, REG> = crate::BitWriter<'a, REG, REFSEL_A>;
+impl<'a, REG> REFSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -490,8 +490,8 @@ impl RESREG_R {
     }
 }
 #[doc = "Field `RESREG` writer - Result Register"]
-pub type RESREG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, RESREG_A>;
-impl<'a, REG, const O: u8> RESREG_W<'a, REG, O>
+pub type RESREG_W<'a, REG> = crate::FieldWriter<'a, REG, 4, RESREG_A>;
+impl<'a, REG> RESREG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -544,8 +544,8 @@ impl RESTBS_R {
     }
 }
 #[doc = "Field `RESTBS` writer - Result Target for Background Source"]
-pub type RESTBS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESTBS_A>;
-impl<'a, REG, const O: u8> RESTBS_W<'a, REG, O>
+pub type RESTBS_W<'a, REG> = crate::BitWriter<'a, REG, RESTBS_A>;
+impl<'a, REG> RESTBS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -597,8 +597,8 @@ impl RESPOS_R {
     }
 }
 #[doc = "Field `RESPOS` writer - Result Position"]
-pub type RESPOS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESPOS_A>;
-impl<'a, REG, const O: u8> RESPOS_W<'a, REG, O>
+pub type RESPOS_W<'a, REG> = crate::BitWriter<'a, REG, RESPOS_A>;
+impl<'a, REG> RESPOS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -655,8 +655,8 @@ impl BWDCH_R {
     }
 }
 #[doc = "Field `BWDCH` writer - Broken Wire Detection Channel"]
-pub type BWDCH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, BWDCH_A>;
-impl<'a, REG, const O: u8> BWDCH_W<'a, REG, O>
+pub type BWDCH_W<'a, REG> = crate::FieldWriter<'a, REG, 2, BWDCH_A>;
+impl<'a, REG> BWDCH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -709,8 +709,8 @@ impl BWDEN_R {
     }
 }
 #[doc = "Field `BWDEN` writer - Broken Wire Detection Enable"]
-pub type BWDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BWDEN_A>;
-impl<'a, REG, const O: u8> BWDEN_W<'a, REG, O>
+pub type BWDEN_W<'a, REG> = crate::BitWriter<'a, REG, BWDEN_A>;
+impl<'a, REG> BWDEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -786,68 +786,68 @@ impl W {
     #[doc = "Bits 0:1 - Input Class Select"]
     #[inline(always)]
     #[must_use]
-    pub fn iclsel(&mut self) -> ICLSEL_W<CHCTR_SPEC, 0> {
-        ICLSEL_W::new(self)
+    pub fn iclsel(&mut self) -> ICLSEL_W<CHCTR_SPEC> {
+        ICLSEL_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Lower Boundary Select"]
     #[inline(always)]
     #[must_use]
-    pub fn bndsell(&mut self) -> BNDSELL_W<CHCTR_SPEC, 4> {
-        BNDSELL_W::new(self)
+    pub fn bndsell(&mut self) -> BNDSELL_W<CHCTR_SPEC> {
+        BNDSELL_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Upper Boundary Select"]
     #[inline(always)]
     #[must_use]
-    pub fn bndselu(&mut self) -> BNDSELU_W<CHCTR_SPEC, 6> {
-        BNDSELU_W::new(self)
+    pub fn bndselu(&mut self) -> BNDSELU_W<CHCTR_SPEC> {
+        BNDSELU_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Channel Event Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn chevmode(&mut self) -> CHEVMODE_W<CHCTR_SPEC, 8> {
-        CHEVMODE_W::new(self)
+    pub fn chevmode(&mut self) -> CHEVMODE_W<CHCTR_SPEC> {
+        CHEVMODE_W::new(self, 8)
     }
     #[doc = "Bit 10 - Synchronization Request"]
     #[inline(always)]
     #[must_use]
-    pub fn sync(&mut self) -> SYNC_W<CHCTR_SPEC, 10> {
-        SYNC_W::new(self)
+    pub fn sync(&mut self) -> SYNC_W<CHCTR_SPEC> {
+        SYNC_W::new(self, 10)
     }
     #[doc = "Bit 11 - Reference Input Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn refsel(&mut self) -> REFSEL_W<CHCTR_SPEC, 11> {
-        REFSEL_W::new(self)
+    pub fn refsel(&mut self) -> REFSEL_W<CHCTR_SPEC> {
+        REFSEL_W::new(self, 11)
     }
     #[doc = "Bits 16:19 - Result Register"]
     #[inline(always)]
     #[must_use]
-    pub fn resreg(&mut self) -> RESREG_W<CHCTR_SPEC, 16> {
-        RESREG_W::new(self)
+    pub fn resreg(&mut self) -> RESREG_W<CHCTR_SPEC> {
+        RESREG_W::new(self, 16)
     }
     #[doc = "Bit 20 - Result Target for Background Source"]
     #[inline(always)]
     #[must_use]
-    pub fn restbs(&mut self) -> RESTBS_W<CHCTR_SPEC, 20> {
-        RESTBS_W::new(self)
+    pub fn restbs(&mut self) -> RESTBS_W<CHCTR_SPEC> {
+        RESTBS_W::new(self, 20)
     }
     #[doc = "Bit 21 - Result Position"]
     #[inline(always)]
     #[must_use]
-    pub fn respos(&mut self) -> RESPOS_W<CHCTR_SPEC, 21> {
-        RESPOS_W::new(self)
+    pub fn respos(&mut self) -> RESPOS_W<CHCTR_SPEC> {
+        RESPOS_W::new(self, 21)
     }
     #[doc = "Bits 28:29 - Broken Wire Detection Channel"]
     #[inline(always)]
     #[must_use]
-    pub fn bwdch(&mut self) -> BWDCH_W<CHCTR_SPEC, 28> {
-        BWDCH_W::new(self)
+    pub fn bwdch(&mut self) -> BWDCH_W<CHCTR_SPEC> {
+        BWDCH_W::new(self, 28)
     }
     #[doc = "Bit 30 - Broken Wire Detection Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn bwden(&mut self) -> BWDEN_W<CHCTR_SPEC, 30> {
-        BWDEN_W::new(self)
+    pub fn bwden(&mut self) -> BWDEN_W<CHCTR_SPEC> {
+        BWDEN_W::new(self, 30)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

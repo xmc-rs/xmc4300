@@ -5,11 +5,11 @@ pub type W = crate::W<SHPR3_SPEC>;
 #[doc = "Field `PRI_14` reader - Priority of system handler 14"]
 pub type PRI_14_R = crate::FieldReader;
 #[doc = "Field `PRI_14` writer - Priority of system handler 14"]
-pub type PRI_14_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PRI_14_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PRI_15` reader - Priority of system handler 15"]
 pub type PRI_15_R = crate::FieldReader;
 #[doc = "Field `PRI_15` writer - Priority of system handler 15"]
-pub type PRI_15_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PRI_15_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 16:23 - Priority of system handler 14"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 16:23 - Priority of system handler 14"]
     #[inline(always)]
     #[must_use]
-    pub fn pri_14(&mut self) -> PRI_14_W<SHPR3_SPEC, 16> {
-        PRI_14_W::new(self)
+    pub fn pri_14(&mut self) -> PRI_14_W<SHPR3_SPEC> {
+        PRI_14_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Priority of system handler 15"]
     #[inline(always)]
     #[must_use]
-    pub fn pri_15(&mut self) -> PRI_15_W<SHPR3_SPEC, 24> {
-        PRI_15_W::new(self)
+    pub fn pri_15(&mut self) -> PRI_15_W<SHPR3_SPEC> {
+        PRI_15_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

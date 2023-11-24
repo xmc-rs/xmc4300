@@ -60,8 +60,8 @@ impl MPS_R {
     }
 }
 #[doc = "Field `MPS` writer - Maximum Packet Size"]
-pub type MPS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, MPS_A>;
-impl<'a, REG, const O: u8> MPS_W<'a, REG, O>
+pub type MPS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, MPS_A>;
+impl<'a, REG> MPS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -130,23 +130,23 @@ pub type EPTYPE_R = crate::FieldReader;
 #[doc = "Field `Stall` reader - STALL Handshake"]
 pub type STALL_R = crate::BitReader;
 #[doc = "Field `Stall` writer - STALL Handshake"]
-pub type STALL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type STALL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TxFNum` reader - TxFIFO Number"]
 pub type TX_FNUM_R = crate::FieldReader;
 #[doc = "Field `TxFNum` writer - TxFIFO Number"]
-pub type TX_FNUM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type TX_FNUM_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CNAK` writer - Clear NAK"]
-pub type CNAK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CNAK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SNAK` writer - Set NAK"]
-pub type SNAK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SNAK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPDis` reader - Endpoint Disable"]
 pub type EPDIS_R = crate::BitReader;
 #[doc = "Field `EPDis` writer - Endpoint Disable"]
-pub type EPDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPEna` reader - Endpoint Enable"]
 pub type EPENA_R = crate::BitReader;
 #[doc = "Field `EPEna` writer - Endpoint Enable"]
-pub type EPENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPENA_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:1 - Maximum Packet Size"]
     #[inline(always)]
@@ -193,44 +193,44 @@ impl W {
     #[doc = "Bits 0:1 - Maximum Packet Size"]
     #[inline(always)]
     #[must_use]
-    pub fn mps(&mut self) -> MPS_W<DIEPCTL0_SPEC, 0> {
-        MPS_W::new(self)
+    pub fn mps(&mut self) -> MPS_W<DIEPCTL0_SPEC> {
+        MPS_W::new(self, 0)
     }
     #[doc = "Bit 21 - STALL Handshake"]
     #[inline(always)]
     #[must_use]
-    pub fn stall(&mut self) -> STALL_W<DIEPCTL0_SPEC, 21> {
-        STALL_W::new(self)
+    pub fn stall(&mut self) -> STALL_W<DIEPCTL0_SPEC> {
+        STALL_W::new(self, 21)
     }
     #[doc = "Bits 22:25 - TxFIFO Number"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_fnum(&mut self) -> TX_FNUM_W<DIEPCTL0_SPEC, 22> {
-        TX_FNUM_W::new(self)
+    pub fn tx_fnum(&mut self) -> TX_FNUM_W<DIEPCTL0_SPEC> {
+        TX_FNUM_W::new(self, 22)
     }
     #[doc = "Bit 26 - Clear NAK"]
     #[inline(always)]
     #[must_use]
-    pub fn cnak(&mut self) -> CNAK_W<DIEPCTL0_SPEC, 26> {
-        CNAK_W::new(self)
+    pub fn cnak(&mut self) -> CNAK_W<DIEPCTL0_SPEC> {
+        CNAK_W::new(self, 26)
     }
     #[doc = "Bit 27 - Set NAK"]
     #[inline(always)]
     #[must_use]
-    pub fn snak(&mut self) -> SNAK_W<DIEPCTL0_SPEC, 27> {
-        SNAK_W::new(self)
+    pub fn snak(&mut self) -> SNAK_W<DIEPCTL0_SPEC> {
+        SNAK_W::new(self, 27)
     }
     #[doc = "Bit 30 - Endpoint Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn epdis(&mut self) -> EPDIS_W<DIEPCTL0_SPEC, 30> {
-        EPDIS_W::new(self)
+    pub fn epdis(&mut self) -> EPDIS_W<DIEPCTL0_SPEC> {
+        EPDIS_W::new(self, 30)
     }
     #[doc = "Bit 31 - Endpoint Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epena(&mut self) -> EPENA_W<DIEPCTL0_SPEC, 31> {
-        EPENA_W::new(self)
+    pub fn epena(&mut self) -> EPENA_W<DIEPCTL0_SPEC> {
+        EPENA_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

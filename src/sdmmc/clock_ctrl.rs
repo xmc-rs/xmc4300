@@ -39,8 +39,8 @@ impl INTERNAL_CLOCK_EN_R {
     }
 }
 #[doc = "Field `INTERNAL_CLOCK_EN` writer - Internal Clock Enable"]
-pub type INTERNAL_CLOCK_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, INTERNAL_CLOCK_EN_A>;
-impl<'a, REG, const O: u8> INTERNAL_CLOCK_EN_W<'a, REG, O>
+pub type INTERNAL_CLOCK_EN_W<'a, REG> = crate::BitWriter<'a, REG, INTERNAL_CLOCK_EN_A>;
+impl<'a, REG> INTERNAL_CLOCK_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -128,8 +128,8 @@ impl SDCLOCK_EN_R {
     }
 }
 #[doc = "Field `SDCLOCK_EN` writer - SD Clock Enable"]
-pub type SDCLOCK_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SDCLOCK_EN_A>;
-impl<'a, REG, const O: u8> SDCLOCK_EN_W<'a, REG, O>
+pub type SDCLOCK_EN_W<'a, REG> = crate::BitWriter<'a, REG, SDCLOCK_EN_A>;
+impl<'a, REG> SDCLOCK_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -242,8 +242,8 @@ impl SDCLK_FREQ_SEL_R {
     }
 }
 #[doc = "Field `SDCLK_FREQ_SEL` writer - SDCLK Frequency Select"]
-pub type SDCLK_FREQ_SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, SDCLK_FREQ_SEL_A>;
-impl<'a, REG, const O: u8> SDCLK_FREQ_SEL_W<'a, REG, O>
+pub type SDCLK_FREQ_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 8, SDCLK_FREQ_SEL_A>;
+impl<'a, REG> SDCLK_FREQ_SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -320,20 +320,20 @@ impl W {
     #[doc = "Bit 0 - Internal Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn internal_clock_en(&mut self) -> INTERNAL_CLOCK_EN_W<CLOCK_CTRL_SPEC, 0> {
-        INTERNAL_CLOCK_EN_W::new(self)
+    pub fn internal_clock_en(&mut self) -> INTERNAL_CLOCK_EN_W<CLOCK_CTRL_SPEC> {
+        INTERNAL_CLOCK_EN_W::new(self, 0)
     }
     #[doc = "Bit 2 - SD Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn sdclock_en(&mut self) -> SDCLOCK_EN_W<CLOCK_CTRL_SPEC, 2> {
-        SDCLOCK_EN_W::new(self)
+    pub fn sdclock_en(&mut self) -> SDCLOCK_EN_W<CLOCK_CTRL_SPEC> {
+        SDCLOCK_EN_W::new(self, 2)
     }
     #[doc = "Bits 8:15 - SDCLK Frequency Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sdclk_freq_sel(&mut self) -> SDCLK_FREQ_SEL_W<CLOCK_CTRL_SPEC, 8> {
-        SDCLK_FREQ_SEL_W::new(self)
+    pub fn sdclk_freq_sel(&mut self) -> SDCLK_FREQ_SEL_W<CLOCK_CTRL_SPEC> {
+        SDCLK_FREQ_SEL_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

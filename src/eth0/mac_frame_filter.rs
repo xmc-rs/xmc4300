@@ -5,47 +5,47 @@ pub type W = crate::W<MAC_FRAME_FILTER_SPEC>;
 #[doc = "Field `PR` reader - Promiscuous Mode"]
 pub type PR_R = crate::BitReader;
 #[doc = "Field `PR` writer - Promiscuous Mode"]
-pub type PR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HUC` reader - Hash Unicast"]
 pub type HUC_R = crate::BitReader;
 #[doc = "Field `HUC` writer - Hash Unicast"]
-pub type HUC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HUC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HMC` reader - Hash Multicast"]
 pub type HMC_R = crate::BitReader;
 #[doc = "Field `HMC` writer - Hash Multicast"]
-pub type HMC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HMC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DAIF` reader - DA Inverse Filtering"]
 pub type DAIF_R = crate::BitReader;
 #[doc = "Field `DAIF` writer - DA Inverse Filtering"]
-pub type DAIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DAIF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PM` reader - Pass All Multicast"]
 pub type PM_R = crate::BitReader;
 #[doc = "Field `PM` writer - Pass All Multicast"]
-pub type PM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DBF` reader - Disable Broadcast Frames"]
 pub type DBF_R = crate::BitReader;
 #[doc = "Field `DBF` writer - Disable Broadcast Frames"]
-pub type DBF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DBF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PCF` reader - Pass Control Frames"]
 pub type PCF_R = crate::FieldReader;
 #[doc = "Field `PCF` writer - Pass Control Frames"]
-pub type PCF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type PCF_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `SAIF` reader - SA Inverse Filtering"]
 pub type SAIF_R = crate::BitReader;
 #[doc = "Field `SAIF` writer - SA Inverse Filtering"]
-pub type SAIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SAIF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SAF` reader - Source Address Filter Enable"]
 pub type SAF_R = crate::BitReader;
 #[doc = "Field `SAF` writer - Source Address Filter Enable"]
-pub type SAF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SAF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `HPF` reader - Hash or Perfect Filter"]
 pub type HPF_R = crate::BitReader;
 #[doc = "Field `HPF` writer - Hash or Perfect Filter"]
-pub type HPF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HPF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `VTFE` reader - VLAN Tag Filter Enable"]
 pub type VTFE_R = crate::BitReader;
 #[doc = "Field `VTFE` writer - VLAN Tag Filter Enable"]
-pub type VTFE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type VTFE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `IPFE` reader - Layer 3 and Layer 4 Filter Enable"]
 pub type IPFE_R = crate::BitReader;
 #[doc = "Field `DNTU` reader - Drop non-TCP/UDP over IP Frames"]
@@ -53,7 +53,7 @@ pub type DNTU_R = crate::BitReader;
 #[doc = "Field `RA` reader - Receive All"]
 pub type RA_R = crate::BitReader;
 #[doc = "Field `RA` writer - Receive All"]
-pub type RA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RA_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Promiscuous Mode"]
     #[inline(always)]
@@ -130,74 +130,74 @@ impl W {
     #[doc = "Bit 0 - Promiscuous Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn pr(&mut self) -> PR_W<MAC_FRAME_FILTER_SPEC, 0> {
-        PR_W::new(self)
+    pub fn pr(&mut self) -> PR_W<MAC_FRAME_FILTER_SPEC> {
+        PR_W::new(self, 0)
     }
     #[doc = "Bit 1 - Hash Unicast"]
     #[inline(always)]
     #[must_use]
-    pub fn huc(&mut self) -> HUC_W<MAC_FRAME_FILTER_SPEC, 1> {
-        HUC_W::new(self)
+    pub fn huc(&mut self) -> HUC_W<MAC_FRAME_FILTER_SPEC> {
+        HUC_W::new(self, 1)
     }
     #[doc = "Bit 2 - Hash Multicast"]
     #[inline(always)]
     #[must_use]
-    pub fn hmc(&mut self) -> HMC_W<MAC_FRAME_FILTER_SPEC, 2> {
-        HMC_W::new(self)
+    pub fn hmc(&mut self) -> HMC_W<MAC_FRAME_FILTER_SPEC> {
+        HMC_W::new(self, 2)
     }
     #[doc = "Bit 3 - DA Inverse Filtering"]
     #[inline(always)]
     #[must_use]
-    pub fn daif(&mut self) -> DAIF_W<MAC_FRAME_FILTER_SPEC, 3> {
-        DAIF_W::new(self)
+    pub fn daif(&mut self) -> DAIF_W<MAC_FRAME_FILTER_SPEC> {
+        DAIF_W::new(self, 3)
     }
     #[doc = "Bit 4 - Pass All Multicast"]
     #[inline(always)]
     #[must_use]
-    pub fn pm(&mut self) -> PM_W<MAC_FRAME_FILTER_SPEC, 4> {
-        PM_W::new(self)
+    pub fn pm(&mut self) -> PM_W<MAC_FRAME_FILTER_SPEC> {
+        PM_W::new(self, 4)
     }
     #[doc = "Bit 5 - Disable Broadcast Frames"]
     #[inline(always)]
     #[must_use]
-    pub fn dbf(&mut self) -> DBF_W<MAC_FRAME_FILTER_SPEC, 5> {
-        DBF_W::new(self)
+    pub fn dbf(&mut self) -> DBF_W<MAC_FRAME_FILTER_SPEC> {
+        DBF_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Pass Control Frames"]
     #[inline(always)]
     #[must_use]
-    pub fn pcf(&mut self) -> PCF_W<MAC_FRAME_FILTER_SPEC, 6> {
-        PCF_W::new(self)
+    pub fn pcf(&mut self) -> PCF_W<MAC_FRAME_FILTER_SPEC> {
+        PCF_W::new(self, 6)
     }
     #[doc = "Bit 8 - SA Inverse Filtering"]
     #[inline(always)]
     #[must_use]
-    pub fn saif(&mut self) -> SAIF_W<MAC_FRAME_FILTER_SPEC, 8> {
-        SAIF_W::new(self)
+    pub fn saif(&mut self) -> SAIF_W<MAC_FRAME_FILTER_SPEC> {
+        SAIF_W::new(self, 8)
     }
     #[doc = "Bit 9 - Source Address Filter Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn saf(&mut self) -> SAF_W<MAC_FRAME_FILTER_SPEC, 9> {
-        SAF_W::new(self)
+    pub fn saf(&mut self) -> SAF_W<MAC_FRAME_FILTER_SPEC> {
+        SAF_W::new(self, 9)
     }
     #[doc = "Bit 10 - Hash or Perfect Filter"]
     #[inline(always)]
     #[must_use]
-    pub fn hpf(&mut self) -> HPF_W<MAC_FRAME_FILTER_SPEC, 10> {
-        HPF_W::new(self)
+    pub fn hpf(&mut self) -> HPF_W<MAC_FRAME_FILTER_SPEC> {
+        HPF_W::new(self, 10)
     }
     #[doc = "Bit 16 - VLAN Tag Filter Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn vtfe(&mut self) -> VTFE_W<MAC_FRAME_FILTER_SPEC, 16> {
-        VTFE_W::new(self)
+    pub fn vtfe(&mut self) -> VTFE_W<MAC_FRAME_FILTER_SPEC> {
+        VTFE_W::new(self, 16)
     }
     #[doc = "Bit 31 - Receive All"]
     #[inline(always)]
     #[must_use]
-    pub fn ra(&mut self) -> RA_W<MAC_FRAME_FILTER_SPEC, 31> {
-        RA_W::new(self)
+    pub fn ra(&mut self) -> RA_W<MAC_FRAME_FILTER_SPEC> {
+        RA_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

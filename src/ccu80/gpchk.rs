@@ -5,7 +5,7 @@ pub type W = crate::W<GPCHK_SPEC>;
 #[doc = "Field `PASE` reader - Parity Checker Automatic start/stop"]
 pub type PASE_R = crate::BitReader;
 #[doc = "Field `PASE` writer - Parity Checker Automatic start/stop"]
-pub type PASE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PASE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PACS` reader - Parity Checker Automatic start/stop selector"]
 pub type PACS_R = crate::FieldReader<PACS_A>;
 #[doc = "Parity Checker Automatic start/stop selector\n\nValue on reset: 0"]
@@ -64,8 +64,8 @@ impl PACS_R {
     }
 }
 #[doc = "Field `PACS` writer - Parity Checker Automatic start/stop selector"]
-pub type PACS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PACS_A>;
-impl<'a, REG, const O: u8> PACS_W<'a, REG, O>
+pub type PACS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PACS_A>;
+impl<'a, REG> PACS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -149,8 +149,8 @@ impl PISEL_R {
     }
 }
 #[doc = "Field `PISEL` writer - Driver Input signal selector"]
-pub type PISEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PISEL_A>;
-impl<'a, REG, const O: u8> PISEL_W<'a, REG, O>
+pub type PISEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PISEL_A>;
+impl<'a, REG> PISEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -234,8 +234,8 @@ impl PCDS_R {
     }
 }
 #[doc = "Field `PCDS` writer - Parity Checker Delay Input Selector"]
-pub type PCDS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PCDS_A>;
-impl<'a, REG, const O: u8> PCDS_W<'a, REG, O>
+pub type PCDS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PCDS_A>;
+impl<'a, REG> PCDS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -298,8 +298,8 @@ impl PCTS_R {
     }
 }
 #[doc = "Field `PCTS` writer - Parity Checker type selector"]
-pub type PCTS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PCTS_A>;
-impl<'a, REG, const O: u8> PCTS_W<'a, REG, O>
+pub type PCTS_W<'a, REG> = crate::BitWriter<'a, REG, PCTS_A>;
+impl<'a, REG> PCTS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -319,19 +319,19 @@ pub type PCST_R = crate::BitReader;
 #[doc = "Field `PCSEL0` reader - Parity Checker Slice 0 output selection"]
 pub type PCSEL0_R = crate::FieldReader;
 #[doc = "Field `PCSEL0` writer - Parity Checker Slice 0 output selection"]
-pub type PCSEL0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PCSEL0_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `PCSEL1` reader - Parity Checker Slice 1 output selection"]
 pub type PCSEL1_R = crate::FieldReader;
 #[doc = "Field `PCSEL1` writer - Parity Checker Slice 1 output selection"]
-pub type PCSEL1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PCSEL1_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `PCSEL2` reader - Parity Checker Slice 2 output selection"]
 pub type PCSEL2_R = crate::FieldReader;
 #[doc = "Field `PCSEL2` writer - Parity Checker Slice 2 output selection"]
-pub type PCSEL2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PCSEL2_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `PCSEL3` reader - Parity Checker Slice 3 output selection"]
 pub type PCSEL3_R = crate::FieldReader;
 #[doc = "Field `PCSEL3` writer - Parity Checker Slice 3 output selection"]
-pub type PCSEL3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type PCSEL3_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - Parity Checker Automatic start/stop"]
     #[inline(always)]
@@ -388,56 +388,56 @@ impl W {
     #[doc = "Bit 0 - Parity Checker Automatic start/stop"]
     #[inline(always)]
     #[must_use]
-    pub fn pase(&mut self) -> PASE_W<GPCHK_SPEC, 0> {
-        PASE_W::new(self)
+    pub fn pase(&mut self) -> PASE_W<GPCHK_SPEC> {
+        PASE_W::new(self, 0)
     }
     #[doc = "Bits 1:2 - Parity Checker Automatic start/stop selector"]
     #[inline(always)]
     #[must_use]
-    pub fn pacs(&mut self) -> PACS_W<GPCHK_SPEC, 1> {
-        PACS_W::new(self)
+    pub fn pacs(&mut self) -> PACS_W<GPCHK_SPEC> {
+        PACS_W::new(self, 1)
     }
     #[doc = "Bits 3:4 - Driver Input signal selector"]
     #[inline(always)]
     #[must_use]
-    pub fn pisel(&mut self) -> PISEL_W<GPCHK_SPEC, 3> {
-        PISEL_W::new(self)
+    pub fn pisel(&mut self) -> PISEL_W<GPCHK_SPEC> {
+        PISEL_W::new(self, 3)
     }
     #[doc = "Bits 5:6 - Parity Checker Delay Input Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn pcds(&mut self) -> PCDS_W<GPCHK_SPEC, 5> {
-        PCDS_W::new(self)
+    pub fn pcds(&mut self) -> PCDS_W<GPCHK_SPEC> {
+        PCDS_W::new(self, 5)
     }
     #[doc = "Bit 7 - Parity Checker type selector"]
     #[inline(always)]
     #[must_use]
-    pub fn pcts(&mut self) -> PCTS_W<GPCHK_SPEC, 7> {
-        PCTS_W::new(self)
+    pub fn pcts(&mut self) -> PCTS_W<GPCHK_SPEC> {
+        PCTS_W::new(self, 7)
     }
     #[doc = "Bits 16:19 - Parity Checker Slice 0 output selection"]
     #[inline(always)]
     #[must_use]
-    pub fn pcsel0(&mut self) -> PCSEL0_W<GPCHK_SPEC, 16> {
-        PCSEL0_W::new(self)
+    pub fn pcsel0(&mut self) -> PCSEL0_W<GPCHK_SPEC> {
+        PCSEL0_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Parity Checker Slice 1 output selection"]
     #[inline(always)]
     #[must_use]
-    pub fn pcsel1(&mut self) -> PCSEL1_W<GPCHK_SPEC, 20> {
-        PCSEL1_W::new(self)
+    pub fn pcsel1(&mut self) -> PCSEL1_W<GPCHK_SPEC> {
+        PCSEL1_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Parity Checker Slice 2 output selection"]
     #[inline(always)]
     #[must_use]
-    pub fn pcsel2(&mut self) -> PCSEL2_W<GPCHK_SPEC, 24> {
-        PCSEL2_W::new(self)
+    pub fn pcsel2(&mut self) -> PCSEL2_W<GPCHK_SPEC> {
+        PCSEL2_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Parity Checker Slice 3 output selection"]
     #[inline(always)]
     #[must_use]
-    pub fn pcsel3(&mut self) -> PCSEL3_W<GPCHK_SPEC, 28> {
-        PCSEL3_W::new(self)
+    pub fn pcsel3(&mut self) -> PCSEL3_W<GPCHK_SPEC> {
+        PCSEL3_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

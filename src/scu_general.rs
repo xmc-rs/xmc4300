@@ -1,42 +1,104 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - SCU Module ID Register"]
-    pub id: ID,
-    #[doc = "0x04 - Chip ID Register"]
-    pub idchip: IDCHIP,
-    #[doc = "0x08 - Manufactory ID Register"]
-    pub idmanuf: IDMANUF,
+    id: ID,
+    idchip: IDCHIP,
+    idmanuf: IDMANUF,
     _reserved3: [u8; 0x04],
-    #[doc = "0x10 - Startup Configuration Register"]
-    pub stcon: STCON,
+    stcon: STCON,
     _reserved4: [u8; 0x18],
-    #[doc = "0x2c - General Purpose Register 0"]
-    pub gpr0: GPR0,
-    #[doc = "0x30 - General Purpose Register 1"]
-    pub gpr1: GPR1,
+    gpr0: GPR0,
+    gpr1: GPR1,
     _reserved6: [u8; 0x18],
-    #[doc = "0x4c - CCU Control Register"]
-    pub ccucon: CCUCON,
+    ccucon: CCUCON,
     _reserved7: [u8; 0x3c],
-    #[doc = "0x8c - Die Temperature Sensor Control Register"]
-    pub dtscon: DTSCON,
-    #[doc = "0x90 - Die Temperature Sensor Status Register"]
-    pub dtsstat: DTSSTAT,
+    dtscon: DTSCON,
+    dtsstat: DTSSTAT,
     _reserved9: [u8; 0x08],
-    #[doc = "0x9c - SD-MMC Delay Control Register"]
-    pub sdmmcdel: SDMMCDEL,
-    #[doc = "0xa0 - Out of Range Comparator Enable Register 0"]
-    pub g0orcen: G0ORCEN,
-    #[doc = "0xa4 - Out of Range Comparator Enable Register 1"]
-    pub g1orcen: G1ORCEN,
+    sdmmcdel: SDMMCDEL,
+    g0orcen: G0ORCEN,
+    g1orcen: G1ORCEN,
     _reserved12: [u8; 0x1c],
+    mirrsts: MIRRSTS,
+    rmacr: RMACR,
+    rmdata: RMDATA,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - SCU Module ID Register"]
+    #[inline(always)]
+    pub const fn id(&self) -> &ID {
+        &self.id
+    }
+    #[doc = "0x04 - Chip ID Register"]
+    #[inline(always)]
+    pub const fn idchip(&self) -> &IDCHIP {
+        &self.idchip
+    }
+    #[doc = "0x08 - Manufactory ID Register"]
+    #[inline(always)]
+    pub const fn idmanuf(&self) -> &IDMANUF {
+        &self.idmanuf
+    }
+    #[doc = "0x10 - Startup Configuration Register"]
+    #[inline(always)]
+    pub const fn stcon(&self) -> &STCON {
+        &self.stcon
+    }
+    #[doc = "0x2c - General Purpose Register 0"]
+    #[inline(always)]
+    pub const fn gpr0(&self) -> &GPR0 {
+        &self.gpr0
+    }
+    #[doc = "0x30 - General Purpose Register 1"]
+    #[inline(always)]
+    pub const fn gpr1(&self) -> &GPR1 {
+        &self.gpr1
+    }
+    #[doc = "0x4c - CCU Control Register"]
+    #[inline(always)]
+    pub const fn ccucon(&self) -> &CCUCON {
+        &self.ccucon
+    }
+    #[doc = "0x8c - Die Temperature Sensor Control Register"]
+    #[inline(always)]
+    pub const fn dtscon(&self) -> &DTSCON {
+        &self.dtscon
+    }
+    #[doc = "0x90 - Die Temperature Sensor Status Register"]
+    #[inline(always)]
+    pub const fn dtsstat(&self) -> &DTSSTAT {
+        &self.dtsstat
+    }
+    #[doc = "0x9c - SD-MMC Delay Control Register"]
+    #[inline(always)]
+    pub const fn sdmmcdel(&self) -> &SDMMCDEL {
+        &self.sdmmcdel
+    }
+    #[doc = "0xa0 - Out of Range Comparator Enable Register 0"]
+    #[inline(always)]
+    pub const fn g0orcen(&self) -> &G0ORCEN {
+        &self.g0orcen
+    }
+    #[doc = "0xa4 - Out of Range Comparator Enable Register 1"]
+    #[inline(always)]
+    pub const fn g1orcen(&self) -> &G1ORCEN {
+        &self.g1orcen
+    }
     #[doc = "0xc4 - Mirror Write Status Register"]
-    pub mirrsts: MIRRSTS,
+    #[inline(always)]
+    pub const fn mirrsts(&self) -> &MIRRSTS {
+        &self.mirrsts
+    }
     #[doc = "0xc8 - Retention Memory Access Control Register"]
-    pub rmacr: RMACR,
+    #[inline(always)]
+    pub const fn rmacr(&self) -> &RMACR {
+        &self.rmacr
+    }
     #[doc = "0xcc - Retention Memory Access Data Register"]
-    pub rmdata: RMDATA,
+    #[inline(always)]
+    pub const fn rmdata(&self) -> &RMDATA {
+        &self.rmdata
+    }
 }
 #[doc = "ID (r) register accessor: SCU Module ID Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@id`]
 module"]

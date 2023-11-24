@@ -1,13 +1,27 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - OSC_HP Status Register"]
-    pub oschpstat: OSCHPSTAT,
-    #[doc = "0x04 - OSC_HP Control Register"]
-    pub oschpctrl: OSCHPCTRL,
+    oschpstat: OSCHPSTAT,
+    oschpctrl: OSCHPCTRL,
     _reserved2: [u8; 0x04],
+    clkcalconst: CLKCALCONST,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - OSC_HP Status Register"]
+    #[inline(always)]
+    pub const fn oschpstat(&self) -> &OSCHPSTAT {
+        &self.oschpstat
+    }
+    #[doc = "0x04 - OSC_HP Control Register"]
+    #[inline(always)]
+    pub const fn oschpctrl(&self) -> &OSCHPCTRL {
+        &self.oschpctrl
+    }
     #[doc = "0x0c - Clock Calibration Constant Register"]
-    pub clkcalconst: CLKCALCONST,
+    #[inline(always)]
+    pub const fn clkcalconst(&self) -> &CLKCALCONST {
+        &self.clkcalconst
+    }
 }
 #[doc = "OSCHPSTAT (r) register accessor: OSC_HP Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`oschpstat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@oschpstat`]
 module"]

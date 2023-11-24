@@ -5,11 +5,11 @@ pub type W = crate::W<DAC01DATA_SPEC>;
 #[doc = "Field `DATA0` reader - DAC0 Data Bits"]
 pub type DATA0_R = crate::FieldReader<u16>;
 #[doc = "Field `DATA0` writer - DAC0 Data Bits"]
-pub type DATA0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type DATA0_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "Field `DATA1` reader - DAC1 Data Bits"]
 pub type DATA1_R = crate::FieldReader<u16>;
 #[doc = "Field `DATA1` writer - DAC1 Data Bits"]
-pub type DATA1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type DATA1_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     #[doc = "Bits 0:11 - DAC0 Data Bits"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:11 - DAC0 Data Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn data0(&mut self) -> DATA0_W<DAC01DATA_SPEC, 0> {
-        DATA0_W::new(self)
+    pub fn data0(&mut self) -> DATA0_W<DAC01DATA_SPEC> {
+        DATA0_W::new(self, 0)
     }
     #[doc = "Bits 16:27 - DAC1 Data Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn data1(&mut self) -> DATA1_W<DAC01DATA_SPEC, 16> {
-        DATA1_W::new(self)
+    pub fn data1(&mut self) -> DATA1_W<DAC01DATA_SPEC> {
+        DATA1_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

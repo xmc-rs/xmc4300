@@ -5,23 +5,23 @@ pub type W = crate::W<ACTLR_SPEC>;
 #[doc = "Field `DISMCYCINT` reader - Disable load/store multiple"]
 pub type DISMCYCINT_R = crate::BitReader;
 #[doc = "Field `DISMCYCINT` writer - Disable load/store multiple"]
-pub type DISMCYCINT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DISMCYCINT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DISDEFWBUF` reader - Disable write buffer"]
 pub type DISDEFWBUF_R = crate::BitReader;
 #[doc = "Field `DISDEFWBUF` writer - Disable write buffer"]
-pub type DISDEFWBUF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DISDEFWBUF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DISFOLD` reader - Disable IT folding"]
 pub type DISFOLD_R = crate::BitReader;
 #[doc = "Field `DISFOLD` writer - Disable IT folding"]
-pub type DISFOLD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DISFOLD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DISFPCA` reader - Disable FPCA update"]
 pub type DISFPCA_R = crate::BitReader;
 #[doc = "Field `DISFPCA` writer - Disable FPCA update"]
-pub type DISFPCA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DISFPCA_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DISOOFP` reader - Disable out of order FP execution"]
 pub type DISOOFP_R = crate::BitReader;
 #[doc = "Field `DISOOFP` writer - Disable out of order FP execution"]
-pub type DISOOFP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DISOOFP_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Disable load/store multiple"]
     #[inline(always)]
@@ -53,32 +53,32 @@ impl W {
     #[doc = "Bit 0 - Disable load/store multiple"]
     #[inline(always)]
     #[must_use]
-    pub fn dismcycint(&mut self) -> DISMCYCINT_W<ACTLR_SPEC, 0> {
-        DISMCYCINT_W::new(self)
+    pub fn dismcycint(&mut self) -> DISMCYCINT_W<ACTLR_SPEC> {
+        DISMCYCINT_W::new(self, 0)
     }
     #[doc = "Bit 1 - Disable write buffer"]
     #[inline(always)]
     #[must_use]
-    pub fn disdefwbuf(&mut self) -> DISDEFWBUF_W<ACTLR_SPEC, 1> {
-        DISDEFWBUF_W::new(self)
+    pub fn disdefwbuf(&mut self) -> DISDEFWBUF_W<ACTLR_SPEC> {
+        DISDEFWBUF_W::new(self, 1)
     }
     #[doc = "Bit 2 - Disable IT folding"]
     #[inline(always)]
     #[must_use]
-    pub fn disfold(&mut self) -> DISFOLD_W<ACTLR_SPEC, 2> {
-        DISFOLD_W::new(self)
+    pub fn disfold(&mut self) -> DISFOLD_W<ACTLR_SPEC> {
+        DISFOLD_W::new(self, 2)
     }
     #[doc = "Bit 8 - Disable FPCA update"]
     #[inline(always)]
     #[must_use]
-    pub fn disfpca(&mut self) -> DISFPCA_W<ACTLR_SPEC, 8> {
-        DISFPCA_W::new(self)
+    pub fn disfpca(&mut self) -> DISFPCA_W<ACTLR_SPEC> {
+        DISFPCA_W::new(self, 8)
     }
     #[doc = "Bit 9 - Disable out of order FP execution"]
     #[inline(always)]
     #[must_use]
-    pub fn disoofp(&mut self) -> DISOOFP_W<ACTLR_SPEC, 9> {
-        DISOOFP_W::new(self)
+    pub fn disoofp(&mut self) -> DISOOFP_W<ACTLR_SPEC> {
+        DISOOFP_W::new(self, 9)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

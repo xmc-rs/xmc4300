@@ -41,19 +41,19 @@ impl CUR_MOD_R {
 #[doc = "Field `ModeMis` reader - Mode Mismatch Interrupt"]
 pub type MODE_MIS_R = crate::BitReader;
 #[doc = "Field `ModeMis` writer - Mode Mismatch Interrupt"]
-pub type MODE_MIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MODE_MIS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OTGInt` reader - OTG Interrupt"]
 pub type OTGINT_R = crate::BitReader;
 #[doc = "Field `Sof` reader - Start of Frame"]
 pub type SOF_R = crate::BitReader;
 #[doc = "Field `Sof` writer - Start of Frame"]
-pub type SOF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SOF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RxFLvl` reader - RxFIFO Non-Empty"]
 pub type RX_FLVL_R = crate::BitReader;
 #[doc = "Field `incomplP` reader - Incomplete Periodic Transfer"]
 pub type INCOMPL_P_R = crate::BitReader;
 #[doc = "Field `incomplP` writer - Incomplete Periodic Transfer"]
-pub type INCOMPL_P_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INCOMPL_P_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `PrtInt` reader - Host Port Interrupt"]
 pub type PRT_INT_R = crate::BitReader;
 #[doc = "Field `HChInt` reader - Host Channels Interrupt"]
@@ -63,19 +63,19 @@ pub type PTX_FEMP_R = crate::BitReader;
 #[doc = "Field `ConIDStsChng` reader - Connector ID Status Change"]
 pub type CON_IDSTS_CHNG_R = crate::BitReader;
 #[doc = "Field `ConIDStsChng` writer - Connector ID Status Change"]
-pub type CON_IDSTS_CHNG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CON_IDSTS_CHNG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DisconnInt` reader - Disconnect Detected Interrupt"]
 pub type DISCONN_INT_R = crate::BitReader;
 #[doc = "Field `DisconnInt` writer - Disconnect Detected Interrupt"]
-pub type DISCONN_INT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DISCONN_INT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SessReqInt` reader - Session Request/New Session Detected Interrupt"]
 pub type SESS_REQ_INT_R = crate::BitReader;
 #[doc = "Field `SessReqInt` writer - Session Request/New Session Detected Interrupt"]
-pub type SESS_REQ_INT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SESS_REQ_INT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `WkUpInt` reader - Resume/Remote Wakeup Detected Interrupt"]
 pub type WK_UP_INT_R = crate::BitReader;
 #[doc = "Field `WkUpInt` writer - Resume/Remote Wakeup Detected Interrupt"]
-pub type WK_UP_INT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type WK_UP_INT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Current Mode of Operation"]
     #[inline(always)]
@@ -147,44 +147,44 @@ impl W {
     #[doc = "Bit 1 - Mode Mismatch Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn mode_mis(&mut self) -> MODE_MIS_W<GINTSTS_HOSTMODE_SPEC, 1> {
-        MODE_MIS_W::new(self)
+    pub fn mode_mis(&mut self) -> MODE_MIS_W<GINTSTS_HOSTMODE_SPEC> {
+        MODE_MIS_W::new(self, 1)
     }
     #[doc = "Bit 3 - Start of Frame"]
     #[inline(always)]
     #[must_use]
-    pub fn sof(&mut self) -> SOF_W<GINTSTS_HOSTMODE_SPEC, 3> {
-        SOF_W::new(self)
+    pub fn sof(&mut self) -> SOF_W<GINTSTS_HOSTMODE_SPEC> {
+        SOF_W::new(self, 3)
     }
     #[doc = "Bit 21 - Incomplete Periodic Transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn incompl_p(&mut self) -> INCOMPL_P_W<GINTSTS_HOSTMODE_SPEC, 21> {
-        INCOMPL_P_W::new(self)
+    pub fn incompl_p(&mut self) -> INCOMPL_P_W<GINTSTS_HOSTMODE_SPEC> {
+        INCOMPL_P_W::new(self, 21)
     }
     #[doc = "Bit 28 - Connector ID Status Change"]
     #[inline(always)]
     #[must_use]
-    pub fn con_idsts_chng(&mut self) -> CON_IDSTS_CHNG_W<GINTSTS_HOSTMODE_SPEC, 28> {
-        CON_IDSTS_CHNG_W::new(self)
+    pub fn con_idsts_chng(&mut self) -> CON_IDSTS_CHNG_W<GINTSTS_HOSTMODE_SPEC> {
+        CON_IDSTS_CHNG_W::new(self, 28)
     }
     #[doc = "Bit 29 - Disconnect Detected Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn disconn_int(&mut self) -> DISCONN_INT_W<GINTSTS_HOSTMODE_SPEC, 29> {
-        DISCONN_INT_W::new(self)
+    pub fn disconn_int(&mut self) -> DISCONN_INT_W<GINTSTS_HOSTMODE_SPEC> {
+        DISCONN_INT_W::new(self, 29)
     }
     #[doc = "Bit 30 - Session Request/New Session Detected Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn sess_req_int(&mut self) -> SESS_REQ_INT_W<GINTSTS_HOSTMODE_SPEC, 30> {
-        SESS_REQ_INT_W::new(self)
+    pub fn sess_req_int(&mut self) -> SESS_REQ_INT_W<GINTSTS_HOSTMODE_SPEC> {
+        SESS_REQ_INT_W::new(self, 30)
     }
     #[doc = "Bit 31 - Resume/Remote Wakeup Detected Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn wk_up_int(&mut self) -> WK_UP_INT_W<GINTSTS_HOSTMODE_SPEC, 31> {
-        WK_UP_INT_W::new(self)
+    pub fn wk_up_int(&mut self) -> WK_UP_INT_W<GINTSTS_HOSTMODE_SPEC> {
+        WK_UP_INT_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,19 +5,19 @@ pub type W = crate::W<FPDSCR_SPEC>;
 #[doc = "Field `RMode` reader - Default value for FPSCR.RMode"]
 pub type RMODE_R = crate::FieldReader;
 #[doc = "Field `RMode` writer - Default value for FPSCR.RMode"]
-pub type RMODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type RMODE_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `FZ` reader - Default value for FPSCR.FZ"]
 pub type FZ_R = crate::BitReader;
 #[doc = "Field `FZ` writer - Default value for FPSCR.FZ"]
-pub type FZ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FZ_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DN` reader - Default value for FPSCR.DN"]
 pub type DN_R = crate::BitReader;
 #[doc = "Field `DN` writer - Default value for FPSCR.DN"]
-pub type DN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `AHP` reader - Default value for FPSCR.AHP"]
 pub type AHP_R = crate::BitReader;
 #[doc = "Field `AHP` writer - Default value for FPSCR.AHP"]
-pub type AHP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type AHP_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 22:23 - Default value for FPSCR.RMode"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 22:23 - Default value for FPSCR.RMode"]
     #[inline(always)]
     #[must_use]
-    pub fn rmode(&mut self) -> RMODE_W<FPDSCR_SPEC, 22> {
-        RMODE_W::new(self)
+    pub fn rmode(&mut self) -> RMODE_W<FPDSCR_SPEC> {
+        RMODE_W::new(self, 22)
     }
     #[doc = "Bit 24 - Default value for FPSCR.FZ"]
     #[inline(always)]
     #[must_use]
-    pub fn fz(&mut self) -> FZ_W<FPDSCR_SPEC, 24> {
-        FZ_W::new(self)
+    pub fn fz(&mut self) -> FZ_W<FPDSCR_SPEC> {
+        FZ_W::new(self, 24)
     }
     #[doc = "Bit 25 - Default value for FPSCR.DN"]
     #[inline(always)]
     #[must_use]
-    pub fn dn(&mut self) -> DN_W<FPDSCR_SPEC, 25> {
-        DN_W::new(self)
+    pub fn dn(&mut self) -> DN_W<FPDSCR_SPEC> {
+        DN_W::new(self, 25)
     }
     #[doc = "Bit 26 - Default value for FPSCR.AHP"]
     #[inline(always)]
     #[must_use]
-    pub fn ahp(&mut self) -> AHP_W<FPDSCR_SPEC, 26> {
-        AHP_W::new(self)
+    pub fn ahp(&mut self) -> AHP_W<FPDSCR_SPEC> {
+        AHP_W::new(self, 26)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

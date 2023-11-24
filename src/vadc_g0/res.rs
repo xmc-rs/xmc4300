@@ -5,7 +5,7 @@ pub type W = crate::W<RES_SPEC>;
 #[doc = "Field `RESULT` reader - Result of Most Recent Conversion"]
 pub type RESULT_R = crate::FieldReader<u16>;
 #[doc = "Field `RESULT` writer - Result of Most Recent Conversion"]
-pub type RESULT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type RESULT_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `DRC` reader - Data Reduction Counter"]
 pub type DRC_R = crate::FieldReader;
 #[doc = "Field `CHNR` reader - Channel Number"]
@@ -174,8 +174,8 @@ impl W {
     #[doc = "Bits 0:15 - Result of Most Recent Conversion"]
     #[inline(always)]
     #[must_use]
-    pub fn result(&mut self) -> RESULT_W<RES_SPEC, 0> {
-        RESULT_W::new(self)
+    pub fn result(&mut self) -> RESULT_W<RES_SPEC> {
+        RESULT_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

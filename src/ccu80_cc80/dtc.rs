@@ -39,8 +39,8 @@ impl DTE1_R {
     }
 }
 #[doc = "Field `DTE1` writer - Dead Time Enable for Channel 1"]
-pub type DTE1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DTE1_A>;
-impl<'a, REG, const O: u8> DTE1_W<'a, REG, O>
+pub type DTE1_W<'a, REG> = crate::BitWriter<'a, REG, DTE1_A>;
+impl<'a, REG> DTE1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl DTE2_R {
     }
 }
 #[doc = "Field `DTE2` writer - Dead Time Enable for Channel 2"]
-pub type DTE2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DTE2_A>;
-impl<'a, REG, const O: u8> DTE2_W<'a, REG, O>
+pub type DTE2_W<'a, REG> = crate::BitWriter<'a, REG, DTE2_A>;
+impl<'a, REG> DTE2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl DCEN1_R {
     }
 }
 #[doc = "Field `DCEN1` writer - Dead Time Enable for CC8yST1"]
-pub type DCEN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DCEN1_A>;
-impl<'a, REG, const O: u8> DCEN1_W<'a, REG, O>
+pub type DCEN1_W<'a, REG> = crate::BitWriter<'a, REG, DCEN1_A>;
+impl<'a, REG> DCEN1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl DCEN2_R {
     }
 }
 #[doc = "Field `DCEN2` writer - Dead Time Enable for inverted CC8yST1"]
-pub type DCEN2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DCEN2_A>;
-impl<'a, REG, const O: u8> DCEN2_W<'a, REG, O>
+pub type DCEN2_W<'a, REG> = crate::BitWriter<'a, REG, DCEN2_A>;
+impl<'a, REG> DCEN2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl DCEN3_R {
     }
 }
 #[doc = "Field `DCEN3` writer - Dead Time Enable for CC8yST2"]
-pub type DCEN3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DCEN3_A>;
-impl<'a, REG, const O: u8> DCEN3_W<'a, REG, O>
+pub type DCEN3_W<'a, REG> = crate::BitWriter<'a, REG, DCEN3_A>;
+impl<'a, REG> DCEN3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl DCEN4_R {
     }
 }
 #[doc = "Field `DCEN4` writer - Dead Time Enable for inverted CC8yST2"]
-pub type DCEN4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DCEN4_A>;
-impl<'a, REG, const O: u8> DCEN4_W<'a, REG, O>
+pub type DCEN4_W<'a, REG> = crate::BitWriter<'a, REG, DCEN4_A>;
+impl<'a, REG> DCEN4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -378,8 +378,8 @@ impl DTCC_R {
     }
 }
 #[doc = "Field `DTCC` writer - Dead Time clock control"]
-pub type DTCC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, DTCC_A>;
-impl<'a, REG, const O: u8> DTCC_W<'a, REG, O>
+pub type DTCC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, DTCC_A>;
+impl<'a, REG> DTCC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -446,44 +446,44 @@ impl W {
     #[doc = "Bit 0 - Dead Time Enable for Channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn dte1(&mut self) -> DTE1_W<DTC_SPEC, 0> {
-        DTE1_W::new(self)
+    pub fn dte1(&mut self) -> DTE1_W<DTC_SPEC> {
+        DTE1_W::new(self, 0)
     }
     #[doc = "Bit 1 - Dead Time Enable for Channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn dte2(&mut self) -> DTE2_W<DTC_SPEC, 1> {
-        DTE2_W::new(self)
+    pub fn dte2(&mut self) -> DTE2_W<DTC_SPEC> {
+        DTE2_W::new(self, 1)
     }
     #[doc = "Bit 2 - Dead Time Enable for CC8yST1"]
     #[inline(always)]
     #[must_use]
-    pub fn dcen1(&mut self) -> DCEN1_W<DTC_SPEC, 2> {
-        DCEN1_W::new(self)
+    pub fn dcen1(&mut self) -> DCEN1_W<DTC_SPEC> {
+        DCEN1_W::new(self, 2)
     }
     #[doc = "Bit 3 - Dead Time Enable for inverted CC8yST1"]
     #[inline(always)]
     #[must_use]
-    pub fn dcen2(&mut self) -> DCEN2_W<DTC_SPEC, 3> {
-        DCEN2_W::new(self)
+    pub fn dcen2(&mut self) -> DCEN2_W<DTC_SPEC> {
+        DCEN2_W::new(self, 3)
     }
     #[doc = "Bit 4 - Dead Time Enable for CC8yST2"]
     #[inline(always)]
     #[must_use]
-    pub fn dcen3(&mut self) -> DCEN3_W<DTC_SPEC, 4> {
-        DCEN3_W::new(self)
+    pub fn dcen3(&mut self) -> DCEN3_W<DTC_SPEC> {
+        DCEN3_W::new(self, 4)
     }
     #[doc = "Bit 5 - Dead Time Enable for inverted CC8yST2"]
     #[inline(always)]
     #[must_use]
-    pub fn dcen4(&mut self) -> DCEN4_W<DTC_SPEC, 5> {
-        DCEN4_W::new(self)
+    pub fn dcen4(&mut self) -> DCEN4_W<DTC_SPEC> {
+        DCEN4_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Dead Time clock control"]
     #[inline(always)]
     #[must_use]
-    pub fn dtcc(&mut self) -> DTCC_W<DTC_SPEC, 6> {
-        DTCC_W::new(self)
+    pub fn dtcc(&mut self) -> DTCC_W<DTC_SPEC> {
+        DTCC_W::new(self, 6)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -39,8 +39,8 @@ impl PE_R {
     }
 }
 #[doc = "Field `PE` writer - Output Trigger Pulse Enable for ETLx"]
-pub type PE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PE_A>;
-impl<'a, REG, const O: u8> PE_W<'a, REG, O>
+pub type PE_W<'a, REG> = crate::BitWriter<'a, REG, PE_A>;
+impl<'a, REG> PE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl LD_R {
     }
 }
 #[doc = "Field `LD` writer - Rebuild Level Detection for Status Flag for ETLx"]
-pub type LD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LD_A>;
-impl<'a, REG, const O: u8> LD_W<'a, REG, O>
+pub type LD_W<'a, REG> = crate::BitWriter<'a, REG, LD_A>;
+impl<'a, REG> LD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl RE_R {
     }
 }
 #[doc = "Field `RE` writer - Rising Edge Detection Enable ETLx"]
-pub type RE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RE_A>;
-impl<'a, REG, const O: u8> RE_W<'a, REG, O>
+pub type RE_W<'a, REG> = crate::BitWriter<'a, REG, RE_A>;
+impl<'a, REG> RE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl FE_R {
     }
 }
 #[doc = "Field `FE` writer - Falling Edge Detection Enable ETLx"]
-pub type FE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FE_A>;
-impl<'a, REG, const O: u8> FE_W<'a, REG, O>
+pub type FE_W<'a, REG> = crate::BitWriter<'a, REG, FE_A>;
+impl<'a, REG> FE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -272,8 +272,8 @@ impl OCS_R {
     }
 }
 #[doc = "Field `OCS` writer - Output Channel Select for ETLx Output Trigger Pulse"]
-pub type OCS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, OCS_A>;
-impl<'a, REG, const O: u8> OCS_W<'a, REG, O>
+pub type OCS_W<'a, REG> = crate::FieldWriter<'a, REG, 3, OCS_A>;
+impl<'a, REG> OCS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -336,8 +336,8 @@ impl FL_R {
     }
 }
 #[doc = "Field `FL` writer - Status Flag for ETLx"]
-pub type FL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FL_A>;
-impl<'a, REG, const O: u8> FL_W<'a, REG, O>
+pub type FL_W<'a, REG> = crate::BitWriter<'a, REG, FL_A>;
+impl<'a, REG> FL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl SS_R {
     }
 }
 #[doc = "Field `SS` writer - Input Source Select for ERSx"]
-pub type SS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, SS_A>;
-impl<'a, REG, const O: u8> SS_W<'a, REG, O>
+pub type SS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SS_A>;
+impl<'a, REG> SS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -474,8 +474,8 @@ impl NA_R {
     }
 }
 #[doc = "Field `NA` writer - Input A Negation Select for ERSx"]
-pub type NA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NA_A>;
-impl<'a, REG, const O: u8> NA_W<'a, REG, O>
+pub type NA_W<'a, REG> = crate::BitWriter<'a, REG, NA_A>;
+impl<'a, REG> NA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -527,8 +527,8 @@ impl NB_R {
     }
 }
 #[doc = "Field `NB` writer - Input B Negation Select for ERSx"]
-pub type NB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NB_A>;
-impl<'a, REG, const O: u8> NB_W<'a, REG, O>
+pub type NB_W<'a, REG> = crate::BitWriter<'a, REG, NB_A>;
+impl<'a, REG> NB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -594,56 +594,56 @@ impl W {
     #[doc = "Bit 0 - Output Trigger Pulse Enable for ETLx"]
     #[inline(always)]
     #[must_use]
-    pub fn pe(&mut self) -> PE_W<EXICON_SPEC, 0> {
-        PE_W::new(self)
+    pub fn pe(&mut self) -> PE_W<EXICON_SPEC> {
+        PE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Rebuild Level Detection for Status Flag for ETLx"]
     #[inline(always)]
     #[must_use]
-    pub fn ld(&mut self) -> LD_W<EXICON_SPEC, 1> {
-        LD_W::new(self)
+    pub fn ld(&mut self) -> LD_W<EXICON_SPEC> {
+        LD_W::new(self, 1)
     }
     #[doc = "Bit 2 - Rising Edge Detection Enable ETLx"]
     #[inline(always)]
     #[must_use]
-    pub fn re(&mut self) -> RE_W<EXICON_SPEC, 2> {
-        RE_W::new(self)
+    pub fn re(&mut self) -> RE_W<EXICON_SPEC> {
+        RE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Falling Edge Detection Enable ETLx"]
     #[inline(always)]
     #[must_use]
-    pub fn fe(&mut self) -> FE_W<EXICON_SPEC, 3> {
-        FE_W::new(self)
+    pub fn fe(&mut self) -> FE_W<EXICON_SPEC> {
+        FE_W::new(self, 3)
     }
     #[doc = "Bits 4:6 - Output Channel Select for ETLx Output Trigger Pulse"]
     #[inline(always)]
     #[must_use]
-    pub fn ocs(&mut self) -> OCS_W<EXICON_SPEC, 4> {
-        OCS_W::new(self)
+    pub fn ocs(&mut self) -> OCS_W<EXICON_SPEC> {
+        OCS_W::new(self, 4)
     }
     #[doc = "Bit 7 - Status Flag for ETLx"]
     #[inline(always)]
     #[must_use]
-    pub fn fl(&mut self) -> FL_W<EXICON_SPEC, 7> {
-        FL_W::new(self)
+    pub fn fl(&mut self) -> FL_W<EXICON_SPEC> {
+        FL_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Input Source Select for ERSx"]
     #[inline(always)]
     #[must_use]
-    pub fn ss(&mut self) -> SS_W<EXICON_SPEC, 8> {
-        SS_W::new(self)
+    pub fn ss(&mut self) -> SS_W<EXICON_SPEC> {
+        SS_W::new(self, 8)
     }
     #[doc = "Bit 10 - Input A Negation Select for ERSx"]
     #[inline(always)]
     #[must_use]
-    pub fn na(&mut self) -> NA_W<EXICON_SPEC, 10> {
-        NA_W::new(self)
+    pub fn na(&mut self) -> NA_W<EXICON_SPEC> {
+        NA_W::new(self, 10)
     }
     #[doc = "Bit 11 - Input B Negation Select for ERSx"]
     #[inline(always)]
     #[must_use]
-    pub fn nb(&mut self) -> NB_W<EXICON_SPEC, 11> {
-        NB_W::new(self)
+    pub fn nb(&mut self) -> NB_W<EXICON_SPEC> {
+        NB_W::new(self, 11)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

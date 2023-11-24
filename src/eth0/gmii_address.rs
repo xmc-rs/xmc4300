@@ -5,23 +5,23 @@ pub type W = crate::W<GMII_ADDRESS_SPEC>;
 #[doc = "Field `MB` reader - MII Busy"]
 pub type MB_R = crate::BitReader;
 #[doc = "Field `MB` writer - MII Busy"]
-pub type MB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MW` reader - MII Write"]
 pub type MW_R = crate::BitReader;
 #[doc = "Field `MW` writer - MII Write"]
-pub type MW_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MW_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CR` reader - CSR Clock Range"]
 pub type CR_R = crate::FieldReader;
 #[doc = "Field `CR` writer - CSR Clock Range"]
-pub type CR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `MR` reader - MII Register"]
 pub type MR_R = crate::FieldReader;
 #[doc = "Field `MR` writer - MII Register"]
-pub type MR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type MR_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PA` reader - Physical Layer Address"]
 pub type PA_R = crate::FieldReader;
 #[doc = "Field `PA` writer - Physical Layer Address"]
-pub type PA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type PA_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bit 0 - MII Busy"]
     #[inline(always)]
@@ -53,32 +53,32 @@ impl W {
     #[doc = "Bit 0 - MII Busy"]
     #[inline(always)]
     #[must_use]
-    pub fn mb(&mut self) -> MB_W<GMII_ADDRESS_SPEC, 0> {
-        MB_W::new(self)
+    pub fn mb(&mut self) -> MB_W<GMII_ADDRESS_SPEC> {
+        MB_W::new(self, 0)
     }
     #[doc = "Bit 1 - MII Write"]
     #[inline(always)]
     #[must_use]
-    pub fn mw(&mut self) -> MW_W<GMII_ADDRESS_SPEC, 1> {
-        MW_W::new(self)
+    pub fn mw(&mut self) -> MW_W<GMII_ADDRESS_SPEC> {
+        MW_W::new(self, 1)
     }
     #[doc = "Bits 2:5 - CSR Clock Range"]
     #[inline(always)]
     #[must_use]
-    pub fn cr(&mut self) -> CR_W<GMII_ADDRESS_SPEC, 2> {
-        CR_W::new(self)
+    pub fn cr(&mut self) -> CR_W<GMII_ADDRESS_SPEC> {
+        CR_W::new(self, 2)
     }
     #[doc = "Bits 6:10 - MII Register"]
     #[inline(always)]
     #[must_use]
-    pub fn mr(&mut self) -> MR_W<GMII_ADDRESS_SPEC, 6> {
-        MR_W::new(self)
+    pub fn mr(&mut self) -> MR_W<GMII_ADDRESS_SPEC> {
+        MR_W::new(self, 6)
     }
     #[doc = "Bits 11:15 - Physical Layer Address"]
     #[inline(always)]
     #[must_use]
-    pub fn pa(&mut self) -> PA_W<GMII_ADDRESS_SPEC, 11> {
-        PA_W::new(self)
+    pub fn pa(&mut self) -> PA_W<GMII_ADDRESS_SPEC> {
+        PA_W::new(self, 11)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

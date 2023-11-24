@@ -15,8 +15,8 @@ impl From<SEV0_AW> for bool {
     }
 }
 #[doc = "Field `SEV0` writer - Clear Source Event 0/1"]
-pub type SEV0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SEV0_AW>;
-impl<'a, REG, const O: u8> SEV0_W<'a, REG, O>
+pub type SEV0_W<'a, REG> = crate::BitWriter<'a, REG, SEV0_AW>;
+impl<'a, REG> SEV0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<SEV1_AW> for bool {
     }
 }
 #[doc = "Field `SEV1` writer - Clear Source Event 0/1"]
-pub type SEV1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SEV1_AW>;
-impl<'a, REG, const O: u8> SEV1_W<'a, REG, O>
+pub type SEV1_W<'a, REG> = crate::BitWriter<'a, REG, SEV1_AW>;
+impl<'a, REG> SEV1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,14 +66,14 @@ impl W {
     #[doc = "Bit 0 - Clear Source Event 0/1"]
     #[inline(always)]
     #[must_use]
-    pub fn sev0(&mut self) -> SEV0_W<SEFCLR_SPEC, 0> {
-        SEV0_W::new(self)
+    pub fn sev0(&mut self) -> SEV0_W<SEFCLR_SPEC> {
+        SEV0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Source Event 0/1"]
     #[inline(always)]
     #[must_use]
-    pub fn sev1(&mut self) -> SEV1_W<SEFCLR_SPEC, 1> {
-        SEV1_W::new(self)
+    pub fn sev1(&mut self) -> SEV1_W<SEFCLR_SPEC> {
+        SEV1_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -52,8 +52,8 @@ impl PTX_FSPC_AVAIL_R {
     }
 }
 #[doc = "Field `PTxFSpcAvail` writer - Periodic Transmit Data FIFO Space Available"]
-pub type PTX_FSPC_AVAIL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, PTX_FSPC_AVAIL_A>;
-impl<'a, REG, const O: u8> PTX_FSPC_AVAIL_W<'a, REG, O>
+pub type PTX_FSPC_AVAIL_W<'a, REG> = crate::FieldWriter<'a, REG, 16, PTX_FSPC_AVAIL_A>;
+impl<'a, REG> PTX_FSPC_AVAIL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u16>,
@@ -146,8 +146,8 @@ impl W {
     #[doc = "Bits 0:15 - Periodic Transmit Data FIFO Space Available"]
     #[inline(always)]
     #[must_use]
-    pub fn ptx_fspc_avail(&mut self) -> PTX_FSPC_AVAIL_W<HPTXSTS_SPEC, 0> {
-        PTX_FSPC_AVAIL_W::new(self)
+    pub fn ptx_fspc_avail(&mut self) -> PTX_FSPC_AVAIL_W<HPTXSTS_SPEC> {
+        PTX_FSPC_AVAIL_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<SAR_SPEC>;
 #[doc = "Field `SAR` reader - Current Source Address of DMA transfer"]
 pub type SAR_R = crate::FieldReader<u32>;
 #[doc = "Field `SAR` writer - Current Source Address of DMA transfer"]
-pub type SAR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type SAR_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Current Source Address of DMA transfer"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Current Source Address of DMA transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn sar(&mut self) -> SAR_W<SAR_SPEC, 0> {
-        SAR_W::new(self)
+    pub fn sar(&mut self) -> SAR_W<SAR_SPEC> {
+        SAR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

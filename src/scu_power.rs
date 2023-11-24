@@ -1,20 +1,46 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - PCU Status Register"]
-    pub pwrstat: PWRSTAT,
-    #[doc = "0x04 - PCU Set Control Register"]
-    pub pwrset: PWRSET,
-    #[doc = "0x08 - PCU Clear Control Register"]
-    pub pwrclr: PWRCLR,
+    pwrstat: PWRSTAT,
+    pwrset: PWRSET,
+    pwrclr: PWRCLR,
     _reserved3: [u8; 0x04],
-    #[doc = "0x10 - EVR Status Register"]
-    pub evrstat: EVRSTAT,
-    #[doc = "0x14 - EVR VADC Status Register"]
-    pub evrvadcstat: EVRVADCSTAT,
+    evrstat: EVRSTAT,
+    evrvadcstat: EVRVADCSTAT,
     _reserved5: [u8; 0x14],
+    pwrmon: PWRMON,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - PCU Status Register"]
+    #[inline(always)]
+    pub const fn pwrstat(&self) -> &PWRSTAT {
+        &self.pwrstat
+    }
+    #[doc = "0x04 - PCU Set Control Register"]
+    #[inline(always)]
+    pub const fn pwrset(&self) -> &PWRSET {
+        &self.pwrset
+    }
+    #[doc = "0x08 - PCU Clear Control Register"]
+    #[inline(always)]
+    pub const fn pwrclr(&self) -> &PWRCLR {
+        &self.pwrclr
+    }
+    #[doc = "0x10 - EVR Status Register"]
+    #[inline(always)]
+    pub const fn evrstat(&self) -> &EVRSTAT {
+        &self.evrstat
+    }
+    #[doc = "0x14 - EVR VADC Status Register"]
+    #[inline(always)]
+    pub const fn evrvadcstat(&self) -> &EVRVADCSTAT {
+        &self.evrvadcstat
+    }
     #[doc = "0x2c - Power Monitor Control"]
-    pub pwrmon: PWRMON,
+    #[inline(always)]
+    pub const fn pwrmon(&self) -> &PWRMON {
+        &self.pwrmon
+    }
 }
 #[doc = "PWRSTAT (r) register accessor: PCU Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrstat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pwrstat`]
 module"]

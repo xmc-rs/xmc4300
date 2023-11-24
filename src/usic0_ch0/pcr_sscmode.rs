@@ -39,8 +39,8 @@ impl MSLSEN_R {
     }
 }
 #[doc = "Field `MSLSEN` writer - MSLS Enable"]
-pub type MSLSEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MSLSEN_A>;
-impl<'a, REG, const O: u8> MSLSEN_W<'a, REG, O>
+pub type MSLSEN_W<'a, REG> = crate::BitWriter<'a, REG, MSLSEN_A>;
+impl<'a, REG> MSLSEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl SELCTR_R {
     }
 }
 #[doc = "Field `SELCTR` writer - Select Control"]
-pub type SELCTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELCTR_A>;
-impl<'a, REG, const O: u8> SELCTR_W<'a, REG, O>
+pub type SELCTR_W<'a, REG> = crate::BitWriter<'a, REG, SELCTR_A>;
+impl<'a, REG> SELCTR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl SELINV_R {
     }
 }
 #[doc = "Field `SELINV` writer - Select Inversion"]
-pub type SELINV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELINV_A>;
-impl<'a, REG, const O: u8> SELINV_W<'a, REG, O>
+pub type SELINV_W<'a, REG> = crate::BitWriter<'a, REG, SELINV_A>;
+impl<'a, REG> SELINV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl FEM_R {
     }
 }
 #[doc = "Field `FEM` writer - Frame End Mode"]
-pub type FEM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FEM_A>;
-impl<'a, REG, const O: u8> FEM_W<'a, REG, O>
+pub type FEM_W<'a, REG> = crate::BitWriter<'a, REG, FEM_A>;
+impl<'a, REG> FEM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -272,8 +272,8 @@ impl CTQSEL1_R {
     }
 }
 #[doc = "Field `CTQSEL1` writer - Input Frequency Selection"]
-pub type CTQSEL1_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CTQSEL1_A>;
-impl<'a, REG, const O: u8> CTQSEL1_W<'a, REG, O>
+pub type CTQSEL1_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CTQSEL1_A>;
+impl<'a, REG> CTQSEL1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -302,11 +302,11 @@ where
 #[doc = "Field `PCTQ1` reader - Divider Factor PCTQ1 for Tiw and Tnf"]
 pub type PCTQ1_R = crate::FieldReader;
 #[doc = "Field `PCTQ1` writer - Divider Factor PCTQ1 for Tiw and Tnf"]
-pub type PCTQ1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type PCTQ1_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `DCTQ1` reader - Divider Factor DCTQ1 for Tiw and Tnf"]
 pub type DCTQ1_R = crate::FieldReader;
 #[doc = "Field `DCTQ1` writer - Divider Factor DCTQ1 for Tiw and Tnf"]
-pub type DCTQ1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type DCTQ1_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PARIEN` reader - Parity Error Interrupt Enable"]
 pub type PARIEN_R = crate::BitReader<PARIEN_A>;
 #[doc = "Parity Error Interrupt Enable\n\nValue on reset: 0"]
@@ -344,8 +344,8 @@ impl PARIEN_R {
     }
 }
 #[doc = "Field `PARIEN` writer - Parity Error Interrupt Enable"]
-pub type PARIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PARIEN_A>;
-impl<'a, REG, const O: u8> PARIEN_W<'a, REG, O>
+pub type PARIEN_W<'a, REG> = crate::BitWriter<'a, REG, PARIEN_A>;
+impl<'a, REG> PARIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -397,8 +397,8 @@ impl MSLSIEN_R {
     }
 }
 #[doc = "Field `MSLSIEN` writer - MSLS Interrupt Enable"]
-pub type MSLSIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MSLSIEN_A>;
-impl<'a, REG, const O: u8> MSLSIEN_W<'a, REG, O>
+pub type MSLSIEN_W<'a, REG> = crate::BitWriter<'a, REG, MSLSIEN_A>;
+impl<'a, REG> MSLSIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -450,8 +450,8 @@ impl DX2TIEN_R {
     }
 }
 #[doc = "Field `DX2TIEN` writer - DX2T Interrupt Enable"]
-pub type DX2TIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DX2TIEN_A>;
-impl<'a, REG, const O: u8> DX2TIEN_W<'a, REG, O>
+pub type DX2TIEN_W<'a, REG> = crate::BitWriter<'a, REG, DX2TIEN_A>;
+impl<'a, REG> DX2TIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -508,8 +508,8 @@ impl SELO_R {
     }
 }
 #[doc = "Field `SELO` writer - Select Output"]
-pub type SELO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, SELO_A>;
-impl<'a, REG, const O: u8> SELO_W<'a, REG, O>
+pub type SELO_W<'a, REG> = crate::FieldWriter<'a, REG, 8, SELO_A>;
+impl<'a, REG> SELO_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -562,8 +562,8 @@ impl TIWEN_R {
     }
 }
 #[doc = "Field `TIWEN` writer - Enable Inter-Word Delay Tiw"]
-pub type TIWEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TIWEN_A>;
-impl<'a, REG, const O: u8> TIWEN_W<'a, REG, O>
+pub type TIWEN_W<'a, REG> = crate::BitWriter<'a, REG, TIWEN_A>;
+impl<'a, REG> TIWEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -615,8 +615,8 @@ impl SLPHSEL_R {
     }
 }
 #[doc = "Field `SLPHSEL` writer - Slave Mode Clock Phase Select"]
-pub type SLPHSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SLPHSEL_A>;
-impl<'a, REG, const O: u8> SLPHSEL_W<'a, REG, O>
+pub type SLPHSEL_W<'a, REG> = crate::BitWriter<'a, REG, SLPHSEL_A>;
+impl<'a, REG> SLPHSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -668,8 +668,8 @@ impl MCLK_R {
     }
 }
 #[doc = "Field `MCLK` writer - Master Clock Enable"]
-pub type MCLK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MCLK_A>;
-impl<'a, REG, const O: u8> MCLK_W<'a, REG, O>
+pub type MCLK_W<'a, REG> = crate::BitWriter<'a, REG, MCLK_A>;
+impl<'a, REG> MCLK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -760,86 +760,86 @@ impl W {
     #[doc = "Bit 0 - MSLS Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mslsen(&mut self) -> MSLSEN_W<PCR_SSCMODE_SPEC, 0> {
-        MSLSEN_W::new(self)
+    pub fn mslsen(&mut self) -> MSLSEN_W<PCR_SSCMODE_SPEC> {
+        MSLSEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Select Control"]
     #[inline(always)]
     #[must_use]
-    pub fn selctr(&mut self) -> SELCTR_W<PCR_SSCMODE_SPEC, 1> {
-        SELCTR_W::new(self)
+    pub fn selctr(&mut self) -> SELCTR_W<PCR_SSCMODE_SPEC> {
+        SELCTR_W::new(self, 1)
     }
     #[doc = "Bit 2 - Select Inversion"]
     #[inline(always)]
     #[must_use]
-    pub fn selinv(&mut self) -> SELINV_W<PCR_SSCMODE_SPEC, 2> {
-        SELINV_W::new(self)
+    pub fn selinv(&mut self) -> SELINV_W<PCR_SSCMODE_SPEC> {
+        SELINV_W::new(self, 2)
     }
     #[doc = "Bit 3 - Frame End Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn fem(&mut self) -> FEM_W<PCR_SSCMODE_SPEC, 3> {
-        FEM_W::new(self)
+    pub fn fem(&mut self) -> FEM_W<PCR_SSCMODE_SPEC> {
+        FEM_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Input Frequency Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ctqsel1(&mut self) -> CTQSEL1_W<PCR_SSCMODE_SPEC, 4> {
-        CTQSEL1_W::new(self)
+    pub fn ctqsel1(&mut self) -> CTQSEL1_W<PCR_SSCMODE_SPEC> {
+        CTQSEL1_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Divider Factor PCTQ1 for Tiw and Tnf"]
     #[inline(always)]
     #[must_use]
-    pub fn pctq1(&mut self) -> PCTQ1_W<PCR_SSCMODE_SPEC, 6> {
-        PCTQ1_W::new(self)
+    pub fn pctq1(&mut self) -> PCTQ1_W<PCR_SSCMODE_SPEC> {
+        PCTQ1_W::new(self, 6)
     }
     #[doc = "Bits 8:12 - Divider Factor DCTQ1 for Tiw and Tnf"]
     #[inline(always)]
     #[must_use]
-    pub fn dctq1(&mut self) -> DCTQ1_W<PCR_SSCMODE_SPEC, 8> {
-        DCTQ1_W::new(self)
+    pub fn dctq1(&mut self) -> DCTQ1_W<PCR_SSCMODE_SPEC> {
+        DCTQ1_W::new(self, 8)
     }
     #[doc = "Bit 13 - Parity Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn parien(&mut self) -> PARIEN_W<PCR_SSCMODE_SPEC, 13> {
-        PARIEN_W::new(self)
+    pub fn parien(&mut self) -> PARIEN_W<PCR_SSCMODE_SPEC> {
+        PARIEN_W::new(self, 13)
     }
     #[doc = "Bit 14 - MSLS Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mslsien(&mut self) -> MSLSIEN_W<PCR_SSCMODE_SPEC, 14> {
-        MSLSIEN_W::new(self)
+    pub fn mslsien(&mut self) -> MSLSIEN_W<PCR_SSCMODE_SPEC> {
+        MSLSIEN_W::new(self, 14)
     }
     #[doc = "Bit 15 - DX2T Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dx2tien(&mut self) -> DX2TIEN_W<PCR_SSCMODE_SPEC, 15> {
-        DX2TIEN_W::new(self)
+    pub fn dx2tien(&mut self) -> DX2TIEN_W<PCR_SSCMODE_SPEC> {
+        DX2TIEN_W::new(self, 15)
     }
     #[doc = "Bits 16:23 - Select Output"]
     #[inline(always)]
     #[must_use]
-    pub fn selo(&mut self) -> SELO_W<PCR_SSCMODE_SPEC, 16> {
-        SELO_W::new(self)
+    pub fn selo(&mut self) -> SELO_W<PCR_SSCMODE_SPEC> {
+        SELO_W::new(self, 16)
     }
     #[doc = "Bit 24 - Enable Inter-Word Delay Tiw"]
     #[inline(always)]
     #[must_use]
-    pub fn tiwen(&mut self) -> TIWEN_W<PCR_SSCMODE_SPEC, 24> {
-        TIWEN_W::new(self)
+    pub fn tiwen(&mut self) -> TIWEN_W<PCR_SSCMODE_SPEC> {
+        TIWEN_W::new(self, 24)
     }
     #[doc = "Bit 25 - Slave Mode Clock Phase Select"]
     #[inline(always)]
     #[must_use]
-    pub fn slphsel(&mut self) -> SLPHSEL_W<PCR_SSCMODE_SPEC, 25> {
-        SLPHSEL_W::new(self)
+    pub fn slphsel(&mut self) -> SLPHSEL_W<PCR_SSCMODE_SPEC> {
+        SLPHSEL_W::new(self, 25)
     }
     #[doc = "Bit 31 - Master Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mclk(&mut self) -> MCLK_W<PCR_SSCMODE_SPEC, 31> {
-        MCLK_W::new(self)
+    pub fn mclk(&mut self) -> MCLK_W<PCR_SSCMODE_SPEC> {
+        MCLK_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

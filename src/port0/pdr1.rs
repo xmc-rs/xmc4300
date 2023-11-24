@@ -5,35 +5,35 @@ pub type W = crate::W<PDR1_SPEC>;
 #[doc = "Field `PD8` reader - Pad Driver Mode for Pn.8"]
 pub type PD8_R = crate::FieldReader;
 #[doc = "Field `PD8` writer - Pad Driver Mode for Pn.8"]
-pub type PD8_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PD8_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `PD9` reader - Pad Driver Mode for Pn.9"]
 pub type PD9_R = crate::FieldReader;
 #[doc = "Field `PD9` writer - Pad Driver Mode for Pn.9"]
-pub type PD9_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PD9_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `PD10` reader - Pad Driver Mode for Pn.10"]
 pub type PD10_R = crate::FieldReader;
 #[doc = "Field `PD10` writer - Pad Driver Mode for Pn.10"]
-pub type PD10_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PD10_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `PD11` reader - Pad Driver Mode for Pn.11"]
 pub type PD11_R = crate::FieldReader;
 #[doc = "Field `PD11` writer - Pad Driver Mode for Pn.11"]
-pub type PD11_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PD11_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `PD12` reader - Pad Driver Mode for Pn.12"]
 pub type PD12_R = crate::FieldReader;
 #[doc = "Field `PD12` writer - Pad Driver Mode for Pn.12"]
-pub type PD12_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PD12_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `PD13` reader - Pad Driver Mode for Pn.13"]
 pub type PD13_R = crate::FieldReader;
 #[doc = "Field `PD13` writer - Pad Driver Mode for Pn.13"]
-pub type PD13_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PD13_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `PD14` reader - Pad Driver Mode for Pn.14"]
 pub type PD14_R = crate::FieldReader;
 #[doc = "Field `PD14` writer - Pad Driver Mode for Pn.14"]
-pub type PD14_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PD14_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `PD15` reader - Pad Driver Mode for Pn.15"]
 pub type PD15_R = crate::FieldReader;
 #[doc = "Field `PD15` writer - Pad Driver Mode for Pn.15"]
-pub type PD15_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PD15_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.8"]
     #[inline(always)]
@@ -80,50 +80,50 @@ impl W {
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.8"]
     #[inline(always)]
     #[must_use]
-    pub fn pd8(&mut self) -> PD8_W<PDR1_SPEC, 0> {
-        PD8_W::new(self)
+    pub fn pd8(&mut self) -> PD8_W<PDR1_SPEC> {
+        PD8_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Pad Driver Mode for Pn.9"]
     #[inline(always)]
     #[must_use]
-    pub fn pd9(&mut self) -> PD9_W<PDR1_SPEC, 4> {
-        PD9_W::new(self)
+    pub fn pd9(&mut self) -> PD9_W<PDR1_SPEC> {
+        PD9_W::new(self, 4)
     }
     #[doc = "Bits 8:10 - Pad Driver Mode for Pn.10"]
     #[inline(always)]
     #[must_use]
-    pub fn pd10(&mut self) -> PD10_W<PDR1_SPEC, 8> {
-        PD10_W::new(self)
+    pub fn pd10(&mut self) -> PD10_W<PDR1_SPEC> {
+        PD10_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - Pad Driver Mode for Pn.11"]
     #[inline(always)]
     #[must_use]
-    pub fn pd11(&mut self) -> PD11_W<PDR1_SPEC, 12> {
-        PD11_W::new(self)
+    pub fn pd11(&mut self) -> PD11_W<PDR1_SPEC> {
+        PD11_W::new(self, 12)
     }
     #[doc = "Bits 16:18 - Pad Driver Mode for Pn.12"]
     #[inline(always)]
     #[must_use]
-    pub fn pd12(&mut self) -> PD12_W<PDR1_SPEC, 16> {
-        PD12_W::new(self)
+    pub fn pd12(&mut self) -> PD12_W<PDR1_SPEC> {
+        PD12_W::new(self, 16)
     }
     #[doc = "Bits 20:22 - Pad Driver Mode for Pn.13"]
     #[inline(always)]
     #[must_use]
-    pub fn pd13(&mut self) -> PD13_W<PDR1_SPEC, 20> {
-        PD13_W::new(self)
+    pub fn pd13(&mut self) -> PD13_W<PDR1_SPEC> {
+        PD13_W::new(self, 20)
     }
     #[doc = "Bits 24:26 - Pad Driver Mode for Pn.14"]
     #[inline(always)]
     #[must_use]
-    pub fn pd14(&mut self) -> PD14_W<PDR1_SPEC, 24> {
-        PD14_W::new(self)
+    pub fn pd14(&mut self) -> PD14_W<PDR1_SPEC> {
+        PD14_W::new(self, 24)
     }
     #[doc = "Bits 28:30 - Pad Driver Mode for Pn.15"]
     #[inline(always)]
     #[must_use]
-    pub fn pd15(&mut self) -> PD15_W<PDR1_SPEC, 28> {
-        PD15_W::new(self)
+    pub fn pd15(&mut self) -> PD15_W<PDR1_SPEC> {
+        PD15_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

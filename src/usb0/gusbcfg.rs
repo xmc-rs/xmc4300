@@ -5,7 +5,7 @@ pub type W = crate::W<GUSBCFG_SPEC>;
 #[doc = "Field `TOutCal` reader - FS Timeout Calibration"]
 pub type TOUT_CAL_R = crate::FieldReader;
 #[doc = "Field `TOutCal` writer - FS Timeout Calibration"]
-pub type TOUT_CAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type TOUT_CAL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `PHYSel` reader - USB 1.1 Full-Speed Serial Transceiver Select"]
 pub type PHYSEL_R = crate::BitReader<PHYSEL_A>;
 #[doc = "USB 1.1 Full-Speed Serial Transceiver Select\n\nValue on reset: 1"]
@@ -72,8 +72,8 @@ impl SRPCAP_R {
     }
 }
 #[doc = "Field `SRPCap` writer - SRP-Capable"]
-pub type SRPCAP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRPCAP_A>;
-impl<'a, REG, const O: u8> SRPCAP_W<'a, REG, O>
+pub type SRPCAP_W<'a, REG> = crate::BitWriter<'a, REG, SRPCAP_A>;
+impl<'a, REG> SRPCAP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -125,8 +125,8 @@ impl HNPCAP_R {
     }
 }
 #[doc = "Field `HNPCap` writer - HNP-Capable"]
-pub type HNPCAP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HNPCAP_A>;
-impl<'a, REG, const O: u8> HNPCAP_W<'a, REG, O>
+pub type HNPCAP_W<'a, REG> = crate::BitWriter<'a, REG, HNPCAP_A>;
+impl<'a, REG> HNPCAP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -144,7 +144,7 @@ where
 #[doc = "Field `USBTrdTim` reader - USB Turnaround Time"]
 pub type USBTRD_TIM_R = crate::FieldReader;
 #[doc = "Field `USBTrdTim` writer - USB Turnaround Time"]
-pub type USBTRD_TIM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type USBTRD_TIM_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `OtgI2CSel` reader - UTMIFS Interface Select"]
 pub type OTG_I2CSEL_R = crate::BitReader<OTG_I2CSEL_A>;
 #[doc = "UTMIFS Interface Select\n\nValue on reset: 0"]
@@ -175,8 +175,8 @@ impl OTG_I2CSEL_R {
     }
 }
 #[doc = "Field `OtgI2CSel` writer - UTMIFS Interface Select"]
-pub type OTG_I2CSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OTG_I2CSEL_A>;
-impl<'a, REG, const O: u8> OTG_I2CSEL_W<'a, REG, O>
+pub type OTG_I2CSEL_W<'a, REG> = crate::BitWriter<'a, REG, OTG_I2CSEL_A>;
+impl<'a, REG> OTG_I2CSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -223,8 +223,8 @@ impl TX_END_DELAY_R {
     }
 }
 #[doc = "Field `TxEndDelay` writer - Tx End Delay"]
-pub type TX_END_DELAY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_END_DELAY_A>;
-impl<'a, REG, const O: u8> TX_END_DELAY_W<'a, REG, O>
+pub type TX_END_DELAY_W<'a, REG> = crate::BitWriter<'a, REG, TX_END_DELAY_A>;
+impl<'a, REG> TX_END_DELAY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -276,8 +276,8 @@ impl FORCE_HST_MODE_R {
     }
 }
 #[doc = "Field `ForceHstMode` writer - Force Host Mode"]
-pub type FORCE_HST_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FORCE_HST_MODE_A>;
-impl<'a, REG, const O: u8> FORCE_HST_MODE_W<'a, REG, O>
+pub type FORCE_HST_MODE_W<'a, REG> = crate::BitWriter<'a, REG, FORCE_HST_MODE_A>;
+impl<'a, REG> FORCE_HST_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -329,8 +329,8 @@ impl FORCE_DEV_MODE_R {
     }
 }
 #[doc = "Field `ForceDevMode` writer - Force Device Mode"]
-pub type FORCE_DEV_MODE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FORCE_DEV_MODE_A>;
-impl<'a, REG, const O: u8> FORCE_DEV_MODE_W<'a, REG, O>
+pub type FORCE_DEV_MODE_W<'a, REG> = crate::BitWriter<'a, REG, FORCE_DEV_MODE_A>;
+impl<'a, REG> FORCE_DEV_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -348,7 +348,7 @@ where
 #[doc = "Field `CTP` reader - Corrupt Tx packet"]
 pub type CTP_R = crate::BitReader;
 #[doc = "Field `CTP` writer - Corrupt Tx packet"]
-pub type CTP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CTP_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:2 - FS Timeout Calibration"]
     #[inline(always)]
@@ -405,56 +405,56 @@ impl W {
     #[doc = "Bits 0:2 - FS Timeout Calibration"]
     #[inline(always)]
     #[must_use]
-    pub fn tout_cal(&mut self) -> TOUT_CAL_W<GUSBCFG_SPEC, 0> {
-        TOUT_CAL_W::new(self)
+    pub fn tout_cal(&mut self) -> TOUT_CAL_W<GUSBCFG_SPEC> {
+        TOUT_CAL_W::new(self, 0)
     }
     #[doc = "Bit 8 - SRP-Capable"]
     #[inline(always)]
     #[must_use]
-    pub fn srpcap(&mut self) -> SRPCAP_W<GUSBCFG_SPEC, 8> {
-        SRPCAP_W::new(self)
+    pub fn srpcap(&mut self) -> SRPCAP_W<GUSBCFG_SPEC> {
+        SRPCAP_W::new(self, 8)
     }
     #[doc = "Bit 9 - HNP-Capable"]
     #[inline(always)]
     #[must_use]
-    pub fn hnpcap(&mut self) -> HNPCAP_W<GUSBCFG_SPEC, 9> {
-        HNPCAP_W::new(self)
+    pub fn hnpcap(&mut self) -> HNPCAP_W<GUSBCFG_SPEC> {
+        HNPCAP_W::new(self, 9)
     }
     #[doc = "Bits 10:13 - USB Turnaround Time"]
     #[inline(always)]
     #[must_use]
-    pub fn usbtrd_tim(&mut self) -> USBTRD_TIM_W<GUSBCFG_SPEC, 10> {
-        USBTRD_TIM_W::new(self)
+    pub fn usbtrd_tim(&mut self) -> USBTRD_TIM_W<GUSBCFG_SPEC> {
+        USBTRD_TIM_W::new(self, 10)
     }
     #[doc = "Bit 16 - UTMIFS Interface Select"]
     #[inline(always)]
     #[must_use]
-    pub fn otg_i2csel(&mut self) -> OTG_I2CSEL_W<GUSBCFG_SPEC, 16> {
-        OTG_I2CSEL_W::new(self)
+    pub fn otg_i2csel(&mut self) -> OTG_I2CSEL_W<GUSBCFG_SPEC> {
+        OTG_I2CSEL_W::new(self, 16)
     }
     #[doc = "Bit 28 - Tx End Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_end_delay(&mut self) -> TX_END_DELAY_W<GUSBCFG_SPEC, 28> {
-        TX_END_DELAY_W::new(self)
+    pub fn tx_end_delay(&mut self) -> TX_END_DELAY_W<GUSBCFG_SPEC> {
+        TX_END_DELAY_W::new(self, 28)
     }
     #[doc = "Bit 29 - Force Host Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn force_hst_mode(&mut self) -> FORCE_HST_MODE_W<GUSBCFG_SPEC, 29> {
-        FORCE_HST_MODE_W::new(self)
+    pub fn force_hst_mode(&mut self) -> FORCE_HST_MODE_W<GUSBCFG_SPEC> {
+        FORCE_HST_MODE_W::new(self, 29)
     }
     #[doc = "Bit 30 - Force Device Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn force_dev_mode(&mut self) -> FORCE_DEV_MODE_W<GUSBCFG_SPEC, 30> {
-        FORCE_DEV_MODE_W::new(self)
+    pub fn force_dev_mode(&mut self) -> FORCE_DEV_MODE_W<GUSBCFG_SPEC> {
+        FORCE_DEV_MODE_W::new(self, 30)
     }
     #[doc = "Bit 31 - Corrupt Tx packet"]
     #[inline(always)]
     #[must_use]
-    pub fn ctp(&mut self) -> CTP_W<GUSBCFG_SPEC, 31> {
-        CTP_W::new(self)
+    pub fn ctp(&mut self) -> CTP_W<GUSBCFG_SPEC> {
+        CTP_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

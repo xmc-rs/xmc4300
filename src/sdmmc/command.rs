@@ -60,8 +60,8 @@ impl RESP_TYPE_SELECT_R {
     }
 }
 #[doc = "Field `RESP_TYPE_SELECT` writer - Response Type Select"]
-pub type RESP_TYPE_SELECT_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RESP_TYPE_SELECT_A>;
-impl<'a, REG, const O: u8> RESP_TYPE_SELECT_W<'a, REG, O>
+pub type RESP_TYPE_SELECT_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RESP_TYPE_SELECT_A>;
+impl<'a, REG> RESP_TYPE_SELECT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -124,8 +124,8 @@ impl CMD_CRC_CHECK_EN_R {
     }
 }
 #[doc = "Field `CMD_CRC_CHECK_EN` writer - Command CRC Check Enable"]
-pub type CMD_CRC_CHECK_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_CRC_CHECK_EN_A>;
-impl<'a, REG, const O: u8> CMD_CRC_CHECK_EN_W<'a, REG, O>
+pub type CMD_CRC_CHECK_EN_W<'a, REG> = crate::BitWriter<'a, REG, CMD_CRC_CHECK_EN_A>;
+impl<'a, REG> CMD_CRC_CHECK_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -177,8 +177,8 @@ impl CMD_IND_CHECK_EN_R {
     }
 }
 #[doc = "Field `CMD_IND_CHECK_EN` writer - Command Index Check Enable"]
-pub type CMD_IND_CHECK_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_IND_CHECK_EN_A>;
-impl<'a, REG, const O: u8> CMD_IND_CHECK_EN_W<'a, REG, O>
+pub type CMD_IND_CHECK_EN_W<'a, REG> = crate::BitWriter<'a, REG, CMD_IND_CHECK_EN_A>;
+impl<'a, REG> CMD_IND_CHECK_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -230,8 +230,8 @@ impl DATA_PRESENT_SELECT_R {
     }
 }
 #[doc = "Field `DATA_PRESENT_SELECT` writer - Data Present Select"]
-pub type DATA_PRESENT_SELECT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DATA_PRESENT_SELECT_A>;
-impl<'a, REG, const O: u8> DATA_PRESENT_SELECT_W<'a, REG, O>
+pub type DATA_PRESENT_SELECT_W<'a, REG> = crate::BitWriter<'a, REG, DATA_PRESENT_SELECT_A>;
+impl<'a, REG> DATA_PRESENT_SELECT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl CMD_TYPE_R {
     }
 }
 #[doc = "Field `CMD_TYPE` writer - Command Type"]
-pub type CMD_TYPE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CMD_TYPE_A>;
-impl<'a, REG, const O: u8> CMD_TYPE_W<'a, REG, O>
+pub type CMD_TYPE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CMD_TYPE_A>;
+impl<'a, REG> CMD_TYPE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -334,7 +334,7 @@ where
 #[doc = "Field `CMD_IND` reader - Command Index"]
 pub type CMD_IND_R = crate::FieldReader;
 #[doc = "Field `CMD_IND` writer - Command Index"]
-pub type CMD_IND_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type CMD_IND_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     #[doc = "Bits 0:1 - Response Type Select"]
     #[inline(always)]
@@ -371,38 +371,38 @@ impl W {
     #[doc = "Bits 0:1 - Response Type Select"]
     #[inline(always)]
     #[must_use]
-    pub fn resp_type_select(&mut self) -> RESP_TYPE_SELECT_W<COMMAND_SPEC, 0> {
-        RESP_TYPE_SELECT_W::new(self)
+    pub fn resp_type_select(&mut self) -> RESP_TYPE_SELECT_W<COMMAND_SPEC> {
+        RESP_TYPE_SELECT_W::new(self, 0)
     }
     #[doc = "Bit 3 - Command CRC Check Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_crc_check_en(&mut self) -> CMD_CRC_CHECK_EN_W<COMMAND_SPEC, 3> {
-        CMD_CRC_CHECK_EN_W::new(self)
+    pub fn cmd_crc_check_en(&mut self) -> CMD_CRC_CHECK_EN_W<COMMAND_SPEC> {
+        CMD_CRC_CHECK_EN_W::new(self, 3)
     }
     #[doc = "Bit 4 - Command Index Check Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_ind_check_en(&mut self) -> CMD_IND_CHECK_EN_W<COMMAND_SPEC, 4> {
-        CMD_IND_CHECK_EN_W::new(self)
+    pub fn cmd_ind_check_en(&mut self) -> CMD_IND_CHECK_EN_W<COMMAND_SPEC> {
+        CMD_IND_CHECK_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Data Present Select"]
     #[inline(always)]
     #[must_use]
-    pub fn data_present_select(&mut self) -> DATA_PRESENT_SELECT_W<COMMAND_SPEC, 5> {
-        DATA_PRESENT_SELECT_W::new(self)
+    pub fn data_present_select(&mut self) -> DATA_PRESENT_SELECT_W<COMMAND_SPEC> {
+        DATA_PRESENT_SELECT_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Command Type"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_type(&mut self) -> CMD_TYPE_W<COMMAND_SPEC, 6> {
-        CMD_TYPE_W::new(self)
+    pub fn cmd_type(&mut self) -> CMD_TYPE_W<COMMAND_SPEC> {
+        CMD_TYPE_W::new(self, 6)
     }
     #[doc = "Bits 8:13 - Command Index"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_ind(&mut self) -> CMD_IND_W<COMMAND_SPEC, 8> {
-        CMD_IND_W::new(self)
+    pub fn cmd_ind(&mut self) -> CMD_IND_W<COMMAND_SPEC> {
+        CMD_IND_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

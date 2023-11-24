@@ -76,8 +76,8 @@ impl TSINP_R {
     }
 }
 #[doc = "Field `TSINP` writer - Transmit Shift Interrupt Node Pointer"]
-pub type TSINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, TSINP_A>;
-impl<'a, REG, const O: u8> TSINP_W<'a, REG, O>
+pub type TSINP_W<'a, REG> = crate::FieldWriter<'a, REG, 3, TSINP_A>;
+impl<'a, REG> TSINP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -116,19 +116,19 @@ where
 #[doc = "Field `TBINP` reader - Transmit Buffer Interrupt Node Pointer"]
 pub type TBINP_R = crate::FieldReader;
 #[doc = "Field `TBINP` writer - Transmit Buffer Interrupt Node Pointer"]
-pub type TBINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type TBINP_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `RINP` reader - Receive Interrupt Node Pointer"]
 pub type RINP_R = crate::FieldReader;
 #[doc = "Field `RINP` writer - Receive Interrupt Node Pointer"]
-pub type RINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type RINP_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `AINP` reader - Alternative Receive Interrupt Node Pointer"]
 pub type AINP_R = crate::FieldReader;
 #[doc = "Field `AINP` writer - Alternative Receive Interrupt Node Pointer"]
-pub type AINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type AINP_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `PINP` reader - Transmit Shift Interrupt Node Pointer"]
 pub type PINP_R = crate::FieldReader;
 #[doc = "Field `PINP` writer - Transmit Shift Interrupt Node Pointer"]
-pub type PINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type PINP_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:2 - Transmit Shift Interrupt Node Pointer"]
     #[inline(always)]
@@ -160,32 +160,32 @@ impl W {
     #[doc = "Bits 0:2 - Transmit Shift Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn tsinp(&mut self) -> TSINP_W<INPR_SPEC, 0> {
-        TSINP_W::new(self)
+    pub fn tsinp(&mut self) -> TSINP_W<INPR_SPEC> {
+        TSINP_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Transmit Buffer Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn tbinp(&mut self) -> TBINP_W<INPR_SPEC, 4> {
-        TBINP_W::new(self)
+    pub fn tbinp(&mut self) -> TBINP_W<INPR_SPEC> {
+        TBINP_W::new(self, 4)
     }
     #[doc = "Bits 8:10 - Receive Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn rinp(&mut self) -> RINP_W<INPR_SPEC, 8> {
-        RINP_W::new(self)
+    pub fn rinp(&mut self) -> RINP_W<INPR_SPEC> {
+        RINP_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - Alternative Receive Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn ainp(&mut self) -> AINP_W<INPR_SPEC, 12> {
-        AINP_W::new(self)
+    pub fn ainp(&mut self) -> AINP_W<INPR_SPEC> {
+        AINP_W::new(self, 12)
     }
     #[doc = "Bits 16:18 - Transmit Shift Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn pinp(&mut self) -> PINP_W<INPR_SPEC, 16> {
-        PINP_W::new(self)
+    pub fn pinp(&mut self) -> PINP_W<INPR_SPEC> {
+        PINP_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

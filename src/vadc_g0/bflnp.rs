@@ -68,8 +68,8 @@ impl BFL0NP_R {
     }
 }
 #[doc = "Field `BFL0NP` writer - Boundary Flag y Node Pointer"]
-pub type BFL0NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BFL0NP_A>;
-impl<'a, REG, const O: u8> BFL0NP_W<'a, REG, O>
+pub type BFL0NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, BFL0NP_A>;
+impl<'a, REG> BFL0NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -166,8 +166,8 @@ impl BFL1NP_R {
     }
 }
 #[doc = "Field `BFL1NP` writer - Boundary Flag y Node Pointer"]
-pub type BFL1NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BFL1NP_A>;
-impl<'a, REG, const O: u8> BFL1NP_W<'a, REG, O>
+pub type BFL1NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, BFL1NP_A>;
+impl<'a, REG> BFL1NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -264,8 +264,8 @@ impl BFL2NP_R {
     }
 }
 #[doc = "Field `BFL2NP` writer - Boundary Flag y Node Pointer"]
-pub type BFL2NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BFL2NP_A>;
-impl<'a, REG, const O: u8> BFL2NP_W<'a, REG, O>
+pub type BFL2NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, BFL2NP_A>;
+impl<'a, REG> BFL2NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -362,8 +362,8 @@ impl BFL3NP_R {
     }
 }
 #[doc = "Field `BFL3NP` writer - Boundary Flag y Node Pointer"]
-pub type BFL3NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BFL3NP_A>;
-impl<'a, REG, const O: u8> BFL3NP_W<'a, REG, O>
+pub type BFL3NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, BFL3NP_A>;
+impl<'a, REG> BFL3NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -420,26 +420,26 @@ impl W {
     #[doc = "Bits 0:3 - Boundary Flag y Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn bfl0np(&mut self) -> BFL0NP_W<BFLNP_SPEC, 0> {
-        BFL0NP_W::new(self)
+    pub fn bfl0np(&mut self) -> BFL0NP_W<BFLNP_SPEC> {
+        BFL0NP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Boundary Flag y Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn bfl1np(&mut self) -> BFL1NP_W<BFLNP_SPEC, 4> {
-        BFL1NP_W::new(self)
+    pub fn bfl1np(&mut self) -> BFL1NP_W<BFLNP_SPEC> {
+        BFL1NP_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Boundary Flag y Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn bfl2np(&mut self) -> BFL2NP_W<BFLNP_SPEC, 8> {
-        BFL2NP_W::new(self)
+    pub fn bfl2np(&mut self) -> BFL2NP_W<BFLNP_SPEC> {
+        BFL2NP_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Boundary Flag y Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn bfl3np(&mut self) -> BFL3NP_W<BFLNP_SPEC, 12> {
-        BFL3NP_W::new(self)
+    pub fn bfl3np(&mut self) -> BFL3NP_W<BFLNP_SPEC> {
+        BFL3NP_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

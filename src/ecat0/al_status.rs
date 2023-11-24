@@ -68,8 +68,8 @@ impl STATE_R {
     }
 }
 #[doc = "Field `STATE` writer - Actual State of the Device State Machine"]
-pub type STATE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, STATE_A>;
-impl<'a, REG, const O: u8> STATE_W<'a, REG, O>
+pub type STATE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, STATE_A>;
+impl<'a, REG> STATE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -137,8 +137,8 @@ impl ERRI_R {
     }
 }
 #[doc = "Field `ERRI` writer - Error Ind"]
-pub type ERRI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERRI_A>;
-impl<'a, REG, const O: u8> ERRI_W<'a, REG, O>
+pub type ERRI_W<'a, REG> = crate::BitWriter<'a, REG, ERRI_A>;
+impl<'a, REG> ERRI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -190,8 +190,8 @@ impl DID_R {
     }
 }
 #[doc = "Field `DID` writer - Device Identification"]
-pub type DID_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DID_A>;
-impl<'a, REG, const O: u8> DID_W<'a, REG, O>
+pub type DID_W<'a, REG> = crate::BitWriter<'a, REG, DID_A>;
+impl<'a, REG> DID_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -227,20 +227,20 @@ impl W {
     #[doc = "Bits 0:3 - Actual State of the Device State Machine"]
     #[inline(always)]
     #[must_use]
-    pub fn state(&mut self) -> STATE_W<AL_STATUS_SPEC, 0> {
-        STATE_W::new(self)
+    pub fn state(&mut self) -> STATE_W<AL_STATUS_SPEC> {
+        STATE_W::new(self, 0)
     }
     #[doc = "Bit 4 - Error Ind"]
     #[inline(always)]
     #[must_use]
-    pub fn erri(&mut self) -> ERRI_W<AL_STATUS_SPEC, 4> {
-        ERRI_W::new(self)
+    pub fn erri(&mut self) -> ERRI_W<AL_STATUS_SPEC> {
+        ERRI_W::new(self, 4)
     }
     #[doc = "Bit 5 - Device Identification"]
     #[inline(always)]
     #[must_use]
-    pub fn did(&mut self) -> DID_W<AL_STATUS_SPEC, 5> {
-        DID_W::new(self)
+    pub fn did(&mut self) -> DID_W<AL_STATUS_SPEC> {
+        DID_W::new(self, 5)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

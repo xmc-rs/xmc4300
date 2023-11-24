@@ -5,7 +5,7 @@ pub type W = crate::W<MPU_RNR_SPEC>;
 #[doc = "Field `REGION` reader - Region"]
 pub type REGION_R = crate::FieldReader;
 #[doc = "Field `REGION` writer - Region"]
-pub type REGION_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type REGION_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Region"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:7 - Region"]
     #[inline(always)]
     #[must_use]
-    pub fn region(&mut self) -> REGION_W<MPU_RNR_SPEC, 0> {
-        REGION_W::new(self)
+    pub fn region(&mut self) -> REGION_W<MPU_RNR_SPEC> {
+        REGION_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

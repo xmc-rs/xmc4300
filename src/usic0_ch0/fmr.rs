@@ -21,8 +21,8 @@ impl crate::FieldSpec for MTDV_AW {
     type Ux = u8;
 }
 #[doc = "Field `MTDV` writer - Modify Transmit Data Valid"]
-pub type MTDV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, MTDV_AW>;
-impl<'a, REG, const O: u8> MTDV_W<'a, REG, O>
+pub type MTDV_W<'a, REG> = crate::FieldWriter<'a, REG, 2, MTDV_AW>;
+impl<'a, REG> MTDV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -58,8 +58,8 @@ impl From<ATVC_AW> for bool {
     }
 }
 #[doc = "Field `ATVC` writer - Activate Bit TVC"]
-pub type ATVC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ATVC_AW>;
-impl<'a, REG, const O: u8> ATVC_W<'a, REG, O>
+pub type ATVC_W<'a, REG> = crate::BitWriter<'a, REG, ATVC_AW>;
+impl<'a, REG> ATVC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -89,8 +89,8 @@ impl From<CRDV0_AW> for bool {
     }
 }
 #[doc = "Field `CRDV0` writer - Clear Bits RDV for RBUF0"]
-pub type CRDV0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CRDV0_AW>;
-impl<'a, REG, const O: u8> CRDV0_W<'a, REG, O>
+pub type CRDV0_W<'a, REG> = crate::BitWriter<'a, REG, CRDV0_AW>;
+impl<'a, REG> CRDV0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -120,8 +120,8 @@ impl From<CRDV1_AW> for bool {
     }
 }
 #[doc = "Field `CRDV1` writer - Clear Bit RDV for RBUF1"]
-pub type CRDV1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CRDV1_AW>;
-impl<'a, REG, const O: u8> CRDV1_W<'a, REG, O>
+pub type CRDV1_W<'a, REG> = crate::BitWriter<'a, REG, CRDV1_AW>;
+impl<'a, REG> CRDV1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -151,8 +151,8 @@ impl From<SIO0_AW> for bool {
     }
 }
 #[doc = "Field `SIO0` writer - Set Interrupt Output SRx"]
-pub type SIO0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIO0_AW>;
-impl<'a, REG, const O: u8> SIO0_W<'a, REG, O>
+pub type SIO0_W<'a, REG> = crate::BitWriter<'a, REG, SIO0_AW>;
+impl<'a, REG> SIO0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -182,8 +182,8 @@ impl From<SIO1_AW> for bool {
     }
 }
 #[doc = "Field `SIO1` writer - Set Interrupt Output SRx"]
-pub type SIO1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIO1_AW>;
-impl<'a, REG, const O: u8> SIO1_W<'a, REG, O>
+pub type SIO1_W<'a, REG> = crate::BitWriter<'a, REG, SIO1_AW>;
+impl<'a, REG> SIO1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -213,8 +213,8 @@ impl From<SIO2_AW> for bool {
     }
 }
 #[doc = "Field `SIO2` writer - Set Interrupt Output SRx"]
-pub type SIO2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIO2_AW>;
-impl<'a, REG, const O: u8> SIO2_W<'a, REG, O>
+pub type SIO2_W<'a, REG> = crate::BitWriter<'a, REG, SIO2_AW>;
+impl<'a, REG> SIO2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -244,8 +244,8 @@ impl From<SIO3_AW> for bool {
     }
 }
 #[doc = "Field `SIO3` writer - Set Interrupt Output SRx"]
-pub type SIO3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIO3_AW>;
-impl<'a, REG, const O: u8> SIO3_W<'a, REG, O>
+pub type SIO3_W<'a, REG> = crate::BitWriter<'a, REG, SIO3_AW>;
+impl<'a, REG> SIO3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -275,8 +275,8 @@ impl From<SIO4_AW> for bool {
     }
 }
 #[doc = "Field `SIO4` writer - Set Interrupt Output SRx"]
-pub type SIO4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIO4_AW>;
-impl<'a, REG, const O: u8> SIO4_W<'a, REG, O>
+pub type SIO4_W<'a, REG> = crate::BitWriter<'a, REG, SIO4_AW>;
+impl<'a, REG> SIO4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -306,8 +306,8 @@ impl From<SIO5_AW> for bool {
     }
 }
 #[doc = "Field `SIO5` writer - Set Interrupt Output SRx"]
-pub type SIO5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIO5_AW>;
-impl<'a, REG, const O: u8> SIO5_W<'a, REG, O>
+pub type SIO5_W<'a, REG> = crate::BitWriter<'a, REG, SIO5_AW>;
+impl<'a, REG> SIO5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -326,62 +326,62 @@ impl W {
     #[doc = "Bits 0:1 - Modify Transmit Data Valid"]
     #[inline(always)]
     #[must_use]
-    pub fn mtdv(&mut self) -> MTDV_W<FMR_SPEC, 0> {
-        MTDV_W::new(self)
+    pub fn mtdv(&mut self) -> MTDV_W<FMR_SPEC> {
+        MTDV_W::new(self, 0)
     }
     #[doc = "Bit 4 - Activate Bit TVC"]
     #[inline(always)]
     #[must_use]
-    pub fn atvc(&mut self) -> ATVC_W<FMR_SPEC, 4> {
-        ATVC_W::new(self)
+    pub fn atvc(&mut self) -> ATVC_W<FMR_SPEC> {
+        ATVC_W::new(self, 4)
     }
     #[doc = "Bit 14 - Clear Bits RDV for RBUF0"]
     #[inline(always)]
     #[must_use]
-    pub fn crdv0(&mut self) -> CRDV0_W<FMR_SPEC, 14> {
-        CRDV0_W::new(self)
+    pub fn crdv0(&mut self) -> CRDV0_W<FMR_SPEC> {
+        CRDV0_W::new(self, 14)
     }
     #[doc = "Bit 15 - Clear Bit RDV for RBUF1"]
     #[inline(always)]
     #[must_use]
-    pub fn crdv1(&mut self) -> CRDV1_W<FMR_SPEC, 15> {
-        CRDV1_W::new(self)
+    pub fn crdv1(&mut self) -> CRDV1_W<FMR_SPEC> {
+        CRDV1_W::new(self, 15)
     }
     #[doc = "Bit 16 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio0(&mut self) -> SIO0_W<FMR_SPEC, 16> {
-        SIO0_W::new(self)
+    pub fn sio0(&mut self) -> SIO0_W<FMR_SPEC> {
+        SIO0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio1(&mut self) -> SIO1_W<FMR_SPEC, 17> {
-        SIO1_W::new(self)
+    pub fn sio1(&mut self) -> SIO1_W<FMR_SPEC> {
+        SIO1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio2(&mut self) -> SIO2_W<FMR_SPEC, 18> {
-        SIO2_W::new(self)
+    pub fn sio2(&mut self) -> SIO2_W<FMR_SPEC> {
+        SIO2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio3(&mut self) -> SIO3_W<FMR_SPEC, 19> {
-        SIO3_W::new(self)
+    pub fn sio3(&mut self) -> SIO3_W<FMR_SPEC> {
+        SIO3_W::new(self, 19)
     }
     #[doc = "Bit 20 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio4(&mut self) -> SIO4_W<FMR_SPEC, 20> {
-        SIO4_W::new(self)
+    pub fn sio4(&mut self) -> SIO4_W<FMR_SPEC> {
+        SIO4_W::new(self, 20)
     }
     #[doc = "Bit 21 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio5(&mut self) -> SIO5_W<FMR_SPEC, 21> {
-        SIO5_W::new(self)
+    pub fn sio5(&mut self) -> SIO5_W<FMR_SPEC> {
+        SIO5_W::new(self, 21)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

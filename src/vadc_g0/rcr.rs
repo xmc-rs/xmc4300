@@ -5,7 +5,7 @@ pub type W = crate::W<RCR_SPEC>;
 #[doc = "Field `DRCTR` reader - Data Reduction Control"]
 pub type DRCTR_R = crate::FieldReader;
 #[doc = "Field `DRCTR` writer - Data Reduction Control"]
-pub type DRCTR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type DRCTR_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `DMM` reader - Data Modification Mode"]
 pub type DMM_R = crate::FieldReader<DMM_A>;
 #[doc = "Data Modification Mode\n\nValue on reset: 0"]
@@ -56,8 +56,8 @@ impl DMM_R {
     }
 }
 #[doc = "Field `DMM` writer - Data Modification Mode"]
-pub type DMM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DMM_A>;
-impl<'a, REG, const O: u8> DMM_W<'a, REG, O>
+pub type DMM_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DMM_A>;
+impl<'a, REG> DMM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -115,8 +115,8 @@ impl WFR_R {
     }
 }
 #[doc = "Field `WFR` writer - Wait-for-Read Mode Enable"]
-pub type WFR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WFR_A>;
-impl<'a, REG, const O: u8> WFR_W<'a, REG, O>
+pub type WFR_W<'a, REG> = crate::BitWriter<'a, REG, WFR_A>;
+impl<'a, REG> WFR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -173,8 +173,8 @@ impl FEN_R {
     }
 }
 #[doc = "Field `FEN` writer - FIFO Mode Enable"]
-pub type FEN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, FEN_A>;
-impl<'a, REG, const O: u8> FEN_W<'a, REG, O>
+pub type FEN_W<'a, REG> = crate::FieldWriter<'a, REG, 2, FEN_A>;
+impl<'a, REG> FEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -227,8 +227,8 @@ impl SRGEN_R {
     }
 }
 #[doc = "Field `SRGEN` writer - Service Request Generation Enable"]
-pub type SRGEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRGEN_A>;
-impl<'a, REG, const O: u8> SRGEN_W<'a, REG, O>
+pub type SRGEN_W<'a, REG> = crate::BitWriter<'a, REG, SRGEN_A>;
+impl<'a, REG> SRGEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -274,32 +274,32 @@ impl W {
     #[doc = "Bits 16:19 - Data Reduction Control"]
     #[inline(always)]
     #[must_use]
-    pub fn drctr(&mut self) -> DRCTR_W<RCR_SPEC, 16> {
-        DRCTR_W::new(self)
+    pub fn drctr(&mut self) -> DRCTR_W<RCR_SPEC> {
+        DRCTR_W::new(self, 16)
     }
     #[doc = "Bits 20:21 - Data Modification Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn dmm(&mut self) -> DMM_W<RCR_SPEC, 20> {
-        DMM_W::new(self)
+    pub fn dmm(&mut self) -> DMM_W<RCR_SPEC> {
+        DMM_W::new(self, 20)
     }
     #[doc = "Bit 24 - Wait-for-Read Mode Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wfr(&mut self) -> WFR_W<RCR_SPEC, 24> {
-        WFR_W::new(self)
+    pub fn wfr(&mut self) -> WFR_W<RCR_SPEC> {
+        WFR_W::new(self, 24)
     }
     #[doc = "Bits 25:26 - FIFO Mode Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fen(&mut self) -> FEN_W<RCR_SPEC, 25> {
-        FEN_W::new(self)
+    pub fn fen(&mut self) -> FEN_W<RCR_SPEC> {
+        FEN_W::new(self, 25)
     }
     #[doc = "Bit 31 - Service Request Generation Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn srgen(&mut self) -> SRGEN_W<RCR_SPEC, 31> {
-        SRGEN_W::new(self)
+    pub fn srgen(&mut self) -> SRGEN_W<RCR_SPEC> {
+        SRGEN_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

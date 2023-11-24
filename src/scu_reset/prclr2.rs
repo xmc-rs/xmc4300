@@ -15,8 +15,8 @@ impl From<WDTRS_AW> for bool {
     }
 }
 #[doc = "Field `WDTRS` writer - WDT Reset Clear"]
-pub type WDTRS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WDTRS_AW>;
-impl<'a, REG, const O: u8> WDTRS_W<'a, REG, O>
+pub type WDTRS_W<'a, REG> = crate::BitWriter<'a, REG, WDTRS_AW>;
+impl<'a, REG> WDTRS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<ETH0RS_AW> for bool {
     }
 }
 #[doc = "Field `ETH0RS` writer - ETH0 Reset Clear"]
-pub type ETH0RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ETH0RS_AW>;
-impl<'a, REG, const O: u8> ETH0RS_W<'a, REG, O>
+pub type ETH0RS_W<'a, REG> = crate::BitWriter<'a, REG, ETH0RS_AW>;
+impl<'a, REG> ETH0RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<DMA0RS_AW> for bool {
     }
 }
 #[doc = "Field `DMA0RS` writer - DMA0 Reset Clear"]
-pub type DMA0RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DMA0RS_AW>;
-impl<'a, REG, const O: u8> DMA0RS_W<'a, REG, O>
+pub type DMA0RS_W<'a, REG> = crate::BitWriter<'a, REG, DMA0RS_AW>;
+impl<'a, REG> DMA0RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<FCERS_AW> for bool {
     }
 }
 #[doc = "Field `FCERS` writer - FCE Reset Clear"]
-pub type FCERS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FCERS_AW>;
-impl<'a, REG, const O: u8> FCERS_W<'a, REG, O>
+pub type FCERS_W<'a, REG> = crate::BitWriter<'a, REG, FCERS_AW>;
+impl<'a, REG> FCERS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<USBRS_AW> for bool {
     }
 }
 #[doc = "Field `USBRS` writer - USB Reset Clear"]
-pub type USBRS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USBRS_AW>;
-impl<'a, REG, const O: u8> USBRS_W<'a, REG, O>
+pub type USBRS_W<'a, REG> = crate::BitWriter<'a, REG, USBRS_AW>;
+impl<'a, REG> USBRS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<ECAT0RS_AW> for bool {
     }
 }
 #[doc = "Field `ECAT0RS` writer - ECAT0 Reset Clear"]
-pub type ECAT0RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ECAT0RS_AW>;
-impl<'a, REG, const O: u8> ECAT0RS_W<'a, REG, O>
+pub type ECAT0RS_W<'a, REG> = crate::BitWriter<'a, REG, ECAT0RS_AW>;
+impl<'a, REG> ECAT0RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -190,38 +190,38 @@ impl W {
     #[doc = "Bit 1 - WDT Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn wdtrs(&mut self) -> WDTRS_W<PRCLR2_SPEC, 1> {
-        WDTRS_W::new(self)
+    pub fn wdtrs(&mut self) -> WDTRS_W<PRCLR2_SPEC> {
+        WDTRS_W::new(self, 1)
     }
     #[doc = "Bit 2 - ETH0 Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn eth0rs(&mut self) -> ETH0RS_W<PRCLR2_SPEC, 2> {
-        ETH0RS_W::new(self)
+    pub fn eth0rs(&mut self) -> ETH0RS_W<PRCLR2_SPEC> {
+        ETH0RS_W::new(self, 2)
     }
     #[doc = "Bit 4 - DMA0 Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn dma0rs(&mut self) -> DMA0RS_W<PRCLR2_SPEC, 4> {
-        DMA0RS_W::new(self)
+    pub fn dma0rs(&mut self) -> DMA0RS_W<PRCLR2_SPEC> {
+        DMA0RS_W::new(self, 4)
     }
     #[doc = "Bit 6 - FCE Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn fcers(&mut self) -> FCERS_W<PRCLR2_SPEC, 6> {
-        FCERS_W::new(self)
+    pub fn fcers(&mut self) -> FCERS_W<PRCLR2_SPEC> {
+        FCERS_W::new(self, 6)
     }
     #[doc = "Bit 7 - USB Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn usbrs(&mut self) -> USBRS_W<PRCLR2_SPEC, 7> {
-        USBRS_W::new(self)
+    pub fn usbrs(&mut self) -> USBRS_W<PRCLR2_SPEC> {
+        USBRS_W::new(self, 7)
     }
     #[doc = "Bit 10 - ECAT0 Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ecat0rs(&mut self) -> ECAT0RS_W<PRCLR2_SPEC, 10> {
-        ECAT0RS_W::new(self)
+    pub fn ecat0rs(&mut self) -> ECAT0RS_W<PRCLR2_SPEC> {
+        ECAT0RS_W::new(self, 10)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

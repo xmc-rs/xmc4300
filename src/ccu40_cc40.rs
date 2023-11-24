@@ -1,65 +1,179 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Input Selector Configuration"]
-    pub ins: INS,
-    #[doc = "0x04 - Connection Matrix Control"]
-    pub cmc: CMC,
-    #[doc = "0x08 - Slice Timer Status"]
-    pub tcst: TCST,
-    #[doc = "0x0c - Slice Timer Run Set"]
-    pub tcset: TCSET,
-    #[doc = "0x10 - Slice Timer Clear"]
-    pub tcclr: TCCLR,
-    #[doc = "0x14 - Slice Timer Control"]
-    pub tc: TC,
-    #[doc = "0x18 - Passive Level Config"]
-    pub psl: PSL,
-    #[doc = "0x1c - Dither Config"]
-    pub dit: DIT,
-    #[doc = "0x20 - Dither Shadow Register"]
-    pub dits: DITS,
-    #[doc = "0x24 - Prescaler Control"]
-    pub psc: PSC,
-    #[doc = "0x28 - Floating Prescaler Control"]
-    pub fpc: FPC,
-    #[doc = "0x2c - Floating Prescaler Shadow"]
-    pub fpcs: FPCS,
-    #[doc = "0x30 - Timer Period Value"]
-    pub pr: PR,
-    #[doc = "0x34 - Timer Shadow Period Value"]
-    pub prs: PRS,
-    #[doc = "0x38 - Timer Compare Value"]
-    pub cr: CR,
-    #[doc = "0x3c - Timer Shadow Compare Value"]
-    pub crs: CRS,
+    ins: INS,
+    cmc: CMC,
+    tcst: TCST,
+    tcset: TCSET,
+    tcclr: TCCLR,
+    tc: TC,
+    psl: PSL,
+    dit: DIT,
+    dits: DITS,
+    psc: PSC,
+    fpc: FPC,
+    fpcs: FPCS,
+    pr: PR,
+    prs: PRS,
+    cr: CR,
+    crs: CRS,
     _reserved16: [u8; 0x30],
-    #[doc = "0x70 - Timer Value"]
-    pub timer: TIMER,
-    #[doc = "0x74 - Capture Register 0"]
-    pub c0v: C0V,
-    #[doc = "0x78 - Capture Register 1"]
-    pub c1v: C1V,
-    #[doc = "0x7c - Capture Register 2"]
-    pub c2v: C2V,
-    #[doc = "0x80 - Capture Register 3"]
-    pub c3v: C3V,
+    timer: TIMER,
+    c0v: C0V,
+    c1v: C1V,
+    c2v: C2V,
+    c3v: C3V,
     _reserved21: [u8; 0x1c],
-    #[doc = "0xa0 - Interrupt Status"]
-    pub ints: INTS,
-    #[doc = "0xa4 - Interrupt Enable Control"]
-    pub inte: INTE,
-    #[doc = "0xa8 - Service Request Selector"]
-    pub srs: SRS,
-    #[doc = "0xac - Interrupt Status Set"]
-    pub sws: SWS,
-    #[doc = "0xb0 - Interrupt Status Clear"]
-    pub swr: SWR,
+    ints: INTS,
+    inte: INTE,
+    srs: SRS,
+    sws: SWS,
+    swr: SWR,
     _reserved26: [u8; 0x04],
+    ecrd0: ECRD0,
+    ecrd1: ECRD1,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Input Selector Configuration"]
+    #[inline(always)]
+    pub const fn ins(&self) -> &INS {
+        &self.ins
+    }
+    #[doc = "0x04 - Connection Matrix Control"]
+    #[inline(always)]
+    pub const fn cmc(&self) -> &CMC {
+        &self.cmc
+    }
+    #[doc = "0x08 - Slice Timer Status"]
+    #[inline(always)]
+    pub const fn tcst(&self) -> &TCST {
+        &self.tcst
+    }
+    #[doc = "0x0c - Slice Timer Run Set"]
+    #[inline(always)]
+    pub const fn tcset(&self) -> &TCSET {
+        &self.tcset
+    }
+    #[doc = "0x10 - Slice Timer Clear"]
+    #[inline(always)]
+    pub const fn tcclr(&self) -> &TCCLR {
+        &self.tcclr
+    }
+    #[doc = "0x14 - Slice Timer Control"]
+    #[inline(always)]
+    pub const fn tc(&self) -> &TC {
+        &self.tc
+    }
+    #[doc = "0x18 - Passive Level Config"]
+    #[inline(always)]
+    pub const fn psl(&self) -> &PSL {
+        &self.psl
+    }
+    #[doc = "0x1c - Dither Config"]
+    #[inline(always)]
+    pub const fn dit(&self) -> &DIT {
+        &self.dit
+    }
+    #[doc = "0x20 - Dither Shadow Register"]
+    #[inline(always)]
+    pub const fn dits(&self) -> &DITS {
+        &self.dits
+    }
+    #[doc = "0x24 - Prescaler Control"]
+    #[inline(always)]
+    pub const fn psc(&self) -> &PSC {
+        &self.psc
+    }
+    #[doc = "0x28 - Floating Prescaler Control"]
+    #[inline(always)]
+    pub const fn fpc(&self) -> &FPC {
+        &self.fpc
+    }
+    #[doc = "0x2c - Floating Prescaler Shadow"]
+    #[inline(always)]
+    pub const fn fpcs(&self) -> &FPCS {
+        &self.fpcs
+    }
+    #[doc = "0x30 - Timer Period Value"]
+    #[inline(always)]
+    pub const fn pr(&self) -> &PR {
+        &self.pr
+    }
+    #[doc = "0x34 - Timer Shadow Period Value"]
+    #[inline(always)]
+    pub const fn prs(&self) -> &PRS {
+        &self.prs
+    }
+    #[doc = "0x38 - Timer Compare Value"]
+    #[inline(always)]
+    pub const fn cr(&self) -> &CR {
+        &self.cr
+    }
+    #[doc = "0x3c - Timer Shadow Compare Value"]
+    #[inline(always)]
+    pub const fn crs(&self) -> &CRS {
+        &self.crs
+    }
+    #[doc = "0x70 - Timer Value"]
+    #[inline(always)]
+    pub const fn timer(&self) -> &TIMER {
+        &self.timer
+    }
+    #[doc = "0x74 - Capture Register 0"]
+    #[inline(always)]
+    pub const fn c0v(&self) -> &C0V {
+        &self.c0v
+    }
+    #[doc = "0x78 - Capture Register 1"]
+    #[inline(always)]
+    pub const fn c1v(&self) -> &C1V {
+        &self.c1v
+    }
+    #[doc = "0x7c - Capture Register 2"]
+    #[inline(always)]
+    pub const fn c2v(&self) -> &C2V {
+        &self.c2v
+    }
+    #[doc = "0x80 - Capture Register 3"]
+    #[inline(always)]
+    pub const fn c3v(&self) -> &C3V {
+        &self.c3v
+    }
+    #[doc = "0xa0 - Interrupt Status"]
+    #[inline(always)]
+    pub const fn ints(&self) -> &INTS {
+        &self.ints
+    }
+    #[doc = "0xa4 - Interrupt Enable Control"]
+    #[inline(always)]
+    pub const fn inte(&self) -> &INTE {
+        &self.inte
+    }
+    #[doc = "0xa8 - Service Request Selector"]
+    #[inline(always)]
+    pub const fn srs(&self) -> &SRS {
+        &self.srs
+    }
+    #[doc = "0xac - Interrupt Status Set"]
+    #[inline(always)]
+    pub const fn sws(&self) -> &SWS {
+        &self.sws
+    }
+    #[doc = "0xb0 - Interrupt Status Clear"]
+    #[inline(always)]
+    pub const fn swr(&self) -> &SWR {
+        &self.swr
+    }
     #[doc = "0xb8 - Extended Read Back 0"]
-    pub ecrd0: ECRD0,
+    #[inline(always)]
+    pub const fn ecrd0(&self) -> &ECRD0 {
+        &self.ecrd0
+    }
     #[doc = "0xbc - Extended Read Back 1"]
-    pub ecrd1: ECRD1,
+    #[inline(always)]
+    pub const fn ecrd1(&self) -> &ECRD1 {
+        &self.ecrd1
+    }
 }
 #[doc = "INS (rw) register accessor: Input Selector Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ins::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ins::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ins`]
 module"]

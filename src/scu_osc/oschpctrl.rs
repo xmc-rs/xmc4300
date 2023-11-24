@@ -39,8 +39,8 @@ impl X1DEN_R {
     }
 }
 #[doc = "Field `X1DEN` writer - XTAL1 Data Enable"]
-pub type X1DEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, X1DEN_A>;
-impl<'a, REG, const O: u8> X1DEN_W<'a, REG, O>
+pub type X1DEN_W<'a, REG> = crate::BitWriter<'a, REG, X1DEN_A>;
+impl<'a, REG> X1DEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl SHBY_R {
     }
 }
 #[doc = "Field `SHBY` writer - Shaper Bypass"]
-pub type SHBY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SHBY_A>;
-impl<'a, REG, const O: u8> SHBY_W<'a, REG, O>
+pub type SHBY_W<'a, REG> = crate::BitWriter<'a, REG, SHBY_A>;
+impl<'a, REG> SHBY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -166,8 +166,8 @@ impl GAINSEL_R {
     }
 }
 #[doc = "Field `GAINSEL` writer - Oscillator Gain Selection"]
-pub type GAINSEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, GAINSEL_A>;
-impl<'a, REG, const O: u8> GAINSEL_W<'a, REG, O>
+pub type GAINSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, GAINSEL_A>;
+impl<'a, REG> GAINSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -251,8 +251,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Oscillator Mode"]
-pub type MODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, MODE_A>;
-impl<'a, REG, const O: u8> MODE_W<'a, REG, O>
+pub type MODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, MODE_A>;
+impl<'a, REG> MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -281,7 +281,7 @@ where
 #[doc = "Field `OSCVAL` reader - OSC Frequency Value"]
 pub type OSCVAL_R = crate::FieldReader;
 #[doc = "Field `OSCVAL` writer - OSC Frequency Value"]
-pub type OSCVAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type OSCVAL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - XTAL1 Data Enable"]
     #[inline(always)]
@@ -313,32 +313,32 @@ impl W {
     #[doc = "Bit 0 - XTAL1 Data Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn x1den(&mut self) -> X1DEN_W<OSCHPCTRL_SPEC, 0> {
-        X1DEN_W::new(self)
+    pub fn x1den(&mut self) -> X1DEN_W<OSCHPCTRL_SPEC> {
+        X1DEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Shaper Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn shby(&mut self) -> SHBY_W<OSCHPCTRL_SPEC, 1> {
-        SHBY_W::new(self)
+    pub fn shby(&mut self) -> SHBY_W<OSCHPCTRL_SPEC> {
+        SHBY_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - Oscillator Gain Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn gainsel(&mut self) -> GAINSEL_W<OSCHPCTRL_SPEC, 2> {
-        GAINSEL_W::new(self)
+    pub fn gainsel(&mut self) -> GAINSEL_W<OSCHPCTRL_SPEC> {
+        GAINSEL_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<OSCHPCTRL_SPEC, 4> {
-        MODE_W::new(self)
+    pub fn mode(&mut self) -> MODE_W<OSCHPCTRL_SPEC> {
+        MODE_W::new(self, 4)
     }
     #[doc = "Bits 16:19 - OSC Frequency Value"]
     #[inline(always)]
     #[must_use]
-    pub fn oscval(&mut self) -> OSCVAL_W<OSCHPCTRL_SPEC, 16> {
-        OSCVAL_W::new(self)
+    pub fn oscval(&mut self) -> OSCVAL_W<OSCHPCTRL_SPEC> {
+        OSCVAL_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

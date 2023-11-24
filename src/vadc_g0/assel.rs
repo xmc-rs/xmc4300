@@ -39,8 +39,8 @@ impl CHSEL0_R {
     }
 }
 #[doc = "Field `CHSEL0` writer - Channel Selection"]
-pub type CHSEL0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSEL0_A>;
-impl<'a, REG, const O: u8> CHSEL0_W<'a, REG, O>
+pub type CHSEL0_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL0_A>;
+impl<'a, REG> CHSEL0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl CHSEL1_R {
     }
 }
 #[doc = "Field `CHSEL1` writer - Channel Selection"]
-pub type CHSEL1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSEL1_A>;
-impl<'a, REG, const O: u8> CHSEL1_W<'a, REG, O>
+pub type CHSEL1_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL1_A>;
+impl<'a, REG> CHSEL1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl CHSEL2_R {
     }
 }
 #[doc = "Field `CHSEL2` writer - Channel Selection"]
-pub type CHSEL2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSEL2_A>;
-impl<'a, REG, const O: u8> CHSEL2_W<'a, REG, O>
+pub type CHSEL2_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL2_A>;
+impl<'a, REG> CHSEL2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl CHSEL3_R {
     }
 }
 #[doc = "Field `CHSEL3` writer - Channel Selection"]
-pub type CHSEL3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSEL3_A>;
-impl<'a, REG, const O: u8> CHSEL3_W<'a, REG, O>
+pub type CHSEL3_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL3_A>;
+impl<'a, REG> CHSEL3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl CHSEL4_R {
     }
 }
 #[doc = "Field `CHSEL4` writer - Channel Selection"]
-pub type CHSEL4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSEL4_A>;
-impl<'a, REG, const O: u8> CHSEL4_W<'a, REG, O>
+pub type CHSEL4_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL4_A>;
+impl<'a, REG> CHSEL4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl CHSEL5_R {
     }
 }
 #[doc = "Field `CHSEL5` writer - Channel Selection"]
-pub type CHSEL5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSEL5_A>;
-impl<'a, REG, const O: u8> CHSEL5_W<'a, REG, O>
+pub type CHSEL5_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL5_A>;
+impl<'a, REG> CHSEL5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl CHSEL6_R {
     }
 }
 #[doc = "Field `CHSEL6` writer - Channel Selection"]
-pub type CHSEL6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSEL6_A>;
-impl<'a, REG, const O: u8> CHSEL6_W<'a, REG, O>
+pub type CHSEL6_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL6_A>;
+impl<'a, REG> CHSEL6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl CHSEL7_R {
     }
 }
 #[doc = "Field `CHSEL7` writer - Channel Selection"]
-pub type CHSEL7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHSEL7_A>;
-impl<'a, REG, const O: u8> CHSEL7_W<'a, REG, O>
+pub type CHSEL7_W<'a, REG> = crate::BitWriter<'a, REG, CHSEL7_A>;
+impl<'a, REG> CHSEL7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -472,50 +472,50 @@ impl W {
     #[doc = "Bit 0 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel0(&mut self) -> CHSEL0_W<ASSEL_SPEC, 0> {
-        CHSEL0_W::new(self)
+    pub fn chsel0(&mut self) -> CHSEL0_W<ASSEL_SPEC> {
+        CHSEL0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel1(&mut self) -> CHSEL1_W<ASSEL_SPEC, 1> {
-        CHSEL1_W::new(self)
+    pub fn chsel1(&mut self) -> CHSEL1_W<ASSEL_SPEC> {
+        CHSEL1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel2(&mut self) -> CHSEL2_W<ASSEL_SPEC, 2> {
-        CHSEL2_W::new(self)
+    pub fn chsel2(&mut self) -> CHSEL2_W<ASSEL_SPEC> {
+        CHSEL2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel3(&mut self) -> CHSEL3_W<ASSEL_SPEC, 3> {
-        CHSEL3_W::new(self)
+    pub fn chsel3(&mut self) -> CHSEL3_W<ASSEL_SPEC> {
+        CHSEL3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel4(&mut self) -> CHSEL4_W<ASSEL_SPEC, 4> {
-        CHSEL4_W::new(self)
+    pub fn chsel4(&mut self) -> CHSEL4_W<ASSEL_SPEC> {
+        CHSEL4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel5(&mut self) -> CHSEL5_W<ASSEL_SPEC, 5> {
-        CHSEL5_W::new(self)
+    pub fn chsel5(&mut self) -> CHSEL5_W<ASSEL_SPEC> {
+        CHSEL5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel6(&mut self) -> CHSEL6_W<ASSEL_SPEC, 6> {
-        CHSEL6_W::new(self)
+    pub fn chsel6(&mut self) -> CHSEL6_W<ASSEL_SPEC> {
+        CHSEL6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Channel Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn chsel7(&mut self) -> CHSEL7_W<ASSEL_SPEC, 7> {
-        CHSEL7_W::new(self)
+    pub fn chsel7(&mut self) -> CHSEL7_W<ASSEL_SPEC> {
+        CHSEL7_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

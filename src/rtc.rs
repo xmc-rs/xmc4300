@@ -1,26 +1,68 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
+    id: ID,
+    ctr: CTR,
+    rawstat: RAWSTAT,
+    stssr: STSSR,
+    msksr: MSKSR,
+    clrsr: CLRSR,
+    atim0: ATIM0,
+    atim1: ATIM1,
+    tim0: TIM0,
+    tim1: TIM1,
+}
+impl RegisterBlock {
     #[doc = "0x00 - RTC ID Register"]
-    pub id: ID,
+    #[inline(always)]
+    pub const fn id(&self) -> &ID {
+        &self.id
+    }
     #[doc = "0x04 - RTC Control Register"]
-    pub ctr: CTR,
+    #[inline(always)]
+    pub const fn ctr(&self) -> &CTR {
+        &self.ctr
+    }
     #[doc = "0x08 - RTC Raw Service Request Register"]
-    pub rawstat: RAWSTAT,
+    #[inline(always)]
+    pub const fn rawstat(&self) -> &RAWSTAT {
+        &self.rawstat
+    }
     #[doc = "0x0c - RTC Service Request Status Register"]
-    pub stssr: STSSR,
+    #[inline(always)]
+    pub const fn stssr(&self) -> &STSSR {
+        &self.stssr
+    }
     #[doc = "0x10 - RTC Service Request Mask Register"]
-    pub msksr: MSKSR,
+    #[inline(always)]
+    pub const fn msksr(&self) -> &MSKSR {
+        &self.msksr
+    }
     #[doc = "0x14 - RTC Clear Service Request Register"]
-    pub clrsr: CLRSR,
+    #[inline(always)]
+    pub const fn clrsr(&self) -> &CLRSR {
+        &self.clrsr
+    }
     #[doc = "0x18 - RTC Alarm Time Register 0"]
-    pub atim0: ATIM0,
+    #[inline(always)]
+    pub const fn atim0(&self) -> &ATIM0 {
+        &self.atim0
+    }
     #[doc = "0x1c - RTC Alarm Time Register 1"]
-    pub atim1: ATIM1,
+    #[inline(always)]
+    pub const fn atim1(&self) -> &ATIM1 {
+        &self.atim1
+    }
     #[doc = "0x20 - RTC Time Register 0"]
-    pub tim0: TIM0,
+    #[inline(always)]
+    pub const fn tim0(&self) -> &TIM0 {
+        &self.tim0
+    }
     #[doc = "0x24 - RTC Time Register 1"]
-    pub tim1: TIM1,
+    #[inline(always)]
+    pub const fn tim1(&self) -> &TIM1 {
+        &self.tim1
+    }
 }
 #[doc = "ID (r) register accessor: RTC ID Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@id`]
 module"]

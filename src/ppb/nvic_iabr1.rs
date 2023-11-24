@@ -44,8 +44,8 @@ impl ACTIVE_R {
     }
 }
 #[doc = "Field `ACTIVE` writer - Interrupt active flags:"]
-pub type ACTIVE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, ACTIVE_A>;
-impl<'a, REG, const O: u8> ACTIVE_W<'a, REG, O>
+pub type ACTIVE_W<'a, REG> = crate::FieldWriter<'a, REG, 32, ACTIVE_A>;
+impl<'a, REG> ACTIVE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
@@ -72,8 +72,8 @@ impl W {
     #[doc = "Bits 0:31 - Interrupt active flags:"]
     #[inline(always)]
     #[must_use]
-    pub fn active(&mut self) -> ACTIVE_W<NVIC_IABR1_SPEC, 0> {
-        ACTIVE_W::new(self)
+    pub fn active(&mut self) -> ACTIVE_W<NVIC_IABR1_SPEC> {
+        ACTIVE_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

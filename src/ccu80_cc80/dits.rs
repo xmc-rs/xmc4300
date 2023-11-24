@@ -5,7 +5,7 @@ pub type W = crate::W<DITS_SPEC>;
 #[doc = "Field `DCVS` reader - Dither Shadow Compare Value"]
 pub type DCVS_R = crate::FieldReader;
 #[doc = "Field `DCVS` writer - Dither Shadow Compare Value"]
-pub type DCVS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type DCVS_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3 - Dither Shadow Compare Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:3 - Dither Shadow Compare Value"]
     #[inline(always)]
     #[must_use]
-    pub fn dcvs(&mut self) -> DCVS_W<DITS_SPEC, 0> {
-        DCVS_W::new(self)
+    pub fn dcvs(&mut self) -> DCVS_W<DITS_SPEC> {
+        DCVS_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

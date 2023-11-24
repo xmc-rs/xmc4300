@@ -5,7 +5,7 @@ pub type W = crate::W<USBCLKCR_SPEC>;
 #[doc = "Field `USBDIV` reader - USB Clock Divider Value"]
 pub type USBDIV_R = crate::FieldReader;
 #[doc = "Field `USBDIV` writer - USB Clock Divider Value"]
-pub type USBDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type USBDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `USBSEL` reader - USB Clock Selection Value"]
 pub type USBSEL_R = crate::BitReader<USBSEL_A>;
 #[doc = "USB Clock Selection Value\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl USBSEL_R {
     }
 }
 #[doc = "Field `USBSEL` writer - USB Clock Selection Value"]
-pub type USBSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USBSEL_A>;
-impl<'a, REG, const O: u8> USBSEL_W<'a, REG, O>
+pub type USBSEL_W<'a, REG> = crate::BitWriter<'a, REG, USBSEL_A>;
+impl<'a, REG> USBSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -75,14 +75,14 @@ impl W {
     #[doc = "Bits 0:2 - USB Clock Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn usbdiv(&mut self) -> USBDIV_W<USBCLKCR_SPEC, 0> {
-        USBDIV_W::new(self)
+    pub fn usbdiv(&mut self) -> USBDIV_W<USBCLKCR_SPEC> {
+        USBDIV_W::new(self, 0)
     }
     #[doc = "Bit 16 - USB Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn usbsel(&mut self) -> USBSEL_W<USBCLKCR_SPEC, 16> {
-        USBSEL_W::new(self)
+    pub fn usbsel(&mut self) -> USBSEL_W<USBCLKCR_SPEC> {
+        USBSEL_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

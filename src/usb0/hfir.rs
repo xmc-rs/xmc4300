@@ -5,7 +5,7 @@ pub type W = crate::W<HFIR_SPEC>;
 #[doc = "Field `FrInt` reader - Frame Interval"]
 pub type FR_INT_R = crate::FieldReader<u16>;
 #[doc = "Field `FrInt` writer - Frame Interval"]
-pub type FR_INT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type FR_INT_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `HFIRRldCtrl` reader - Reload Control"]
 pub type HFIRRLD_CTRL_R = crate::BitReader<HFIRRLD_CTRL_A>;
 #[doc = "Reload Control\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl HFIRRLD_CTRL_R {
     }
 }
 #[doc = "Field `HFIRRldCtrl` writer - Reload Control"]
-pub type HFIRRLD_CTRL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HFIRRLD_CTRL_A>;
-impl<'a, REG, const O: u8> HFIRRLD_CTRL_W<'a, REG, O>
+pub type HFIRRLD_CTRL_W<'a, REG> = crate::BitWriter<'a, REG, HFIRRLD_CTRL_A>;
+impl<'a, REG> HFIRRLD_CTRL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -75,14 +75,14 @@ impl W {
     #[doc = "Bits 0:15 - Frame Interval"]
     #[inline(always)]
     #[must_use]
-    pub fn fr_int(&mut self) -> FR_INT_W<HFIR_SPEC, 0> {
-        FR_INT_W::new(self)
+    pub fn fr_int(&mut self) -> FR_INT_W<HFIR_SPEC> {
+        FR_INT_W::new(self, 0)
     }
     #[doc = "Bit 16 - Reload Control"]
     #[inline(always)]
     #[must_use]
-    pub fn hfirrld_ctrl(&mut self) -> HFIRRLD_CTRL_W<HFIR_SPEC, 16> {
-        HFIRRLD_CTRL_W::new(self)
+    pub fn hfirrld_ctrl(&mut self) -> HFIRRLD_CTRL_W<HFIR_SPEC> {
+        HFIRRLD_CTRL_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

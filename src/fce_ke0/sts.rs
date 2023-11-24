@@ -5,19 +5,19 @@ pub type W = crate::W<STS_SPEC>;
 #[doc = "Field `CMF` reader - CRC Mismatch Flag"]
 pub type CMF_R = crate::BitReader;
 #[doc = "Field `CMF` writer - CRC Mismatch Flag"]
-pub type CMF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CMF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CEF` reader - Configuration Error Flag"]
 pub type CEF_R = crate::BitReader;
 #[doc = "Field `CEF` writer - Configuration Error Flag"]
-pub type CEF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CEF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LEF` reader - Length Error Flag"]
 pub type LEF_R = crate::BitReader;
 #[doc = "Field `LEF` writer - Length Error Flag"]
-pub type LEF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type LEF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BEF` reader - Bus Error Flag"]
 pub type BEF_R = crate::BitReader;
 #[doc = "Field `BEF` writer - Bus Error Flag"]
-pub type BEF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BEF_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - CRC Mismatch Flag"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bit 0 - CRC Mismatch Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cmf(&mut self) -> CMF_W<STS_SPEC, 0> {
-        CMF_W::new(self)
+    pub fn cmf(&mut self) -> CMF_W<STS_SPEC> {
+        CMF_W::new(self, 0)
     }
     #[doc = "Bit 1 - Configuration Error Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cef(&mut self) -> CEF_W<STS_SPEC, 1> {
-        CEF_W::new(self)
+    pub fn cef(&mut self) -> CEF_W<STS_SPEC> {
+        CEF_W::new(self, 1)
     }
     #[doc = "Bit 2 - Length Error Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn lef(&mut self) -> LEF_W<STS_SPEC, 2> {
-        LEF_W::new(self)
+    pub fn lef(&mut self) -> LEF_W<STS_SPEC> {
+        LEF_W::new(self, 2)
     }
     #[doc = "Bit 3 - Bus Error Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn bef(&mut self) -> BEF_W<STS_SPEC, 3> {
-        BEF_W::new(self)
+    pub fn bef(&mut self) -> BEF_W<STS_SPEC> {
+        BEF_W::new(self, 3)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

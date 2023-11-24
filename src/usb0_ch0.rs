@@ -1,39 +1,55 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Host Channel Characteristics Register"]
-    pub hcchar: HCCHAR,
+    hcchar: HCCHAR,
     _reserved1: [u8; 0x04],
-    #[doc = "0x08 - Host Channel Interrupt Register"]
-    pub hcint: HCINT,
-    #[doc = "0x0c - Host Channel Interrupt Mask Register"]
-    pub hcintmsk: HCINTMSK,
+    hcint: HCINT,
+    hcintmsk: HCINTMSK,
     _reserved_3_hctsiz: [u8; 0x04],
     _reserved_4_hcdma: [u8; 0x04],
     _reserved5: [u8; 0x04],
-    #[doc = "0x1c - Host Channel DMA Buffer Address Register"]
-    pub hcdmab: HCDMAB,
+    hcdmab: HCDMAB,
 }
 impl RegisterBlock {
+    #[doc = "0x00 - Host Channel Characteristics Register"]
+    #[inline(always)]
+    pub const fn hcchar(&self) -> &HCCHAR {
+        &self.hcchar
+    }
+    #[doc = "0x08 - Host Channel Interrupt Register"]
+    #[inline(always)]
+    pub const fn hcint(&self) -> &HCINT {
+        &self.hcint
+    }
+    #[doc = "0x0c - Host Channel Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn hcintmsk(&self) -> &HCINTMSK {
+        &self.hcintmsk
+    }
     #[doc = "0x10 - Host Channel Transfer Size Register \\[SCATGATHER\\]"]
     #[inline(always)]
     pub const fn hctsiz_scatgather(&self) -> &HCTSIZ_SCATGATHER {
-        unsafe { &*(self as *const Self).cast::<u8>().add(16usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(16).cast() }
     }
     #[doc = "0x10 - Host Channel Transfer Size Register \\[BUFFERMODE\\]"]
     #[inline(always)]
     pub const fn hctsiz_buffermode(&self) -> &HCTSIZ_BUFFERMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(16usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(16).cast() }
     }
     #[doc = "0x14 - Host Channel DMA Address Register \\[SCATGATHER\\]"]
     #[inline(always)]
     pub const fn hcdma_scatgather(&self) -> &HCDMA_SCATGATHER {
-        unsafe { &*(self as *const Self).cast::<u8>().add(20usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(20).cast() }
     }
     #[doc = "0x14 - Host Channel DMA Address Register \\[BUFFERMODE\\]"]
     #[inline(always)]
     pub const fn hcdma_buffermode(&self) -> &HCDMA_BUFFERMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(20usize).cast() }
+        unsafe { &*(self as *const Self).cast::<u8>().add(20).cast() }
+    }
+    #[doc = "0x1c - Host Channel DMA Buffer Address Register"]
+    #[inline(always)]
+    pub const fn hcdmab(&self) -> &HCDMAB {
+        &self.hcdmab
     }
 }
 #[doc = "HCCHAR (rw) register accessor: Host Channel Characteristics Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hcchar::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hcchar::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hcchar`]

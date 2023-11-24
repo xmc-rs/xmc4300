@@ -5,33 +5,33 @@ pub type W = crate::W<DIEPINT0_SPEC>;
 #[doc = "Field `XferCompl` reader - Transfer Completed Interrupt"]
 pub type XFER_COMPL_R = crate::BitReader;
 #[doc = "Field `XferCompl` writer - Transfer Completed Interrupt"]
-pub type XFER_COMPL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type XFER_COMPL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPDisbld` reader - Endpoint Disabled Interrupt"]
 pub type EPDISBLD_R = crate::BitReader;
 #[doc = "Field `EPDisbld` writer - Endpoint Disabled Interrupt"]
-pub type EPDISBLD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type EPDISBLD_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `AHBErr` reader - AHB Error"]
 pub type AHBERR_R = crate::BitReader;
 #[doc = "Field `AHBErr` writer - AHB Error"]
-pub type AHBERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type AHBERR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TimeOUT` reader - Timeout Condition"]
 pub type TIME_OUT_R = crate::BitReader;
 #[doc = "Field `TimeOUT` writer - Timeout Condition"]
-pub type TIME_OUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TIME_OUT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INTknTXFEmp` reader - IN Token Received When TxFIFO is Empty"]
 pub type INTKN_TXFEMP_R = crate::BitReader;
 #[doc = "Field `INTknTXFEmp` writer - IN Token Received When TxFIFO is Empty"]
-pub type INTKN_TXFEMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INTKN_TXFEMP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `INEPNakEff` reader - IN Endpoint NAK Effective"]
 pub type INEPNAK_EFF_R = crate::BitReader;
 #[doc = "Field `INEPNakEff` writer - IN Endpoint NAK Effective"]
-pub type INEPNAK_EFF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INEPNAK_EFF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TxFEmp` reader - Transmit FIFO Empty"]
 pub type TX_FEMP_R = crate::BitReader;
 #[doc = "Field `BNAIntr` reader - BNA (Buffer Not Available) Interrupt"]
 pub type BNAINTR_R = crate::BitReader;
 #[doc = "Field `BNAIntr` writer - BNA (Buffer Not Available) Interrupt"]
-pub type BNAINTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type BNAINTR_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Transfer Completed Interrupt"]
     #[inline(always)]
@@ -78,44 +78,44 @@ impl W {
     #[doc = "Bit 0 - Transfer Completed Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn xfer_compl(&mut self) -> XFER_COMPL_W<DIEPINT0_SPEC, 0> {
-        XFER_COMPL_W::new(self)
+    pub fn xfer_compl(&mut self) -> XFER_COMPL_W<DIEPINT0_SPEC> {
+        XFER_COMPL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Endpoint Disabled Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn epdisbld(&mut self) -> EPDISBLD_W<DIEPINT0_SPEC, 1> {
-        EPDISBLD_W::new(self)
+    pub fn epdisbld(&mut self) -> EPDISBLD_W<DIEPINT0_SPEC> {
+        EPDISBLD_W::new(self, 1)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
     #[must_use]
-    pub fn ahberr(&mut self) -> AHBERR_W<DIEPINT0_SPEC, 2> {
-        AHBERR_W::new(self)
+    pub fn ahberr(&mut self) -> AHBERR_W<DIEPINT0_SPEC> {
+        AHBERR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Timeout Condition"]
     #[inline(always)]
     #[must_use]
-    pub fn time_out(&mut self) -> TIME_OUT_W<DIEPINT0_SPEC, 3> {
-        TIME_OUT_W::new(self)
+    pub fn time_out(&mut self) -> TIME_OUT_W<DIEPINT0_SPEC> {
+        TIME_OUT_W::new(self, 3)
     }
     #[doc = "Bit 4 - IN Token Received When TxFIFO is Empty"]
     #[inline(always)]
     #[must_use]
-    pub fn intkn_txfemp(&mut self) -> INTKN_TXFEMP_W<DIEPINT0_SPEC, 4> {
-        INTKN_TXFEMP_W::new(self)
+    pub fn intkn_txfemp(&mut self) -> INTKN_TXFEMP_W<DIEPINT0_SPEC> {
+        INTKN_TXFEMP_W::new(self, 4)
     }
     #[doc = "Bit 6 - IN Endpoint NAK Effective"]
     #[inline(always)]
     #[must_use]
-    pub fn inepnak_eff(&mut self) -> INEPNAK_EFF_W<DIEPINT0_SPEC, 6> {
-        INEPNAK_EFF_W::new(self)
+    pub fn inepnak_eff(&mut self) -> INEPNAK_EFF_W<DIEPINT0_SPEC> {
+        INEPNAK_EFF_W::new(self, 6)
     }
     #[doc = "Bit 9 - BNA (Buffer Not Available) Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn bnaintr(&mut self) -> BNAINTR_W<DIEPINT0_SPEC, 9> {
-        BNAINTR_W::new(self)
+    pub fn bnaintr(&mut self) -> BNAINTR_W<DIEPINT0_SPEC> {
+        BNAINTR_W::new(self, 9)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

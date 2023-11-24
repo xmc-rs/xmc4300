@@ -1,29 +1,29 @@
 #[doc = "Register `TCCLR` writer"]
 pub type W = crate::W<TCCLR_SPEC>;
 #[doc = "Field `TRBC` writer - Timer Run Bit Clear"]
-pub type TRBC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TRBC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TCC` writer - Timer Clear"]
-pub type TCC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TCC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DITC` writer - Dither Counter Clear"]
-pub type DITC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DITC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Timer Run Bit Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn trbc(&mut self) -> TRBC_W<TCCLR_SPEC, 0> {
-        TRBC_W::new(self)
+    pub fn trbc(&mut self) -> TRBC_W<TCCLR_SPEC> {
+        TRBC_W::new(self, 0)
     }
     #[doc = "Bit 1 - Timer Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn tcc(&mut self) -> TCC_W<TCCLR_SPEC, 1> {
-        TCC_W::new(self)
+    pub fn tcc(&mut self) -> TCC_W<TCCLR_SPEC> {
+        TCC_W::new(self, 1)
     }
     #[doc = "Bit 2 - Dither Counter Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ditc(&mut self) -> DITC_W<TCCLR_SPEC, 2> {
-        DITC_W::new(self)
+    pub fn ditc(&mut self) -> DITC_W<TCCLR_SPEC> {
+        DITC_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

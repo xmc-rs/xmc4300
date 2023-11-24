@@ -5,11 +5,11 @@ pub type W = crate::W<INTERRUPT_MASK_SPEC>;
 #[doc = "Field `PMTIM` reader - PMT Interrupt Mask"]
 pub type PMTIM_R = crate::BitReader;
 #[doc = "Field `PMTIM` writer - PMT Interrupt Mask"]
-pub type PMTIM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type PMTIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TSIM` reader - Timestamp Interrupt Mask"]
 pub type TSIM_R = crate::BitReader;
 #[doc = "Field `TSIM` writer - Timestamp Interrupt Mask"]
-pub type TSIM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TSIM_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 3 - PMT Interrupt Mask"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bit 3 - PMT Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn pmtim(&mut self) -> PMTIM_W<INTERRUPT_MASK_SPEC, 3> {
-        PMTIM_W::new(self)
+    pub fn pmtim(&mut self) -> PMTIM_W<INTERRUPT_MASK_SPEC> {
+        PMTIM_W::new(self, 3)
     }
     #[doc = "Bit 9 - Timestamp Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn tsim(&mut self) -> TSIM_W<INTERRUPT_MASK_SPEC, 9> {
-        TSIM_W::new(self)
+    pub fn tsim(&mut self) -> TSIM_W<INTERRUPT_MASK_SPEC> {
+        TSIM_W::new(self, 9)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

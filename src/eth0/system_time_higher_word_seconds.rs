@@ -5,7 +5,7 @@ pub type W = crate::W<SYSTEM_TIME_HIGHER_WORD_SECONDS_SPEC>;
 #[doc = "Field `TSHWR` reader - Timestamp Higher Word Register"]
 pub type TSHWR_R = crate::FieldReader<u16>;
 #[doc = "Field `TSHWR` writer - Timestamp Higher Word Register"]
-pub type TSHWR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type TSHWR_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Timestamp Higher Word Register"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Timestamp Higher Word Register"]
     #[inline(always)]
     #[must_use]
-    pub fn tshwr(&mut self) -> TSHWR_W<SYSTEM_TIME_HIGHER_WORD_SECONDS_SPEC, 0> {
-        TSHWR_W::new(self)
+    pub fn tshwr(&mut self) -> TSHWR_W<SYSTEM_TIME_HIGHER_WORD_SECONDS_SPEC> {
+        TSHWR_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

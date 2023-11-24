@@ -5,7 +5,7 @@ pub type W = crate::W<HASH_TABLE_LOW_SPEC>;
 #[doc = "Field `HTL` reader - Hash Table Low"]
 pub type HTL_R = crate::FieldReader<u32>;
 #[doc = "Field `HTL` writer - Hash Table Low"]
-pub type HTL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type HTL_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Hash Table Low"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Hash Table Low"]
     #[inline(always)]
     #[must_use]
-    pub fn htl(&mut self) -> HTL_W<HASH_TABLE_LOW_SPEC, 0> {
-        HTL_W::new(self)
+    pub fn htl(&mut self) -> HTL_W<HASH_TABLE_LOW_SPEC> {
+        HTL_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

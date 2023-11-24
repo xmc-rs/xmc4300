@@ -39,8 +39,8 @@ impl CMD_COMPLETE_R {
     }
 }
 #[doc = "Field `CMD_COMPLETE` writer - Command Complete"]
-pub type CMD_COMPLETE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_COMPLETE_A>;
-impl<'a, REG, const O: u8> CMD_COMPLETE_W<'a, REG, O>
+pub type CMD_COMPLETE_W<'a, REG> = crate::BitWriter<'a, REG, CMD_COMPLETE_A>;
+impl<'a, REG> CMD_COMPLETE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl TX_COMPLETE_R {
     }
 }
 #[doc = "Field `TX_COMPLETE` writer - Transfer Complete"]
-pub type TX_COMPLETE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_COMPLETE_A>;
-impl<'a, REG, const O: u8> TX_COMPLETE_W<'a, REG, O>
+pub type TX_COMPLETE_W<'a, REG> = crate::BitWriter<'a, REG, TX_COMPLETE_A>;
+impl<'a, REG> TX_COMPLETE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl BLOCK_GAP_EVENT_R {
     }
 }
 #[doc = "Field `BLOCK_GAP_EVENT` writer - Block Gap Event"]
-pub type BLOCK_GAP_EVENT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BLOCK_GAP_EVENT_A>;
-impl<'a, REG, const O: u8> BLOCK_GAP_EVENT_W<'a, REG, O>
+pub type BLOCK_GAP_EVENT_W<'a, REG> = crate::BitWriter<'a, REG, BLOCK_GAP_EVENT_A>;
+impl<'a, REG> BLOCK_GAP_EVENT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl BUFF_WRITE_READY_R {
     }
 }
 #[doc = "Field `BUFF_WRITE_READY` writer - Buffer Write Ready"]
-pub type BUFF_WRITE_READY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BUFF_WRITE_READY_A>;
-impl<'a, REG, const O: u8> BUFF_WRITE_READY_W<'a, REG, O>
+pub type BUFF_WRITE_READY_W<'a, REG> = crate::BitWriter<'a, REG, BUFF_WRITE_READY_A>;
+impl<'a, REG> BUFF_WRITE_READY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl BUFF_READ_READY_R {
     }
 }
 #[doc = "Field `BUFF_READ_READY` writer - Buffer Read Ready"]
-pub type BUFF_READ_READY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BUFF_READ_READY_A>;
-impl<'a, REG, const O: u8> BUFF_READ_READY_W<'a, REG, O>
+pub type BUFF_READ_READY_W<'a, REG> = crate::BitWriter<'a, REG, BUFF_READ_READY_A>;
+impl<'a, REG> BUFF_READ_READY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl CARD_INS_R {
     }
 }
 #[doc = "Field `CARD_INS` writer - Card Insertion"]
-pub type CARD_INS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CARD_INS_A>;
-impl<'a, REG, const O: u8> CARD_INS_W<'a, REG, O>
+pub type CARD_INS_W<'a, REG> = crate::BitWriter<'a, REG, CARD_INS_A>;
+impl<'a, REG> CARD_INS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl CARD_REMOVAL_R {
     }
 }
 #[doc = "Field `CARD_REMOVAL` writer - Card Removal"]
-pub type CARD_REMOVAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CARD_REMOVAL_A>;
-impl<'a, REG, const O: u8> CARD_REMOVAL_W<'a, REG, O>
+pub type CARD_REMOVAL_W<'a, REG> = crate::BitWriter<'a, REG, CARD_REMOVAL_A>;
+impl<'a, REG> CARD_REMOVAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -496,44 +496,44 @@ impl W {
     #[doc = "Bit 0 - Command Complete"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_complete(&mut self) -> CMD_COMPLETE_W<INT_STATUS_NORM_SPEC, 0> {
-        CMD_COMPLETE_W::new(self)
+    pub fn cmd_complete(&mut self) -> CMD_COMPLETE_W<INT_STATUS_NORM_SPEC> {
+        CMD_COMPLETE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transfer Complete"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_complete(&mut self) -> TX_COMPLETE_W<INT_STATUS_NORM_SPEC, 1> {
-        TX_COMPLETE_W::new(self)
+    pub fn tx_complete(&mut self) -> TX_COMPLETE_W<INT_STATUS_NORM_SPEC> {
+        TX_COMPLETE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Block Gap Event"]
     #[inline(always)]
     #[must_use]
-    pub fn block_gap_event(&mut self) -> BLOCK_GAP_EVENT_W<INT_STATUS_NORM_SPEC, 2> {
-        BLOCK_GAP_EVENT_W::new(self)
+    pub fn block_gap_event(&mut self) -> BLOCK_GAP_EVENT_W<INT_STATUS_NORM_SPEC> {
+        BLOCK_GAP_EVENT_W::new(self, 2)
     }
     #[doc = "Bit 4 - Buffer Write Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_write_ready(&mut self) -> BUFF_WRITE_READY_W<INT_STATUS_NORM_SPEC, 4> {
-        BUFF_WRITE_READY_W::new(self)
+    pub fn buff_write_ready(&mut self) -> BUFF_WRITE_READY_W<INT_STATUS_NORM_SPEC> {
+        BUFF_WRITE_READY_W::new(self, 4)
     }
     #[doc = "Bit 5 - Buffer Read Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_read_ready(&mut self) -> BUFF_READ_READY_W<INT_STATUS_NORM_SPEC, 5> {
-        BUFF_READ_READY_W::new(self)
+    pub fn buff_read_ready(&mut self) -> BUFF_READ_READY_W<INT_STATUS_NORM_SPEC> {
+        BUFF_READ_READY_W::new(self, 5)
     }
     #[doc = "Bit 6 - Card Insertion"]
     #[inline(always)]
     #[must_use]
-    pub fn card_ins(&mut self) -> CARD_INS_W<INT_STATUS_NORM_SPEC, 6> {
-        CARD_INS_W::new(self)
+    pub fn card_ins(&mut self) -> CARD_INS_W<INT_STATUS_NORM_SPEC> {
+        CARD_INS_W::new(self, 6)
     }
     #[doc = "Bit 7 - Card Removal"]
     #[inline(always)]
     #[must_use]
-    pub fn card_removal(&mut self) -> CARD_REMOVAL_W<INT_STATUS_NORM_SPEC, 7> {
-        CARD_REMOVAL_W::new(self)
+    pub fn card_removal(&mut self) -> CARD_REMOVAL_W<INT_STATUS_NORM_SPEC> {
+        CARD_REMOVAL_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

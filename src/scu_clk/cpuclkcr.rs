@@ -39,8 +39,8 @@ impl CPUDIV_R {
     }
 }
 #[doc = "Field `CPUDIV` writer - CPU Clock Divider Enable"]
-pub type CPUDIV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CPUDIV_A>;
-impl<'a, REG, const O: u8> CPUDIV_W<'a, REG, O>
+pub type CPUDIV_W<'a, REG> = crate::BitWriter<'a, REG, CPUDIV_A>;
+impl<'a, REG> CPUDIV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -66,8 +66,8 @@ impl W {
     #[doc = "Bit 0 - CPU Clock Divider Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cpudiv(&mut self) -> CPUDIV_W<CPUCLKCR_SPEC, 0> {
-        CPUDIV_W::new(self)
+    pub fn cpudiv(&mut self) -> CPUDIV_W<CPUCLKCR_SPEC> {
+        CPUDIV_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

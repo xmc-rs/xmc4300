@@ -60,8 +60,8 @@ impl DIVA_R {
     }
 }
 #[doc = "Field `DIVA` writer - Divider Factor for the Analog Internal Clock"]
-pub type DIVA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O, DIVA_A>;
-impl<'a, REG, const O: u8> DIVA_W<'a, REG, O>
+pub type DIVA_W<'a, REG> = crate::FieldWriter<'a, REG, 5, DIVA_A>;
+impl<'a, REG> DIVA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -124,8 +124,8 @@ impl DCMSB_R {
     }
 }
 #[doc = "Field `DCMSB` writer - Double Clock for the MSB Conversion"]
-pub type DCMSB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DCMSB_A>;
-impl<'a, REG, const O: u8> DCMSB_W<'a, REG, O>
+pub type DCMSB_W<'a, REG> = crate::BitWriter<'a, REG, DCMSB_A>;
+impl<'a, REG> DCMSB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl DIVD_R {
     }
 }
 #[doc = "Field `DIVD` writer - Divider Factor for the Arbiter Clock"]
-pub type DIVD_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, DIVD_A>;
-impl<'a, REG, const O: u8> DIVD_W<'a, REG, O>
+pub type DIVD_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, DIVD_A>;
+impl<'a, REG> DIVD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -240,8 +240,8 @@ impl From<DIVWC_AW> for bool {
     }
 }
 #[doc = "Field `DIVWC` writer - Write Control for Divider Parameters"]
-pub type DIVWC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DIVWC_AW>;
-impl<'a, REG, const O: u8> DIVWC_W<'a, REG, O>
+pub type DIVWC_W<'a, REG> = crate::BitWriter<'a, REG, DIVWC_AW>;
+impl<'a, REG> DIVWC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -293,8 +293,8 @@ impl DPCAL0_R {
     }
 }
 #[doc = "Field `DPCAL0` writer - Disable Post-Calibration"]
-pub type DPCAL0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DPCAL0_A>;
-impl<'a, REG, const O: u8> DPCAL0_W<'a, REG, O>
+pub type DPCAL0_W<'a, REG> = crate::BitWriter<'a, REG, DPCAL0_A>;
+impl<'a, REG> DPCAL0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -346,8 +346,8 @@ impl DPCAL1_R {
     }
 }
 #[doc = "Field `DPCAL1` writer - Disable Post-Calibration"]
-pub type DPCAL1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DPCAL1_A>;
-impl<'a, REG, const O: u8> DPCAL1_W<'a, REG, O>
+pub type DPCAL1_W<'a, REG> = crate::BitWriter<'a, REG, DPCAL1_A>;
+impl<'a, REG> DPCAL1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -399,8 +399,8 @@ impl DPCAL2_R {
     }
 }
 #[doc = "Field `DPCAL2` writer - Disable Post-Calibration"]
-pub type DPCAL2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DPCAL2_A>;
-impl<'a, REG, const O: u8> DPCAL2_W<'a, REG, O>
+pub type DPCAL2_W<'a, REG> = crate::BitWriter<'a, REG, DPCAL2_A>;
+impl<'a, REG> DPCAL2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -452,8 +452,8 @@ impl DPCAL3_R {
     }
 }
 #[doc = "Field `DPCAL3` writer - Disable Post-Calibration"]
-pub type DPCAL3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DPCAL3_A>;
-impl<'a, REG, const O: u8> DPCAL3_W<'a, REG, O>
+pub type DPCAL3_W<'a, REG> = crate::BitWriter<'a, REG, DPCAL3_A>;
+impl<'a, REG> DPCAL3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -483,8 +483,8 @@ impl From<SUCAL_AW> for bool {
     }
 }
 #[doc = "Field `SUCAL` writer - Start-Up Calibration"]
-pub type SUCAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SUCAL_AW>;
-impl<'a, REG, const O: u8> SUCAL_W<'a, REG, O>
+pub type SUCAL_W<'a, REG> = crate::BitWriter<'a, REG, SUCAL_AW>;
+impl<'a, REG> SUCAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -540,56 +540,56 @@ impl W {
     #[doc = "Bits 0:4 - Divider Factor for the Analog Internal Clock"]
     #[inline(always)]
     #[must_use]
-    pub fn diva(&mut self) -> DIVA_W<GLOBCFG_SPEC, 0> {
-        DIVA_W::new(self)
+    pub fn diva(&mut self) -> DIVA_W<GLOBCFG_SPEC> {
+        DIVA_W::new(self, 0)
     }
     #[doc = "Bit 7 - Double Clock for the MSB Conversion"]
     #[inline(always)]
     #[must_use]
-    pub fn dcmsb(&mut self) -> DCMSB_W<GLOBCFG_SPEC, 7> {
-        DCMSB_W::new(self)
+    pub fn dcmsb(&mut self) -> DCMSB_W<GLOBCFG_SPEC> {
+        DCMSB_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Divider Factor for the Arbiter Clock"]
     #[inline(always)]
     #[must_use]
-    pub fn divd(&mut self) -> DIVD_W<GLOBCFG_SPEC, 8> {
-        DIVD_W::new(self)
+    pub fn divd(&mut self) -> DIVD_W<GLOBCFG_SPEC> {
+        DIVD_W::new(self, 8)
     }
     #[doc = "Bit 15 - Write Control for Divider Parameters"]
     #[inline(always)]
     #[must_use]
-    pub fn divwc(&mut self) -> DIVWC_W<GLOBCFG_SPEC, 15> {
-        DIVWC_W::new(self)
+    pub fn divwc(&mut self) -> DIVWC_W<GLOBCFG_SPEC> {
+        DIVWC_W::new(self, 15)
     }
     #[doc = "Bit 16 - Disable Post-Calibration"]
     #[inline(always)]
     #[must_use]
-    pub fn dpcal0(&mut self) -> DPCAL0_W<GLOBCFG_SPEC, 16> {
-        DPCAL0_W::new(self)
+    pub fn dpcal0(&mut self) -> DPCAL0_W<GLOBCFG_SPEC> {
+        DPCAL0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Disable Post-Calibration"]
     #[inline(always)]
     #[must_use]
-    pub fn dpcal1(&mut self) -> DPCAL1_W<GLOBCFG_SPEC, 17> {
-        DPCAL1_W::new(self)
+    pub fn dpcal1(&mut self) -> DPCAL1_W<GLOBCFG_SPEC> {
+        DPCAL1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Disable Post-Calibration"]
     #[inline(always)]
     #[must_use]
-    pub fn dpcal2(&mut self) -> DPCAL2_W<GLOBCFG_SPEC, 18> {
-        DPCAL2_W::new(self)
+    pub fn dpcal2(&mut self) -> DPCAL2_W<GLOBCFG_SPEC> {
+        DPCAL2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Disable Post-Calibration"]
     #[inline(always)]
     #[must_use]
-    pub fn dpcal3(&mut self) -> DPCAL3_W<GLOBCFG_SPEC, 19> {
-        DPCAL3_W::new(self)
+    pub fn dpcal3(&mut self) -> DPCAL3_W<GLOBCFG_SPEC> {
+        DPCAL3_W::new(self, 19)
     }
     #[doc = "Bit 31 - Start-Up Calibration"]
     #[inline(always)]
     #[must_use]
-    pub fn sucal(&mut self) -> SUCAL_W<GLOBCFG_SPEC, 31> {
-        SUCAL_W::new(self)
+    pub fn sucal(&mut self) -> SUCAL_W<GLOBCFG_SPEC> {
+        SUCAL_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

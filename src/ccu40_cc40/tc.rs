@@ -39,8 +39,8 @@ impl TCM_R {
     }
 }
 #[doc = "Field `TCM` writer - Timer Counting Mode"]
-pub type TCM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TCM_A>;
-impl<'a, REG, const O: u8> TCM_W<'a, REG, O>
+pub type TCM_W<'a, REG> = crate::BitWriter<'a, REG, TCM_A>;
+impl<'a, REG> TCM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl TSSM_R {
     }
 }
 #[doc = "Field `TSSM` writer - Timer Single Shot Mode"]
-pub type TSSM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSSM_A>;
-impl<'a, REG, const O: u8> TSSM_W<'a, REG, O>
+pub type TSSM_W<'a, REG> = crate::BitWriter<'a, REG, TSSM_A>;
+impl<'a, REG> TSSM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -111,7 +111,7 @@ where
 #[doc = "Field `CLST` reader - Shadow Transfer on Clear"]
 pub type CLST_R = crate::BitReader;
 #[doc = "Field `CLST` writer - Shadow Transfer on Clear"]
-pub type CLST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CLST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CMOD` reader - Capture Compare Mode"]
 pub type CMOD_R = crate::BitReader<CMOD_A>;
 #[doc = "Capture Compare Mode\n\nValue on reset: 0"]
@@ -185,8 +185,8 @@ impl ECM_R {
     }
 }
 #[doc = "Field `ECM` writer - Extended Capture Mode"]
-pub type ECM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ECM_A>;
-impl<'a, REG, const O: u8> ECM_W<'a, REG, O>
+pub type ECM_W<'a, REG> = crate::BitWriter<'a, REG, ECM_A>;
+impl<'a, REG> ECM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -259,8 +259,8 @@ impl CAPC_R {
     }
 }
 #[doc = "Field `CAPC` writer - Clear on Capture Control"]
-pub type CAPC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CAPC_A>;
-impl<'a, REG, const O: u8> CAPC_W<'a, REG, O>
+pub type CAPC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CAPC_A>;
+impl<'a, REG> CAPC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -336,8 +336,8 @@ impl ENDM_R {
     }
 }
 #[doc = "Field `ENDM` writer - Extended Stop Function Control"]
-pub type ENDM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, ENDM_A>;
-impl<'a, REG, const O: u8> ENDM_W<'a, REG, O>
+pub type ENDM_W<'a, REG> = crate::FieldWriter<'a, REG, 2, ENDM_A>;
+impl<'a, REG> ENDM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -395,8 +395,8 @@ impl STRM_R {
     }
 }
 #[doc = "Field `STRM` writer - Extended Start Function Control"]
-pub type STRM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STRM_A>;
-impl<'a, REG, const O: u8> STRM_W<'a, REG, O>
+pub type STRM_W<'a, REG> = crate::BitWriter<'a, REG, STRM_A>;
+impl<'a, REG> STRM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -448,8 +448,8 @@ impl SCE_R {
     }
 }
 #[doc = "Field `SCE` writer - Equal Capture Event enable"]
-pub type SCE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SCE_A>;
-impl<'a, REG, const O: u8> SCE_W<'a, REG, O>
+pub type SCE_W<'a, REG> = crate::BitWriter<'a, REG, SCE_A>;
+impl<'a, REG> SCE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -501,8 +501,8 @@ impl CCS_R {
     }
 }
 #[doc = "Field `CCS` writer - Continuous Capture Enable"]
-pub type CCS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCS_A>;
-impl<'a, REG, const O: u8> CCS_W<'a, REG, O>
+pub type CCS_W<'a, REG> = crate::BitWriter<'a, REG, CCS_A>;
+impl<'a, REG> CCS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -575,8 +575,8 @@ impl DITHE_R {
     }
 }
 #[doc = "Field `DITHE` writer - Dither Enable"]
-pub type DITHE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, DITHE_A>;
-impl<'a, REG, const O: u8> DITHE_W<'a, REG, O>
+pub type DITHE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, DITHE_A>;
+impl<'a, REG> DITHE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -639,8 +639,8 @@ impl DIM_R {
     }
 }
 #[doc = "Field `DIM` writer - Dither input selector"]
-pub type DIM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DIM_A>;
-impl<'a, REG, const O: u8> DIM_W<'a, REG, O>
+pub type DIM_W<'a, REG> = crate::BitWriter<'a, REG, DIM_A>;
+impl<'a, REG> DIM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -692,8 +692,8 @@ impl FPE_R {
     }
 }
 #[doc = "Field `FPE` writer - Floating Prescaler enable"]
-pub type FPE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FPE_A>;
-impl<'a, REG, const O: u8> FPE_W<'a, REG, O>
+pub type FPE_W<'a, REG> = crate::BitWriter<'a, REG, FPE_A>;
+impl<'a, REG> FPE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -745,8 +745,8 @@ impl TRAPE_R {
     }
 }
 #[doc = "Field `TRAPE` writer - TRAP enable"]
-pub type TRAPE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TRAPE_A>;
-impl<'a, REG, const O: u8> TRAPE_W<'a, REG, O>
+pub type TRAPE_W<'a, REG> = crate::BitWriter<'a, REG, TRAPE_A>;
+impl<'a, REG> TRAPE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -798,8 +798,8 @@ impl TRPSE_R {
     }
 }
 #[doc = "Field `TRPSE` writer - TRAP Synchronization Enable"]
-pub type TRPSE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TRPSE_A>;
-impl<'a, REG, const O: u8> TRPSE_W<'a, REG, O>
+pub type TRPSE_W<'a, REG> = crate::BitWriter<'a, REG, TRPSE_A>;
+impl<'a, REG> TRPSE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -851,8 +851,8 @@ impl TRPSW_R {
     }
 }
 #[doc = "Field `TRPSW` writer - TRAP State Clear Control"]
-pub type TRPSW_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TRPSW_A>;
-impl<'a, REG, const O: u8> TRPSW_W<'a, REG, O>
+pub type TRPSW_W<'a, REG> = crate::BitWriter<'a, REG, TRPSW_A>;
+impl<'a, REG> TRPSW_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -904,8 +904,8 @@ impl EMS_R {
     }
 }
 #[doc = "Field `EMS` writer - External Modulation Synchronization"]
-pub type EMS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EMS_A>;
-impl<'a, REG, const O: u8> EMS_W<'a, REG, O>
+pub type EMS_W<'a, REG> = crate::BitWriter<'a, REG, EMS_A>;
+impl<'a, REG> EMS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -957,8 +957,8 @@ impl EMT_R {
     }
 }
 #[doc = "Field `EMT` writer - External Modulation Type"]
-pub type EMT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EMT_A>;
-impl<'a, REG, const O: u8> EMT_W<'a, REG, O>
+pub type EMT_W<'a, REG> = crate::BitWriter<'a, REG, EMT_A>;
+impl<'a, REG> EMT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1010,8 +1010,8 @@ impl MCME_R {
     }
 }
 #[doc = "Field `MCME` writer - Multi Channel Mode Enable"]
-pub type MCME_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MCME_A>;
-impl<'a, REG, const O: u8> MCME_W<'a, REG, O>
+pub type MCME_W<'a, REG> = crate::BitWriter<'a, REG, MCME_A>;
+impl<'a, REG> MCME_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1127,110 +1127,110 @@ impl W {
     #[doc = "Bit 0 - Timer Counting Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tcm(&mut self) -> TCM_W<TC_SPEC, 0> {
-        TCM_W::new(self)
+    pub fn tcm(&mut self) -> TCM_W<TC_SPEC> {
+        TCM_W::new(self, 0)
     }
     #[doc = "Bit 1 - Timer Single Shot Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tssm(&mut self) -> TSSM_W<TC_SPEC, 1> {
-        TSSM_W::new(self)
+    pub fn tssm(&mut self) -> TSSM_W<TC_SPEC> {
+        TSSM_W::new(self, 1)
     }
     #[doc = "Bit 2 - Shadow Transfer on Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn clst(&mut self) -> CLST_W<TC_SPEC, 2> {
-        CLST_W::new(self)
+    pub fn clst(&mut self) -> CLST_W<TC_SPEC> {
+        CLST_W::new(self, 2)
     }
     #[doc = "Bit 4 - Extended Capture Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ecm(&mut self) -> ECM_W<TC_SPEC, 4> {
-        ECM_W::new(self)
+    pub fn ecm(&mut self) -> ECM_W<TC_SPEC> {
+        ECM_W::new(self, 4)
     }
     #[doc = "Bits 5:6 - Clear on Capture Control"]
     #[inline(always)]
     #[must_use]
-    pub fn capc(&mut self) -> CAPC_W<TC_SPEC, 5> {
-        CAPC_W::new(self)
+    pub fn capc(&mut self) -> CAPC_W<TC_SPEC> {
+        CAPC_W::new(self, 5)
     }
     #[doc = "Bits 8:9 - Extended Stop Function Control"]
     #[inline(always)]
     #[must_use]
-    pub fn endm(&mut self) -> ENDM_W<TC_SPEC, 8> {
-        ENDM_W::new(self)
+    pub fn endm(&mut self) -> ENDM_W<TC_SPEC> {
+        ENDM_W::new(self, 8)
     }
     #[doc = "Bit 10 - Extended Start Function Control"]
     #[inline(always)]
     #[must_use]
-    pub fn strm(&mut self) -> STRM_W<TC_SPEC, 10> {
-        STRM_W::new(self)
+    pub fn strm(&mut self) -> STRM_W<TC_SPEC> {
+        STRM_W::new(self, 10)
     }
     #[doc = "Bit 11 - Equal Capture Event enable"]
     #[inline(always)]
     #[must_use]
-    pub fn sce(&mut self) -> SCE_W<TC_SPEC, 11> {
-        SCE_W::new(self)
+    pub fn sce(&mut self) -> SCE_W<TC_SPEC> {
+        SCE_W::new(self, 11)
     }
     #[doc = "Bit 12 - Continuous Capture Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ccs(&mut self) -> CCS_W<TC_SPEC, 12> {
-        CCS_W::new(self)
+    pub fn ccs(&mut self) -> CCS_W<TC_SPEC> {
+        CCS_W::new(self, 12)
     }
     #[doc = "Bits 13:14 - Dither Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dithe(&mut self) -> DITHE_W<TC_SPEC, 13> {
-        DITHE_W::new(self)
+    pub fn dithe(&mut self) -> DITHE_W<TC_SPEC> {
+        DITHE_W::new(self, 13)
     }
     #[doc = "Bit 15 - Dither input selector"]
     #[inline(always)]
     #[must_use]
-    pub fn dim(&mut self) -> DIM_W<TC_SPEC, 15> {
-        DIM_W::new(self)
+    pub fn dim(&mut self) -> DIM_W<TC_SPEC> {
+        DIM_W::new(self, 15)
     }
     #[doc = "Bit 16 - Floating Prescaler enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fpe(&mut self) -> FPE_W<TC_SPEC, 16> {
-        FPE_W::new(self)
+    pub fn fpe(&mut self) -> FPE_W<TC_SPEC> {
+        FPE_W::new(self, 16)
     }
     #[doc = "Bit 17 - TRAP enable"]
     #[inline(always)]
     #[must_use]
-    pub fn trape(&mut self) -> TRAPE_W<TC_SPEC, 17> {
-        TRAPE_W::new(self)
+    pub fn trape(&mut self) -> TRAPE_W<TC_SPEC> {
+        TRAPE_W::new(self, 17)
     }
     #[doc = "Bit 21 - TRAP Synchronization Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn trpse(&mut self) -> TRPSE_W<TC_SPEC, 21> {
-        TRPSE_W::new(self)
+    pub fn trpse(&mut self) -> TRPSE_W<TC_SPEC> {
+        TRPSE_W::new(self, 21)
     }
     #[doc = "Bit 22 - TRAP State Clear Control"]
     #[inline(always)]
     #[must_use]
-    pub fn trpsw(&mut self) -> TRPSW_W<TC_SPEC, 22> {
-        TRPSW_W::new(self)
+    pub fn trpsw(&mut self) -> TRPSW_W<TC_SPEC> {
+        TRPSW_W::new(self, 22)
     }
     #[doc = "Bit 23 - External Modulation Synchronization"]
     #[inline(always)]
     #[must_use]
-    pub fn ems(&mut self) -> EMS_W<TC_SPEC, 23> {
-        EMS_W::new(self)
+    pub fn ems(&mut self) -> EMS_W<TC_SPEC> {
+        EMS_W::new(self, 23)
     }
     #[doc = "Bit 24 - External Modulation Type"]
     #[inline(always)]
     #[must_use]
-    pub fn emt(&mut self) -> EMT_W<TC_SPEC, 24> {
-        EMT_W::new(self)
+    pub fn emt(&mut self) -> EMT_W<TC_SPEC> {
+        EMT_W::new(self, 24)
     }
     #[doc = "Bit 25 - Multi Channel Mode Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mcme(&mut self) -> MCME_W<TC_SPEC, 25> {
-        MCME_W::new(self)
+    pub fn mcme(&mut self) -> MCME_W<TC_SPEC> {
+        MCME_W::new(self, 25)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

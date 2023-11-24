@@ -5,11 +5,11 @@ pub type W = crate::W<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC>;
 #[doc = "Field `TSSS` reader - Timestamp Sub Second"]
 pub type TSSS_R = crate::FieldReader<u32>;
 #[doc = "Field `TSSS` writer - Timestamp Sub Second"]
-pub type TSSS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 31, O, u32>;
+pub type TSSS_W<'a, REG> = crate::FieldWriter<'a, REG, 31, u32>;
 #[doc = "Field `ADDSUB` reader - Add or subtract time"]
 pub type ADDSUB_R = crate::BitReader;
 #[doc = "Field `ADDSUB` writer - Add or subtract time"]
-pub type ADDSUB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ADDSUB_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:30 - Timestamp Sub Second"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:30 - Timestamp Sub Second"]
     #[inline(always)]
     #[must_use]
-    pub fn tsss(&mut self) -> TSSS_W<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC, 0> {
-        TSSS_W::new(self)
+    pub fn tsss(&mut self) -> TSSS_W<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC> {
+        TSSS_W::new(self, 0)
     }
     #[doc = "Bit 31 - Add or subtract time"]
     #[inline(always)]
     #[must_use]
-    pub fn addsub(&mut self) -> ADDSUB_W<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC, 31> {
-        ADDSUB_W::new(self)
+    pub fn addsub(&mut self) -> ADDSUB_W<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC> {
+        ADDSUB_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

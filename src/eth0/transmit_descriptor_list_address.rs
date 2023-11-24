@@ -5,7 +5,7 @@ pub type W = crate::W<TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC>;
 #[doc = "Field `TDESLA_32bit` reader - Start of Transmit List"]
 pub type TDESLA_32BIT_R = crate::FieldReader<u32>;
 #[doc = "Field `TDESLA_32bit` writer - Start of Transmit List"]
-pub type TDESLA_32BIT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 30, O, u32>;
+pub type TDESLA_32BIT_W<'a, REG> = crate::FieldWriter<'a, REG, 30, u32>;
 impl R {
     #[doc = "Bits 2:31 - Start of Transmit List"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 2:31 - Start of Transmit List"]
     #[inline(always)]
     #[must_use]
-    pub fn tdesla_32bit(&mut self) -> TDESLA_32BIT_W<TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC, 2> {
-        TDESLA_32BIT_W::new(self)
+    pub fn tdesla_32bit(&mut self) -> TDESLA_32BIT_W<TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC> {
+        TDESLA_32BIT_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<ARBCFG_SPEC>;
 #[doc = "Field `ANONC` reader - Analog Converter Control"]
 pub type ANONC_R = crate::FieldReader;
 #[doc = "Field `ANONC` writer - Analog Converter Control"]
-pub type ANONC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type ANONC_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `ARBRND` reader - Arbitration Round Length"]
 pub type ARBRND_R = crate::FieldReader<ARBRND_A>;
 #[doc = "Arbitration Round Length\n\nValue on reset: 0"]
@@ -64,8 +64,8 @@ impl ARBRND_R {
     }
 }
 #[doc = "Field `ARBRND` writer - Arbitration Round Length"]
-pub type ARBRND_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ARBRND_A>;
-impl<'a, REG, const O: u8> ARBRND_W<'a, REG, O>
+pub type ARBRND_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ARBRND_A>;
+impl<'a, REG> ARBRND_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -128,8 +128,8 @@ impl ARBM_R {
     }
 }
 #[doc = "Field `ARBM` writer - Arbitration Mode"]
-pub type ARBM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ARBM_A>;
-impl<'a, REG, const O: u8> ARBM_W<'a, REG, O>
+pub type ARBM_W<'a, REG> = crate::BitWriter<'a, REG, ARBM_A>;
+impl<'a, REG> ARBM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -334,20 +334,20 @@ impl W {
     #[doc = "Bits 0:1 - Analog Converter Control"]
     #[inline(always)]
     #[must_use]
-    pub fn anonc(&mut self) -> ANONC_W<ARBCFG_SPEC, 0> {
-        ANONC_W::new(self)
+    pub fn anonc(&mut self) -> ANONC_W<ARBCFG_SPEC> {
+        ANONC_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Arbitration Round Length"]
     #[inline(always)]
     #[must_use]
-    pub fn arbrnd(&mut self) -> ARBRND_W<ARBCFG_SPEC, 4> {
-        ARBRND_W::new(self)
+    pub fn arbrnd(&mut self) -> ARBRND_W<ARBCFG_SPEC> {
+        ARBRND_W::new(self, 4)
     }
     #[doc = "Bit 7 - Arbitration Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn arbm(&mut self) -> ARBM_W<ARBCFG_SPEC, 7> {
-        ARBM_W::new(self)
+    pub fn arbm(&mut self) -> ARBM_W<ARBCFG_SPEC> {
+        ARBM_W::new(self, 7)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

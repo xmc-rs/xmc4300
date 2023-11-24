@@ -41,8 +41,8 @@ set to one. When this value is loaded into the PC it indicates to the processor 
     }
 }
 #[doc = "Field `NONBASETHRDENA` writer - Non Base Thread Mode Enable"]
-pub type NONBASETHRDENA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NONBASETHRDENA_A>;
-impl<'a, REG, const O: u8> NONBASETHRDENA_W<'a, REG, O>
+pub type NONBASETHRDENA_W<'a, REG> = crate::BitWriter<'a, REG, NONBASETHRDENA_A>;
+impl<'a, REG> NONBASETHRDENA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -95,8 +95,8 @@ impl USERSETMPEND_R {
     }
 }
 #[doc = "Field `USERSETMPEND` writer - User Set Pending Enable"]
-pub type USERSETMPEND_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USERSETMPEND_A>;
-impl<'a, REG, const O: u8> USERSETMPEND_W<'a, REG, O>
+pub type USERSETMPEND_W<'a, REG> = crate::BitWriter<'a, REG, USERSETMPEND_A>;
+impl<'a, REG> USERSETMPEND_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -148,8 +148,8 @@ impl UNALIGN_TRP_R {
     }
 }
 #[doc = "Field `UNALIGN_TRP` writer - Unaligned Access Trap Enable"]
-pub type UNALIGN_TRP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, UNALIGN_TRP_A>;
-impl<'a, REG, const O: u8> UNALIGN_TRP_W<'a, REG, O>
+pub type UNALIGN_TRP_W<'a, REG> = crate::BitWriter<'a, REG, UNALIGN_TRP_A>;
+impl<'a, REG> UNALIGN_TRP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -201,8 +201,8 @@ impl DIV_0_TRP_R {
     }
 }
 #[doc = "Field `DIV_0_TRP` writer - Divide by Zero Trap Enable"]
-pub type DIV_0_TRP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DIV_0_TRP_A>;
-impl<'a, REG, const O: u8> DIV_0_TRP_W<'a, REG, O>
+pub type DIV_0_TRP_W<'a, REG> = crate::BitWriter<'a, REG, DIV_0_TRP_A>;
+impl<'a, REG> DIV_0_TRP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -254,8 +254,8 @@ impl BFHFNMIGN_R {
     }
 }
 #[doc = "Field `BFHFNMIGN` writer - Bus Fault Hard Fault and NMI Ignore"]
-pub type BFHFNMIGN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFHFNMIGN_A>;
-impl<'a, REG, const O: u8> BFHFNMIGN_W<'a, REG, O>
+pub type BFHFNMIGN_W<'a, REG> = crate::BitWriter<'a, REG, BFHFNMIGN_A>;
+impl<'a, REG> BFHFNMIGN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -307,8 +307,8 @@ impl STKALIGN_R {
     }
 }
 #[doc = "Field `STKALIGN` writer - Stack Alignment"]
-pub type STKALIGN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STKALIGN_A>;
-impl<'a, REG, const O: u8> STKALIGN_W<'a, REG, O>
+pub type STKALIGN_W<'a, REG> = crate::BitWriter<'a, REG, STKALIGN_A>;
+impl<'a, REG> STKALIGN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -359,38 +359,38 @@ impl W {
     #[doc = "Bit 0 - Non Base Thread Mode Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn nonbasethrdena(&mut self) -> NONBASETHRDENA_W<CCR_SPEC, 0> {
-        NONBASETHRDENA_W::new(self)
+    pub fn nonbasethrdena(&mut self) -> NONBASETHRDENA_W<CCR_SPEC> {
+        NONBASETHRDENA_W::new(self, 0)
     }
     #[doc = "Bit 1 - User Set Pending Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn usersetmpend(&mut self) -> USERSETMPEND_W<CCR_SPEC, 1> {
-        USERSETMPEND_W::new(self)
+    pub fn usersetmpend(&mut self) -> USERSETMPEND_W<CCR_SPEC> {
+        USERSETMPEND_W::new(self, 1)
     }
     #[doc = "Bit 3 - Unaligned Access Trap Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn unalign_trp(&mut self) -> UNALIGN_TRP_W<CCR_SPEC, 3> {
-        UNALIGN_TRP_W::new(self)
+    pub fn unalign_trp(&mut self) -> UNALIGN_TRP_W<CCR_SPEC> {
+        UNALIGN_TRP_W::new(self, 3)
     }
     #[doc = "Bit 4 - Divide by Zero Trap Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn div_0_trp(&mut self) -> DIV_0_TRP_W<CCR_SPEC, 4> {
-        DIV_0_TRP_W::new(self)
+    pub fn div_0_trp(&mut self) -> DIV_0_TRP_W<CCR_SPEC> {
+        DIV_0_TRP_W::new(self, 4)
     }
     #[doc = "Bit 8 - Bus Fault Hard Fault and NMI Ignore"]
     #[inline(always)]
     #[must_use]
-    pub fn bfhfnmign(&mut self) -> BFHFNMIGN_W<CCR_SPEC, 8> {
-        BFHFNMIGN_W::new(self)
+    pub fn bfhfnmign(&mut self) -> BFHFNMIGN_W<CCR_SPEC> {
+        BFHFNMIGN_W::new(self, 8)
     }
     #[doc = "Bit 9 - Stack Alignment"]
     #[inline(always)]
     #[must_use]
-    pub fn stkalign(&mut self) -> STKALIGN_W<CCR_SPEC, 9> {
-        STKALIGN_W::new(self)
+    pub fn stkalign(&mut self) -> STKALIGN_W<CCR_SPEC> {
+        STKALIGN_W::new(self, 9)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

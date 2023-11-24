@@ -5,7 +5,7 @@ pub type W = crate::W<MOAMR_SPEC>;
 #[doc = "Field `AM` reader - Acceptance Mask for Message Identifier"]
 pub type AM_R = crate::FieldReader<u32>;
 #[doc = "Field `AM` writer - Acceptance Mask for Message Identifier"]
-pub type AM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 29, O, u32>;
+pub type AM_W<'a, REG> = crate::FieldWriter<'a, REG, 29, u32>;
 #[doc = "Field `MIDE` reader - Acceptance Mask Bit for Message IDE Bit"]
 pub type MIDE_R = crate::BitReader<MIDE_A>;
 #[doc = "Acceptance Mask Bit for Message IDE Bit\n\nValue on reset: 1"]
@@ -43,8 +43,8 @@ impl MIDE_R {
     }
 }
 #[doc = "Field `MIDE` writer - Acceptance Mask Bit for Message IDE Bit"]
-pub type MIDE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MIDE_A>;
-impl<'a, REG, const O: u8> MIDE_W<'a, REG, O>
+pub type MIDE_W<'a, REG> = crate::BitWriter<'a, REG, MIDE_A>;
+impl<'a, REG> MIDE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -75,14 +75,14 @@ impl W {
     #[doc = "Bits 0:28 - Acceptance Mask for Message Identifier"]
     #[inline(always)]
     #[must_use]
-    pub fn am(&mut self) -> AM_W<MOAMR_SPEC, 0> {
-        AM_W::new(self)
+    pub fn am(&mut self) -> AM_W<MOAMR_SPEC> {
+        AM_W::new(self, 0)
     }
     #[doc = "Bit 29 - Acceptance Mask Bit for Message IDE Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn mide(&mut self) -> MIDE_W<MOAMR_SPEC, 29> {
-        MIDE_W::new(self)
+    pub fn mide(&mut self) -> MIDE_W<MOAMR_SPEC> {
+        MIDE_W::new(self, 29)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

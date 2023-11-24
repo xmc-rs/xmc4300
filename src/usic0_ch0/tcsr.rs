@@ -39,8 +39,8 @@ impl WLEMD_R {
     }
 }
 #[doc = "Field `WLEMD` writer - WLE Mode"]
-pub type WLEMD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WLEMD_A>;
-impl<'a, REG, const O: u8> WLEMD_W<'a, REG, O>
+pub type WLEMD_W<'a, REG> = crate::BitWriter<'a, REG, WLEMD_A>;
+impl<'a, REG> WLEMD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -96,8 +96,8 @@ is disabled."]
     }
 }
 #[doc = "Field `SELMD` writer - Select Mode"]
-pub type SELMD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELMD_A>;
-impl<'a, REG, const O: u8> SELMD_W<'a, REG, O>
+pub type SELMD_W<'a, REG> = crate::BitWriter<'a, REG, SELMD_A>;
+impl<'a, REG> SELMD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -151,8 +151,8 @@ impl FLEMD_R {
     }
 }
 #[doc = "Field `FLEMD` writer - FLE Mode"]
-pub type FLEMD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FLEMD_A>;
-impl<'a, REG, const O: u8> FLEMD_W<'a, REG, O>
+pub type FLEMD_W<'a, REG> = crate::BitWriter<'a, REG, FLEMD_A>;
+impl<'a, REG> FLEMD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -204,8 +204,8 @@ impl WAMD_R {
     }
 }
 #[doc = "Field `WAMD` writer - WA Mode"]
-pub type WAMD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WAMD_A>;
-impl<'a, REG, const O: u8> WAMD_W<'a, REG, O>
+pub type WAMD_W<'a, REG> = crate::BitWriter<'a, REG, WAMD_A>;
+impl<'a, REG> WAMD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -257,8 +257,8 @@ impl HPCMD_R {
     }
 }
 #[doc = "Field `HPCMD` writer - Hardware Port Control Mode"]
-pub type HPCMD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HPCMD_A>;
-impl<'a, REG, const O: u8> HPCMD_W<'a, REG, O>
+pub type HPCMD_W<'a, REG> = crate::BitWriter<'a, REG, HPCMD_A>;
+impl<'a, REG> HPCMD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -310,8 +310,8 @@ impl SOF_R {
     }
 }
 #[doc = "Field `SOF` writer - Start Of Frame"]
-pub type SOF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SOF_A>;
-impl<'a, REG, const O: u8> SOF_W<'a, REG, O>
+pub type SOF_W<'a, REG> = crate::BitWriter<'a, REG, SOF_A>;
+impl<'a, REG> SOF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -363,8 +363,8 @@ impl EOF_R {
     }
 }
 #[doc = "Field `EOF` writer - End Of Frame"]
-pub type EOF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EOF_A>;
-impl<'a, REG, const O: u8> EOF_W<'a, REG, O>
+pub type EOF_W<'a, REG> = crate::BitWriter<'a, REG, EOF_A>;
+impl<'a, REG> EOF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -452,8 +452,8 @@ impl TDSSM_R {
     }
 }
 #[doc = "Field `TDSSM` writer - TBUF Data Single Shot Mode"]
-pub type TDSSM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TDSSM_A>;
-impl<'a, REG, const O: u8> TDSSM_W<'a, REG, O>
+pub type TDSSM_W<'a, REG> = crate::BitWriter<'a, REG, TDSSM_A>;
+impl<'a, REG> TDSSM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -526,8 +526,8 @@ impl TDEN_R {
     }
 }
 #[doc = "Field `TDEN` writer - TBUF Data Enable"]
-pub type TDEN_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, TDEN_A>;
-impl<'a, REG, const O: u8> TDEN_W<'a, REG, O>
+pub type TDEN_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TDEN_A>;
+impl<'a, REG> TDEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -590,8 +590,8 @@ impl TDVTR_R {
     }
 }
 #[doc = "Field `TDVTR` writer - TBUF Data Valid Trigger"]
-pub type TDVTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TDVTR_A>;
-impl<'a, REG, const O: u8> TDVTR_W<'a, REG, O>
+pub type TDVTR_W<'a, REG> = crate::BitWriter<'a, REG, TDVTR_A>;
+impl<'a, REG> TDVTR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -643,8 +643,8 @@ impl WA_R {
     }
 }
 #[doc = "Field `WA` writer - Word Address"]
-pub type WA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WA_A>;
-impl<'a, REG, const O: u8> WA_W<'a, REG, O>
+pub type WA_W<'a, REG> = crate::BitWriter<'a, REG, WA_A>;
+impl<'a, REG> WA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -889,68 +889,68 @@ impl W {
     #[doc = "Bit 0 - WLE Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn wlemd(&mut self) -> WLEMD_W<TCSR_SPEC, 0> {
-        WLEMD_W::new(self)
+    pub fn wlemd(&mut self) -> WLEMD_W<TCSR_SPEC> {
+        WLEMD_W::new(self, 0)
     }
     #[doc = "Bit 1 - Select Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn selmd(&mut self) -> SELMD_W<TCSR_SPEC, 1> {
-        SELMD_W::new(self)
+    pub fn selmd(&mut self) -> SELMD_W<TCSR_SPEC> {
+        SELMD_W::new(self, 1)
     }
     #[doc = "Bit 2 - FLE Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn flemd(&mut self) -> FLEMD_W<TCSR_SPEC, 2> {
-        FLEMD_W::new(self)
+    pub fn flemd(&mut self) -> FLEMD_W<TCSR_SPEC> {
+        FLEMD_W::new(self, 2)
     }
     #[doc = "Bit 3 - WA Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn wamd(&mut self) -> WAMD_W<TCSR_SPEC, 3> {
-        WAMD_W::new(self)
+    pub fn wamd(&mut self) -> WAMD_W<TCSR_SPEC> {
+        WAMD_W::new(self, 3)
     }
     #[doc = "Bit 4 - Hardware Port Control Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn hpcmd(&mut self) -> HPCMD_W<TCSR_SPEC, 4> {
-        HPCMD_W::new(self)
+    pub fn hpcmd(&mut self) -> HPCMD_W<TCSR_SPEC> {
+        HPCMD_W::new(self, 4)
     }
     #[doc = "Bit 5 - Start Of Frame"]
     #[inline(always)]
     #[must_use]
-    pub fn sof(&mut self) -> SOF_W<TCSR_SPEC, 5> {
-        SOF_W::new(self)
+    pub fn sof(&mut self) -> SOF_W<TCSR_SPEC> {
+        SOF_W::new(self, 5)
     }
     #[doc = "Bit 6 - End Of Frame"]
     #[inline(always)]
     #[must_use]
-    pub fn eof(&mut self) -> EOF_W<TCSR_SPEC, 6> {
-        EOF_W::new(self)
+    pub fn eof(&mut self) -> EOF_W<TCSR_SPEC> {
+        EOF_W::new(self, 6)
     }
     #[doc = "Bit 8 - TBUF Data Single Shot Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tdssm(&mut self) -> TDSSM_W<TCSR_SPEC, 8> {
-        TDSSM_W::new(self)
+    pub fn tdssm(&mut self) -> TDSSM_W<TCSR_SPEC> {
+        TDSSM_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - TBUF Data Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tden(&mut self) -> TDEN_W<TCSR_SPEC, 10> {
-        TDEN_W::new(self)
+    pub fn tden(&mut self) -> TDEN_W<TCSR_SPEC> {
+        TDEN_W::new(self, 10)
     }
     #[doc = "Bit 12 - TBUF Data Valid Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn tdvtr(&mut self) -> TDVTR_W<TCSR_SPEC, 12> {
-        TDVTR_W::new(self)
+    pub fn tdvtr(&mut self) -> TDVTR_W<TCSR_SPEC> {
+        TDVTR_W::new(self, 12)
     }
     #[doc = "Bit 13 - Word Address"]
     #[inline(always)]
     #[must_use]
-    pub fn wa(&mut self) -> WA_W<TCSR_SPEC, 13> {
-        WA_W::new(self)
+    pub fn wa(&mut self) -> WA_W<TCSR_SPEC> {
+        WA_W::new(self, 13)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

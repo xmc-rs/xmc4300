@@ -68,8 +68,8 @@ impl CLKSEL_R {
     }
 }
 #[doc = "Field `CLKSEL` writer - Baud Rate Logic Clock Select"]
-pub type CLKSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CLKSEL_A>;
-impl<'a, REG, const O: u8> CLKSEL_W<'a, REG, O>
+pub type CLKSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CLKSEL_A>;
+impl<'a, REG> CLKSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -103,7 +103,7 @@ where
 #[doc = "Field `MPSEL` reader - Message Pending Selector"]
 pub type MPSEL_R = crate::FieldReader;
 #[doc = "Field `MPSEL` writer - Message Pending Selector"]
-pub type MPSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type MPSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3 - Baud Rate Logic Clock Select"]
     #[inline(always)]
@@ -120,14 +120,14 @@ impl W {
     #[doc = "Bits 0:3 - Baud Rate Logic Clock Select"]
     #[inline(always)]
     #[must_use]
-    pub fn clksel(&mut self) -> CLKSEL_W<MCR_SPEC, 0> {
-        CLKSEL_W::new(self)
+    pub fn clksel(&mut self) -> CLKSEL_W<MCR_SPEC> {
+        CLKSEL_W::new(self, 0)
     }
     #[doc = "Bits 12:15 - Message Pending Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn mpsel(&mut self) -> MPSEL_W<MCR_SPEC, 12> {
-        MPSEL_W::new(self)
+    pub fn mpsel(&mut self) -> MPSEL_W<MCR_SPEC> {
+        MPSEL_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

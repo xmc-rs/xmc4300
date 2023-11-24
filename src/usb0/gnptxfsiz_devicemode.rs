@@ -5,11 +5,11 @@ pub type W = crate::W<GNPTXFSIZ_DEVICEMODE_SPEC>;
 #[doc = "Field `INEPTxF0StAddr` reader - IN Endpoint FIFO0 Transmit RAM Start Address"]
 pub type INEPTX_F0ST_ADDR_R = crate::FieldReader<u16>;
 #[doc = "Field `INEPTxF0StAddr` writer - IN Endpoint FIFO0 Transmit RAM Start Address"]
-pub type INEPTX_F0ST_ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type INEPTX_F0ST_ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `INEPTxF0Dep` reader - IN Endpoint TxFIFO 0 Depth"]
 pub type INEPTX_F0DEP_R = crate::FieldReader<u16>;
 #[doc = "Field `INEPTxF0Dep` writer - IN Endpoint TxFIFO 0 Depth"]
-pub type INEPTX_F0DEP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type INEPTX_F0DEP_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - IN Endpoint FIFO0 Transmit RAM Start Address"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:15 - IN Endpoint FIFO0 Transmit RAM Start Address"]
     #[inline(always)]
     #[must_use]
-    pub fn ineptx_f0st_addr(&mut self) -> INEPTX_F0ST_ADDR_W<GNPTXFSIZ_DEVICEMODE_SPEC, 0> {
-        INEPTX_F0ST_ADDR_W::new(self)
+    pub fn ineptx_f0st_addr(&mut self) -> INEPTX_F0ST_ADDR_W<GNPTXFSIZ_DEVICEMODE_SPEC> {
+        INEPTX_F0ST_ADDR_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - IN Endpoint TxFIFO 0 Depth"]
     #[inline(always)]
     #[must_use]
-    pub fn ineptx_f0dep(&mut self) -> INEPTX_F0DEP_W<GNPTXFSIZ_DEVICEMODE_SPEC, 16> {
-        INEPTX_F0DEP_W::new(self)
+    pub fn ineptx_f0dep(&mut self) -> INEPTX_F0DEP_W<GNPTXFSIZ_DEVICEMODE_SPEC> {
+        INEPTX_F0DEP_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

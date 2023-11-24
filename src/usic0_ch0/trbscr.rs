@@ -15,8 +15,8 @@ impl From<CSRBI_AW> for bool {
     }
 }
 #[doc = "Field `CSRBI` writer - Clear Standard Receive Buffer Event"]
-pub type CSRBI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CSRBI_AW>;
-impl<'a, REG, const O: u8> CSRBI_W<'a, REG, O>
+pub type CSRBI_W<'a, REG> = crate::BitWriter<'a, REG, CSRBI_AW>;
+impl<'a, REG> CSRBI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<CRBERI_AW> for bool {
     }
 }
 #[doc = "Field `CRBERI` writer - Clear Receive Buffer Error Event"]
-pub type CRBERI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CRBERI_AW>;
-impl<'a, REG, const O: u8> CRBERI_W<'a, REG, O>
+pub type CRBERI_W<'a, REG> = crate::BitWriter<'a, REG, CRBERI_AW>;
+impl<'a, REG> CRBERI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<CARBI_AW> for bool {
     }
 }
 #[doc = "Field `CARBI` writer - Clear Alternative Receive Buffer Event"]
-pub type CARBI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CARBI_AW>;
-impl<'a, REG, const O: u8> CARBI_W<'a, REG, O>
+pub type CARBI_W<'a, REG> = crate::BitWriter<'a, REG, CARBI_AW>;
+impl<'a, REG> CARBI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<CSTBI_AW> for bool {
     }
 }
 #[doc = "Field `CSTBI` writer - Clear Standard Transmit Buffer Event"]
-pub type CSTBI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CSTBI_AW>;
-impl<'a, REG, const O: u8> CSTBI_W<'a, REG, O>
+pub type CSTBI_W<'a, REG> = crate::BitWriter<'a, REG, CSTBI_AW>;
+impl<'a, REG> CSTBI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<CTBERI_AW> for bool {
     }
 }
 #[doc = "Field `CTBERI` writer - Clear Transmit Buffer Error Event"]
-pub type CTBERI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CTBERI_AW>;
-impl<'a, REG, const O: u8> CTBERI_W<'a, REG, O>
+pub type CTBERI_W<'a, REG> = crate::BitWriter<'a, REG, CTBERI_AW>;
+impl<'a, REG> CTBERI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<CBDV_AW> for bool {
     }
 }
 #[doc = "Field `CBDV` writer - Clear Bypass Data Valid"]
-pub type CBDV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CBDV_AW>;
-impl<'a, REG, const O: u8> CBDV_W<'a, REG, O>
+pub type CBDV_W<'a, REG> = crate::BitWriter<'a, REG, CBDV_AW>;
+impl<'a, REG> CBDV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -201,8 +201,8 @@ impl From<FLUSHRB_AW> for bool {
     }
 }
 #[doc = "Field `FLUSHRB` writer - Flush Receive Buffer"]
-pub type FLUSHRB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FLUSHRB_AW>;
-impl<'a, REG, const O: u8> FLUSHRB_W<'a, REG, O>
+pub type FLUSHRB_W<'a, REG> = crate::BitWriter<'a, REG, FLUSHRB_AW>;
+impl<'a, REG> FLUSHRB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -232,8 +232,8 @@ impl From<FLUSHTB_AW> for bool {
     }
 }
 #[doc = "Field `FLUSHTB` writer - Flush Transmit Buffer"]
-pub type FLUSHTB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FLUSHTB_AW>;
-impl<'a, REG, const O: u8> FLUSHTB_W<'a, REG, O>
+pub type FLUSHTB_W<'a, REG> = crate::BitWriter<'a, REG, FLUSHTB_AW>;
+impl<'a, REG> FLUSHTB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -252,50 +252,50 @@ impl W {
     #[doc = "Bit 0 - Clear Standard Receive Buffer Event"]
     #[inline(always)]
     #[must_use]
-    pub fn csrbi(&mut self) -> CSRBI_W<TRBSCR_SPEC, 0> {
-        CSRBI_W::new(self)
+    pub fn csrbi(&mut self) -> CSRBI_W<TRBSCR_SPEC> {
+        CSRBI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Receive Buffer Error Event"]
     #[inline(always)]
     #[must_use]
-    pub fn crberi(&mut self) -> CRBERI_W<TRBSCR_SPEC, 1> {
-        CRBERI_W::new(self)
+    pub fn crberi(&mut self) -> CRBERI_W<TRBSCR_SPEC> {
+        CRBERI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Alternative Receive Buffer Event"]
     #[inline(always)]
     #[must_use]
-    pub fn carbi(&mut self) -> CARBI_W<TRBSCR_SPEC, 2> {
-        CARBI_W::new(self)
+    pub fn carbi(&mut self) -> CARBI_W<TRBSCR_SPEC> {
+        CARBI_W::new(self, 2)
     }
     #[doc = "Bit 8 - Clear Standard Transmit Buffer Event"]
     #[inline(always)]
     #[must_use]
-    pub fn cstbi(&mut self) -> CSTBI_W<TRBSCR_SPEC, 8> {
-        CSTBI_W::new(self)
+    pub fn cstbi(&mut self) -> CSTBI_W<TRBSCR_SPEC> {
+        CSTBI_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear Transmit Buffer Error Event"]
     #[inline(always)]
     #[must_use]
-    pub fn ctberi(&mut self) -> CTBERI_W<TRBSCR_SPEC, 9> {
-        CTBERI_W::new(self)
+    pub fn ctberi(&mut self) -> CTBERI_W<TRBSCR_SPEC> {
+        CTBERI_W::new(self, 9)
     }
     #[doc = "Bit 10 - Clear Bypass Data Valid"]
     #[inline(always)]
     #[must_use]
-    pub fn cbdv(&mut self) -> CBDV_W<TRBSCR_SPEC, 10> {
-        CBDV_W::new(self)
+    pub fn cbdv(&mut self) -> CBDV_W<TRBSCR_SPEC> {
+        CBDV_W::new(self, 10)
     }
     #[doc = "Bit 14 - Flush Receive Buffer"]
     #[inline(always)]
     #[must_use]
-    pub fn flushrb(&mut self) -> FLUSHRB_W<TRBSCR_SPEC, 14> {
-        FLUSHRB_W::new(self)
+    pub fn flushrb(&mut self) -> FLUSHRB_W<TRBSCR_SPEC> {
+        FLUSHRB_W::new(self, 14)
     }
     #[doc = "Bit 15 - Flush Transmit Buffer"]
     #[inline(always)]
     #[must_use]
-    pub fn flushtb(&mut self) -> FLUSHTB_W<TRBSCR_SPEC, 15> {
-        FLUSHTB_W::new(self)
+    pub fn flushtb(&mut self) -> FLUSHTB_W<TRBSCR_SPEC> {
+        FLUSHTB_W::new(self, 15)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

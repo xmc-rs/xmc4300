@@ -5,11 +5,11 @@ pub type W = crate::W<HCTSIZ_BUFFERMODE_SPEC>;
 #[doc = "Field `XferSize` reader - Transfer Size"]
 pub type XFER_SIZE_R = crate::FieldReader<u32>;
 #[doc = "Field `XferSize` writer - Transfer Size"]
-pub type XFER_SIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 19, O, u32>;
+pub type XFER_SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 19, u32>;
 #[doc = "Field `PktCnt` reader - Packet Count"]
 pub type PKT_CNT_R = crate::FieldReader<u16>;
 #[doc = "Field `PktCnt` writer - Packet Count"]
-pub type PKT_CNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 10, O, u16>;
+pub type PKT_CNT_W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "Field `Pid` reader - PID"]
 pub type PID_R = crate::FieldReader<PID_A>;
 #[doc = "PID\n\nValue on reset: 0"]
@@ -68,8 +68,8 @@ impl PID_R {
     }
 }
 #[doc = "Field `Pid` writer - PID"]
-pub type PID_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PID_A>;
-impl<'a, REG, const O: u8> PID_W<'a, REG, O>
+pub type PID_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PID_A>;
+impl<'a, REG> PID_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -116,20 +116,20 @@ impl W {
     #[doc = "Bits 0:18 - Transfer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn xfer_size(&mut self) -> XFER_SIZE_W<HCTSIZ_BUFFERMODE_SPEC, 0> {
-        XFER_SIZE_W::new(self)
+    pub fn xfer_size(&mut self) -> XFER_SIZE_W<HCTSIZ_BUFFERMODE_SPEC> {
+        XFER_SIZE_W::new(self, 0)
     }
     #[doc = "Bits 19:28 - Packet Count"]
     #[inline(always)]
     #[must_use]
-    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<HCTSIZ_BUFFERMODE_SPEC, 19> {
-        PKT_CNT_W::new(self)
+    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<HCTSIZ_BUFFERMODE_SPEC> {
+        PKT_CNT_W::new(self, 19)
     }
     #[doc = "Bits 29:30 - PID"]
     #[inline(always)]
     #[must_use]
-    pub fn pid(&mut self) -> PID_W<HCTSIZ_BUFFERMODE_SPEC, 29> {
-        PID_W::new(self)
+    pub fn pid(&mut self) -> PID_W<HCTSIZ_BUFFERMODE_SPEC> {
+        PID_W::new(self, 29)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

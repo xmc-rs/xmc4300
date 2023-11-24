@@ -39,8 +39,8 @@ impl PME_R {
     }
 }
 #[doc = "Field `PME` writer - Period match while counting up enable"]
-pub type PME_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PME_A>;
-impl<'a, REG, const O: u8> PME_W<'a, REG, O>
+pub type PME_W<'a, REG> = crate::BitWriter<'a, REG, PME_A>;
+impl<'a, REG> PME_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl OME_R {
     }
 }
 #[doc = "Field `OME` writer - One match while counting down enable"]
-pub type OME_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OME_A>;
-impl<'a, REG, const O: u8> OME_W<'a, REG, O>
+pub type OME_W<'a, REG> = crate::BitWriter<'a, REG, OME_A>;
+impl<'a, REG> OME_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl CMUE_R {
     }
 }
 #[doc = "Field `CMUE` writer - Compare match while counting up enable"]
-pub type CMUE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMUE_A>;
-impl<'a, REG, const O: u8> CMUE_W<'a, REG, O>
+pub type CMUE_W<'a, REG> = crate::BitWriter<'a, REG, CMUE_A>;
+impl<'a, REG> CMUE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl CMDE_R {
     }
 }
 #[doc = "Field `CMDE` writer - Compare match while counting down enable"]
-pub type CMDE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMDE_A>;
-impl<'a, REG, const O: u8> CMDE_W<'a, REG, O>
+pub type CMDE_W<'a, REG> = crate::BitWriter<'a, REG, CMDE_A>;
+impl<'a, REG> CMDE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl E0AE_R {
     }
 }
 #[doc = "Field `E0AE` writer - Event 0 interrupt enable"]
-pub type E0AE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, E0AE_A>;
-impl<'a, REG, const O: u8> E0AE_W<'a, REG, O>
+pub type E0AE_W<'a, REG> = crate::BitWriter<'a, REG, E0AE_A>;
+impl<'a, REG> E0AE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl E1AE_R {
     }
 }
 #[doc = "Field `E1AE` writer - Event 1 interrupt enable"]
-pub type E1AE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, E1AE_A>;
-impl<'a, REG, const O: u8> E1AE_W<'a, REG, O>
+pub type E1AE_W<'a, REG> = crate::BitWriter<'a, REG, E1AE_A>;
+impl<'a, REG> E1AE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl E2AE_R {
     }
 }
 #[doc = "Field `E2AE` writer - Event 2 interrupt enable"]
-pub type E2AE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, E2AE_A>;
-impl<'a, REG, const O: u8> E2AE_W<'a, REG, O>
+pub type E2AE_W<'a, REG> = crate::BitWriter<'a, REG, E2AE_A>;
+impl<'a, REG> E2AE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -414,44 +414,44 @@ impl W {
     #[doc = "Bit 0 - Period match while counting up enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pme(&mut self) -> PME_W<INTE_SPEC, 0> {
-        PME_W::new(self)
+    pub fn pme(&mut self) -> PME_W<INTE_SPEC> {
+        PME_W::new(self, 0)
     }
     #[doc = "Bit 1 - One match while counting down enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ome(&mut self) -> OME_W<INTE_SPEC, 1> {
-        OME_W::new(self)
+    pub fn ome(&mut self) -> OME_W<INTE_SPEC> {
+        OME_W::new(self, 1)
     }
     #[doc = "Bit 2 - Compare match while counting up enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmue(&mut self) -> CMUE_W<INTE_SPEC, 2> {
-        CMUE_W::new(self)
+    pub fn cmue(&mut self) -> CMUE_W<INTE_SPEC> {
+        CMUE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Compare match while counting down enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmde(&mut self) -> CMDE_W<INTE_SPEC, 3> {
-        CMDE_W::new(self)
+    pub fn cmde(&mut self) -> CMDE_W<INTE_SPEC> {
+        CMDE_W::new(self, 3)
     }
     #[doc = "Bit 8 - Event 0 interrupt enable"]
     #[inline(always)]
     #[must_use]
-    pub fn e0ae(&mut self) -> E0AE_W<INTE_SPEC, 8> {
-        E0AE_W::new(self)
+    pub fn e0ae(&mut self) -> E0AE_W<INTE_SPEC> {
+        E0AE_W::new(self, 8)
     }
     #[doc = "Bit 9 - Event 1 interrupt enable"]
     #[inline(always)]
     #[must_use]
-    pub fn e1ae(&mut self) -> E1AE_W<INTE_SPEC, 9> {
-        E1AE_W::new(self)
+    pub fn e1ae(&mut self) -> E1AE_W<INTE_SPEC> {
+        E1AE_W::new(self, 9)
     }
     #[doc = "Bit 10 - Event 2 interrupt enable"]
     #[inline(always)]
     #[must_use]
-    pub fn e2ae(&mut self) -> E2AE_W<INTE_SPEC, 10> {
-        E2AE_W::new(self)
+    pub fn e2ae(&mut self) -> E2AE_W<INTE_SPEC> {
+        E2AE_W::new(self, 10)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

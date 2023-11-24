@@ -44,8 +44,8 @@ impl CTD_R {
     }
 }
 #[doc = "Field `CTD` writer - Current Transfer Desc:"]
-pub type CTD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O, CTD_A>;
-impl<'a, REG, const O: u8> CTD_W<'a, REG, O>
+pub type CTD_W<'a, REG> = crate::FieldWriter<'a, REG, 6, CTD_A>;
+impl<'a, REG> CTD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -64,7 +64,7 @@ where
 #[doc = "Field `DMAAddr` reader - DMA Address"]
 pub type DMAADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `DMAAddr` writer - DMA Address"]
-pub type DMAADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 23, O, u32>;
+pub type DMAADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 23, u32>;
 impl R {
     #[doc = "Bits 3:8 - Current Transfer Desc:"]
     #[inline(always)]
@@ -81,14 +81,14 @@ impl W {
     #[doc = "Bits 3:8 - Current Transfer Desc:"]
     #[inline(always)]
     #[must_use]
-    pub fn ctd(&mut self) -> CTD_W<HCDMA_SCATGATHER_SPEC, 3> {
-        CTD_W::new(self)
+    pub fn ctd(&mut self) -> CTD_W<HCDMA_SCATGATHER_SPEC> {
+        CTD_W::new(self, 3)
     }
     #[doc = "Bits 9:31 - DMA Address"]
     #[inline(always)]
     #[must_use]
-    pub fn dmaaddr(&mut self) -> DMAADDR_W<HCDMA_SCATGATHER_SPEC, 9> {
-        DMAADDR_W::new(self)
+    pub fn dmaaddr(&mut self) -> DMAADDR_W<HCDMA_SCATGATHER_SPEC> {
+        DMAADDR_W::new(self, 9)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

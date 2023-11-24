@@ -5,7 +5,7 @@ pub type W = crate::W<NPCR_SPEC>;
 #[doc = "Field `RXSEL` reader - Receive Select"]
 pub type RXSEL_R = crate::FieldReader;
 #[doc = "Field `RXSEL` writer - Receive Select"]
-pub type RXSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type RXSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `LBM` reader - Loop-Back Mode"]
 pub type LBM_R = crate::BitReader<LBM_A>;
 #[doc = "Loop-Back Mode\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl LBM_R {
     }
 }
 #[doc = "Field `LBM` writer - Loop-Back Mode"]
-pub type LBM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LBM_A>;
-impl<'a, REG, const O: u8> LBM_W<'a, REG, O>
+pub type LBM_W<'a, REG> = crate::BitWriter<'a, REG, LBM_A>;
+impl<'a, REG> LBM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -75,14 +75,14 @@ impl W {
     #[doc = "Bits 0:2 - Receive Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rxsel(&mut self) -> RXSEL_W<NPCR_SPEC, 0> {
-        RXSEL_W::new(self)
+    pub fn rxsel(&mut self) -> RXSEL_W<NPCR_SPEC> {
+        RXSEL_W::new(self, 0)
     }
     #[doc = "Bit 8 - Loop-Back Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn lbm(&mut self) -> LBM_W<NPCR_SPEC, 8> {
-        LBM_W::new(self)
+    pub fn lbm(&mut self) -> LBM_W<NPCR_SPEC> {
+        LBM_W::new(self, 8)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

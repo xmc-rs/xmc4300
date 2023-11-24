@@ -5,15 +5,15 @@ pub type W = crate::W<CTLL_SPEC>;
 #[doc = "Field `INT_EN` reader - Interrupt Enable Bit"]
 pub type INT_EN_R = crate::BitReader;
 #[doc = "Field `INT_EN` writer - Interrupt Enable Bit"]
-pub type INT_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type INT_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DST_TR_WIDTH` reader - Destination Transfer Width"]
 pub type DST_TR_WIDTH_R = crate::FieldReader;
 #[doc = "Field `DST_TR_WIDTH` writer - Destination Transfer Width"]
-pub type DST_TR_WIDTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type DST_TR_WIDTH_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `SRC_TR_WIDTH` reader - Source Transfer Width"]
 pub type SRC_TR_WIDTH_R = crate::FieldReader;
 #[doc = "Field `SRC_TR_WIDTH` writer - Source Transfer Width"]
-pub type SRC_TR_WIDTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type SRC_TR_WIDTH_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `DINC` reader - Destination Address Increment"]
 pub type DINC_R = crate::FieldReader<DINC_A>;
 #[doc = "Destination Address Increment\n\nValue on reset: 0"]
@@ -64,8 +64,8 @@ impl DINC_R {
     }
 }
 #[doc = "Field `DINC` writer - Destination Address Increment"]
-pub type DINC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DINC_A>;
-impl<'a, REG, const O: u8> DINC_W<'a, REG, O>
+pub type DINC_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DINC_A>;
+impl<'a, REG> DINC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -136,8 +136,8 @@ impl SINC_R {
     }
 }
 #[doc = "Field `SINC` writer - Source Address Increment"]
-pub type SINC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SINC_A>;
-impl<'a, REG, const O: u8> SINC_W<'a, REG, O>
+pub type SINC_W<'a, REG> = crate::FieldWriter<'a, REG, 2, SINC_A>;
+impl<'a, REG> SINC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -161,15 +161,15 @@ where
 #[doc = "Field `DEST_MSIZE` reader - Destination Burst Transaction Length"]
 pub type DEST_MSIZE_R = crate::FieldReader;
 #[doc = "Field `DEST_MSIZE` writer - Destination Burst Transaction Length"]
-pub type DEST_MSIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type DEST_MSIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `SRC_MSIZE` reader - Source Burst Transaction Length"]
 pub type SRC_MSIZE_R = crate::FieldReader;
 #[doc = "Field `SRC_MSIZE` writer - Source Burst Transaction Length"]
-pub type SRC_MSIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type SRC_MSIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `TT_FC` reader - Transfer Type and Flow Control"]
 pub type TT_FC_R = crate::FieldReader;
 #[doc = "Field `TT_FC` writer - Transfer Type and Flow Control"]
-pub type TT_FC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type TT_FC_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bit 0 - Interrupt Enable Bit"]
     #[inline(always)]
@@ -216,50 +216,50 @@ impl W {
     #[doc = "Bit 0 - Interrupt Enable Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn int_en(&mut self) -> INT_EN_W<CTLL_SPEC, 0> {
-        INT_EN_W::new(self)
+    pub fn int_en(&mut self) -> INT_EN_W<CTLL_SPEC> {
+        INT_EN_W::new(self, 0)
     }
     #[doc = "Bits 1:3 - Destination Transfer Width"]
     #[inline(always)]
     #[must_use]
-    pub fn dst_tr_width(&mut self) -> DST_TR_WIDTH_W<CTLL_SPEC, 1> {
-        DST_TR_WIDTH_W::new(self)
+    pub fn dst_tr_width(&mut self) -> DST_TR_WIDTH_W<CTLL_SPEC> {
+        DST_TR_WIDTH_W::new(self, 1)
     }
     #[doc = "Bits 4:6 - Source Transfer Width"]
     #[inline(always)]
     #[must_use]
-    pub fn src_tr_width(&mut self) -> SRC_TR_WIDTH_W<CTLL_SPEC, 4> {
-        SRC_TR_WIDTH_W::new(self)
+    pub fn src_tr_width(&mut self) -> SRC_TR_WIDTH_W<CTLL_SPEC> {
+        SRC_TR_WIDTH_W::new(self, 4)
     }
     #[doc = "Bits 7:8 - Destination Address Increment"]
     #[inline(always)]
     #[must_use]
-    pub fn dinc(&mut self) -> DINC_W<CTLL_SPEC, 7> {
-        DINC_W::new(self)
+    pub fn dinc(&mut self) -> DINC_W<CTLL_SPEC> {
+        DINC_W::new(self, 7)
     }
     #[doc = "Bits 9:10 - Source Address Increment"]
     #[inline(always)]
     #[must_use]
-    pub fn sinc(&mut self) -> SINC_W<CTLL_SPEC, 9> {
-        SINC_W::new(self)
+    pub fn sinc(&mut self) -> SINC_W<CTLL_SPEC> {
+        SINC_W::new(self, 9)
     }
     #[doc = "Bits 11:13 - Destination Burst Transaction Length"]
     #[inline(always)]
     #[must_use]
-    pub fn dest_msize(&mut self) -> DEST_MSIZE_W<CTLL_SPEC, 11> {
-        DEST_MSIZE_W::new(self)
+    pub fn dest_msize(&mut self) -> DEST_MSIZE_W<CTLL_SPEC> {
+        DEST_MSIZE_W::new(self, 11)
     }
     #[doc = "Bits 14:16 - Source Burst Transaction Length"]
     #[inline(always)]
     #[must_use]
-    pub fn src_msize(&mut self) -> SRC_MSIZE_W<CTLL_SPEC, 14> {
-        SRC_MSIZE_W::new(self)
+    pub fn src_msize(&mut self) -> SRC_MSIZE_W<CTLL_SPEC> {
+        SRC_MSIZE_W::new(self, 14)
     }
     #[doc = "Bits 20:22 - Transfer Type and Flow Control"]
     #[inline(always)]
     #[must_use]
-    pub fn tt_fc(&mut self) -> TT_FC_W<CTLL_SPEC, 20> {
-        TT_FC_W::new(self)
+    pub fn tt_fc(&mut self) -> TT_FC_W<CTLL_SPEC> {
+        TT_FC_W::new(self, 20)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -15,8 +15,8 @@ impl From<HIB_AW> for bool {
     }
 }
 #[doc = "Field `HIB` writer - Clear Disable Hibernate Domain"]
-pub type HIB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HIB_AW>;
-impl<'a, REG, const O: u8> HIB_W<'a, REG, O>
+pub type HIB_W<'a, REG> = crate::BitWriter<'a, REG, HIB_AW>;
+impl<'a, REG> HIB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<USBPHYPDQ_AW> for bool {
     }
 }
 #[doc = "Field `USBPHYPDQ` writer - Clear USB PHY Transceiver Disable"]
-pub type USBPHYPDQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USBPHYPDQ_AW>;
-impl<'a, REG, const O: u8> USBPHYPDQ_W<'a, REG, O>
+pub type USBPHYPDQ_W<'a, REG> = crate::BitWriter<'a, REG, USBPHYPDQ_AW>;
+impl<'a, REG> USBPHYPDQ_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<USBOTGEN_AW> for bool {
     }
 }
 #[doc = "Field `USBOTGEN` writer - Clear USB On-The-Go Comparators Enable"]
-pub type USBOTGEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USBOTGEN_AW>;
-impl<'a, REG, const O: u8> USBOTGEN_W<'a, REG, O>
+pub type USBOTGEN_W<'a, REG> = crate::BitWriter<'a, REG, USBOTGEN_AW>;
+impl<'a, REG> USBOTGEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<USBPUWQ_AW> for bool {
     }
 }
 #[doc = "Field `USBPUWQ` writer - Clear USB Weak Pull-Up at PADN Enable"]
-pub type USBPUWQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USBPUWQ_AW>;
-impl<'a, REG, const O: u8> USBPUWQ_W<'a, REG, O>
+pub type USBPUWQ_W<'a, REG> = crate::BitWriter<'a, REG, USBPUWQ_AW>;
+impl<'a, REG> USBPUWQ_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -128,26 +128,26 @@ impl W {
     #[doc = "Bit 0 - Clear Disable Hibernate Domain"]
     #[inline(always)]
     #[must_use]
-    pub fn hib(&mut self) -> HIB_W<PWRCLR_SPEC, 0> {
-        HIB_W::new(self)
+    pub fn hib(&mut self) -> HIB_W<PWRCLR_SPEC> {
+        HIB_W::new(self, 0)
     }
     #[doc = "Bit 16 - Clear USB PHY Transceiver Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn usbphypdq(&mut self) -> USBPHYPDQ_W<PWRCLR_SPEC, 16> {
-        USBPHYPDQ_W::new(self)
+    pub fn usbphypdq(&mut self) -> USBPHYPDQ_W<PWRCLR_SPEC> {
+        USBPHYPDQ_W::new(self, 16)
     }
     #[doc = "Bit 17 - Clear USB On-The-Go Comparators Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn usbotgen(&mut self) -> USBOTGEN_W<PWRCLR_SPEC, 17> {
-        USBOTGEN_W::new(self)
+    pub fn usbotgen(&mut self) -> USBOTGEN_W<PWRCLR_SPEC> {
+        USBOTGEN_W::new(self, 17)
     }
     #[doc = "Bit 18 - Clear USB Weak Pull-Up at PADN Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn usbpuwq(&mut self) -> USBPUWQ_W<PWRCLR_SPEC, 18> {
-        USBPUWQ_W::new(self)
+    pub fn usbpuwq(&mut self) -> USBPUWQ_W<PWRCLR_SPEC> {
+        USBPUWQ_W::new(self, 18)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,51 +5,51 @@ pub type W = crate::W<OPERATION_MODE_SPEC>;
 #[doc = "Field `SR` reader - Start or Stop Receive"]
 pub type SR_R = crate::BitReader;
 #[doc = "Field `SR` writer - Start or Stop Receive"]
-pub type SR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `OSF` reader - Operate on Second Frame"]
 pub type OSF_R = crate::BitReader;
 #[doc = "Field `OSF` writer - Operate on Second Frame"]
-pub type OSF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type OSF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RTC` reader - Receive Threshold Control"]
 pub type RTC_R = crate::FieldReader;
 #[doc = "Field `RTC` writer - Receive Threshold Control"]
-pub type RTC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type RTC_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `FUF` reader - Forward Undersized Good Frames"]
 pub type FUF_R = crate::BitReader;
 #[doc = "Field `FUF` writer - Forward Undersized Good Frames"]
-pub type FUF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FUF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FEF` reader - Forward Error Frames"]
 pub type FEF_R = crate::BitReader;
 #[doc = "Field `FEF` writer - Forward Error Frames"]
-pub type FEF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FEF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ST` reader - Start or Stop Transmission Command"]
 pub type ST_R = crate::BitReader;
 #[doc = "Field `ST` writer - Start or Stop Transmission Command"]
-pub type ST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TTC` reader - Transmit Threshold Control"]
 pub type TTC_R = crate::FieldReader;
 #[doc = "Field `TTC` writer - Transmit Threshold Control"]
-pub type TTC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type TTC_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `FTF` reader - Flush Transmit FIFO"]
 pub type FTF_R = crate::BitReader;
 #[doc = "Field `FTF` writer - Flush Transmit FIFO"]
-pub type FTF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type FTF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TSF` reader - Transmit Store and Forward"]
 pub type TSF_R = crate::BitReader;
 #[doc = "Field `TSF` writer - Transmit Store and Forward"]
-pub type TSF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type TSF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DFF` reader - Disable Flushing of Received Frames"]
 pub type DFF_R = crate::BitReader;
 #[doc = "Field `DFF` writer - Disable Flushing of Received Frames"]
-pub type DFF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DFF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RSF` reader - Receive Store and Forward"]
 pub type RSF_R = crate::BitReader;
 #[doc = "Field `RSF` writer - Receive Store and Forward"]
-pub type RSF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type RSF_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DT` reader - Disable Dropping of TCP/IP Checksum Error Frames"]
 pub type DT_R = crate::BitReader;
 #[doc = "Field `DT` writer - Disable Dropping of TCP/IP Checksum Error Frames"]
-pub type DT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DT_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 1 - Start or Stop Receive"]
     #[inline(always)]
@@ -116,74 +116,74 @@ impl W {
     #[doc = "Bit 1 - Start or Stop Receive"]
     #[inline(always)]
     #[must_use]
-    pub fn sr(&mut self) -> SR_W<OPERATION_MODE_SPEC, 1> {
-        SR_W::new(self)
+    pub fn sr(&mut self) -> SR_W<OPERATION_MODE_SPEC> {
+        SR_W::new(self, 1)
     }
     #[doc = "Bit 2 - Operate on Second Frame"]
     #[inline(always)]
     #[must_use]
-    pub fn osf(&mut self) -> OSF_W<OPERATION_MODE_SPEC, 2> {
-        OSF_W::new(self)
+    pub fn osf(&mut self) -> OSF_W<OPERATION_MODE_SPEC> {
+        OSF_W::new(self, 2)
     }
     #[doc = "Bits 3:4 - Receive Threshold Control"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc(&mut self) -> RTC_W<OPERATION_MODE_SPEC, 3> {
-        RTC_W::new(self)
+    pub fn rtc(&mut self) -> RTC_W<OPERATION_MODE_SPEC> {
+        RTC_W::new(self, 3)
     }
     #[doc = "Bit 6 - Forward Undersized Good Frames"]
     #[inline(always)]
     #[must_use]
-    pub fn fuf(&mut self) -> FUF_W<OPERATION_MODE_SPEC, 6> {
-        FUF_W::new(self)
+    pub fn fuf(&mut self) -> FUF_W<OPERATION_MODE_SPEC> {
+        FUF_W::new(self, 6)
     }
     #[doc = "Bit 7 - Forward Error Frames"]
     #[inline(always)]
     #[must_use]
-    pub fn fef(&mut self) -> FEF_W<OPERATION_MODE_SPEC, 7> {
-        FEF_W::new(self)
+    pub fn fef(&mut self) -> FEF_W<OPERATION_MODE_SPEC> {
+        FEF_W::new(self, 7)
     }
     #[doc = "Bit 13 - Start or Stop Transmission Command"]
     #[inline(always)]
     #[must_use]
-    pub fn st(&mut self) -> ST_W<OPERATION_MODE_SPEC, 13> {
-        ST_W::new(self)
+    pub fn st(&mut self) -> ST_W<OPERATION_MODE_SPEC> {
+        ST_W::new(self, 13)
     }
     #[doc = "Bits 14:16 - Transmit Threshold Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ttc(&mut self) -> TTC_W<OPERATION_MODE_SPEC, 14> {
-        TTC_W::new(self)
+    pub fn ttc(&mut self) -> TTC_W<OPERATION_MODE_SPEC> {
+        TTC_W::new(self, 14)
     }
     #[doc = "Bit 20 - Flush Transmit FIFO"]
     #[inline(always)]
     #[must_use]
-    pub fn ftf(&mut self) -> FTF_W<OPERATION_MODE_SPEC, 20> {
-        FTF_W::new(self)
+    pub fn ftf(&mut self) -> FTF_W<OPERATION_MODE_SPEC> {
+        FTF_W::new(self, 20)
     }
     #[doc = "Bit 21 - Transmit Store and Forward"]
     #[inline(always)]
     #[must_use]
-    pub fn tsf(&mut self) -> TSF_W<OPERATION_MODE_SPEC, 21> {
-        TSF_W::new(self)
+    pub fn tsf(&mut self) -> TSF_W<OPERATION_MODE_SPEC> {
+        TSF_W::new(self, 21)
     }
     #[doc = "Bit 24 - Disable Flushing of Received Frames"]
     #[inline(always)]
     #[must_use]
-    pub fn dff(&mut self) -> DFF_W<OPERATION_MODE_SPEC, 24> {
-        DFF_W::new(self)
+    pub fn dff(&mut self) -> DFF_W<OPERATION_MODE_SPEC> {
+        DFF_W::new(self, 24)
     }
     #[doc = "Bit 25 - Receive Store and Forward"]
     #[inline(always)]
     #[must_use]
-    pub fn rsf(&mut self) -> RSF_W<OPERATION_MODE_SPEC, 25> {
-        RSF_W::new(self)
+    pub fn rsf(&mut self) -> RSF_W<OPERATION_MODE_SPEC> {
+        RSF_W::new(self, 25)
     }
     #[doc = "Bit 26 - Disable Dropping of TCP/IP Checksum Error Frames"]
     #[inline(always)]
     #[must_use]
-    pub fn dt(&mut self) -> DT_W<OPERATION_MODE_SPEC, 26> {
-        DT_W::new(self)
+    pub fn dt(&mut self) -> DT_W<OPERATION_MODE_SPEC> {
+        DT_W::new(self, 26)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

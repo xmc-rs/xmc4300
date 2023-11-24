@@ -5,7 +5,7 @@ pub type W = crate::W<SYSTEM_TIME_SECONDS_UPDATE_SPEC>;
 #[doc = "Field `TSS` reader - Timestamp Second"]
 pub type TSS_R = crate::FieldReader<u32>;
 #[doc = "Field `TSS` writer - Timestamp Second"]
-pub type TSS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type TSS_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Timestamp Second"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Timestamp Second"]
     #[inline(always)]
     #[must_use]
-    pub fn tss(&mut self) -> TSS_W<SYSTEM_TIME_SECONDS_UPDATE_SPEC, 0> {
-        TSS_W::new(self)
+    pub fn tss(&mut self) -> TSS_W<SYSTEM_TIME_SECONDS_UPDATE_SPEC> {
+        TSS_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

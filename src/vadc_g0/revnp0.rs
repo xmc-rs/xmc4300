@@ -60,8 +60,8 @@ impl REV0NP_R {
     }
 }
 #[doc = "Field `REV0NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV0NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV0NP_A>;
-impl<'a, REG, const O: u8> REV0NP_W<'a, REG, O>
+pub type REV0NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, REV0NP_A>;
+impl<'a, REG> REV0NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,8 +145,8 @@ impl REV1NP_R {
     }
 }
 #[doc = "Field `REV1NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV1NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV1NP_A>;
-impl<'a, REG, const O: u8> REV1NP_W<'a, REG, O>
+pub type REV1NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, REV1NP_A>;
+impl<'a, REG> REV1NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -230,8 +230,8 @@ impl REV2NP_R {
     }
 }
 #[doc = "Field `REV2NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV2NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV2NP_A>;
-impl<'a, REG, const O: u8> REV2NP_W<'a, REG, O>
+pub type REV2NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, REV2NP_A>;
+impl<'a, REG> REV2NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -315,8 +315,8 @@ impl REV3NP_R {
     }
 }
 #[doc = "Field `REV3NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV3NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV3NP_A>;
-impl<'a, REG, const O: u8> REV3NP_W<'a, REG, O>
+pub type REV3NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, REV3NP_A>;
+impl<'a, REG> REV3NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -400,8 +400,8 @@ impl REV4NP_R {
     }
 }
 #[doc = "Field `REV4NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV4NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV4NP_A>;
-impl<'a, REG, const O: u8> REV4NP_W<'a, REG, O>
+pub type REV4NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, REV4NP_A>;
+impl<'a, REG> REV4NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -485,8 +485,8 @@ impl REV5NP_R {
     }
 }
 #[doc = "Field `REV5NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV5NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV5NP_A>;
-impl<'a, REG, const O: u8> REV5NP_W<'a, REG, O>
+pub type REV5NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, REV5NP_A>;
+impl<'a, REG> REV5NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -570,8 +570,8 @@ impl REV6NP_R {
     }
 }
 #[doc = "Field `REV6NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV6NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV6NP_A>;
-impl<'a, REG, const O: u8> REV6NP_W<'a, REG, O>
+pub type REV6NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, REV6NP_A>;
+impl<'a, REG> REV6NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -655,8 +655,8 @@ impl REV7NP_R {
     }
 }
 #[doc = "Field `REV7NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV7NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV7NP_A>;
-impl<'a, REG, const O: u8> REV7NP_W<'a, REG, O>
+pub type REV7NP_W<'a, REG> = crate::FieldWriter<'a, REG, 4, REV7NP_A>;
+impl<'a, REG> REV7NP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -728,50 +728,50 @@ impl W {
     #[doc = "Bits 0:3 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev0np(&mut self) -> REV0NP_W<REVNP0_SPEC, 0> {
-        REV0NP_W::new(self)
+    pub fn rev0np(&mut self) -> REV0NP_W<REVNP0_SPEC> {
+        REV0NP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev1np(&mut self) -> REV1NP_W<REVNP0_SPEC, 4> {
-        REV1NP_W::new(self)
+    pub fn rev1np(&mut self) -> REV1NP_W<REVNP0_SPEC> {
+        REV1NP_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev2np(&mut self) -> REV2NP_W<REVNP0_SPEC, 8> {
-        REV2NP_W::new(self)
+    pub fn rev2np(&mut self) -> REV2NP_W<REVNP0_SPEC> {
+        REV2NP_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev3np(&mut self) -> REV3NP_W<REVNP0_SPEC, 12> {
-        REV3NP_W::new(self)
+    pub fn rev3np(&mut self) -> REV3NP_W<REVNP0_SPEC> {
+        REV3NP_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev4np(&mut self) -> REV4NP_W<REVNP0_SPEC, 16> {
-        REV4NP_W::new(self)
+    pub fn rev4np(&mut self) -> REV4NP_W<REVNP0_SPEC> {
+        REV4NP_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev5np(&mut self) -> REV5NP_W<REVNP0_SPEC, 20> {
-        REV5NP_W::new(self)
+    pub fn rev5np(&mut self) -> REV5NP_W<REVNP0_SPEC> {
+        REV5NP_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev6np(&mut self) -> REV6NP_W<REVNP0_SPEC, 24> {
-        REV6NP_W::new(self)
+    pub fn rev6np(&mut self) -> REV6NP_W<REVNP0_SPEC> {
+        REV6NP_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev7np(&mut self) -> REV7NP_W<REVNP0_SPEC, 28> {
-        REV7NP_W::new(self)
+    pub fn rev7np(&mut self) -> REV7NP_W<REVNP0_SPEC> {
+        REV7NP_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

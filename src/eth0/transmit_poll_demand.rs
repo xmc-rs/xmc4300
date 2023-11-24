@@ -5,7 +5,7 @@ pub type W = crate::W<TRANSMIT_POLL_DEMAND_SPEC>;
 #[doc = "Field `TPD` reader - Transmit Poll Demand"]
 pub type TPD_R = crate::FieldReader<u32>;
 #[doc = "Field `TPD` writer - Transmit Poll Demand"]
-pub type TPD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type TPD_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Transmit Poll Demand"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Transmit Poll Demand"]
     #[inline(always)]
     #[must_use]
-    pub fn tpd(&mut self) -> TPD_W<TRANSMIT_POLL_DEMAND_SPEC, 0> {
-        TPD_W::new(self)
+    pub fn tpd(&mut self) -> TPD_W<TRANSMIT_POLL_DEMAND_SPEC> {
+        TPD_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

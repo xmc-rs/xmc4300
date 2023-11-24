@@ -5,7 +5,7 @@ pub type W = crate::W<WLB_SPEC>;
 #[doc = "Field `WLB` reader - Window Lower Bound"]
 pub type WLB_R = crate::FieldReader<u32>;
 #[doc = "Field `WLB` writer - Window Lower Bound"]
-pub type WLB_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type WLB_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Window Lower Bound"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Window Lower Bound"]
     #[inline(always)]
     #[must_use]
-    pub fn wlb(&mut self) -> WLB_W<WLB_SPEC, 0> {
-        WLB_W::new(self)
+    pub fn wlb(&mut self) -> WLB_W<WLB_SPEC> {
+        WLB_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

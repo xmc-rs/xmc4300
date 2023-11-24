@@ -156,8 +156,8 @@ impl EV0IS_R {
     }
 }
 #[doc = "Field `EV0IS` writer - Event 0 signal selection"]
-pub type EV0IS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 4, O, EV0IS_A>;
-impl<'a, REG, const O: u8> EV0IS_W<'a, REG, O>
+pub type EV0IS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, EV0IS_A>;
+impl<'a, REG> EV0IS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -397,8 +397,8 @@ impl EV1IS_R {
     }
 }
 #[doc = "Field `EV1IS` writer - Event 1 signal selection"]
-pub type EV1IS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 4, O, EV1IS_A>;
-impl<'a, REG, const O: u8> EV1IS_W<'a, REG, O>
+pub type EV1IS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, EV1IS_A>;
+impl<'a, REG> EV1IS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -638,8 +638,8 @@ impl EV2IS_R {
     }
 }
 #[doc = "Field `EV2IS` writer - Event 2 signal selection"]
-pub type EV2IS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 4, O, EV2IS_A>;
-impl<'a, REG, const O: u8> EV2IS_W<'a, REG, O>
+pub type EV2IS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, EV2IS_A>;
+impl<'a, REG> EV2IS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -783,8 +783,8 @@ impl EV0EM_R {
     }
 }
 #[doc = "Field `EV0EM` writer - Event 0 Edge Selection"]
-pub type EV0EM_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EV0EM_A>;
-impl<'a, REG, const O: u8> EV0EM_W<'a, REG, O>
+pub type EV0EM_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EV0EM_A>;
+impl<'a, REG> EV0EM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -868,8 +868,8 @@ impl EV1EM_R {
     }
 }
 #[doc = "Field `EV1EM` writer - Event 1 Edge Selection"]
-pub type EV1EM_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EV1EM_A>;
-impl<'a, REG, const O: u8> EV1EM_W<'a, REG, O>
+pub type EV1EM_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EV1EM_A>;
+impl<'a, REG> EV1EM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -953,8 +953,8 @@ impl EV2EM_R {
     }
 }
 #[doc = "Field `EV2EM` writer - Event 2 Edge Selection"]
-pub type EV2EM_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EV2EM_A>;
-impl<'a, REG, const O: u8> EV2EM_W<'a, REG, O>
+pub type EV2EM_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EV2EM_A>;
+impl<'a, REG> EV2EM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1017,8 +1017,8 @@ impl EV0LM_R {
     }
 }
 #[doc = "Field `EV0LM` writer - Event 0 Level Selection"]
-pub type EV0LM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EV0LM_A>;
-impl<'a, REG, const O: u8> EV0LM_W<'a, REG, O>
+pub type EV0LM_W<'a, REG> = crate::BitWriter<'a, REG, EV0LM_A>;
+impl<'a, REG> EV0LM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1070,8 +1070,8 @@ impl EV1LM_R {
     }
 }
 #[doc = "Field `EV1LM` writer - Event 1 Level Selection"]
-pub type EV1LM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EV1LM_A>;
-impl<'a, REG, const O: u8> EV1LM_W<'a, REG, O>
+pub type EV1LM_W<'a, REG> = crate::BitWriter<'a, REG, EV1LM_A>;
+impl<'a, REG> EV1LM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1123,8 +1123,8 @@ impl EV2LM_R {
     }
 }
 #[doc = "Field `EV2LM` writer - Event 2 Level Selection"]
-pub type EV2LM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EV2LM_A>;
-impl<'a, REG, const O: u8> EV2LM_W<'a, REG, O>
+pub type EV2LM_W<'a, REG> = crate::BitWriter<'a, REG, EV2LM_A>;
+impl<'a, REG> EV2LM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1197,8 +1197,8 @@ impl LPF0M_R {
     }
 }
 #[doc = "Field `LPF0M` writer - Event 0 Low Pass Filter Configuration"]
-pub type LPF0M_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LPF0M_A>;
-impl<'a, REG, const O: u8> LPF0M_W<'a, REG, O>
+pub type LPF0M_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, LPF0M_A>;
+impl<'a, REG> LPF0M_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1282,8 +1282,8 @@ impl LPF1M_R {
     }
 }
 #[doc = "Field `LPF1M` writer - Event 1 Low Pass Filter Configuration"]
-pub type LPF1M_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LPF1M_A>;
-impl<'a, REG, const O: u8> LPF1M_W<'a, REG, O>
+pub type LPF1M_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, LPF1M_A>;
+impl<'a, REG> LPF1M_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1367,8 +1367,8 @@ impl LPF2M_R {
     }
 }
 #[doc = "Field `LPF2M` writer - Event 2 Low Pass Filter Configuration"]
-pub type LPF2M_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LPF2M_A>;
-impl<'a, REG, const O: u8> LPF2M_W<'a, REG, O>
+pub type LPF2M_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, LPF2M_A>;
+impl<'a, REG> LPF2M_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1460,74 +1460,74 @@ impl W {
     #[doc = "Bits 0:3 - Event 0 signal selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev0is(&mut self) -> EV0IS_W<INS_SPEC, 0> {
-        EV0IS_W::new(self)
+    pub fn ev0is(&mut self) -> EV0IS_W<INS_SPEC> {
+        EV0IS_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Event 1 signal selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev1is(&mut self) -> EV1IS_W<INS_SPEC, 4> {
-        EV1IS_W::new(self)
+    pub fn ev1is(&mut self) -> EV1IS_W<INS_SPEC> {
+        EV1IS_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Event 2 signal selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev2is(&mut self) -> EV2IS_W<INS_SPEC, 8> {
-        EV2IS_W::new(self)
+    pub fn ev2is(&mut self) -> EV2IS_W<INS_SPEC> {
+        EV2IS_W::new(self, 8)
     }
     #[doc = "Bits 16:17 - Event 0 Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev0em(&mut self) -> EV0EM_W<INS_SPEC, 16> {
-        EV0EM_W::new(self)
+    pub fn ev0em(&mut self) -> EV0EM_W<INS_SPEC> {
+        EV0EM_W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Event 1 Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev1em(&mut self) -> EV1EM_W<INS_SPEC, 18> {
-        EV1EM_W::new(self)
+    pub fn ev1em(&mut self) -> EV1EM_W<INS_SPEC> {
+        EV1EM_W::new(self, 18)
     }
     #[doc = "Bits 20:21 - Event 2 Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev2em(&mut self) -> EV2EM_W<INS_SPEC, 20> {
-        EV2EM_W::new(self)
+    pub fn ev2em(&mut self) -> EV2EM_W<INS_SPEC> {
+        EV2EM_W::new(self, 20)
     }
     #[doc = "Bit 22 - Event 0 Level Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev0lm(&mut self) -> EV0LM_W<INS_SPEC, 22> {
-        EV0LM_W::new(self)
+    pub fn ev0lm(&mut self) -> EV0LM_W<INS_SPEC> {
+        EV0LM_W::new(self, 22)
     }
     #[doc = "Bit 23 - Event 1 Level Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev1lm(&mut self) -> EV1LM_W<INS_SPEC, 23> {
-        EV1LM_W::new(self)
+    pub fn ev1lm(&mut self) -> EV1LM_W<INS_SPEC> {
+        EV1LM_W::new(self, 23)
     }
     #[doc = "Bit 24 - Event 2 Level Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev2lm(&mut self) -> EV2LM_W<INS_SPEC, 24> {
-        EV2LM_W::new(self)
+    pub fn ev2lm(&mut self) -> EV2LM_W<INS_SPEC> {
+        EV2LM_W::new(self, 24)
     }
     #[doc = "Bits 25:26 - Event 0 Low Pass Filter Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn lpf0m(&mut self) -> LPF0M_W<INS_SPEC, 25> {
-        LPF0M_W::new(self)
+    pub fn lpf0m(&mut self) -> LPF0M_W<INS_SPEC> {
+        LPF0M_W::new(self, 25)
     }
     #[doc = "Bits 27:28 - Event 1 Low Pass Filter Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn lpf1m(&mut self) -> LPF1M_W<INS_SPEC, 27> {
-        LPF1M_W::new(self)
+    pub fn lpf1m(&mut self) -> LPF1M_W<INS_SPEC> {
+        LPF1M_W::new(self, 27)
     }
     #[doc = "Bits 29:30 - Event 2 Low Pass Filter Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn lpf2m(&mut self) -> LPF2M_W<INS_SPEC, 29> {
-        LPF2M_W::new(self)
+    pub fn lpf2m(&mut self) -> LPF2M_W<INS_SPEC> {
+        LPF2M_W::new(self, 29)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

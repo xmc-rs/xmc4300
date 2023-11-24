@@ -5,7 +5,7 @@ pub type W = crate::W<PANCTR_SPEC>;
 #[doc = "Field `PANCMD` reader - Panel Command"]
 pub type PANCMD_R = crate::FieldReader;
 #[doc = "Field `PANCMD` writer - Panel Command"]
-pub type PANCMD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PANCMD_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `BUSY` reader - Panel Busy Flag"]
 pub type BUSY_R = crate::BitReader<BUSY_A>;
 #[doc = "Panel Busy Flag\n\nValue on reset: 1"]
@@ -81,11 +81,11 @@ impl RBUSY_R {
 #[doc = "Field `PANAR1` reader - Panel Argument 1"]
 pub type PANAR1_R = crate::FieldReader;
 #[doc = "Field `PANAR1` writer - Panel Argument 1"]
-pub type PANAR1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PANAR1_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `PANAR2` reader - Panel Argument 2"]
 pub type PANAR2_R = crate::FieldReader;
 #[doc = "Field `PANAR2` writer - Panel Argument 2"]
-pub type PANAR2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type PANAR2_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Panel Command"]
     #[inline(always)]
@@ -117,20 +117,20 @@ impl W {
     #[doc = "Bits 0:7 - Panel Command"]
     #[inline(always)]
     #[must_use]
-    pub fn pancmd(&mut self) -> PANCMD_W<PANCTR_SPEC, 0> {
-        PANCMD_W::new(self)
+    pub fn pancmd(&mut self) -> PANCMD_W<PANCTR_SPEC> {
+        PANCMD_W::new(self, 0)
     }
     #[doc = "Bits 16:23 - Panel Argument 1"]
     #[inline(always)]
     #[must_use]
-    pub fn panar1(&mut self) -> PANAR1_W<PANCTR_SPEC, 16> {
-        PANAR1_W::new(self)
+    pub fn panar1(&mut self) -> PANAR1_W<PANCTR_SPEC> {
+        PANAR1_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Panel Argument 2"]
     #[inline(always)]
     #[must_use]
-    pub fn panar2(&mut self) -> PANAR2_W<PANCTR_SPEC, 24> {
-        PANAR2_W::new(self)
+    pub fn panar2(&mut self) -> PANAR2_W<PANCTR_SPEC> {
+        PANAR2_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

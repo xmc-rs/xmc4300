@@ -5,7 +5,7 @@ pub type W = crate::W<DC_SYNC1_CYC_TIME_SPEC>;
 #[doc = "Field `TIME_SYNC1_SYNC0` reader - Time between SYNC1 pulses and SYNC0 pulse"]
 pub type TIME_SYNC1_SYNC0_R = crate::FieldReader<u32>;
 #[doc = "Field `TIME_SYNC1_SYNC0` writer - Time between SYNC1 pulses and SYNC0 pulse"]
-pub type TIME_SYNC1_SYNC0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
+pub type TIME_SYNC1_SYNC0_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Time between SYNC1 pulses and SYNC0 pulse"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:31 - Time between SYNC1 pulses and SYNC0 pulse"]
     #[inline(always)]
     #[must_use]
-    pub fn time_sync1_sync0(&mut self) -> TIME_SYNC1_SYNC0_W<DC_SYNC1_CYC_TIME_SPEC, 0> {
-        TIME_SYNC1_SYNC0_W::new(self)
+    pub fn time_sync1_sync0(&mut self) -> TIME_SYNC1_SYNC0_W<DC_SYNC1_CYC_TIME_SPEC> {
+        TIME_SYNC1_SYNC0_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

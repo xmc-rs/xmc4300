@@ -39,8 +39,8 @@ impl L1_POS_R {
     }
 }
 #[doc = "Field `L1_POS` writer - Latch1 positive edge"]
-pub type L1_POS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, L1_POS_A>;
-impl<'a, REG, const O: u8> L1_POS_W<'a, REG, O>
+pub type L1_POS_W<'a, REG> = crate::BitWriter<'a, REG, L1_POS_A>;
+impl<'a, REG> L1_POS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl L1_NEG_R {
     }
 }
 #[doc = "Field `L1_NEG` writer - Latch1 negative edge"]
-pub type L1_NEG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, L1_NEG_A>;
-impl<'a, REG, const O: u8> L1_NEG_W<'a, REG, O>
+pub type L1_NEG_W<'a, REG> = crate::BitWriter<'a, REG, L1_NEG_A>;
+impl<'a, REG> L1_NEG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -124,14 +124,14 @@ impl W {
     #[doc = "Bit 0 - Latch1 positive edge"]
     #[inline(always)]
     #[must_use]
-    pub fn l1_pos(&mut self) -> L1_POS_W<DC_LATCH1_CONT_SPEC, 0> {
-        L1_POS_W::new(self)
+    pub fn l1_pos(&mut self) -> L1_POS_W<DC_LATCH1_CONT_SPEC> {
+        L1_POS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Latch1 negative edge"]
     #[inline(always)]
     #[must_use]
-    pub fn l1_neg(&mut self) -> L1_NEG_W<DC_LATCH1_CONT_SPEC, 1> {
-        L1_NEG_W::new(self)
+    pub fn l1_neg(&mut self) -> L1_NEG_W<DC_LATCH1_CONT_SPEC> {
+        L1_NEG_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -39,8 +39,8 @@ impl PRWARN_R {
     }
 }
 #[doc = "Field `PRWARN` writer - Promote Pre-Warning Interrupt Request to NMI Request"]
-pub type PRWARN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PRWARN_A>;
-impl<'a, REG, const O: u8> PRWARN_W<'a, REG, O>
+pub type PRWARN_W<'a, REG> = crate::BitWriter<'a, REG, PRWARN_A>;
+impl<'a, REG> PRWARN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl PI_R {
     }
 }
 #[doc = "Field `PI` writer - Promote RTC Periodic Interrupt request to NMI Request"]
-pub type PI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PI_A>;
-impl<'a, REG, const O: u8> PI_W<'a, REG, O>
+pub type PI_W<'a, REG> = crate::BitWriter<'a, REG, PI_A>;
+impl<'a, REG> PI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl AI_R {
     }
 }
 #[doc = "Field `AI` writer - Promote RTC Alarm Interrupt Request to NMI Request"]
-pub type AI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AI_A>;
-impl<'a, REG, const O: u8> AI_W<'a, REG, O>
+pub type AI_W<'a, REG> = crate::BitWriter<'a, REG, AI_A>;
+impl<'a, REG> AI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl ERU00_R {
     }
 }
 #[doc = "Field `ERU00` writer - Promote Channel 0 Interrupt of ERU0 Request to NMI Request"]
-pub type ERU00_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERU00_A>;
-impl<'a, REG, const O: u8> ERU00_W<'a, REG, O>
+pub type ERU00_W<'a, REG> = crate::BitWriter<'a, REG, ERU00_A>;
+impl<'a, REG> ERU00_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl ERU01_R {
     }
 }
 #[doc = "Field `ERU01` writer - Promote Channel 1 Interrupt of ERU0 Request to NMI Request"]
-pub type ERU01_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERU01_A>;
-impl<'a, REG, const O: u8> ERU01_W<'a, REG, O>
+pub type ERU01_W<'a, REG> = crate::BitWriter<'a, REG, ERU01_A>;
+impl<'a, REG> ERU01_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl ERU02_R {
     }
 }
 #[doc = "Field `ERU02` writer - Promote Channel 2 Interrupt of ERU0 Request to NMI Request"]
-pub type ERU02_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERU02_A>;
-impl<'a, REG, const O: u8> ERU02_W<'a, REG, O>
+pub type ERU02_W<'a, REG> = crate::BitWriter<'a, REG, ERU02_A>;
+impl<'a, REG> ERU02_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl ERU03_R {
     }
 }
 #[doc = "Field `ERU03` writer - Promote Channel 3 Interrupt of ERU0 Request to NMI Request"]
-pub type ERU03_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERU03_A>;
-impl<'a, REG, const O: u8> ERU03_W<'a, REG, O>
+pub type ERU03_W<'a, REG> = crate::BitWriter<'a, REG, ERU03_A>;
+impl<'a, REG> ERU03_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -414,44 +414,44 @@ impl W {
     #[doc = "Bit 0 - Promote Pre-Warning Interrupt Request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn prwarn(&mut self) -> PRWARN_W<NMIREQEN_SPEC, 0> {
-        PRWARN_W::new(self)
+    pub fn prwarn(&mut self) -> PRWARN_W<NMIREQEN_SPEC> {
+        PRWARN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Promote RTC Periodic Interrupt request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn pi(&mut self) -> PI_W<NMIREQEN_SPEC, 1> {
-        PI_W::new(self)
+    pub fn pi(&mut self) -> PI_W<NMIREQEN_SPEC> {
+        PI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Promote RTC Alarm Interrupt Request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn ai(&mut self) -> AI_W<NMIREQEN_SPEC, 2> {
-        AI_W::new(self)
+    pub fn ai(&mut self) -> AI_W<NMIREQEN_SPEC> {
+        AI_W::new(self, 2)
     }
     #[doc = "Bit 16 - Promote Channel 0 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn eru00(&mut self) -> ERU00_W<NMIREQEN_SPEC, 16> {
-        ERU00_W::new(self)
+    pub fn eru00(&mut self) -> ERU00_W<NMIREQEN_SPEC> {
+        ERU00_W::new(self, 16)
     }
     #[doc = "Bit 17 - Promote Channel 1 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn eru01(&mut self) -> ERU01_W<NMIREQEN_SPEC, 17> {
-        ERU01_W::new(self)
+    pub fn eru01(&mut self) -> ERU01_W<NMIREQEN_SPEC> {
+        ERU01_W::new(self, 17)
     }
     #[doc = "Bit 18 - Promote Channel 2 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn eru02(&mut self) -> ERU02_W<NMIREQEN_SPEC, 18> {
-        ERU02_W::new(self)
+    pub fn eru02(&mut self) -> ERU02_W<NMIREQEN_SPEC> {
+        ERU02_W::new(self, 18)
     }
     #[doc = "Bit 19 - Promote Channel 3 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn eru03(&mut self) -> ERU03_W<NMIREQEN_SPEC, 19> {
-        ERU03_W::new(self)
+    pub fn eru03(&mut self) -> ERU03_W<NMIREQEN_SPEC> {
+        ERU03_W::new(self, 19)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

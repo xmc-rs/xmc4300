@@ -5,7 +5,7 @@ pub type W = crate::W<BYPCR_SPEC>;
 #[doc = "Field `BWLE` reader - Bypass Word Length"]
 pub type BWLE_R = crate::FieldReader;
 #[doc = "Field `BWLE` writer - Bypass Word Length"]
-pub type BWLE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type BWLE_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `BDSSM` reader - Bypass Data Single Shot Mode"]
 pub type BDSSM_R = crate::BitReader<BDSSM_A>;
 #[doc = "Bypass Data Single Shot Mode\n\nValue on reset: 0"]
@@ -43,8 +43,8 @@ impl BDSSM_R {
     }
 }
 #[doc = "Field `BDSSM` writer - Bypass Data Single Shot Mode"]
-pub type BDSSM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BDSSM_A>;
-impl<'a, REG, const O: u8> BDSSM_W<'a, REG, O>
+pub type BDSSM_W<'a, REG> = crate::BitWriter<'a, REG, BDSSM_A>;
+impl<'a, REG> BDSSM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -117,8 +117,8 @@ impl BDEN_R {
     }
 }
 #[doc = "Field `BDEN` writer - Bypass Data Enable"]
-pub type BDEN_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BDEN_A>;
-impl<'a, REG, const O: u8> BDEN_W<'a, REG, O>
+pub type BDEN_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BDEN_A>;
+impl<'a, REG> BDEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -181,8 +181,8 @@ impl BDVTR_R {
     }
 }
 #[doc = "Field `BDVTR` writer - Bypass Data Valid Trigger"]
-pub type BDVTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BDVTR_A>;
-impl<'a, REG, const O: u8> BDVTR_W<'a, REG, O>
+pub type BDVTR_W<'a, REG> = crate::BitWriter<'a, REG, BDVTR_A>;
+impl<'a, REG> BDVTR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -234,8 +234,8 @@ impl BPRIO_R {
     }
 }
 #[doc = "Field `BPRIO` writer - Bypass Priority"]
-pub type BPRIO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BPRIO_A>;
-impl<'a, REG, const O: u8> BPRIO_W<'a, REG, O>
+pub type BPRIO_W<'a, REG> = crate::BitWriter<'a, REG, BPRIO_A>;
+impl<'a, REG> BPRIO_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -289,11 +289,11 @@ impl BDV_R {
 #[doc = "Field `BSELO` reader - Bypass Select Outputs"]
 pub type BSELO_R = crate::FieldReader;
 #[doc = "Field `BSELO` writer - Bypass Select Outputs"]
-pub type BSELO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
+pub type BSELO_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `BHPC` reader - Bypass Hardware Port Control"]
 pub type BHPC_R = crate::FieldReader;
 #[doc = "Field `BHPC` writer - Bypass Hardware Port Control"]
-pub type BHPC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type BHPC_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:3 - Bypass Word Length"]
     #[inline(always)]
@@ -340,44 +340,44 @@ impl W {
     #[doc = "Bits 0:3 - Bypass Word Length"]
     #[inline(always)]
     #[must_use]
-    pub fn bwle(&mut self) -> BWLE_W<BYPCR_SPEC, 0> {
-        BWLE_W::new(self)
+    pub fn bwle(&mut self) -> BWLE_W<BYPCR_SPEC> {
+        BWLE_W::new(self, 0)
     }
     #[doc = "Bit 8 - Bypass Data Single Shot Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn bdssm(&mut self) -> BDSSM_W<BYPCR_SPEC, 8> {
-        BDSSM_W::new(self)
+    pub fn bdssm(&mut self) -> BDSSM_W<BYPCR_SPEC> {
+        BDSSM_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Bypass Data Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn bden(&mut self) -> BDEN_W<BYPCR_SPEC, 10> {
-        BDEN_W::new(self)
+    pub fn bden(&mut self) -> BDEN_W<BYPCR_SPEC> {
+        BDEN_W::new(self, 10)
     }
     #[doc = "Bit 12 - Bypass Data Valid Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn bdvtr(&mut self) -> BDVTR_W<BYPCR_SPEC, 12> {
-        BDVTR_W::new(self)
+    pub fn bdvtr(&mut self) -> BDVTR_W<BYPCR_SPEC> {
+        BDVTR_W::new(self, 12)
     }
     #[doc = "Bit 13 - Bypass Priority"]
     #[inline(always)]
     #[must_use]
-    pub fn bprio(&mut self) -> BPRIO_W<BYPCR_SPEC, 13> {
-        BPRIO_W::new(self)
+    pub fn bprio(&mut self) -> BPRIO_W<BYPCR_SPEC> {
+        BPRIO_W::new(self, 13)
     }
     #[doc = "Bits 16:20 - Bypass Select Outputs"]
     #[inline(always)]
     #[must_use]
-    pub fn bselo(&mut self) -> BSELO_W<BYPCR_SPEC, 16> {
-        BSELO_W::new(self)
+    pub fn bselo(&mut self) -> BSELO_W<BYPCR_SPEC> {
+        BSELO_W::new(self, 16)
     }
     #[doc = "Bits 21:23 - Bypass Hardware Port Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bhpc(&mut self) -> BHPC_W<BYPCR_SPEC, 21> {
-        BHPC_W::new(self)
+    pub fn bhpc(&mut self) -> BHPC_W<BYPCR_SPEC> {
+        BHPC_W::new(self, 21)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

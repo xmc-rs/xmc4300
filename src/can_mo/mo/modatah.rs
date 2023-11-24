@@ -5,19 +5,19 @@ pub type W = crate::W<MODATAH_SPEC>;
 #[doc = "Field `DB4` reader - Data Byte 4 of Message Object n"]
 pub type DB4_R = crate::FieldReader;
 #[doc = "Field `DB4` writer - Data Byte 4 of Message Object n"]
-pub type DB4_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DB4_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `DB5` reader - Data Byte 5 of Message Object n"]
 pub type DB5_R = crate::FieldReader;
 #[doc = "Field `DB5` writer - Data Byte 5 of Message Object n"]
-pub type DB5_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DB5_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `DB6` reader - Data Byte 6 of Message Object n"]
 pub type DB6_R = crate::FieldReader;
 #[doc = "Field `DB6` writer - Data Byte 6 of Message Object n"]
-pub type DB6_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DB6_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `DB7` reader - Data Byte 7 of Message Object n"]
 pub type DB7_R = crate::FieldReader;
 #[doc = "Field `DB7` writer - Data Byte 7 of Message Object n"]
-pub type DB7_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type DB7_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Data Byte 4 of Message Object n"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:7 - Data Byte 4 of Message Object n"]
     #[inline(always)]
     #[must_use]
-    pub fn db4(&mut self) -> DB4_W<MODATAH_SPEC, 0> {
-        DB4_W::new(self)
+    pub fn db4(&mut self) -> DB4_W<MODATAH_SPEC> {
+        DB4_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Data Byte 5 of Message Object n"]
     #[inline(always)]
     #[must_use]
-    pub fn db5(&mut self) -> DB5_W<MODATAH_SPEC, 8> {
-        DB5_W::new(self)
+    pub fn db5(&mut self) -> DB5_W<MODATAH_SPEC> {
+        DB5_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Data Byte 6 of Message Object n"]
     #[inline(always)]
     #[must_use]
-    pub fn db6(&mut self) -> DB6_W<MODATAH_SPEC, 16> {
-        DB6_W::new(self)
+    pub fn db6(&mut self) -> DB6_W<MODATAH_SPEC> {
+        DB6_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Data Byte 7 of Message Object n"]
     #[inline(always)]
     #[must_use]
-    pub fn db7(&mut self) -> DB7_W<MODATAH_SPEC, 24> {
-        DB7_W::new(self)
+    pub fn db7(&mut self) -> DB7_W<MODATAH_SPEC> {
+        DB7_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
