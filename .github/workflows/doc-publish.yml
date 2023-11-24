@@ -3,20 +3,17 @@ on:
   push:
     branches:
     - master
-    
+
 jobs:
   build:
     name: Build Docs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: actions/checkout@v4.1.1
       - name: Install Toolchain
-        uses: actions-rs/toolchain@v1
+        uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
           toolchain: 'stable'
           target: 'x86_64-unknown-linux-gnu'
       - name: Cargo Doc
-        uses: actions-rs/cargo@v1
-        with:
-          command: doc
-          args: --verbose --no-deps --document-private-items
+        run: cargo doc --verbose --no-deps --document-private-items

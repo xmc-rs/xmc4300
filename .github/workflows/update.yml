@@ -1,5 +1,3 @@
-
-
 on:
   workflow_dispatch:
   schedule:
@@ -11,21 +9,16 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
-      - uses: actions-rs/cargo@v1
-        with:
-          command: install
-          args: svd2rust
-      - uses: actions-rs/cargo@v1
-        with:
-          command: install
-          args: form
+      - uses: actions/checkout@v4.1.1
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - run:  cargo install svd2rust
+      - run:  cargo install form
       - uses: oleksiyrudenko/gha-git-credentials@v2.1.1
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
       - run: |
           rm -r src/
-          svd2rust -i XMC4300.svd
+          svd2rust -i XMC4100.svd
           mkdir src
           form -i lib.rs -o src/
           cargo fmt

@@ -15,20 +15,13 @@ jobs:
     name: ${{ matrix.rust-channel }}-${{ matrix.rust-target }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: actions/checkout@v4.1.1
       - name: Install toolchain
-        uses: actions-rs/toolchain@v1
+        uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
             toolchain: ${{ matrix.rust-channel }}
             target: ${{ matrix.rust-target }}
-            override: true
       - name: Cargo Check
-        uses: actions-rs/cargo@v1
-        with:
-          command: check
-          args: --target ${{ matrix.rust-target }}
+        run: cargo check --target ${{ matrix.rust-target }}
       - name: Cargo Build
-        uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --verbose --target ${{ matrix.rust-target }}
+        run: cargo build --verbose --target ${{ matrix.rust-target }}
