@@ -46,6 +46,8 @@ jobs:
         id: release
         with:
           release-type: rust
+          token: ${{ secrets.GH_PERSONAL_TOKEN }}
+
 
   publish:
     name: Publish to crates.io
