@@ -7,8 +7,6 @@
 
 This is a 'peripheral access crate' for interfacing to the XMC4300 series of microcontrollers for embedded support in Rust that is generated using [svd2rust](https://docs.rs/svd2rust) and an SVD file provided by Infineon.
 
-There is an optional `rt` that can be utilized. An explanation of the feature is given by [svd2rust](https://docs.rs/svd2rust/0.16.1/svd2rust/#the-rt-feature)
-
 All API's and usage (besides what registers exist) are defined by [svd2rust](https://docs.rs/svd2rust)
 
 ## Generate Crate from SVD
