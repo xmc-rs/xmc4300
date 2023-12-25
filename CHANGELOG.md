@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.2](https://github.com/xmc-rs/xmc4300/compare/v0.7.1...v0.7.2) (2023-12-25)
+
+
+### Bug Fixes
+
+* adding default features ([52d6bf4](https://github.com/xmc-rs/xmc4300/commit/52d6bf461195627e9e24ab6401deb1f45cac4d0e))
+* removing toml info from readme ([6116f78](https://github.com/xmc-rs/xmc4300/commit/6116f7868d5d80aa9f90c9dc34bdb1e4e8c1f021))
+
 ## [0.7.1](https://github.com/xmc-rs/xmc4300/compare/v0.7.0...v0.7.1) (2023-12-22)
 
 
