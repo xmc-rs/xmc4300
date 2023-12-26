@@ -37,15 +37,33 @@ impl RegisterBlock {
     pub const fn list(&self, n: usize) -> &LIST {
         &self.list[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x100..0x140 - List Register"]
+    #[inline(always)]
+    pub fn list_iter(&self) -> impl Iterator<Item = &LIST> {
+        self.list.iter()
+    }
     #[doc = "0x140..0x160 - Message Pending Register"]
     #[inline(always)]
     pub const fn mspnd(&self, n: usize) -> &MSPND {
         &self.mspnd[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x140..0x160 - Message Pending Register"]
+    #[inline(always)]
+    pub fn mspnd_iter(&self) -> impl Iterator<Item = &MSPND> {
+        self.mspnd.iter()
+    }
     #[doc = "0x180..0x1a0 - Message Index Register"]
     #[inline(always)]
     pub const fn msid(&self, n: usize) -> &MSID {
         &self.msid[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x180..0x1a0 - Message Index Register"]
+    #[inline(always)]
+    pub fn msid_iter(&self) -> impl Iterator<Item = &MSID> {
+        self.msid.iter()
     }
     #[doc = "0x1c0 - Message Index Mask Register"]
     #[inline(always)]

@@ -17,10 +17,22 @@ impl RegisterBlock {
     pub const fn exicon(&self, n: usize) -> &EXICON {
         &self.exicon[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x10..0x20 - Event Input Control"]
+    #[inline(always)]
+    pub fn exicon_iter(&self) -> impl Iterator<Item = &EXICON> {
+        self.exicon.iter()
+    }
     #[doc = "0x20..0x30 - Event Output Trigger Control"]
     #[inline(always)]
     pub const fn exocon(&self, n: usize) -> &EXOCON {
         &self.exocon[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x20..0x30 - Event Output Trigger Control"]
+    #[inline(always)]
+    pub fn exocon_iter(&self) -> impl Iterator<Item = &EXOCON> {
+        self.exocon.iter()
     }
 }
 #[doc = "EXISEL (rw) register accessor: Event Input Select\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`exisel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`exisel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@exisel`]
