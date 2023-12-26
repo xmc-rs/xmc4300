@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.8.0](https://github.com/xmc-rs/xmc4300/compare/v0.7.2...v0.8.0) (2023-12-26)
+
+
+### Features
+
+* updating from newer svd2rust ([#65](https://github.com/xmc-rs/xmc4300/issues/65)) ([db2a5f5](https://github.com/xmc-rs/xmc4300/commit/db2a5f5cf1d798838b22b32ae1177a9251d9cfad))
+
+
+### Bug Fixes
+
+* moving to 2021 edition ([efcdc16](https://github.com/xmc-rs/xmc4300/commit/efcdc16fef6a00158e0d08cdd5e4cb179075ca55))
+
 ## [0.7.2](https://github.com/xmc-rs/xmc4300/compare/v0.7.1...v0.7.2) (2023-12-25)
 
 
