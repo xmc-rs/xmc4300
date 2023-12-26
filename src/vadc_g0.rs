@@ -80,6 +80,12 @@ impl RegisterBlock {
     pub const fn iclass(&self, n: usize) -> &ICLASS {
         &self.iclass[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0xa0..0xa8 - Input Class Register"]
+    #[inline(always)]
+    pub fn iclass_iter(&self) -> impl Iterator<Item = &ICLASS> {
+        self.iclass.iter()
+    }
     #[doc = "0xb0 - Alias Register"]
     #[inline(always)]
     pub const fn alias(&self) -> &ALIAS {
@@ -235,20 +241,44 @@ impl RegisterBlock {
     pub const fn chctr(&self, n: usize) -> &CHCTR {
         &self.chctr[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x200..0x220 - Channel Ctrl. Reg."]
+    #[inline(always)]
+    pub fn chctr_iter(&self) -> impl Iterator<Item = &CHCTR> {
+        self.chctr.iter()
+    }
     #[doc = "0x280..0x2c0 - Result Control Register"]
     #[inline(always)]
     pub const fn rcr(&self, n: usize) -> &RCR {
         &self.rcr[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x280..0x2c0 - Result Control Register"]
+    #[inline(always)]
+    pub fn rcr_iter(&self) -> impl Iterator<Item = &RCR> {
+        self.rcr.iter()
     }
     #[doc = "0x300..0x340 - Result Register"]
     #[inline(always)]
     pub const fn res(&self, n: usize) -> &RES {
         &self.res[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x300..0x340 - Result Register"]
+    #[inline(always)]
+    pub fn res_iter(&self) -> impl Iterator<Item = &RES> {
+        self.res.iter()
+    }
     #[doc = "0x380..0x3c0 - Result Register, Debug"]
     #[inline(always)]
     pub const fn resd(&self, n: usize) -> &RESD {
         &self.resd[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x380..0x3c0 - Result Register, Debug"]
+    #[inline(always)]
+    pub fn resd_iter(&self) -> impl Iterator<Item = &RESD> {
+        self.resd.iter()
     }
 }
 #[doc = "ARBCFG (rw) register accessor: Arbitration Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`arbcfg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`arbcfg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@arbcfg`]

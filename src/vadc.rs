@@ -60,6 +60,12 @@ impl RegisterBlock {
     pub const fn globiclass(&self, n: usize) -> &GLOBICLASS {
         &self.globiclass[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0xa0..0xa8 - Input Class Register, Global"]
+    #[inline(always)]
+    pub fn globiclass_iter(&self) -> impl Iterator<Item = &GLOBICLASS> {
+        self.globiclass.iter()
+    }
     #[doc = "0xb8 - Global Boundary Select Register"]
     #[inline(always)]
     pub const fn globbound(&self) -> &GLOBBOUND {
@@ -85,10 +91,22 @@ impl RegisterBlock {
     pub const fn brssel(&self, n: usize) -> &BRSSEL {
         &self.brssel[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x180..0x188 - Background Request Source Channel Select Register"]
+    #[inline(always)]
+    pub fn brssel_iter(&self) -> impl Iterator<Item = &BRSSEL> {
+        self.brssel.iter()
+    }
     #[doc = "0x1c0..0x1c8 - Background Request Source Pending Register"]
     #[inline(always)]
     pub const fn brspnd(&self, n: usize) -> &BRSPND {
         &self.brspnd[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x1c0..0x1c8 - Background Request Source Pending Register"]
+    #[inline(always)]
+    pub fn brspnd_iter(&self) -> impl Iterator<Item = &BRSPND> {
+        self.brspnd.iter()
     }
     #[doc = "0x200 - Background Request Source Control Register"]
     #[inline(always)]

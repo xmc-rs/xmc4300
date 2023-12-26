@@ -213,6 +213,12 @@ impl RegisterBlock {
     pub const fn tbuf(&self, n: usize) -> &TBUF {
         &self.tbuf[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x80..0x100 - Transmit Buffer"]
+    #[inline(always)]
+    pub fn tbuf_iter(&self) -> impl Iterator<Item = &TBUF> {
+        self.tbuf.iter()
+    }
     #[doc = "0x100 - Bypass Data Register"]
     #[inline(always)]
     pub const fn byp(&self) -> &BYP {
@@ -262,6 +268,12 @@ impl RegisterBlock {
     #[inline(always)]
     pub const fn in_(&self, n: usize) -> &IN {
         &self.in_[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x180..0x200 - Transmit FIFO Buffer"]
+    #[inline(always)]
+    pub fn in__iter(&self) -> impl Iterator<Item = &IN> {
+        self.in_.iter()
     }
 }
 #[doc = "CCFG (r) register accessor: Channel Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccfg::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ccfg`]

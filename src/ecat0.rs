@@ -401,6 +401,12 @@ PDI Configuration"]
     pub const fn eep_data(&self, n: usize) -> &EEP_DATA {
         &self.eep_data[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x508..0x510 - EEPROM Read/Write data"]
+    #[inline(always)]
+    pub fn eep_data_iter(&self) -> impl Iterator<Item = &EEP_DATA> {
+        self.eep_data.iter()
+    }
     #[doc = "0x510 - MII Management Control/Status"]
     #[inline(always)]
     pub const fn mii_cont_stat(&self) -> &MII_CONT_STAT {
@@ -453,15 +459,33 @@ PDI Configuration"]
         [(); 2][n];
         unsafe { &*(self as *const Self).cast::<u8>().add(2320).add(4 * n).cast() }
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x910..0x918 - System Time read access"]
+    #[inline(always)]
+    pub fn readmode_dc_sys_time_iter(&self) -> impl Iterator<Item = &READMODE_DC_SYS_TIME> {
+        (0..2).map(|n| unsafe { &*(self as *const Self).cast::<u8>().add(2320).add(4 * n).cast() })
+    }
     #[doc = "0x918..0x920 - Local time of the beginning of a frame"]
     #[inline(always)]
     pub const fn receive_time_pu(&self, n: usize) -> &RECEIVE_TIME_PU {
         &self.receive_time_pu[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x918..0x920 - Local time of the beginning of a frame"]
+    #[inline(always)]
+    pub fn receive_time_pu_iter(&self) -> impl Iterator<Item = &RECEIVE_TIME_PU> {
+        self.receive_time_pu.iter()
+    }
     #[doc = "0x920..0x928 - Difference between local time and System Time"]
     #[inline(always)]
     pub const fn dc_sys_time_offset(&self, n: usize) -> &DC_SYS_TIME_OFFSET {
         &self.dc_sys_time_offset[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x920..0x928 - Difference between local time and System Time"]
+    #[inline(always)]
+    pub fn dc_sys_time_offset_iter(&self) -> impl Iterator<Item = &DC_SYS_TIME_OFFSET> {
+        self.dc_sys_time_offset.iter()
     }
     #[doc = "0x928 - System Time Delay"]
     #[inline(always)]
@@ -528,10 +552,22 @@ PDI Configuration"]
     pub const fn dc_cyc_start_time(&self, n: usize) -> &DC_CYC_START_TIME {
         &self.dc_cyc_start_time[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x990..0x998 - Start Time Cyclic Operation"]
+    #[inline(always)]
+    pub fn dc_cyc_start_time_iter(&self) -> impl Iterator<Item = &DC_CYC_START_TIME> {
+        self.dc_cyc_start_time.iter()
+    }
     #[doc = "0x998..0x9a0 - System time of next SYNC1 pulse in ns"]
     #[inline(always)]
     pub const fn dc_next_sync1_pulse(&self, n: usize) -> &DC_NEXT_SYNC1_PULSE {
         &self.dc_next_sync1_pulse[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x998..0x9a0 - System time of next SYNC1 pulse in ns"]
+    #[inline(always)]
+    pub fn dc_next_sync1_pulse_iter(&self) -> impl Iterator<Item = &DC_NEXT_SYNC1_PULSE> {
+        self.dc_next_sync1_pulse.iter()
     }
     #[doc = "0x9a0 - SYNC0 Cycle Time"]
     #[inline(always)]
@@ -568,20 +604,44 @@ PDI Configuration"]
     pub const fn dc_latch0_time_pos(&self, n: usize) -> &DC_LATCH0_TIME_POS {
         &self.dc_latch0_time_pos[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x9b0..0x9b8 - Register captures System time at the positive edge of the Latch0 signal"]
+    #[inline(always)]
+    pub fn dc_latch0_time_pos_iter(&self) -> impl Iterator<Item = &DC_LATCH0_TIME_POS> {
+        self.dc_latch0_time_pos.iter()
+    }
     #[doc = "0x9b8..0x9c0 - Register captures System time at the negative edge of the Latch0 signal"]
     #[inline(always)]
     pub const fn dc_latch0_time_neg(&self, n: usize) -> &DC_LATCH0_TIME_NEG {
         &self.dc_latch0_time_neg[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x9b8..0x9c0 - Register captures System time at the negative edge of the Latch0 signal"]
+    #[inline(always)]
+    pub fn dc_latch0_time_neg_iter(&self) -> impl Iterator<Item = &DC_LATCH0_TIME_NEG> {
+        self.dc_latch0_time_neg.iter()
     }
     #[doc = "0x9c0..0x9c8 - Register captures System time at the positive edge of the Latch1 signal"]
     #[inline(always)]
     pub const fn dc_latch1_time_pos(&self, n: usize) -> &DC_LATCH1_TIME_POS {
         &self.dc_latch1_time_pos[n]
     }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x9c0..0x9c8 - Register captures System time at the positive edge of the Latch1 signal"]
+    #[inline(always)]
+    pub fn dc_latch1_time_pos_iter(&self) -> impl Iterator<Item = &DC_LATCH1_TIME_POS> {
+        self.dc_latch1_time_pos.iter()
+    }
     #[doc = "0x9c8..0x9d0 - Register captures System time at the negative edge of the Latch1 signal"]
     #[inline(always)]
     pub const fn dc_latch1_time_neg(&self, n: usize) -> &DC_LATCH1_TIME_NEG {
         &self.dc_latch1_time_neg[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x9c8..0x9d0 - Register captures System time at the negative edge of the Latch1 signal"]
+    #[inline(always)]
+    pub fn dc_latch1_time_neg_iter(&self) -> impl Iterator<Item = &DC_LATCH1_TIME_NEG> {
+        self.dc_latch1_time_neg.iter()
     }
     #[doc = "0x9f0 - EtherCAT Buffer Change Event Time"]
     #[inline(always)]
