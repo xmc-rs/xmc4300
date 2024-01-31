@@ -28,7 +28,7 @@ jobs:
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.APP_SECRET_KEY }}
-      - uses: peter-evans/create-pull-request@v5
+      - uses: peter-evans/create-pull-request@v6
         with:
           branch: svd-update
           commit-message: "feat: updating from newer svd2rust"
