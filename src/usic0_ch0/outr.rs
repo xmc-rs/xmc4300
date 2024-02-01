@@ -25,5 +25,5 @@ impl crate::RegisterSpec for OUTR_SPEC {
 impl crate::Readable for OUTR_SPEC {}
 #[doc = "`reset()` method sets OUTR to value 0"]
 impl crate::Resettable for OUTR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -60,5 +60,5 @@ impl crate::RegisterSpec for RAWSTAT_SPEC {
 impl crate::Readable for RAWSTAT_SPEC {}
 #[doc = "`reset()` method sets RAWSTAT to value 0"]
 impl crate::Resettable for RAWSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

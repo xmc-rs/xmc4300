@@ -40,10 +40,10 @@ impl crate::RegisterSpec for RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC {
 impl crate::Readable for RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`receive_interrupt_watchdog_timer::W`](W) writer structure"]
 impl crate::Writable for RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RECEIVE_INTERRUPT_WATCHDOG_TIMER to value 0"]
 impl crate::Resettable for RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

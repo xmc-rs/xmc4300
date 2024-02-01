@@ -89,10 +89,10 @@ impl crate::RegisterSpec for EEP_STATE_SPEC {
 impl crate::Readable for EEP_STATE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`eep_state::W`](W) writer structure"]
 impl crate::Writable for EEP_STATE_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets EEP_STATE to value 0"]
 impl crate::Resettable for EEP_STATE_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

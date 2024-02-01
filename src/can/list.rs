@@ -74,5 +74,5 @@ impl crate::Readable for LIST_SPEC {}
 #[doc = "`reset()` method sets LIST[%s]
 to value 0"]
 impl crate::Resettable for LIST_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -27,10 +27,10 @@ impl crate::RegisterSpec for WRITEMODE_DC_SYS_TIME_SPEC {
 }
 #[doc = "`write(|w| ..)` method takes [`writemode_dc_sys_time::W`](W) writer structure"]
 impl crate::Writable for WRITEMODE_DC_SYS_TIME_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DC_SYS_TIME to value 0"]
 impl crate::Resettable for WRITEMODE_DC_SYS_TIME_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

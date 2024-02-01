@@ -40,10 +40,10 @@ impl crate::RegisterSpec for MII_PHY_DATA_SPEC {
 impl crate::Readable for MII_PHY_DATA_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mii_phy_data::W`](W) writer structure"]
 impl crate::Writable for MII_PHY_DATA_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets MII_PHY_DATA to value 0"]
 impl crate::Resettable for MII_PHY_DATA_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u16 = 0;
 }

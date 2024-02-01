@@ -18,5 +18,5 @@ impl crate::RegisterSpec for CLKCALCONST_SPEC {
 impl crate::Readable for CLKCALCONST_SPEC {}
 #[doc = "`reset()` method sets CLKCALCONST to value 0"]
 impl crate::Resettable for CLKCALCONST_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

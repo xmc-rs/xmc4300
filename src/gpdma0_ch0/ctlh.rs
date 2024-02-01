@@ -55,10 +55,10 @@ impl crate::RegisterSpec for CTLH_SPEC {
 impl crate::Readable for CTLH_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ctlh::W`](W) writer structure"]
 impl crate::Writable for CTLH_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CTLH to value 0x02"]
 impl crate::Resettable for CTLH_SPEC {
-    const RESET_VALUE: Self::Ux = 0x02;
+    const RESET_VALUE: u32 = 0x02;
 }

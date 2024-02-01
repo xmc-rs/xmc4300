@@ -447,10 +447,10 @@ impl crate::RegisterSpec for USBPLLCON_SPEC {
 impl crate::Readable for USBPLLCON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`usbpllcon::W`](W) writer structure"]
 impl crate::Writable for USBPLLCON_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets USBPLLCON to value 0x0001_0003"]
 impl crate::Resettable for USBPLLCON_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0001_0003;
+    const RESET_VALUE: u32 = 0x0001_0003;
 }

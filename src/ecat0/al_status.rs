@@ -262,10 +262,10 @@ impl crate::RegisterSpec for AL_STATUS_SPEC {
 impl crate::Readable for AL_STATUS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`al_status::W`](W) writer structure"]
 impl crate::Writable for AL_STATUS_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets AL_STATUS to value 0x01"]
 impl crate::Resettable for AL_STATUS_SPEC {
-    const RESET_VALUE: Self::Ux = 0x01;
+    const RESET_VALUE: u16 = 0x01;
 }

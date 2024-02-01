@@ -257,5 +257,5 @@ impl crate::RegisterSpec for CCFG_SPEC {
 impl crate::Readable for CCFG_SPEC {}
 #[doc = "`reset()` method sets CCFG to value 0xcf"]
 impl crate::Resettable for CCFG_SPEC {
-    const RESET_VALUE: Self::Ux = 0xcf;
+    const RESET_VALUE: u32 = 0xcf;
 }

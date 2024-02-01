@@ -170,5 +170,5 @@ impl crate::RegisterSpec for CPUID_SPEC {
 impl crate::Readable for CPUID_SPEC {}
 #[doc = "`reset()` method sets CPUID to value 0x410f_c241"]
 impl crate::Resettable for CPUID_SPEC {
-    const RESET_VALUE: Self::Ux = 0x410f_c241;
+    const RESET_VALUE: u32 = 0x410f_c241;
 }

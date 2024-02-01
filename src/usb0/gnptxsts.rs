@@ -173,5 +173,5 @@ impl crate::RegisterSpec for GNPTXSTS_SPEC {
 impl crate::Readable for GNPTXSTS_SPEC {}
 #[doc = "`reset()` method sets GNPTXSTS to value 0x0008_0010"]
 impl crate::Resettable for GNPTXSTS_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0008_0010;
+    const RESET_VALUE: u32 = 0x0008_0010;
 }

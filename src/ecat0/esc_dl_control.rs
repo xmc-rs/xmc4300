@@ -558,5 +558,5 @@ impl crate::RegisterSpec for ESC_DL_CONTROL_SPEC {
 impl crate::Readable for ESC_DL_CONTROL_SPEC {}
 #[doc = "`reset()` method sets ESC_DL_CONTROL to value 0x0007_c001"]
 impl crate::Resettable for ESC_DL_CONTROL_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0007_c001;
+    const RESET_VALUE: u32 = 0x0007_c001;
 }

@@ -216,5 +216,5 @@ impl crate::RegisterSpec for USBPLLSTAT_SPEC {
 impl crate::Readable for USBPLLSTAT_SPEC {}
 #[doc = "`reset()` method sets USBPLLSTAT to value 0x02"]
 impl crate::Resettable for USBPLLSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0x02;
+    const RESET_VALUE: u32 = 0x02;
 }

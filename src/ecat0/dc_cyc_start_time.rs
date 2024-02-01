@@ -40,11 +40,11 @@ impl crate::RegisterSpec for DC_CYC_START_TIME_SPEC {
 impl crate::Readable for DC_CYC_START_TIME_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dc_cyc_start_time::W`](W) writer structure"]
 impl crate::Writable for DC_CYC_START_TIME_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DC_CYC_START_TIME[%s]
 to value 0"]
 impl crate::Resettable for DC_CYC_START_TIME_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -18,5 +18,5 @@ impl crate::RegisterSpec for RXICMP_GOOD_OCTETS_SPEC {
 impl crate::Readable for RXICMP_GOOD_OCTETS_SPEC {}
 #[doc = "`reset()` method sets RXICMP_GOOD_OCTETS to value 0"]
 impl crate::Resettable for RXICMP_GOOD_OCTETS_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

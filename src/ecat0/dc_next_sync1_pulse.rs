@@ -19,5 +19,5 @@ impl crate::Readable for DC_NEXT_SYNC1_PULSE_SPEC {}
 #[doc = "`reset()` method sets DC_NEXT_SYNC1_PULSE[%s]
 to value 0"]
 impl crate::Resettable for DC_NEXT_SYNC1_PULSE_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

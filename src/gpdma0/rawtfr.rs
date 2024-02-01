@@ -145,10 +145,10 @@ impl crate::RegisterSpec for RAWTFR_SPEC {
 impl crate::Readable for RAWTFR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`rawtfr::W`](W) writer structure"]
 impl crate::Writable for RAWTFR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RAWTFR to value 0"]
 impl crate::Resettable for RAWTFR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

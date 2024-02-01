@@ -18,5 +18,5 @@ impl crate::RegisterSpec for FMMU_NUM_SPEC {
 impl crate::Readable for FMMU_NUM_SPEC {}
 #[doc = "`reset()` method sets FMMU_NUM to value 0x08"]
 impl crate::Resettable for FMMU_NUM_SPEC {
-    const RESET_VALUE: Self::Ux = 0x08;
+    const RESET_VALUE: u8 = 0x08;
 }

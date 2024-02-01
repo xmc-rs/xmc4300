@@ -99,10 +99,10 @@ impl crate::RegisterSpec for SWR_SPEC {
 }
 #[doc = "`write(|w| ..)` method takes [`swr::W`](W) writer structure"]
 impl crate::Writable for SWR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SWR to value 0"]
 impl crate::Resettable for SWR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

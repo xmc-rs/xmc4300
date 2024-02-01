@@ -380,5 +380,5 @@ impl crate::RegisterSpec for PLLSTAT_SPEC {
 impl crate::Readable for PLLSTAT_SPEC {}
 #[doc = "`reset()` method sets PLLSTAT to value 0x02"]
 impl crate::Resettable for PLLSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0x02;
+    const RESET_VALUE: u32 = 0x02;
 }

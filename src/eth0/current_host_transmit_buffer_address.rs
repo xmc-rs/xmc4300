@@ -18,5 +18,5 @@ impl crate::RegisterSpec for CURRENT_HOST_TRANSMIT_BUFFER_ADDRESS_SPEC {
 impl crate::Readable for CURRENT_HOST_TRANSMIT_BUFFER_ADDRESS_SPEC {}
 #[doc = "`reset()` method sets CURRENT_HOST_TRANSMIT_BUFFER_ADDRESS to value 0"]
 impl crate::Resettable for CURRENT_HOST_TRANSMIT_BUFFER_ADDRESS_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

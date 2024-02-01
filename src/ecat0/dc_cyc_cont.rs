@@ -134,5 +134,5 @@ impl crate::RegisterSpec for DC_CYC_CONT_SPEC {
 impl crate::Readable for DC_CYC_CONT_SPEC {}
 #[doc = "`reset()` method sets DC_CYC_CONT to value 0"]
 impl crate::Resettable for DC_CYC_CONT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

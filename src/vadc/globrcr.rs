@@ -210,10 +210,10 @@ impl crate::RegisterSpec for GLOBRCR_SPEC {
 impl crate::Readable for GLOBRCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`globrcr::W`](W) writer structure"]
 impl crate::Writable for GLOBRCR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GLOBRCR to value 0"]
 impl crate::Resettable for GLOBRCR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

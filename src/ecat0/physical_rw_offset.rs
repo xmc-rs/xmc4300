@@ -18,5 +18,5 @@ impl crate::RegisterSpec for PHYSICAL_RW_OFFSET_SPEC {
 impl crate::Readable for PHYSICAL_RW_OFFSET_SPEC {}
 #[doc = "`reset()` method sets PHYSICAL_RW_OFFSET to value 0"]
 impl crate::Resettable for PHYSICAL_RW_OFFSET_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u16 = 0;
 }

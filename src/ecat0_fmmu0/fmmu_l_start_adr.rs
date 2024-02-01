@@ -18,5 +18,5 @@ impl crate::RegisterSpec for FMMU_L_START_ADR_SPEC {
 impl crate::Readable for FMMU_L_START_ADR_SPEC {}
 #[doc = "`reset()` method sets FMMU_L_START_ADR to value 0"]
 impl crate::Resettable for FMMU_L_START_ADR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

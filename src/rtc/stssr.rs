@@ -60,5 +60,5 @@ impl crate::RegisterSpec for STSSR_SPEC {
 impl crate::Readable for STSSR_SPEC {}
 #[doc = "`reset()` method sets STSSR to value 0"]
 impl crate::Resettable for STSSR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

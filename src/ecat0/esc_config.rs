@@ -339,5 +339,5 @@ impl crate::RegisterSpec for ESC_CONFIG_SPEC {
 impl crate::Readable for ESC_CONFIG_SPEC {}
 #[doc = "`reset()` method sets ESC_CONFIG to value 0xfe"]
 impl crate::Resettable for ESC_CONFIG_SPEC {
-    const RESET_VALUE: Self::Ux = 0xfe;
+    const RESET_VALUE: u8 = 0xfe;
 }

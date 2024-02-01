@@ -85,10 +85,10 @@ impl crate::RegisterSpec for MOFGPR_SPEC {
 impl crate::Readable for MOFGPR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mofgpr::W`](W) writer structure"]
 impl crate::Writable for MOFGPR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MOFGPR to value 0"]
 impl crate::Resettable for MOFGPR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

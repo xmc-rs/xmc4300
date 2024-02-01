@@ -164,5 +164,5 @@ impl crate::RegisterSpec for GRXSTSR_DEVICEMODE_SPEC {
 impl crate::Readable for GRXSTSR_DEVICEMODE_SPEC {}
 #[doc = "`reset()` method sets GRXSTSR_DEVICEMODE to value 0"]
 impl crate::Resettable for GRXSTSR_DEVICEMODE_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

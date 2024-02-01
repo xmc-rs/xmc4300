@@ -193,5 +193,5 @@ impl crate::RegisterSpec for MMC_RECEIVE_INTERRUPT_SPEC {
 impl crate::Readable for MMC_RECEIVE_INTERRUPT_SPEC {}
 #[doc = "`reset()` method sets MMC_RECEIVE_INTERRUPT to value 0"]
 impl crate::Resettable for MMC_RECEIVE_INTERRUPT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

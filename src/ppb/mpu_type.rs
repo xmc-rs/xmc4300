@@ -32,5 +32,5 @@ impl crate::RegisterSpec for MPU_TYPE_SPEC {
 impl crate::Readable for MPU_TYPE_SPEC {}
 #[doc = "`reset()` method sets MPU_TYPE to value 0x0800"]
 impl crate::Resettable for MPU_TYPE_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0800;
+    const RESET_VALUE: u32 = 0x0800;
 }

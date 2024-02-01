@@ -18,5 +18,5 @@ impl crate::RegisterSpec for RX_OCTET_COUNT_GOOD_BAD_SPEC {
 impl crate::Readable for RX_OCTET_COUNT_GOOD_BAD_SPEC {}
 #[doc = "`reset()` method sets RX_OCTET_COUNT_GOOD_BAD to value 0"]
 impl crate::Resettable for RX_OCTET_COUNT_GOOD_BAD_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

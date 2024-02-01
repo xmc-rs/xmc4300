@@ -18,5 +18,5 @@ impl crate::RegisterSpec for RXIPV4_HEADER_ERROR_OCTETS_SPEC {
 impl crate::Readable for RXIPV4_HEADER_ERROR_OCTETS_SPEC {}
 #[doc = "`reset()` method sets RXIPV4_HEADER_ERROR_OCTETS to value 0"]
 impl crate::Resettable for RXIPV4_HEADER_ERROR_OCTETS_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

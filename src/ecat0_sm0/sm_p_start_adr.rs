@@ -18,5 +18,5 @@ impl crate::RegisterSpec for SM_P_START_ADR_SPEC {
 impl crate::Readable for SM_P_START_ADR_SPEC {}
 #[doc = "`reset()` method sets SM_P_START_ADR to value 0"]
 impl crate::Resettable for SM_P_START_ADR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u16 = 0;
 }

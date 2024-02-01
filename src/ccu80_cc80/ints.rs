@@ -387,5 +387,5 @@ impl crate::RegisterSpec for INTS_SPEC {
 impl crate::Readable for INTS_SPEC {}
 #[doc = "`reset()` method sets INTS to value 0"]
 impl crate::Resettable for INTS_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

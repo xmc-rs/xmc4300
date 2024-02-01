@@ -66,5 +66,5 @@ impl crate::RegisterSpec for C1V_SPEC {
 impl crate::Readable for C1V_SPEC {}
 #[doc = "`reset()` method sets C1V to value 0"]
 impl crate::Resettable for C1V_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

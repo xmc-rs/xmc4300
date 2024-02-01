@@ -278,5 +278,5 @@ impl crate::RegisterSpec for SM_STATUS_SPEC {
 impl crate::Readable for SM_STATUS_SPEC {}
 #[doc = "`reset()` method sets SM_STATUS to value 0x30"]
 impl crate::Resettable for SM_STATUS_SPEC {
-    const RESET_VALUE: Self::Ux = 0x30;
+    const RESET_VALUE: u8 = 0x30;
 }

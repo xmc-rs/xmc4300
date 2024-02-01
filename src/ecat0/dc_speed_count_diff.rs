@@ -18,5 +18,5 @@ impl crate::RegisterSpec for DC_SPEED_COUNT_DIFF_SPEC {
 impl crate::Readable for DC_SPEED_COUNT_DIFF_SPEC {}
 #[doc = "`reset()` method sets DC_SPEED_COUNT_DIFF to value 0"]
 impl crate::Resettable for DC_SPEED_COUNT_DIFF_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u16 = 0;
 }

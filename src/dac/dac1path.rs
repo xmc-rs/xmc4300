@@ -70,10 +70,10 @@ impl crate::RegisterSpec for DAC1PATH_SPEC {
 impl crate::Readable for DAC1PATH_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dac1path::W`](W) writer structure"]
 impl crate::Writable for DAC1PATH_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DAC1PATH to value 0x7fdd"]
 impl crate::Resettable for DAC1PATH_SPEC {
-    const RESET_VALUE: Self::Ux = 0x7fdd;
+    const RESET_VALUE: u32 = 0x7fdd;
 }

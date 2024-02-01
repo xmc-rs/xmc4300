@@ -421,5 +421,5 @@ impl crate::RegisterSpec for PROCON1_SPEC {
 impl crate::Readable for PROCON1_SPEC {}
 #[doc = "`reset()` method sets PROCON1 to value 0"]
 impl crate::Resettable for PROCON1_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

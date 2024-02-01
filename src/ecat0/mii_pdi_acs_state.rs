@@ -130,10 +130,10 @@ impl crate::RegisterSpec for MII_PDI_ACS_STATE_SPEC {
 impl crate::Readable for MII_PDI_ACS_STATE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mii_pdi_acs_state::W`](W) writer structure"]
 impl crate::Writable for MII_PDI_ACS_STATE_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets MII_PDI_ACS_STATE to value 0"]
 impl crate::Resettable for MII_PDI_ACS_STATE_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

@@ -25,5 +25,5 @@ impl crate::RegisterSpec for IDMANUF_SPEC {
 impl crate::Readable for IDMANUF_SPEC {}
 #[doc = "`reset()` method sets IDMANUF to value 0x1820"]
 impl crate::Resettable for IDMANUF_SPEC {
-    const RESET_VALUE: Self::Ux = 0x1820;
+    const RESET_VALUE: u32 = 0x1820;
 }

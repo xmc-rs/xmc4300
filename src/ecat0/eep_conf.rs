@@ -93,5 +93,5 @@ impl crate::RegisterSpec for EEP_CONF_SPEC {
 impl crate::Readable for EEP_CONF_SPEC {}
 #[doc = "`reset()` method sets EEP_CONF to value 0"]
 impl crate::Resettable for EEP_CONF_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

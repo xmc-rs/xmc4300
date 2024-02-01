@@ -226,5 +226,5 @@ impl crate::RegisterSpec for SM_CONTROL_SPEC {
 impl crate::Readable for SM_CONTROL_SPEC {}
 #[doc = "`reset()` method sets SM_CONTROL to value 0"]
 impl crate::Resettable for SM_CONTROL_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

@@ -104,10 +104,10 @@ impl crate::RegisterSpec for HFIR_SPEC {
 impl crate::Readable for HFIR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hfir::W`](W) writer structure"]
 impl crate::Writable for HFIR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HFIR to value 0xea60"]
 impl crate::Resettable for HFIR_SPEC {
-    const RESET_VALUE: Self::Ux = 0xea60;
+    const RESET_VALUE: u32 = 0xea60;
 }

@@ -1077,10 +1077,10 @@ impl crate::RegisterSpec for HDCR_SPEC {
 impl crate::Readable for HDCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hdcr::W`](W) writer structure"]
 impl crate::Writable for HDCR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HDCR to value 0x000c_2000"]
 impl crate::Resettable for HDCR_SPEC {
-    const RESET_VALUE: Self::Ux = 0x000c_2000;
+    const RESET_VALUE: u32 = 0x000c_2000;
 }

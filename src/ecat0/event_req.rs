@@ -462,5 +462,5 @@ impl crate::RegisterSpec for EVENT_REQ_SPEC {
 impl crate::Readable for EVENT_REQ_SPEC {}
 #[doc = "`reset()` method sets EVENT_REQ to value 0x04"]
 impl crate::Resettable for EVENT_REQ_SPEC {
-    const RESET_VALUE: Self::Ux = 0x04;
+    const RESET_VALUE: u16 = 0x04;
 }

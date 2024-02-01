@@ -40,10 +40,10 @@ impl crate::RegisterSpec for WD_TIME_PDATA_SPEC {
 impl crate::Readable for WD_TIME_PDATA_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`wd_time_pdata::W`](W) writer structure"]
 impl crate::Writable for WD_TIME_PDATA_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets WD_TIME_PDATA to value 0x03e8"]
 impl crate::Resettable for WD_TIME_PDATA_SPEC {
-    const RESET_VALUE: Self::Ux = 0x03e8;
+    const RESET_VALUE: u16 = 0x03e8;
 }

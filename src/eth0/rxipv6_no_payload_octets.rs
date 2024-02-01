@@ -18,5 +18,5 @@ impl crate::RegisterSpec for RXIPV6_NO_PAYLOAD_OCTETS_SPEC {
 impl crate::Readable for RXIPV6_NO_PAYLOAD_OCTETS_SPEC {}
 #[doc = "`reset()` method sets RXIPV6_NO_PAYLOAD_OCTETS to value 0"]
 impl crate::Resettable for RXIPV6_NO_PAYLOAD_OCTETS_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

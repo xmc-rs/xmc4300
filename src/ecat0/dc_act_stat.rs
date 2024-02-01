@@ -134,5 +134,5 @@ impl crate::RegisterSpec for DC_ACT_STAT_SPEC {
 impl crate::Readable for DC_ACT_STAT_SPEC {}
 #[doc = "`reset()` method sets DC_ACT_STAT to value 0"]
 impl crate::Resettable for DC_ACT_STAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

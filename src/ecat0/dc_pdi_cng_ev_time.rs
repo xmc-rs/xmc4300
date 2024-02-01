@@ -18,5 +18,5 @@ impl crate::RegisterSpec for DC_PDI_CNG_EV_TIME_SPEC {
 impl crate::Readable for DC_PDI_CNG_EV_TIME_SPEC {}
 #[doc = "`reset()` method sets DC_PDI_CNG_EV_TIME to value 0"]
 impl crate::Resettable for DC_PDI_CNG_EV_TIME_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

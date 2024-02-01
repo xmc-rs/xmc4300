@@ -207,10 +207,10 @@ impl crate::RegisterSpec for INPR_SPEC {
 impl crate::Readable for INPR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`inpr::W`](W) writer structure"]
 impl crate::Writable for INPR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INPR to value 0"]
 impl crate::Resettable for INPR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

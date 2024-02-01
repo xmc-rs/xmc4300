@@ -18,5 +18,5 @@ impl crate::RegisterSpec for WD_COUNT_PDI_SPEC {
 impl crate::Readable for WD_COUNT_PDI_SPEC {}
 #[doc = "`reset()` method sets WD_COUNT_PDI to value 0"]
 impl crate::Resettable for WD_COUNT_PDI_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

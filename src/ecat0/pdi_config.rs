@@ -119,5 +119,5 @@ impl crate::RegisterSpec for PDI_CONFIG_SPEC {
 impl crate::Readable for PDI_CONFIG_SPEC {}
 #[doc = "`reset()` method sets PDI_CONFIG to value 0x81"]
 impl crate::Resettable for PDI_CONFIG_SPEC {
-    const RESET_VALUE: Self::Ux = 0x81;
+    const RESET_VALUE: u8 = 0x81;
 }

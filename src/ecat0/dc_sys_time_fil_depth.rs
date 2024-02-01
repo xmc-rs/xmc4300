@@ -40,10 +40,10 @@ impl crate::RegisterSpec for DC_SYS_TIME_FIL_DEPTH_SPEC {
 impl crate::Readable for DC_SYS_TIME_FIL_DEPTH_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dc_sys_time_fil_depth::W`](W) writer structure"]
 impl crate::Writable for DC_SYS_TIME_FIL_DEPTH_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets DC_SYS_TIME_FIL_DEPTH to value 0x04"]
 impl crate::Resettable for DC_SYS_TIME_FIL_DEPTH_SPEC {
-    const RESET_VALUE: Self::Ux = 0x04;
+    const RESET_VALUE: u8 = 0x04;
 }

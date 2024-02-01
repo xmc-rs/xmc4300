@@ -163,5 +163,5 @@ impl crate::RegisterSpec for AL_CONTROL_SPEC {
 impl crate::Readable for AL_CONTROL_SPEC {}
 #[doc = "`reset()` method sets AL_CONTROL to value 0x01"]
 impl crate::Resettable for AL_CONTROL_SPEC {
-    const RESET_VALUE: Self::Ux = 0x01;
+    const RESET_VALUE: u16 = 0x01;
 }

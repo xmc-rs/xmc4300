@@ -18,5 +18,5 @@ impl crate::RegisterSpec for RXUDP_ERROR_FRAMES_SPEC {
 impl crate::Readable for RXUDP_ERROR_FRAMES_SPEC {}
 #[doc = "`reset()` method sets RXUDP_ERROR_FRAMES to value 0"]
 impl crate::Resettable for RXUDP_ERROR_FRAMES_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

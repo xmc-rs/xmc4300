@@ -264,10 +264,10 @@ impl crate::RegisterSpec for MPU_RASR_SPEC {
 impl crate::Readable for MPU_RASR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mpu_rasr::W`](W) writer structure"]
 impl crate::Writable for MPU_RASR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MPU_RASR to value 0"]
 impl crate::Resettable for MPU_RASR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

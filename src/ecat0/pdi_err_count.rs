@@ -18,5 +18,5 @@ impl crate::RegisterSpec for PDI_ERR_COUNT_SPEC {
 impl crate::Readable for PDI_ERR_COUNT_SPEC {}
 #[doc = "`reset()` method sets PDI_ERR_COUNT to value 0"]
 impl crate::Resettable for PDI_ERR_COUNT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

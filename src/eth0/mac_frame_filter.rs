@@ -219,10 +219,10 @@ impl crate::RegisterSpec for MAC_FRAME_FILTER_SPEC {
 impl crate::Readable for MAC_FRAME_FILTER_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mac_frame_filter::W`](W) writer structure"]
 impl crate::Writable for MAC_FRAME_FILTER_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MAC_FRAME_FILTER to value 0"]
 impl crate::Resettable for MAC_FRAME_FILTER_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

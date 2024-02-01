@@ -39,5 +39,5 @@ impl crate::RegisterSpec for MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER_SPEC {
 impl crate::Readable for MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER_SPEC {}
 #[doc = "`reset()` method sets MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER to value 0"]
 impl crate::Resettable for MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

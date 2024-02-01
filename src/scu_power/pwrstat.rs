@@ -175,5 +175,5 @@ impl crate::RegisterSpec for PWRSTAT_SPEC {
 impl crate::Readable for PWRSTAT_SPEC {}
 #[doc = "`reset()` method sets PWRSTAT to value 0"]
 impl crate::Resettable for PWRSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

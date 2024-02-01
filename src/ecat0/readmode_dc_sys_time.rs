@@ -19,5 +19,5 @@ impl crate::Readable for READMODE_DC_SYS_TIME_SPEC {}
 #[doc = "`reset()` method sets DC_SYS_TIME[%s]
 to value 0"]
 impl crate::Resettable for READMODE_DC_SYS_TIME_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

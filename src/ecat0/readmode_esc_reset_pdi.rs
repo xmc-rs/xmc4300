@@ -65,5 +65,5 @@ impl crate::RegisterSpec for READMODE_ESC_RESET_PDI_SPEC {
 impl crate::Readable for READMODE_ESC_RESET_PDI_SPEC {}
 #[doc = "`reset()` method sets ESC_RESET_PDI to value 0"]
 impl crate::Resettable for READMODE_ESC_RESET_PDI_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

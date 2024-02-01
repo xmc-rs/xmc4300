@@ -104,10 +104,10 @@ impl crate::RegisterSpec for ECATCLKCR_SPEC {
 impl crate::Readable for ECATCLKCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ecatclkcr::W`](W) writer structure"]
 impl crate::Writable for ECATCLKCR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ECATCLKCR to value 0"]
 impl crate::Resettable for ECATCLKCR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -18,5 +18,5 @@ impl crate::RegisterSpec for SM_LEN_SPEC {
 impl crate::Readable for SM_LEN_SPEC {}
 #[doc = "`reset()` method sets SM_LEN to value 0"]
 impl crate::Resettable for SM_LEN_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u16 = 0;
 }

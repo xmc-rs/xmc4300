@@ -217,10 +217,10 @@ impl crate::RegisterSpec for DC_ACT_SPEC {
 impl crate::Readable for DC_ACT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dc_act::W`](W) writer structure"]
 impl crate::Writable for DC_ACT_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets DC_ACT to value 0"]
 impl crate::Resettable for DC_ACT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

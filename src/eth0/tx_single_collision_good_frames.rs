@@ -18,5 +18,5 @@ impl crate::RegisterSpec for TX_SINGLE_COLLISION_GOOD_FRAMES_SPEC {
 impl crate::Readable for TX_SINGLE_COLLISION_GOOD_FRAMES_SPEC {}
 #[doc = "`reset()` method sets TX_SINGLE_COLLISION_GOOD_FRAMES to value 0"]
 impl crate::Resettable for TX_SINGLE_COLLISION_GOOD_FRAMES_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

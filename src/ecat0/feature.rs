@@ -462,5 +462,5 @@ impl crate::RegisterSpec for FEATURE_SPEC {
 impl crate::Readable for FEATURE_SPEC {}
 #[doc = "`reset()` method sets FEATURE to value 0x01cc"]
 impl crate::Resettable for FEATURE_SPEC {
-    const RESET_VALUE: Self::Ux = 0x01cc;
+    const RESET_VALUE: u16 = 0x01cc;
 }
