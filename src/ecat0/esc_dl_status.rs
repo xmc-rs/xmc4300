@@ -626,5 +626,5 @@ impl crate::RegisterSpec for ESC_DL_STATUS_SPEC {
 impl crate::Readable for ESC_DL_STATUS_SPEC {}
 #[doc = "`reset()` method sets ESC_DL_STATUS to value 0x5000"]
 impl crate::Resettable for ESC_DL_STATUS_SPEC {
-    const RESET_VALUE: Self::Ux = 0x5000;
+    const RESET_VALUE: u16 = 0x5000;
 }

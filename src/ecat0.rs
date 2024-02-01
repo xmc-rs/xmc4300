@@ -463,7 +463,7 @@ PDI Configuration"]
     #[doc = "0x910..0x918 - System Time read access"]
     #[inline(always)]
     pub fn readmode_dc_sys_time_iter(&self) -> impl Iterator<Item = &READMODE_DC_SYS_TIME> {
-        (0..2).map(|n| unsafe { &*(self as *const Self).cast::<u8>().add(2320).add(4 * n).cast() })
+        (0..2).map(move |n| unsafe { &*(self as *const Self).cast::<u8>().add(2320).add(4 * n).cast() })
     }
     #[doc = "0x918..0x920 - Local time of the beginning of a frame"]
     #[inline(always)]

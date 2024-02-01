@@ -18,5 +18,5 @@ impl crate::RegisterSpec for FMMU_L_STOP_BIT_SPEC {
 impl crate::Readable for FMMU_L_STOP_BIT_SPEC {}
 #[doc = "`reset()` method sets FMMU_L_STOP_BIT to value 0"]
 impl crate::Resettable for FMMU_L_STOP_BIT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

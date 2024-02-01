@@ -19,5 +19,5 @@ impl crate::Readable for RECEIVE_TIME_PU_SPEC {}
 #[doc = "`reset()` method sets RECEIVE_TIME_PU[%s]
 to value 0"]
 impl crate::Resettable for RECEIVE_TIME_PU_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -513,10 +513,10 @@ impl crate::RegisterSpec for EEP_CONT_STAT_SPEC {
 impl crate::Readable for EEP_CONT_STAT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`eep_cont_stat::W`](W) writer structure"]
 impl crate::Writable for EEP_CONT_STAT_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets EEP_CONT_STAT to value 0x9460"]
 impl crate::Resettable for EEP_CONT_STAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0x9460;
+    const RESET_VALUE: u16 = 0x9460;
 }

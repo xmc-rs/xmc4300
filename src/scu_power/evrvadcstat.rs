@@ -25,5 +25,5 @@ impl crate::RegisterSpec for EVRVADCSTAT_SPEC {
 impl crate::Readable for EVRVADCSTAT_SPEC {}
 #[doc = "`reset()` method sets EVRVADCSTAT to value 0"]
 impl crate::Resettable for EVRVADCSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

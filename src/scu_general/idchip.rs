@@ -18,5 +18,5 @@ impl crate::RegisterSpec for IDCHIP_SPEC {
 impl crate::Readable for IDCHIP_SPEC {}
 #[doc = "`reset()` method sets IDCHIP to value 0"]
 impl crate::Resettable for IDCHIP_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

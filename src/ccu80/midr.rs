@@ -32,5 +32,5 @@ impl crate::RegisterSpec for MIDR_SPEC {
 impl crate::Readable for MIDR_SPEC {}
 #[doc = "`reset()` method sets MIDR to value 0x00a7_c000"]
 impl crate::Resettable for MIDR_SPEC {
-    const RESET_VALUE: Self::Ux = 0x00a7_c000;
+    const RESET_VALUE: u32 = 0x00a7_c000;
 }

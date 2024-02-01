@@ -18,5 +18,5 @@ impl crate::RegisterSpec for LOST_LINK_COUNT1_SPEC {
 impl crate::Readable for LOST_LINK_COUNT1_SPEC {}
 #[doc = "`reset()` method sets LOST_LINK_COUNT1 to value 0"]
 impl crate::Resettable for LOST_LINK_COUNT1_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

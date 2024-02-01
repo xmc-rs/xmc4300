@@ -198,10 +198,10 @@ impl crate::RegisterSpec for RUN_LED_SPEC {
 impl crate::Readable for RUN_LED_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`run_led::W`](W) writer structure"]
 impl crate::Writable for RUN_LED_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets RUN_LED to value 0x0e"]
 impl crate::Resettable for RUN_LED_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0e;
+    const RESET_VALUE: u8 = 0x0e;
 }

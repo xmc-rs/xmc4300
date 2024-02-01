@@ -257,5 +257,5 @@ impl crate::RegisterSpec for GSTAT_SPEC {
 impl crate::Readable for GSTAT_SPEC {}
 #[doc = "`reset()` method sets GSTAT to value 0x0f"]
 impl crate::Resettable for GSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0f;
+    const RESET_VALUE: u32 = 0x0f;
 }

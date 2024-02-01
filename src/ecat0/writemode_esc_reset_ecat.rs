@@ -18,5 +18,5 @@ impl crate::RegisterSpec for WRITEMODE_ESC_RESET_ECAT_SPEC {
 impl crate::Readable for WRITEMODE_ESC_RESET_ECAT_SPEC {}
 #[doc = "`reset()` method sets ESC_RESET_ECAT to value 0"]
 impl crate::Resettable for WRITEMODE_ESC_RESET_ECAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

@@ -259,5 +259,5 @@ impl crate::RegisterSpec for PORT_DESC_SPEC {
 impl crate::Readable for PORT_DESC_SPEC {}
 #[doc = "`reset()` method sets PORT_DESC to value 0x0f"]
 impl crate::Resettable for PORT_DESC_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0f;
+    const RESET_VALUE: u8 = 0x0f;
 }

@@ -18,5 +18,5 @@ impl crate::RegisterSpec for OSCHPSTAT_SPEC {
 impl crate::Readable for OSCHPSTAT_SPEC {}
 #[doc = "`reset()` method sets OSCHPSTAT to value 0"]
 impl crate::Resettable for OSCHPSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

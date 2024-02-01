@@ -216,5 +216,5 @@ impl crate::RegisterSpec for HDSTAT_SPEC {
 impl crate::Readable for HDSTAT_SPEC {}
 #[doc = "`reset()` method sets HDSTAT to value 0"]
 impl crate::Resettable for HDSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

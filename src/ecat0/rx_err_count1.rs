@@ -25,5 +25,5 @@ impl crate::RegisterSpec for RX_ERR_COUNT1_SPEC {
 impl crate::Readable for RX_ERR_COUNT1_SPEC {}
 #[doc = "`reset()` method sets RX_ERR_COUNT1 to value 0"]
 impl crate::Resettable for RX_ERR_COUNT1_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u16 = 0;
 }

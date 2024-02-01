@@ -18,5 +18,5 @@ impl crate::RegisterSpec for OSCULSTAT_SPEC {
 impl crate::Readable for OSCULSTAT_SPEC {}
 #[doc = "`reset()` method sets OSCULSTAT to value 0"]
 impl crate::Resettable for OSCULSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

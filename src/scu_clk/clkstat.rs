@@ -216,5 +216,5 @@ impl crate::RegisterSpec for CLKSTAT_SPEC {
 impl crate::Readable for CLKSTAT_SPEC {}
 #[doc = "`reset()` method sets CLKSTAT to value 0"]
 impl crate::Resettable for CLKSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

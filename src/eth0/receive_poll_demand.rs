@@ -40,10 +40,10 @@ impl crate::RegisterSpec for RECEIVE_POLL_DEMAND_SPEC {
 impl crate::Readable for RECEIVE_POLL_DEMAND_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`receive_poll_demand::W`](W) writer structure"]
 impl crate::Writable for RECEIVE_POLL_DEMAND_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RECEIVE_POLL_DEMAND to value 0"]
 impl crate::Resettable for RECEIVE_POLL_DEMAND_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

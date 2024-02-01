@@ -524,5 +524,5 @@ impl crate::RegisterSpec for SRSTAT_SPEC {
 impl crate::Readable for SRSTAT_SPEC {}
 #[doc = "`reset()` method sets SRSTAT to value 0"]
 impl crate::Resettable for SRSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

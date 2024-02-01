@@ -18,5 +18,5 @@ impl crate::RegisterSpec for REVISION_SPEC {
 impl crate::Readable for REVISION_SPEC {}
 #[doc = "`reset()` method sets REVISION to value 0x01"]
 impl crate::Resettable for REVISION_SPEC {
-    const RESET_VALUE: Self::Ux = 0x01;
+    const RESET_VALUE: u8 = 0x01;
 }

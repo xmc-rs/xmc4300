@@ -355,10 +355,10 @@ impl crate::RegisterSpec for CLOCK_CTRL_SPEC {
 impl crate::Readable for CLOCK_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`clock_ctrl::W`](W) writer structure"]
 impl crate::Writable for CLOCK_CTRL_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets CLOCK_CTRL to value 0"]
 impl crate::Resettable for CLOCK_CTRL_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u16 = 0;
 }

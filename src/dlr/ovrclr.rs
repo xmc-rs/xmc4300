@@ -83,10 +83,10 @@ impl crate::RegisterSpec for OVRCLR_SPEC {
 }
 #[doc = "`write(|w| ..)` method takes [`ovrclr::W`](W) writer structure"]
 impl crate::Writable for OVRCLR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets OVRCLR to value 0"]
 impl crate::Resettable for OVRCLR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -104,10 +104,10 @@ impl crate::RegisterSpec for SM_PDI_CTR_SPEC {
 impl crate::Readable for SM_PDI_CTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sm_pdi_ctr::W`](W) writer structure"]
 impl crate::Writable for SM_PDI_CTR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets SM_PDI_CTR to value 0"]
 impl crate::Resettable for SM_PDI_CTR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

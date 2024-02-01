@@ -409,10 +409,10 @@ impl crate::RegisterSpec for SLEEPCR_SPEC {
 impl crate::Readable for SLEEPCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sleepcr::W`](W) writer structure"]
 impl crate::Writable for SLEEPCR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SLEEPCR to value 0"]
 impl crate::Resettable for SLEEPCR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

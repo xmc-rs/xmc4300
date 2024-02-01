@@ -67,5 +67,5 @@ impl crate::RegisterSpec for STATUSBLOCK_SPEC {
 impl crate::Readable for STATUSBLOCK_SPEC {}
 #[doc = "`reset()` method sets STATUSBLOCK to value 0"]
 impl crate::Resettable for STATUSBLOCK_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -80,5 +80,5 @@ impl crate::RegisterSpec for QBUR0_SPEC {
 impl crate::Readable for QBUR0_SPEC {}
 #[doc = "`reset()` method sets QBUR0 to value 0"]
 impl crate::Resettable for QBUR0_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

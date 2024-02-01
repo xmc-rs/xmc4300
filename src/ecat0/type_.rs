@@ -18,5 +18,5 @@ impl crate::RegisterSpec for TYPE_SPEC {
 impl crate::Readable for TYPE_SPEC {}
 #[doc = "`reset()` method sets TYPE to value 0x98"]
 impl crate::Resettable for TYPE_SPEC {
-    const RESET_VALUE: Self::Ux = 0x98;
+    const RESET_VALUE: u8 = 0x98;
 }

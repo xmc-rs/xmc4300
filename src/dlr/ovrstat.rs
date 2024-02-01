@@ -67,5 +67,5 @@ impl crate::RegisterSpec for OVRSTAT_SPEC {
 impl crate::Readable for OVRSTAT_SPEC {}
 #[doc = "`reset()` method sets OVRSTAT to value 0"]
 impl crate::Resettable for OVRSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

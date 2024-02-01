@@ -619,10 +619,10 @@ impl crate::RegisterSpec for ARBPR_SPEC {
 impl crate::Readable for ARBPR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`arbpr::W`](W) writer structure"]
 impl crate::Writable for ARBPR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ARBPR to value 0"]
 impl crate::Resettable for ARBPR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

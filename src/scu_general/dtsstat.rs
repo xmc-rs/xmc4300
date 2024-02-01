@@ -100,5 +100,5 @@ impl crate::RegisterSpec for DTSSTAT_SPEC {
 impl crate::Readable for DTSSTAT_SPEC {}
 #[doc = "`reset()` method sets DTSSTAT to value 0"]
 impl crate::Resettable for DTSSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

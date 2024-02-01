@@ -32,5 +32,5 @@ impl crate::RegisterSpec for ID_SPEC {
 impl crate::Readable for ID_SPEC {}
 #[doc = "`reset()` method sets ID to value 0x00ca_c001"]
 impl crate::Resettable for ID_SPEC {
-    const RESET_VALUE: Self::Ux = 0x00ca_c001;
+    const RESET_VALUE: u32 = 0x00ca_c001;
 }

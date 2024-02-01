@@ -25,5 +25,5 @@ impl crate::RegisterSpec for RESPONSE6_SPEC {
 impl crate::Readable for RESPONSE6_SPEC {}
 #[doc = "`reset()` method sets RESPONSE6 to value 0"]
 impl crate::Resettable for RESPONSE6_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

@@ -300,5 +300,5 @@ impl crate::RegisterSpec for SYNC_LATCH_CONFIG_SPEC {
 impl crate::Readable for SYNC_LATCH_CONFIG_SPEC {}
 #[doc = "`reset()` method sets SYNC_LATCH_CONFIG to value 0xee"]
 impl crate::Resettable for SYNC_LATCH_CONFIG_SPEC {
-    const RESET_VALUE: Self::Ux = 0xee;
+    const RESET_VALUE: u8 = 0xee;
 }

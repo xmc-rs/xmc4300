@@ -351,10 +351,10 @@ impl crate::RegisterSpec for TRANSFER_MODE_SPEC {
 impl crate::Readable for TRANSFER_MODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`transfer_mode::W`](W) writer structure"]
 impl crate::Writable for TRANSFER_MODE_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets TRANSFER_MODE to value 0"]
 impl crate::Resettable for TRANSFER_MODE_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u16 = 0;
 }

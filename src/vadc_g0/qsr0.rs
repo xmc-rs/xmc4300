@@ -196,5 +196,5 @@ impl crate::RegisterSpec for QSR0_SPEC {
 impl crate::Readable for QSR0_SPEC {}
 #[doc = "`reset()` method sets QSR0 to value 0x20"]
 impl crate::Resettable for QSR0_SPEC {
-    const RESET_VALUE: Self::Ux = 0x20;
+    const RESET_VALUE: u32 = 0x20;
 }

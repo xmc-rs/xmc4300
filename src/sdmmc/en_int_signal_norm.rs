@@ -544,10 +544,10 @@ impl crate::RegisterSpec for EN_INT_SIGNAL_NORM_SPEC {
 impl crate::Readable for EN_INT_SIGNAL_NORM_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`en_int_signal_norm::W`](W) writer structure"]
 impl crate::Writable for EN_INT_SIGNAL_NORM_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets EN_INT_SIGNAL_NORM to value 0"]
 impl crate::Resettable for EN_INT_SIGNAL_NORM_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u16 = 0;
 }

@@ -18,5 +18,5 @@ impl crate::RegisterSpec for SYNC_MANAGER_SPEC {
 impl crate::Readable for SYNC_MANAGER_SPEC {}
 #[doc = "`reset()` method sets SYNC_MANAGER to value 0x08"]
 impl crate::Resettable for SYNC_MANAGER_SPEC {
-    const RESET_VALUE: Self::Ux = 0x08;
+    const RESET_VALUE: u8 = 0x08;
 }

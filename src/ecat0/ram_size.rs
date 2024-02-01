@@ -18,5 +18,5 @@ impl crate::RegisterSpec for RAM_SIZE_SPEC {
 impl crate::Readable for RAM_SIZE_SPEC {}
 #[doc = "`reset()` method sets RAM_SIZE to value 0x08"]
 impl crate::Resettable for RAM_SIZE_SPEC {
-    const RESET_VALUE: Self::Ux = 0x08;
+    const RESET_VALUE: u8 = 0x08;
 }

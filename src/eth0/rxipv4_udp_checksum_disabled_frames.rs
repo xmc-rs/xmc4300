@@ -18,5 +18,5 @@ impl crate::RegisterSpec for RXIPV4_UDP_CHECKSUM_DISABLED_FRAMES_SPEC {
 impl crate::Readable for RXIPV4_UDP_CHECKSUM_DISABLED_FRAMES_SPEC {}
 #[doc = "`reset()` method sets RXIPV4_UDP_CHECKSUM_DISABLED_FRAMES to value 0"]
 impl crate::Resettable for RXIPV4_UDP_CHECKSUM_DISABLED_FRAMES_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

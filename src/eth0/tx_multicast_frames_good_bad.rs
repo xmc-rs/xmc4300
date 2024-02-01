@@ -18,5 +18,5 @@ impl crate::RegisterSpec for TX_MULTICAST_FRAMES_GOOD_BAD_SPEC {
 impl crate::Readable for TX_MULTICAST_FRAMES_GOOD_BAD_SPEC {}
 #[doc = "`reset()` method sets TX_MULTICAST_FRAMES_GOOD_BAD to value 0"]
 impl crate::Resettable for TX_MULTICAST_FRAMES_GOOD_BAD_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

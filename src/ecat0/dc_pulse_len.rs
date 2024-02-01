@@ -51,5 +51,5 @@ impl crate::RegisterSpec for DC_PULSE_LEN_SPEC {
 impl crate::Readable for DC_PULSE_LEN_SPEC {}
 #[doc = "`reset()` method sets DC_PULSE_LEN to value 0"]
 impl crate::Resettable for DC_PULSE_LEN_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u16 = 0;
 }

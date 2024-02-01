@@ -93,5 +93,5 @@ impl crate::RegisterSpec for FMMU_TYPE_SPEC {
 impl crate::Readable for FMMU_TYPE_SPEC {}
 #[doc = "`reset()` method sets FMMU_TYPE to value 0"]
 impl crate::Resettable for FMMU_TYPE_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u8 = 0;
 }

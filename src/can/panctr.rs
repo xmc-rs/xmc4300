@@ -152,10 +152,10 @@ impl crate::RegisterSpec for PANCTR_SPEC {
 impl crate::Readable for PANCTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`panctr::W`](W) writer structure"]
 impl crate::Writable for PANCTR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PANCTR to value 0x0301"]
 impl crate::Resettable for PANCTR_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0301;
+    const RESET_VALUE: u32 = 0x0301;
 }

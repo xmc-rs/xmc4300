@@ -315,10 +315,10 @@ impl crate::RegisterSpec for CLEARDSTTRAN_SPEC {
 }
 #[doc = "`write(|w| ..)` method takes [`cleardsttran::W`](W) writer structure"]
 impl crate::Writable for CLEARDSTTRAN_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CLEARDSTTRAN to value 0"]
 impl crate::Resettable for CLEARDSTTRAN_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

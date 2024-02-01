@@ -145,10 +145,10 @@ impl crate::RegisterSpec for PDR1_SPEC {
 impl crate::Readable for PDR1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pdr1::W`](W) writer structure"]
 impl crate::Writable for PDR1_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PDR1 to value 0x2222_2222"]
 impl crate::Resettable for PDR1_SPEC {
-    const RESET_VALUE: Self::Ux = 0x2222_2222;
+    const RESET_VALUE: u32 = 0x2222_2222;
 }

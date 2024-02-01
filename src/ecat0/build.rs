@@ -18,5 +18,5 @@ impl crate::RegisterSpec for BUILD_SPEC {
 impl crate::Readable for BUILD_SPEC {}
 #[doc = "`reset()` method sets BUILD to value 0x01"]
 impl crate::Resettable for BUILD_SPEC {
-    const RESET_VALUE: Self::Ux = 0x01;
+    const RESET_VALUE: u16 = 0x01;
 }

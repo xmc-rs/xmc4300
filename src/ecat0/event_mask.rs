@@ -462,5 +462,5 @@ impl crate::RegisterSpec for EVENT_MASK_SPEC {
 impl crate::Readable for EVENT_MASK_SPEC {}
 #[doc = "`reset()` method sets EVENT_MASK to value 0"]
 impl crate::Resettable for EVENT_MASK_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u16 = 0;
 }

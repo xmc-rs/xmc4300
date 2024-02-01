@@ -227,10 +227,10 @@ impl crate::RegisterSpec for BUS_MODE_SPEC {
 impl crate::Readable for BUS_MODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`bus_mode::W`](W) writer structure"]
 impl crate::Writable for BUS_MODE_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BUS_MODE to value 0x0002_0101"]
 impl crate::Resettable for BUS_MODE_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0002_0101;
+    const RESET_VALUE: u32 = 0x0002_0101;
 }

@@ -115,10 +115,10 @@ impl crate::RegisterSpec for DAC1PATL_SPEC {
 impl crate::Readable for DAC1PATL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dac1patl::W`](W) writer structure"]
 impl crate::Writable for DAC1PATL_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DAC1PATL to value 0x3568_b0c0"]
 impl crate::Resettable for DAC1PATL_SPEC {
-    const RESET_VALUE: Self::Ux = 0x3568_b0c0;
+    const RESET_VALUE: u32 = 0x3568_b0c0;
 }
