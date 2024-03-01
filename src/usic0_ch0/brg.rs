@@ -1,59 +1,59 @@
 #[doc = "Register `BRG` reader"]
-pub type R = crate::R<BRG_SPEC>;
+pub type R = crate::R<BrgSpec>;
 #[doc = "Register `BRG` writer"]
-pub type W = crate::W<BRG_SPEC>;
-#[doc = "Field `CLKSEL` reader - Clock Selection"]
-pub type CLKSEL_R = crate::FieldReader<CLKSEL_A>;
+pub type W = crate::W<BrgSpec>;
 #[doc = "Clock Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CLKSEL_A {
+pub enum Clksel {
     #[doc = "0: The fractional divider frequency fFD is selected."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "2: The trigger signal DX1T defines fPIN. Signal MCLK toggles with fPIN."]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: Signal MCLK corresponds to the DX1S signal and the frequency fPIN is derived from the rising edges of DX1S."]
-    VALUE4 = 3,
+    Value4 = 3,
 }
-impl From<CLKSEL_A> for u8 {
+impl From<Clksel> for u8 {
     #[inline(always)]
-    fn from(variant: CLKSEL_A) -> Self {
+    fn from(variant: Clksel) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CLKSEL_A {
+impl crate::FieldSpec for Clksel {
     type Ux = u8;
 }
-impl CLKSEL_R {
+#[doc = "Field `CLKSEL` reader - Clock Selection"]
+pub type ClkselR = crate::FieldReader<Clksel>;
+impl ClkselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<CLKSEL_A> {
+    pub const fn variant(&self) -> Option<Clksel> {
         match self.bits {
-            0 => Some(CLKSEL_A::VALUE1),
-            2 => Some(CLKSEL_A::VALUE3),
-            3 => Some(CLKSEL_A::VALUE4),
+            0 => Some(Clksel::Value1),
+            2 => Some(Clksel::Value3),
+            3 => Some(Clksel::Value4),
             _ => None,
         }
     }
     #[doc = "The fractional divider frequency fFD is selected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CLKSEL_A::VALUE1
+        *self == Clksel::Value1
     }
     #[doc = "The trigger signal DX1T defines fPIN. Signal MCLK toggles with fPIN."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CLKSEL_A::VALUE3
+        *self == Clksel::Value3
     }
     #[doc = "Signal MCLK corresponds to the DX1S signal and the frequency fPIN is derived from the rising edges of DX1S."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == CLKSEL_A::VALUE4
+        *self == Clksel::Value4
     }
 }
 #[doc = "Field `CLKSEL` writer - Clock Selection"]
-pub type CLKSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CLKSEL_A>;
-impl<'a, REG> CLKSEL_W<'a, REG>
+pub type ClkselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Clksel>;
+impl<'a, REG> ClkselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -61,185 +61,185 @@ where
     #[doc = "The fractional divider frequency fFD is selected."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKSEL_A::VALUE1)
+        self.variant(Clksel::Value1)
     }
     #[doc = "The trigger signal DX1T defines fPIN. Signal MCLK toggles with fPIN."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKSEL_A::VALUE3)
+        self.variant(Clksel::Value3)
     }
     #[doc = "Signal MCLK corresponds to the DX1S signal and the frequency fPIN is derived from the rising edges of DX1S."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(CLKSEL_A::VALUE4)
+        self.variant(Clksel::Value4)
+    }
+}
+#[doc = "Timing Measurement Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Tmen {
+    #[doc = "0: Timing measurement is disabled: The trigger signals DX0T and DX1T are ignored."]
+    Value1 = 0,
+    #[doc = "1: Timing measurement is enabled: The 10-bit counter is incremented by 1 with fPPP and stops counting when reaching its maximum value. If one of the trigger signals DX0T or DX1T become active, the counter value is captured into bit field CTV, the counter is cleared and a transmit shift event is generated."]
+    Value2 = 1,
+}
+impl From<Tmen> for bool {
+    #[inline(always)]
+    fn from(variant: Tmen) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `TMEN` reader - Timing Measurement Enable"]
-pub type TMEN_R = crate::BitReader<TMEN_A>;
-#[doc = "Timing Measurement Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum TMEN_A {
-    #[doc = "0: Timing measurement is disabled: The trigger signals DX0T and DX1T are ignored."]
-    VALUE1 = 0,
-    #[doc = "1: Timing measurement is enabled: The 10-bit counter is incremented by 1 with fPPP and stops counting when reaching its maximum value. If one of the trigger signals DX0T or DX1T become active, the counter value is captured into bit field CTV, the counter is cleared and a transmit shift event is generated."]
-    VALUE2 = 1,
-}
-impl From<TMEN_A> for bool {
-    #[inline(always)]
-    fn from(variant: TMEN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl TMEN_R {
+pub type TmenR = crate::BitReader<Tmen>;
+impl TmenR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> TMEN_A {
+    pub const fn variant(&self) -> Tmen {
         match self.bits {
-            false => TMEN_A::VALUE1,
-            true => TMEN_A::VALUE2,
+            false => Tmen::Value1,
+            true => Tmen::Value2,
         }
     }
     #[doc = "Timing measurement is disabled: The trigger signals DX0T and DX1T are ignored."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TMEN_A::VALUE1
+        *self == Tmen::Value1
     }
     #[doc = "Timing measurement is enabled: The 10-bit counter is incremented by 1 with fPPP and stops counting when reaching its maximum value. If one of the trigger signals DX0T or DX1T become active, the counter value is captured into bit field CTV, the counter is cleared and a transmit shift event is generated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TMEN_A::VALUE2
+        *self == Tmen::Value2
     }
 }
 #[doc = "Field `TMEN` writer - Timing Measurement Enable"]
-pub type TMEN_W<'a, REG> = crate::BitWriter<'a, REG, TMEN_A>;
-impl<'a, REG> TMEN_W<'a, REG>
+pub type TmenW<'a, REG> = crate::BitWriter<'a, REG, Tmen>;
+impl<'a, REG> TmenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Timing measurement is disabled: The trigger signals DX0T and DX1T are ignored."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(TMEN_A::VALUE1)
+        self.variant(Tmen::Value1)
     }
     #[doc = "Timing measurement is enabled: The 10-bit counter is incremented by 1 with fPPP and stops counting when reaching its maximum value. If one of the trigger signals DX0T or DX1T become active, the counter value is captured into bit field CTV, the counter is cleared and a transmit shift event is generated."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(TMEN_A::VALUE2)
+        self.variant(Tmen::Value2)
+    }
+}
+#[doc = "Enable 2:1 Divider for fPPP\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Pppen {
+    #[doc = "0: The 2:1 divider for fPPP is disabled. fPPP = fPIN"]
+    Value1 = 0,
+    #[doc = "1: The 2:1 divider for fPPP is enabled. fPPP = fMCLK = fPIN / 2."]
+    Value2 = 1,
+}
+impl From<Pppen> for bool {
+    #[inline(always)]
+    fn from(variant: Pppen) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `PPPEN` reader - Enable 2:1 Divider for fPPP"]
-pub type PPPEN_R = crate::BitReader<PPPEN_A>;
-#[doc = "Enable 2:1 Divider for fPPP\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PPPEN_A {
-    #[doc = "0: The 2:1 divider for fPPP is disabled. fPPP = fPIN"]
-    VALUE1 = 0,
-    #[doc = "1: The 2:1 divider for fPPP is enabled. fPPP = fMCLK = fPIN / 2."]
-    VALUE2 = 1,
-}
-impl From<PPPEN_A> for bool {
-    #[inline(always)]
-    fn from(variant: PPPEN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl PPPEN_R {
+pub type PppenR = crate::BitReader<Pppen>;
+impl PppenR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PPPEN_A {
+    pub const fn variant(&self) -> Pppen {
         match self.bits {
-            false => PPPEN_A::VALUE1,
-            true => PPPEN_A::VALUE2,
+            false => Pppen::Value1,
+            true => Pppen::Value2,
         }
     }
     #[doc = "The 2:1 divider for fPPP is disabled. fPPP = fPIN"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PPPEN_A::VALUE1
+        *self == Pppen::Value1
     }
     #[doc = "The 2:1 divider for fPPP is enabled. fPPP = fMCLK = fPIN / 2."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PPPEN_A::VALUE2
+        *self == Pppen::Value2
     }
 }
 #[doc = "Field `PPPEN` writer - Enable 2:1 Divider for fPPP"]
-pub type PPPEN_W<'a, REG> = crate::BitWriter<'a, REG, PPPEN_A>;
-impl<'a, REG> PPPEN_W<'a, REG>
+pub type PppenW<'a, REG> = crate::BitWriter<'a, REG, Pppen>;
+impl<'a, REG> PppenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The 2:1 divider for fPPP is disabled. fPPP = fPIN"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(PPPEN_A::VALUE1)
+        self.variant(Pppen::Value1)
     }
     #[doc = "The 2:1 divider for fPPP is enabled. fPPP = fMCLK = fPIN / 2."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(PPPEN_A::VALUE2)
+        self.variant(Pppen::Value2)
     }
 }
-#[doc = "Field `CTQSEL` reader - Input Selection for CTQ"]
-pub type CTQSEL_R = crate::FieldReader<CTQSEL_A>;
 #[doc = "Input Selection for CTQ\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CTQSEL_A {
+pub enum Ctqsel {
     #[doc = "0: fCTQIN = fPDIV"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: fCTQIN = fPPP"]
-    VALUE2 = 1,
+    Value2 = 1,
     #[doc = "2: fCTQIN = fSCLK"]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: fCTQIN = fMCLK"]
-    VALUE4 = 3,
+    Value4 = 3,
 }
-impl From<CTQSEL_A> for u8 {
+impl From<Ctqsel> for u8 {
     #[inline(always)]
-    fn from(variant: CTQSEL_A) -> Self {
+    fn from(variant: Ctqsel) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CTQSEL_A {
+impl crate::FieldSpec for Ctqsel {
     type Ux = u8;
 }
-impl CTQSEL_R {
+#[doc = "Field `CTQSEL` reader - Input Selection for CTQ"]
+pub type CtqselR = crate::FieldReader<Ctqsel>;
+impl CtqselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CTQSEL_A {
+    pub const fn variant(&self) -> Ctqsel {
         match self.bits {
-            0 => CTQSEL_A::VALUE1,
-            1 => CTQSEL_A::VALUE2,
-            2 => CTQSEL_A::VALUE3,
-            3 => CTQSEL_A::VALUE4,
+            0 => Ctqsel::Value1,
+            1 => Ctqsel::Value2,
+            2 => Ctqsel::Value3,
+            3 => Ctqsel::Value4,
             _ => unreachable!(),
         }
     }
     #[doc = "fCTQIN = fPDIV"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CTQSEL_A::VALUE1
+        *self == Ctqsel::Value1
     }
     #[doc = "fCTQIN = fPPP"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CTQSEL_A::VALUE2
+        *self == Ctqsel::Value2
     }
     #[doc = "fCTQIN = fSCLK"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CTQSEL_A::VALUE3
+        *self == Ctqsel::Value3
     }
     #[doc = "fCTQIN = fMCLK"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == CTQSEL_A::VALUE4
+        *self == Ctqsel::Value4
     }
 }
 #[doc = "Field `CTQSEL` writer - Input Selection for CTQ"]
-pub type CTQSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CTQSEL_A>;
-impl<'a, REG> CTQSEL_W<'a, REG>
+pub type CtqselW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ctqsel>;
+impl<'a, REG> CtqselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -247,202 +247,202 @@ where
     #[doc = "fCTQIN = fPDIV"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CTQSEL_A::VALUE1)
+        self.variant(Ctqsel::Value1)
     }
     #[doc = "fCTQIN = fPPP"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CTQSEL_A::VALUE2)
+        self.variant(Ctqsel::Value2)
     }
     #[doc = "fCTQIN = fSCLK"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(CTQSEL_A::VALUE3)
+        self.variant(Ctqsel::Value3)
     }
     #[doc = "fCTQIN = fMCLK"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(CTQSEL_A::VALUE4)
+        self.variant(Ctqsel::Value4)
     }
 }
 #[doc = "Field `PCTQ` reader - Pre-Divider for Time Quanta Counter"]
-pub type PCTQ_R = crate::FieldReader;
+pub type PctqR = crate::FieldReader;
 #[doc = "Field `PCTQ` writer - Pre-Divider for Time Quanta Counter"]
-pub type PCTQ_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
+pub type PctqW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `DCTQ` reader - Denominator for Time Quanta Counter"]
-pub type DCTQ_R = crate::FieldReader;
+pub type DctqR = crate::FieldReader;
 #[doc = "Field `DCTQ` writer - Denominator for Time Quanta Counter"]
-pub type DCTQ_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
+pub type DctqW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `PDIV` reader - Divider Mode: Divider Factor to Generate fPDIV"]
-pub type PDIV_R = crate::FieldReader<u16>;
+pub type PdivR = crate::FieldReader<u16>;
 #[doc = "Field `PDIV` writer - Divider Mode: Divider Factor to Generate fPDIV"]
-pub type PDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
-#[doc = "Field `SCLKOSEL` reader - Shift Clock Output Select"]
-pub type SCLKOSEL_R = crate::BitReader<SCLKOSEL_A>;
+pub type PdivW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "Shift Clock Output Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SCLKOSEL_A {
+pub enum Sclkosel {
     #[doc = "0: SCLK from the baud rate generator is selected as the SCLKOUT input source."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The transmit shift clock from DX1 input stage is selected as the SCLKOUT input source."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<SCLKOSEL_A> for bool {
+impl From<Sclkosel> for bool {
     #[inline(always)]
-    fn from(variant: SCLKOSEL_A) -> Self {
+    fn from(variant: Sclkosel) -> Self {
         variant as u8 != 0
     }
 }
-impl SCLKOSEL_R {
+#[doc = "Field `SCLKOSEL` reader - Shift Clock Output Select"]
+pub type SclkoselR = crate::BitReader<Sclkosel>;
+impl SclkoselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SCLKOSEL_A {
+    pub const fn variant(&self) -> Sclkosel {
         match self.bits {
-            false => SCLKOSEL_A::VALUE1,
-            true => SCLKOSEL_A::VALUE2,
+            false => Sclkosel::Value1,
+            true => Sclkosel::Value2,
         }
     }
     #[doc = "SCLK from the baud rate generator is selected as the SCLKOUT input source."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SCLKOSEL_A::VALUE1
+        *self == Sclkosel::Value1
     }
     #[doc = "The transmit shift clock from DX1 input stage is selected as the SCLKOUT input source."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SCLKOSEL_A::VALUE2
+        *self == Sclkosel::Value2
     }
 }
 #[doc = "Field `SCLKOSEL` writer - Shift Clock Output Select"]
-pub type SCLKOSEL_W<'a, REG> = crate::BitWriter<'a, REG, SCLKOSEL_A>;
-impl<'a, REG> SCLKOSEL_W<'a, REG>
+pub type SclkoselW<'a, REG> = crate::BitWriter<'a, REG, Sclkosel>;
+impl<'a, REG> SclkoselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "SCLK from the baud rate generator is selected as the SCLKOUT input source."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(SCLKOSEL_A::VALUE1)
+        self.variant(Sclkosel::Value1)
     }
     #[doc = "The transmit shift clock from DX1 input stage is selected as the SCLKOUT input source."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(SCLKOSEL_A::VALUE2)
+        self.variant(Sclkosel::Value2)
     }
 }
-#[doc = "Field `MCLKCFG` reader - Master Clock Configuration"]
-pub type MCLKCFG_R = crate::BitReader<MCLKCFG_A>;
 #[doc = "Master Clock Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MCLKCFG_A {
+pub enum Mclkcfg {
     #[doc = "0: The passive level is 0."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The passive level is 1."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<MCLKCFG_A> for bool {
+impl From<Mclkcfg> for bool {
     #[inline(always)]
-    fn from(variant: MCLKCFG_A) -> Self {
+    fn from(variant: Mclkcfg) -> Self {
         variant as u8 != 0
     }
 }
-impl MCLKCFG_R {
+#[doc = "Field `MCLKCFG` reader - Master Clock Configuration"]
+pub type MclkcfgR = crate::BitReader<Mclkcfg>;
+impl MclkcfgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MCLKCFG_A {
+    pub const fn variant(&self) -> Mclkcfg {
         match self.bits {
-            false => MCLKCFG_A::VALUE1,
-            true => MCLKCFG_A::VALUE2,
+            false => Mclkcfg::Value1,
+            true => Mclkcfg::Value2,
         }
     }
     #[doc = "The passive level is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MCLKCFG_A::VALUE1
+        *self == Mclkcfg::Value1
     }
     #[doc = "The passive level is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MCLKCFG_A::VALUE2
+        *self == Mclkcfg::Value2
     }
 }
 #[doc = "Field `MCLKCFG` writer - Master Clock Configuration"]
-pub type MCLKCFG_W<'a, REG> = crate::BitWriter<'a, REG, MCLKCFG_A>;
-impl<'a, REG> MCLKCFG_W<'a, REG>
+pub type MclkcfgW<'a, REG> = crate::BitWriter<'a, REG, Mclkcfg>;
+impl<'a, REG> MclkcfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The passive level is 0."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(MCLKCFG_A::VALUE1)
+        self.variant(Mclkcfg::Value1)
     }
     #[doc = "The passive level is 1."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(MCLKCFG_A::VALUE2)
+        self.variant(Mclkcfg::Value2)
     }
 }
-#[doc = "Field `SCLKCFG` reader - Shift Clock Output Configuration"]
-pub type SCLKCFG_R = crate::FieldReader<SCLKCFG_A>;
 #[doc = "Shift Clock Output Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SCLKCFG_A {
+pub enum Sclkcfg {
     #[doc = "0: The passive level is 0 and the delay is disabled."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The passive level is 1 and the delay is disabled."]
-    VALUE2 = 1,
+    Value2 = 1,
     #[doc = "2: The passive level is 0 and the delay is enabled."]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: The passive level is 1 and the delay is enabled."]
-    VALUE4 = 3,
+    Value4 = 3,
 }
-impl From<SCLKCFG_A> for u8 {
+impl From<Sclkcfg> for u8 {
     #[inline(always)]
-    fn from(variant: SCLKCFG_A) -> Self {
+    fn from(variant: Sclkcfg) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for SCLKCFG_A {
+impl crate::FieldSpec for Sclkcfg {
     type Ux = u8;
 }
-impl SCLKCFG_R {
+#[doc = "Field `SCLKCFG` reader - Shift Clock Output Configuration"]
+pub type SclkcfgR = crate::FieldReader<Sclkcfg>;
+impl SclkcfgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SCLKCFG_A {
+    pub const fn variant(&self) -> Sclkcfg {
         match self.bits {
-            0 => SCLKCFG_A::VALUE1,
-            1 => SCLKCFG_A::VALUE2,
-            2 => SCLKCFG_A::VALUE3,
-            3 => SCLKCFG_A::VALUE4,
+            0 => Sclkcfg::Value1,
+            1 => Sclkcfg::Value2,
+            2 => Sclkcfg::Value3,
+            3 => Sclkcfg::Value4,
             _ => unreachable!(),
         }
     }
     #[doc = "The passive level is 0 and the delay is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SCLKCFG_A::VALUE1
+        *self == Sclkcfg::Value1
     }
     #[doc = "The passive level is 1 and the delay is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SCLKCFG_A::VALUE2
+        *self == Sclkcfg::Value2
     }
     #[doc = "The passive level is 0 and the delay is enabled."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == SCLKCFG_A::VALUE3
+        *self == Sclkcfg::Value3
     }
     #[doc = "The passive level is 1 and the delay is enabled."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == SCLKCFG_A::VALUE4
+        *self == Sclkcfg::Value4
     }
 }
 #[doc = "Field `SCLKCFG` writer - Shift Clock Output Configuration"]
-pub type SCLKCFG_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SCLKCFG_A>;
-impl<'a, REG> SCLKCFG_W<'a, REG>
+pub type SclkcfgW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Sclkcfg>;
+impl<'a, REG> SclkcfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -450,161 +450,152 @@ where
     #[doc = "The passive level is 0 and the delay is disabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(SCLKCFG_A::VALUE1)
+        self.variant(Sclkcfg::Value1)
     }
     #[doc = "The passive level is 1 and the delay is disabled."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(SCLKCFG_A::VALUE2)
+        self.variant(Sclkcfg::Value2)
     }
     #[doc = "The passive level is 0 and the delay is enabled."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(SCLKCFG_A::VALUE3)
+        self.variant(Sclkcfg::Value3)
     }
     #[doc = "The passive level is 1 and the delay is enabled."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(SCLKCFG_A::VALUE4)
+        self.variant(Sclkcfg::Value4)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Clock Selection"]
     #[inline(always)]
-    pub fn clksel(&self) -> CLKSEL_R {
-        CLKSEL_R::new((self.bits & 3) as u8)
+    pub fn clksel(&self) -> ClkselR {
+        ClkselR::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 3 - Timing Measurement Enable"]
     #[inline(always)]
-    pub fn tmen(&self) -> TMEN_R {
-        TMEN_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn tmen(&self) -> TmenR {
+        TmenR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Enable 2:1 Divider for fPPP"]
     #[inline(always)]
-    pub fn pppen(&self) -> PPPEN_R {
-        PPPEN_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn pppen(&self) -> PppenR {
+        PppenR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 6:7 - Input Selection for CTQ"]
     #[inline(always)]
-    pub fn ctqsel(&self) -> CTQSEL_R {
-        CTQSEL_R::new(((self.bits >> 6) & 3) as u8)
+    pub fn ctqsel(&self) -> CtqselR {
+        CtqselR::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:9 - Pre-Divider for Time Quanta Counter"]
     #[inline(always)]
-    pub fn pctq(&self) -> PCTQ_R {
-        PCTQ_R::new(((self.bits >> 8) & 3) as u8)
+    pub fn pctq(&self) -> PctqR {
+        PctqR::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:14 - Denominator for Time Quanta Counter"]
     #[inline(always)]
-    pub fn dctq(&self) -> DCTQ_R {
-        DCTQ_R::new(((self.bits >> 10) & 0x1f) as u8)
+    pub fn dctq(&self) -> DctqR {
+        DctqR::new(((self.bits >> 10) & 0x1f) as u8)
     }
     #[doc = "Bits 16:25 - Divider Mode: Divider Factor to Generate fPDIV"]
     #[inline(always)]
-    pub fn pdiv(&self) -> PDIV_R {
-        PDIV_R::new(((self.bits >> 16) & 0x03ff) as u16)
+    pub fn pdiv(&self) -> PdivR {
+        PdivR::new(((self.bits >> 16) & 0x03ff) as u16)
     }
     #[doc = "Bit 28 - Shift Clock Output Select"]
     #[inline(always)]
-    pub fn sclkosel(&self) -> SCLKOSEL_R {
-        SCLKOSEL_R::new(((self.bits >> 28) & 1) != 0)
+    pub fn sclkosel(&self) -> SclkoselR {
+        SclkoselR::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - Master Clock Configuration"]
     #[inline(always)]
-    pub fn mclkcfg(&self) -> MCLKCFG_R {
-        MCLKCFG_R::new(((self.bits >> 29) & 1) != 0)
+    pub fn mclkcfg(&self) -> MclkcfgR {
+        MclkcfgR::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bits 30:31 - Shift Clock Output Configuration"]
     #[inline(always)]
-    pub fn sclkcfg(&self) -> SCLKCFG_R {
-        SCLKCFG_R::new(((self.bits >> 30) & 3) as u8)
+    pub fn sclkcfg(&self) -> SclkcfgR {
+        SclkcfgR::new(((self.bits >> 30) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn clksel(&mut self) -> CLKSEL_W<BRG_SPEC> {
-        CLKSEL_W::new(self, 0)
+    pub fn clksel(&mut self) -> ClkselW<BrgSpec> {
+        ClkselW::new(self, 0)
     }
     #[doc = "Bit 3 - Timing Measurement Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tmen(&mut self) -> TMEN_W<BRG_SPEC> {
-        TMEN_W::new(self, 3)
+    pub fn tmen(&mut self) -> TmenW<BrgSpec> {
+        TmenW::new(self, 3)
     }
     #[doc = "Bit 4 - Enable 2:1 Divider for fPPP"]
     #[inline(always)]
     #[must_use]
-    pub fn pppen(&mut self) -> PPPEN_W<BRG_SPEC> {
-        PPPEN_W::new(self, 4)
+    pub fn pppen(&mut self) -> PppenW<BrgSpec> {
+        PppenW::new(self, 4)
     }
     #[doc = "Bits 6:7 - Input Selection for CTQ"]
     #[inline(always)]
     #[must_use]
-    pub fn ctqsel(&mut self) -> CTQSEL_W<BRG_SPEC> {
-        CTQSEL_W::new(self, 6)
+    pub fn ctqsel(&mut self) -> CtqselW<BrgSpec> {
+        CtqselW::new(self, 6)
     }
     #[doc = "Bits 8:9 - Pre-Divider for Time Quanta Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn pctq(&mut self) -> PCTQ_W<BRG_SPEC> {
-        PCTQ_W::new(self, 8)
+    pub fn pctq(&mut self) -> PctqW<BrgSpec> {
+        PctqW::new(self, 8)
     }
     #[doc = "Bits 10:14 - Denominator for Time Quanta Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn dctq(&mut self) -> DCTQ_W<BRG_SPEC> {
-        DCTQ_W::new(self, 10)
+    pub fn dctq(&mut self) -> DctqW<BrgSpec> {
+        DctqW::new(self, 10)
     }
     #[doc = "Bits 16:25 - Divider Mode: Divider Factor to Generate fPDIV"]
     #[inline(always)]
     #[must_use]
-    pub fn pdiv(&mut self) -> PDIV_W<BRG_SPEC> {
-        PDIV_W::new(self, 16)
+    pub fn pdiv(&mut self) -> PdivW<BrgSpec> {
+        PdivW::new(self, 16)
     }
     #[doc = "Bit 28 - Shift Clock Output Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sclkosel(&mut self) -> SCLKOSEL_W<BRG_SPEC> {
-        SCLKOSEL_W::new(self, 28)
+    pub fn sclkosel(&mut self) -> SclkoselW<BrgSpec> {
+        SclkoselW::new(self, 28)
     }
     #[doc = "Bit 29 - Master Clock Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn mclkcfg(&mut self) -> MCLKCFG_W<BRG_SPEC> {
-        MCLKCFG_W::new(self, 29)
+    pub fn mclkcfg(&mut self) -> MclkcfgW<BrgSpec> {
+        MclkcfgW::new(self, 29)
     }
     #[doc = "Bits 30:31 - Shift Clock Output Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn sclkcfg(&mut self) -> SCLKCFG_W<BRG_SPEC> {
-        SCLKCFG_W::new(self, 30)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn sclkcfg(&mut self) -> SclkcfgW<BrgSpec> {
+        SclkcfgW::new(self, 30)
     }
 }
 #[doc = "Baud Rate Generator Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`brg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`brg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct BRG_SPEC;
-impl crate::RegisterSpec for BRG_SPEC {
+pub struct BrgSpec;
+impl crate::RegisterSpec for BrgSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`brg::R`](R) reader structure"]
-impl crate::Readable for BRG_SPEC {}
+impl crate::Readable for BrgSpec {}
 #[doc = "`write(|w| ..)` method takes [`brg::W`](W) writer structure"]
-impl crate::Writable for BRG_SPEC {
+impl crate::Writable for BrgSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BRG to value 0"]
-impl crate::Resettable for BRG_SPEC {
+impl crate::Resettable for BrgSpec {
     const RESET_VALUE: u32 = 0;
 }

@@ -1,98 +1,89 @@
 #[doc = "Register `STS` reader"]
-pub type R = crate::R<STS_SPEC>;
+pub type R = crate::R<StsSpec>;
 #[doc = "Register `STS` writer"]
-pub type W = crate::W<STS_SPEC>;
-#[doc = "Field `WERR` reader - Bufferable Write Access Error"]
-pub type WERR_R = crate::BitReader<WERR_A>;
+pub type W = crate::W<StsSpec>;
 #[doc = "Bufferable Write Access Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WERR_A {
+pub enum Werr {
     #[doc = "0: no write error occurred."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: write error occurred, interrupt request is pending."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WERR_A> for bool {
+impl From<Werr> for bool {
     #[inline(always)]
-    fn from(variant: WERR_A) -> Self {
+    fn from(variant: Werr) -> Self {
         variant as u8 != 0
     }
 }
-impl WERR_R {
+#[doc = "Field `WERR` reader - Bufferable Write Access Error"]
+pub type WerrR = crate::BitReader<Werr>;
+impl WerrR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WERR_A {
+    pub const fn variant(&self) -> Werr {
         match self.bits {
-            false => WERR_A::VALUE1,
-            true => WERR_A::VALUE2,
+            false => Werr::Value1,
+            true => Werr::Value2,
         }
     }
     #[doc = "no write error occurred."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WERR_A::VALUE1
+        *self == Werr::Value1
     }
     #[doc = "write error occurred, interrupt request is pending."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WERR_A::VALUE2
+        *self == Werr::Value2
     }
 }
 #[doc = "Field `WERR` writer - Bufferable Write Access Error"]
-pub type WERR_W<'a, REG> = crate::BitWriter<'a, REG, WERR_A>;
-impl<'a, REG> WERR_W<'a, REG>
+pub type WerrW<'a, REG> = crate::BitWriter<'a, REG, Werr>;
+impl<'a, REG> WerrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "no write error occurred."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WERR_A::VALUE1)
+        self.variant(Werr::Value1)
     }
     #[doc = "write error occurred, interrupt request is pending."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WERR_A::VALUE2)
+        self.variant(Werr::Value2)
     }
 }
 impl R {
     #[doc = "Bit 0 - Bufferable Write Access Error"]
     #[inline(always)]
-    pub fn werr(&self) -> WERR_R {
-        WERR_R::new((self.bits & 1) != 0)
+    pub fn werr(&self) -> WerrR {
+        WerrR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Bufferable Write Access Error"]
     #[inline(always)]
     #[must_use]
-    pub fn werr(&mut self) -> WERR_W<STS_SPEC> {
-        WERR_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn werr(&mut self) -> WerrW<StsSpec> {
+        WerrW::new(self, 0)
     }
 }
 #[doc = "Peripheral Bridge Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sts::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sts::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct STS_SPEC;
-impl crate::RegisterSpec for STS_SPEC {
+pub struct StsSpec;
+impl crate::RegisterSpec for StsSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`sts::R`](R) reader structure"]
-impl crate::Readable for STS_SPEC {}
+impl crate::Readable for StsSpec {}
 #[doc = "`write(|w| ..)` method takes [`sts::W`](W) writer structure"]
-impl crate::Writable for STS_SPEC {
+impl crate::Writable for StsSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets STS to value 0"]
-impl crate::Resettable for STS_SPEC {
+impl crate::Resettable for StsSpec {
     const RESET_VALUE: u32 = 0;
 }

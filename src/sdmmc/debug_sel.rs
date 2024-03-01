@@ -1,65 +1,56 @@
 #[doc = "Register `DEBUG_SEL` writer"]
-pub type W = crate::W<DEBUG_SEL_SPEC>;
+pub type W = crate::W<DebugSelSpec>;
 #[doc = "Debug_sel\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DEBUG_SEL_AW {
+pub enum DebugSel {
     #[doc = "0: receiver module and fifo_ctrl module signals are probed out"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: cmd register, Interrupt status, transmitter module and clk sdcard signals are probed out."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<DEBUG_SEL_AW> for bool {
+impl From<DebugSel> for bool {
     #[inline(always)]
-    fn from(variant: DEBUG_SEL_AW) -> Self {
+    fn from(variant: DebugSel) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DEBUG_SEL` writer - Debug_sel"]
-pub type DEBUG_SEL_W<'a, REG> = crate::BitWriter<'a, REG, DEBUG_SEL_AW>;
-impl<'a, REG> DEBUG_SEL_W<'a, REG>
+pub type DebugSelW<'a, REG> = crate::BitWriter<'a, REG, DebugSel>;
+impl<'a, REG> DebugSelW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "receiver module and fifo_ctrl module signals are probed out"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(DEBUG_SEL_AW::VALUE1)
+        self.variant(DebugSel::Value1)
     }
     #[doc = "cmd register, Interrupt status, transmitter module and clk sdcard signals are probed out."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(DEBUG_SEL_AW::VALUE2)
+        self.variant(DebugSel::Value2)
     }
 }
 impl W {
     #[doc = "Bit 0 - Debug_sel"]
     #[inline(always)]
     #[must_use]
-    pub fn debug_sel(&mut self) -> DEBUG_SEL_W<DEBUG_SEL_SPEC> {
-        DEBUG_SEL_W::new(self, 0)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn debug_sel(&mut self) -> DebugSelW<DebugSelSpec> {
+        DebugSelW::new(self, 0)
     }
 }
 #[doc = "Debug Selection Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`debug_sel::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DEBUG_SEL_SPEC;
-impl crate::RegisterSpec for DEBUG_SEL_SPEC {
+pub struct DebugSelSpec;
+impl crate::RegisterSpec for DebugSelSpec {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`debug_sel::W`](W) writer structure"]
-impl crate::Writable for DEBUG_SEL_SPEC {
+impl crate::Writable for DebugSelSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DEBUG_SEL to value 0"]
-impl crate::Resettable for DEBUG_SEL_SPEC {
+impl crate::Resettable for DebugSelSpec {
     const RESET_VALUE: u32 = 0;
 }

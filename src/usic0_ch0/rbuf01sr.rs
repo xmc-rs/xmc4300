@@ -1,492 +1,492 @@
 #[doc = "Register `RBUF01SR` reader"]
-pub type R = crate::R<RBUF01SR_SPEC>;
+pub type R = crate::R<Rbuf01srSpec>;
 #[doc = "Field `WLEN0` reader - Received Data Word Length in RBUF0"]
-pub type WLEN0_R = crate::FieldReader;
-#[doc = "Field `SOF0` reader - Start of Frame in RBUF0"]
-pub type SOF0_R = crate::BitReader<SOF0_A>;
+pub type Wlen0R = crate::FieldReader;
 #[doc = "Start of Frame in RBUF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SOF0_A {
+pub enum Sof0 {
     #[doc = "0: The data in RBUF0 has not been the first data word of a data frame."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The data in RBUF0 has been the first data word of a data frame."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<SOF0_A> for bool {
+impl From<Sof0> for bool {
     #[inline(always)]
-    fn from(variant: SOF0_A) -> Self {
+    fn from(variant: Sof0) -> Self {
         variant as u8 != 0
     }
 }
-impl SOF0_R {
+#[doc = "Field `SOF0` reader - Start of Frame in RBUF0"]
+pub type Sof0R = crate::BitReader<Sof0>;
+impl Sof0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SOF0_A {
+    pub const fn variant(&self) -> Sof0 {
         match self.bits {
-            false => SOF0_A::VALUE1,
-            true => SOF0_A::VALUE2,
+            false => Sof0::Value1,
+            true => Sof0::Value2,
         }
     }
     #[doc = "The data in RBUF0 has not been the first data word of a data frame."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SOF0_A::VALUE1
+        *self == Sof0::Value1
     }
     #[doc = "The data in RBUF0 has been the first data word of a data frame."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SOF0_A::VALUE2
+        *self == Sof0::Value2
     }
 }
 #[doc = "Field `PAR0` reader - Protocol-Related Argument in RBUF0"]
-pub type PAR0_R = crate::BitReader;
-#[doc = "Field `PERR0` reader - Protocol-related Error in RBUF0"]
-pub type PERR0_R = crate::BitReader<PERR0_A>;
+pub type Par0R = crate::BitReader;
 #[doc = "Protocol-related Error in RBUF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PERR0_A {
+pub enum Perr0 {
     #[doc = "0: The received protocol-related argument PAR matches the expected value. The reception of the data word sets bit PSR.RIF and can generate a receive interrupt."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The received protocol-related argument PAR does not match the expected value. The reception of the data word sets bit PSR.AIF and can generate an alternative receive interrupt."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<PERR0_A> for bool {
+impl From<Perr0> for bool {
     #[inline(always)]
-    fn from(variant: PERR0_A) -> Self {
+    fn from(variant: Perr0) -> Self {
         variant as u8 != 0
     }
 }
-impl PERR0_R {
+#[doc = "Field `PERR0` reader - Protocol-related Error in RBUF0"]
+pub type Perr0R = crate::BitReader<Perr0>;
+impl Perr0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PERR0_A {
+    pub const fn variant(&self) -> Perr0 {
         match self.bits {
-            false => PERR0_A::VALUE1,
-            true => PERR0_A::VALUE2,
+            false => Perr0::Value1,
+            true => Perr0::Value2,
         }
     }
     #[doc = "The received protocol-related argument PAR matches the expected value. The reception of the data word sets bit PSR.RIF and can generate a receive interrupt."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PERR0_A::VALUE1
+        *self == Perr0::Value1
     }
     #[doc = "The received protocol-related argument PAR does not match the expected value. The reception of the data word sets bit PSR.AIF and can generate an alternative receive interrupt."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PERR0_A::VALUE2
+        *self == Perr0::Value2
     }
 }
-#[doc = "Field `RDV00` reader - Receive Data Valid in RBUF0"]
-pub type RDV00_R = crate::BitReader<RDV00_A>;
 #[doc = "Receive Data Valid in RBUF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RDV00_A {
+pub enum Rdv00 {
     #[doc = "0: Register RBUF0 does not contain data that has not yet been read out."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Register RBUF0 contains data that has not yet been read out."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<RDV00_A> for bool {
+impl From<Rdv00> for bool {
     #[inline(always)]
-    fn from(variant: RDV00_A) -> Self {
+    fn from(variant: Rdv00) -> Self {
         variant as u8 != 0
     }
 }
-impl RDV00_R {
+#[doc = "Field `RDV00` reader - Receive Data Valid in RBUF0"]
+pub type Rdv00R = crate::BitReader<Rdv00>;
+impl Rdv00R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RDV00_A {
+    pub const fn variant(&self) -> Rdv00 {
         match self.bits {
-            false => RDV00_A::VALUE1,
-            true => RDV00_A::VALUE2,
+            false => Rdv00::Value1,
+            true => Rdv00::Value2,
         }
     }
     #[doc = "Register RBUF0 does not contain data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RDV00_A::VALUE1
+        *self == Rdv00::Value1
     }
     #[doc = "Register RBUF0 contains data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RDV00_A::VALUE2
+        *self == Rdv00::Value2
     }
 }
-#[doc = "Field `RDV01` reader - Receive Data Valid in RBUF1"]
-pub type RDV01_R = crate::BitReader<RDV01_A>;
 #[doc = "Receive Data Valid in RBUF1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RDV01_A {
+pub enum Rdv01 {
     #[doc = "0: Register RBUF1 does not contain data that has not yet been read out."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Register RBUF1 contains data that has not yet been read out."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<RDV01_A> for bool {
+impl From<Rdv01> for bool {
     #[inline(always)]
-    fn from(variant: RDV01_A) -> Self {
+    fn from(variant: Rdv01) -> Self {
         variant as u8 != 0
     }
 }
-impl RDV01_R {
+#[doc = "Field `RDV01` reader - Receive Data Valid in RBUF1"]
+pub type Rdv01R = crate::BitReader<Rdv01>;
+impl Rdv01R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RDV01_A {
+    pub const fn variant(&self) -> Rdv01 {
         match self.bits {
-            false => RDV01_A::VALUE1,
-            true => RDV01_A::VALUE2,
+            false => Rdv01::Value1,
+            true => Rdv01::Value2,
         }
     }
     #[doc = "Register RBUF1 does not contain data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RDV01_A::VALUE1
+        *self == Rdv01::Value1
     }
     #[doc = "Register RBUF1 contains data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RDV01_A::VALUE2
+        *self == Rdv01::Value2
     }
 }
-#[doc = "Field `DS0` reader - Data Source"]
-pub type DS0_R = crate::BitReader<DS0_A>;
 #[doc = "Data Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DS0_A {
+pub enum Ds0 {
     #[doc = "0: The register RBUF contains the data of RBUF0 (same for associated status information)."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The register RBUF contains the data of RBUF1 (same for associated status information)."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<DS0_A> for bool {
+impl From<Ds0> for bool {
     #[inline(always)]
-    fn from(variant: DS0_A) -> Self {
+    fn from(variant: Ds0) -> Self {
         variant as u8 != 0
     }
 }
-impl DS0_R {
+#[doc = "Field `DS0` reader - Data Source"]
+pub type Ds0R = crate::BitReader<Ds0>;
+impl Ds0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> DS0_A {
+    pub const fn variant(&self) -> Ds0 {
         match self.bits {
-            false => DS0_A::VALUE1,
-            true => DS0_A::VALUE2,
+            false => Ds0::Value1,
+            true => Ds0::Value2,
         }
     }
     #[doc = "The register RBUF contains the data of RBUF0 (same for associated status information)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DS0_A::VALUE1
+        *self == Ds0::Value1
     }
     #[doc = "The register RBUF contains the data of RBUF1 (same for associated status information)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DS0_A::VALUE2
+        *self == Ds0::Value2
     }
 }
-#[doc = "Field `WLEN1` reader - Received Data Word Length in RBUF1"]
-pub type WLEN1_R = crate::FieldReader<WLEN1_A>;
 #[doc = "Received Data Word Length in RBUF1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum WLEN1_A {
+pub enum Wlen1 {
     #[doc = "0: One bit has been received."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "15: Sixteen bits have been received."]
-    VALUE2 = 15,
+    Value2 = 15,
 }
-impl From<WLEN1_A> for u8 {
+impl From<Wlen1> for u8 {
     #[inline(always)]
-    fn from(variant: WLEN1_A) -> Self {
+    fn from(variant: Wlen1) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for WLEN1_A {
+impl crate::FieldSpec for Wlen1 {
     type Ux = u8;
 }
-impl WLEN1_R {
+#[doc = "Field `WLEN1` reader - Received Data Word Length in RBUF1"]
+pub type Wlen1R = crate::FieldReader<Wlen1>;
+impl Wlen1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<WLEN1_A> {
+    pub const fn variant(&self) -> Option<Wlen1> {
         match self.bits {
-            0 => Some(WLEN1_A::VALUE1),
-            15 => Some(WLEN1_A::VALUE2),
+            0 => Some(Wlen1::Value1),
+            15 => Some(Wlen1::Value2),
             _ => None,
         }
     }
     #[doc = "One bit has been received."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WLEN1_A::VALUE1
+        *self == Wlen1::Value1
     }
     #[doc = "Sixteen bits have been received."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WLEN1_A::VALUE2
+        *self == Wlen1::Value2
     }
 }
-#[doc = "Field `SOF1` reader - Start of Frame in RBUF1"]
-pub type SOF1_R = crate::BitReader<SOF1_A>;
 #[doc = "Start of Frame in RBUF1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SOF1_A {
+pub enum Sof1 {
     #[doc = "0: The data in RBUF1 has not been the first data word of a data frame."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The data in RBUF1 has been the first data word of a data frame."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<SOF1_A> for bool {
+impl From<Sof1> for bool {
     #[inline(always)]
-    fn from(variant: SOF1_A) -> Self {
+    fn from(variant: Sof1) -> Self {
         variant as u8 != 0
     }
 }
-impl SOF1_R {
+#[doc = "Field `SOF1` reader - Start of Frame in RBUF1"]
+pub type Sof1R = crate::BitReader<Sof1>;
+impl Sof1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SOF1_A {
+    pub const fn variant(&self) -> Sof1 {
         match self.bits {
-            false => SOF1_A::VALUE1,
-            true => SOF1_A::VALUE2,
+            false => Sof1::Value1,
+            true => Sof1::Value2,
         }
     }
     #[doc = "The data in RBUF1 has not been the first data word of a data frame."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SOF1_A::VALUE1
+        *self == Sof1::Value1
     }
     #[doc = "The data in RBUF1 has been the first data word of a data frame."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SOF1_A::VALUE2
+        *self == Sof1::Value2
     }
 }
 #[doc = "Field `PAR1` reader - Protocol-Related Argument in RBUF1"]
-pub type PAR1_R = crate::BitReader;
-#[doc = "Field `PERR1` reader - Protocol-related Error in RBUF1"]
-pub type PERR1_R = crate::BitReader<PERR1_A>;
+pub type Par1R = crate::BitReader;
 #[doc = "Protocol-related Error in RBUF1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PERR1_A {
+pub enum Perr1 {
     #[doc = "0: The received protocol-related argument PAR matches the expected value. The reception of the data word sets bit PSR.RIF and can generate a receive interrupt."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The received protocol-related argument PAR does not match the expected value. The reception of the data word sets bit PSR.AIF and can generate an alternative receive interrupt."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<PERR1_A> for bool {
+impl From<Perr1> for bool {
     #[inline(always)]
-    fn from(variant: PERR1_A) -> Self {
+    fn from(variant: Perr1) -> Self {
         variant as u8 != 0
     }
 }
-impl PERR1_R {
+#[doc = "Field `PERR1` reader - Protocol-related Error in RBUF1"]
+pub type Perr1R = crate::BitReader<Perr1>;
+impl Perr1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PERR1_A {
+    pub const fn variant(&self) -> Perr1 {
         match self.bits {
-            false => PERR1_A::VALUE1,
-            true => PERR1_A::VALUE2,
+            false => Perr1::Value1,
+            true => Perr1::Value2,
         }
     }
     #[doc = "The received protocol-related argument PAR matches the expected value. The reception of the data word sets bit PSR.RIF and can generate a receive interrupt."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PERR1_A::VALUE1
+        *self == Perr1::Value1
     }
     #[doc = "The received protocol-related argument PAR does not match the expected value. The reception of the data word sets bit PSR.AIF and can generate an alternative receive interrupt."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PERR1_A::VALUE2
+        *self == Perr1::Value2
     }
 }
-#[doc = "Field `RDV10` reader - Receive Data Valid in RBUF0"]
-pub type RDV10_R = crate::BitReader<RDV10_A>;
 #[doc = "Receive Data Valid in RBUF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RDV10_A {
+pub enum Rdv10 {
     #[doc = "0: Register RBUF0 does not contain data that has not yet been read out."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Register RBUF0 contains data that has not yet been read out."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<RDV10_A> for bool {
+impl From<Rdv10> for bool {
     #[inline(always)]
-    fn from(variant: RDV10_A) -> Self {
+    fn from(variant: Rdv10) -> Self {
         variant as u8 != 0
     }
 }
-impl RDV10_R {
+#[doc = "Field `RDV10` reader - Receive Data Valid in RBUF0"]
+pub type Rdv10R = crate::BitReader<Rdv10>;
+impl Rdv10R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RDV10_A {
+    pub const fn variant(&self) -> Rdv10 {
         match self.bits {
-            false => RDV10_A::VALUE1,
-            true => RDV10_A::VALUE2,
+            false => Rdv10::Value1,
+            true => Rdv10::Value2,
         }
     }
     #[doc = "Register RBUF0 does not contain data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RDV10_A::VALUE1
+        *self == Rdv10::Value1
     }
     #[doc = "Register RBUF0 contains data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RDV10_A::VALUE2
+        *self == Rdv10::Value2
     }
 }
-#[doc = "Field `RDV11` reader - Receive Data Valid in RBUF1"]
-pub type RDV11_R = crate::BitReader<RDV11_A>;
 #[doc = "Receive Data Valid in RBUF1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RDV11_A {
+pub enum Rdv11 {
     #[doc = "0: Register RBUF1 does not contain data that has not yet been read out."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Register RBUF1 contains data that has not yet been read out."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<RDV11_A> for bool {
+impl From<Rdv11> for bool {
     #[inline(always)]
-    fn from(variant: RDV11_A) -> Self {
+    fn from(variant: Rdv11) -> Self {
         variant as u8 != 0
     }
 }
-impl RDV11_R {
+#[doc = "Field `RDV11` reader - Receive Data Valid in RBUF1"]
+pub type Rdv11R = crate::BitReader<Rdv11>;
+impl Rdv11R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RDV11_A {
+    pub const fn variant(&self) -> Rdv11 {
         match self.bits {
-            false => RDV11_A::VALUE1,
-            true => RDV11_A::VALUE2,
+            false => Rdv11::Value1,
+            true => Rdv11::Value2,
         }
     }
     #[doc = "Register RBUF1 does not contain data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RDV11_A::VALUE1
+        *self == Rdv11::Value1
     }
     #[doc = "Register RBUF1 contains data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RDV11_A::VALUE2
+        *self == Rdv11::Value2
     }
 }
-#[doc = "Field `DS1` reader - Data Source"]
-pub type DS1_R = crate::BitReader<DS1_A>;
 #[doc = "Data Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DS1_A {
+pub enum Ds1 {
     #[doc = "0: The register RBUF contains the data of RBUF0 (same for associated status information)."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The register RBUF contains the data of RBUF1 (same for associated status information)."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<DS1_A> for bool {
+impl From<Ds1> for bool {
     #[inline(always)]
-    fn from(variant: DS1_A) -> Self {
+    fn from(variant: Ds1) -> Self {
         variant as u8 != 0
     }
 }
-impl DS1_R {
+#[doc = "Field `DS1` reader - Data Source"]
+pub type Ds1R = crate::BitReader<Ds1>;
+impl Ds1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> DS1_A {
+    pub const fn variant(&self) -> Ds1 {
         match self.bits {
-            false => DS1_A::VALUE1,
-            true => DS1_A::VALUE2,
+            false => Ds1::Value1,
+            true => Ds1::Value2,
         }
     }
     #[doc = "The register RBUF contains the data of RBUF0 (same for associated status information)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DS1_A::VALUE1
+        *self == Ds1::Value1
     }
     #[doc = "The register RBUF contains the data of RBUF1 (same for associated status information)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DS1_A::VALUE2
+        *self == Ds1::Value2
     }
 }
 impl R {
     #[doc = "Bits 0:3 - Received Data Word Length in RBUF0"]
     #[inline(always)]
-    pub fn wlen0(&self) -> WLEN0_R {
-        WLEN0_R::new((self.bits & 0x0f) as u8)
+    pub fn wlen0(&self) -> Wlen0R {
+        Wlen0R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 6 - Start of Frame in RBUF0"]
     #[inline(always)]
-    pub fn sof0(&self) -> SOF0_R {
-        SOF0_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn sof0(&self) -> Sof0R {
+        Sof0R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 8 - Protocol-Related Argument in RBUF0"]
     #[inline(always)]
-    pub fn par0(&self) -> PAR0_R {
-        PAR0_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn par0(&self) -> Par0R {
+        Par0R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Protocol-related Error in RBUF0"]
     #[inline(always)]
-    pub fn perr0(&self) -> PERR0_R {
-        PERR0_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn perr0(&self) -> Perr0R {
+        Perr0R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 13 - Receive Data Valid in RBUF0"]
     #[inline(always)]
-    pub fn rdv00(&self) -> RDV00_R {
-        RDV00_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn rdv00(&self) -> Rdv00R {
+        Rdv00R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Receive Data Valid in RBUF1"]
     #[inline(always)]
-    pub fn rdv01(&self) -> RDV01_R {
-        RDV01_R::new(((self.bits >> 14) & 1) != 0)
+    pub fn rdv01(&self) -> Rdv01R {
+        Rdv01R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Data Source"]
     #[inline(always)]
-    pub fn ds0(&self) -> DS0_R {
-        DS0_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn ds0(&self) -> Ds0R {
+        Ds0R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:19 - Received Data Word Length in RBUF1"]
     #[inline(always)]
-    pub fn wlen1(&self) -> WLEN1_R {
-        WLEN1_R::new(((self.bits >> 16) & 0x0f) as u8)
+    pub fn wlen1(&self) -> Wlen1R {
+        Wlen1R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bit 22 - Start of Frame in RBUF1"]
     #[inline(always)]
-    pub fn sof1(&self) -> SOF1_R {
-        SOF1_R::new(((self.bits >> 22) & 1) != 0)
+    pub fn sof1(&self) -> Sof1R {
+        Sof1R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 24 - Protocol-Related Argument in RBUF1"]
     #[inline(always)]
-    pub fn par1(&self) -> PAR1_R {
-        PAR1_R::new(((self.bits >> 24) & 1) != 0)
+    pub fn par1(&self) -> Par1R {
+        Par1R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Protocol-related Error in RBUF1"]
     #[inline(always)]
-    pub fn perr1(&self) -> PERR1_R {
-        PERR1_R::new(((self.bits >> 25) & 1) != 0)
+    pub fn perr1(&self) -> Perr1R {
+        Perr1R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 29 - Receive Data Valid in RBUF0"]
     #[inline(always)]
-    pub fn rdv10(&self) -> RDV10_R {
-        RDV10_R::new(((self.bits >> 29) & 1) != 0)
+    pub fn rdv10(&self) -> Rdv10R {
+        Rdv10R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - Receive Data Valid in RBUF1"]
     #[inline(always)]
-    pub fn rdv11(&self) -> RDV11_R {
-        RDV11_R::new(((self.bits >> 30) & 1) != 0)
+    pub fn rdv11(&self) -> Rdv11R {
+        Rdv11R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Data Source"]
     #[inline(always)]
-    pub fn ds1(&self) -> DS1_R {
-        DS1_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn ds1(&self) -> Ds1R {
+        Ds1R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 #[doc = "Receiver Buffer 01 Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rbuf01sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct RBUF01SR_SPEC;
-impl crate::RegisterSpec for RBUF01SR_SPEC {
+pub struct Rbuf01srSpec;
+impl crate::RegisterSpec for Rbuf01srSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`rbuf01sr::R`](R) reader structure"]
-impl crate::Readable for RBUF01SR_SPEC {}
+impl crate::Readable for Rbuf01srSpec {}
 #[doc = "`reset()` method sets RBUF01SR to value 0"]
-impl crate::Resettable for RBUF01SR_SPEC {
+impl crate::Resettable for Rbuf01srSpec {
     const RESET_VALUE: u32 = 0;
 }

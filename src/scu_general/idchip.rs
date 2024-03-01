@@ -1,22 +1,22 @@
 #[doc = "Register `IDCHIP` reader"]
-pub type R = crate::R<IDCHIP_SPEC>;
+pub type R = crate::R<IdchipSpec>;
 #[doc = "Field `IDCHIP` reader - Chip ID"]
-pub type IDCHIP_R = crate::FieldReader<u32>;
+pub type IdchipR = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Chip ID"]
     #[inline(always)]
-    pub fn idchip(&self) -> IDCHIP_R {
-        IDCHIP_R::new(self.bits)
+    pub fn idchip(&self) -> IdchipR {
+        IdchipR::new(self.bits)
     }
 }
 #[doc = "Chip ID Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`idchip::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct IDCHIP_SPEC;
-impl crate::RegisterSpec for IDCHIP_SPEC {
+pub struct IdchipSpec;
+impl crate::RegisterSpec for IdchipSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`idchip::R`](R) reader structure"]
-impl crate::Readable for IDCHIP_SPEC {}
+impl crate::Readable for IdchipSpec {}
 #[doc = "`reset()` method sets IDCHIP to value 0"]
-impl crate::Resettable for IDCHIP_SPEC {
+impl crate::Resettable for IdchipSpec {
     const RESET_VALUE: u32 = 0;
 }

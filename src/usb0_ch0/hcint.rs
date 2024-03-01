@@ -1,244 +1,235 @@
 #[doc = "Register `HCINT` reader"]
-pub type R = crate::R<HCINT_SPEC>;
+pub type R = crate::R<HcintSpec>;
 #[doc = "Register `HCINT` writer"]
-pub type W = crate::W<HCINT_SPEC>;
+pub type W = crate::W<HcintSpec>;
 #[doc = "Field `XferCompl` reader - Transfer Completed"]
-pub type XFER_COMPL_R = crate::BitReader;
+pub type XferComplR = crate::BitReader;
 #[doc = "Field `XferCompl` writer - Transfer Completed"]
-pub type XFER_COMPL_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type XferComplW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ChHltd` reader - Channel Halted"]
-pub type CH_HLTD_R = crate::BitReader;
+pub type ChHltdR = crate::BitReader;
 #[doc = "Field `ChHltd` writer - Channel Halted"]
-pub type CH_HLTD_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ChHltdW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `AHBErr` reader - AHB Error"]
-pub type AHBERR_R = crate::BitReader;
+pub type AhberrR = crate::BitReader;
 #[doc = "Field `AHBErr` writer - AHB Error"]
-pub type AHBERR_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type AhberrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `STALL` reader - STALL Response Received Interrupt"]
-pub type STALL_R = crate::BitReader;
+pub type StallR = crate::BitReader;
 #[doc = "Field `STALL` writer - STALL Response Received Interrupt"]
-pub type STALL_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type StallW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NAK` reader - NAK Response Received Interrupt"]
-pub type NAK_R = crate::BitReader;
+pub type NakR = crate::BitReader;
 #[doc = "Field `NAK` writer - NAK Response Received Interrupt"]
-pub type NAK_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type NakW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ACK` reader - ACK Response Received/Transmitted Interrupt"]
-pub type ACK_R = crate::BitReader;
+pub type AckR = crate::BitReader;
 #[doc = "Field `ACK` writer - ACK Response Received/Transmitted Interrupt"]
-pub type ACK_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type AckW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NYET` reader - NYET Response Received Interrupt"]
-pub type NYET_R = crate::BitReader;
+pub type NyetR = crate::BitReader;
 #[doc = "Field `NYET` writer - NYET Response Received Interrupt"]
-pub type NYET_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type NyetW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `XactErr` reader - Transaction Error"]
-pub type XACT_ERR_R = crate::BitReader;
+pub type XactErrR = crate::BitReader;
 #[doc = "Field `XactErr` writer - Transaction Error"]
-pub type XACT_ERR_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type XactErrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BblErr` reader - Babble Error"]
-pub type BBL_ERR_R = crate::BitReader;
+pub type BblErrR = crate::BitReader;
 #[doc = "Field `BblErr` writer - Babble Error"]
-pub type BBL_ERR_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type BblErrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `FrmOvrun` reader - Frame Overrun"]
-pub type FRM_OVRUN_R = crate::BitReader;
+pub type FrmOvrunR = crate::BitReader;
 #[doc = "Field `FrmOvrun` writer - Frame Overrun"]
-pub type FRM_OVRUN_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type FrmOvrunW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DataTglErr` reader - Data Toggle Error"]
-pub type DATA_TGL_ERR_R = crate::BitReader;
+pub type DataTglErrR = crate::BitReader;
 #[doc = "Field `DataTglErr` writer - Data Toggle Error"]
-pub type DATA_TGL_ERR_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DataTglErrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `BNAIntr` reader - BNA (Buffer Not Available) Interrupt"]
-pub type BNAINTR_R = crate::BitReader;
+pub type BnaintrR = crate::BitReader;
 #[doc = "Field `BNAIntr` writer - BNA (Buffer Not Available) Interrupt"]
-pub type BNAINTR_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type BnaintrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `XCS_XACT_ERR` reader - Excessive Transaction Error"]
-pub type XCS_XACT_ERR_R = crate::BitReader;
+pub type XcsXactErrR = crate::BitReader;
 #[doc = "Field `XCS_XACT_ERR` writer - Excessive Transaction Error"]
-pub type XCS_XACT_ERR_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type XcsXactErrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `DESC_LST_ROLLIntr` reader - Descriptor rollover interrupt"]
-pub type DESC_LST_ROLLINTR_R = crate::BitReader;
+pub type DescLstRollintrR = crate::BitReader;
 #[doc = "Field `DESC_LST_ROLLIntr` writer - Descriptor rollover interrupt"]
-pub type DESC_LST_ROLLINTR_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DescLstRollintrW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Transfer Completed"]
     #[inline(always)]
-    pub fn xfer_compl(&self) -> XFER_COMPL_R {
-        XFER_COMPL_R::new((self.bits & 1) != 0)
+    pub fn xfer_compl(&self) -> XferComplR {
+        XferComplR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Channel Halted"]
     #[inline(always)]
-    pub fn ch_hltd(&self) -> CH_HLTD_R {
-        CH_HLTD_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn ch_hltd(&self) -> ChHltdR {
+        ChHltdR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
-    pub fn ahberr(&self) -> AHBERR_R {
-        AHBERR_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn ahberr(&self) -> AhberrR {
+        AhberrR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - STALL Response Received Interrupt"]
     #[inline(always)]
-    pub fn stall(&self) -> STALL_R {
-        STALL_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn stall(&self) -> StallR {
+        StallR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - NAK Response Received Interrupt"]
     #[inline(always)]
-    pub fn nak(&self) -> NAK_R {
-        NAK_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn nak(&self) -> NakR {
+        NakR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - ACK Response Received/Transmitted Interrupt"]
     #[inline(always)]
-    pub fn ack(&self) -> ACK_R {
-        ACK_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn ack(&self) -> AckR {
+        AckR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - NYET Response Received Interrupt"]
     #[inline(always)]
-    pub fn nyet(&self) -> NYET_R {
-        NYET_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn nyet(&self) -> NyetR {
+        NyetR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Transaction Error"]
     #[inline(always)]
-    pub fn xact_err(&self) -> XACT_ERR_R {
-        XACT_ERR_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn xact_err(&self) -> XactErrR {
+        XactErrR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Babble Error"]
     #[inline(always)]
-    pub fn bbl_err(&self) -> BBL_ERR_R {
-        BBL_ERR_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn bbl_err(&self) -> BblErrR {
+        BblErrR::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Frame Overrun"]
     #[inline(always)]
-    pub fn frm_ovrun(&self) -> FRM_OVRUN_R {
-        FRM_OVRUN_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn frm_ovrun(&self) -> FrmOvrunR {
+        FrmOvrunR::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Data Toggle Error"]
     #[inline(always)]
-    pub fn data_tgl_err(&self) -> DATA_TGL_ERR_R {
-        DATA_TGL_ERR_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn data_tgl_err(&self) -> DataTglErrR {
+        DataTglErrR::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - BNA (Buffer Not Available) Interrupt"]
     #[inline(always)]
-    pub fn bnaintr(&self) -> BNAINTR_R {
-        BNAINTR_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn bnaintr(&self) -> BnaintrR {
+        BnaintrR::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Excessive Transaction Error"]
     #[inline(always)]
-    pub fn xcs_xact_err(&self) -> XCS_XACT_ERR_R {
-        XCS_XACT_ERR_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn xcs_xact_err(&self) -> XcsXactErrR {
+        XcsXactErrR::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Descriptor rollover interrupt"]
     #[inline(always)]
-    pub fn desc_lst_rollintr(&self) -> DESC_LST_ROLLINTR_R {
-        DESC_LST_ROLLINTR_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn desc_lst_rollintr(&self) -> DescLstRollintrR {
+        DescLstRollintrR::new(((self.bits >> 13) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Transfer Completed"]
     #[inline(always)]
     #[must_use]
-    pub fn xfer_compl(&mut self) -> XFER_COMPL_W<HCINT_SPEC> {
-        XFER_COMPL_W::new(self, 0)
+    pub fn xfer_compl(&mut self) -> XferComplW<HcintSpec> {
+        XferComplW::new(self, 0)
     }
     #[doc = "Bit 1 - Channel Halted"]
     #[inline(always)]
     #[must_use]
-    pub fn ch_hltd(&mut self) -> CH_HLTD_W<HCINT_SPEC> {
-        CH_HLTD_W::new(self, 1)
+    pub fn ch_hltd(&mut self) -> ChHltdW<HcintSpec> {
+        ChHltdW::new(self, 1)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
     #[must_use]
-    pub fn ahberr(&mut self) -> AHBERR_W<HCINT_SPEC> {
-        AHBERR_W::new(self, 2)
+    pub fn ahberr(&mut self) -> AhberrW<HcintSpec> {
+        AhberrW::new(self, 2)
     }
     #[doc = "Bit 3 - STALL Response Received Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn stall(&mut self) -> STALL_W<HCINT_SPEC> {
-        STALL_W::new(self, 3)
+    pub fn stall(&mut self) -> StallW<HcintSpec> {
+        StallW::new(self, 3)
     }
     #[doc = "Bit 4 - NAK Response Received Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn nak(&mut self) -> NAK_W<HCINT_SPEC> {
-        NAK_W::new(self, 4)
+    pub fn nak(&mut self) -> NakW<HcintSpec> {
+        NakW::new(self, 4)
     }
     #[doc = "Bit 5 - ACK Response Received/Transmitted Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn ack(&mut self) -> ACK_W<HCINT_SPEC> {
-        ACK_W::new(self, 5)
+    pub fn ack(&mut self) -> AckW<HcintSpec> {
+        AckW::new(self, 5)
     }
     #[doc = "Bit 6 - NYET Response Received Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn nyet(&mut self) -> NYET_W<HCINT_SPEC> {
-        NYET_W::new(self, 6)
+    pub fn nyet(&mut self) -> NyetW<HcintSpec> {
+        NyetW::new(self, 6)
     }
     #[doc = "Bit 7 - Transaction Error"]
     #[inline(always)]
     #[must_use]
-    pub fn xact_err(&mut self) -> XACT_ERR_W<HCINT_SPEC> {
-        XACT_ERR_W::new(self, 7)
+    pub fn xact_err(&mut self) -> XactErrW<HcintSpec> {
+        XactErrW::new(self, 7)
     }
     #[doc = "Bit 8 - Babble Error"]
     #[inline(always)]
     #[must_use]
-    pub fn bbl_err(&mut self) -> BBL_ERR_W<HCINT_SPEC> {
-        BBL_ERR_W::new(self, 8)
+    pub fn bbl_err(&mut self) -> BblErrW<HcintSpec> {
+        BblErrW::new(self, 8)
     }
     #[doc = "Bit 9 - Frame Overrun"]
     #[inline(always)]
     #[must_use]
-    pub fn frm_ovrun(&mut self) -> FRM_OVRUN_W<HCINT_SPEC> {
-        FRM_OVRUN_W::new(self, 9)
+    pub fn frm_ovrun(&mut self) -> FrmOvrunW<HcintSpec> {
+        FrmOvrunW::new(self, 9)
     }
     #[doc = "Bit 10 - Data Toggle Error"]
     #[inline(always)]
     #[must_use]
-    pub fn data_tgl_err(&mut self) -> DATA_TGL_ERR_W<HCINT_SPEC> {
-        DATA_TGL_ERR_W::new(self, 10)
+    pub fn data_tgl_err(&mut self) -> DataTglErrW<HcintSpec> {
+        DataTglErrW::new(self, 10)
     }
     #[doc = "Bit 11 - BNA (Buffer Not Available) Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn bnaintr(&mut self) -> BNAINTR_W<HCINT_SPEC> {
-        BNAINTR_W::new(self, 11)
+    pub fn bnaintr(&mut self) -> BnaintrW<HcintSpec> {
+        BnaintrW::new(self, 11)
     }
     #[doc = "Bit 12 - Excessive Transaction Error"]
     #[inline(always)]
     #[must_use]
-    pub fn xcs_xact_err(&mut self) -> XCS_XACT_ERR_W<HCINT_SPEC> {
-        XCS_XACT_ERR_W::new(self, 12)
+    pub fn xcs_xact_err(&mut self) -> XcsXactErrW<HcintSpec> {
+        XcsXactErrW::new(self, 12)
     }
     #[doc = "Bit 13 - Descriptor rollover interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn desc_lst_rollintr(&mut self) -> DESC_LST_ROLLINTR_W<HCINT_SPEC> {
-        DESC_LST_ROLLINTR_W::new(self, 13)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn desc_lst_rollintr(&mut self) -> DescLstRollintrW<HcintSpec> {
+        DescLstRollintrW::new(self, 13)
     }
 }
 #[doc = "Host Channel Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hcint::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hcint::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct HCINT_SPEC;
-impl crate::RegisterSpec for HCINT_SPEC {
+pub struct HcintSpec;
+impl crate::RegisterSpec for HcintSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`hcint::R`](R) reader structure"]
-impl crate::Readable for HCINT_SPEC {}
+impl crate::Readable for HcintSpec {}
 #[doc = "`write(|w| ..)` method takes [`hcint::W`](W) writer structure"]
-impl crate::Writable for HCINT_SPEC {
+impl crate::Writable for HcintSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HCINT to value 0"]
-impl crate::Resettable for HCINT_SPEC {
+impl crate::Resettable for HcintSpec {
     const RESET_VALUE: u32 = 0;
 }
