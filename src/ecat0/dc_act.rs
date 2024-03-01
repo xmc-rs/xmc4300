@@ -1,226 +1,217 @@
 #[doc = "Register `DC_ACT` reader"]
-pub type R = crate::R<DC_ACT_SPEC>;
+pub type R = crate::R<DcActSpec>;
 #[doc = "Register `DC_ACT` writer"]
-pub type W = crate::W<DC_ACT_SPEC>;
-#[doc = "Field `SYNC_OUT` reader - Sync Out Unit activation"]
-pub type SYNC_OUT_R = crate::BitReader<SYNC_OUT_A>;
+pub type W = crate::W<DcActSpec>;
 #[doc = "Sync Out Unit activation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SYNC_OUT_A {
+pub enum SyncOut {
     #[doc = "0: Deactivated"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Activated"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<SYNC_OUT_A> for bool {
+impl From<SyncOut> for bool {
     #[inline(always)]
-    fn from(variant: SYNC_OUT_A) -> Self {
+    fn from(variant: SyncOut) -> Self {
         variant as u8 != 0
     }
 }
-impl SYNC_OUT_R {
+#[doc = "Field `SYNC_OUT` reader - Sync Out Unit activation"]
+pub type SyncOutR = crate::BitReader<SyncOut>;
+impl SyncOutR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SYNC_OUT_A {
+    pub const fn variant(&self) -> SyncOut {
         match self.bits {
-            false => SYNC_OUT_A::VALUE1,
-            true => SYNC_OUT_A::VALUE2,
+            false => SyncOut::Value1,
+            true => SyncOut::Value2,
         }
     }
     #[doc = "Deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SYNC_OUT_A::VALUE1
+        *self == SyncOut::Value1
     }
     #[doc = "Activated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SYNC_OUT_A::VALUE2
+        *self == SyncOut::Value2
     }
 }
 #[doc = "Field `SYNC_OUT` writer - Sync Out Unit activation"]
-pub type SYNC_OUT_W<'a, REG> = crate::BitWriter<'a, REG, SYNC_OUT_A>;
-impl<'a, REG> SYNC_OUT_W<'a, REG>
+pub type SyncOutW<'a, REG> = crate::BitWriter<'a, REG, SyncOut>;
+impl<'a, REG> SyncOutW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Deactivated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(SYNC_OUT_A::VALUE1)
+        self.variant(SyncOut::Value1)
     }
     #[doc = "Activated"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(SYNC_OUT_A::VALUE2)
+        self.variant(SyncOut::Value2)
+    }
+}
+#[doc = "SYNC0 generation\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Sync0 {
+    #[doc = "0: Deactivated"]
+    Value1 = 0,
+    #[doc = "1: SYNC0 pulse is generated"]
+    Value2 = 1,
+}
+impl From<Sync0> for bool {
+    #[inline(always)]
+    fn from(variant: Sync0) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `SYNC_0` reader - SYNC0 generation"]
-pub type SYNC_0_R = crate::BitReader<SYNC_0_A>;
-#[doc = "SYNC0 generation\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SYNC_0_A {
-    #[doc = "0: Deactivated"]
-    VALUE1 = 0,
-    #[doc = "1: SYNC0 pulse is generated"]
-    VALUE2 = 1,
-}
-impl From<SYNC_0_A> for bool {
-    #[inline(always)]
-    fn from(variant: SYNC_0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl SYNC_0_R {
+pub type Sync0R = crate::BitReader<Sync0>;
+impl Sync0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SYNC_0_A {
+    pub const fn variant(&self) -> Sync0 {
         match self.bits {
-            false => SYNC_0_A::VALUE1,
-            true => SYNC_0_A::VALUE2,
+            false => Sync0::Value1,
+            true => Sync0::Value2,
         }
     }
     #[doc = "Deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SYNC_0_A::VALUE1
+        *self == Sync0::Value1
     }
     #[doc = "SYNC0 pulse is generated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SYNC_0_A::VALUE2
+        *self == Sync0::Value2
     }
 }
 #[doc = "Field `SYNC_0` writer - SYNC0 generation"]
-pub type SYNC_0_W<'a, REG> = crate::BitWriter<'a, REG, SYNC_0_A>;
-impl<'a, REG> SYNC_0_W<'a, REG>
+pub type Sync0W<'a, REG> = crate::BitWriter<'a, REG, Sync0>;
+impl<'a, REG> Sync0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Deactivated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(SYNC_0_A::VALUE1)
+        self.variant(Sync0::Value1)
     }
     #[doc = "SYNC0 pulse is generated"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(SYNC_0_A::VALUE2)
+        self.variant(Sync0::Value2)
     }
 }
-#[doc = "Field `SYNC_1` reader - SYNC1 generation"]
-pub type SYNC_1_R = crate::BitReader<SYNC_1_A>;
 #[doc = "SYNC1 generation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SYNC_1_A {
+pub enum Sync1 {
     #[doc = "0: Deactivated"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: SYNC1 pulse is generated"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<SYNC_1_A> for bool {
+impl From<Sync1> for bool {
     #[inline(always)]
-    fn from(variant: SYNC_1_A) -> Self {
+    fn from(variant: Sync1) -> Self {
         variant as u8 != 0
     }
 }
-impl SYNC_1_R {
+#[doc = "Field `SYNC_1` reader - SYNC1 generation"]
+pub type Sync1R = crate::BitReader<Sync1>;
+impl Sync1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SYNC_1_A {
+    pub const fn variant(&self) -> Sync1 {
         match self.bits {
-            false => SYNC_1_A::VALUE1,
-            true => SYNC_1_A::VALUE2,
+            false => Sync1::Value1,
+            true => Sync1::Value2,
         }
     }
     #[doc = "Deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SYNC_1_A::VALUE1
+        *self == Sync1::Value1
     }
     #[doc = "SYNC1 pulse is generated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SYNC_1_A::VALUE2
+        *self == Sync1::Value2
     }
 }
 #[doc = "Field `SYNC_1` writer - SYNC1 generation"]
-pub type SYNC_1_W<'a, REG> = crate::BitWriter<'a, REG, SYNC_1_A>;
-impl<'a, REG> SYNC_1_W<'a, REG>
+pub type Sync1W<'a, REG> = crate::BitWriter<'a, REG, Sync1>;
+impl<'a, REG> Sync1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Deactivated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(SYNC_1_A::VALUE1)
+        self.variant(Sync1::Value1)
     }
     #[doc = "SYNC1 pulse is generated"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(SYNC_1_A::VALUE2)
+        self.variant(Sync1::Value2)
     }
 }
 impl R {
     #[doc = "Bit 0 - Sync Out Unit activation"]
     #[inline(always)]
-    pub fn sync_out(&self) -> SYNC_OUT_R {
-        SYNC_OUT_R::new((self.bits & 1) != 0)
+    pub fn sync_out(&self) -> SyncOutR {
+        SyncOutR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - SYNC0 generation"]
     #[inline(always)]
-    pub fn sync_0(&self) -> SYNC_0_R {
-        SYNC_0_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn sync_0(&self) -> Sync0R {
+        Sync0R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - SYNC1 generation"]
     #[inline(always)]
-    pub fn sync_1(&self) -> SYNC_1_R {
-        SYNC_1_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn sync_1(&self) -> Sync1R {
+        Sync1R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Sync Out Unit activation"]
     #[inline(always)]
     #[must_use]
-    pub fn sync_out(&mut self) -> SYNC_OUT_W<DC_ACT_SPEC> {
-        SYNC_OUT_W::new(self, 0)
+    pub fn sync_out(&mut self) -> SyncOutW<DcActSpec> {
+        SyncOutW::new(self, 0)
     }
     #[doc = "Bit 1 - SYNC0 generation"]
     #[inline(always)]
     #[must_use]
-    pub fn sync_0(&mut self) -> SYNC_0_W<DC_ACT_SPEC> {
-        SYNC_0_W::new(self, 1)
+    pub fn sync_0(&mut self) -> Sync0W<DcActSpec> {
+        Sync0W::new(self, 1)
     }
     #[doc = "Bit 2 - SYNC1 generation"]
     #[inline(always)]
     #[must_use]
-    pub fn sync_1(&mut self) -> SYNC_1_W<DC_ACT_SPEC> {
-        SYNC_1_W::new(self, 2)
-    }
-    #[doc = r" Writes raw bits to the register."]
-    #[doc = r""]
-    #[doc = r" # Safety"]
-    #[doc = r""]
-    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.bits = bits;
-        self
+    pub fn sync_1(&mut self) -> Sync1W<DcActSpec> {
+        Sync1W::new(self, 2)
     }
 }
 #[doc = "Activation register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_act::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dc_act::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DC_ACT_SPEC;
-impl crate::RegisterSpec for DC_ACT_SPEC {
+pub struct DcActSpec;
+impl crate::RegisterSpec for DcActSpec {
     type Ux = u8;
 }
 #[doc = "`read()` method returns [`dc_act::R`](R) reader structure"]
-impl crate::Readable for DC_ACT_SPEC {}
+impl crate::Readable for DcActSpec {}
 #[doc = "`write(|w| ..)` method takes [`dc_act::W`](W) writer structure"]
-impl crate::Writable for DC_ACT_SPEC {
+impl crate::Writable for DcActSpec {
+    type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets DC_ACT to value 0"]
-impl crate::Resettable for DC_ACT_SPEC {
+impl crate::Resettable for DcActSpec {
     const RESET_VALUE: u8 = 0;
 }
