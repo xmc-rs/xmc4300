@@ -32,6 +32,7 @@ impl From<Cfmod> for u8 {
 impl crate::FieldSpec for Cfmod {
     type Ux = u8;
 }
+impl crate::IsEnum for Cfmod {}
 #[doc = "Field `CFMOD` reader - CAN Frame Counter Mode"]
 pub type CfmodR = crate::FieldReader<Cfmod>;
 impl CfmodR {
@@ -68,7 +69,7 @@ impl CfmodR {
     }
 }
 #[doc = "Field `CFMOD` writer - CAN Frame Counter Mode"]
-pub type CfmodW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Cfmod>;
+pub type CfmodW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cfmod, crate::Safe>;
 impl<'a, REG> CfmodW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

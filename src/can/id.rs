@@ -18,6 +18,7 @@ impl From<ModType> for u8 {
 impl crate::FieldSpec for ModType {
     type Ux = u8;
 }
+impl crate::IsEnum for ModType {}
 #[doc = "Field `MOD_TYPE` reader - Module Type"]
 pub type ModTypeR = crate::FieldReader<ModType>;
 impl ModTypeR {

@@ -20,6 +20,7 @@ impl From<Mtdv> for u8 {
 impl crate::FieldSpec for Mtdv {
     type Ux = u8;
 }
+impl crate::IsEnum for Mtdv {}
 #[doc = "Field `MTDV` writer - Modify Transmit Data Valid"]
 pub type MtdvW<'a, REG> = crate::FieldWriter<'a, REG, 2, Mtdv>;
 impl<'a, REG> MtdvW<'a, REG>

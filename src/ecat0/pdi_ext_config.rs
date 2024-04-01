@@ -20,6 +20,7 @@ impl From<RPref> for u8 {
 impl crate::FieldSpec for RPref {
     type Ux = u8;
 }
+impl crate::IsEnum for RPref {}
 #[doc = "Field `R_Pref` reader - Read Prefetch Size"]
 pub type RPrefR = crate::FieldReader<RPref>;
 impl RPrefR {
@@ -69,6 +70,7 @@ impl From<SubType> for u8 {
 impl crate::FieldSpec for SubType {
     type Ux = u8;
 }
+impl crate::IsEnum for SubType {}
 #[doc = "Field `SUB_TYPE` reader - On-chip Sub Type for AXI"]
 pub type SubTypeR = crate::FieldReader<SubType>;
 impl SubTypeR {

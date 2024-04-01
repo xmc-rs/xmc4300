@@ -28,6 +28,7 @@ impl From<Rststat> for u8 {
 impl crate::FieldSpec for Rststat {
     type Ux = u8;
 }
+impl crate::IsEnum for Rststat {}
 #[doc = "Field `RSTSTAT` reader - Reset Status Information"]
 pub type RststatR = crate::FieldReader<Rststat>;
 impl RststatR {

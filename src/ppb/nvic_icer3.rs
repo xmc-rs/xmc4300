@@ -20,6 +20,7 @@ impl From<Clrena> for u32 {
 impl crate::FieldSpec for Clrena {
     type Ux = u32;
 }
+impl crate::IsEnum for Clrena {}
 #[doc = "Field `CLRENA` reader - Interrupt clear-enable bits."]
 pub type ClrenaR = crate::FieldReader<Clrena>;
 impl ClrenaR {

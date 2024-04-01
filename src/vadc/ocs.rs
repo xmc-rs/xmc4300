@@ -20,6 +20,7 @@ impl From<Tgs> for u8 {
 impl crate::FieldSpec for Tgs {
     type Ux = u8;
 }
+impl crate::IsEnum for Tgs {}
 #[doc = "Field `TGS` reader - Trigger Set for OTGB0/1"]
 pub type TgsR = crate::FieldReader<Tgs>;
 impl TgsR {
@@ -138,6 +139,7 @@ impl From<Sus> for u8 {
 impl crate::FieldSpec for Sus {
     type Ux = u8;
 }
+impl crate::IsEnum for Sus {}
 #[doc = "Field `SUS` reader - OCDS Suspend Control"]
 pub type SusR = crate::FieldReader<Sus>;
 impl SusR {

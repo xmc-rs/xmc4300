@@ -17,6 +17,7 @@ impl From<PulsLength> for u16 {
 impl crate::FieldSpec for PulsLength {
     type Ux = u16;
 }
+impl crate::IsEnum for PulsLength {}
 #[doc = "Field `PULS_LENGTH` reader - Pulse length of SyncSignals"]
 pub type PulsLengthR = crate::FieldReader<PulsLength>;
 impl PulsLengthR {

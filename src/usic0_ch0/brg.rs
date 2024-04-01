@@ -22,6 +22,7 @@ impl From<Clksel> for u8 {
 impl crate::FieldSpec for Clksel {
     type Ux = u8;
 }
+impl crate::IsEnum for Clksel {}
 #[doc = "Field `CLKSEL` reader - Clock Selection"]
 pub type ClkselR = crate::FieldReader<Clksel>;
 impl ClkselR {
@@ -202,6 +203,7 @@ impl From<Ctqsel> for u8 {
 impl crate::FieldSpec for Ctqsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Ctqsel {}
 #[doc = "Field `CTQSEL` reader - Input Selection for CTQ"]
 pub type CtqselR = crate::FieldReader<Ctqsel>;
 impl CtqselR {
@@ -238,7 +240,7 @@ impl CtqselR {
     }
 }
 #[doc = "Field `CTQSEL` writer - Input Selection for CTQ"]
-pub type CtqselW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ctqsel>;
+pub type CtqselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ctqsel, crate::Safe>;
 impl<'a, REG> CtqselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -405,6 +407,7 @@ impl From<Sclkcfg> for u8 {
 impl crate::FieldSpec for Sclkcfg {
     type Ux = u8;
 }
+impl crate::IsEnum for Sclkcfg {}
 #[doc = "Field `SCLKCFG` reader - Shift Clock Output Configuration"]
 pub type SclkcfgR = crate::FieldReader<Sclkcfg>;
 impl SclkcfgR {
@@ -441,7 +444,7 @@ impl SclkcfgR {
     }
 }
 #[doc = "Field `SCLKCFG` writer - Shift Clock Output Configuration"]
-pub type SclkcfgW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Sclkcfg>;
+pub type SclkcfgW<'a, REG> = crate::FieldWriter<'a, REG, 2, Sclkcfg, crate::Safe>;
 impl<'a, REG> SclkcfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

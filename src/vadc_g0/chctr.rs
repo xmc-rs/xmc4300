@@ -24,6 +24,7 @@ impl From<Iclsel> for u8 {
 impl crate::FieldSpec for Iclsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Iclsel {}
 #[doc = "Field `ICLSEL` reader - Input Class Select"]
 pub type IclselR = crate::FieldReader<Iclsel>;
 impl IclselR {
@@ -60,7 +61,7 @@ impl IclselR {
     }
 }
 #[doc = "Field `ICLSEL` writer - Input Class Select"]
-pub type IclselW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Iclsel>;
+pub type IclselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Iclsel, crate::Safe>;
 impl<'a, REG> IclselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -109,6 +110,7 @@ impl From<Bndsell> for u8 {
 impl crate::FieldSpec for Bndsell {
     type Ux = u8;
 }
+impl crate::IsEnum for Bndsell {}
 #[doc = "Field `BNDSELL` reader - Lower Boundary Select"]
 pub type BndsellR = crate::FieldReader<Bndsell>;
 impl BndsellR {
@@ -145,7 +147,7 @@ impl BndsellR {
     }
 }
 #[doc = "Field `BNDSELL` writer - Lower Boundary Select"]
-pub type BndsellW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Bndsell>;
+pub type BndsellW<'a, REG> = crate::FieldWriter<'a, REG, 2, Bndsell, crate::Safe>;
 impl<'a, REG> BndsellW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -194,6 +196,7 @@ impl From<Bndselu> for u8 {
 impl crate::FieldSpec for Bndselu {
     type Ux = u8;
 }
+impl crate::IsEnum for Bndselu {}
 #[doc = "Field `BNDSELU` reader - Upper Boundary Select"]
 pub type BndseluR = crate::FieldReader<Bndselu>;
 impl BndseluR {
@@ -230,7 +233,7 @@ impl BndseluR {
     }
 }
 #[doc = "Field `BNDSELU` writer - Upper Boundary Select"]
-pub type BndseluW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Bndselu>;
+pub type BndseluW<'a, REG> = crate::FieldWriter<'a, REG, 2, Bndselu, crate::Safe>;
 impl<'a, REG> BndseluW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -279,6 +282,7 @@ impl From<Chevmode> for u8 {
 impl crate::FieldSpec for Chevmode {
     type Ux = u8;
 }
+impl crate::IsEnum for Chevmode {}
 #[doc = "Field `CHEVMODE` reader - Channel Event Mode"]
 pub type ChevmodeR = crate::FieldReader<Chevmode>;
 impl ChevmodeR {
@@ -315,7 +319,7 @@ impl ChevmodeR {
     }
 }
 #[doc = "Field `CHEVMODE` writer - Channel Event Mode"]
-pub type ChevmodeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Chevmode>;
+pub type ChevmodeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Chevmode, crate::Safe>;
 impl<'a, REG> ChevmodeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -466,6 +470,7 @@ impl From<Resreg> for u8 {
 impl crate::FieldSpec for Resreg {
     type Ux = u8;
 }
+impl crate::IsEnum for Resreg {}
 #[doc = "Field `RESREG` reader - Result Register"]
 pub type ResregR = crate::FieldReader<Resreg>;
 impl ResregR {
@@ -631,6 +636,7 @@ impl From<Bwdch> for u8 {
 impl crate::FieldSpec for Bwdch {
     type Ux = u8;
 }
+impl crate::IsEnum for Bwdch {}
 #[doc = "Field `BWDCH` reader - Broken Wire Detection Channel"]
 pub type BwdchR = crate::FieldReader<Bwdch>;
 impl BwdchR {

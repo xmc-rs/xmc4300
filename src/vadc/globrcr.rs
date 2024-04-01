@@ -18,6 +18,7 @@ impl From<Drctr> for u8 {
 impl crate::FieldSpec for Drctr {
     type Ux = u8;
 }
+impl crate::IsEnum for Drctr {}
 #[doc = "Field `DRCTR` reader - Data Reduction Control"]
 pub type DrctrR = crate::FieldReader<Drctr>;
 impl DrctrR {

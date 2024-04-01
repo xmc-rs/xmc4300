@@ -26,6 +26,7 @@ impl From<Mmc> for u8 {
 impl crate::FieldSpec for Mmc {
     type Ux = u8;
 }
+impl crate::IsEnum for Mmc {}
 #[doc = "Field `MMC` reader - Message Mode Control"]
 pub type MmcR = crate::FieldReader<Mmc>;
 impl MmcR {

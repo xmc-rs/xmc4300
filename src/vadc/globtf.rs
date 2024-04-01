@@ -81,6 +81,7 @@ impl From<Cdsel> for u8 {
 impl crate::FieldSpec for Cdsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Cdsel {}
 #[doc = "Field `CDSEL` reader - Converter Diagnostics Pull-Devices Select"]
 pub type CdselR = crate::FieldReader<Cdsel>;
 impl CdselR {
@@ -117,7 +118,7 @@ impl CdselR {
     }
 }
 #[doc = "Field `CDSEL` writer - Converter Diagnostics Pull-Devices Select"]
-pub type CdselW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Cdsel>;
+pub type CdselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cdsel, crate::Safe>;
 impl<'a, REG> CdselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

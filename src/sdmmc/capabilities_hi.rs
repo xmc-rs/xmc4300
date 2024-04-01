@@ -190,6 +190,7 @@ impl From<TimCntRetune> for u8 {
 impl crate::FieldSpec for TimCntRetune {
     type Ux = u8;
 }
+impl crate::IsEnum for TimCntRetune {}
 #[doc = "Field `TIM_CNT_RETUNE` reader - Timer count for Re-Tuning"]
 pub type TimCntRetuneR = crate::FieldReader<TimCntRetune>;
 impl TimCntRetuneR {
@@ -252,6 +253,7 @@ impl From<ReTuningModes> for u8 {
 impl crate::FieldSpec for ReTuningModes {
     type Ux = u8;
 }
+impl crate::IsEnum for ReTuningModes {}
 #[doc = "Field `RE_TUNING_MODES` reader - Re-tuning modes"]
 pub type ReTuningModesR = crate::FieldReader<ReTuningModes>;
 impl ReTuningModesR {
@@ -285,6 +287,7 @@ impl From<ClkMult> for u8 {
 impl crate::FieldSpec for ClkMult {
     type Ux = u8;
 }
+impl crate::IsEnum for ClkMult {}
 #[doc = "Field `CLK_MULT` reader - Clock Multiplier"]
 pub type ClkMultR = crate::FieldReader<ClkMult>;
 impl ClkMultR {

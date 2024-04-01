@@ -73,6 +73,7 @@ impl From<AcmdEn> for u8 {
 impl crate::FieldSpec for AcmdEn {
     type Ux = u8;
 }
+impl crate::IsEnum for AcmdEn {}
 #[doc = "Field `ACMD_EN` reader - Auto CMD Enable"]
 pub type AcmdEnR = crate::FieldReader<AcmdEn>;
 impl AcmdEnR {

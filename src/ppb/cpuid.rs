@@ -16,6 +16,7 @@ impl From<Revision> for u8 {
 impl crate::FieldSpec for Revision {
     type Ux = u8;
 }
+impl crate::IsEnum for Revision {}
 #[doc = "Field `Revision` reader - Revision number"]
 pub type RevisionR = crate::FieldReader<Revision>;
 impl RevisionR {
@@ -49,6 +50,7 @@ impl From<PartNo> for u16 {
 impl crate::FieldSpec for PartNo {
     type Ux = u16;
 }
+impl crate::IsEnum for PartNo {}
 #[doc = "Field `PartNo` reader - Part number of the processor"]
 pub type PartNoR = crate::FieldReader<PartNo>;
 impl PartNoR {
@@ -84,6 +86,7 @@ impl From<Variant> for u8 {
 impl crate::FieldSpec for Variant {
     type Ux = u8;
 }
+impl crate::IsEnum for Variant {}
 #[doc = "Field `Variant` reader - Variant number"]
 pub type VariantR = crate::FieldReader<Variant>;
 impl VariantR {
@@ -117,6 +120,7 @@ impl From<Implementer> for u8 {
 impl crate::FieldSpec for Implementer {
     type Ux = u8;
 }
+impl crate::IsEnum for Implementer {}
 #[doc = "Field `Implementer` reader - Implementer code"]
 pub type ImplementerR = crate::FieldReader<Implementer>;
 impl ImplementerR {

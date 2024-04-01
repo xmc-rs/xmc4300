@@ -18,6 +18,7 @@ impl From<BusClk> for u8 {
 impl crate::FieldSpec for BusClk {
     type Ux = u8;
 }
+impl crate::IsEnum for BusClk {}
 #[doc = "Field `BUS_CLK` reader - On-chip bus clock"]
 pub type BusClkR = crate::FieldReader<BusClk>;
 impl BusClkR {
@@ -63,6 +64,7 @@ impl From<OcBus> for u8 {
 impl crate::FieldSpec for OcBus {
     type Ux = u8;
 }
+impl crate::IsEnum for OcBus {}
 #[doc = "Field `OC_BUS` reader - On-chip bus"]
 pub type OcBusR = crate::FieldReader<OcBus>;
 impl OcBusR {

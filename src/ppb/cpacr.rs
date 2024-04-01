@@ -22,6 +22,7 @@ impl From<Cp10> for u8 {
 impl crate::FieldSpec for Cp10 {
     type Ux = u8;
 }
+impl crate::IsEnum for Cp10 {}
 #[doc = "Field `CP10` reader - Access privileges for coprocessor 10"]
 pub type Cp10R = crate::FieldReader<Cp10>;
 impl Cp10R {
@@ -94,6 +95,7 @@ impl From<Cp11> for u8 {
 impl crate::FieldSpec for Cp11 {
     type Ux = u8;
 }
+impl crate::IsEnum for Cp11 {}
 #[doc = "Field `CP11` reader - Access privileges for coprocessor 11"]
 pub type Cp11R = crate::FieldReader<Cp11>;
 impl Cp11R {

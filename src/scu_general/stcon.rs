@@ -24,6 +24,7 @@ impl From<Hwcon> for u8 {
 impl crate::FieldSpec for Hwcon {
     type Ux = u8;
 }
+impl crate::IsEnum for Hwcon {}
 #[doc = "Field `HWCON` reader - HW Configuration"]
 pub type HwconR = crate::FieldReader<Hwcon>;
 impl HwconR {
@@ -89,6 +90,7 @@ impl From<Swcon> for u8 {
 impl crate::FieldSpec for Swcon {
     type Ux = u8;
 }
+impl crate::IsEnum for Swcon {}
 #[doc = "Field `SWCON` reader - SW Configuration"]
 pub type SwconR = crate::FieldReader<Swcon>;
 impl SwconR {

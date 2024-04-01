@@ -34,6 +34,7 @@ impl From<Emuxmode> for u8 {
 impl crate::FieldSpec for Emuxmode {
     type Ux = u8;
 }
+impl crate::IsEnum for Emuxmode {}
 #[doc = "Field `EMUXMODE` reader - External Multiplexer Mode"]
 pub type EmuxmodeR = crate::FieldReader<Emuxmode>;
 impl EmuxmodeR {
@@ -70,7 +71,7 @@ impl EmuxmodeR {
     }
 }
 #[doc = "Field `EMUXMODE` writer - External Multiplexer Mode"]
-pub type EmuxmodeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Emuxmode>;
+pub type EmuxmodeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Emuxmode, crate::Safe>;
 impl<'a, REG> EmuxmodeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

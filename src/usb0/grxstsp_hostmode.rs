@@ -26,6 +26,7 @@ impl From<Dpid> for u8 {
 impl crate::FieldSpec for Dpid {
     type Ux = u8;
 }
+impl crate::IsEnum for Dpid {}
 #[doc = "Field `DPID` reader - Data PID"]
 pub type DpidR = crate::FieldReader<Dpid>;
 impl DpidR {
@@ -83,6 +84,7 @@ impl From<PktSts> for u8 {
 impl crate::FieldSpec for PktSts {
     type Ux = u8;
 }
+impl crate::IsEnum for PktSts {}
 #[doc = "Field `PktSts` reader - Packet Status"]
 pub type PktStsR = crate::FieldReader<PktSts>;
 impl PktStsR {

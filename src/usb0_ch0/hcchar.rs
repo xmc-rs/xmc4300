@@ -85,6 +85,7 @@ impl From<Eptype> for u8 {
 impl crate::FieldSpec for Eptype {
     type Ux = u8;
 }
+impl crate::IsEnum for Eptype {}
 #[doc = "Field `EPType` reader - Endpoint Type"]
 pub type EptypeR = crate::FieldReader<Eptype>;
 impl EptypeR {
@@ -121,7 +122,7 @@ impl EptypeR {
     }
 }
 #[doc = "Field `EPType` writer - Endpoint Type"]
-pub type EptypeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Eptype>;
+pub type EptypeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Eptype, crate::Safe>;
 impl<'a, REG> EptypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -168,6 +169,7 @@ impl From<McEc> for u8 {
 impl crate::FieldSpec for McEc {
     type Ux = u8;
 }
+impl crate::IsEnum for McEc {}
 #[doc = "Field `MC_EC` reader - Multi Count / Error Count"]
 pub type McEcR = crate::FieldReader<McEc>;
 impl McEcR {

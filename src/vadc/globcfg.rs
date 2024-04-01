@@ -24,6 +24,7 @@ impl From<Diva> for u8 {
 impl crate::FieldSpec for Diva {
     type Ux = u8;
 }
+impl crate::IsEnum for Diva {}
 #[doc = "Field `DIVA` reader - Divider Factor for the Analog Internal Clock"]
 pub type DivaR = crate::FieldReader<Diva>;
 impl DivaR {
@@ -162,6 +163,7 @@ impl From<Divd> for u8 {
 impl crate::FieldSpec for Divd {
     type Ux = u8;
 }
+impl crate::IsEnum for Divd {}
 #[doc = "Field `DIVD` reader - Divider Factor for the Arbiter Clock"]
 pub type DivdR = crate::FieldReader<Divd>;
 impl DivdR {
@@ -198,7 +200,7 @@ impl DivdR {
     }
 }
 #[doc = "Field `DIVD` writer - Divider Factor for the Arbiter Clock"]
-pub type DivdW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Divd>;
+pub type DivdW<'a, REG> = crate::FieldWriter<'a, REG, 2, Divd, crate::Safe>;
 impl<'a, REG> DivdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

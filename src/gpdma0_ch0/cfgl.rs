@@ -221,6 +221,7 @@ impl From<LockChL> for u8 {
 impl crate::FieldSpec for LockChL {
     type Ux = u8;
 }
+impl crate::IsEnum for LockChL {}
 #[doc = "Field `LOCK_CH_L` reader - Channel Lock Level"]
 pub type LockChLR = crate::FieldReader<LockChL>;
 impl LockChLR {
@@ -293,6 +294,7 @@ impl From<LockBL> for u8 {
 impl crate::FieldSpec for LockBL {
     type Ux = u8;
 }
+impl crate::IsEnum for LockBL {}
 #[doc = "Field `LOCK_B_L` reader - Bus Lock Level"]
 pub type LockBLR = crate::FieldReader<LockBL>;
 impl LockBLR {

@@ -36,6 +36,7 @@ impl From<Mode> for u8 {
 impl crate::FieldSpec for Mode {
     type Ux = u8;
 }
+impl crate::IsEnum for Mode {}
 #[doc = "Field `MODE` reader - Enables and sets the Mode for DAC1"]
 pub type ModeR = crate::FieldReader<Mode>;
 impl ModeR {
@@ -96,7 +97,7 @@ impl ModeR {
     }
 }
 #[doc = "Field `MODE` writer - Enables and sets the Mode for DAC1"]
-pub type ModeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Mode>;
+pub type ModeW<'a, REG> = crate::FieldWriter<'a, REG, 3, Mode, crate::Safe>;
 impl<'a, REG> ModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

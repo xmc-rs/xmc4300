@@ -28,6 +28,7 @@ impl From<Crs> for u8 {
 impl crate::FieldSpec for Crs {
     type Ux = u8;
 }
+impl crate::IsEnum for Crs {}
 #[doc = "Field `CRS` reader - Converted Request Source"]
 pub type CrsR = crate::FieldReader<Crs>;
 impl CrsR {

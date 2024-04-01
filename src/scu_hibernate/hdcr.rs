@@ -619,6 +619,7 @@ impl From<Hibio0sel> for u8 {
 impl crate::FieldSpec for Hibio0sel {
     type Ux = u8;
 }
+impl crate::IsEnum for Hibio0sel {}
 #[doc = "Field `HIBIO0SEL` reader - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
 pub type Hibio0selR = crate::FieldReader<Hibio0sel>;
 impl Hibio0selR {
@@ -782,6 +783,7 @@ impl From<Hibio1sel> for u8 {
 impl crate::FieldSpec for Hibio1sel {
     type Ux = u8;
 }
+impl crate::IsEnum for Hibio1sel {}
 #[doc = "Field `HIBIO1SEL` reader - HIB_IO_1 Pin I/O Control (Default WKUP)"]
 pub type Hibio1selR = crate::FieldReader<Hibio1sel>;
 impl Hibio1selR {

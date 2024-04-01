@@ -32,6 +32,7 @@ impl From<RxDpid> for u8 {
 impl crate::FieldSpec for RxDpid {
     type Ux = u8;
 }
+impl crate::IsEnum for RxDpid {}
 #[doc = "Field `RxDPID` reader - Received Data PID"]
 pub type RxDpidR = crate::FieldReader<RxDpid>;
 impl RxDpidR {

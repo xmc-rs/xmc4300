@@ -20,6 +20,7 @@ impl From<Ctd> for u8 {
 impl crate::FieldSpec for Ctd {
     type Ux = u8;
 }
+impl crate::IsEnum for Ctd {}
 #[doc = "Field `CTD` reader - Current Transfer Desc:"]
 pub type CtdR = crate::FieldReader<Ctd>;
 impl CtdR {

@@ -24,6 +24,7 @@ impl From<Bfm0> for u8 {
 impl crate::FieldSpec for Bfm0 {
     type Ux = u8;
 }
+impl crate::IsEnum for Bfm0 {}
 #[doc = "Field `BFM0` reader - Boundary Flag y Mode Control"]
 pub type Bfm0R = crate::FieldReader<Bfm0>;
 impl Bfm0R {
@@ -109,6 +110,7 @@ impl From<Bfm1> for u8 {
 impl crate::FieldSpec for Bfm1 {
     type Ux = u8;
 }
+impl crate::IsEnum for Bfm1 {}
 #[doc = "Field `BFM1` reader - Boundary Flag y Mode Control"]
 pub type Bfm1R = crate::FieldReader<Bfm1>;
 impl Bfm1R {
@@ -194,6 +196,7 @@ impl From<Bfm2> for u8 {
 impl crate::FieldSpec for Bfm2 {
     type Ux = u8;
 }
+impl crate::IsEnum for Bfm2 {}
 #[doc = "Field `BFM2` reader - Boundary Flag y Mode Control"]
 pub type Bfm2R = crate::FieldReader<Bfm2>;
 impl Bfm2R {
@@ -279,6 +282,7 @@ impl From<Bfm3> for u8 {
 impl crate::FieldSpec for Bfm3 {
     type Ux = u8;
 }
+impl crate::IsEnum for Bfm3 {}
 #[doc = "Field `BFM3` reader - Boundary Flag y Mode Control"]
 pub type Bfm3R = crate::FieldReader<Bfm3>;
 impl Bfm3R {

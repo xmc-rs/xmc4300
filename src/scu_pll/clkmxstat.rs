@@ -18,6 +18,7 @@ impl From<Sysclkmux> for u8 {
 impl crate::FieldSpec for Sysclkmux {
     type Ux = u8;
 }
+impl crate::IsEnum for Sysclkmux {}
 #[doc = "Field `SYSCLKMUX` reader - Status of System Clock Multiplexing Upon Source Switching"]
 pub type SysclkmuxR = crate::FieldReader<Sysclkmux>;
 impl SysclkmuxR {

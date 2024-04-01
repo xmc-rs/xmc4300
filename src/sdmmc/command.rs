@@ -24,6 +24,7 @@ impl From<RespTypeSelect> for u8 {
 impl crate::FieldSpec for RespTypeSelect {
     type Ux = u8;
 }
+impl crate::IsEnum for RespTypeSelect {}
 #[doc = "Field `RESP_TYPE_SELECT` reader - Response Type Select"]
 pub type RespTypeSelectR = crate::FieldReader<RespTypeSelect>;
 impl RespTypeSelectR {
@@ -60,7 +61,7 @@ impl RespTypeSelectR {
     }
 }
 #[doc = "Field `RESP_TYPE_SELECT` writer - Response Type Select"]
-pub type RespTypeSelectW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RespTypeSelect>;
+pub type RespTypeSelectW<'a, REG> = crate::FieldWriter<'a, REG, 2, RespTypeSelect, crate::Safe>;
 impl<'a, REG> RespTypeSelectW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -268,6 +269,7 @@ impl From<CmdType> for u8 {
 impl crate::FieldSpec for CmdType {
     type Ux = u8;
 }
+impl crate::IsEnum for CmdType {}
 #[doc = "Field `CMD_TYPE` reader - Command Type"]
 pub type CmdTypeR = crate::FieldReader<CmdType>;
 impl CmdTypeR {
@@ -304,7 +306,7 @@ impl CmdTypeR {
     }
 }
 #[doc = "Field `CMD_TYPE` writer - Command Type"]
-pub type CmdTypeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CmdType>;
+pub type CmdTypeW<'a, REG> = crate::FieldWriter<'a, REG, 2, CmdType, crate::Safe>;
 impl<'a, REG> CmdTypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

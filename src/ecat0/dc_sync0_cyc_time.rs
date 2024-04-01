@@ -18,6 +18,7 @@ impl From<TimeBetweenSync0> for u32 {
 impl crate::FieldSpec for TimeBetweenSync0 {
     type Ux = u32;
 }
+impl crate::IsEnum for TimeBetweenSync0 {}
 #[doc = "Field `TIME_BETWEEN_SYNC0` reader - Time between two consecutive SYNC0 pulses"]
 pub type TimeBetweenSync0R = crate::FieldReader<TimeBetweenSync0>;
 impl TimeBetweenSync0R {

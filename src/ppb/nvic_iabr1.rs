@@ -20,6 +20,7 @@ impl From<Active> for u32 {
 impl crate::FieldSpec for Active {
     type Ux = u32;
 }
+impl crate::IsEnum for Active {}
 #[doc = "Field `ACTIVE` reader - Interrupt active flags:"]
 pub type ActiveR = crate::FieldReader<Active>;
 impl ActiveR {

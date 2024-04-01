@@ -24,6 +24,7 @@ impl From<Stsel> for u8 {
 impl crate::FieldSpec for Stsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Stsel {}
 #[doc = "Field `STSEL` reader - Start Selection"]
 pub type StselR = crate::FieldReader<Stsel>;
 impl StselR {
@@ -60,7 +61,7 @@ impl StselR {
     }
 }
 #[doc = "Field `STSEL` writer - Start Selection"]
-pub type StselW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Stsel>;
+pub type StselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Stsel, crate::Safe>;
 impl<'a, REG> StselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

@@ -16,6 +16,7 @@ impl From<SlotIntStatus> for u8 {
 impl crate::FieldSpec for SlotIntStatus {
     type Ux = u8;
 }
+impl crate::IsEnum for SlotIntStatus {}
 #[doc = "Field `SLOT_INT_STATUS` reader - Interrupt Signal for Card Slot"]
 pub type SlotIntStatusR = crate::FieldReader<SlotIntStatus>;
 impl SlotIntStatusR {

@@ -20,6 +20,7 @@ impl From<IneptxFspcAvail> for u16 {
 impl crate::FieldSpec for IneptxFspcAvail {
     type Ux = u16;
 }
+impl crate::IsEnum for IneptxFspcAvail {}
 #[doc = "Field `INEPTxFSpcAvail` reader - IN Endpoint TxFIFO Space Avail"]
 pub type IneptxFspcAvailR = crate::FieldReader<IneptxFspcAvail>;
 impl IneptxFspcAvailR {

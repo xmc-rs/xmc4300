@@ -32,6 +32,7 @@ impl From<Dsel> for u8 {
 impl crate::FieldSpec for Dsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Dsel {}
 #[doc = "Field `DSEL` reader - Data Selection for Input Signal"]
 pub type DselR = crate::FieldReader<Dsel>;
 impl DselR {
@@ -92,7 +93,7 @@ impl DselR {
     }
 }
 #[doc = "Field `DSEL` writer - Data Selection for Input Signal"]
-pub type DselW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Dsel>;
+pub type DselW<'a, REG> = crate::FieldWriter<'a, REG, 3, Dsel, crate::Safe>;
 impl<'a, REG> DselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -426,6 +427,7 @@ impl From<Cm> for u8 {
 impl crate::FieldSpec for Cm {
     type Ux = u8;
 }
+impl crate::IsEnum for Cm {}
 #[doc = "Field `CM` reader - Combination Mode"]
 pub type CmR = crate::FieldReader<Cm>;
 impl CmR {
@@ -462,7 +464,7 @@ impl CmR {
     }
 }
 #[doc = "Field `CM` writer - Combination Mode"]
-pub type CmW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Cm>;
+pub type CmW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cm, crate::Safe>;
 impl<'a, REG> CmW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

@@ -20,6 +20,7 @@ impl From<Ch> for u8 {
 impl crate::FieldSpec for Ch {
     type Ux = u8;
 }
+impl crate::IsEnum for Ch {}
 #[doc = "Field `CH` reader - Enables/Disables the channel"]
 pub type ChR = crate::FieldReader<Ch>;
 impl ChR {

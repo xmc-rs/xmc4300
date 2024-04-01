@@ -24,6 +24,7 @@ impl From<Alinp> for u8 {
 impl crate::FieldSpec for Alinp {
     type Ux = u8;
 }
+impl crate::IsEnum for Alinp {}
 #[doc = "Field `ALINP` reader - Alert Interrupt Node Pointer"]
 pub type AlinpR = crate::FieldReader<Alinp>;
 impl AlinpR {
@@ -109,6 +110,7 @@ impl From<Lecinp> for u8 {
 impl crate::FieldSpec for Lecinp {
     type Ux = u8;
 }
+impl crate::IsEnum for Lecinp {}
 #[doc = "Field `LECINP` reader - Last Error Code Interrupt Node Pointer"]
 pub type LecinpR = crate::FieldReader<Lecinp>;
 impl LecinpR {
@@ -194,6 +196,7 @@ impl From<Trinp> for u8 {
 impl crate::FieldSpec for Trinp {
     type Ux = u8;
 }
+impl crate::IsEnum for Trinp {}
 #[doc = "Field `TRINP` reader - Transfer OK Interrupt Node Pointer"]
 pub type TrinpR = crate::FieldReader<Trinp>;
 impl TrinpR {
@@ -279,6 +282,7 @@ impl From<Cfcinp> for u8 {
 impl crate::FieldSpec for Cfcinp {
     type Ux = u8;
 }
+impl crate::IsEnum for Cfcinp {}
 #[doc = "Field `CFCINP` reader - Frame Counter Interrupt Node Pointer"]
 pub type CfcinpR = crate::FieldReader<Cfcinp>;
 impl CfcinpR {

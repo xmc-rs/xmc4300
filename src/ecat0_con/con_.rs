@@ -77,6 +77,7 @@ impl From<Latchin0sel> for u8 {
 impl crate::FieldSpec for Latchin0sel {
     type Ux = u8;
 }
+impl crate::IsEnum for Latchin0sel {}
 #[doc = "Field `LATCHIN0SEL` reader - LATCHIN0 Input Select"]
 pub type Latchin0selR = crate::FieldReader<Latchin0sel>;
 impl Latchin0selR {
@@ -113,7 +114,7 @@ impl Latchin0selR {
     }
 }
 #[doc = "Field `LATCHIN0SEL` writer - LATCHIN0 Input Select"]
-pub type Latchin0selW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Latchin0sel>;
+pub type Latchin0selW<'a, REG> = crate::FieldWriter<'a, REG, 2, Latchin0sel, crate::Safe>;
 impl<'a, REG> Latchin0selW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -164,6 +165,7 @@ impl From<Latchin1sel> for u8 {
 impl crate::FieldSpec for Latchin1sel {
     type Ux = u8;
 }
+impl crate::IsEnum for Latchin1sel {}
 #[doc = "Field `LATCHIN1SEL` reader - LATCHIN1 Input Select"]
 pub type Latchin1selR = crate::FieldReader<Latchin1sel>;
 impl Latchin1selR {
@@ -200,7 +202,7 @@ impl Latchin1selR {
     }
 }
 #[doc = "Field `LATCHIN1SEL` writer - LATCHIN1 Input Select"]
-pub type Latchin1selW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Latchin1sel>;
+pub type Latchin1selW<'a, REG> = crate::FieldWriter<'a, REG, 2, Latchin1sel, crate::Safe>;
 impl<'a, REG> Latchin1selW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -255,6 +257,7 @@ impl From<Mdio> for u8 {
 impl crate::FieldSpec for Mdio {
     type Ux = u8;
 }
+impl crate::IsEnum for Mdio {}
 #[doc = "Field `MDIO` reader - MDIO Input Select"]
 pub type MdioR = crate::FieldReader<Mdio>;
 impl MdioR {
@@ -291,7 +294,7 @@ impl MdioR {
     }
 }
 #[doc = "Field `MDIO` writer - MDIO Input Select"]
-pub type MdioW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Mdio>;
+pub type MdioW<'a, REG> = crate::FieldWriter<'a, REG, 2, Mdio, crate::Safe>;
 impl<'a, REG> MdioW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

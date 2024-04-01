@@ -28,6 +28,7 @@ impl From<Dm> for u8 {
 impl crate::FieldSpec for Dm {
     type Ux = u8;
 }
+impl crate::IsEnum for Dm {}
 #[doc = "Field `DM` reader - Divider Mode"]
 pub type DmR = crate::FieldReader<Dm>;
 impl DmR {
@@ -64,7 +65,7 @@ impl DmR {
     }
 }
 #[doc = "Field `DM` writer - Divider Mode"]
-pub type DmW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Dm>;
+pub type DmW<'a, REG> = crate::FieldWriter<'a, REG, 2, Dm, crate::Safe>;
 impl<'a, REG> DmW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

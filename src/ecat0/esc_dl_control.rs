@@ -94,6 +94,7 @@ impl From<Lp0> for u8 {
 impl crate::FieldSpec for Lp0 {
     type Ux = u8;
 }
+impl crate::IsEnum for Lp0 {}
 #[doc = "Field `LP0` reader - Loop Port 0"]
 pub type Lp0R = crate::FieldReader<Lp0>;
 impl Lp0R {
@@ -151,6 +152,7 @@ impl From<Lp1> for u8 {
 impl crate::FieldSpec for Lp1 {
     type Ux = u8;
 }
+impl crate::IsEnum for Lp1 {}
 #[doc = "Field `LP1` reader - Loop Port 1"]
 pub type Lp1R = crate::FieldReader<Lp1>;
 impl Lp1R {
@@ -208,6 +210,7 @@ impl From<Lp2> for u8 {
 impl crate::FieldSpec for Lp2 {
     type Ux = u8;
 }
+impl crate::IsEnum for Lp2 {}
 #[doc = "Field `LP2` reader - Loop Port 2"]
 pub type Lp2R = crate::FieldReader<Lp2>;
 impl Lp2R {
@@ -265,6 +268,7 @@ impl From<Lp3> for u8 {
 impl crate::FieldSpec for Lp3 {
     type Ux = u8;
 }
+impl crate::IsEnum for Lp3 {}
 #[doc = "Field `LP3` reader - Loop Port 3"]
 pub type Lp3R = crate::FieldReader<Lp3>;
 impl Lp3R {
@@ -330,6 +334,7 @@ impl From<RxFifoSize> for u8 {
 impl crate::FieldSpec for RxFifoSize {
     type Ux = u8;
 }
+impl crate::IsEnum for RxFifoSize {}
 #[doc = "Field `RX_FIFO_SIZE` reader - RX FIFO Size"]
 pub type RxFifoSizeR = crate::FieldReader<RxFifoSize>;
 impl RxFifoSizeR {

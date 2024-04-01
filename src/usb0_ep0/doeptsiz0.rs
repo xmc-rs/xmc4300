@@ -30,6 +30,7 @@ impl From<Supcnt> for u8 {
 impl crate::FieldSpec for Supcnt {
     type Ux = u8;
 }
+impl crate::IsEnum for Supcnt {}
 #[doc = "Field `SUPCnt` reader - SETUP Packet Count"]
 pub type SupcntR = crate::FieldReader<Supcnt>;
 impl SupcntR {

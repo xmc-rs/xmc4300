@@ -79,6 +79,7 @@ impl From<HbstLen> for u8 {
 impl crate::FieldSpec for HbstLen {
     type Ux = u8;
 }
+impl crate::IsEnum for HbstLen {}
 #[doc = "Field `HBstLen` reader - Burst Length/Type"]
 pub type HbstLenR = crate::FieldReader<HbstLen>;
 impl HbstLenR {

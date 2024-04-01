@@ -202,6 +202,7 @@ impl From<Wlen1> for u8 {
 impl crate::FieldSpec for Wlen1 {
     type Ux = u8;
 }
+impl crate::IsEnum for Wlen1 {}
 #[doc = "Field `WLEN1` reader - Received Data Word Length in RBUF1"]
 pub type Wlen1R = crate::FieldReader<Wlen1>;
 impl Wlen1R {

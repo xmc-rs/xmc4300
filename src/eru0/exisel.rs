@@ -24,6 +24,7 @@ impl From<Exs0a> for u8 {
 impl crate::FieldSpec for Exs0a {
     type Ux = u8;
 }
+impl crate::IsEnum for Exs0a {}
 #[doc = "Field `EXS0A` reader - Event Source Select for A0 (ERS0)"]
 pub type Exs0aR = crate::FieldReader<Exs0a>;
 impl Exs0aR {
@@ -60,7 +61,7 @@ impl Exs0aR {
     }
 }
 #[doc = "Field `EXS0A` writer - Event Source Select for A0 (ERS0)"]
-pub type Exs0aW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Exs0a>;
+pub type Exs0aW<'a, REG> = crate::FieldWriter<'a, REG, 2, Exs0a, crate::Safe>;
 impl<'a, REG> Exs0aW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -109,6 +110,7 @@ impl From<Exs0b> for u8 {
 impl crate::FieldSpec for Exs0b {
     type Ux = u8;
 }
+impl crate::IsEnum for Exs0b {}
 #[doc = "Field `EXS0B` reader - Event Source Select for B0 (ERS0)"]
 pub type Exs0bR = crate::FieldReader<Exs0b>;
 impl Exs0bR {
@@ -145,7 +147,7 @@ impl Exs0bR {
     }
 }
 #[doc = "Field `EXS0B` writer - Event Source Select for B0 (ERS0)"]
-pub type Exs0bW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Exs0b>;
+pub type Exs0bW<'a, REG> = crate::FieldWriter<'a, REG, 2, Exs0b, crate::Safe>;
 impl<'a, REG> Exs0bW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -194,6 +196,7 @@ impl From<Exs1a> for u8 {
 impl crate::FieldSpec for Exs1a {
     type Ux = u8;
 }
+impl crate::IsEnum for Exs1a {}
 #[doc = "Field `EXS1A` reader - Event Source Select for A1 (ERS1)"]
 pub type Exs1aR = crate::FieldReader<Exs1a>;
 impl Exs1aR {
@@ -230,7 +233,7 @@ impl Exs1aR {
     }
 }
 #[doc = "Field `EXS1A` writer - Event Source Select for A1 (ERS1)"]
-pub type Exs1aW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Exs1a>;
+pub type Exs1aW<'a, REG> = crate::FieldWriter<'a, REG, 2, Exs1a, crate::Safe>;
 impl<'a, REG> Exs1aW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -279,6 +282,7 @@ impl From<Exs1b> for u8 {
 impl crate::FieldSpec for Exs1b {
     type Ux = u8;
 }
+impl crate::IsEnum for Exs1b {}
 #[doc = "Field `EXS1B` reader - Event Source Select for B1 (ERS1)"]
 pub type Exs1bR = crate::FieldReader<Exs1b>;
 impl Exs1bR {
@@ -315,7 +319,7 @@ impl Exs1bR {
     }
 }
 #[doc = "Field `EXS1B` writer - Event Source Select for B1 (ERS1)"]
-pub type Exs1bW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Exs1b>;
+pub type Exs1bW<'a, REG> = crate::FieldWriter<'a, REG, 2, Exs1b, crate::Safe>;
 impl<'a, REG> Exs1bW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -364,6 +368,7 @@ impl From<Exs2a> for u8 {
 impl crate::FieldSpec for Exs2a {
     type Ux = u8;
 }
+impl crate::IsEnum for Exs2a {}
 #[doc = "Field `EXS2A` reader - Event Source Select for A2 (ERS2)"]
 pub type Exs2aR = crate::FieldReader<Exs2a>;
 impl Exs2aR {
@@ -400,7 +405,7 @@ impl Exs2aR {
     }
 }
 #[doc = "Field `EXS2A` writer - Event Source Select for A2 (ERS2)"]
-pub type Exs2aW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Exs2a>;
+pub type Exs2aW<'a, REG> = crate::FieldWriter<'a, REG, 2, Exs2a, crate::Safe>;
 impl<'a, REG> Exs2aW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -449,6 +454,7 @@ impl From<Exs2b> for u8 {
 impl crate::FieldSpec for Exs2b {
     type Ux = u8;
 }
+impl crate::IsEnum for Exs2b {}
 #[doc = "Field `EXS2B` reader - Event Source Select for B2 (ERS2)"]
 pub type Exs2bR = crate::FieldReader<Exs2b>;
 impl Exs2bR {
@@ -485,7 +491,7 @@ impl Exs2bR {
     }
 }
 #[doc = "Field `EXS2B` writer - Event Source Select for B2 (ERS2)"]
-pub type Exs2bW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Exs2b>;
+pub type Exs2bW<'a, REG> = crate::FieldWriter<'a, REG, 2, Exs2b, crate::Safe>;
 impl<'a, REG> Exs2bW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -534,6 +540,7 @@ impl From<Exs3a> for u8 {
 impl crate::FieldSpec for Exs3a {
     type Ux = u8;
 }
+impl crate::IsEnum for Exs3a {}
 #[doc = "Field `EXS3A` reader - Event Source Select for A3 (ERS3)"]
 pub type Exs3aR = crate::FieldReader<Exs3a>;
 impl Exs3aR {
@@ -570,7 +577,7 @@ impl Exs3aR {
     }
 }
 #[doc = "Field `EXS3A` writer - Event Source Select for A3 (ERS3)"]
-pub type Exs3aW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Exs3a>;
+pub type Exs3aW<'a, REG> = crate::FieldWriter<'a, REG, 2, Exs3a, crate::Safe>;
 impl<'a, REG> Exs3aW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -619,6 +626,7 @@ impl From<Exs3b> for u8 {
 impl crate::FieldSpec for Exs3b {
     type Ux = u8;
 }
+impl crate::IsEnum for Exs3b {}
 #[doc = "Field `EXS3B` reader - Event Source Select for B3 (ERS3)"]
 pub type Exs3bR = crate::FieldReader<Exs3b>;
 impl Exs3bR {
@@ -655,7 +663,7 @@ impl Exs3bR {
     }
 }
 #[doc = "Field `EXS3B` writer - Event Source Select for B3 (ERS3)"]
-pub type Exs3bW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Exs3b>;
+pub type Exs3bW<'a, REG> = crate::FieldWriter<'a, REG, 2, Exs3b, crate::Safe>;
 impl<'a, REG> Exs3bW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

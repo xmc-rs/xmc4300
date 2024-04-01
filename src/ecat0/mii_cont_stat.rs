@@ -132,6 +132,7 @@ impl From<CmdReg> for u8 {
 impl crate::FieldSpec for CmdReg {
     type Ux = u8;
 }
+impl crate::IsEnum for CmdReg {}
 #[doc = "Field `CMD_REG` reader - Command register"]
 pub type CmdRegR = crate::FieldReader<CmdReg>;
 impl CmdRegR {

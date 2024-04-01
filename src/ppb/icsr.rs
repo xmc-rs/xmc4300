@@ -18,6 +18,7 @@ impl From<Vectactive> for u16 {
 impl crate::FieldSpec for Vectactive {
     type Ux = u16;
 }
+impl crate::IsEnum for Vectactive {}
 #[doc = "Field `VECTACTIVE` reader - Active exception number"]
 pub type VectactiveR = crate::FieldReader<Vectactive>;
 impl VectactiveR {
@@ -87,6 +88,7 @@ impl From<Vectpending> for u8 {
 impl crate::FieldSpec for Vectpending {
     type Ux = u8;
 }
+impl crate::IsEnum for Vectpending {}
 #[doc = "Field `VECTPENDING` reader - Vector Pending"]
 pub type VectpendingR = crate::FieldReader<Vectpending>;
 impl VectpendingR {

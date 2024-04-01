@@ -26,6 +26,7 @@ impl From<State> for u8 {
 impl crate::FieldSpec for State {
     type Ux = u8;
 }
+impl crate::IsEnum for State {}
 #[doc = "Field `STATE` reader - Actual State of the Device State Machine"]
 pub type StateR = crate::FieldReader<State>;
 impl StateR {

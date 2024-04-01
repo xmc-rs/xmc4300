@@ -18,6 +18,7 @@ impl From<OpMode> for u8 {
 impl crate::FieldSpec for OpMode {
     type Ux = u8;
 }
+impl crate::IsEnum for OpMode {}
 #[doc = "Field `OP_MODE` reader - Operation Mode"]
 pub type OpModeR = crate::FieldReader<OpMode>;
 impl OpModeR {
@@ -59,6 +60,7 @@ impl From<Dir> for u8 {
 impl crate::FieldSpec for Dir {
     type Ux = u8;
 }
+impl crate::IsEnum for Dir {}
 #[doc = "Field `DIR` reader - Direction"]
 pub type DirR = crate::FieldReader<Dir>;
 impl DirR {

@@ -490,6 +490,7 @@ impl From<Tden> for u8 {
 impl crate::FieldSpec for Tden {
     type Ux = u8;
 }
+impl crate::IsEnum for Tden {}
 #[doc = "Field `TDEN` reader - TBUF Data Enable"]
 pub type TdenR = crate::FieldReader<Tden>;
 impl TdenR {
@@ -526,7 +527,7 @@ impl TdenR {
     }
 }
 #[doc = "Field `TDEN` writer - TBUF Data Enable"]
-pub type TdenW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Tden>;
+pub type TdenW<'a, REG> = crate::FieldWriter<'a, REG, 2, Tden, crate::Safe>;
 impl<'a, REG> TdenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

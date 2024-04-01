@@ -161,6 +161,7 @@ impl From<Gmc> for u8 {
 impl crate::FieldSpec for Gmc {
     type Ux = u8;
 }
+impl crate::IsEnum for Gmc {}
 #[doc = "Field `GMC` reader - Global Multi Count"]
 pub type GmcR = crate::FieldReader<Gmc>;
 impl GmcR {
@@ -197,7 +198,7 @@ impl GmcR {
     }
 }
 #[doc = "Field `GMC` writer - Global Multi Count"]
-pub type GmcW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Gmc>;
+pub type GmcW<'a, REG> = crate::FieldWriter<'a, REG, 2, Gmc, crate::Safe>;
 impl<'a, REG> GmcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

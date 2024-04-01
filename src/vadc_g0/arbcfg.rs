@@ -28,6 +28,7 @@ impl From<Arbrnd> for u8 {
 impl crate::FieldSpec for Arbrnd {
     type Ux = u8;
 }
+impl crate::IsEnum for Arbrnd {}
 #[doc = "Field `ARBRND` reader - Arbitration Round Length"]
 pub type ArbrndR = crate::FieldReader<Arbrnd>;
 impl ArbrndR {
@@ -64,7 +65,7 @@ impl ArbrndR {
     }
 }
 #[doc = "Field `ARBRND` writer - Arbitration Round Length"]
-pub type ArbrndW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Arbrnd>;
+pub type ArbrndW<'a, REG> = crate::FieldWriter<'a, REG, 2, Arbrnd, crate::Safe>;
 impl<'a, REG> ArbrndW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -162,6 +163,7 @@ impl From<Anons> for u8 {
 impl crate::FieldSpec for Anons {
     type Ux = u8;
 }
+impl crate::IsEnum for Anons {}
 #[doc = "Field `ANONS` reader - Analog Converter Control Status"]
 pub type AnonsR = crate::FieldReader<Anons>;
 impl AnonsR {

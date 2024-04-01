@@ -75,6 +75,7 @@ impl From<Stm> for u8 {
 impl crate::FieldSpec for Stm {
     type Ux = u8;
 }
+impl crate::IsEnum for Stm {}
 #[doc = "Field `STM` reader - Shadow transfer mode"]
 pub type StmR = crate::FieldReader<Stm>;
 impl StmR {

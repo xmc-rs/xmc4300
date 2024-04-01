@@ -34,6 +34,7 @@ impl From<Dinc> for u8 {
 impl crate::FieldSpec for Dinc {
     type Ux = u8;
 }
+impl crate::IsEnum for Dinc {}
 #[doc = "Field `DINC` reader - Destination Address Increment"]
 pub type DincR = crate::FieldReader<Dinc>;
 impl DincR {
@@ -106,6 +107,7 @@ impl From<Sinc> for u8 {
 impl crate::FieldSpec for Sinc {
     type Ux = u8;
 }
+impl crate::IsEnum for Sinc {}
 #[doc = "Field `SINC` reader - Source Address Increment"]
 pub type SincR = crate::FieldReader<Sinc>;
 impl SincR {
