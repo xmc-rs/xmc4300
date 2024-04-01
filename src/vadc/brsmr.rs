@@ -24,6 +24,7 @@ impl From<Engt> for u8 {
 impl crate::FieldSpec for Engt {
     type Ux = u8;
 }
+impl crate::IsEnum for Engt {}
 #[doc = "Field `ENGT` reader - Enable Gate"]
 pub type EngtR = crate::FieldReader<Engt>;
 impl EngtR {
@@ -60,7 +61,7 @@ impl EngtR {
     }
 }
 #[doc = "Field `ENGT` writer - Enable Gate"]
-pub type EngtW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Engt>;
+pub type EngtW<'a, REG> = crate::FieldWriter<'a, REG, 2, Engt, crate::Safe>;
 impl<'a, REG> EngtW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

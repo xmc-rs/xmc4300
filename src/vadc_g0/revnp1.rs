@@ -24,6 +24,7 @@ impl From<Rev8np> for u8 {
 impl crate::FieldSpec for Rev8np {
     type Ux = u8;
 }
+impl crate::IsEnum for Rev8np {}
 #[doc = "Field `REV8NP` reader - Service Request Node Pointer Result Event i"]
 pub type Rev8npR = crate::FieldReader<Rev8np>;
 impl Rev8npR {
@@ -109,6 +110,7 @@ impl From<Rev9np> for u8 {
 impl crate::FieldSpec for Rev9np {
     type Ux = u8;
 }
+impl crate::IsEnum for Rev9np {}
 #[doc = "Field `REV9NP` reader - Service Request Node Pointer Result Event i"]
 pub type Rev9npR = crate::FieldReader<Rev9np>;
 impl Rev9npR {
@@ -194,6 +196,7 @@ impl From<Rev10np> for u8 {
 impl crate::FieldSpec for Rev10np {
     type Ux = u8;
 }
+impl crate::IsEnum for Rev10np {}
 #[doc = "Field `REV10NP` reader - Service Request Node Pointer Result Event i"]
 pub type Rev10npR = crate::FieldReader<Rev10np>;
 impl Rev10npR {
@@ -279,6 +282,7 @@ impl From<Rev11np> for u8 {
 impl crate::FieldSpec for Rev11np {
     type Ux = u8;
 }
+impl crate::IsEnum for Rev11np {}
 #[doc = "Field `REV11NP` reader - Service Request Node Pointer Result Event i"]
 pub type Rev11npR = crate::FieldReader<Rev11np>;
 impl Rev11npR {
@@ -364,6 +368,7 @@ impl From<Rev12np> for u8 {
 impl crate::FieldSpec for Rev12np {
     type Ux = u8;
 }
+impl crate::IsEnum for Rev12np {}
 #[doc = "Field `REV12NP` reader - Service Request Node Pointer Result Event i"]
 pub type Rev12npR = crate::FieldReader<Rev12np>;
 impl Rev12npR {
@@ -449,6 +454,7 @@ impl From<Rev13np> for u8 {
 impl crate::FieldSpec for Rev13np {
     type Ux = u8;
 }
+impl crate::IsEnum for Rev13np {}
 #[doc = "Field `REV13NP` reader - Service Request Node Pointer Result Event i"]
 pub type Rev13npR = crate::FieldReader<Rev13np>;
 impl Rev13npR {
@@ -534,6 +540,7 @@ impl From<Rev14np> for u8 {
 impl crate::FieldSpec for Rev14np {
     type Ux = u8;
 }
+impl crate::IsEnum for Rev14np {}
 #[doc = "Field `REV14NP` reader - Service Request Node Pointer Result Event i"]
 pub type Rev14npR = crate::FieldReader<Rev14np>;
 impl Rev14npR {
@@ -619,6 +626,7 @@ impl From<Rev15np> for u8 {
 impl crate::FieldSpec for Rev15np {
     type Ux = u8;
 }
+impl crate::IsEnum for Rev15np {}
 #[doc = "Field `REV15NP` reader - Service Request Node Pointer Result Event i"]
 pub type Rev15npR = crate::FieldReader<Rev15np>;
 impl Rev15npR {

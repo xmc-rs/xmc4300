@@ -26,6 +26,7 @@ impl From<Clksel> for u8 {
 impl crate::FieldSpec for Clksel {
     type Ux = u8;
 }
+impl crate::IsEnum for Clksel {}
 #[doc = "Field `CLKSEL` reader - Baud Rate Logic Clock Select"]
 pub type ClkselR = crate::FieldReader<Clksel>;
 impl ClkselR {

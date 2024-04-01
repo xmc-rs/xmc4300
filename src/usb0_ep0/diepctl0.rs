@@ -24,6 +24,7 @@ impl From<Mps> for u8 {
 impl crate::FieldSpec for Mps {
     type Ux = u8;
 }
+impl crate::IsEnum for Mps {}
 #[doc = "Field `MPS` reader - Maximum Packet Size"]
 pub type MpsR = crate::FieldReader<Mps>;
 impl MpsR {
@@ -60,7 +61,7 @@ impl MpsR {
     }
 }
 #[doc = "Field `MPS` writer - Maximum Packet Size"]
-pub type MpsW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Mps>;
+pub type MpsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Mps, crate::Safe>;
 impl<'a, REG> MpsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

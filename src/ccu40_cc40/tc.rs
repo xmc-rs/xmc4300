@@ -223,6 +223,7 @@ impl From<Capc> for u8 {
 impl crate::FieldSpec for Capc {
     type Ux = u8;
 }
+impl crate::IsEnum for Capc {}
 #[doc = "Field `CAPC` reader - Clear on Capture Control"]
 pub type CapcR = crate::FieldReader<Capc>;
 impl CapcR {
@@ -259,7 +260,7 @@ impl CapcR {
     }
 }
 #[doc = "Field `CAPC` writer - Clear on Capture Control"]
-pub type CapcW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Capc>;
+pub type CapcW<'a, REG> = crate::FieldWriter<'a, REG, 2, Capc, crate::Safe>;
 impl<'a, REG> CapcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -306,6 +307,7 @@ impl From<Endm> for u8 {
 impl crate::FieldSpec for Endm {
     type Ux = u8;
 }
+impl crate::IsEnum for Endm {}
 #[doc = "Field `ENDM` reader - Extended Stop Function Control"]
 pub type EndmR = crate::FieldReader<Endm>;
 impl EndmR {
@@ -539,6 +541,7 @@ impl From<Dithe> for u8 {
 impl crate::FieldSpec for Dithe {
     type Ux = u8;
 }
+impl crate::IsEnum for Dithe {}
 #[doc = "Field `DITHE` reader - Dither Enable"]
 pub type DitheR = crate::FieldReader<Dithe>;
 impl DitheR {
@@ -575,7 +578,7 @@ impl DitheR {
     }
 }
 #[doc = "Field `DITHE` writer - Dither Enable"]
-pub type DitheW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Dithe>;
+pub type DitheW<'a, REG> = crate::FieldWriter<'a, REG, 2, Dithe, crate::Safe>;
 impl<'a, REG> DitheW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

@@ -26,6 +26,7 @@ impl From<Prbc> for u8 {
 impl crate::FieldSpec for Prbc {
     type Ux = u8;
 }
+impl crate::IsEnum for Prbc {}
 #[doc = "Field `PRBC` reader - Prescaler Clear Configuration"]
 pub type PrbcR = crate::FieldReader<Prbc>;
 impl PrbcR {
@@ -122,6 +123,7 @@ impl From<Pcis> for u8 {
 impl crate::FieldSpec for Pcis {
     type Ux = u8;
 }
+impl crate::IsEnum for Pcis {}
 #[doc = "Field `PCIS` reader - Prescaler Input Clock Selection"]
 pub type PcisR = crate::FieldReader<Pcis>;
 impl PcisR {
@@ -158,7 +160,7 @@ impl PcisR {
     }
 }
 #[doc = "Field `PCIS` writer - Prescaler Input Clock Selection"]
-pub type PcisW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Pcis>;
+pub type PcisW<'a, REG> = crate::FieldWriter<'a, REG, 2, Pcis, crate::Safe>;
 impl<'a, REG> PcisW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -207,6 +209,7 @@ impl From<Suscfg> for u8 {
 impl crate::FieldSpec for Suscfg {
     type Ux = u8;
 }
+impl crate::IsEnum for Suscfg {}
 #[doc = "Field `SUSCFG` reader - Suspend Mode Configuration"]
 pub type SuscfgR = crate::FieldReader<Suscfg>;
 impl SuscfgR {
@@ -243,7 +246,7 @@ impl SuscfgR {
     }
 }
 #[doc = "Field `SUSCFG` writer - Suspend Mode Configuration"]
-pub type SuscfgW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Suscfg>;
+pub type SuscfgW<'a, REG> = crate::FieldWriter<'a, REG, 2, Suscfg, crate::Safe>;
 impl<'a, REG> SuscfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -502,6 +505,7 @@ impl From<Msde> for u8 {
 impl crate::FieldSpec for Msde {
     type Ux = u8;
 }
+impl crate::IsEnum for Msde {}
 #[doc = "Field `MSDE` reader - Multi Channel shadow transfer request configuration"]
 pub type MsdeR = crate::FieldReader<Msde>;
 impl MsdeR {

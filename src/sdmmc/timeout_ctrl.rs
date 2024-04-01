@@ -22,6 +22,7 @@ impl From<DatTimeoutCntVal> for u8 {
 impl crate::FieldSpec for DatTimeoutCntVal {
     type Ux = u8;
 }
+impl crate::IsEnum for DatTimeoutCntVal {}
 #[doc = "Field `DAT_TIMEOUT_CNT_VAL` reader - Data Timeout Counter Value"]
 pub type DatTimeoutCntValR = crate::FieldReader<DatTimeoutCntVal>;
 impl DatTimeoutCntValR {

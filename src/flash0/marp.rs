@@ -22,6 +22,7 @@ impl From<Margin> for u8 {
 impl crate::FieldSpec for Margin {
     type Ux = u8;
 }
+impl crate::IsEnum for Margin {}
 #[doc = "Field `MARGIN` reader - PFLASH Margin Selection"]
 pub type MarginR = crate::FieldReader<Margin>;
 impl MarginR {

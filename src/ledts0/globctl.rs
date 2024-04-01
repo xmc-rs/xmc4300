@@ -189,6 +189,7 @@ impl From<Maskval> for u8 {
 impl crate::FieldSpec for Maskval {
     type Ux = u8;
 }
+impl crate::IsEnum for Maskval {}
 #[doc = "Field `MASKVAL` reader - Mask Number of LSB Bits for Event Validation"]
 pub type MaskvalR = crate::FieldReader<Maskval>;
 impl MaskvalR {

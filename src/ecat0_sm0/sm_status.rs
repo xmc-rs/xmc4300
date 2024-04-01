@@ -130,6 +130,7 @@ impl From<BufStatus> for u8 {
 impl crate::FieldSpec for BufStatus {
     type Ux = u8;
 }
+impl crate::IsEnum for BufStatus {}
 #[doc = "Field `BUF_STATUS` reader - Buffered mode: buffer status (last written buffer)"]
 pub type BufStatusR = crate::FieldReader<BufStatus>;
 impl BufStatusR {

@@ -22,6 +22,7 @@ impl From<Ecksel> for u8 {
 impl crate::FieldSpec for Ecksel {
     type Ux = u8;
 }
+impl crate::IsEnum for Ecksel {}
 #[doc = "Field `ECKSEL` reader - External Clock Selection Value"]
 pub type EckselR = crate::FieldReader<Ecksel>;
 impl EckselR {

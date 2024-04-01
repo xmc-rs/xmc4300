@@ -24,6 +24,7 @@ impl From<Ist> for u8 {
 impl crate::FieldSpec for Ist {
     type Ux = u8;
 }
+impl crate::IsEnum for Ist {}
 #[doc = "Field `IST` reader - Initiate State Transition of the Device StateMachine"]
 pub type IstR = crate::FieldReader<Ist>;
 impl IstR {

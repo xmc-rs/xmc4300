@@ -20,6 +20,7 @@ impl From<Setpend> for u32 {
 impl crate::FieldSpec for Setpend {
     type Ux = u32;
 }
+impl crate::IsEnum for Setpend {}
 #[doc = "Field `SETPEND` reader - Interrupt set-pending bits."]
 pub type SetpendR = crate::FieldReader<Setpend>;
 impl SetpendR {

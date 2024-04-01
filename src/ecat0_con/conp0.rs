@@ -24,6 +24,7 @@ impl From<Rxd0> for u8 {
 impl crate::FieldSpec for Rxd0 {
     type Ux = u8;
 }
+impl crate::IsEnum for Rxd0 {}
 #[doc = "Field `RXD0` reader - PORT0 Receive Input 0 Select"]
 pub type Rxd0R = crate::FieldReader<Rxd0>;
 impl Rxd0R {
@@ -60,7 +61,7 @@ impl Rxd0R {
     }
 }
 #[doc = "Field `RXD0` writer - PORT0 Receive Input 0 Select"]
-pub type Rxd0W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Rxd0>;
+pub type Rxd0W<'a, REG> = crate::FieldWriter<'a, REG, 2, Rxd0, crate::Safe>;
 impl<'a, REG> Rxd0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -109,6 +110,7 @@ impl From<Rxd1> for u8 {
 impl crate::FieldSpec for Rxd1 {
     type Ux = u8;
 }
+impl crate::IsEnum for Rxd1 {}
 #[doc = "Field `RXD1` reader - Port0 Receive Input 1 Select"]
 pub type Rxd1R = crate::FieldReader<Rxd1>;
 impl Rxd1R {
@@ -145,7 +147,7 @@ impl Rxd1R {
     }
 }
 #[doc = "Field `RXD1` writer - Port0 Receive Input 1 Select"]
-pub type Rxd1W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Rxd1>;
+pub type Rxd1W<'a, REG> = crate::FieldWriter<'a, REG, 2, Rxd1, crate::Safe>;
 impl<'a, REG> Rxd1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -194,6 +196,7 @@ impl From<Rxd2> for u8 {
 impl crate::FieldSpec for Rxd2 {
     type Ux = u8;
 }
+impl crate::IsEnum for Rxd2 {}
 #[doc = "Field `RXD2` reader - Port0 Receive Input 2 Select"]
 pub type Rxd2R = crate::FieldReader<Rxd2>;
 impl Rxd2R {
@@ -230,7 +233,7 @@ impl Rxd2R {
     }
 }
 #[doc = "Field `RXD2` writer - Port0 Receive Input 2 Select"]
-pub type Rxd2W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Rxd2>;
+pub type Rxd2W<'a, REG> = crate::FieldWriter<'a, REG, 2, Rxd2, crate::Safe>;
 impl<'a, REG> Rxd2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -279,6 +282,7 @@ impl From<Rxd3> for u8 {
 impl crate::FieldSpec for Rxd3 {
     type Ux = u8;
 }
+impl crate::IsEnum for Rxd3 {}
 #[doc = "Field `RXD3` reader - Port0 Receive Input 3 Select"]
 pub type Rxd3R = crate::FieldReader<Rxd3>;
 impl Rxd3R {
@@ -315,7 +319,7 @@ impl Rxd3R {
     }
 }
 #[doc = "Field `RXD3` writer - Port0 Receive Input 3 Select"]
-pub type Rxd3W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Rxd3>;
+pub type Rxd3W<'a, REG> = crate::FieldWriter<'a, REG, 2, Rxd3, crate::Safe>;
 impl<'a, REG> Rxd3W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -364,6 +368,7 @@ impl From<RxErr> for u8 {
 impl crate::FieldSpec for RxErr {
     type Ux = u8;
 }
+impl crate::IsEnum for RxErr {}
 #[doc = "Field `RX_ERR` reader - Port0 MII RX ERROR Input Select"]
 pub type RxErrR = crate::FieldReader<RxErr>;
 impl RxErrR {
@@ -400,7 +405,7 @@ impl RxErrR {
     }
 }
 #[doc = "Field `RX_ERR` writer - Port0 MII RX ERROR Input Select"]
-pub type RxErrW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RxErr>;
+pub type RxErrW<'a, REG> = crate::FieldWriter<'a, REG, 2, RxErr, crate::Safe>;
 impl<'a, REG> RxErrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -449,6 +454,7 @@ impl From<RxDv> for u8 {
 impl crate::FieldSpec for RxDv {
     type Ux = u8;
 }
+impl crate::IsEnum for RxDv {}
 #[doc = "Field `RX_DV` reader - Port0 MII RX DV Input Select"]
 pub type RxDvR = crate::FieldReader<RxDv>;
 impl RxDvR {
@@ -485,7 +491,7 @@ impl RxDvR {
     }
 }
 #[doc = "Field `RX_DV` writer - Port0 MII RX DV Input Select"]
-pub type RxDvW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RxDv>;
+pub type RxDvW<'a, REG> = crate::FieldWriter<'a, REG, 2, RxDv, crate::Safe>;
 impl<'a, REG> RxDvW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -534,6 +540,7 @@ impl From<RxClk> for u8 {
 impl crate::FieldSpec for RxClk {
     type Ux = u8;
 }
+impl crate::IsEnum for RxClk {}
 #[doc = "Field `RX_CLK` reader - Port0 MII RX Clock Input Select"]
 pub type RxClkR = crate::FieldReader<RxClk>;
 impl RxClkR {
@@ -570,7 +577,7 @@ impl RxClkR {
     }
 }
 #[doc = "Field `RX_CLK` writer - Port0 MII RX Clock Input Select"]
-pub type RxClkW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, RxClk>;
+pub type RxClkW<'a, REG> = crate::FieldWriter<'a, REG, 2, RxClk, crate::Safe>;
 impl<'a, REG> RxClkW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -619,6 +626,7 @@ impl From<Link> for u8 {
 impl crate::FieldSpec for Link {
     type Ux = u8;
 }
+impl crate::IsEnum for Link {}
 #[doc = "Field `LINK` reader - Port0 PHY Link Input Select"]
 pub type LinkR = crate::FieldReader<Link>;
 impl LinkR {
@@ -655,7 +663,7 @@ impl LinkR {
     }
 }
 #[doc = "Field `LINK` writer - Port0 PHY Link Input Select"]
-pub type LinkW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Link>;
+pub type LinkW<'a, REG> = crate::FieldWriter<'a, REG, 2, Link, crate::Safe>;
 impl<'a, REG> LinkW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -704,6 +712,7 @@ impl From<TxClk> for u8 {
 impl crate::FieldSpec for TxClk {
     type Ux = u8;
 }
+impl crate::IsEnum for TxClk {}
 #[doc = "Field `TX_CLK` reader - Port0 MII TX Clock Input Select"]
 pub type TxClkR = crate::FieldReader<TxClk>;
 impl TxClkR {
@@ -740,7 +749,7 @@ impl TxClkR {
     }
 }
 #[doc = "Field `TX_CLK` writer - Port0 MII TX Clock Input Select"]
-pub type TxClkW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TxClk>;
+pub type TxClkW<'a, REG> = crate::FieldWriter<'a, REG, 2, TxClk, crate::Safe>;
 impl<'a, REG> TxClkW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -789,6 +798,7 @@ impl From<TxShift> for u8 {
 impl crate::FieldSpec for TxShift {
     type Ux = u8;
 }
+impl crate::IsEnum for TxShift {}
 #[doc = "Field `TX_SHIFT` reader - Port0 Manual TX Shift configuration"]
 pub type TxShiftR = crate::FieldReader<TxShift>;
 impl TxShiftR {
@@ -825,7 +835,7 @@ impl TxShiftR {
     }
 }
 #[doc = "Field `TX_SHIFT` writer - Port0 Manual TX Shift configuration"]
-pub type TxShiftW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TxShift>;
+pub type TxShiftW<'a, REG> = crate::FieldWriter<'a, REG, 2, TxShift, crate::Safe>;
 impl<'a, REG> TxShiftW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

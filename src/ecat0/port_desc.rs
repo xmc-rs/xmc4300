@@ -22,6 +22,7 @@ impl From<Port0> for u8 {
 impl crate::FieldSpec for Port0 {
     type Ux = u8;
 }
+impl crate::IsEnum for Port0 {}
 #[doc = "Field `Port0` reader - Port Configuration"]
 pub type Port0R = crate::FieldReader<Port0>;
 impl Port0R {
@@ -79,6 +80,7 @@ impl From<Port1> for u8 {
 impl crate::FieldSpec for Port1 {
     type Ux = u8;
 }
+impl crate::IsEnum for Port1 {}
 #[doc = "Field `Port1` reader - Port Configuration"]
 pub type Port1R = crate::FieldReader<Port1>;
 impl Port1R {
@@ -136,6 +138,7 @@ impl From<Port2> for u8 {
 impl crate::FieldSpec for Port2 {
     type Ux = u8;
 }
+impl crate::IsEnum for Port2 {}
 #[doc = "Field `Port2` reader - Port Configuration"]
 pub type Port2R = crate::FieldReader<Port2>;
 impl Port2R {
@@ -193,6 +196,7 @@ impl From<Port3> for u8 {
 impl crate::FieldSpec for Port3 {
     type Ux = u8;
 }
+impl crate::IsEnum for Port3 {}
 #[doc = "Field `Port3` reader - Port Configuration"]
 pub type Port3R = crate::FieldReader<Port3>;
 impl Port3R {

@@ -22,6 +22,7 @@ impl From<Hw0> for u8 {
 impl crate::FieldSpec for Hw0 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw0 {}
 #[doc = "Field `HW0` reader - Port n Pin Hardware Select Bit 0"]
 pub type Hw0R = crate::FieldReader<Hw0>;
 impl Hw0R {
@@ -94,6 +95,7 @@ impl From<Hw1> for u8 {
 impl crate::FieldSpec for Hw1 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw1 {}
 #[doc = "Field `HW1` reader - Port n Pin Hardware Select Bit 1"]
 pub type Hw1R = crate::FieldReader<Hw1>;
 impl Hw1R {
@@ -166,6 +168,7 @@ impl From<Hw2> for u8 {
 impl crate::FieldSpec for Hw2 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw2 {}
 #[doc = "Field `HW2` reader - Port n Pin Hardware Select Bit 2"]
 pub type Hw2R = crate::FieldReader<Hw2>;
 impl Hw2R {
@@ -238,6 +241,7 @@ impl From<Hw3> for u8 {
 impl crate::FieldSpec for Hw3 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw3 {}
 #[doc = "Field `HW3` reader - Port n Pin Hardware Select Bit 3"]
 pub type Hw3R = crate::FieldReader<Hw3>;
 impl Hw3R {
@@ -310,6 +314,7 @@ impl From<Hw4> for u8 {
 impl crate::FieldSpec for Hw4 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw4 {}
 #[doc = "Field `HW4` reader - Port n Pin Hardware Select Bit 4"]
 pub type Hw4R = crate::FieldReader<Hw4>;
 impl Hw4R {
@@ -382,6 +387,7 @@ impl From<Hw5> for u8 {
 impl crate::FieldSpec for Hw5 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw5 {}
 #[doc = "Field `HW5` reader - Port n Pin Hardware Select Bit 5"]
 pub type Hw5R = crate::FieldReader<Hw5>;
 impl Hw5R {
@@ -454,6 +460,7 @@ impl From<Hw6> for u8 {
 impl crate::FieldSpec for Hw6 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw6 {}
 #[doc = "Field `HW6` reader - Port n Pin Hardware Select Bit 6"]
 pub type Hw6R = crate::FieldReader<Hw6>;
 impl Hw6R {
@@ -526,6 +533,7 @@ impl From<Hw7> for u8 {
 impl crate::FieldSpec for Hw7 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw7 {}
 #[doc = "Field `HW7` reader - Port n Pin Hardware Select Bit 7"]
 pub type Hw7R = crate::FieldReader<Hw7>;
 impl Hw7R {
@@ -598,6 +606,7 @@ impl From<Hw8> for u8 {
 impl crate::FieldSpec for Hw8 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw8 {}
 #[doc = "Field `HW8` reader - Port n Pin Hardware Select Bit 8"]
 pub type Hw8R = crate::FieldReader<Hw8>;
 impl Hw8R {
@@ -670,6 +679,7 @@ impl From<Hw9> for u8 {
 impl crate::FieldSpec for Hw9 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw9 {}
 #[doc = "Field `HW9` reader - Port n Pin Hardware Select Bit 9"]
 pub type Hw9R = crate::FieldReader<Hw9>;
 impl Hw9R {
@@ -742,6 +752,7 @@ impl From<Hw10> for u8 {
 impl crate::FieldSpec for Hw10 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw10 {}
 #[doc = "Field `HW10` reader - Port n Pin Hardware Select Bit 10"]
 pub type Hw10R = crate::FieldReader<Hw10>;
 impl Hw10R {
@@ -814,6 +825,7 @@ impl From<Hw11> for u8 {
 impl crate::FieldSpec for Hw11 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw11 {}
 #[doc = "Field `HW11` reader - Port n Pin Hardware Select Bit 11"]
 pub type Hw11R = crate::FieldReader<Hw11>;
 impl Hw11R {
@@ -886,6 +898,7 @@ impl From<Hw12> for u8 {
 impl crate::FieldSpec for Hw12 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw12 {}
 #[doc = "Field `HW12` reader - Port n Pin Hardware Select Bit 12"]
 pub type Hw12R = crate::FieldReader<Hw12>;
 impl Hw12R {
@@ -958,6 +971,7 @@ impl From<Hw13> for u8 {
 impl crate::FieldSpec for Hw13 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw13 {}
 #[doc = "Field `HW13` reader - Port n Pin Hardware Select Bit 13"]
 pub type Hw13R = crate::FieldReader<Hw13>;
 impl Hw13R {
@@ -1030,6 +1044,7 @@ impl From<Hw14> for u8 {
 impl crate::FieldSpec for Hw14 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw14 {}
 #[doc = "Field `HW14` reader - Port n Pin Hardware Select Bit 14"]
 pub type Hw14R = crate::FieldReader<Hw14>;
 impl Hw14R {
@@ -1102,6 +1117,7 @@ impl From<Hw15> for u8 {
 impl crate::FieldSpec for Hw15 {
     type Ux = u8;
 }
+impl crate::IsEnum for Hw15 {}
 #[doc = "Field `HW15` reader - Port n Pin Hardware Select Bit 15"]
 pub type Hw15R = crate::FieldReader<Hw15>;
 impl Hw15R {

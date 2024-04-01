@@ -342,6 +342,7 @@ impl From<Dtcc> for u8 {
 impl crate::FieldSpec for Dtcc {
     type Ux = u8;
 }
+impl crate::IsEnum for Dtcc {}
 #[doc = "Field `DTCC` reader - Dead Time clock control"]
 pub type DtccR = crate::FieldReader<Dtcc>;
 impl DtccR {
@@ -378,7 +379,7 @@ impl DtccR {
     }
 }
 #[doc = "Field `DTCC` writer - Dead Time clock control"]
-pub type DtccW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Dtcc>;
+pub type DtccW<'a, REG> = crate::FieldWriter<'a, REG, 2, Dtcc, crate::Safe>;
 impl<'a, REG> DtccW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

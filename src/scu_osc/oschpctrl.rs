@@ -130,6 +130,7 @@ impl From<Gainsel> for u8 {
 impl crate::FieldSpec for Gainsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Gainsel {}
 #[doc = "Field `GAINSEL` reader - Oscillator Gain Selection"]
 pub type GainselR = crate::FieldReader<Gainsel>;
 impl GainselR {
@@ -166,7 +167,7 @@ impl GainselR {
     }
 }
 #[doc = "Field `GAINSEL` writer - Oscillator Gain Selection"]
-pub type GainselW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Gainsel>;
+pub type GainselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Gainsel, crate::Safe>;
 impl<'a, REG> GainselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -215,6 +216,7 @@ impl From<Mode> for u8 {
 impl crate::FieldSpec for Mode {
     type Ux = u8;
 }
+impl crate::IsEnum for Mode {}
 #[doc = "Field `MODE` reader - Oscillator Mode"]
 pub type ModeR = crate::FieldReader<Mode>;
 impl ModeR {
@@ -251,7 +253,7 @@ impl ModeR {
     }
 }
 #[doc = "Field `MODE` writer - Oscillator Mode"]
-pub type ModeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Mode>;
+pub type ModeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Mode, crate::Safe>;
 impl<'a, REG> ModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

@@ -24,6 +24,7 @@ impl From<Mps> for u8 {
 impl crate::FieldSpec for Mps {
     type Ux = u8;
 }
+impl crate::IsEnum for Mps {}
 #[doc = "Field `MPS` reader - Maximum Packet Size"]
 pub type MpsR = crate::FieldReader<Mps>;
 impl MpsR {

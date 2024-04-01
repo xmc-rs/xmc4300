@@ -24,6 +24,7 @@ impl From<Sev0np> for u8 {
 impl crate::FieldSpec for Sev0np {
     type Ux = u8;
 }
+impl crate::IsEnum for Sev0np {}
 #[doc = "Field `SEV0NP` reader - Service Request Node Pointer Backgr. Source"]
 pub type Sev0npR = crate::FieldReader<Sev0np>;
 impl Sev0npR {
@@ -109,6 +110,7 @@ impl From<Rev0np> for u8 {
 impl crate::FieldSpec for Rev0np {
     type Ux = u8;
 }
+impl crate::IsEnum for Rev0np {}
 #[doc = "Field `REV0NP` reader - Service Request Node Pointer Backgr. Result"]
 pub type Rev0npR = crate::FieldReader<Rev0np>;
 impl Rev0npR {

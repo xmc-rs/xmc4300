@@ -369,6 +369,7 @@ impl From<PrtSpd> for u8 {
 impl crate::FieldSpec for PrtSpd {
     type Ux = u8;
 }
+impl crate::IsEnum for PrtSpd {}
 #[doc = "Field `PrtSpd` reader - Port Speed"]
 pub type PrtSpdR = crate::FieldReader<PrtSpd>;
 impl PrtSpdR {

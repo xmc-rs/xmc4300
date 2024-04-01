@@ -24,6 +24,7 @@ impl From<Cev0np> for u8 {
 impl crate::FieldSpec for Cev0np {
     type Ux = u8;
 }
+impl crate::IsEnum for Cev0np {}
 #[doc = "Field `CEV0NP` reader - Service Request Node Pointer Channel Event i"]
 pub type Cev0npR = crate::FieldReader<Cev0np>;
 impl Cev0npR {
@@ -109,6 +110,7 @@ impl From<Cev1np> for u8 {
 impl crate::FieldSpec for Cev1np {
     type Ux = u8;
 }
+impl crate::IsEnum for Cev1np {}
 #[doc = "Field `CEV1NP` reader - Service Request Node Pointer Channel Event i"]
 pub type Cev1npR = crate::FieldReader<Cev1np>;
 impl Cev1npR {
@@ -194,6 +196,7 @@ impl From<Cev2np> for u8 {
 impl crate::FieldSpec for Cev2np {
     type Ux = u8;
 }
+impl crate::IsEnum for Cev2np {}
 #[doc = "Field `CEV2NP` reader - Service Request Node Pointer Channel Event i"]
 pub type Cev2npR = crate::FieldReader<Cev2np>;
 impl Cev2npR {
@@ -279,6 +282,7 @@ impl From<Cev3np> for u8 {
 impl crate::FieldSpec for Cev3np {
     type Ux = u8;
 }
+impl crate::IsEnum for Cev3np {}
 #[doc = "Field `CEV3NP` reader - Service Request Node Pointer Channel Event i"]
 pub type Cev3npR = crate::FieldReader<Cev3np>;
 impl Cev3npR {
@@ -364,6 +368,7 @@ impl From<Cev4np> for u8 {
 impl crate::FieldSpec for Cev4np {
     type Ux = u8;
 }
+impl crate::IsEnum for Cev4np {}
 #[doc = "Field `CEV4NP` reader - Service Request Node Pointer Channel Event i"]
 pub type Cev4npR = crate::FieldReader<Cev4np>;
 impl Cev4npR {
@@ -449,6 +454,7 @@ impl From<Cev5np> for u8 {
 impl crate::FieldSpec for Cev5np {
     type Ux = u8;
 }
+impl crate::IsEnum for Cev5np {}
 #[doc = "Field `CEV5NP` reader - Service Request Node Pointer Channel Event i"]
 pub type Cev5npR = crate::FieldReader<Cev5np>;
 impl Cev5npR {
@@ -534,6 +540,7 @@ impl From<Cev6np> for u8 {
 impl crate::FieldSpec for Cev6np {
     type Ux = u8;
 }
+impl crate::IsEnum for Cev6np {}
 #[doc = "Field `CEV6NP` reader - Service Request Node Pointer Channel Event i"]
 pub type Cev6npR = crate::FieldReader<Cev6np>;
 impl Cev6npR {
@@ -619,6 +626,7 @@ impl From<Cev7np> for u8 {
 impl crate::FieldSpec for Cev7np {
     type Ux = u8;
 }
+impl crate::IsEnum for Cev7np {}
 #[doc = "Field `CEV7NP` reader - Service Request Node Pointer Channel Event i"]
 pub type Cev7npR = crate::FieldReader<Cev7np>;
 impl Cev7npR {

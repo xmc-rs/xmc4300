@@ -48,6 +48,7 @@ impl From<Ev0is> for u8 {
 impl crate::FieldSpec for Ev0is {
     type Ux = u8;
 }
+impl crate::IsEnum for Ev0is {}
 #[doc = "Field `EV0IS` reader - Event 0 signal selection"]
 pub type Ev0isR = crate::FieldReader<Ev0is>;
 impl Ev0isR {
@@ -156,7 +157,7 @@ impl Ev0isR {
     }
 }
 #[doc = "Field `EV0IS` writer - Event 0 signal selection"]
-pub type Ev0isW<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, Ev0is>;
+pub type Ev0isW<'a, REG> = crate::FieldWriter<'a, REG, 4, Ev0is, crate::Safe>;
 impl<'a, REG> Ev0isW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -289,6 +290,7 @@ impl From<Ev1is> for u8 {
 impl crate::FieldSpec for Ev1is {
     type Ux = u8;
 }
+impl crate::IsEnum for Ev1is {}
 #[doc = "Field `EV1IS` reader - Event 1 signal selection"]
 pub type Ev1isR = crate::FieldReader<Ev1is>;
 impl Ev1isR {
@@ -397,7 +399,7 @@ impl Ev1isR {
     }
 }
 #[doc = "Field `EV1IS` writer - Event 1 signal selection"]
-pub type Ev1isW<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, Ev1is>;
+pub type Ev1isW<'a, REG> = crate::FieldWriter<'a, REG, 4, Ev1is, crate::Safe>;
 impl<'a, REG> Ev1isW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -530,6 +532,7 @@ impl From<Ev2is> for u8 {
 impl crate::FieldSpec for Ev2is {
     type Ux = u8;
 }
+impl crate::IsEnum for Ev2is {}
 #[doc = "Field `EV2IS` reader - Event 2 signal selection"]
 pub type Ev2isR = crate::FieldReader<Ev2is>;
 impl Ev2isR {
@@ -638,7 +641,7 @@ impl Ev2isR {
     }
 }
 #[doc = "Field `EV2IS` writer - Event 2 signal selection"]
-pub type Ev2isW<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, Ev2is>;
+pub type Ev2isW<'a, REG> = crate::FieldWriter<'a, REG, 4, Ev2is, crate::Safe>;
 impl<'a, REG> Ev2isW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -747,6 +750,7 @@ impl From<Ev0em> for u8 {
 impl crate::FieldSpec for Ev0em {
     type Ux = u8;
 }
+impl crate::IsEnum for Ev0em {}
 #[doc = "Field `EV0EM` reader - Event 0 Edge Selection"]
 pub type Ev0emR = crate::FieldReader<Ev0em>;
 impl Ev0emR {
@@ -783,7 +787,7 @@ impl Ev0emR {
     }
 }
 #[doc = "Field `EV0EM` writer - Event 0 Edge Selection"]
-pub type Ev0emW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ev0em>;
+pub type Ev0emW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ev0em, crate::Safe>;
 impl<'a, REG> Ev0emW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -832,6 +836,7 @@ impl From<Ev1em> for u8 {
 impl crate::FieldSpec for Ev1em {
     type Ux = u8;
 }
+impl crate::IsEnum for Ev1em {}
 #[doc = "Field `EV1EM` reader - Event 1 Edge Selection"]
 pub type Ev1emR = crate::FieldReader<Ev1em>;
 impl Ev1emR {
@@ -868,7 +873,7 @@ impl Ev1emR {
     }
 }
 #[doc = "Field `EV1EM` writer - Event 1 Edge Selection"]
-pub type Ev1emW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ev1em>;
+pub type Ev1emW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ev1em, crate::Safe>;
 impl<'a, REG> Ev1emW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -917,6 +922,7 @@ impl From<Ev2em> for u8 {
 impl crate::FieldSpec for Ev2em {
     type Ux = u8;
 }
+impl crate::IsEnum for Ev2em {}
 #[doc = "Field `EV2EM` reader - Event 2 Edge Selection"]
 pub type Ev2emR = crate::FieldReader<Ev2em>;
 impl Ev2emR {
@@ -953,7 +959,7 @@ impl Ev2emR {
     }
 }
 #[doc = "Field `EV2EM` writer - Event 2 Edge Selection"]
-pub type Ev2emW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ev2em>;
+pub type Ev2emW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ev2em, crate::Safe>;
 impl<'a, REG> Ev2emW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -1161,6 +1167,7 @@ impl From<Lpf0m> for u8 {
 impl crate::FieldSpec for Lpf0m {
     type Ux = u8;
 }
+impl crate::IsEnum for Lpf0m {}
 #[doc = "Field `LPF0M` reader - Event 0 Low Pass Filter Configuration"]
 pub type Lpf0mR = crate::FieldReader<Lpf0m>;
 impl Lpf0mR {
@@ -1197,7 +1204,7 @@ impl Lpf0mR {
     }
 }
 #[doc = "Field `LPF0M` writer - Event 0 Low Pass Filter Configuration"]
-pub type Lpf0mW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Lpf0m>;
+pub type Lpf0mW<'a, REG> = crate::FieldWriter<'a, REG, 2, Lpf0m, crate::Safe>;
 impl<'a, REG> Lpf0mW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -1246,6 +1253,7 @@ impl From<Lpf1m> for u8 {
 impl crate::FieldSpec for Lpf1m {
     type Ux = u8;
 }
+impl crate::IsEnum for Lpf1m {}
 #[doc = "Field `LPF1M` reader - Event 1 Low Pass Filter Configuration"]
 pub type Lpf1mR = crate::FieldReader<Lpf1m>;
 impl Lpf1mR {
@@ -1282,7 +1290,7 @@ impl Lpf1mR {
     }
 }
 #[doc = "Field `LPF1M` writer - Event 1 Low Pass Filter Configuration"]
-pub type Lpf1mW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Lpf1m>;
+pub type Lpf1mW<'a, REG> = crate::FieldWriter<'a, REG, 2, Lpf1m, crate::Safe>;
 impl<'a, REG> Lpf1mW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -1331,6 +1339,7 @@ impl From<Lpf2m> for u8 {
 impl crate::FieldSpec for Lpf2m {
     type Ux = u8;
 }
+impl crate::IsEnum for Lpf2m {}
 #[doc = "Field `LPF2M` reader - Event 2 Low Pass Filter Configuration"]
 pub type Lpf2mR = crate::FieldReader<Lpf2m>;
 impl Lpf2mR {
@@ -1367,7 +1376,7 @@ impl Lpf2mR {
     }
 }
 #[doc = "Field `LPF2M` writer - Event 2 Low Pass Filter Configuration"]
-pub type Lpf2mW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Lpf2m>;
+pub type Lpf2mW<'a, REG> = crate::FieldWriter<'a, REG, 2, Lpf2m, crate::Safe>;
 impl<'a, REG> Lpf2mW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

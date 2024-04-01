@@ -20,6 +20,7 @@ impl From<NptxFspcAvail> for u16 {
 impl crate::FieldSpec for NptxFspcAvail {
     type Ux = u16;
 }
+impl crate::IsEnum for NptxFspcAvail {}
 #[doc = "Field `NPTxFSpcAvail` reader - Non-periodic TxFIFO Space Avail"]
 pub type NptxFspcAvailR = crate::FieldReader<NptxFspcAvail>;
 impl NptxFspcAvailR {
@@ -69,6 +70,7 @@ impl From<NptxQspcAvail> for u8 {
 impl crate::FieldSpec for NptxQspcAvail {
     type Ux = u8;
 }
+impl crate::IsEnum for NptxQspcAvail {}
 #[doc = "Field `NPTxQSpcAvail` reader - Non-periodic Transmit Request Queue Space Available"]
 pub type NptxQspcAvailR = crate::FieldReader<NptxQspcAvail>;
 impl NptxQspcAvailR {
@@ -118,6 +120,7 @@ impl From<NptxQtop> for u8 {
 impl crate::FieldSpec for NptxQtop {
     type Ux = u8;
 }
+impl crate::IsEnum for NptxQtop {}
 #[doc = "Field `NPTxQTop` reader - Top of the Non-periodic Transmit Request Queue"]
 pub type NptxQtopR = crate::FieldReader<NptxQtop>;
 impl NptxQtopR {

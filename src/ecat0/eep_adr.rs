@@ -20,6 +20,7 @@ impl From<EepromAddr> for u32 {
 impl crate::FieldSpec for EepromAddr {
     type Ux = u32;
 }
+impl crate::IsEnum for EepromAddr {}
 #[doc = "Field `EEPROM_ADDR` reader - EEPROM Address"]
 pub type EepromAddrR = crate::FieldReader<EepromAddr>;
 impl EepromAddrR {

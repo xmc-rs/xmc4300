@@ -26,6 +26,7 @@ impl From<Mode> for u8 {
 impl crate::FieldSpec for Mode {
     type Ux = u8;
 }
+impl crate::IsEnum for Mode {}
 #[doc = "Field `MODE` reader - Operating Mode"]
 pub type ModeR = crate::FieldReader<Mode>;
 impl ModeR {
@@ -123,6 +124,7 @@ impl From<Hpcen> for u8 {
 impl crate::FieldSpec for Hpcen {
     type Ux = u8;
 }
+impl crate::IsEnum for Hpcen {}
 #[doc = "Field `HPCEN` reader - Hardware Port Control Enable"]
 pub type HpcenR = crate::FieldReader<Hpcen>;
 impl HpcenR {
@@ -160,7 +162,7 @@ and DOUT\\[3:0\\]."]
     }
 }
 #[doc = "Field `HPCEN` writer - Hardware Port Control Enable"]
-pub type HpcenW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Hpcen>;
+pub type HpcenW<'a, REG> = crate::FieldWriter<'a, REG, 2, Hpcen, crate::Safe>;
 impl<'a, REG> HpcenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -208,6 +210,7 @@ impl From<Pm> for u8 {
 impl crate::FieldSpec for Pm {
     type Ux = u8;
 }
+impl crate::IsEnum for Pm {}
 #[doc = "Field `PM` reader - Parity Mode"]
 pub type PmR = crate::FieldReader<Pm>;
 impl PmR {

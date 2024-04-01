@@ -140,6 +140,7 @@ impl From<Stbinp> for u8 {
 impl crate::FieldSpec for Stbinp {
     type Ux = u8;
 }
+impl crate::IsEnum for Stbinp {}
 #[doc = "Field `STBINP` reader - Standard Transmit Buffer Interrupt Node Pointer"]
 pub type StbinpR = crate::FieldReader<Stbinp>;
 impl StbinpR {
@@ -251,6 +252,7 @@ impl From<Atbinp> for u8 {
 impl crate::FieldSpec for Atbinp {
     type Ux = u8;
 }
+impl crate::IsEnum for Atbinp {}
 #[doc = "Field `ATBINP` reader - Alternative Transmit Buffer Interrupt Node Pointer"]
 pub type AtbinpR = crate::FieldReader<Atbinp>;
 impl AtbinpR {
@@ -364,6 +366,7 @@ impl From<Size> for u8 {
 impl crate::FieldSpec for Size {
     type Ux = u8;
 }
+impl crate::IsEnum for Size {}
 #[doc = "Field `SIZE` reader - Buffer Size"]
 pub type SizeR = crate::FieldReader<Size>;
 impl SizeR {

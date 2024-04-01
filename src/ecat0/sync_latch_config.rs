@@ -22,6 +22,7 @@ impl From<Sync0Pol> for u8 {
 impl crate::FieldSpec for Sync0Pol {
     type Ux = u8;
 }
+impl crate::IsEnum for Sync0Pol {}
 #[doc = "Field `SYNC0_POL` reader - SYNC0 output driver/polarity"]
 pub type Sync0PolR = crate::FieldReader<Sync0Pol>;
 impl Sync0PolR {
@@ -151,6 +152,7 @@ impl From<Sync1Pol> for u8 {
 impl crate::FieldSpec for Sync1Pol {
     type Ux = u8;
 }
+impl crate::IsEnum for Sync1Pol {}
 #[doc = "Field `SYNC1_POL` reader - SYNC1 output driver/polarity"]
 pub type Sync1PolR = crate::FieldReader<Sync1Pol>;
 impl Sync1PolR {

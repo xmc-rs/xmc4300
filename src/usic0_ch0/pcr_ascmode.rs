@@ -452,6 +452,7 @@ impl From<Pl> for u8 {
 impl crate::FieldSpec for Pl {
     type Ux = u8;
 }
+impl crate::IsEnum for Pl {}
 #[doc = "Field `PL` reader - Pulse Length"]
 pub type PlR = crate::FieldReader<Pl>;
 impl PlR {

@@ -18,6 +18,7 @@ impl From<DevSpd> for u8 {
 impl crate::FieldSpec for DevSpd {
     type Ux = u8;
 }
+impl crate::IsEnum for DevSpd {}
 #[doc = "Field `DevSpd` reader - Device Speed"]
 pub type DevSpdR = crate::FieldReader<DevSpd>;
 impl DevSpdR {
@@ -127,6 +128,7 @@ impl From<PerFrInt> for u8 {
 impl crate::FieldSpec for PerFrInt {
     type Ux = u8;
 }
+impl crate::IsEnum for PerFrInt {}
 #[doc = "Field `PerFrInt` reader - Periodic Frame Interval"]
 pub type PerFrIntR = crate::FieldReader<PerFrInt>;
 impl PerFrIntR {
@@ -163,7 +165,7 @@ impl PerFrIntR {
     }
 }
 #[doc = "Field `PerFrInt` writer - Periodic Frame Interval"]
-pub type PerFrIntW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PerFrInt>;
+pub type PerFrIntW<'a, REG> = crate::FieldWriter<'a, REG, 2, PerFrInt, crate::Safe>;
 impl<'a, REG> PerFrIntW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -214,6 +216,7 @@ impl From<PerSchIntvl> for u8 {
 impl crate::FieldSpec for PerSchIntvl {
     type Ux = u8;
 }
+impl crate::IsEnum for PerSchIntvl {}
 #[doc = "Field `PerSchIntvl` reader - Periodic Scheduling Interval"]
 pub type PerSchIntvlR = crate::FieldReader<PerSchIntvl>;
 impl PerSchIntvlR {

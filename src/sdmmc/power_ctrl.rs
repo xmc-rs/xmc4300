@@ -71,6 +71,7 @@ impl From<SdBusVoltageSel> for u8 {
 impl crate::FieldSpec for SdBusVoltageSel {
     type Ux = u8;
 }
+impl crate::IsEnum for SdBusVoltageSel {}
 #[doc = "Field `SD_BUS_VOLTAGE_SEL` reader - SD Bus Voltage Select"]
 pub type SdBusVoltageSelR = crate::FieldReader<SdBusVoltageSel>;
 impl SdBusVoltageSelR {

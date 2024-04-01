@@ -26,6 +26,7 @@ impl From<Wdtsel> for u8 {
 impl crate::FieldSpec for Wdtsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Wdtsel {}
 #[doc = "Field `WDTSEL` reader - WDT Clock Selection Value"]
 pub type WdtselR = crate::FieldReader<Wdtsel>;
 impl WdtselR {

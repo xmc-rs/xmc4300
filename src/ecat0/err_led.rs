@@ -24,6 +24,7 @@ impl From<LedCode> for u8 {
 impl crate::FieldSpec for LedCode {
     type Ux = u8;
 }
+impl crate::IsEnum for LedCode {}
 #[doc = "Field `LED_CODE` reader - LED Code"]
 pub type LedCodeR = crate::FieldReader<LedCode>;
 impl LedCodeR {

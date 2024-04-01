@@ -24,6 +24,7 @@ impl From<Strts> for u8 {
 impl crate::FieldSpec for Strts {
     type Ux = u8;
 }
+impl crate::IsEnum for Strts {}
 #[doc = "Field `STRTS` reader - External Start Functionality Selector"]
 pub type StrtsR = crate::FieldReader<Strts>;
 impl StrtsR {
@@ -60,7 +61,7 @@ impl StrtsR {
     }
 }
 #[doc = "Field `STRTS` writer - External Start Functionality Selector"]
-pub type StrtsW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Strts>;
+pub type StrtsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Strts, crate::Safe>;
 impl<'a, REG> StrtsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -109,6 +110,7 @@ impl From<Ends> for u8 {
 impl crate::FieldSpec for Ends {
     type Ux = u8;
 }
+impl crate::IsEnum for Ends {}
 #[doc = "Field `ENDS` reader - External Stop Functionality Selector"]
 pub type EndsR = crate::FieldReader<Ends>;
 impl EndsR {
@@ -145,7 +147,7 @@ impl EndsR {
     }
 }
 #[doc = "Field `ENDS` writer - External Stop Functionality Selector"]
-pub type EndsW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ends>;
+pub type EndsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ends, crate::Safe>;
 impl<'a, REG> EndsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -194,6 +196,7 @@ impl From<Cap0s> for u8 {
 impl crate::FieldSpec for Cap0s {
     type Ux = u8;
 }
+impl crate::IsEnum for Cap0s {}
 #[doc = "Field `CAP0S` reader - External Capture 0 Functionality Selector"]
 pub type Cap0sR = crate::FieldReader<Cap0s>;
 impl Cap0sR {
@@ -230,7 +233,7 @@ impl Cap0sR {
     }
 }
 #[doc = "Field `CAP0S` writer - External Capture 0 Functionality Selector"]
-pub type Cap0sW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Cap0s>;
+pub type Cap0sW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cap0s, crate::Safe>;
 impl<'a, REG> Cap0sW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -279,6 +282,7 @@ impl From<Cap1s> for u8 {
 impl crate::FieldSpec for Cap1s {
     type Ux = u8;
 }
+impl crate::IsEnum for Cap1s {}
 #[doc = "Field `CAP1S` reader - External Capture 1 Functionality Selector"]
 pub type Cap1sR = crate::FieldReader<Cap1s>;
 impl Cap1sR {
@@ -315,7 +319,7 @@ impl Cap1sR {
     }
 }
 #[doc = "Field `CAP1S` writer - External Capture 1 Functionality Selector"]
-pub type Cap1sW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Cap1s>;
+pub type Cap1sW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cap1s, crate::Safe>;
 impl<'a, REG> Cap1sW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -364,6 +368,7 @@ impl From<Gates> for u8 {
 impl crate::FieldSpec for Gates {
     type Ux = u8;
 }
+impl crate::IsEnum for Gates {}
 #[doc = "Field `GATES` reader - External Gate Functionality Selector"]
 pub type GatesR = crate::FieldReader<Gates>;
 impl GatesR {
@@ -400,7 +405,7 @@ impl GatesR {
     }
 }
 #[doc = "Field `GATES` writer - External Gate Functionality Selector"]
-pub type GatesW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Gates>;
+pub type GatesW<'a, REG> = crate::FieldWriter<'a, REG, 2, Gates, crate::Safe>;
 impl<'a, REG> GatesW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -449,6 +454,7 @@ impl From<Uds> for u8 {
 impl crate::FieldSpec for Uds {
     type Ux = u8;
 }
+impl crate::IsEnum for Uds {}
 #[doc = "Field `UDS` reader - External Up/Down Functionality Selector"]
 pub type UdsR = crate::FieldReader<Uds>;
 impl UdsR {
@@ -485,7 +491,7 @@ impl UdsR {
     }
 }
 #[doc = "Field `UDS` writer - External Up/Down Functionality Selector"]
-pub type UdsW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Uds>;
+pub type UdsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Uds, crate::Safe>;
 impl<'a, REG> UdsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -538,6 +544,7 @@ impl From<Cnts> for u8 {
 impl crate::FieldSpec for Cnts {
     type Ux = u8;
 }
+impl crate::IsEnum for Cnts {}
 #[doc = "Field `CNTS` reader - External Count Selector"]
 pub type CntsR = crate::FieldReader<Cnts>;
 impl CntsR {
@@ -574,7 +581,7 @@ impl CntsR {
     }
 }
 #[doc = "Field `CNTS` writer - External Count Selector"]
-pub type CntsW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Cnts>;
+pub type CntsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cnts, crate::Safe>;
 impl<'a, REG> CntsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

@@ -28,6 +28,7 @@ impl From<Cms> for u8 {
 impl crate::FieldSpec for Cms {
     type Ux = u8;
 }
+impl crate::IsEnum for Cms {}
 #[doc = "Field `CMS` reader - Conversion Mode for Standard Conversions"]
 pub type CmsR = crate::FieldReader<Cms>;
 impl CmsR {
@@ -117,6 +118,7 @@ impl From<Cme> for u8 {
 impl crate::FieldSpec for Cme {
     type Ux = u8;
 }
+impl crate::IsEnum for Cme {}
 #[doc = "Field `CME` reader - Conversion Mode for EMUX Conversions"]
 pub type CmeR = crate::FieldReader<Cme>;
 impl CmeR {

@@ -32,6 +32,7 @@ impl From<Pid> for u8 {
 impl crate::FieldSpec for Pid {
     type Ux = u8;
 }
+impl crate::IsEnum for Pid {}
 #[doc = "Field `Pid` reader - PID"]
 pub type PidR = crate::FieldReader<Pid>;
 impl PidR {
@@ -68,7 +69,7 @@ impl PidR {
     }
 }
 #[doc = "Field `Pid` writer - PID"]
-pub type PidW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Pid>;
+pub type PidW<'a, REG> = crate::FieldWriter<'a, REG, 2, Pid, crate::Safe>;
 impl<'a, REG> PidW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

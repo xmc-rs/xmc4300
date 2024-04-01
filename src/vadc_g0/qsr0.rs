@@ -22,6 +22,7 @@ impl From<Fill> for u8 {
 impl crate::FieldSpec for Fill {
     type Ux = u8;
 }
+impl crate::IsEnum for Fill {}
 #[doc = "Field `FILL` reader - Filling Level for Queue 2"]
 pub type FillR = crate::FieldReader<Fill>;
 impl FillR {

@@ -81,6 +81,7 @@ impl From<Bden> for u8 {
 impl crate::FieldSpec for Bden {
     type Ux = u8;
 }
+impl crate::IsEnum for Bden {}
 #[doc = "Field `BDEN` reader - Bypass Data Enable"]
 pub type BdenR = crate::FieldReader<Bden>;
 impl BdenR {
@@ -117,7 +118,7 @@ impl BdenR {
     }
 }
 #[doc = "Field `BDEN` writer - Bypass Data Enable"]
-pub type BdenW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Bden>;
+pub type BdenW<'a, REG> = crate::FieldWriter<'a, REG, 2, Bden, crate::Safe>;
 impl<'a, REG> BdenW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

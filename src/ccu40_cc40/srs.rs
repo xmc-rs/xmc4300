@@ -24,6 +24,7 @@ impl From<Posr> for u8 {
 impl crate::FieldSpec for Posr {
     type Ux = u8;
 }
+impl crate::IsEnum for Posr {}
 #[doc = "Field `POSR` reader - Period/One match Service request selector"]
 pub type PosrR = crate::FieldReader<Posr>;
 impl PosrR {
@@ -60,7 +61,7 @@ impl PosrR {
     }
 }
 #[doc = "Field `POSR` writer - Period/One match Service request selector"]
-pub type PosrW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Posr>;
+pub type PosrW<'a, REG> = crate::FieldWriter<'a, REG, 2, Posr, crate::Safe>;
 impl<'a, REG> PosrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -109,6 +110,7 @@ impl From<Cmsr> for u8 {
 impl crate::FieldSpec for Cmsr {
     type Ux = u8;
 }
+impl crate::IsEnum for Cmsr {}
 #[doc = "Field `CMSR` reader - Compare match Service request selector"]
 pub type CmsrR = crate::FieldReader<Cmsr>;
 impl CmsrR {
@@ -145,7 +147,7 @@ impl CmsrR {
     }
 }
 #[doc = "Field `CMSR` writer - Compare match Service request selector"]
-pub type CmsrW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Cmsr>;
+pub type CmsrW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cmsr, crate::Safe>;
 impl<'a, REG> CmsrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -194,6 +196,7 @@ impl From<E0sr> for u8 {
 impl crate::FieldSpec for E0sr {
     type Ux = u8;
 }
+impl crate::IsEnum for E0sr {}
 #[doc = "Field `E0SR` reader - Event 0 Service request selector"]
 pub type E0srR = crate::FieldReader<E0sr>;
 impl E0srR {
@@ -230,7 +233,7 @@ impl E0srR {
     }
 }
 #[doc = "Field `E0SR` writer - Event 0 Service request selector"]
-pub type E0srW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, E0sr>;
+pub type E0srW<'a, REG> = crate::FieldWriter<'a, REG, 2, E0sr, crate::Safe>;
 impl<'a, REG> E0srW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -279,6 +282,7 @@ impl From<E1sr> for u8 {
 impl crate::FieldSpec for E1sr {
     type Ux = u8;
 }
+impl crate::IsEnum for E1sr {}
 #[doc = "Field `E1SR` reader - Event 1 Service request selector"]
 pub type E1srR = crate::FieldReader<E1sr>;
 impl E1srR {
@@ -315,7 +319,7 @@ impl E1srR {
     }
 }
 #[doc = "Field `E1SR` writer - Event 1 Service request selector"]
-pub type E1srW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, E1sr>;
+pub type E1srW<'a, REG> = crate::FieldWriter<'a, REG, 2, E1sr, crate::Safe>;
 impl<'a, REG> E1srW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -364,6 +368,7 @@ impl From<E2sr> for u8 {
 impl crate::FieldSpec for E2sr {
     type Ux = u8;
 }
+impl crate::IsEnum for E2sr {}
 #[doc = "Field `E2SR` reader - Event 2 Service request selector"]
 pub type E2srR = crate::FieldReader<E2sr>;
 impl E2srR {
@@ -400,7 +405,7 @@ impl E2srR {
     }
 }
 #[doc = "Field `E2SR` writer - Event 2 Service request selector"]
-pub type E2srW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, E2sr>;
+pub type E2srW<'a, REG> = crate::FieldWriter<'a, REG, 2, E2sr, crate::Safe>;
 impl<'a, REG> E2srW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

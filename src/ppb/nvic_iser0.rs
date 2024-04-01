@@ -20,6 +20,7 @@ impl From<Setena> for u32 {
 impl crate::FieldSpec for Setena {
     type Ux = u32;
 }
+impl crate::IsEnum for Setena {}
 #[doc = "Field `SETENA` reader - Interrupt set-enable bits"]
 pub type SetenaR = crate::FieldReader<Setena>;
 impl SetenaR {

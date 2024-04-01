@@ -28,6 +28,7 @@ impl From<Pacs> for u8 {
 impl crate::FieldSpec for Pacs {
     type Ux = u8;
 }
+impl crate::IsEnum for Pacs {}
 #[doc = "Field `PACS` reader - Parity Checker Automatic start/stop selector"]
 pub type PacsR = crate::FieldReader<Pacs>;
 impl PacsR {
@@ -64,7 +65,7 @@ impl PacsR {
     }
 }
 #[doc = "Field `PACS` writer - Parity Checker Automatic start/stop selector"]
-pub type PacsW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Pacs>;
+pub type PacsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Pacs, crate::Safe>;
 impl<'a, REG> PacsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -113,6 +114,7 @@ impl From<Pisel> for u8 {
 impl crate::FieldSpec for Pisel {
     type Ux = u8;
 }
+impl crate::IsEnum for Pisel {}
 #[doc = "Field `PISEL` reader - Driver Input signal selector"]
 pub type PiselR = crate::FieldReader<Pisel>;
 impl PiselR {
@@ -149,7 +151,7 @@ impl PiselR {
     }
 }
 #[doc = "Field `PISEL` writer - Driver Input signal selector"]
-pub type PiselW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Pisel>;
+pub type PiselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Pisel, crate::Safe>;
 impl<'a, REG> PiselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -198,6 +200,7 @@ impl From<Pcds> for u8 {
 impl crate::FieldSpec for Pcds {
     type Ux = u8;
 }
+impl crate::IsEnum for Pcds {}
 #[doc = "Field `PCDS` reader - Parity Checker Delay Input Selector"]
 pub type PcdsR = crate::FieldReader<Pcds>;
 impl PcdsR {
@@ -234,7 +237,7 @@ impl PcdsR {
     }
 }
 #[doc = "Field `PCDS` writer - Parity Checker Delay Input Selector"]
-pub type PcdsW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Pcds>;
+pub type PcdsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Pcds, crate::Safe>;
 impl<'a, REG> PcdsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

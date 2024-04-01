@@ -18,6 +18,7 @@ impl From<FslspclkSel> for u8 {
 impl crate::FieldSpec for FslspclkSel {
     type Ux = u8;
 }
+impl crate::IsEnum for FslspclkSel {}
 #[doc = "Field `FSLSPclkSel` reader - FS PHY Clock Select"]
 pub type FslspclkSelR = crate::FieldReader<FslspclkSel>;
 impl FslspclkSelR {
@@ -127,6 +128,7 @@ impl From<FrListEn> for u8 {
 impl crate::FieldSpec for FrListEn {
     type Ux = u8;
 }
+impl crate::IsEnum for FrListEn {}
 #[doc = "Field `FrListEn` reader - Frame List Entries"]
 pub type FrListEnR = crate::FieldReader<FrListEn>;
 impl FrListEnR {
@@ -163,7 +165,7 @@ impl FrListEnR {
     }
 }
 #[doc = "Field `FrListEn` writer - Frame List Entries"]
-pub type FrListEnW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, FrListEn>;
+pub type FrListEnW<'a, REG> = crate::FieldWriter<'a, REG, 2, FrListEn, crate::Safe>;
 impl<'a, REG> FrListEnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

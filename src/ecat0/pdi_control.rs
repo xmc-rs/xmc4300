@@ -18,6 +18,7 @@ impl From<Pdi> for u8 {
 impl crate::FieldSpec for Pdi {
     type Ux = u8;
 }
+impl crate::IsEnum for Pdi {}
 #[doc = "Field `PDI` reader - On-chip bus clock"]
 pub type PdiR = crate::FieldReader<Pdi>;
 impl PdiR {

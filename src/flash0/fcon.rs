@@ -26,6 +26,7 @@ impl From<Wspflash> for u8 {
 impl crate::FieldSpec for Wspflash {
     type Ux = u8;
 }
+impl crate::IsEnum for Wspflash {}
 #[doc = "Field `WSPFLASH` reader - Wait States for read access to PFLASH"]
 pub type WspflashR = crate::FieldReader<Wspflash>;
 impl WspflashR {

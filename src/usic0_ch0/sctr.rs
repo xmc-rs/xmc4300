@@ -130,6 +130,7 @@ impl From<Dsm> for u8 {
 impl crate::FieldSpec for Dsm {
     type Ux = u8;
 }
+impl crate::IsEnum for Dsm {}
 #[doc = "Field `DSM` reader - Data Shift Mode"]
 pub type DsmR = crate::FieldReader<Dsm>;
 impl DsmR {
@@ -257,6 +258,7 @@ impl From<Docfg> for u8 {
 impl crate::FieldSpec for Docfg {
     type Ux = u8;
 }
+impl crate::IsEnum for Docfg {}
 #[doc = "Field `DOCFG` reader - Data Output Configuration"]
 pub type DocfgR = crate::FieldReader<Docfg>;
 impl DocfgR {
@@ -320,6 +322,7 @@ impl From<Trm> for u8 {
 impl crate::FieldSpec for Trm {
     type Ux = u8;
 }
+impl crate::IsEnum for Trm {}
 #[doc = "Field `TRM` reader - Transmission Mode"]
 pub type TrmR = crate::FieldReader<Trm>;
 impl TrmR {
@@ -356,7 +359,7 @@ impl TrmR {
     }
 }
 #[doc = "Field `TRM` writer - Transmission Mode"]
-pub type TrmW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Trm>;
+pub type TrmW<'a, REG> = crate::FieldWriter<'a, REG, 2, Trm, crate::Safe>;
 impl<'a, REG> TrmW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -409,6 +412,7 @@ impl From<Wle> for u8 {
 impl crate::FieldSpec for Wle {
     type Ux = u8;
 }
+impl crate::IsEnum for Wle {}
 #[doc = "Field `WLE` reader - Word Length"]
 pub type WleR = crate::FieldReader<Wle>;
 impl WleR {

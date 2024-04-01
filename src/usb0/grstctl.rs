@@ -42,6 +42,7 @@ impl From<TxFnum> for u8 {
 impl crate::FieldSpec for TxFnum {
     type Ux = u8;
 }
+impl crate::IsEnum for TxFnum {}
 #[doc = "Field `TxFNum` reader - TxFIFO Number"]
 pub type TxFnumR = crate::FieldReader<TxFnum>;
 impl TxFnumR {

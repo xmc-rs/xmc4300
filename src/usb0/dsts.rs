@@ -18,6 +18,7 @@ impl From<EnumSpd> for u8 {
 impl crate::FieldSpec for EnumSpd {
     type Ux = u8;
 }
+impl crate::IsEnum for EnumSpd {}
 #[doc = "Field `EnumSpd` reader - Enumerated Speed"]
 pub type EnumSpdR = crate::FieldReader<EnumSpd>;
 impl EnumSpdR {

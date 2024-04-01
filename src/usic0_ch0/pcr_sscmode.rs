@@ -236,6 +236,7 @@ impl From<Ctqsel1> for u8 {
 impl crate::FieldSpec for Ctqsel1 {
     type Ux = u8;
 }
+impl crate::IsEnum for Ctqsel1 {}
 #[doc = "Field `CTQSEL1` reader - Input Frequency Selection"]
 pub type Ctqsel1R = crate::FieldReader<Ctqsel1>;
 impl Ctqsel1R {
@@ -272,7 +273,7 @@ impl Ctqsel1R {
     }
 }
 #[doc = "Field `CTQSEL1` writer - Input Frequency Selection"]
-pub type Ctqsel1W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ctqsel1>;
+pub type Ctqsel1W<'a, REG> = crate::FieldWriter<'a, REG, 2, Ctqsel1, crate::Safe>;
 impl<'a, REG> Ctqsel1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -484,6 +485,7 @@ impl From<Selo> for u8 {
 impl crate::FieldSpec for Selo {
     type Ux = u8;
 }
+impl crate::IsEnum for Selo {}
 #[doc = "Field `SELO` reader - Select Output"]
 pub type SeloR = crate::FieldReader<Selo>;
 impl SeloR {

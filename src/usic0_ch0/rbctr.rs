@@ -140,6 +140,7 @@ impl From<Srbinp> for u8 {
 impl crate::FieldSpec for Srbinp {
     type Ux = u8;
 }
+impl crate::IsEnum for Srbinp {}
 #[doc = "Field `SRBINP` reader - Standard Receive Buffer Interrupt Node Pointer"]
 pub type SrbinpR = crate::FieldReader<Srbinp>;
 impl SrbinpR {
@@ -251,6 +252,7 @@ impl From<Arbinp> for u8 {
 impl crate::FieldSpec for Arbinp {
     type Ux = u8;
 }
+impl crate::IsEnum for Arbinp {}
 #[doc = "Field `ARBINP` reader - Alternative Receive Buffer Interrupt Node Pointer"]
 pub type ArbinpR = crate::FieldReader<Arbinp>;
 impl ArbinpR {
@@ -368,6 +370,7 @@ impl From<Rcim> for u8 {
 impl crate::FieldSpec for Rcim {
     type Ux = u8;
 }
+impl crate::IsEnum for Rcim {}
 #[doc = "Field `RCIM` reader - Receiver Control Information Mode"]
 pub type RcimR = crate::FieldReader<Rcim>;
 impl RcimR {
@@ -414,7 +417,7 @@ impl RcimR {
     }
 }
 #[doc = "Field `RCIM` writer - Receiver Control Information Mode"]
-pub type RcimW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Rcim>;
+pub type RcimW<'a, REG> = crate::FieldWriter<'a, REG, 2, Rcim, crate::Safe>;
 impl<'a, REG> RcimW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -479,6 +482,7 @@ impl From<Size> for u8 {
 impl crate::FieldSpec for Size {
     type Ux = u8;
 }
+impl crate::IsEnum for Size {}
 #[doc = "Field `SIZE` reader - Buffer Size"]
 pub type SizeR = crate::FieldReader<Size>;
 impl SizeR {

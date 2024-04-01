@@ -20,6 +20,7 @@ impl From<ResetCmdState> for u8 {
 impl crate::FieldSpec for ResetCmdState {
     type Ux = u8;
 }
+impl crate::IsEnum for ResetCmdState {}
 #[doc = "Field `RESET_CMD_STATE` reader - Progress of the reset procedure"]
 pub type ResetCmdStateR = crate::FieldReader<ResetCmdState>;
 impl ResetCmdStateR {

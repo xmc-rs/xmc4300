@@ -20,6 +20,7 @@ impl From<Clrpend> for u32 {
 impl crate::FieldSpec for Clrpend {
     type Ux = u32;
 }
+impl crate::IsEnum for Clrpend {}
 #[doc = "Field `CLRPEND` reader - Interrupt set-pending bits."]
 pub type ClrpendR = crate::FieldReader<Clrpend>;
 impl ClrpendR {

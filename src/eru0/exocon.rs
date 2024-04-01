@@ -24,6 +24,7 @@ impl From<Iss> for u8 {
 impl crate::FieldSpec for Iss {
     type Ux = u8;
 }
+impl crate::IsEnum for Iss {}
 #[doc = "Field `ISS` reader - Internal Trigger Source Selection"]
 pub type IssR = crate::FieldReader<Iss>;
 impl IssR {
@@ -60,7 +61,7 @@ impl IssR {
     }
 }
 #[doc = "Field `ISS` writer - Internal Trigger Source Selection"]
-pub type IssW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Iss>;
+pub type IssW<'a, REG> = crate::FieldWriter<'a, REG, 2, Iss, crate::Safe>;
 impl<'a, REG> IssW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -198,6 +199,7 @@ impl From<Gp> for u8 {
 impl crate::FieldSpec for Gp {
     type Ux = u8;
 }
+impl crate::IsEnum for Gp {}
 #[doc = "Field `GP` reader - Gating Selection for Pattern Detection Result"]
 pub type GpR = crate::FieldReader<Gp>;
 impl GpR {
@@ -234,7 +236,7 @@ impl GpR {
     }
 }
 #[doc = "Field `GP` writer - Gating Selection for Pattern Detection Result"]
-pub type GpW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Gp>;
+pub type GpW<'a, REG> = crate::FieldWriter<'a, REG, 2, Gp, crate::Safe>;
 impl<'a, REG> GpW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

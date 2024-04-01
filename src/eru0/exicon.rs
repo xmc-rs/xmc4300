@@ -236,6 +236,7 @@ impl From<Ocs> for u8 {
 impl crate::FieldSpec for Ocs {
     type Ux = u8;
 }
+impl crate::IsEnum for Ocs {}
 #[doc = "Field `OCS` reader - Output Channel Select for ETLx Output Trigger Pulse"]
 pub type OcsR = crate::FieldReader<Ocs>;
 impl OcsR {
@@ -374,6 +375,7 @@ impl From<Ss> for u8 {
 impl crate::FieldSpec for Ss {
     type Ux = u8;
 }
+impl crate::IsEnum for Ss {}
 #[doc = "Field `SS` reader - Input Source Select for ERSx"]
 pub type SsR = crate::FieldReader<Ss>;
 impl SsR {
@@ -410,7 +412,7 @@ impl SsR {
     }
 }
 #[doc = "Field `SS` writer - Input Source Select for ERSx"]
-pub type SsW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ss>;
+pub type SsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ss, crate::Safe>;
 impl<'a, REG> SsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

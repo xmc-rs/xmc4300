@@ -24,6 +24,7 @@ impl From<Rxd0> for u8 {
 impl crate::FieldSpec for Rxd0 {
     type Ux = u8;
 }
+impl crate::IsEnum for Rxd0 {}
 #[doc = "Field `RXD0` reader - MAC Receive Input 0"]
 pub type Rxd0R = crate::FieldReader<Rxd0>;
 impl Rxd0R {
@@ -60,7 +61,7 @@ impl Rxd0R {
     }
 }
 #[doc = "Field `RXD0` writer - MAC Receive Input 0"]
-pub type Rxd0W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Rxd0>;
+pub type Rxd0W<'a, REG> = crate::FieldWriter<'a, REG, 2, Rxd0, crate::Safe>;
 impl<'a, REG> Rxd0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -109,6 +110,7 @@ impl From<Rxd1> for u8 {
 impl crate::FieldSpec for Rxd1 {
     type Ux = u8;
 }
+impl crate::IsEnum for Rxd1 {}
 #[doc = "Field `RXD1` reader - MAC Receive Input 1"]
 pub type Rxd1R = crate::FieldReader<Rxd1>;
 impl Rxd1R {
@@ -145,7 +147,7 @@ impl Rxd1R {
     }
 }
 #[doc = "Field `RXD1` writer - MAC Receive Input 1"]
-pub type Rxd1W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Rxd1>;
+pub type Rxd1W<'a, REG> = crate::FieldWriter<'a, REG, 2, Rxd1, crate::Safe>;
 impl<'a, REG> Rxd1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -194,6 +196,7 @@ impl From<Rxd2> for u8 {
 impl crate::FieldSpec for Rxd2 {
     type Ux = u8;
 }
+impl crate::IsEnum for Rxd2 {}
 #[doc = "Field `RXD2` reader - MAC Receive Input 2"]
 pub type Rxd2R = crate::FieldReader<Rxd2>;
 impl Rxd2R {
@@ -230,7 +233,7 @@ impl Rxd2R {
     }
 }
 #[doc = "Field `RXD2` writer - MAC Receive Input 2"]
-pub type Rxd2W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Rxd2>;
+pub type Rxd2W<'a, REG> = crate::FieldWriter<'a, REG, 2, Rxd2, crate::Safe>;
 impl<'a, REG> Rxd2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -279,6 +282,7 @@ impl From<Rxd3> for u8 {
 impl crate::FieldSpec for Rxd3 {
     type Ux = u8;
 }
+impl crate::IsEnum for Rxd3 {}
 #[doc = "Field `RXD3` reader - MAC Receive Input 3"]
 pub type Rxd3R = crate::FieldReader<Rxd3>;
 impl Rxd3R {
@@ -315,7 +319,7 @@ impl Rxd3R {
     }
 }
 #[doc = "Field `RXD3` writer - MAC Receive Input 3"]
-pub type Rxd3W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Rxd3>;
+pub type Rxd3W<'a, REG> = crate::FieldWriter<'a, REG, 2, Rxd3, crate::Safe>;
 impl<'a, REG> Rxd3W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -364,6 +368,7 @@ impl From<ClkRmii> for u8 {
 impl crate::FieldSpec for ClkRmii {
     type Ux = u8;
 }
+impl crate::IsEnum for ClkRmii {}
 #[doc = "Field `CLK_RMII` reader - RMII clock input"]
 pub type ClkRmiiR = crate::FieldReader<ClkRmii>;
 impl ClkRmiiR {
@@ -400,7 +405,7 @@ impl ClkRmiiR {
     }
 }
 #[doc = "Field `CLK_RMII` writer - RMII clock input"]
-pub type ClkRmiiW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ClkRmii>;
+pub type ClkRmiiW<'a, REG> = crate::FieldWriter<'a, REG, 2, ClkRmii, crate::Safe>;
 impl<'a, REG> ClkRmiiW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -449,6 +454,7 @@ impl From<CrsDv> for u8 {
 impl crate::FieldSpec for CrsDv {
     type Ux = u8;
 }
+impl crate::IsEnum for CrsDv {}
 #[doc = "Field `CRS_DV` reader - CRS_DV input"]
 pub type CrsDvR = crate::FieldReader<CrsDv>;
 impl CrsDvR {
@@ -485,7 +491,7 @@ impl CrsDvR {
     }
 }
 #[doc = "Field `CRS_DV` writer - CRS_DV input"]
-pub type CrsDvW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CrsDv>;
+pub type CrsDvW<'a, REG> = crate::FieldWriter<'a, REG, 2, CrsDv, crate::Safe>;
 impl<'a, REG> CrsDvW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -534,6 +540,7 @@ impl From<Crs> for u8 {
 impl crate::FieldSpec for Crs {
     type Ux = u8;
 }
+impl crate::IsEnum for Crs {}
 #[doc = "Field `CRS` reader - CRS input"]
 pub type CrsR = crate::FieldReader<Crs>;
 impl CrsR {
@@ -570,7 +577,7 @@ impl CrsR {
     }
 }
 #[doc = "Field `CRS` writer - CRS input"]
-pub type CrsW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Crs>;
+pub type CrsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Crs, crate::Safe>;
 impl<'a, REG> CrsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -619,6 +626,7 @@ impl From<Rxer> for u8 {
 impl crate::FieldSpec for Rxer {
     type Ux = u8;
 }
+impl crate::IsEnum for Rxer {}
 #[doc = "Field `RXER` reader - RXER Input"]
 pub type RxerR = crate::FieldReader<Rxer>;
 impl RxerR {
@@ -655,7 +663,7 @@ impl RxerR {
     }
 }
 #[doc = "Field `RXER` writer - RXER Input"]
-pub type RxerW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Rxer>;
+pub type RxerW<'a, REG> = crate::FieldWriter<'a, REG, 2, Rxer, crate::Safe>;
 impl<'a, REG> RxerW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -704,6 +712,7 @@ impl From<Col> for u8 {
 impl crate::FieldSpec for Col {
     type Ux = u8;
 }
+impl crate::IsEnum for Col {}
 #[doc = "Field `COL` reader - COL input"]
 pub type ColR = crate::FieldReader<Col>;
 impl ColR {
@@ -740,7 +749,7 @@ impl ColR {
     }
 }
 #[doc = "Field `COL` writer - COL input"]
-pub type ColW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Col>;
+pub type ColW<'a, REG> = crate::FieldWriter<'a, REG, 2, Col, crate::Safe>;
 impl<'a, REG> ColW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -789,6 +798,7 @@ impl From<ClkTx> for u8 {
 impl crate::FieldSpec for ClkTx {
     type Ux = u8;
 }
+impl crate::IsEnum for ClkTx {}
 #[doc = "Field `CLK_TX` reader - CLK_TX input"]
 pub type ClkTxR = crate::FieldReader<ClkTx>;
 impl ClkTxR {
@@ -825,7 +835,7 @@ impl ClkTxR {
     }
 }
 #[doc = "Field `CLK_TX` writer - CLK_TX input"]
-pub type ClkTxW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ClkTx>;
+pub type ClkTxW<'a, REG> = crate::FieldWriter<'a, REG, 2, ClkTx, crate::Safe>;
 impl<'a, REG> ClkTxW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -874,6 +884,7 @@ impl From<Mdio> for u8 {
 impl crate::FieldSpec for Mdio {
     type Ux = u8;
 }
+impl crate::IsEnum for Mdio {}
 #[doc = "Field `MDIO` reader - MDIO Input Select"]
 pub type MdioR = crate::FieldReader<Mdio>;
 impl MdioR {
@@ -910,7 +921,7 @@ impl MdioR {
     }
 }
 #[doc = "Field `MDIO` writer - MDIO Input Select"]
-pub type MdioW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Mdio>;
+pub type MdioW<'a, REG> = crate::FieldWriter<'a, REG, 2, Mdio, crate::Safe>;
 impl<'a, REG> MdioW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

@@ -16,6 +16,7 @@ impl From<TimeoutClockFreq> for u8 {
 impl crate::FieldSpec for TimeoutClockFreq {
     type Ux = u8;
 }
+impl crate::IsEnum for TimeoutClockFreq {}
 #[doc = "Field `TIMEOUT_CLOCK_FREQ` reader - Timeout Clock Frequency"]
 pub type TimeoutClockFreqR = crate::FieldReader<TimeoutClockFreq>;
 impl TimeoutClockFreqR {
@@ -78,6 +79,7 @@ impl From<BaseSdClockFreq> for u8 {
 impl crate::FieldSpec for BaseSdClockFreq {
     type Ux = u8;
 }
+impl crate::IsEnum for BaseSdClockFreq {}
 #[doc = "Field `BASE_SD_CLOCK_FREQ` reader - Base Clock Frequency for SD Clock"]
 pub type BaseSdClockFreqR = crate::FieldReader<BaseSdClockFreq>;
 impl BaseSdClockFreqR {
@@ -111,6 +113,7 @@ impl From<MaxBlockLength> for u8 {
 impl crate::FieldSpec for MaxBlockLength {
     type Ux = u8;
 }
+impl crate::IsEnum for MaxBlockLength {}
 #[doc = "Field `MAX_BLOCK_LENGTH` reader - Max Block Length"]
 pub type MaxBlockLengthR = crate::FieldReader<MaxBlockLength>;
 impl MaxBlockLengthR {
@@ -434,6 +437,7 @@ impl From<SlotType> for u8 {
 impl crate::FieldSpec for SlotType {
     type Ux = u8;
 }
+impl crate::IsEnum for SlotType {}
 #[doc = "Field `SLOT_TYPE` reader - Slot Type"]
 pub type SlotTypeR = crate::FieldReader<SlotType>;
 impl SlotTypeR {

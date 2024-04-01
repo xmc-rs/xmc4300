@@ -22,6 +22,7 @@ impl From<PtxFspcAvail> for u16 {
 impl crate::FieldSpec for PtxFspcAvail {
     type Ux = u16;
 }
+impl crate::IsEnum for PtxFspcAvail {}
 #[doc = "Field `PTxFSpcAvail` reader - Periodic Transmit Data FIFO Space Available"]
 pub type PtxFspcAvailR = crate::FieldReader<PtxFspcAvail>;
 impl PtxFspcAvailR {
@@ -94,6 +95,7 @@ impl From<PtxQspcAvail> for u8 {
 impl crate::FieldSpec for PtxQspcAvail {
     type Ux = u8;
 }
+impl crate::IsEnum for PtxQspcAvail {}
 #[doc = "Field `PTxQSpcAvail` reader - Periodic Transmit Request Queue Space Available"]
 pub type PtxQspcAvailR = crate::FieldReader<PtxQspcAvail>;
 impl PtxQspcAvailR {

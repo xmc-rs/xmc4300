@@ -108,6 +108,7 @@ impl From<Nomcfg> for u8 {
 impl crate::FieldSpec for Nomcfg {
     type Ux = u8;
 }
+impl crate::IsEnum for Nomcfg {}
 #[doc = "Field `NOMCFG` reader - Normal Operation Mode Configuration"]
 pub type NomcfgR = crate::FieldReader<Nomcfg>;
 impl NomcfgR {
@@ -144,7 +145,7 @@ impl NomcfgR {
     }
 }
 #[doc = "Field `NOMCFG` writer - Normal Operation Mode Configuration"]
-pub type NomcfgW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Nomcfg>;
+pub type NomcfgW<'a, REG> = crate::FieldWriter<'a, REG, 2, Nomcfg, crate::Safe>;
 impl<'a, REG> NomcfgW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

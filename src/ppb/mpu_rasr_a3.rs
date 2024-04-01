@@ -28,6 +28,7 @@ impl From<Srd> for u8 {
 impl crate::FieldSpec for Srd {
     type Ux = u8;
 }
+impl crate::IsEnum for Srd {}
 #[doc = "Field `SRD` reader - Subregion disable bits"]
 pub type SrdR = crate::FieldReader<Srd>;
 impl SrdR {

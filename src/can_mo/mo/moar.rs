@@ -79,6 +79,7 @@ impl From<Pri> for u8 {
 impl crate::FieldSpec for Pri {
     type Ux = u8;
 }
+impl crate::IsEnum for Pri {}
 #[doc = "Field `PRI` reader - Priority Class"]
 pub type PriR = crate::FieldReader<Pri>;
 impl PriR {

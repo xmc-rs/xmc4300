@@ -26,6 +26,7 @@ impl From<Dmm> for u8 {
 impl crate::FieldSpec for Dmm {
     type Ux = u8;
 }
+impl crate::IsEnum for Dmm {}
 #[doc = "Field `DMM` reader - Data Modification Mode"]
 pub type DmmR = crate::FieldReader<Dmm>;
 impl DmmR {
@@ -149,6 +150,7 @@ impl From<Fen> for u8 {
 impl crate::FieldSpec for Fen {
     type Ux = u8;
 }
+impl crate::IsEnum for Fen {}
 #[doc = "Field `FEN` reader - FIFO Mode Enable"]
 pub type FenR = crate::FieldReader<Fen>;
 impl FenR {

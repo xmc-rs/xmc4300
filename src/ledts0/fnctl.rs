@@ -20,6 +20,7 @@ impl From<Padt> for u8 {
 impl crate::FieldSpec for Padt {
     type Ux = u8;
 }
+impl crate::IsEnum for Padt {}
 #[doc = "Field `PADT` reader - Touch-Sense TSIN Pad Turn"]
 pub type PadtR = crate::FieldReader<Padt>;
 impl PadtR {
@@ -192,6 +193,7 @@ impl From<Acccnt> for u8 {
 impl crate::FieldSpec for Acccnt {
     type Ux = u8;
 }
+impl crate::IsEnum for Acccnt {}
 #[doc = "Field `ACCCNT` reader - Accumulate Count on Touch-Sense Input"]
 pub type AcccntR = crate::FieldReader<Acccnt>;
 impl AcccntR {
@@ -319,6 +321,7 @@ impl From<Tsoext> for u8 {
 impl crate::FieldSpec for Tsoext {
     type Ux = u8;
 }
+impl crate::IsEnum for Tsoext {}
 #[doc = "Field `TSOEXT` reader - Extension for Touch-Sense Output for Pin-Low-Level"]
 pub type TsoextR = crate::FieldReader<Tsoext>;
 impl TsoextR {
@@ -355,7 +358,7 @@ impl TsoextR {
     }
 }
 #[doc = "Field `TSOEXT` writer - Extension for Touch-Sense Output for Pin-Low-Level"]
-pub type TsoextW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Tsoext>;
+pub type TsoextW<'a, REG> = crate::FieldWriter<'a, REG, 2, Tsoext, crate::Safe>;
 impl<'a, REG> TsoextW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -506,6 +509,7 @@ impl From<NrTsin> for u8 {
 impl crate::FieldSpec for NrTsin {
     type Ux = u8;
 }
+impl crate::IsEnum for NrTsin {}
 #[doc = "Field `NR_TSIN` reader - Number of Touch-Sense Input"]
 pub type NrTsinR = crate::FieldReader<NrTsin>;
 impl NrTsinR {
@@ -630,6 +634,7 @@ impl From<NrLedcol> for u8 {
 impl crate::FieldSpec for NrLedcol {
     type Ux = u8;
 }
+impl crate::IsEnum for NrLedcol {}
 #[doc = "Field `NR_LEDCOL` reader - Number of LED Columns"]
 pub type NrLedcolR = crate::FieldReader<NrLedcol>;
 impl NrLedcolR {
@@ -690,7 +695,7 @@ impl NrLedcolR {
     }
 }
 #[doc = "Field `NR_LEDCOL` writer - Number of LED Columns"]
-pub type NrLedcolW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, NrLedcol>;
+pub type NrLedcolW<'a, REG> = crate::FieldWriter<'a, REG, 3, NrLedcol, crate::Safe>;
 impl<'a, REG> NrLedcolW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

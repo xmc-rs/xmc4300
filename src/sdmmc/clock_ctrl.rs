@@ -176,6 +176,7 @@ impl From<SdclkFreqSel> for u8 {
 impl crate::FieldSpec for SdclkFreqSel {
     type Ux = u8;
 }
+impl crate::IsEnum for SdclkFreqSel {}
 #[doc = "Field `SDCLK_FREQ_SEL` reader - SDCLK Frequency Select"]
 pub type SdclkFreqSelR = crate::FieldReader<SdclkFreqSel>;
 impl SdclkFreqSelR {

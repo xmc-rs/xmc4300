@@ -20,6 +20,7 @@ impl From<Prio0> for u8 {
 impl crate::FieldSpec for Prio0 {
     type Ux = u8;
 }
+impl crate::IsEnum for Prio0 {}
 #[doc = "Field `PRIO0` reader - Priority of Request Source x"]
 pub type Prio0R = crate::FieldReader<Prio0>;
 impl Prio0R {
@@ -132,6 +133,7 @@ impl From<Prio1> for u8 {
 impl crate::FieldSpec for Prio1 {
     type Ux = u8;
 }
+impl crate::IsEnum for Prio1 {}
 #[doc = "Field `PRIO1` reader - Priority of Request Source x"]
 pub type Prio1R = crate::FieldReader<Prio1>;
 impl Prio1R {
@@ -244,6 +246,7 @@ impl From<Prio2> for u8 {
 impl crate::FieldSpec for Prio2 {
     type Ux = u8;
 }
+impl crate::IsEnum for Prio2 {}
 #[doc = "Field `PRIO2` reader - Priority of Request Source x"]
 pub type Prio2R = crate::FieldReader<Prio2>;
 impl Prio2R {

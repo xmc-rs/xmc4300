@@ -26,6 +26,7 @@ impl From<Bfl0np> for u8 {
 impl crate::FieldSpec for Bfl0np {
     type Ux = u8;
 }
+impl crate::IsEnum for Bfl0np {}
 #[doc = "Field `BFL0NP` reader - Boundary Flag y Node Pointer"]
 pub type Bfl0npR = crate::FieldReader<Bfl0np>;
 impl Bfl0npR {
@@ -124,6 +125,7 @@ impl From<Bfl1np> for u8 {
 impl crate::FieldSpec for Bfl1np {
     type Ux = u8;
 }
+impl crate::IsEnum for Bfl1np {}
 #[doc = "Field `BFL1NP` reader - Boundary Flag y Node Pointer"]
 pub type Bfl1npR = crate::FieldReader<Bfl1np>;
 impl Bfl1npR {
@@ -222,6 +224,7 @@ impl From<Bfl2np> for u8 {
 impl crate::FieldSpec for Bfl2np {
     type Ux = u8;
 }
+impl crate::IsEnum for Bfl2np {}
 #[doc = "Field `BFL2NP` reader - Boundary Flag y Node Pointer"]
 pub type Bfl2npR = crate::FieldReader<Bfl2np>;
 impl Bfl2npR {
@@ -320,6 +323,7 @@ impl From<Bfl3np> for u8 {
 impl crate::FieldSpec for Bfl3np {
     type Ux = u8;
 }
+impl crate::IsEnum for Bfl3np {}
 #[doc = "Field `BFL3NP` reader - Boundary Flag y Node Pointer"]
 pub type Bfl3npR = crate::FieldReader<Bfl3np>;
 impl Bfl3npR {

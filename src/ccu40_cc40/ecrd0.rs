@@ -26,6 +26,7 @@ impl From<Sptr> for u8 {
 impl crate::FieldSpec for Sptr {
     type Ux = u8;
 }
+impl crate::IsEnum for Sptr {}
 #[doc = "Field `SPTR` reader - Slice pointer"]
 pub type SptrR = crate::FieldReader<Sptr>;
 impl SptrR {
@@ -83,6 +84,7 @@ impl From<Vptr> for u8 {
 impl crate::FieldSpec for Vptr {
     type Ux = u8;
 }
+impl crate::IsEnum for Vptr {}
 #[doc = "Field `VPTR` reader - Capture register pointer"]
 pub type VptrR = crate::FieldReader<Vptr>;
 impl VptrR {

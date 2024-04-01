@@ -32,6 +32,7 @@ impl From<Scale> for u8 {
 impl crate::FieldSpec for Scale {
     type Ux = u8;
 }
+impl crate::IsEnum for Scale {}
 #[doc = "Field `SCALE` reader - Scale value for up- or downscale of the DAC1 input data in steps by the power of 2 (=shift operation)"]
 pub type ScaleR = crate::FieldReader<Scale>;
 impl ScaleR {
@@ -92,7 +93,7 @@ impl ScaleR {
     }
 }
 #[doc = "Field `SCALE` writer - Scale value for up- or downscale of the DAC1 input data in steps by the power of 2 (=shift operation)"]
-pub type ScaleW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Scale>;
+pub type ScaleW<'a, REG> = crate::FieldWriter<'a, REG, 3, Scale, crate::Safe>;
 impl<'a, REG> ScaleW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -224,6 +225,7 @@ impl From<Trigmod> for u8 {
 impl crate::FieldSpec for Trigmod {
     type Ux = u8;
 }
+impl crate::IsEnum for Trigmod {}
 #[doc = "Field `TRIGMOD` reader - Select the trigger source for channel 1"]
 pub type TrigmodR = crate::FieldReader<Trigmod>;
 impl TrigmodR {

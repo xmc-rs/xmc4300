@@ -24,6 +24,7 @@ impl From<Rxinp> for u8 {
 impl crate::FieldSpec for Rxinp {
     type Ux = u8;
 }
+impl crate::IsEnum for Rxinp {}
 #[doc = "Field `RXINP` reader - Receive Interrupt Node Pointer"]
 pub type RxinpR = crate::FieldReader<Rxinp>;
 impl RxinpR {
@@ -109,6 +110,7 @@ impl From<Txinp> for u8 {
 impl crate::FieldSpec for Txinp {
     type Ux = u8;
 }
+impl crate::IsEnum for Txinp {}
 #[doc = "Field `TXINP` reader - Transmit Interrupt Node Pointer"]
 pub type TxinpR = crate::FieldReader<Txinp>;
 impl TxinpR {

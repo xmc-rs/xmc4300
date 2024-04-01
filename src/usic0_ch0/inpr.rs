@@ -28,6 +28,7 @@ impl From<Tsinp> for u8 {
 impl crate::FieldSpec for Tsinp {
     type Ux = u8;
 }
+impl crate::IsEnum for Tsinp {}
 #[doc = "Field `TSINP` reader - Transmit Shift Interrupt Node Pointer"]
 pub type TsinpR = crate::FieldReader<Tsinp>;
 impl TsinpR {
