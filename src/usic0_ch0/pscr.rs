@@ -1,648 +1,648 @@
 #[doc = "Register `PSCR` writer"]
-pub type W = crate::W<PscrSpec>;
+pub type W = crate::W<PSCR_SPEC>;
 #[doc = "Clear Status Flag 0 in PSR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cst0 {
+pub enum CST0_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cst0> for bool {
+impl From<CST0_A> for bool {
     #[inline(always)]
-    fn from(variant: Cst0) -> Self {
+    fn from(variant: CST0_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CST0` writer - Clear Status Flag 0 in PSR"]
-pub type Cst0W<'a, REG> = crate::BitWriter<'a, REG, Cst0>;
-impl<'a, REG> Cst0W<'a, REG>
+pub type CST0_W<'a, REG> = crate::BitWriter<'a, REG, CST0_A>;
+impl<'a, REG> CST0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst0::Value1)
+        self.variant(CST0_A::VALUE1)
     }
     #[doc = "Flag PSR.STx is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst0::Value2)
+        self.variant(CST0_A::VALUE2)
     }
 }
 #[doc = "Clear Status Flag 1 in PSR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cst1 {
+pub enum CST1_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cst1> for bool {
+impl From<CST1_A> for bool {
     #[inline(always)]
-    fn from(variant: Cst1) -> Self {
+    fn from(variant: CST1_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CST1` writer - Clear Status Flag 1 in PSR"]
-pub type Cst1W<'a, REG> = crate::BitWriter<'a, REG, Cst1>;
-impl<'a, REG> Cst1W<'a, REG>
+pub type CST1_W<'a, REG> = crate::BitWriter<'a, REG, CST1_A>;
+impl<'a, REG> CST1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst1::Value1)
+        self.variant(CST1_A::VALUE1)
     }
     #[doc = "Flag PSR.STx is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst1::Value2)
+        self.variant(CST1_A::VALUE2)
     }
 }
 #[doc = "Clear Status Flag 2 in PSR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cst2 {
+pub enum CST2_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cst2> for bool {
+impl From<CST2_A> for bool {
     #[inline(always)]
-    fn from(variant: Cst2) -> Self {
+    fn from(variant: CST2_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CST2` writer - Clear Status Flag 2 in PSR"]
-pub type Cst2W<'a, REG> = crate::BitWriter<'a, REG, Cst2>;
-impl<'a, REG> Cst2W<'a, REG>
+pub type CST2_W<'a, REG> = crate::BitWriter<'a, REG, CST2_A>;
+impl<'a, REG> CST2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst2::Value1)
+        self.variant(CST2_A::VALUE1)
     }
     #[doc = "Flag PSR.STx is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst2::Value2)
+        self.variant(CST2_A::VALUE2)
     }
 }
 #[doc = "Clear Status Flag 3 in PSR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cst3 {
+pub enum CST3_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cst3> for bool {
+impl From<CST3_A> for bool {
     #[inline(always)]
-    fn from(variant: Cst3) -> Self {
+    fn from(variant: CST3_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CST3` writer - Clear Status Flag 3 in PSR"]
-pub type Cst3W<'a, REG> = crate::BitWriter<'a, REG, Cst3>;
-impl<'a, REG> Cst3W<'a, REG>
+pub type CST3_W<'a, REG> = crate::BitWriter<'a, REG, CST3_A>;
+impl<'a, REG> CST3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst3::Value1)
+        self.variant(CST3_A::VALUE1)
     }
     #[doc = "Flag PSR.STx is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst3::Value2)
+        self.variant(CST3_A::VALUE2)
     }
 }
 #[doc = "Clear Status Flag 4 in PSR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cst4 {
+pub enum CST4_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cst4> for bool {
+impl From<CST4_A> for bool {
     #[inline(always)]
-    fn from(variant: Cst4) -> Self {
+    fn from(variant: CST4_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CST4` writer - Clear Status Flag 4 in PSR"]
-pub type Cst4W<'a, REG> = crate::BitWriter<'a, REG, Cst4>;
-impl<'a, REG> Cst4W<'a, REG>
+pub type CST4_W<'a, REG> = crate::BitWriter<'a, REG, CST4_A>;
+impl<'a, REG> CST4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst4::Value1)
+        self.variant(CST4_A::VALUE1)
     }
     #[doc = "Flag PSR.STx is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst4::Value2)
+        self.variant(CST4_A::VALUE2)
     }
 }
 #[doc = "Clear Status Flag 5 in PSR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cst5 {
+pub enum CST5_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cst5> for bool {
+impl From<CST5_A> for bool {
     #[inline(always)]
-    fn from(variant: Cst5) -> Self {
+    fn from(variant: CST5_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CST5` writer - Clear Status Flag 5 in PSR"]
-pub type Cst5W<'a, REG> = crate::BitWriter<'a, REG, Cst5>;
-impl<'a, REG> Cst5W<'a, REG>
+pub type CST5_W<'a, REG> = crate::BitWriter<'a, REG, CST5_A>;
+impl<'a, REG> CST5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst5::Value1)
+        self.variant(CST5_A::VALUE1)
     }
     #[doc = "Flag PSR.STx is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst5::Value2)
+        self.variant(CST5_A::VALUE2)
     }
 }
 #[doc = "Clear Status Flag 6 in PSR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cst6 {
+pub enum CST6_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cst6> for bool {
+impl From<CST6_A> for bool {
     #[inline(always)]
-    fn from(variant: Cst6) -> Self {
+    fn from(variant: CST6_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CST6` writer - Clear Status Flag 6 in PSR"]
-pub type Cst6W<'a, REG> = crate::BitWriter<'a, REG, Cst6>;
-impl<'a, REG> Cst6W<'a, REG>
+pub type CST6_W<'a, REG> = crate::BitWriter<'a, REG, CST6_A>;
+impl<'a, REG> CST6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst6::Value1)
+        self.variant(CST6_A::VALUE1)
     }
     #[doc = "Flag PSR.STx is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst6::Value2)
+        self.variant(CST6_A::VALUE2)
     }
 }
 #[doc = "Clear Status Flag 7 in PSR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cst7 {
+pub enum CST7_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cst7> for bool {
+impl From<CST7_A> for bool {
     #[inline(always)]
-    fn from(variant: Cst7) -> Self {
+    fn from(variant: CST7_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CST7` writer - Clear Status Flag 7 in PSR"]
-pub type Cst7W<'a, REG> = crate::BitWriter<'a, REG, Cst7>;
-impl<'a, REG> Cst7W<'a, REG>
+pub type CST7_W<'a, REG> = crate::BitWriter<'a, REG, CST7_A>;
+impl<'a, REG> CST7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst7::Value1)
+        self.variant(CST7_A::VALUE1)
     }
     #[doc = "Flag PSR.STx is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst7::Value2)
+        self.variant(CST7_A::VALUE2)
     }
 }
 #[doc = "Clear Status Flag 8 in PSR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cst8 {
+pub enum CST8_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cst8> for bool {
+impl From<CST8_A> for bool {
     #[inline(always)]
-    fn from(variant: Cst8) -> Self {
+    fn from(variant: CST8_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CST8` writer - Clear Status Flag 8 in PSR"]
-pub type Cst8W<'a, REG> = crate::BitWriter<'a, REG, Cst8>;
-impl<'a, REG> Cst8W<'a, REG>
+pub type CST8_W<'a, REG> = crate::BitWriter<'a, REG, CST8_A>;
+impl<'a, REG> CST8_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst8::Value1)
+        self.variant(CST8_A::VALUE1)
     }
     #[doc = "Flag PSR.STx is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst8::Value2)
+        self.variant(CST8_A::VALUE2)
     }
 }
 #[doc = "Clear Status Flag 9 in PSR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cst9 {
+pub enum CST9_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cst9> for bool {
+impl From<CST9_A> for bool {
     #[inline(always)]
-    fn from(variant: Cst9) -> Self {
+    fn from(variant: CST9_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CST9` writer - Clear Status Flag 9 in PSR"]
-pub type Cst9W<'a, REG> = crate::BitWriter<'a, REG, Cst9>;
-impl<'a, REG> Cst9W<'a, REG>
+pub type CST9_W<'a, REG> = crate::BitWriter<'a, REG, CST9_A>;
+impl<'a, REG> CST9_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst9::Value1)
+        self.variant(CST9_A::VALUE1)
     }
     #[doc = "Flag PSR.STx is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cst9::Value2)
+        self.variant(CST9_A::VALUE2)
     }
 }
 #[doc = "Clear Receiver Start Indication Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Crsif {
+pub enum CRSIF_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.RSIF is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Crsif> for bool {
+impl From<CRSIF_A> for bool {
     #[inline(always)]
-    fn from(variant: Crsif) -> Self {
+    fn from(variant: CRSIF_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CRSIF` writer - Clear Receiver Start Indication Flag"]
-pub type CrsifW<'a, REG> = crate::BitWriter<'a, REG, Crsif>;
-impl<'a, REG> CrsifW<'a, REG>
+pub type CRSIF_W<'a, REG> = crate::BitWriter<'a, REG, CRSIF_A>;
+impl<'a, REG> CRSIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Crsif::Value1)
+        self.variant(CRSIF_A::VALUE1)
     }
     #[doc = "Flag PSR.RSIF is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Crsif::Value2)
+        self.variant(CRSIF_A::VALUE2)
     }
 }
 #[doc = "Clear Data Lost Indication Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cdlif {
+pub enum CDLIF_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.DLIF is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cdlif> for bool {
+impl From<CDLIF_A> for bool {
     #[inline(always)]
-    fn from(variant: Cdlif) -> Self {
+    fn from(variant: CDLIF_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CDLIF` writer - Clear Data Lost Indication Flag"]
-pub type CdlifW<'a, REG> = crate::BitWriter<'a, REG, Cdlif>;
-impl<'a, REG> CdlifW<'a, REG>
+pub type CDLIF_W<'a, REG> = crate::BitWriter<'a, REG, CDLIF_A>;
+impl<'a, REG> CDLIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cdlif::Value1)
+        self.variant(CDLIF_A::VALUE1)
     }
     #[doc = "Flag PSR.DLIF is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cdlif::Value2)
+        self.variant(CDLIF_A::VALUE2)
     }
 }
 #[doc = "Clear Transmit Shift Indication Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ctsif {
+pub enum CTSIF_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.TSIF is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ctsif> for bool {
+impl From<CTSIF_A> for bool {
     #[inline(always)]
-    fn from(variant: Ctsif) -> Self {
+    fn from(variant: CTSIF_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CTSIF` writer - Clear Transmit Shift Indication Flag"]
-pub type CtsifW<'a, REG> = crate::BitWriter<'a, REG, Ctsif>;
-impl<'a, REG> CtsifW<'a, REG>
+pub type CTSIF_W<'a, REG> = crate::BitWriter<'a, REG, CTSIF_A>;
+impl<'a, REG> CTSIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ctsif::Value1)
+        self.variant(CTSIF_A::VALUE1)
     }
     #[doc = "Flag PSR.TSIF is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ctsif::Value2)
+        self.variant(CTSIF_A::VALUE2)
     }
 }
 #[doc = "Clear Transmit Buffer Indication Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ctbif {
+pub enum CTBIF_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.TBIF is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ctbif> for bool {
+impl From<CTBIF_A> for bool {
     #[inline(always)]
-    fn from(variant: Ctbif) -> Self {
+    fn from(variant: CTBIF_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CTBIF` writer - Clear Transmit Buffer Indication Flag"]
-pub type CtbifW<'a, REG> = crate::BitWriter<'a, REG, Ctbif>;
-impl<'a, REG> CtbifW<'a, REG>
+pub type CTBIF_W<'a, REG> = crate::BitWriter<'a, REG, CTBIF_A>;
+impl<'a, REG> CTBIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ctbif::Value1)
+        self.variant(CTBIF_A::VALUE1)
     }
     #[doc = "Flag PSR.TBIF is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ctbif::Value2)
+        self.variant(CTBIF_A::VALUE2)
     }
 }
 #[doc = "Clear Receive Indication Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Crif {
+pub enum CRIF_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.RIF is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Crif> for bool {
+impl From<CRIF_A> for bool {
     #[inline(always)]
-    fn from(variant: Crif) -> Self {
+    fn from(variant: CRIF_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CRIF` writer - Clear Receive Indication Flag"]
-pub type CrifW<'a, REG> = crate::BitWriter<'a, REG, Crif>;
-impl<'a, REG> CrifW<'a, REG>
+pub type CRIF_W<'a, REG> = crate::BitWriter<'a, REG, CRIF_A>;
+impl<'a, REG> CRIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Crif::Value1)
+        self.variant(CRIF_A::VALUE1)
     }
     #[doc = "Flag PSR.RIF is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Crif::Value2)
+        self.variant(CRIF_A::VALUE2)
     }
 }
 #[doc = "Clear Alternative Receive Indication Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Caif {
+pub enum CAIF_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.AIF is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Caif> for bool {
+impl From<CAIF_A> for bool {
     #[inline(always)]
-    fn from(variant: Caif) -> Self {
+    fn from(variant: CAIF_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CAIF` writer - Clear Alternative Receive Indication Flag"]
-pub type CaifW<'a, REG> = crate::BitWriter<'a, REG, Caif>;
-impl<'a, REG> CaifW<'a, REG>
+pub type CAIF_W<'a, REG> = crate::BitWriter<'a, REG, CAIF_A>;
+impl<'a, REG> CAIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Caif::Value1)
+        self.variant(CAIF_A::VALUE1)
     }
     #[doc = "Flag PSR.AIF is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Caif::Value2)
+        self.variant(CAIF_A::VALUE2)
     }
 }
 #[doc = "Clear Baud Rate Generator Indication Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cbrgif {
+pub enum CBRGIF_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.BRGIF is cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cbrgif> for bool {
+impl From<CBRGIF_A> for bool {
     #[inline(always)]
-    fn from(variant: Cbrgif) -> Self {
+    fn from(variant: CBRGIF_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CBRGIF` writer - Clear Baud Rate Generator Indication Flag"]
-pub type CbrgifW<'a, REG> = crate::BitWriter<'a, REG, Cbrgif>;
-impl<'a, REG> CbrgifW<'a, REG>
+pub type CBRGIF_W<'a, REG> = crate::BitWriter<'a, REG, CBRGIF_A>;
+impl<'a, REG> CBRGIF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cbrgif::Value1)
+        self.variant(CBRGIF_A::VALUE1)
     }
     #[doc = "Flag PSR.BRGIF is cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cbrgif::Value2)
+        self.variant(CBRGIF_A::VALUE2)
     }
 }
 impl W {
     #[doc = "Bit 0 - Clear Status Flag 0 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst0(&mut self) -> Cst0W<PscrSpec> {
-        Cst0W::new(self, 0)
+    pub fn cst0(&mut self) -> CST0_W<PSCR_SPEC> {
+        CST0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Status Flag 1 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst1(&mut self) -> Cst1W<PscrSpec> {
-        Cst1W::new(self, 1)
+    pub fn cst1(&mut self) -> CST1_W<PSCR_SPEC> {
+        CST1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Status Flag 2 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst2(&mut self) -> Cst2W<PscrSpec> {
-        Cst2W::new(self, 2)
+    pub fn cst2(&mut self) -> CST2_W<PSCR_SPEC> {
+        CST2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Clear Status Flag 3 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst3(&mut self) -> Cst3W<PscrSpec> {
-        Cst3W::new(self, 3)
+    pub fn cst3(&mut self) -> CST3_W<PSCR_SPEC> {
+        CST3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Clear Status Flag 4 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst4(&mut self) -> Cst4W<PscrSpec> {
-        Cst4W::new(self, 4)
+    pub fn cst4(&mut self) -> CST4_W<PSCR_SPEC> {
+        CST4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Clear Status Flag 5 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst5(&mut self) -> Cst5W<PscrSpec> {
-        Cst5W::new(self, 5)
+    pub fn cst5(&mut self) -> CST5_W<PSCR_SPEC> {
+        CST5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Clear Status Flag 6 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst6(&mut self) -> Cst6W<PscrSpec> {
-        Cst6W::new(self, 6)
+    pub fn cst6(&mut self) -> CST6_W<PSCR_SPEC> {
+        CST6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Clear Status Flag 7 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst7(&mut self) -> Cst7W<PscrSpec> {
-        Cst7W::new(self, 7)
+    pub fn cst7(&mut self) -> CST7_W<PSCR_SPEC> {
+        CST7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Clear Status Flag 8 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst8(&mut self) -> Cst8W<PscrSpec> {
-        Cst8W::new(self, 8)
+    pub fn cst8(&mut self) -> CST8_W<PSCR_SPEC> {
+        CST8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear Status Flag 9 in PSR"]
     #[inline(always)]
     #[must_use]
-    pub fn cst9(&mut self) -> Cst9W<PscrSpec> {
-        Cst9W::new(self, 9)
+    pub fn cst9(&mut self) -> CST9_W<PSCR_SPEC> {
+        CST9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Clear Receiver Start Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn crsif(&mut self) -> CrsifW<PscrSpec> {
-        CrsifW::new(self, 10)
+    pub fn crsif(&mut self) -> CRSIF_W<PSCR_SPEC> {
+        CRSIF_W::new(self, 10)
     }
     #[doc = "Bit 11 - Clear Data Lost Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cdlif(&mut self) -> CdlifW<PscrSpec> {
-        CdlifW::new(self, 11)
+    pub fn cdlif(&mut self) -> CDLIF_W<PSCR_SPEC> {
+        CDLIF_W::new(self, 11)
     }
     #[doc = "Bit 12 - Clear Transmit Shift Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn ctsif(&mut self) -> CtsifW<PscrSpec> {
-        CtsifW::new(self, 12)
+    pub fn ctsif(&mut self) -> CTSIF_W<PSCR_SPEC> {
+        CTSIF_W::new(self, 12)
     }
     #[doc = "Bit 13 - Clear Transmit Buffer Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn ctbif(&mut self) -> CtbifW<PscrSpec> {
-        CtbifW::new(self, 13)
+    pub fn ctbif(&mut self) -> CTBIF_W<PSCR_SPEC> {
+        CTBIF_W::new(self, 13)
     }
     #[doc = "Bit 14 - Clear Receive Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn crif(&mut self) -> CrifW<PscrSpec> {
-        CrifW::new(self, 14)
+    pub fn crif(&mut self) -> CRIF_W<PSCR_SPEC> {
+        CRIF_W::new(self, 14)
     }
     #[doc = "Bit 15 - Clear Alternative Receive Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn caif(&mut self) -> CaifW<PscrSpec> {
-        CaifW::new(self, 15)
+    pub fn caif(&mut self) -> CAIF_W<PSCR_SPEC> {
+        CAIF_W::new(self, 15)
     }
     #[doc = "Bit 16 - Clear Baud Rate Generator Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cbrgif(&mut self) -> CbrgifW<PscrSpec> {
-        CbrgifW::new(self, 16)
+    pub fn cbrgif(&mut self) -> CBRGIF_W<PSCR_SPEC> {
+        CBRGIF_W::new(self, 16)
     }
 }
 #[doc = "Protocol Status Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pscr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PscrSpec;
-impl crate::RegisterSpec for PscrSpec {
+pub struct PSCR_SPEC;
+impl crate::RegisterSpec for PSCR_SPEC {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`pscr::W`](W) writer structure"]
-impl crate::Writable for PscrSpec {
+impl crate::Writable for PSCR_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PSCR to value 0"]
-impl crate::Resettable for PscrSpec {
+impl crate::Resettable for PSCR_SPEC {
     const RESET_VALUE: u32 = 0;
 }

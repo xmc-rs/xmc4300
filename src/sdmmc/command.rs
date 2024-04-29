@@ -1,68 +1,68 @@
 #[doc = "Register `COMMAND` reader"]
-pub type R = crate::R<CommandSpec>;
+pub type R = crate::R<COMMAND_SPEC>;
 #[doc = "Register `COMMAND` writer"]
-pub type W = crate::W<CommandSpec>;
+pub type W = crate::W<COMMAND_SPEC>;
 #[doc = "Response Type Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum RespTypeSelect {
+pub enum RESP_TYPE_SELECT_A {
     #[doc = "0: No Response"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Response length 136"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Response length 48"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Response length 48 check Busy after response"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<RespTypeSelect> for u8 {
+impl From<RESP_TYPE_SELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: RespTypeSelect) -> Self {
+    fn from(variant: RESP_TYPE_SELECT_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for RespTypeSelect {
+impl crate::FieldSpec for RESP_TYPE_SELECT_A {
     type Ux = u8;
 }
-impl crate::IsEnum for RespTypeSelect {}
+impl crate::IsEnum for RESP_TYPE_SELECT_A {}
 #[doc = "Field `RESP_TYPE_SELECT` reader - Response Type Select"]
-pub type RespTypeSelectR = crate::FieldReader<RespTypeSelect>;
-impl RespTypeSelectR {
+pub type RESP_TYPE_SELECT_R = crate::FieldReader<RESP_TYPE_SELECT_A>;
+impl RESP_TYPE_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RespTypeSelect {
+    pub const fn variant(&self) -> RESP_TYPE_SELECT_A {
         match self.bits {
-            0 => RespTypeSelect::Value1,
-            1 => RespTypeSelect::Value2,
-            2 => RespTypeSelect::Value3,
-            3 => RespTypeSelect::Value4,
+            0 => RESP_TYPE_SELECT_A::VALUE1,
+            1 => RESP_TYPE_SELECT_A::VALUE2,
+            2 => RESP_TYPE_SELECT_A::VALUE3,
+            3 => RESP_TYPE_SELECT_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "No Response"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RespTypeSelect::Value1
+        *self == RESP_TYPE_SELECT_A::VALUE1
     }
     #[doc = "Response length 136"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RespTypeSelect::Value2
+        *self == RESP_TYPE_SELECT_A::VALUE2
     }
     #[doc = "Response length 48"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == RespTypeSelect::Value3
+        *self == RESP_TYPE_SELECT_A::VALUE3
     }
     #[doc = "Response length 48 check Busy after response"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == RespTypeSelect::Value4
+        *self == RESP_TYPE_SELECT_A::VALUE4
     }
 }
 #[doc = "Field `RESP_TYPE_SELECT` writer - Response Type Select"]
-pub type RespTypeSelectW<'a, REG> = crate::FieldWriter<'a, REG, 2, RespTypeSelect, crate::Safe>;
-impl<'a, REG> RespTypeSelectW<'a, REG>
+pub type RESP_TYPE_SELECT_W<'a, REG> = crate::FieldWriter<'a, REG, 2, RESP_TYPE_SELECT_A, crate::Safe>;
+impl<'a, REG> RESP_TYPE_SELECT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -70,244 +70,244 @@ where
     #[doc = "No Response"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(RespTypeSelect::Value1)
+        self.variant(RESP_TYPE_SELECT_A::VALUE1)
     }
     #[doc = "Response length 136"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(RespTypeSelect::Value2)
+        self.variant(RESP_TYPE_SELECT_A::VALUE2)
     }
     #[doc = "Response length 48"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(RespTypeSelect::Value3)
+        self.variant(RESP_TYPE_SELECT_A::VALUE3)
     }
     #[doc = "Response length 48 check Busy after response"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(RespTypeSelect::Value4)
+        self.variant(RESP_TYPE_SELECT_A::VALUE4)
     }
 }
 #[doc = "Command CRC Check Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CmdCrcCheckEn {
+pub enum CMD_CRC_CHECK_EN_A {
     #[doc = "0: Disable"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<CmdCrcCheckEn> for bool {
+impl From<CMD_CRC_CHECK_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: CmdCrcCheckEn) -> Self {
+    fn from(variant: CMD_CRC_CHECK_EN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CMD_CRC_CHECK_EN` reader - Command CRC Check Enable"]
-pub type CmdCrcCheckEnR = crate::BitReader<CmdCrcCheckEn>;
-impl CmdCrcCheckEnR {
+pub type CMD_CRC_CHECK_EN_R = crate::BitReader<CMD_CRC_CHECK_EN_A>;
+impl CMD_CRC_CHECK_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CmdCrcCheckEn {
+    pub const fn variant(&self) -> CMD_CRC_CHECK_EN_A {
         match self.bits {
-            false => CmdCrcCheckEn::Value1,
-            true => CmdCrcCheckEn::Value2,
+            false => CMD_CRC_CHECK_EN_A::VALUE1,
+            true => CMD_CRC_CHECK_EN_A::VALUE2,
         }
     }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CmdCrcCheckEn::Value1
+        *self == CMD_CRC_CHECK_EN_A::VALUE1
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CmdCrcCheckEn::Value2
+        *self == CMD_CRC_CHECK_EN_A::VALUE2
     }
 }
 #[doc = "Field `CMD_CRC_CHECK_EN` writer - Command CRC Check Enable"]
-pub type CmdCrcCheckEnW<'a, REG> = crate::BitWriter<'a, REG, CmdCrcCheckEn>;
-impl<'a, REG> CmdCrcCheckEnW<'a, REG>
+pub type CMD_CRC_CHECK_EN_W<'a, REG> = crate::BitWriter<'a, REG, CMD_CRC_CHECK_EN_A>;
+impl<'a, REG> CMD_CRC_CHECK_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CmdCrcCheckEn::Value1)
+        self.variant(CMD_CRC_CHECK_EN_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CmdCrcCheckEn::Value2)
+        self.variant(CMD_CRC_CHECK_EN_A::VALUE2)
     }
 }
 #[doc = "Command Index Check Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CmdIndCheckEn {
+pub enum CMD_IND_CHECK_EN_A {
     #[doc = "0: Disable"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<CmdIndCheckEn> for bool {
+impl From<CMD_IND_CHECK_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: CmdIndCheckEn) -> Self {
+    fn from(variant: CMD_IND_CHECK_EN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CMD_IND_CHECK_EN` reader - Command Index Check Enable"]
-pub type CmdIndCheckEnR = crate::BitReader<CmdIndCheckEn>;
-impl CmdIndCheckEnR {
+pub type CMD_IND_CHECK_EN_R = crate::BitReader<CMD_IND_CHECK_EN_A>;
+impl CMD_IND_CHECK_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CmdIndCheckEn {
+    pub const fn variant(&self) -> CMD_IND_CHECK_EN_A {
         match self.bits {
-            false => CmdIndCheckEn::Value1,
-            true => CmdIndCheckEn::Value2,
+            false => CMD_IND_CHECK_EN_A::VALUE1,
+            true => CMD_IND_CHECK_EN_A::VALUE2,
         }
     }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CmdIndCheckEn::Value1
+        *self == CMD_IND_CHECK_EN_A::VALUE1
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CmdIndCheckEn::Value2
+        *self == CMD_IND_CHECK_EN_A::VALUE2
     }
 }
 #[doc = "Field `CMD_IND_CHECK_EN` writer - Command Index Check Enable"]
-pub type CmdIndCheckEnW<'a, REG> = crate::BitWriter<'a, REG, CmdIndCheckEn>;
-impl<'a, REG> CmdIndCheckEnW<'a, REG>
+pub type CMD_IND_CHECK_EN_W<'a, REG> = crate::BitWriter<'a, REG, CMD_IND_CHECK_EN_A>;
+impl<'a, REG> CMD_IND_CHECK_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CmdIndCheckEn::Value1)
+        self.variant(CMD_IND_CHECK_EN_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CmdIndCheckEn::Value2)
+        self.variant(CMD_IND_CHECK_EN_A::VALUE2)
     }
 }
 #[doc = "Data Present Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DataPresentSelect {
+pub enum DATA_PRESENT_SELECT_A {
     #[doc = "0: No Data Present"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Data Present"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<DataPresentSelect> for bool {
+impl From<DATA_PRESENT_SELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: DataPresentSelect) -> Self {
+    fn from(variant: DATA_PRESENT_SELECT_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DATA_PRESENT_SELECT` reader - Data Present Select"]
-pub type DataPresentSelectR = crate::BitReader<DataPresentSelect>;
-impl DataPresentSelectR {
+pub type DATA_PRESENT_SELECT_R = crate::BitReader<DATA_PRESENT_SELECT_A>;
+impl DATA_PRESENT_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> DataPresentSelect {
+    pub const fn variant(&self) -> DATA_PRESENT_SELECT_A {
         match self.bits {
-            false => DataPresentSelect::Value1,
-            true => DataPresentSelect::Value2,
+            false => DATA_PRESENT_SELECT_A::VALUE1,
+            true => DATA_PRESENT_SELECT_A::VALUE2,
         }
     }
     #[doc = "No Data Present"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DataPresentSelect::Value1
+        *self == DATA_PRESENT_SELECT_A::VALUE1
     }
     #[doc = "Data Present"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DataPresentSelect::Value2
+        *self == DATA_PRESENT_SELECT_A::VALUE2
     }
 }
 #[doc = "Field `DATA_PRESENT_SELECT` writer - Data Present Select"]
-pub type DataPresentSelectW<'a, REG> = crate::BitWriter<'a, REG, DataPresentSelect>;
-impl<'a, REG> DataPresentSelectW<'a, REG>
+pub type DATA_PRESENT_SELECT_W<'a, REG> = crate::BitWriter<'a, REG, DATA_PRESENT_SELECT_A>;
+impl<'a, REG> DATA_PRESENT_SELECT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No Data Present"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(DataPresentSelect::Value1)
+        self.variant(DATA_PRESENT_SELECT_A::VALUE1)
     }
     #[doc = "Data Present"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(DataPresentSelect::Value2)
+        self.variant(DATA_PRESENT_SELECT_A::VALUE2)
     }
 }
 #[doc = "Command Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CmdType {
+pub enum CMD_TYPE_A {
     #[doc = "0: Normal"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Suspend"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Resume"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Abort"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<CmdType> for u8 {
+impl From<CMD_TYPE_A> for u8 {
     #[inline(always)]
-    fn from(variant: CmdType) -> Self {
+    fn from(variant: CMD_TYPE_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CmdType {
+impl crate::FieldSpec for CMD_TYPE_A {
     type Ux = u8;
 }
-impl crate::IsEnum for CmdType {}
+impl crate::IsEnum for CMD_TYPE_A {}
 #[doc = "Field `CMD_TYPE` reader - Command Type"]
-pub type CmdTypeR = crate::FieldReader<CmdType>;
-impl CmdTypeR {
+pub type CMD_TYPE_R = crate::FieldReader<CMD_TYPE_A>;
+impl CMD_TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CmdType {
+    pub const fn variant(&self) -> CMD_TYPE_A {
         match self.bits {
-            0 => CmdType::Value1,
-            1 => CmdType::Value2,
-            2 => CmdType::Value3,
-            3 => CmdType::Value4,
+            0 => CMD_TYPE_A::VALUE1,
+            1 => CMD_TYPE_A::VALUE2,
+            2 => CMD_TYPE_A::VALUE3,
+            3 => CMD_TYPE_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Normal"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CmdType::Value1
+        *self == CMD_TYPE_A::VALUE1
     }
     #[doc = "Suspend"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CmdType::Value2
+        *self == CMD_TYPE_A::VALUE2
     }
     #[doc = "Resume"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CmdType::Value3
+        *self == CMD_TYPE_A::VALUE3
     }
     #[doc = "Abort"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == CmdType::Value4
+        *self == CMD_TYPE_A::VALUE4
     }
 }
 #[doc = "Field `CMD_TYPE` writer - Command Type"]
-pub type CmdTypeW<'a, REG> = crate::FieldWriter<'a, REG, 2, CmdType, crate::Safe>;
-impl<'a, REG> CmdTypeW<'a, REG>
+pub type CMD_TYPE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CMD_TYPE_A, crate::Safe>;
+impl<'a, REG> CMD_TYPE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -315,112 +315,112 @@ where
     #[doc = "Normal"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CmdType::Value1)
+        self.variant(CMD_TYPE_A::VALUE1)
     }
     #[doc = "Suspend"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CmdType::Value2)
+        self.variant(CMD_TYPE_A::VALUE2)
     }
     #[doc = "Resume"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(CmdType::Value3)
+        self.variant(CMD_TYPE_A::VALUE3)
     }
     #[doc = "Abort"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(CmdType::Value4)
+        self.variant(CMD_TYPE_A::VALUE4)
     }
 }
 #[doc = "Field `CMD_IND` reader - Command Index"]
-pub type CmdIndR = crate::FieldReader;
+pub type CMD_IND_R = crate::FieldReader;
 #[doc = "Field `CMD_IND` writer - Command Index"]
-pub type CmdIndW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+pub type CMD_IND_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     #[doc = "Bits 0:1 - Response Type Select"]
     #[inline(always)]
-    pub fn resp_type_select(&self) -> RespTypeSelectR {
-        RespTypeSelectR::new((self.bits & 3) as u8)
+    pub fn resp_type_select(&self) -> RESP_TYPE_SELECT_R {
+        RESP_TYPE_SELECT_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 3 - Command CRC Check Enable"]
     #[inline(always)]
-    pub fn cmd_crc_check_en(&self) -> CmdCrcCheckEnR {
-        CmdCrcCheckEnR::new(((self.bits >> 3) & 1) != 0)
+    pub fn cmd_crc_check_en(&self) -> CMD_CRC_CHECK_EN_R {
+        CMD_CRC_CHECK_EN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Command Index Check Enable"]
     #[inline(always)]
-    pub fn cmd_ind_check_en(&self) -> CmdIndCheckEnR {
-        CmdIndCheckEnR::new(((self.bits >> 4) & 1) != 0)
+    pub fn cmd_ind_check_en(&self) -> CMD_IND_CHECK_EN_R {
+        CMD_IND_CHECK_EN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Data Present Select"]
     #[inline(always)]
-    pub fn data_present_select(&self) -> DataPresentSelectR {
-        DataPresentSelectR::new(((self.bits >> 5) & 1) != 0)
+    pub fn data_present_select(&self) -> DATA_PRESENT_SELECT_R {
+        DATA_PRESENT_SELECT_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 6:7 - Command Type"]
     #[inline(always)]
-    pub fn cmd_type(&self) -> CmdTypeR {
-        CmdTypeR::new(((self.bits >> 6) & 3) as u8)
+    pub fn cmd_type(&self) -> CMD_TYPE_R {
+        CMD_TYPE_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:13 - Command Index"]
     #[inline(always)]
-    pub fn cmd_ind(&self) -> CmdIndR {
-        CmdIndR::new(((self.bits >> 8) & 0x3f) as u8)
+    pub fn cmd_ind(&self) -> CMD_IND_R {
+        CMD_IND_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Response Type Select"]
     #[inline(always)]
     #[must_use]
-    pub fn resp_type_select(&mut self) -> RespTypeSelectW<CommandSpec> {
-        RespTypeSelectW::new(self, 0)
+    pub fn resp_type_select(&mut self) -> RESP_TYPE_SELECT_W<COMMAND_SPEC> {
+        RESP_TYPE_SELECT_W::new(self, 0)
     }
     #[doc = "Bit 3 - Command CRC Check Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_crc_check_en(&mut self) -> CmdCrcCheckEnW<CommandSpec> {
-        CmdCrcCheckEnW::new(self, 3)
+    pub fn cmd_crc_check_en(&mut self) -> CMD_CRC_CHECK_EN_W<COMMAND_SPEC> {
+        CMD_CRC_CHECK_EN_W::new(self, 3)
     }
     #[doc = "Bit 4 - Command Index Check Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_ind_check_en(&mut self) -> CmdIndCheckEnW<CommandSpec> {
-        CmdIndCheckEnW::new(self, 4)
+    pub fn cmd_ind_check_en(&mut self) -> CMD_IND_CHECK_EN_W<COMMAND_SPEC> {
+        CMD_IND_CHECK_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Data Present Select"]
     #[inline(always)]
     #[must_use]
-    pub fn data_present_select(&mut self) -> DataPresentSelectW<CommandSpec> {
-        DataPresentSelectW::new(self, 5)
+    pub fn data_present_select(&mut self) -> DATA_PRESENT_SELECT_W<COMMAND_SPEC> {
+        DATA_PRESENT_SELECT_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Command Type"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_type(&mut self) -> CmdTypeW<CommandSpec> {
-        CmdTypeW::new(self, 6)
+    pub fn cmd_type(&mut self) -> CMD_TYPE_W<COMMAND_SPEC> {
+        CMD_TYPE_W::new(self, 6)
     }
     #[doc = "Bits 8:13 - Command Index"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_ind(&mut self) -> CmdIndW<CommandSpec> {
-        CmdIndW::new(self, 8)
+    pub fn cmd_ind(&mut self) -> CMD_IND_W<COMMAND_SPEC> {
+        CMD_IND_W::new(self, 8)
     }
 }
 #[doc = "Command Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`command::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`command::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CommandSpec;
-impl crate::RegisterSpec for CommandSpec {
+pub struct COMMAND_SPEC;
+impl crate::RegisterSpec for COMMAND_SPEC {
     type Ux = u16;
 }
 #[doc = "`read()` method returns [`command::R`](R) reader structure"]
-impl crate::Readable for CommandSpec {}
+impl crate::Readable for COMMAND_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`command::W`](W) writer structure"]
-impl crate::Writable for CommandSpec {
+impl crate::Writable for COMMAND_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets COMMAND to value 0"]
-impl crate::Resettable for CommandSpec {
+impl crate::Resettable for COMMAND_SPEC {
     const RESET_VALUE: u16 = 0;
 }

@@ -1,152 +1,152 @@
 #[doc = "Register `KSCFG` reader"]
-pub type R = crate::R<KscfgSpec>;
+pub type R = crate::R<KSCFG_SPEC>;
 #[doc = "Register `KSCFG` writer"]
-pub type W = crate::W<KscfgSpec>;
+pub type W = crate::W<KSCFG_SPEC>;
 #[doc = "Module Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Moden {
+pub enum MODEN_A {
     #[doc = "0: The module is switched off immediately (without respecting a stop condition). It does not react on mode control actions and the module clock is switched off. The module does not react on read accesses and ignores write accesses (except to KSCFG)."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The module is switched on and can operate. After writing 1 to MODEN, it is recommended to read register KSCFG to avoid pipeline effects in the control block before accessing other Service Request Processing registers."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Moden> for bool {
+impl From<MODEN_A> for bool {
     #[inline(always)]
-    fn from(variant: Moden) -> Self {
+    fn from(variant: MODEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MODEN` reader - Module Enable"]
-pub type ModenR = crate::BitReader<Moden>;
-impl ModenR {
+pub type MODEN_R = crate::BitReader<MODEN_A>;
+impl MODEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Moden {
+    pub const fn variant(&self) -> MODEN_A {
         match self.bits {
-            false => Moden::Value1,
-            true => Moden::Value2,
+            false => MODEN_A::VALUE1,
+            true => MODEN_A::VALUE2,
         }
     }
     #[doc = "The module is switched off immediately (without respecting a stop condition). It does not react on mode control actions and the module clock is switched off. The module does not react on read accesses and ignores write accesses (except to KSCFG)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Moden::Value1
+        *self == MODEN_A::VALUE1
     }
     #[doc = "The module is switched on and can operate. After writing 1 to MODEN, it is recommended to read register KSCFG to avoid pipeline effects in the control block before accessing other Service Request Processing registers."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Moden::Value2
+        *self == MODEN_A::VALUE2
     }
 }
 #[doc = "Field `MODEN` writer - Module Enable"]
-pub type ModenW<'a, REG> = crate::BitWriter<'a, REG, Moden>;
-impl<'a, REG> ModenW<'a, REG>
+pub type MODEN_W<'a, REG> = crate::BitWriter<'a, REG, MODEN_A>;
+impl<'a, REG> MODEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The module is switched off immediately (without respecting a stop condition). It does not react on mode control actions and the module clock is switched off. The module does not react on read accesses and ignores write accesses (except to KSCFG)."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Moden::Value1)
+        self.variant(MODEN_A::VALUE1)
     }
     #[doc = "The module is switched on and can operate. After writing 1 to MODEN, it is recommended to read register KSCFG to avoid pipeline effects in the control block before accessing other Service Request Processing registers."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Moden::Value2)
+        self.variant(MODEN_A::VALUE2)
     }
 }
 #[doc = "Bit Protection for MODEN\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Bpmoden {
+pub enum BPMODEN_A {
     #[doc = "0: MODEN is not changed."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: MODEN is updated with the written value."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Bpmoden> for bool {
+impl From<BPMODEN_A> for bool {
     #[inline(always)]
-    fn from(variant: Bpmoden) -> Self {
+    fn from(variant: BPMODEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BPMODEN` writer - Bit Protection for MODEN"]
-pub type BpmodenW<'a, REG> = crate::BitWriter<'a, REG, Bpmoden>;
-impl<'a, REG> BpmodenW<'a, REG>
+pub type BPMODEN_W<'a, REG> = crate::BitWriter<'a, REG, BPMODEN_A>;
+impl<'a, REG> BPMODEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "MODEN is not changed."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Bpmoden::Value1)
+        self.variant(BPMODEN_A::VALUE1)
     }
     #[doc = "MODEN is updated with the written value."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Bpmoden::Value2)
+        self.variant(BPMODEN_A::VALUE2)
     }
 }
 #[doc = "Normal Operation Mode Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Nomcfg {
+pub enum NOMCFG_A {
     #[doc = "0: Run mode 0 is selected."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Run mode 1 is selected."]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Stop mode 0 is selected."]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Stop mode 1 is selected."]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Nomcfg> for u8 {
+impl From<NOMCFG_A> for u8 {
     #[inline(always)]
-    fn from(variant: Nomcfg) -> Self {
+    fn from(variant: NOMCFG_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Nomcfg {
+impl crate::FieldSpec for NOMCFG_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Nomcfg {}
+impl crate::IsEnum for NOMCFG_A {}
 #[doc = "Field `NOMCFG` reader - Normal Operation Mode Configuration"]
-pub type NomcfgR = crate::FieldReader<Nomcfg>;
-impl NomcfgR {
+pub type NOMCFG_R = crate::FieldReader<NOMCFG_A>;
+impl NOMCFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Nomcfg {
+    pub const fn variant(&self) -> NOMCFG_A {
         match self.bits {
-            0 => Nomcfg::Value1,
-            1 => Nomcfg::Value2,
-            2 => Nomcfg::Value3,
-            3 => Nomcfg::Value4,
+            0 => NOMCFG_A::VALUE1,
+            1 => NOMCFG_A::VALUE2,
+            2 => NOMCFG_A::VALUE3,
+            3 => NOMCFG_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Run mode 0 is selected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Nomcfg::Value1
+        *self == NOMCFG_A::VALUE1
     }
     #[doc = "Run mode 1 is selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Nomcfg::Value2
+        *self == NOMCFG_A::VALUE2
     }
     #[doc = "Stop mode 0 is selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Nomcfg::Value3
+        *self == NOMCFG_A::VALUE3
     }
     #[doc = "Stop mode 1 is selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Nomcfg::Value4
+        *self == NOMCFG_A::VALUE4
     }
 }
 #[doc = "Field `NOMCFG` writer - Normal Operation Mode Configuration"]
-pub type NomcfgW<'a, REG> = crate::FieldWriter<'a, REG, 2, Nomcfg, crate::Safe>;
-impl<'a, REG> NomcfgW<'a, REG>
+pub type NOMCFG_W<'a, REG> = crate::FieldWriter<'a, REG, 2, NOMCFG_A, crate::Safe>;
+impl<'a, REG> NOMCFG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -154,159 +154,159 @@ where
     #[doc = "Run mode 0 is selected."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Nomcfg::Value1)
+        self.variant(NOMCFG_A::VALUE1)
     }
     #[doc = "Run mode 1 is selected."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Nomcfg::Value2)
+        self.variant(NOMCFG_A::VALUE2)
     }
     #[doc = "Stop mode 0 is selected."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Nomcfg::Value3)
+        self.variant(NOMCFG_A::VALUE3)
     }
     #[doc = "Stop mode 1 is selected."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Nomcfg::Value4)
+        self.variant(NOMCFG_A::VALUE4)
     }
 }
 #[doc = "Bit Protection for NOMCFG\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Bpnom {
+pub enum BPNOM_A {
     #[doc = "0: NOMCFG is not changed."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: NOMCFG is updated with the written value."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Bpnom> for bool {
+impl From<BPNOM_A> for bool {
     #[inline(always)]
-    fn from(variant: Bpnom) -> Self {
+    fn from(variant: BPNOM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BPNOM` writer - Bit Protection for NOMCFG"]
-pub type BpnomW<'a, REG> = crate::BitWriter<'a, REG, Bpnom>;
-impl<'a, REG> BpnomW<'a, REG>
+pub type BPNOM_W<'a, REG> = crate::BitWriter<'a, REG, BPNOM_A>;
+impl<'a, REG> BPNOM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "NOMCFG is not changed."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Bpnom::Value1)
+        self.variant(BPNOM_A::VALUE1)
     }
     #[doc = "NOMCFG is updated with the written value."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Bpnom::Value2)
+        self.variant(BPNOM_A::VALUE2)
     }
 }
 #[doc = "Field `SUMCFG` reader - Suspend Mode Configuration"]
-pub type SumcfgR = crate::FieldReader;
+pub type SUMCFG_R = crate::FieldReader;
 #[doc = "Field `SUMCFG` writer - Suspend Mode Configuration"]
-pub type SumcfgW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
+pub type SUMCFG_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Bit Protection for SUMCFG\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Bpsum {
+pub enum BPSUM_A {
     #[doc = "0: SUMCFG is not changed."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: SUMCFG is updated with the written value."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Bpsum> for bool {
+impl From<BPSUM_A> for bool {
     #[inline(always)]
-    fn from(variant: Bpsum) -> Self {
+    fn from(variant: BPSUM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BPSUM` writer - Bit Protection for SUMCFG"]
-pub type BpsumW<'a, REG> = crate::BitWriter<'a, REG, Bpsum>;
-impl<'a, REG> BpsumW<'a, REG>
+pub type BPSUM_W<'a, REG> = crate::BitWriter<'a, REG, BPSUM_A>;
+impl<'a, REG> BPSUM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "SUMCFG is not changed."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Bpsum::Value1)
+        self.variant(BPSUM_A::VALUE1)
     }
     #[doc = "SUMCFG is updated with the written value."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Bpsum::Value2)
+        self.variant(BPSUM_A::VALUE2)
     }
 }
 impl R {
     #[doc = "Bit 0 - Module Enable"]
     #[inline(always)]
-    pub fn moden(&self) -> ModenR {
-        ModenR::new((self.bits & 1) != 0)
+    pub fn moden(&self) -> MODEN_R {
+        MODEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:5 - Normal Operation Mode Configuration"]
     #[inline(always)]
-    pub fn nomcfg(&self) -> NomcfgR {
-        NomcfgR::new(((self.bits >> 4) & 3) as u8)
+    pub fn nomcfg(&self) -> NOMCFG_R {
+        NOMCFG_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 8:9 - Suspend Mode Configuration"]
     #[inline(always)]
-    pub fn sumcfg(&self) -> SumcfgR {
-        SumcfgR::new(((self.bits >> 8) & 3) as u8)
+    pub fn sumcfg(&self) -> SUMCFG_R {
+        SUMCFG_R::new(((self.bits >> 8) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Module Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn moden(&mut self) -> ModenW<KscfgSpec> {
-        ModenW::new(self, 0)
+    pub fn moden(&mut self) -> MODEN_W<KSCFG_SPEC> {
+        MODEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Bit Protection for MODEN"]
     #[inline(always)]
     #[must_use]
-    pub fn bpmoden(&mut self) -> BpmodenW<KscfgSpec> {
-        BpmodenW::new(self, 1)
+    pub fn bpmoden(&mut self) -> BPMODEN_W<KSCFG_SPEC> {
+        BPMODEN_W::new(self, 1)
     }
     #[doc = "Bits 4:5 - Normal Operation Mode Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn nomcfg(&mut self) -> NomcfgW<KscfgSpec> {
-        NomcfgW::new(self, 4)
+    pub fn nomcfg(&mut self) -> NOMCFG_W<KSCFG_SPEC> {
+        NOMCFG_W::new(self, 4)
     }
     #[doc = "Bit 7 - Bit Protection for NOMCFG"]
     #[inline(always)]
     #[must_use]
-    pub fn bpnom(&mut self) -> BpnomW<KscfgSpec> {
-        BpnomW::new(self, 7)
+    pub fn bpnom(&mut self) -> BPNOM_W<KSCFG_SPEC> {
+        BPNOM_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Suspend Mode Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn sumcfg(&mut self) -> SumcfgW<KscfgSpec> {
-        SumcfgW::new(self, 8)
+    pub fn sumcfg(&mut self) -> SUMCFG_W<KSCFG_SPEC> {
+        SUMCFG_W::new(self, 8)
     }
     #[doc = "Bit 11 - Bit Protection for SUMCFG"]
     #[inline(always)]
     #[must_use]
-    pub fn bpsum(&mut self) -> BpsumW<KscfgSpec> {
-        BpsumW::new(self, 11)
+    pub fn bpsum(&mut self) -> BPSUM_W<KSCFG_SPEC> {
+        BPSUM_W::new(self, 11)
     }
 }
 #[doc = "Kernel State Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`kscfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`kscfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct KscfgSpec;
-impl crate::RegisterSpec for KscfgSpec {
+pub struct KSCFG_SPEC;
+impl crate::RegisterSpec for KSCFG_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`kscfg::R`](R) reader structure"]
-impl crate::Readable for KscfgSpec {}
+impl crate::Readable for KSCFG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`kscfg::W`](W) writer structure"]
-impl crate::Writable for KscfgSpec {
+impl crate::Writable for KSCFG_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets KSCFG to value 0"]
-impl crate::Resettable for KscfgSpec {
+impl crate::Resettable for KSCFG_SPEC {
     const RESET_VALUE: u32 = 0;
 }

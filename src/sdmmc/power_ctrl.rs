@@ -1,97 +1,97 @@
 #[doc = "Register `POWER_CTRL` reader"]
-pub type R = crate::R<PowerCtrlSpec>;
+pub type R = crate::R<POWER_CTRL_SPEC>;
 #[doc = "Register `POWER_CTRL` writer"]
-pub type W = crate::W<PowerCtrlSpec>;
+pub type W = crate::W<POWER_CTRL_SPEC>;
 #[doc = "SD Bus Power\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SdBusPower {
+pub enum SD_BUS_POWER_A {
     #[doc = "0: Power off"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Power on"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<SdBusPower> for bool {
+impl From<SD_BUS_POWER_A> for bool {
     #[inline(always)]
-    fn from(variant: SdBusPower) -> Self {
+    fn from(variant: SD_BUS_POWER_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SD_BUS_POWER` reader - SD Bus Power"]
-pub type SdBusPowerR = crate::BitReader<SdBusPower>;
-impl SdBusPowerR {
+pub type SD_BUS_POWER_R = crate::BitReader<SD_BUS_POWER_A>;
+impl SD_BUS_POWER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SdBusPower {
+    pub const fn variant(&self) -> SD_BUS_POWER_A {
         match self.bits {
-            false => SdBusPower::Value1,
-            true => SdBusPower::Value2,
+            false => SD_BUS_POWER_A::VALUE1,
+            true => SD_BUS_POWER_A::VALUE2,
         }
     }
     #[doc = "Power off"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SdBusPower::Value1
+        *self == SD_BUS_POWER_A::VALUE1
     }
     #[doc = "Power on"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SdBusPower::Value2
+        *self == SD_BUS_POWER_A::VALUE2
     }
 }
 #[doc = "Field `SD_BUS_POWER` writer - SD Bus Power"]
-pub type SdBusPowerW<'a, REG> = crate::BitWriter<'a, REG, SdBusPower>;
-impl<'a, REG> SdBusPowerW<'a, REG>
+pub type SD_BUS_POWER_W<'a, REG> = crate::BitWriter<'a, REG, SD_BUS_POWER_A>;
+impl<'a, REG> SD_BUS_POWER_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Power off"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(SdBusPower::Value1)
+        self.variant(SD_BUS_POWER_A::VALUE1)
     }
     #[doc = "Power on"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(SdBusPower::Value2)
+        self.variant(SD_BUS_POWER_A::VALUE2)
     }
 }
 #[doc = "SD Bus Voltage Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SdBusVoltageSel {
+pub enum SD_BUS_VOLTAGE_SEL_A {
     #[doc = "7: 3.3V (Flattop.)"]
-    Value1 = 7,
+    VALUE1 = 7,
 }
-impl From<SdBusVoltageSel> for u8 {
+impl From<SD_BUS_VOLTAGE_SEL_A> for u8 {
     #[inline(always)]
-    fn from(variant: SdBusVoltageSel) -> Self {
+    fn from(variant: SD_BUS_VOLTAGE_SEL_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for SdBusVoltageSel {
+impl crate::FieldSpec for SD_BUS_VOLTAGE_SEL_A {
     type Ux = u8;
 }
-impl crate::IsEnum for SdBusVoltageSel {}
+impl crate::IsEnum for SD_BUS_VOLTAGE_SEL_A {}
 #[doc = "Field `SD_BUS_VOLTAGE_SEL` reader - SD Bus Voltage Select"]
-pub type SdBusVoltageSelR = crate::FieldReader<SdBusVoltageSel>;
-impl SdBusVoltageSelR {
+pub type SD_BUS_VOLTAGE_SEL_R = crate::FieldReader<SD_BUS_VOLTAGE_SEL_A>;
+impl SD_BUS_VOLTAGE_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<SdBusVoltageSel> {
+    pub const fn variant(&self) -> Option<SD_BUS_VOLTAGE_SEL_A> {
         match self.bits {
-            7 => Some(SdBusVoltageSel::Value1),
+            7 => Some(SD_BUS_VOLTAGE_SEL_A::VALUE1),
             _ => None,
         }
     }
     #[doc = "3.3V (Flattop.)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SdBusVoltageSel::Value1
+        *self == SD_BUS_VOLTAGE_SEL_A::VALUE1
     }
 }
 #[doc = "Field `SD_BUS_VOLTAGE_SEL` writer - SD Bus Voltage Select"]
-pub type SdBusVoltageSelW<'a, REG> = crate::FieldWriter<'a, REG, 3, SdBusVoltageSel>;
-impl<'a, REG> SdBusVoltageSelW<'a, REG>
+pub type SD_BUS_VOLTAGE_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, SD_BUS_VOLTAGE_SEL_A>;
+impl<'a, REG> SD_BUS_VOLTAGE_SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -99,64 +99,64 @@ where
     #[doc = "3.3V (Flattop.)"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(SdBusVoltageSel::Value1)
+        self.variant(SD_BUS_VOLTAGE_SEL_A::VALUE1)
     }
 }
 #[doc = "Field `HARDWARE_RESET` reader - Hardware reset"]
-pub type HardwareResetR = crate::BitReader;
+pub type HARDWARE_RESET_R = crate::BitReader;
 #[doc = "Field `HARDWARE_RESET` writer - Hardware reset"]
-pub type HardwareResetW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type HARDWARE_RESET_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - SD Bus Power"]
     #[inline(always)]
-    pub fn sd_bus_power(&self) -> SdBusPowerR {
-        SdBusPowerR::new((self.bits & 1) != 0)
+    pub fn sd_bus_power(&self) -> SD_BUS_POWER_R {
+        SD_BUS_POWER_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:3 - SD Bus Voltage Select"]
     #[inline(always)]
-    pub fn sd_bus_voltage_sel(&self) -> SdBusVoltageSelR {
-        SdBusVoltageSelR::new((self.bits >> 1) & 7)
+    pub fn sd_bus_voltage_sel(&self) -> SD_BUS_VOLTAGE_SEL_R {
+        SD_BUS_VOLTAGE_SEL_R::new((self.bits >> 1) & 7)
     }
     #[doc = "Bit 4 - Hardware reset"]
     #[inline(always)]
-    pub fn hardware_reset(&self) -> HardwareResetR {
-        HardwareResetR::new(((self.bits >> 4) & 1) != 0)
+    pub fn hardware_reset(&self) -> HARDWARE_RESET_R {
+        HARDWARE_RESET_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - SD Bus Power"]
     #[inline(always)]
     #[must_use]
-    pub fn sd_bus_power(&mut self) -> SdBusPowerW<PowerCtrlSpec> {
-        SdBusPowerW::new(self, 0)
+    pub fn sd_bus_power(&mut self) -> SD_BUS_POWER_W<POWER_CTRL_SPEC> {
+        SD_BUS_POWER_W::new(self, 0)
     }
     #[doc = "Bits 1:3 - SD Bus Voltage Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sd_bus_voltage_sel(&mut self) -> SdBusVoltageSelW<PowerCtrlSpec> {
-        SdBusVoltageSelW::new(self, 1)
+    pub fn sd_bus_voltage_sel(&mut self) -> SD_BUS_VOLTAGE_SEL_W<POWER_CTRL_SPEC> {
+        SD_BUS_VOLTAGE_SEL_W::new(self, 1)
     }
     #[doc = "Bit 4 - Hardware reset"]
     #[inline(always)]
     #[must_use]
-    pub fn hardware_reset(&mut self) -> HardwareResetW<PowerCtrlSpec> {
-        HardwareResetW::new(self, 4)
+    pub fn hardware_reset(&mut self) -> HARDWARE_RESET_W<POWER_CTRL_SPEC> {
+        HARDWARE_RESET_W::new(self, 4)
     }
 }
 #[doc = "Power Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`power_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`power_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PowerCtrlSpec;
-impl crate::RegisterSpec for PowerCtrlSpec {
+pub struct POWER_CTRL_SPEC;
+impl crate::RegisterSpec for POWER_CTRL_SPEC {
     type Ux = u8;
 }
 #[doc = "`read()` method returns [`power_ctrl::R`](R) reader structure"]
-impl crate::Readable for PowerCtrlSpec {}
+impl crate::Readable for POWER_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`power_ctrl::W`](W) writer structure"]
-impl crate::Writable for PowerCtrlSpec {
+impl crate::Writable for POWER_CTRL_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets POWER_CTRL to value 0"]
-impl crate::Resettable for PowerCtrlSpec {
+impl crate::Resettable for POWER_CTRL_SPEC {
     const RESET_VALUE: u8 = 0;
 }

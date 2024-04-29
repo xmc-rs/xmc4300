@@ -1,66 +1,61 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    trapstat: Trapstat,
-    trapraw: Trapraw,
-    trapdis: Trapdis,
-    trapclr: Trapclr,
-    trapset: Trapset,
+    trapstat: TRAPSTAT,
+    trapraw: TRAPRAW,
+    trapdis: TRAPDIS,
+    trapclr: TRAPCLR,
+    trapset: TRAPSET,
 }
 impl RegisterBlock {
     #[doc = "0x00 - Trap Status Register"]
     #[inline(always)]
-    pub const fn trapstat(&self) -> &Trapstat {
+    pub const fn trapstat(&self) -> &TRAPSTAT {
         &self.trapstat
     }
     #[doc = "0x04 - Trap Raw Status Register"]
     #[inline(always)]
-    pub const fn trapraw(&self) -> &Trapraw {
+    pub const fn trapraw(&self) -> &TRAPRAW {
         &self.trapraw
     }
     #[doc = "0x08 - Trap Disable Register"]
     #[inline(always)]
-    pub const fn trapdis(&self) -> &Trapdis {
+    pub const fn trapdis(&self) -> &TRAPDIS {
         &self.trapdis
     }
     #[doc = "0x0c - Trap Clear Register"]
     #[inline(always)]
-    pub const fn trapclr(&self) -> &Trapclr {
+    pub const fn trapclr(&self) -> &TRAPCLR {
         &self.trapclr
     }
     #[doc = "0x10 - Trap Set Register"]
     #[inline(always)]
-    pub const fn trapset(&self) -> &Trapset {
+    pub const fn trapset(&self) -> &TRAPSET {
         &self.trapset
     }
 }
 #[doc = "TRAPSTAT (r) register accessor: Trap Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`trapstat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@trapstat`]
 module"]
-#[doc(alias = "TRAPSTAT")]
-pub type Trapstat = crate::Reg<trapstat::TrapstatSpec>;
+pub type TRAPSTAT = crate::Reg<trapstat::TRAPSTAT_SPEC>;
 #[doc = "Trap Status Register"]
 pub mod trapstat;
 #[doc = "TRAPRAW (r) register accessor: Trap Raw Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`trapraw::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@trapraw`]
 module"]
-#[doc(alias = "TRAPRAW")]
-pub type Trapraw = crate::Reg<trapraw::TraprawSpec>;
+pub type TRAPRAW = crate::Reg<trapraw::TRAPRAW_SPEC>;
 #[doc = "Trap Raw Status Register"]
 pub mod trapraw;
 #[doc = "TRAPDIS (rw) register accessor: Trap Disable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`trapdis::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`trapdis::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@trapdis`]
 module"]
-#[doc(alias = "TRAPDIS")]
-pub type Trapdis = crate::Reg<trapdis::TrapdisSpec>;
+pub type TRAPDIS = crate::Reg<trapdis::TRAPDIS_SPEC>;
 #[doc = "Trap Disable Register"]
 pub mod trapdis;
 #[doc = "TRAPCLR (w) register accessor: Trap Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`trapclr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@trapclr`]
 module"]
-#[doc(alias = "TRAPCLR")]
-pub type Trapclr = crate::Reg<trapclr::TrapclrSpec>;
+pub type TRAPCLR = crate::Reg<trapclr::TRAPCLR_SPEC>;
 #[doc = "Trap Clear Register"]
 pub mod trapclr;
 #[doc = "TRAPSET (w) register accessor: Trap Set Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`trapset::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@trapset`]
 module"]
-#[doc(alias = "TRAPSET")]
-pub type Trapset = crate::Reg<trapset::TrapsetSpec>;
+pub type TRAPSET = crate::Reg<trapset::TRAPSET_SPEC>;
 #[doc = "Trap Set Register"]
 pub mod trapset;

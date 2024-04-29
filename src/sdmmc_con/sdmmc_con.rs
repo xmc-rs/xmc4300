@@ -1,281 +1,281 @@
 #[doc = "Register `SDMMC_CON` reader"]
-pub type R = crate::R<SdmmcConSpec>;
+pub type R = crate::R<SDMMC_CON_SPEC>;
 #[doc = "Register `SDMMC_CON` writer"]
-pub type W = crate::W<SdmmcConSpec>;
+pub type W = crate::W<SDMMC_CON_SPEC>;
 #[doc = "SDMMC Write Protection Input Multiplexer Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Wpsel {
+pub enum WPSEL_A {
     #[doc = "0: P1.1 input pin selected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Software bit WPVAL is selected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Wpsel> for bool {
+impl From<WPSEL_A> for bool {
     #[inline(always)]
-    fn from(variant: Wpsel) -> Self {
+    fn from(variant: WPSEL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WPSEL` reader - SDMMC Write Protection Input Multiplexer Control"]
-pub type WpselR = crate::BitReader<Wpsel>;
-impl WpselR {
+pub type WPSEL_R = crate::BitReader<WPSEL_A>;
+impl WPSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Wpsel {
+    pub const fn variant(&self) -> WPSEL_A {
         match self.bits {
-            false => Wpsel::Value1,
-            true => Wpsel::Value2,
+            false => WPSEL_A::VALUE1,
+            true => WPSEL_A::VALUE2,
         }
     }
     #[doc = "P1.1 input pin selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Wpsel::Value1
+        *self == WPSEL_A::VALUE1
     }
     #[doc = "Software bit WPVAL is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Wpsel::Value2
+        *self == WPSEL_A::VALUE2
     }
 }
 #[doc = "Field `WPSEL` writer - SDMMC Write Protection Input Multiplexer Control"]
-pub type WpselW<'a, REG> = crate::BitWriter<'a, REG, Wpsel>;
-impl<'a, REG> WpselW<'a, REG>
+pub type WPSEL_W<'a, REG> = crate::BitWriter<'a, REG, WPSEL_A>;
+impl<'a, REG> WPSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "P1.1 input pin selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Wpsel::Value1)
+        self.variant(WPSEL_A::VALUE1)
     }
     #[doc = "Software bit WPVAL is selected"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Wpsel::Value2)
+        self.variant(WPSEL_A::VALUE2)
     }
 }
 #[doc = "SDMMC Write Protect Software Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Wpsval {
+pub enum WPSVAL_A {
     #[doc = "0: No write protection"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Write protection active"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Wpsval> for bool {
+impl From<WPSVAL_A> for bool {
     #[inline(always)]
-    fn from(variant: Wpsval) -> Self {
+    fn from(variant: WPSVAL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WPSVAL` reader - SDMMC Write Protect Software Control"]
-pub type WpsvalR = crate::BitReader<Wpsval>;
-impl WpsvalR {
+pub type WPSVAL_R = crate::BitReader<WPSVAL_A>;
+impl WPSVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Wpsval {
+    pub const fn variant(&self) -> WPSVAL_A {
         match self.bits {
-            false => Wpsval::Value1,
-            true => Wpsval::Value2,
+            false => WPSVAL_A::VALUE1,
+            true => WPSVAL_A::VALUE2,
         }
     }
     #[doc = "No write protection"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Wpsval::Value1
+        *self == WPSVAL_A::VALUE1
     }
     #[doc = "Write protection active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Wpsval::Value2
+        *self == WPSVAL_A::VALUE2
     }
 }
 #[doc = "Field `WPSVAL` writer - SDMMC Write Protect Software Control"]
-pub type WpsvalW<'a, REG> = crate::BitWriter<'a, REG, Wpsval>;
-impl<'a, REG> WpsvalW<'a, REG>
+pub type WPSVAL_W<'a, REG> = crate::BitWriter<'a, REG, WPSVAL_A>;
+impl<'a, REG> WPSVAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No write protection"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Wpsval::Value1)
+        self.variant(WPSVAL_A::VALUE1)
     }
     #[doc = "Write protection active"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Wpsval::Value2)
+        self.variant(WPSVAL_A::VALUE2)
     }
 }
 #[doc = "SDMMC Card Detection Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cdsel {
+pub enum CDSEL_A {
     #[doc = "0: P1.10 input pin selected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Software bit CDSVAL is selected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cdsel> for bool {
+impl From<CDSEL_A> for bool {
     #[inline(always)]
-    fn from(variant: Cdsel) -> Self {
+    fn from(variant: CDSEL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CDSEL` reader - SDMMC Card Detection Control"]
-pub type CdselR = crate::BitReader<Cdsel>;
-impl CdselR {
+pub type CDSEL_R = crate::BitReader<CDSEL_A>;
+impl CDSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Cdsel {
+    pub const fn variant(&self) -> CDSEL_A {
         match self.bits {
-            false => Cdsel::Value1,
-            true => Cdsel::Value2,
+            false => CDSEL_A::VALUE1,
+            true => CDSEL_A::VALUE2,
         }
     }
     #[doc = "P1.10 input pin selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Cdsel::Value1
+        *self == CDSEL_A::VALUE1
     }
     #[doc = "Software bit CDSVAL is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Cdsel::Value2
+        *self == CDSEL_A::VALUE2
     }
 }
 #[doc = "Field `CDSEL` writer - SDMMC Card Detection Control"]
-pub type CdselW<'a, REG> = crate::BitWriter<'a, REG, Cdsel>;
-impl<'a, REG> CdselW<'a, REG>
+pub type CDSEL_W<'a, REG> = crate::BitWriter<'a, REG, CDSEL_A>;
+impl<'a, REG> CDSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "P1.10 input pin selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cdsel::Value1)
+        self.variant(CDSEL_A::VALUE1)
     }
     #[doc = "Software bit CDSVAL is selected"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cdsel::Value2)
+        self.variant(CDSEL_A::VALUE2)
     }
 }
 #[doc = "SDMMC Write Protect Software Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cdsval {
+pub enum CDSVAL_A {
     #[doc = "0: No card detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Card detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cdsval> for bool {
+impl From<CDSVAL_A> for bool {
     #[inline(always)]
-    fn from(variant: Cdsval) -> Self {
+    fn from(variant: CDSVAL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CDSVAL` reader - SDMMC Write Protect Software Control"]
-pub type CdsvalR = crate::BitReader<Cdsval>;
-impl CdsvalR {
+pub type CDSVAL_R = crate::BitReader<CDSVAL_A>;
+impl CDSVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Cdsval {
+    pub const fn variant(&self) -> CDSVAL_A {
         match self.bits {
-            false => Cdsval::Value1,
-            true => Cdsval::Value2,
+            false => CDSVAL_A::VALUE1,
+            true => CDSVAL_A::VALUE2,
         }
     }
     #[doc = "No card detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Cdsval::Value1
+        *self == CDSVAL_A::VALUE1
     }
     #[doc = "Card detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Cdsval::Value2
+        *self == CDSVAL_A::VALUE2
     }
 }
 #[doc = "Field `CDSVAL` writer - SDMMC Write Protect Software Control"]
-pub type CdsvalW<'a, REG> = crate::BitWriter<'a, REG, Cdsval>;
-impl<'a, REG> CdsvalW<'a, REG>
+pub type CDSVAL_W<'a, REG> = crate::BitWriter<'a, REG, CDSVAL_A>;
+impl<'a, REG> CDSVAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No card detected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cdsval::Value1)
+        self.variant(CDSVAL_A::VALUE1)
     }
     #[doc = "Card detected"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cdsval::Value2)
+        self.variant(CDSVAL_A::VALUE2)
     }
 }
 impl R {
     #[doc = "Bit 0 - SDMMC Write Protection Input Multiplexer Control"]
     #[inline(always)]
-    pub fn wpsel(&self) -> WpselR {
-        WpselR::new((self.bits & 1) != 0)
+    pub fn wpsel(&self) -> WPSEL_R {
+        WPSEL_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 4 - SDMMC Write Protect Software Control"]
     #[inline(always)]
-    pub fn wpsval(&self) -> WpsvalR {
-        WpsvalR::new(((self.bits >> 4) & 1) != 0)
+    pub fn wpsval(&self) -> WPSVAL_R {
+        WPSVAL_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 16 - SDMMC Card Detection Control"]
     #[inline(always)]
-    pub fn cdsel(&self) -> CdselR {
-        CdselR::new(((self.bits >> 16) & 1) != 0)
+    pub fn cdsel(&self) -> CDSEL_R {
+        CDSEL_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 20 - SDMMC Write Protect Software Control"]
     #[inline(always)]
-    pub fn cdsval(&self) -> CdsvalR {
-        CdsvalR::new(((self.bits >> 20) & 1) != 0)
+    pub fn cdsval(&self) -> CDSVAL_R {
+        CDSVAL_R::new(((self.bits >> 20) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - SDMMC Write Protection Input Multiplexer Control"]
     #[inline(always)]
     #[must_use]
-    pub fn wpsel(&mut self) -> WpselW<SdmmcConSpec> {
-        WpselW::new(self, 0)
+    pub fn wpsel(&mut self) -> WPSEL_W<SDMMC_CON_SPEC> {
+        WPSEL_W::new(self, 0)
     }
     #[doc = "Bit 4 - SDMMC Write Protect Software Control"]
     #[inline(always)]
     #[must_use]
-    pub fn wpsval(&mut self) -> WpsvalW<SdmmcConSpec> {
-        WpsvalW::new(self, 4)
+    pub fn wpsval(&mut self) -> WPSVAL_W<SDMMC_CON_SPEC> {
+        WPSVAL_W::new(self, 4)
     }
     #[doc = "Bit 16 - SDMMC Card Detection Control"]
     #[inline(always)]
     #[must_use]
-    pub fn cdsel(&mut self) -> CdselW<SdmmcConSpec> {
-        CdselW::new(self, 16)
+    pub fn cdsel(&mut self) -> CDSEL_W<SDMMC_CON_SPEC> {
+        CDSEL_W::new(self, 16)
     }
     #[doc = "Bit 20 - SDMMC Write Protect Software Control"]
     #[inline(always)]
     #[must_use]
-    pub fn cdsval(&mut self) -> CdsvalW<SdmmcConSpec> {
-        CdsvalW::new(self, 20)
+    pub fn cdsval(&mut self) -> CDSVAL_W<SDMMC_CON_SPEC> {
+        CDSVAL_W::new(self, 20)
     }
 }
 #[doc = "SDMMC Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sdmmc_con::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sdmmc_con::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct SdmmcConSpec;
-impl crate::RegisterSpec for SdmmcConSpec {
+pub struct SDMMC_CON_SPEC;
+impl crate::RegisterSpec for SDMMC_CON_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`sdmmc_con::R`](R) reader structure"]
-impl crate::Readable for SdmmcConSpec {}
+impl crate::Readable for SDMMC_CON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sdmmc_con::W`](W) writer structure"]
-impl crate::Writable for SdmmcConSpec {
+impl crate::Writable for SDMMC_CON_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SDMMC_CON to value 0"]
-impl crate::Resettable for SdmmcConSpec {
+impl crate::Resettable for SDMMC_CON_SPEC {
     const RESET_VALUE: u32 = 0;
 }

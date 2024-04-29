@@ -1,315 +1,315 @@
 #[doc = "Register `TRBSCR` writer"]
-pub type W = crate::W<TrbscrSpec>;
+pub type W = crate::W<TRBSCR_SPEC>;
 #[doc = "Clear Standard Receive Buffer Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Csrbi {
+pub enum CSRBI_A {
     #[doc = "0: No effect."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear TRBSR.SRBI."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Csrbi> for bool {
+impl From<CSRBI_A> for bool {
     #[inline(always)]
-    fn from(variant: Csrbi) -> Self {
+    fn from(variant: CSRBI_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CSRBI` writer - Clear Standard Receive Buffer Event"]
-pub type CsrbiW<'a, REG> = crate::BitWriter<'a, REG, Csrbi>;
-impl<'a, REG> CsrbiW<'a, REG>
+pub type CSRBI_W<'a, REG> = crate::BitWriter<'a, REG, CSRBI_A>;
+impl<'a, REG> CSRBI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Csrbi::Value1)
+        self.variant(CSRBI_A::VALUE1)
     }
     #[doc = "Clear TRBSR.SRBI."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Csrbi::Value2)
+        self.variant(CSRBI_A::VALUE2)
     }
 }
 #[doc = "Clear Receive Buffer Error Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Crberi {
+pub enum CRBERI_A {
     #[doc = "0: No effect."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear TRBSR.RBERI."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Crberi> for bool {
+impl From<CRBERI_A> for bool {
     #[inline(always)]
-    fn from(variant: Crberi) -> Self {
+    fn from(variant: CRBERI_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CRBERI` writer - Clear Receive Buffer Error Event"]
-pub type CrberiW<'a, REG> = crate::BitWriter<'a, REG, Crberi>;
-impl<'a, REG> CrberiW<'a, REG>
+pub type CRBERI_W<'a, REG> = crate::BitWriter<'a, REG, CRBERI_A>;
+impl<'a, REG> CRBERI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Crberi::Value1)
+        self.variant(CRBERI_A::VALUE1)
     }
     #[doc = "Clear TRBSR.RBERI."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Crberi::Value2)
+        self.variant(CRBERI_A::VALUE2)
     }
 }
 #[doc = "Clear Alternative Receive Buffer Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Carbi {
+pub enum CARBI_A {
     #[doc = "0: No effect."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear TRBSR.ARBI."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Carbi> for bool {
+impl From<CARBI_A> for bool {
     #[inline(always)]
-    fn from(variant: Carbi) -> Self {
+    fn from(variant: CARBI_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CARBI` writer - Clear Alternative Receive Buffer Event"]
-pub type CarbiW<'a, REG> = crate::BitWriter<'a, REG, Carbi>;
-impl<'a, REG> CarbiW<'a, REG>
+pub type CARBI_W<'a, REG> = crate::BitWriter<'a, REG, CARBI_A>;
+impl<'a, REG> CARBI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Carbi::Value1)
+        self.variant(CARBI_A::VALUE1)
     }
     #[doc = "Clear TRBSR.ARBI."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Carbi::Value2)
+        self.variant(CARBI_A::VALUE2)
     }
 }
 #[doc = "Clear Standard Transmit Buffer Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cstbi {
+pub enum CSTBI_A {
     #[doc = "0: No effect."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear TRBSR.STBI."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cstbi> for bool {
+impl From<CSTBI_A> for bool {
     #[inline(always)]
-    fn from(variant: Cstbi) -> Self {
+    fn from(variant: CSTBI_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CSTBI` writer - Clear Standard Transmit Buffer Event"]
-pub type CstbiW<'a, REG> = crate::BitWriter<'a, REG, Cstbi>;
-impl<'a, REG> CstbiW<'a, REG>
+pub type CSTBI_W<'a, REG> = crate::BitWriter<'a, REG, CSTBI_A>;
+impl<'a, REG> CSTBI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cstbi::Value1)
+        self.variant(CSTBI_A::VALUE1)
     }
     #[doc = "Clear TRBSR.STBI."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cstbi::Value2)
+        self.variant(CSTBI_A::VALUE2)
     }
 }
 #[doc = "Clear Transmit Buffer Error Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ctberi {
+pub enum CTBERI_A {
     #[doc = "0: No effect."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear TRBSR.TBERI."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ctberi> for bool {
+impl From<CTBERI_A> for bool {
     #[inline(always)]
-    fn from(variant: Ctberi) -> Self {
+    fn from(variant: CTBERI_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CTBERI` writer - Clear Transmit Buffer Error Event"]
-pub type CtberiW<'a, REG> = crate::BitWriter<'a, REG, Ctberi>;
-impl<'a, REG> CtberiW<'a, REG>
+pub type CTBERI_W<'a, REG> = crate::BitWriter<'a, REG, CTBERI_A>;
+impl<'a, REG> CTBERI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ctberi::Value1)
+        self.variant(CTBERI_A::VALUE1)
     }
     #[doc = "Clear TRBSR.TBERI."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ctberi::Value2)
+        self.variant(CTBERI_A::VALUE2)
     }
 }
 #[doc = "Clear Bypass Data Valid\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cbdv {
+pub enum CBDV_A {
     #[doc = "0: No effect."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear BYPCR.BDV."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cbdv> for bool {
+impl From<CBDV_A> for bool {
     #[inline(always)]
-    fn from(variant: Cbdv) -> Self {
+    fn from(variant: CBDV_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CBDV` writer - Clear Bypass Data Valid"]
-pub type CbdvW<'a, REG> = crate::BitWriter<'a, REG, Cbdv>;
-impl<'a, REG> CbdvW<'a, REG>
+pub type CBDV_W<'a, REG> = crate::BitWriter<'a, REG, CBDV_A>;
+impl<'a, REG> CBDV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cbdv::Value1)
+        self.variant(CBDV_A::VALUE1)
     }
     #[doc = "Clear BYPCR.BDV."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cbdv::Value2)
+        self.variant(CBDV_A::VALUE2)
     }
 }
 #[doc = "Flush Receive Buffer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Flushrb {
+pub enum FLUSHRB_A {
     #[doc = "0: No effect."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The receive FIFO buffer is cleared (filling level is cleared and output pointer is set to input pointer value). Should only be used while the FIFO buffer is not taking part in data traffic."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Flushrb> for bool {
+impl From<FLUSHRB_A> for bool {
     #[inline(always)]
-    fn from(variant: Flushrb) -> Self {
+    fn from(variant: FLUSHRB_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `FLUSHRB` writer - Flush Receive Buffer"]
-pub type FlushrbW<'a, REG> = crate::BitWriter<'a, REG, Flushrb>;
-impl<'a, REG> FlushrbW<'a, REG>
+pub type FLUSHRB_W<'a, REG> = crate::BitWriter<'a, REG, FLUSHRB_A>;
+impl<'a, REG> FLUSHRB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Flushrb::Value1)
+        self.variant(FLUSHRB_A::VALUE1)
     }
     #[doc = "The receive FIFO buffer is cleared (filling level is cleared and output pointer is set to input pointer value). Should only be used while the FIFO buffer is not taking part in data traffic."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Flushrb::Value2)
+        self.variant(FLUSHRB_A::VALUE2)
     }
 }
 #[doc = "Flush Transmit Buffer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Flushtb {
+pub enum FLUSHTB_A {
     #[doc = "0: No effect."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The transmit FIFO buffer is cleared (filling level is cleared and output pointer is set to input pointer value). Should only be used while the FIFO buffer is not taking part in data traffic."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Flushtb> for bool {
+impl From<FLUSHTB_A> for bool {
     #[inline(always)]
-    fn from(variant: Flushtb) -> Self {
+    fn from(variant: FLUSHTB_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `FLUSHTB` writer - Flush Transmit Buffer"]
-pub type FlushtbW<'a, REG> = crate::BitWriter<'a, REG, Flushtb>;
-impl<'a, REG> FlushtbW<'a, REG>
+pub type FLUSHTB_W<'a, REG> = crate::BitWriter<'a, REG, FLUSHTB_A>;
+impl<'a, REG> FLUSHTB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Flushtb::Value1)
+        self.variant(FLUSHTB_A::VALUE1)
     }
     #[doc = "The transmit FIFO buffer is cleared (filling level is cleared and output pointer is set to input pointer value). Should only be used while the FIFO buffer is not taking part in data traffic."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Flushtb::Value2)
+        self.variant(FLUSHTB_A::VALUE2)
     }
 }
 impl W {
     #[doc = "Bit 0 - Clear Standard Receive Buffer Event"]
     #[inline(always)]
     #[must_use]
-    pub fn csrbi(&mut self) -> CsrbiW<TrbscrSpec> {
-        CsrbiW::new(self, 0)
+    pub fn csrbi(&mut self) -> CSRBI_W<TRBSCR_SPEC> {
+        CSRBI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Receive Buffer Error Event"]
     #[inline(always)]
     #[must_use]
-    pub fn crberi(&mut self) -> CrberiW<TrbscrSpec> {
-        CrberiW::new(self, 1)
+    pub fn crberi(&mut self) -> CRBERI_W<TRBSCR_SPEC> {
+        CRBERI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Alternative Receive Buffer Event"]
     #[inline(always)]
     #[must_use]
-    pub fn carbi(&mut self) -> CarbiW<TrbscrSpec> {
-        CarbiW::new(self, 2)
+    pub fn carbi(&mut self) -> CARBI_W<TRBSCR_SPEC> {
+        CARBI_W::new(self, 2)
     }
     #[doc = "Bit 8 - Clear Standard Transmit Buffer Event"]
     #[inline(always)]
     #[must_use]
-    pub fn cstbi(&mut self) -> CstbiW<TrbscrSpec> {
-        CstbiW::new(self, 8)
+    pub fn cstbi(&mut self) -> CSTBI_W<TRBSCR_SPEC> {
+        CSTBI_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear Transmit Buffer Error Event"]
     #[inline(always)]
     #[must_use]
-    pub fn ctberi(&mut self) -> CtberiW<TrbscrSpec> {
-        CtberiW::new(self, 9)
+    pub fn ctberi(&mut self) -> CTBERI_W<TRBSCR_SPEC> {
+        CTBERI_W::new(self, 9)
     }
     #[doc = "Bit 10 - Clear Bypass Data Valid"]
     #[inline(always)]
     #[must_use]
-    pub fn cbdv(&mut self) -> CbdvW<TrbscrSpec> {
-        CbdvW::new(self, 10)
+    pub fn cbdv(&mut self) -> CBDV_W<TRBSCR_SPEC> {
+        CBDV_W::new(self, 10)
     }
     #[doc = "Bit 14 - Flush Receive Buffer"]
     #[inline(always)]
     #[must_use]
-    pub fn flushrb(&mut self) -> FlushrbW<TrbscrSpec> {
-        FlushrbW::new(self, 14)
+    pub fn flushrb(&mut self) -> FLUSHRB_W<TRBSCR_SPEC> {
+        FLUSHRB_W::new(self, 14)
     }
     #[doc = "Bit 15 - Flush Transmit Buffer"]
     #[inline(always)]
     #[must_use]
-    pub fn flushtb(&mut self) -> FlushtbW<TrbscrSpec> {
-        FlushtbW::new(self, 15)
+    pub fn flushtb(&mut self) -> FLUSHTB_W<TRBSCR_SPEC> {
+        FLUSHTB_W::new(self, 15)
     }
 }
 #[doc = "Transmit/Receive Buffer Status Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`trbscr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct TrbscrSpec;
-impl crate::RegisterSpec for TrbscrSpec {
+pub struct TRBSCR_SPEC;
+impl crate::RegisterSpec for TRBSCR_SPEC {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`trbscr::W`](W) writer structure"]
-impl crate::Writable for TrbscrSpec {
+impl crate::Writable for TRBSCR_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TRBSCR to value 0"]
-impl crate::Resettable for TrbscrSpec {
+impl crate::Resettable for TRBSCR_SPEC {
     const RESET_VALUE: u32 = 0;
 }

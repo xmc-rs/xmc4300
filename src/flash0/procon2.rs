@@ -1,384 +1,384 @@
 #[doc = "Register `PROCON2` reader"]
-pub type R = crate::R<Procon2Spec>;
+pub type R = crate::R<PROCON2_SPEC>;
 #[doc = "Sector 0 Locked Forever by User 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S0rom {
+pub enum S0ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<S0rom> for bool {
+impl From<S0ROM_A> for bool {
     #[inline(always)]
-    fn from(variant: S0rom) -> Self {
+    fn from(variant: S0ROM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S0ROM` reader - Sector 0 Locked Forever by User 2"]
-pub type S0romR = crate::BitReader<S0rom>;
-impl S0romR {
+pub type S0ROM_R = crate::BitReader<S0ROM_A>;
+impl S0ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S0rom {
+    pub const fn variant(&self) -> S0ROM_A {
         match self.bits {
-            false => S0rom::Const0,
-            true => S0rom::Const1,
+            false => S0ROM_A::CONST_0,
+            true => S0ROM_A::CONST_1,
         }
     }
     #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S0rom::Const0
+        *self == S0ROM_A::CONST_0
     }
     #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S0rom::Const1
+        *self == S0ROM_A::CONST_1
     }
 }
 #[doc = "Sector 1 Locked Forever by User 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S1rom {
+pub enum S1ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<S1rom> for bool {
+impl From<S1ROM_A> for bool {
     #[inline(always)]
-    fn from(variant: S1rom) -> Self {
+    fn from(variant: S1ROM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S1ROM` reader - Sector 1 Locked Forever by User 2"]
-pub type S1romR = crate::BitReader<S1rom>;
-impl S1romR {
+pub type S1ROM_R = crate::BitReader<S1ROM_A>;
+impl S1ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S1rom {
+    pub const fn variant(&self) -> S1ROM_A {
         match self.bits {
-            false => S1rom::Const0,
-            true => S1rom::Const1,
+            false => S1ROM_A::CONST_0,
+            true => S1ROM_A::CONST_1,
         }
     }
     #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S1rom::Const0
+        *self == S1ROM_A::CONST_0
     }
     #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S1rom::Const1
+        *self == S1ROM_A::CONST_1
     }
 }
 #[doc = "Sector 2 Locked Forever by User 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S2rom {
+pub enum S2ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<S2rom> for bool {
+impl From<S2ROM_A> for bool {
     #[inline(always)]
-    fn from(variant: S2rom) -> Self {
+    fn from(variant: S2ROM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S2ROM` reader - Sector 2 Locked Forever by User 2"]
-pub type S2romR = crate::BitReader<S2rom>;
-impl S2romR {
+pub type S2ROM_R = crate::BitReader<S2ROM_A>;
+impl S2ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S2rom {
+    pub const fn variant(&self) -> S2ROM_A {
         match self.bits {
-            false => S2rom::Const0,
-            true => S2rom::Const1,
+            false => S2ROM_A::CONST_0,
+            true => S2ROM_A::CONST_1,
         }
     }
     #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S2rom::Const0
+        *self == S2ROM_A::CONST_0
     }
     #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S2rom::Const1
+        *self == S2ROM_A::CONST_1
     }
 }
 #[doc = "Sector 3 Locked Forever by User 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S3rom {
+pub enum S3ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<S3rom> for bool {
+impl From<S3ROM_A> for bool {
     #[inline(always)]
-    fn from(variant: S3rom) -> Self {
+    fn from(variant: S3ROM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S3ROM` reader - Sector 3 Locked Forever by User 2"]
-pub type S3romR = crate::BitReader<S3rom>;
-impl S3romR {
+pub type S3ROM_R = crate::BitReader<S3ROM_A>;
+impl S3ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S3rom {
+    pub const fn variant(&self) -> S3ROM_A {
         match self.bits {
-            false => S3rom::Const0,
-            true => S3rom::Const1,
+            false => S3ROM_A::CONST_0,
+            true => S3ROM_A::CONST_1,
         }
     }
     #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S3rom::Const0
+        *self == S3ROM_A::CONST_0
     }
     #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S3rom::Const1
+        *self == S3ROM_A::CONST_1
     }
 }
 #[doc = "Sector 4 Locked Forever by User 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S4rom {
+pub enum S4ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<S4rom> for bool {
+impl From<S4ROM_A> for bool {
     #[inline(always)]
-    fn from(variant: S4rom) -> Self {
+    fn from(variant: S4ROM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S4ROM` reader - Sector 4 Locked Forever by User 2"]
-pub type S4romR = crate::BitReader<S4rom>;
-impl S4romR {
+pub type S4ROM_R = crate::BitReader<S4ROM_A>;
+impl S4ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S4rom {
+    pub const fn variant(&self) -> S4ROM_A {
         match self.bits {
-            false => S4rom::Const0,
-            true => S4rom::Const1,
+            false => S4ROM_A::CONST_0,
+            true => S4ROM_A::CONST_1,
         }
     }
     #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S4rom::Const0
+        *self == S4ROM_A::CONST_0
     }
     #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S4rom::Const1
+        *self == S4ROM_A::CONST_1
     }
 }
 #[doc = "Sector 5 Locked Forever by User 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S5rom {
+pub enum S5ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<S5rom> for bool {
+impl From<S5ROM_A> for bool {
     #[inline(always)]
-    fn from(variant: S5rom) -> Self {
+    fn from(variant: S5ROM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S5ROM` reader - Sector 5 Locked Forever by User 2"]
-pub type S5romR = crate::BitReader<S5rom>;
-impl S5romR {
+pub type S5ROM_R = crate::BitReader<S5ROM_A>;
+impl S5ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S5rom {
+    pub const fn variant(&self) -> S5ROM_A {
         match self.bits {
-            false => S5rom::Const0,
-            true => S5rom::Const1,
+            false => S5ROM_A::CONST_0,
+            true => S5ROM_A::CONST_1,
         }
     }
     #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S5rom::Const0
+        *self == S5ROM_A::CONST_0
     }
     #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S5rom::Const1
+        *self == S5ROM_A::CONST_1
     }
 }
 #[doc = "Sector 6 Locked Forever by User 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S6rom {
+pub enum S6ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<S6rom> for bool {
+impl From<S6ROM_A> for bool {
     #[inline(always)]
-    fn from(variant: S6rom) -> Self {
+    fn from(variant: S6ROM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S6ROM` reader - Sector 6 Locked Forever by User 2"]
-pub type S6romR = crate::BitReader<S6rom>;
-impl S6romR {
+pub type S6ROM_R = crate::BitReader<S6ROM_A>;
+impl S6ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S6rom {
+    pub const fn variant(&self) -> S6ROM_A {
         match self.bits {
-            false => S6rom::Const0,
-            true => S6rom::Const1,
+            false => S6ROM_A::CONST_0,
+            true => S6ROM_A::CONST_1,
         }
     }
     #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S6rom::Const0
+        *self == S6ROM_A::CONST_0
     }
     #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S6rom::Const1
+        *self == S6ROM_A::CONST_1
     }
 }
 #[doc = "Sector 7 Locked Forever by User 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S7rom {
+pub enum S7ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<S7rom> for bool {
+impl From<S7ROM_A> for bool {
     #[inline(always)]
-    fn from(variant: S7rom) -> Self {
+    fn from(variant: S7ROM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S7ROM` reader - Sector 7 Locked Forever by User 2"]
-pub type S7romR = crate::BitReader<S7rom>;
-impl S7romR {
+pub type S7ROM_R = crate::BitReader<S7ROM_A>;
+impl S7ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S7rom {
+    pub const fn variant(&self) -> S7ROM_A {
         match self.bits {
-            false => S7rom::Const0,
-            true => S7rom::Const1,
+            false => S7ROM_A::CONST_0,
+            true => S7ROM_A::CONST_1,
         }
     }
     #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S7rom::Const0
+        *self == S7ROM_A::CONST_0
     }
     #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S7rom::Const1
+        *self == S7ROM_A::CONST_1
     }
 }
 #[doc = "Sector 8 Locked Forever by User 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S8rom {
+pub enum S8ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<S8rom> for bool {
+impl From<S8ROM_A> for bool {
     #[inline(always)]
-    fn from(variant: S8rom) -> Self {
+    fn from(variant: S8ROM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S8ROM` reader - Sector 8 Locked Forever by User 2"]
-pub type S8romR = crate::BitReader<S8rom>;
-impl S8romR {
+pub type S8ROM_R = crate::BitReader<S8ROM_A>;
+impl S8ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S8rom {
+    pub const fn variant(&self) -> S8ROM_A {
         match self.bits {
-            false => S8rom::Const0,
-            true => S8rom::Const1,
+            false => S8ROM_A::CONST_0,
+            true => S8ROM_A::CONST_1,
         }
     }
     #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S8rom::Const0
+        *self == S8ROM_A::CONST_0
     }
     #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S8rom::Const1
+        *self == S8ROM_A::CONST_1
     }
 }
 impl R {
     #[doc = "Bit 0 - Sector 0 Locked Forever by User 2"]
     #[inline(always)]
-    pub fn s0rom(&self) -> S0romR {
-        S0romR::new((self.bits & 1) != 0)
+    pub fn s0rom(&self) -> S0ROM_R {
+        S0ROM_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Sector 1 Locked Forever by User 2"]
     #[inline(always)]
-    pub fn s1rom(&self) -> S1romR {
-        S1romR::new(((self.bits >> 1) & 1) != 0)
+    pub fn s1rom(&self) -> S1ROM_R {
+        S1ROM_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Sector 2 Locked Forever by User 2"]
     #[inline(always)]
-    pub fn s2rom(&self) -> S2romR {
-        S2romR::new(((self.bits >> 2) & 1) != 0)
+    pub fn s2rom(&self) -> S2ROM_R {
+        S2ROM_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Sector 3 Locked Forever by User 2"]
     #[inline(always)]
-    pub fn s3rom(&self) -> S3romR {
-        S3romR::new(((self.bits >> 3) & 1) != 0)
+    pub fn s3rom(&self) -> S3ROM_R {
+        S3ROM_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Sector 4 Locked Forever by User 2"]
     #[inline(always)]
-    pub fn s4rom(&self) -> S4romR {
-        S4romR::new(((self.bits >> 4) & 1) != 0)
+    pub fn s4rom(&self) -> S4ROM_R {
+        S4ROM_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Sector 5 Locked Forever by User 2"]
     #[inline(always)]
-    pub fn s5rom(&self) -> S5romR {
-        S5romR::new(((self.bits >> 5) & 1) != 0)
+    pub fn s5rom(&self) -> S5ROM_R {
+        S5ROM_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Sector 6 Locked Forever by User 2"]
     #[inline(always)]
-    pub fn s6rom(&self) -> S6romR {
-        S6romR::new(((self.bits >> 6) & 1) != 0)
+    pub fn s6rom(&self) -> S6ROM_R {
+        S6ROM_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Sector 7 Locked Forever by User 2"]
     #[inline(always)]
-    pub fn s7rom(&self) -> S7romR {
-        S7romR::new(((self.bits >> 7) & 1) != 0)
+    pub fn s7rom(&self) -> S7ROM_R {
+        S7ROM_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Sector 8 Locked Forever by User 2"]
     #[inline(always)]
-    pub fn s8rom(&self) -> S8romR {
-        S8romR::new(((self.bits >> 8) & 1) != 0)
+    pub fn s8rom(&self) -> S8ROM_R {
+        S8ROM_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 #[doc = "Flash Protection Configuration Register User 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`procon2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct Procon2Spec;
-impl crate::RegisterSpec for Procon2Spec {
+pub struct PROCON2_SPEC;
+impl crate::RegisterSpec for PROCON2_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`procon2::R`](R) reader structure"]
-impl crate::Readable for Procon2Spec {}
+impl crate::Readable for PROCON2_SPEC {}
 #[doc = "`reset()` method sets PROCON2 to value 0"]
-impl crate::Resettable for Procon2Spec {
+impl crate::Resettable for PROCON2_SPEC {
     const RESET_VALUE: u32 = 0;
 }

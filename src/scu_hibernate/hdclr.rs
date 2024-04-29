@@ -1,167 +1,167 @@
 #[doc = "Register `HDCLR` writer"]
-pub type W = crate::W<HdclrSpec>;
+pub type W = crate::W<HDCLR_SPEC>;
 #[doc = "Wake-up Pin Event Positive Edge Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Epev {
+pub enum EPEV_A {
     #[doc = "0: No effect"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Clear wake-up event"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Epev> for bool {
+impl From<EPEV_A> for bool {
     #[inline(always)]
-    fn from(variant: Epev) -> Self {
+    fn from(variant: EPEV_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EPEV` writer - Wake-up Pin Event Positive Edge Clear"]
-pub type EpevW<'a, REG> = crate::BitWriter<'a, REG, Epev>;
-impl<'a, REG> EpevW<'a, REG>
+pub type EPEV_W<'a, REG> = crate::BitWriter<'a, REG, EPEV_A>;
+impl<'a, REG> EPEV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Epev::Const0)
+        self.variant(EPEV_A::CONST_0)
     }
     #[doc = "Clear wake-up event"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Epev::Const1)
+        self.variant(EPEV_A::CONST_1)
     }
 }
 #[doc = "Wake-up Pin Event Negative Edge Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Enev {
+pub enum ENEV_A {
     #[doc = "0: No effect"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Clear wake-up event"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Enev> for bool {
+impl From<ENEV_A> for bool {
     #[inline(always)]
-    fn from(variant: Enev) -> Self {
+    fn from(variant: ENEV_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ENEV` writer - Wake-up Pin Event Negative Edge Clear"]
-pub type EnevW<'a, REG> = crate::BitWriter<'a, REG, Enev>;
-impl<'a, REG> EnevW<'a, REG>
+pub type ENEV_W<'a, REG> = crate::BitWriter<'a, REG, ENEV_A>;
+impl<'a, REG> ENEV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Enev::Const0)
+        self.variant(ENEV_A::CONST_0)
     }
     #[doc = "Clear wake-up event"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Enev::Const1)
+        self.variant(ENEV_A::CONST_1)
     }
 }
 #[doc = "RTC Event Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rtcev {
+pub enum RTCEV_A {
     #[doc = "0: No effect"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Clear wake-up event"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Rtcev> for bool {
+impl From<RTCEV_A> for bool {
     #[inline(always)]
-    fn from(variant: Rtcev) -> Self {
+    fn from(variant: RTCEV_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RTCEV` writer - RTC Event Clear"]
-pub type RtcevW<'a, REG> = crate::BitWriter<'a, REG, Rtcev>;
-impl<'a, REG> RtcevW<'a, REG>
+pub type RTCEV_W<'a, REG> = crate::BitWriter<'a, REG, RTCEV_A>;
+impl<'a, REG> RTCEV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Rtcev::Const0)
+        self.variant(RTCEV_A::CONST_0)
     }
     #[doc = "Clear wake-up event"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rtcev::Const1)
+        self.variant(RTCEV_A::CONST_1)
     }
 }
 #[doc = "ULP WDG Alarm Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ulpwdg {
+pub enum ULPWDG_A {
     #[doc = "0: No effect"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Clear watchdog alarm"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Ulpwdg> for bool {
+impl From<ULPWDG_A> for bool {
     #[inline(always)]
-    fn from(variant: Ulpwdg) -> Self {
+    fn from(variant: ULPWDG_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ULPWDG` writer - ULP WDG Alarm Clear"]
-pub type UlpwdgW<'a, REG> = crate::BitWriter<'a, REG, Ulpwdg>;
-impl<'a, REG> UlpwdgW<'a, REG>
+pub type ULPWDG_W<'a, REG> = crate::BitWriter<'a, REG, ULPWDG_A>;
+impl<'a, REG> ULPWDG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Ulpwdg::Const0)
+        self.variant(ULPWDG_A::CONST_0)
     }
     #[doc = "Clear watchdog alarm"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ulpwdg::Const1)
+        self.variant(ULPWDG_A::CONST_1)
     }
 }
 impl W {
     #[doc = "Bit 0 - Wake-up Pin Event Positive Edge Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn epev(&mut self) -> EpevW<HdclrSpec> {
-        EpevW::new(self, 0)
+    pub fn epev(&mut self) -> EPEV_W<HDCLR_SPEC> {
+        EPEV_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wake-up Pin Event Negative Edge Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn enev(&mut self) -> EnevW<HdclrSpec> {
-        EnevW::new(self, 1)
+    pub fn enev(&mut self) -> ENEV_W<HDCLR_SPEC> {
+        ENEV_W::new(self, 1)
     }
     #[doc = "Bit 2 - RTC Event Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn rtcev(&mut self) -> RtcevW<HdclrSpec> {
-        RtcevW::new(self, 2)
+    pub fn rtcev(&mut self) -> RTCEV_W<HDCLR_SPEC> {
+        RTCEV_W::new(self, 2)
     }
     #[doc = "Bit 3 - ULP WDG Alarm Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ulpwdg(&mut self) -> UlpwdgW<HdclrSpec> {
-        UlpwdgW::new(self, 3)
+    pub fn ulpwdg(&mut self) -> ULPWDG_W<HDCLR_SPEC> {
+        ULPWDG_W::new(self, 3)
     }
 }
 #[doc = "Hibernate Domain Status Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdclr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct HdclrSpec;
-impl crate::RegisterSpec for HdclrSpec {
+pub struct HDCLR_SPEC;
+impl crate::RegisterSpec for HDCLR_SPEC {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`hdclr::W`](W) writer structure"]
-impl crate::Writable for HdclrSpec {
+impl crate::Writable for HDCLR_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HDCLR to value 0"]
-impl crate::Resettable for HdclrSpec {
+impl crate::Resettable for HDCLR_SPEC {
     const RESET_VALUE: u32 = 0;
 }

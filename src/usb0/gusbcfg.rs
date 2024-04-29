@@ -1,476 +1,476 @@
 #[doc = "Register `GUSBCFG` reader"]
-pub type R = crate::R<GusbcfgSpec>;
+pub type R = crate::R<GUSBCFG_SPEC>;
 #[doc = "Register `GUSBCFG` writer"]
-pub type W = crate::W<GusbcfgSpec>;
+pub type W = crate::W<GUSBCFG_SPEC>;
 #[doc = "Field `TOutCal` reader - FS Timeout Calibration"]
-pub type ToutCalR = crate::FieldReader;
+pub type TOUT_CAL_R = crate::FieldReader;
 #[doc = "Field `TOutCal` writer - FS Timeout Calibration"]
-pub type ToutCalW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+pub type TOUT_CAL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "USB 1.1 Full-Speed Serial Transceiver Select\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Physel {
+pub enum PHYSEL_A {
     #[doc = "1: USB 1.1 full-speed serial transceiver"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Physel> for bool {
+impl From<PHYSEL_A> for bool {
     #[inline(always)]
-    fn from(variant: Physel) -> Self {
+    fn from(variant: PHYSEL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PHYSel` reader - USB 1.1 Full-Speed Serial Transceiver Select"]
-pub type PhyselR = crate::BitReader<Physel>;
-impl PhyselR {
+pub type PHYSEL_R = crate::BitReader<PHYSEL_A>;
+impl PHYSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Physel> {
+    pub const fn variant(&self) -> Option<PHYSEL_A> {
         match self.bits {
-            true => Some(Physel::Value2),
+            true => Some(PHYSEL_A::VALUE2),
             _ => None,
         }
     }
     #[doc = "USB 1.1 full-speed serial transceiver"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Physel::Value2
+        *self == PHYSEL_A::VALUE2
     }
 }
 #[doc = "SRP-Capable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Srpcap {
+pub enum SRPCAP_A {
     #[doc = "0: SRP capability is not enabled."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: SRP capability is enabled."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Srpcap> for bool {
+impl From<SRPCAP_A> for bool {
     #[inline(always)]
-    fn from(variant: Srpcap) -> Self {
+    fn from(variant: SRPCAP_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SRPCap` reader - SRP-Capable"]
-pub type SrpcapR = crate::BitReader<Srpcap>;
-impl SrpcapR {
+pub type SRPCAP_R = crate::BitReader<SRPCAP_A>;
+impl SRPCAP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Srpcap {
+    pub const fn variant(&self) -> SRPCAP_A {
         match self.bits {
-            false => Srpcap::Value1,
-            true => Srpcap::Value2,
+            false => SRPCAP_A::VALUE1,
+            true => SRPCAP_A::VALUE2,
         }
     }
     #[doc = "SRP capability is not enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Srpcap::Value1
+        *self == SRPCAP_A::VALUE1
     }
     #[doc = "SRP capability is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Srpcap::Value2
+        *self == SRPCAP_A::VALUE2
     }
 }
 #[doc = "Field `SRPCap` writer - SRP-Capable"]
-pub type SrpcapW<'a, REG> = crate::BitWriter<'a, REG, Srpcap>;
-impl<'a, REG> SrpcapW<'a, REG>
+pub type SRPCAP_W<'a, REG> = crate::BitWriter<'a, REG, SRPCAP_A>;
+impl<'a, REG> SRPCAP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "SRP capability is not enabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Srpcap::Value1)
+        self.variant(SRPCAP_A::VALUE1)
     }
     #[doc = "SRP capability is enabled."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Srpcap::Value2)
+        self.variant(SRPCAP_A::VALUE2)
     }
 }
 #[doc = "HNP-Capable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Hnpcap {
+pub enum HNPCAP_A {
     #[doc = "0: HNP capability is not enabled."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: HNP capability is enabled."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Hnpcap> for bool {
+impl From<HNPCAP_A> for bool {
     #[inline(always)]
-    fn from(variant: Hnpcap) -> Self {
+    fn from(variant: HNPCAP_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `HNPCap` reader - HNP-Capable"]
-pub type HnpcapR = crate::BitReader<Hnpcap>;
-impl HnpcapR {
+pub type HNPCAP_R = crate::BitReader<HNPCAP_A>;
+impl HNPCAP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Hnpcap {
+    pub const fn variant(&self) -> HNPCAP_A {
         match self.bits {
-            false => Hnpcap::Value1,
-            true => Hnpcap::Value2,
+            false => HNPCAP_A::VALUE1,
+            true => HNPCAP_A::VALUE2,
         }
     }
     #[doc = "HNP capability is not enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Hnpcap::Value1
+        *self == HNPCAP_A::VALUE1
     }
     #[doc = "HNP capability is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Hnpcap::Value2
+        *self == HNPCAP_A::VALUE2
     }
 }
 #[doc = "Field `HNPCap` writer - HNP-Capable"]
-pub type HnpcapW<'a, REG> = crate::BitWriter<'a, REG, Hnpcap>;
-impl<'a, REG> HnpcapW<'a, REG>
+pub type HNPCAP_W<'a, REG> = crate::BitWriter<'a, REG, HNPCAP_A>;
+impl<'a, REG> HNPCAP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "HNP capability is not enabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Hnpcap::Value1)
+        self.variant(HNPCAP_A::VALUE1)
     }
     #[doc = "HNP capability is enabled."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Hnpcap::Value2)
+        self.variant(HNPCAP_A::VALUE2)
     }
 }
 #[doc = "Field `USBTrdTim` reader - USB Turnaround Time"]
-pub type UsbtrdTimR = crate::FieldReader;
+pub type USBTRD_TIM_R = crate::FieldReader;
 #[doc = "Field `USBTrdTim` writer - USB Turnaround Time"]
-pub type UsbtrdTimW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type USBTRD_TIM_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "UTMIFS Interface Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum OtgI2csel {
+pub enum OTG_I2CSEL_A {
     #[doc = "0: UTMI USB 1.1 Full-Speed interface for OTG signals"]
-    Value1 = 0,
+    VALUE1 = 0,
 }
-impl From<OtgI2csel> for bool {
+impl From<OTG_I2CSEL_A> for bool {
     #[inline(always)]
-    fn from(variant: OtgI2csel) -> Self {
+    fn from(variant: OTG_I2CSEL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `OtgI2CSel` reader - UTMIFS Interface Select"]
-pub type OtgI2cselR = crate::BitReader<OtgI2csel>;
-impl OtgI2cselR {
+pub type OTG_I2CSEL_R = crate::BitReader<OTG_I2CSEL_A>;
+impl OTG_I2CSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<OtgI2csel> {
+    pub const fn variant(&self) -> Option<OTG_I2CSEL_A> {
         match self.bits {
-            false => Some(OtgI2csel::Value1),
+            false => Some(OTG_I2CSEL_A::VALUE1),
             _ => None,
         }
     }
     #[doc = "UTMI USB 1.1 Full-Speed interface for OTG signals"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == OtgI2csel::Value1
+        *self == OTG_I2CSEL_A::VALUE1
     }
 }
 #[doc = "Field `OtgI2CSel` writer - UTMIFS Interface Select"]
-pub type OtgI2cselW<'a, REG> = crate::BitWriter<'a, REG, OtgI2csel>;
-impl<'a, REG> OtgI2cselW<'a, REG>
+pub type OTG_I2CSEL_W<'a, REG> = crate::BitWriter<'a, REG, OTG_I2CSEL_A>;
+impl<'a, REG> OTG_I2CSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "UTMI USB 1.1 Full-Speed interface for OTG signals"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(OtgI2csel::Value1)
+        self.variant(OTG_I2CSEL_A::VALUE1)
     }
 }
 #[doc = "Tx End Delay\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum TxEndDelay {
+pub enum TX_END_DELAY_A {
     #[doc = "0: Normal mode"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Introduce Tx end delay timers"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<TxEndDelay> for bool {
+impl From<TX_END_DELAY_A> for bool {
     #[inline(always)]
-    fn from(variant: TxEndDelay) -> Self {
+    fn from(variant: TX_END_DELAY_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TxEndDelay` reader - Tx End Delay"]
-pub type TxEndDelayR = crate::BitReader<TxEndDelay>;
-impl TxEndDelayR {
+pub type TX_END_DELAY_R = crate::BitReader<TX_END_DELAY_A>;
+impl TX_END_DELAY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> TxEndDelay {
+    pub const fn variant(&self) -> TX_END_DELAY_A {
         match self.bits {
-            false => TxEndDelay::Value1,
-            true => TxEndDelay::Value2,
+            false => TX_END_DELAY_A::VALUE1,
+            true => TX_END_DELAY_A::VALUE2,
         }
     }
     #[doc = "Normal mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TxEndDelay::Value1
+        *self == TX_END_DELAY_A::VALUE1
     }
     #[doc = "Introduce Tx end delay timers"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TxEndDelay::Value2
+        *self == TX_END_DELAY_A::VALUE2
     }
 }
 #[doc = "Field `TxEndDelay` writer - Tx End Delay"]
-pub type TxEndDelayW<'a, REG> = crate::BitWriter<'a, REG, TxEndDelay>;
-impl<'a, REG> TxEndDelayW<'a, REG>
+pub type TX_END_DELAY_W<'a, REG> = crate::BitWriter<'a, REG, TX_END_DELAY_A>;
+impl<'a, REG> TX_END_DELAY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Normal mode"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(TxEndDelay::Value1)
+        self.variant(TX_END_DELAY_A::VALUE1)
     }
     #[doc = "Introduce Tx end delay timers"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(TxEndDelay::Value2)
+        self.variant(TX_END_DELAY_A::VALUE2)
     }
 }
 #[doc = "Force Host Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ForceHstMode {
+pub enum FORCE_HST_MODE_A {
     #[doc = "0: Normal Mode"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Force Host Mode"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<ForceHstMode> for bool {
+impl From<FORCE_HST_MODE_A> for bool {
     #[inline(always)]
-    fn from(variant: ForceHstMode) -> Self {
+    fn from(variant: FORCE_HST_MODE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ForceHstMode` reader - Force Host Mode"]
-pub type ForceHstModeR = crate::BitReader<ForceHstMode>;
-impl ForceHstModeR {
+pub type FORCE_HST_MODE_R = crate::BitReader<FORCE_HST_MODE_A>;
+impl FORCE_HST_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ForceHstMode {
+    pub const fn variant(&self) -> FORCE_HST_MODE_A {
         match self.bits {
-            false => ForceHstMode::Value1,
-            true => ForceHstMode::Value2,
+            false => FORCE_HST_MODE_A::VALUE1,
+            true => FORCE_HST_MODE_A::VALUE2,
         }
     }
     #[doc = "Normal Mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ForceHstMode::Value1
+        *self == FORCE_HST_MODE_A::VALUE1
     }
     #[doc = "Force Host Mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ForceHstMode::Value2
+        *self == FORCE_HST_MODE_A::VALUE2
     }
 }
 #[doc = "Field `ForceHstMode` writer - Force Host Mode"]
-pub type ForceHstModeW<'a, REG> = crate::BitWriter<'a, REG, ForceHstMode>;
-impl<'a, REG> ForceHstModeW<'a, REG>
+pub type FORCE_HST_MODE_W<'a, REG> = crate::BitWriter<'a, REG, FORCE_HST_MODE_A>;
+impl<'a, REG> FORCE_HST_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Normal Mode"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(ForceHstMode::Value1)
+        self.variant(FORCE_HST_MODE_A::VALUE1)
     }
     #[doc = "Force Host Mode"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(ForceHstMode::Value2)
+        self.variant(FORCE_HST_MODE_A::VALUE2)
     }
 }
 #[doc = "Force Device Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ForceDevMode {
+pub enum FORCE_DEV_MODE_A {
     #[doc = "0: Normal Mode"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Force Device Mode"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<ForceDevMode> for bool {
+impl From<FORCE_DEV_MODE_A> for bool {
     #[inline(always)]
-    fn from(variant: ForceDevMode) -> Self {
+    fn from(variant: FORCE_DEV_MODE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ForceDevMode` reader - Force Device Mode"]
-pub type ForceDevModeR = crate::BitReader<ForceDevMode>;
-impl ForceDevModeR {
+pub type FORCE_DEV_MODE_R = crate::BitReader<FORCE_DEV_MODE_A>;
+impl FORCE_DEV_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ForceDevMode {
+    pub const fn variant(&self) -> FORCE_DEV_MODE_A {
         match self.bits {
-            false => ForceDevMode::Value1,
-            true => ForceDevMode::Value2,
+            false => FORCE_DEV_MODE_A::VALUE1,
+            true => FORCE_DEV_MODE_A::VALUE2,
         }
     }
     #[doc = "Normal Mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ForceDevMode::Value1
+        *self == FORCE_DEV_MODE_A::VALUE1
     }
     #[doc = "Force Device Mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ForceDevMode::Value2
+        *self == FORCE_DEV_MODE_A::VALUE2
     }
 }
 #[doc = "Field `ForceDevMode` writer - Force Device Mode"]
-pub type ForceDevModeW<'a, REG> = crate::BitWriter<'a, REG, ForceDevMode>;
-impl<'a, REG> ForceDevModeW<'a, REG>
+pub type FORCE_DEV_MODE_W<'a, REG> = crate::BitWriter<'a, REG, FORCE_DEV_MODE_A>;
+impl<'a, REG> FORCE_DEV_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Normal Mode"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(ForceDevMode::Value1)
+        self.variant(FORCE_DEV_MODE_A::VALUE1)
     }
     #[doc = "Force Device Mode"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(ForceDevMode::Value2)
+        self.variant(FORCE_DEV_MODE_A::VALUE2)
     }
 }
 #[doc = "Field `CTP` reader - Corrupt Tx packet"]
-pub type CtpR = crate::BitReader;
+pub type CTP_R = crate::BitReader;
 #[doc = "Field `CTP` writer - Corrupt Tx packet"]
-pub type CtpW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type CTP_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:2 - FS Timeout Calibration"]
     #[inline(always)]
-    pub fn tout_cal(&self) -> ToutCalR {
-        ToutCalR::new((self.bits & 7) as u8)
+    pub fn tout_cal(&self) -> TOUT_CAL_R {
+        TOUT_CAL_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 6 - USB 1.1 Full-Speed Serial Transceiver Select"]
     #[inline(always)]
-    pub fn physel(&self) -> PhyselR {
-        PhyselR::new(((self.bits >> 6) & 1) != 0)
+    pub fn physel(&self) -> PHYSEL_R {
+        PHYSEL_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 8 - SRP-Capable"]
     #[inline(always)]
-    pub fn srpcap(&self) -> SrpcapR {
-        SrpcapR::new(((self.bits >> 8) & 1) != 0)
+    pub fn srpcap(&self) -> SRPCAP_R {
+        SRPCAP_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - HNP-Capable"]
     #[inline(always)]
-    pub fn hnpcap(&self) -> HnpcapR {
-        HnpcapR::new(((self.bits >> 9) & 1) != 0)
+    pub fn hnpcap(&self) -> HNPCAP_R {
+        HNPCAP_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bits 10:13 - USB Turnaround Time"]
     #[inline(always)]
-    pub fn usbtrd_tim(&self) -> UsbtrdTimR {
-        UsbtrdTimR::new(((self.bits >> 10) & 0x0f) as u8)
+    pub fn usbtrd_tim(&self) -> USBTRD_TIM_R {
+        USBTRD_TIM_R::new(((self.bits >> 10) & 0x0f) as u8)
     }
     #[doc = "Bit 16 - UTMIFS Interface Select"]
     #[inline(always)]
-    pub fn otg_i2csel(&self) -> OtgI2cselR {
-        OtgI2cselR::new(((self.bits >> 16) & 1) != 0)
+    pub fn otg_i2csel(&self) -> OTG_I2CSEL_R {
+        OTG_I2CSEL_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 28 - Tx End Delay"]
     #[inline(always)]
-    pub fn tx_end_delay(&self) -> TxEndDelayR {
-        TxEndDelayR::new(((self.bits >> 28) & 1) != 0)
+    pub fn tx_end_delay(&self) -> TX_END_DELAY_R {
+        TX_END_DELAY_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - Force Host Mode"]
     #[inline(always)]
-    pub fn force_hst_mode(&self) -> ForceHstModeR {
-        ForceHstModeR::new(((self.bits >> 29) & 1) != 0)
+    pub fn force_hst_mode(&self) -> FORCE_HST_MODE_R {
+        FORCE_HST_MODE_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - Force Device Mode"]
     #[inline(always)]
-    pub fn force_dev_mode(&self) -> ForceDevModeR {
-        ForceDevModeR::new(((self.bits >> 30) & 1) != 0)
+    pub fn force_dev_mode(&self) -> FORCE_DEV_MODE_R {
+        FORCE_DEV_MODE_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Corrupt Tx packet"]
     #[inline(always)]
-    pub fn ctp(&self) -> CtpR {
-        CtpR::new(((self.bits >> 31) & 1) != 0)
+    pub fn ctp(&self) -> CTP_R {
+        CTP_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - FS Timeout Calibration"]
     #[inline(always)]
     #[must_use]
-    pub fn tout_cal(&mut self) -> ToutCalW<GusbcfgSpec> {
-        ToutCalW::new(self, 0)
+    pub fn tout_cal(&mut self) -> TOUT_CAL_W<GUSBCFG_SPEC> {
+        TOUT_CAL_W::new(self, 0)
     }
     #[doc = "Bit 8 - SRP-Capable"]
     #[inline(always)]
     #[must_use]
-    pub fn srpcap(&mut self) -> SrpcapW<GusbcfgSpec> {
-        SrpcapW::new(self, 8)
+    pub fn srpcap(&mut self) -> SRPCAP_W<GUSBCFG_SPEC> {
+        SRPCAP_W::new(self, 8)
     }
     #[doc = "Bit 9 - HNP-Capable"]
     #[inline(always)]
     #[must_use]
-    pub fn hnpcap(&mut self) -> HnpcapW<GusbcfgSpec> {
-        HnpcapW::new(self, 9)
+    pub fn hnpcap(&mut self) -> HNPCAP_W<GUSBCFG_SPEC> {
+        HNPCAP_W::new(self, 9)
     }
     #[doc = "Bits 10:13 - USB Turnaround Time"]
     #[inline(always)]
     #[must_use]
-    pub fn usbtrd_tim(&mut self) -> UsbtrdTimW<GusbcfgSpec> {
-        UsbtrdTimW::new(self, 10)
+    pub fn usbtrd_tim(&mut self) -> USBTRD_TIM_W<GUSBCFG_SPEC> {
+        USBTRD_TIM_W::new(self, 10)
     }
     #[doc = "Bit 16 - UTMIFS Interface Select"]
     #[inline(always)]
     #[must_use]
-    pub fn otg_i2csel(&mut self) -> OtgI2cselW<GusbcfgSpec> {
-        OtgI2cselW::new(self, 16)
+    pub fn otg_i2csel(&mut self) -> OTG_I2CSEL_W<GUSBCFG_SPEC> {
+        OTG_I2CSEL_W::new(self, 16)
     }
     #[doc = "Bit 28 - Tx End Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_end_delay(&mut self) -> TxEndDelayW<GusbcfgSpec> {
-        TxEndDelayW::new(self, 28)
+    pub fn tx_end_delay(&mut self) -> TX_END_DELAY_W<GUSBCFG_SPEC> {
+        TX_END_DELAY_W::new(self, 28)
     }
     #[doc = "Bit 29 - Force Host Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn force_hst_mode(&mut self) -> ForceHstModeW<GusbcfgSpec> {
-        ForceHstModeW::new(self, 29)
+    pub fn force_hst_mode(&mut self) -> FORCE_HST_MODE_W<GUSBCFG_SPEC> {
+        FORCE_HST_MODE_W::new(self, 29)
     }
     #[doc = "Bit 30 - Force Device Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn force_dev_mode(&mut self) -> ForceDevModeW<GusbcfgSpec> {
-        ForceDevModeW::new(self, 30)
+    pub fn force_dev_mode(&mut self) -> FORCE_DEV_MODE_W<GUSBCFG_SPEC> {
+        FORCE_DEV_MODE_W::new(self, 30)
     }
     #[doc = "Bit 31 - Corrupt Tx packet"]
     #[inline(always)]
     #[must_use]
-    pub fn ctp(&mut self) -> CtpW<GusbcfgSpec> {
-        CtpW::new(self, 31)
+    pub fn ctp(&mut self) -> CTP_W<GUSBCFG_SPEC> {
+        CTP_W::new(self, 31)
     }
 }
 #[doc = "USB Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gusbcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gusbcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct GusbcfgSpec;
-impl crate::RegisterSpec for GusbcfgSpec {
+pub struct GUSBCFG_SPEC;
+impl crate::RegisterSpec for GUSBCFG_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`gusbcfg::R`](R) reader structure"]
-impl crate::Readable for GusbcfgSpec {}
+impl crate::Readable for GUSBCFG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gusbcfg::W`](W) writer structure"]
-impl crate::Writable for GusbcfgSpec {
+impl crate::Writable for GUSBCFG_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GUSBCFG to value 0x1440"]
-impl crate::Resettable for GusbcfgSpec {
+impl crate::Resettable for GUSBCFG_SPEC {
     const RESET_VALUE: u32 = 0x1440;
 }

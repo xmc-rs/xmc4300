@@ -1,391 +1,391 @@
 #[doc = "Register `INTS` reader"]
-pub type R = crate::R<IntsSpec>;
+pub type R = crate::R<INTS_SPEC>;
 #[doc = "Period Match while Counting Up\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pmus {
+pub enum PMUS_A {
     #[doc = "0: Period match while counting up not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Period match while counting up detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Pmus> for bool {
+impl From<PMUS_A> for bool {
     #[inline(always)]
-    fn from(variant: Pmus) -> Self {
+    fn from(variant: PMUS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PMUS` reader - Period Match while Counting Up"]
-pub type PmusR = crate::BitReader<Pmus>;
-impl PmusR {
+pub type PMUS_R = crate::BitReader<PMUS_A>;
+impl PMUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pmus {
+    pub const fn variant(&self) -> PMUS_A {
         match self.bits {
-            false => Pmus::Value1,
-            true => Pmus::Value2,
+            false => PMUS_A::VALUE1,
+            true => PMUS_A::VALUE2,
         }
     }
     #[doc = "Period match while counting up not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Pmus::Value1
+        *self == PMUS_A::VALUE1
     }
     #[doc = "Period match while counting up detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Pmus::Value2
+        *self == PMUS_A::VALUE2
     }
 }
 #[doc = "One Match while Counting Down\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Omds {
+pub enum OMDS_A {
     #[doc = "0: One match while counting down not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: One match while counting down detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Omds> for bool {
+impl From<OMDS_A> for bool {
     #[inline(always)]
-    fn from(variant: Omds) -> Self {
+    fn from(variant: OMDS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `OMDS` reader - One Match while Counting Down"]
-pub type OmdsR = crate::BitReader<Omds>;
-impl OmdsR {
+pub type OMDS_R = crate::BitReader<OMDS_A>;
+impl OMDS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Omds {
+    pub const fn variant(&self) -> OMDS_A {
         match self.bits {
-            false => Omds::Value1,
-            true => Omds::Value2,
+            false => OMDS_A::VALUE1,
+            true => OMDS_A::VALUE2,
         }
     }
     #[doc = "One match while counting down not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Omds::Value1
+        *self == OMDS_A::VALUE1
     }
     #[doc = "One match while counting down detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Omds::Value2
+        *self == OMDS_A::VALUE2
     }
 }
 #[doc = "Channel 1 Compare Match while Counting Up\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cmu1s {
+pub enum CMU1S_A {
     #[doc = "0: Compare match while counting up not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Compare match while counting up detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cmu1s> for bool {
+impl From<CMU1S_A> for bool {
     #[inline(always)]
-    fn from(variant: Cmu1s) -> Self {
+    fn from(variant: CMU1S_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CMU1S` reader - Channel 1 Compare Match while Counting Up"]
-pub type Cmu1sR = crate::BitReader<Cmu1s>;
-impl Cmu1sR {
+pub type CMU1S_R = crate::BitReader<CMU1S_A>;
+impl CMU1S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Cmu1s {
+    pub const fn variant(&self) -> CMU1S_A {
         match self.bits {
-            false => Cmu1s::Value1,
-            true => Cmu1s::Value2,
+            false => CMU1S_A::VALUE1,
+            true => CMU1S_A::VALUE2,
         }
     }
     #[doc = "Compare match while counting up not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Cmu1s::Value1
+        *self == CMU1S_A::VALUE1
     }
     #[doc = "Compare match while counting up detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Cmu1s::Value2
+        *self == CMU1S_A::VALUE2
     }
 }
 #[doc = "Channel 1 Compare Match while Counting Down\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cmd1s {
+pub enum CMD1S_A {
     #[doc = "0: Compare match while counting down not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Compare match while counting down detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cmd1s> for bool {
+impl From<CMD1S_A> for bool {
     #[inline(always)]
-    fn from(variant: Cmd1s) -> Self {
+    fn from(variant: CMD1S_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CMD1S` reader - Channel 1 Compare Match while Counting Down"]
-pub type Cmd1sR = crate::BitReader<Cmd1s>;
-impl Cmd1sR {
+pub type CMD1S_R = crate::BitReader<CMD1S_A>;
+impl CMD1S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Cmd1s {
+    pub const fn variant(&self) -> CMD1S_A {
         match self.bits {
-            false => Cmd1s::Value1,
-            true => Cmd1s::Value2,
+            false => CMD1S_A::VALUE1,
+            true => CMD1S_A::VALUE2,
         }
     }
     #[doc = "Compare match while counting down not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Cmd1s::Value1
+        *self == CMD1S_A::VALUE1
     }
     #[doc = "Compare match while counting down detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Cmd1s::Value2
+        *self == CMD1S_A::VALUE2
     }
 }
 #[doc = "Channel 2 Compare Match while Counting Up\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cmu2s {
+pub enum CMU2S_A {
     #[doc = "0: Compare match while counting up not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Compare match while counting up detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cmu2s> for bool {
+impl From<CMU2S_A> for bool {
     #[inline(always)]
-    fn from(variant: Cmu2s) -> Self {
+    fn from(variant: CMU2S_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CMU2S` reader - Channel 2 Compare Match while Counting Up"]
-pub type Cmu2sR = crate::BitReader<Cmu2s>;
-impl Cmu2sR {
+pub type CMU2S_R = crate::BitReader<CMU2S_A>;
+impl CMU2S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Cmu2s {
+    pub const fn variant(&self) -> CMU2S_A {
         match self.bits {
-            false => Cmu2s::Value1,
-            true => Cmu2s::Value2,
+            false => CMU2S_A::VALUE1,
+            true => CMU2S_A::VALUE2,
         }
     }
     #[doc = "Compare match while counting up not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Cmu2s::Value1
+        *self == CMU2S_A::VALUE1
     }
     #[doc = "Compare match while counting up detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Cmu2s::Value2
+        *self == CMU2S_A::VALUE2
     }
 }
 #[doc = "Channel 2 Compare Match while Counting Down\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cmd2s {
+pub enum CMD2S_A {
     #[doc = "0: Compare match while counting down not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Compare match while counting down detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cmd2s> for bool {
+impl From<CMD2S_A> for bool {
     #[inline(always)]
-    fn from(variant: Cmd2s) -> Self {
+    fn from(variant: CMD2S_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CMD2S` reader - Channel 2 Compare Match while Counting Down"]
-pub type Cmd2sR = crate::BitReader<Cmd2s>;
-impl Cmd2sR {
+pub type CMD2S_R = crate::BitReader<CMD2S_A>;
+impl CMD2S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Cmd2s {
+    pub const fn variant(&self) -> CMD2S_A {
         match self.bits {
-            false => Cmd2s::Value1,
-            true => Cmd2s::Value2,
+            false => CMD2S_A::VALUE1,
+            true => CMD2S_A::VALUE2,
         }
     }
     #[doc = "Compare match while counting down not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Cmd2s::Value1
+        *self == CMD2S_A::VALUE1
     }
     #[doc = "Compare match while counting down detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Cmd2s::Value2
+        *self == CMD2S_A::VALUE2
     }
 }
 #[doc = "Event 0 Detection Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum E0as {
+pub enum E0AS_A {
     #[doc = "0: Event 0 not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Event 0 detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<E0as> for bool {
+impl From<E0AS_A> for bool {
     #[inline(always)]
-    fn from(variant: E0as) -> Self {
+    fn from(variant: E0AS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `E0AS` reader - Event 0 Detection Status"]
-pub type E0asR = crate::BitReader<E0as>;
-impl E0asR {
+pub type E0AS_R = crate::BitReader<E0AS_A>;
+impl E0AS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> E0as {
+    pub const fn variant(&self) -> E0AS_A {
         match self.bits {
-            false => E0as::Value1,
-            true => E0as::Value2,
+            false => E0AS_A::VALUE1,
+            true => E0AS_A::VALUE2,
         }
     }
     #[doc = "Event 0 not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == E0as::Value1
+        *self == E0AS_A::VALUE1
     }
     #[doc = "Event 0 detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == E0as::Value2
+        *self == E0AS_A::VALUE2
     }
 }
 #[doc = "Event 1 Detection Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum E1as {
+pub enum E1AS_A {
     #[doc = "0: Event 1 not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Event 1 detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<E1as> for bool {
+impl From<E1AS_A> for bool {
     #[inline(always)]
-    fn from(variant: E1as) -> Self {
+    fn from(variant: E1AS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `E1AS` reader - Event 1 Detection Status"]
-pub type E1asR = crate::BitReader<E1as>;
-impl E1asR {
+pub type E1AS_R = crate::BitReader<E1AS_A>;
+impl E1AS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> E1as {
+    pub const fn variant(&self) -> E1AS_A {
         match self.bits {
-            false => E1as::Value1,
-            true => E1as::Value2,
+            false => E1AS_A::VALUE1,
+            true => E1AS_A::VALUE2,
         }
     }
     #[doc = "Event 1 not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == E1as::Value1
+        *self == E1AS_A::VALUE1
     }
     #[doc = "Event 1 detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == E1as::Value2
+        *self == E1AS_A::VALUE2
     }
 }
 #[doc = "Event 2 Detection Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum E2as {
+pub enum E2AS_A {
     #[doc = "0: Event 2 not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Event 2 detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<E2as> for bool {
+impl From<E2AS_A> for bool {
     #[inline(always)]
-    fn from(variant: E2as) -> Self {
+    fn from(variant: E2AS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `E2AS` reader - Event 2 Detection Status"]
-pub type E2asR = crate::BitReader<E2as>;
-impl E2asR {
+pub type E2AS_R = crate::BitReader<E2AS_A>;
+impl E2AS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> E2as {
+    pub const fn variant(&self) -> E2AS_A {
         match self.bits {
-            false => E2as::Value1,
-            true => E2as::Value2,
+            false => E2AS_A::VALUE1,
+            true => E2AS_A::VALUE2,
         }
     }
     #[doc = "Event 2 not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == E2as::Value1
+        *self == E2AS_A::VALUE1
     }
     #[doc = "Event 2 detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == E2as::Value2
+        *self == E2AS_A::VALUE2
     }
 }
 #[doc = "Field `TRPF` reader - Trap Flag Status"]
-pub type TrpfR = crate::BitReader;
+pub type TRPF_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Period Match while Counting Up"]
     #[inline(always)]
-    pub fn pmus(&self) -> PmusR {
-        PmusR::new((self.bits & 1) != 0)
+    pub fn pmus(&self) -> PMUS_R {
+        PMUS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - One Match while Counting Down"]
     #[inline(always)]
-    pub fn omds(&self) -> OmdsR {
-        OmdsR::new(((self.bits >> 1) & 1) != 0)
+    pub fn omds(&self) -> OMDS_R {
+        OMDS_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Channel 1 Compare Match while Counting Up"]
     #[inline(always)]
-    pub fn cmu1s(&self) -> Cmu1sR {
-        Cmu1sR::new(((self.bits >> 2) & 1) != 0)
+    pub fn cmu1s(&self) -> CMU1S_R {
+        CMU1S_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Channel 1 Compare Match while Counting Down"]
     #[inline(always)]
-    pub fn cmd1s(&self) -> Cmd1sR {
-        Cmd1sR::new(((self.bits >> 3) & 1) != 0)
+    pub fn cmd1s(&self) -> CMD1S_R {
+        CMD1S_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Channel 2 Compare Match while Counting Up"]
     #[inline(always)]
-    pub fn cmu2s(&self) -> Cmu2sR {
-        Cmu2sR::new(((self.bits >> 4) & 1) != 0)
+    pub fn cmu2s(&self) -> CMU2S_R {
+        CMU2S_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Channel 2 Compare Match while Counting Down"]
     #[inline(always)]
-    pub fn cmd2s(&self) -> Cmd2sR {
-        Cmd2sR::new(((self.bits >> 5) & 1) != 0)
+    pub fn cmd2s(&self) -> CMD2S_R {
+        CMD2S_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 8 - Event 0 Detection Status"]
     #[inline(always)]
-    pub fn e0as(&self) -> E0asR {
-        E0asR::new(((self.bits >> 8) & 1) != 0)
+    pub fn e0as(&self) -> E0AS_R {
+        E0AS_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Event 1 Detection Status"]
     #[inline(always)]
-    pub fn e1as(&self) -> E1asR {
-        E1asR::new(((self.bits >> 9) & 1) != 0)
+    pub fn e1as(&self) -> E1AS_R {
+        E1AS_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Event 2 Detection Status"]
     #[inline(always)]
-    pub fn e2as(&self) -> E2asR {
-        E2asR::new(((self.bits >> 10) & 1) != 0)
+    pub fn e2as(&self) -> E2AS_R {
+        E2AS_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Trap Flag Status"]
     #[inline(always)]
-    pub fn trpf(&self) -> TrpfR {
-        TrpfR::new(((self.bits >> 11) & 1) != 0)
+    pub fn trpf(&self) -> TRPF_R {
+        TRPF_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
 #[doc = "Interrupt Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ints::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct IntsSpec;
-impl crate::RegisterSpec for IntsSpec {
+pub struct INTS_SPEC;
+impl crate::RegisterSpec for INTS_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`ints::R`](R) reader structure"]
-impl crate::Readable for IntsSpec {}
+impl crate::Readable for INTS_SPEC {}
 #[doc = "`reset()` method sets INTS to value 0"]
-impl crate::Resettable for IntsSpec {
+impl crate::Resettable for INTS_SPEC {
     const RESET_VALUE: u32 = 0;
 }

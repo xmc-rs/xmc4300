@@ -1,267 +1,267 @@
 #[doc = "Register `TC` reader"]
-pub type R = crate::R<TcSpec>;
+pub type R = crate::R<TC_SPEC>;
 #[doc = "Register `TC` writer"]
-pub type W = crate::W<TcSpec>;
+pub type W = crate::W<TC_SPEC>;
 #[doc = "Timer Counting Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Tcm {
+pub enum TCM_A {
     #[doc = "0: Edge aligned mode"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Center aligned mode"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Tcm> for bool {
+impl From<TCM_A> for bool {
     #[inline(always)]
-    fn from(variant: Tcm) -> Self {
+    fn from(variant: TCM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TCM` reader - Timer Counting Mode"]
-pub type TcmR = crate::BitReader<Tcm>;
-impl TcmR {
+pub type TCM_R = crate::BitReader<TCM_A>;
+impl TCM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Tcm {
+    pub const fn variant(&self) -> TCM_A {
         match self.bits {
-            false => Tcm::Value1,
-            true => Tcm::Value2,
+            false => TCM_A::VALUE1,
+            true => TCM_A::VALUE2,
         }
     }
     #[doc = "Edge aligned mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Tcm::Value1
+        *self == TCM_A::VALUE1
     }
     #[doc = "Center aligned mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Tcm::Value2
+        *self == TCM_A::VALUE2
     }
 }
 #[doc = "Field `TCM` writer - Timer Counting Mode"]
-pub type TcmW<'a, REG> = crate::BitWriter<'a, REG, Tcm>;
-impl<'a, REG> TcmW<'a, REG>
+pub type TCM_W<'a, REG> = crate::BitWriter<'a, REG, TCM_A>;
+impl<'a, REG> TCM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Edge aligned mode"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Tcm::Value1)
+        self.variant(TCM_A::VALUE1)
     }
     #[doc = "Center aligned mode"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Tcm::Value2)
+        self.variant(TCM_A::VALUE2)
     }
 }
 #[doc = "Timer Single Shot Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Tssm {
+pub enum TSSM_A {
     #[doc = "0: Single shot mode is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Single shot mode is enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Tssm> for bool {
+impl From<TSSM_A> for bool {
     #[inline(always)]
-    fn from(variant: Tssm) -> Self {
+    fn from(variant: TSSM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TSSM` reader - Timer Single Shot Mode"]
-pub type TssmR = crate::BitReader<Tssm>;
-impl TssmR {
+pub type TSSM_R = crate::BitReader<TSSM_A>;
+impl TSSM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Tssm {
+    pub const fn variant(&self) -> TSSM_A {
         match self.bits {
-            false => Tssm::Value1,
-            true => Tssm::Value2,
+            false => TSSM_A::VALUE1,
+            true => TSSM_A::VALUE2,
         }
     }
     #[doc = "Single shot mode is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Tssm::Value1
+        *self == TSSM_A::VALUE1
     }
     #[doc = "Single shot mode is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Tssm::Value2
+        *self == TSSM_A::VALUE2
     }
 }
 #[doc = "Field `TSSM` writer - Timer Single Shot Mode"]
-pub type TssmW<'a, REG> = crate::BitWriter<'a, REG, Tssm>;
-impl<'a, REG> TssmW<'a, REG>
+pub type TSSM_W<'a, REG> = crate::BitWriter<'a, REG, TSSM_A>;
+impl<'a, REG> TSSM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Single shot mode is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Tssm::Value1)
+        self.variant(TSSM_A::VALUE1)
     }
     #[doc = "Single shot mode is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Tssm::Value2)
+        self.variant(TSSM_A::VALUE2)
     }
 }
 #[doc = "Field `CLST` reader - Shadow Transfer on Clear"]
-pub type ClstR = crate::BitReader;
+pub type CLST_R = crate::BitReader;
 #[doc = "Field `CLST` writer - Shadow Transfer on Clear"]
-pub type ClstW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type CLST_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Capture Compare Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cmod {
+pub enum CMOD_A {
     #[doc = "0: Compare Mode"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Capture Mode"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cmod> for bool {
+impl From<CMOD_A> for bool {
     #[inline(always)]
-    fn from(variant: Cmod) -> Self {
+    fn from(variant: CMOD_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CMOD` reader - Capture Compare Mode"]
-pub type CmodR = crate::BitReader<Cmod>;
-impl CmodR {
+pub type CMOD_R = crate::BitReader<CMOD_A>;
+impl CMOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Cmod {
+    pub const fn variant(&self) -> CMOD_A {
         match self.bits {
-            false => Cmod::Value1,
-            true => Cmod::Value2,
+            false => CMOD_A::VALUE1,
+            true => CMOD_A::VALUE2,
         }
     }
     #[doc = "Compare Mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Cmod::Value1
+        *self == CMOD_A::VALUE1
     }
     #[doc = "Capture Mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Cmod::Value2
+        *self == CMOD_A::VALUE2
     }
 }
 #[doc = "Extended Capture Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ecm {
+pub enum ECM_A {
     #[doc = "0: Normal Capture Mode. Clear of the Full Flag of each capture register is done by accessing the registers individually only."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Extended Capture Mode. Clear of the Full Flag of each capture register is done not only by accessing the individual registers but also by accessing the ECRD register. When reading the ECRD register, only the capture register register full flag pointed by the VPTR is cleared"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ecm> for bool {
+impl From<ECM_A> for bool {
     #[inline(always)]
-    fn from(variant: Ecm) -> Self {
+    fn from(variant: ECM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ECM` reader - Extended Capture Mode"]
-pub type EcmR = crate::BitReader<Ecm>;
-impl EcmR {
+pub type ECM_R = crate::BitReader<ECM_A>;
+impl ECM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ecm {
+    pub const fn variant(&self) -> ECM_A {
         match self.bits {
-            false => Ecm::Value1,
-            true => Ecm::Value2,
+            false => ECM_A::VALUE1,
+            true => ECM_A::VALUE2,
         }
     }
     #[doc = "Normal Capture Mode. Clear of the Full Flag of each capture register is done by accessing the registers individually only."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ecm::Value1
+        *self == ECM_A::VALUE1
     }
     #[doc = "Extended Capture Mode. Clear of the Full Flag of each capture register is done not only by accessing the individual registers but also by accessing the ECRD register. When reading the ECRD register, only the capture register register full flag pointed by the VPTR is cleared"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ecm::Value2
+        *self == ECM_A::VALUE2
     }
 }
 #[doc = "Field `ECM` writer - Extended Capture Mode"]
-pub type EcmW<'a, REG> = crate::BitWriter<'a, REG, Ecm>;
-impl<'a, REG> EcmW<'a, REG>
+pub type ECM_W<'a, REG> = crate::BitWriter<'a, REG, ECM_A>;
+impl<'a, REG> ECM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Normal Capture Mode. Clear of the Full Flag of each capture register is done by accessing the registers individually only."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ecm::Value1)
+        self.variant(ECM_A::VALUE1)
     }
     #[doc = "Extended Capture Mode. Clear of the Full Flag of each capture register is done not only by accessing the individual registers but also by accessing the ECRD register. When reading the ECRD register, only the capture register register full flag pointed by the VPTR is cleared"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ecm::Value2)
+        self.variant(ECM_A::VALUE2)
     }
 }
 #[doc = "Clear on Capture Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Capc {
+pub enum CAPC_A {
     #[doc = "0: Timer is never cleared on a capture event"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Timer is cleared on a capture event into capture registers 2 and 3. (When SCE = 1#, Timer is always cleared in a capture event)"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Timer is cleared on a capture event into capture registers 0 and 1. (When SCE = 1#, Timer is always cleared in a capture event)"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Timer is always cleared in a capture event."]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Capc> for u8 {
+impl From<CAPC_A> for u8 {
     #[inline(always)]
-    fn from(variant: Capc) -> Self {
+    fn from(variant: CAPC_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Capc {
+impl crate::FieldSpec for CAPC_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Capc {}
+impl crate::IsEnum for CAPC_A {}
 #[doc = "Field `CAPC` reader - Clear on Capture Control"]
-pub type CapcR = crate::FieldReader<Capc>;
-impl CapcR {
+pub type CAPC_R = crate::FieldReader<CAPC_A>;
+impl CAPC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Capc {
+    pub const fn variant(&self) -> CAPC_A {
         match self.bits {
-            0 => Capc::Value1,
-            1 => Capc::Value2,
-            2 => Capc::Value3,
-            3 => Capc::Value4,
+            0 => CAPC_A::VALUE1,
+            1 => CAPC_A::VALUE2,
+            2 => CAPC_A::VALUE3,
+            3 => CAPC_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Timer is never cleared on a capture event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Capc::Value1
+        *self == CAPC_A::VALUE1
     }
     #[doc = "Timer is cleared on a capture event into capture registers 2 and 3. (When SCE = 1#, Timer is always cleared in a capture event)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Capc::Value2
+        *self == CAPC_A::VALUE2
     }
     #[doc = "Timer is cleared on a capture event into capture registers 0 and 1. (When SCE = 1#, Timer is always cleared in a capture event)"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Capc::Value3
+        *self == CAPC_A::VALUE3
     }
     #[doc = "Timer is always cleared in a capture event."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Capc::Value4
+        *self == CAPC_A::VALUE4
     }
 }
 #[doc = "Field `CAPC` writer - Clear on Capture Control"]
-pub type CapcW<'a, REG> = crate::FieldWriter<'a, REG, 2, Capc, crate::Safe>;
-impl<'a, REG> CapcW<'a, REG>
+pub type CAPC_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CAPC_A, crate::Safe>;
+impl<'a, REG> CAPC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -269,130 +269,130 @@ where
     #[doc = "Timer is never cleared on a capture event"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Capc::Value1)
+        self.variant(CAPC_A::VALUE1)
     }
     #[doc = "Timer is cleared on a capture event into capture registers 2 and 3. (When SCE = 1#, Timer is always cleared in a capture event)"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Capc::Value2)
+        self.variant(CAPC_A::VALUE2)
     }
     #[doc = "Timer is cleared on a capture event into capture registers 0 and 1. (When SCE = 1#, Timer is always cleared in a capture event)"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Capc::Value3)
+        self.variant(CAPC_A::VALUE3)
     }
     #[doc = "Timer is always cleared in a capture event."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Capc::Value4)
+        self.variant(CAPC_A::VALUE4)
     }
 }
 #[doc = "Timer Load selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Tls {
+pub enum TLS_A {
     #[doc = "0: Timer is loaded with the value of CR1"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Timer is loaded with the value of CR2"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Tls> for bool {
+impl From<TLS_A> for bool {
     #[inline(always)]
-    fn from(variant: Tls) -> Self {
+    fn from(variant: TLS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TLS` reader - Timer Load selector"]
-pub type TlsR = crate::BitReader<Tls>;
-impl TlsR {
+pub type TLS_R = crate::BitReader<TLS_A>;
+impl TLS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Tls {
+    pub const fn variant(&self) -> TLS_A {
         match self.bits {
-            false => Tls::Value1,
-            true => Tls::Value2,
+            false => TLS_A::VALUE1,
+            true => TLS_A::VALUE2,
         }
     }
     #[doc = "Timer is loaded with the value of CR1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Tls::Value1
+        *self == TLS_A::VALUE1
     }
     #[doc = "Timer is loaded with the value of CR2"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Tls::Value2
+        *self == TLS_A::VALUE2
     }
 }
 #[doc = "Field `TLS` writer - Timer Load selector"]
-pub type TlsW<'a, REG> = crate::BitWriter<'a, REG, Tls>;
-impl<'a, REG> TlsW<'a, REG>
+pub type TLS_W<'a, REG> = crate::BitWriter<'a, REG, TLS_A>;
+impl<'a, REG> TLS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Timer is loaded with the value of CR1"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Tls::Value1)
+        self.variant(TLS_A::VALUE1)
     }
     #[doc = "Timer is loaded with the value of CR2"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Tls::Value2)
+        self.variant(TLS_A::VALUE2)
     }
 }
 #[doc = "Extended Stop Function Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Endm {
+pub enum ENDM_A {
     #[doc = "0: Clears the timer run bit only (default stop)"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clears the timer only (flush)"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Clears the timer and run bit (flush/stop)"]
-    Value3 = 2,
+    VALUE3 = 2,
 }
-impl From<Endm> for u8 {
+impl From<ENDM_A> for u8 {
     #[inline(always)]
-    fn from(variant: Endm) -> Self {
+    fn from(variant: ENDM_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Endm {
+impl crate::FieldSpec for ENDM_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Endm {}
+impl crate::IsEnum for ENDM_A {}
 #[doc = "Field `ENDM` reader - Extended Stop Function Control"]
-pub type EndmR = crate::FieldReader<Endm>;
-impl EndmR {
+pub type ENDM_R = crate::FieldReader<ENDM_A>;
+impl ENDM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Endm> {
+    pub const fn variant(&self) -> Option<ENDM_A> {
         match self.bits {
-            0 => Some(Endm::Value1),
-            1 => Some(Endm::Value2),
-            2 => Some(Endm::Value3),
+            0 => Some(ENDM_A::VALUE1),
+            1 => Some(ENDM_A::VALUE2),
+            2 => Some(ENDM_A::VALUE3),
             _ => None,
         }
     }
     #[doc = "Clears the timer run bit only (default stop)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Endm::Value1
+        *self == ENDM_A::VALUE1
     }
     #[doc = "Clears the timer only (flush)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Endm::Value2
+        *self == ENDM_A::VALUE2
     }
     #[doc = "Clears the timer and run bit (flush/stop)"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Endm::Value3
+        *self == ENDM_A::VALUE3
     }
 }
 #[doc = "Field `ENDM` writer - Extended Stop Function Control"]
-pub type EndmW<'a, REG> = crate::FieldWriter<'a, REG, 2, Endm>;
-impl<'a, REG> EndmW<'a, REG>
+pub type ENDM_W<'a, REG> = crate::FieldWriter<'a, REG, 2, ENDM_A>;
+impl<'a, REG> ENDM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -400,239 +400,239 @@ where
     #[doc = "Clears the timer run bit only (default stop)"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Endm::Value1)
+        self.variant(ENDM_A::VALUE1)
     }
     #[doc = "Clears the timer only (flush)"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Endm::Value2)
+        self.variant(ENDM_A::VALUE2)
     }
     #[doc = "Clears the timer and run bit (flush/stop)"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Endm::Value3)
+        self.variant(ENDM_A::VALUE3)
     }
 }
 #[doc = "Extended Start Function Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Strm {
+pub enum STRM_A {
     #[doc = "0: Sets run bit only (default start)"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clears the timer and sets run bit, if not set (flush/start)"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Strm> for bool {
+impl From<STRM_A> for bool {
     #[inline(always)]
-    fn from(variant: Strm) -> Self {
+    fn from(variant: STRM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `STRM` reader - Extended Start Function Control"]
-pub type StrmR = crate::BitReader<Strm>;
-impl StrmR {
+pub type STRM_R = crate::BitReader<STRM_A>;
+impl STRM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Strm {
+    pub const fn variant(&self) -> STRM_A {
         match self.bits {
-            false => Strm::Value1,
-            true => Strm::Value2,
+            false => STRM_A::VALUE1,
+            true => STRM_A::VALUE2,
         }
     }
     #[doc = "Sets run bit only (default start)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Strm::Value1
+        *self == STRM_A::VALUE1
     }
     #[doc = "Clears the timer and sets run bit, if not set (flush/start)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Strm::Value2
+        *self == STRM_A::VALUE2
     }
 }
 #[doc = "Field `STRM` writer - Extended Start Function Control"]
-pub type StrmW<'a, REG> = crate::BitWriter<'a, REG, Strm>;
-impl<'a, REG> StrmW<'a, REG>
+pub type STRM_W<'a, REG> = crate::BitWriter<'a, REG, STRM_A>;
+impl<'a, REG> STRM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Sets run bit only (default start)"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Strm::Value1)
+        self.variant(STRM_A::VALUE1)
     }
     #[doc = "Clears the timer and sets run bit, if not set (flush/start)"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Strm::Value2)
+        self.variant(STRM_A::VALUE2)
     }
 }
 #[doc = "Equal Capture Event enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Sce {
+pub enum SCE_A {
     #[doc = "0: Capture into CC8yC0VThis register contains the values associated with the Capture 0 field./CC8yC1VThis register contains the values associated with the Capture 1 field. registers control by CCycapt0 and capture into CC8yC3VThis register contains the values associated with the Capture 3 field./CC8yC2VThis register contains the values associated with the Capture 2 field. control by CCycapt1"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Capture into CC8yC0VThis register contains the values associated with the Capture 0 field./CC8yC1VThis register contains the values associated with the Capture 1 field. and CC8yC3VThis register contains the values associated with the Capture 3 field./CC8yC2VThis register contains the values associated with the Capture 2 field. control by CCycapt1"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Sce> for bool {
+impl From<SCE_A> for bool {
     #[inline(always)]
-    fn from(variant: Sce) -> Self {
+    fn from(variant: SCE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SCE` reader - Equal Capture Event enable"]
-pub type SceR = crate::BitReader<Sce>;
-impl SceR {
+pub type SCE_R = crate::BitReader<SCE_A>;
+impl SCE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Sce {
+    pub const fn variant(&self) -> SCE_A {
         match self.bits {
-            false => Sce::Value1,
-            true => Sce::Value2,
+            false => SCE_A::VALUE1,
+            true => SCE_A::VALUE2,
         }
     }
     #[doc = "Capture into CC8yC0VThis register contains the values associated with the Capture 0 field./CC8yC1VThis register contains the values associated with the Capture 1 field. registers control by CCycapt0 and capture into CC8yC3VThis register contains the values associated with the Capture 3 field./CC8yC2VThis register contains the values associated with the Capture 2 field. control by CCycapt1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Sce::Value1
+        *self == SCE_A::VALUE1
     }
     #[doc = "Capture into CC8yC0VThis register contains the values associated with the Capture 0 field./CC8yC1VThis register contains the values associated with the Capture 1 field. and CC8yC3VThis register contains the values associated with the Capture 3 field./CC8yC2VThis register contains the values associated with the Capture 2 field. control by CCycapt1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Sce::Value2
+        *self == SCE_A::VALUE2
     }
 }
 #[doc = "Field `SCE` writer - Equal Capture Event enable"]
-pub type SceW<'a, REG> = crate::BitWriter<'a, REG, Sce>;
-impl<'a, REG> SceW<'a, REG>
+pub type SCE_W<'a, REG> = crate::BitWriter<'a, REG, SCE_A>;
+impl<'a, REG> SCE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Capture into CC8yC0VThis register contains the values associated with the Capture 0 field./CC8yC1VThis register contains the values associated with the Capture 1 field. registers control by CCycapt0 and capture into CC8yC3VThis register contains the values associated with the Capture 3 field./CC8yC2VThis register contains the values associated with the Capture 2 field. control by CCycapt1"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Sce::Value1)
+        self.variant(SCE_A::VALUE1)
     }
     #[doc = "Capture into CC8yC0VThis register contains the values associated with the Capture 0 field./CC8yC1VThis register contains the values associated with the Capture 1 field. and CC8yC3VThis register contains the values associated with the Capture 3 field./CC8yC2VThis register contains the values associated with the Capture 2 field. control by CCycapt1"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Sce::Value2)
+        self.variant(SCE_A::VALUE2)
     }
 }
 #[doc = "Continuous Capture Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ccs {
+pub enum CCS_A {
     #[doc = "0: The capture into a specific capture register is done with the rules linked with the full flags, described at ."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The capture into the capture registers is always done regardless of the full flag status (even if the register has not been read back)."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ccs> for bool {
+impl From<CCS_A> for bool {
     #[inline(always)]
-    fn from(variant: Ccs) -> Self {
+    fn from(variant: CCS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CCS` reader - Continuous Capture Enable"]
-pub type CcsR = crate::BitReader<Ccs>;
-impl CcsR {
+pub type CCS_R = crate::BitReader<CCS_A>;
+impl CCS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ccs {
+    pub const fn variant(&self) -> CCS_A {
         match self.bits {
-            false => Ccs::Value1,
-            true => Ccs::Value2,
+            false => CCS_A::VALUE1,
+            true => CCS_A::VALUE2,
         }
     }
     #[doc = "The capture into a specific capture register is done with the rules linked with the full flags, described at ."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ccs::Value1
+        *self == CCS_A::VALUE1
     }
     #[doc = "The capture into the capture registers is always done regardless of the full flag status (even if the register has not been read back)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ccs::Value2
+        *self == CCS_A::VALUE2
     }
 }
 #[doc = "Field `CCS` writer - Continuous Capture Enable"]
-pub type CcsW<'a, REG> = crate::BitWriter<'a, REG, Ccs>;
-impl<'a, REG> CcsW<'a, REG>
+pub type CCS_W<'a, REG> = crate::BitWriter<'a, REG, CCS_A>;
+impl<'a, REG> CCS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The capture into a specific capture register is done with the rules linked with the full flags, described at ."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ccs::Value1)
+        self.variant(CCS_A::VALUE1)
     }
     #[doc = "The capture into the capture registers is always done regardless of the full flag status (even if the register has not been read back)."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ccs::Value2)
+        self.variant(CCS_A::VALUE2)
     }
 }
 #[doc = "Dither Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Dithe {
+pub enum DITHE_A {
     #[doc = "0: Dither is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Dither is applied to the Period"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Dither is applied to the Compare"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Dither is applied to the Period and Compare"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Dithe> for u8 {
+impl From<DITHE_A> for u8 {
     #[inline(always)]
-    fn from(variant: Dithe) -> Self {
+    fn from(variant: DITHE_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Dithe {
+impl crate::FieldSpec for DITHE_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Dithe {}
+impl crate::IsEnum for DITHE_A {}
 #[doc = "Field `DITHE` reader - Dither Enable"]
-pub type DitheR = crate::FieldReader<Dithe>;
-impl DitheR {
+pub type DITHE_R = crate::FieldReader<DITHE_A>;
+impl DITHE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Dithe {
+    pub const fn variant(&self) -> DITHE_A {
         match self.bits {
-            0 => Dithe::Value1,
-            1 => Dithe::Value2,
-            2 => Dithe::Value3,
-            3 => Dithe::Value4,
+            0 => DITHE_A::VALUE1,
+            1 => DITHE_A::VALUE2,
+            2 => DITHE_A::VALUE3,
+            3 => DITHE_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Dither is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Dithe::Value1
+        *self == DITHE_A::VALUE1
     }
     #[doc = "Dither is applied to the Period"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Dithe::Value2
+        *self == DITHE_A::VALUE2
     }
     #[doc = "Dither is applied to the Compare"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Dithe::Value3
+        *self == DITHE_A::VALUE3
     }
     #[doc = "Dither is applied to the Period and Compare"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Dithe::Value4
+        *self == DITHE_A::VALUE4
     }
 }
 #[doc = "Field `DITHE` writer - Dither Enable"]
-pub type DitheW<'a, REG> = crate::FieldWriter<'a, REG, 2, Dithe, crate::Safe>;
-impl<'a, REG> DitheW<'a, REG>
+pub type DITHE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DITHE_A, crate::Safe>;
+impl<'a, REG> DITHE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -640,574 +640,574 @@ where
     #[doc = "Dither is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Dithe::Value1)
+        self.variant(DITHE_A::VALUE1)
     }
     #[doc = "Dither is applied to the Period"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Dithe::Value2)
+        self.variant(DITHE_A::VALUE2)
     }
     #[doc = "Dither is applied to the Compare"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Dithe::Value3)
+        self.variant(DITHE_A::VALUE3)
     }
     #[doc = "Dither is applied to the Period and Compare"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Dithe::Value4)
+        self.variant(DITHE_A::VALUE4)
     }
 }
 #[doc = "Dither input selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Dim {
+pub enum DIM_A {
     #[doc = "0: Slice is using it own dither unit"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Slice is connected to the dither unit of slice 0."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Dim> for bool {
+impl From<DIM_A> for bool {
     #[inline(always)]
-    fn from(variant: Dim) -> Self {
+    fn from(variant: DIM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DIM` reader - Dither input selector"]
-pub type DimR = crate::BitReader<Dim>;
-impl DimR {
+pub type DIM_R = crate::BitReader<DIM_A>;
+impl DIM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Dim {
+    pub const fn variant(&self) -> DIM_A {
         match self.bits {
-            false => Dim::Value1,
-            true => Dim::Value2,
+            false => DIM_A::VALUE1,
+            true => DIM_A::VALUE2,
         }
     }
     #[doc = "Slice is using it own dither unit"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Dim::Value1
+        *self == DIM_A::VALUE1
     }
     #[doc = "Slice is connected to the dither unit of slice 0."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Dim::Value2
+        *self == DIM_A::VALUE2
     }
 }
 #[doc = "Field `DIM` writer - Dither input selector"]
-pub type DimW<'a, REG> = crate::BitWriter<'a, REG, Dim>;
-impl<'a, REG> DimW<'a, REG>
+pub type DIM_W<'a, REG> = crate::BitWriter<'a, REG, DIM_A>;
+impl<'a, REG> DIM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Slice is using it own dither unit"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Dim::Value1)
+        self.variant(DIM_A::VALUE1)
     }
     #[doc = "Slice is connected to the dither unit of slice 0."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Dim::Value2)
+        self.variant(DIM_A::VALUE2)
     }
 }
 #[doc = "Floating Prescaler enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Fpe {
+pub enum FPE_A {
     #[doc = "0: Floating prescaler mode is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Floating prescaler mode is enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Fpe> for bool {
+impl From<FPE_A> for bool {
     #[inline(always)]
-    fn from(variant: Fpe) -> Self {
+    fn from(variant: FPE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `FPE` reader - Floating Prescaler enable"]
-pub type FpeR = crate::BitReader<Fpe>;
-impl FpeR {
+pub type FPE_R = crate::BitReader<FPE_A>;
+impl FPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Fpe {
+    pub const fn variant(&self) -> FPE_A {
         match self.bits {
-            false => Fpe::Value1,
-            true => Fpe::Value2,
+            false => FPE_A::VALUE1,
+            true => FPE_A::VALUE2,
         }
     }
     #[doc = "Floating prescaler mode is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Fpe::Value1
+        *self == FPE_A::VALUE1
     }
     #[doc = "Floating prescaler mode is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Fpe::Value2
+        *self == FPE_A::VALUE2
     }
 }
 #[doc = "Field `FPE` writer - Floating Prescaler enable"]
-pub type FpeW<'a, REG> = crate::BitWriter<'a, REG, Fpe>;
-impl<'a, REG> FpeW<'a, REG>
+pub type FPE_W<'a, REG> = crate::BitWriter<'a, REG, FPE_A>;
+impl<'a, REG> FPE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Floating prescaler mode is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Fpe::Value1)
+        self.variant(FPE_A::VALUE1)
     }
     #[doc = "Floating prescaler mode is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Fpe::Value2)
+        self.variant(FPE_A::VALUE2)
     }
 }
 #[doc = "TRAP enable for CCU8x.OUTy0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Trape0 {
+pub enum TRAPE0_A {
     #[doc = "0: TRAP functionality has no effect on the CCU8x.OUTy0 output"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: TRAP functionality affects the CCU8x.OUTy0 output"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Trape0> for bool {
+impl From<TRAPE0_A> for bool {
     #[inline(always)]
-    fn from(variant: Trape0) -> Self {
+    fn from(variant: TRAPE0_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TRAPE0` reader - TRAP enable for CCU8x.OUTy0"]
-pub type Trape0R = crate::BitReader<Trape0>;
-impl Trape0R {
+pub type TRAPE0_R = crate::BitReader<TRAPE0_A>;
+impl TRAPE0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Trape0 {
+    pub const fn variant(&self) -> TRAPE0_A {
         match self.bits {
-            false => Trape0::Value1,
-            true => Trape0::Value2,
+            false => TRAPE0_A::VALUE1,
+            true => TRAPE0_A::VALUE2,
         }
     }
     #[doc = "TRAP functionality has no effect on the CCU8x.OUTy0 output"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Trape0::Value1
+        *self == TRAPE0_A::VALUE1
     }
     #[doc = "TRAP functionality affects the CCU8x.OUTy0 output"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Trape0::Value2
+        *self == TRAPE0_A::VALUE2
     }
 }
 #[doc = "Field `TRAPE0` writer - TRAP enable for CCU8x.OUTy0"]
-pub type Trape0W<'a, REG> = crate::BitWriter<'a, REG, Trape0>;
-impl<'a, REG> Trape0W<'a, REG>
+pub type TRAPE0_W<'a, REG> = crate::BitWriter<'a, REG, TRAPE0_A>;
+impl<'a, REG> TRAPE0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "TRAP functionality has no effect on the CCU8x.OUTy0 output"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Trape0::Value1)
+        self.variant(TRAPE0_A::VALUE1)
     }
     #[doc = "TRAP functionality affects the CCU8x.OUTy0 output"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Trape0::Value2)
+        self.variant(TRAPE0_A::VALUE2)
     }
 }
 #[doc = "Field `TRAPE1` reader - TRAP enable for CCU8x.OUTy1"]
-pub type Trape1R = crate::BitReader;
+pub type TRAPE1_R = crate::BitReader;
 #[doc = "Field `TRAPE1` writer - TRAP enable for CCU8x.OUTy1"]
-pub type Trape1W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TRAPE1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TRAPE2` reader - TRAP enable for CCU8x.OUTy2"]
-pub type Trape2R = crate::BitReader;
+pub type TRAPE2_R = crate::BitReader;
 #[doc = "Field `TRAPE2` writer - TRAP enable for CCU8x.OUTy2"]
-pub type Trape2W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TRAPE2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TRAPE3` reader - TRAP enable for CCU8x.OUTy3"]
-pub type Trape3R = crate::BitReader;
+pub type TRAPE3_R = crate::BitReader;
 #[doc = "Field `TRAPE3` writer - TRAP enable for CCU8x.OUTy3"]
-pub type Trape3W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TRAPE3_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "TRAP Synchronization Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Trpse {
+pub enum TRPSE_A {
     #[doc = "0: Exiting from TRAP state isn't synchronized with the PWM signal"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Exiting from TRAP state is synchronized with the PWM signal"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Trpse> for bool {
+impl From<TRPSE_A> for bool {
     #[inline(always)]
-    fn from(variant: Trpse) -> Self {
+    fn from(variant: TRPSE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TRPSE` reader - TRAP Synchronization Enable"]
-pub type TrpseR = crate::BitReader<Trpse>;
-impl TrpseR {
+pub type TRPSE_R = crate::BitReader<TRPSE_A>;
+impl TRPSE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Trpse {
+    pub const fn variant(&self) -> TRPSE_A {
         match self.bits {
-            false => Trpse::Value1,
-            true => Trpse::Value2,
+            false => TRPSE_A::VALUE1,
+            true => TRPSE_A::VALUE2,
         }
     }
     #[doc = "Exiting from TRAP state isn't synchronized with the PWM signal"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Trpse::Value1
+        *self == TRPSE_A::VALUE1
     }
     #[doc = "Exiting from TRAP state is synchronized with the PWM signal"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Trpse::Value2
+        *self == TRPSE_A::VALUE2
     }
 }
 #[doc = "Field `TRPSE` writer - TRAP Synchronization Enable"]
-pub type TrpseW<'a, REG> = crate::BitWriter<'a, REG, Trpse>;
-impl<'a, REG> TrpseW<'a, REG>
+pub type TRPSE_W<'a, REG> = crate::BitWriter<'a, REG, TRPSE_A>;
+impl<'a, REG> TRPSE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Exiting from TRAP state isn't synchronized with the PWM signal"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Trpse::Value1)
+        self.variant(TRPSE_A::VALUE1)
     }
     #[doc = "Exiting from TRAP state is synchronized with the PWM signal"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Trpse::Value2)
+        self.variant(TRPSE_A::VALUE2)
     }
 }
 #[doc = "TRAP State Clear Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Trpsw {
+pub enum TRPSW_A {
     #[doc = "0: The slice exits the TRAP state automatically when the TRAP condition is not present (Trap state cleared by HW and SW)"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The TRAP state can only be exited by a SW request."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Trpsw> for bool {
+impl From<TRPSW_A> for bool {
     #[inline(always)]
-    fn from(variant: Trpsw) -> Self {
+    fn from(variant: TRPSW_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TRPSW` reader - TRAP State Clear Control"]
-pub type TrpswR = crate::BitReader<Trpsw>;
-impl TrpswR {
+pub type TRPSW_R = crate::BitReader<TRPSW_A>;
+impl TRPSW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Trpsw {
+    pub const fn variant(&self) -> TRPSW_A {
         match self.bits {
-            false => Trpsw::Value1,
-            true => Trpsw::Value2,
+            false => TRPSW_A::VALUE1,
+            true => TRPSW_A::VALUE2,
         }
     }
     #[doc = "The slice exits the TRAP state automatically when the TRAP condition is not present (Trap state cleared by HW and SW)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Trpsw::Value1
+        *self == TRPSW_A::VALUE1
     }
     #[doc = "The TRAP state can only be exited by a SW request."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Trpsw::Value2
+        *self == TRPSW_A::VALUE2
     }
 }
 #[doc = "Field `TRPSW` writer - TRAP State Clear Control"]
-pub type TrpswW<'a, REG> = crate::BitWriter<'a, REG, Trpsw>;
-impl<'a, REG> TrpswW<'a, REG>
+pub type TRPSW_W<'a, REG> = crate::BitWriter<'a, REG, TRPSW_A>;
+impl<'a, REG> TRPSW_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The slice exits the TRAP state automatically when the TRAP condition is not present (Trap state cleared by HW and SW)"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Trpsw::Value1)
+        self.variant(TRPSW_A::VALUE1)
     }
     #[doc = "The TRAP state can only be exited by a SW request."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Trpsw::Value2)
+        self.variant(TRPSW_A::VALUE2)
     }
 }
 #[doc = "External Modulation Synchronization\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ems {
+pub enum EMS_A {
     #[doc = "0: External Modulation functionality is not synchronized with the PWM signal"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: External Modulation functionality is synchronized with the PWM signal"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ems> for bool {
+impl From<EMS_A> for bool {
     #[inline(always)]
-    fn from(variant: Ems) -> Self {
+    fn from(variant: EMS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EMS` reader - External Modulation Synchronization"]
-pub type EmsR = crate::BitReader<Ems>;
-impl EmsR {
+pub type EMS_R = crate::BitReader<EMS_A>;
+impl EMS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ems {
+    pub const fn variant(&self) -> EMS_A {
         match self.bits {
-            false => Ems::Value1,
-            true => Ems::Value2,
+            false => EMS_A::VALUE1,
+            true => EMS_A::VALUE2,
         }
     }
     #[doc = "External Modulation functionality is not synchronized with the PWM signal"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ems::Value1
+        *self == EMS_A::VALUE1
     }
     #[doc = "External Modulation functionality is synchronized with the PWM signal"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ems::Value2
+        *self == EMS_A::VALUE2
     }
 }
 #[doc = "Field `EMS` writer - External Modulation Synchronization"]
-pub type EmsW<'a, REG> = crate::BitWriter<'a, REG, Ems>;
-impl<'a, REG> EmsW<'a, REG>
+pub type EMS_W<'a, REG> = crate::BitWriter<'a, REG, EMS_A>;
+impl<'a, REG> EMS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "External Modulation functionality is not synchronized with the PWM signal"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ems::Value1)
+        self.variant(EMS_A::VALUE1)
     }
     #[doc = "External Modulation functionality is synchronized with the PWM signal"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ems::Value2)
+        self.variant(EMS_A::VALUE2)
     }
 }
 #[doc = "External Modulation Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Emt {
+pub enum EMT_A {
     #[doc = "0: External Modulation functionality is clearing the CC8ySTx bits."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: External Modulation functionality is gating the outputs."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Emt> for bool {
+impl From<EMT_A> for bool {
     #[inline(always)]
-    fn from(variant: Emt) -> Self {
+    fn from(variant: EMT_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EMT` reader - External Modulation Type"]
-pub type EmtR = crate::BitReader<Emt>;
-impl EmtR {
+pub type EMT_R = crate::BitReader<EMT_A>;
+impl EMT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Emt {
+    pub const fn variant(&self) -> EMT_A {
         match self.bits {
-            false => Emt::Value1,
-            true => Emt::Value2,
+            false => EMT_A::VALUE1,
+            true => EMT_A::VALUE2,
         }
     }
     #[doc = "External Modulation functionality is clearing the CC8ySTx bits."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Emt::Value1
+        *self == EMT_A::VALUE1
     }
     #[doc = "External Modulation functionality is gating the outputs."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Emt::Value2
+        *self == EMT_A::VALUE2
     }
 }
 #[doc = "Field `EMT` writer - External Modulation Type"]
-pub type EmtW<'a, REG> = crate::BitWriter<'a, REG, Emt>;
-impl<'a, REG> EmtW<'a, REG>
+pub type EMT_W<'a, REG> = crate::BitWriter<'a, REG, EMT_A>;
+impl<'a, REG> EMT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "External Modulation functionality is clearing the CC8ySTx bits."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Emt::Value1)
+        self.variant(EMT_A::VALUE1)
     }
     #[doc = "External Modulation functionality is gating the outputs."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Emt::Value2)
+        self.variant(EMT_A::VALUE2)
     }
 }
 #[doc = "Multi Channel Mode Enable for Channel 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Mcme1 {
+pub enum MCME1_A {
     #[doc = "0: Multi Channel Mode in Channel 1 is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Multi Channel Mode in Channel 1 is enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Mcme1> for bool {
+impl From<MCME1_A> for bool {
     #[inline(always)]
-    fn from(variant: Mcme1) -> Self {
+    fn from(variant: MCME1_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MCME1` reader - Multi Channel Mode Enable for Channel 1"]
-pub type Mcme1R = crate::BitReader<Mcme1>;
-impl Mcme1R {
+pub type MCME1_R = crate::BitReader<MCME1_A>;
+impl MCME1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Mcme1 {
+    pub const fn variant(&self) -> MCME1_A {
         match self.bits {
-            false => Mcme1::Value1,
-            true => Mcme1::Value2,
+            false => MCME1_A::VALUE1,
+            true => MCME1_A::VALUE2,
         }
     }
     #[doc = "Multi Channel Mode in Channel 1 is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Mcme1::Value1
+        *self == MCME1_A::VALUE1
     }
     #[doc = "Multi Channel Mode in Channel 1 is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Mcme1::Value2
+        *self == MCME1_A::VALUE2
     }
 }
 #[doc = "Field `MCME1` writer - Multi Channel Mode Enable for Channel 1"]
-pub type Mcme1W<'a, REG> = crate::BitWriter<'a, REG, Mcme1>;
-impl<'a, REG> Mcme1W<'a, REG>
+pub type MCME1_W<'a, REG> = crate::BitWriter<'a, REG, MCME1_A>;
+impl<'a, REG> MCME1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Multi Channel Mode in Channel 1 is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Mcme1::Value1)
+        self.variant(MCME1_A::VALUE1)
     }
     #[doc = "Multi Channel Mode in Channel 1 is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Mcme1::Value2)
+        self.variant(MCME1_A::VALUE2)
     }
 }
 #[doc = "Multi Channel Mode Enable for Channel 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Mcme2 {
+pub enum MCME2_A {
     #[doc = "0: Multi Channel Mode in Channel 2 is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Multi Channel Mode in Channel 2 is enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Mcme2> for bool {
+impl From<MCME2_A> for bool {
     #[inline(always)]
-    fn from(variant: Mcme2) -> Self {
+    fn from(variant: MCME2_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MCME2` reader - Multi Channel Mode Enable for Channel 2"]
-pub type Mcme2R = crate::BitReader<Mcme2>;
-impl Mcme2R {
+pub type MCME2_R = crate::BitReader<MCME2_A>;
+impl MCME2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Mcme2 {
+    pub const fn variant(&self) -> MCME2_A {
         match self.bits {
-            false => Mcme2::Value1,
-            true => Mcme2::Value2,
+            false => MCME2_A::VALUE1,
+            true => MCME2_A::VALUE2,
         }
     }
     #[doc = "Multi Channel Mode in Channel 2 is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Mcme2::Value1
+        *self == MCME2_A::VALUE1
     }
     #[doc = "Multi Channel Mode in Channel 2 is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Mcme2::Value2
+        *self == MCME2_A::VALUE2
     }
 }
 #[doc = "Field `MCME2` writer - Multi Channel Mode Enable for Channel 2"]
-pub type Mcme2W<'a, REG> = crate::BitWriter<'a, REG, Mcme2>;
-impl<'a, REG> Mcme2W<'a, REG>
+pub type MCME2_W<'a, REG> = crate::BitWriter<'a, REG, MCME2_A>;
+impl<'a, REG> MCME2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Multi Channel Mode in Channel 2 is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Mcme2::Value1)
+        self.variant(MCME2_A::VALUE1)
     }
     #[doc = "Multi Channel Mode in Channel 2 is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Mcme2::Value2)
+        self.variant(MCME2_A::VALUE2)
     }
 }
 #[doc = "External Modulation Channel enable\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Eme {
+pub enum EME_A {
     #[doc = "0: External Modulation functionality doesn't affect any channel"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: External Modulation only applied on channel 1"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: External Modulation only applied on channel 2"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: External Modulation applied on both channels"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Eme> for u8 {
+impl From<EME_A> for u8 {
     #[inline(always)]
-    fn from(variant: Eme) -> Self {
+    fn from(variant: EME_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Eme {
+impl crate::FieldSpec for EME_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Eme {}
+impl crate::IsEnum for EME_A {}
 #[doc = "Field `EME` reader - External Modulation Channel enable"]
-pub type EmeR = crate::FieldReader<Eme>;
-impl EmeR {
+pub type EME_R = crate::FieldReader<EME_A>;
+impl EME_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Eme {
+    pub const fn variant(&self) -> EME_A {
         match self.bits {
-            0 => Eme::Value1,
-            1 => Eme::Value2,
-            2 => Eme::Value3,
-            3 => Eme::Value4,
+            0 => EME_A::VALUE1,
+            1 => EME_A::VALUE2,
+            2 => EME_A::VALUE3,
+            3 => EME_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "External Modulation functionality doesn't affect any channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Eme::Value1
+        *self == EME_A::VALUE1
     }
     #[doc = "External Modulation only applied on channel 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Eme::Value2
+        *self == EME_A::VALUE2
     }
     #[doc = "External Modulation only applied on channel 2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Eme::Value3
+        *self == EME_A::VALUE3
     }
     #[doc = "External Modulation applied on both channels"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Eme::Value4
+        *self == EME_A::VALUE4
     }
 }
 #[doc = "Field `EME` writer - External Modulation Channel enable"]
-pub type EmeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Eme, crate::Safe>;
-impl<'a, REG> EmeW<'a, REG>
+pub type EME_W<'a, REG> = crate::FieldWriter<'a, REG, 2, EME_A, crate::Safe>;
+impl<'a, REG> EME_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1215,85 +1215,85 @@ where
     #[doc = "External Modulation functionality doesn't affect any channel"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Eme::Value1)
+        self.variant(EME_A::VALUE1)
     }
     #[doc = "External Modulation only applied on channel 1"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Eme::Value2)
+        self.variant(EME_A::VALUE2)
     }
     #[doc = "External Modulation only applied on channel 2"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Eme::Value3)
+        self.variant(EME_A::VALUE3)
     }
     #[doc = "External Modulation applied on both channels"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Eme::Value4)
+        self.variant(EME_A::VALUE4)
     }
 }
 #[doc = "Status bit output selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Stos {
+pub enum STOS_A {
     #[doc = "0: CC8yST1 forward to CCU8x.STy"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: CC8yST2 forward to CCU8x.STy"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: CC8yST1 AND CC8yST2 forward to CCU8x.STy"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: CC8yST1 OR CC8yST2 forward to CCU8x.STy"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Stos> for u8 {
+impl From<STOS_A> for u8 {
     #[inline(always)]
-    fn from(variant: Stos) -> Self {
+    fn from(variant: STOS_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Stos {
+impl crate::FieldSpec for STOS_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Stos {}
+impl crate::IsEnum for STOS_A {}
 #[doc = "Field `STOS` reader - Status bit output selector"]
-pub type StosR = crate::FieldReader<Stos>;
-impl StosR {
+pub type STOS_R = crate::FieldReader<STOS_A>;
+impl STOS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Stos {
+    pub const fn variant(&self) -> STOS_A {
         match self.bits {
-            0 => Stos::Value1,
-            1 => Stos::Value2,
-            2 => Stos::Value3,
-            3 => Stos::Value4,
+            0 => STOS_A::VALUE1,
+            1 => STOS_A::VALUE2,
+            2 => STOS_A::VALUE3,
+            3 => STOS_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "CC8yST1 forward to CCU8x.STy"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Stos::Value1
+        *self == STOS_A::VALUE1
     }
     #[doc = "CC8yST2 forward to CCU8x.STy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Stos::Value2
+        *self == STOS_A::VALUE2
     }
     #[doc = "CC8yST1 AND CC8yST2 forward to CCU8x.STy"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Stos::Value3
+        *self == STOS_A::VALUE3
     }
     #[doc = "CC8yST1 OR CC8yST2 forward to CCU8x.STy"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Stos::Value4
+        *self == STOS_A::VALUE4
     }
 }
 #[doc = "Field `STOS` writer - Status bit output selector"]
-pub type StosW<'a, REG> = crate::FieldWriter<'a, REG, 2, Stos, crate::Safe>;
-impl<'a, REG> StosW<'a, REG>
+pub type STOS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, STOS_A, crate::Safe>;
+impl<'a, REG> STOS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1301,322 +1301,322 @@ where
     #[doc = "CC8yST1 forward to CCU8x.STy"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Stos::Value1)
+        self.variant(STOS_A::VALUE1)
     }
     #[doc = "CC8yST2 forward to CCU8x.STy"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Stos::Value2)
+        self.variant(STOS_A::VALUE2)
     }
     #[doc = "CC8yST1 AND CC8yST2 forward to CCU8x.STy"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Stos::Value3)
+        self.variant(STOS_A::VALUE3)
     }
     #[doc = "CC8yST1 OR CC8yST2 forward to CCU8x.STy"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Stos::Value4)
+        self.variant(STOS_A::VALUE4)
     }
 }
 impl R {
     #[doc = "Bit 0 - Timer Counting Mode"]
     #[inline(always)]
-    pub fn tcm(&self) -> TcmR {
-        TcmR::new((self.bits & 1) != 0)
+    pub fn tcm(&self) -> TCM_R {
+        TCM_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Timer Single Shot Mode"]
     #[inline(always)]
-    pub fn tssm(&self) -> TssmR {
-        TssmR::new(((self.bits >> 1) & 1) != 0)
+    pub fn tssm(&self) -> TSSM_R {
+        TSSM_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Shadow Transfer on Clear"]
     #[inline(always)]
-    pub fn clst(&self) -> ClstR {
-        ClstR::new(((self.bits >> 2) & 1) != 0)
+    pub fn clst(&self) -> CLST_R {
+        CLST_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Capture Compare Mode"]
     #[inline(always)]
-    pub fn cmod(&self) -> CmodR {
-        CmodR::new(((self.bits >> 3) & 1) != 0)
+    pub fn cmod(&self) -> CMOD_R {
+        CMOD_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Extended Capture Mode"]
     #[inline(always)]
-    pub fn ecm(&self) -> EcmR {
-        EcmR::new(((self.bits >> 4) & 1) != 0)
+    pub fn ecm(&self) -> ECM_R {
+        ECM_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 5:6 - Clear on Capture Control"]
     #[inline(always)]
-    pub fn capc(&self) -> CapcR {
-        CapcR::new(((self.bits >> 5) & 3) as u8)
+    pub fn capc(&self) -> CAPC_R {
+        CAPC_R::new(((self.bits >> 5) & 3) as u8)
     }
     #[doc = "Bit 7 - Timer Load selector"]
     #[inline(always)]
-    pub fn tls(&self) -> TlsR {
-        TlsR::new(((self.bits >> 7) & 1) != 0)
+    pub fn tls(&self) -> TLS_R {
+        TLS_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Extended Stop Function Control"]
     #[inline(always)]
-    pub fn endm(&self) -> EndmR {
-        EndmR::new(((self.bits >> 8) & 3) as u8)
+    pub fn endm(&self) -> ENDM_R {
+        ENDM_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bit 10 - Extended Start Function Control"]
     #[inline(always)]
-    pub fn strm(&self) -> StrmR {
-        StrmR::new(((self.bits >> 10) & 1) != 0)
+    pub fn strm(&self) -> STRM_R {
+        STRM_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Equal Capture Event enable"]
     #[inline(always)]
-    pub fn sce(&self) -> SceR {
-        SceR::new(((self.bits >> 11) & 1) != 0)
+    pub fn sce(&self) -> SCE_R {
+        SCE_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Continuous Capture Enable"]
     #[inline(always)]
-    pub fn ccs(&self) -> CcsR {
-        CcsR::new(((self.bits >> 12) & 1) != 0)
+    pub fn ccs(&self) -> CCS_R {
+        CCS_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bits 13:14 - Dither Enable"]
     #[inline(always)]
-    pub fn dithe(&self) -> DitheR {
-        DitheR::new(((self.bits >> 13) & 3) as u8)
+    pub fn dithe(&self) -> DITHE_R {
+        DITHE_R::new(((self.bits >> 13) & 3) as u8)
     }
     #[doc = "Bit 15 - Dither input selector"]
     #[inline(always)]
-    pub fn dim(&self) -> DimR {
-        DimR::new(((self.bits >> 15) & 1) != 0)
+    pub fn dim(&self) -> DIM_R {
+        DIM_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Floating Prescaler enable"]
     #[inline(always)]
-    pub fn fpe(&self) -> FpeR {
-        FpeR::new(((self.bits >> 16) & 1) != 0)
+    pub fn fpe(&self) -> FPE_R {
+        FPE_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - TRAP enable for CCU8x.OUTy0"]
     #[inline(always)]
-    pub fn trape0(&self) -> Trape0R {
-        Trape0R::new(((self.bits >> 17) & 1) != 0)
+    pub fn trape0(&self) -> TRAPE0_R {
+        TRAPE0_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - TRAP enable for CCU8x.OUTy1"]
     #[inline(always)]
-    pub fn trape1(&self) -> Trape1R {
-        Trape1R::new(((self.bits >> 18) & 1) != 0)
+    pub fn trape1(&self) -> TRAPE1_R {
+        TRAPE1_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - TRAP enable for CCU8x.OUTy2"]
     #[inline(always)]
-    pub fn trape2(&self) -> Trape2R {
-        Trape2R::new(((self.bits >> 19) & 1) != 0)
+    pub fn trape2(&self) -> TRAPE2_R {
+        TRAPE2_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - TRAP enable for CCU8x.OUTy3"]
     #[inline(always)]
-    pub fn trape3(&self) -> Trape3R {
-        Trape3R::new(((self.bits >> 20) & 1) != 0)
+    pub fn trape3(&self) -> TRAPE3_R {
+        TRAPE3_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - TRAP Synchronization Enable"]
     #[inline(always)]
-    pub fn trpse(&self) -> TrpseR {
-        TrpseR::new(((self.bits >> 21) & 1) != 0)
+    pub fn trpse(&self) -> TRPSE_R {
+        TRPSE_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - TRAP State Clear Control"]
     #[inline(always)]
-    pub fn trpsw(&self) -> TrpswR {
-        TrpswR::new(((self.bits >> 22) & 1) != 0)
+    pub fn trpsw(&self) -> TRPSW_R {
+        TRPSW_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - External Modulation Synchronization"]
     #[inline(always)]
-    pub fn ems(&self) -> EmsR {
-        EmsR::new(((self.bits >> 23) & 1) != 0)
+    pub fn ems(&self) -> EMS_R {
+        EMS_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - External Modulation Type"]
     #[inline(always)]
-    pub fn emt(&self) -> EmtR {
-        EmtR::new(((self.bits >> 24) & 1) != 0)
+    pub fn emt(&self) -> EMT_R {
+        EMT_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Multi Channel Mode Enable for Channel 1"]
     #[inline(always)]
-    pub fn mcme1(&self) -> Mcme1R {
-        Mcme1R::new(((self.bits >> 25) & 1) != 0)
+    pub fn mcme1(&self) -> MCME1_R {
+        MCME1_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - Multi Channel Mode Enable for Channel 2"]
     #[inline(always)]
-    pub fn mcme2(&self) -> Mcme2R {
-        Mcme2R::new(((self.bits >> 26) & 1) != 0)
+    pub fn mcme2(&self) -> MCME2_R {
+        MCME2_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bits 27:28 - External Modulation Channel enable"]
     #[inline(always)]
-    pub fn eme(&self) -> EmeR {
-        EmeR::new(((self.bits >> 27) & 3) as u8)
+    pub fn eme(&self) -> EME_R {
+        EME_R::new(((self.bits >> 27) & 3) as u8)
     }
     #[doc = "Bits 29:30 - Status bit output selector"]
     #[inline(always)]
-    pub fn stos(&self) -> StosR {
-        StosR::new(((self.bits >> 29) & 3) as u8)
+    pub fn stos(&self) -> STOS_R {
+        STOS_R::new(((self.bits >> 29) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Timer Counting Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tcm(&mut self) -> TcmW<TcSpec> {
-        TcmW::new(self, 0)
+    pub fn tcm(&mut self) -> TCM_W<TC_SPEC> {
+        TCM_W::new(self, 0)
     }
     #[doc = "Bit 1 - Timer Single Shot Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tssm(&mut self) -> TssmW<TcSpec> {
-        TssmW::new(self, 1)
+    pub fn tssm(&mut self) -> TSSM_W<TC_SPEC> {
+        TSSM_W::new(self, 1)
     }
     #[doc = "Bit 2 - Shadow Transfer on Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn clst(&mut self) -> ClstW<TcSpec> {
-        ClstW::new(self, 2)
+    pub fn clst(&mut self) -> CLST_W<TC_SPEC> {
+        CLST_W::new(self, 2)
     }
     #[doc = "Bit 4 - Extended Capture Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ecm(&mut self) -> EcmW<TcSpec> {
-        EcmW::new(self, 4)
+    pub fn ecm(&mut self) -> ECM_W<TC_SPEC> {
+        ECM_W::new(self, 4)
     }
     #[doc = "Bits 5:6 - Clear on Capture Control"]
     #[inline(always)]
     #[must_use]
-    pub fn capc(&mut self) -> CapcW<TcSpec> {
-        CapcW::new(self, 5)
+    pub fn capc(&mut self) -> CAPC_W<TC_SPEC> {
+        CAPC_W::new(self, 5)
     }
     #[doc = "Bit 7 - Timer Load selector"]
     #[inline(always)]
     #[must_use]
-    pub fn tls(&mut self) -> TlsW<TcSpec> {
-        TlsW::new(self, 7)
+    pub fn tls(&mut self) -> TLS_W<TC_SPEC> {
+        TLS_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Extended Stop Function Control"]
     #[inline(always)]
     #[must_use]
-    pub fn endm(&mut self) -> EndmW<TcSpec> {
-        EndmW::new(self, 8)
+    pub fn endm(&mut self) -> ENDM_W<TC_SPEC> {
+        ENDM_W::new(self, 8)
     }
     #[doc = "Bit 10 - Extended Start Function Control"]
     #[inline(always)]
     #[must_use]
-    pub fn strm(&mut self) -> StrmW<TcSpec> {
-        StrmW::new(self, 10)
+    pub fn strm(&mut self) -> STRM_W<TC_SPEC> {
+        STRM_W::new(self, 10)
     }
     #[doc = "Bit 11 - Equal Capture Event enable"]
     #[inline(always)]
     #[must_use]
-    pub fn sce(&mut self) -> SceW<TcSpec> {
-        SceW::new(self, 11)
+    pub fn sce(&mut self) -> SCE_W<TC_SPEC> {
+        SCE_W::new(self, 11)
     }
     #[doc = "Bit 12 - Continuous Capture Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ccs(&mut self) -> CcsW<TcSpec> {
-        CcsW::new(self, 12)
+    pub fn ccs(&mut self) -> CCS_W<TC_SPEC> {
+        CCS_W::new(self, 12)
     }
     #[doc = "Bits 13:14 - Dither Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dithe(&mut self) -> DitheW<TcSpec> {
-        DitheW::new(self, 13)
+    pub fn dithe(&mut self) -> DITHE_W<TC_SPEC> {
+        DITHE_W::new(self, 13)
     }
     #[doc = "Bit 15 - Dither input selector"]
     #[inline(always)]
     #[must_use]
-    pub fn dim(&mut self) -> DimW<TcSpec> {
-        DimW::new(self, 15)
+    pub fn dim(&mut self) -> DIM_W<TC_SPEC> {
+        DIM_W::new(self, 15)
     }
     #[doc = "Bit 16 - Floating Prescaler enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fpe(&mut self) -> FpeW<TcSpec> {
-        FpeW::new(self, 16)
+    pub fn fpe(&mut self) -> FPE_W<TC_SPEC> {
+        FPE_W::new(self, 16)
     }
     #[doc = "Bit 17 - TRAP enable for CCU8x.OUTy0"]
     #[inline(always)]
     #[must_use]
-    pub fn trape0(&mut self) -> Trape0W<TcSpec> {
-        Trape0W::new(self, 17)
+    pub fn trape0(&mut self) -> TRAPE0_W<TC_SPEC> {
+        TRAPE0_W::new(self, 17)
     }
     #[doc = "Bit 18 - TRAP enable for CCU8x.OUTy1"]
     #[inline(always)]
     #[must_use]
-    pub fn trape1(&mut self) -> Trape1W<TcSpec> {
-        Trape1W::new(self, 18)
+    pub fn trape1(&mut self) -> TRAPE1_W<TC_SPEC> {
+        TRAPE1_W::new(self, 18)
     }
     #[doc = "Bit 19 - TRAP enable for CCU8x.OUTy2"]
     #[inline(always)]
     #[must_use]
-    pub fn trape2(&mut self) -> Trape2W<TcSpec> {
-        Trape2W::new(self, 19)
+    pub fn trape2(&mut self) -> TRAPE2_W<TC_SPEC> {
+        TRAPE2_W::new(self, 19)
     }
     #[doc = "Bit 20 - TRAP enable for CCU8x.OUTy3"]
     #[inline(always)]
     #[must_use]
-    pub fn trape3(&mut self) -> Trape3W<TcSpec> {
-        Trape3W::new(self, 20)
+    pub fn trape3(&mut self) -> TRAPE3_W<TC_SPEC> {
+        TRAPE3_W::new(self, 20)
     }
     #[doc = "Bit 21 - TRAP Synchronization Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn trpse(&mut self) -> TrpseW<TcSpec> {
-        TrpseW::new(self, 21)
+    pub fn trpse(&mut self) -> TRPSE_W<TC_SPEC> {
+        TRPSE_W::new(self, 21)
     }
     #[doc = "Bit 22 - TRAP State Clear Control"]
     #[inline(always)]
     #[must_use]
-    pub fn trpsw(&mut self) -> TrpswW<TcSpec> {
-        TrpswW::new(self, 22)
+    pub fn trpsw(&mut self) -> TRPSW_W<TC_SPEC> {
+        TRPSW_W::new(self, 22)
     }
     #[doc = "Bit 23 - External Modulation Synchronization"]
     #[inline(always)]
     #[must_use]
-    pub fn ems(&mut self) -> EmsW<TcSpec> {
-        EmsW::new(self, 23)
+    pub fn ems(&mut self) -> EMS_W<TC_SPEC> {
+        EMS_W::new(self, 23)
     }
     #[doc = "Bit 24 - External Modulation Type"]
     #[inline(always)]
     #[must_use]
-    pub fn emt(&mut self) -> EmtW<TcSpec> {
-        EmtW::new(self, 24)
+    pub fn emt(&mut self) -> EMT_W<TC_SPEC> {
+        EMT_W::new(self, 24)
     }
     #[doc = "Bit 25 - Multi Channel Mode Enable for Channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn mcme1(&mut self) -> Mcme1W<TcSpec> {
-        Mcme1W::new(self, 25)
+    pub fn mcme1(&mut self) -> MCME1_W<TC_SPEC> {
+        MCME1_W::new(self, 25)
     }
     #[doc = "Bit 26 - Multi Channel Mode Enable for Channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn mcme2(&mut self) -> Mcme2W<TcSpec> {
-        Mcme2W::new(self, 26)
+    pub fn mcme2(&mut self) -> MCME2_W<TC_SPEC> {
+        MCME2_W::new(self, 26)
     }
     #[doc = "Bits 27:28 - External Modulation Channel enable"]
     #[inline(always)]
     #[must_use]
-    pub fn eme(&mut self) -> EmeW<TcSpec> {
-        EmeW::new(self, 27)
+    pub fn eme(&mut self) -> EME_W<TC_SPEC> {
+        EME_W::new(self, 27)
     }
     #[doc = "Bits 29:30 - Status bit output selector"]
     #[inline(always)]
     #[must_use]
-    pub fn stos(&mut self) -> StosW<TcSpec> {
-        StosW::new(self, 29)
+    pub fn stos(&mut self) -> STOS_W<TC_SPEC> {
+        STOS_W::new(self, 29)
     }
 }
 #[doc = "Slice Timer Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct TcSpec;
-impl crate::RegisterSpec for TcSpec {
+pub struct TC_SPEC;
+impl crate::RegisterSpec for TC_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`tc::R`](R) reader structure"]
-impl crate::Readable for TcSpec {}
+impl crate::Readable for TC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`tc::W`](W) writer structure"]
-impl crate::Writable for TcSpec {
+impl crate::Writable for TC_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TC to value 0x1800_0000"]
-impl crate::Resettable for TcSpec {
+impl crate::Resettable for TC_SPEC {
     const RESET_VALUE: u32 = 0x1800_0000;
 }

@@ -1,170 +1,170 @@
 #[doc = "Register `MII_CONT_STAT` reader"]
-pub type R = crate::R<MiiContStatSpec>;
+pub type R = crate::R<MII_CONT_STAT_SPEC>;
 #[doc = "Register `MII_CONT_STAT` writer"]
-pub type W = crate::W<MiiContStatSpec>;
+pub type W = crate::W<MII_CONT_STAT_SPEC>;
 #[doc = "Write enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WEn {
+pub enum W_EN_A {
     #[doc = "0: Write disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Write enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<WEn> for bool {
+impl From<W_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: WEn) -> Self {
+    fn from(variant: W_EN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `W_EN` reader - Write enable"]
-pub type WEnR = crate::BitReader<WEn>;
-impl WEnR {
+pub type W_EN_R = crate::BitReader<W_EN_A>;
+impl W_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WEn {
+    pub const fn variant(&self) -> W_EN_A {
         match self.bits {
-            false => WEn::Value1,
-            true => WEn::Value2,
+            false => W_EN_A::VALUE1,
+            true => W_EN_A::VALUE2,
         }
     }
     #[doc = "Write disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WEn::Value1
+        *self == W_EN_A::VALUE1
     }
     #[doc = "Write enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WEn::Value2
+        *self == W_EN_A::VALUE2
     }
 }
 #[doc = "Management Interface can be controlled by PDI\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MicPdi {
+pub enum MIC_PDI_A {
     #[doc = "0: Only ECAT control"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: PDI control possible"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<MicPdi> for bool {
+impl From<MIC_PDI_A> for bool {
     #[inline(always)]
-    fn from(variant: MicPdi) -> Self {
+    fn from(variant: MIC_PDI_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MIC_PDI` reader - Management Interface can be controlled by PDI"]
-pub type MicPdiR = crate::BitReader<MicPdi>;
-impl MicPdiR {
+pub type MIC_PDI_R = crate::BitReader<MIC_PDI_A>;
+impl MIC_PDI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MicPdi {
+    pub const fn variant(&self) -> MIC_PDI_A {
         match self.bits {
-            false => MicPdi::Value1,
-            true => MicPdi::Value2,
+            false => MIC_PDI_A::VALUE1,
+            true => MIC_PDI_A::VALUE2,
         }
     }
     #[doc = "Only ECAT control"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MicPdi::Value1
+        *self == MIC_PDI_A::VALUE1
     }
     #[doc = "PDI control possible"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MicPdi::Value2
+        *self == MIC_PDI_A::VALUE2
     }
 }
 #[doc = "MI link detection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MiLd {
+pub enum MI_LD_A {
     #[doc = "0: Not available"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: MI link detection active"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<MiLd> for bool {
+impl From<MI_LD_A> for bool {
     #[inline(always)]
-    fn from(variant: MiLd) -> Self {
+    fn from(variant: MI_LD_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MI_LD` reader - MI link detection"]
-pub type MiLdR = crate::BitReader<MiLd>;
-impl MiLdR {
+pub type MI_LD_R = crate::BitReader<MI_LD_A>;
+impl MI_LD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MiLd {
+    pub const fn variant(&self) -> MI_LD_A {
         match self.bits {
-            false => MiLd::Value1,
-            true => MiLd::Value2,
+            false => MI_LD_A::VALUE1,
+            true => MI_LD_A::VALUE2,
         }
     }
     #[doc = "Not available"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MiLd::Value1
+        *self == MI_LD_A::VALUE1
     }
     #[doc = "MI link detection active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MiLd::Value2
+        *self == MI_LD_A::VALUE2
     }
 }
 #[doc = "Field `PHY_ADDR` reader - PHY address of port 0"]
-pub type PhyAddrR = crate::FieldReader;
+pub type PHY_ADDR_R = crate::FieldReader;
 #[doc = "Command register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CmdReg {
+pub enum CMD_REG_A {
     #[doc = "0: No command/MII idle (clear error bits)"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Read"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Write"]
-    Value3 = 2,
+    VALUE3 = 2,
 }
-impl From<CmdReg> for u8 {
+impl From<CMD_REG_A> for u8 {
     #[inline(always)]
-    fn from(variant: CmdReg) -> Self {
+    fn from(variant: CMD_REG_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CmdReg {
+impl crate::FieldSpec for CMD_REG_A {
     type Ux = u8;
 }
-impl crate::IsEnum for CmdReg {}
+impl crate::IsEnum for CMD_REG_A {}
 #[doc = "Field `CMD_REG` reader - Command register"]
-pub type CmdRegR = crate::FieldReader<CmdReg>;
-impl CmdRegR {
+pub type CMD_REG_R = crate::FieldReader<CMD_REG_A>;
+impl CMD_REG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<CmdReg> {
+    pub const fn variant(&self) -> Option<CMD_REG_A> {
         match self.bits {
-            0 => Some(CmdReg::Value1),
-            1 => Some(CmdReg::Value2),
-            2 => Some(CmdReg::Value3),
+            0 => Some(CMD_REG_A::VALUE1),
+            1 => Some(CMD_REG_A::VALUE2),
+            2 => Some(CMD_REG_A::VALUE3),
             _ => None,
         }
     }
     #[doc = "No command/MII idle (clear error bits)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CmdReg::Value1
+        *self == CMD_REG_A::VALUE1
     }
     #[doc = "Read"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CmdReg::Value2
+        *self == CMD_REG_A::VALUE2
     }
     #[doc = "Write"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CmdReg::Value3
+        *self == CMD_REG_A::VALUE3
     }
 }
 #[doc = "Field `CMD_REG` writer - Command register"]
-pub type CmdRegW<'a, REG> = crate::FieldWriter<'a, REG, 2, CmdReg>;
-impl<'a, REG> CmdRegW<'a, REG>
+pub type CMD_REG_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CMD_REG_A>;
+impl<'a, REG> CMD_REG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -172,150 +172,150 @@ where
     #[doc = "No command/MII idle (clear error bits)"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CmdReg::Value1)
+        self.variant(CMD_REG_A::VALUE1)
     }
     #[doc = "Read"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CmdReg::Value2)
+        self.variant(CMD_REG_A::VALUE2)
     }
     #[doc = "Write"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(CmdReg::Value3)
+        self.variant(CMD_REG_A::VALUE3)
     }
 }
 #[doc = "Command error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Error {
+pub enum ERROR_A {
     #[doc = "0: Last Command was successful"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Invalid command or write command without Write Enable"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Error> for bool {
+impl From<ERROR_A> for bool {
     #[inline(always)]
-    fn from(variant: Error) -> Self {
+    fn from(variant: ERROR_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ERROR` reader - Command error"]
-pub type ErrorR = crate::BitReader<Error>;
-impl ErrorR {
+pub type ERROR_R = crate::BitReader<ERROR_A>;
+impl ERROR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Error {
+    pub const fn variant(&self) -> ERROR_A {
         match self.bits {
-            false => Error::Value1,
-            true => Error::Value2,
+            false => ERROR_A::VALUE1,
+            true => ERROR_A::VALUE2,
         }
     }
     #[doc = "Last Command was successful"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Error::Value1
+        *self == ERROR_A::VALUE1
     }
     #[doc = "Invalid command or write command without Write Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Error::Value2
+        *self == ERROR_A::VALUE2
     }
 }
 #[doc = "Busy\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Busy {
+pub enum BUSY_A {
     #[doc = "0: MI control state machine is idle"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: MI control state machine is active"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Busy> for bool {
+impl From<BUSY_A> for bool {
     #[inline(always)]
-    fn from(variant: Busy) -> Self {
+    fn from(variant: BUSY_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BUSY` reader - Busy"]
-pub type BusyR = crate::BitReader<Busy>;
-impl BusyR {
+pub type BUSY_R = crate::BitReader<BUSY_A>;
+impl BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Busy {
+    pub const fn variant(&self) -> BUSY_A {
         match self.bits {
-            false => Busy::Value1,
-            true => Busy::Value2,
+            false => BUSY_A::VALUE1,
+            true => BUSY_A::VALUE2,
         }
     }
     #[doc = "MI control state machine is idle"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Busy::Value1
+        *self == BUSY_A::VALUE1
     }
     #[doc = "MI control state machine is active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Busy::Value2
+        *self == BUSY_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - Write enable"]
     #[inline(always)]
-    pub fn w_en(&self) -> WEnR {
-        WEnR::new((self.bits & 1) != 0)
+    pub fn w_en(&self) -> W_EN_R {
+        W_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Management Interface can be controlled by PDI"]
     #[inline(always)]
-    pub fn mic_pdi(&self) -> MicPdiR {
-        MicPdiR::new(((self.bits >> 1) & 1) != 0)
+    pub fn mic_pdi(&self) -> MIC_PDI_R {
+        MIC_PDI_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - MI link detection"]
     #[inline(always)]
-    pub fn mi_ld(&self) -> MiLdR {
-        MiLdR::new(((self.bits >> 2) & 1) != 0)
+    pub fn mi_ld(&self) -> MI_LD_R {
+        MI_LD_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 3:7 - PHY address of port 0"]
     #[inline(always)]
-    pub fn phy_addr(&self) -> PhyAddrR {
-        PhyAddrR::new(((self.bits >> 3) & 0x1f) as u8)
+    pub fn phy_addr(&self) -> PHY_ADDR_R {
+        PHY_ADDR_R::new(((self.bits >> 3) & 0x1f) as u8)
     }
     #[doc = "Bits 8:9 - Command register"]
     #[inline(always)]
-    pub fn cmd_reg(&self) -> CmdRegR {
-        CmdRegR::new(((self.bits >> 8) & 3) as u8)
+    pub fn cmd_reg(&self) -> CMD_REG_R {
+        CMD_REG_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bit 14 - Command error"]
     #[inline(always)]
-    pub fn error(&self) -> ErrorR {
-        ErrorR::new(((self.bits >> 14) & 1) != 0)
+    pub fn error(&self) -> ERROR_R {
+        ERROR_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Busy"]
     #[inline(always)]
-    pub fn busy(&self) -> BusyR {
-        BusyR::new(((self.bits >> 15) & 1) != 0)
+    pub fn busy(&self) -> BUSY_R {
+        BUSY_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 8:9 - Command register"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_reg(&mut self) -> CmdRegW<MiiContStatSpec> {
-        CmdRegW::new(self, 8)
+    pub fn cmd_reg(&mut self) -> CMD_REG_W<MII_CONT_STAT_SPEC> {
+        CMD_REG_W::new(self, 8)
     }
 }
 #[doc = "MII Management Control/Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mii_cont_stat::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mii_cont_stat::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct MiiContStatSpec;
-impl crate::RegisterSpec for MiiContStatSpec {
+pub struct MII_CONT_STAT_SPEC;
+impl crate::RegisterSpec for MII_CONT_STAT_SPEC {
     type Ux = u16;
 }
 #[doc = "`read()` method returns [`mii_cont_stat::R`](R) reader structure"]
-impl crate::Readable for MiiContStatSpec {}
+impl crate::Readable for MII_CONT_STAT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mii_cont_stat::W`](W) writer structure"]
-impl crate::Writable for MiiContStatSpec {
+impl crate::Writable for MII_CONT_STAT_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets MII_CONT_STAT to value 0"]
-impl crate::Resettable for MiiContStatSpec {
+impl crate::Resettable for MII_CONT_STAT_SPEC {
     const RESET_VALUE: u16 = 0;
 }

@@ -1,68 +1,68 @@
 #[doc = "Register `CONP0` reader"]
-pub type R = crate::R<Conp0Spec>;
+pub type R = crate::R<CONP0_SPEC>;
 #[doc = "Register `CONP0` writer"]
-pub type W = crate::W<Conp0Spec>;
+pub type W = crate::W<CONP0_SPEC>;
 #[doc = "PORT0 Receive Input 0 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Rxd0 {
+pub enum RXD0_A {
     #[doc = "0: Data input RXD0A is selected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Data input RXD0B is selected"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Data input RXD0C is selected"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Data input RXD0D is selected"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Rxd0> for u8 {
+impl From<RXD0_A> for u8 {
     #[inline(always)]
-    fn from(variant: Rxd0) -> Self {
+    fn from(variant: RXD0_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Rxd0 {
+impl crate::FieldSpec for RXD0_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Rxd0 {}
+impl crate::IsEnum for RXD0_A {}
 #[doc = "Field `RXD0` reader - PORT0 Receive Input 0 Select"]
-pub type Rxd0R = crate::FieldReader<Rxd0>;
-impl Rxd0R {
+pub type RXD0_R = crate::FieldReader<RXD0_A>;
+impl RXD0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rxd0 {
+    pub const fn variant(&self) -> RXD0_A {
         match self.bits {
-            0 => Rxd0::Value1,
-            1 => Rxd0::Value2,
-            2 => Rxd0::Value3,
-            3 => Rxd0::Value4,
+            0 => RXD0_A::VALUE1,
+            1 => RXD0_A::VALUE2,
+            2 => RXD0_A::VALUE3,
+            3 => RXD0_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Data input RXD0A is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rxd0::Value1
+        *self == RXD0_A::VALUE1
     }
     #[doc = "Data input RXD0B is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rxd0::Value2
+        *self == RXD0_A::VALUE2
     }
     #[doc = "Data input RXD0C is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Rxd0::Value3
+        *self == RXD0_A::VALUE3
     }
     #[doc = "Data input RXD0D is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Rxd0::Value4
+        *self == RXD0_A::VALUE4
     }
 }
 #[doc = "Field `RXD0` writer - PORT0 Receive Input 0 Select"]
-pub type Rxd0W<'a, REG> = crate::FieldWriter<'a, REG, 2, Rxd0, crate::Safe>;
-impl<'a, REG> Rxd0W<'a, REG>
+pub type RXD0_W<'a, REG> = crate::FieldWriter<'a, REG, 2, RXD0_A, crate::Safe>;
+impl<'a, REG> RXD0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -70,85 +70,85 @@ where
     #[doc = "Data input RXD0A is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd0::Value1)
+        self.variant(RXD0_A::VALUE1)
     }
     #[doc = "Data input RXD0B is selected"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd0::Value2)
+        self.variant(RXD0_A::VALUE2)
     }
     #[doc = "Data input RXD0C is selected"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd0::Value3)
+        self.variant(RXD0_A::VALUE3)
     }
     #[doc = "Data input RXD0D is selected"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd0::Value4)
+        self.variant(RXD0_A::VALUE4)
     }
 }
 #[doc = "Port0 Receive Input 1 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Rxd1 {
+pub enum RXD1_A {
     #[doc = "0: Data input RXD1A is selected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Data input RXD1B is selected"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Data input RXD1C is selected"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Data input RXD1D is selected"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Rxd1> for u8 {
+impl From<RXD1_A> for u8 {
     #[inline(always)]
-    fn from(variant: Rxd1) -> Self {
+    fn from(variant: RXD1_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Rxd1 {
+impl crate::FieldSpec for RXD1_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Rxd1 {}
+impl crate::IsEnum for RXD1_A {}
 #[doc = "Field `RXD1` reader - Port0 Receive Input 1 Select"]
-pub type Rxd1R = crate::FieldReader<Rxd1>;
-impl Rxd1R {
+pub type RXD1_R = crate::FieldReader<RXD1_A>;
+impl RXD1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rxd1 {
+    pub const fn variant(&self) -> RXD1_A {
         match self.bits {
-            0 => Rxd1::Value1,
-            1 => Rxd1::Value2,
-            2 => Rxd1::Value3,
-            3 => Rxd1::Value4,
+            0 => RXD1_A::VALUE1,
+            1 => RXD1_A::VALUE2,
+            2 => RXD1_A::VALUE3,
+            3 => RXD1_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Data input RXD1A is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rxd1::Value1
+        *self == RXD1_A::VALUE1
     }
     #[doc = "Data input RXD1B is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rxd1::Value2
+        *self == RXD1_A::VALUE2
     }
     #[doc = "Data input RXD1C is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Rxd1::Value3
+        *self == RXD1_A::VALUE3
     }
     #[doc = "Data input RXD1D is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Rxd1::Value4
+        *self == RXD1_A::VALUE4
     }
 }
 #[doc = "Field `RXD1` writer - Port0 Receive Input 1 Select"]
-pub type Rxd1W<'a, REG> = crate::FieldWriter<'a, REG, 2, Rxd1, crate::Safe>;
-impl<'a, REG> Rxd1W<'a, REG>
+pub type RXD1_W<'a, REG> = crate::FieldWriter<'a, REG, 2, RXD1_A, crate::Safe>;
+impl<'a, REG> RXD1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -156,85 +156,85 @@ where
     #[doc = "Data input RXD1A is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd1::Value1)
+        self.variant(RXD1_A::VALUE1)
     }
     #[doc = "Data input RXD1B is selected"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd1::Value2)
+        self.variant(RXD1_A::VALUE2)
     }
     #[doc = "Data input RXD1C is selected"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd1::Value3)
+        self.variant(RXD1_A::VALUE3)
     }
     #[doc = "Data input RXD1D is selected"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd1::Value4)
+        self.variant(RXD1_A::VALUE4)
     }
 }
 #[doc = "Port0 Receive Input 2 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Rxd2 {
+pub enum RXD2_A {
     #[doc = "0: Data input RXD2A is selected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Data input RXD2B is selected"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Data input RXD2C is selected"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Data input RXD2D is selected"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Rxd2> for u8 {
+impl From<RXD2_A> for u8 {
     #[inline(always)]
-    fn from(variant: Rxd2) -> Self {
+    fn from(variant: RXD2_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Rxd2 {
+impl crate::FieldSpec for RXD2_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Rxd2 {}
+impl crate::IsEnum for RXD2_A {}
 #[doc = "Field `RXD2` reader - Port0 Receive Input 2 Select"]
-pub type Rxd2R = crate::FieldReader<Rxd2>;
-impl Rxd2R {
+pub type RXD2_R = crate::FieldReader<RXD2_A>;
+impl RXD2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rxd2 {
+    pub const fn variant(&self) -> RXD2_A {
         match self.bits {
-            0 => Rxd2::Value1,
-            1 => Rxd2::Value2,
-            2 => Rxd2::Value3,
-            3 => Rxd2::Value4,
+            0 => RXD2_A::VALUE1,
+            1 => RXD2_A::VALUE2,
+            2 => RXD2_A::VALUE3,
+            3 => RXD2_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Data input RXD2A is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rxd2::Value1
+        *self == RXD2_A::VALUE1
     }
     #[doc = "Data input RXD2B is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rxd2::Value2
+        *self == RXD2_A::VALUE2
     }
     #[doc = "Data input RXD2C is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Rxd2::Value3
+        *self == RXD2_A::VALUE3
     }
     #[doc = "Data input RXD2D is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Rxd2::Value4
+        *self == RXD2_A::VALUE4
     }
 }
 #[doc = "Field `RXD2` writer - Port0 Receive Input 2 Select"]
-pub type Rxd2W<'a, REG> = crate::FieldWriter<'a, REG, 2, Rxd2, crate::Safe>;
-impl<'a, REG> Rxd2W<'a, REG>
+pub type RXD2_W<'a, REG> = crate::FieldWriter<'a, REG, 2, RXD2_A, crate::Safe>;
+impl<'a, REG> RXD2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -242,85 +242,85 @@ where
     #[doc = "Data input RXD2A is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd2::Value1)
+        self.variant(RXD2_A::VALUE1)
     }
     #[doc = "Data input RXD2B is selected"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd2::Value2)
+        self.variant(RXD2_A::VALUE2)
     }
     #[doc = "Data input RXD2C is selected"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd2::Value3)
+        self.variant(RXD2_A::VALUE3)
     }
     #[doc = "Data input RXD2D is selected"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd2::Value4)
+        self.variant(RXD2_A::VALUE4)
     }
 }
 #[doc = "Port0 Receive Input 3 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Rxd3 {
+pub enum RXD3_A {
     #[doc = "0: Data input RXD3A is selected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Data input RXD3B is selected"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Data input RXD3C is selected"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Data input RXD3D is selected"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Rxd3> for u8 {
+impl From<RXD3_A> for u8 {
     #[inline(always)]
-    fn from(variant: Rxd3) -> Self {
+    fn from(variant: RXD3_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Rxd3 {
+impl crate::FieldSpec for RXD3_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Rxd3 {}
+impl crate::IsEnum for RXD3_A {}
 #[doc = "Field `RXD3` reader - Port0 Receive Input 3 Select"]
-pub type Rxd3R = crate::FieldReader<Rxd3>;
-impl Rxd3R {
+pub type RXD3_R = crate::FieldReader<RXD3_A>;
+impl RXD3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rxd3 {
+    pub const fn variant(&self) -> RXD3_A {
         match self.bits {
-            0 => Rxd3::Value1,
-            1 => Rxd3::Value2,
-            2 => Rxd3::Value3,
-            3 => Rxd3::Value4,
+            0 => RXD3_A::VALUE1,
+            1 => RXD3_A::VALUE2,
+            2 => RXD3_A::VALUE3,
+            3 => RXD3_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Data input RXD3A is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rxd3::Value1
+        *self == RXD3_A::VALUE1
     }
     #[doc = "Data input RXD3B is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rxd3::Value2
+        *self == RXD3_A::VALUE2
     }
     #[doc = "Data input RXD3C is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Rxd3::Value3
+        *self == RXD3_A::VALUE3
     }
     #[doc = "Data input RXD3D is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Rxd3::Value4
+        *self == RXD3_A::VALUE4
     }
 }
 #[doc = "Field `RXD3` writer - Port0 Receive Input 3 Select"]
-pub type Rxd3W<'a, REG> = crate::FieldWriter<'a, REG, 2, Rxd3, crate::Safe>;
-impl<'a, REG> Rxd3W<'a, REG>
+pub type RXD3_W<'a, REG> = crate::FieldWriter<'a, REG, 2, RXD3_A, crate::Safe>;
+impl<'a, REG> RXD3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -328,85 +328,85 @@ where
     #[doc = "Data input RXD3A is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd3::Value1)
+        self.variant(RXD3_A::VALUE1)
     }
     #[doc = "Data input RXD3B is selected"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd3::Value2)
+        self.variant(RXD3_A::VALUE2)
     }
     #[doc = "Data input RXD3C is selected"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd3::Value3)
+        self.variant(RXD3_A::VALUE3)
     }
     #[doc = "Data input RXD3D is selected"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxd3::Value4)
+        self.variant(RXD3_A::VALUE4)
     }
 }
 #[doc = "Port0 MII RX ERROR Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum RxErr {
+pub enum RX_ERR_A {
     #[doc = "0: Data input RX_ERRA is selected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Data input RX_ERRB is selected"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Data input RX_ERRC is selected"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Data input RX_ERRD is selected"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<RxErr> for u8 {
+impl From<RX_ERR_A> for u8 {
     #[inline(always)]
-    fn from(variant: RxErr) -> Self {
+    fn from(variant: RX_ERR_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for RxErr {
+impl crate::FieldSpec for RX_ERR_A {
     type Ux = u8;
 }
-impl crate::IsEnum for RxErr {}
+impl crate::IsEnum for RX_ERR_A {}
 #[doc = "Field `RX_ERR` reader - Port0 MII RX ERROR Input Select"]
-pub type RxErrR = crate::FieldReader<RxErr>;
-impl RxErrR {
+pub type RX_ERR_R = crate::FieldReader<RX_ERR_A>;
+impl RX_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RxErr {
+    pub const fn variant(&self) -> RX_ERR_A {
         match self.bits {
-            0 => RxErr::Value1,
-            1 => RxErr::Value2,
-            2 => RxErr::Value3,
-            3 => RxErr::Value4,
+            0 => RX_ERR_A::VALUE1,
+            1 => RX_ERR_A::VALUE2,
+            2 => RX_ERR_A::VALUE3,
+            3 => RX_ERR_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Data input RX_ERRA is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RxErr::Value1
+        *self == RX_ERR_A::VALUE1
     }
     #[doc = "Data input RX_ERRB is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RxErr::Value2
+        *self == RX_ERR_A::VALUE2
     }
     #[doc = "Data input RX_ERRC is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == RxErr::Value3
+        *self == RX_ERR_A::VALUE3
     }
     #[doc = "Data input RX_ERRD is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == RxErr::Value4
+        *self == RX_ERR_A::VALUE4
     }
 }
 #[doc = "Field `RX_ERR` writer - Port0 MII RX ERROR Input Select"]
-pub type RxErrW<'a, REG> = crate::FieldWriter<'a, REG, 2, RxErr, crate::Safe>;
-impl<'a, REG> RxErrW<'a, REG>
+pub type RX_ERR_W<'a, REG> = crate::FieldWriter<'a, REG, 2, RX_ERR_A, crate::Safe>;
+impl<'a, REG> RX_ERR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -414,85 +414,85 @@ where
     #[doc = "Data input RX_ERRA is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(RxErr::Value1)
+        self.variant(RX_ERR_A::VALUE1)
     }
     #[doc = "Data input RX_ERRB is selected"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(RxErr::Value2)
+        self.variant(RX_ERR_A::VALUE2)
     }
     #[doc = "Data input RX_ERRC is selected"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(RxErr::Value3)
+        self.variant(RX_ERR_A::VALUE3)
     }
     #[doc = "Data input RX_ERRD is selected"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(RxErr::Value4)
+        self.variant(RX_ERR_A::VALUE4)
     }
 }
 #[doc = "Port0 MII RX DV Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum RxDv {
+pub enum RX_DV_A {
     #[doc = "0: Data input RX_DVA is selected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Data input RX_DVB is selected"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Data input RX_DVC is selected"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Data input RX_DVD is selected"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<RxDv> for u8 {
+impl From<RX_DV_A> for u8 {
     #[inline(always)]
-    fn from(variant: RxDv) -> Self {
+    fn from(variant: RX_DV_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for RxDv {
+impl crate::FieldSpec for RX_DV_A {
     type Ux = u8;
 }
-impl crate::IsEnum for RxDv {}
+impl crate::IsEnum for RX_DV_A {}
 #[doc = "Field `RX_DV` reader - Port0 MII RX DV Input Select"]
-pub type RxDvR = crate::FieldReader<RxDv>;
-impl RxDvR {
+pub type RX_DV_R = crate::FieldReader<RX_DV_A>;
+impl RX_DV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RxDv {
+    pub const fn variant(&self) -> RX_DV_A {
         match self.bits {
-            0 => RxDv::Value1,
-            1 => RxDv::Value2,
-            2 => RxDv::Value3,
-            3 => RxDv::Value4,
+            0 => RX_DV_A::VALUE1,
+            1 => RX_DV_A::VALUE2,
+            2 => RX_DV_A::VALUE3,
+            3 => RX_DV_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Data input RX_DVA is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RxDv::Value1
+        *self == RX_DV_A::VALUE1
     }
     #[doc = "Data input RX_DVB is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RxDv::Value2
+        *self == RX_DV_A::VALUE2
     }
     #[doc = "Data input RX_DVC is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == RxDv::Value3
+        *self == RX_DV_A::VALUE3
     }
     #[doc = "Data input RX_DVD is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == RxDv::Value4
+        *self == RX_DV_A::VALUE4
     }
 }
 #[doc = "Field `RX_DV` writer - Port0 MII RX DV Input Select"]
-pub type RxDvW<'a, REG> = crate::FieldWriter<'a, REG, 2, RxDv, crate::Safe>;
-impl<'a, REG> RxDvW<'a, REG>
+pub type RX_DV_W<'a, REG> = crate::FieldWriter<'a, REG, 2, RX_DV_A, crate::Safe>;
+impl<'a, REG> RX_DV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -500,85 +500,85 @@ where
     #[doc = "Data input RX_DVA is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(RxDv::Value1)
+        self.variant(RX_DV_A::VALUE1)
     }
     #[doc = "Data input RX_DVB is selected"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(RxDv::Value2)
+        self.variant(RX_DV_A::VALUE2)
     }
     #[doc = "Data input RX_DVC is selected"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(RxDv::Value3)
+        self.variant(RX_DV_A::VALUE3)
     }
     #[doc = "Data input RX_DVD is selected"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(RxDv::Value4)
+        self.variant(RX_DV_A::VALUE4)
     }
 }
 #[doc = "Port0 MII RX Clock Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum RxClk {
+pub enum RX_CLK_A {
     #[doc = "0: Clock input RX_CLKA"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clock input RX_CLKB"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Clock input RX_CLKC"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Clock input RX_CLKD"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<RxClk> for u8 {
+impl From<RX_CLK_A> for u8 {
     #[inline(always)]
-    fn from(variant: RxClk) -> Self {
+    fn from(variant: RX_CLK_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for RxClk {
+impl crate::FieldSpec for RX_CLK_A {
     type Ux = u8;
 }
-impl crate::IsEnum for RxClk {}
+impl crate::IsEnum for RX_CLK_A {}
 #[doc = "Field `RX_CLK` reader - Port0 MII RX Clock Input Select"]
-pub type RxClkR = crate::FieldReader<RxClk>;
-impl RxClkR {
+pub type RX_CLK_R = crate::FieldReader<RX_CLK_A>;
+impl RX_CLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RxClk {
+    pub const fn variant(&self) -> RX_CLK_A {
         match self.bits {
-            0 => RxClk::Value1,
-            1 => RxClk::Value2,
-            2 => RxClk::Value3,
-            3 => RxClk::Value4,
+            0 => RX_CLK_A::VALUE1,
+            1 => RX_CLK_A::VALUE2,
+            2 => RX_CLK_A::VALUE3,
+            3 => RX_CLK_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Clock input RX_CLKA"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RxClk::Value1
+        *self == RX_CLK_A::VALUE1
     }
     #[doc = "Clock input RX_CLKB"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RxClk::Value2
+        *self == RX_CLK_A::VALUE2
     }
     #[doc = "Clock input RX_CLKC"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == RxClk::Value3
+        *self == RX_CLK_A::VALUE3
     }
     #[doc = "Clock input RX_CLKD"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == RxClk::Value4
+        *self == RX_CLK_A::VALUE4
     }
 }
 #[doc = "Field `RX_CLK` writer - Port0 MII RX Clock Input Select"]
-pub type RxClkW<'a, REG> = crate::FieldWriter<'a, REG, 2, RxClk, crate::Safe>;
-impl<'a, REG> RxClkW<'a, REG>
+pub type RX_CLK_W<'a, REG> = crate::FieldWriter<'a, REG, 2, RX_CLK_A, crate::Safe>;
+impl<'a, REG> RX_CLK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -586,85 +586,85 @@ where
     #[doc = "Clock input RX_CLKA"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(RxClk::Value1)
+        self.variant(RX_CLK_A::VALUE1)
     }
     #[doc = "Clock input RX_CLKB"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(RxClk::Value2)
+        self.variant(RX_CLK_A::VALUE2)
     }
     #[doc = "Clock input RX_CLKC"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(RxClk::Value3)
+        self.variant(RX_CLK_A::VALUE3)
     }
     #[doc = "Clock input RX_CLKD"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(RxClk::Value4)
+        self.variant(RX_CLK_A::VALUE4)
     }
 }
 #[doc = "Port0 PHY Link Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Link {
+pub enum LINK_A {
     #[doc = "0: PHY LINKA"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: PHY LINKB"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: PHY LINKC"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: PHY LINKD"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Link> for u8 {
+impl From<LINK_A> for u8 {
     #[inline(always)]
-    fn from(variant: Link) -> Self {
+    fn from(variant: LINK_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Link {
+impl crate::FieldSpec for LINK_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Link {}
+impl crate::IsEnum for LINK_A {}
 #[doc = "Field `LINK` reader - Port0 PHY Link Input Select"]
-pub type LinkR = crate::FieldReader<Link>;
-impl LinkR {
+pub type LINK_R = crate::FieldReader<LINK_A>;
+impl LINK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Link {
+    pub const fn variant(&self) -> LINK_A {
         match self.bits {
-            0 => Link::Value1,
-            1 => Link::Value2,
-            2 => Link::Value3,
-            3 => Link::Value4,
+            0 => LINK_A::VALUE1,
+            1 => LINK_A::VALUE2,
+            2 => LINK_A::VALUE3,
+            3 => LINK_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "PHY LINKA"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Link::Value1
+        *self == LINK_A::VALUE1
     }
     #[doc = "PHY LINKB"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Link::Value2
+        *self == LINK_A::VALUE2
     }
     #[doc = "PHY LINKC"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Link::Value3
+        *self == LINK_A::VALUE3
     }
     #[doc = "PHY LINKD"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Link::Value4
+        *self == LINK_A::VALUE4
     }
 }
 #[doc = "Field `LINK` writer - Port0 PHY Link Input Select"]
-pub type LinkW<'a, REG> = crate::FieldWriter<'a, REG, 2, Link, crate::Safe>;
-impl<'a, REG> LinkW<'a, REG>
+pub type LINK_W<'a, REG> = crate::FieldWriter<'a, REG, 2, LINK_A, crate::Safe>;
+impl<'a, REG> LINK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -672,85 +672,85 @@ where
     #[doc = "PHY LINKA"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Link::Value1)
+        self.variant(LINK_A::VALUE1)
     }
     #[doc = "PHY LINKB"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Link::Value2)
+        self.variant(LINK_A::VALUE2)
     }
     #[doc = "PHY LINKC"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Link::Value3)
+        self.variant(LINK_A::VALUE3)
     }
     #[doc = "PHY LINKD"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Link::Value4)
+        self.variant(LINK_A::VALUE4)
     }
 }
 #[doc = "Port0 MII TX Clock Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TxClk {
+pub enum TX_CLK_A {
     #[doc = "0: Clock input TX_CLKA"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clock input TX_CLKB"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Clock input TX_CLKC"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Clock input TX_CLKD"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<TxClk> for u8 {
+impl From<TX_CLK_A> for u8 {
     #[inline(always)]
-    fn from(variant: TxClk) -> Self {
+    fn from(variant: TX_CLK_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for TxClk {
+impl crate::FieldSpec for TX_CLK_A {
     type Ux = u8;
 }
-impl crate::IsEnum for TxClk {}
+impl crate::IsEnum for TX_CLK_A {}
 #[doc = "Field `TX_CLK` reader - Port0 MII TX Clock Input Select"]
-pub type TxClkR = crate::FieldReader<TxClk>;
-impl TxClkR {
+pub type TX_CLK_R = crate::FieldReader<TX_CLK_A>;
+impl TX_CLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> TxClk {
+    pub const fn variant(&self) -> TX_CLK_A {
         match self.bits {
-            0 => TxClk::Value1,
-            1 => TxClk::Value2,
-            2 => TxClk::Value3,
-            3 => TxClk::Value4,
+            0 => TX_CLK_A::VALUE1,
+            1 => TX_CLK_A::VALUE2,
+            2 => TX_CLK_A::VALUE3,
+            3 => TX_CLK_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Clock input TX_CLKA"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TxClk::Value1
+        *self == TX_CLK_A::VALUE1
     }
     #[doc = "Clock input TX_CLKB"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TxClk::Value2
+        *self == TX_CLK_A::VALUE2
     }
     #[doc = "Clock input TX_CLKC"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == TxClk::Value3
+        *self == TX_CLK_A::VALUE3
     }
     #[doc = "Clock input TX_CLKD"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == TxClk::Value4
+        *self == TX_CLK_A::VALUE4
     }
 }
 #[doc = "Field `TX_CLK` writer - Port0 MII TX Clock Input Select"]
-pub type TxClkW<'a, REG> = crate::FieldWriter<'a, REG, 2, TxClk, crate::Safe>;
-impl<'a, REG> TxClkW<'a, REG>
+pub type TX_CLK_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TX_CLK_A, crate::Safe>;
+impl<'a, REG> TX_CLK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -758,85 +758,85 @@ where
     #[doc = "Clock input TX_CLKA"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(TxClk::Value1)
+        self.variant(TX_CLK_A::VALUE1)
     }
     #[doc = "Clock input TX_CLKB"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(TxClk::Value2)
+        self.variant(TX_CLK_A::VALUE2)
     }
     #[doc = "Clock input TX_CLKC"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(TxClk::Value3)
+        self.variant(TX_CLK_A::VALUE3)
     }
     #[doc = "Clock input TX_CLKD"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(TxClk::Value4)
+        self.variant(TX_CLK_A::VALUE4)
     }
 }
 #[doc = "Port0 Manual TX Shift configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TxShift {
+pub enum TX_SHIFT_A {
     #[doc = "0: 0 ns"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 10 ns"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: 20 ns"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: 30 ns"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<TxShift> for u8 {
+impl From<TX_SHIFT_A> for u8 {
     #[inline(always)]
-    fn from(variant: TxShift) -> Self {
+    fn from(variant: TX_SHIFT_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for TxShift {
+impl crate::FieldSpec for TX_SHIFT_A {
     type Ux = u8;
 }
-impl crate::IsEnum for TxShift {}
+impl crate::IsEnum for TX_SHIFT_A {}
 #[doc = "Field `TX_SHIFT` reader - Port0 Manual TX Shift configuration"]
-pub type TxShiftR = crate::FieldReader<TxShift>;
-impl TxShiftR {
+pub type TX_SHIFT_R = crate::FieldReader<TX_SHIFT_A>;
+impl TX_SHIFT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> TxShift {
+    pub const fn variant(&self) -> TX_SHIFT_A {
         match self.bits {
-            0 => TxShift::Value1,
-            1 => TxShift::Value2,
-            2 => TxShift::Value3,
-            3 => TxShift::Value4,
+            0 => TX_SHIFT_A::VALUE1,
+            1 => TX_SHIFT_A::VALUE2,
+            2 => TX_SHIFT_A::VALUE3,
+            3 => TX_SHIFT_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "0 ns"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TxShift::Value1
+        *self == TX_SHIFT_A::VALUE1
     }
     #[doc = "10 ns"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TxShift::Value2
+        *self == TX_SHIFT_A::VALUE2
     }
     #[doc = "20 ns"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == TxShift::Value3
+        *self == TX_SHIFT_A::VALUE3
     }
     #[doc = "30 ns"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == TxShift::Value4
+        *self == TX_SHIFT_A::VALUE4
     }
 }
 #[doc = "Field `TX_SHIFT` writer - Port0 Manual TX Shift configuration"]
-pub type TxShiftW<'a, REG> = crate::FieldWriter<'a, REG, 2, TxShift, crate::Safe>;
-impl<'a, REG> TxShiftW<'a, REG>
+pub type TX_SHIFT_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TX_SHIFT_A, crate::Safe>;
+impl<'a, REG> TX_SHIFT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -844,152 +844,152 @@ where
     #[doc = "0 ns"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(TxShift::Value1)
+        self.variant(TX_SHIFT_A::VALUE1)
     }
     #[doc = "10 ns"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(TxShift::Value2)
+        self.variant(TX_SHIFT_A::VALUE2)
     }
     #[doc = "20 ns"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(TxShift::Value3)
+        self.variant(TX_SHIFT_A::VALUE3)
     }
     #[doc = "30 ns"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(TxShift::Value4)
+        self.variant(TX_SHIFT_A::VALUE4)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - PORT0 Receive Input 0 Select"]
     #[inline(always)]
-    pub fn rxd0(&self) -> Rxd0R {
-        Rxd0R::new((self.bits & 3) as u8)
+    pub fn rxd0(&self) -> RXD0_R {
+        RXD0_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - Port0 Receive Input 1 Select"]
     #[inline(always)]
-    pub fn rxd1(&self) -> Rxd1R {
-        Rxd1R::new(((self.bits >> 2) & 3) as u8)
+    pub fn rxd1(&self) -> RXD1_R {
+        RXD1_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - Port0 Receive Input 2 Select"]
     #[inline(always)]
-    pub fn rxd2(&self) -> Rxd2R {
-        Rxd2R::new(((self.bits >> 4) & 3) as u8)
+    pub fn rxd2(&self) -> RXD2_R {
+        RXD2_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - Port0 Receive Input 3 Select"]
     #[inline(always)]
-    pub fn rxd3(&self) -> Rxd3R {
-        Rxd3R::new(((self.bits >> 6) & 3) as u8)
+    pub fn rxd3(&self) -> RXD3_R {
+        RXD3_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:9 - Port0 MII RX ERROR Input Select"]
     #[inline(always)]
-    pub fn rx_err(&self) -> RxErrR {
-        RxErrR::new(((self.bits >> 8) & 3) as u8)
+    pub fn rx_err(&self) -> RX_ERR_R {
+        RX_ERR_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - Port0 MII RX DV Input Select"]
     #[inline(always)]
-    pub fn rx_dv(&self) -> RxDvR {
-        RxDvR::new(((self.bits >> 10) & 3) as u8)
+    pub fn rx_dv(&self) -> RX_DV_R {
+        RX_DV_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - Port0 MII RX Clock Input Select"]
     #[inline(always)]
-    pub fn rx_clk(&self) -> RxClkR {
-        RxClkR::new(((self.bits >> 12) & 3) as u8)
+    pub fn rx_clk(&self) -> RX_CLK_R {
+        RX_CLK_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 16:17 - Port0 PHY Link Input Select"]
     #[inline(always)]
-    pub fn link(&self) -> LinkR {
-        LinkR::new(((self.bits >> 16) & 3) as u8)
+    pub fn link(&self) -> LINK_R {
+        LINK_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 28:29 - Port0 MII TX Clock Input Select"]
     #[inline(always)]
-    pub fn tx_clk(&self) -> TxClkR {
-        TxClkR::new(((self.bits >> 28) & 3) as u8)
+    pub fn tx_clk(&self) -> TX_CLK_R {
+        TX_CLK_R::new(((self.bits >> 28) & 3) as u8)
     }
     #[doc = "Bits 30:31 - Port0 Manual TX Shift configuration"]
     #[inline(always)]
-    pub fn tx_shift(&self) -> TxShiftR {
-        TxShiftR::new(((self.bits >> 30) & 3) as u8)
+    pub fn tx_shift(&self) -> TX_SHIFT_R {
+        TX_SHIFT_R::new(((self.bits >> 30) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - PORT0 Receive Input 0 Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rxd0(&mut self) -> Rxd0W<Conp0Spec> {
-        Rxd0W::new(self, 0)
+    pub fn rxd0(&mut self) -> RXD0_W<CONP0_SPEC> {
+        RXD0_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Port0 Receive Input 1 Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rxd1(&mut self) -> Rxd1W<Conp0Spec> {
-        Rxd1W::new(self, 2)
+    pub fn rxd1(&mut self) -> RXD1_W<CONP0_SPEC> {
+        RXD1_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Port0 Receive Input 2 Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rxd2(&mut self) -> Rxd2W<Conp0Spec> {
-        Rxd2W::new(self, 4)
+    pub fn rxd2(&mut self) -> RXD2_W<CONP0_SPEC> {
+        RXD2_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Port0 Receive Input 3 Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rxd3(&mut self) -> Rxd3W<Conp0Spec> {
-        Rxd3W::new(self, 6)
+    pub fn rxd3(&mut self) -> RXD3_W<CONP0_SPEC> {
+        RXD3_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Port0 MII RX ERROR Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_err(&mut self) -> RxErrW<Conp0Spec> {
-        RxErrW::new(self, 8)
+    pub fn rx_err(&mut self) -> RX_ERR_W<CONP0_SPEC> {
+        RX_ERR_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Port0 MII RX DV Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_dv(&mut self) -> RxDvW<Conp0Spec> {
-        RxDvW::new(self, 10)
+    pub fn rx_dv(&mut self) -> RX_DV_W<CONP0_SPEC> {
+        RX_DV_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Port0 MII RX Clock Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_clk(&mut self) -> RxClkW<Conp0Spec> {
-        RxClkW::new(self, 12)
+    pub fn rx_clk(&mut self) -> RX_CLK_W<CONP0_SPEC> {
+        RX_CLK_W::new(self, 12)
     }
     #[doc = "Bits 16:17 - Port0 PHY Link Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn link(&mut self) -> LinkW<Conp0Spec> {
-        LinkW::new(self, 16)
+    pub fn link(&mut self) -> LINK_W<CONP0_SPEC> {
+        LINK_W::new(self, 16)
     }
     #[doc = "Bits 28:29 - Port0 MII TX Clock Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_clk(&mut self) -> TxClkW<Conp0Spec> {
-        TxClkW::new(self, 28)
+    pub fn tx_clk(&mut self) -> TX_CLK_W<CONP0_SPEC> {
+        TX_CLK_W::new(self, 28)
     }
     #[doc = "Bits 30:31 - Port0 Manual TX Shift configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_shift(&mut self) -> TxShiftW<Conp0Spec> {
-        TxShiftW::new(self, 30)
+    pub fn tx_shift(&mut self) -> TX_SHIFT_W<CONP0_SPEC> {
+        TX_SHIFT_W::new(self, 30)
     }
 }
 #[doc = "EtherCAT 0 Port 1 Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`conp0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`conp0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct Conp0Spec;
-impl crate::RegisterSpec for Conp0Spec {
+pub struct CONP0_SPEC;
+impl crate::RegisterSpec for CONP0_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`conp0::R`](R) reader structure"]
-impl crate::Readable for Conp0Spec {}
+impl crate::Readable for CONP0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`conp0::W`](W) writer structure"]
-impl crate::Writable for Conp0Spec {
+impl crate::Writable for CONP0_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CONP0 to value 0"]
-impl crate::Resettable for Conp0Spec {
+impl crate::Resettable for CONP0_SPEC {
     const RESET_VALUE: u32 = 0;
 }
