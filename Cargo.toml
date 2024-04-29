@@ -1,6 +1,6 @@
 [package]
 name = "xmc4300"
-version = "0.10.0"
+version = "0.10.1"
 description = "XMC peripheral library for XMC4300 generated from SVD"
 authors = ["Lucas Brendel <lucasbrendel@gmail.com>"]
 readme = "README.md"
