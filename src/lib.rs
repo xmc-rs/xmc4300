@@ -337,11 +337,11 @@ unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
     }
 }
 #[doc = "Cortex-M4 Private Peripheral Block"]
-pub struct PPB {
+pub struct Ppb {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PPB {}
-impl PPB {
+unsafe impl Send for Ppb {}
+impl Ppb {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ppb::RegisterBlock = 0xe000_e000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -366,26 +366,26 @@ impl PPB {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for PPB {
+impl Deref for Ppb {
     type Target = ppb::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PPB {
+impl core::fmt::Debug for Ppb {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PPB").finish()
+        f.debug_struct("Ppb").finish()
     }
 }
 #[doc = "Cortex-M4 Private Peripheral Block"]
 pub mod ppb;
 #[doc = "DMA Line Router"]
-pub struct DLR {
+pub struct Dlr {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for DLR {}
-impl DLR {
+unsafe impl Send for Dlr {}
+impl Dlr {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const dlr::RegisterBlock = 0x5000_4900 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -410,26 +410,26 @@ impl DLR {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for DLR {
+impl Deref for Dlr {
     type Target = dlr::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for DLR {
+impl core::fmt::Debug for Dlr {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DLR").finish()
+        f.debug_struct("Dlr").finish()
     }
 }
 #[doc = "DMA Line Router"]
 pub mod dlr;
 #[doc = "Event Request Unit 0"]
-pub struct ERU0 {
+pub struct Eru0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ERU0 {}
-impl ERU0 {
+unsafe impl Send for Eru0 {}
+impl Eru0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const eru0::RegisterBlock = 0x5000_4800 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -454,26 +454,26 @@ impl ERU0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ERU0 {
+impl Deref for Eru0 {
     type Target = eru0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ERU0 {
+impl core::fmt::Debug for Eru0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ERU0").finish()
+        f.debug_struct("Eru0").finish()
     }
 }
 #[doc = "Event Request Unit 0"]
 pub mod eru0;
 #[doc = "Event Request Unit 1"]
-pub struct ERU1 {
+pub struct Eru1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ERU1 {}
-impl ERU1 {
+unsafe impl Send for Eru1 {}
+impl Eru1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const eru0::RegisterBlock = 0x4004_4000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -498,26 +498,26 @@ impl ERU1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ERU1 {
+impl Deref for Eru1 {
     type Target = eru0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ERU1 {
+impl core::fmt::Debug for Eru1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ERU1").finish()
+        f.debug_struct("Eru1").finish()
     }
 }
 #[doc = "Event Request Unit 1"]
 pub use self::eru0 as eru1;
 #[doc = "General Purpose DMA Unit 0"]
-pub struct GPDMA0 {
+pub struct Gpdma0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for GPDMA0 {}
-impl GPDMA0 {
+unsafe impl Send for Gpdma0 {}
+impl Gpdma0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const gpdma0::RegisterBlock = 0x5001_42c0 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -542,26 +542,26 @@ impl GPDMA0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for GPDMA0 {
+impl Deref for Gpdma0 {
     type Target = gpdma0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for GPDMA0 {
+impl core::fmt::Debug for Gpdma0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("GPDMA0").finish()
+        f.debug_struct("Gpdma0").finish()
     }
 }
 #[doc = "General Purpose DMA Unit 0"]
 pub mod gpdma0;
 #[doc = "General Purpose DMA Unit 0"]
-pub struct GPDMA0_CH0 {
+pub struct Gpdma0Ch0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for GPDMA0_CH0 {}
-impl GPDMA0_CH0 {
+unsafe impl Send for Gpdma0Ch0 {}
+impl Gpdma0Ch0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const gpdma0_ch0::RegisterBlock = 0x5001_4000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -586,26 +586,26 @@ impl GPDMA0_CH0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for GPDMA0_CH0 {
+impl Deref for Gpdma0Ch0 {
     type Target = gpdma0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for GPDMA0_CH0 {
+impl core::fmt::Debug for Gpdma0Ch0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("GPDMA0_CH0").finish()
+        f.debug_struct("Gpdma0Ch0").finish()
     }
 }
 #[doc = "General Purpose DMA Unit 0"]
 pub mod gpdma0_ch0;
 #[doc = "General Purpose DMA Unit 0"]
-pub struct GPDMA0_CH1 {
+pub struct Gpdma0Ch1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for GPDMA0_CH1 {}
-impl GPDMA0_CH1 {
+unsafe impl Send for Gpdma0Ch1 {}
+impl Gpdma0Ch1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const gpdma0_ch0::RegisterBlock = 0x5001_4058 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -630,26 +630,26 @@ impl GPDMA0_CH1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for GPDMA0_CH1 {
+impl Deref for Gpdma0Ch1 {
     type Target = gpdma0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for GPDMA0_CH1 {
+impl core::fmt::Debug for Gpdma0Ch1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("GPDMA0_CH1").finish()
+        f.debug_struct("Gpdma0Ch1").finish()
     }
 }
 #[doc = "General Purpose DMA Unit 0"]
 pub use self::gpdma0_ch0 as gpdma0_ch1;
 #[doc = "General Purpose DMA Unit 0"]
-pub struct GPDMA0_CH2 {
+pub struct Gpdma0Ch2 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for GPDMA0_CH2 {}
-impl GPDMA0_CH2 {
+unsafe impl Send for Gpdma0Ch2 {}
+impl Gpdma0Ch2 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const gpdma0_ch2::RegisterBlock = 0x5001_40b0 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -674,26 +674,26 @@ impl GPDMA0_CH2 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for GPDMA0_CH2 {
+impl Deref for Gpdma0Ch2 {
     type Target = gpdma0_ch2::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for GPDMA0_CH2 {
+impl core::fmt::Debug for Gpdma0Ch2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("GPDMA0_CH2").finish()
+        f.debug_struct("Gpdma0Ch2").finish()
     }
 }
 #[doc = "General Purpose DMA Unit 0"]
 pub mod gpdma0_ch2;
 #[doc = "General Purpose DMA Unit 0"]
-pub struct GPDMA0_CH3 {
+pub struct Gpdma0Ch3 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for GPDMA0_CH3 {}
-impl GPDMA0_CH3 {
+unsafe impl Send for Gpdma0Ch3 {}
+impl Gpdma0Ch3 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const gpdma0_ch2::RegisterBlock = 0x5001_4108 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -718,26 +718,26 @@ impl GPDMA0_CH3 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for GPDMA0_CH3 {
+impl Deref for Gpdma0Ch3 {
     type Target = gpdma0_ch2::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for GPDMA0_CH3 {
+impl core::fmt::Debug for Gpdma0Ch3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("GPDMA0_CH3").finish()
+        f.debug_struct("Gpdma0Ch3").finish()
     }
 }
 #[doc = "General Purpose DMA Unit 0"]
 pub use self::gpdma0_ch2 as gpdma0_ch3;
 #[doc = "General Purpose DMA Unit 0"]
-pub struct GPDMA0_CH4 {
+pub struct Gpdma0Ch4 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for GPDMA0_CH4 {}
-impl GPDMA0_CH4 {
+unsafe impl Send for Gpdma0Ch4 {}
+impl Gpdma0Ch4 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const gpdma0_ch2::RegisterBlock = 0x5001_4160 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -762,26 +762,26 @@ impl GPDMA0_CH4 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for GPDMA0_CH4 {
+impl Deref for Gpdma0Ch4 {
     type Target = gpdma0_ch2::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for GPDMA0_CH4 {
+impl core::fmt::Debug for Gpdma0Ch4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("GPDMA0_CH4").finish()
+        f.debug_struct("Gpdma0Ch4").finish()
     }
 }
 #[doc = "General Purpose DMA Unit 0"]
 pub use self::gpdma0_ch2 as gpdma0_ch4;
 #[doc = "General Purpose DMA Unit 0"]
-pub struct GPDMA0_CH5 {
+pub struct Gpdma0Ch5 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for GPDMA0_CH5 {}
-impl GPDMA0_CH5 {
+unsafe impl Send for Gpdma0Ch5 {}
+impl Gpdma0Ch5 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const gpdma0_ch2::RegisterBlock = 0x5001_41b8 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -806,26 +806,26 @@ impl GPDMA0_CH5 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for GPDMA0_CH5 {
+impl Deref for Gpdma0Ch5 {
     type Target = gpdma0_ch2::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for GPDMA0_CH5 {
+impl core::fmt::Debug for Gpdma0Ch5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("GPDMA0_CH5").finish()
+        f.debug_struct("Gpdma0Ch5").finish()
     }
 }
 #[doc = "General Purpose DMA Unit 0"]
 pub use self::gpdma0_ch2 as gpdma0_ch5;
 #[doc = "General Purpose DMA Unit 0"]
-pub struct GPDMA0_CH6 {
+pub struct Gpdma0Ch6 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for GPDMA0_CH6 {}
-impl GPDMA0_CH6 {
+unsafe impl Send for Gpdma0Ch6 {}
+impl Gpdma0Ch6 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const gpdma0_ch2::RegisterBlock = 0x5001_4210 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -850,26 +850,26 @@ impl GPDMA0_CH6 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for GPDMA0_CH6 {
+impl Deref for Gpdma0Ch6 {
     type Target = gpdma0_ch2::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for GPDMA0_CH6 {
+impl core::fmt::Debug for Gpdma0Ch6 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("GPDMA0_CH6").finish()
+        f.debug_struct("Gpdma0Ch6").finish()
     }
 }
 #[doc = "General Purpose DMA Unit 0"]
 pub use self::gpdma0_ch2 as gpdma0_ch6;
 #[doc = "General Purpose DMA Unit 0"]
-pub struct GPDMA0_CH7 {
+pub struct Gpdma0Ch7 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for GPDMA0_CH7 {}
-impl GPDMA0_CH7 {
+unsafe impl Send for Gpdma0Ch7 {}
+impl Gpdma0Ch7 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const gpdma0_ch2::RegisterBlock = 0x5001_4268 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -894,26 +894,26 @@ impl GPDMA0_CH7 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for GPDMA0_CH7 {
+impl Deref for Gpdma0Ch7 {
     type Target = gpdma0_ch2::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for GPDMA0_CH7 {
+impl core::fmt::Debug for Gpdma0Ch7 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("GPDMA0_CH7").finish()
+        f.debug_struct("Gpdma0Ch7").finish()
     }
 }
 #[doc = "General Purpose DMA Unit 0"]
 pub use self::gpdma0_ch2 as gpdma0_ch7;
 #[doc = "Flexible CRC Engine"]
-pub struct FCE {
+pub struct Fce {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for FCE {}
-impl FCE {
+unsafe impl Send for Fce {}
+impl Fce {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const fce::RegisterBlock = 0x5002_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -938,26 +938,26 @@ impl FCE {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for FCE {
+impl Deref for Fce {
     type Target = fce::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for FCE {
+impl core::fmt::Debug for Fce {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FCE").finish()
+        f.debug_struct("Fce").finish()
     }
 }
 #[doc = "Flexible CRC Engine"]
 pub mod fce;
 #[doc = "Flexible CRC Engine"]
-pub struct FCE_KE0 {
+pub struct FceKe0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for FCE_KE0 {}
-impl FCE_KE0 {
+unsafe impl Send for FceKe0 {}
+impl FceKe0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const fce_ke0::RegisterBlock = 0x5002_0020 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -982,26 +982,26 @@ impl FCE_KE0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for FCE_KE0 {
+impl Deref for FceKe0 {
     type Target = fce_ke0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for FCE_KE0 {
+impl core::fmt::Debug for FceKe0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FCE_KE0").finish()
+        f.debug_struct("FceKe0").finish()
     }
 }
 #[doc = "Flexible CRC Engine"]
 pub mod fce_ke0;
 #[doc = "Flexible CRC Engine"]
-pub struct FCE_KE1 {
+pub struct FceKe1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for FCE_KE1 {}
-impl FCE_KE1 {
+unsafe impl Send for FceKe1 {}
+impl FceKe1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const fce_ke0::RegisterBlock = 0x5002_0040 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1026,26 +1026,26 @@ impl FCE_KE1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for FCE_KE1 {
+impl Deref for FceKe1 {
     type Target = fce_ke0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for FCE_KE1 {
+impl core::fmt::Debug for FceKe1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FCE_KE1").finish()
+        f.debug_struct("FceKe1").finish()
     }
 }
 #[doc = "Flexible CRC Engine"]
 pub use self::fce_ke0 as fce_ke1;
 #[doc = "Flexible CRC Engine"]
-pub struct FCE_KE2 {
+pub struct FceKe2 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for FCE_KE2 {}
-impl FCE_KE2 {
+unsafe impl Send for FceKe2 {}
+impl FceKe2 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const fce_ke0::RegisterBlock = 0x5002_0060 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1070,26 +1070,26 @@ impl FCE_KE2 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for FCE_KE2 {
+impl Deref for FceKe2 {
     type Target = fce_ke0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for FCE_KE2 {
+impl core::fmt::Debug for FceKe2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FCE_KE2").finish()
+        f.debug_struct("FceKe2").finish()
     }
 }
 #[doc = "Flexible CRC Engine"]
 pub use self::fce_ke0 as fce_ke2;
 #[doc = "Flexible CRC Engine"]
-pub struct FCE_KE3 {
+pub struct FceKe3 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for FCE_KE3 {}
-impl FCE_KE3 {
+unsafe impl Send for FceKe3 {}
+impl FceKe3 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const fce_ke0::RegisterBlock = 0x5002_0080 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1114,26 +1114,26 @@ impl FCE_KE3 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for FCE_KE3 {
+impl Deref for FceKe3 {
     type Target = fce_ke0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for FCE_KE3 {
+impl core::fmt::Debug for FceKe3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FCE_KE3").finish()
+        f.debug_struct("FceKe3").finish()
     }
 }
 #[doc = "Flexible CRC Engine"]
 pub use self::fce_ke0 as fce_ke3;
 #[doc = "Peripheral Bridge AHB 0"]
-pub struct PBA0 {
+pub struct Pba0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PBA0 {}
-impl PBA0 {
+unsafe impl Send for Pba0 {}
+impl Pba0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const pba0::RegisterBlock = 0x4000_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1158,26 +1158,26 @@ impl PBA0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for PBA0 {
+impl Deref for Pba0 {
     type Target = pba0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PBA0 {
+impl core::fmt::Debug for Pba0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PBA0").finish()
+        f.debug_struct("Pba0").finish()
     }
 }
 #[doc = "Peripheral Bridge AHB 0"]
 pub mod pba0;
 #[doc = "Peripheral Bridge AHB 1"]
-pub struct PBA1 {
+pub struct Pba1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PBA1 {}
-impl PBA1 {
+unsafe impl Send for Pba1 {}
+impl Pba1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const pba0::RegisterBlock = 0x4800_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1202,26 +1202,26 @@ impl PBA1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for PBA1 {
+impl Deref for Pba1 {
     type Target = pba0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PBA1 {
+impl core::fmt::Debug for Pba1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PBA1").finish()
+        f.debug_struct("Pba1").finish()
     }
 }
 #[doc = "Peripheral Bridge AHB 1"]
 pub use self::pba0 as pba1;
 #[doc = "Flash Memory Controller"]
-pub struct FLASH0 {
+pub struct Flash0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for FLASH0 {}
-impl FLASH0 {
+unsafe impl Send for Flash0 {}
+impl Flash0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const flash0::RegisterBlock = 0x5800_1000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1246,26 +1246,26 @@ impl FLASH0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for FLASH0 {
+impl Deref for Flash0 {
     type Target = flash0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for FLASH0 {
+impl core::fmt::Debug for Flash0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("FLASH0").finish()
+        f.debug_struct("Flash0").finish()
     }
 }
 #[doc = "Flash Memory Controller"]
 pub mod flash0;
 #[doc = "Prefetch Unit"]
-pub struct PREF {
+pub struct Pref {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PREF {}
-impl PREF {
+unsafe impl Send for Pref {}
+impl Pref {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const pref::RegisterBlock = 0x5800_4000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1290,26 +1290,26 @@ impl PREF {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for PREF {
+impl Deref for Pref {
     type Target = pref::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PREF {
+impl core::fmt::Debug for Pref {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PREF").finish()
+        f.debug_struct("Pref").finish()
     }
 }
 #[doc = "Prefetch Unit"]
 pub mod pref;
 #[doc = "Program Management Unit"]
-pub struct PMU0 {
+pub struct Pmu0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PMU0 {}
-impl PMU0 {
+unsafe impl Send for Pmu0 {}
+impl Pmu0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const pmu0::RegisterBlock = 0x5800_0508 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1334,26 +1334,26 @@ impl PMU0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for PMU0 {
+impl Deref for Pmu0 {
     type Target = pmu0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PMU0 {
+impl core::fmt::Debug for Pmu0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PMU0").finish()
+        f.debug_struct("Pmu0").finish()
     }
 }
 #[doc = "Program Management Unit"]
 pub mod pmu0;
 #[doc = "Watch Dog Timer"]
-pub struct WDT {
+pub struct Wdt {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for WDT {}
-impl WDT {
+unsafe impl Send for Wdt {}
+impl Wdt {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const wdt::RegisterBlock = 0x5000_8000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1378,26 +1378,26 @@ impl WDT {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for WDT {
+impl Deref for Wdt {
     type Target = wdt::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for WDT {
+impl core::fmt::Debug for Wdt {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("WDT").finish()
+        f.debug_struct("Wdt").finish()
     }
 }
 #[doc = "Watch Dog Timer"]
 pub mod wdt;
 #[doc = "Real Time Clock"]
-pub struct RTC {
+pub struct Rtc {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for RTC {}
-impl RTC {
+unsafe impl Send for Rtc {}
+impl Rtc {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const rtc::RegisterBlock = 0x5000_4a00 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1422,26 +1422,26 @@ impl RTC {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for RTC {
+impl Deref for Rtc {
     type Target = rtc::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for RTC {
+impl core::fmt::Debug for Rtc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("RTC").finish()
+        f.debug_struct("Rtc").finish()
     }
 }
 #[doc = "Real Time Clock"]
 pub mod rtc;
 #[doc = "System Control Unit"]
-pub struct SCU_CLK {
+pub struct ScuClk {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SCU_CLK {}
-impl SCU_CLK {
+unsafe impl Send for ScuClk {}
+impl ScuClk {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const scu_clk::RegisterBlock = 0x5000_4600 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1466,26 +1466,26 @@ impl SCU_CLK {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for SCU_CLK {
+impl Deref for ScuClk {
     type Target = scu_clk::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SCU_CLK {
+impl core::fmt::Debug for ScuClk {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SCU_CLK").finish()
+        f.debug_struct("ScuClk").finish()
     }
 }
 #[doc = "System Control Unit"]
 pub mod scu_clk;
 #[doc = "System Control Unit"]
-pub struct SCU_OSC {
+pub struct ScuOsc {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SCU_OSC {}
-impl SCU_OSC {
+unsafe impl Send for ScuOsc {}
+impl ScuOsc {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const scu_osc::RegisterBlock = 0x5000_4700 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1510,26 +1510,26 @@ impl SCU_OSC {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for SCU_OSC {
+impl Deref for ScuOsc {
     type Target = scu_osc::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SCU_OSC {
+impl core::fmt::Debug for ScuOsc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SCU_OSC").finish()
+        f.debug_struct("ScuOsc").finish()
     }
 }
 #[doc = "System Control Unit"]
 pub mod scu_osc;
 #[doc = "System Control Unit"]
-pub struct SCU_PLL {
+pub struct ScuPll {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SCU_PLL {}
-impl SCU_PLL {
+unsafe impl Send for ScuPll {}
+impl ScuPll {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const scu_pll::RegisterBlock = 0x5000_4710 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1554,26 +1554,26 @@ impl SCU_PLL {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for SCU_PLL {
+impl Deref for ScuPll {
     type Target = scu_pll::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SCU_PLL {
+impl core::fmt::Debug for ScuPll {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SCU_PLL").finish()
+        f.debug_struct("ScuPll").finish()
     }
 }
 #[doc = "System Control Unit"]
 pub mod scu_pll;
 #[doc = "System Control Unit"]
-pub struct SCU_GENERAL {
+pub struct ScuGeneral {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SCU_GENERAL {}
-impl SCU_GENERAL {
+unsafe impl Send for ScuGeneral {}
+impl ScuGeneral {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const scu_general::RegisterBlock = 0x5000_4000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1598,26 +1598,26 @@ impl SCU_GENERAL {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for SCU_GENERAL {
+impl Deref for ScuGeneral {
     type Target = scu_general::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SCU_GENERAL {
+impl core::fmt::Debug for ScuGeneral {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SCU_GENERAL").finish()
+        f.debug_struct("ScuGeneral").finish()
     }
 }
 #[doc = "System Control Unit"]
 pub mod scu_general;
 #[doc = "System Control Unit"]
-pub struct SCU_INTERRUPT {
+pub struct ScuInterrupt {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SCU_INTERRUPT {}
-impl SCU_INTERRUPT {
+unsafe impl Send for ScuInterrupt {}
+impl ScuInterrupt {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const scu_interrupt::RegisterBlock = 0x5000_4074 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1642,26 +1642,26 @@ impl SCU_INTERRUPT {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for SCU_INTERRUPT {
+impl Deref for ScuInterrupt {
     type Target = scu_interrupt::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SCU_INTERRUPT {
+impl core::fmt::Debug for ScuInterrupt {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SCU_INTERRUPT").finish()
+        f.debug_struct("ScuInterrupt").finish()
     }
 }
 #[doc = "System Control Unit"]
 pub mod scu_interrupt;
 #[doc = "System Control Unit"]
-pub struct SCU_PARITY {
+pub struct ScuParity {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SCU_PARITY {}
-impl SCU_PARITY {
+unsafe impl Send for ScuParity {}
+impl ScuParity {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const scu_parity::RegisterBlock = 0x5000_413c as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1686,26 +1686,26 @@ impl SCU_PARITY {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for SCU_PARITY {
+impl Deref for ScuParity {
     type Target = scu_parity::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SCU_PARITY {
+impl core::fmt::Debug for ScuParity {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SCU_PARITY").finish()
+        f.debug_struct("ScuParity").finish()
     }
 }
 #[doc = "System Control Unit"]
 pub mod scu_parity;
 #[doc = "System Control Unit"]
-pub struct SCU_TRAP {
+pub struct ScuTrap {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SCU_TRAP {}
-impl SCU_TRAP {
+unsafe impl Send for ScuTrap {}
+impl ScuTrap {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const scu_trap::RegisterBlock = 0x5000_4160 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1730,26 +1730,26 @@ impl SCU_TRAP {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for SCU_TRAP {
+impl Deref for ScuTrap {
     type Target = scu_trap::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SCU_TRAP {
+impl core::fmt::Debug for ScuTrap {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SCU_TRAP").finish()
+        f.debug_struct("ScuTrap").finish()
     }
 }
 #[doc = "System Control Unit"]
 pub mod scu_trap;
 #[doc = "System Control Unit"]
-pub struct SCU_HIBERNATE {
+pub struct ScuHibernate {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SCU_HIBERNATE {}
-impl SCU_HIBERNATE {
+unsafe impl Send for ScuHibernate {}
+impl ScuHibernate {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const scu_hibernate::RegisterBlock = 0x5000_4300 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1774,26 +1774,26 @@ impl SCU_HIBERNATE {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for SCU_HIBERNATE {
+impl Deref for ScuHibernate {
     type Target = scu_hibernate::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SCU_HIBERNATE {
+impl core::fmt::Debug for ScuHibernate {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SCU_HIBERNATE").finish()
+        f.debug_struct("ScuHibernate").finish()
     }
 }
 #[doc = "System Control Unit"]
 pub mod scu_hibernate;
 #[doc = "System Control Unit"]
-pub struct SCU_POWER {
+pub struct ScuPower {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SCU_POWER {}
-impl SCU_POWER {
+unsafe impl Send for ScuPower {}
+impl ScuPower {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const scu_power::RegisterBlock = 0x5000_4200 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1818,26 +1818,26 @@ impl SCU_POWER {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for SCU_POWER {
+impl Deref for ScuPower {
     type Target = scu_power::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SCU_POWER {
+impl core::fmt::Debug for ScuPower {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SCU_POWER").finish()
+        f.debug_struct("ScuPower").finish()
     }
 }
 #[doc = "System Control Unit"]
 pub mod scu_power;
 #[doc = "System Control Unit"]
-pub struct SCU_RESET {
+pub struct ScuReset {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SCU_RESET {}
-impl SCU_RESET {
+unsafe impl Send for ScuReset {}
+impl ScuReset {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const scu_reset::RegisterBlock = 0x5000_4400 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1862,26 +1862,26 @@ impl SCU_RESET {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for SCU_RESET {
+impl Deref for ScuReset {
     type Target = scu_reset::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SCU_RESET {
+impl core::fmt::Debug for ScuReset {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SCU_RESET").finish()
+        f.debug_struct("ScuReset").finish()
     }
 }
 #[doc = "System Control Unit"]
 pub mod scu_reset;
 #[doc = "LED and Touch Sense Unit 0"]
-pub struct LEDTS0 {
+pub struct Ledts0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for LEDTS0 {}
-impl LEDTS0 {
+unsafe impl Send for Ledts0 {}
+impl Ledts0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ledts0::RegisterBlock = 0x4801_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1906,26 +1906,26 @@ impl LEDTS0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for LEDTS0 {
+impl Deref for Ledts0 {
     type Target = ledts0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for LEDTS0 {
+impl core::fmt::Debug for Ledts0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("LEDTS0").finish()
+        f.debug_struct("Ledts0").finish()
     }
 }
 #[doc = "LED and Touch Sense Unit 0"]
 pub mod ledts0;
 #[doc = "SD and Multimediacard Control Register"]
-pub struct SDMMC_CON {
+pub struct SdmmcCon {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SDMMC_CON {}
-impl SDMMC_CON {
+unsafe impl Send for SdmmcCon {}
+impl SdmmcCon {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const sdmmc_con::RegisterBlock = 0x5000_40b4 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1950,26 +1950,26 @@ impl SDMMC_CON {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for SDMMC_CON {
+impl Deref for SdmmcCon {
     type Target = sdmmc_con::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SDMMC_CON {
+impl core::fmt::Debug for SdmmcCon {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SDMMC_CON").finish()
+        f.debug_struct("SdmmcCon").finish()
     }
 }
 #[doc = "SD and Multimediacard Control Register"]
 pub mod sdmmc_con;
 #[doc = "SD and Multimediacard Interface"]
-pub struct SDMMC {
+pub struct Sdmmc {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SDMMC {}
-impl SDMMC {
+unsafe impl Send for Sdmmc {}
+impl Sdmmc {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const sdmmc::RegisterBlock = 0x4801_c000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1994,26 +1994,26 @@ impl SDMMC {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for SDMMC {
+impl Deref for Sdmmc {
     type Target = sdmmc::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for SDMMC {
+impl core::fmt::Debug for Sdmmc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SDMMC").finish()
+        f.debug_struct("Sdmmc").finish()
     }
 }
 #[doc = "SD and Multimediacard Interface"]
 pub mod sdmmc;
 #[doc = "Ethernet Control Register"]
-pub struct ETH0_CON {
+pub struct Eth0Con {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ETH0_CON {}
-impl ETH0_CON {
+unsafe impl Send for Eth0Con {}
+impl Eth0Con {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const eth0_con::RegisterBlock = 0x5000_4040 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2038,26 +2038,26 @@ impl ETH0_CON {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ETH0_CON {
+impl Deref for Eth0Con {
     type Target = eth0_con::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ETH0_CON {
+impl core::fmt::Debug for Eth0Con {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ETH0_CON").finish()
+        f.debug_struct("Eth0Con").finish()
     }
 }
 #[doc = "Ethernet Control Register"]
 pub mod eth0_con;
 #[doc = "Ethernet Unit 0"]
-pub struct ETH0 {
+pub struct Eth0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ETH0 {}
-impl ETH0 {
+unsafe impl Send for Eth0 {}
+impl Eth0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const eth0::RegisterBlock = 0x5000_c000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2082,26 +2082,26 @@ impl ETH0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ETH0 {
+impl Deref for Eth0 {
     type Target = eth0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ETH0 {
+impl core::fmt::Debug for Eth0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ETH0").finish()
+        f.debug_struct("Eth0").finish()
     }
 }
 #[doc = "Ethernet Unit 0"]
 pub mod eth0;
 #[doc = "EtherCAT 0 Control Register"]
-pub struct ECAT0_CON {
+pub struct Ecat0Con {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_CON {}
-impl ECAT0_CON {
+unsafe impl Send for Ecat0Con {}
+impl Ecat0Con {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_con::RegisterBlock = 0x5000_41b0 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2126,26 +2126,26 @@ impl ECAT0_CON {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_CON {
+impl Deref for Ecat0Con {
     type Target = ecat0_con::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_CON {
+impl core::fmt::Debug for Ecat0Con {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_CON").finish()
+        f.debug_struct("Ecat0Con").finish()
     }
 }
 #[doc = "EtherCAT 0 Control Register"]
 pub mod ecat0_con;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0 {
+pub struct Ecat0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0 {}
-impl ECAT0 {
+unsafe impl Send for Ecat0 {}
+impl Ecat0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0::RegisterBlock = 0x5401_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2170,26 +2170,26 @@ impl ECAT0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0 {
+impl Deref for Ecat0 {
     type Target = ecat0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0 {
+impl core::fmt::Debug for Ecat0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0").finish()
+        f.debug_struct("Ecat0").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub mod ecat0;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU0 {
+pub struct Ecat0Fmmu0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_FMMU0 {}
-impl ECAT0_FMMU0 {
+unsafe impl Send for Ecat0Fmmu0 {}
+impl Ecat0Fmmu0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_fmmu0::RegisterBlock = 0x5401_0600 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2214,26 +2214,26 @@ impl ECAT0_FMMU0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_FMMU0 {
+impl Deref for Ecat0Fmmu0 {
     type Target = ecat0_fmmu0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_FMMU0 {
+impl core::fmt::Debug for Ecat0Fmmu0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_FMMU0").finish()
+        f.debug_struct("Ecat0Fmmu0").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub mod ecat0_fmmu0;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU1 {
+pub struct Ecat0Fmmu1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_FMMU1 {}
-impl ECAT0_FMMU1 {
+unsafe impl Send for Ecat0Fmmu1 {}
+impl Ecat0Fmmu1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_fmmu0::RegisterBlock = 0x5401_0610 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2258,26 +2258,26 @@ impl ECAT0_FMMU1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_FMMU1 {
+impl Deref for Ecat0Fmmu1 {
     type Target = ecat0_fmmu0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_FMMU1 {
+impl core::fmt::Debug for Ecat0Fmmu1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_FMMU1").finish()
+        f.debug_struct("Ecat0Fmmu1").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_fmmu0 as ecat0_fmmu1;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU2 {
+pub struct Ecat0Fmmu2 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_FMMU2 {}
-impl ECAT0_FMMU2 {
+unsafe impl Send for Ecat0Fmmu2 {}
+impl Ecat0Fmmu2 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_fmmu0::RegisterBlock = 0x5401_0620 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2302,26 +2302,26 @@ impl ECAT0_FMMU2 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_FMMU2 {
+impl Deref for Ecat0Fmmu2 {
     type Target = ecat0_fmmu0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_FMMU2 {
+impl core::fmt::Debug for Ecat0Fmmu2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_FMMU2").finish()
+        f.debug_struct("Ecat0Fmmu2").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_fmmu0 as ecat0_fmmu2;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU3 {
+pub struct Ecat0Fmmu3 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_FMMU3 {}
-impl ECAT0_FMMU3 {
+unsafe impl Send for Ecat0Fmmu3 {}
+impl Ecat0Fmmu3 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_fmmu0::RegisterBlock = 0x5401_0630 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2346,26 +2346,26 @@ impl ECAT0_FMMU3 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_FMMU3 {
+impl Deref for Ecat0Fmmu3 {
     type Target = ecat0_fmmu0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_FMMU3 {
+impl core::fmt::Debug for Ecat0Fmmu3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_FMMU3").finish()
+        f.debug_struct("Ecat0Fmmu3").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_fmmu0 as ecat0_fmmu3;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU4 {
+pub struct Ecat0Fmmu4 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_FMMU4 {}
-impl ECAT0_FMMU4 {
+unsafe impl Send for Ecat0Fmmu4 {}
+impl Ecat0Fmmu4 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_fmmu0::RegisterBlock = 0x5401_0640 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2390,26 +2390,26 @@ impl ECAT0_FMMU4 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_FMMU4 {
+impl Deref for Ecat0Fmmu4 {
     type Target = ecat0_fmmu0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_FMMU4 {
+impl core::fmt::Debug for Ecat0Fmmu4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_FMMU4").finish()
+        f.debug_struct("Ecat0Fmmu4").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_fmmu0 as ecat0_fmmu4;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU5 {
+pub struct Ecat0Fmmu5 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_FMMU5 {}
-impl ECAT0_FMMU5 {
+unsafe impl Send for Ecat0Fmmu5 {}
+impl Ecat0Fmmu5 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_fmmu0::RegisterBlock = 0x5401_0650 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2434,26 +2434,26 @@ impl ECAT0_FMMU5 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_FMMU5 {
+impl Deref for Ecat0Fmmu5 {
     type Target = ecat0_fmmu0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_FMMU5 {
+impl core::fmt::Debug for Ecat0Fmmu5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_FMMU5").finish()
+        f.debug_struct("Ecat0Fmmu5").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_fmmu0 as ecat0_fmmu5;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU6 {
+pub struct Ecat0Fmmu6 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_FMMU6 {}
-impl ECAT0_FMMU6 {
+unsafe impl Send for Ecat0Fmmu6 {}
+impl Ecat0Fmmu6 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_fmmu0::RegisterBlock = 0x5401_0660 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2478,26 +2478,26 @@ impl ECAT0_FMMU6 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_FMMU6 {
+impl Deref for Ecat0Fmmu6 {
     type Target = ecat0_fmmu0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_FMMU6 {
+impl core::fmt::Debug for Ecat0Fmmu6 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_FMMU6").finish()
+        f.debug_struct("Ecat0Fmmu6").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_fmmu0 as ecat0_fmmu6;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU7 {
+pub struct Ecat0Fmmu7 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_FMMU7 {}
-impl ECAT0_FMMU7 {
+unsafe impl Send for Ecat0Fmmu7 {}
+impl Ecat0Fmmu7 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_fmmu0::RegisterBlock = 0x5401_0670 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2522,26 +2522,26 @@ impl ECAT0_FMMU7 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_FMMU7 {
+impl Deref for Ecat0Fmmu7 {
     type Target = ecat0_fmmu0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_FMMU7 {
+impl core::fmt::Debug for Ecat0Fmmu7 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_FMMU7").finish()
+        f.debug_struct("Ecat0Fmmu7").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_fmmu0 as ecat0_fmmu7;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_SM0 {
+pub struct Ecat0Sm0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_SM0 {}
-impl ECAT0_SM0 {
+unsafe impl Send for Ecat0Sm0 {}
+impl Ecat0Sm0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_sm0::RegisterBlock = 0x5401_0800 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2566,26 +2566,26 @@ impl ECAT0_SM0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_SM0 {
+impl Deref for Ecat0Sm0 {
     type Target = ecat0_sm0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_SM0 {
+impl core::fmt::Debug for Ecat0Sm0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_SM0").finish()
+        f.debug_struct("Ecat0Sm0").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub mod ecat0_sm0;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_SM1 {
+pub struct Ecat0Sm1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_SM1 {}
-impl ECAT0_SM1 {
+unsafe impl Send for Ecat0Sm1 {}
+impl Ecat0Sm1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_sm0::RegisterBlock = 0x5401_0808 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2610,26 +2610,26 @@ impl ECAT0_SM1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_SM1 {
+impl Deref for Ecat0Sm1 {
     type Target = ecat0_sm0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_SM1 {
+impl core::fmt::Debug for Ecat0Sm1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_SM1").finish()
+        f.debug_struct("Ecat0Sm1").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_sm0 as ecat0_sm1;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_SM2 {
+pub struct Ecat0Sm2 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_SM2 {}
-impl ECAT0_SM2 {
+unsafe impl Send for Ecat0Sm2 {}
+impl Ecat0Sm2 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_sm0::RegisterBlock = 0x5401_0810 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2654,26 +2654,26 @@ impl ECAT0_SM2 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_SM2 {
+impl Deref for Ecat0Sm2 {
     type Target = ecat0_sm0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_SM2 {
+impl core::fmt::Debug for Ecat0Sm2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_SM2").finish()
+        f.debug_struct("Ecat0Sm2").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_sm0 as ecat0_sm2;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_SM3 {
+pub struct Ecat0Sm3 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_SM3 {}
-impl ECAT0_SM3 {
+unsafe impl Send for Ecat0Sm3 {}
+impl Ecat0Sm3 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_sm0::RegisterBlock = 0x5401_0818 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2698,26 +2698,26 @@ impl ECAT0_SM3 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_SM3 {
+impl Deref for Ecat0Sm3 {
     type Target = ecat0_sm0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_SM3 {
+impl core::fmt::Debug for Ecat0Sm3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_SM3").finish()
+        f.debug_struct("Ecat0Sm3").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_sm0 as ecat0_sm3;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_SM4 {
+pub struct Ecat0Sm4 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_SM4 {}
-impl ECAT0_SM4 {
+unsafe impl Send for Ecat0Sm4 {}
+impl Ecat0Sm4 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_sm0::RegisterBlock = 0x5401_0820 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2742,26 +2742,26 @@ impl ECAT0_SM4 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_SM4 {
+impl Deref for Ecat0Sm4 {
     type Target = ecat0_sm0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_SM4 {
+impl core::fmt::Debug for Ecat0Sm4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_SM4").finish()
+        f.debug_struct("Ecat0Sm4").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_sm0 as ecat0_sm4;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_SM5 {
+pub struct Ecat0Sm5 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_SM5 {}
-impl ECAT0_SM5 {
+unsafe impl Send for Ecat0Sm5 {}
+impl Ecat0Sm5 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_sm0::RegisterBlock = 0x5401_0828 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2786,26 +2786,26 @@ impl ECAT0_SM5 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_SM5 {
+impl Deref for Ecat0Sm5 {
     type Target = ecat0_sm0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_SM5 {
+impl core::fmt::Debug for Ecat0Sm5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_SM5").finish()
+        f.debug_struct("Ecat0Sm5").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_sm0 as ecat0_sm5;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_SM6 {
+pub struct Ecat0Sm6 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_SM6 {}
-impl ECAT0_SM6 {
+unsafe impl Send for Ecat0Sm6 {}
+impl Ecat0Sm6 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_sm0::RegisterBlock = 0x5401_0830 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2830,26 +2830,26 @@ impl ECAT0_SM6 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_SM6 {
+impl Deref for Ecat0Sm6 {
     type Target = ecat0_sm0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_SM6 {
+impl core::fmt::Debug for Ecat0Sm6 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_SM6").finish()
+        f.debug_struct("Ecat0Sm6").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_sm0 as ecat0_sm6;
 #[doc = "EtherCAT 0"]
-pub struct ECAT0_SM7 {
+pub struct Ecat0Sm7 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for ECAT0_SM7 {}
-impl ECAT0_SM7 {
+unsafe impl Send for Ecat0Sm7 {}
+impl Ecat0Sm7 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ecat0_sm0::RegisterBlock = 0x5401_0838 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2874,26 +2874,26 @@ impl ECAT0_SM7 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for ECAT0_SM7 {
+impl Deref for Ecat0Sm7 {
     type Target = ecat0_sm0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for ECAT0_SM7 {
+impl core::fmt::Debug for Ecat0Sm7 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("ECAT0_SM7").finish()
+        f.debug_struct("Ecat0Sm7").finish()
     }
 }
 #[doc = "EtherCAT 0"]
 pub use self::ecat0_sm0 as ecat0_sm7;
 #[doc = "Universal Serial Bus"]
-pub struct USB0 {
+pub struct Usb0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0 {}
-impl USB0 {
+unsafe impl Send for Usb0 {}
+impl Usb0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0::RegisterBlock = 0x5004_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2918,26 +2918,26 @@ impl USB0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0 {
+impl Deref for Usb0 {
     type Target = usb0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0 {
+impl core::fmt::Debug for Usb0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0").finish()
+        f.debug_struct("Usb0").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub mod usb0;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_EP0 {
+pub struct Usb0Ep0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_EP0 {}
-impl USB0_EP0 {
+unsafe impl Send for Usb0Ep0 {}
+impl Usb0Ep0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ep0::RegisterBlock = 0x5004_0900 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -2962,26 +2962,26 @@ impl USB0_EP0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_EP0 {
+impl Deref for Usb0Ep0 {
     type Target = usb0_ep0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_EP0 {
+impl core::fmt::Debug for Usb0Ep0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_EP0").finish()
+        f.debug_struct("Usb0Ep0").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub mod usb0_ep0;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_EP1 {
+pub struct Usb0Ep1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_EP1 {}
-impl USB0_EP1 {
+unsafe impl Send for Usb0Ep1 {}
+impl Usb0Ep1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ep1::RegisterBlock = 0x5004_0920 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3006,26 +3006,26 @@ impl USB0_EP1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_EP1 {
+impl Deref for Usb0Ep1 {
     type Target = usb0_ep1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_EP1 {
+impl core::fmt::Debug for Usb0Ep1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_EP1").finish()
+        f.debug_struct("Usb0Ep1").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub mod usb0_ep1;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_EP2 {
+pub struct Usb0Ep2 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_EP2 {}
-impl USB0_EP2 {
+unsafe impl Send for Usb0Ep2 {}
+impl Usb0Ep2 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ep1::RegisterBlock = 0x5004_0940 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3050,26 +3050,26 @@ impl USB0_EP2 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_EP2 {
+impl Deref for Usb0Ep2 {
     type Target = usb0_ep1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_EP2 {
+impl core::fmt::Debug for Usb0Ep2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_EP2").finish()
+        f.debug_struct("Usb0Ep2").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ep1 as usb0_ep2;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_EP3 {
+pub struct Usb0Ep3 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_EP3 {}
-impl USB0_EP3 {
+unsafe impl Send for Usb0Ep3 {}
+impl Usb0Ep3 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ep1::RegisterBlock = 0x5004_0960 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3094,26 +3094,26 @@ impl USB0_EP3 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_EP3 {
+impl Deref for Usb0Ep3 {
     type Target = usb0_ep1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_EP3 {
+impl core::fmt::Debug for Usb0Ep3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_EP3").finish()
+        f.debug_struct("Usb0Ep3").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ep1 as usb0_ep3;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_EP4 {
+pub struct Usb0Ep4 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_EP4 {}
-impl USB0_EP4 {
+unsafe impl Send for Usb0Ep4 {}
+impl Usb0Ep4 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ep1::RegisterBlock = 0x5004_0980 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3138,26 +3138,26 @@ impl USB0_EP4 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_EP4 {
+impl Deref for Usb0Ep4 {
     type Target = usb0_ep1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_EP4 {
+impl core::fmt::Debug for Usb0Ep4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_EP4").finish()
+        f.debug_struct("Usb0Ep4").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ep1 as usb0_ep4;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_EP5 {
+pub struct Usb0Ep5 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_EP5 {}
-impl USB0_EP5 {
+unsafe impl Send for Usb0Ep5 {}
+impl Usb0Ep5 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ep1::RegisterBlock = 0x5004_09a0 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3182,26 +3182,26 @@ impl USB0_EP5 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_EP5 {
+impl Deref for Usb0Ep5 {
     type Target = usb0_ep1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_EP5 {
+impl core::fmt::Debug for Usb0Ep5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_EP5").finish()
+        f.debug_struct("Usb0Ep5").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ep1 as usb0_ep5;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_EP6 {
+pub struct Usb0Ep6 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_EP6 {}
-impl USB0_EP6 {
+unsafe impl Send for Usb0Ep6 {}
+impl Usb0Ep6 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ep1::RegisterBlock = 0x5004_09c0 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3226,26 +3226,26 @@ impl USB0_EP6 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_EP6 {
+impl Deref for Usb0Ep6 {
     type Target = usb0_ep1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_EP6 {
+impl core::fmt::Debug for Usb0Ep6 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_EP6").finish()
+        f.debug_struct("Usb0Ep6").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ep1 as usb0_ep6;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH0 {
+pub struct Usb0Ch0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH0 {}
-impl USB0_CH0 {
+unsafe impl Send for Usb0Ch0 {}
+impl Usb0Ch0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_0500 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3270,26 +3270,26 @@ impl USB0_CH0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH0 {
+impl Deref for Usb0Ch0 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH0 {
+impl core::fmt::Debug for Usb0Ch0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH0").finish()
+        f.debug_struct("Usb0Ch0").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub mod usb0_ch0;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH1 {
+pub struct Usb0Ch1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH1 {}
-impl USB0_CH1 {
+unsafe impl Send for Usb0Ch1 {}
+impl Usb0Ch1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_0520 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3314,26 +3314,26 @@ impl USB0_CH1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH1 {
+impl Deref for Usb0Ch1 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH1 {
+impl core::fmt::Debug for Usb0Ch1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH1").finish()
+        f.debug_struct("Usb0Ch1").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ch0 as usb0_ch1;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH2 {
+pub struct Usb0Ch2 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH2 {}
-impl USB0_CH2 {
+unsafe impl Send for Usb0Ch2 {}
+impl Usb0Ch2 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_0540 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3358,26 +3358,26 @@ impl USB0_CH2 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH2 {
+impl Deref for Usb0Ch2 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH2 {
+impl core::fmt::Debug for Usb0Ch2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH2").finish()
+        f.debug_struct("Usb0Ch2").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ch0 as usb0_ch2;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH3 {
+pub struct Usb0Ch3 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH3 {}
-impl USB0_CH3 {
+unsafe impl Send for Usb0Ch3 {}
+impl Usb0Ch3 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_0560 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3402,26 +3402,26 @@ impl USB0_CH3 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH3 {
+impl Deref for Usb0Ch3 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH3 {
+impl core::fmt::Debug for Usb0Ch3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH3").finish()
+        f.debug_struct("Usb0Ch3").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ch0 as usb0_ch3;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH4 {
+pub struct Usb0Ch4 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH4 {}
-impl USB0_CH4 {
+unsafe impl Send for Usb0Ch4 {}
+impl Usb0Ch4 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_0580 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3446,26 +3446,26 @@ impl USB0_CH4 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH4 {
+impl Deref for Usb0Ch4 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH4 {
+impl core::fmt::Debug for Usb0Ch4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH4").finish()
+        f.debug_struct("Usb0Ch4").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ch0 as usb0_ch4;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH5 {
+pub struct Usb0Ch5 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH5 {}
-impl USB0_CH5 {
+unsafe impl Send for Usb0Ch5 {}
+impl Usb0Ch5 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_05a0 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3490,26 +3490,26 @@ impl USB0_CH5 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH5 {
+impl Deref for Usb0Ch5 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH5 {
+impl core::fmt::Debug for Usb0Ch5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH5").finish()
+        f.debug_struct("Usb0Ch5").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ch0 as usb0_ch5;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH6 {
+pub struct Usb0Ch6 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH6 {}
-impl USB0_CH6 {
+unsafe impl Send for Usb0Ch6 {}
+impl Usb0Ch6 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_05c0 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3534,26 +3534,26 @@ impl USB0_CH6 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH6 {
+impl Deref for Usb0Ch6 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH6 {
+impl core::fmt::Debug for Usb0Ch6 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH6").finish()
+        f.debug_struct("Usb0Ch6").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ch0 as usb0_ch6;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH7 {
+pub struct Usb0Ch7 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH7 {}
-impl USB0_CH7 {
+unsafe impl Send for Usb0Ch7 {}
+impl Usb0Ch7 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_05e0 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3578,26 +3578,26 @@ impl USB0_CH7 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH7 {
+impl Deref for Usb0Ch7 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH7 {
+impl core::fmt::Debug for Usb0Ch7 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH7").finish()
+        f.debug_struct("Usb0Ch7").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ch0 as usb0_ch7;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH8 {
+pub struct Usb0Ch8 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH8 {}
-impl USB0_CH8 {
+unsafe impl Send for Usb0Ch8 {}
+impl Usb0Ch8 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_0600 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3622,26 +3622,26 @@ impl USB0_CH8 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH8 {
+impl Deref for Usb0Ch8 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH8 {
+impl core::fmt::Debug for Usb0Ch8 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH8").finish()
+        f.debug_struct("Usb0Ch8").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ch0 as usb0_ch8;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH9 {
+pub struct Usb0Ch9 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH9 {}
-impl USB0_CH9 {
+unsafe impl Send for Usb0Ch9 {}
+impl Usb0Ch9 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_0620 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3666,26 +3666,26 @@ impl USB0_CH9 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH9 {
+impl Deref for Usb0Ch9 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH9 {
+impl core::fmt::Debug for Usb0Ch9 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH9").finish()
+        f.debug_struct("Usb0Ch9").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ch0 as usb0_ch9;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH10 {
+pub struct Usb0Ch10 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH10 {}
-impl USB0_CH10 {
+unsafe impl Send for Usb0Ch10 {}
+impl Usb0Ch10 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_0640 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3710,26 +3710,26 @@ impl USB0_CH10 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH10 {
+impl Deref for Usb0Ch10 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH10 {
+impl core::fmt::Debug for Usb0Ch10 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH10").finish()
+        f.debug_struct("Usb0Ch10").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ch0 as usb0_ch10;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH11 {
+pub struct Usb0Ch11 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH11 {}
-impl USB0_CH11 {
+unsafe impl Send for Usb0Ch11 {}
+impl Usb0Ch11 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_0660 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3754,26 +3754,26 @@ impl USB0_CH11 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH11 {
+impl Deref for Usb0Ch11 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH11 {
+impl core::fmt::Debug for Usb0Ch11 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH11").finish()
+        f.debug_struct("Usb0Ch11").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ch0 as usb0_ch11;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH12 {
+pub struct Usb0Ch12 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH12 {}
-impl USB0_CH12 {
+unsafe impl Send for Usb0Ch12 {}
+impl Usb0Ch12 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_0680 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3798,26 +3798,26 @@ impl USB0_CH12 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH12 {
+impl Deref for Usb0Ch12 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH12 {
+impl core::fmt::Debug for Usb0Ch12 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH12").finish()
+        f.debug_struct("Usb0Ch12").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ch0 as usb0_ch12;
 #[doc = "Universal Serial Bus"]
-pub struct USB0_CH13 {
+pub struct Usb0Ch13 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USB0_CH13 {}
-impl USB0_CH13 {
+unsafe impl Send for Usb0Ch13 {}
+impl Usb0Ch13 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usb0_ch0::RegisterBlock = 0x5004_06a0 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3842,26 +3842,26 @@ impl USB0_CH13 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USB0_CH13 {
+impl Deref for Usb0Ch13 {
     type Target = usb0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USB0_CH13 {
+impl core::fmt::Debug for Usb0Ch13 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USB0_CH13").finish()
+        f.debug_struct("Usb0Ch13").finish()
     }
 }
 #[doc = "Universal Serial Bus"]
 pub use self::usb0_ch0 as usb0_ch13;
 #[doc = "Universal Serial Interface Controller 0"]
-pub struct USIC0 {
+pub struct Usic0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USIC0 {}
-impl USIC0 {
+unsafe impl Send for Usic0 {}
+impl Usic0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usic0::RegisterBlock = 0x4003_0008 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3886,26 +3886,26 @@ impl USIC0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USIC0 {
+impl Deref for Usic0 {
     type Target = usic0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USIC0 {
+impl core::fmt::Debug for Usic0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USIC0").finish()
+        f.debug_struct("Usic0").finish()
     }
 }
 #[doc = "Universal Serial Interface Controller 0"]
 pub mod usic0;
 #[doc = "Universal Serial Interface Controller 1"]
-pub struct USIC1 {
+pub struct Usic1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USIC1 {}
-impl USIC1 {
+unsafe impl Send for Usic1 {}
+impl Usic1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usic0::RegisterBlock = 0x4802_0008 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3930,26 +3930,26 @@ impl USIC1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USIC1 {
+impl Deref for Usic1 {
     type Target = usic0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USIC1 {
+impl core::fmt::Debug for Usic1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USIC1").finish()
+        f.debug_struct("Usic1").finish()
     }
 }
 #[doc = "Universal Serial Interface Controller 1"]
 pub use self::usic0 as usic1;
 #[doc = "Universal Serial Interface Controller 0"]
-pub struct USIC0_CH0 {
+pub struct Usic0Ch0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USIC0_CH0 {}
-impl USIC0_CH0 {
+unsafe impl Send for Usic0Ch0 {}
+impl Usic0Ch0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usic0_ch0::RegisterBlock = 0x4003_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -3974,26 +3974,26 @@ impl USIC0_CH0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USIC0_CH0 {
+impl Deref for Usic0Ch0 {
     type Target = usic0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USIC0_CH0 {
+impl core::fmt::Debug for Usic0Ch0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USIC0_CH0").finish()
+        f.debug_struct("Usic0Ch0").finish()
     }
 }
 #[doc = "Universal Serial Interface Controller 0"]
 pub mod usic0_ch0;
 #[doc = "Universal Serial Interface Controller 0"]
-pub struct USIC0_CH1 {
+pub struct Usic0Ch1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USIC0_CH1 {}
-impl USIC0_CH1 {
+unsafe impl Send for Usic0Ch1 {}
+impl Usic0Ch1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usic0_ch0::RegisterBlock = 0x4003_0200 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4018,26 +4018,26 @@ impl USIC0_CH1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USIC0_CH1 {
+impl Deref for Usic0Ch1 {
     type Target = usic0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USIC0_CH1 {
+impl core::fmt::Debug for Usic0Ch1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USIC0_CH1").finish()
+        f.debug_struct("Usic0Ch1").finish()
     }
 }
 #[doc = "Universal Serial Interface Controller 0"]
 pub use self::usic0_ch0 as usic0_ch1;
 #[doc = "Universal Serial Interface Controller 0"]
-pub struct USIC1_CH0 {
+pub struct Usic1Ch0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USIC1_CH0 {}
-impl USIC1_CH0 {
+unsafe impl Send for Usic1Ch0 {}
+impl Usic1Ch0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usic0_ch0::RegisterBlock = 0x4802_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4062,26 +4062,26 @@ impl USIC1_CH0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USIC1_CH0 {
+impl Deref for Usic1Ch0 {
     type Target = usic0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USIC1_CH0 {
+impl core::fmt::Debug for Usic1Ch0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USIC1_CH0").finish()
+        f.debug_struct("Usic1Ch0").finish()
     }
 }
 #[doc = "Universal Serial Interface Controller 0"]
 pub use self::usic0_ch0 as usic1_ch0;
 #[doc = "Universal Serial Interface Controller 0"]
-pub struct USIC1_CH1 {
+pub struct Usic1Ch1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USIC1_CH1 {}
-impl USIC1_CH1 {
+unsafe impl Send for Usic1Ch1 {}
+impl Usic1Ch1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const usic0_ch0::RegisterBlock = 0x4802_0200 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4106,26 +4106,26 @@ impl USIC1_CH1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for USIC1_CH1 {
+impl Deref for Usic1Ch1 {
     type Target = usic0_ch0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for USIC1_CH1 {
+impl core::fmt::Debug for Usic1Ch1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("USIC1_CH1").finish()
+        f.debug_struct("Usic1Ch1").finish()
     }
 }
 #[doc = "Universal Serial Interface Controller 0"]
 pub use self::usic0_ch0 as usic1_ch1;
 #[doc = "Controller Area Networks"]
-pub struct CAN {
+pub struct Can {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CAN {}
-impl CAN {
+unsafe impl Send for Can {}
+impl Can {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const can::RegisterBlock = 0x4801_4000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4150,26 +4150,26 @@ impl CAN {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CAN {
+impl Deref for Can {
     type Target = can::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CAN {
+impl core::fmt::Debug for Can {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CAN").finish()
+        f.debug_struct("Can").finish()
     }
 }
 #[doc = "Controller Area Networks"]
 pub mod can;
 #[doc = "Controller Area Networks"]
-pub struct CAN_NODE0 {
+pub struct CanNode0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CAN_NODE0 {}
-impl CAN_NODE0 {
+unsafe impl Send for CanNode0 {}
+impl CanNode0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const can_node0::RegisterBlock = 0x4801_4200 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4194,26 +4194,26 @@ impl CAN_NODE0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CAN_NODE0 {
+impl Deref for CanNode0 {
     type Target = can_node0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CAN_NODE0 {
+impl core::fmt::Debug for CanNode0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CAN_NODE0").finish()
+        f.debug_struct("CanNode0").finish()
     }
 }
 #[doc = "Controller Area Networks"]
 pub mod can_node0;
 #[doc = "Controller Area Networks"]
-pub struct CAN_NODE1 {
+pub struct CanNode1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CAN_NODE1 {}
-impl CAN_NODE1 {
+unsafe impl Send for CanNode1 {}
+impl CanNode1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const can_node0::RegisterBlock = 0x4801_4300 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4238,26 +4238,26 @@ impl CAN_NODE1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CAN_NODE1 {
+impl Deref for CanNode1 {
     type Target = can_node0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CAN_NODE1 {
+impl core::fmt::Debug for CanNode1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CAN_NODE1").finish()
+        f.debug_struct("CanNode1").finish()
     }
 }
 #[doc = "Controller Area Networks"]
 pub use self::can_node0 as can_node1;
 #[doc = "Controller Area Networks"]
-pub struct CAN_MO {
+pub struct CanMo {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CAN_MO {}
-impl CAN_MO {
+unsafe impl Send for CanMo {}
+impl CanMo {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const can_mo::RegisterBlock = 0x4801_5000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4282,26 +4282,26 @@ impl CAN_MO {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CAN_MO {
+impl Deref for CanMo {
     type Target = can_mo::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CAN_MO {
+impl core::fmt::Debug for CanMo {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CAN_MO").finish()
+        f.debug_struct("CanMo").finish()
     }
 }
 #[doc = "Controller Area Networks"]
 pub mod can_mo;
 #[doc = "Analog to Digital Converter"]
-pub struct VADC {
+pub struct Vadc {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for VADC {}
-impl VADC {
+unsafe impl Send for Vadc {}
+impl Vadc {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const vadc::RegisterBlock = 0x4000_4000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4326,26 +4326,26 @@ impl VADC {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for VADC {
+impl Deref for Vadc {
     type Target = vadc::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for VADC {
+impl core::fmt::Debug for Vadc {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("VADC").finish()
+        f.debug_struct("Vadc").finish()
     }
 }
 #[doc = "Analog to Digital Converter"]
 pub mod vadc;
 #[doc = "Analog to Digital Converter"]
-pub struct VADC_G0 {
+pub struct VadcG0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for VADC_G0 {}
-impl VADC_G0 {
+unsafe impl Send for VadcG0 {}
+impl VadcG0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const vadc_g0::RegisterBlock = 0x4000_4400 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4370,26 +4370,26 @@ impl VADC_G0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for VADC_G0 {
+impl Deref for VadcG0 {
     type Target = vadc_g0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for VADC_G0 {
+impl core::fmt::Debug for VadcG0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("VADC_G0").finish()
+        f.debug_struct("VadcG0").finish()
     }
 }
 #[doc = "Analog to Digital Converter"]
 pub mod vadc_g0;
 #[doc = "Analog to Digital Converter"]
-pub struct VADC_G1 {
+pub struct VadcG1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for VADC_G1 {}
-impl VADC_G1 {
+unsafe impl Send for VadcG1 {}
+impl VadcG1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const vadc_g0::RegisterBlock = 0x4000_4800 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4414,26 +4414,26 @@ impl VADC_G1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for VADC_G1 {
+impl Deref for VadcG1 {
     type Target = vadc_g0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for VADC_G1 {
+impl core::fmt::Debug for VadcG1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("VADC_G1").finish()
+        f.debug_struct("VadcG1").finish()
     }
 }
 #[doc = "Analog to Digital Converter"]
 pub use self::vadc_g0 as vadc_g1;
 #[doc = "Digital to Analog Converter"]
-pub struct DAC {
+pub struct Dac {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for DAC {}
-impl DAC {
+unsafe impl Send for Dac {}
+impl Dac {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const dac::RegisterBlock = 0x4801_8000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4458,26 +4458,26 @@ impl DAC {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for DAC {
+impl Deref for Dac {
     type Target = dac::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for DAC {
+impl core::fmt::Debug for Dac {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("DAC").finish()
+        f.debug_struct("Dac").finish()
     }
 }
 #[doc = "Digital to Analog Converter"]
 pub mod dac;
 #[doc = "Capture Compare Unit 4 - Unit 0"]
-pub struct CCU40 {
+pub struct Ccu40 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU40 {}
-impl CCU40 {
+unsafe impl Send for Ccu40 {}
+impl Ccu40 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu40::RegisterBlock = 0x4000_c000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4502,26 +4502,26 @@ impl CCU40 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU40 {
+impl Deref for Ccu40 {
     type Target = ccu40::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU40 {
+impl core::fmt::Debug for Ccu40 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU40").finish()
+        f.debug_struct("Ccu40").finish()
     }
 }
 #[doc = "Capture Compare Unit 4 - Unit 0"]
 pub mod ccu40;
 #[doc = "Capture Compare Unit 4 - Unit 1"]
-pub struct CCU41 {
+pub struct Ccu41 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU41 {}
-impl CCU41 {
+unsafe impl Send for Ccu41 {}
+impl Ccu41 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu40::RegisterBlock = 0x4001_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4546,26 +4546,26 @@ impl CCU41 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU41 {
+impl Deref for Ccu41 {
     type Target = ccu40::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU41 {
+impl core::fmt::Debug for Ccu41 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU41").finish()
+        f.debug_struct("Ccu41").finish()
     }
 }
 #[doc = "Capture Compare Unit 4 - Unit 1"]
 pub use self::ccu40 as ccu41;
 #[doc = "Capture Compare Unit 4 - Unit 0"]
-pub struct CCU40_CC40 {
+pub struct Ccu40Cc40 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU40_CC40 {}
-impl CCU40_CC40 {
+unsafe impl Send for Ccu40Cc40 {}
+impl Ccu40Cc40 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu40_cc40::RegisterBlock = 0x4000_c100 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4590,26 +4590,26 @@ impl CCU40_CC40 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU40_CC40 {
+impl Deref for Ccu40Cc40 {
     type Target = ccu40_cc40::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU40_CC40 {
+impl core::fmt::Debug for Ccu40Cc40 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU40_CC40").finish()
+        f.debug_struct("Ccu40Cc40").finish()
     }
 }
 #[doc = "Capture Compare Unit 4 - Unit 0"]
 pub mod ccu40_cc40;
 #[doc = "Capture Compare Unit 4 - Unit 0"]
-pub struct CCU40_CC41 {
+pub struct Ccu40Cc41 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU40_CC41 {}
-impl CCU40_CC41 {
+unsafe impl Send for Ccu40Cc41 {}
+impl Ccu40Cc41 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu40_cc40::RegisterBlock = 0x4000_c200 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4634,26 +4634,26 @@ impl CCU40_CC41 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU40_CC41 {
+impl Deref for Ccu40Cc41 {
     type Target = ccu40_cc40::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU40_CC41 {
+impl core::fmt::Debug for Ccu40Cc41 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU40_CC41").finish()
+        f.debug_struct("Ccu40Cc41").finish()
     }
 }
 #[doc = "Capture Compare Unit 4 - Unit 0"]
 pub use self::ccu40_cc40 as ccu40_cc41;
 #[doc = "Capture Compare Unit 4 - Unit 0"]
-pub struct CCU40_CC42 {
+pub struct Ccu40Cc42 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU40_CC42 {}
-impl CCU40_CC42 {
+unsafe impl Send for Ccu40Cc42 {}
+impl Ccu40Cc42 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu40_cc40::RegisterBlock = 0x4000_c300 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4678,26 +4678,26 @@ impl CCU40_CC42 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU40_CC42 {
+impl Deref for Ccu40Cc42 {
     type Target = ccu40_cc40::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU40_CC42 {
+impl core::fmt::Debug for Ccu40Cc42 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU40_CC42").finish()
+        f.debug_struct("Ccu40Cc42").finish()
     }
 }
 #[doc = "Capture Compare Unit 4 - Unit 0"]
 pub use self::ccu40_cc40 as ccu40_cc42;
 #[doc = "Capture Compare Unit 4 - Unit 0"]
-pub struct CCU40_CC43 {
+pub struct Ccu40Cc43 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU40_CC43 {}
-impl CCU40_CC43 {
+unsafe impl Send for Ccu40Cc43 {}
+impl Ccu40Cc43 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu40_cc40::RegisterBlock = 0x4000_c400 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4722,26 +4722,26 @@ impl CCU40_CC43 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU40_CC43 {
+impl Deref for Ccu40Cc43 {
     type Target = ccu40_cc40::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU40_CC43 {
+impl core::fmt::Debug for Ccu40Cc43 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU40_CC43").finish()
+        f.debug_struct("Ccu40Cc43").finish()
     }
 }
 #[doc = "Capture Compare Unit 4 - Unit 0"]
 pub use self::ccu40_cc40 as ccu40_cc43;
 #[doc = "Capture Compare Unit 4 - Unit 1"]
-pub struct CCU41_CC40 {
+pub struct Ccu41Cc40 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU41_CC40 {}
-impl CCU41_CC40 {
+unsafe impl Send for Ccu41Cc40 {}
+impl Ccu41Cc40 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu40_cc40::RegisterBlock = 0x4001_0100 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4766,26 +4766,26 @@ impl CCU41_CC40 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU41_CC40 {
+impl Deref for Ccu41Cc40 {
     type Target = ccu40_cc40::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU41_CC40 {
+impl core::fmt::Debug for Ccu41Cc40 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU41_CC40").finish()
+        f.debug_struct("Ccu41Cc40").finish()
     }
 }
 #[doc = "Capture Compare Unit 4 - Unit 1"]
 pub use self::ccu40_cc40 as ccu41_cc40;
 #[doc = "Capture Compare Unit 4 - Unit 1"]
-pub struct CCU41_CC41 {
+pub struct Ccu41Cc41 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU41_CC41 {}
-impl CCU41_CC41 {
+unsafe impl Send for Ccu41Cc41 {}
+impl Ccu41Cc41 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu40_cc40::RegisterBlock = 0x4001_0200 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4810,26 +4810,26 @@ impl CCU41_CC41 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU41_CC41 {
+impl Deref for Ccu41Cc41 {
     type Target = ccu40_cc40::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU41_CC41 {
+impl core::fmt::Debug for Ccu41Cc41 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU41_CC41").finish()
+        f.debug_struct("Ccu41Cc41").finish()
     }
 }
 #[doc = "Capture Compare Unit 4 - Unit 1"]
 pub use self::ccu40_cc40 as ccu41_cc41;
 #[doc = "Capture Compare Unit 4 - Unit 1"]
-pub struct CCU41_CC42 {
+pub struct Ccu41Cc42 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU41_CC42 {}
-impl CCU41_CC42 {
+unsafe impl Send for Ccu41Cc42 {}
+impl Ccu41Cc42 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu40_cc40::RegisterBlock = 0x4001_0300 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4854,26 +4854,26 @@ impl CCU41_CC42 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU41_CC42 {
+impl Deref for Ccu41Cc42 {
     type Target = ccu40_cc40::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU41_CC42 {
+impl core::fmt::Debug for Ccu41Cc42 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU41_CC42").finish()
+        f.debug_struct("Ccu41Cc42").finish()
     }
 }
 #[doc = "Capture Compare Unit 4 - Unit 1"]
 pub use self::ccu40_cc40 as ccu41_cc42;
 #[doc = "Capture Compare Unit 4 - Unit 1"]
-pub struct CCU41_CC43 {
+pub struct Ccu41Cc43 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU41_CC43 {}
-impl CCU41_CC43 {
+unsafe impl Send for Ccu41Cc43 {}
+impl Ccu41Cc43 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu40_cc40::RegisterBlock = 0x4001_0400 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4898,26 +4898,26 @@ impl CCU41_CC43 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU41_CC43 {
+impl Deref for Ccu41Cc43 {
     type Target = ccu40_cc40::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU41_CC43 {
+impl core::fmt::Debug for Ccu41Cc43 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU41_CC43").finish()
+        f.debug_struct("Ccu41Cc43").finish()
     }
 }
 #[doc = "Capture Compare Unit 4 - Unit 1"]
 pub use self::ccu40_cc40 as ccu41_cc43;
 #[doc = "Capture Compare Unit 8 - Unit 0"]
-pub struct CCU80 {
+pub struct Ccu80 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU80 {}
-impl CCU80 {
+unsafe impl Send for Ccu80 {}
+impl Ccu80 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu80::RegisterBlock = 0x4002_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4942,26 +4942,26 @@ impl CCU80 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU80 {
+impl Deref for Ccu80 {
     type Target = ccu80::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU80 {
+impl core::fmt::Debug for Ccu80 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU80").finish()
+        f.debug_struct("Ccu80").finish()
     }
 }
 #[doc = "Capture Compare Unit 8 - Unit 0"]
 pub mod ccu80;
 #[doc = "Capture Compare Unit 8 - Unit 0"]
-pub struct CCU80_CC80 {
+pub struct Ccu80Cc80 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU80_CC80 {}
-impl CCU80_CC80 {
+unsafe impl Send for Ccu80Cc80 {}
+impl Ccu80Cc80 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu80_cc80::RegisterBlock = 0x4002_0100 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -4986,26 +4986,26 @@ impl CCU80_CC80 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU80_CC80 {
+impl Deref for Ccu80Cc80 {
     type Target = ccu80_cc80::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU80_CC80 {
+impl core::fmt::Debug for Ccu80Cc80 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU80_CC80").finish()
+        f.debug_struct("Ccu80Cc80").finish()
     }
 }
 #[doc = "Capture Compare Unit 8 - Unit 0"]
 pub mod ccu80_cc80;
 #[doc = "Capture Compare Unit 8 - Unit 0"]
-pub struct CCU80_CC81 {
+pub struct Ccu80Cc81 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU80_CC81 {}
-impl CCU80_CC81 {
+unsafe impl Send for Ccu80Cc81 {}
+impl Ccu80Cc81 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu80_cc80::RegisterBlock = 0x4002_0200 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -5030,26 +5030,26 @@ impl CCU80_CC81 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU80_CC81 {
+impl Deref for Ccu80Cc81 {
     type Target = ccu80_cc80::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU80_CC81 {
+impl core::fmt::Debug for Ccu80Cc81 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU80_CC81").finish()
+        f.debug_struct("Ccu80Cc81").finish()
     }
 }
 #[doc = "Capture Compare Unit 8 - Unit 0"]
 pub use self::ccu80_cc80 as ccu80_cc81;
 #[doc = "Capture Compare Unit 8 - Unit 0"]
-pub struct CCU80_CC82 {
+pub struct Ccu80Cc82 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU80_CC82 {}
-impl CCU80_CC82 {
+unsafe impl Send for Ccu80Cc82 {}
+impl Ccu80Cc82 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu80_cc80::RegisterBlock = 0x4002_0300 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -5074,26 +5074,26 @@ impl CCU80_CC82 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU80_CC82 {
+impl Deref for Ccu80Cc82 {
     type Target = ccu80_cc80::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU80_CC82 {
+impl core::fmt::Debug for Ccu80Cc82 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU80_CC82").finish()
+        f.debug_struct("Ccu80Cc82").finish()
     }
 }
 #[doc = "Capture Compare Unit 8 - Unit 0"]
 pub use self::ccu80_cc80 as ccu80_cc82;
 #[doc = "Capture Compare Unit 8 - Unit 0"]
-pub struct CCU80_CC83 {
+pub struct Ccu80Cc83 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for CCU80_CC83 {}
-impl CCU80_CC83 {
+unsafe impl Send for Ccu80Cc83 {}
+impl Ccu80Cc83 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const ccu80_cc80::RegisterBlock = 0x4002_0400 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -5118,26 +5118,26 @@ impl CCU80_CC83 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for CCU80_CC83 {
+impl Deref for Ccu80Cc83 {
     type Target = ccu80_cc80::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for CCU80_CC83 {
+impl core::fmt::Debug for Ccu80Cc83 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("CCU80_CC83").finish()
+        f.debug_struct("Ccu80Cc83").finish()
     }
 }
 #[doc = "Capture Compare Unit 8 - Unit 0"]
 pub use self::ccu80_cc80 as ccu80_cc83;
 #[doc = "Port 0"]
-pub struct PORT0 {
+pub struct Port0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PORT0 {}
-impl PORT0 {
+unsafe impl Send for Port0 {}
+impl Port0 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const port0::RegisterBlock = 0x4802_8000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -5162,26 +5162,26 @@ impl PORT0 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for PORT0 {
+impl Deref for Port0 {
     type Target = port0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PORT0 {
+impl core::fmt::Debug for Port0 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PORT0").finish()
+        f.debug_struct("Port0").finish()
     }
 }
 #[doc = "Port 0"]
 pub mod port0;
 #[doc = "Port 1"]
-pub struct PORT1 {
+pub struct Port1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PORT1 {}
-impl PORT1 {
+unsafe impl Send for Port1 {}
+impl Port1 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const port1::RegisterBlock = 0x4802_8100 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -5206,26 +5206,26 @@ impl PORT1 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for PORT1 {
+impl Deref for Port1 {
     type Target = port1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PORT1 {
+impl core::fmt::Debug for Port1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PORT1").finish()
+        f.debug_struct("Port1").finish()
     }
 }
 #[doc = "Port 1"]
 pub mod port1;
 #[doc = "Port 2"]
-pub struct PORT2 {
+pub struct Port2 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PORT2 {}
-impl PORT2 {
+unsafe impl Send for Port2 {}
+impl Port2 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const port2::RegisterBlock = 0x4802_8200 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -5250,26 +5250,26 @@ impl PORT2 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for PORT2 {
+impl Deref for Port2 {
     type Target = port2::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PORT2 {
+impl core::fmt::Debug for Port2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PORT2").finish()
+        f.debug_struct("Port2").finish()
     }
 }
 #[doc = "Port 2"]
 pub mod port2;
 #[doc = "Port 3"]
-pub struct PORT3 {
+pub struct Port3 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PORT3 {}
-impl PORT3 {
+unsafe impl Send for Port3 {}
+impl Port3 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const port3::RegisterBlock = 0x4802_8300 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -5294,26 +5294,26 @@ impl PORT3 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for PORT3 {
+impl Deref for Port3 {
     type Target = port3::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PORT3 {
+impl core::fmt::Debug for Port3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PORT3").finish()
+        f.debug_struct("Port3").finish()
     }
 }
 #[doc = "Port 3"]
 pub mod port3;
 #[doc = "Port 4"]
-pub struct PORT4 {
+pub struct Port4 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PORT4 {}
-impl PORT4 {
+unsafe impl Send for Port4 {}
+impl Port4 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const port4::RegisterBlock = 0x4802_8400 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -5338,26 +5338,26 @@ impl PORT4 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for PORT4 {
+impl Deref for Port4 {
     type Target = port4::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PORT4 {
+impl core::fmt::Debug for Port4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PORT4").finish()
+        f.debug_struct("Port4").finish()
     }
 }
 #[doc = "Port 4"]
 pub mod port4;
 #[doc = "Port 5"]
-pub struct PORT5 {
+pub struct Port5 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PORT5 {}
-impl PORT5 {
+unsafe impl Send for Port5 {}
+impl Port5 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const port5::RegisterBlock = 0x4802_8500 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -5382,26 +5382,26 @@ impl PORT5 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for PORT5 {
+impl Deref for Port5 {
     type Target = port5::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PORT5 {
+impl core::fmt::Debug for Port5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PORT5").finish()
+        f.debug_struct("Port5").finish()
     }
 }
 #[doc = "Port 5"]
 pub mod port5;
 #[doc = "Port 14"]
-pub struct PORT14 {
+pub struct Port14 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PORT14 {}
-impl PORT14 {
+unsafe impl Send for Port14 {}
+impl Port14 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const port14::RegisterBlock = 0x4802_8e00 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -5426,26 +5426,26 @@ impl PORT14 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for PORT14 {
+impl Deref for Port14 {
     type Target = port14::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PORT14 {
+impl core::fmt::Debug for Port14 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PORT14").finish()
+        f.debug_struct("Port14").finish()
     }
 }
 #[doc = "Port 14"]
 pub mod port14;
 #[doc = "Port 15"]
-pub struct PORT15 {
+pub struct Port15 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for PORT15 {}
-impl PORT15 {
+unsafe impl Send for Port15 {}
+impl Port15 {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const port15::RegisterBlock = 0x4802_8f00 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -5470,16 +5470,16 @@ impl PORT15 {
         Self { _marker: PhantomData }
     }
 }
-impl Deref for PORT15 {
+impl Deref for Port15 {
     type Target = port15::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for PORT15 {
+impl core::fmt::Debug for Port15 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("PORT15").finish()
+        f.debug_struct("Port15").finish()
     }
 }
 #[doc = "Port 15"]
@@ -5490,239 +5490,239 @@ static mut DEVICE_PERIPHERALS: bool = false;
 #[allow(non_snake_case)]
 pub struct Peripherals {
     #[doc = "PPB"]
-    pub PPB: PPB,
+    pub ppb: Ppb,
     #[doc = "DLR"]
-    pub DLR: DLR,
+    pub dlr: Dlr,
     #[doc = "ERU0"]
-    pub ERU0: ERU0,
+    pub eru0: Eru0,
     #[doc = "ERU1"]
-    pub ERU1: ERU1,
+    pub eru1: Eru1,
     #[doc = "GPDMA0"]
-    pub GPDMA0: GPDMA0,
+    pub gpdma0: Gpdma0,
     #[doc = "GPDMA0_CH0"]
-    pub GPDMA0_CH0: GPDMA0_CH0,
+    pub gpdma0_ch0: Gpdma0Ch0,
     #[doc = "GPDMA0_CH1"]
-    pub GPDMA0_CH1: GPDMA0_CH1,
+    pub gpdma0_ch1: Gpdma0Ch1,
     #[doc = "GPDMA0_CH2"]
-    pub GPDMA0_CH2: GPDMA0_CH2,
+    pub gpdma0_ch2: Gpdma0Ch2,
     #[doc = "GPDMA0_CH3"]
-    pub GPDMA0_CH3: GPDMA0_CH3,
+    pub gpdma0_ch3: Gpdma0Ch3,
     #[doc = "GPDMA0_CH4"]
-    pub GPDMA0_CH4: GPDMA0_CH4,
+    pub gpdma0_ch4: Gpdma0Ch4,
     #[doc = "GPDMA0_CH5"]
-    pub GPDMA0_CH5: GPDMA0_CH5,
+    pub gpdma0_ch5: Gpdma0Ch5,
     #[doc = "GPDMA0_CH6"]
-    pub GPDMA0_CH6: GPDMA0_CH6,
+    pub gpdma0_ch6: Gpdma0Ch6,
     #[doc = "GPDMA0_CH7"]
-    pub GPDMA0_CH7: GPDMA0_CH7,
+    pub gpdma0_ch7: Gpdma0Ch7,
     #[doc = "FCE"]
-    pub FCE: FCE,
+    pub fce: Fce,
     #[doc = "FCE_KE0"]
-    pub FCE_KE0: FCE_KE0,
+    pub fce_ke0: FceKe0,
     #[doc = "FCE_KE1"]
-    pub FCE_KE1: FCE_KE1,
+    pub fce_ke1: FceKe1,
     #[doc = "FCE_KE2"]
-    pub FCE_KE2: FCE_KE2,
+    pub fce_ke2: FceKe2,
     #[doc = "FCE_KE3"]
-    pub FCE_KE3: FCE_KE3,
+    pub fce_ke3: FceKe3,
     #[doc = "PBA0"]
-    pub PBA0: PBA0,
+    pub pba0: Pba0,
     #[doc = "PBA1"]
-    pub PBA1: PBA1,
+    pub pba1: Pba1,
     #[doc = "FLASH0"]
-    pub FLASH0: FLASH0,
+    pub flash0: Flash0,
     #[doc = "PREF"]
-    pub PREF: PREF,
+    pub pref: Pref,
     #[doc = "PMU0"]
-    pub PMU0: PMU0,
+    pub pmu0: Pmu0,
     #[doc = "WDT"]
-    pub WDT: WDT,
+    pub wdt: Wdt,
     #[doc = "RTC"]
-    pub RTC: RTC,
+    pub rtc: Rtc,
     #[doc = "SCU_CLK"]
-    pub SCU_CLK: SCU_CLK,
+    pub scu_clk: ScuClk,
     #[doc = "SCU_OSC"]
-    pub SCU_OSC: SCU_OSC,
+    pub scu_osc: ScuOsc,
     #[doc = "SCU_PLL"]
-    pub SCU_PLL: SCU_PLL,
+    pub scu_pll: ScuPll,
     #[doc = "SCU_GENERAL"]
-    pub SCU_GENERAL: SCU_GENERAL,
+    pub scu_general: ScuGeneral,
     #[doc = "SCU_INTERRUPT"]
-    pub SCU_INTERRUPT: SCU_INTERRUPT,
+    pub scu_interrupt: ScuInterrupt,
     #[doc = "SCU_PARITY"]
-    pub SCU_PARITY: SCU_PARITY,
+    pub scu_parity: ScuParity,
     #[doc = "SCU_TRAP"]
-    pub SCU_TRAP: SCU_TRAP,
+    pub scu_trap: ScuTrap,
     #[doc = "SCU_HIBERNATE"]
-    pub SCU_HIBERNATE: SCU_HIBERNATE,
+    pub scu_hibernate: ScuHibernate,
     #[doc = "SCU_POWER"]
-    pub SCU_POWER: SCU_POWER,
+    pub scu_power: ScuPower,
     #[doc = "SCU_RESET"]
-    pub SCU_RESET: SCU_RESET,
+    pub scu_reset: ScuReset,
     #[doc = "LEDTS0"]
-    pub LEDTS0: LEDTS0,
+    pub ledts0: Ledts0,
     #[doc = "SDMMC_CON"]
-    pub SDMMC_CON: SDMMC_CON,
+    pub sdmmc_con: SdmmcCon,
     #[doc = "SDMMC"]
-    pub SDMMC: SDMMC,
+    pub sdmmc: Sdmmc,
     #[doc = "ETH0_CON"]
-    pub ETH0_CON: ETH0_CON,
+    pub eth0_con: Eth0Con,
     #[doc = "ETH0"]
-    pub ETH0: ETH0,
+    pub eth0: Eth0,
     #[doc = "ECAT0_CON"]
-    pub ECAT0_CON: ECAT0_CON,
+    pub ecat0_con: Ecat0Con,
     #[doc = "ECAT0"]
-    pub ECAT0: ECAT0,
+    pub ecat0: Ecat0,
     #[doc = "ECAT0_FMMU0"]
-    pub ECAT0_FMMU0: ECAT0_FMMU0,
+    pub ecat0_fmmu0: Ecat0Fmmu0,
     #[doc = "ECAT0_FMMU1"]
-    pub ECAT0_FMMU1: ECAT0_FMMU1,
+    pub ecat0_fmmu1: Ecat0Fmmu1,
     #[doc = "ECAT0_FMMU2"]
-    pub ECAT0_FMMU2: ECAT0_FMMU2,
+    pub ecat0_fmmu2: Ecat0Fmmu2,
     #[doc = "ECAT0_FMMU3"]
-    pub ECAT0_FMMU3: ECAT0_FMMU3,
+    pub ecat0_fmmu3: Ecat0Fmmu3,
     #[doc = "ECAT0_FMMU4"]
-    pub ECAT0_FMMU4: ECAT0_FMMU4,
+    pub ecat0_fmmu4: Ecat0Fmmu4,
     #[doc = "ECAT0_FMMU5"]
-    pub ECAT0_FMMU5: ECAT0_FMMU5,
+    pub ecat0_fmmu5: Ecat0Fmmu5,
     #[doc = "ECAT0_FMMU6"]
-    pub ECAT0_FMMU6: ECAT0_FMMU6,
+    pub ecat0_fmmu6: Ecat0Fmmu6,
     #[doc = "ECAT0_FMMU7"]
-    pub ECAT0_FMMU7: ECAT0_FMMU7,
+    pub ecat0_fmmu7: Ecat0Fmmu7,
     #[doc = "ECAT0_SM0"]
-    pub ECAT0_SM0: ECAT0_SM0,
+    pub ecat0_sm0: Ecat0Sm0,
     #[doc = "ECAT0_SM1"]
-    pub ECAT0_SM1: ECAT0_SM1,
+    pub ecat0_sm1: Ecat0Sm1,
     #[doc = "ECAT0_SM2"]
-    pub ECAT0_SM2: ECAT0_SM2,
+    pub ecat0_sm2: Ecat0Sm2,
     #[doc = "ECAT0_SM3"]
-    pub ECAT0_SM3: ECAT0_SM3,
+    pub ecat0_sm3: Ecat0Sm3,
     #[doc = "ECAT0_SM4"]
-    pub ECAT0_SM4: ECAT0_SM4,
+    pub ecat0_sm4: Ecat0Sm4,
     #[doc = "ECAT0_SM5"]
-    pub ECAT0_SM5: ECAT0_SM5,
+    pub ecat0_sm5: Ecat0Sm5,
     #[doc = "ECAT0_SM6"]
-    pub ECAT0_SM6: ECAT0_SM6,
+    pub ecat0_sm6: Ecat0Sm6,
     #[doc = "ECAT0_SM7"]
-    pub ECAT0_SM7: ECAT0_SM7,
+    pub ecat0_sm7: Ecat0Sm7,
     #[doc = "USB0"]
-    pub USB0: USB0,
+    pub usb0: Usb0,
     #[doc = "USB0_EP0"]
-    pub USB0_EP0: USB0_EP0,
+    pub usb0_ep0: Usb0Ep0,
     #[doc = "USB0_EP1"]
-    pub USB0_EP1: USB0_EP1,
+    pub usb0_ep1: Usb0Ep1,
     #[doc = "USB0_EP2"]
-    pub USB0_EP2: USB0_EP2,
+    pub usb0_ep2: Usb0Ep2,
     #[doc = "USB0_EP3"]
-    pub USB0_EP3: USB0_EP3,
+    pub usb0_ep3: Usb0Ep3,
     #[doc = "USB0_EP4"]
-    pub USB0_EP4: USB0_EP4,
+    pub usb0_ep4: Usb0Ep4,
     #[doc = "USB0_EP5"]
-    pub USB0_EP5: USB0_EP5,
+    pub usb0_ep5: Usb0Ep5,
     #[doc = "USB0_EP6"]
-    pub USB0_EP6: USB0_EP6,
+    pub usb0_ep6: Usb0Ep6,
     #[doc = "USB0_CH0"]
-    pub USB0_CH0: USB0_CH0,
+    pub usb0_ch0: Usb0Ch0,
     #[doc = "USB0_CH1"]
-    pub USB0_CH1: USB0_CH1,
+    pub usb0_ch1: Usb0Ch1,
     #[doc = "USB0_CH2"]
-    pub USB0_CH2: USB0_CH2,
+    pub usb0_ch2: Usb0Ch2,
     #[doc = "USB0_CH3"]
-    pub USB0_CH3: USB0_CH3,
+    pub usb0_ch3: Usb0Ch3,
     #[doc = "USB0_CH4"]
-    pub USB0_CH4: USB0_CH4,
+    pub usb0_ch4: Usb0Ch4,
     #[doc = "USB0_CH5"]
-    pub USB0_CH5: USB0_CH5,
+    pub usb0_ch5: Usb0Ch5,
     #[doc = "USB0_CH6"]
-    pub USB0_CH6: USB0_CH6,
+    pub usb0_ch6: Usb0Ch6,
     #[doc = "USB0_CH7"]
-    pub USB0_CH7: USB0_CH7,
+    pub usb0_ch7: Usb0Ch7,
     #[doc = "USB0_CH8"]
-    pub USB0_CH8: USB0_CH8,
+    pub usb0_ch8: Usb0Ch8,
     #[doc = "USB0_CH9"]
-    pub USB0_CH9: USB0_CH9,
+    pub usb0_ch9: Usb0Ch9,
     #[doc = "USB0_CH10"]
-    pub USB0_CH10: USB0_CH10,
+    pub usb0_ch10: Usb0Ch10,
     #[doc = "USB0_CH11"]
-    pub USB0_CH11: USB0_CH11,
+    pub usb0_ch11: Usb0Ch11,
     #[doc = "USB0_CH12"]
-    pub USB0_CH12: USB0_CH12,
+    pub usb0_ch12: Usb0Ch12,
     #[doc = "USB0_CH13"]
-    pub USB0_CH13: USB0_CH13,
+    pub usb0_ch13: Usb0Ch13,
     #[doc = "USIC0"]
-    pub USIC0: USIC0,
+    pub usic0: Usic0,
     #[doc = "USIC1"]
-    pub USIC1: USIC1,
+    pub usic1: Usic1,
     #[doc = "USIC0_CH0"]
-    pub USIC0_CH0: USIC0_CH0,
+    pub usic0_ch0: Usic0Ch0,
     #[doc = "USIC0_CH1"]
-    pub USIC0_CH1: USIC0_CH1,
+    pub usic0_ch1: Usic0Ch1,
     #[doc = "USIC1_CH0"]
-    pub USIC1_CH0: USIC1_CH0,
+    pub usic1_ch0: Usic1Ch0,
     #[doc = "USIC1_CH1"]
-    pub USIC1_CH1: USIC1_CH1,
+    pub usic1_ch1: Usic1Ch1,
     #[doc = "CAN"]
-    pub CAN: CAN,
+    pub can: Can,
     #[doc = "CAN_NODE0"]
-    pub CAN_NODE0: CAN_NODE0,
+    pub can_node0: CanNode0,
     #[doc = "CAN_NODE1"]
-    pub CAN_NODE1: CAN_NODE1,
+    pub can_node1: CanNode1,
     #[doc = "CAN_MO"]
-    pub CAN_MO: CAN_MO,
+    pub can_mo: CanMo,
     #[doc = "VADC"]
-    pub VADC: VADC,
+    pub vadc: Vadc,
     #[doc = "VADC_G0"]
-    pub VADC_G0: VADC_G0,
+    pub vadc_g0: VadcG0,
     #[doc = "VADC_G1"]
-    pub VADC_G1: VADC_G1,
+    pub vadc_g1: VadcG1,
     #[doc = "DAC"]
-    pub DAC: DAC,
+    pub dac: Dac,
     #[doc = "CCU40"]
-    pub CCU40: CCU40,
+    pub ccu40: Ccu40,
     #[doc = "CCU41"]
-    pub CCU41: CCU41,
+    pub ccu41: Ccu41,
     #[doc = "CCU40_CC40"]
-    pub CCU40_CC40: CCU40_CC40,
+    pub ccu40_cc40: Ccu40Cc40,
     #[doc = "CCU40_CC41"]
-    pub CCU40_CC41: CCU40_CC41,
+    pub ccu40_cc41: Ccu40Cc41,
     #[doc = "CCU40_CC42"]
-    pub CCU40_CC42: CCU40_CC42,
+    pub ccu40_cc42: Ccu40Cc42,
     #[doc = "CCU40_CC43"]
-    pub CCU40_CC43: CCU40_CC43,
+    pub ccu40_cc43: Ccu40Cc43,
     #[doc = "CCU41_CC40"]
-    pub CCU41_CC40: CCU41_CC40,
+    pub ccu41_cc40: Ccu41Cc40,
     #[doc = "CCU41_CC41"]
-    pub CCU41_CC41: CCU41_CC41,
+    pub ccu41_cc41: Ccu41Cc41,
     #[doc = "CCU41_CC42"]
-    pub CCU41_CC42: CCU41_CC42,
+    pub ccu41_cc42: Ccu41Cc42,
     #[doc = "CCU41_CC43"]
-    pub CCU41_CC43: CCU41_CC43,
+    pub ccu41_cc43: Ccu41Cc43,
     #[doc = "CCU80"]
-    pub CCU80: CCU80,
+    pub ccu80: Ccu80,
     #[doc = "CCU80_CC80"]
-    pub CCU80_CC80: CCU80_CC80,
+    pub ccu80_cc80: Ccu80Cc80,
     #[doc = "CCU80_CC81"]
-    pub CCU80_CC81: CCU80_CC81,
+    pub ccu80_cc81: Ccu80Cc81,
     #[doc = "CCU80_CC82"]
-    pub CCU80_CC82: CCU80_CC82,
+    pub ccu80_cc82: Ccu80Cc82,
     #[doc = "CCU80_CC83"]
-    pub CCU80_CC83: CCU80_CC83,
+    pub ccu80_cc83: Ccu80Cc83,
     #[doc = "PORT0"]
-    pub PORT0: PORT0,
+    pub port0: Port0,
     #[doc = "PORT1"]
-    pub PORT1: PORT1,
+    pub port1: Port1,
     #[doc = "PORT2"]
-    pub PORT2: PORT2,
+    pub port2: Port2,
     #[doc = "PORT3"]
-    pub PORT3: PORT3,
+    pub port3: Port3,
     #[doc = "PORT4"]
-    pub PORT4: PORT4,
+    pub port4: Port4,
     #[doc = "PORT5"]
-    pub PORT5: PORT5,
+    pub port5: Port5,
     #[doc = "PORT14"]
-    pub PORT14: PORT14,
+    pub port14: Port14,
     #[doc = "PORT15"]
-    pub PORT15: PORT15,
+    pub port15: Port15,
 }
 impl Peripherals {
     #[doc = r" Returns all the peripherals *once*."]
@@ -5745,123 +5745,123 @@ impl Peripherals {
     pub unsafe fn steal() -> Self {
         DEVICE_PERIPHERALS = true;
         Peripherals {
-            PPB: PPB { _marker: PhantomData },
-            DLR: DLR { _marker: PhantomData },
-            ERU0: ERU0 { _marker: PhantomData },
-            ERU1: ERU1 { _marker: PhantomData },
-            GPDMA0: GPDMA0 { _marker: PhantomData },
-            GPDMA0_CH0: GPDMA0_CH0 { _marker: PhantomData },
-            GPDMA0_CH1: GPDMA0_CH1 { _marker: PhantomData },
-            GPDMA0_CH2: GPDMA0_CH2 { _marker: PhantomData },
-            GPDMA0_CH3: GPDMA0_CH3 { _marker: PhantomData },
-            GPDMA0_CH4: GPDMA0_CH4 { _marker: PhantomData },
-            GPDMA0_CH5: GPDMA0_CH5 { _marker: PhantomData },
-            GPDMA0_CH6: GPDMA0_CH6 { _marker: PhantomData },
-            GPDMA0_CH7: GPDMA0_CH7 { _marker: PhantomData },
-            FCE: FCE { _marker: PhantomData },
-            FCE_KE0: FCE_KE0 { _marker: PhantomData },
-            FCE_KE1: FCE_KE1 { _marker: PhantomData },
-            FCE_KE2: FCE_KE2 { _marker: PhantomData },
-            FCE_KE3: FCE_KE3 { _marker: PhantomData },
-            PBA0: PBA0 { _marker: PhantomData },
-            PBA1: PBA1 { _marker: PhantomData },
-            FLASH0: FLASH0 { _marker: PhantomData },
-            PREF: PREF { _marker: PhantomData },
-            PMU0: PMU0 { _marker: PhantomData },
-            WDT: WDT { _marker: PhantomData },
-            RTC: RTC { _marker: PhantomData },
-            SCU_CLK: SCU_CLK { _marker: PhantomData },
-            SCU_OSC: SCU_OSC { _marker: PhantomData },
-            SCU_PLL: SCU_PLL { _marker: PhantomData },
-            SCU_GENERAL: SCU_GENERAL { _marker: PhantomData },
-            SCU_INTERRUPT: SCU_INTERRUPT { _marker: PhantomData },
-            SCU_PARITY: SCU_PARITY { _marker: PhantomData },
-            SCU_TRAP: SCU_TRAP { _marker: PhantomData },
-            SCU_HIBERNATE: SCU_HIBERNATE { _marker: PhantomData },
-            SCU_POWER: SCU_POWER { _marker: PhantomData },
-            SCU_RESET: SCU_RESET { _marker: PhantomData },
-            LEDTS0: LEDTS0 { _marker: PhantomData },
-            SDMMC_CON: SDMMC_CON { _marker: PhantomData },
-            SDMMC: SDMMC { _marker: PhantomData },
-            ETH0_CON: ETH0_CON { _marker: PhantomData },
-            ETH0: ETH0 { _marker: PhantomData },
-            ECAT0_CON: ECAT0_CON { _marker: PhantomData },
-            ECAT0: ECAT0 { _marker: PhantomData },
-            ECAT0_FMMU0: ECAT0_FMMU0 { _marker: PhantomData },
-            ECAT0_FMMU1: ECAT0_FMMU1 { _marker: PhantomData },
-            ECAT0_FMMU2: ECAT0_FMMU2 { _marker: PhantomData },
-            ECAT0_FMMU3: ECAT0_FMMU3 { _marker: PhantomData },
-            ECAT0_FMMU4: ECAT0_FMMU4 { _marker: PhantomData },
-            ECAT0_FMMU5: ECAT0_FMMU5 { _marker: PhantomData },
-            ECAT0_FMMU6: ECAT0_FMMU6 { _marker: PhantomData },
-            ECAT0_FMMU7: ECAT0_FMMU7 { _marker: PhantomData },
-            ECAT0_SM0: ECAT0_SM0 { _marker: PhantomData },
-            ECAT0_SM1: ECAT0_SM1 { _marker: PhantomData },
-            ECAT0_SM2: ECAT0_SM2 { _marker: PhantomData },
-            ECAT0_SM3: ECAT0_SM3 { _marker: PhantomData },
-            ECAT0_SM4: ECAT0_SM4 { _marker: PhantomData },
-            ECAT0_SM5: ECAT0_SM5 { _marker: PhantomData },
-            ECAT0_SM6: ECAT0_SM6 { _marker: PhantomData },
-            ECAT0_SM7: ECAT0_SM7 { _marker: PhantomData },
-            USB0: USB0 { _marker: PhantomData },
-            USB0_EP0: USB0_EP0 { _marker: PhantomData },
-            USB0_EP1: USB0_EP1 { _marker: PhantomData },
-            USB0_EP2: USB0_EP2 { _marker: PhantomData },
-            USB0_EP3: USB0_EP3 { _marker: PhantomData },
-            USB0_EP4: USB0_EP4 { _marker: PhantomData },
-            USB0_EP5: USB0_EP5 { _marker: PhantomData },
-            USB0_EP6: USB0_EP6 { _marker: PhantomData },
-            USB0_CH0: USB0_CH0 { _marker: PhantomData },
-            USB0_CH1: USB0_CH1 { _marker: PhantomData },
-            USB0_CH2: USB0_CH2 { _marker: PhantomData },
-            USB0_CH3: USB0_CH3 { _marker: PhantomData },
-            USB0_CH4: USB0_CH4 { _marker: PhantomData },
-            USB0_CH5: USB0_CH5 { _marker: PhantomData },
-            USB0_CH6: USB0_CH6 { _marker: PhantomData },
-            USB0_CH7: USB0_CH7 { _marker: PhantomData },
-            USB0_CH8: USB0_CH8 { _marker: PhantomData },
-            USB0_CH9: USB0_CH9 { _marker: PhantomData },
-            USB0_CH10: USB0_CH10 { _marker: PhantomData },
-            USB0_CH11: USB0_CH11 { _marker: PhantomData },
-            USB0_CH12: USB0_CH12 { _marker: PhantomData },
-            USB0_CH13: USB0_CH13 { _marker: PhantomData },
-            USIC0: USIC0 { _marker: PhantomData },
-            USIC1: USIC1 { _marker: PhantomData },
-            USIC0_CH0: USIC0_CH0 { _marker: PhantomData },
-            USIC0_CH1: USIC0_CH1 { _marker: PhantomData },
-            USIC1_CH0: USIC1_CH0 { _marker: PhantomData },
-            USIC1_CH1: USIC1_CH1 { _marker: PhantomData },
-            CAN: CAN { _marker: PhantomData },
-            CAN_NODE0: CAN_NODE0 { _marker: PhantomData },
-            CAN_NODE1: CAN_NODE1 { _marker: PhantomData },
-            CAN_MO: CAN_MO { _marker: PhantomData },
-            VADC: VADC { _marker: PhantomData },
-            VADC_G0: VADC_G0 { _marker: PhantomData },
-            VADC_G1: VADC_G1 { _marker: PhantomData },
-            DAC: DAC { _marker: PhantomData },
-            CCU40: CCU40 { _marker: PhantomData },
-            CCU41: CCU41 { _marker: PhantomData },
-            CCU40_CC40: CCU40_CC40 { _marker: PhantomData },
-            CCU40_CC41: CCU40_CC41 { _marker: PhantomData },
-            CCU40_CC42: CCU40_CC42 { _marker: PhantomData },
-            CCU40_CC43: CCU40_CC43 { _marker: PhantomData },
-            CCU41_CC40: CCU41_CC40 { _marker: PhantomData },
-            CCU41_CC41: CCU41_CC41 { _marker: PhantomData },
-            CCU41_CC42: CCU41_CC42 { _marker: PhantomData },
-            CCU41_CC43: CCU41_CC43 { _marker: PhantomData },
-            CCU80: CCU80 { _marker: PhantomData },
-            CCU80_CC80: CCU80_CC80 { _marker: PhantomData },
-            CCU80_CC81: CCU80_CC81 { _marker: PhantomData },
-            CCU80_CC82: CCU80_CC82 { _marker: PhantomData },
-            CCU80_CC83: CCU80_CC83 { _marker: PhantomData },
-            PORT0: PORT0 { _marker: PhantomData },
-            PORT1: PORT1 { _marker: PhantomData },
-            PORT2: PORT2 { _marker: PhantomData },
-            PORT3: PORT3 { _marker: PhantomData },
-            PORT4: PORT4 { _marker: PhantomData },
-            PORT5: PORT5 { _marker: PhantomData },
-            PORT14: PORT14 { _marker: PhantomData },
-            PORT15: PORT15 { _marker: PhantomData },
+            ppb: Ppb { _marker: PhantomData },
+            dlr: Dlr { _marker: PhantomData },
+            eru0: Eru0 { _marker: PhantomData },
+            eru1: Eru1 { _marker: PhantomData },
+            gpdma0: Gpdma0 { _marker: PhantomData },
+            gpdma0_ch0: Gpdma0Ch0 { _marker: PhantomData },
+            gpdma0_ch1: Gpdma0Ch1 { _marker: PhantomData },
+            gpdma0_ch2: Gpdma0Ch2 { _marker: PhantomData },
+            gpdma0_ch3: Gpdma0Ch3 { _marker: PhantomData },
+            gpdma0_ch4: Gpdma0Ch4 { _marker: PhantomData },
+            gpdma0_ch5: Gpdma0Ch5 { _marker: PhantomData },
+            gpdma0_ch6: Gpdma0Ch6 { _marker: PhantomData },
+            gpdma0_ch7: Gpdma0Ch7 { _marker: PhantomData },
+            fce: Fce { _marker: PhantomData },
+            fce_ke0: FceKe0 { _marker: PhantomData },
+            fce_ke1: FceKe1 { _marker: PhantomData },
+            fce_ke2: FceKe2 { _marker: PhantomData },
+            fce_ke3: FceKe3 { _marker: PhantomData },
+            pba0: Pba0 { _marker: PhantomData },
+            pba1: Pba1 { _marker: PhantomData },
+            flash0: Flash0 { _marker: PhantomData },
+            pref: Pref { _marker: PhantomData },
+            pmu0: Pmu0 { _marker: PhantomData },
+            wdt: Wdt { _marker: PhantomData },
+            rtc: Rtc { _marker: PhantomData },
+            scu_clk: ScuClk { _marker: PhantomData },
+            scu_osc: ScuOsc { _marker: PhantomData },
+            scu_pll: ScuPll { _marker: PhantomData },
+            scu_general: ScuGeneral { _marker: PhantomData },
+            scu_interrupt: ScuInterrupt { _marker: PhantomData },
+            scu_parity: ScuParity { _marker: PhantomData },
+            scu_trap: ScuTrap { _marker: PhantomData },
+            scu_hibernate: ScuHibernate { _marker: PhantomData },
+            scu_power: ScuPower { _marker: PhantomData },
+            scu_reset: ScuReset { _marker: PhantomData },
+            ledts0: Ledts0 { _marker: PhantomData },
+            sdmmc_con: SdmmcCon { _marker: PhantomData },
+            sdmmc: Sdmmc { _marker: PhantomData },
+            eth0_con: Eth0Con { _marker: PhantomData },
+            eth0: Eth0 { _marker: PhantomData },
+            ecat0_con: Ecat0Con { _marker: PhantomData },
+            ecat0: Ecat0 { _marker: PhantomData },
+            ecat0_fmmu0: Ecat0Fmmu0 { _marker: PhantomData },
+            ecat0_fmmu1: Ecat0Fmmu1 { _marker: PhantomData },
+            ecat0_fmmu2: Ecat0Fmmu2 { _marker: PhantomData },
+            ecat0_fmmu3: Ecat0Fmmu3 { _marker: PhantomData },
+            ecat0_fmmu4: Ecat0Fmmu4 { _marker: PhantomData },
+            ecat0_fmmu5: Ecat0Fmmu5 { _marker: PhantomData },
+            ecat0_fmmu6: Ecat0Fmmu6 { _marker: PhantomData },
+            ecat0_fmmu7: Ecat0Fmmu7 { _marker: PhantomData },
+            ecat0_sm0: Ecat0Sm0 { _marker: PhantomData },
+            ecat0_sm1: Ecat0Sm1 { _marker: PhantomData },
+            ecat0_sm2: Ecat0Sm2 { _marker: PhantomData },
+            ecat0_sm3: Ecat0Sm3 { _marker: PhantomData },
+            ecat0_sm4: Ecat0Sm4 { _marker: PhantomData },
+            ecat0_sm5: Ecat0Sm5 { _marker: PhantomData },
+            ecat0_sm6: Ecat0Sm6 { _marker: PhantomData },
+            ecat0_sm7: Ecat0Sm7 { _marker: PhantomData },
+            usb0: Usb0 { _marker: PhantomData },
+            usb0_ep0: Usb0Ep0 { _marker: PhantomData },
+            usb0_ep1: Usb0Ep1 { _marker: PhantomData },
+            usb0_ep2: Usb0Ep2 { _marker: PhantomData },
+            usb0_ep3: Usb0Ep3 { _marker: PhantomData },
+            usb0_ep4: Usb0Ep4 { _marker: PhantomData },
+            usb0_ep5: Usb0Ep5 { _marker: PhantomData },
+            usb0_ep6: Usb0Ep6 { _marker: PhantomData },
+            usb0_ch0: Usb0Ch0 { _marker: PhantomData },
+            usb0_ch1: Usb0Ch1 { _marker: PhantomData },
+            usb0_ch2: Usb0Ch2 { _marker: PhantomData },
+            usb0_ch3: Usb0Ch3 { _marker: PhantomData },
+            usb0_ch4: Usb0Ch4 { _marker: PhantomData },
+            usb0_ch5: Usb0Ch5 { _marker: PhantomData },
+            usb0_ch6: Usb0Ch6 { _marker: PhantomData },
+            usb0_ch7: Usb0Ch7 { _marker: PhantomData },
+            usb0_ch8: Usb0Ch8 { _marker: PhantomData },
+            usb0_ch9: Usb0Ch9 { _marker: PhantomData },
+            usb0_ch10: Usb0Ch10 { _marker: PhantomData },
+            usb0_ch11: Usb0Ch11 { _marker: PhantomData },
+            usb0_ch12: Usb0Ch12 { _marker: PhantomData },
+            usb0_ch13: Usb0Ch13 { _marker: PhantomData },
+            usic0: Usic0 { _marker: PhantomData },
+            usic1: Usic1 { _marker: PhantomData },
+            usic0_ch0: Usic0Ch0 { _marker: PhantomData },
+            usic0_ch1: Usic0Ch1 { _marker: PhantomData },
+            usic1_ch0: Usic1Ch0 { _marker: PhantomData },
+            usic1_ch1: Usic1Ch1 { _marker: PhantomData },
+            can: Can { _marker: PhantomData },
+            can_node0: CanNode0 { _marker: PhantomData },
+            can_node1: CanNode1 { _marker: PhantomData },
+            can_mo: CanMo { _marker: PhantomData },
+            vadc: Vadc { _marker: PhantomData },
+            vadc_g0: VadcG0 { _marker: PhantomData },
+            vadc_g1: VadcG1 { _marker: PhantomData },
+            dac: Dac { _marker: PhantomData },
+            ccu40: Ccu40 { _marker: PhantomData },
+            ccu41: Ccu41 { _marker: PhantomData },
+            ccu40_cc40: Ccu40Cc40 { _marker: PhantomData },
+            ccu40_cc41: Ccu40Cc41 { _marker: PhantomData },
+            ccu40_cc42: Ccu40Cc42 { _marker: PhantomData },
+            ccu40_cc43: Ccu40Cc43 { _marker: PhantomData },
+            ccu41_cc40: Ccu41Cc40 { _marker: PhantomData },
+            ccu41_cc41: Ccu41Cc41 { _marker: PhantomData },
+            ccu41_cc42: Ccu41Cc42 { _marker: PhantomData },
+            ccu41_cc43: Ccu41Cc43 { _marker: PhantomData },
+            ccu80: Ccu80 { _marker: PhantomData },
+            ccu80_cc80: Ccu80Cc80 { _marker: PhantomData },
+            ccu80_cc81: Ccu80Cc81 { _marker: PhantomData },
+            ccu80_cc82: Ccu80Cc82 { _marker: PhantomData },
+            ccu80_cc83: Ccu80Cc83 { _marker: PhantomData },
+            port0: Port0 { _marker: PhantomData },
+            port1: Port1 { _marker: PhantomData },
+            port2: Port2 { _marker: PhantomData },
+            port3: Port3 { _marker: PhantomData },
+            port4: Port4 { _marker: PhantomData },
+            port5: Port5 { _marker: PhantomData },
+            port14: Port14 { _marker: PhantomData },
+            port15: Port15 { _marker: PhantomData },
         }
     }
 }

@@ -1,138 +1,148 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    clc: CLC,
+    clc: Clc,
     _reserved1: [u8; 0x04],
-    id: ID,
-    fdr: FDR,
+    id: Id,
+    fdr: Fdr,
     _reserved3: [u8; 0xf0],
-    list: [LIST; 16],
-    mspnd: [MSPND; 8],
+    list: [List; 16],
+    mspnd: [Mspnd; 8],
     _reserved5: [u8; 0x20],
-    msid: [MSID; 8],
+    msid: [Msid; 8],
     _reserved6: [u8; 0x20],
-    msimask: MSIMASK,
-    panctr: PANCTR,
-    mcr: MCR,
-    mitr: MITR,
+    msimask: Msimask,
+    panctr: Panctr,
+    mcr: Mcr,
+    mitr: Mitr,
 }
 impl RegisterBlock {
     #[doc = "0x00 - CAN Clock Control Register"]
     #[inline(always)]
-    pub const fn clc(&self) -> &CLC {
+    pub const fn clc(&self) -> &Clc {
         &self.clc
     }
     #[doc = "0x08 - Module Identification Register"]
     #[inline(always)]
-    pub const fn id(&self) -> &ID {
+    pub const fn id(&self) -> &Id {
         &self.id
     }
     #[doc = "0x0c - CAN Fractional Divider Register"]
     #[inline(always)]
-    pub const fn fdr(&self) -> &FDR {
+    pub const fn fdr(&self) -> &Fdr {
         &self.fdr
     }
     #[doc = "0x100..0x140 - List Register"]
     #[inline(always)]
-    pub const fn list(&self, n: usize) -> &LIST {
+    pub const fn list(&self, n: usize) -> &List {
         &self.list[n]
     }
     #[doc = "Iterator for array of:"]
     #[doc = "0x100..0x140 - List Register"]
     #[inline(always)]
-    pub fn list_iter(&self) -> impl Iterator<Item = &LIST> {
+    pub fn list_iter(&self) -> impl Iterator<Item = &List> {
         self.list.iter()
     }
     #[doc = "0x140..0x160 - Message Pending Register"]
     #[inline(always)]
-    pub const fn mspnd(&self, n: usize) -> &MSPND {
+    pub const fn mspnd(&self, n: usize) -> &Mspnd {
         &self.mspnd[n]
     }
     #[doc = "Iterator for array of:"]
     #[doc = "0x140..0x160 - Message Pending Register"]
     #[inline(always)]
-    pub fn mspnd_iter(&self) -> impl Iterator<Item = &MSPND> {
+    pub fn mspnd_iter(&self) -> impl Iterator<Item = &Mspnd> {
         self.mspnd.iter()
     }
     #[doc = "0x180..0x1a0 - Message Index Register"]
     #[inline(always)]
-    pub const fn msid(&self, n: usize) -> &MSID {
+    pub const fn msid(&self, n: usize) -> &Msid {
         &self.msid[n]
     }
     #[doc = "Iterator for array of:"]
     #[doc = "0x180..0x1a0 - Message Index Register"]
     #[inline(always)]
-    pub fn msid_iter(&self) -> impl Iterator<Item = &MSID> {
+    pub fn msid_iter(&self) -> impl Iterator<Item = &Msid> {
         self.msid.iter()
     }
     #[doc = "0x1c0 - Message Index Mask Register"]
     #[inline(always)]
-    pub const fn msimask(&self) -> &MSIMASK {
+    pub const fn msimask(&self) -> &Msimask {
         &self.msimask
     }
     #[doc = "0x1c4 - Panel Control Register"]
     #[inline(always)]
-    pub const fn panctr(&self) -> &PANCTR {
+    pub const fn panctr(&self) -> &Panctr {
         &self.panctr
     }
     #[doc = "0x1c8 - Module Control Register"]
     #[inline(always)]
-    pub const fn mcr(&self) -> &MCR {
+    pub const fn mcr(&self) -> &Mcr {
         &self.mcr
     }
     #[doc = "0x1cc - Module Interrupt Trigger Register"]
     #[inline(always)]
-    pub const fn mitr(&self) -> &MITR {
+    pub const fn mitr(&self) -> &Mitr {
         &self.mitr
     }
 }
 #[doc = "CLC (rw) register accessor: CAN Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clc::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clc::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clc`]
 module"]
-pub type CLC = crate::Reg<clc::CLC_SPEC>;
+#[doc(alias = "CLC")]
+pub type Clc = crate::Reg<clc::ClcSpec>;
 #[doc = "CAN Clock Control Register"]
 pub mod clc;
 #[doc = "ID (r) register accessor: Module Identification Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@id`]
 module"]
-pub type ID = crate::Reg<id::ID_SPEC>;
+#[doc(alias = "ID")]
+pub type Id = crate::Reg<id::IdSpec>;
 #[doc = "Module Identification Register"]
 pub mod id;
 #[doc = "FDR (rw) register accessor: CAN Fractional Divider Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fdr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fdr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fdr`]
 module"]
-pub type FDR = crate::Reg<fdr::FDR_SPEC>;
+#[doc(alias = "FDR")]
+pub type Fdr = crate::Reg<fdr::FdrSpec>;
 #[doc = "CAN Fractional Divider Register"]
 pub mod fdr;
 #[doc = "LIST (r) register accessor: List Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`list::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@list`]
 module"]
-pub type LIST = crate::Reg<list::LIST_SPEC>;
+#[doc(alias = "LIST")]
+pub type List = crate::Reg<list::ListSpec>;
 #[doc = "List Register"]
 pub mod list;
 #[doc = "MSPND (rw) register accessor: Message Pending Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mspnd::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mspnd::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mspnd`]
 module"]
-pub type MSPND = crate::Reg<mspnd::MSPND_SPEC>;
+#[doc(alias = "MSPND")]
+pub type Mspnd = crate::Reg<mspnd::MspndSpec>;
 #[doc = "Message Pending Register"]
 pub mod mspnd;
 #[doc = "MSID (r) register accessor: Message Index Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`msid::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@msid`]
 module"]
-pub type MSID = crate::Reg<msid::MSID_SPEC>;
+#[doc(alias = "MSID")]
+pub type Msid = crate::Reg<msid::MsidSpec>;
 #[doc = "Message Index Register"]
 pub mod msid;
 #[doc = "MSIMASK (rw) register accessor: Message Index Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`msimask::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`msimask::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@msimask`]
 module"]
-pub type MSIMASK = crate::Reg<msimask::MSIMASK_SPEC>;
+#[doc(alias = "MSIMASK")]
+pub type Msimask = crate::Reg<msimask::MsimaskSpec>;
 #[doc = "Message Index Mask Register"]
 pub mod msimask;
 #[doc = "PANCTR (rw) register accessor: Panel Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`panctr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`panctr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@panctr`]
 module"]
-pub type PANCTR = crate::Reg<panctr::PANCTR_SPEC>;
+#[doc(alias = "PANCTR")]
+pub type Panctr = crate::Reg<panctr::PanctrSpec>;
 #[doc = "Panel Control Register"]
 pub mod panctr;
 #[doc = "MCR (rw) register accessor: Module Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mcr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mcr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mcr`]
 module"]
-pub type MCR = crate::Reg<mcr::MCR_SPEC>;
+#[doc(alias = "MCR")]
+pub type Mcr = crate::Reg<mcr::McrSpec>;
 #[doc = "Module Control Register"]
 pub mod mcr;
 #[doc = "MITR (w) register accessor: Module Interrupt Trigger Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mitr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mitr`]
 module"]
-pub type MITR = crate::Reg<mitr::MITR_SPEC>;
+#[doc(alias = "MITR")]
+pub type Mitr = crate::Reg<mitr::MitrSpec>;
 #[doc = "Module Interrupt Trigger Register"]
 pub mod mitr;

@@ -1,601 +1,601 @@
 #[doc = "Register `DSLEEPCR` reader"]
-pub type R = crate::R<DSLEEPCR_SPEC>;
+pub type R = crate::R<DsleepcrSpec>;
 #[doc = "Register `DSLEEPCR` writer"]
-pub type W = crate::W<DSLEEPCR_SPEC>;
+pub type W = crate::W<DsleepcrSpec>;
 #[doc = "System Clock Selection Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SYSSEL_A {
+pub enum Syssel {
     #[doc = "0: fOFI clock"]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: fPLL clock"]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<SYSSEL_A> for bool {
+impl From<Syssel> for bool {
     #[inline(always)]
-    fn from(variant: SYSSEL_A) -> Self {
+    fn from(variant: Syssel) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SYSSEL` reader - System Clock Selection Value"]
-pub type SYSSEL_R = crate::BitReader<SYSSEL_A>;
-impl SYSSEL_R {
+pub type SysselR = crate::BitReader<Syssel>;
+impl SysselR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SYSSEL_A {
+    pub const fn variant(&self) -> Syssel {
         match self.bits {
-            false => SYSSEL_A::CONST_0,
-            true => SYSSEL_A::CONST_1,
+            false => Syssel::Const0,
+            true => Syssel::Const1,
         }
     }
     #[doc = "fOFI clock"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == SYSSEL_A::CONST_0
+        *self == Syssel::Const0
     }
     #[doc = "fPLL clock"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == SYSSEL_A::CONST_1
+        *self == Syssel::Const1
     }
 }
 #[doc = "Field `SYSSEL` writer - System Clock Selection Value"]
-pub type SYSSEL_W<'a, REG> = crate::BitWriter<'a, REG, SYSSEL_A>;
-impl<'a, REG> SYSSEL_W<'a, REG>
+pub type SysselW<'a, REG> = crate::BitWriter<'a, REG, Syssel>;
+impl<'a, REG> SysselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "fOFI clock"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(SYSSEL_A::CONST_0)
+        self.variant(Syssel::Const0)
     }
     #[doc = "fPLL clock"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(SYSSEL_A::CONST_1)
+        self.variant(Syssel::Const1)
     }
 }
 #[doc = "Flash Power Down\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum FPDN_A {
+pub enum Fpdn {
     #[doc = "1: Flash power down module"]
-    CONST_1 = 1,
+    Const1 = 1,
     #[doc = "0: No effect"]
-    CONST_0 = 0,
+    Const0 = 0,
 }
-impl From<FPDN_A> for bool {
+impl From<Fpdn> for bool {
     #[inline(always)]
-    fn from(variant: FPDN_A) -> Self {
+    fn from(variant: Fpdn) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `FPDN` reader - Flash Power Down"]
-pub type FPDN_R = crate::BitReader<FPDN_A>;
-impl FPDN_R {
+pub type FpdnR = crate::BitReader<Fpdn>;
+impl FpdnR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> FPDN_A {
+    pub const fn variant(&self) -> Fpdn {
         match self.bits {
-            true => FPDN_A::CONST_1,
-            false => FPDN_A::CONST_0,
+            true => Fpdn::Const1,
+            false => Fpdn::Const0,
         }
     }
     #[doc = "Flash power down module"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == FPDN_A::CONST_1
+        *self == Fpdn::Const1
     }
     #[doc = "No effect"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == FPDN_A::CONST_0
+        *self == Fpdn::Const0
     }
 }
 #[doc = "Field `FPDN` writer - Flash Power Down"]
-pub type FPDN_W<'a, REG> = crate::BitWriter<'a, REG, FPDN_A>;
-impl<'a, REG> FPDN_W<'a, REG>
+pub type FpdnW<'a, REG> = crate::BitWriter<'a, REG, Fpdn>;
+impl<'a, REG> FpdnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Flash power down module"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(FPDN_A::CONST_1)
+        self.variant(Fpdn::Const1)
     }
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(FPDN_A::CONST_0)
+        self.variant(Fpdn::Const0)
     }
 }
 #[doc = "PLL Power Down\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PLLPDN_A {
+pub enum Pllpdn {
     #[doc = "1: Switch off main PLL"]
-    CONST_1 = 1,
+    Const1 = 1,
     #[doc = "0: No effect"]
-    CONST_0 = 0,
+    Const0 = 0,
 }
-impl From<PLLPDN_A> for bool {
+impl From<Pllpdn> for bool {
     #[inline(always)]
-    fn from(variant: PLLPDN_A) -> Self {
+    fn from(variant: Pllpdn) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PLLPDN` reader - PLL Power Down"]
-pub type PLLPDN_R = crate::BitReader<PLLPDN_A>;
-impl PLLPDN_R {
+pub type PllpdnR = crate::BitReader<Pllpdn>;
+impl PllpdnR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PLLPDN_A {
+    pub const fn variant(&self) -> Pllpdn {
         match self.bits {
-            true => PLLPDN_A::CONST_1,
-            false => PLLPDN_A::CONST_0,
+            true => Pllpdn::Const1,
+            false => Pllpdn::Const0,
         }
     }
     #[doc = "Switch off main PLL"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PLLPDN_A::CONST_1
+        *self == Pllpdn::Const1
     }
     #[doc = "No effect"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PLLPDN_A::CONST_0
+        *self == Pllpdn::Const0
     }
 }
 #[doc = "Field `PLLPDN` writer - PLL Power Down"]
-pub type PLLPDN_W<'a, REG> = crate::BitWriter<'a, REG, PLLPDN_A>;
-impl<'a, REG> PLLPDN_W<'a, REG>
+pub type PllpdnW<'a, REG> = crate::BitWriter<'a, REG, Pllpdn>;
+impl<'a, REG> PllpdnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Switch off main PLL"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(PLLPDN_A::CONST_1)
+        self.variant(Pllpdn::Const1)
     }
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(PLLPDN_A::CONST_0)
+        self.variant(Pllpdn::Const0)
     }
 }
 #[doc = "VCO Power Down\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum VCOPDN_A {
+pub enum Vcopdn {
     #[doc = "1: Switch off VCO of main PLL"]
-    CONST_1 = 1,
+    Const1 = 1,
     #[doc = "0: No effect"]
-    CONST_0 = 0,
+    Const0 = 0,
 }
-impl From<VCOPDN_A> for bool {
+impl From<Vcopdn> for bool {
     #[inline(always)]
-    fn from(variant: VCOPDN_A) -> Self {
+    fn from(variant: Vcopdn) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `VCOPDN` reader - VCO Power Down"]
-pub type VCOPDN_R = crate::BitReader<VCOPDN_A>;
-impl VCOPDN_R {
+pub type VcopdnR = crate::BitReader<Vcopdn>;
+impl VcopdnR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> VCOPDN_A {
+    pub const fn variant(&self) -> Vcopdn {
         match self.bits {
-            true => VCOPDN_A::CONST_1,
-            false => VCOPDN_A::CONST_0,
+            true => Vcopdn::Const1,
+            false => Vcopdn::Const0,
         }
     }
     #[doc = "Switch off VCO of main PLL"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == VCOPDN_A::CONST_1
+        *self == Vcopdn::Const1
     }
     #[doc = "No effect"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == VCOPDN_A::CONST_0
+        *self == Vcopdn::Const0
     }
 }
 #[doc = "Field `VCOPDN` writer - VCO Power Down"]
-pub type VCOPDN_W<'a, REG> = crate::BitWriter<'a, REG, VCOPDN_A>;
-impl<'a, REG> VCOPDN_W<'a, REG>
+pub type VcopdnW<'a, REG> = crate::BitWriter<'a, REG, Vcopdn>;
+impl<'a, REG> VcopdnW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Switch off VCO of main PLL"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(VCOPDN_A::CONST_1)
+        self.variant(Vcopdn::Const1)
     }
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(VCOPDN_A::CONST_0)
+        self.variant(Vcopdn::Const0)
     }
 }
 #[doc = "USB Clock Control in Deep Sleep Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum USBCR_A {
+pub enum Usbcr {
     #[doc = "0: Disabled"]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<USBCR_A> for bool {
+impl From<Usbcr> for bool {
     #[inline(always)]
-    fn from(variant: USBCR_A) -> Self {
+    fn from(variant: Usbcr) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `USBCR` reader - USB Clock Control in Deep Sleep Mode"]
-pub type USBCR_R = crate::BitReader<USBCR_A>;
-impl USBCR_R {
+pub type UsbcrR = crate::BitReader<Usbcr>;
+impl UsbcrR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> USBCR_A {
+    pub const fn variant(&self) -> Usbcr {
         match self.bits {
-            false => USBCR_A::CONST_0,
-            true => USBCR_A::CONST_1,
+            false => Usbcr::Const0,
+            true => Usbcr::Const1,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == USBCR_A::CONST_0
+        *self == Usbcr::Const0
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == USBCR_A::CONST_1
+        *self == Usbcr::Const1
     }
 }
 #[doc = "Field `USBCR` writer - USB Clock Control in Deep Sleep Mode"]
-pub type USBCR_W<'a, REG> = crate::BitWriter<'a, REG, USBCR_A>;
-impl<'a, REG> USBCR_W<'a, REG>
+pub type UsbcrW<'a, REG> = crate::BitWriter<'a, REG, Usbcr>;
+impl<'a, REG> UsbcrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(USBCR_A::CONST_0)
+        self.variant(Usbcr::Const0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(USBCR_A::CONST_1)
+        self.variant(Usbcr::Const1)
     }
 }
 #[doc = "MMC Clock Control in Deep Sleep Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MMCCR_A {
+pub enum Mmccr {
     #[doc = "0: Disabled"]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<MMCCR_A> for bool {
+impl From<Mmccr> for bool {
     #[inline(always)]
-    fn from(variant: MMCCR_A) -> Self {
+    fn from(variant: Mmccr) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MMCCR` reader - MMC Clock Control in Deep Sleep Mode"]
-pub type MMCCR_R = crate::BitReader<MMCCR_A>;
-impl MMCCR_R {
+pub type MmccrR = crate::BitReader<Mmccr>;
+impl MmccrR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MMCCR_A {
+    pub const fn variant(&self) -> Mmccr {
         match self.bits {
-            false => MMCCR_A::CONST_0,
-            true => MMCCR_A::CONST_1,
+            false => Mmccr::Const0,
+            true => Mmccr::Const1,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == MMCCR_A::CONST_0
+        *self == Mmccr::Const0
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == MMCCR_A::CONST_1
+        *self == Mmccr::Const1
     }
 }
 #[doc = "Field `MMCCR` writer - MMC Clock Control in Deep Sleep Mode"]
-pub type MMCCR_W<'a, REG> = crate::BitWriter<'a, REG, MMCCR_A>;
-impl<'a, REG> MMCCR_W<'a, REG>
+pub type MmccrW<'a, REG> = crate::BitWriter<'a, REG, Mmccr>;
+impl<'a, REG> MmccrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(MMCCR_A::CONST_0)
+        self.variant(Mmccr::Const0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(MMCCR_A::CONST_1)
+        self.variant(Mmccr::Const1)
     }
 }
 #[doc = "Ethernet Clock Control in Deep Sleep Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ETH0CR_A {
+pub enum Eth0cr {
     #[doc = "0: Disabled"]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<ETH0CR_A> for bool {
+impl From<Eth0cr> for bool {
     #[inline(always)]
-    fn from(variant: ETH0CR_A) -> Self {
+    fn from(variant: Eth0cr) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ETH0CR` reader - Ethernet Clock Control in Deep Sleep Mode"]
-pub type ETH0CR_R = crate::BitReader<ETH0CR_A>;
-impl ETH0CR_R {
+pub type Eth0crR = crate::BitReader<Eth0cr>;
+impl Eth0crR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ETH0CR_A {
+    pub const fn variant(&self) -> Eth0cr {
         match self.bits {
-            false => ETH0CR_A::CONST_0,
-            true => ETH0CR_A::CONST_1,
+            false => Eth0cr::Const0,
+            true => Eth0cr::Const1,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ETH0CR_A::CONST_0
+        *self == Eth0cr::Const0
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ETH0CR_A::CONST_1
+        *self == Eth0cr::Const1
     }
 }
 #[doc = "Field `ETH0CR` writer - Ethernet Clock Control in Deep Sleep Mode"]
-pub type ETH0CR_W<'a, REG> = crate::BitWriter<'a, REG, ETH0CR_A>;
-impl<'a, REG> ETH0CR_W<'a, REG>
+pub type Eth0crW<'a, REG> = crate::BitWriter<'a, REG, Eth0cr>;
+impl<'a, REG> Eth0crW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(ETH0CR_A::CONST_0)
+        self.variant(Eth0cr::Const0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(ETH0CR_A::CONST_1)
+        self.variant(Eth0cr::Const1)
     }
 }
 #[doc = "CCU Clock Control in Deep Sleep Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CCUCR_A {
+pub enum Ccucr {
     #[doc = "0: Disabled"]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<CCUCR_A> for bool {
+impl From<Ccucr> for bool {
     #[inline(always)]
-    fn from(variant: CCUCR_A) -> Self {
+    fn from(variant: Ccucr) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CCUCR` reader - CCU Clock Control in Deep Sleep Mode"]
-pub type CCUCR_R = crate::BitReader<CCUCR_A>;
-impl CCUCR_R {
+pub type CcucrR = crate::BitReader<Ccucr>;
+impl CcucrR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CCUCR_A {
+    pub const fn variant(&self) -> Ccucr {
         match self.bits {
-            false => CCUCR_A::CONST_0,
-            true => CCUCR_A::CONST_1,
+            false => Ccucr::Const0,
+            true => Ccucr::Const1,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == CCUCR_A::CONST_0
+        *self == Ccucr::Const0
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == CCUCR_A::CONST_1
+        *self == Ccucr::Const1
     }
 }
 #[doc = "Field `CCUCR` writer - CCU Clock Control in Deep Sleep Mode"]
-pub type CCUCR_W<'a, REG> = crate::BitWriter<'a, REG, CCUCR_A>;
-impl<'a, REG> CCUCR_W<'a, REG>
+pub type CcucrW<'a, REG> = crate::BitWriter<'a, REG, Ccucr>;
+impl<'a, REG> CcucrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(CCUCR_A::CONST_0)
+        self.variant(Ccucr::Const0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(CCUCR_A::CONST_1)
+        self.variant(Ccucr::Const1)
     }
 }
 #[doc = "WDT Clock Control in Deep Sleep Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WDTCR_A {
+pub enum Wdtcr {
     #[doc = "0: Disabled"]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<WDTCR_A> for bool {
+impl From<Wdtcr> for bool {
     #[inline(always)]
-    fn from(variant: WDTCR_A) -> Self {
+    fn from(variant: Wdtcr) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WDTCR` reader - WDT Clock Control in Deep Sleep Mode"]
-pub type WDTCR_R = crate::BitReader<WDTCR_A>;
-impl WDTCR_R {
+pub type WdtcrR = crate::BitReader<Wdtcr>;
+impl WdtcrR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WDTCR_A {
+    pub const fn variant(&self) -> Wdtcr {
         match self.bits {
-            false => WDTCR_A::CONST_0,
-            true => WDTCR_A::CONST_1,
+            false => Wdtcr::Const0,
+            true => Wdtcr::Const1,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == WDTCR_A::CONST_0
+        *self == Wdtcr::Const0
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == WDTCR_A::CONST_1
+        *self == Wdtcr::Const1
     }
 }
 #[doc = "Field `WDTCR` writer - WDT Clock Control in Deep Sleep Mode"]
-pub type WDTCR_W<'a, REG> = crate::BitWriter<'a, REG, WDTCR_A>;
-impl<'a, REG> WDTCR_W<'a, REG>
+pub type WdtcrW<'a, REG> = crate::BitWriter<'a, REG, Wdtcr>;
+impl<'a, REG> WdtcrW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(WDTCR_A::CONST_0)
+        self.variant(Wdtcr::Const0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(WDTCR_A::CONST_1)
+        self.variant(Wdtcr::Const1)
     }
 }
 impl R {
     #[doc = "Bit 0 - System Clock Selection Value"]
     #[inline(always)]
-    pub fn syssel(&self) -> SYSSEL_R {
-        SYSSEL_R::new((self.bits & 1) != 0)
+    pub fn syssel(&self) -> SysselR {
+        SysselR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 11 - Flash Power Down"]
     #[inline(always)]
-    pub fn fpdn(&self) -> FPDN_R {
-        FPDN_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn fpdn(&self) -> FpdnR {
+        FpdnR::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - PLL Power Down"]
     #[inline(always)]
-    pub fn pllpdn(&self) -> PLLPDN_R {
-        PLLPDN_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn pllpdn(&self) -> PllpdnR {
+        PllpdnR::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - VCO Power Down"]
     #[inline(always)]
-    pub fn vcopdn(&self) -> VCOPDN_R {
-        VCOPDN_R::new(((self.bits >> 13) & 1) != 0)
+    pub fn vcopdn(&self) -> VcopdnR {
+        VcopdnR::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 16 - USB Clock Control in Deep Sleep Mode"]
     #[inline(always)]
-    pub fn usbcr(&self) -> USBCR_R {
-        USBCR_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn usbcr(&self) -> UsbcrR {
+        UsbcrR::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - MMC Clock Control in Deep Sleep Mode"]
     #[inline(always)]
-    pub fn mmccr(&self) -> MMCCR_R {
-        MMCCR_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn mmccr(&self) -> MmccrR {
+        MmccrR::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Ethernet Clock Control in Deep Sleep Mode"]
     #[inline(always)]
-    pub fn eth0cr(&self) -> ETH0CR_R {
-        ETH0CR_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn eth0cr(&self) -> Eth0crR {
+        Eth0crR::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 20 - CCU Clock Control in Deep Sleep Mode"]
     #[inline(always)]
-    pub fn ccucr(&self) -> CCUCR_R {
-        CCUCR_R::new(((self.bits >> 20) & 1) != 0)
+    pub fn ccucr(&self) -> CcucrR {
+        CcucrR::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - WDT Clock Control in Deep Sleep Mode"]
     #[inline(always)]
-    pub fn wdtcr(&self) -> WDTCR_R {
-        WDTCR_R::new(((self.bits >> 21) & 1) != 0)
+    pub fn wdtcr(&self) -> WdtcrR {
+        WdtcrR::new(((self.bits >> 21) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - System Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn syssel(&mut self) -> SYSSEL_W<DSLEEPCR_SPEC> {
-        SYSSEL_W::new(self, 0)
+    pub fn syssel(&mut self) -> SysselW<DsleepcrSpec> {
+        SysselW::new(self, 0)
     }
     #[doc = "Bit 11 - Flash Power Down"]
     #[inline(always)]
     #[must_use]
-    pub fn fpdn(&mut self) -> FPDN_W<DSLEEPCR_SPEC> {
-        FPDN_W::new(self, 11)
+    pub fn fpdn(&mut self) -> FpdnW<DsleepcrSpec> {
+        FpdnW::new(self, 11)
     }
     #[doc = "Bit 12 - PLL Power Down"]
     #[inline(always)]
     #[must_use]
-    pub fn pllpdn(&mut self) -> PLLPDN_W<DSLEEPCR_SPEC> {
-        PLLPDN_W::new(self, 12)
+    pub fn pllpdn(&mut self) -> PllpdnW<DsleepcrSpec> {
+        PllpdnW::new(self, 12)
     }
     #[doc = "Bit 13 - VCO Power Down"]
     #[inline(always)]
     #[must_use]
-    pub fn vcopdn(&mut self) -> VCOPDN_W<DSLEEPCR_SPEC> {
-        VCOPDN_W::new(self, 13)
+    pub fn vcopdn(&mut self) -> VcopdnW<DsleepcrSpec> {
+        VcopdnW::new(self, 13)
     }
     #[doc = "Bit 16 - USB Clock Control in Deep Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn usbcr(&mut self) -> USBCR_W<DSLEEPCR_SPEC> {
-        USBCR_W::new(self, 16)
+    pub fn usbcr(&mut self) -> UsbcrW<DsleepcrSpec> {
+        UsbcrW::new(self, 16)
     }
     #[doc = "Bit 17 - MMC Clock Control in Deep Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mmccr(&mut self) -> MMCCR_W<DSLEEPCR_SPEC> {
-        MMCCR_W::new(self, 17)
+    pub fn mmccr(&mut self) -> MmccrW<DsleepcrSpec> {
+        MmccrW::new(self, 17)
     }
     #[doc = "Bit 18 - Ethernet Clock Control in Deep Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn eth0cr(&mut self) -> ETH0CR_W<DSLEEPCR_SPEC> {
-        ETH0CR_W::new(self, 18)
+    pub fn eth0cr(&mut self) -> Eth0crW<DsleepcrSpec> {
+        Eth0crW::new(self, 18)
     }
     #[doc = "Bit 20 - CCU Clock Control in Deep Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ccucr(&mut self) -> CCUCR_W<DSLEEPCR_SPEC> {
-        CCUCR_W::new(self, 20)
+    pub fn ccucr(&mut self) -> CcucrW<DsleepcrSpec> {
+        CcucrW::new(self, 20)
     }
     #[doc = "Bit 21 - WDT Clock Control in Deep Sleep Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn wdtcr(&mut self) -> WDTCR_W<DSLEEPCR_SPEC> {
-        WDTCR_W::new(self, 21)
+    pub fn wdtcr(&mut self) -> WdtcrW<DsleepcrSpec> {
+        WdtcrW::new(self, 21)
     }
 }
 #[doc = "Deep Sleep Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dsleepcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dsleepcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DSLEEPCR_SPEC;
-impl crate::RegisterSpec for DSLEEPCR_SPEC {
+pub struct DsleepcrSpec;
+impl crate::RegisterSpec for DsleepcrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`dsleepcr::R`](R) reader structure"]
-impl crate::Readable for DSLEEPCR_SPEC {}
+impl crate::Readable for DsleepcrSpec {}
 #[doc = "`write(|w| ..)` method takes [`dsleepcr::W`](W) writer structure"]
-impl crate::Writable for DSLEEPCR_SPEC {
+impl crate::Writable for DsleepcrSpec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DSLEEPCR to value 0"]
-impl crate::Resettable for DSLEEPCR_SPEC {
+impl crate::Resettable for DsleepcrSpec {
     const RESET_VALUE: u32 = 0;
 }

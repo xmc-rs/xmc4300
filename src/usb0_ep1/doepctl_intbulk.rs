@@ -1,148 +1,148 @@
 #[doc = "Register `DOEPCTL_INTBULK` reader"]
-pub type R = crate::R<DOEPCTL_INTBULK_SPEC>;
+pub type R = crate::R<DoepctlIntbulkSpec>;
 #[doc = "Register `DOEPCTL_INTBULK` writer"]
-pub type W = crate::W<DOEPCTL_INTBULK_SPEC>;
+pub type W = crate::W<DoepctlIntbulkSpec>;
 #[doc = "Field `MPS` reader - Maximum Packet Size"]
-pub type MPS_R = crate::FieldReader<u16>;
+pub type MpsR = crate::FieldReader<u16>;
 #[doc = "Field `MPS` writer - Maximum Packet Size"]
-pub type MPS_W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
+pub type MpsW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 #[doc = "Field `USBActEP` reader - USB Active Endpoint"]
-pub type USBACT_EP_R = crate::BitReader;
+pub type UsbactEpR = crate::BitReader;
 #[doc = "Field `USBActEP` writer - USB Active Endpoint"]
-pub type USBACT_EP_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type UsbactEpW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Endpoint Data PID\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DPID_A {
+pub enum Dpid {
     #[doc = "0: DATA0"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: DATA1"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<DPID_A> for bool {
+impl From<Dpid> for bool {
     #[inline(always)]
-    fn from(variant: DPID_A) -> Self {
+    fn from(variant: Dpid) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DPID` reader - Endpoint Data PID"]
-pub type DPID_R = crate::BitReader<DPID_A>;
-impl DPID_R {
+pub type DpidR = crate::BitReader<Dpid>;
+impl DpidR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> DPID_A {
+    pub const fn variant(&self) -> Dpid {
         match self.bits {
-            false => DPID_A::VALUE1,
-            true => DPID_A::VALUE2,
+            false => Dpid::Value1,
+            true => Dpid::Value2,
         }
     }
     #[doc = "DATA0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DPID_A::VALUE1
+        *self == Dpid::Value1
     }
     #[doc = "DATA1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DPID_A::VALUE2
+        *self == Dpid::Value2
     }
 }
 #[doc = "NAK Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum NAKSTS_A {
+pub enum Naksts {
     #[doc = "0: The core is transmitting non-NAK handshakes based on the FIFO status."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The core is transmitting NAK handshakes on this endpoint."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<NAKSTS_A> for bool {
+impl From<Naksts> for bool {
     #[inline(always)]
-    fn from(variant: NAKSTS_A) -> Self {
+    fn from(variant: Naksts) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `NAKSts` reader - NAK Status"]
-pub type NAKSTS_R = crate::BitReader<NAKSTS_A>;
-impl NAKSTS_R {
+pub type NakstsR = crate::BitReader<Naksts>;
+impl NakstsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> NAKSTS_A {
+    pub const fn variant(&self) -> Naksts {
         match self.bits {
-            false => NAKSTS_A::VALUE1,
-            true => NAKSTS_A::VALUE2,
+            false => Naksts::Value1,
+            true => Naksts::Value2,
         }
     }
     #[doc = "The core is transmitting non-NAK handshakes based on the FIFO status."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == NAKSTS_A::VALUE1
+        *self == Naksts::Value1
     }
     #[doc = "The core is transmitting NAK handshakes on this endpoint."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == NAKSTS_A::VALUE2
+        *self == Naksts::Value2
     }
 }
 #[doc = "Endpoint Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum EPTYPE_A {
+pub enum Eptype {
     #[doc = "0: Control"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Isochronous"]
-    VALUE2 = 1,
+    Value2 = 1,
     #[doc = "2: Bulk"]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: Interrupt"]
-    VALUE4 = 3,
+    Value4 = 3,
 }
-impl From<EPTYPE_A> for u8 {
+impl From<Eptype> for u8 {
     #[inline(always)]
-    fn from(variant: EPTYPE_A) -> Self {
+    fn from(variant: Eptype) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for EPTYPE_A {
+impl crate::FieldSpec for Eptype {
     type Ux = u8;
 }
-impl crate::IsEnum for EPTYPE_A {}
+impl crate::IsEnum for Eptype {}
 #[doc = "Field `EPType` reader - Endpoint Type"]
-pub type EPTYPE_R = crate::FieldReader<EPTYPE_A>;
-impl EPTYPE_R {
+pub type EptypeR = crate::FieldReader<Eptype>;
+impl EptypeR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> EPTYPE_A {
+    pub const fn variant(&self) -> Eptype {
         match self.bits {
-            0 => EPTYPE_A::VALUE1,
-            1 => EPTYPE_A::VALUE2,
-            2 => EPTYPE_A::VALUE3,
-            3 => EPTYPE_A::VALUE4,
+            0 => Eptype::Value1,
+            1 => Eptype::Value2,
+            2 => Eptype::Value3,
+            3 => Eptype::Value4,
             _ => unreachable!(),
         }
     }
     #[doc = "Control"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EPTYPE_A::VALUE1
+        *self == Eptype::Value1
     }
     #[doc = "Isochronous"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EPTYPE_A::VALUE2
+        *self == Eptype::Value2
     }
     #[doc = "Bulk"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EPTYPE_A::VALUE3
+        *self == Eptype::Value3
     }
     #[doc = "Interrupt"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EPTYPE_A::VALUE4
+        *self == Eptype::Value4
     }
 }
 #[doc = "Field `EPType` writer - Endpoint Type"]
-pub type EPTYPE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, EPTYPE_A, crate::Safe>;
-impl<'a, REG> EPTYPE_W<'a, REG>
+pub type EptypeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Eptype, crate::Safe>;
+impl<'a, REG> EptypeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -150,192 +150,192 @@ where
     #[doc = "Control"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(EPTYPE_A::VALUE1)
+        self.variant(Eptype::Value1)
     }
     #[doc = "Isochronous"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(EPTYPE_A::VALUE2)
+        self.variant(Eptype::Value2)
     }
     #[doc = "Bulk"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(EPTYPE_A::VALUE3)
+        self.variant(Eptype::Value3)
     }
     #[doc = "Interrupt"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(EPTYPE_A::VALUE4)
+        self.variant(Eptype::Value4)
     }
 }
 #[doc = "Field `Snp` reader - Snoop Mode"]
-pub type SNP_R = crate::BitReader;
+pub type SnpR = crate::BitReader;
 #[doc = "Field `Snp` writer - Snoop Mode"]
-pub type SNP_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type SnpW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `Stall` reader - STALL Handshake"]
-pub type STALL_R = crate::BitReader;
+pub type StallR = crate::BitReader;
 #[doc = "Field `Stall` writer - STALL Handshake"]
-pub type STALL_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type StallW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `TxFNum` reader - TxFIFO Number"]
-pub type TX_FNUM_R = crate::FieldReader;
+pub type TxFnumR = crate::FieldReader;
 #[doc = "Field `TxFNum` writer - TxFIFO Number"]
-pub type TX_FNUM_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type TxFnumW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CNAK` writer - Clear NAK"]
-pub type CNAK_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type CnakW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SNAK` writer - Set NAK"]
-pub type SNAK_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type SnakW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SetD0PID` writer - Set DATA0 PID"]
-pub type SET_D0PID_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type SetD0pidW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SetD1PID` writer - 29 Set DATA1 PID"]
-pub type SET_D1PID_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type SetD1pidW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPDis` reader - Endpoint Disable"]
-pub type EPDIS_R = crate::BitReader;
+pub type EpdisR = crate::BitReader;
 #[doc = "Field `EPDis` writer - Endpoint Disable"]
-pub type EPDIS_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type EpdisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EPEna` reader - Endpoint Enable"]
-pub type EPENA_R = crate::BitReader;
+pub type EpenaR = crate::BitReader;
 #[doc = "Field `EPEna` writer - Endpoint Enable"]
-pub type EPENA_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type EpenaW<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:10 - Maximum Packet Size"]
     #[inline(always)]
-    pub fn mps(&self) -> MPS_R {
-        MPS_R::new((self.bits & 0x07ff) as u16)
+    pub fn mps(&self) -> MpsR {
+        MpsR::new((self.bits & 0x07ff) as u16)
     }
     #[doc = "Bit 15 - USB Active Endpoint"]
     #[inline(always)]
-    pub fn usbact_ep(&self) -> USBACT_EP_R {
-        USBACT_EP_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn usbact_ep(&self) -> UsbactEpR {
+        UsbactEpR::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Endpoint Data PID"]
     #[inline(always)]
-    pub fn dpid(&self) -> DPID_R {
-        DPID_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn dpid(&self) -> DpidR {
+        DpidR::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - NAK Status"]
     #[inline(always)]
-    pub fn naksts(&self) -> NAKSTS_R {
-        NAKSTS_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn naksts(&self) -> NakstsR {
+        NakstsR::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bits 18:19 - Endpoint Type"]
     #[inline(always)]
-    pub fn eptype(&self) -> EPTYPE_R {
-        EPTYPE_R::new(((self.bits >> 18) & 3) as u8)
+    pub fn eptype(&self) -> EptypeR {
+        EptypeR::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bit 20 - Snoop Mode"]
     #[inline(always)]
-    pub fn snp(&self) -> SNP_R {
-        SNP_R::new(((self.bits >> 20) & 1) != 0)
+    pub fn snp(&self) -> SnpR {
+        SnpR::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - STALL Handshake"]
     #[inline(always)]
-    pub fn stall(&self) -> STALL_R {
-        STALL_R::new(((self.bits >> 21) & 1) != 0)
+    pub fn stall(&self) -> StallR {
+        StallR::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bits 22:25 - TxFIFO Number"]
     #[inline(always)]
-    pub fn tx_fnum(&self) -> TX_FNUM_R {
-        TX_FNUM_R::new(((self.bits >> 22) & 0x0f) as u8)
+    pub fn tx_fnum(&self) -> TxFnumR {
+        TxFnumR::new(((self.bits >> 22) & 0x0f) as u8)
     }
     #[doc = "Bit 30 - Endpoint Disable"]
     #[inline(always)]
-    pub fn epdis(&self) -> EPDIS_R {
-        EPDIS_R::new(((self.bits >> 30) & 1) != 0)
+    pub fn epdis(&self) -> EpdisR {
+        EpdisR::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Endpoint Enable"]
     #[inline(always)]
-    pub fn epena(&self) -> EPENA_R {
-        EPENA_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn epena(&self) -> EpenaR {
+        EpenaR::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:10 - Maximum Packet Size"]
     #[inline(always)]
     #[must_use]
-    pub fn mps(&mut self) -> MPS_W<DOEPCTL_INTBULK_SPEC> {
-        MPS_W::new(self, 0)
+    pub fn mps(&mut self) -> MpsW<DoepctlIntbulkSpec> {
+        MpsW::new(self, 0)
     }
     #[doc = "Bit 15 - USB Active Endpoint"]
     #[inline(always)]
     #[must_use]
-    pub fn usbact_ep(&mut self) -> USBACT_EP_W<DOEPCTL_INTBULK_SPEC> {
-        USBACT_EP_W::new(self, 15)
+    pub fn usbact_ep(&mut self) -> UsbactEpW<DoepctlIntbulkSpec> {
+        UsbactEpW::new(self, 15)
     }
     #[doc = "Bits 18:19 - Endpoint Type"]
     #[inline(always)]
     #[must_use]
-    pub fn eptype(&mut self) -> EPTYPE_W<DOEPCTL_INTBULK_SPEC> {
-        EPTYPE_W::new(self, 18)
+    pub fn eptype(&mut self) -> EptypeW<DoepctlIntbulkSpec> {
+        EptypeW::new(self, 18)
     }
     #[doc = "Bit 20 - Snoop Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn snp(&mut self) -> SNP_W<DOEPCTL_INTBULK_SPEC> {
-        SNP_W::new(self, 20)
+    pub fn snp(&mut self) -> SnpW<DoepctlIntbulkSpec> {
+        SnpW::new(self, 20)
     }
     #[doc = "Bit 21 - STALL Handshake"]
     #[inline(always)]
     #[must_use]
-    pub fn stall(&mut self) -> STALL_W<DOEPCTL_INTBULK_SPEC> {
-        STALL_W::new(self, 21)
+    pub fn stall(&mut self) -> StallW<DoepctlIntbulkSpec> {
+        StallW::new(self, 21)
     }
     #[doc = "Bits 22:25 - TxFIFO Number"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_fnum(&mut self) -> TX_FNUM_W<DOEPCTL_INTBULK_SPEC> {
-        TX_FNUM_W::new(self, 22)
+    pub fn tx_fnum(&mut self) -> TxFnumW<DoepctlIntbulkSpec> {
+        TxFnumW::new(self, 22)
     }
     #[doc = "Bit 26 - Clear NAK"]
     #[inline(always)]
     #[must_use]
-    pub fn cnak(&mut self) -> CNAK_W<DOEPCTL_INTBULK_SPEC> {
-        CNAK_W::new(self, 26)
+    pub fn cnak(&mut self) -> CnakW<DoepctlIntbulkSpec> {
+        CnakW::new(self, 26)
     }
     #[doc = "Bit 27 - Set NAK"]
     #[inline(always)]
     #[must_use]
-    pub fn snak(&mut self) -> SNAK_W<DOEPCTL_INTBULK_SPEC> {
-        SNAK_W::new(self, 27)
+    pub fn snak(&mut self) -> SnakW<DoepctlIntbulkSpec> {
+        SnakW::new(self, 27)
     }
     #[doc = "Bit 28 - Set DATA0 PID"]
     #[inline(always)]
     #[must_use]
-    pub fn set_d0pid(&mut self) -> SET_D0PID_W<DOEPCTL_INTBULK_SPEC> {
-        SET_D0PID_W::new(self, 28)
+    pub fn set_d0pid(&mut self) -> SetD0pidW<DoepctlIntbulkSpec> {
+        SetD0pidW::new(self, 28)
     }
     #[doc = "Bit 29 - 29 Set DATA1 PID"]
     #[inline(always)]
     #[must_use]
-    pub fn set_d1pid(&mut self) -> SET_D1PID_W<DOEPCTL_INTBULK_SPEC> {
-        SET_D1PID_W::new(self, 29)
+    pub fn set_d1pid(&mut self) -> SetD1pidW<DoepctlIntbulkSpec> {
+        SetD1pidW::new(self, 29)
     }
     #[doc = "Bit 30 - Endpoint Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn epdis(&mut self) -> EPDIS_W<DOEPCTL_INTBULK_SPEC> {
-        EPDIS_W::new(self, 30)
+    pub fn epdis(&mut self) -> EpdisW<DoepctlIntbulkSpec> {
+        EpdisW::new(self, 30)
     }
     #[doc = "Bit 31 - Endpoint Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn epena(&mut self) -> EPENA_W<DOEPCTL_INTBULK_SPEC> {
-        EPENA_W::new(self, 31)
+    pub fn epena(&mut self) -> EpenaW<DoepctlIntbulkSpec> {
+        EpenaW::new(self, 31)
     }
 }
 #[doc = "Device Endpoint Control Register \\[INTBULK\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`doepctl_intbulk::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`doepctl_intbulk::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DOEPCTL_INTBULK_SPEC;
-impl crate::RegisterSpec for DOEPCTL_INTBULK_SPEC {
+pub struct DoepctlIntbulkSpec;
+impl crate::RegisterSpec for DoepctlIntbulkSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`doepctl_intbulk::R`](R) reader structure"]
-impl crate::Readable for DOEPCTL_INTBULK_SPEC {}
+impl crate::Readable for DoepctlIntbulkSpec {}
 #[doc = "`write(|w| ..)` method takes [`doepctl_intbulk::W`](W) writer structure"]
-impl crate::Writable for DOEPCTL_INTBULK_SPEC {
+impl crate::Writable for DoepctlIntbulkSpec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DOEPCTL_INTBULK to value 0"]
-impl crate::Resettable for DOEPCTL_INTBULK_SPEC {
+impl crate::Resettable for DoepctlIntbulkSpec {
     const RESET_VALUE: u32 = 0;
 }

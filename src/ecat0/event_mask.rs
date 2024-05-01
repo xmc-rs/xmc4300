@@ -1,466 +1,466 @@
 #[doc = "Register `EVENT_MASK` reader"]
-pub type R = crate::R<EVENT_MASK_SPEC>;
+pub type R = crate::R<EventMaskSpec>;
 #[doc = "DC Latch event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DC_LE_MASK_A {
+pub enum DcLeMask {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<DC_LE_MASK_A> for bool {
+impl From<DcLeMask> for bool {
     #[inline(always)]
-    fn from(variant: DC_LE_MASK_A) -> Self {
+    fn from(variant: DcLeMask) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DC_LE_MASK` reader - DC Latch event"]
-pub type DC_LE_MASK_R = crate::BitReader<DC_LE_MASK_A>;
-impl DC_LE_MASK_R {
+pub type DcLeMaskR = crate::BitReader<DcLeMask>;
+impl DcLeMaskR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> DC_LE_MASK_A {
+    pub const fn variant(&self) -> DcLeMask {
         match self.bits {
-            false => DC_LE_MASK_A::VALUE1,
-            true => DC_LE_MASK_A::VALUE2,
+            false => DcLeMask::Value1,
+            true => DcLeMask::Value2,
         }
     }
     #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DC_LE_MASK_A::VALUE1
+        *self == DcLeMask::Value1
     }
     #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DC_LE_MASK_A::VALUE2
+        *self == DcLeMask::Value2
     }
 }
 #[doc = "DL Status event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DL_SE_MASK_A {
+pub enum DlSeMask {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<DL_SE_MASK_A> for bool {
+impl From<DlSeMask> for bool {
     #[inline(always)]
-    fn from(variant: DL_SE_MASK_A) -> Self {
+    fn from(variant: DlSeMask) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DL_SE_MASK` reader - DL Status event"]
-pub type DL_SE_MASK_R = crate::BitReader<DL_SE_MASK_A>;
-impl DL_SE_MASK_R {
+pub type DlSeMaskR = crate::BitReader<DlSeMask>;
+impl DlSeMaskR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> DL_SE_MASK_A {
+    pub const fn variant(&self) -> DlSeMask {
         match self.bits {
-            false => DL_SE_MASK_A::VALUE1,
-            true => DL_SE_MASK_A::VALUE2,
+            false => DlSeMask::Value1,
+            true => DlSeMask::Value2,
         }
     }
     #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DL_SE_MASK_A::VALUE1
+        *self == DlSeMask::Value1
     }
     #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DL_SE_MASK_A::VALUE2
+        *self == DlSeMask::Value2
     }
 }
 #[doc = "AL Status event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum AL_SE_MASK_A {
+pub enum AlSeMask {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<AL_SE_MASK_A> for bool {
+impl From<AlSeMask> for bool {
     #[inline(always)]
-    fn from(variant: AL_SE_MASK_A) -> Self {
+    fn from(variant: AlSeMask) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `AL_SE_MASK` reader - AL Status event"]
-pub type AL_SE_MASK_R = crate::BitReader<AL_SE_MASK_A>;
-impl AL_SE_MASK_R {
+pub type AlSeMaskR = crate::BitReader<AlSeMask>;
+impl AlSeMaskR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> AL_SE_MASK_A {
+    pub const fn variant(&self) -> AlSeMask {
         match self.bits {
-            false => AL_SE_MASK_A::VALUE1,
-            true => AL_SE_MASK_A::VALUE2,
+            false => AlSeMask::Value1,
+            true => AlSeMask::Value2,
         }
     }
     #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == AL_SE_MASK_A::VALUE1
+        *self == AlSeMask::Value1
     }
     #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == AL_SE_MASK_A::VALUE2
+        *self == AlSeMask::Value2
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MIR_0_MASK_A {
+pub enum Mir0Mask {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<MIR_0_MASK_A> for bool {
+impl From<Mir0Mask> for bool {
     #[inline(always)]
-    fn from(variant: MIR_0_MASK_A) -> Self {
+    fn from(variant: Mir0Mask) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MIR_0_MASK` reader - Mirrors values of each SyncManager Status"]
-pub type MIR_0_MASK_R = crate::BitReader<MIR_0_MASK_A>;
-impl MIR_0_MASK_R {
+pub type Mir0MaskR = crate::BitReader<Mir0Mask>;
+impl Mir0MaskR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MIR_0_MASK_A {
+    pub const fn variant(&self) -> Mir0Mask {
         match self.bits {
-            false => MIR_0_MASK_A::VALUE1,
-            true => MIR_0_MASK_A::VALUE2,
+            false => Mir0Mask::Value1,
+            true => Mir0Mask::Value2,
         }
     }
     #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_0_MASK_A::VALUE1
+        *self == Mir0Mask::Value1
     }
     #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_0_MASK_A::VALUE2
+        *self == Mir0Mask::Value2
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MIR_1_MASK_A {
+pub enum Mir1Mask {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<MIR_1_MASK_A> for bool {
+impl From<Mir1Mask> for bool {
     #[inline(always)]
-    fn from(variant: MIR_1_MASK_A) -> Self {
+    fn from(variant: Mir1Mask) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MIR_1_MASK` reader - Mirrors values of each SyncManager Status"]
-pub type MIR_1_MASK_R = crate::BitReader<MIR_1_MASK_A>;
-impl MIR_1_MASK_R {
+pub type Mir1MaskR = crate::BitReader<Mir1Mask>;
+impl Mir1MaskR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MIR_1_MASK_A {
+    pub const fn variant(&self) -> Mir1Mask {
         match self.bits {
-            false => MIR_1_MASK_A::VALUE1,
-            true => MIR_1_MASK_A::VALUE2,
+            false => Mir1Mask::Value1,
+            true => Mir1Mask::Value2,
         }
     }
     #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_1_MASK_A::VALUE1
+        *self == Mir1Mask::Value1
     }
     #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_1_MASK_A::VALUE2
+        *self == Mir1Mask::Value2
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MIR_2_MASK_A {
+pub enum Mir2Mask {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<MIR_2_MASK_A> for bool {
+impl From<Mir2Mask> for bool {
     #[inline(always)]
-    fn from(variant: MIR_2_MASK_A) -> Self {
+    fn from(variant: Mir2Mask) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MIR_2_MASK` reader - Mirrors values of each SyncManager Status"]
-pub type MIR_2_MASK_R = crate::BitReader<MIR_2_MASK_A>;
-impl MIR_2_MASK_R {
+pub type Mir2MaskR = crate::BitReader<Mir2Mask>;
+impl Mir2MaskR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MIR_2_MASK_A {
+    pub const fn variant(&self) -> Mir2Mask {
         match self.bits {
-            false => MIR_2_MASK_A::VALUE1,
-            true => MIR_2_MASK_A::VALUE2,
+            false => Mir2Mask::Value1,
+            true => Mir2Mask::Value2,
         }
     }
     #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_2_MASK_A::VALUE1
+        *self == Mir2Mask::Value1
     }
     #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_2_MASK_A::VALUE2
+        *self == Mir2Mask::Value2
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MIR_3_MASK_A {
+pub enum Mir3Mask {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<MIR_3_MASK_A> for bool {
+impl From<Mir3Mask> for bool {
     #[inline(always)]
-    fn from(variant: MIR_3_MASK_A) -> Self {
+    fn from(variant: Mir3Mask) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MIR_3_MASK` reader - Mirrors values of each SyncManager Status"]
-pub type MIR_3_MASK_R = crate::BitReader<MIR_3_MASK_A>;
-impl MIR_3_MASK_R {
+pub type Mir3MaskR = crate::BitReader<Mir3Mask>;
+impl Mir3MaskR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MIR_3_MASK_A {
+    pub const fn variant(&self) -> Mir3Mask {
         match self.bits {
-            false => MIR_3_MASK_A::VALUE1,
-            true => MIR_3_MASK_A::VALUE2,
+            false => Mir3Mask::Value1,
+            true => Mir3Mask::Value2,
         }
     }
     #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_3_MASK_A::VALUE1
+        *self == Mir3Mask::Value1
     }
     #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_3_MASK_A::VALUE2
+        *self == Mir3Mask::Value2
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MIR_4_MASK_A {
+pub enum Mir4Mask {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<MIR_4_MASK_A> for bool {
+impl From<Mir4Mask> for bool {
     #[inline(always)]
-    fn from(variant: MIR_4_MASK_A) -> Self {
+    fn from(variant: Mir4Mask) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MIR_4_MASK` reader - Mirrors values of each SyncManager Status"]
-pub type MIR_4_MASK_R = crate::BitReader<MIR_4_MASK_A>;
-impl MIR_4_MASK_R {
+pub type Mir4MaskR = crate::BitReader<Mir4Mask>;
+impl Mir4MaskR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MIR_4_MASK_A {
+    pub const fn variant(&self) -> Mir4Mask {
         match self.bits {
-            false => MIR_4_MASK_A::VALUE1,
-            true => MIR_4_MASK_A::VALUE2,
+            false => Mir4Mask::Value1,
+            true => Mir4Mask::Value2,
         }
     }
     #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_4_MASK_A::VALUE1
+        *self == Mir4Mask::Value1
     }
     #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_4_MASK_A::VALUE2
+        *self == Mir4Mask::Value2
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MIR_5_MASK_A {
+pub enum Mir5Mask {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<MIR_5_MASK_A> for bool {
+impl From<Mir5Mask> for bool {
     #[inline(always)]
-    fn from(variant: MIR_5_MASK_A) -> Self {
+    fn from(variant: Mir5Mask) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MIR_5_MASK` reader - Mirrors values of each SyncManager Status"]
-pub type MIR_5_MASK_R = crate::BitReader<MIR_5_MASK_A>;
-impl MIR_5_MASK_R {
+pub type Mir5MaskR = crate::BitReader<Mir5Mask>;
+impl Mir5MaskR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MIR_5_MASK_A {
+    pub const fn variant(&self) -> Mir5Mask {
         match self.bits {
-            false => MIR_5_MASK_A::VALUE1,
-            true => MIR_5_MASK_A::VALUE2,
+            false => Mir5Mask::Value1,
+            true => Mir5Mask::Value2,
         }
     }
     #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_5_MASK_A::VALUE1
+        *self == Mir5Mask::Value1
     }
     #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_5_MASK_A::VALUE2
+        *self == Mir5Mask::Value2
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MIR_6_MASK_A {
+pub enum Mir6Mask {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<MIR_6_MASK_A> for bool {
+impl From<Mir6Mask> for bool {
     #[inline(always)]
-    fn from(variant: MIR_6_MASK_A) -> Self {
+    fn from(variant: Mir6Mask) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MIR_6_MASK` reader - Mirrors values of each SyncManager Status"]
-pub type MIR_6_MASK_R = crate::BitReader<MIR_6_MASK_A>;
-impl MIR_6_MASK_R {
+pub type Mir6MaskR = crate::BitReader<Mir6Mask>;
+impl Mir6MaskR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MIR_6_MASK_A {
+    pub const fn variant(&self) -> Mir6Mask {
         match self.bits {
-            false => MIR_6_MASK_A::VALUE1,
-            true => MIR_6_MASK_A::VALUE2,
+            false => Mir6Mask::Value1,
+            true => Mir6Mask::Value2,
         }
     }
     #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_6_MASK_A::VALUE1
+        *self == Mir6Mask::Value1
     }
     #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_6_MASK_A::VALUE2
+        *self == Mir6Mask::Value2
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MIR_7_MASK_A {
+pub enum Mir7Mask {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<MIR_7_MASK_A> for bool {
+impl From<Mir7Mask> for bool {
     #[inline(always)]
-    fn from(variant: MIR_7_MASK_A) -> Self {
+    fn from(variant: Mir7Mask) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MIR_7_MASK` reader - Mirrors values of each SyncManager Status"]
-pub type MIR_7_MASK_R = crate::BitReader<MIR_7_MASK_A>;
-impl MIR_7_MASK_R {
+pub type Mir7MaskR = crate::BitReader<Mir7Mask>;
+impl Mir7MaskR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MIR_7_MASK_A {
+    pub const fn variant(&self) -> Mir7Mask {
         match self.bits {
-            false => MIR_7_MASK_A::VALUE1,
-            true => MIR_7_MASK_A::VALUE2,
+            false => Mir7Mask::Value1,
+            true => Mir7Mask::Value2,
         }
     }
     #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_7_MASK_A::VALUE1
+        *self == Mir7Mask::Value1
     }
     #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_7_MASK_A::VALUE2
+        *self == Mir7Mask::Value2
     }
 }
 impl R {
     #[doc = "Bit 0 - DC Latch event"]
     #[inline(always)]
-    pub fn dc_le_mask(&self) -> DC_LE_MASK_R {
-        DC_LE_MASK_R::new((self.bits & 1) != 0)
+    pub fn dc_le_mask(&self) -> DcLeMaskR {
+        DcLeMaskR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 2 - DL Status event"]
     #[inline(always)]
-    pub fn dl_se_mask(&self) -> DL_SE_MASK_R {
-        DL_SE_MASK_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn dl_se_mask(&self) -> DlSeMaskR {
+        DlSeMaskR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - AL Status event"]
     #[inline(always)]
-    pub fn al_se_mask(&self) -> AL_SE_MASK_R {
-        AL_SE_MASK_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn al_se_mask(&self) -> AlSeMaskR {
+        AlSeMaskR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Mirrors values of each SyncManager Status"]
     #[inline(always)]
-    pub fn mir_0_mask(&self) -> MIR_0_MASK_R {
-        MIR_0_MASK_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn mir_0_mask(&self) -> Mir0MaskR {
+        Mir0MaskR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Mirrors values of each SyncManager Status"]
     #[inline(always)]
-    pub fn mir_1_mask(&self) -> MIR_1_MASK_R {
-        MIR_1_MASK_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn mir_1_mask(&self) -> Mir1MaskR {
+        Mir1MaskR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Mirrors values of each SyncManager Status"]
     #[inline(always)]
-    pub fn mir_2_mask(&self) -> MIR_2_MASK_R {
-        MIR_2_MASK_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn mir_2_mask(&self) -> Mir2MaskR {
+        Mir2MaskR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Mirrors values of each SyncManager Status"]
     #[inline(always)]
-    pub fn mir_3_mask(&self) -> MIR_3_MASK_R {
-        MIR_3_MASK_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn mir_3_mask(&self) -> Mir3MaskR {
+        Mir3MaskR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Mirrors values of each SyncManager Status"]
     #[inline(always)]
-    pub fn mir_4_mask(&self) -> MIR_4_MASK_R {
-        MIR_4_MASK_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn mir_4_mask(&self) -> Mir4MaskR {
+        Mir4MaskR::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Mirrors values of each SyncManager Status"]
     #[inline(always)]
-    pub fn mir_5_mask(&self) -> MIR_5_MASK_R {
-        MIR_5_MASK_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn mir_5_mask(&self) -> Mir5MaskR {
+        Mir5MaskR::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Mirrors values of each SyncManager Status"]
     #[inline(always)]
-    pub fn mir_6_mask(&self) -> MIR_6_MASK_R {
-        MIR_6_MASK_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn mir_6_mask(&self) -> Mir6MaskR {
+        Mir6MaskR::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Mirrors values of each SyncManager Status"]
     #[inline(always)]
-    pub fn mir_7_mask(&self) -> MIR_7_MASK_R {
-        MIR_7_MASK_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn mir_7_mask(&self) -> Mir7MaskR {
+        Mir7MaskR::new(((self.bits >> 11) & 1) != 0)
     }
 }
 #[doc = "ECAT Event Mask\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`event_mask::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct EVENT_MASK_SPEC;
-impl crate::RegisterSpec for EVENT_MASK_SPEC {
+pub struct EventMaskSpec;
+impl crate::RegisterSpec for EventMaskSpec {
     type Ux = u16;
 }
 #[doc = "`read()` method returns [`event_mask::R`](R) reader structure"]
-impl crate::Readable for EVENT_MASK_SPEC {}
+impl crate::Readable for EventMaskSpec {}
 #[doc = "`reset()` method sets EVENT_MASK to value 0"]
-impl crate::Resettable for EVENT_MASK_SPEC {
+impl crate::Resettable for EventMaskSpec {
     const RESET_VALUE: u16 = 0;
 }

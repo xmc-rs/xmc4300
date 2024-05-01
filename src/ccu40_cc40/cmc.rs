@@ -1,68 +1,68 @@
 #[doc = "Register `CMC` reader"]
-pub type R = crate::R<CMC_SPEC>;
+pub type R = crate::R<CmcSpec>;
 #[doc = "Register `CMC` writer"]
-pub type W = crate::W<CMC_SPEC>;
+pub type W = crate::W<CmcSpec>;
 #[doc = "External Start Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum STRTS_A {
+pub enum Strts {
     #[doc = "0: External Start Function deactivated"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: External Start Function triggered by Event 0"]
-    VALUE2 = 1,
+    Value2 = 1,
     #[doc = "2: External Start Function triggered by Event 1"]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: External Start Function triggered by Event 2"]
-    VALUE4 = 3,
+    Value4 = 3,
 }
-impl From<STRTS_A> for u8 {
+impl From<Strts> for u8 {
     #[inline(always)]
-    fn from(variant: STRTS_A) -> Self {
+    fn from(variant: Strts) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for STRTS_A {
+impl crate::FieldSpec for Strts {
     type Ux = u8;
 }
-impl crate::IsEnum for STRTS_A {}
+impl crate::IsEnum for Strts {}
 #[doc = "Field `STRTS` reader - External Start Functionality Selector"]
-pub type STRTS_R = crate::FieldReader<STRTS_A>;
-impl STRTS_R {
+pub type StrtsR = crate::FieldReader<Strts>;
+impl StrtsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> STRTS_A {
+    pub const fn variant(&self) -> Strts {
         match self.bits {
-            0 => STRTS_A::VALUE1,
-            1 => STRTS_A::VALUE2,
-            2 => STRTS_A::VALUE3,
-            3 => STRTS_A::VALUE4,
+            0 => Strts::Value1,
+            1 => Strts::Value2,
+            2 => Strts::Value3,
+            3 => Strts::Value4,
             _ => unreachable!(),
         }
     }
     #[doc = "External Start Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == STRTS_A::VALUE1
+        *self == Strts::Value1
     }
     #[doc = "External Start Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == STRTS_A::VALUE2
+        *self == Strts::Value2
     }
     #[doc = "External Start Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == STRTS_A::VALUE3
+        *self == Strts::Value3
     }
     #[doc = "External Start Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == STRTS_A::VALUE4
+        *self == Strts::Value4
     }
 }
 #[doc = "Field `STRTS` writer - External Start Functionality Selector"]
-pub type STRTS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, STRTS_A, crate::Safe>;
-impl<'a, REG> STRTS_W<'a, REG>
+pub type StrtsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Strts, crate::Safe>;
+impl<'a, REG> StrtsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -70,85 +70,85 @@ where
     #[doc = "External Start Function deactivated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(STRTS_A::VALUE1)
+        self.variant(Strts::Value1)
     }
     #[doc = "External Start Function triggered by Event 0"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(STRTS_A::VALUE2)
+        self.variant(Strts::Value2)
     }
     #[doc = "External Start Function triggered by Event 1"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(STRTS_A::VALUE3)
+        self.variant(Strts::Value3)
     }
     #[doc = "External Start Function triggered by Event 2"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(STRTS_A::VALUE4)
+        self.variant(Strts::Value4)
     }
 }
 #[doc = "External Stop Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ENDS_A {
+pub enum Ends {
     #[doc = "0: External Stop Function deactivated"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: External Stop Function triggered by Event 0"]
-    VALUE2 = 1,
+    Value2 = 1,
     #[doc = "2: External Stop Function triggered by Event 1"]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: External Stop Function triggered by Event 2"]
-    VALUE4 = 3,
+    Value4 = 3,
 }
-impl From<ENDS_A> for u8 {
+impl From<Ends> for u8 {
     #[inline(always)]
-    fn from(variant: ENDS_A) -> Self {
+    fn from(variant: Ends) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for ENDS_A {
+impl crate::FieldSpec for Ends {
     type Ux = u8;
 }
-impl crate::IsEnum for ENDS_A {}
+impl crate::IsEnum for Ends {}
 #[doc = "Field `ENDS` reader - External Stop Functionality Selector"]
-pub type ENDS_R = crate::FieldReader<ENDS_A>;
-impl ENDS_R {
+pub type EndsR = crate::FieldReader<Ends>;
+impl EndsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ENDS_A {
+    pub const fn variant(&self) -> Ends {
         match self.bits {
-            0 => ENDS_A::VALUE1,
-            1 => ENDS_A::VALUE2,
-            2 => ENDS_A::VALUE3,
-            3 => ENDS_A::VALUE4,
+            0 => Ends::Value1,
+            1 => Ends::Value2,
+            2 => Ends::Value3,
+            3 => Ends::Value4,
             _ => unreachable!(),
         }
     }
     #[doc = "External Stop Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ENDS_A::VALUE1
+        *self == Ends::Value1
     }
     #[doc = "External Stop Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ENDS_A::VALUE2
+        *self == Ends::Value2
     }
     #[doc = "External Stop Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == ENDS_A::VALUE3
+        *self == Ends::Value3
     }
     #[doc = "External Stop Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == ENDS_A::VALUE4
+        *self == Ends::Value4
     }
 }
 #[doc = "Field `ENDS` writer - External Stop Functionality Selector"]
-pub type ENDS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, ENDS_A, crate::Safe>;
-impl<'a, REG> ENDS_W<'a, REG>
+pub type EndsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ends, crate::Safe>;
+impl<'a, REG> EndsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -156,85 +156,85 @@ where
     #[doc = "External Stop Function deactivated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(ENDS_A::VALUE1)
+        self.variant(Ends::Value1)
     }
     #[doc = "External Stop Function triggered by Event 0"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(ENDS_A::VALUE2)
+        self.variant(Ends::Value2)
     }
     #[doc = "External Stop Function triggered by Event 1"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(ENDS_A::VALUE3)
+        self.variant(Ends::Value3)
     }
     #[doc = "External Stop Function triggered by Event 2"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(ENDS_A::VALUE4)
+        self.variant(Ends::Value4)
     }
 }
 #[doc = "External Capture 0 Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CAP0S_A {
+pub enum Cap0s {
     #[doc = "0: External Capture 0 Function deactivated"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: External Capture 0 Function triggered by Event 0"]
-    VALUE2 = 1,
+    Value2 = 1,
     #[doc = "2: External Capture 0 Function triggered by Event 1"]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: External Capture 0 Function triggered by Event 2"]
-    VALUE4 = 3,
+    Value4 = 3,
 }
-impl From<CAP0S_A> for u8 {
+impl From<Cap0s> for u8 {
     #[inline(always)]
-    fn from(variant: CAP0S_A) -> Self {
+    fn from(variant: Cap0s) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CAP0S_A {
+impl crate::FieldSpec for Cap0s {
     type Ux = u8;
 }
-impl crate::IsEnum for CAP0S_A {}
+impl crate::IsEnum for Cap0s {}
 #[doc = "Field `CAP0S` reader - External Capture 0 Functionality Selector"]
-pub type CAP0S_R = crate::FieldReader<CAP0S_A>;
-impl CAP0S_R {
+pub type Cap0sR = crate::FieldReader<Cap0s>;
+impl Cap0sR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CAP0S_A {
+    pub const fn variant(&self) -> Cap0s {
         match self.bits {
-            0 => CAP0S_A::VALUE1,
-            1 => CAP0S_A::VALUE2,
-            2 => CAP0S_A::VALUE3,
-            3 => CAP0S_A::VALUE4,
+            0 => Cap0s::Value1,
+            1 => Cap0s::Value2,
+            2 => Cap0s::Value3,
+            3 => Cap0s::Value4,
             _ => unreachable!(),
         }
     }
     #[doc = "External Capture 0 Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CAP0S_A::VALUE1
+        *self == Cap0s::Value1
     }
     #[doc = "External Capture 0 Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CAP0S_A::VALUE2
+        *self == Cap0s::Value2
     }
     #[doc = "External Capture 0 Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CAP0S_A::VALUE3
+        *self == Cap0s::Value3
     }
     #[doc = "External Capture 0 Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == CAP0S_A::VALUE4
+        *self == Cap0s::Value4
     }
 }
 #[doc = "Field `CAP0S` writer - External Capture 0 Functionality Selector"]
-pub type CAP0S_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CAP0S_A, crate::Safe>;
-impl<'a, REG> CAP0S_W<'a, REG>
+pub type Cap0sW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cap0s, crate::Safe>;
+impl<'a, REG> Cap0sW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -242,85 +242,85 @@ where
     #[doc = "External Capture 0 Function deactivated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CAP0S_A::VALUE1)
+        self.variant(Cap0s::Value1)
     }
     #[doc = "External Capture 0 Function triggered by Event 0"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CAP0S_A::VALUE2)
+        self.variant(Cap0s::Value2)
     }
     #[doc = "External Capture 0 Function triggered by Event 1"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(CAP0S_A::VALUE3)
+        self.variant(Cap0s::Value3)
     }
     #[doc = "External Capture 0 Function triggered by Event 2"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(CAP0S_A::VALUE4)
+        self.variant(Cap0s::Value4)
     }
 }
 #[doc = "External Capture 1 Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CAP1S_A {
+pub enum Cap1s {
     #[doc = "0: External Capture 1 Function deactivated"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: External Capture 1 Function triggered by Event 0"]
-    VALUE2 = 1,
+    Value2 = 1,
     #[doc = "2: External Capture 1 Function triggered by Event 1"]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: External Capture 1 Function triggered by Event 2"]
-    VALUE4 = 3,
+    Value4 = 3,
 }
-impl From<CAP1S_A> for u8 {
+impl From<Cap1s> for u8 {
     #[inline(always)]
-    fn from(variant: CAP1S_A) -> Self {
+    fn from(variant: Cap1s) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CAP1S_A {
+impl crate::FieldSpec for Cap1s {
     type Ux = u8;
 }
-impl crate::IsEnum for CAP1S_A {}
+impl crate::IsEnum for Cap1s {}
 #[doc = "Field `CAP1S` reader - External Capture 1 Functionality Selector"]
-pub type CAP1S_R = crate::FieldReader<CAP1S_A>;
-impl CAP1S_R {
+pub type Cap1sR = crate::FieldReader<Cap1s>;
+impl Cap1sR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CAP1S_A {
+    pub const fn variant(&self) -> Cap1s {
         match self.bits {
-            0 => CAP1S_A::VALUE1,
-            1 => CAP1S_A::VALUE2,
-            2 => CAP1S_A::VALUE3,
-            3 => CAP1S_A::VALUE4,
+            0 => Cap1s::Value1,
+            1 => Cap1s::Value2,
+            2 => Cap1s::Value3,
+            3 => Cap1s::Value4,
             _ => unreachable!(),
         }
     }
     #[doc = "External Capture 1 Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CAP1S_A::VALUE1
+        *self == Cap1s::Value1
     }
     #[doc = "External Capture 1 Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CAP1S_A::VALUE2
+        *self == Cap1s::Value2
     }
     #[doc = "External Capture 1 Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CAP1S_A::VALUE3
+        *self == Cap1s::Value3
     }
     #[doc = "External Capture 1 Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == CAP1S_A::VALUE4
+        *self == Cap1s::Value4
     }
 }
 #[doc = "Field `CAP1S` writer - External Capture 1 Functionality Selector"]
-pub type CAP1S_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CAP1S_A, crate::Safe>;
-impl<'a, REG> CAP1S_W<'a, REG>
+pub type Cap1sW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cap1s, crate::Safe>;
+impl<'a, REG> Cap1sW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -328,85 +328,85 @@ where
     #[doc = "External Capture 1 Function deactivated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CAP1S_A::VALUE1)
+        self.variant(Cap1s::Value1)
     }
     #[doc = "External Capture 1 Function triggered by Event 0"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CAP1S_A::VALUE2)
+        self.variant(Cap1s::Value2)
     }
     #[doc = "External Capture 1 Function triggered by Event 1"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(CAP1S_A::VALUE3)
+        self.variant(Cap1s::Value3)
     }
     #[doc = "External Capture 1 Function triggered by Event 2"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(CAP1S_A::VALUE4)
+        self.variant(Cap1s::Value4)
     }
 }
 #[doc = "External Gate Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum GATES_A {
+pub enum Gates {
     #[doc = "0: External Gating Function deactivated"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: External Gating Function triggered by Event 0"]
-    VALUE2 = 1,
+    Value2 = 1,
     #[doc = "2: External Gating Function triggered by Event 1"]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: External Gating Function triggered by Event 2"]
-    VALUE4 = 3,
+    Value4 = 3,
 }
-impl From<GATES_A> for u8 {
+impl From<Gates> for u8 {
     #[inline(always)]
-    fn from(variant: GATES_A) -> Self {
+    fn from(variant: Gates) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for GATES_A {
+impl crate::FieldSpec for Gates {
     type Ux = u8;
 }
-impl crate::IsEnum for GATES_A {}
+impl crate::IsEnum for Gates {}
 #[doc = "Field `GATES` reader - External Gate Functionality Selector"]
-pub type GATES_R = crate::FieldReader<GATES_A>;
-impl GATES_R {
+pub type GatesR = crate::FieldReader<Gates>;
+impl GatesR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> GATES_A {
+    pub const fn variant(&self) -> Gates {
         match self.bits {
-            0 => GATES_A::VALUE1,
-            1 => GATES_A::VALUE2,
-            2 => GATES_A::VALUE3,
-            3 => GATES_A::VALUE4,
+            0 => Gates::Value1,
+            1 => Gates::Value2,
+            2 => Gates::Value3,
+            3 => Gates::Value4,
             _ => unreachable!(),
         }
     }
     #[doc = "External Gating Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == GATES_A::VALUE1
+        *self == Gates::Value1
     }
     #[doc = "External Gating Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == GATES_A::VALUE2
+        *self == Gates::Value2
     }
     #[doc = "External Gating Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == GATES_A::VALUE3
+        *self == Gates::Value3
     }
     #[doc = "External Gating Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == GATES_A::VALUE4
+        *self == Gates::Value4
     }
 }
 #[doc = "Field `GATES` writer - External Gate Functionality Selector"]
-pub type GATES_W<'a, REG> = crate::FieldWriter<'a, REG, 2, GATES_A, crate::Safe>;
-impl<'a, REG> GATES_W<'a, REG>
+pub type GatesW<'a, REG> = crate::FieldWriter<'a, REG, 2, Gates, crate::Safe>;
+impl<'a, REG> GatesW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -414,85 +414,85 @@ where
     #[doc = "External Gating Function deactivated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(GATES_A::VALUE1)
+        self.variant(Gates::Value1)
     }
     #[doc = "External Gating Function triggered by Event 0"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(GATES_A::VALUE2)
+        self.variant(Gates::Value2)
     }
     #[doc = "External Gating Function triggered by Event 1"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(GATES_A::VALUE3)
+        self.variant(Gates::Value3)
     }
     #[doc = "External Gating Function triggered by Event 2"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(GATES_A::VALUE4)
+        self.variant(Gates::Value4)
     }
 }
 #[doc = "External Up/Down Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum UDS_A {
+pub enum Uds {
     #[doc = "0: External Up/Down Function deactivated"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: External Up/Down Function triggered by Event 0"]
-    VALUE2 = 1,
+    Value2 = 1,
     #[doc = "2: External Up/Down Function triggered by Event 1"]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: External Up/Down Function triggered by Event 2"]
-    VALUE4 = 3,
+    Value4 = 3,
 }
-impl From<UDS_A> for u8 {
+impl From<Uds> for u8 {
     #[inline(always)]
-    fn from(variant: UDS_A) -> Self {
+    fn from(variant: Uds) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for UDS_A {
+impl crate::FieldSpec for Uds {
     type Ux = u8;
 }
-impl crate::IsEnum for UDS_A {}
+impl crate::IsEnum for Uds {}
 #[doc = "Field `UDS` reader - External Up/Down Functionality Selector"]
-pub type UDS_R = crate::FieldReader<UDS_A>;
-impl UDS_R {
+pub type UdsR = crate::FieldReader<Uds>;
+impl UdsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> UDS_A {
+    pub const fn variant(&self) -> Uds {
         match self.bits {
-            0 => UDS_A::VALUE1,
-            1 => UDS_A::VALUE2,
-            2 => UDS_A::VALUE3,
-            3 => UDS_A::VALUE4,
+            0 => Uds::Value1,
+            1 => Uds::Value2,
+            2 => Uds::Value3,
+            3 => Uds::Value4,
             _ => unreachable!(),
         }
     }
     #[doc = "External Up/Down Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == UDS_A::VALUE1
+        *self == Uds::Value1
     }
     #[doc = "External Up/Down Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == UDS_A::VALUE2
+        *self == Uds::Value2
     }
     #[doc = "External Up/Down Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == UDS_A::VALUE3
+        *self == Uds::Value3
     }
     #[doc = "External Up/Down Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == UDS_A::VALUE4
+        *self == Uds::Value4
     }
 }
 #[doc = "Field `UDS` writer - External Up/Down Functionality Selector"]
-pub type UDS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, UDS_A, crate::Safe>;
-impl<'a, REG> UDS_W<'a, REG>
+pub type UdsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Uds, crate::Safe>;
+impl<'a, REG> UdsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -500,89 +500,89 @@ where
     #[doc = "External Up/Down Function deactivated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(UDS_A::VALUE1)
+        self.variant(Uds::Value1)
     }
     #[doc = "External Up/Down Function triggered by Event 0"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(UDS_A::VALUE2)
+        self.variant(Uds::Value2)
     }
     #[doc = "External Up/Down Function triggered by Event 1"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(UDS_A::VALUE3)
+        self.variant(Uds::Value3)
     }
     #[doc = "External Up/Down Function triggered by Event 2"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(UDS_A::VALUE4)
+        self.variant(Uds::Value4)
     }
 }
 #[doc = "Field `LDS` reader - External Timer Load Functionality Selector"]
-pub type LDS_R = crate::FieldReader;
+pub type LdsR = crate::FieldReader;
 #[doc = "Field `LDS` writer - External Timer Load Functionality Selector"]
-pub type LDS_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
+pub type LdsW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "External Count Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CNTS_A {
+pub enum Cnts {
     #[doc = "0: External Count Function deactivated"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: External Count Function triggered by Event 0"]
-    VALUE2 = 1,
+    Value2 = 1,
     #[doc = "2: External Count Function triggered by Event 1"]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: External Count Function triggered by Event 2"]
-    VALUE4 = 3,
+    Value4 = 3,
 }
-impl From<CNTS_A> for u8 {
+impl From<Cnts> for u8 {
     #[inline(always)]
-    fn from(variant: CNTS_A) -> Self {
+    fn from(variant: Cnts) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for CNTS_A {
+impl crate::FieldSpec for Cnts {
     type Ux = u8;
 }
-impl crate::IsEnum for CNTS_A {}
+impl crate::IsEnum for Cnts {}
 #[doc = "Field `CNTS` reader - External Count Selector"]
-pub type CNTS_R = crate::FieldReader<CNTS_A>;
-impl CNTS_R {
+pub type CntsR = crate::FieldReader<Cnts>;
+impl CntsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CNTS_A {
+    pub const fn variant(&self) -> Cnts {
         match self.bits {
-            0 => CNTS_A::VALUE1,
-            1 => CNTS_A::VALUE2,
-            2 => CNTS_A::VALUE3,
-            3 => CNTS_A::VALUE4,
+            0 => Cnts::Value1,
+            1 => Cnts::Value2,
+            2 => Cnts::Value3,
+            3 => Cnts::Value4,
             _ => unreachable!(),
         }
     }
     #[doc = "External Count Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CNTS_A::VALUE1
+        *self == Cnts::Value1
     }
     #[doc = "External Count Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CNTS_A::VALUE2
+        *self == Cnts::Value2
     }
     #[doc = "External Count Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CNTS_A::VALUE3
+        *self == Cnts::Value3
     }
     #[doc = "External Count Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == CNTS_A::VALUE4
+        *self == Cnts::Value4
     }
 }
 #[doc = "Field `CNTS` writer - External Count Selector"]
-pub type CNTS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CNTS_A, crate::Safe>;
-impl<'a, REG> CNTS_W<'a, REG>
+pub type CntsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cnts, crate::Safe>;
+impl<'a, REG> CntsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -590,337 +590,337 @@ where
     #[doc = "External Count Function deactivated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CNTS_A::VALUE1)
+        self.variant(Cnts::Value1)
     }
     #[doc = "External Count Function triggered by Event 0"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CNTS_A::VALUE2)
+        self.variant(Cnts::Value2)
     }
     #[doc = "External Count Function triggered by Event 1"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(CNTS_A::VALUE3)
+        self.variant(Cnts::Value3)
     }
     #[doc = "External Count Function triggered by Event 2"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(CNTS_A::VALUE4)
+        self.variant(Cnts::Value4)
     }
 }
 #[doc = "Override Function Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum OFS_A {
+pub enum Ofs {
     #[doc = "0: Override functionality disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Status bit trigger override connected to Event 1; Status bit value override connected to Event 2"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<OFS_A> for bool {
+impl From<Ofs> for bool {
     #[inline(always)]
-    fn from(variant: OFS_A) -> Self {
+    fn from(variant: Ofs) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `OFS` reader - Override Function Selector"]
-pub type OFS_R = crate::BitReader<OFS_A>;
-impl OFS_R {
+pub type OfsR = crate::BitReader<Ofs>;
+impl OfsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> OFS_A {
+    pub const fn variant(&self) -> Ofs {
         match self.bits {
-            false => OFS_A::VALUE1,
-            true => OFS_A::VALUE2,
+            false => Ofs::Value1,
+            true => Ofs::Value2,
         }
     }
     #[doc = "Override functionality disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == OFS_A::VALUE1
+        *self == Ofs::Value1
     }
     #[doc = "Status bit trigger override connected to Event 1; Status bit value override connected to Event 2"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == OFS_A::VALUE2
+        *self == Ofs::Value2
     }
 }
 #[doc = "Field `OFS` writer - Override Function Selector"]
-pub type OFS_W<'a, REG> = crate::BitWriter<'a, REG, OFS_A>;
-impl<'a, REG> OFS_W<'a, REG>
+pub type OfsW<'a, REG> = crate::BitWriter<'a, REG, Ofs>;
+impl<'a, REG> OfsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Override functionality disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(OFS_A::VALUE1)
+        self.variant(Ofs::Value1)
     }
     #[doc = "Status bit trigger override connected to Event 1; Status bit value override connected to Event 2"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(OFS_A::VALUE2)
+        self.variant(Ofs::Value2)
     }
 }
 #[doc = "Trap Function Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum TS_A {
+pub enum Ts {
     #[doc = "0: Trap function disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: TRAP function connected to Event 2"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<TS_A> for bool {
+impl From<Ts> for bool {
     #[inline(always)]
-    fn from(variant: TS_A) -> Self {
+    fn from(variant: Ts) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TS` reader - Trap Function Selector"]
-pub type TS_R = crate::BitReader<TS_A>;
-impl TS_R {
+pub type TsR = crate::BitReader<Ts>;
+impl TsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> TS_A {
+    pub const fn variant(&self) -> Ts {
         match self.bits {
-            false => TS_A::VALUE1,
-            true => TS_A::VALUE2,
+            false => Ts::Value1,
+            true => Ts::Value2,
         }
     }
     #[doc = "Trap function disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TS_A::VALUE1
+        *self == Ts::Value1
     }
     #[doc = "TRAP function connected to Event 2"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TS_A::VALUE2
+        *self == Ts::Value2
     }
 }
 #[doc = "Field `TS` writer - Trap Function Selector"]
-pub type TS_W<'a, REG> = crate::BitWriter<'a, REG, TS_A>;
-impl<'a, REG> TS_W<'a, REG>
+pub type TsW<'a, REG> = crate::BitWriter<'a, REG, Ts>;
+impl<'a, REG> TsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Trap function disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(TS_A::VALUE1)
+        self.variant(Ts::Value1)
     }
     #[doc = "TRAP function connected to Event 2"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(TS_A::VALUE2)
+        self.variant(Ts::Value2)
     }
 }
 #[doc = "Field `MOS` reader - External Modulation Functionality Selector"]
-pub type MOS_R = crate::FieldReader;
+pub type MosR = crate::FieldReader;
 #[doc = "Field `MOS` writer - External Modulation Functionality Selector"]
-pub type MOS_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
+pub type MosW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Timer Concatenation Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum TCE_A {
+pub enum Tce {
     #[doc = "0: Timer concatenation is disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Timer concatenation is enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<TCE_A> for bool {
+impl From<Tce> for bool {
     #[inline(always)]
-    fn from(variant: TCE_A) -> Self {
+    fn from(variant: Tce) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TCE` reader - Timer Concatenation Enable"]
-pub type TCE_R = crate::BitReader<TCE_A>;
-impl TCE_R {
+pub type TceR = crate::BitReader<Tce>;
+impl TceR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> TCE_A {
+    pub const fn variant(&self) -> Tce {
         match self.bits {
-            false => TCE_A::VALUE1,
-            true => TCE_A::VALUE2,
+            false => Tce::Value1,
+            true => Tce::Value2,
         }
     }
     #[doc = "Timer concatenation is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TCE_A::VALUE1
+        *self == Tce::Value1
     }
     #[doc = "Timer concatenation is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TCE_A::VALUE2
+        *self == Tce::Value2
     }
 }
 #[doc = "Field `TCE` writer - Timer Concatenation Enable"]
-pub type TCE_W<'a, REG> = crate::BitWriter<'a, REG, TCE_A>;
-impl<'a, REG> TCE_W<'a, REG>
+pub type TceW<'a, REG> = crate::BitWriter<'a, REG, Tce>;
+impl<'a, REG> TceW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Timer concatenation is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(TCE_A::VALUE1)
+        self.variant(Tce::Value1)
     }
     #[doc = "Timer concatenation is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(TCE_A::VALUE2)
+        self.variant(Tce::Value2)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - External Start Functionality Selector"]
     #[inline(always)]
-    pub fn strts(&self) -> STRTS_R {
-        STRTS_R::new((self.bits & 3) as u8)
+    pub fn strts(&self) -> StrtsR {
+        StrtsR::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - External Stop Functionality Selector"]
     #[inline(always)]
-    pub fn ends(&self) -> ENDS_R {
-        ENDS_R::new(((self.bits >> 2) & 3) as u8)
+    pub fn ends(&self) -> EndsR {
+        EndsR::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - External Capture 0 Functionality Selector"]
     #[inline(always)]
-    pub fn cap0s(&self) -> CAP0S_R {
-        CAP0S_R::new(((self.bits >> 4) & 3) as u8)
+    pub fn cap0s(&self) -> Cap0sR {
+        Cap0sR::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - External Capture 1 Functionality Selector"]
     #[inline(always)]
-    pub fn cap1s(&self) -> CAP1S_R {
-        CAP1S_R::new(((self.bits >> 6) & 3) as u8)
+    pub fn cap1s(&self) -> Cap1sR {
+        Cap1sR::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:9 - External Gate Functionality Selector"]
     #[inline(always)]
-    pub fn gates(&self) -> GATES_R {
-        GATES_R::new(((self.bits >> 8) & 3) as u8)
+    pub fn gates(&self) -> GatesR {
+        GatesR::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - External Up/Down Functionality Selector"]
     #[inline(always)]
-    pub fn uds(&self) -> UDS_R {
-        UDS_R::new(((self.bits >> 10) & 3) as u8)
+    pub fn uds(&self) -> UdsR {
+        UdsR::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - External Timer Load Functionality Selector"]
     #[inline(always)]
-    pub fn lds(&self) -> LDS_R {
-        LDS_R::new(((self.bits >> 12) & 3) as u8)
+    pub fn lds(&self) -> LdsR {
+        LdsR::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 14:15 - External Count Selector"]
     #[inline(always)]
-    pub fn cnts(&self) -> CNTS_R {
-        CNTS_R::new(((self.bits >> 14) & 3) as u8)
+    pub fn cnts(&self) -> CntsR {
+        CntsR::new(((self.bits >> 14) & 3) as u8)
     }
     #[doc = "Bit 16 - Override Function Selector"]
     #[inline(always)]
-    pub fn ofs(&self) -> OFS_R {
-        OFS_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn ofs(&self) -> OfsR {
+        OfsR::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Trap Function Selector"]
     #[inline(always)]
-    pub fn ts(&self) -> TS_R {
-        TS_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn ts(&self) -> TsR {
+        TsR::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bits 18:19 - External Modulation Functionality Selector"]
     #[inline(always)]
-    pub fn mos(&self) -> MOS_R {
-        MOS_R::new(((self.bits >> 18) & 3) as u8)
+    pub fn mos(&self) -> MosR {
+        MosR::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bit 20 - Timer Concatenation Enable"]
     #[inline(always)]
-    pub fn tce(&self) -> TCE_R {
-        TCE_R::new(((self.bits >> 20) & 1) != 0)
+    pub fn tce(&self) -> TceR {
+        TceR::new(((self.bits >> 20) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - External Start Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn strts(&mut self) -> STRTS_W<CMC_SPEC> {
-        STRTS_W::new(self, 0)
+    pub fn strts(&mut self) -> StrtsW<CmcSpec> {
+        StrtsW::new(self, 0)
     }
     #[doc = "Bits 2:3 - External Stop Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn ends(&mut self) -> ENDS_W<CMC_SPEC> {
-        ENDS_W::new(self, 2)
+    pub fn ends(&mut self) -> EndsW<CmcSpec> {
+        EndsW::new(self, 2)
     }
     #[doc = "Bits 4:5 - External Capture 0 Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn cap0s(&mut self) -> CAP0S_W<CMC_SPEC> {
-        CAP0S_W::new(self, 4)
+    pub fn cap0s(&mut self) -> Cap0sW<CmcSpec> {
+        Cap0sW::new(self, 4)
     }
     #[doc = "Bits 6:7 - External Capture 1 Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn cap1s(&mut self) -> CAP1S_W<CMC_SPEC> {
-        CAP1S_W::new(self, 6)
+    pub fn cap1s(&mut self) -> Cap1sW<CmcSpec> {
+        Cap1sW::new(self, 6)
     }
     #[doc = "Bits 8:9 - External Gate Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn gates(&mut self) -> GATES_W<CMC_SPEC> {
-        GATES_W::new(self, 8)
+    pub fn gates(&mut self) -> GatesW<CmcSpec> {
+        GatesW::new(self, 8)
     }
     #[doc = "Bits 10:11 - External Up/Down Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn uds(&mut self) -> UDS_W<CMC_SPEC> {
-        UDS_W::new(self, 10)
+    pub fn uds(&mut self) -> UdsW<CmcSpec> {
+        UdsW::new(self, 10)
     }
     #[doc = "Bits 12:13 - External Timer Load Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn lds(&mut self) -> LDS_W<CMC_SPEC> {
-        LDS_W::new(self, 12)
+    pub fn lds(&mut self) -> LdsW<CmcSpec> {
+        LdsW::new(self, 12)
     }
     #[doc = "Bits 14:15 - External Count Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn cnts(&mut self) -> CNTS_W<CMC_SPEC> {
-        CNTS_W::new(self, 14)
+    pub fn cnts(&mut self) -> CntsW<CmcSpec> {
+        CntsW::new(self, 14)
     }
     #[doc = "Bit 16 - Override Function Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn ofs(&mut self) -> OFS_W<CMC_SPEC> {
-        OFS_W::new(self, 16)
+    pub fn ofs(&mut self) -> OfsW<CmcSpec> {
+        OfsW::new(self, 16)
     }
     #[doc = "Bit 17 - Trap Function Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn ts(&mut self) -> TS_W<CMC_SPEC> {
-        TS_W::new(self, 17)
+    pub fn ts(&mut self) -> TsW<CmcSpec> {
+        TsW::new(self, 17)
     }
     #[doc = "Bits 18:19 - External Modulation Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn mos(&mut self) -> MOS_W<CMC_SPEC> {
-        MOS_W::new(self, 18)
+    pub fn mos(&mut self) -> MosW<CmcSpec> {
+        MosW::new(self, 18)
     }
     #[doc = "Bit 20 - Timer Concatenation Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tce(&mut self) -> TCE_W<CMC_SPEC> {
-        TCE_W::new(self, 20)
+    pub fn tce(&mut self) -> TceW<CmcSpec> {
+        TceW::new(self, 20)
     }
 }
 #[doc = "Connection Matrix Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cmc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CMC_SPEC;
-impl crate::RegisterSpec for CMC_SPEC {
+pub struct CmcSpec;
+impl crate::RegisterSpec for CmcSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`cmc::R`](R) reader structure"]
-impl crate::Readable for CMC_SPEC {}
+impl crate::Readable for CmcSpec {}
 #[doc = "`write(|w| ..)` method takes [`cmc::W`](W) writer structure"]
-impl crate::Writable for CMC_SPEC {
+impl crate::Writable for CmcSpec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CMC to value 0"]
-impl crate::Resettable for CMC_SPEC {
+impl crate::Resettable for CmcSpec {
     const RESET_VALUE: u32 = 0;
 }

@@ -1,179 +1,179 @@
 #[doc = "Register `TCST` reader"]
-pub type R = crate::R<TCST_SPEC>;
+pub type R = crate::R<TcstSpec>;
 #[doc = "Timer Run Bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum TRB_A {
+pub enum Trb {
     #[doc = "0: Timer is stopped"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Timer is running"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<TRB_A> for bool {
+impl From<Trb> for bool {
     #[inline(always)]
-    fn from(variant: TRB_A) -> Self {
+    fn from(variant: Trb) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TRB` reader - Timer Run Bit"]
-pub type TRB_R = crate::BitReader<TRB_A>;
-impl TRB_R {
+pub type TrbR = crate::BitReader<Trb>;
+impl TrbR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> TRB_A {
+    pub const fn variant(&self) -> Trb {
         match self.bits {
-            false => TRB_A::VALUE1,
-            true => TRB_A::VALUE2,
+            false => Trb::Value1,
+            true => Trb::Value2,
         }
     }
     #[doc = "Timer is stopped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TRB_A::VALUE1
+        *self == Trb::Value1
     }
     #[doc = "Timer is running"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TRB_A::VALUE2
+        *self == Trb::Value2
     }
 }
 #[doc = "Timer Counting Direction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CDIR_A {
+pub enum Cdir {
     #[doc = "0: Timer is counting up"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Timer is counting down"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CDIR_A> for bool {
+impl From<Cdir> for bool {
     #[inline(always)]
-    fn from(variant: CDIR_A) -> Self {
+    fn from(variant: Cdir) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CDIR` reader - Timer Counting Direction"]
-pub type CDIR_R = crate::BitReader<CDIR_A>;
-impl CDIR_R {
+pub type CdirR = crate::BitReader<Cdir>;
+impl CdirR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CDIR_A {
+    pub const fn variant(&self) -> Cdir {
         match self.bits {
-            false => CDIR_A::VALUE1,
-            true => CDIR_A::VALUE2,
+            false => Cdir::Value1,
+            true => Cdir::Value2,
         }
     }
     #[doc = "Timer is counting up"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CDIR_A::VALUE1
+        *self == Cdir::Value1
     }
     #[doc = "Timer is counting down"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CDIR_A::VALUE2
+        *self == Cdir::Value2
     }
 }
 #[doc = "Dead Time Counter 1 Run bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DTR1_A {
+pub enum Dtr1 {
     #[doc = "0: Dead Time counter is idle"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Dead Time counter is running"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<DTR1_A> for bool {
+impl From<Dtr1> for bool {
     #[inline(always)]
-    fn from(variant: DTR1_A) -> Self {
+    fn from(variant: Dtr1) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DTR1` reader - Dead Time Counter 1 Run bit"]
-pub type DTR1_R = crate::BitReader<DTR1_A>;
-impl DTR1_R {
+pub type Dtr1R = crate::BitReader<Dtr1>;
+impl Dtr1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> DTR1_A {
+    pub const fn variant(&self) -> Dtr1 {
         match self.bits {
-            false => DTR1_A::VALUE1,
-            true => DTR1_A::VALUE2,
+            false => Dtr1::Value1,
+            true => Dtr1::Value2,
         }
     }
     #[doc = "Dead Time counter is idle"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DTR1_A::VALUE1
+        *self == Dtr1::Value1
     }
     #[doc = "Dead Time counter is running"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DTR1_A::VALUE2
+        *self == Dtr1::Value2
     }
 }
 #[doc = "Dead Time Counter 2 Run bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DTR2_A {
+pub enum Dtr2 {
     #[doc = "0: Dead Time counter is idle"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Dead Time counter is running"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<DTR2_A> for bool {
+impl From<Dtr2> for bool {
     #[inline(always)]
-    fn from(variant: DTR2_A) -> Self {
+    fn from(variant: Dtr2) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DTR2` reader - Dead Time Counter 2 Run bit"]
-pub type DTR2_R = crate::BitReader<DTR2_A>;
-impl DTR2_R {
+pub type Dtr2R = crate::BitReader<Dtr2>;
+impl Dtr2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> DTR2_A {
+    pub const fn variant(&self) -> Dtr2 {
         match self.bits {
-            false => DTR2_A::VALUE1,
-            true => DTR2_A::VALUE2,
+            false => Dtr2::Value1,
+            true => Dtr2::Value2,
         }
     }
     #[doc = "Dead Time counter is idle"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DTR2_A::VALUE1
+        *self == Dtr2::Value1
     }
     #[doc = "Dead Time counter is running"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DTR2_A::VALUE2
+        *self == Dtr2::Value2
     }
 }
 impl R {
     #[doc = "Bit 0 - Timer Run Bit"]
     #[inline(always)]
-    pub fn trb(&self) -> TRB_R {
-        TRB_R::new((self.bits & 1) != 0)
+    pub fn trb(&self) -> TrbR {
+        TrbR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Timer Counting Direction"]
     #[inline(always)]
-    pub fn cdir(&self) -> CDIR_R {
-        CDIR_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn cdir(&self) -> CdirR {
+        CdirR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 3 - Dead Time Counter 1 Run bit"]
     #[inline(always)]
-    pub fn dtr1(&self) -> DTR1_R {
-        DTR1_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn dtr1(&self) -> Dtr1R {
+        Dtr1R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Dead Time Counter 2 Run bit"]
     #[inline(always)]
-    pub fn dtr2(&self) -> DTR2_R {
-        DTR2_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn dtr2(&self) -> Dtr2R {
+        Dtr2R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 #[doc = "Slice Timer Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tcst::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct TCST_SPEC;
-impl crate::RegisterSpec for TCST_SPEC {
+pub struct TcstSpec;
+impl crate::RegisterSpec for TcstSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`tcst::R`](R) reader structure"]
-impl crate::Readable for TCST_SPEC {}
+impl crate::Readable for TcstSpec {}
 #[doc = "`reset()` method sets TCST to value 0"]
-impl crate::Resettable for TCST_SPEC {
+impl crate::Resettable for TcstSpec {
     const RESET_VALUE: u32 = 0;
 }

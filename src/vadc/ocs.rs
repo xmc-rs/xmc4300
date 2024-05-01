@@ -1,52 +1,52 @@
 #[doc = "Register `OCS` reader"]
-pub type R = crate::R<OCS_SPEC>;
+pub type R = crate::R<OcsSpec>;
 #[doc = "Register `OCS` writer"]
-pub type W = crate::W<OCS_SPEC>;
+pub type W = crate::W<OcsSpec>;
 #[doc = "Trigger Set for OTGB0/1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TGS_A {
+pub enum Tgs {
     #[doc = "0: No Trigger Set output"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Trigger Set 1: TS16_SSIG, input sample signals"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<TGS_A> for u8 {
+impl From<Tgs> for u8 {
     #[inline(always)]
-    fn from(variant: TGS_A) -> Self {
+    fn from(variant: Tgs) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for TGS_A {
+impl crate::FieldSpec for Tgs {
     type Ux = u8;
 }
-impl crate::IsEnum for TGS_A {}
+impl crate::IsEnum for Tgs {}
 #[doc = "Field `TGS` reader - Trigger Set for OTGB0/1"]
-pub type TGS_R = crate::FieldReader<TGS_A>;
-impl TGS_R {
+pub type TgsR = crate::FieldReader<Tgs>;
+impl TgsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<TGS_A> {
+    pub const fn variant(&self) -> Option<Tgs> {
         match self.bits {
-            0 => Some(TGS_A::VALUE1),
-            1 => Some(TGS_A::VALUE2),
+            0 => Some(Tgs::Value1),
+            1 => Some(Tgs::Value2),
             _ => None,
         }
     }
     #[doc = "No Trigger Set output"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TGS_A::VALUE1
+        *self == Tgs::Value1
     }
     #[doc = "Trigger Set 1: TS16_SSIG, input sample signals"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TGS_A::VALUE2
+        *self == Tgs::Value2
     }
 }
 #[doc = "Field `TGS` writer - Trigger Set for OTGB0/1"]
-pub type TGS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TGS_A>;
-impl<'a, REG> TGS_W<'a, REG>
+pub type TgsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Tgs>;
+impl<'a, REG> TgsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -54,130 +54,130 @@ where
     #[doc = "No Trigger Set output"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(TGS_A::VALUE1)
+        self.variant(Tgs::Value1)
     }
     #[doc = "Trigger Set 1: TS16_SSIG, input sample signals"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(TGS_A::VALUE2)
+        self.variant(Tgs::Value2)
     }
 }
 #[doc = "OTGB0/1 Bus Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum TGB_A {
+pub enum Tgb {
     #[doc = "0: Trigger Set is output on OTGB0"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Trigger Set is output on OTGB1"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<TGB_A> for bool {
+impl From<Tgb> for bool {
     #[inline(always)]
-    fn from(variant: TGB_A) -> Self {
+    fn from(variant: Tgb) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TGB` reader - OTGB0/1 Bus Select"]
-pub type TGB_R = crate::BitReader<TGB_A>;
-impl TGB_R {
+pub type TgbR = crate::BitReader<Tgb>;
+impl TgbR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> TGB_A {
+    pub const fn variant(&self) -> Tgb {
         match self.bits {
-            false => TGB_A::VALUE1,
-            true => TGB_A::VALUE2,
+            false => Tgb::Value1,
+            true => Tgb::Value2,
         }
     }
     #[doc = "Trigger Set is output on OTGB0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TGB_A::VALUE1
+        *self == Tgb::Value1
     }
     #[doc = "Trigger Set is output on OTGB1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TGB_A::VALUE2
+        *self == Tgb::Value2
     }
 }
 #[doc = "Field `TGB` writer - OTGB0/1 Bus Select"]
-pub type TGB_W<'a, REG> = crate::BitWriter<'a, REG, TGB_A>;
-impl<'a, REG> TGB_W<'a, REG>
+pub type TgbW<'a, REG> = crate::BitWriter<'a, REG, Tgb>;
+impl<'a, REG> TgbW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Trigger Set is output on OTGB0"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(TGB_A::VALUE1)
+        self.variant(Tgb::Value1)
     }
     #[doc = "Trigger Set is output on OTGB1"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(TGB_A::VALUE2)
+        self.variant(Tgb::Value2)
     }
 }
 #[doc = "Field `TG_P` writer - TGS, TGB Write Protection"]
-pub type TG_P_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TgPW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "OCDS Suspend Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SUS_A {
+pub enum Sus {
     #[doc = "0: Will not suspend"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Hard suspend: Clock is switched off immediately."]
-    VALUE2 = 1,
+    Value2 = 1,
     #[doc = "2: Soft suspend mode 0: Stop conversions after the currently running one is completed and its result has been stored. No change for the arbiter."]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: Soft suspend mode 1: Stop conversions after the currently running one is completed and its result has been stored. Stop arbiter after the current arbitration round."]
-    VALUE4 = 3,
+    Value4 = 3,
 }
-impl From<SUS_A> for u8 {
+impl From<Sus> for u8 {
     #[inline(always)]
-    fn from(variant: SUS_A) -> Self {
+    fn from(variant: Sus) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for SUS_A {
+impl crate::FieldSpec for Sus {
     type Ux = u8;
 }
-impl crate::IsEnum for SUS_A {}
+impl crate::IsEnum for Sus {}
 #[doc = "Field `SUS` reader - OCDS Suspend Control"]
-pub type SUS_R = crate::FieldReader<SUS_A>;
-impl SUS_R {
+pub type SusR = crate::FieldReader<Sus>;
+impl SusR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<SUS_A> {
+    pub const fn variant(&self) -> Option<Sus> {
         match self.bits {
-            0 => Some(SUS_A::VALUE1),
-            1 => Some(SUS_A::VALUE2),
-            2 => Some(SUS_A::VALUE3),
-            3 => Some(SUS_A::VALUE4),
+            0 => Some(Sus::Value1),
+            1 => Some(Sus::Value2),
+            2 => Some(Sus::Value3),
+            3 => Some(Sus::Value4),
             _ => None,
         }
     }
     #[doc = "Will not suspend"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SUS_A::VALUE1
+        *self == Sus::Value1
     }
     #[doc = "Hard suspend: Clock is switched off immediately."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SUS_A::VALUE2
+        *self == Sus::Value2
     }
     #[doc = "Soft suspend mode 0: Stop conversions after the currently running one is completed and its result has been stored. No change for the arbiter."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == SUS_A::VALUE3
+        *self == Sus::Value3
     }
     #[doc = "Soft suspend mode 1: Stop conversions after the currently running one is completed and its result has been stored. Stop arbiter after the current arbitration round."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == SUS_A::VALUE4
+        *self == Sus::Value4
     }
 }
 #[doc = "Field `SUS` writer - OCDS Suspend Control"]
-pub type SUS_W<'a, REG> = crate::FieldWriter<'a, REG, 4, SUS_A>;
-impl<'a, REG> SUS_W<'a, REG>
+pub type SusW<'a, REG> = crate::FieldWriter<'a, REG, 4, Sus>;
+impl<'a, REG> SusW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -185,130 +185,130 @@ where
     #[doc = "Will not suspend"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(SUS_A::VALUE1)
+        self.variant(Sus::Value1)
     }
     #[doc = "Hard suspend: Clock is switched off immediately."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(SUS_A::VALUE2)
+        self.variant(Sus::Value2)
     }
     #[doc = "Soft suspend mode 0: Stop conversions after the currently running one is completed and its result has been stored. No change for the arbiter."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(SUS_A::VALUE3)
+        self.variant(Sus::Value3)
     }
     #[doc = "Soft suspend mode 1: Stop conversions after the currently running one is completed and its result has been stored. Stop arbiter after the current arbitration round."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(SUS_A::VALUE4)
+        self.variant(Sus::Value4)
     }
 }
 #[doc = "Field `SUS_P` writer - SUS Write Protection"]
-pub type SUS_P_W<'a, REG> = crate::BitWriter<'a, REG>;
+pub type SusPW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Suspend State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SUSSTA_A {
+pub enum Sussta {
     #[doc = "0: Module is not (yet) suspended"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Module is suspended"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<SUSSTA_A> for bool {
+impl From<Sussta> for bool {
     #[inline(always)]
-    fn from(variant: SUSSTA_A) -> Self {
+    fn from(variant: Sussta) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SUSSTA` reader - Suspend State"]
-pub type SUSSTA_R = crate::BitReader<SUSSTA_A>;
-impl SUSSTA_R {
+pub type SusstaR = crate::BitReader<Sussta>;
+impl SusstaR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SUSSTA_A {
+    pub const fn variant(&self) -> Sussta {
         match self.bits {
-            false => SUSSTA_A::VALUE1,
-            true => SUSSTA_A::VALUE2,
+            false => Sussta::Value1,
+            true => Sussta::Value2,
         }
     }
     #[doc = "Module is not (yet) suspended"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SUSSTA_A::VALUE1
+        *self == Sussta::Value1
     }
     #[doc = "Module is suspended"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SUSSTA_A::VALUE2
+        *self == Sussta::Value2
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Trigger Set for OTGB0/1"]
     #[inline(always)]
-    pub fn tgs(&self) -> TGS_R {
-        TGS_R::new((self.bits & 3) as u8)
+    pub fn tgs(&self) -> TgsR {
+        TgsR::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - OTGB0/1 Bus Select"]
     #[inline(always)]
-    pub fn tgb(&self) -> TGB_R {
-        TGB_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn tgb(&self) -> TgbR {
+        TgbR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 24:27 - OCDS Suspend Control"]
     #[inline(always)]
-    pub fn sus(&self) -> SUS_R {
-        SUS_R::new(((self.bits >> 24) & 0x0f) as u8)
+    pub fn sus(&self) -> SusR {
+        SusR::new(((self.bits >> 24) & 0x0f) as u8)
     }
     #[doc = "Bit 29 - Suspend State"]
     #[inline(always)]
-    pub fn sussta(&self) -> SUSSTA_R {
-        SUSSTA_R::new(((self.bits >> 29) & 1) != 0)
+    pub fn sussta(&self) -> SusstaR {
+        SusstaR::new(((self.bits >> 29) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Trigger Set for OTGB0/1"]
     #[inline(always)]
     #[must_use]
-    pub fn tgs(&mut self) -> TGS_W<OCS_SPEC> {
-        TGS_W::new(self, 0)
+    pub fn tgs(&mut self) -> TgsW<OcsSpec> {
+        TgsW::new(self, 0)
     }
     #[doc = "Bit 2 - OTGB0/1 Bus Select"]
     #[inline(always)]
     #[must_use]
-    pub fn tgb(&mut self) -> TGB_W<OCS_SPEC> {
-        TGB_W::new(self, 2)
+    pub fn tgb(&mut self) -> TgbW<OcsSpec> {
+        TgbW::new(self, 2)
     }
     #[doc = "Bit 3 - TGS, TGB Write Protection"]
     #[inline(always)]
     #[must_use]
-    pub fn tg_p(&mut self) -> TG_P_W<OCS_SPEC> {
-        TG_P_W::new(self, 3)
+    pub fn tg_p(&mut self) -> TgPW<OcsSpec> {
+        TgPW::new(self, 3)
     }
     #[doc = "Bits 24:27 - OCDS Suspend Control"]
     #[inline(always)]
     #[must_use]
-    pub fn sus(&mut self) -> SUS_W<OCS_SPEC> {
-        SUS_W::new(self, 24)
+    pub fn sus(&mut self) -> SusW<OcsSpec> {
+        SusW::new(self, 24)
     }
     #[doc = "Bit 28 - SUS Write Protection"]
     #[inline(always)]
     #[must_use]
-    pub fn sus_p(&mut self) -> SUS_P_W<OCS_SPEC> {
-        SUS_P_W::new(self, 28)
+    pub fn sus_p(&mut self) -> SusPW<OcsSpec> {
+        SusPW::new(self, 28)
     }
 }
 #[doc = "OCDS Control and Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ocs::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ocs::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct OCS_SPEC;
-impl crate::RegisterSpec for OCS_SPEC {
+pub struct OcsSpec;
+impl crate::RegisterSpec for OcsSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`ocs::R`](R) reader structure"]
-impl crate::Readable for OCS_SPEC {}
+impl crate::Readable for OcsSpec {}
 #[doc = "`write(|w| ..)` method takes [`ocs::W`](W) writer structure"]
-impl crate::Writable for OCS_SPEC {
+impl crate::Writable for OcsSpec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets OCS to value 0"]
-impl crate::Resettable for OCS_SPEC {
+impl crate::Resettable for OcsSpec {
     const RESET_VALUE: u32 = 0;
 }
