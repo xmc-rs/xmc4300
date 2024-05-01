@@ -1,393 +1,393 @@
 #[doc = "Register `NSR` reader"]
-pub type R = crate::R<NsrSpec>;
+pub type R = crate::R<NSR_SPEC>;
 #[doc = "Register `NSR` writer"]
-pub type W = crate::W<NsrSpec>;
+pub type W = crate::W<NSR_SPEC>;
 #[doc = "Field `LEC` reader - Last Error Code"]
-pub type LecR = crate::FieldReader;
+pub type LEC_R = crate::FieldReader;
 #[doc = "Field `LEC` writer - Last Error Code"]
-pub type LecW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
+pub type LEC_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Message Transmitted Successfully\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Txok {
+pub enum TXOK_A {
     #[doc = "0: No successful transmission since last (most recent) flag reset."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A message has been transmitted successfully (error-free and acknowledged by at least another node)."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Txok> for bool {
+impl From<TXOK_A> for bool {
     #[inline(always)]
-    fn from(variant: Txok) -> Self {
+    fn from(variant: TXOK_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TXOK` reader - Message Transmitted Successfully"]
-pub type TxokR = crate::BitReader<Txok>;
-impl TxokR {
+pub type TXOK_R = crate::BitReader<TXOK_A>;
+impl TXOK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Txok {
+    pub const fn variant(&self) -> TXOK_A {
         match self.bits {
-            false => Txok::Value1,
-            true => Txok::Value2,
+            false => TXOK_A::VALUE1,
+            true => TXOK_A::VALUE2,
         }
     }
     #[doc = "No successful transmission since last (most recent) flag reset."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Txok::Value1
+        *self == TXOK_A::VALUE1
     }
     #[doc = "A message has been transmitted successfully (error-free and acknowledged by at least another node)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Txok::Value2
+        *self == TXOK_A::VALUE2
     }
 }
 #[doc = "Field `TXOK` writer - Message Transmitted Successfully"]
-pub type TxokW<'a, REG> = crate::BitWriter<'a, REG, Txok>;
-impl<'a, REG> TxokW<'a, REG>
+pub type TXOK_W<'a, REG> = crate::BitWriter<'a, REG, TXOK_A>;
+impl<'a, REG> TXOK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No successful transmission since last (most recent) flag reset."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Txok::Value1)
+        self.variant(TXOK_A::VALUE1)
     }
     #[doc = "A message has been transmitted successfully (error-free and acknowledged by at least another node)."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Txok::Value2)
+        self.variant(TXOK_A::VALUE2)
     }
 }
 #[doc = "Message Received Successfully\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rxok {
+pub enum RXOK_A {
     #[doc = "0: No successful reception since last (most recent) flag reset."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A message has been received successfully."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rxok> for bool {
+impl From<RXOK_A> for bool {
     #[inline(always)]
-    fn from(variant: Rxok) -> Self {
+    fn from(variant: RXOK_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RXOK` reader - Message Received Successfully"]
-pub type RxokR = crate::BitReader<Rxok>;
-impl RxokR {
+pub type RXOK_R = crate::BitReader<RXOK_A>;
+impl RXOK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rxok {
+    pub const fn variant(&self) -> RXOK_A {
         match self.bits {
-            false => Rxok::Value1,
-            true => Rxok::Value2,
+            false => RXOK_A::VALUE1,
+            true => RXOK_A::VALUE2,
         }
     }
     #[doc = "No successful reception since last (most recent) flag reset."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rxok::Value1
+        *self == RXOK_A::VALUE1
     }
     #[doc = "A message has been received successfully."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rxok::Value2
+        *self == RXOK_A::VALUE2
     }
 }
 #[doc = "Field `RXOK` writer - Message Received Successfully"]
-pub type RxokW<'a, REG> = crate::BitWriter<'a, REG, Rxok>;
-impl<'a, REG> RxokW<'a, REG>
+pub type RXOK_W<'a, REG> = crate::BitWriter<'a, REG, RXOK_A>;
+impl<'a, REG> RXOK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No successful reception since last (most recent) flag reset."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxok::Value1)
+        self.variant(RXOK_A::VALUE1)
     }
     #[doc = "A message has been received successfully."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rxok::Value2)
+        self.variant(RXOK_A::VALUE2)
     }
 }
 #[doc = "Field `ALERT` reader - Alert Warning"]
-pub type AlertR = crate::BitReader;
+pub type ALERT_R = crate::BitReader;
 #[doc = "Field `ALERT` writer - Alert Warning"]
-pub type AlertW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ALERT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Error Warning Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ewrn {
+pub enum EWRN_A {
     #[doc = "0: No warning limit exceeded."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: One of the error counters REC or TEC reached the warning limit EWRNLVL."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ewrn> for bool {
+impl From<EWRN_A> for bool {
     #[inline(always)]
-    fn from(variant: Ewrn) -> Self {
+    fn from(variant: EWRN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EWRN` reader - Error Warning Status"]
-pub type EwrnR = crate::BitReader<Ewrn>;
-impl EwrnR {
+pub type EWRN_R = crate::BitReader<EWRN_A>;
+impl EWRN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ewrn {
+    pub const fn variant(&self) -> EWRN_A {
         match self.bits {
-            false => Ewrn::Value1,
-            true => Ewrn::Value2,
+            false => EWRN_A::VALUE1,
+            true => EWRN_A::VALUE2,
         }
     }
     #[doc = "No warning limit exceeded."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ewrn::Value1
+        *self == EWRN_A::VALUE1
     }
     #[doc = "One of the error counters REC or TEC reached the warning limit EWRNLVL."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ewrn::Value2
+        *self == EWRN_A::VALUE2
     }
 }
 #[doc = "Bus-off Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Boff {
+pub enum BOFF_A {
     #[doc = "0: CAN controller is not in the bus-off state."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: CAN controller is in the bus-off state."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Boff> for bool {
+impl From<BOFF_A> for bool {
     #[inline(always)]
-    fn from(variant: Boff) -> Self {
+    fn from(variant: BOFF_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BOFF` reader - Bus-off Status"]
-pub type BoffR = crate::BitReader<Boff>;
-impl BoffR {
+pub type BOFF_R = crate::BitReader<BOFF_A>;
+impl BOFF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Boff {
+    pub const fn variant(&self) -> BOFF_A {
         match self.bits {
-            false => Boff::Value1,
-            true => Boff::Value2,
+            false => BOFF_A::VALUE1,
+            true => BOFF_A::VALUE2,
         }
     }
     #[doc = "CAN controller is not in the bus-off state."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Boff::Value1
+        *self == BOFF_A::VALUE1
     }
     #[doc = "CAN controller is in the bus-off state."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Boff::Value2
+        *self == BOFF_A::VALUE2
     }
 }
 #[doc = "List Length Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Lle {
+pub enum LLE_A {
     #[doc = "0: No List Length Error since last (most recent) flag reset."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A List Length Error has been detected during message acceptance filtering. The number of elements in the list that belongs to this CAN node differs from the list SIZE given in the list termination pointer."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Lle> for bool {
+impl From<LLE_A> for bool {
     #[inline(always)]
-    fn from(variant: Lle) -> Self {
+    fn from(variant: LLE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LLE` reader - List Length Error"]
-pub type LleR = crate::BitReader<Lle>;
-impl LleR {
+pub type LLE_R = crate::BitReader<LLE_A>;
+impl LLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Lle {
+    pub const fn variant(&self) -> LLE_A {
         match self.bits {
-            false => Lle::Value1,
-            true => Lle::Value2,
+            false => LLE_A::VALUE1,
+            true => LLE_A::VALUE2,
         }
     }
     #[doc = "No List Length Error since last (most recent) flag reset."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Lle::Value1
+        *self == LLE_A::VALUE1
     }
     #[doc = "A List Length Error has been detected during message acceptance filtering. The number of elements in the list that belongs to this CAN node differs from the list SIZE given in the list termination pointer."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Lle::Value2
+        *self == LLE_A::VALUE2
     }
 }
 #[doc = "Field `LLE` writer - List Length Error"]
-pub type LleW<'a, REG> = crate::BitWriter<'a, REG, Lle>;
-impl<'a, REG> LleW<'a, REG>
+pub type LLE_W<'a, REG> = crate::BitWriter<'a, REG, LLE_A>;
+impl<'a, REG> LLE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No List Length Error since last (most recent) flag reset."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Lle::Value1)
+        self.variant(LLE_A::VALUE1)
     }
     #[doc = "A List Length Error has been detected during message acceptance filtering. The number of elements in the list that belongs to this CAN node differs from the list SIZE given in the list termination pointer."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Lle::Value2)
+        self.variant(LLE_A::VALUE2)
     }
 }
 #[doc = "List Object Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Loe {
+pub enum LOE_A {
     #[doc = "0: No List Object Error since last (most recent) flag reset."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A List Object Error has been detected during message acceptance filtering. A message object with wrong LIST index entry in the Message Object Status Register has been detected."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Loe> for bool {
+impl From<LOE_A> for bool {
     #[inline(always)]
-    fn from(variant: Loe) -> Self {
+    fn from(variant: LOE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LOE` reader - List Object Error"]
-pub type LoeR = crate::BitReader<Loe>;
-impl LoeR {
+pub type LOE_R = crate::BitReader<LOE_A>;
+impl LOE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Loe {
+    pub const fn variant(&self) -> LOE_A {
         match self.bits {
-            false => Loe::Value1,
-            true => Loe::Value2,
+            false => LOE_A::VALUE1,
+            true => LOE_A::VALUE2,
         }
     }
     #[doc = "No List Object Error since last (most recent) flag reset."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Loe::Value1
+        *self == LOE_A::VALUE1
     }
     #[doc = "A List Object Error has been detected during message acceptance filtering. A message object with wrong LIST index entry in the Message Object Status Register has been detected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Loe::Value2
+        *self == LOE_A::VALUE2
     }
 }
 #[doc = "Field `LOE` writer - List Object Error"]
-pub type LoeW<'a, REG> = crate::BitWriter<'a, REG, Loe>;
-impl<'a, REG> LoeW<'a, REG>
+pub type LOE_W<'a, REG> = crate::BitWriter<'a, REG, LOE_A>;
+impl<'a, REG> LOE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No List Object Error since last (most recent) flag reset."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Loe::Value1)
+        self.variant(LOE_A::VALUE1)
     }
     #[doc = "A List Object Error has been detected during message acceptance filtering. A message object with wrong LIST index entry in the Message Object Status Register has been detected."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Loe::Value2)
+        self.variant(LOE_A::VALUE2)
     }
 }
 impl R {
     #[doc = "Bits 0:2 - Last Error Code"]
     #[inline(always)]
-    pub fn lec(&self) -> LecR {
-        LecR::new((self.bits & 7) as u8)
+    pub fn lec(&self) -> LEC_R {
+        LEC_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 3 - Message Transmitted Successfully"]
     #[inline(always)]
-    pub fn txok(&self) -> TxokR {
-        TxokR::new(((self.bits >> 3) & 1) != 0)
+    pub fn txok(&self) -> TXOK_R {
+        TXOK_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Message Received Successfully"]
     #[inline(always)]
-    pub fn rxok(&self) -> RxokR {
-        RxokR::new(((self.bits >> 4) & 1) != 0)
+    pub fn rxok(&self) -> RXOK_R {
+        RXOK_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Alert Warning"]
     #[inline(always)]
-    pub fn alert(&self) -> AlertR {
-        AlertR::new(((self.bits >> 5) & 1) != 0)
+    pub fn alert(&self) -> ALERT_R {
+        ALERT_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Error Warning Status"]
     #[inline(always)]
-    pub fn ewrn(&self) -> EwrnR {
-        EwrnR::new(((self.bits >> 6) & 1) != 0)
+    pub fn ewrn(&self) -> EWRN_R {
+        EWRN_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Bus-off Status"]
     #[inline(always)]
-    pub fn boff(&self) -> BoffR {
-        BoffR::new(((self.bits >> 7) & 1) != 0)
+    pub fn boff(&self) -> BOFF_R {
+        BOFF_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - List Length Error"]
     #[inline(always)]
-    pub fn lle(&self) -> LleR {
-        LleR::new(((self.bits >> 8) & 1) != 0)
+    pub fn lle(&self) -> LLE_R {
+        LLE_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - List Object Error"]
     #[inline(always)]
-    pub fn loe(&self) -> LoeR {
-        LoeR::new(((self.bits >> 9) & 1) != 0)
+    pub fn loe(&self) -> LOE_R {
+        LOE_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Last Error Code"]
     #[inline(always)]
     #[must_use]
-    pub fn lec(&mut self) -> LecW<NsrSpec> {
-        LecW::new(self, 0)
+    pub fn lec(&mut self) -> LEC_W<NSR_SPEC> {
+        LEC_W::new(self, 0)
     }
     #[doc = "Bit 3 - Message Transmitted Successfully"]
     #[inline(always)]
     #[must_use]
-    pub fn txok(&mut self) -> TxokW<NsrSpec> {
-        TxokW::new(self, 3)
+    pub fn txok(&mut self) -> TXOK_W<NSR_SPEC> {
+        TXOK_W::new(self, 3)
     }
     #[doc = "Bit 4 - Message Received Successfully"]
     #[inline(always)]
     #[must_use]
-    pub fn rxok(&mut self) -> RxokW<NsrSpec> {
-        RxokW::new(self, 4)
+    pub fn rxok(&mut self) -> RXOK_W<NSR_SPEC> {
+        RXOK_W::new(self, 4)
     }
     #[doc = "Bit 5 - Alert Warning"]
     #[inline(always)]
     #[must_use]
-    pub fn alert(&mut self) -> AlertW<NsrSpec> {
-        AlertW::new(self, 5)
+    pub fn alert(&mut self) -> ALERT_W<NSR_SPEC> {
+        ALERT_W::new(self, 5)
     }
     #[doc = "Bit 8 - List Length Error"]
     #[inline(always)]
     #[must_use]
-    pub fn lle(&mut self) -> LleW<NsrSpec> {
-        LleW::new(self, 8)
+    pub fn lle(&mut self) -> LLE_W<NSR_SPEC> {
+        LLE_W::new(self, 8)
     }
     #[doc = "Bit 9 - List Object Error"]
     #[inline(always)]
     #[must_use]
-    pub fn loe(&mut self) -> LoeW<NsrSpec> {
-        LoeW::new(self, 9)
+    pub fn loe(&mut self) -> LOE_W<NSR_SPEC> {
+        LOE_W::new(self, 9)
     }
 }
 #[doc = "Node Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`nsr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`nsr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct NsrSpec;
-impl crate::RegisterSpec for NsrSpec {
+pub struct NSR_SPEC;
+impl crate::RegisterSpec for NSR_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`nsr::R`](R) reader structure"]
-impl crate::Readable for NsrSpec {}
+impl crate::Readable for NSR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`nsr::W`](W) writer structure"]
-impl crate::Writable for NsrSpec {
+impl crate::Writable for NSR_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NSR to value 0"]
-impl crate::Resettable for NsrSpec {
+impl crate::Resettable for NSR_SPEC {
     const RESET_VALUE: u32 = 0;
 }

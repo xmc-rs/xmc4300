@@ -1,174 +1,174 @@
 #[doc = "Register `OSCHPCTRL` reader"]
-pub type R = crate::R<OschpctrlSpec>;
+pub type R = crate::R<OSCHPCTRL_SPEC>;
 #[doc = "Register `OSCHPCTRL` writer"]
-pub type W = crate::W<OschpctrlSpec>;
+pub type W = crate::W<OSCHPCTRL_SPEC>;
 #[doc = "XTAL1 Data Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum X1den {
+pub enum X1DEN_A {
     #[doc = "0: Bit X1D is not updated"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Bit X1D can be updated"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<X1den> for bool {
+impl From<X1DEN_A> for bool {
     #[inline(always)]
-    fn from(variant: X1den) -> Self {
+    fn from(variant: X1DEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `X1DEN` reader - XTAL1 Data Enable"]
-pub type X1denR = crate::BitReader<X1den>;
-impl X1denR {
+pub type X1DEN_R = crate::BitReader<X1DEN_A>;
+impl X1DEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> X1den {
+    pub const fn variant(&self) -> X1DEN_A {
         match self.bits {
-            false => X1den::Const0,
-            true => X1den::Const1,
+            false => X1DEN_A::CONST_0,
+            true => X1DEN_A::CONST_1,
         }
     }
     #[doc = "Bit X1D is not updated"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == X1den::Const0
+        *self == X1DEN_A::CONST_0
     }
     #[doc = "Bit X1D can be updated"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == X1den::Const1
+        *self == X1DEN_A::CONST_1
     }
 }
 #[doc = "Field `X1DEN` writer - XTAL1 Data Enable"]
-pub type X1denW<'a, REG> = crate::BitWriter<'a, REG, X1den>;
-impl<'a, REG> X1denW<'a, REG>
+pub type X1DEN_W<'a, REG> = crate::BitWriter<'a, REG, X1DEN_A>;
+impl<'a, REG> X1DEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Bit X1D is not updated"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(X1den::Const0)
+        self.variant(X1DEN_A::CONST_0)
     }
     #[doc = "Bit X1D can be updated"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(X1den::Const1)
+        self.variant(X1DEN_A::CONST_1)
     }
 }
 #[doc = "Shaper Bypass\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Shby {
+pub enum SHBY_A {
     #[doc = "0: The shaper is not bypassed"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: The shaper is bypassed"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Shby> for bool {
+impl From<SHBY_A> for bool {
     #[inline(always)]
-    fn from(variant: Shby) -> Self {
+    fn from(variant: SHBY_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SHBY` reader - Shaper Bypass"]
-pub type ShbyR = crate::BitReader<Shby>;
-impl ShbyR {
+pub type SHBY_R = crate::BitReader<SHBY_A>;
+impl SHBY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Shby {
+    pub const fn variant(&self) -> SHBY_A {
         match self.bits {
-            false => Shby::Const0,
-            true => Shby::Const1,
+            false => SHBY_A::CONST_0,
+            true => SHBY_A::CONST_1,
         }
     }
     #[doc = "The shaper is not bypassed"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == Shby::Const0
+        *self == SHBY_A::CONST_0
     }
     #[doc = "The shaper is bypassed"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == Shby::Const1
+        *self == SHBY_A::CONST_1
     }
 }
 #[doc = "Field `SHBY` writer - Shaper Bypass"]
-pub type ShbyW<'a, REG> = crate::BitWriter<'a, REG, Shby>;
-impl<'a, REG> ShbyW<'a, REG>
+pub type SHBY_W<'a, REG> = crate::BitWriter<'a, REG, SHBY_A>;
+impl<'a, REG> SHBY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The shaper is not bypassed"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut crate::W<REG> {
-        self.variant(Shby::Const0)
+        self.variant(SHBY_A::CONST_0)
     }
     #[doc = "The shaper is bypassed"]
     #[inline(always)]
     pub fn const_1(self) -> &'a mut crate::W<REG> {
-        self.variant(Shby::Const1)
+        self.variant(SHBY_A::CONST_1)
     }
 }
 #[doc = "Oscillator Gain Selection\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Gainsel {
+pub enum GAINSEL_A {
     #[doc = "0: The gain control is configured for frequencies from 4 MHz to 8 MHz"]
-    Const00 = 0,
+    CONST_00 = 0,
     #[doc = "1: The gain control is configured for frequencies from 4 MHz to 16 MHz"]
-    Const01 = 1,
+    CONST_01 = 1,
     #[doc = "2: The gain control is configured for frequencies from 4 MHz to 20 MHz"]
-    Const10 = 2,
+    CONST_10 = 2,
     #[doc = "3: The gain control is configured for frequencies from 4 MHz to 25 MHz"]
-    Const11 = 3,
+    CONST_11 = 3,
 }
-impl From<Gainsel> for u8 {
+impl From<GAINSEL_A> for u8 {
     #[inline(always)]
-    fn from(variant: Gainsel) -> Self {
+    fn from(variant: GAINSEL_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Gainsel {
+impl crate::FieldSpec for GAINSEL_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Gainsel {}
+impl crate::IsEnum for GAINSEL_A {}
 #[doc = "Field `GAINSEL` reader - Oscillator Gain Selection"]
-pub type GainselR = crate::FieldReader<Gainsel>;
-impl GainselR {
+pub type GAINSEL_R = crate::FieldReader<GAINSEL_A>;
+impl GAINSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Gainsel {
+    pub const fn variant(&self) -> GAINSEL_A {
         match self.bits {
-            0 => Gainsel::Const00,
-            1 => Gainsel::Const01,
-            2 => Gainsel::Const10,
-            3 => Gainsel::Const11,
+            0 => GAINSEL_A::CONST_00,
+            1 => GAINSEL_A::CONST_01,
+            2 => GAINSEL_A::CONST_10,
+            3 => GAINSEL_A::CONST_11,
             _ => unreachable!(),
         }
     }
     #[doc = "The gain control is configured for frequencies from 4 MHz to 8 MHz"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        *self == Gainsel::Const00
+        *self == GAINSEL_A::CONST_00
     }
     #[doc = "The gain control is configured for frequencies from 4 MHz to 16 MHz"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        *self == Gainsel::Const01
+        *self == GAINSEL_A::CONST_01
     }
     #[doc = "The gain control is configured for frequencies from 4 MHz to 20 MHz"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        *self == Gainsel::Const10
+        *self == GAINSEL_A::CONST_10
     }
     #[doc = "The gain control is configured for frequencies from 4 MHz to 25 MHz"]
     #[inline(always)]
     pub fn is_const_11(&self) -> bool {
-        *self == Gainsel::Const11
+        *self == GAINSEL_A::CONST_11
     }
 }
 #[doc = "Field `GAINSEL` writer - Oscillator Gain Selection"]
-pub type GainselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Gainsel, crate::Safe>;
-impl<'a, REG> GainselW<'a, REG>
+pub type GAINSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, GAINSEL_A, crate::Safe>;
+impl<'a, REG> GAINSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -176,85 +176,85 @@ where
     #[doc = "The gain control is configured for frequencies from 4 MHz to 8 MHz"]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut crate::W<REG> {
-        self.variant(Gainsel::Const00)
+        self.variant(GAINSEL_A::CONST_00)
     }
     #[doc = "The gain control is configured for frequencies from 4 MHz to 16 MHz"]
     #[inline(always)]
     pub fn const_01(self) -> &'a mut crate::W<REG> {
-        self.variant(Gainsel::Const01)
+        self.variant(GAINSEL_A::CONST_01)
     }
     #[doc = "The gain control is configured for frequencies from 4 MHz to 20 MHz"]
     #[inline(always)]
     pub fn const_10(self) -> &'a mut crate::W<REG> {
-        self.variant(Gainsel::Const10)
+        self.variant(GAINSEL_A::CONST_10)
     }
     #[doc = "The gain control is configured for frequencies from 4 MHz to 25 MHz"]
     #[inline(always)]
     pub fn const_11(self) -> &'a mut crate::W<REG> {
-        self.variant(Gainsel::Const11)
+        self.variant(GAINSEL_A::CONST_11)
     }
 }
 #[doc = "Oscillator Mode\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Mode {
+pub enum MODE_A {
     #[doc = "0: External Crystal Mode and External Input Clock Mode. The oscillator Power-Saving Mode is not entered."]
-    Const00 = 0,
+    CONST_00 = 0,
     #[doc = "1: OSC is disabled. The oscillator Power-Saving Mode is not entered."]
-    Const01 = 1,
+    CONST_01 = 1,
     #[doc = "2: External Input Clock Mode and the oscillator Power-Saving Mode is entered"]
-    Const10 = 2,
+    CONST_10 = 2,
     #[doc = "3: OSC is disabled. The oscillator Power-Saving Mode is entered."]
-    Const11 = 3,
+    CONST_11 = 3,
 }
-impl From<Mode> for u8 {
+impl From<MODE_A> for u8 {
     #[inline(always)]
-    fn from(variant: Mode) -> Self {
+    fn from(variant: MODE_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Mode {
+impl crate::FieldSpec for MODE_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Mode {}
+impl crate::IsEnum for MODE_A {}
 #[doc = "Field `MODE` reader - Oscillator Mode"]
-pub type ModeR = crate::FieldReader<Mode>;
-impl ModeR {
+pub type MODE_R = crate::FieldReader<MODE_A>;
+impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Mode {
+    pub const fn variant(&self) -> MODE_A {
         match self.bits {
-            0 => Mode::Const00,
-            1 => Mode::Const01,
-            2 => Mode::Const10,
-            3 => Mode::Const11,
+            0 => MODE_A::CONST_00,
+            1 => MODE_A::CONST_01,
+            2 => MODE_A::CONST_10,
+            3 => MODE_A::CONST_11,
             _ => unreachable!(),
         }
     }
     #[doc = "External Crystal Mode and External Input Clock Mode. The oscillator Power-Saving Mode is not entered."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        *self == Mode::Const00
+        *self == MODE_A::CONST_00
     }
     #[doc = "OSC is disabled. The oscillator Power-Saving Mode is not entered."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        *self == Mode::Const01
+        *self == MODE_A::CONST_01
     }
     #[doc = "External Input Clock Mode and the oscillator Power-Saving Mode is entered"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        *self == Mode::Const10
+        *self == MODE_A::CONST_10
     }
     #[doc = "OSC is disabled. The oscillator Power-Saving Mode is entered."]
     #[inline(always)]
     pub fn is_const_11(&self) -> bool {
-        *self == Mode::Const11
+        *self == MODE_A::CONST_11
     }
 }
 #[doc = "Field `MODE` writer - Oscillator Mode"]
-pub type ModeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Mode, crate::Safe>;
-impl<'a, REG> ModeW<'a, REG>
+pub type MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, MODE_A, crate::Safe>;
+impl<'a, REG> MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -262,101 +262,101 @@ where
     #[doc = "External Crystal Mode and External Input Clock Mode. The oscillator Power-Saving Mode is not entered."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut crate::W<REG> {
-        self.variant(Mode::Const00)
+        self.variant(MODE_A::CONST_00)
     }
     #[doc = "OSC is disabled. The oscillator Power-Saving Mode is not entered."]
     #[inline(always)]
     pub fn const_01(self) -> &'a mut crate::W<REG> {
-        self.variant(Mode::Const01)
+        self.variant(MODE_A::CONST_01)
     }
     #[doc = "External Input Clock Mode and the oscillator Power-Saving Mode is entered"]
     #[inline(always)]
     pub fn const_10(self) -> &'a mut crate::W<REG> {
-        self.variant(Mode::Const10)
+        self.variant(MODE_A::CONST_10)
     }
     #[doc = "OSC is disabled. The oscillator Power-Saving Mode is entered."]
     #[inline(always)]
     pub fn const_11(self) -> &'a mut crate::W<REG> {
-        self.variant(Mode::Const11)
+        self.variant(MODE_A::CONST_11)
     }
 }
 #[doc = "Field `OSCVAL` reader - OSC Frequency Value"]
-pub type OscvalR = crate::FieldReader;
+pub type OSCVAL_R = crate::FieldReader;
 #[doc = "Field `OSCVAL` writer - OSC Frequency Value"]
-pub type OscvalW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type OSCVAL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bit 0 - XTAL1 Data Enable"]
     #[inline(always)]
-    pub fn x1den(&self) -> X1denR {
-        X1denR::new((self.bits & 1) != 0)
+    pub fn x1den(&self) -> X1DEN_R {
+        X1DEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Shaper Bypass"]
     #[inline(always)]
-    pub fn shby(&self) -> ShbyR {
-        ShbyR::new(((self.bits >> 1) & 1) != 0)
+    pub fn shby(&self) -> SHBY_R {
+        SHBY_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:3 - Oscillator Gain Selection"]
     #[inline(always)]
-    pub fn gainsel(&self) -> GainselR {
-        GainselR::new(((self.bits >> 2) & 3) as u8)
+    pub fn gainsel(&self) -> GAINSEL_R {
+        GAINSEL_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
     #[inline(always)]
-    pub fn mode(&self) -> ModeR {
-        ModeR::new(((self.bits >> 4) & 3) as u8)
+    pub fn mode(&self) -> MODE_R {
+        MODE_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 16:19 - OSC Frequency Value"]
     #[inline(always)]
-    pub fn oscval(&self) -> OscvalR {
-        OscvalR::new(((self.bits >> 16) & 0x0f) as u8)
+    pub fn oscval(&self) -> OSCVAL_R {
+        OSCVAL_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - XTAL1 Data Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn x1den(&mut self) -> X1denW<OschpctrlSpec> {
-        X1denW::new(self, 0)
+    pub fn x1den(&mut self) -> X1DEN_W<OSCHPCTRL_SPEC> {
+        X1DEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Shaper Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn shby(&mut self) -> ShbyW<OschpctrlSpec> {
-        ShbyW::new(self, 1)
+    pub fn shby(&mut self) -> SHBY_W<OSCHPCTRL_SPEC> {
+        SHBY_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - Oscillator Gain Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn gainsel(&mut self) -> GainselW<OschpctrlSpec> {
-        GainselW::new(self, 2)
+    pub fn gainsel(&mut self) -> GAINSEL_W<OSCHPCTRL_SPEC> {
+        GAINSEL_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> ModeW<OschpctrlSpec> {
-        ModeW::new(self, 4)
+    pub fn mode(&mut self) -> MODE_W<OSCHPCTRL_SPEC> {
+        MODE_W::new(self, 4)
     }
     #[doc = "Bits 16:19 - OSC Frequency Value"]
     #[inline(always)]
     #[must_use]
-    pub fn oscval(&mut self) -> OscvalW<OschpctrlSpec> {
-        OscvalW::new(self, 16)
+    pub fn oscval(&mut self) -> OSCVAL_W<OSCHPCTRL_SPEC> {
+        OSCVAL_W::new(self, 16)
     }
 }
 #[doc = "OSC_HP Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`oschpctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`oschpctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct OschpctrlSpec;
-impl crate::RegisterSpec for OschpctrlSpec {
+pub struct OSCHPCTRL_SPEC;
+impl crate::RegisterSpec for OSCHPCTRL_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`oschpctrl::R`](R) reader structure"]
-impl crate::Readable for OschpctrlSpec {}
+impl crate::Readable for OSCHPCTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`oschpctrl::W`](W) writer structure"]
-impl crate::Writable for OschpctrlSpec {
+impl crate::Writable for OSCHPCTRL_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets OSCHPCTRL to value 0x3c"]
-impl crate::Resettable for OschpctrlSpec {
+impl crate::Resettable for OSCHPCTRL_SPEC {
     const RESET_VALUE: u32 = 0x3c;
 }

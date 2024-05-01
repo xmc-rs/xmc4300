@@ -1,40 +1,40 @@
 #[doc = "Register `VTOR` reader"]
-pub type R = crate::R<VtorSpec>;
+pub type R = crate::R<VTOR_SPEC>;
 #[doc = "Register `VTOR` writer"]
-pub type W = crate::W<VtorSpec>;
+pub type W = crate::W<VTOR_SPEC>;
 #[doc = "Field `TBLOFF` reader - Vector table base offset field"]
-pub type TbloffR = crate::FieldReader<u32>;
+pub type TBLOFF_R = crate::FieldReader<u32>;
 #[doc = "Field `TBLOFF` writer - Vector table base offset field"]
-pub type TbloffW<'a, REG> = crate::FieldWriter<'a, REG, 22, u32>;
+pub type TBLOFF_W<'a, REG> = crate::FieldWriter<'a, REG, 22, u32>;
 impl R {
     #[doc = "Bits 10:31 - Vector table base offset field"]
     #[inline(always)]
-    pub fn tbloff(&self) -> TbloffR {
-        TbloffR::new((self.bits >> 10) & 0x003f_ffff)
+    pub fn tbloff(&self) -> TBLOFF_R {
+        TBLOFF_R::new((self.bits >> 10) & 0x003f_ffff)
     }
 }
 impl W {
     #[doc = "Bits 10:31 - Vector table base offset field"]
     #[inline(always)]
     #[must_use]
-    pub fn tbloff(&mut self) -> TbloffW<VtorSpec> {
-        TbloffW::new(self, 10)
+    pub fn tbloff(&mut self) -> TBLOFF_W<VTOR_SPEC> {
+        TBLOFF_W::new(self, 10)
     }
 }
 #[doc = "Vector Table Offset Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`vtor::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`vtor::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct VtorSpec;
-impl crate::RegisterSpec for VtorSpec {
+pub struct VTOR_SPEC;
+impl crate::RegisterSpec for VTOR_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`vtor::R`](R) reader structure"]
-impl crate::Readable for VtorSpec {}
+impl crate::Readable for VTOR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`vtor::W`](W) writer structure"]
-impl crate::Writable for VtorSpec {
+impl crate::Writable for VTOR_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets VTOR to value 0"]
-impl crate::Resettable for VtorSpec {
+impl crate::Resettable for VTOR_SPEC {
     const RESET_VALUE: u32 = 0;
 }

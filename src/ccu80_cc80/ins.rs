@@ -1,164 +1,164 @@
 #[doc = "Register `INS` reader"]
-pub type R = crate::R<InsSpec>;
+pub type R = crate::R<INS_SPEC>;
 #[doc = "Register `INS` writer"]
-pub type W = crate::W<InsSpec>;
+pub type W = crate::W<INS_SPEC>;
 #[doc = "Event 0 signal selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Ev0is {
+pub enum EV0IS_A {
     #[doc = "0: CCU8x.INyA"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: CCU8x.INyB"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: CCU8x.INyC"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: CCU8x.INyD"]
-    Value4 = 3,
+    VALUE4 = 3,
     #[doc = "4: CCU8x.INyE"]
-    Value5 = 4,
+    VALUE5 = 4,
     #[doc = "5: CCU8x.INyF"]
-    Value6 = 5,
+    VALUE6 = 5,
     #[doc = "6: CCU8x.INyG"]
-    Value7 = 6,
+    VALUE7 = 6,
     #[doc = "7: CCU8x.INyH"]
-    Value8 = 7,
+    VALUE8 = 7,
     #[doc = "8: CCU8x.INyI"]
-    Value9 = 8,
+    VALUE9 = 8,
     #[doc = "9: CCU8x.INyJ"]
-    Value10 = 9,
+    VALUE10 = 9,
     #[doc = "10: CCU8x.INyK"]
-    Value11 = 10,
+    VALUE11 = 10,
     #[doc = "11: CCU8x.INyL"]
-    Value12 = 11,
+    VALUE12 = 11,
     #[doc = "12: CCU8x.INyM"]
-    Value13 = 12,
+    VALUE13 = 12,
     #[doc = "13: CCU8x.INyN"]
-    Value14 = 13,
+    VALUE14 = 13,
     #[doc = "14: CCU8x.INyO"]
-    Value15 = 14,
+    VALUE15 = 14,
     #[doc = "15: CCU8x.INyP"]
-    Value16 = 15,
+    VALUE16 = 15,
 }
-impl From<Ev0is> for u8 {
+impl From<EV0IS_A> for u8 {
     #[inline(always)]
-    fn from(variant: Ev0is) -> Self {
+    fn from(variant: EV0IS_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Ev0is {
+impl crate::FieldSpec for EV0IS_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Ev0is {}
+impl crate::IsEnum for EV0IS_A {}
 #[doc = "Field `EV0IS` reader - Event 0 signal selection"]
-pub type Ev0isR = crate::FieldReader<Ev0is>;
-impl Ev0isR {
+pub type EV0IS_R = crate::FieldReader<EV0IS_A>;
+impl EV0IS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ev0is {
+    pub const fn variant(&self) -> EV0IS_A {
         match self.bits {
-            0 => Ev0is::Value1,
-            1 => Ev0is::Value2,
-            2 => Ev0is::Value3,
-            3 => Ev0is::Value4,
-            4 => Ev0is::Value5,
-            5 => Ev0is::Value6,
-            6 => Ev0is::Value7,
-            7 => Ev0is::Value8,
-            8 => Ev0is::Value9,
-            9 => Ev0is::Value10,
-            10 => Ev0is::Value11,
-            11 => Ev0is::Value12,
-            12 => Ev0is::Value13,
-            13 => Ev0is::Value14,
-            14 => Ev0is::Value15,
-            15 => Ev0is::Value16,
+            0 => EV0IS_A::VALUE1,
+            1 => EV0IS_A::VALUE2,
+            2 => EV0IS_A::VALUE3,
+            3 => EV0IS_A::VALUE4,
+            4 => EV0IS_A::VALUE5,
+            5 => EV0IS_A::VALUE6,
+            6 => EV0IS_A::VALUE7,
+            7 => EV0IS_A::VALUE8,
+            8 => EV0IS_A::VALUE9,
+            9 => EV0IS_A::VALUE10,
+            10 => EV0IS_A::VALUE11,
+            11 => EV0IS_A::VALUE12,
+            12 => EV0IS_A::VALUE13,
+            13 => EV0IS_A::VALUE14,
+            14 => EV0IS_A::VALUE15,
+            15 => EV0IS_A::VALUE16,
             _ => unreachable!(),
         }
     }
     #[doc = "CCU8x.INyA"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ev0is::Value1
+        *self == EV0IS_A::VALUE1
     }
     #[doc = "CCU8x.INyB"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ev0is::Value2
+        *self == EV0IS_A::VALUE2
     }
     #[doc = "CCU8x.INyC"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Ev0is::Value3
+        *self == EV0IS_A::VALUE3
     }
     #[doc = "CCU8x.INyD"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Ev0is::Value4
+        *self == EV0IS_A::VALUE4
     }
     #[doc = "CCU8x.INyE"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == Ev0is::Value5
+        *self == EV0IS_A::VALUE5
     }
     #[doc = "CCU8x.INyF"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == Ev0is::Value6
+        *self == EV0IS_A::VALUE6
     }
     #[doc = "CCU8x.INyG"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == Ev0is::Value7
+        *self == EV0IS_A::VALUE7
     }
     #[doc = "CCU8x.INyH"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        *self == Ev0is::Value8
+        *self == EV0IS_A::VALUE8
     }
     #[doc = "CCU8x.INyI"]
     #[inline(always)]
     pub fn is_value9(&self) -> bool {
-        *self == Ev0is::Value9
+        *self == EV0IS_A::VALUE9
     }
     #[doc = "CCU8x.INyJ"]
     #[inline(always)]
     pub fn is_value10(&self) -> bool {
-        *self == Ev0is::Value10
+        *self == EV0IS_A::VALUE10
     }
     #[doc = "CCU8x.INyK"]
     #[inline(always)]
     pub fn is_value11(&self) -> bool {
-        *self == Ev0is::Value11
+        *self == EV0IS_A::VALUE11
     }
     #[doc = "CCU8x.INyL"]
     #[inline(always)]
     pub fn is_value12(&self) -> bool {
-        *self == Ev0is::Value12
+        *self == EV0IS_A::VALUE12
     }
     #[doc = "CCU8x.INyM"]
     #[inline(always)]
     pub fn is_value13(&self) -> bool {
-        *self == Ev0is::Value13
+        *self == EV0IS_A::VALUE13
     }
     #[doc = "CCU8x.INyN"]
     #[inline(always)]
     pub fn is_value14(&self) -> bool {
-        *self == Ev0is::Value14
+        *self == EV0IS_A::VALUE14
     }
     #[doc = "CCU8x.INyO"]
     #[inline(always)]
     pub fn is_value15(&self) -> bool {
-        *self == Ev0is::Value15
+        *self == EV0IS_A::VALUE15
     }
     #[doc = "CCU8x.INyP"]
     #[inline(always)]
     pub fn is_value16(&self) -> bool {
-        *self == Ev0is::Value16
+        *self == EV0IS_A::VALUE16
     }
 }
 #[doc = "Field `EV0IS` writer - Event 0 signal selection"]
-pub type Ev0isW<'a, REG> = crate::FieldWriter<'a, REG, 4, Ev0is, crate::Safe>;
-impl<'a, REG> Ev0isW<'a, REG>
+pub type EV0IS_W<'a, REG> = crate::FieldWriter<'a, REG, 4, EV0IS_A, crate::Safe>;
+impl<'a, REG> EV0IS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -166,241 +166,241 @@ where
     #[doc = "CCU8x.INyA"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value1)
+        self.variant(EV0IS_A::VALUE1)
     }
     #[doc = "CCU8x.INyB"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value2)
+        self.variant(EV0IS_A::VALUE2)
     }
     #[doc = "CCU8x.INyC"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value3)
+        self.variant(EV0IS_A::VALUE3)
     }
     #[doc = "CCU8x.INyD"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value4)
+        self.variant(EV0IS_A::VALUE4)
     }
     #[doc = "CCU8x.INyE"]
     #[inline(always)]
     pub fn value5(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value5)
+        self.variant(EV0IS_A::VALUE5)
     }
     #[doc = "CCU8x.INyF"]
     #[inline(always)]
     pub fn value6(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value6)
+        self.variant(EV0IS_A::VALUE6)
     }
     #[doc = "CCU8x.INyG"]
     #[inline(always)]
     pub fn value7(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value7)
+        self.variant(EV0IS_A::VALUE7)
     }
     #[doc = "CCU8x.INyH"]
     #[inline(always)]
     pub fn value8(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value8)
+        self.variant(EV0IS_A::VALUE8)
     }
     #[doc = "CCU8x.INyI"]
     #[inline(always)]
     pub fn value9(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value9)
+        self.variant(EV0IS_A::VALUE9)
     }
     #[doc = "CCU8x.INyJ"]
     #[inline(always)]
     pub fn value10(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value10)
+        self.variant(EV0IS_A::VALUE10)
     }
     #[doc = "CCU8x.INyK"]
     #[inline(always)]
     pub fn value11(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value11)
+        self.variant(EV0IS_A::VALUE11)
     }
     #[doc = "CCU8x.INyL"]
     #[inline(always)]
     pub fn value12(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value12)
+        self.variant(EV0IS_A::VALUE12)
     }
     #[doc = "CCU8x.INyM"]
     #[inline(always)]
     pub fn value13(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value13)
+        self.variant(EV0IS_A::VALUE13)
     }
     #[doc = "CCU8x.INyN"]
     #[inline(always)]
     pub fn value14(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value14)
+        self.variant(EV0IS_A::VALUE14)
     }
     #[doc = "CCU8x.INyO"]
     #[inline(always)]
     pub fn value15(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value15)
+        self.variant(EV0IS_A::VALUE15)
     }
     #[doc = "CCU8x.INyP"]
     #[inline(always)]
     pub fn value16(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0is::Value16)
+        self.variant(EV0IS_A::VALUE16)
     }
 }
 #[doc = "Event 1 signal selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Ev1is {
+pub enum EV1IS_A {
     #[doc = "0: CCU8x.INyA"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: CCU8x.INyB"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: CCU8x.INyC"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: CCU8x.INyD"]
-    Value4 = 3,
+    VALUE4 = 3,
     #[doc = "4: CCU8x.INyE"]
-    Value5 = 4,
+    VALUE5 = 4,
     #[doc = "5: CCU8x.INyF"]
-    Value6 = 5,
+    VALUE6 = 5,
     #[doc = "6: CCU8x.INyG"]
-    Value7 = 6,
+    VALUE7 = 6,
     #[doc = "7: CCU8x.INyH"]
-    Value8 = 7,
+    VALUE8 = 7,
     #[doc = "8: CCU8x.INyI"]
-    Value9 = 8,
+    VALUE9 = 8,
     #[doc = "9: CCU8x.INyJ"]
-    Value10 = 9,
+    VALUE10 = 9,
     #[doc = "10: CCU8x.INyK"]
-    Value11 = 10,
+    VALUE11 = 10,
     #[doc = "11: CCU8x.INyL"]
-    Value12 = 11,
+    VALUE12 = 11,
     #[doc = "12: CCU8x.INyM"]
-    Value13 = 12,
+    VALUE13 = 12,
     #[doc = "13: CCU8x.INyN"]
-    Value14 = 13,
+    VALUE14 = 13,
     #[doc = "14: CCU8x.INyO"]
-    Value15 = 14,
+    VALUE15 = 14,
     #[doc = "15: CCU8x.INyP"]
-    Value16 = 15,
+    VALUE16 = 15,
 }
-impl From<Ev1is> for u8 {
+impl From<EV1IS_A> for u8 {
     #[inline(always)]
-    fn from(variant: Ev1is) -> Self {
+    fn from(variant: EV1IS_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Ev1is {
+impl crate::FieldSpec for EV1IS_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Ev1is {}
+impl crate::IsEnum for EV1IS_A {}
 #[doc = "Field `EV1IS` reader - Event 1 signal selection"]
-pub type Ev1isR = crate::FieldReader<Ev1is>;
-impl Ev1isR {
+pub type EV1IS_R = crate::FieldReader<EV1IS_A>;
+impl EV1IS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ev1is {
+    pub const fn variant(&self) -> EV1IS_A {
         match self.bits {
-            0 => Ev1is::Value1,
-            1 => Ev1is::Value2,
-            2 => Ev1is::Value3,
-            3 => Ev1is::Value4,
-            4 => Ev1is::Value5,
-            5 => Ev1is::Value6,
-            6 => Ev1is::Value7,
-            7 => Ev1is::Value8,
-            8 => Ev1is::Value9,
-            9 => Ev1is::Value10,
-            10 => Ev1is::Value11,
-            11 => Ev1is::Value12,
-            12 => Ev1is::Value13,
-            13 => Ev1is::Value14,
-            14 => Ev1is::Value15,
-            15 => Ev1is::Value16,
+            0 => EV1IS_A::VALUE1,
+            1 => EV1IS_A::VALUE2,
+            2 => EV1IS_A::VALUE3,
+            3 => EV1IS_A::VALUE4,
+            4 => EV1IS_A::VALUE5,
+            5 => EV1IS_A::VALUE6,
+            6 => EV1IS_A::VALUE7,
+            7 => EV1IS_A::VALUE8,
+            8 => EV1IS_A::VALUE9,
+            9 => EV1IS_A::VALUE10,
+            10 => EV1IS_A::VALUE11,
+            11 => EV1IS_A::VALUE12,
+            12 => EV1IS_A::VALUE13,
+            13 => EV1IS_A::VALUE14,
+            14 => EV1IS_A::VALUE15,
+            15 => EV1IS_A::VALUE16,
             _ => unreachable!(),
         }
     }
     #[doc = "CCU8x.INyA"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ev1is::Value1
+        *self == EV1IS_A::VALUE1
     }
     #[doc = "CCU8x.INyB"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ev1is::Value2
+        *self == EV1IS_A::VALUE2
     }
     #[doc = "CCU8x.INyC"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Ev1is::Value3
+        *self == EV1IS_A::VALUE3
     }
     #[doc = "CCU8x.INyD"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Ev1is::Value4
+        *self == EV1IS_A::VALUE4
     }
     #[doc = "CCU8x.INyE"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == Ev1is::Value5
+        *self == EV1IS_A::VALUE5
     }
     #[doc = "CCU8x.INyF"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == Ev1is::Value6
+        *self == EV1IS_A::VALUE6
     }
     #[doc = "CCU8x.INyG"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == Ev1is::Value7
+        *self == EV1IS_A::VALUE7
     }
     #[doc = "CCU8x.INyH"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        *self == Ev1is::Value8
+        *self == EV1IS_A::VALUE8
     }
     #[doc = "CCU8x.INyI"]
     #[inline(always)]
     pub fn is_value9(&self) -> bool {
-        *self == Ev1is::Value9
+        *self == EV1IS_A::VALUE9
     }
     #[doc = "CCU8x.INyJ"]
     #[inline(always)]
     pub fn is_value10(&self) -> bool {
-        *self == Ev1is::Value10
+        *self == EV1IS_A::VALUE10
     }
     #[doc = "CCU8x.INyK"]
     #[inline(always)]
     pub fn is_value11(&self) -> bool {
-        *self == Ev1is::Value11
+        *self == EV1IS_A::VALUE11
     }
     #[doc = "CCU8x.INyL"]
     #[inline(always)]
     pub fn is_value12(&self) -> bool {
-        *self == Ev1is::Value12
+        *self == EV1IS_A::VALUE12
     }
     #[doc = "CCU8x.INyM"]
     #[inline(always)]
     pub fn is_value13(&self) -> bool {
-        *self == Ev1is::Value13
+        *self == EV1IS_A::VALUE13
     }
     #[doc = "CCU8x.INyN"]
     #[inline(always)]
     pub fn is_value14(&self) -> bool {
-        *self == Ev1is::Value14
+        *self == EV1IS_A::VALUE14
     }
     #[doc = "CCU8x.INyO"]
     #[inline(always)]
     pub fn is_value15(&self) -> bool {
-        *self == Ev1is::Value15
+        *self == EV1IS_A::VALUE15
     }
     #[doc = "CCU8x.INyP"]
     #[inline(always)]
     pub fn is_value16(&self) -> bool {
-        *self == Ev1is::Value16
+        *self == EV1IS_A::VALUE16
     }
 }
 #[doc = "Field `EV1IS` writer - Event 1 signal selection"]
-pub type Ev1isW<'a, REG> = crate::FieldWriter<'a, REG, 4, Ev1is, crate::Safe>;
-impl<'a, REG> Ev1isW<'a, REG>
+pub type EV1IS_W<'a, REG> = crate::FieldWriter<'a, REG, 4, EV1IS_A, crate::Safe>;
+impl<'a, REG> EV1IS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -408,241 +408,241 @@ where
     #[doc = "CCU8x.INyA"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value1)
+        self.variant(EV1IS_A::VALUE1)
     }
     #[doc = "CCU8x.INyB"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value2)
+        self.variant(EV1IS_A::VALUE2)
     }
     #[doc = "CCU8x.INyC"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value3)
+        self.variant(EV1IS_A::VALUE3)
     }
     #[doc = "CCU8x.INyD"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value4)
+        self.variant(EV1IS_A::VALUE4)
     }
     #[doc = "CCU8x.INyE"]
     #[inline(always)]
     pub fn value5(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value5)
+        self.variant(EV1IS_A::VALUE5)
     }
     #[doc = "CCU8x.INyF"]
     #[inline(always)]
     pub fn value6(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value6)
+        self.variant(EV1IS_A::VALUE6)
     }
     #[doc = "CCU8x.INyG"]
     #[inline(always)]
     pub fn value7(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value7)
+        self.variant(EV1IS_A::VALUE7)
     }
     #[doc = "CCU8x.INyH"]
     #[inline(always)]
     pub fn value8(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value8)
+        self.variant(EV1IS_A::VALUE8)
     }
     #[doc = "CCU8x.INyI"]
     #[inline(always)]
     pub fn value9(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value9)
+        self.variant(EV1IS_A::VALUE9)
     }
     #[doc = "CCU8x.INyJ"]
     #[inline(always)]
     pub fn value10(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value10)
+        self.variant(EV1IS_A::VALUE10)
     }
     #[doc = "CCU8x.INyK"]
     #[inline(always)]
     pub fn value11(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value11)
+        self.variant(EV1IS_A::VALUE11)
     }
     #[doc = "CCU8x.INyL"]
     #[inline(always)]
     pub fn value12(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value12)
+        self.variant(EV1IS_A::VALUE12)
     }
     #[doc = "CCU8x.INyM"]
     #[inline(always)]
     pub fn value13(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value13)
+        self.variant(EV1IS_A::VALUE13)
     }
     #[doc = "CCU8x.INyN"]
     #[inline(always)]
     pub fn value14(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value14)
+        self.variant(EV1IS_A::VALUE14)
     }
     #[doc = "CCU8x.INyO"]
     #[inline(always)]
     pub fn value15(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value15)
+        self.variant(EV1IS_A::VALUE15)
     }
     #[doc = "CCU8x.INyP"]
     #[inline(always)]
     pub fn value16(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1is::Value16)
+        self.variant(EV1IS_A::VALUE16)
     }
 }
 #[doc = "Event 2 signal selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Ev2is {
+pub enum EV2IS_A {
     #[doc = "0: CCU8x.INyA"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: CCU8x.INyB"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: CCU8x.INyC"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: CCU8x.INyD"]
-    Value4 = 3,
+    VALUE4 = 3,
     #[doc = "4: CCU8x.INyE"]
-    Value5 = 4,
+    VALUE5 = 4,
     #[doc = "5: CCU8x.INyF"]
-    Value6 = 5,
+    VALUE6 = 5,
     #[doc = "6: CCU8x.INyG"]
-    Value7 = 6,
+    VALUE7 = 6,
     #[doc = "7: CCU8x.INyH"]
-    Value8 = 7,
+    VALUE8 = 7,
     #[doc = "8: CCU8x.INyI"]
-    Value9 = 8,
+    VALUE9 = 8,
     #[doc = "9: CCU8x.INyJ"]
-    Value10 = 9,
+    VALUE10 = 9,
     #[doc = "10: CCU8x.INyK"]
-    Value11 = 10,
+    VALUE11 = 10,
     #[doc = "11: CCU8x.INyL"]
-    Value12 = 11,
+    VALUE12 = 11,
     #[doc = "12: CCU8x.INyM"]
-    Value13 = 12,
+    VALUE13 = 12,
     #[doc = "13: CCU8x.INyN"]
-    Value14 = 13,
+    VALUE14 = 13,
     #[doc = "14: CCU8x.INyO"]
-    Value15 = 14,
+    VALUE15 = 14,
     #[doc = "15: CCU8x.INyP"]
-    Value16 = 15,
+    VALUE16 = 15,
 }
-impl From<Ev2is> for u8 {
+impl From<EV2IS_A> for u8 {
     #[inline(always)]
-    fn from(variant: Ev2is) -> Self {
+    fn from(variant: EV2IS_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Ev2is {
+impl crate::FieldSpec for EV2IS_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Ev2is {}
+impl crate::IsEnum for EV2IS_A {}
 #[doc = "Field `EV2IS` reader - Event 2 signal selection"]
-pub type Ev2isR = crate::FieldReader<Ev2is>;
-impl Ev2isR {
+pub type EV2IS_R = crate::FieldReader<EV2IS_A>;
+impl EV2IS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ev2is {
+    pub const fn variant(&self) -> EV2IS_A {
         match self.bits {
-            0 => Ev2is::Value1,
-            1 => Ev2is::Value2,
-            2 => Ev2is::Value3,
-            3 => Ev2is::Value4,
-            4 => Ev2is::Value5,
-            5 => Ev2is::Value6,
-            6 => Ev2is::Value7,
-            7 => Ev2is::Value8,
-            8 => Ev2is::Value9,
-            9 => Ev2is::Value10,
-            10 => Ev2is::Value11,
-            11 => Ev2is::Value12,
-            12 => Ev2is::Value13,
-            13 => Ev2is::Value14,
-            14 => Ev2is::Value15,
-            15 => Ev2is::Value16,
+            0 => EV2IS_A::VALUE1,
+            1 => EV2IS_A::VALUE2,
+            2 => EV2IS_A::VALUE3,
+            3 => EV2IS_A::VALUE4,
+            4 => EV2IS_A::VALUE5,
+            5 => EV2IS_A::VALUE6,
+            6 => EV2IS_A::VALUE7,
+            7 => EV2IS_A::VALUE8,
+            8 => EV2IS_A::VALUE9,
+            9 => EV2IS_A::VALUE10,
+            10 => EV2IS_A::VALUE11,
+            11 => EV2IS_A::VALUE12,
+            12 => EV2IS_A::VALUE13,
+            13 => EV2IS_A::VALUE14,
+            14 => EV2IS_A::VALUE15,
+            15 => EV2IS_A::VALUE16,
             _ => unreachable!(),
         }
     }
     #[doc = "CCU8x.INyA"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ev2is::Value1
+        *self == EV2IS_A::VALUE1
     }
     #[doc = "CCU8x.INyB"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ev2is::Value2
+        *self == EV2IS_A::VALUE2
     }
     #[doc = "CCU8x.INyC"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Ev2is::Value3
+        *self == EV2IS_A::VALUE3
     }
     #[doc = "CCU8x.INyD"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Ev2is::Value4
+        *self == EV2IS_A::VALUE4
     }
     #[doc = "CCU8x.INyE"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == Ev2is::Value5
+        *self == EV2IS_A::VALUE5
     }
     #[doc = "CCU8x.INyF"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == Ev2is::Value6
+        *self == EV2IS_A::VALUE6
     }
     #[doc = "CCU8x.INyG"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == Ev2is::Value7
+        *self == EV2IS_A::VALUE7
     }
     #[doc = "CCU8x.INyH"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        *self == Ev2is::Value8
+        *self == EV2IS_A::VALUE8
     }
     #[doc = "CCU8x.INyI"]
     #[inline(always)]
     pub fn is_value9(&self) -> bool {
-        *self == Ev2is::Value9
+        *self == EV2IS_A::VALUE9
     }
     #[doc = "CCU8x.INyJ"]
     #[inline(always)]
     pub fn is_value10(&self) -> bool {
-        *self == Ev2is::Value10
+        *self == EV2IS_A::VALUE10
     }
     #[doc = "CCU8x.INyK"]
     #[inline(always)]
     pub fn is_value11(&self) -> bool {
-        *self == Ev2is::Value11
+        *self == EV2IS_A::VALUE11
     }
     #[doc = "CCU8x.INyL"]
     #[inline(always)]
     pub fn is_value12(&self) -> bool {
-        *self == Ev2is::Value12
+        *self == EV2IS_A::VALUE12
     }
     #[doc = "CCU8x.INyM"]
     #[inline(always)]
     pub fn is_value13(&self) -> bool {
-        *self == Ev2is::Value13
+        *self == EV2IS_A::VALUE13
     }
     #[doc = "CCU8x.INyN"]
     #[inline(always)]
     pub fn is_value14(&self) -> bool {
-        *self == Ev2is::Value14
+        *self == EV2IS_A::VALUE14
     }
     #[doc = "CCU8x.INyO"]
     #[inline(always)]
     pub fn is_value15(&self) -> bool {
-        *self == Ev2is::Value15
+        *self == EV2IS_A::VALUE15
     }
     #[doc = "CCU8x.INyP"]
     #[inline(always)]
     pub fn is_value16(&self) -> bool {
-        *self == Ev2is::Value16
+        *self == EV2IS_A::VALUE16
     }
 }
 #[doc = "Field `EV2IS` writer - Event 2 signal selection"]
-pub type Ev2isW<'a, REG> = crate::FieldWriter<'a, REG, 4, Ev2is, crate::Safe>;
-impl<'a, REG> Ev2isW<'a, REG>
+pub type EV2IS_W<'a, REG> = crate::FieldWriter<'a, REG, 4, EV2IS_A, crate::Safe>;
+impl<'a, REG> EV2IS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -650,145 +650,145 @@ where
     #[doc = "CCU8x.INyA"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value1)
+        self.variant(EV2IS_A::VALUE1)
     }
     #[doc = "CCU8x.INyB"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value2)
+        self.variant(EV2IS_A::VALUE2)
     }
     #[doc = "CCU8x.INyC"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value3)
+        self.variant(EV2IS_A::VALUE3)
     }
     #[doc = "CCU8x.INyD"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value4)
+        self.variant(EV2IS_A::VALUE4)
     }
     #[doc = "CCU8x.INyE"]
     #[inline(always)]
     pub fn value5(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value5)
+        self.variant(EV2IS_A::VALUE5)
     }
     #[doc = "CCU8x.INyF"]
     #[inline(always)]
     pub fn value6(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value6)
+        self.variant(EV2IS_A::VALUE6)
     }
     #[doc = "CCU8x.INyG"]
     #[inline(always)]
     pub fn value7(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value7)
+        self.variant(EV2IS_A::VALUE7)
     }
     #[doc = "CCU8x.INyH"]
     #[inline(always)]
     pub fn value8(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value8)
+        self.variant(EV2IS_A::VALUE8)
     }
     #[doc = "CCU8x.INyI"]
     #[inline(always)]
     pub fn value9(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value9)
+        self.variant(EV2IS_A::VALUE9)
     }
     #[doc = "CCU8x.INyJ"]
     #[inline(always)]
     pub fn value10(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value10)
+        self.variant(EV2IS_A::VALUE10)
     }
     #[doc = "CCU8x.INyK"]
     #[inline(always)]
     pub fn value11(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value11)
+        self.variant(EV2IS_A::VALUE11)
     }
     #[doc = "CCU8x.INyL"]
     #[inline(always)]
     pub fn value12(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value12)
+        self.variant(EV2IS_A::VALUE12)
     }
     #[doc = "CCU8x.INyM"]
     #[inline(always)]
     pub fn value13(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value13)
+        self.variant(EV2IS_A::VALUE13)
     }
     #[doc = "CCU8x.INyN"]
     #[inline(always)]
     pub fn value14(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value14)
+        self.variant(EV2IS_A::VALUE14)
     }
     #[doc = "CCU8x.INyO"]
     #[inline(always)]
     pub fn value15(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value15)
+        self.variant(EV2IS_A::VALUE15)
     }
     #[doc = "CCU8x.INyP"]
     #[inline(always)]
     pub fn value16(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2is::Value16)
+        self.variant(EV2IS_A::VALUE16)
     }
 }
 #[doc = "Event 0 Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Ev0em {
+pub enum EV0EM_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Signal active on rising edge"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Signal active on falling edge"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Signal active on both edges"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Ev0em> for u8 {
+impl From<EV0EM_A> for u8 {
     #[inline(always)]
-    fn from(variant: Ev0em) -> Self {
+    fn from(variant: EV0EM_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Ev0em {
+impl crate::FieldSpec for EV0EM_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Ev0em {}
+impl crate::IsEnum for EV0EM_A {}
 #[doc = "Field `EV0EM` reader - Event 0 Edge Selection"]
-pub type Ev0emR = crate::FieldReader<Ev0em>;
-impl Ev0emR {
+pub type EV0EM_R = crate::FieldReader<EV0EM_A>;
+impl EV0EM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ev0em {
+    pub const fn variant(&self) -> EV0EM_A {
         match self.bits {
-            0 => Ev0em::Value1,
-            1 => Ev0em::Value2,
-            2 => Ev0em::Value3,
-            3 => Ev0em::Value4,
+            0 => EV0EM_A::VALUE1,
+            1 => EV0EM_A::VALUE2,
+            2 => EV0EM_A::VALUE3,
+            3 => EV0EM_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "No action"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ev0em::Value1
+        *self == EV0EM_A::VALUE1
     }
     #[doc = "Signal active on rising edge"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ev0em::Value2
+        *self == EV0EM_A::VALUE2
     }
     #[doc = "Signal active on falling edge"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Ev0em::Value3
+        *self == EV0EM_A::VALUE3
     }
     #[doc = "Signal active on both edges"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Ev0em::Value4
+        *self == EV0EM_A::VALUE4
     }
 }
 #[doc = "Field `EV0EM` writer - Event 0 Edge Selection"]
-pub type Ev0emW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ev0em, crate::Safe>;
-impl<'a, REG> Ev0emW<'a, REG>
+pub type EV0EM_W<'a, REG> = crate::FieldWriter<'a, REG, 2, EV0EM_A, crate::Safe>;
+impl<'a, REG> EV0EM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -796,85 +796,85 @@ where
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0em::Value1)
+        self.variant(EV0EM_A::VALUE1)
     }
     #[doc = "Signal active on rising edge"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0em::Value2)
+        self.variant(EV0EM_A::VALUE2)
     }
     #[doc = "Signal active on falling edge"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0em::Value3)
+        self.variant(EV0EM_A::VALUE3)
     }
     #[doc = "Signal active on both edges"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0em::Value4)
+        self.variant(EV0EM_A::VALUE4)
     }
 }
 #[doc = "Event 1 Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Ev1em {
+pub enum EV1EM_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Signal active on rising edge"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Signal active on falling edge"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Signal active on both edges"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Ev1em> for u8 {
+impl From<EV1EM_A> for u8 {
     #[inline(always)]
-    fn from(variant: Ev1em) -> Self {
+    fn from(variant: EV1EM_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Ev1em {
+impl crate::FieldSpec for EV1EM_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Ev1em {}
+impl crate::IsEnum for EV1EM_A {}
 #[doc = "Field `EV1EM` reader - Event 1 Edge Selection"]
-pub type Ev1emR = crate::FieldReader<Ev1em>;
-impl Ev1emR {
+pub type EV1EM_R = crate::FieldReader<EV1EM_A>;
+impl EV1EM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ev1em {
+    pub const fn variant(&self) -> EV1EM_A {
         match self.bits {
-            0 => Ev1em::Value1,
-            1 => Ev1em::Value2,
-            2 => Ev1em::Value3,
-            3 => Ev1em::Value4,
+            0 => EV1EM_A::VALUE1,
+            1 => EV1EM_A::VALUE2,
+            2 => EV1EM_A::VALUE3,
+            3 => EV1EM_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "No action"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ev1em::Value1
+        *self == EV1EM_A::VALUE1
     }
     #[doc = "Signal active on rising edge"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ev1em::Value2
+        *self == EV1EM_A::VALUE2
     }
     #[doc = "Signal active on falling edge"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Ev1em::Value3
+        *self == EV1EM_A::VALUE3
     }
     #[doc = "Signal active on both edges"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Ev1em::Value4
+        *self == EV1EM_A::VALUE4
     }
 }
 #[doc = "Field `EV1EM` writer - Event 1 Edge Selection"]
-pub type Ev1emW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ev1em, crate::Safe>;
-impl<'a, REG> Ev1emW<'a, REG>
+pub type EV1EM_W<'a, REG> = crate::FieldWriter<'a, REG, 2, EV1EM_A, crate::Safe>;
+impl<'a, REG> EV1EM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -882,85 +882,85 @@ where
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1em::Value1)
+        self.variant(EV1EM_A::VALUE1)
     }
     #[doc = "Signal active on rising edge"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1em::Value2)
+        self.variant(EV1EM_A::VALUE2)
     }
     #[doc = "Signal active on falling edge"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1em::Value3)
+        self.variant(EV1EM_A::VALUE3)
     }
     #[doc = "Signal active on both edges"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1em::Value4)
+        self.variant(EV1EM_A::VALUE4)
     }
 }
 #[doc = "Event 2 Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Ev2em {
+pub enum EV2EM_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Signal active on rising edge"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Signal active on falling edge"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Signal active on both edges"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Ev2em> for u8 {
+impl From<EV2EM_A> for u8 {
     #[inline(always)]
-    fn from(variant: Ev2em) -> Self {
+    fn from(variant: EV2EM_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Ev2em {
+impl crate::FieldSpec for EV2EM_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Ev2em {}
+impl crate::IsEnum for EV2EM_A {}
 #[doc = "Field `EV2EM` reader - Event 2 Edge Selection"]
-pub type Ev2emR = crate::FieldReader<Ev2em>;
-impl Ev2emR {
+pub type EV2EM_R = crate::FieldReader<EV2EM_A>;
+impl EV2EM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ev2em {
+    pub const fn variant(&self) -> EV2EM_A {
         match self.bits {
-            0 => Ev2em::Value1,
-            1 => Ev2em::Value2,
-            2 => Ev2em::Value3,
-            3 => Ev2em::Value4,
+            0 => EV2EM_A::VALUE1,
+            1 => EV2EM_A::VALUE2,
+            2 => EV2EM_A::VALUE3,
+            3 => EV2EM_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "No action"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ev2em::Value1
+        *self == EV2EM_A::VALUE1
     }
     #[doc = "Signal active on rising edge"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ev2em::Value2
+        *self == EV2EM_A::VALUE2
     }
     #[doc = "Signal active on falling edge"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Ev2em::Value3
+        *self == EV2EM_A::VALUE3
     }
     #[doc = "Signal active on both edges"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Ev2em::Value4
+        *self == EV2EM_A::VALUE4
     }
 }
 #[doc = "Field `EV2EM` writer - Event 2 Edge Selection"]
-pub type Ev2emW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ev2em, crate::Safe>;
-impl<'a, REG> Ev2emW<'a, REG>
+pub type EV2EM_W<'a, REG> = crate::FieldWriter<'a, REG, 2, EV2EM_A, crate::Safe>;
+impl<'a, REG> EV2EM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -968,244 +968,244 @@ where
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2em::Value1)
+        self.variant(EV2EM_A::VALUE1)
     }
     #[doc = "Signal active on rising edge"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2em::Value2)
+        self.variant(EV2EM_A::VALUE2)
     }
     #[doc = "Signal active on falling edge"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2em::Value3)
+        self.variant(EV2EM_A::VALUE3)
     }
     #[doc = "Signal active on both edges"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2em::Value4)
+        self.variant(EV2EM_A::VALUE4)
     }
 }
 #[doc = "Event 0 Level Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ev0lm {
+pub enum EV0LM_A {
     #[doc = "0: Active on HIGH level"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Active on LOW level"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ev0lm> for bool {
+impl From<EV0LM_A> for bool {
     #[inline(always)]
-    fn from(variant: Ev0lm) -> Self {
+    fn from(variant: EV0LM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EV0LM` reader - Event 0 Level Selection"]
-pub type Ev0lmR = crate::BitReader<Ev0lm>;
-impl Ev0lmR {
+pub type EV0LM_R = crate::BitReader<EV0LM_A>;
+impl EV0LM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ev0lm {
+    pub const fn variant(&self) -> EV0LM_A {
         match self.bits {
-            false => Ev0lm::Value1,
-            true => Ev0lm::Value2,
+            false => EV0LM_A::VALUE1,
+            true => EV0LM_A::VALUE2,
         }
     }
     #[doc = "Active on HIGH level"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ev0lm::Value1
+        *self == EV0LM_A::VALUE1
     }
     #[doc = "Active on LOW level"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ev0lm::Value2
+        *self == EV0LM_A::VALUE2
     }
 }
 #[doc = "Field `EV0LM` writer - Event 0 Level Selection"]
-pub type Ev0lmW<'a, REG> = crate::BitWriter<'a, REG, Ev0lm>;
-impl<'a, REG> Ev0lmW<'a, REG>
+pub type EV0LM_W<'a, REG> = crate::BitWriter<'a, REG, EV0LM_A>;
+impl<'a, REG> EV0LM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Active on HIGH level"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0lm::Value1)
+        self.variant(EV0LM_A::VALUE1)
     }
     #[doc = "Active on LOW level"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev0lm::Value2)
+        self.variant(EV0LM_A::VALUE2)
     }
 }
 #[doc = "Event 1 Level Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ev1lm {
+pub enum EV1LM_A {
     #[doc = "0: Active on HIGH level"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Active on LOW level"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ev1lm> for bool {
+impl From<EV1LM_A> for bool {
     #[inline(always)]
-    fn from(variant: Ev1lm) -> Self {
+    fn from(variant: EV1LM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EV1LM` reader - Event 1 Level Selection"]
-pub type Ev1lmR = crate::BitReader<Ev1lm>;
-impl Ev1lmR {
+pub type EV1LM_R = crate::BitReader<EV1LM_A>;
+impl EV1LM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ev1lm {
+    pub const fn variant(&self) -> EV1LM_A {
         match self.bits {
-            false => Ev1lm::Value1,
-            true => Ev1lm::Value2,
+            false => EV1LM_A::VALUE1,
+            true => EV1LM_A::VALUE2,
         }
     }
     #[doc = "Active on HIGH level"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ev1lm::Value1
+        *self == EV1LM_A::VALUE1
     }
     #[doc = "Active on LOW level"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ev1lm::Value2
+        *self == EV1LM_A::VALUE2
     }
 }
 #[doc = "Field `EV1LM` writer - Event 1 Level Selection"]
-pub type Ev1lmW<'a, REG> = crate::BitWriter<'a, REG, Ev1lm>;
-impl<'a, REG> Ev1lmW<'a, REG>
+pub type EV1LM_W<'a, REG> = crate::BitWriter<'a, REG, EV1LM_A>;
+impl<'a, REG> EV1LM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Active on HIGH level"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1lm::Value1)
+        self.variant(EV1LM_A::VALUE1)
     }
     #[doc = "Active on LOW level"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev1lm::Value2)
+        self.variant(EV1LM_A::VALUE2)
     }
 }
 #[doc = "Event 2 Level Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ev2lm {
+pub enum EV2LM_A {
     #[doc = "0: Active on HIGH level"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Active on LOW level"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ev2lm> for bool {
+impl From<EV2LM_A> for bool {
     #[inline(always)]
-    fn from(variant: Ev2lm) -> Self {
+    fn from(variant: EV2LM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EV2LM` reader - Event 2 Level Selection"]
-pub type Ev2lmR = crate::BitReader<Ev2lm>;
-impl Ev2lmR {
+pub type EV2LM_R = crate::BitReader<EV2LM_A>;
+impl EV2LM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ev2lm {
+    pub const fn variant(&self) -> EV2LM_A {
         match self.bits {
-            false => Ev2lm::Value1,
-            true => Ev2lm::Value2,
+            false => EV2LM_A::VALUE1,
+            true => EV2LM_A::VALUE2,
         }
     }
     #[doc = "Active on HIGH level"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ev2lm::Value1
+        *self == EV2LM_A::VALUE1
     }
     #[doc = "Active on LOW level"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ev2lm::Value2
+        *self == EV2LM_A::VALUE2
     }
 }
 #[doc = "Field `EV2LM` writer - Event 2 Level Selection"]
-pub type Ev2lmW<'a, REG> = crate::BitWriter<'a, REG, Ev2lm>;
-impl<'a, REG> Ev2lmW<'a, REG>
+pub type EV2LM_W<'a, REG> = crate::BitWriter<'a, REG, EV2LM_A>;
+impl<'a, REG> EV2LM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Active on HIGH level"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2lm::Value1)
+        self.variant(EV2LM_A::VALUE1)
     }
     #[doc = "Active on LOW level"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ev2lm::Value2)
+        self.variant(EV2LM_A::VALUE2)
     }
 }
 #[doc = "Event 0 Low Pass Filter Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Lpf0m {
+pub enum LPF0M_A {
     #[doc = "0: LPF is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 3 clock cycles of fCCU8"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: 5 clock cycles of fCCU8"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: 7 clock cycles of fCCU8"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Lpf0m> for u8 {
+impl From<LPF0M_A> for u8 {
     #[inline(always)]
-    fn from(variant: Lpf0m) -> Self {
+    fn from(variant: LPF0M_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Lpf0m {
+impl crate::FieldSpec for LPF0M_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Lpf0m {}
+impl crate::IsEnum for LPF0M_A {}
 #[doc = "Field `LPF0M` reader - Event 0 Low Pass Filter Configuration"]
-pub type Lpf0mR = crate::FieldReader<Lpf0m>;
-impl Lpf0mR {
+pub type LPF0M_R = crate::FieldReader<LPF0M_A>;
+impl LPF0M_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Lpf0m {
+    pub const fn variant(&self) -> LPF0M_A {
         match self.bits {
-            0 => Lpf0m::Value1,
-            1 => Lpf0m::Value2,
-            2 => Lpf0m::Value3,
-            3 => Lpf0m::Value4,
+            0 => LPF0M_A::VALUE1,
+            1 => LPF0M_A::VALUE2,
+            2 => LPF0M_A::VALUE3,
+            3 => LPF0M_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "LPF is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Lpf0m::Value1
+        *self == LPF0M_A::VALUE1
     }
     #[doc = "3 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Lpf0m::Value2
+        *self == LPF0M_A::VALUE2
     }
     #[doc = "5 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Lpf0m::Value3
+        *self == LPF0M_A::VALUE3
     }
     #[doc = "7 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Lpf0m::Value4
+        *self == LPF0M_A::VALUE4
     }
 }
 #[doc = "Field `LPF0M` writer - Event 0 Low Pass Filter Configuration"]
-pub type Lpf0mW<'a, REG> = crate::FieldWriter<'a, REG, 2, Lpf0m, crate::Safe>;
-impl<'a, REG> Lpf0mW<'a, REG>
+pub type LPF0M_W<'a, REG> = crate::FieldWriter<'a, REG, 2, LPF0M_A, crate::Safe>;
+impl<'a, REG> LPF0M_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1213,85 +1213,85 @@ where
     #[doc = "LPF is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Lpf0m::Value1)
+        self.variant(LPF0M_A::VALUE1)
     }
     #[doc = "3 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Lpf0m::Value2)
+        self.variant(LPF0M_A::VALUE2)
     }
     #[doc = "5 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Lpf0m::Value3)
+        self.variant(LPF0M_A::VALUE3)
     }
     #[doc = "7 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Lpf0m::Value4)
+        self.variant(LPF0M_A::VALUE4)
     }
 }
 #[doc = "Event 1 Low Pass Filter Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Lpf1m {
+pub enum LPF1M_A {
     #[doc = "0: LPF is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 3 clock cycles of fCCU8"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: 5 clock cycles of fCCU8"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: 7 clock cycles of fCCU8"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Lpf1m> for u8 {
+impl From<LPF1M_A> for u8 {
     #[inline(always)]
-    fn from(variant: Lpf1m) -> Self {
+    fn from(variant: LPF1M_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Lpf1m {
+impl crate::FieldSpec for LPF1M_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Lpf1m {}
+impl crate::IsEnum for LPF1M_A {}
 #[doc = "Field `LPF1M` reader - Event 1 Low Pass Filter Configuration"]
-pub type Lpf1mR = crate::FieldReader<Lpf1m>;
-impl Lpf1mR {
+pub type LPF1M_R = crate::FieldReader<LPF1M_A>;
+impl LPF1M_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Lpf1m {
+    pub const fn variant(&self) -> LPF1M_A {
         match self.bits {
-            0 => Lpf1m::Value1,
-            1 => Lpf1m::Value2,
-            2 => Lpf1m::Value3,
-            3 => Lpf1m::Value4,
+            0 => LPF1M_A::VALUE1,
+            1 => LPF1M_A::VALUE2,
+            2 => LPF1M_A::VALUE3,
+            3 => LPF1M_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "LPF is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Lpf1m::Value1
+        *self == LPF1M_A::VALUE1
     }
     #[doc = "3 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Lpf1m::Value2
+        *self == LPF1M_A::VALUE2
     }
     #[doc = "5 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Lpf1m::Value3
+        *self == LPF1M_A::VALUE3
     }
     #[doc = "7 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Lpf1m::Value4
+        *self == LPF1M_A::VALUE4
     }
 }
 #[doc = "Field `LPF1M` writer - Event 1 Low Pass Filter Configuration"]
-pub type Lpf1mW<'a, REG> = crate::FieldWriter<'a, REG, 2, Lpf1m, crate::Safe>;
-impl<'a, REG> Lpf1mW<'a, REG>
+pub type LPF1M_W<'a, REG> = crate::FieldWriter<'a, REG, 2, LPF1M_A, crate::Safe>;
+impl<'a, REG> LPF1M_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1299,85 +1299,85 @@ where
     #[doc = "LPF is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Lpf1m::Value1)
+        self.variant(LPF1M_A::VALUE1)
     }
     #[doc = "3 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Lpf1m::Value2)
+        self.variant(LPF1M_A::VALUE2)
     }
     #[doc = "5 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Lpf1m::Value3)
+        self.variant(LPF1M_A::VALUE3)
     }
     #[doc = "7 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Lpf1m::Value4)
+        self.variant(LPF1M_A::VALUE4)
     }
 }
 #[doc = "Event 2 Low Pass Filter Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Lpf2m {
+pub enum LPF2M_A {
     #[doc = "0: LPF is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 3 clock cycles of fCCU8"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: 5 clock cycles of fCCU8"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: 7 clock cycles of fCCU8"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Lpf2m> for u8 {
+impl From<LPF2M_A> for u8 {
     #[inline(always)]
-    fn from(variant: Lpf2m) -> Self {
+    fn from(variant: LPF2M_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Lpf2m {
+impl crate::FieldSpec for LPF2M_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Lpf2m {}
+impl crate::IsEnum for LPF2M_A {}
 #[doc = "Field `LPF2M` reader - Event 2 Low Pass Filter Configuration"]
-pub type Lpf2mR = crate::FieldReader<Lpf2m>;
-impl Lpf2mR {
+pub type LPF2M_R = crate::FieldReader<LPF2M_A>;
+impl LPF2M_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Lpf2m {
+    pub const fn variant(&self) -> LPF2M_A {
         match self.bits {
-            0 => Lpf2m::Value1,
-            1 => Lpf2m::Value2,
-            2 => Lpf2m::Value3,
-            3 => Lpf2m::Value4,
+            0 => LPF2M_A::VALUE1,
+            1 => LPF2M_A::VALUE2,
+            2 => LPF2M_A::VALUE3,
+            3 => LPF2M_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "LPF is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Lpf2m::Value1
+        *self == LPF2M_A::VALUE1
     }
     #[doc = "3 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Lpf2m::Value2
+        *self == LPF2M_A::VALUE2
     }
     #[doc = "5 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Lpf2m::Value3
+        *self == LPF2M_A::VALUE3
     }
     #[doc = "7 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Lpf2m::Value4
+        *self == LPF2M_A::VALUE4
     }
 }
 #[doc = "Field `LPF2M` writer - Event 2 Low Pass Filter Configuration"]
-pub type Lpf2mW<'a, REG> = crate::FieldWriter<'a, REG, 2, Lpf2m, crate::Safe>;
-impl<'a, REG> Lpf2mW<'a, REG>
+pub type LPF2M_W<'a, REG> = crate::FieldWriter<'a, REG, 2, LPF2M_A, crate::Safe>;
+impl<'a, REG> LPF2M_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1385,174 +1385,174 @@ where
     #[doc = "LPF is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Lpf2m::Value1)
+        self.variant(LPF2M_A::VALUE1)
     }
     #[doc = "3 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Lpf2m::Value2)
+        self.variant(LPF2M_A::VALUE2)
     }
     #[doc = "5 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Lpf2m::Value3)
+        self.variant(LPF2M_A::VALUE3)
     }
     #[doc = "7 clock cycles of fCCU8"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Lpf2m::Value4)
+        self.variant(LPF2M_A::VALUE4)
     }
 }
 impl R {
     #[doc = "Bits 0:3 - Event 0 signal selection"]
     #[inline(always)]
-    pub fn ev0is(&self) -> Ev0isR {
-        Ev0isR::new((self.bits & 0x0f) as u8)
+    pub fn ev0is(&self) -> EV0IS_R {
+        EV0IS_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Event 1 signal selection"]
     #[inline(always)]
-    pub fn ev1is(&self) -> Ev1isR {
-        Ev1isR::new(((self.bits >> 4) & 0x0f) as u8)
+    pub fn ev1is(&self) -> EV1IS_R {
+        EV1IS_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - Event 2 signal selection"]
     #[inline(always)]
-    pub fn ev2is(&self) -> Ev2isR {
-        Ev2isR::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn ev2is(&self) -> EV2IS_R {
+        EV2IS_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 16:17 - Event 0 Edge Selection"]
     #[inline(always)]
-    pub fn ev0em(&self) -> Ev0emR {
-        Ev0emR::new(((self.bits >> 16) & 3) as u8)
+    pub fn ev0em(&self) -> EV0EM_R {
+        EV0EM_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 18:19 - Event 1 Edge Selection"]
     #[inline(always)]
-    pub fn ev1em(&self) -> Ev1emR {
-        Ev1emR::new(((self.bits >> 18) & 3) as u8)
+    pub fn ev1em(&self) -> EV1EM_R {
+        EV1EM_R::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bits 20:21 - Event 2 Edge Selection"]
     #[inline(always)]
-    pub fn ev2em(&self) -> Ev2emR {
-        Ev2emR::new(((self.bits >> 20) & 3) as u8)
+    pub fn ev2em(&self) -> EV2EM_R {
+        EV2EM_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bit 22 - Event 0 Level Selection"]
     #[inline(always)]
-    pub fn ev0lm(&self) -> Ev0lmR {
-        Ev0lmR::new(((self.bits >> 22) & 1) != 0)
+    pub fn ev0lm(&self) -> EV0LM_R {
+        EV0LM_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - Event 1 Level Selection"]
     #[inline(always)]
-    pub fn ev1lm(&self) -> Ev1lmR {
-        Ev1lmR::new(((self.bits >> 23) & 1) != 0)
+    pub fn ev1lm(&self) -> EV1LM_R {
+        EV1LM_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - Event 2 Level Selection"]
     #[inline(always)]
-    pub fn ev2lm(&self) -> Ev2lmR {
-        Ev2lmR::new(((self.bits >> 24) & 1) != 0)
+    pub fn ev2lm(&self) -> EV2LM_R {
+        EV2LM_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bits 25:26 - Event 0 Low Pass Filter Configuration"]
     #[inline(always)]
-    pub fn lpf0m(&self) -> Lpf0mR {
-        Lpf0mR::new(((self.bits >> 25) & 3) as u8)
+    pub fn lpf0m(&self) -> LPF0M_R {
+        LPF0M_R::new(((self.bits >> 25) & 3) as u8)
     }
     #[doc = "Bits 27:28 - Event 1 Low Pass Filter Configuration"]
     #[inline(always)]
-    pub fn lpf1m(&self) -> Lpf1mR {
-        Lpf1mR::new(((self.bits >> 27) & 3) as u8)
+    pub fn lpf1m(&self) -> LPF1M_R {
+        LPF1M_R::new(((self.bits >> 27) & 3) as u8)
     }
     #[doc = "Bits 29:30 - Event 2 Low Pass Filter Configuration"]
     #[inline(always)]
-    pub fn lpf2m(&self) -> Lpf2mR {
-        Lpf2mR::new(((self.bits >> 29) & 3) as u8)
+    pub fn lpf2m(&self) -> LPF2M_R {
+        LPF2M_R::new(((self.bits >> 29) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Event 0 signal selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev0is(&mut self) -> Ev0isW<InsSpec> {
-        Ev0isW::new(self, 0)
+    pub fn ev0is(&mut self) -> EV0IS_W<INS_SPEC> {
+        EV0IS_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Event 1 signal selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev1is(&mut self) -> Ev1isW<InsSpec> {
-        Ev1isW::new(self, 4)
+    pub fn ev1is(&mut self) -> EV1IS_W<INS_SPEC> {
+        EV1IS_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Event 2 signal selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev2is(&mut self) -> Ev2isW<InsSpec> {
-        Ev2isW::new(self, 8)
+    pub fn ev2is(&mut self) -> EV2IS_W<INS_SPEC> {
+        EV2IS_W::new(self, 8)
     }
     #[doc = "Bits 16:17 - Event 0 Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev0em(&mut self) -> Ev0emW<InsSpec> {
-        Ev0emW::new(self, 16)
+    pub fn ev0em(&mut self) -> EV0EM_W<INS_SPEC> {
+        EV0EM_W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Event 1 Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev1em(&mut self) -> Ev1emW<InsSpec> {
-        Ev1emW::new(self, 18)
+    pub fn ev1em(&mut self) -> EV1EM_W<INS_SPEC> {
+        EV1EM_W::new(self, 18)
     }
     #[doc = "Bits 20:21 - Event 2 Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev2em(&mut self) -> Ev2emW<InsSpec> {
-        Ev2emW::new(self, 20)
+    pub fn ev2em(&mut self) -> EV2EM_W<INS_SPEC> {
+        EV2EM_W::new(self, 20)
     }
     #[doc = "Bit 22 - Event 0 Level Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev0lm(&mut self) -> Ev0lmW<InsSpec> {
-        Ev0lmW::new(self, 22)
+    pub fn ev0lm(&mut self) -> EV0LM_W<INS_SPEC> {
+        EV0LM_W::new(self, 22)
     }
     #[doc = "Bit 23 - Event 1 Level Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev1lm(&mut self) -> Ev1lmW<InsSpec> {
-        Ev1lmW::new(self, 23)
+    pub fn ev1lm(&mut self) -> EV1LM_W<INS_SPEC> {
+        EV1LM_W::new(self, 23)
     }
     #[doc = "Bit 24 - Event 2 Level Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev2lm(&mut self) -> Ev2lmW<InsSpec> {
-        Ev2lmW::new(self, 24)
+    pub fn ev2lm(&mut self) -> EV2LM_W<INS_SPEC> {
+        EV2LM_W::new(self, 24)
     }
     #[doc = "Bits 25:26 - Event 0 Low Pass Filter Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn lpf0m(&mut self) -> Lpf0mW<InsSpec> {
-        Lpf0mW::new(self, 25)
+    pub fn lpf0m(&mut self) -> LPF0M_W<INS_SPEC> {
+        LPF0M_W::new(self, 25)
     }
     #[doc = "Bits 27:28 - Event 1 Low Pass Filter Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn lpf1m(&mut self) -> Lpf1mW<InsSpec> {
-        Lpf1mW::new(self, 27)
+    pub fn lpf1m(&mut self) -> LPF1M_W<INS_SPEC> {
+        LPF1M_W::new(self, 27)
     }
     #[doc = "Bits 29:30 - Event 2 Low Pass Filter Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn lpf2m(&mut self) -> Lpf2mW<InsSpec> {
-        Lpf2mW::new(self, 29)
+    pub fn lpf2m(&mut self) -> LPF2M_W<INS_SPEC> {
+        LPF2M_W::new(self, 29)
     }
 }
 #[doc = "Input Selector Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ins::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ins::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct InsSpec;
-impl crate::RegisterSpec for InsSpec {
+pub struct INS_SPEC;
+impl crate::RegisterSpec for INS_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`ins::R`](R) reader structure"]
-impl crate::Readable for InsSpec {}
+impl crate::Readable for INS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ins::W`](W) writer structure"]
-impl crate::Writable for InsSpec {
+impl crate::Writable for INS_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INS to value 0"]
-impl crate::Resettable for InsSpec {
+impl crate::Resettable for INS_SPEC {
     const RESET_VALUE: u32 = 0;
 }

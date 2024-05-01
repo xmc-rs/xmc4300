@@ -1,687 +1,687 @@
 #[doc = "Register `TRBSR` reader"]
-pub type R = crate::R<TrbsrSpec>;
+pub type R = crate::R<TRBSR_SPEC>;
 #[doc = "Register `TRBSR` writer"]
-pub type W = crate::W<TrbsrSpec>;
+pub type W = crate::W<TRBSR_SPEC>;
 #[doc = "Standard Receive Buffer Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Srbi {
+pub enum SRBI_A {
     #[doc = "0: A standard receive buffer event has not been detected."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A standard receive buffer event has been detected."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Srbi> for bool {
+impl From<SRBI_A> for bool {
     #[inline(always)]
-    fn from(variant: Srbi) -> Self {
+    fn from(variant: SRBI_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SRBI` reader - Standard Receive Buffer Event"]
-pub type SrbiR = crate::BitReader<Srbi>;
-impl SrbiR {
+pub type SRBI_R = crate::BitReader<SRBI_A>;
+impl SRBI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Srbi {
+    pub const fn variant(&self) -> SRBI_A {
         match self.bits {
-            false => Srbi::Value1,
-            true => Srbi::Value2,
+            false => SRBI_A::VALUE1,
+            true => SRBI_A::VALUE2,
         }
     }
     #[doc = "A standard receive buffer event has not been detected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Srbi::Value1
+        *self == SRBI_A::VALUE1
     }
     #[doc = "A standard receive buffer event has been detected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Srbi::Value2
+        *self == SRBI_A::VALUE2
     }
 }
 #[doc = "Field `SRBI` writer - Standard Receive Buffer Event"]
-pub type SrbiW<'a, REG> = crate::BitWriter<'a, REG, Srbi>;
-impl<'a, REG> SrbiW<'a, REG>
+pub type SRBI_W<'a, REG> = crate::BitWriter<'a, REG, SRBI_A>;
+impl<'a, REG> SRBI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "A standard receive buffer event has not been detected."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Srbi::Value1)
+        self.variant(SRBI_A::VALUE1)
     }
     #[doc = "A standard receive buffer event has been detected."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Srbi::Value2)
+        self.variant(SRBI_A::VALUE2)
     }
 }
 #[doc = "Receive Buffer Error Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rberi {
+pub enum RBERI_A {
     #[doc = "0: A receive buffer error event has not been detected."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A receive buffer error event has been detected."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rberi> for bool {
+impl From<RBERI_A> for bool {
     #[inline(always)]
-    fn from(variant: Rberi) -> Self {
+    fn from(variant: RBERI_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RBERI` reader - Receive Buffer Error Event"]
-pub type RberiR = crate::BitReader<Rberi>;
-impl RberiR {
+pub type RBERI_R = crate::BitReader<RBERI_A>;
+impl RBERI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rberi {
+    pub const fn variant(&self) -> RBERI_A {
         match self.bits {
-            false => Rberi::Value1,
-            true => Rberi::Value2,
+            false => RBERI_A::VALUE1,
+            true => RBERI_A::VALUE2,
         }
     }
     #[doc = "A receive buffer error event has not been detected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rberi::Value1
+        *self == RBERI_A::VALUE1
     }
     #[doc = "A receive buffer error event has been detected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rberi::Value2
+        *self == RBERI_A::VALUE2
     }
 }
 #[doc = "Field `RBERI` writer - Receive Buffer Error Event"]
-pub type RberiW<'a, REG> = crate::BitWriter<'a, REG, Rberi>;
-impl<'a, REG> RberiW<'a, REG>
+pub type RBERI_W<'a, REG> = crate::BitWriter<'a, REG, RBERI_A>;
+impl<'a, REG> RBERI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "A receive buffer error event has not been detected."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rberi::Value1)
+        self.variant(RBERI_A::VALUE1)
     }
     #[doc = "A receive buffer error event has been detected."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rberi::Value2)
+        self.variant(RBERI_A::VALUE2)
     }
 }
 #[doc = "Alternative Receive Buffer Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Arbi {
+pub enum ARBI_A {
     #[doc = "0: An alternative receive buffer event has not been detected."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: An alternative receive buffer event has been detected."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Arbi> for bool {
+impl From<ARBI_A> for bool {
     #[inline(always)]
-    fn from(variant: Arbi) -> Self {
+    fn from(variant: ARBI_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ARBI` reader - Alternative Receive Buffer Event"]
-pub type ArbiR = crate::BitReader<Arbi>;
-impl ArbiR {
+pub type ARBI_R = crate::BitReader<ARBI_A>;
+impl ARBI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Arbi {
+    pub const fn variant(&self) -> ARBI_A {
         match self.bits {
-            false => Arbi::Value1,
-            true => Arbi::Value2,
+            false => ARBI_A::VALUE1,
+            true => ARBI_A::VALUE2,
         }
     }
     #[doc = "An alternative receive buffer event has not been detected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Arbi::Value1
+        *self == ARBI_A::VALUE1
     }
     #[doc = "An alternative receive buffer event has been detected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Arbi::Value2
+        *self == ARBI_A::VALUE2
     }
 }
 #[doc = "Field `ARBI` writer - Alternative Receive Buffer Event"]
-pub type ArbiW<'a, REG> = crate::BitWriter<'a, REG, Arbi>;
-impl<'a, REG> ArbiW<'a, REG>
+pub type ARBI_W<'a, REG> = crate::BitWriter<'a, REG, ARBI_A>;
+impl<'a, REG> ARBI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "An alternative receive buffer event has not been detected."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Arbi::Value1)
+        self.variant(ARBI_A::VALUE1)
     }
     #[doc = "An alternative receive buffer event has been detected."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Arbi::Value2)
+        self.variant(ARBI_A::VALUE2)
     }
 }
 #[doc = "Receive Buffer Empty\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rempty {
+pub enum REMPTY_A {
     #[doc = "0: The receive buffer is not empty."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The receive buffer is empty."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rempty> for bool {
+impl From<REMPTY_A> for bool {
     #[inline(always)]
-    fn from(variant: Rempty) -> Self {
+    fn from(variant: REMPTY_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REMPTY` reader - Receive Buffer Empty"]
-pub type RemptyR = crate::BitReader<Rempty>;
-impl RemptyR {
+pub type REMPTY_R = crate::BitReader<REMPTY_A>;
+impl REMPTY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rempty {
+    pub const fn variant(&self) -> REMPTY_A {
         match self.bits {
-            false => Rempty::Value1,
-            true => Rempty::Value2,
+            false => REMPTY_A::VALUE1,
+            true => REMPTY_A::VALUE2,
         }
     }
     #[doc = "The receive buffer is not empty."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rempty::Value1
+        *self == REMPTY_A::VALUE1
     }
     #[doc = "The receive buffer is empty."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rempty::Value2
+        *self == REMPTY_A::VALUE2
     }
 }
 #[doc = "Receive Buffer Full\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rfull {
+pub enum RFULL_A {
     #[doc = "0: The receive buffer is not full."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The receive buffer is full."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rfull> for bool {
+impl From<RFULL_A> for bool {
     #[inline(always)]
-    fn from(variant: Rfull) -> Self {
+    fn from(variant: RFULL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RFULL` reader - Receive Buffer Full"]
-pub type RfullR = crate::BitReader<Rfull>;
-impl RfullR {
+pub type RFULL_R = crate::BitReader<RFULL_A>;
+impl RFULL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rfull {
+    pub const fn variant(&self) -> RFULL_A {
         match self.bits {
-            false => Rfull::Value1,
-            true => Rfull::Value2,
+            false => RFULL_A::VALUE1,
+            true => RFULL_A::VALUE2,
         }
     }
     #[doc = "The receive buffer is not full."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rfull::Value1
+        *self == RFULL_A::VALUE1
     }
     #[doc = "The receive buffer is full."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rfull::Value2
+        *self == RFULL_A::VALUE2
     }
 }
 #[doc = "Receive Buffer Busy\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rbus {
+pub enum RBUS_A {
     #[doc = "0: The receive buffer information has been completely updated."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The OUTR update from the FIFO memory is ongoing. A read from OUTR will be delayed. FIFO pointers from the previous read are not yet updated."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rbus> for bool {
+impl From<RBUS_A> for bool {
     #[inline(always)]
-    fn from(variant: Rbus) -> Self {
+    fn from(variant: RBUS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RBUS` reader - Receive Buffer Busy"]
-pub type RbusR = crate::BitReader<Rbus>;
-impl RbusR {
+pub type RBUS_R = crate::BitReader<RBUS_A>;
+impl RBUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rbus {
+    pub const fn variant(&self) -> RBUS_A {
         match self.bits {
-            false => Rbus::Value1,
-            true => Rbus::Value2,
+            false => RBUS_A::VALUE1,
+            true => RBUS_A::VALUE2,
         }
     }
     #[doc = "The receive buffer information has been completely updated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rbus::Value1
+        *self == RBUS_A::VALUE1
     }
     #[doc = "The OUTR update from the FIFO memory is ongoing. A read from OUTR will be delayed. FIFO pointers from the previous read are not yet updated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rbus::Value2
+        *self == RBUS_A::VALUE2
     }
 }
 #[doc = "Standard Receive Buffer Event Trigger\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Srbt {
+pub enum SRBT_A {
     #[doc = "0: A standard receive buffer event is not triggered using this bit."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A standard receive buffer event is triggered using this bit."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Srbt> for bool {
+impl From<SRBT_A> for bool {
     #[inline(always)]
-    fn from(variant: Srbt) -> Self {
+    fn from(variant: SRBT_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SRBT` reader - Standard Receive Buffer Event Trigger"]
-pub type SrbtR = crate::BitReader<Srbt>;
-impl SrbtR {
+pub type SRBT_R = crate::BitReader<SRBT_A>;
+impl SRBT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Srbt {
+    pub const fn variant(&self) -> SRBT_A {
         match self.bits {
-            false => Srbt::Value1,
-            true => Srbt::Value2,
+            false => SRBT_A::VALUE1,
+            true => SRBT_A::VALUE2,
         }
     }
     #[doc = "A standard receive buffer event is not triggered using this bit."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Srbt::Value1
+        *self == SRBT_A::VALUE1
     }
     #[doc = "A standard receive buffer event is triggered using this bit."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Srbt::Value2
+        *self == SRBT_A::VALUE2
     }
 }
 #[doc = "Standard Transmit Buffer Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Stbi {
+pub enum STBI_A {
     #[doc = "0: A standard transmit buffer event has not been detected."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A standard transmit buffer event has been detected."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Stbi> for bool {
+impl From<STBI_A> for bool {
     #[inline(always)]
-    fn from(variant: Stbi) -> Self {
+    fn from(variant: STBI_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `STBI` reader - Standard Transmit Buffer Event"]
-pub type StbiR = crate::BitReader<Stbi>;
-impl StbiR {
+pub type STBI_R = crate::BitReader<STBI_A>;
+impl STBI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Stbi {
+    pub const fn variant(&self) -> STBI_A {
         match self.bits {
-            false => Stbi::Value1,
-            true => Stbi::Value2,
+            false => STBI_A::VALUE1,
+            true => STBI_A::VALUE2,
         }
     }
     #[doc = "A standard transmit buffer event has not been detected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Stbi::Value1
+        *self == STBI_A::VALUE1
     }
     #[doc = "A standard transmit buffer event has been detected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Stbi::Value2
+        *self == STBI_A::VALUE2
     }
 }
 #[doc = "Field `STBI` writer - Standard Transmit Buffer Event"]
-pub type StbiW<'a, REG> = crate::BitWriter<'a, REG, Stbi>;
-impl<'a, REG> StbiW<'a, REG>
+pub type STBI_W<'a, REG> = crate::BitWriter<'a, REG, STBI_A>;
+impl<'a, REG> STBI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "A standard transmit buffer event has not been detected."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbi::Value1)
+        self.variant(STBI_A::VALUE1)
     }
     #[doc = "A standard transmit buffer event has been detected."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbi::Value2)
+        self.variant(STBI_A::VALUE2)
     }
 }
 #[doc = "Transmit Buffer Error Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Tberi {
+pub enum TBERI_A {
     #[doc = "0: A transmit buffer error event has not been detected."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A transmit buffer error event has been detected."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Tberi> for bool {
+impl From<TBERI_A> for bool {
     #[inline(always)]
-    fn from(variant: Tberi) -> Self {
+    fn from(variant: TBERI_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TBERI` reader - Transmit Buffer Error Event"]
-pub type TberiR = crate::BitReader<Tberi>;
-impl TberiR {
+pub type TBERI_R = crate::BitReader<TBERI_A>;
+impl TBERI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Tberi {
+    pub const fn variant(&self) -> TBERI_A {
         match self.bits {
-            false => Tberi::Value1,
-            true => Tberi::Value2,
+            false => TBERI_A::VALUE1,
+            true => TBERI_A::VALUE2,
         }
     }
     #[doc = "A transmit buffer error event has not been detected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Tberi::Value1
+        *self == TBERI_A::VALUE1
     }
     #[doc = "A transmit buffer error event has been detected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Tberi::Value2
+        *self == TBERI_A::VALUE2
     }
 }
 #[doc = "Field `TBERI` writer - Transmit Buffer Error Event"]
-pub type TberiW<'a, REG> = crate::BitWriter<'a, REG, Tberi>;
-impl<'a, REG> TberiW<'a, REG>
+pub type TBERI_W<'a, REG> = crate::BitWriter<'a, REG, TBERI_A>;
+impl<'a, REG> TBERI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "A transmit buffer error event has not been detected."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Tberi::Value1)
+        self.variant(TBERI_A::VALUE1)
     }
     #[doc = "A transmit buffer error event has been detected."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Tberi::Value2)
+        self.variant(TBERI_A::VALUE2)
     }
 }
 #[doc = "Transmit Buffer Empty\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Tempty {
+pub enum TEMPTY_A {
     #[doc = "0: The transmit buffer is not empty."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The transmit buffer is empty."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Tempty> for bool {
+impl From<TEMPTY_A> for bool {
     #[inline(always)]
-    fn from(variant: Tempty) -> Self {
+    fn from(variant: TEMPTY_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TEMPTY` reader - Transmit Buffer Empty"]
-pub type TemptyR = crate::BitReader<Tempty>;
-impl TemptyR {
+pub type TEMPTY_R = crate::BitReader<TEMPTY_A>;
+impl TEMPTY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Tempty {
+    pub const fn variant(&self) -> TEMPTY_A {
         match self.bits {
-            false => Tempty::Value1,
-            true => Tempty::Value2,
+            false => TEMPTY_A::VALUE1,
+            true => TEMPTY_A::VALUE2,
         }
     }
     #[doc = "The transmit buffer is not empty."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Tempty::Value1
+        *self == TEMPTY_A::VALUE1
     }
     #[doc = "The transmit buffer is empty."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Tempty::Value2
+        *self == TEMPTY_A::VALUE2
     }
 }
 #[doc = "Transmit Buffer Full\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Tfull {
+pub enum TFULL_A {
     #[doc = "0: The transmit buffer is not full."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The transmit buffer is full."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Tfull> for bool {
+impl From<TFULL_A> for bool {
     #[inline(always)]
-    fn from(variant: Tfull) -> Self {
+    fn from(variant: TFULL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TFULL` reader - Transmit Buffer Full"]
-pub type TfullR = crate::BitReader<Tfull>;
-impl TfullR {
+pub type TFULL_R = crate::BitReader<TFULL_A>;
+impl TFULL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Tfull {
+    pub const fn variant(&self) -> TFULL_A {
         match self.bits {
-            false => Tfull::Value1,
-            true => Tfull::Value2,
+            false => TFULL_A::VALUE1,
+            true => TFULL_A::VALUE2,
         }
     }
     #[doc = "The transmit buffer is not full."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Tfull::Value1
+        *self == TFULL_A::VALUE1
     }
     #[doc = "The transmit buffer is full."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Tfull::Value2
+        *self == TFULL_A::VALUE2
     }
 }
 #[doc = "Transmit Buffer Busy\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Tbus {
+pub enum TBUS_A {
     #[doc = "0: The transmit buffer information has been completely updated."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The FIFO memory update after write to INx is ongoing. A write to INx will be delayed. FIFO pointers from the previous INx write are not yet updated."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Tbus> for bool {
+impl From<TBUS_A> for bool {
     #[inline(always)]
-    fn from(variant: Tbus) -> Self {
+    fn from(variant: TBUS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TBUS` reader - Transmit Buffer Busy"]
-pub type TbusR = crate::BitReader<Tbus>;
-impl TbusR {
+pub type TBUS_R = crate::BitReader<TBUS_A>;
+impl TBUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Tbus {
+    pub const fn variant(&self) -> TBUS_A {
         match self.bits {
-            false => Tbus::Value1,
-            true => Tbus::Value2,
+            false => TBUS_A::VALUE1,
+            true => TBUS_A::VALUE2,
         }
     }
     #[doc = "The transmit buffer information has been completely updated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Tbus::Value1
+        *self == TBUS_A::VALUE1
     }
     #[doc = "The FIFO memory update after write to INx is ongoing. A write to INx will be delayed. FIFO pointers from the previous INx write are not yet updated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Tbus::Value2
+        *self == TBUS_A::VALUE2
     }
 }
 #[doc = "Standard Transmit Buffer Event Trigger\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Stbt {
+pub enum STBT_A {
     #[doc = "0: A standard transmit buffer event is not triggered using this bit."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A standard transmit buffer event is triggered using this bit."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Stbt> for bool {
+impl From<STBT_A> for bool {
     #[inline(always)]
-    fn from(variant: Stbt) -> Self {
+    fn from(variant: STBT_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `STBT` reader - Standard Transmit Buffer Event Trigger"]
-pub type StbtR = crate::BitReader<Stbt>;
-impl StbtR {
+pub type STBT_R = crate::BitReader<STBT_A>;
+impl STBT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Stbt {
+    pub const fn variant(&self) -> STBT_A {
         match self.bits {
-            false => Stbt::Value1,
-            true => Stbt::Value2,
+            false => STBT_A::VALUE1,
+            true => STBT_A::VALUE2,
         }
     }
     #[doc = "A standard transmit buffer event is not triggered using this bit."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Stbt::Value1
+        *self == STBT_A::VALUE1
     }
     #[doc = "A standard transmit buffer event is triggered using this bit."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Stbt::Value2
+        *self == STBT_A::VALUE2
     }
 }
 #[doc = "Field `RBFLVL` reader - Receive Buffer Filling Level"]
-pub type RbflvlR = crate::FieldReader;
+pub type RBFLVL_R = crate::FieldReader;
 #[doc = "Field `TBFLVL` reader - Transmit Buffer Filling Level"]
-pub type TbflvlR = crate::FieldReader;
+pub type TBFLVL_R = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Standard Receive Buffer Event"]
     #[inline(always)]
-    pub fn srbi(&self) -> SrbiR {
-        SrbiR::new((self.bits & 1) != 0)
+    pub fn srbi(&self) -> SRBI_R {
+        SRBI_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Receive Buffer Error Event"]
     #[inline(always)]
-    pub fn rberi(&self) -> RberiR {
-        RberiR::new(((self.bits >> 1) & 1) != 0)
+    pub fn rberi(&self) -> RBERI_R {
+        RBERI_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Alternative Receive Buffer Event"]
     #[inline(always)]
-    pub fn arbi(&self) -> ArbiR {
-        ArbiR::new(((self.bits >> 2) & 1) != 0)
+    pub fn arbi(&self) -> ARBI_R {
+        ARBI_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Receive Buffer Empty"]
     #[inline(always)]
-    pub fn rempty(&self) -> RemptyR {
-        RemptyR::new(((self.bits >> 3) & 1) != 0)
+    pub fn rempty(&self) -> REMPTY_R {
+        REMPTY_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Receive Buffer Full"]
     #[inline(always)]
-    pub fn rfull(&self) -> RfullR {
-        RfullR::new(((self.bits >> 4) & 1) != 0)
+    pub fn rfull(&self) -> RFULL_R {
+        RFULL_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Receive Buffer Busy"]
     #[inline(always)]
-    pub fn rbus(&self) -> RbusR {
-        RbusR::new(((self.bits >> 5) & 1) != 0)
+    pub fn rbus(&self) -> RBUS_R {
+        RBUS_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Standard Receive Buffer Event Trigger"]
     #[inline(always)]
-    pub fn srbt(&self) -> SrbtR {
-        SrbtR::new(((self.bits >> 6) & 1) != 0)
+    pub fn srbt(&self) -> SRBT_R {
+        SRBT_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 8 - Standard Transmit Buffer Event"]
     #[inline(always)]
-    pub fn stbi(&self) -> StbiR {
-        StbiR::new(((self.bits >> 8) & 1) != 0)
+    pub fn stbi(&self) -> STBI_R {
+        STBI_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Transmit Buffer Error Event"]
     #[inline(always)]
-    pub fn tberi(&self) -> TberiR {
-        TberiR::new(((self.bits >> 9) & 1) != 0)
+    pub fn tberi(&self) -> TBERI_R {
+        TBERI_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 11 - Transmit Buffer Empty"]
     #[inline(always)]
-    pub fn tempty(&self) -> TemptyR {
-        TemptyR::new(((self.bits >> 11) & 1) != 0)
+    pub fn tempty(&self) -> TEMPTY_R {
+        TEMPTY_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Transmit Buffer Full"]
     #[inline(always)]
-    pub fn tfull(&self) -> TfullR {
-        TfullR::new(((self.bits >> 12) & 1) != 0)
+    pub fn tfull(&self) -> TFULL_R {
+        TFULL_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Transmit Buffer Busy"]
     #[inline(always)]
-    pub fn tbus(&self) -> TbusR {
-        TbusR::new(((self.bits >> 13) & 1) != 0)
+    pub fn tbus(&self) -> TBUS_R {
+        TBUS_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Standard Transmit Buffer Event Trigger"]
     #[inline(always)]
-    pub fn stbt(&self) -> StbtR {
-        StbtR::new(((self.bits >> 14) & 1) != 0)
+    pub fn stbt(&self) -> STBT_R {
+        STBT_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bits 16:22 - Receive Buffer Filling Level"]
     #[inline(always)]
-    pub fn rbflvl(&self) -> RbflvlR {
-        RbflvlR::new(((self.bits >> 16) & 0x7f) as u8)
+    pub fn rbflvl(&self) -> RBFLVL_R {
+        RBFLVL_R::new(((self.bits >> 16) & 0x7f) as u8)
     }
     #[doc = "Bits 24:30 - Transmit Buffer Filling Level"]
     #[inline(always)]
-    pub fn tbflvl(&self) -> TbflvlR {
-        TbflvlR::new(((self.bits >> 24) & 0x7f) as u8)
+    pub fn tbflvl(&self) -> TBFLVL_R {
+        TBFLVL_R::new(((self.bits >> 24) & 0x7f) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Standard Receive Buffer Event"]
     #[inline(always)]
     #[must_use]
-    pub fn srbi(&mut self) -> SrbiW<TrbsrSpec> {
-        SrbiW::new(self, 0)
+    pub fn srbi(&mut self) -> SRBI_W<TRBSR_SPEC> {
+        SRBI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Receive Buffer Error Event"]
     #[inline(always)]
     #[must_use]
-    pub fn rberi(&mut self) -> RberiW<TrbsrSpec> {
-        RberiW::new(self, 1)
+    pub fn rberi(&mut self) -> RBERI_W<TRBSR_SPEC> {
+        RBERI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Alternative Receive Buffer Event"]
     #[inline(always)]
     #[must_use]
-    pub fn arbi(&mut self) -> ArbiW<TrbsrSpec> {
-        ArbiW::new(self, 2)
+    pub fn arbi(&mut self) -> ARBI_W<TRBSR_SPEC> {
+        ARBI_W::new(self, 2)
     }
     #[doc = "Bit 8 - Standard Transmit Buffer Event"]
     #[inline(always)]
     #[must_use]
-    pub fn stbi(&mut self) -> StbiW<TrbsrSpec> {
-        StbiW::new(self, 8)
+    pub fn stbi(&mut self) -> STBI_W<TRBSR_SPEC> {
+        STBI_W::new(self, 8)
     }
     #[doc = "Bit 9 - Transmit Buffer Error Event"]
     #[inline(always)]
     #[must_use]
-    pub fn tberi(&mut self) -> TberiW<TrbsrSpec> {
-        TberiW::new(self, 9)
+    pub fn tberi(&mut self) -> TBERI_W<TRBSR_SPEC> {
+        TBERI_W::new(self, 9)
     }
 }
 #[doc = "Transmit/Receive Buffer Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`trbsr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`trbsr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct TrbsrSpec;
-impl crate::RegisterSpec for TrbsrSpec {
+pub struct TRBSR_SPEC;
+impl crate::RegisterSpec for TRBSR_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`trbsr::R`](R) reader structure"]
-impl crate::Readable for TrbsrSpec {}
+impl crate::Readable for TRBSR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`trbsr::W`](W) writer structure"]
-impl crate::Writable for TrbsrSpec {
+impl crate::Writable for TRBSR_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TRBSR to value 0x0808"]
-impl crate::Resettable for TrbsrSpec {
+impl crate::Resettable for TRBSR_SPEC {
     const RESET_VALUE: u32 = 0x0808;
 }

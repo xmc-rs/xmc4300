@@ -1,97 +1,97 @@
 #[doc = "Register `FMMU_TYPE` reader"]
-pub type R = crate::R<FmmuTypeSpec>;
+pub type R = crate::R<FMMU_TYPE_SPEC>;
 #[doc = "Read Access\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RAcc {
+pub enum R_ACC_A {
     #[doc = "0: Ignore mapping for read accesses"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Use mapping for read accesses"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<RAcc> for bool {
+impl From<R_ACC_A> for bool {
     #[inline(always)]
-    fn from(variant: RAcc) -> Self {
+    fn from(variant: R_ACC_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `R_ACC` reader - Read Access"]
-pub type RAccR = crate::BitReader<RAcc>;
-impl RAccR {
+pub type R_ACC_R = crate::BitReader<R_ACC_A>;
+impl R_ACC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RAcc {
+    pub const fn variant(&self) -> R_ACC_A {
         match self.bits {
-            false => RAcc::Value1,
-            true => RAcc::Value2,
+            false => R_ACC_A::VALUE1,
+            true => R_ACC_A::VALUE2,
         }
     }
     #[doc = "Ignore mapping for read accesses"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RAcc::Value1
+        *self == R_ACC_A::VALUE1
     }
     #[doc = "Use mapping for read accesses"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RAcc::Value2
+        *self == R_ACC_A::VALUE2
     }
 }
 #[doc = "Write Access\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WAcc {
+pub enum W_ACC_A {
     #[doc = "0: Ignore mapping for write accesses"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Use mapping for write accesses"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<WAcc> for bool {
+impl From<W_ACC_A> for bool {
     #[inline(always)]
-    fn from(variant: WAcc) -> Self {
+    fn from(variant: W_ACC_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `W_ACC` reader - Write Access"]
-pub type WAccR = crate::BitReader<WAcc>;
-impl WAccR {
+pub type W_ACC_R = crate::BitReader<W_ACC_A>;
+impl W_ACC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WAcc {
+    pub const fn variant(&self) -> W_ACC_A {
         match self.bits {
-            false => WAcc::Value1,
-            true => WAcc::Value2,
+            false => W_ACC_A::VALUE1,
+            true => W_ACC_A::VALUE2,
         }
     }
     #[doc = "Ignore mapping for write accesses"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WAcc::Value1
+        *self == W_ACC_A::VALUE1
     }
     #[doc = "Use mapping for write accesses"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WAcc::Value2
+        *self == W_ACC_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - Read Access"]
     #[inline(always)]
-    pub fn r_acc(&self) -> RAccR {
-        RAccR::new((self.bits & 1) != 0)
+    pub fn r_acc(&self) -> R_ACC_R {
+        R_ACC_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Write Access"]
     #[inline(always)]
-    pub fn w_acc(&self) -> WAccR {
-        WAccR::new(((self.bits >> 1) & 1) != 0)
+    pub fn w_acc(&self) -> W_ACC_R {
+        W_ACC_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[doc = "T0pe FMMU y\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmmu_type::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct FmmuTypeSpec;
-impl crate::RegisterSpec for FmmuTypeSpec {
+pub struct FMMU_TYPE_SPEC;
+impl crate::RegisterSpec for FMMU_TYPE_SPEC {
     type Ux = u8;
 }
 #[doc = "`read()` method returns [`fmmu_type::R`](R) reader structure"]
-impl crate::Readable for FmmuTypeSpec {}
+impl crate::Readable for FMMU_TYPE_SPEC {}
 #[doc = "`reset()` method sets FMMU_TYPE to value 0"]
-impl crate::Resettable for FmmuTypeSpec {
+impl crate::Resettable for FMMU_TYPE_SPEC {
     const RESET_VALUE: u8 = 0;
 }

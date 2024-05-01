@@ -1,280 +1,280 @@
 #[doc = "Register `EXICON[%s]` reader"]
-pub type R = crate::R<ExiconSpec>;
+pub type R = crate::R<EXICON_SPEC>;
 #[doc = "Register `EXICON[%s]` writer"]
-pub type W = crate::W<ExiconSpec>;
+pub type W = crate::W<EXICON_SPEC>;
 #[doc = "Output Trigger Pulse Enable for ETLx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pe {
+pub enum PE_A {
     #[doc = "0: The trigger pulse generation is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The trigger pulse generation is enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Pe> for bool {
+impl From<PE_A> for bool {
     #[inline(always)]
-    fn from(variant: Pe) -> Self {
+    fn from(variant: PE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PE` reader - Output Trigger Pulse Enable for ETLx"]
-pub type PeR = crate::BitReader<Pe>;
-impl PeR {
+pub type PE_R = crate::BitReader<PE_A>;
+impl PE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pe {
+    pub const fn variant(&self) -> PE_A {
         match self.bits {
-            false => Pe::Value1,
-            true => Pe::Value2,
+            false => PE_A::VALUE1,
+            true => PE_A::VALUE2,
         }
     }
     #[doc = "The trigger pulse generation is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Pe::Value1
+        *self == PE_A::VALUE1
     }
     #[doc = "The trigger pulse generation is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Pe::Value2
+        *self == PE_A::VALUE2
     }
 }
 #[doc = "Field `PE` writer - Output Trigger Pulse Enable for ETLx"]
-pub type PeW<'a, REG> = crate::BitWriter<'a, REG, Pe>;
-impl<'a, REG> PeW<'a, REG>
+pub type PE_W<'a, REG> = crate::BitWriter<'a, REG, PE_A>;
+impl<'a, REG> PE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The trigger pulse generation is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Pe::Value1)
+        self.variant(PE_A::VALUE1)
     }
     #[doc = "The trigger pulse generation is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Pe::Value2)
+        self.variant(PE_A::VALUE2)
     }
 }
 #[doc = "Rebuild Level Detection for Status Flag for ETLx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ld {
+pub enum LD_A {
     #[doc = "0: The status flag FL is not cleared by hardware and is used as \"sticky\" bit. Once set, it is not influenced by any edge until it becomes cleared by software."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The status flag FL rebuilds a level detection of the desired event. It becomes automatically set with a rising edge if RE = 1 or with a falling edge if FE = 1. It becomes automatically cleared with a rising edge if RE = 0 or with a falling edge if FE = 0."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ld> for bool {
+impl From<LD_A> for bool {
     #[inline(always)]
-    fn from(variant: Ld) -> Self {
+    fn from(variant: LD_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LD` reader - Rebuild Level Detection for Status Flag for ETLx"]
-pub type LdR = crate::BitReader<Ld>;
-impl LdR {
+pub type LD_R = crate::BitReader<LD_A>;
+impl LD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ld {
+    pub const fn variant(&self) -> LD_A {
         match self.bits {
-            false => Ld::Value1,
-            true => Ld::Value2,
+            false => LD_A::VALUE1,
+            true => LD_A::VALUE2,
         }
     }
     #[doc = "The status flag FL is not cleared by hardware and is used as \"sticky\" bit. Once set, it is not influenced by any edge until it becomes cleared by software."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ld::Value1
+        *self == LD_A::VALUE1
     }
     #[doc = "The status flag FL rebuilds a level detection of the desired event. It becomes automatically set with a rising edge if RE = 1 or with a falling edge if FE = 1. It becomes automatically cleared with a rising edge if RE = 0 or with a falling edge if FE = 0."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ld::Value2
+        *self == LD_A::VALUE2
     }
 }
 #[doc = "Field `LD` writer - Rebuild Level Detection for Status Flag for ETLx"]
-pub type LdW<'a, REG> = crate::BitWriter<'a, REG, Ld>;
-impl<'a, REG> LdW<'a, REG>
+pub type LD_W<'a, REG> = crate::BitWriter<'a, REG, LD_A>;
+impl<'a, REG> LD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The status flag FL is not cleared by hardware and is used as \"sticky\" bit. Once set, it is not influenced by any edge until it becomes cleared by software."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ld::Value1)
+        self.variant(LD_A::VALUE1)
     }
     #[doc = "The status flag FL rebuilds a level detection of the desired event. It becomes automatically set with a rising edge if RE = 1 or with a falling edge if FE = 1. It becomes automatically cleared with a rising edge if RE = 0 or with a falling edge if FE = 0."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ld::Value2)
+        self.variant(LD_A::VALUE2)
     }
 }
 #[doc = "Rising Edge Detection Enable ETLx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Re {
+pub enum RE_A {
     #[doc = "0: A rising edge is not considered as edge event"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A rising edge is considered as edge event"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Re> for bool {
+impl From<RE_A> for bool {
     #[inline(always)]
-    fn from(variant: Re) -> Self {
+    fn from(variant: RE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RE` reader - Rising Edge Detection Enable ETLx"]
-pub type ReR = crate::BitReader<Re>;
-impl ReR {
+pub type RE_R = crate::BitReader<RE_A>;
+impl RE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Re {
+    pub const fn variant(&self) -> RE_A {
         match self.bits {
-            false => Re::Value1,
-            true => Re::Value2,
+            false => RE_A::VALUE1,
+            true => RE_A::VALUE2,
         }
     }
     #[doc = "A rising edge is not considered as edge event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Re::Value1
+        *self == RE_A::VALUE1
     }
     #[doc = "A rising edge is considered as edge event"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Re::Value2
+        *self == RE_A::VALUE2
     }
 }
 #[doc = "Field `RE` writer - Rising Edge Detection Enable ETLx"]
-pub type ReW<'a, REG> = crate::BitWriter<'a, REG, Re>;
-impl<'a, REG> ReW<'a, REG>
+pub type RE_W<'a, REG> = crate::BitWriter<'a, REG, RE_A>;
+impl<'a, REG> RE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "A rising edge is not considered as edge event"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Re::Value1)
+        self.variant(RE_A::VALUE1)
     }
     #[doc = "A rising edge is considered as edge event"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Re::Value2)
+        self.variant(RE_A::VALUE2)
     }
 }
 #[doc = "Falling Edge Detection Enable ETLx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Fe {
+pub enum FE_A {
     #[doc = "0: A falling edge is not considered as edge event"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A falling edge is considered as edge event"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Fe> for bool {
+impl From<FE_A> for bool {
     #[inline(always)]
-    fn from(variant: Fe) -> Self {
+    fn from(variant: FE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `FE` reader - Falling Edge Detection Enable ETLx"]
-pub type FeR = crate::BitReader<Fe>;
-impl FeR {
+pub type FE_R = crate::BitReader<FE_A>;
+impl FE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Fe {
+    pub const fn variant(&self) -> FE_A {
         match self.bits {
-            false => Fe::Value1,
-            true => Fe::Value2,
+            false => FE_A::VALUE1,
+            true => FE_A::VALUE2,
         }
     }
     #[doc = "A falling edge is not considered as edge event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Fe::Value1
+        *self == FE_A::VALUE1
     }
     #[doc = "A falling edge is considered as edge event"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Fe::Value2
+        *self == FE_A::VALUE2
     }
 }
 #[doc = "Field `FE` writer - Falling Edge Detection Enable ETLx"]
-pub type FeW<'a, REG> = crate::BitWriter<'a, REG, Fe>;
-impl<'a, REG> FeW<'a, REG>
+pub type FE_W<'a, REG> = crate::BitWriter<'a, REG, FE_A>;
+impl<'a, REG> FE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "A falling edge is not considered as edge event"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Fe::Value1)
+        self.variant(FE_A::VALUE1)
     }
     #[doc = "A falling edge is considered as edge event"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Fe::Value2)
+        self.variant(FE_A::VALUE2)
     }
 }
 #[doc = "Output Channel Select for ETLx Output Trigger Pulse\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Ocs {
+pub enum OCS_A {
     #[doc = "0: Trigger pulses are sent to OGU0"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Trigger pulses are sent to OGU1"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Trigger pulses are sent to OGU2"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Trigger pulses are sent to OGU3"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Ocs> for u8 {
+impl From<OCS_A> for u8 {
     #[inline(always)]
-    fn from(variant: Ocs) -> Self {
+    fn from(variant: OCS_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Ocs {
+impl crate::FieldSpec for OCS_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Ocs {}
+impl crate::IsEnum for OCS_A {}
 #[doc = "Field `OCS` reader - Output Channel Select for ETLx Output Trigger Pulse"]
-pub type OcsR = crate::FieldReader<Ocs>;
-impl OcsR {
+pub type OCS_R = crate::FieldReader<OCS_A>;
+impl OCS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Ocs> {
+    pub const fn variant(&self) -> Option<OCS_A> {
         match self.bits {
-            0 => Some(Ocs::Value1),
-            1 => Some(Ocs::Value2),
-            2 => Some(Ocs::Value3),
-            3 => Some(Ocs::Value4),
+            0 => Some(OCS_A::VALUE1),
+            1 => Some(OCS_A::VALUE2),
+            2 => Some(OCS_A::VALUE3),
+            3 => Some(OCS_A::VALUE4),
             _ => None,
         }
     }
     #[doc = "Trigger pulses are sent to OGU0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ocs::Value1
+        *self == OCS_A::VALUE1
     }
     #[doc = "Trigger pulses are sent to OGU1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ocs::Value2
+        *self == OCS_A::VALUE2
     }
     #[doc = "Trigger pulses are sent to OGU2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Ocs::Value3
+        *self == OCS_A::VALUE3
     }
     #[doc = "Trigger pulses are sent to OGU3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Ocs::Value4
+        *self == OCS_A::VALUE4
     }
 }
 #[doc = "Field `OCS` writer - Output Channel Select for ETLx Output Trigger Pulse"]
-pub type OcsW<'a, REG> = crate::FieldWriter<'a, REG, 3, Ocs>;
-impl<'a, REG> OcsW<'a, REG>
+pub type OCS_W<'a, REG> = crate::FieldWriter<'a, REG, 3, OCS_A>;
+impl<'a, REG> OCS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -282,138 +282,138 @@ where
     #[doc = "Trigger pulses are sent to OGU0"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ocs::Value1)
+        self.variant(OCS_A::VALUE1)
     }
     #[doc = "Trigger pulses are sent to OGU1"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ocs::Value2)
+        self.variant(OCS_A::VALUE2)
     }
     #[doc = "Trigger pulses are sent to OGU2"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Ocs::Value3)
+        self.variant(OCS_A::VALUE3)
     }
     #[doc = "Trigger pulses are sent to OGU3"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Ocs::Value4)
+        self.variant(OCS_A::VALUE4)
     }
 }
 #[doc = "Status Flag for ETLx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Fl {
+pub enum FL_A {
     #[doc = "0: The enabled edge event has not been detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The enabled edge event has been detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Fl> for bool {
+impl From<FL_A> for bool {
     #[inline(always)]
-    fn from(variant: Fl) -> Self {
+    fn from(variant: FL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `FL` reader - Status Flag for ETLx"]
-pub type FlR = crate::BitReader<Fl>;
-impl FlR {
+pub type FL_R = crate::BitReader<FL_A>;
+impl FL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Fl {
+    pub const fn variant(&self) -> FL_A {
         match self.bits {
-            false => Fl::Value1,
-            true => Fl::Value2,
+            false => FL_A::VALUE1,
+            true => FL_A::VALUE2,
         }
     }
     #[doc = "The enabled edge event has not been detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Fl::Value1
+        *self == FL_A::VALUE1
     }
     #[doc = "The enabled edge event has been detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Fl::Value2
+        *self == FL_A::VALUE2
     }
 }
 #[doc = "Field `FL` writer - Status Flag for ETLx"]
-pub type FlW<'a, REG> = crate::BitWriter<'a, REG, Fl>;
-impl<'a, REG> FlW<'a, REG>
+pub type FL_W<'a, REG> = crate::BitWriter<'a, REG, FL_A>;
+impl<'a, REG> FL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The enabled edge event has not been detected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Fl::Value1)
+        self.variant(FL_A::VALUE1)
     }
     #[doc = "The enabled edge event has been detected"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Fl::Value2)
+        self.variant(FL_A::VALUE2)
     }
 }
 #[doc = "Input Source Select for ERSx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Ss {
+pub enum SS_A {
     #[doc = "0: Input A without additional combination"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Input B without additional combination"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Input A OR input B"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Input A AND input B"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Ss> for u8 {
+impl From<SS_A> for u8 {
     #[inline(always)]
-    fn from(variant: Ss) -> Self {
+    fn from(variant: SS_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Ss {
+impl crate::FieldSpec for SS_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Ss {}
+impl crate::IsEnum for SS_A {}
 #[doc = "Field `SS` reader - Input Source Select for ERSx"]
-pub type SsR = crate::FieldReader<Ss>;
-impl SsR {
+pub type SS_R = crate::FieldReader<SS_A>;
+impl SS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ss {
+    pub const fn variant(&self) -> SS_A {
         match self.bits {
-            0 => Ss::Value1,
-            1 => Ss::Value2,
-            2 => Ss::Value3,
-            3 => Ss::Value4,
+            0 => SS_A::VALUE1,
+            1 => SS_A::VALUE2,
+            2 => SS_A::VALUE3,
+            3 => SS_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Input A without additional combination"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ss::Value1
+        *self == SS_A::VALUE1
     }
     #[doc = "Input B without additional combination"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ss::Value2
+        *self == SS_A::VALUE2
     }
     #[doc = "Input A OR input B"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Ss::Value3
+        *self == SS_A::VALUE3
     }
     #[doc = "Input A AND input B"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Ss::Value4
+        *self == SS_A::VALUE4
     }
 }
 #[doc = "Field `SS` writer - Input Source Select for ERSx"]
-pub type SsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ss, crate::Safe>;
-impl<'a, REG> SsW<'a, REG>
+pub type SS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, SS_A, crate::Safe>;
+impl<'a, REG> SS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -421,248 +421,248 @@ where
     #[doc = "Input A without additional combination"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ss::Value1)
+        self.variant(SS_A::VALUE1)
     }
     #[doc = "Input B without additional combination"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ss::Value2)
+        self.variant(SS_A::VALUE2)
     }
     #[doc = "Input A OR input B"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Ss::Value3)
+        self.variant(SS_A::VALUE3)
     }
     #[doc = "Input A AND input B"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Ss::Value4)
+        self.variant(SS_A::VALUE4)
     }
 }
 #[doc = "Input A Negation Select for ERSx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Na {
+pub enum NA_A {
     #[doc = "0: Input A is used directly"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Input A is inverted"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Na> for bool {
+impl From<NA_A> for bool {
     #[inline(always)]
-    fn from(variant: Na) -> Self {
+    fn from(variant: NA_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `NA` reader - Input A Negation Select for ERSx"]
-pub type NaR = crate::BitReader<Na>;
-impl NaR {
+pub type NA_R = crate::BitReader<NA_A>;
+impl NA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Na {
+    pub const fn variant(&self) -> NA_A {
         match self.bits {
-            false => Na::Value1,
-            true => Na::Value2,
+            false => NA_A::VALUE1,
+            true => NA_A::VALUE2,
         }
     }
     #[doc = "Input A is used directly"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Na::Value1
+        *self == NA_A::VALUE1
     }
     #[doc = "Input A is inverted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Na::Value2
+        *self == NA_A::VALUE2
     }
 }
 #[doc = "Field `NA` writer - Input A Negation Select for ERSx"]
-pub type NaW<'a, REG> = crate::BitWriter<'a, REG, Na>;
-impl<'a, REG> NaW<'a, REG>
+pub type NA_W<'a, REG> = crate::BitWriter<'a, REG, NA_A>;
+impl<'a, REG> NA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Input A is used directly"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Na::Value1)
+        self.variant(NA_A::VALUE1)
     }
     #[doc = "Input A is inverted"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Na::Value2)
+        self.variant(NA_A::VALUE2)
     }
 }
 #[doc = "Input B Negation Select for ERSx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Nb {
+pub enum NB_A {
     #[doc = "0: Input B is used directly"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Input B is inverted"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Nb> for bool {
+impl From<NB_A> for bool {
     #[inline(always)]
-    fn from(variant: Nb) -> Self {
+    fn from(variant: NB_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `NB` reader - Input B Negation Select for ERSx"]
-pub type NbR = crate::BitReader<Nb>;
-impl NbR {
+pub type NB_R = crate::BitReader<NB_A>;
+impl NB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Nb {
+    pub const fn variant(&self) -> NB_A {
         match self.bits {
-            false => Nb::Value1,
-            true => Nb::Value2,
+            false => NB_A::VALUE1,
+            true => NB_A::VALUE2,
         }
     }
     #[doc = "Input B is used directly"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Nb::Value1
+        *self == NB_A::VALUE1
     }
     #[doc = "Input B is inverted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Nb::Value2
+        *self == NB_A::VALUE2
     }
 }
 #[doc = "Field `NB` writer - Input B Negation Select for ERSx"]
-pub type NbW<'a, REG> = crate::BitWriter<'a, REG, Nb>;
-impl<'a, REG> NbW<'a, REG>
+pub type NB_W<'a, REG> = crate::BitWriter<'a, REG, NB_A>;
+impl<'a, REG> NB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Input B is used directly"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Nb::Value1)
+        self.variant(NB_A::VALUE1)
     }
     #[doc = "Input B is inverted"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Nb::Value2)
+        self.variant(NB_A::VALUE2)
     }
 }
 impl R {
     #[doc = "Bit 0 - Output Trigger Pulse Enable for ETLx"]
     #[inline(always)]
-    pub fn pe(&self) -> PeR {
-        PeR::new((self.bits & 1) != 0)
+    pub fn pe(&self) -> PE_R {
+        PE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Rebuild Level Detection for Status Flag for ETLx"]
     #[inline(always)]
-    pub fn ld(&self) -> LdR {
-        LdR::new(((self.bits >> 1) & 1) != 0)
+    pub fn ld(&self) -> LD_R {
+        LD_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Rising Edge Detection Enable ETLx"]
     #[inline(always)]
-    pub fn re(&self) -> ReR {
-        ReR::new(((self.bits >> 2) & 1) != 0)
+    pub fn re(&self) -> RE_R {
+        RE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Falling Edge Detection Enable ETLx"]
     #[inline(always)]
-    pub fn fe(&self) -> FeR {
-        FeR::new(((self.bits >> 3) & 1) != 0)
+    pub fn fe(&self) -> FE_R {
+        FE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:6 - Output Channel Select for ETLx Output Trigger Pulse"]
     #[inline(always)]
-    pub fn ocs(&self) -> OcsR {
-        OcsR::new(((self.bits >> 4) & 7) as u8)
+    pub fn ocs(&self) -> OCS_R {
+        OCS_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bit 7 - Status Flag for ETLx"]
     #[inline(always)]
-    pub fn fl(&self) -> FlR {
-        FlR::new(((self.bits >> 7) & 1) != 0)
+    pub fn fl(&self) -> FL_R {
+        FL_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Input Source Select for ERSx"]
     #[inline(always)]
-    pub fn ss(&self) -> SsR {
-        SsR::new(((self.bits >> 8) & 3) as u8)
+    pub fn ss(&self) -> SS_R {
+        SS_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bit 10 - Input A Negation Select for ERSx"]
     #[inline(always)]
-    pub fn na(&self) -> NaR {
-        NaR::new(((self.bits >> 10) & 1) != 0)
+    pub fn na(&self) -> NA_R {
+        NA_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Input B Negation Select for ERSx"]
     #[inline(always)]
-    pub fn nb(&self) -> NbR {
-        NbR::new(((self.bits >> 11) & 1) != 0)
+    pub fn nb(&self) -> NB_R {
+        NB_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Output Trigger Pulse Enable for ETLx"]
     #[inline(always)]
     #[must_use]
-    pub fn pe(&mut self) -> PeW<ExiconSpec> {
-        PeW::new(self, 0)
+    pub fn pe(&mut self) -> PE_W<EXICON_SPEC> {
+        PE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Rebuild Level Detection for Status Flag for ETLx"]
     #[inline(always)]
     #[must_use]
-    pub fn ld(&mut self) -> LdW<ExiconSpec> {
-        LdW::new(self, 1)
+    pub fn ld(&mut self) -> LD_W<EXICON_SPEC> {
+        LD_W::new(self, 1)
     }
     #[doc = "Bit 2 - Rising Edge Detection Enable ETLx"]
     #[inline(always)]
     #[must_use]
-    pub fn re(&mut self) -> ReW<ExiconSpec> {
-        ReW::new(self, 2)
+    pub fn re(&mut self) -> RE_W<EXICON_SPEC> {
+        RE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Falling Edge Detection Enable ETLx"]
     #[inline(always)]
     #[must_use]
-    pub fn fe(&mut self) -> FeW<ExiconSpec> {
-        FeW::new(self, 3)
+    pub fn fe(&mut self) -> FE_W<EXICON_SPEC> {
+        FE_W::new(self, 3)
     }
     #[doc = "Bits 4:6 - Output Channel Select for ETLx Output Trigger Pulse"]
     #[inline(always)]
     #[must_use]
-    pub fn ocs(&mut self) -> OcsW<ExiconSpec> {
-        OcsW::new(self, 4)
+    pub fn ocs(&mut self) -> OCS_W<EXICON_SPEC> {
+        OCS_W::new(self, 4)
     }
     #[doc = "Bit 7 - Status Flag for ETLx"]
     #[inline(always)]
     #[must_use]
-    pub fn fl(&mut self) -> FlW<ExiconSpec> {
-        FlW::new(self, 7)
+    pub fn fl(&mut self) -> FL_W<EXICON_SPEC> {
+        FL_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Input Source Select for ERSx"]
     #[inline(always)]
     #[must_use]
-    pub fn ss(&mut self) -> SsW<ExiconSpec> {
-        SsW::new(self, 8)
+    pub fn ss(&mut self) -> SS_W<EXICON_SPEC> {
+        SS_W::new(self, 8)
     }
     #[doc = "Bit 10 - Input A Negation Select for ERSx"]
     #[inline(always)]
     #[must_use]
-    pub fn na(&mut self) -> NaW<ExiconSpec> {
-        NaW::new(self, 10)
+    pub fn na(&mut self) -> NA_W<EXICON_SPEC> {
+        NA_W::new(self, 10)
     }
     #[doc = "Bit 11 - Input B Negation Select for ERSx"]
     #[inline(always)]
     #[must_use]
-    pub fn nb(&mut self) -> NbW<ExiconSpec> {
-        NbW::new(self, 11)
+    pub fn nb(&mut self) -> NB_W<EXICON_SPEC> {
+        NB_W::new(self, 11)
     }
 }
 #[doc = "Event Input Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`exicon::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`exicon::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct ExiconSpec;
-impl crate::RegisterSpec for ExiconSpec {
+pub struct EXICON_SPEC;
+impl crate::RegisterSpec for EXICON_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`exicon::R`](R) reader structure"]
-impl crate::Readable for ExiconSpec {}
+impl crate::Readable for EXICON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`exicon::W`](W) writer structure"]
-impl crate::Writable for ExiconSpec {
+impl crate::Writable for EXICON_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets EXICON[%s]
 to value 0"]
-impl crate::Resettable for ExiconSpec {
+impl crate::Resettable for EXICON_SPEC {
     const RESET_VALUE: u32 = 0;
 }

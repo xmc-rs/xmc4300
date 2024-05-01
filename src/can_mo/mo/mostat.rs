@@ -1,528 +1,528 @@
 #[doc = "Register `MOSTAT` reader"]
-pub type R = crate::R<MostatSpec>;
+pub type R = crate::R<MOSTAT_SPEC>;
 #[doc = "Receive Pending\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rxpnd {
+pub enum RXPND_A {
     #[doc = "0: No CAN message has been received."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A CAN message has been received by the message object n, either directly or via gateway copy action."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rxpnd> for bool {
+impl From<RXPND_A> for bool {
     #[inline(always)]
-    fn from(variant: Rxpnd) -> Self {
+    fn from(variant: RXPND_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RXPND` reader - Receive Pending"]
-pub type RxpndR = crate::BitReader<Rxpnd>;
-impl RxpndR {
+pub type RXPND_R = crate::BitReader<RXPND_A>;
+impl RXPND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rxpnd {
+    pub const fn variant(&self) -> RXPND_A {
         match self.bits {
-            false => Rxpnd::Value1,
-            true => Rxpnd::Value2,
+            false => RXPND_A::VALUE1,
+            true => RXPND_A::VALUE2,
         }
     }
     #[doc = "No CAN message has been received."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rxpnd::Value1
+        *self == RXPND_A::VALUE1
     }
     #[doc = "A CAN message has been received by the message object n, either directly or via gateway copy action."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rxpnd::Value2
+        *self == RXPND_A::VALUE2
     }
 }
 #[doc = "Transmit Pending\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Txpnd {
+pub enum TXPND_A {
     #[doc = "0: No CAN message has been transmitted."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A CAN message from message object n has been transmitted successfully over the CAN bus."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Txpnd> for bool {
+impl From<TXPND_A> for bool {
     #[inline(always)]
-    fn from(variant: Txpnd) -> Self {
+    fn from(variant: TXPND_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TXPND` reader - Transmit Pending"]
-pub type TxpndR = crate::BitReader<Txpnd>;
-impl TxpndR {
+pub type TXPND_R = crate::BitReader<TXPND_A>;
+impl TXPND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Txpnd {
+    pub const fn variant(&self) -> TXPND_A {
         match self.bits {
-            false => Txpnd::Value1,
-            true => Txpnd::Value2,
+            false => TXPND_A::VALUE1,
+            true => TXPND_A::VALUE2,
         }
     }
     #[doc = "No CAN message has been transmitted."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Txpnd::Value1
+        *self == TXPND_A::VALUE1
     }
     #[doc = "A CAN message from message object n has been transmitted successfully over the CAN bus."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Txpnd::Value2
+        *self == TXPND_A::VALUE2
     }
 }
 #[doc = "Receive Updating\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rxupd {
+pub enum RXUPD_A {
     #[doc = "0: No receive update ongoing."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Message identifier, DLC, and data of the message object are currently updated."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rxupd> for bool {
+impl From<RXUPD_A> for bool {
     #[inline(always)]
-    fn from(variant: Rxupd) -> Self {
+    fn from(variant: RXUPD_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RXUPD` reader - Receive Updating"]
-pub type RxupdR = crate::BitReader<Rxupd>;
-impl RxupdR {
+pub type RXUPD_R = crate::BitReader<RXUPD_A>;
+impl RXUPD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rxupd {
+    pub const fn variant(&self) -> RXUPD_A {
         match self.bits {
-            false => Rxupd::Value1,
-            true => Rxupd::Value2,
+            false => RXUPD_A::VALUE1,
+            true => RXUPD_A::VALUE2,
         }
     }
     #[doc = "No receive update ongoing."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rxupd::Value1
+        *self == RXUPD_A::VALUE1
     }
     #[doc = "Message identifier, DLC, and data of the message object are currently updated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rxupd::Value2
+        *self == RXUPD_A::VALUE2
     }
 }
 #[doc = "New Data\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Newdat {
+pub enum NEWDAT_A {
     #[doc = "0: No update of the message object n since last flag reset."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Message object n has been updated."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Newdat> for bool {
+impl From<NEWDAT_A> for bool {
     #[inline(always)]
-    fn from(variant: Newdat) -> Self {
+    fn from(variant: NEWDAT_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `NEWDAT` reader - New Data"]
-pub type NewdatR = crate::BitReader<Newdat>;
-impl NewdatR {
+pub type NEWDAT_R = crate::BitReader<NEWDAT_A>;
+impl NEWDAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Newdat {
+    pub const fn variant(&self) -> NEWDAT_A {
         match self.bits {
-            false => Newdat::Value1,
-            true => Newdat::Value2,
+            false => NEWDAT_A::VALUE1,
+            true => NEWDAT_A::VALUE2,
         }
     }
     #[doc = "No update of the message object n since last flag reset."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Newdat::Value1
+        *self == NEWDAT_A::VALUE1
     }
     #[doc = "Message object n has been updated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Newdat::Value2
+        *self == NEWDAT_A::VALUE2
     }
 }
 #[doc = "Message Lost\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Msglst {
+pub enum MSGLST_A {
     #[doc = "0: No CAN message is lost."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A CAN message is lost because NEWDAT has become set again when it has already been set."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Msglst> for bool {
+impl From<MSGLST_A> for bool {
     #[inline(always)]
-    fn from(variant: Msglst) -> Self {
+    fn from(variant: MSGLST_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MSGLST` reader - Message Lost"]
-pub type MsglstR = crate::BitReader<Msglst>;
-impl MsglstR {
+pub type MSGLST_R = crate::BitReader<MSGLST_A>;
+impl MSGLST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Msglst {
+    pub const fn variant(&self) -> MSGLST_A {
         match self.bits {
-            false => Msglst::Value1,
-            true => Msglst::Value2,
+            false => MSGLST_A::VALUE1,
+            true => MSGLST_A::VALUE2,
         }
     }
     #[doc = "No CAN message is lost."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Msglst::Value1
+        *self == MSGLST_A::VALUE1
     }
     #[doc = "A CAN message is lost because NEWDAT has become set again when it has already been set."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Msglst::Value2
+        *self == MSGLST_A::VALUE2
     }
 }
 #[doc = "Message Valid\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Msgval {
+pub enum MSGVAL_A {
     #[doc = "0: Message object n is not valid."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Message object n is valid."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Msgval> for bool {
+impl From<MSGVAL_A> for bool {
     #[inline(always)]
-    fn from(variant: Msgval) -> Self {
+    fn from(variant: MSGVAL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MSGVAL` reader - Message Valid"]
-pub type MsgvalR = crate::BitReader<Msgval>;
-impl MsgvalR {
+pub type MSGVAL_R = crate::BitReader<MSGVAL_A>;
+impl MSGVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Msgval {
+    pub const fn variant(&self) -> MSGVAL_A {
         match self.bits {
-            false => Msgval::Value1,
-            true => Msgval::Value2,
+            false => MSGVAL_A::VALUE1,
+            true => MSGVAL_A::VALUE2,
         }
     }
     #[doc = "Message object n is not valid."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Msgval::Value1
+        *self == MSGVAL_A::VALUE1
     }
     #[doc = "Message object n is valid."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Msgval::Value2
+        *self == MSGVAL_A::VALUE2
     }
 }
 #[doc = "Receive/Transmit Selected\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rtsel {
+pub enum RTSEL_A {
     #[doc = "0: Message object n is not selected for receive or transmit operation."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Message object n is selected for receive or transmit operation."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rtsel> for bool {
+impl From<RTSEL_A> for bool {
     #[inline(always)]
-    fn from(variant: Rtsel) -> Self {
+    fn from(variant: RTSEL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RTSEL` reader - Receive/Transmit Selected"]
-pub type RtselR = crate::BitReader<Rtsel>;
-impl RtselR {
+pub type RTSEL_R = crate::BitReader<RTSEL_A>;
+impl RTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rtsel {
+    pub const fn variant(&self) -> RTSEL_A {
         match self.bits {
-            false => Rtsel::Value1,
-            true => Rtsel::Value2,
+            false => RTSEL_A::VALUE1,
+            true => RTSEL_A::VALUE2,
         }
     }
     #[doc = "Message object n is not selected for receive or transmit operation."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rtsel::Value1
+        *self == RTSEL_A::VALUE1
     }
     #[doc = "Message object n is selected for receive or transmit operation."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rtsel::Value2
+        *self == RTSEL_A::VALUE2
     }
 }
 #[doc = "Receive Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rxen {
+pub enum RXEN_A {
     #[doc = "0: Message object n is not enabled for frame reception."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Message object n is enabled for frame reception."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rxen> for bool {
+impl From<RXEN_A> for bool {
     #[inline(always)]
-    fn from(variant: Rxen) -> Self {
+    fn from(variant: RXEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RXEN` reader - Receive Enable"]
-pub type RxenR = crate::BitReader<Rxen>;
-impl RxenR {
+pub type RXEN_R = crate::BitReader<RXEN_A>;
+impl RXEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rxen {
+    pub const fn variant(&self) -> RXEN_A {
         match self.bits {
-            false => Rxen::Value1,
-            true => Rxen::Value2,
+            false => RXEN_A::VALUE1,
+            true => RXEN_A::VALUE2,
         }
     }
     #[doc = "Message object n is not enabled for frame reception."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rxen::Value1
+        *self == RXEN_A::VALUE1
     }
     #[doc = "Message object n is enabled for frame reception."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rxen::Value2
+        *self == RXEN_A::VALUE2
     }
 }
 #[doc = "Transmit Request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Txrq {
+pub enum TXRQ_A {
     #[doc = "0: No transmission of message object n is requested."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Transmission of message object n on the CAN bus is requested."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Txrq> for bool {
+impl From<TXRQ_A> for bool {
     #[inline(always)]
-    fn from(variant: Txrq) -> Self {
+    fn from(variant: TXRQ_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TXRQ` reader - Transmit Request"]
-pub type TxrqR = crate::BitReader<Txrq>;
-impl TxrqR {
+pub type TXRQ_R = crate::BitReader<TXRQ_A>;
+impl TXRQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Txrq {
+    pub const fn variant(&self) -> TXRQ_A {
         match self.bits {
-            false => Txrq::Value1,
-            true => Txrq::Value2,
+            false => TXRQ_A::VALUE1,
+            true => TXRQ_A::VALUE2,
         }
     }
     #[doc = "No transmission of message object n is requested."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Txrq::Value1
+        *self == TXRQ_A::VALUE1
     }
     #[doc = "Transmission of message object n on the CAN bus is requested."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Txrq::Value2
+        *self == TXRQ_A::VALUE2
     }
 }
 #[doc = "Transmit Enable 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Txen0 {
+pub enum TXEN0_A {
     #[doc = "0: Message object n is not enabled for frame transmission."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Message object n is enabled for frame transmission."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Txen0> for bool {
+impl From<TXEN0_A> for bool {
     #[inline(always)]
-    fn from(variant: Txen0) -> Self {
+    fn from(variant: TXEN0_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TXEN0` reader - Transmit Enable 0"]
-pub type Txen0R = crate::BitReader<Txen0>;
-impl Txen0R {
+pub type TXEN0_R = crate::BitReader<TXEN0_A>;
+impl TXEN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Txen0 {
+    pub const fn variant(&self) -> TXEN0_A {
         match self.bits {
-            false => Txen0::Value1,
-            true => Txen0::Value2,
+            false => TXEN0_A::VALUE1,
+            true => TXEN0_A::VALUE2,
         }
     }
     #[doc = "Message object n is not enabled for frame transmission."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Txen0::Value1
+        *self == TXEN0_A::VALUE1
     }
     #[doc = "Message object n is enabled for frame transmission."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Txen0::Value2
+        *self == TXEN0_A::VALUE2
     }
 }
 #[doc = "Transmit Enable 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Txen1 {
+pub enum TXEN1_A {
     #[doc = "0: Message object n is not enabled for frame transmission."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Message object n is enabled for frame transmission."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Txen1> for bool {
+impl From<TXEN1_A> for bool {
     #[inline(always)]
-    fn from(variant: Txen1) -> Self {
+    fn from(variant: TXEN1_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TXEN1` reader - Transmit Enable 1"]
-pub type Txen1R = crate::BitReader<Txen1>;
-impl Txen1R {
+pub type TXEN1_R = crate::BitReader<TXEN1_A>;
+impl TXEN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Txen1 {
+    pub const fn variant(&self) -> TXEN1_A {
         match self.bits {
-            false => Txen1::Value1,
-            true => Txen1::Value2,
+            false => TXEN1_A::VALUE1,
+            true => TXEN1_A::VALUE2,
         }
     }
     #[doc = "Message object n is not enabled for frame transmission."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Txen1::Value1
+        *self == TXEN1_A::VALUE1
     }
     #[doc = "Message object n is enabled for frame transmission."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Txen1::Value2
+        *self == TXEN1_A::VALUE2
     }
 }
 #[doc = "Message Direction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Dir {
+pub enum DIR_A {
     #[doc = "0: Receive Object selected: With TXRQ = 1, a Remote Frame with the identifier of message object n is scheduled for transmission. On reception of a Data Frame with matching identifier, the message is stored in message object n."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Transmit Object selected: If TXRQ = 1, message object n is scheduled for transmission of a Data Frame. On reception of a Remote Frame with matching identifier, bit TXRQ is set."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Dir> for bool {
+impl From<DIR_A> for bool {
     #[inline(always)]
-    fn from(variant: Dir) -> Self {
+    fn from(variant: DIR_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DIR` reader - Message Direction"]
-pub type DirR = crate::BitReader<Dir>;
-impl DirR {
+pub type DIR_R = crate::BitReader<DIR_A>;
+impl DIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Dir {
+    pub const fn variant(&self) -> DIR_A {
         match self.bits {
-            false => Dir::Value1,
-            true => Dir::Value2,
+            false => DIR_A::VALUE1,
+            true => DIR_A::VALUE2,
         }
     }
     #[doc = "Receive Object selected: With TXRQ = 1, a Remote Frame with the identifier of message object n is scheduled for transmission. On reception of a Data Frame with matching identifier, the message is stored in message object n."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Dir::Value1
+        *self == DIR_A::VALUE1
     }
     #[doc = "Transmit Object selected: If TXRQ = 1, message object n is scheduled for transmission of a Data Frame. On reception of a Remote Frame with matching identifier, bit TXRQ is set."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Dir::Value2
+        *self == DIR_A::VALUE2
     }
 }
 #[doc = "Field `LIST` reader - List Allocation"]
-pub type ListR = crate::FieldReader;
+pub type LIST_R = crate::FieldReader;
 #[doc = "Field `PPREV` reader - Pointer to Previous Message Object"]
-pub type PprevR = crate::FieldReader;
+pub type PPREV_R = crate::FieldReader;
 #[doc = "Field `PNEXT` reader - Pointer to Next Message Object"]
-pub type PnextR = crate::FieldReader;
+pub type PNEXT_R = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Receive Pending"]
     #[inline(always)]
-    pub fn rxpnd(&self) -> RxpndR {
-        RxpndR::new((self.bits & 1) != 0)
+    pub fn rxpnd(&self) -> RXPND_R {
+        RXPND_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Transmit Pending"]
     #[inline(always)]
-    pub fn txpnd(&self) -> TxpndR {
-        TxpndR::new(((self.bits >> 1) & 1) != 0)
+    pub fn txpnd(&self) -> TXPND_R {
+        TXPND_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Receive Updating"]
     #[inline(always)]
-    pub fn rxupd(&self) -> RxupdR {
-        RxupdR::new(((self.bits >> 2) & 1) != 0)
+    pub fn rxupd(&self) -> RXUPD_R {
+        RXUPD_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - New Data"]
     #[inline(always)]
-    pub fn newdat(&self) -> NewdatR {
-        NewdatR::new(((self.bits >> 3) & 1) != 0)
+    pub fn newdat(&self) -> NEWDAT_R {
+        NEWDAT_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Message Lost"]
     #[inline(always)]
-    pub fn msglst(&self) -> MsglstR {
-        MsglstR::new(((self.bits >> 4) & 1) != 0)
+    pub fn msglst(&self) -> MSGLST_R {
+        MSGLST_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Message Valid"]
     #[inline(always)]
-    pub fn msgval(&self) -> MsgvalR {
-        MsgvalR::new(((self.bits >> 5) & 1) != 0)
+    pub fn msgval(&self) -> MSGVAL_R {
+        MSGVAL_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Receive/Transmit Selected"]
     #[inline(always)]
-    pub fn rtsel(&self) -> RtselR {
-        RtselR::new(((self.bits >> 6) & 1) != 0)
+    pub fn rtsel(&self) -> RTSEL_R {
+        RTSEL_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Receive Enable"]
     #[inline(always)]
-    pub fn rxen(&self) -> RxenR {
-        RxenR::new(((self.bits >> 7) & 1) != 0)
+    pub fn rxen(&self) -> RXEN_R {
+        RXEN_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Transmit Request"]
     #[inline(always)]
-    pub fn txrq(&self) -> TxrqR {
-        TxrqR::new(((self.bits >> 8) & 1) != 0)
+    pub fn txrq(&self) -> TXRQ_R {
+        TXRQ_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Transmit Enable 0"]
     #[inline(always)]
-    pub fn txen0(&self) -> Txen0R {
-        Txen0R::new(((self.bits >> 9) & 1) != 0)
+    pub fn txen0(&self) -> TXEN0_R {
+        TXEN0_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Transmit Enable 1"]
     #[inline(always)]
-    pub fn txen1(&self) -> Txen1R {
-        Txen1R::new(((self.bits >> 10) & 1) != 0)
+    pub fn txen1(&self) -> TXEN1_R {
+        TXEN1_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Message Direction"]
     #[inline(always)]
-    pub fn dir(&self) -> DirR {
-        DirR::new(((self.bits >> 11) & 1) != 0)
+    pub fn dir(&self) -> DIR_R {
+        DIR_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bits 12:15 - List Allocation"]
     #[inline(always)]
-    pub fn list(&self) -> ListR {
-        ListR::new(((self.bits >> 12) & 0x0f) as u8)
+    pub fn list(&self) -> LIST_R {
+        LIST_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 16:23 - Pointer to Previous Message Object"]
     #[inline(always)]
-    pub fn pprev(&self) -> PprevR {
-        PprevR::new(((self.bits >> 16) & 0xff) as u8)
+    pub fn pprev(&self) -> PPREV_R {
+        PPREV_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Pointer to Next Message Object"]
     #[inline(always)]
-    pub fn pnext(&self) -> PnextR {
-        PnextR::new(((self.bits >> 24) & 0xff) as u8)
+    pub fn pnext(&self) -> PNEXT_R {
+        PNEXT_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 #[doc = "Message Object Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mostat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct MostatSpec;
-impl crate::RegisterSpec for MostatSpec {
+pub struct MOSTAT_SPEC;
+impl crate::RegisterSpec for MOSTAT_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`mostat::R`](R) reader structure"]
-impl crate::Readable for MostatSpec {}
+impl crate::Readable for MOSTAT_SPEC {}
 #[doc = "`reset()` method sets MOSTAT to value 0"]
-impl crate::Resettable for MostatSpec {
+impl crate::Resettable for MOSTAT_SPEC {
     const RESET_VALUE: u32 = 0;
 }

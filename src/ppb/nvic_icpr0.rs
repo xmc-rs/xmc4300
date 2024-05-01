@@ -1,52 +1,52 @@
 #[doc = "Register `NVIC_ICPR0` reader"]
-pub type R = crate::R<NvicIcpr0Spec>;
+pub type R = crate::R<NVIC_ICPR0_SPEC>;
 #[doc = "Register `NVIC_ICPR0` writer"]
-pub type W = crate::W<NvicIcpr0Spec>;
+pub type W = crate::W<NVIC_ICPR0_SPEC>;
 #[doc = "Interrupt set-pending bits.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
-pub enum Clrpend {
+pub enum CLRPEND_A {
     #[doc = "0: interrupt is not pending"]
-    Value3 = 0,
+    VALUE3 = 0,
     #[doc = "1: interrupt is pending."]
-    Value4 = 1,
+    VALUE4 = 1,
 }
-impl From<Clrpend> for u32 {
+impl From<CLRPEND_A> for u32 {
     #[inline(always)]
-    fn from(variant: Clrpend) -> Self {
+    fn from(variant: CLRPEND_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Clrpend {
+impl crate::FieldSpec for CLRPEND_A {
     type Ux = u32;
 }
-impl crate::IsEnum for Clrpend {}
+impl crate::IsEnum for CLRPEND_A {}
 #[doc = "Field `CLRPEND` reader - Interrupt set-pending bits."]
-pub type ClrpendR = crate::FieldReader<Clrpend>;
-impl ClrpendR {
+pub type CLRPEND_R = crate::FieldReader<CLRPEND_A>;
+impl CLRPEND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Clrpend> {
+    pub const fn variant(&self) -> Option<CLRPEND_A> {
         match self.bits {
-            0 => Some(Clrpend::Value3),
-            1 => Some(Clrpend::Value4),
+            0 => Some(CLRPEND_A::VALUE3),
+            1 => Some(CLRPEND_A::VALUE4),
             _ => None,
         }
     }
     #[doc = "interrupt is not pending"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Clrpend::Value3
+        *self == CLRPEND_A::VALUE3
     }
     #[doc = "interrupt is pending."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Clrpend::Value4
+        *self == CLRPEND_A::VALUE4
     }
 }
 #[doc = "Field `CLRPEND` writer - Interrupt set-pending bits."]
-pub type ClrpendW<'a, REG> = crate::FieldWriter<'a, REG, 32, Clrpend>;
-impl<'a, REG> ClrpendW<'a, REG>
+pub type CLRPEND_W<'a, REG> = crate::FieldWriter<'a, REG, 32, CLRPEND_A>;
+impl<'a, REG> CLRPEND_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
@@ -54,43 +54,43 @@ where
     #[doc = "interrupt is not pending"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Clrpend::Value3)
+        self.variant(CLRPEND_A::VALUE3)
     }
     #[doc = "interrupt is pending."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Clrpend::Value4)
+        self.variant(CLRPEND_A::VALUE4)
     }
 }
 impl R {
     #[doc = "Bits 0:31 - Interrupt set-pending bits."]
     #[inline(always)]
-    pub fn clrpend(&self) -> ClrpendR {
-        ClrpendR::new(self.bits)
+    pub fn clrpend(&self) -> CLRPEND_R {
+        CLRPEND_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Interrupt set-pending bits."]
     #[inline(always)]
     #[must_use]
-    pub fn clrpend(&mut self) -> ClrpendW<NvicIcpr0Spec> {
-        ClrpendW::new(self, 0)
+    pub fn clrpend(&mut self) -> CLRPEND_W<NVIC_ICPR0_SPEC> {
+        CLRPEND_W::new(self, 0)
     }
 }
 #[doc = "Interrupt Clear-pending Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`nvic_icpr0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`nvic_icpr0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct NvicIcpr0Spec;
-impl crate::RegisterSpec for NvicIcpr0Spec {
+pub struct NVIC_ICPR0_SPEC;
+impl crate::RegisterSpec for NVIC_ICPR0_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`nvic_icpr0::R`](R) reader structure"]
-impl crate::Readable for NvicIcpr0Spec {}
+impl crate::Readable for NVIC_ICPR0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`nvic_icpr0::W`](W) writer structure"]
-impl crate::Writable for NvicIcpr0Spec {
+impl crate::Writable for NVIC_ICPR0_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NVIC_ICPR0 to value 0"]
-impl crate::Resettable for NvicIcpr0Spec {
+impl crate::Resettable for NVIC_ICPR0_SPEC {
     const RESET_VALUE: u32 = 0;
 }

@@ -1,384 +1,384 @@
 #[doc = "Register `TRAPSTAT` reader"]
-pub type R = crate::R<TrapstatSpec>;
+pub type R = crate::R<TRAPSTAT_SPEC>;
 #[doc = "OSC_HP Oscillator Watchdog Trap Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Soscwdgt {
+pub enum SOSCWDGT_A {
     #[doc = "0: No pending trap request"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Pending trap request"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Soscwdgt> for bool {
+impl From<SOSCWDGT_A> for bool {
     #[inline(always)]
-    fn from(variant: Soscwdgt) -> Self {
+    fn from(variant: SOSCWDGT_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SOSCWDGT` reader - OSC_HP Oscillator Watchdog Trap Status"]
-pub type SoscwdgtR = crate::BitReader<Soscwdgt>;
-impl SoscwdgtR {
+pub type SOSCWDGT_R = crate::BitReader<SOSCWDGT_A>;
+impl SOSCWDGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Soscwdgt {
+    pub const fn variant(&self) -> SOSCWDGT_A {
         match self.bits {
-            false => Soscwdgt::Const0,
-            true => Soscwdgt::Const1,
+            false => SOSCWDGT_A::CONST_0,
+            true => SOSCWDGT_A::CONST_1,
         }
     }
     #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == Soscwdgt::Const0
+        *self == SOSCWDGT_A::CONST_0
     }
     #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == Soscwdgt::Const1
+        *self == SOSCWDGT_A::CONST_1
     }
 }
 #[doc = "System VCO Lock Trap Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Svcolckt {
+pub enum SVCOLCKT_A {
     #[doc = "0: No pending trap request"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Pending trap request"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Svcolckt> for bool {
+impl From<SVCOLCKT_A> for bool {
     #[inline(always)]
-    fn from(variant: Svcolckt) -> Self {
+    fn from(variant: SVCOLCKT_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SVCOLCKT` reader - System VCO Lock Trap Status"]
-pub type SvcolcktR = crate::BitReader<Svcolckt>;
-impl SvcolcktR {
+pub type SVCOLCKT_R = crate::BitReader<SVCOLCKT_A>;
+impl SVCOLCKT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Svcolckt {
+    pub const fn variant(&self) -> SVCOLCKT_A {
         match self.bits {
-            false => Svcolckt::Const0,
-            true => Svcolckt::Const1,
+            false => SVCOLCKT_A::CONST_0,
+            true => SVCOLCKT_A::CONST_1,
         }
     }
     #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == Svcolckt::Const0
+        *self == SVCOLCKT_A::CONST_0
     }
     #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == Svcolckt::Const1
+        *self == SVCOLCKT_A::CONST_1
     }
 }
 #[doc = "USB VCO Lock Trap Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Uvcolckt {
+pub enum UVCOLCKT_A {
     #[doc = "0: No pending trap request"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Pending trap request"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Uvcolckt> for bool {
+impl From<UVCOLCKT_A> for bool {
     #[inline(always)]
-    fn from(variant: Uvcolckt) -> Self {
+    fn from(variant: UVCOLCKT_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `UVCOLCKT` reader - USB VCO Lock Trap Status"]
-pub type UvcolcktR = crate::BitReader<Uvcolckt>;
-impl UvcolcktR {
+pub type UVCOLCKT_R = crate::BitReader<UVCOLCKT_A>;
+impl UVCOLCKT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Uvcolckt {
+    pub const fn variant(&self) -> UVCOLCKT_A {
         match self.bits {
-            false => Uvcolckt::Const0,
-            true => Uvcolckt::Const1,
+            false => UVCOLCKT_A::CONST_0,
+            true => UVCOLCKT_A::CONST_1,
         }
     }
     #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == Uvcolckt::Const0
+        *self == UVCOLCKT_A::CONST_0
     }
     #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == Uvcolckt::Const1
+        *self == UVCOLCKT_A::CONST_1
     }
 }
 #[doc = "Parity Error Trap Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pet {
+pub enum PET_A {
     #[doc = "0: No pending trap request"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Pending trap request"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Pet> for bool {
+impl From<PET_A> for bool {
     #[inline(always)]
-    fn from(variant: Pet) -> Self {
+    fn from(variant: PET_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PET` reader - Parity Error Trap Status"]
-pub type PetR = crate::BitReader<Pet>;
-impl PetR {
+pub type PET_R = crate::BitReader<PET_A>;
+impl PET_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pet {
+    pub const fn variant(&self) -> PET_A {
         match self.bits {
-            false => Pet::Const0,
-            true => Pet::Const1,
+            false => PET_A::CONST_0,
+            true => PET_A::CONST_1,
         }
     }
     #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == Pet::Const0
+        *self == PET_A::CONST_0
     }
     #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == Pet::Const1
+        *self == PET_A::CONST_1
     }
 }
 #[doc = "Brown Out Trap Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Brwnt {
+pub enum BRWNT_A {
     #[doc = "0: No pending trap request"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Pending trap request"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Brwnt> for bool {
+impl From<BRWNT_A> for bool {
     #[inline(always)]
-    fn from(variant: Brwnt) -> Self {
+    fn from(variant: BRWNT_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BRWNT` reader - Brown Out Trap Status"]
-pub type BrwntR = crate::BitReader<Brwnt>;
-impl BrwntR {
+pub type BRWNT_R = crate::BitReader<BRWNT_A>;
+impl BRWNT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Brwnt {
+    pub const fn variant(&self) -> BRWNT_A {
         match self.bits {
-            false => Brwnt::Const0,
-            true => Brwnt::Const1,
+            false => BRWNT_A::CONST_0,
+            true => BRWNT_A::CONST_1,
         }
     }
     #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == Brwnt::Const0
+        *self == BRWNT_A::CONST_0
     }
     #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == Brwnt::Const1
+        *self == BRWNT_A::CONST_1
     }
 }
 #[doc = "OSC_ULP Oscillator Watchdog Trap Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ulpwdgt {
+pub enum ULPWDGT_A {
     #[doc = "0: No pending trap request"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Pending trap request"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Ulpwdgt> for bool {
+impl From<ULPWDGT_A> for bool {
     #[inline(always)]
-    fn from(variant: Ulpwdgt) -> Self {
+    fn from(variant: ULPWDGT_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ULPWDGT` reader - OSC_ULP Oscillator Watchdog Trap Status"]
-pub type UlpwdgtR = crate::BitReader<Ulpwdgt>;
-impl UlpwdgtR {
+pub type ULPWDGT_R = crate::BitReader<ULPWDGT_A>;
+impl ULPWDGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ulpwdgt {
+    pub const fn variant(&self) -> ULPWDGT_A {
         match self.bits {
-            false => Ulpwdgt::Const0,
-            true => Ulpwdgt::Const1,
+            false => ULPWDGT_A::CONST_0,
+            true => ULPWDGT_A::CONST_1,
         }
     }
     #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == Ulpwdgt::Const0
+        *self == ULPWDGT_A::CONST_0
     }
     #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == Ulpwdgt::Const1
+        *self == ULPWDGT_A::CONST_1
     }
 }
 #[doc = "Peripheral Bridge 0 Trap Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Bwerr0t {
+pub enum BWERR0T_A {
     #[doc = "0: No pending trap request"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Pending trap request"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Bwerr0t> for bool {
+impl From<BWERR0T_A> for bool {
     #[inline(always)]
-    fn from(variant: Bwerr0t) -> Self {
+    fn from(variant: BWERR0T_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BWERR0T` reader - Peripheral Bridge 0 Trap Status"]
-pub type Bwerr0tR = crate::BitReader<Bwerr0t>;
-impl Bwerr0tR {
+pub type BWERR0T_R = crate::BitReader<BWERR0T_A>;
+impl BWERR0T_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Bwerr0t {
+    pub const fn variant(&self) -> BWERR0T_A {
         match self.bits {
-            false => Bwerr0t::Const0,
-            true => Bwerr0t::Const1,
+            false => BWERR0T_A::CONST_0,
+            true => BWERR0T_A::CONST_1,
         }
     }
     #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == Bwerr0t::Const0
+        *self == BWERR0T_A::CONST_0
     }
     #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == Bwerr0t::Const1
+        *self == BWERR0T_A::CONST_1
     }
 }
 #[doc = "Peripheral Bridge 1 Trap Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Bwerr1t {
+pub enum BWERR1T_A {
     #[doc = "0: No pending trap request"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Pending trap request"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Bwerr1t> for bool {
+impl From<BWERR1T_A> for bool {
     #[inline(always)]
-    fn from(variant: Bwerr1t) -> Self {
+    fn from(variant: BWERR1T_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BWERR1T` reader - Peripheral Bridge 1 Trap Status"]
-pub type Bwerr1tR = crate::BitReader<Bwerr1t>;
-impl Bwerr1tR {
+pub type BWERR1T_R = crate::BitReader<BWERR1T_A>;
+impl BWERR1T_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Bwerr1t {
+    pub const fn variant(&self) -> BWERR1T_A {
         match self.bits {
-            false => Bwerr1t::Const0,
-            true => Bwerr1t::Const1,
+            false => BWERR1T_A::CONST_0,
+            true => BWERR1T_A::CONST_1,
         }
     }
     #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == Bwerr1t::Const0
+        *self == BWERR1T_A::CONST_0
     }
     #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == Bwerr1t::Const1
+        *self == BWERR1T_A::CONST_1
     }
 }
 #[doc = "EtherCat Reset 0 Trap Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ecat0rst {
+pub enum ECAT0RST_A {
     #[doc = "0: No effect"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: Pending trap request"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Ecat0rst> for bool {
+impl From<ECAT0RST_A> for bool {
     #[inline(always)]
-    fn from(variant: Ecat0rst) -> Self {
+    fn from(variant: ECAT0RST_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ECAT0RST` reader - EtherCat Reset 0 Trap Status"]
-pub type Ecat0rstR = crate::BitReader<Ecat0rst>;
-impl Ecat0rstR {
+pub type ECAT0RST_R = crate::BitReader<ECAT0RST_A>;
+impl ECAT0RST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ecat0rst {
+    pub const fn variant(&self) -> ECAT0RST_A {
         match self.bits {
-            false => Ecat0rst::Const0,
-            true => Ecat0rst::Const1,
+            false => ECAT0RST_A::CONST_0,
+            true => ECAT0RST_A::CONST_1,
         }
     }
     #[doc = "No effect"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == Ecat0rst::Const0
+        *self == ECAT0RST_A::CONST_0
     }
     #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == Ecat0rst::Const1
+        *self == ECAT0RST_A::CONST_1
     }
 }
 impl R {
     #[doc = "Bit 0 - OSC_HP Oscillator Watchdog Trap Status"]
     #[inline(always)]
-    pub fn soscwdgt(&self) -> SoscwdgtR {
-        SoscwdgtR::new((self.bits & 1) != 0)
+    pub fn soscwdgt(&self) -> SOSCWDGT_R {
+        SOSCWDGT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 2 - System VCO Lock Trap Status"]
     #[inline(always)]
-    pub fn svcolckt(&self) -> SvcolcktR {
-        SvcolcktR::new(((self.bits >> 2) & 1) != 0)
+    pub fn svcolckt(&self) -> SVCOLCKT_R {
+        SVCOLCKT_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - USB VCO Lock Trap Status"]
     #[inline(always)]
-    pub fn uvcolckt(&self) -> UvcolcktR {
-        UvcolcktR::new(((self.bits >> 3) & 1) != 0)
+    pub fn uvcolckt(&self) -> UVCOLCKT_R {
+        UVCOLCKT_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Parity Error Trap Status"]
     #[inline(always)]
-    pub fn pet(&self) -> PetR {
-        PetR::new(((self.bits >> 4) & 1) != 0)
+    pub fn pet(&self) -> PET_R {
+        PET_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Brown Out Trap Status"]
     #[inline(always)]
-    pub fn brwnt(&self) -> BrwntR {
-        BrwntR::new(((self.bits >> 5) & 1) != 0)
+    pub fn brwnt(&self) -> BRWNT_R {
+        BRWNT_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - OSC_ULP Oscillator Watchdog Trap Status"]
     #[inline(always)]
-    pub fn ulpwdgt(&self) -> UlpwdgtR {
-        UlpwdgtR::new(((self.bits >> 6) & 1) != 0)
+    pub fn ulpwdgt(&self) -> ULPWDGT_R {
+        ULPWDGT_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Peripheral Bridge 0 Trap Status"]
     #[inline(always)]
-    pub fn bwerr0t(&self) -> Bwerr0tR {
-        Bwerr0tR::new(((self.bits >> 7) & 1) != 0)
+    pub fn bwerr0t(&self) -> BWERR0T_R {
+        BWERR0T_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Peripheral Bridge 1 Trap Status"]
     #[inline(always)]
-    pub fn bwerr1t(&self) -> Bwerr1tR {
-        Bwerr1tR::new(((self.bits >> 8) & 1) != 0)
+    pub fn bwerr1t(&self) -> BWERR1T_R {
+        BWERR1T_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 16 - EtherCat Reset 0 Trap Status"]
     #[inline(always)]
-    pub fn ecat0rst(&self) -> Ecat0rstR {
-        Ecat0rstR::new(((self.bits >> 16) & 1) != 0)
+    pub fn ecat0rst(&self) -> ECAT0RST_R {
+        ECAT0RST_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 #[doc = "Trap Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`trapstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct TrapstatSpec;
-impl crate::RegisterSpec for TrapstatSpec {
+pub struct TRAPSTAT_SPEC;
+impl crate::RegisterSpec for TRAPSTAT_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`trapstat::R`](R) reader structure"]
-impl crate::Readable for TrapstatSpec {}
+impl crate::Readable for TRAPSTAT_SPEC {}
 #[doc = "`reset()` method sets TRAPSTAT to value 0"]
-impl crate::Resettable for TrapstatSpec {
+impl crate::Resettable for TRAPSTAT_SPEC {
     const RESET_VALUE: u32 = 0;
 }

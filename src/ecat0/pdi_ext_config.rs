@@ -1,125 +1,125 @@
 #[doc = "Register `PDI_EXT_CONFIG` reader"]
-pub type R = crate::R<PdiExtConfigSpec>;
+pub type R = crate::R<PDI_EXT_CONFIG_SPEC>;
 #[doc = "Read Prefetch Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum RPref {
+pub enum R_PREF_A {
     #[doc = "0: 4 cycles"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 1 cycle (typical)"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: 2 cycles"]
-    Value3 = 2,
+    VALUE3 = 2,
 }
-impl From<RPref> for u8 {
+impl From<R_PREF_A> for u8 {
     #[inline(always)]
-    fn from(variant: RPref) -> Self {
+    fn from(variant: R_PREF_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for RPref {
+impl crate::FieldSpec for R_PREF_A {
     type Ux = u8;
 }
-impl crate::IsEnum for RPref {}
+impl crate::IsEnum for R_PREF_A {}
 #[doc = "Field `R_Pref` reader - Read Prefetch Size"]
-pub type RPrefR = crate::FieldReader<RPref>;
-impl RPrefR {
+pub type R_PREF_R = crate::FieldReader<R_PREF_A>;
+impl R_PREF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<RPref> {
+    pub const fn variant(&self) -> Option<R_PREF_A> {
         match self.bits {
-            0 => Some(RPref::Value1),
-            1 => Some(RPref::Value2),
-            2 => Some(RPref::Value3),
+            0 => Some(R_PREF_A::VALUE1),
+            1 => Some(R_PREF_A::VALUE2),
+            2 => Some(R_PREF_A::VALUE3),
             _ => None,
         }
     }
     #[doc = "4 cycles"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RPref::Value1
+        *self == R_PREF_A::VALUE1
     }
     #[doc = "1 cycle (typical)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RPref::Value2
+        *self == R_PREF_A::VALUE2
     }
     #[doc = "2 cycles"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == RPref::Value3
+        *self == R_PREF_A::VALUE3
     }
 }
 #[doc = "On-chip Sub Type for AXI\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SubType {
+pub enum SUB_TYPE_A {
     #[doc = "0: AXI3"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: AXI4"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: AXI4 Lite"]
-    Value3 = 2,
+    VALUE3 = 2,
 }
-impl From<SubType> for u8 {
+impl From<SUB_TYPE_A> for u8 {
     #[inline(always)]
-    fn from(variant: SubType) -> Self {
+    fn from(variant: SUB_TYPE_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for SubType {
+impl crate::FieldSpec for SUB_TYPE_A {
     type Ux = u8;
 }
-impl crate::IsEnum for SubType {}
+impl crate::IsEnum for SUB_TYPE_A {}
 #[doc = "Field `SUB_TYPE` reader - On-chip Sub Type for AXI"]
-pub type SubTypeR = crate::FieldReader<SubType>;
-impl SubTypeR {
+pub type SUB_TYPE_R = crate::FieldReader<SUB_TYPE_A>;
+impl SUB_TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<SubType> {
+    pub const fn variant(&self) -> Option<SUB_TYPE_A> {
         match self.bits {
-            0 => Some(SubType::Value1),
-            1 => Some(SubType::Value2),
-            2 => Some(SubType::Value3),
+            0 => Some(SUB_TYPE_A::VALUE1),
+            1 => Some(SUB_TYPE_A::VALUE2),
+            2 => Some(SUB_TYPE_A::VALUE3),
             _ => None,
         }
     }
     #[doc = "AXI3"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SubType::Value1
+        *self == SUB_TYPE_A::VALUE1
     }
     #[doc = "AXI4"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SubType::Value2
+        *self == SUB_TYPE_A::VALUE2
     }
     #[doc = "AXI4 Lite"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == SubType::Value3
+        *self == SUB_TYPE_A::VALUE3
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Read Prefetch Size"]
     #[inline(always)]
-    pub fn r_pref(&self) -> RPrefR {
-        RPrefR::new((self.bits & 3) as u8)
+    pub fn r_pref(&self) -> R_PREF_R {
+        R_PREF_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 8:10 - On-chip Sub Type for AXI"]
     #[inline(always)]
-    pub fn sub_type(&self) -> SubTypeR {
-        SubTypeR::new(((self.bits >> 8) & 7) as u8)
+    pub fn sub_type(&self) -> SUB_TYPE_R {
+        SUB_TYPE_R::new(((self.bits >> 8) & 7) as u8)
     }
 }
 #[doc = "PDI Synchronous Microcontroller extended Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdi_ext_config::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PdiExtConfigSpec;
-impl crate::RegisterSpec for PdiExtConfigSpec {
+pub struct PDI_EXT_CONFIG_SPEC;
+impl crate::RegisterSpec for PDI_EXT_CONFIG_SPEC {
     type Ux = u16;
 }
 #[doc = "`read()` method returns [`pdi_ext_config::R`](R) reader structure"]
-impl crate::Readable for PdiExtConfigSpec {}
+impl crate::Readable for PDI_EXT_CONFIG_SPEC {}
 #[doc = "`reset()` method sets PDI_EXT_CONFIG to value 0"]
-impl crate::Resettable for PdiExtConfigSpec {
+impl crate::Resettable for PDI_EXT_CONFIG_SPEC {
     const RESET_VALUE: u16 = 0;
 }

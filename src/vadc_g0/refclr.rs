@@ -1,611 +1,611 @@
 #[doc = "Register `REFCLR` writer"]
-pub type W = crate::W<RefclrSpec>;
+pub type W = crate::W<REFCLR_SPEC>;
 #[doc = "Clear Result Event for Result Register 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev0 {
+pub enum REV0_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev0> for bool {
+impl From<REV0_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev0) -> Self {
+    fn from(variant: REV0_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV0` writer - Clear Result Event for Result Register 0"]
-pub type Rev0W<'a, REG> = crate::BitWriter<'a, REG, Rev0>;
-impl<'a, REG> Rev0W<'a, REG>
+pub type REV0_W<'a, REG> = crate::BitWriter<'a, REG, REV0_A>;
+impl<'a, REG> REV0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev0::Value1)
+        self.variant(REV0_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev0::Value2)
+        self.variant(REV0_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev1 {
+pub enum REV1_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev1> for bool {
+impl From<REV1_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev1) -> Self {
+    fn from(variant: REV1_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV1` writer - Clear Result Event for Result Register 1"]
-pub type Rev1W<'a, REG> = crate::BitWriter<'a, REG, Rev1>;
-impl<'a, REG> Rev1W<'a, REG>
+pub type REV1_W<'a, REG> = crate::BitWriter<'a, REG, REV1_A>;
+impl<'a, REG> REV1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev1::Value1)
+        self.variant(REV1_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev1::Value2)
+        self.variant(REV1_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev2 {
+pub enum REV2_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev2> for bool {
+impl From<REV2_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev2) -> Self {
+    fn from(variant: REV2_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV2` writer - Clear Result Event for Result Register 2"]
-pub type Rev2W<'a, REG> = crate::BitWriter<'a, REG, Rev2>;
-impl<'a, REG> Rev2W<'a, REG>
+pub type REV2_W<'a, REG> = crate::BitWriter<'a, REG, REV2_A>;
+impl<'a, REG> REV2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev2::Value1)
+        self.variant(REV2_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev2::Value2)
+        self.variant(REV2_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev3 {
+pub enum REV3_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev3> for bool {
+impl From<REV3_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev3) -> Self {
+    fn from(variant: REV3_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV3` writer - Clear Result Event for Result Register 3"]
-pub type Rev3W<'a, REG> = crate::BitWriter<'a, REG, Rev3>;
-impl<'a, REG> Rev3W<'a, REG>
+pub type REV3_W<'a, REG> = crate::BitWriter<'a, REG, REV3_A>;
+impl<'a, REG> REV3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev3::Value1)
+        self.variant(REV3_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev3::Value2)
+        self.variant(REV3_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev4 {
+pub enum REV4_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev4> for bool {
+impl From<REV4_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev4) -> Self {
+    fn from(variant: REV4_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV4` writer - Clear Result Event for Result Register 4"]
-pub type Rev4W<'a, REG> = crate::BitWriter<'a, REG, Rev4>;
-impl<'a, REG> Rev4W<'a, REG>
+pub type REV4_W<'a, REG> = crate::BitWriter<'a, REG, REV4_A>;
+impl<'a, REG> REV4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev4::Value1)
+        self.variant(REV4_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev4::Value2)
+        self.variant(REV4_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev5 {
+pub enum REV5_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev5> for bool {
+impl From<REV5_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev5) -> Self {
+    fn from(variant: REV5_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV5` writer - Clear Result Event for Result Register 5"]
-pub type Rev5W<'a, REG> = crate::BitWriter<'a, REG, Rev5>;
-impl<'a, REG> Rev5W<'a, REG>
+pub type REV5_W<'a, REG> = crate::BitWriter<'a, REG, REV5_A>;
+impl<'a, REG> REV5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev5::Value1)
+        self.variant(REV5_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev5::Value2)
+        self.variant(REV5_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev6 {
+pub enum REV6_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev6> for bool {
+impl From<REV6_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev6) -> Self {
+    fn from(variant: REV6_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV6` writer - Clear Result Event for Result Register 6"]
-pub type Rev6W<'a, REG> = crate::BitWriter<'a, REG, Rev6>;
-impl<'a, REG> Rev6W<'a, REG>
+pub type REV6_W<'a, REG> = crate::BitWriter<'a, REG, REV6_A>;
+impl<'a, REG> REV6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev6::Value1)
+        self.variant(REV6_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev6::Value2)
+        self.variant(REV6_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev7 {
+pub enum REV7_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev7> for bool {
+impl From<REV7_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev7) -> Self {
+    fn from(variant: REV7_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV7` writer - Clear Result Event for Result Register 7"]
-pub type Rev7W<'a, REG> = crate::BitWriter<'a, REG, Rev7>;
-impl<'a, REG> Rev7W<'a, REG>
+pub type REV7_W<'a, REG> = crate::BitWriter<'a, REG, REV7_A>;
+impl<'a, REG> REV7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev7::Value1)
+        self.variant(REV7_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev7::Value2)
+        self.variant(REV7_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 8\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev8 {
+pub enum REV8_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev8> for bool {
+impl From<REV8_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev8) -> Self {
+    fn from(variant: REV8_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV8` writer - Clear Result Event for Result Register 8"]
-pub type Rev8W<'a, REG> = crate::BitWriter<'a, REG, Rev8>;
-impl<'a, REG> Rev8W<'a, REG>
+pub type REV8_W<'a, REG> = crate::BitWriter<'a, REG, REV8_A>;
+impl<'a, REG> REV8_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev8::Value1)
+        self.variant(REV8_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev8::Value2)
+        self.variant(REV8_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 9\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev9 {
+pub enum REV9_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev9> for bool {
+impl From<REV9_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev9) -> Self {
+    fn from(variant: REV9_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV9` writer - Clear Result Event for Result Register 9"]
-pub type Rev9W<'a, REG> = crate::BitWriter<'a, REG, Rev9>;
-impl<'a, REG> Rev9W<'a, REG>
+pub type REV9_W<'a, REG> = crate::BitWriter<'a, REG, REV9_A>;
+impl<'a, REG> REV9_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev9::Value1)
+        self.variant(REV9_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev9::Value2)
+        self.variant(REV9_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 10\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev10 {
+pub enum REV10_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev10> for bool {
+impl From<REV10_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev10) -> Self {
+    fn from(variant: REV10_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV10` writer - Clear Result Event for Result Register 10"]
-pub type Rev10W<'a, REG> = crate::BitWriter<'a, REG, Rev10>;
-impl<'a, REG> Rev10W<'a, REG>
+pub type REV10_W<'a, REG> = crate::BitWriter<'a, REG, REV10_A>;
+impl<'a, REG> REV10_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev10::Value1)
+        self.variant(REV10_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev10::Value2)
+        self.variant(REV10_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev11 {
+pub enum REV11_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev11> for bool {
+impl From<REV11_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev11) -> Self {
+    fn from(variant: REV11_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV11` writer - Clear Result Event for Result Register 11"]
-pub type Rev11W<'a, REG> = crate::BitWriter<'a, REG, Rev11>;
-impl<'a, REG> Rev11W<'a, REG>
+pub type REV11_W<'a, REG> = crate::BitWriter<'a, REG, REV11_A>;
+impl<'a, REG> REV11_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev11::Value1)
+        self.variant(REV11_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev11::Value2)
+        self.variant(REV11_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 12\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev12 {
+pub enum REV12_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev12> for bool {
+impl From<REV12_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev12) -> Self {
+    fn from(variant: REV12_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV12` writer - Clear Result Event for Result Register 12"]
-pub type Rev12W<'a, REG> = crate::BitWriter<'a, REG, Rev12>;
-impl<'a, REG> Rev12W<'a, REG>
+pub type REV12_W<'a, REG> = crate::BitWriter<'a, REG, REV12_A>;
+impl<'a, REG> REV12_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev12::Value1)
+        self.variant(REV12_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev12::Value2)
+        self.variant(REV12_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 13\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev13 {
+pub enum REV13_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev13> for bool {
+impl From<REV13_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev13) -> Self {
+    fn from(variant: REV13_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV13` writer - Clear Result Event for Result Register 13"]
-pub type Rev13W<'a, REG> = crate::BitWriter<'a, REG, Rev13>;
-impl<'a, REG> Rev13W<'a, REG>
+pub type REV13_W<'a, REG> = crate::BitWriter<'a, REG, REV13_A>;
+impl<'a, REG> REV13_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev13::Value1)
+        self.variant(REV13_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev13::Value2)
+        self.variant(REV13_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 14\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev14 {
+pub enum REV14_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev14> for bool {
+impl From<REV14_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev14) -> Self {
+    fn from(variant: REV14_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV14` writer - Clear Result Event for Result Register 14"]
-pub type Rev14W<'a, REG> = crate::BitWriter<'a, REG, Rev14>;
-impl<'a, REG> Rev14W<'a, REG>
+pub type REV14_W<'a, REG> = crate::BitWriter<'a, REG, REV14_A>;
+impl<'a, REG> REV14_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev14::Value1)
+        self.variant(REV14_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev14::Value2)
+        self.variant(REV14_A::VALUE2)
     }
 }
 #[doc = "Clear Result Event for Result Register 15\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rev15 {
+pub enum REV15_A {
     #[doc = "0: No action"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rev15> for bool {
+impl From<REV15_A> for bool {
     #[inline(always)]
-    fn from(variant: Rev15) -> Self {
+    fn from(variant: REV15_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REV15` writer - Clear Result Event for Result Register 15"]
-pub type Rev15W<'a, REG> = crate::BitWriter<'a, REG, Rev15>;
-impl<'a, REG> Rev15W<'a, REG>
+pub type REV15_W<'a, REG> = crate::BitWriter<'a, REG, REV15_A>;
+impl<'a, REG> REV15_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev15::Value1)
+        self.variant(REV15_A::VALUE1)
     }
     #[doc = "Clear the result event flag in GxREFLAG"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rev15::Value2)
+        self.variant(REV15_A::VALUE2)
     }
 }
 impl W {
     #[doc = "Bit 0 - Clear Result Event for Result Register 0"]
     #[inline(always)]
     #[must_use]
-    pub fn rev0(&mut self) -> Rev0W<RefclrSpec> {
-        Rev0W::new(self, 0)
+    pub fn rev0(&mut self) -> REV0_W<REFCLR_SPEC> {
+        REV0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Result Event for Result Register 1"]
     #[inline(always)]
     #[must_use]
-    pub fn rev1(&mut self) -> Rev1W<RefclrSpec> {
-        Rev1W::new(self, 1)
+    pub fn rev1(&mut self) -> REV1_W<REFCLR_SPEC> {
+        REV1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Result Event for Result Register 2"]
     #[inline(always)]
     #[must_use]
-    pub fn rev2(&mut self) -> Rev2W<RefclrSpec> {
-        Rev2W::new(self, 2)
+    pub fn rev2(&mut self) -> REV2_W<REFCLR_SPEC> {
+        REV2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Clear Result Event for Result Register 3"]
     #[inline(always)]
     #[must_use]
-    pub fn rev3(&mut self) -> Rev3W<RefclrSpec> {
-        Rev3W::new(self, 3)
+    pub fn rev3(&mut self) -> REV3_W<REFCLR_SPEC> {
+        REV3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Clear Result Event for Result Register 4"]
     #[inline(always)]
     #[must_use]
-    pub fn rev4(&mut self) -> Rev4W<RefclrSpec> {
-        Rev4W::new(self, 4)
+    pub fn rev4(&mut self) -> REV4_W<REFCLR_SPEC> {
+        REV4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Clear Result Event for Result Register 5"]
     #[inline(always)]
     #[must_use]
-    pub fn rev5(&mut self) -> Rev5W<RefclrSpec> {
-        Rev5W::new(self, 5)
+    pub fn rev5(&mut self) -> REV5_W<REFCLR_SPEC> {
+        REV5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Clear Result Event for Result Register 6"]
     #[inline(always)]
     #[must_use]
-    pub fn rev6(&mut self) -> Rev6W<RefclrSpec> {
-        Rev6W::new(self, 6)
+    pub fn rev6(&mut self) -> REV6_W<REFCLR_SPEC> {
+        REV6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Clear Result Event for Result Register 7"]
     #[inline(always)]
     #[must_use]
-    pub fn rev7(&mut self) -> Rev7W<RefclrSpec> {
-        Rev7W::new(self, 7)
+    pub fn rev7(&mut self) -> REV7_W<REFCLR_SPEC> {
+        REV7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Clear Result Event for Result Register 8"]
     #[inline(always)]
     #[must_use]
-    pub fn rev8(&mut self) -> Rev8W<RefclrSpec> {
-        Rev8W::new(self, 8)
+    pub fn rev8(&mut self) -> REV8_W<REFCLR_SPEC> {
+        REV8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear Result Event for Result Register 9"]
     #[inline(always)]
     #[must_use]
-    pub fn rev9(&mut self) -> Rev9W<RefclrSpec> {
-        Rev9W::new(self, 9)
+    pub fn rev9(&mut self) -> REV9_W<REFCLR_SPEC> {
+        REV9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Clear Result Event for Result Register 10"]
     #[inline(always)]
     #[must_use]
-    pub fn rev10(&mut self) -> Rev10W<RefclrSpec> {
-        Rev10W::new(self, 10)
+    pub fn rev10(&mut self) -> REV10_W<REFCLR_SPEC> {
+        REV10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Clear Result Event for Result Register 11"]
     #[inline(always)]
     #[must_use]
-    pub fn rev11(&mut self) -> Rev11W<RefclrSpec> {
-        Rev11W::new(self, 11)
+    pub fn rev11(&mut self) -> REV11_W<REFCLR_SPEC> {
+        REV11_W::new(self, 11)
     }
     #[doc = "Bit 12 - Clear Result Event for Result Register 12"]
     #[inline(always)]
     #[must_use]
-    pub fn rev12(&mut self) -> Rev12W<RefclrSpec> {
-        Rev12W::new(self, 12)
+    pub fn rev12(&mut self) -> REV12_W<REFCLR_SPEC> {
+        REV12_W::new(self, 12)
     }
     #[doc = "Bit 13 - Clear Result Event for Result Register 13"]
     #[inline(always)]
     #[must_use]
-    pub fn rev13(&mut self) -> Rev13W<RefclrSpec> {
-        Rev13W::new(self, 13)
+    pub fn rev13(&mut self) -> REV13_W<REFCLR_SPEC> {
+        REV13_W::new(self, 13)
     }
     #[doc = "Bit 14 - Clear Result Event for Result Register 14"]
     #[inline(always)]
     #[must_use]
-    pub fn rev14(&mut self) -> Rev14W<RefclrSpec> {
-        Rev14W::new(self, 14)
+    pub fn rev14(&mut self) -> REV14_W<REFCLR_SPEC> {
+        REV14_W::new(self, 14)
     }
     #[doc = "Bit 15 - Clear Result Event for Result Register 15"]
     #[inline(always)]
     #[must_use]
-    pub fn rev15(&mut self) -> Rev15W<RefclrSpec> {
-        Rev15W::new(self, 15)
+    pub fn rev15(&mut self) -> REV15_W<REFCLR_SPEC> {
+        REV15_W::new(self, 15)
     }
 }
 #[doc = "Result Event Flag Clear Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`refclr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct RefclrSpec;
-impl crate::RegisterSpec for RefclrSpec {
+pub struct REFCLR_SPEC;
+impl crate::RegisterSpec for REFCLR_SPEC {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`refclr::W`](W) writer structure"]
-impl crate::Writable for RefclrSpec {
+impl crate::Writable for REFCLR_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets REFCLR to value 0"]
-impl crate::Resettable for RefclrSpec {
+impl crate::Resettable for REFCLR_SPEC {
     const RESET_VALUE: u32 = 0;
 }

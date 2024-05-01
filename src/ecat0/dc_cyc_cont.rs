@@ -1,138 +1,138 @@
 #[doc = "Register `DC_CYC_CONT` reader"]
-pub type R = crate::R<DcCycContSpec>;
+pub type R = crate::R<DC_CYC_CONT_SPEC>;
 #[doc = "SYNC out unit control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Sync {
+pub enum SYNC_A {
     #[doc = "0: ECAT controlled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: PDI controlled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Sync> for bool {
+impl From<SYNC_A> for bool {
     #[inline(always)]
-    fn from(variant: Sync) -> Self {
+    fn from(variant: SYNC_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SYNC` reader - SYNC out unit control"]
-pub type SyncR = crate::BitReader<Sync>;
-impl SyncR {
+pub type SYNC_R = crate::BitReader<SYNC_A>;
+impl SYNC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Sync {
+    pub const fn variant(&self) -> SYNC_A {
         match self.bits {
-            false => Sync::Value1,
-            true => Sync::Value2,
+            false => SYNC_A::VALUE1,
+            true => SYNC_A::VALUE2,
         }
     }
     #[doc = "ECAT controlled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Sync::Value1
+        *self == SYNC_A::VALUE1
     }
     #[doc = "PDI controlled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Sync::Value2
+        *self == SYNC_A::VALUE2
     }
 }
 #[doc = "Latch In unit 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum LatchU0 {
+pub enum LATCH_U0_A {
     #[doc = "0: ECAT controlled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: PDI controlled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<LatchU0> for bool {
+impl From<LATCH_U0_A> for bool {
     #[inline(always)]
-    fn from(variant: LatchU0) -> Self {
+    fn from(variant: LATCH_U0_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LATCH_U0` reader - Latch In unit 0"]
-pub type LatchU0R = crate::BitReader<LatchU0>;
-impl LatchU0R {
+pub type LATCH_U0_R = crate::BitReader<LATCH_U0_A>;
+impl LATCH_U0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> LatchU0 {
+    pub const fn variant(&self) -> LATCH_U0_A {
         match self.bits {
-            false => LatchU0::Value1,
-            true => LatchU0::Value2,
+            false => LATCH_U0_A::VALUE1,
+            true => LATCH_U0_A::VALUE2,
         }
     }
     #[doc = "ECAT controlled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LatchU0::Value1
+        *self == LATCH_U0_A::VALUE1
     }
     #[doc = "PDI controlled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LatchU0::Value2
+        *self == LATCH_U0_A::VALUE2
     }
 }
 #[doc = "Latch In unit 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum LatchU1 {
+pub enum LATCH_U1_A {
     #[doc = "0: ECAT controlled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: PDI controlled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<LatchU1> for bool {
+impl From<LATCH_U1_A> for bool {
     #[inline(always)]
-    fn from(variant: LatchU1) -> Self {
+    fn from(variant: LATCH_U1_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LATCH_U1` reader - Latch In unit 1"]
-pub type LatchU1R = crate::BitReader<LatchU1>;
-impl LatchU1R {
+pub type LATCH_U1_R = crate::BitReader<LATCH_U1_A>;
+impl LATCH_U1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> LatchU1 {
+    pub const fn variant(&self) -> LATCH_U1_A {
         match self.bits {
-            false => LatchU1::Value1,
-            true => LatchU1::Value2,
+            false => LATCH_U1_A::VALUE1,
+            true => LATCH_U1_A::VALUE2,
         }
     }
     #[doc = "ECAT controlled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LatchU1::Value1
+        *self == LATCH_U1_A::VALUE1
     }
     #[doc = "PDI controlled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LatchU1::Value2
+        *self == LATCH_U1_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - SYNC out unit control"]
     #[inline(always)]
-    pub fn sync(&self) -> SyncR {
-        SyncR::new((self.bits & 1) != 0)
+    pub fn sync(&self) -> SYNC_R {
+        SYNC_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 4 - Latch In unit 0"]
     #[inline(always)]
-    pub fn latch_u0(&self) -> LatchU0R {
-        LatchU0R::new(((self.bits >> 4) & 1) != 0)
+    pub fn latch_u0(&self) -> LATCH_U0_R {
+        LATCH_U0_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Latch In unit 1"]
     #[inline(always)]
-    pub fn latch_u1(&self) -> LatchU1R {
-        LatchU1R::new(((self.bits >> 5) & 1) != 0)
+    pub fn latch_u1(&self) -> LATCH_U1_R {
+        LATCH_U1_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 #[doc = "Cyclic Unit Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_cyc_cont::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DcCycContSpec;
-impl crate::RegisterSpec for DcCycContSpec {
+pub struct DC_CYC_CONT_SPEC;
+impl crate::RegisterSpec for DC_CYC_CONT_SPEC {
     type Ux = u8;
 }
 #[doc = "`read()` method returns [`dc_cyc_cont::R`](R) reader structure"]
-impl crate::Readable for DcCycContSpec {}
+impl crate::Readable for DC_CYC_CONT_SPEC {}
 #[doc = "`reset()` method sets DC_CYC_CONT to value 0"]
-impl crate::Resettable for DcCycContSpec {
+impl crate::Resettable for DC_CYC_CONT_SPEC {
     const RESET_VALUE: u8 = 0;
 }

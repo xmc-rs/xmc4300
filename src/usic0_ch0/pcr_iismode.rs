@@ -1,552 +1,552 @@
 #[doc = "Register `PCR_IISMode` reader"]
-pub type R = crate::R<PcrIismodeSpec>;
+pub type R = crate::R<PCR_IISMODE_SPEC>;
 #[doc = "Register `PCR_IISMode` writer"]
-pub type W = crate::W<PcrIismodeSpec>;
+pub type W = crate::W<PCR_IISMODE_SPEC>;
 #[doc = "WA Generation Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Wagen {
+pub enum WAGEN_A {
     #[doc = "0: The IIS can be used as slave. The generation of the word address signal is disabled. The output signal WA is 0. The MCLKO signal generation depends on PCR.MCLK."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The IIS can be used as master. The generation of the word address signal is enabled. The signal starts with a 0 after being enabled. The generation of MCLK is enabled, independent of PCR.MCLK. After clearing WAGEN, the USIC module stops the generation of the WA signal within the next 4 WA periods."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Wagen> for bool {
+impl From<WAGEN_A> for bool {
     #[inline(always)]
-    fn from(variant: Wagen) -> Self {
+    fn from(variant: WAGEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WAGEN` reader - WA Generation Enable"]
-pub type WagenR = crate::BitReader<Wagen>;
-impl WagenR {
+pub type WAGEN_R = crate::BitReader<WAGEN_A>;
+impl WAGEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Wagen {
+    pub const fn variant(&self) -> WAGEN_A {
         match self.bits {
-            false => Wagen::Value1,
-            true => Wagen::Value2,
+            false => WAGEN_A::VALUE1,
+            true => WAGEN_A::VALUE2,
         }
     }
     #[doc = "The IIS can be used as slave. The generation of the word address signal is disabled. The output signal WA is 0. The MCLKO signal generation depends on PCR.MCLK."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Wagen::Value1
+        *self == WAGEN_A::VALUE1
     }
     #[doc = "The IIS can be used as master. The generation of the word address signal is enabled. The signal starts with a 0 after being enabled. The generation of MCLK is enabled, independent of PCR.MCLK. After clearing WAGEN, the USIC module stops the generation of the WA signal within the next 4 WA periods."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Wagen::Value2
+        *self == WAGEN_A::VALUE2
     }
 }
 #[doc = "Field `WAGEN` writer - WA Generation Enable"]
-pub type WagenW<'a, REG> = crate::BitWriter<'a, REG, Wagen>;
-impl<'a, REG> WagenW<'a, REG>
+pub type WAGEN_W<'a, REG> = crate::BitWriter<'a, REG, WAGEN_A>;
+impl<'a, REG> WAGEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The IIS can be used as slave. The generation of the word address signal is disabled. The output signal WA is 0. The MCLKO signal generation depends on PCR.MCLK."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Wagen::Value1)
+        self.variant(WAGEN_A::VALUE1)
     }
     #[doc = "The IIS can be used as master. The generation of the word address signal is enabled. The signal starts with a 0 after being enabled. The generation of MCLK is enabled, independent of PCR.MCLK. After clearing WAGEN, the USIC module stops the generation of the WA signal within the next 4 WA periods."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Wagen::Value2)
+        self.variant(WAGEN_A::VALUE2)
     }
 }
 #[doc = "Data Transfers Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Dten {
+pub enum DTEN_A {
     #[doc = "0: The changes of the WA input signal are ignored and no transfers take place."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Transfers are enabled."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Dten> for bool {
+impl From<DTEN_A> for bool {
     #[inline(always)]
-    fn from(variant: Dten) -> Self {
+    fn from(variant: DTEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DTEN` reader - Data Transfers Enable"]
-pub type DtenR = crate::BitReader<Dten>;
-impl DtenR {
+pub type DTEN_R = crate::BitReader<DTEN_A>;
+impl DTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Dten {
+    pub const fn variant(&self) -> DTEN_A {
         match self.bits {
-            false => Dten::Value1,
-            true => Dten::Value2,
+            false => DTEN_A::VALUE1,
+            true => DTEN_A::VALUE2,
         }
     }
     #[doc = "The changes of the WA input signal are ignored and no transfers take place."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Dten::Value1
+        *self == DTEN_A::VALUE1
     }
     #[doc = "Transfers are enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Dten::Value2
+        *self == DTEN_A::VALUE2
     }
 }
 #[doc = "Field `DTEN` writer - Data Transfers Enable"]
-pub type DtenW<'a, REG> = crate::BitWriter<'a, REG, Dten>;
-impl<'a, REG> DtenW<'a, REG>
+pub type DTEN_W<'a, REG> = crate::BitWriter<'a, REG, DTEN_A>;
+impl<'a, REG> DTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The changes of the WA input signal are ignored and no transfers take place."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Dten::Value1)
+        self.variant(DTEN_A::VALUE1)
     }
     #[doc = "Transfers are enabled."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Dten::Value2)
+        self.variant(DTEN_A::VALUE2)
     }
 }
 #[doc = "Select Inversion\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Selinv {
+pub enum SELINV_A {
     #[doc = "0: The SELOx outputs have the same polarity as the WA signal."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The SELOx outputs have the inverted polarity to the WA signal."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Selinv> for bool {
+impl From<SELINV_A> for bool {
     #[inline(always)]
-    fn from(variant: Selinv) -> Self {
+    fn from(variant: SELINV_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SELINV` reader - Select Inversion"]
-pub type SelinvR = crate::BitReader<Selinv>;
-impl SelinvR {
+pub type SELINV_R = crate::BitReader<SELINV_A>;
+impl SELINV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Selinv {
+    pub const fn variant(&self) -> SELINV_A {
         match self.bits {
-            false => Selinv::Value1,
-            true => Selinv::Value2,
+            false => SELINV_A::VALUE1,
+            true => SELINV_A::VALUE2,
         }
     }
     #[doc = "The SELOx outputs have the same polarity as the WA signal."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Selinv::Value1
+        *self == SELINV_A::VALUE1
     }
     #[doc = "The SELOx outputs have the inverted polarity to the WA signal."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Selinv::Value2
+        *self == SELINV_A::VALUE2
     }
 }
 #[doc = "Field `SELINV` writer - Select Inversion"]
-pub type SelinvW<'a, REG> = crate::BitWriter<'a, REG, Selinv>;
-impl<'a, REG> SelinvW<'a, REG>
+pub type SELINV_W<'a, REG> = crate::BitWriter<'a, REG, SELINV_A>;
+impl<'a, REG> SELINV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The SELOx outputs have the same polarity as the WA signal."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Selinv::Value1)
+        self.variant(SELINV_A::VALUE1)
     }
     #[doc = "The SELOx outputs have the inverted polarity to the WA signal."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Selinv::Value2)
+        self.variant(SELINV_A::VALUE2)
     }
 }
 #[doc = "WA Falling Edge Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Wafeien {
+pub enum WAFEIEN_A {
     #[doc = "0: A protocol interrupt is not activated if a falling edge of WA is generated."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A protocol interrupt is activated if a falling edge of WA is generated."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Wafeien> for bool {
+impl From<WAFEIEN_A> for bool {
     #[inline(always)]
-    fn from(variant: Wafeien) -> Self {
+    fn from(variant: WAFEIEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WAFEIEN` reader - WA Falling Edge Interrupt Enable"]
-pub type WafeienR = crate::BitReader<Wafeien>;
-impl WafeienR {
+pub type WAFEIEN_R = crate::BitReader<WAFEIEN_A>;
+impl WAFEIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Wafeien {
+    pub const fn variant(&self) -> WAFEIEN_A {
         match self.bits {
-            false => Wafeien::Value1,
-            true => Wafeien::Value2,
+            false => WAFEIEN_A::VALUE1,
+            true => WAFEIEN_A::VALUE2,
         }
     }
     #[doc = "A protocol interrupt is not activated if a falling edge of WA is generated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Wafeien::Value1
+        *self == WAFEIEN_A::VALUE1
     }
     #[doc = "A protocol interrupt is activated if a falling edge of WA is generated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Wafeien::Value2
+        *self == WAFEIEN_A::VALUE2
     }
 }
 #[doc = "Field `WAFEIEN` writer - WA Falling Edge Interrupt Enable"]
-pub type WafeienW<'a, REG> = crate::BitWriter<'a, REG, Wafeien>;
-impl<'a, REG> WafeienW<'a, REG>
+pub type WAFEIEN_W<'a, REG> = crate::BitWriter<'a, REG, WAFEIEN_A>;
+impl<'a, REG> WAFEIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "A protocol interrupt is not activated if a falling edge of WA is generated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Wafeien::Value1)
+        self.variant(WAFEIEN_A::VALUE1)
     }
     #[doc = "A protocol interrupt is activated if a falling edge of WA is generated."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Wafeien::Value2)
+        self.variant(WAFEIEN_A::VALUE2)
     }
 }
 #[doc = "WA Rising Edge Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Wareien {
+pub enum WAREIEN_A {
     #[doc = "0: A protocol interrupt is not activated if a rising edge of WA is generated."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A protocol interrupt is activated if a rising edge of WA is generated."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Wareien> for bool {
+impl From<WAREIEN_A> for bool {
     #[inline(always)]
-    fn from(variant: Wareien) -> Self {
+    fn from(variant: WAREIEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WAREIEN` reader - WA Rising Edge Interrupt Enable"]
-pub type WareienR = crate::BitReader<Wareien>;
-impl WareienR {
+pub type WAREIEN_R = crate::BitReader<WAREIEN_A>;
+impl WAREIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Wareien {
+    pub const fn variant(&self) -> WAREIEN_A {
         match self.bits {
-            false => Wareien::Value1,
-            true => Wareien::Value2,
+            false => WAREIEN_A::VALUE1,
+            true => WAREIEN_A::VALUE2,
         }
     }
     #[doc = "A protocol interrupt is not activated if a rising edge of WA is generated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Wareien::Value1
+        *self == WAREIEN_A::VALUE1
     }
     #[doc = "A protocol interrupt is activated if a rising edge of WA is generated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Wareien::Value2
+        *self == WAREIEN_A::VALUE2
     }
 }
 #[doc = "Field `WAREIEN` writer - WA Rising Edge Interrupt Enable"]
-pub type WareienW<'a, REG> = crate::BitWriter<'a, REG, Wareien>;
-impl<'a, REG> WareienW<'a, REG>
+pub type WAREIEN_W<'a, REG> = crate::BitWriter<'a, REG, WAREIEN_A>;
+impl<'a, REG> WAREIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "A protocol interrupt is not activated if a rising edge of WA is generated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Wareien::Value1)
+        self.variant(WAREIEN_A::VALUE1)
     }
     #[doc = "A protocol interrupt is activated if a rising edge of WA is generated."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Wareien::Value2)
+        self.variant(WAREIEN_A::VALUE2)
     }
 }
 #[doc = "END Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Endien {
+pub enum ENDIEN_A {
     #[doc = "0: A protocol interrupt is not activated."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A protocol interrupt is activated."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Endien> for bool {
+impl From<ENDIEN_A> for bool {
     #[inline(always)]
-    fn from(variant: Endien) -> Self {
+    fn from(variant: ENDIEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ENDIEN` reader - END Interrupt Enable"]
-pub type EndienR = crate::BitReader<Endien>;
-impl EndienR {
+pub type ENDIEN_R = crate::BitReader<ENDIEN_A>;
+impl ENDIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Endien {
+    pub const fn variant(&self) -> ENDIEN_A {
         match self.bits {
-            false => Endien::Value1,
-            true => Endien::Value2,
+            false => ENDIEN_A::VALUE1,
+            true => ENDIEN_A::VALUE2,
         }
     }
     #[doc = "A protocol interrupt is not activated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Endien::Value1
+        *self == ENDIEN_A::VALUE1
     }
     #[doc = "A protocol interrupt is activated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Endien::Value2
+        *self == ENDIEN_A::VALUE2
     }
 }
 #[doc = "Field `ENDIEN` writer - END Interrupt Enable"]
-pub type EndienW<'a, REG> = crate::BitWriter<'a, REG, Endien>;
-impl<'a, REG> EndienW<'a, REG>
+pub type ENDIEN_W<'a, REG> = crate::BitWriter<'a, REG, ENDIEN_A>;
+impl<'a, REG> ENDIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "A protocol interrupt is not activated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Endien::Value1)
+        self.variant(ENDIEN_A::VALUE1)
     }
     #[doc = "A protocol interrupt is activated."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Endien::Value2)
+        self.variant(ENDIEN_A::VALUE2)
     }
 }
 #[doc = "DX2T Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Dx2tien {
+pub enum DX2TIEN_A {
     #[doc = "0: A protocol interrupt is not generated if DX2T is active."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A protocol interrupt is generated if DX2T is active."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Dx2tien> for bool {
+impl From<DX2TIEN_A> for bool {
     #[inline(always)]
-    fn from(variant: Dx2tien) -> Self {
+    fn from(variant: DX2TIEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DX2TIEN` reader - DX2T Interrupt Enable"]
-pub type Dx2tienR = crate::BitReader<Dx2tien>;
-impl Dx2tienR {
+pub type DX2TIEN_R = crate::BitReader<DX2TIEN_A>;
+impl DX2TIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Dx2tien {
+    pub const fn variant(&self) -> DX2TIEN_A {
         match self.bits {
-            false => Dx2tien::Value1,
-            true => Dx2tien::Value2,
+            false => DX2TIEN_A::VALUE1,
+            true => DX2TIEN_A::VALUE2,
         }
     }
     #[doc = "A protocol interrupt is not generated if DX2T is active."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Dx2tien::Value1
+        *self == DX2TIEN_A::VALUE1
     }
     #[doc = "A protocol interrupt is generated if DX2T is active."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Dx2tien::Value2
+        *self == DX2TIEN_A::VALUE2
     }
 }
 #[doc = "Field `DX2TIEN` writer - DX2T Interrupt Enable"]
-pub type Dx2tienW<'a, REG> = crate::BitWriter<'a, REG, Dx2tien>;
-impl<'a, REG> Dx2tienW<'a, REG>
+pub type DX2TIEN_W<'a, REG> = crate::BitWriter<'a, REG, DX2TIEN_A>;
+impl<'a, REG> DX2TIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "A protocol interrupt is not generated if DX2T is active."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Dx2tien::Value1)
+        self.variant(DX2TIEN_A::VALUE1)
     }
     #[doc = "A protocol interrupt is generated if DX2T is active."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Dx2tien::Value2)
+        self.variant(DX2TIEN_A::VALUE2)
     }
 }
 #[doc = "Field `TDEL` reader - Transfer Delay"]
-pub type TdelR = crate::FieldReader;
+pub type TDEL_R = crate::FieldReader;
 #[doc = "Field `TDEL` writer - Transfer Delay"]
-pub type TdelW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+pub type TDEL_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Master Clock Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Mclk {
+pub enum MCLK_A {
     #[doc = "0: The MCLK generation is disabled and MCLK is 0."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The MCLK generation is enabled."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Mclk> for bool {
+impl From<MCLK_A> for bool {
     #[inline(always)]
-    fn from(variant: Mclk) -> Self {
+    fn from(variant: MCLK_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MCLK` reader - Master Clock Enable"]
-pub type MclkR = crate::BitReader<Mclk>;
-impl MclkR {
+pub type MCLK_R = crate::BitReader<MCLK_A>;
+impl MCLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Mclk {
+    pub const fn variant(&self) -> MCLK_A {
         match self.bits {
-            false => Mclk::Value1,
-            true => Mclk::Value2,
+            false => MCLK_A::VALUE1,
+            true => MCLK_A::VALUE2,
         }
     }
     #[doc = "The MCLK generation is disabled and MCLK is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Mclk::Value1
+        *self == MCLK_A::VALUE1
     }
     #[doc = "The MCLK generation is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Mclk::Value2
+        *self == MCLK_A::VALUE2
     }
 }
 #[doc = "Field `MCLK` writer - Master Clock Enable"]
-pub type MclkW<'a, REG> = crate::BitWriter<'a, REG, Mclk>;
-impl<'a, REG> MclkW<'a, REG>
+pub type MCLK_W<'a, REG> = crate::BitWriter<'a, REG, MCLK_A>;
+impl<'a, REG> MCLK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The MCLK generation is disabled and MCLK is 0."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Mclk::Value1)
+        self.variant(MCLK_A::VALUE1)
     }
     #[doc = "The MCLK generation is enabled."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Mclk::Value2)
+        self.variant(MCLK_A::VALUE2)
     }
 }
 impl R {
     #[doc = "Bit 0 - WA Generation Enable"]
     #[inline(always)]
-    pub fn wagen(&self) -> WagenR {
-        WagenR::new((self.bits & 1) != 0)
+    pub fn wagen(&self) -> WAGEN_R {
+        WAGEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Data Transfers Enable"]
     #[inline(always)]
-    pub fn dten(&self) -> DtenR {
-        DtenR::new(((self.bits >> 1) & 1) != 0)
+    pub fn dten(&self) -> DTEN_R {
+        DTEN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Select Inversion"]
     #[inline(always)]
-    pub fn selinv(&self) -> SelinvR {
-        SelinvR::new(((self.bits >> 2) & 1) != 0)
+    pub fn selinv(&self) -> SELINV_R {
+        SELINV_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 4 - WA Falling Edge Interrupt Enable"]
     #[inline(always)]
-    pub fn wafeien(&self) -> WafeienR {
-        WafeienR::new(((self.bits >> 4) & 1) != 0)
+    pub fn wafeien(&self) -> WAFEIEN_R {
+        WAFEIEN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - WA Rising Edge Interrupt Enable"]
     #[inline(always)]
-    pub fn wareien(&self) -> WareienR {
-        WareienR::new(((self.bits >> 5) & 1) != 0)
+    pub fn wareien(&self) -> WAREIEN_R {
+        WAREIEN_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - END Interrupt Enable"]
     #[inline(always)]
-    pub fn endien(&self) -> EndienR {
-        EndienR::new(((self.bits >> 6) & 1) != 0)
+    pub fn endien(&self) -> ENDIEN_R {
+        ENDIEN_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 15 - DX2T Interrupt Enable"]
     #[inline(always)]
-    pub fn dx2tien(&self) -> Dx2tienR {
-        Dx2tienR::new(((self.bits >> 15) & 1) != 0)
+    pub fn dx2tien(&self) -> DX2TIEN_R {
+        DX2TIEN_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:21 - Transfer Delay"]
     #[inline(always)]
-    pub fn tdel(&self) -> TdelR {
-        TdelR::new(((self.bits >> 16) & 0x3f) as u8)
+    pub fn tdel(&self) -> TDEL_R {
+        TDEL_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
     #[doc = "Bit 31 - Master Clock Enable"]
     #[inline(always)]
-    pub fn mclk(&self) -> MclkR {
-        MclkR::new(((self.bits >> 31) & 1) != 0)
+    pub fn mclk(&self) -> MCLK_R {
+        MCLK_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - WA Generation Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wagen(&mut self) -> WagenW<PcrIismodeSpec> {
-        WagenW::new(self, 0)
+    pub fn wagen(&mut self) -> WAGEN_W<PCR_IISMODE_SPEC> {
+        WAGEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Data Transfers Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dten(&mut self) -> DtenW<PcrIismodeSpec> {
-        DtenW::new(self, 1)
+    pub fn dten(&mut self) -> DTEN_W<PCR_IISMODE_SPEC> {
+        DTEN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Select Inversion"]
     #[inline(always)]
     #[must_use]
-    pub fn selinv(&mut self) -> SelinvW<PcrIismodeSpec> {
-        SelinvW::new(self, 2)
+    pub fn selinv(&mut self) -> SELINV_W<PCR_IISMODE_SPEC> {
+        SELINV_W::new(self, 2)
     }
     #[doc = "Bit 4 - WA Falling Edge Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wafeien(&mut self) -> WafeienW<PcrIismodeSpec> {
-        WafeienW::new(self, 4)
+    pub fn wafeien(&mut self) -> WAFEIEN_W<PCR_IISMODE_SPEC> {
+        WAFEIEN_W::new(self, 4)
     }
     #[doc = "Bit 5 - WA Rising Edge Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wareien(&mut self) -> WareienW<PcrIismodeSpec> {
-        WareienW::new(self, 5)
+    pub fn wareien(&mut self) -> WAREIEN_W<PCR_IISMODE_SPEC> {
+        WAREIEN_W::new(self, 5)
     }
     #[doc = "Bit 6 - END Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn endien(&mut self) -> EndienW<PcrIismodeSpec> {
-        EndienW::new(self, 6)
+    pub fn endien(&mut self) -> ENDIEN_W<PCR_IISMODE_SPEC> {
+        ENDIEN_W::new(self, 6)
     }
     #[doc = "Bit 15 - DX2T Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dx2tien(&mut self) -> Dx2tienW<PcrIismodeSpec> {
-        Dx2tienW::new(self, 15)
+    pub fn dx2tien(&mut self) -> DX2TIEN_W<PCR_IISMODE_SPEC> {
+        DX2TIEN_W::new(self, 15)
     }
     #[doc = "Bits 16:21 - Transfer Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn tdel(&mut self) -> TdelW<PcrIismodeSpec> {
-        TdelW::new(self, 16)
+    pub fn tdel(&mut self) -> TDEL_W<PCR_IISMODE_SPEC> {
+        TDEL_W::new(self, 16)
     }
     #[doc = "Bit 31 - Master Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mclk(&mut self) -> MclkW<PcrIismodeSpec> {
-        MclkW::new(self, 31)
+    pub fn mclk(&mut self) -> MCLK_W<PCR_IISMODE_SPEC> {
+        MCLK_W::new(self, 31)
     }
 }
 #[doc = "Protocol Control Register \\[IIS Mode\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcr_iismode::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcr_iismode::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PcrIismodeSpec;
-impl crate::RegisterSpec for PcrIismodeSpec {
+pub struct PCR_IISMODE_SPEC;
+impl crate::RegisterSpec for PCR_IISMODE_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`pcr_iismode::R`](R) reader structure"]
-impl crate::Readable for PcrIismodeSpec {}
+impl crate::Readable for PCR_IISMODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pcr_iismode::W`](W) writer structure"]
-impl crate::Writable for PcrIismodeSpec {
+impl crate::Writable for PCR_IISMODE_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PCR_IISMode to value 0"]
-impl crate::Resettable for PcrIismodeSpec {
+impl crate::Resettable for PCR_IISMODE_SPEC {
     const RESET_VALUE: u32 = 0;
 }
