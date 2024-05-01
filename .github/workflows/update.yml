@@ -18,7 +18,7 @@ jobs:
           token: '${{ secrets.GITHUB_TOKEN }}'
       - run: |
           rm -r src/
-          svd2rust -i XMC4300.svd
+          svd2rust -i XMC4300.svd --ident-formats-theme legacy
           mkdir src
           form -i lib.rs -o src/
           cargo fmt
