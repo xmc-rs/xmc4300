@@ -1,104 +1,104 @@
 #[doc = "Register `DTSSTAT` reader"]
-pub type R = crate::R<DtsstatSpec>;
+pub type R = crate::R<DTSSTAT_SPEC>;
 #[doc = "Field `RESULT` reader - Result of the DTS Measurement"]
-pub type ResultR = crate::FieldReader<u16>;
+pub type RESULT_R = crate::FieldReader<u16>;
 #[doc = "Sensor Ready Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rdy {
+pub enum RDY_A {
     #[doc = "0: The DTS is not ready"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: The DTS is ready"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Rdy> for bool {
+impl From<RDY_A> for bool {
     #[inline(always)]
-    fn from(variant: Rdy) -> Self {
+    fn from(variant: RDY_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RDY` reader - Sensor Ready Status"]
-pub type RdyR = crate::BitReader<Rdy>;
-impl RdyR {
+pub type RDY_R = crate::BitReader<RDY_A>;
+impl RDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rdy {
+    pub const fn variant(&self) -> RDY_A {
         match self.bits {
-            false => Rdy::Const0,
-            true => Rdy::Const1,
+            false => RDY_A::CONST_0,
+            true => RDY_A::CONST_1,
         }
     }
     #[doc = "The DTS is not ready"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == Rdy::Const0
+        *self == RDY_A::CONST_0
     }
     #[doc = "The DTS is ready"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == Rdy::Const1
+        *self == RDY_A::CONST_1
     }
 }
 #[doc = "Sensor Busy Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Busy {
+pub enum BUSY_A {
     #[doc = "0: not busy"]
-    Const0 = 0,
+    CONST_0 = 0,
     #[doc = "1: busy"]
-    Const1 = 1,
+    CONST_1 = 1,
 }
-impl From<Busy> for bool {
+impl From<BUSY_A> for bool {
     #[inline(always)]
-    fn from(variant: Busy) -> Self {
+    fn from(variant: BUSY_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BUSY` reader - Sensor Busy Status"]
-pub type BusyR = crate::BitReader<Busy>;
-impl BusyR {
+pub type BUSY_R = crate::BitReader<BUSY_A>;
+impl BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Busy {
+    pub const fn variant(&self) -> BUSY_A {
         match self.bits {
-            false => Busy::Const0,
-            true => Busy::Const1,
+            false => BUSY_A::CONST_0,
+            true => BUSY_A::CONST_1,
         }
     }
     #[doc = "not busy"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == Busy::Const0
+        *self == BUSY_A::CONST_0
     }
     #[doc = "busy"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == Busy::Const1
+        *self == BUSY_A::CONST_1
     }
 }
 impl R {
     #[doc = "Bits 0:9 - Result of the DTS Measurement"]
     #[inline(always)]
-    pub fn result(&self) -> ResultR {
-        ResultR::new((self.bits & 0x03ff) as u16)
+    pub fn result(&self) -> RESULT_R {
+        RESULT_R::new((self.bits & 0x03ff) as u16)
     }
     #[doc = "Bit 14 - Sensor Ready Status"]
     #[inline(always)]
-    pub fn rdy(&self) -> RdyR {
-        RdyR::new(((self.bits >> 14) & 1) != 0)
+    pub fn rdy(&self) -> RDY_R {
+        RDY_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Sensor Busy Status"]
     #[inline(always)]
-    pub fn busy(&self) -> BusyR {
-        BusyR::new(((self.bits >> 15) & 1) != 0)
+    pub fn busy(&self) -> BUSY_R {
+        BUSY_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 #[doc = "Die Temperature Sensor Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtsstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct DtsstatSpec;
-impl crate::RegisterSpec for DtsstatSpec {
+pub struct DTSSTAT_SPEC;
+impl crate::RegisterSpec for DTSSTAT_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`dtsstat::R`](R) reader structure"]
-impl crate::Readable for DtsstatSpec {}
+impl crate::Readable for DTSSTAT_SPEC {}
 #[doc = "`reset()` method sets DTSSTAT to value 0"]
-impl crate::Resettable for DtsstatSpec {
+impl crate::Resettable for DTSSTAT_SPEC {
     const RESET_VALUE: u32 = 0;
 }

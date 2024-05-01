@@ -1,250 +1,250 @@
 #[doc = "Register `CLOCK_CTRL` reader"]
-pub type R = crate::R<ClockCtrlSpec>;
+pub type R = crate::R<CLOCK_CTRL_SPEC>;
 #[doc = "Register `CLOCK_CTRL` writer"]
-pub type W = crate::W<ClockCtrlSpec>;
+pub type W = crate::W<CLOCK_CTRL_SPEC>;
 #[doc = "Internal Clock Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum InternalClockEn {
+pub enum INTERNAL_CLOCK_EN_A {
     #[doc = "0: Stop"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Oscillate"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<InternalClockEn> for bool {
+impl From<INTERNAL_CLOCK_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: InternalClockEn) -> Self {
+    fn from(variant: INTERNAL_CLOCK_EN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `INTERNAL_CLOCK_EN` reader - Internal Clock Enable"]
-pub type InternalClockEnR = crate::BitReader<InternalClockEn>;
-impl InternalClockEnR {
+pub type INTERNAL_CLOCK_EN_R = crate::BitReader<INTERNAL_CLOCK_EN_A>;
+impl INTERNAL_CLOCK_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> InternalClockEn {
+    pub const fn variant(&self) -> INTERNAL_CLOCK_EN_A {
         match self.bits {
-            false => InternalClockEn::Value1,
-            true => InternalClockEn::Value2,
+            false => INTERNAL_CLOCK_EN_A::VALUE1,
+            true => INTERNAL_CLOCK_EN_A::VALUE2,
         }
     }
     #[doc = "Stop"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == InternalClockEn::Value1
+        *self == INTERNAL_CLOCK_EN_A::VALUE1
     }
     #[doc = "Oscillate"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == InternalClockEn::Value2
+        *self == INTERNAL_CLOCK_EN_A::VALUE2
     }
 }
 #[doc = "Field `INTERNAL_CLOCK_EN` writer - Internal Clock Enable"]
-pub type InternalClockEnW<'a, REG> = crate::BitWriter<'a, REG, InternalClockEn>;
-impl<'a, REG> InternalClockEnW<'a, REG>
+pub type INTERNAL_CLOCK_EN_W<'a, REG> = crate::BitWriter<'a, REG, INTERNAL_CLOCK_EN_A>;
+impl<'a, REG> INTERNAL_CLOCK_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Stop"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(InternalClockEn::Value1)
+        self.variant(INTERNAL_CLOCK_EN_A::VALUE1)
     }
     #[doc = "Oscillate"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(InternalClockEn::Value2)
+        self.variant(INTERNAL_CLOCK_EN_A::VALUE2)
     }
 }
 #[doc = "Internal Clock Stable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum InternalClockStable {
+pub enum INTERNAL_CLOCK_STABLE_A {
     #[doc = "0: Not Ready"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Ready"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<InternalClockStable> for bool {
+impl From<INTERNAL_CLOCK_STABLE_A> for bool {
     #[inline(always)]
-    fn from(variant: InternalClockStable) -> Self {
+    fn from(variant: INTERNAL_CLOCK_STABLE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `INTERNAL_CLOCK_STABLE` reader - Internal Clock Stable"]
-pub type InternalClockStableR = crate::BitReader<InternalClockStable>;
-impl InternalClockStableR {
+pub type INTERNAL_CLOCK_STABLE_R = crate::BitReader<INTERNAL_CLOCK_STABLE_A>;
+impl INTERNAL_CLOCK_STABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> InternalClockStable {
+    pub const fn variant(&self) -> INTERNAL_CLOCK_STABLE_A {
         match self.bits {
-            false => InternalClockStable::Value1,
-            true => InternalClockStable::Value2,
+            false => INTERNAL_CLOCK_STABLE_A::VALUE1,
+            true => INTERNAL_CLOCK_STABLE_A::VALUE2,
         }
     }
     #[doc = "Not Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == InternalClockStable::Value1
+        *self == INTERNAL_CLOCK_STABLE_A::VALUE1
     }
     #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == InternalClockStable::Value2
+        *self == INTERNAL_CLOCK_STABLE_A::VALUE2
     }
 }
 #[doc = "SD Clock Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SdclockEn {
+pub enum SDCLOCK_EN_A {
     #[doc = "0: Disable"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<SdclockEn> for bool {
+impl From<SDCLOCK_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: SdclockEn) -> Self {
+    fn from(variant: SDCLOCK_EN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SDCLOCK_EN` reader - SD Clock Enable"]
-pub type SdclockEnR = crate::BitReader<SdclockEn>;
-impl SdclockEnR {
+pub type SDCLOCK_EN_R = crate::BitReader<SDCLOCK_EN_A>;
+impl SDCLOCK_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SdclockEn {
+    pub const fn variant(&self) -> SDCLOCK_EN_A {
         match self.bits {
-            false => SdclockEn::Value1,
-            true => SdclockEn::Value2,
+            false => SDCLOCK_EN_A::VALUE1,
+            true => SDCLOCK_EN_A::VALUE2,
         }
     }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SdclockEn::Value1
+        *self == SDCLOCK_EN_A::VALUE1
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SdclockEn::Value2
+        *self == SDCLOCK_EN_A::VALUE2
     }
 }
 #[doc = "Field `SDCLOCK_EN` writer - SD Clock Enable"]
-pub type SdclockEnW<'a, REG> = crate::BitWriter<'a, REG, SdclockEn>;
-impl<'a, REG> SdclockEnW<'a, REG>
+pub type SDCLOCK_EN_W<'a, REG> = crate::BitWriter<'a, REG, SDCLOCK_EN_A>;
+impl<'a, REG> SDCLOCK_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(SdclockEn::Value1)
+        self.variant(SDCLOCK_EN_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(SdclockEn::Value2)
+        self.variant(SDCLOCK_EN_A::VALUE2)
     }
 }
 #[doc = "SDCLK Frequency Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SdclkFreqSel {
+pub enum SDCLK_FREQ_SEL_A {
     #[doc = "0: base clock(10MHz-63MHz)"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: base clock divided by 2"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "16: base clock divided by 32"]
-    Value3 = 16,
+    VALUE3 = 16,
     #[doc = "2: base clock divided by 4"]
-    Value4 = 2,
+    VALUE4 = 2,
     #[doc = "4: base clock divided by 8"]
-    Value5 = 4,
+    VALUE5 = 4,
     #[doc = "8: base clock divided by 16"]
-    Value6 = 8,
+    VALUE6 = 8,
     #[doc = "32: base clock divided by 64"]
-    Value7 = 32,
+    VALUE7 = 32,
     #[doc = "64: base clock divided by 128"]
-    Value8 = 64,
+    VALUE8 = 64,
     #[doc = "128: base clock divided by 256"]
-    Value9 = 128,
+    VALUE9 = 128,
 }
-impl From<SdclkFreqSel> for u8 {
+impl From<SDCLK_FREQ_SEL_A> for u8 {
     #[inline(always)]
-    fn from(variant: SdclkFreqSel) -> Self {
+    fn from(variant: SDCLK_FREQ_SEL_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for SdclkFreqSel {
+impl crate::FieldSpec for SDCLK_FREQ_SEL_A {
     type Ux = u8;
 }
-impl crate::IsEnum for SdclkFreqSel {}
+impl crate::IsEnum for SDCLK_FREQ_SEL_A {}
 #[doc = "Field `SDCLK_FREQ_SEL` reader - SDCLK Frequency Select"]
-pub type SdclkFreqSelR = crate::FieldReader<SdclkFreqSel>;
-impl SdclkFreqSelR {
+pub type SDCLK_FREQ_SEL_R = crate::FieldReader<SDCLK_FREQ_SEL_A>;
+impl SDCLK_FREQ_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<SdclkFreqSel> {
+    pub const fn variant(&self) -> Option<SDCLK_FREQ_SEL_A> {
         match self.bits {
-            0 => Some(SdclkFreqSel::Value1),
-            1 => Some(SdclkFreqSel::Value2),
-            16 => Some(SdclkFreqSel::Value3),
-            2 => Some(SdclkFreqSel::Value4),
-            4 => Some(SdclkFreqSel::Value5),
-            8 => Some(SdclkFreqSel::Value6),
-            32 => Some(SdclkFreqSel::Value7),
-            64 => Some(SdclkFreqSel::Value8),
-            128 => Some(SdclkFreqSel::Value9),
+            0 => Some(SDCLK_FREQ_SEL_A::VALUE1),
+            1 => Some(SDCLK_FREQ_SEL_A::VALUE2),
+            16 => Some(SDCLK_FREQ_SEL_A::VALUE3),
+            2 => Some(SDCLK_FREQ_SEL_A::VALUE4),
+            4 => Some(SDCLK_FREQ_SEL_A::VALUE5),
+            8 => Some(SDCLK_FREQ_SEL_A::VALUE6),
+            32 => Some(SDCLK_FREQ_SEL_A::VALUE7),
+            64 => Some(SDCLK_FREQ_SEL_A::VALUE8),
+            128 => Some(SDCLK_FREQ_SEL_A::VALUE9),
             _ => None,
         }
     }
     #[doc = "base clock(10MHz-63MHz)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SdclkFreqSel::Value1
+        *self == SDCLK_FREQ_SEL_A::VALUE1
     }
     #[doc = "base clock divided by 2"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SdclkFreqSel::Value2
+        *self == SDCLK_FREQ_SEL_A::VALUE2
     }
     #[doc = "base clock divided by 32"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == SdclkFreqSel::Value3
+        *self == SDCLK_FREQ_SEL_A::VALUE3
     }
     #[doc = "base clock divided by 4"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == SdclkFreqSel::Value4
+        *self == SDCLK_FREQ_SEL_A::VALUE4
     }
     #[doc = "base clock divided by 8"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == SdclkFreqSel::Value5
+        *self == SDCLK_FREQ_SEL_A::VALUE5
     }
     #[doc = "base clock divided by 16"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == SdclkFreqSel::Value6
+        *self == SDCLK_FREQ_SEL_A::VALUE6
     }
     #[doc = "base clock divided by 64"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == SdclkFreqSel::Value7
+        *self == SDCLK_FREQ_SEL_A::VALUE7
     }
     #[doc = "base clock divided by 128"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        *self == SdclkFreqSel::Value8
+        *self == SDCLK_FREQ_SEL_A::VALUE8
     }
     #[doc = "base clock divided by 256"]
     #[inline(always)]
     pub fn is_value9(&self) -> bool {
-        *self == SdclkFreqSel::Value9
+        *self == SDCLK_FREQ_SEL_A::VALUE9
     }
 }
 #[doc = "Field `SDCLK_FREQ_SEL` writer - SDCLK Frequency Select"]
-pub type SdclkFreqSelW<'a, REG> = crate::FieldWriter<'a, REG, 8, SdclkFreqSel>;
-impl<'a, REG> SdclkFreqSelW<'a, REG>
+pub type SDCLK_FREQ_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 8, SDCLK_FREQ_SEL_A>;
+impl<'a, REG> SDCLK_FREQ_SEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -252,105 +252,105 @@ where
     #[doc = "base clock(10MHz-63MHz)"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(SdclkFreqSel::Value1)
+        self.variant(SDCLK_FREQ_SEL_A::VALUE1)
     }
     #[doc = "base clock divided by 2"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(SdclkFreqSel::Value2)
+        self.variant(SDCLK_FREQ_SEL_A::VALUE2)
     }
     #[doc = "base clock divided by 32"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(SdclkFreqSel::Value3)
+        self.variant(SDCLK_FREQ_SEL_A::VALUE3)
     }
     #[doc = "base clock divided by 4"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(SdclkFreqSel::Value4)
+        self.variant(SDCLK_FREQ_SEL_A::VALUE4)
     }
     #[doc = "base clock divided by 8"]
     #[inline(always)]
     pub fn value5(self) -> &'a mut crate::W<REG> {
-        self.variant(SdclkFreqSel::Value5)
+        self.variant(SDCLK_FREQ_SEL_A::VALUE5)
     }
     #[doc = "base clock divided by 16"]
     #[inline(always)]
     pub fn value6(self) -> &'a mut crate::W<REG> {
-        self.variant(SdclkFreqSel::Value6)
+        self.variant(SDCLK_FREQ_SEL_A::VALUE6)
     }
     #[doc = "base clock divided by 64"]
     #[inline(always)]
     pub fn value7(self) -> &'a mut crate::W<REG> {
-        self.variant(SdclkFreqSel::Value7)
+        self.variant(SDCLK_FREQ_SEL_A::VALUE7)
     }
     #[doc = "base clock divided by 128"]
     #[inline(always)]
     pub fn value8(self) -> &'a mut crate::W<REG> {
-        self.variant(SdclkFreqSel::Value8)
+        self.variant(SDCLK_FREQ_SEL_A::VALUE8)
     }
     #[doc = "base clock divided by 256"]
     #[inline(always)]
     pub fn value9(self) -> &'a mut crate::W<REG> {
-        self.variant(SdclkFreqSel::Value9)
+        self.variant(SDCLK_FREQ_SEL_A::VALUE9)
     }
 }
 impl R {
     #[doc = "Bit 0 - Internal Clock Enable"]
     #[inline(always)]
-    pub fn internal_clock_en(&self) -> InternalClockEnR {
-        InternalClockEnR::new((self.bits & 1) != 0)
+    pub fn internal_clock_en(&self) -> INTERNAL_CLOCK_EN_R {
+        INTERNAL_CLOCK_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Internal Clock Stable"]
     #[inline(always)]
-    pub fn internal_clock_stable(&self) -> InternalClockStableR {
-        InternalClockStableR::new(((self.bits >> 1) & 1) != 0)
+    pub fn internal_clock_stable(&self) -> INTERNAL_CLOCK_STABLE_R {
+        INTERNAL_CLOCK_STABLE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - SD Clock Enable"]
     #[inline(always)]
-    pub fn sdclock_en(&self) -> SdclockEnR {
-        SdclockEnR::new(((self.bits >> 2) & 1) != 0)
+    pub fn sdclock_en(&self) -> SDCLOCK_EN_R {
+        SDCLOCK_EN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 8:15 - SDCLK Frequency Select"]
     #[inline(always)]
-    pub fn sdclk_freq_sel(&self) -> SdclkFreqSelR {
-        SdclkFreqSelR::new(((self.bits >> 8) & 0xff) as u8)
+    pub fn sdclk_freq_sel(&self) -> SDCLK_FREQ_SEL_R {
+        SDCLK_FREQ_SEL_R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Internal Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn internal_clock_en(&mut self) -> InternalClockEnW<ClockCtrlSpec> {
-        InternalClockEnW::new(self, 0)
+    pub fn internal_clock_en(&mut self) -> INTERNAL_CLOCK_EN_W<CLOCK_CTRL_SPEC> {
+        INTERNAL_CLOCK_EN_W::new(self, 0)
     }
     #[doc = "Bit 2 - SD Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn sdclock_en(&mut self) -> SdclockEnW<ClockCtrlSpec> {
-        SdclockEnW::new(self, 2)
+    pub fn sdclock_en(&mut self) -> SDCLOCK_EN_W<CLOCK_CTRL_SPEC> {
+        SDCLOCK_EN_W::new(self, 2)
     }
     #[doc = "Bits 8:15 - SDCLK Frequency Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sdclk_freq_sel(&mut self) -> SdclkFreqSelW<ClockCtrlSpec> {
-        SdclkFreqSelW::new(self, 8)
+    pub fn sdclk_freq_sel(&mut self) -> SDCLK_FREQ_SEL_W<CLOCK_CTRL_SPEC> {
+        SDCLK_FREQ_SEL_W::new(self, 8)
     }
 }
 #[doc = "Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clock_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clock_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct ClockCtrlSpec;
-impl crate::RegisterSpec for ClockCtrlSpec {
+pub struct CLOCK_CTRL_SPEC;
+impl crate::RegisterSpec for CLOCK_CTRL_SPEC {
     type Ux = u16;
 }
 #[doc = "`read()` method returns [`clock_ctrl::R`](R) reader structure"]
-impl crate::Readable for ClockCtrlSpec {}
+impl crate::Readable for CLOCK_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`clock_ctrl::W`](W) writer structure"]
-impl crate::Writable for ClockCtrlSpec {
+impl crate::Writable for CLOCK_CTRL_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets CLOCK_CTRL to value 0"]
-impl crate::Resettable for ClockCtrlSpec {
+impl crate::Resettable for CLOCK_CTRL_SPEC {
     const RESET_VALUE: u16 = 0;
 }

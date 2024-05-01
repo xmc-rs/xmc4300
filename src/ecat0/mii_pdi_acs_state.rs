@@ -1,130 +1,130 @@
 #[doc = "Register `MII_PDI_ACS_STATE` reader"]
-pub type R = crate::R<MiiPdiAcsStateSpec>;
+pub type R = crate::R<MII_PDI_ACS_STATE_SPEC>;
 #[doc = "Register `MII_PDI_ACS_STATE` writer"]
-pub type W = crate::W<MiiPdiAcsStateSpec>;
+pub type W = crate::W<MII_PDI_ACS_STATE_SPEC>;
 #[doc = "Access to MII management\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum AcsMiiByPdi {
+pub enum ACS_MII_BY_PDI_A {
     #[doc = "0: ECAT has access to MII managment"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: PDI has access to MII managment"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<AcsMiiByPdi> for bool {
+impl From<ACS_MII_BY_PDI_A> for bool {
     #[inline(always)]
-    fn from(variant: AcsMiiByPdi) -> Self {
+    fn from(variant: ACS_MII_BY_PDI_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ACS_MII_BY_PDI` reader - Access to MII management"]
-pub type AcsMiiByPdiR = crate::BitReader<AcsMiiByPdi>;
-impl AcsMiiByPdiR {
+pub type ACS_MII_BY_PDI_R = crate::BitReader<ACS_MII_BY_PDI_A>;
+impl ACS_MII_BY_PDI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> AcsMiiByPdi {
+    pub const fn variant(&self) -> ACS_MII_BY_PDI_A {
         match self.bits {
-            false => AcsMiiByPdi::Value1,
-            true => AcsMiiByPdi::Value2,
+            false => ACS_MII_BY_PDI_A::VALUE1,
+            true => ACS_MII_BY_PDI_A::VALUE2,
         }
     }
     #[doc = "ECAT has access to MII managment"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == AcsMiiByPdi::Value1
+        *self == ACS_MII_BY_PDI_A::VALUE1
     }
     #[doc = "PDI has access to MII managment"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == AcsMiiByPdi::Value2
+        *self == ACS_MII_BY_PDI_A::VALUE2
     }
 }
 #[doc = "Field `ACS_MII_BY_PDI` writer - Access to MII management"]
-pub type AcsMiiByPdiW<'a, REG> = crate::BitWriter<'a, REG, AcsMiiByPdi>;
-impl<'a, REG> AcsMiiByPdiW<'a, REG>
+pub type ACS_MII_BY_PDI_W<'a, REG> = crate::BitWriter<'a, REG, ACS_MII_BY_PDI_A>;
+impl<'a, REG> ACS_MII_BY_PDI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "ECAT has access to MII managment"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(AcsMiiByPdi::Value1)
+        self.variant(ACS_MII_BY_PDI_A::VALUE1)
     }
     #[doc = "PDI has access to MII managment"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(AcsMiiByPdi::Value2)
+        self.variant(ACS_MII_BY_PDI_A::VALUE2)
     }
 }
 #[doc = "Force PDI Access State by ECAT master\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ForcePdiAcsS {
+pub enum FORCE_PDI_ACS_S_A {
     #[doc = "0: no change"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Reset Bit ACS_MII_BY_PDI"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<ForcePdiAcsS> for bool {
+impl From<FORCE_PDI_ACS_S_A> for bool {
     #[inline(always)]
-    fn from(variant: ForcePdiAcsS) -> Self {
+    fn from(variant: FORCE_PDI_ACS_S_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `FORCE_PDI_ACS_S` reader - Force PDI Access State by ECAT master"]
-pub type ForcePdiAcsSR = crate::BitReader<ForcePdiAcsS>;
-impl ForcePdiAcsSR {
+pub type FORCE_PDI_ACS_S_R = crate::BitReader<FORCE_PDI_ACS_S_A>;
+impl FORCE_PDI_ACS_S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ForcePdiAcsS {
+    pub const fn variant(&self) -> FORCE_PDI_ACS_S_A {
         match self.bits {
-            false => ForcePdiAcsS::Value1,
-            true => ForcePdiAcsS::Value2,
+            false => FORCE_PDI_ACS_S_A::VALUE1,
+            true => FORCE_PDI_ACS_S_A::VALUE2,
         }
     }
     #[doc = "no change"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ForcePdiAcsS::Value1
+        *self == FORCE_PDI_ACS_S_A::VALUE1
     }
     #[doc = "Reset Bit ACS_MII_BY_PDI"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ForcePdiAcsS::Value2
+        *self == FORCE_PDI_ACS_S_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - Access to MII management"]
     #[inline(always)]
-    pub fn acs_mii_by_pdi(&self) -> AcsMiiByPdiR {
-        AcsMiiByPdiR::new((self.bits & 1) != 0)
+    pub fn acs_mii_by_pdi(&self) -> ACS_MII_BY_PDI_R {
+        ACS_MII_BY_PDI_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Force PDI Access State by ECAT master"]
     #[inline(always)]
-    pub fn force_pdi_acs_s(&self) -> ForcePdiAcsSR {
-        ForcePdiAcsSR::new(((self.bits >> 1) & 1) != 0)
+    pub fn force_pdi_acs_s(&self) -> FORCE_PDI_ACS_S_R {
+        FORCE_PDI_ACS_S_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Access to MII management"]
     #[inline(always)]
     #[must_use]
-    pub fn acs_mii_by_pdi(&mut self) -> AcsMiiByPdiW<MiiPdiAcsStateSpec> {
-        AcsMiiByPdiW::new(self, 0)
+    pub fn acs_mii_by_pdi(&mut self) -> ACS_MII_BY_PDI_W<MII_PDI_ACS_STATE_SPEC> {
+        ACS_MII_BY_PDI_W::new(self, 0)
     }
 }
 #[doc = "MII PDI ACS STATE\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mii_pdi_acs_state::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mii_pdi_acs_state::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct MiiPdiAcsStateSpec;
-impl crate::RegisterSpec for MiiPdiAcsStateSpec {
+pub struct MII_PDI_ACS_STATE_SPEC;
+impl crate::RegisterSpec for MII_PDI_ACS_STATE_SPEC {
     type Ux = u8;
 }
 #[doc = "`read()` method returns [`mii_pdi_acs_state::R`](R) reader structure"]
-impl crate::Readable for MiiPdiAcsStateSpec {}
+impl crate::Readable for MII_PDI_ACS_STATE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mii_pdi_acs_state::W`](W) writer structure"]
-impl crate::Writable for MiiPdiAcsStateSpec {
+impl crate::Writable for MII_PDI_ACS_STATE_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets MII_PDI_ACS_STATE to value 0"]
-impl crate::Resettable for MiiPdiAcsStateSpec {
+impl crate::Resettable for MII_PDI_ACS_STATE_SPEC {
     const RESET_VALUE: u8 = 0;
 }

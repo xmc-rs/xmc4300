@@ -1,473 +1,473 @@
 #[doc = "Register `INTE` reader"]
-pub type R = crate::R<InteSpec>;
+pub type R = crate::R<INTE_SPEC>;
 #[doc = "Register `INTE` writer"]
-pub type W = crate::W<InteSpec>;
+pub type W = crate::W<INTE_SPEC>;
 #[doc = "Period match while counting up enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pme {
+pub enum PME_A {
     #[doc = "0: Period Match interrupt is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Period Match interrupt is enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Pme> for bool {
+impl From<PME_A> for bool {
     #[inline(always)]
-    fn from(variant: Pme) -> Self {
+    fn from(variant: PME_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PME` reader - Period match while counting up enable"]
-pub type PmeR = crate::BitReader<Pme>;
-impl PmeR {
+pub type PME_R = crate::BitReader<PME_A>;
+impl PME_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pme {
+    pub const fn variant(&self) -> PME_A {
         match self.bits {
-            false => Pme::Value1,
-            true => Pme::Value2,
+            false => PME_A::VALUE1,
+            true => PME_A::VALUE2,
         }
     }
     #[doc = "Period Match interrupt is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Pme::Value1
+        *self == PME_A::VALUE1
     }
     #[doc = "Period Match interrupt is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Pme::Value2
+        *self == PME_A::VALUE2
     }
 }
 #[doc = "Field `PME` writer - Period match while counting up enable"]
-pub type PmeW<'a, REG> = crate::BitWriter<'a, REG, Pme>;
-impl<'a, REG> PmeW<'a, REG>
+pub type PME_W<'a, REG> = crate::BitWriter<'a, REG, PME_A>;
+impl<'a, REG> PME_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Period Match interrupt is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Pme::Value1)
+        self.variant(PME_A::VALUE1)
     }
     #[doc = "Period Match interrupt is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Pme::Value2)
+        self.variant(PME_A::VALUE2)
     }
 }
 #[doc = "One match while counting down enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ome {
+pub enum OME_A {
     #[doc = "0: One Match interrupt is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: One Match interrupt is enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ome> for bool {
+impl From<OME_A> for bool {
     #[inline(always)]
-    fn from(variant: Ome) -> Self {
+    fn from(variant: OME_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `OME` reader - One match while counting down enable"]
-pub type OmeR = crate::BitReader<Ome>;
-impl OmeR {
+pub type OME_R = crate::BitReader<OME_A>;
+impl OME_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ome {
+    pub const fn variant(&self) -> OME_A {
         match self.bits {
-            false => Ome::Value1,
-            true => Ome::Value2,
+            false => OME_A::VALUE1,
+            true => OME_A::VALUE2,
         }
     }
     #[doc = "One Match interrupt is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ome::Value1
+        *self == OME_A::VALUE1
     }
     #[doc = "One Match interrupt is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ome::Value2
+        *self == OME_A::VALUE2
     }
 }
 #[doc = "Field `OME` writer - One match while counting down enable"]
-pub type OmeW<'a, REG> = crate::BitWriter<'a, REG, Ome>;
-impl<'a, REG> OmeW<'a, REG>
+pub type OME_W<'a, REG> = crate::BitWriter<'a, REG, OME_A>;
+impl<'a, REG> OME_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "One Match interrupt is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ome::Value1)
+        self.variant(OME_A::VALUE1)
     }
     #[doc = "One Match interrupt is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ome::Value2)
+        self.variant(OME_A::VALUE2)
     }
 }
 #[doc = "Compare match while counting up enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cmue {
+pub enum CMUE_A {
     #[doc = "0: Compare Match while counting up interrupt is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Compare Match while counting up interrupt is enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cmue> for bool {
+impl From<CMUE_A> for bool {
     #[inline(always)]
-    fn from(variant: Cmue) -> Self {
+    fn from(variant: CMUE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CMUE` reader - Compare match while counting up enable"]
-pub type CmueR = crate::BitReader<Cmue>;
-impl CmueR {
+pub type CMUE_R = crate::BitReader<CMUE_A>;
+impl CMUE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Cmue {
+    pub const fn variant(&self) -> CMUE_A {
         match self.bits {
-            false => Cmue::Value1,
-            true => Cmue::Value2,
+            false => CMUE_A::VALUE1,
+            true => CMUE_A::VALUE2,
         }
     }
     #[doc = "Compare Match while counting up interrupt is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Cmue::Value1
+        *self == CMUE_A::VALUE1
     }
     #[doc = "Compare Match while counting up interrupt is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Cmue::Value2
+        *self == CMUE_A::VALUE2
     }
 }
 #[doc = "Field `CMUE` writer - Compare match while counting up enable"]
-pub type CmueW<'a, REG> = crate::BitWriter<'a, REG, Cmue>;
-impl<'a, REG> CmueW<'a, REG>
+pub type CMUE_W<'a, REG> = crate::BitWriter<'a, REG, CMUE_A>;
+impl<'a, REG> CMUE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Compare Match while counting up interrupt is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cmue::Value1)
+        self.variant(CMUE_A::VALUE1)
     }
     #[doc = "Compare Match while counting up interrupt is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cmue::Value2)
+        self.variant(CMUE_A::VALUE2)
     }
 }
 #[doc = "Compare match while counting down enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cmde {
+pub enum CMDE_A {
     #[doc = "0: Compare Match while counting down interrupt is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Compare Match while counting down interrupt is enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cmde> for bool {
+impl From<CMDE_A> for bool {
     #[inline(always)]
-    fn from(variant: Cmde) -> Self {
+    fn from(variant: CMDE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CMDE` reader - Compare match while counting down enable"]
-pub type CmdeR = crate::BitReader<Cmde>;
-impl CmdeR {
+pub type CMDE_R = crate::BitReader<CMDE_A>;
+impl CMDE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Cmde {
+    pub const fn variant(&self) -> CMDE_A {
         match self.bits {
-            false => Cmde::Value1,
-            true => Cmde::Value2,
+            false => CMDE_A::VALUE1,
+            true => CMDE_A::VALUE2,
         }
     }
     #[doc = "Compare Match while counting down interrupt is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Cmde::Value1
+        *self == CMDE_A::VALUE1
     }
     #[doc = "Compare Match while counting down interrupt is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Cmde::Value2
+        *self == CMDE_A::VALUE2
     }
 }
 #[doc = "Field `CMDE` writer - Compare match while counting down enable"]
-pub type CmdeW<'a, REG> = crate::BitWriter<'a, REG, Cmde>;
-impl<'a, REG> CmdeW<'a, REG>
+pub type CMDE_W<'a, REG> = crate::BitWriter<'a, REG, CMDE_A>;
+impl<'a, REG> CMDE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Compare Match while counting down interrupt is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cmde::Value1)
+        self.variant(CMDE_A::VALUE1)
     }
     #[doc = "Compare Match while counting down interrupt is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cmde::Value2)
+        self.variant(CMDE_A::VALUE2)
     }
 }
 #[doc = "Event 0 interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum E0ae {
+pub enum E0AE_A {
     #[doc = "0: Event 0 detection interrupt is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Event 0 detection interrupt is enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<E0ae> for bool {
+impl From<E0AE_A> for bool {
     #[inline(always)]
-    fn from(variant: E0ae) -> Self {
+    fn from(variant: E0AE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `E0AE` reader - Event 0 interrupt enable"]
-pub type E0aeR = crate::BitReader<E0ae>;
-impl E0aeR {
+pub type E0AE_R = crate::BitReader<E0AE_A>;
+impl E0AE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> E0ae {
+    pub const fn variant(&self) -> E0AE_A {
         match self.bits {
-            false => E0ae::Value1,
-            true => E0ae::Value2,
+            false => E0AE_A::VALUE1,
+            true => E0AE_A::VALUE2,
         }
     }
     #[doc = "Event 0 detection interrupt is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == E0ae::Value1
+        *self == E0AE_A::VALUE1
     }
     #[doc = "Event 0 detection interrupt is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == E0ae::Value2
+        *self == E0AE_A::VALUE2
     }
 }
 #[doc = "Field `E0AE` writer - Event 0 interrupt enable"]
-pub type E0aeW<'a, REG> = crate::BitWriter<'a, REG, E0ae>;
-impl<'a, REG> E0aeW<'a, REG>
+pub type E0AE_W<'a, REG> = crate::BitWriter<'a, REG, E0AE_A>;
+impl<'a, REG> E0AE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Event 0 detection interrupt is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(E0ae::Value1)
+        self.variant(E0AE_A::VALUE1)
     }
     #[doc = "Event 0 detection interrupt is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(E0ae::Value2)
+        self.variant(E0AE_A::VALUE2)
     }
 }
 #[doc = "Event 1 interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum E1ae {
+pub enum E1AE_A {
     #[doc = "0: Event 1 detection interrupt is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Event 1 detection interrupt is enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<E1ae> for bool {
+impl From<E1AE_A> for bool {
     #[inline(always)]
-    fn from(variant: E1ae) -> Self {
+    fn from(variant: E1AE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `E1AE` reader - Event 1 interrupt enable"]
-pub type E1aeR = crate::BitReader<E1ae>;
-impl E1aeR {
+pub type E1AE_R = crate::BitReader<E1AE_A>;
+impl E1AE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> E1ae {
+    pub const fn variant(&self) -> E1AE_A {
         match self.bits {
-            false => E1ae::Value1,
-            true => E1ae::Value2,
+            false => E1AE_A::VALUE1,
+            true => E1AE_A::VALUE2,
         }
     }
     #[doc = "Event 1 detection interrupt is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == E1ae::Value1
+        *self == E1AE_A::VALUE1
     }
     #[doc = "Event 1 detection interrupt is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == E1ae::Value2
+        *self == E1AE_A::VALUE2
     }
 }
 #[doc = "Field `E1AE` writer - Event 1 interrupt enable"]
-pub type E1aeW<'a, REG> = crate::BitWriter<'a, REG, E1ae>;
-impl<'a, REG> E1aeW<'a, REG>
+pub type E1AE_W<'a, REG> = crate::BitWriter<'a, REG, E1AE_A>;
+impl<'a, REG> E1AE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Event 1 detection interrupt is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(E1ae::Value1)
+        self.variant(E1AE_A::VALUE1)
     }
     #[doc = "Event 1 detection interrupt is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(E1ae::Value2)
+        self.variant(E1AE_A::VALUE2)
     }
 }
 #[doc = "Event 2 interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum E2ae {
+pub enum E2AE_A {
     #[doc = "0: Event 2 detection interrupt is disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Event 2 detection interrupt is enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<E2ae> for bool {
+impl From<E2AE_A> for bool {
     #[inline(always)]
-    fn from(variant: E2ae) -> Self {
+    fn from(variant: E2AE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `E2AE` reader - Event 2 interrupt enable"]
-pub type E2aeR = crate::BitReader<E2ae>;
-impl E2aeR {
+pub type E2AE_R = crate::BitReader<E2AE_A>;
+impl E2AE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> E2ae {
+    pub const fn variant(&self) -> E2AE_A {
         match self.bits {
-            false => E2ae::Value1,
-            true => E2ae::Value2,
+            false => E2AE_A::VALUE1,
+            true => E2AE_A::VALUE2,
         }
     }
     #[doc = "Event 2 detection interrupt is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == E2ae::Value1
+        *self == E2AE_A::VALUE1
     }
     #[doc = "Event 2 detection interrupt is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == E2ae::Value2
+        *self == E2AE_A::VALUE2
     }
 }
 #[doc = "Field `E2AE` writer - Event 2 interrupt enable"]
-pub type E2aeW<'a, REG> = crate::BitWriter<'a, REG, E2ae>;
-impl<'a, REG> E2aeW<'a, REG>
+pub type E2AE_W<'a, REG> = crate::BitWriter<'a, REG, E2AE_A>;
+impl<'a, REG> E2AE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Event 2 detection interrupt is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(E2ae::Value1)
+        self.variant(E2AE_A::VALUE1)
     }
     #[doc = "Event 2 detection interrupt is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(E2ae::Value2)
+        self.variant(E2AE_A::VALUE2)
     }
 }
 impl R {
     #[doc = "Bit 0 - Period match while counting up enable"]
     #[inline(always)]
-    pub fn pme(&self) -> PmeR {
-        PmeR::new((self.bits & 1) != 0)
+    pub fn pme(&self) -> PME_R {
+        PME_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - One match while counting down enable"]
     #[inline(always)]
-    pub fn ome(&self) -> OmeR {
-        OmeR::new(((self.bits >> 1) & 1) != 0)
+    pub fn ome(&self) -> OME_R {
+        OME_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Compare match while counting up enable"]
     #[inline(always)]
-    pub fn cmue(&self) -> CmueR {
-        CmueR::new(((self.bits >> 2) & 1) != 0)
+    pub fn cmue(&self) -> CMUE_R {
+        CMUE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Compare match while counting down enable"]
     #[inline(always)]
-    pub fn cmde(&self) -> CmdeR {
-        CmdeR::new(((self.bits >> 3) & 1) != 0)
+    pub fn cmde(&self) -> CMDE_R {
+        CMDE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 8 - Event 0 interrupt enable"]
     #[inline(always)]
-    pub fn e0ae(&self) -> E0aeR {
-        E0aeR::new(((self.bits >> 8) & 1) != 0)
+    pub fn e0ae(&self) -> E0AE_R {
+        E0AE_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Event 1 interrupt enable"]
     #[inline(always)]
-    pub fn e1ae(&self) -> E1aeR {
-        E1aeR::new(((self.bits >> 9) & 1) != 0)
+    pub fn e1ae(&self) -> E1AE_R {
+        E1AE_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Event 2 interrupt enable"]
     #[inline(always)]
-    pub fn e2ae(&self) -> E2aeR {
-        E2aeR::new(((self.bits >> 10) & 1) != 0)
+    pub fn e2ae(&self) -> E2AE_R {
+        E2AE_R::new(((self.bits >> 10) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Period match while counting up enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pme(&mut self) -> PmeW<InteSpec> {
-        PmeW::new(self, 0)
+    pub fn pme(&mut self) -> PME_W<INTE_SPEC> {
+        PME_W::new(self, 0)
     }
     #[doc = "Bit 1 - One match while counting down enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ome(&mut self) -> OmeW<InteSpec> {
-        OmeW::new(self, 1)
+    pub fn ome(&mut self) -> OME_W<INTE_SPEC> {
+        OME_W::new(self, 1)
     }
     #[doc = "Bit 2 - Compare match while counting up enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmue(&mut self) -> CmueW<InteSpec> {
-        CmueW::new(self, 2)
+    pub fn cmue(&mut self) -> CMUE_W<INTE_SPEC> {
+        CMUE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Compare match while counting down enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmde(&mut self) -> CmdeW<InteSpec> {
-        CmdeW::new(self, 3)
+    pub fn cmde(&mut self) -> CMDE_W<INTE_SPEC> {
+        CMDE_W::new(self, 3)
     }
     #[doc = "Bit 8 - Event 0 interrupt enable"]
     #[inline(always)]
     #[must_use]
-    pub fn e0ae(&mut self) -> E0aeW<InteSpec> {
-        E0aeW::new(self, 8)
+    pub fn e0ae(&mut self) -> E0AE_W<INTE_SPEC> {
+        E0AE_W::new(self, 8)
     }
     #[doc = "Bit 9 - Event 1 interrupt enable"]
     #[inline(always)]
     #[must_use]
-    pub fn e1ae(&mut self) -> E1aeW<InteSpec> {
-        E1aeW::new(self, 9)
+    pub fn e1ae(&mut self) -> E1AE_W<INTE_SPEC> {
+        E1AE_W::new(self, 9)
     }
     #[doc = "Bit 10 - Event 2 interrupt enable"]
     #[inline(always)]
     #[must_use]
-    pub fn e2ae(&mut self) -> E2aeW<InteSpec> {
-        E2aeW::new(self, 10)
+    pub fn e2ae(&mut self) -> E2AE_W<INTE_SPEC> {
+        E2AE_W::new(self, 10)
     }
 }
 #[doc = "Interrupt Enable Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`inte::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`inte::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct InteSpec;
-impl crate::RegisterSpec for InteSpec {
+pub struct INTE_SPEC;
+impl crate::RegisterSpec for INTE_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`inte::R`](R) reader structure"]
-impl crate::Readable for InteSpec {}
+impl crate::Readable for INTE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`inte::W`](W) writer structure"]
-impl crate::Writable for InteSpec {
+impl crate::Writable for INTE_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INTE to value 0"]
-impl crate::Resettable for InteSpec {
+impl crate::Resettable for INTE_SPEC {
     const RESET_VALUE: u32 = 0;
 }

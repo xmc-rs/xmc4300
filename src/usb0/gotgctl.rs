@@ -1,975 +1,975 @@
 #[doc = "Register `GOTGCTL` reader"]
-pub type R = crate::R<GotgctlSpec>;
+pub type R = crate::R<GOTGCTL_SPEC>;
 #[doc = "Register `GOTGCTL` writer"]
-pub type W = crate::W<GotgctlSpec>;
+pub type W = crate::W<GOTGCTL_SPEC>;
 #[doc = "Session Request Success\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SesReqScs {
+pub enum SES_REQ_SCS_A {
     #[doc = "0: Session request failure"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Session request success"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<SesReqScs> for bool {
+impl From<SES_REQ_SCS_A> for bool {
     #[inline(always)]
-    fn from(variant: SesReqScs) -> Self {
+    fn from(variant: SES_REQ_SCS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SesReqScs` reader - Session Request Success"]
-pub type SesReqScsR = crate::BitReader<SesReqScs>;
-impl SesReqScsR {
+pub type SES_REQ_SCS_R = crate::BitReader<SES_REQ_SCS_A>;
+impl SES_REQ_SCS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SesReqScs {
+    pub const fn variant(&self) -> SES_REQ_SCS_A {
         match self.bits {
-            false => SesReqScs::Value1,
-            true => SesReqScs::Value2,
+            false => SES_REQ_SCS_A::VALUE1,
+            true => SES_REQ_SCS_A::VALUE2,
         }
     }
     #[doc = "Session request failure"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SesReqScs::Value1
+        *self == SES_REQ_SCS_A::VALUE1
     }
     #[doc = "Session request success"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SesReqScs::Value2
+        *self == SES_REQ_SCS_A::VALUE2
     }
 }
 #[doc = "Session Request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SesReq {
+pub enum SES_REQ_A {
     #[doc = "0: No session request"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Session request"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<SesReq> for bool {
+impl From<SES_REQ_A> for bool {
     #[inline(always)]
-    fn from(variant: SesReq) -> Self {
+    fn from(variant: SES_REQ_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SesReq` reader - Session Request"]
-pub type SesReqR = crate::BitReader<SesReq>;
-impl SesReqR {
+pub type SES_REQ_R = crate::BitReader<SES_REQ_A>;
+impl SES_REQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SesReq {
+    pub const fn variant(&self) -> SES_REQ_A {
         match self.bits {
-            false => SesReq::Value1,
-            true => SesReq::Value2,
+            false => SES_REQ_A::VALUE1,
+            true => SES_REQ_A::VALUE2,
         }
     }
     #[doc = "No session request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SesReq::Value1
+        *self == SES_REQ_A::VALUE1
     }
     #[doc = "Session request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SesReq::Value2
+        *self == SES_REQ_A::VALUE2
     }
 }
 #[doc = "Field `SesReq` writer - Session Request"]
-pub type SesReqW<'a, REG> = crate::BitWriter<'a, REG, SesReq>;
-impl<'a, REG> SesReqW<'a, REG>
+pub type SES_REQ_W<'a, REG> = crate::BitWriter<'a, REG, SES_REQ_A>;
+impl<'a, REG> SES_REQ_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No session request"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(SesReq::Value1)
+        self.variant(SES_REQ_A::VALUE1)
     }
     #[doc = "Session request"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(SesReq::Value2)
+        self.variant(SES_REQ_A::VALUE2)
     }
 }
 #[doc = "VBUS Valid Override Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum VbvalidOvEn {
+pub enum VBVALID_OV_EN_A {
     #[doc = "0: Override is disabled and vbus valid signal from the PHY is used internally by the core."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Internally vbus valid received from the PHY is overridden with GOTGCTL.VbvalidOvVal."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<VbvalidOvEn> for bool {
+impl From<VBVALID_OV_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: VbvalidOvEn) -> Self {
+    fn from(variant: VBVALID_OV_EN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `VbvalidOvEn` reader - VBUS Valid Override Enable"]
-pub type VbvalidOvEnR = crate::BitReader<VbvalidOvEn>;
-impl VbvalidOvEnR {
+pub type VBVALID_OV_EN_R = crate::BitReader<VBVALID_OV_EN_A>;
+impl VBVALID_OV_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> VbvalidOvEn {
+    pub const fn variant(&self) -> VBVALID_OV_EN_A {
         match self.bits {
-            false => VbvalidOvEn::Value1,
-            true => VbvalidOvEn::Value2,
+            false => VBVALID_OV_EN_A::VALUE1,
+            true => VBVALID_OV_EN_A::VALUE2,
         }
     }
     #[doc = "Override is disabled and vbus valid signal from the PHY is used internally by the core."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VbvalidOvEn::Value1
+        *self == VBVALID_OV_EN_A::VALUE1
     }
     #[doc = "Internally vbus valid received from the PHY is overridden with GOTGCTL.VbvalidOvVal."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VbvalidOvEn::Value2
+        *self == VBVALID_OV_EN_A::VALUE2
     }
 }
 #[doc = "Field `VbvalidOvEn` writer - VBUS Valid Override Enable"]
-pub type VbvalidOvEnW<'a, REG> = crate::BitWriter<'a, REG, VbvalidOvEn>;
-impl<'a, REG> VbvalidOvEnW<'a, REG>
+pub type VBVALID_OV_EN_W<'a, REG> = crate::BitWriter<'a, REG, VBVALID_OV_EN_A>;
+impl<'a, REG> VBVALID_OV_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Override is disabled and vbus valid signal from the PHY is used internally by the core."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(VbvalidOvEn::Value1)
+        self.variant(VBVALID_OV_EN_A::VALUE1)
     }
     #[doc = "Internally vbus valid received from the PHY is overridden with GOTGCTL.VbvalidOvVal."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(VbvalidOvEn::Value2)
+        self.variant(VBVALID_OV_EN_A::VALUE2)
     }
 }
 #[doc = "VBUS Valid Override Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum VbvalidOvVal {
+pub enum VBVALID_OV_VAL_A {
     #[doc = "0: vbusvalid value is 0# when GOTGCTL.VbvalidOvEn = 1"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: vbusvalid value is 1# when GOTGCTL.VbvalidOvEn = 1"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<VbvalidOvVal> for bool {
+impl From<VBVALID_OV_VAL_A> for bool {
     #[inline(always)]
-    fn from(variant: VbvalidOvVal) -> Self {
+    fn from(variant: VBVALID_OV_VAL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `VbvalidOvVal` reader - VBUS Valid Override Value"]
-pub type VbvalidOvValR = crate::BitReader<VbvalidOvVal>;
-impl VbvalidOvValR {
+pub type VBVALID_OV_VAL_R = crate::BitReader<VBVALID_OV_VAL_A>;
+impl VBVALID_OV_VAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> VbvalidOvVal {
+    pub const fn variant(&self) -> VBVALID_OV_VAL_A {
         match self.bits {
-            false => VbvalidOvVal::Value1,
-            true => VbvalidOvVal::Value2,
+            false => VBVALID_OV_VAL_A::VALUE1,
+            true => VBVALID_OV_VAL_A::VALUE2,
         }
     }
     #[doc = "vbusvalid value is 0# when GOTGCTL.VbvalidOvEn = 1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VbvalidOvVal::Value1
+        *self == VBVALID_OV_VAL_A::VALUE1
     }
     #[doc = "vbusvalid value is 1# when GOTGCTL.VbvalidOvEn = 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VbvalidOvVal::Value2
+        *self == VBVALID_OV_VAL_A::VALUE2
     }
 }
 #[doc = "Field `VbvalidOvVal` writer - VBUS Valid Override Value"]
-pub type VbvalidOvValW<'a, REG> = crate::BitWriter<'a, REG, VbvalidOvVal>;
-impl<'a, REG> VbvalidOvValW<'a, REG>
+pub type VBVALID_OV_VAL_W<'a, REG> = crate::BitWriter<'a, REG, VBVALID_OV_VAL_A>;
+impl<'a, REG> VBVALID_OV_VAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "vbusvalid value is 0# when GOTGCTL.VbvalidOvEn = 1"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(VbvalidOvVal::Value1)
+        self.variant(VBVALID_OV_VAL_A::VALUE1)
     }
     #[doc = "vbusvalid value is 1# when GOTGCTL.VbvalidOvEn = 1"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(VbvalidOvVal::Value2)
+        self.variant(VBVALID_OV_VAL_A::VALUE2)
     }
 }
 #[doc = "A-Peripheral Session Valid Override Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum AvalidOvEn {
+pub enum AVALID_OV_EN_A {
     #[doc = "0: Override is disabled and Avalid signal from the PHY is used internally by the core."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Internally Avalid received from the PHY is overridden with GOTGCTL.AvalidOvVal."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<AvalidOvEn> for bool {
+impl From<AVALID_OV_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: AvalidOvEn) -> Self {
+    fn from(variant: AVALID_OV_EN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `AvalidOvEn` reader - A-Peripheral Session Valid Override Enable"]
-pub type AvalidOvEnR = crate::BitReader<AvalidOvEn>;
-impl AvalidOvEnR {
+pub type AVALID_OV_EN_R = crate::BitReader<AVALID_OV_EN_A>;
+impl AVALID_OV_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> AvalidOvEn {
+    pub const fn variant(&self) -> AVALID_OV_EN_A {
         match self.bits {
-            false => AvalidOvEn::Value1,
-            true => AvalidOvEn::Value2,
+            false => AVALID_OV_EN_A::VALUE1,
+            true => AVALID_OV_EN_A::VALUE2,
         }
     }
     #[doc = "Override is disabled and Avalid signal from the PHY is used internally by the core."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == AvalidOvEn::Value1
+        *self == AVALID_OV_EN_A::VALUE1
     }
     #[doc = "Internally Avalid received from the PHY is overridden with GOTGCTL.AvalidOvVal."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == AvalidOvEn::Value2
+        *self == AVALID_OV_EN_A::VALUE2
     }
 }
 #[doc = "Field `AvalidOvEn` writer - A-Peripheral Session Valid Override Enable"]
-pub type AvalidOvEnW<'a, REG> = crate::BitWriter<'a, REG, AvalidOvEn>;
-impl<'a, REG> AvalidOvEnW<'a, REG>
+pub type AVALID_OV_EN_W<'a, REG> = crate::BitWriter<'a, REG, AVALID_OV_EN_A>;
+impl<'a, REG> AVALID_OV_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Override is disabled and Avalid signal from the PHY is used internally by the core."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(AvalidOvEn::Value1)
+        self.variant(AVALID_OV_EN_A::VALUE1)
     }
     #[doc = "Internally Avalid received from the PHY is overridden with GOTGCTL.AvalidOvVal."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(AvalidOvEn::Value2)
+        self.variant(AVALID_OV_EN_A::VALUE2)
     }
 }
 #[doc = "A-Peripheral Session Valid Override Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum AvalidOvVal {
+pub enum AVALID_OV_VAL_A {
     #[doc = "0: Avalid value is 0# when GOTGCTL.AvalidOvEn = 1"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Avalid value is 1# when GOTGCTL.AvalidOvEn = 1"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<AvalidOvVal> for bool {
+impl From<AVALID_OV_VAL_A> for bool {
     #[inline(always)]
-    fn from(variant: AvalidOvVal) -> Self {
+    fn from(variant: AVALID_OV_VAL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `AvalidOvVal` reader - A-Peripheral Session Valid Override Value"]
-pub type AvalidOvValR = crate::BitReader<AvalidOvVal>;
-impl AvalidOvValR {
+pub type AVALID_OV_VAL_R = crate::BitReader<AVALID_OV_VAL_A>;
+impl AVALID_OV_VAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> AvalidOvVal {
+    pub const fn variant(&self) -> AVALID_OV_VAL_A {
         match self.bits {
-            false => AvalidOvVal::Value1,
-            true => AvalidOvVal::Value2,
+            false => AVALID_OV_VAL_A::VALUE1,
+            true => AVALID_OV_VAL_A::VALUE2,
         }
     }
     #[doc = "Avalid value is 0# when GOTGCTL.AvalidOvEn = 1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == AvalidOvVal::Value1
+        *self == AVALID_OV_VAL_A::VALUE1
     }
     #[doc = "Avalid value is 1# when GOTGCTL.AvalidOvEn = 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == AvalidOvVal::Value2
+        *self == AVALID_OV_VAL_A::VALUE2
     }
 }
 #[doc = "Field `AvalidOvVal` writer - A-Peripheral Session Valid Override Value"]
-pub type AvalidOvValW<'a, REG> = crate::BitWriter<'a, REG, AvalidOvVal>;
-impl<'a, REG> AvalidOvValW<'a, REG>
+pub type AVALID_OV_VAL_W<'a, REG> = crate::BitWriter<'a, REG, AVALID_OV_VAL_A>;
+impl<'a, REG> AVALID_OV_VAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Avalid value is 0# when GOTGCTL.AvalidOvEn = 1"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(AvalidOvVal::Value1)
+        self.variant(AVALID_OV_VAL_A::VALUE1)
     }
     #[doc = "Avalid value is 1# when GOTGCTL.AvalidOvEn = 1"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(AvalidOvVal::Value2)
+        self.variant(AVALID_OV_VAL_A::VALUE2)
     }
 }
 #[doc = "B-Peripheral Session Valid Override Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum BvalidOvEn {
+pub enum BVALID_OV_EN_A {
     #[doc = "0: Override is disabled and Bvalid signal from the PHY is used internally by the core."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Internally Bvalid received from the PHY is overridden with GOTGCTL.BvalidOvVal."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<BvalidOvEn> for bool {
+impl From<BVALID_OV_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: BvalidOvEn) -> Self {
+    fn from(variant: BVALID_OV_EN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BvalidOvEn` reader - B-Peripheral Session Valid Override Enable"]
-pub type BvalidOvEnR = crate::BitReader<BvalidOvEn>;
-impl BvalidOvEnR {
+pub type BVALID_OV_EN_R = crate::BitReader<BVALID_OV_EN_A>;
+impl BVALID_OV_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> BvalidOvEn {
+    pub const fn variant(&self) -> BVALID_OV_EN_A {
         match self.bits {
-            false => BvalidOvEn::Value1,
-            true => BvalidOvEn::Value2,
+            false => BVALID_OV_EN_A::VALUE1,
+            true => BVALID_OV_EN_A::VALUE2,
         }
     }
     #[doc = "Override is disabled and Bvalid signal from the PHY is used internally by the core."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BvalidOvEn::Value1
+        *self == BVALID_OV_EN_A::VALUE1
     }
     #[doc = "Internally Bvalid received from the PHY is overridden with GOTGCTL.BvalidOvVal."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BvalidOvEn::Value2
+        *self == BVALID_OV_EN_A::VALUE2
     }
 }
 #[doc = "Field `BvalidOvEn` writer - B-Peripheral Session Valid Override Enable"]
-pub type BvalidOvEnW<'a, REG> = crate::BitWriter<'a, REG, BvalidOvEn>;
-impl<'a, REG> BvalidOvEnW<'a, REG>
+pub type BVALID_OV_EN_W<'a, REG> = crate::BitWriter<'a, REG, BVALID_OV_EN_A>;
+impl<'a, REG> BVALID_OV_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Override is disabled and Bvalid signal from the PHY is used internally by the core."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(BvalidOvEn::Value1)
+        self.variant(BVALID_OV_EN_A::VALUE1)
     }
     #[doc = "Internally Bvalid received from the PHY is overridden with GOTGCTL.BvalidOvVal."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(BvalidOvEn::Value2)
+        self.variant(BVALID_OV_EN_A::VALUE2)
     }
 }
 #[doc = "B-Peripheral Session Valid Override Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum BvalidOvVal {
+pub enum BVALID_OV_VAL_A {
     #[doc = "0: Bvalid value is 0# when GOTGCTL.BvalidOvEn = 1"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Bvalid value is 1# when GOTGCTL.BvalidOvEn = 1"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<BvalidOvVal> for bool {
+impl From<BVALID_OV_VAL_A> for bool {
     #[inline(always)]
-    fn from(variant: BvalidOvVal) -> Self {
+    fn from(variant: BVALID_OV_VAL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BvalidOvVal` reader - B-Peripheral Session Valid Override Value"]
-pub type BvalidOvValR = crate::BitReader<BvalidOvVal>;
-impl BvalidOvValR {
+pub type BVALID_OV_VAL_R = crate::BitReader<BVALID_OV_VAL_A>;
+impl BVALID_OV_VAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> BvalidOvVal {
+    pub const fn variant(&self) -> BVALID_OV_VAL_A {
         match self.bits {
-            false => BvalidOvVal::Value1,
-            true => BvalidOvVal::Value2,
+            false => BVALID_OV_VAL_A::VALUE1,
+            true => BVALID_OV_VAL_A::VALUE2,
         }
     }
     #[doc = "Bvalid value is 0# when GOTGCTL.BvalidOvEn = 1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BvalidOvVal::Value1
+        *self == BVALID_OV_VAL_A::VALUE1
     }
     #[doc = "Bvalid value is 1# when GOTGCTL.BvalidOvEn = 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BvalidOvVal::Value2
+        *self == BVALID_OV_VAL_A::VALUE2
     }
 }
 #[doc = "Field `BvalidOvVal` writer - B-Peripheral Session Valid Override Value"]
-pub type BvalidOvValW<'a, REG> = crate::BitWriter<'a, REG, BvalidOvVal>;
-impl<'a, REG> BvalidOvValW<'a, REG>
+pub type BVALID_OV_VAL_W<'a, REG> = crate::BitWriter<'a, REG, BVALID_OV_VAL_A>;
+impl<'a, REG> BVALID_OV_VAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Bvalid value is 0# when GOTGCTL.BvalidOvEn = 1"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(BvalidOvVal::Value1)
+        self.variant(BVALID_OV_VAL_A::VALUE1)
     }
     #[doc = "Bvalid value is 1# when GOTGCTL.BvalidOvEn = 1"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(BvalidOvVal::Value2)
+        self.variant(BVALID_OV_VAL_A::VALUE2)
     }
 }
 #[doc = "Host Negotiation Success\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum HstNegScs {
+pub enum HST_NEG_SCS_A {
     #[doc = "0: Host negotiation failure"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Host negotiation success"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<HstNegScs> for bool {
+impl From<HST_NEG_SCS_A> for bool {
     #[inline(always)]
-    fn from(variant: HstNegScs) -> Self {
+    fn from(variant: HST_NEG_SCS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `HstNegScs` reader - Host Negotiation Success"]
-pub type HstNegScsR = crate::BitReader<HstNegScs>;
-impl HstNegScsR {
+pub type HST_NEG_SCS_R = crate::BitReader<HST_NEG_SCS_A>;
+impl HST_NEG_SCS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> HstNegScs {
+    pub const fn variant(&self) -> HST_NEG_SCS_A {
         match self.bits {
-            false => HstNegScs::Value1,
-            true => HstNegScs::Value2,
+            false => HST_NEG_SCS_A::VALUE1,
+            true => HST_NEG_SCS_A::VALUE2,
         }
     }
     #[doc = "Host negotiation failure"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == HstNegScs::Value1
+        *self == HST_NEG_SCS_A::VALUE1
     }
     #[doc = "Host negotiation success"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == HstNegScs::Value2
+        *self == HST_NEG_SCS_A::VALUE2
     }
 }
 #[doc = "HNP Request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Hnpreq {
+pub enum HNPREQ_A {
     #[doc = "0: No HNP request"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: HNP request"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Hnpreq> for bool {
+impl From<HNPREQ_A> for bool {
     #[inline(always)]
-    fn from(variant: Hnpreq) -> Self {
+    fn from(variant: HNPREQ_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `HNPReq` reader - HNP Request"]
-pub type HnpreqR = crate::BitReader<Hnpreq>;
-impl HnpreqR {
+pub type HNPREQ_R = crate::BitReader<HNPREQ_A>;
+impl HNPREQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Hnpreq {
+    pub const fn variant(&self) -> HNPREQ_A {
         match self.bits {
-            false => Hnpreq::Value1,
-            true => Hnpreq::Value2,
+            false => HNPREQ_A::VALUE1,
+            true => HNPREQ_A::VALUE2,
         }
     }
     #[doc = "No HNP request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Hnpreq::Value1
+        *self == HNPREQ_A::VALUE1
     }
     #[doc = "HNP request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Hnpreq::Value2
+        *self == HNPREQ_A::VALUE2
     }
 }
 #[doc = "Field `HNPReq` writer - HNP Request"]
-pub type HnpreqW<'a, REG> = crate::BitWriter<'a, REG, Hnpreq>;
-impl<'a, REG> HnpreqW<'a, REG>
+pub type HNPREQ_W<'a, REG> = crate::BitWriter<'a, REG, HNPREQ_A>;
+impl<'a, REG> HNPREQ_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No HNP request"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Hnpreq::Value1)
+        self.variant(HNPREQ_A::VALUE1)
     }
     #[doc = "HNP request"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Hnpreq::Value2)
+        self.variant(HNPREQ_A::VALUE2)
     }
 }
 #[doc = "Host Set HNP Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum HstSetHnpen {
+pub enum HST_SET_HNPEN_A {
     #[doc = "0: Host Set HNP is not enabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Host Set HNP is enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<HstSetHnpen> for bool {
+impl From<HST_SET_HNPEN_A> for bool {
     #[inline(always)]
-    fn from(variant: HstSetHnpen) -> Self {
+    fn from(variant: HST_SET_HNPEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `HstSetHNPEn` reader - Host Set HNP Enable"]
-pub type HstSetHnpenR = crate::BitReader<HstSetHnpen>;
-impl HstSetHnpenR {
+pub type HST_SET_HNPEN_R = crate::BitReader<HST_SET_HNPEN_A>;
+impl HST_SET_HNPEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> HstSetHnpen {
+    pub const fn variant(&self) -> HST_SET_HNPEN_A {
         match self.bits {
-            false => HstSetHnpen::Value1,
-            true => HstSetHnpen::Value2,
+            false => HST_SET_HNPEN_A::VALUE1,
+            true => HST_SET_HNPEN_A::VALUE2,
         }
     }
     #[doc = "Host Set HNP is not enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == HstSetHnpen::Value1
+        *self == HST_SET_HNPEN_A::VALUE1
     }
     #[doc = "Host Set HNP is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == HstSetHnpen::Value2
+        *self == HST_SET_HNPEN_A::VALUE2
     }
 }
 #[doc = "Field `HstSetHNPEn` writer - Host Set HNP Enable"]
-pub type HstSetHnpenW<'a, REG> = crate::BitWriter<'a, REG, HstSetHnpen>;
-impl<'a, REG> HstSetHnpenW<'a, REG>
+pub type HST_SET_HNPEN_W<'a, REG> = crate::BitWriter<'a, REG, HST_SET_HNPEN_A>;
+impl<'a, REG> HST_SET_HNPEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Host Set HNP is not enabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(HstSetHnpen::Value1)
+        self.variant(HST_SET_HNPEN_A::VALUE1)
     }
     #[doc = "Host Set HNP is enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(HstSetHnpen::Value2)
+        self.variant(HST_SET_HNPEN_A::VALUE2)
     }
 }
 #[doc = "Device HNP Enabled\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DevHnpen {
+pub enum DEV_HNPEN_A {
     #[doc = "0: HNP is not enabled in the application"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: HNP is enabled in the application"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<DevHnpen> for bool {
+impl From<DEV_HNPEN_A> for bool {
     #[inline(always)]
-    fn from(variant: DevHnpen) -> Self {
+    fn from(variant: DEV_HNPEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DevHNPEn` reader - Device HNP Enabled"]
-pub type DevHnpenR = crate::BitReader<DevHnpen>;
-impl DevHnpenR {
+pub type DEV_HNPEN_R = crate::BitReader<DEV_HNPEN_A>;
+impl DEV_HNPEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> DevHnpen {
+    pub const fn variant(&self) -> DEV_HNPEN_A {
         match self.bits {
-            false => DevHnpen::Value1,
-            true => DevHnpen::Value2,
+            false => DEV_HNPEN_A::VALUE1,
+            true => DEV_HNPEN_A::VALUE2,
         }
     }
     #[doc = "HNP is not enabled in the application"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DevHnpen::Value1
+        *self == DEV_HNPEN_A::VALUE1
     }
     #[doc = "HNP is enabled in the application"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DevHnpen::Value2
+        *self == DEV_HNPEN_A::VALUE2
     }
 }
 #[doc = "Field `DevHNPEn` writer - Device HNP Enabled"]
-pub type DevHnpenW<'a, REG> = crate::BitWriter<'a, REG, DevHnpen>;
-impl<'a, REG> DevHnpenW<'a, REG>
+pub type DEV_HNPEN_W<'a, REG> = crate::BitWriter<'a, REG, DEV_HNPEN_A>;
+impl<'a, REG> DEV_HNPEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "HNP is not enabled in the application"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(DevHnpen::Value1)
+        self.variant(DEV_HNPEN_A::VALUE1)
     }
     #[doc = "HNP is enabled in the application"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(DevHnpen::Value2)
+        self.variant(DEV_HNPEN_A::VALUE2)
     }
 }
 #[doc = "Connector ID Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ConlDsts {
+pub enum CONL_DSTS_A {
     #[doc = "0: The USB core is in A-Device mode"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The USB core is in B-Device mode"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<ConlDsts> for bool {
+impl From<CONL_DSTS_A> for bool {
     #[inline(always)]
-    fn from(variant: ConlDsts) -> Self {
+    fn from(variant: CONL_DSTS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ConlDSts` reader - Connector ID Status"]
-pub type ConlDstsR = crate::BitReader<ConlDsts>;
-impl ConlDstsR {
+pub type CONL_DSTS_R = crate::BitReader<CONL_DSTS_A>;
+impl CONL_DSTS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ConlDsts {
+    pub const fn variant(&self) -> CONL_DSTS_A {
         match self.bits {
-            false => ConlDsts::Value1,
-            true => ConlDsts::Value2,
+            false => CONL_DSTS_A::VALUE1,
+            true => CONL_DSTS_A::VALUE2,
         }
     }
     #[doc = "The USB core is in A-Device mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ConlDsts::Value1
+        *self == CONL_DSTS_A::VALUE1
     }
     #[doc = "The USB core is in B-Device mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ConlDsts::Value2
+        *self == CONL_DSTS_A::VALUE2
     }
 }
 #[doc = "Long/Short Debounce Time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DbncTime {
+pub enum DBNC_TIME_A {
     #[doc = "0: Long debounce time, used for physical connections (100 ms + 2.5 us)"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Short debounce time, used for soft connections (2.5 us)"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<DbncTime> for bool {
+impl From<DBNC_TIME_A> for bool {
     #[inline(always)]
-    fn from(variant: DbncTime) -> Self {
+    fn from(variant: DBNC_TIME_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DbncTime` reader - Long/Short Debounce Time"]
-pub type DbncTimeR = crate::BitReader<DbncTime>;
-impl DbncTimeR {
+pub type DBNC_TIME_R = crate::BitReader<DBNC_TIME_A>;
+impl DBNC_TIME_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> DbncTime {
+    pub const fn variant(&self) -> DBNC_TIME_A {
         match self.bits {
-            false => DbncTime::Value1,
-            true => DbncTime::Value2,
+            false => DBNC_TIME_A::VALUE1,
+            true => DBNC_TIME_A::VALUE2,
         }
     }
     #[doc = "Long debounce time, used for physical connections (100 ms + 2.5 us)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DbncTime::Value1
+        *self == DBNC_TIME_A::VALUE1
     }
     #[doc = "Short debounce time, used for soft connections (2.5 us)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DbncTime::Value2
+        *self == DBNC_TIME_A::VALUE2
     }
 }
 #[doc = "A-Session Valid\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum AsesVid {
+pub enum ASES_VID_A {
     #[doc = "0: A-session is not valid"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A-session is valid"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<AsesVid> for bool {
+impl From<ASES_VID_A> for bool {
     #[inline(always)]
-    fn from(variant: AsesVid) -> Self {
+    fn from(variant: ASES_VID_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ASesVId` reader - A-Session Valid"]
-pub type AsesVidR = crate::BitReader<AsesVid>;
-impl AsesVidR {
+pub type ASES_VID_R = crate::BitReader<ASES_VID_A>;
+impl ASES_VID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> AsesVid {
+    pub const fn variant(&self) -> ASES_VID_A {
         match self.bits {
-            false => AsesVid::Value1,
-            true => AsesVid::Value2,
+            false => ASES_VID_A::VALUE1,
+            true => ASES_VID_A::VALUE2,
         }
     }
     #[doc = "A-session is not valid"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == AsesVid::Value1
+        *self == ASES_VID_A::VALUE1
     }
     #[doc = "A-session is valid"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == AsesVid::Value2
+        *self == ASES_VID_A::VALUE2
     }
 }
 #[doc = "B-Session Valid\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum BsesVld {
+pub enum BSES_VLD_A {
     #[doc = "0: B-session is not valid."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: B-session is valid."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<BsesVld> for bool {
+impl From<BSES_VLD_A> for bool {
     #[inline(always)]
-    fn from(variant: BsesVld) -> Self {
+    fn from(variant: BSES_VLD_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BSesVld` reader - B-Session Valid"]
-pub type BsesVldR = crate::BitReader<BsesVld>;
-impl BsesVldR {
+pub type BSES_VLD_R = crate::BitReader<BSES_VLD_A>;
+impl BSES_VLD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> BsesVld {
+    pub const fn variant(&self) -> BSES_VLD_A {
         match self.bits {
-            false => BsesVld::Value1,
-            true => BsesVld::Value2,
+            false => BSES_VLD_A::VALUE1,
+            true => BSES_VLD_A::VALUE2,
         }
     }
     #[doc = "B-session is not valid."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BsesVld::Value1
+        *self == BSES_VLD_A::VALUE1
     }
     #[doc = "B-session is valid."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BsesVld::Value2
+        *self == BSES_VLD_A::VALUE2
     }
 }
 #[doc = "OTG Version\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Otgver {
+pub enum OTGVER_A {
     #[doc = "0: OTG Version 1.3. In this version the core supports Data line pulsing and VBus pulsing for SRP."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: OTG Version 2.0. In this version the core supports only Data line pulsing for SRP."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Otgver> for bool {
+impl From<OTGVER_A> for bool {
     #[inline(always)]
-    fn from(variant: Otgver) -> Self {
+    fn from(variant: OTGVER_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `OTGVer` reader - OTG Version"]
-pub type OtgverR = crate::BitReader<Otgver>;
-impl OtgverR {
+pub type OTGVER_R = crate::BitReader<OTGVER_A>;
+impl OTGVER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Otgver {
+    pub const fn variant(&self) -> OTGVER_A {
         match self.bits {
-            false => Otgver::Value1,
-            true => Otgver::Value2,
+            false => OTGVER_A::VALUE1,
+            true => OTGVER_A::VALUE2,
         }
     }
     #[doc = "OTG Version 1.3. In this version the core supports Data line pulsing and VBus pulsing for SRP."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Otgver::Value1
+        *self == OTGVER_A::VALUE1
     }
     #[doc = "OTG Version 2.0. In this version the core supports only Data line pulsing for SRP."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Otgver::Value2
+        *self == OTGVER_A::VALUE2
     }
 }
 #[doc = "Field `OTGVer` writer - OTG Version"]
-pub type OtgverW<'a, REG> = crate::BitWriter<'a, REG, Otgver>;
-impl<'a, REG> OtgverW<'a, REG>
+pub type OTGVER_W<'a, REG> = crate::BitWriter<'a, REG, OTGVER_A>;
+impl<'a, REG> OTGVER_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "OTG Version 1.3. In this version the core supports Data line pulsing and VBus pulsing for SRP."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Otgver::Value1)
+        self.variant(OTGVER_A::VALUE1)
     }
     #[doc = "OTG Version 2.0. In this version the core supports only Data line pulsing for SRP."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Otgver::Value2)
+        self.variant(OTGVER_A::VALUE2)
     }
 }
 impl R {
     #[doc = "Bit 0 - Session Request Success"]
     #[inline(always)]
-    pub fn ses_req_scs(&self) -> SesReqScsR {
-        SesReqScsR::new((self.bits & 1) != 0)
+    pub fn ses_req_scs(&self) -> SES_REQ_SCS_R {
+        SES_REQ_SCS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Session Request"]
     #[inline(always)]
-    pub fn ses_req(&self) -> SesReqR {
-        SesReqR::new(((self.bits >> 1) & 1) != 0)
+    pub fn ses_req(&self) -> SES_REQ_R {
+        SES_REQ_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - VBUS Valid Override Enable"]
     #[inline(always)]
-    pub fn vbvalid_ov_en(&self) -> VbvalidOvEnR {
-        VbvalidOvEnR::new(((self.bits >> 2) & 1) != 0)
+    pub fn vbvalid_ov_en(&self) -> VBVALID_OV_EN_R {
+        VBVALID_OV_EN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - VBUS Valid Override Value"]
     #[inline(always)]
-    pub fn vbvalid_ov_val(&self) -> VbvalidOvValR {
-        VbvalidOvValR::new(((self.bits >> 3) & 1) != 0)
+    pub fn vbvalid_ov_val(&self) -> VBVALID_OV_VAL_R {
+        VBVALID_OV_VAL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - A-Peripheral Session Valid Override Enable"]
     #[inline(always)]
-    pub fn avalid_ov_en(&self) -> AvalidOvEnR {
-        AvalidOvEnR::new(((self.bits >> 4) & 1) != 0)
+    pub fn avalid_ov_en(&self) -> AVALID_OV_EN_R {
+        AVALID_OV_EN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - A-Peripheral Session Valid Override Value"]
     #[inline(always)]
-    pub fn avalid_ov_val(&self) -> AvalidOvValR {
-        AvalidOvValR::new(((self.bits >> 5) & 1) != 0)
+    pub fn avalid_ov_val(&self) -> AVALID_OV_VAL_R {
+        AVALID_OV_VAL_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - B-Peripheral Session Valid Override Enable"]
     #[inline(always)]
-    pub fn bvalid_ov_en(&self) -> BvalidOvEnR {
-        BvalidOvEnR::new(((self.bits >> 6) & 1) != 0)
+    pub fn bvalid_ov_en(&self) -> BVALID_OV_EN_R {
+        BVALID_OV_EN_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - B-Peripheral Session Valid Override Value"]
     #[inline(always)]
-    pub fn bvalid_ov_val(&self) -> BvalidOvValR {
-        BvalidOvValR::new(((self.bits >> 7) & 1) != 0)
+    pub fn bvalid_ov_val(&self) -> BVALID_OV_VAL_R {
+        BVALID_OV_VAL_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Host Negotiation Success"]
     #[inline(always)]
-    pub fn hst_neg_scs(&self) -> HstNegScsR {
-        HstNegScsR::new(((self.bits >> 8) & 1) != 0)
+    pub fn hst_neg_scs(&self) -> HST_NEG_SCS_R {
+        HST_NEG_SCS_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - HNP Request"]
     #[inline(always)]
-    pub fn hnpreq(&self) -> HnpreqR {
-        HnpreqR::new(((self.bits >> 9) & 1) != 0)
+    pub fn hnpreq(&self) -> HNPREQ_R {
+        HNPREQ_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Host Set HNP Enable"]
     #[inline(always)]
-    pub fn hst_set_hnpen(&self) -> HstSetHnpenR {
-        HstSetHnpenR::new(((self.bits >> 10) & 1) != 0)
+    pub fn hst_set_hnpen(&self) -> HST_SET_HNPEN_R {
+        HST_SET_HNPEN_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Device HNP Enabled"]
     #[inline(always)]
-    pub fn dev_hnpen(&self) -> DevHnpenR {
-        DevHnpenR::new(((self.bits >> 11) & 1) != 0)
+    pub fn dev_hnpen(&self) -> DEV_HNPEN_R {
+        DEV_HNPEN_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 16 - Connector ID Status"]
     #[inline(always)]
-    pub fn conl_dsts(&self) -> ConlDstsR {
-        ConlDstsR::new(((self.bits >> 16) & 1) != 0)
+    pub fn conl_dsts(&self) -> CONL_DSTS_R {
+        CONL_DSTS_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Long/Short Debounce Time"]
     #[inline(always)]
-    pub fn dbnc_time(&self) -> DbncTimeR {
-        DbncTimeR::new(((self.bits >> 17) & 1) != 0)
+    pub fn dbnc_time(&self) -> DBNC_TIME_R {
+        DBNC_TIME_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - A-Session Valid"]
     #[inline(always)]
-    pub fn ases_vid(&self) -> AsesVidR {
-        AsesVidR::new(((self.bits >> 18) & 1) != 0)
+    pub fn ases_vid(&self) -> ASES_VID_R {
+        ASES_VID_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - B-Session Valid"]
     #[inline(always)]
-    pub fn bses_vld(&self) -> BsesVldR {
-        BsesVldR::new(((self.bits >> 19) & 1) != 0)
+    pub fn bses_vld(&self) -> BSES_VLD_R {
+        BSES_VLD_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - OTG Version"]
     #[inline(always)]
-    pub fn otgver(&self) -> OtgverR {
-        OtgverR::new(((self.bits >> 20) & 1) != 0)
+    pub fn otgver(&self) -> OTGVER_R {
+        OTGVER_R::new(((self.bits >> 20) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 1 - Session Request"]
     #[inline(always)]
     #[must_use]
-    pub fn ses_req(&mut self) -> SesReqW<GotgctlSpec> {
-        SesReqW::new(self, 1)
+    pub fn ses_req(&mut self) -> SES_REQ_W<GOTGCTL_SPEC> {
+        SES_REQ_W::new(self, 1)
     }
     #[doc = "Bit 2 - VBUS Valid Override Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn vbvalid_ov_en(&mut self) -> VbvalidOvEnW<GotgctlSpec> {
-        VbvalidOvEnW::new(self, 2)
+    pub fn vbvalid_ov_en(&mut self) -> VBVALID_OV_EN_W<GOTGCTL_SPEC> {
+        VBVALID_OV_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - VBUS Valid Override Value"]
     #[inline(always)]
     #[must_use]
-    pub fn vbvalid_ov_val(&mut self) -> VbvalidOvValW<GotgctlSpec> {
-        VbvalidOvValW::new(self, 3)
+    pub fn vbvalid_ov_val(&mut self) -> VBVALID_OV_VAL_W<GOTGCTL_SPEC> {
+        VBVALID_OV_VAL_W::new(self, 3)
     }
     #[doc = "Bit 4 - A-Peripheral Session Valid Override Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn avalid_ov_en(&mut self) -> AvalidOvEnW<GotgctlSpec> {
-        AvalidOvEnW::new(self, 4)
+    pub fn avalid_ov_en(&mut self) -> AVALID_OV_EN_W<GOTGCTL_SPEC> {
+        AVALID_OV_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - A-Peripheral Session Valid Override Value"]
     #[inline(always)]
     #[must_use]
-    pub fn avalid_ov_val(&mut self) -> AvalidOvValW<GotgctlSpec> {
-        AvalidOvValW::new(self, 5)
+    pub fn avalid_ov_val(&mut self) -> AVALID_OV_VAL_W<GOTGCTL_SPEC> {
+        AVALID_OV_VAL_W::new(self, 5)
     }
     #[doc = "Bit 6 - B-Peripheral Session Valid Override Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn bvalid_ov_en(&mut self) -> BvalidOvEnW<GotgctlSpec> {
-        BvalidOvEnW::new(self, 6)
+    pub fn bvalid_ov_en(&mut self) -> BVALID_OV_EN_W<GOTGCTL_SPEC> {
+        BVALID_OV_EN_W::new(self, 6)
     }
     #[doc = "Bit 7 - B-Peripheral Session Valid Override Value"]
     #[inline(always)]
     #[must_use]
-    pub fn bvalid_ov_val(&mut self) -> BvalidOvValW<GotgctlSpec> {
-        BvalidOvValW::new(self, 7)
+    pub fn bvalid_ov_val(&mut self) -> BVALID_OV_VAL_W<GOTGCTL_SPEC> {
+        BVALID_OV_VAL_W::new(self, 7)
     }
     #[doc = "Bit 9 - HNP Request"]
     #[inline(always)]
     #[must_use]
-    pub fn hnpreq(&mut self) -> HnpreqW<GotgctlSpec> {
-        HnpreqW::new(self, 9)
+    pub fn hnpreq(&mut self) -> HNPREQ_W<GOTGCTL_SPEC> {
+        HNPREQ_W::new(self, 9)
     }
     #[doc = "Bit 10 - Host Set HNP Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hst_set_hnpen(&mut self) -> HstSetHnpenW<GotgctlSpec> {
-        HstSetHnpenW::new(self, 10)
+    pub fn hst_set_hnpen(&mut self) -> HST_SET_HNPEN_W<GOTGCTL_SPEC> {
+        HST_SET_HNPEN_W::new(self, 10)
     }
     #[doc = "Bit 11 - Device HNP Enabled"]
     #[inline(always)]
     #[must_use]
-    pub fn dev_hnpen(&mut self) -> DevHnpenW<GotgctlSpec> {
-        DevHnpenW::new(self, 11)
+    pub fn dev_hnpen(&mut self) -> DEV_HNPEN_W<GOTGCTL_SPEC> {
+        DEV_HNPEN_W::new(self, 11)
     }
     #[doc = "Bit 20 - OTG Version"]
     #[inline(always)]
     #[must_use]
-    pub fn otgver(&mut self) -> OtgverW<GotgctlSpec> {
-        OtgverW::new(self, 20)
+    pub fn otgver(&mut self) -> OTGVER_W<GOTGCTL_SPEC> {
+        OTGVER_W::new(self, 20)
     }
 }
 #[doc = "Control and Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gotgctl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gotgctl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct GotgctlSpec;
-impl crate::RegisterSpec for GotgctlSpec {
+pub struct GOTGCTL_SPEC;
+impl crate::RegisterSpec for GOTGCTL_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`gotgctl::R`](R) reader structure"]
-impl crate::Readable for GotgctlSpec {}
+impl crate::Readable for GOTGCTL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gotgctl::W`](W) writer structure"]
-impl crate::Writable for GotgctlSpec {
+impl crate::Writable for GOTGCTL_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GOTGCTL to value 0x0001_0000"]
-impl crate::Resettable for GotgctlSpec {
+impl crate::Resettable for GOTGCTL_SPEC {
     const RESET_VALUE: u32 = 0x0001_0000;
 }

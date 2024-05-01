@@ -1,283 +1,283 @@
 #[doc = "Register `SM_STATUS` reader"]
-pub type R = crate::R<SmStatusSpec>;
+pub type R = crate::R<SM_STATUS_SPEC>;
 #[doc = "Interrupt Write\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IntW {
+pub enum INT_W_A {
     #[doc = "0: Interrupt cleared after first byte of buffer was read"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Interrupt after buffer was completely and successfully written"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<IntW> for bool {
+impl From<INT_W_A> for bool {
     #[inline(always)]
-    fn from(variant: IntW) -> Self {
+    fn from(variant: INT_W_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `INT_W` reader - Interrupt Write"]
-pub type IntWR = crate::BitReader<IntW>;
-impl IntWR {
+pub type INT_W_R = crate::BitReader<INT_W_A>;
+impl INT_W_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> IntW {
+    pub const fn variant(&self) -> INT_W_A {
         match self.bits {
-            false => IntW::Value1,
-            true => IntW::Value2,
+            false => INT_W_A::VALUE1,
+            true => INT_W_A::VALUE2,
         }
     }
     #[doc = "Interrupt cleared after first byte of buffer was read"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == IntW::Value1
+        *self == INT_W_A::VALUE1
     }
     #[doc = "Interrupt after buffer was completely and successfully written"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == IntW::Value2
+        *self == INT_W_A::VALUE2
     }
 }
 #[doc = "Interrupt Read\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IntR {
+pub enum INT_R_A {
     #[doc = "0: Interrupt cleared after first byte of buffer was written"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Interrupt after buffer was completely and successful read"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<IntR> for bool {
+impl From<INT_R_A> for bool {
     #[inline(always)]
-    fn from(variant: IntR) -> Self {
+    fn from(variant: INT_R_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `INT_R` reader - Interrupt Read"]
-pub type IntRR = crate::BitReader<IntR>;
-impl IntRR {
+pub type INT_R_R = crate::BitReader<INT_R_A>;
+impl INT_R_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> IntR {
+    pub const fn variant(&self) -> INT_R_A {
         match self.bits {
-            false => IntR::Value1,
-            true => IntR::Value2,
+            false => INT_R_A::VALUE1,
+            true => INT_R_A::VALUE2,
         }
     }
     #[doc = "Interrupt cleared after first byte of buffer was written"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == IntR::Value1
+        *self == INT_R_A::VALUE1
     }
     #[doc = "Interrupt after buffer was completely and successful read"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == IntR::Value2
+        *self == INT_R_A::VALUE2
     }
 }
 #[doc = "Mailbox mode: mailbox status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MbStatus {
+pub enum MB_STATUS_A {
     #[doc = "0: Mailbox empty"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Mailbox full"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<MbStatus> for bool {
+impl From<MB_STATUS_A> for bool {
     #[inline(always)]
-    fn from(variant: MbStatus) -> Self {
+    fn from(variant: MB_STATUS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MB_STATUS` reader - Mailbox mode: mailbox status"]
-pub type MbStatusR = crate::BitReader<MbStatus>;
-impl MbStatusR {
+pub type MB_STATUS_R = crate::BitReader<MB_STATUS_A>;
+impl MB_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MbStatus {
+    pub const fn variant(&self) -> MB_STATUS_A {
         match self.bits {
-            false => MbStatus::Value1,
-            true => MbStatus::Value2,
+            false => MB_STATUS_A::VALUE1,
+            true => MB_STATUS_A::VALUE2,
         }
     }
     #[doc = "Mailbox empty"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MbStatus::Value1
+        *self == MB_STATUS_A::VALUE1
     }
     #[doc = "Mailbox full"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MbStatus::Value2
+        *self == MB_STATUS_A::VALUE2
     }
 }
 #[doc = "Buffered mode: buffer status (last written buffer)\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum BufStatus {
+pub enum BUF_STATUS_A {
     #[doc = "0: 1. buffer"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 2. buffer"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: 3. buffer"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: (no buffer written)"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<BufStatus> for u8 {
+impl From<BUF_STATUS_A> for u8 {
     #[inline(always)]
-    fn from(variant: BufStatus) -> Self {
+    fn from(variant: BUF_STATUS_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for BufStatus {
+impl crate::FieldSpec for BUF_STATUS_A {
     type Ux = u8;
 }
-impl crate::IsEnum for BufStatus {}
+impl crate::IsEnum for BUF_STATUS_A {}
 #[doc = "Field `BUF_STATUS` reader - Buffered mode: buffer status (last written buffer)"]
-pub type BufStatusR = crate::FieldReader<BufStatus>;
-impl BufStatusR {
+pub type BUF_STATUS_R = crate::FieldReader<BUF_STATUS_A>;
+impl BUF_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> BufStatus {
+    pub const fn variant(&self) -> BUF_STATUS_A {
         match self.bits {
-            0 => BufStatus::Value1,
-            1 => BufStatus::Value2,
-            2 => BufStatus::Value3,
-            3 => BufStatus::Value4,
+            0 => BUF_STATUS_A::VALUE1,
+            1 => BUF_STATUS_A::VALUE2,
+            2 => BUF_STATUS_A::VALUE3,
+            3 => BUF_STATUS_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "1. buffer"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BufStatus::Value1
+        *self == BUF_STATUS_A::VALUE1
     }
     #[doc = "2. buffer"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BufStatus::Value2
+        *self == BUF_STATUS_A::VALUE2
     }
     #[doc = "3. buffer"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == BufStatus::Value3
+        *self == BUF_STATUS_A::VALUE3
     }
     #[doc = "(no buffer written)"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == BufStatus::Value4
+        *self == BUF_STATUS_A::VALUE4
     }
 }
 #[doc = "Read buffer in use (opened)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RBufIu {
+pub enum R_BUF_IU_A {
     #[doc = "0: buffer not in use"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: buffer in use"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<RBufIu> for bool {
+impl From<R_BUF_IU_A> for bool {
     #[inline(always)]
-    fn from(variant: RBufIu) -> Self {
+    fn from(variant: R_BUF_IU_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `R_BUF_IU` reader - Read buffer in use (opened)"]
-pub type RBufIuR = crate::BitReader<RBufIu>;
-impl RBufIuR {
+pub type R_BUF_IU_R = crate::BitReader<R_BUF_IU_A>;
+impl R_BUF_IU_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RBufIu {
+    pub const fn variant(&self) -> R_BUF_IU_A {
         match self.bits {
-            false => RBufIu::Value1,
-            true => RBufIu::Value2,
+            false => R_BUF_IU_A::VALUE1,
+            true => R_BUF_IU_A::VALUE2,
         }
     }
     #[doc = "buffer not in use"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RBufIu::Value1
+        *self == R_BUF_IU_A::VALUE1
     }
     #[doc = "buffer in use"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RBufIu::Value2
+        *self == R_BUF_IU_A::VALUE2
     }
 }
 #[doc = "Write buffer in use (opened)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WBufIu {
+pub enum W_BUF_IU_A {
     #[doc = "0: buffer not in use"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: buffer in use"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<WBufIu> for bool {
+impl From<W_BUF_IU_A> for bool {
     #[inline(always)]
-    fn from(variant: WBufIu) -> Self {
+    fn from(variant: W_BUF_IU_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `W_BUF_IU` reader - Write buffer in use (opened)"]
-pub type WBufIuR = crate::BitReader<WBufIu>;
-impl WBufIuR {
+pub type W_BUF_IU_R = crate::BitReader<W_BUF_IU_A>;
+impl W_BUF_IU_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WBufIu {
+    pub const fn variant(&self) -> W_BUF_IU_A {
         match self.bits {
-            false => WBufIu::Value1,
-            true => WBufIu::Value2,
+            false => W_BUF_IU_A::VALUE1,
+            true => W_BUF_IU_A::VALUE2,
         }
     }
     #[doc = "buffer not in use"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WBufIu::Value1
+        *self == W_BUF_IU_A::VALUE1
     }
     #[doc = "buffer in use"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WBufIu::Value2
+        *self == W_BUF_IU_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - Interrupt Write"]
     #[inline(always)]
-    pub fn int_w(&self) -> IntWR {
-        IntWR::new((self.bits & 1) != 0)
+    pub fn int_w(&self) -> INT_W_R {
+        INT_W_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Interrupt Read"]
     #[inline(always)]
-    pub fn int_r(&self) -> IntRR {
-        IntRR::new(((self.bits >> 1) & 1) != 0)
+    pub fn int_r(&self) -> INT_R_R {
+        INT_R_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 3 - Mailbox mode: mailbox status"]
     #[inline(always)]
-    pub fn mb_status(&self) -> MbStatusR {
-        MbStatusR::new(((self.bits >> 3) & 1) != 0)
+    pub fn mb_status(&self) -> MB_STATUS_R {
+        MB_STATUS_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:5 - Buffered mode: buffer status (last written buffer)"]
     #[inline(always)]
-    pub fn buf_status(&self) -> BufStatusR {
-        BufStatusR::new((self.bits >> 4) & 3)
+    pub fn buf_status(&self) -> BUF_STATUS_R {
+        BUF_STATUS_R::new((self.bits >> 4) & 3)
     }
     #[doc = "Bit 6 - Read buffer in use (opened)"]
     #[inline(always)]
-    pub fn r_buf_iu(&self) -> RBufIuR {
-        RBufIuR::new(((self.bits >> 6) & 1) != 0)
+    pub fn r_buf_iu(&self) -> R_BUF_IU_R {
+        R_BUF_IU_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Write buffer in use (opened)"]
     #[inline(always)]
-    pub fn w_buf_iu(&self) -> WBufIuR {
-        WBufIuR::new(((self.bits >> 7) & 1) != 0)
+    pub fn w_buf_iu(&self) -> W_BUF_IU_R {
+        W_BUF_IU_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 #[doc = "Status Register SyncManager 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sm_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct SmStatusSpec;
-impl crate::RegisterSpec for SmStatusSpec {
+pub struct SM_STATUS_SPEC;
+impl crate::RegisterSpec for SM_STATUS_SPEC {
     type Ux = u8;
 }
 #[doc = "`read()` method returns [`sm_status::R`](R) reader structure"]
-impl crate::Readable for SmStatusSpec {}
+impl crate::Readable for SM_STATUS_SPEC {}
 #[doc = "`reset()` method sets SM_STATUS to value 0x30"]
-impl crate::Resettable for SmStatusSpec {
+impl crate::Resettable for SM_STATUS_SPEC {
     const RESET_VALUE: u8 = 0x30;
 }

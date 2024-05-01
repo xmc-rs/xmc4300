@@ -1,196 +1,196 @@
 #[doc = "Register `TBCTR` reader"]
-pub type R = crate::R<TbctrSpec>;
+pub type R = crate::R<TBCTR_SPEC>;
 #[doc = "Register `TBCTR` writer"]
-pub type W = crate::W<TbctrSpec>;
+pub type W = crate::W<TBCTR_SPEC>;
 #[doc = "Field `DPTR` writer - Data Pointer"]
-pub type DptrW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+pub type DPTR_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `LIMIT` reader - Limit For Interrupt Generation"]
-pub type LimitR = crate::FieldReader;
+pub type LIMIT_R = crate::FieldReader;
 #[doc = "Field `LIMIT` writer - Limit For Interrupt Generation"]
-pub type LimitW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+pub type LIMIT_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Standard Transmit Buffer Trigger Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Stbtm {
+pub enum STBTM_A {
     #[doc = "0: Trigger mode 0: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.LIMIT."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Trigger mode 1: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.SIZE."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Stbtm> for bool {
+impl From<STBTM_A> for bool {
     #[inline(always)]
-    fn from(variant: Stbtm) -> Self {
+    fn from(variant: STBTM_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `STBTM` reader - Standard Transmit Buffer Trigger Mode"]
-pub type StbtmR = crate::BitReader<Stbtm>;
-impl StbtmR {
+pub type STBTM_R = crate::BitReader<STBTM_A>;
+impl STBTM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Stbtm {
+    pub const fn variant(&self) -> STBTM_A {
         match self.bits {
-            false => Stbtm::Value1,
-            true => Stbtm::Value2,
+            false => STBTM_A::VALUE1,
+            true => STBTM_A::VALUE2,
         }
     }
     #[doc = "Trigger mode 0: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.LIMIT."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Stbtm::Value1
+        *self == STBTM_A::VALUE1
     }
     #[doc = "Trigger mode 1: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.SIZE."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Stbtm::Value2
+        *self == STBTM_A::VALUE2
     }
 }
 #[doc = "Field `STBTM` writer - Standard Transmit Buffer Trigger Mode"]
-pub type StbtmW<'a, REG> = crate::BitWriter<'a, REG, Stbtm>;
-impl<'a, REG> StbtmW<'a, REG>
+pub type STBTM_W<'a, REG> = crate::BitWriter<'a, REG, STBTM_A>;
+impl<'a, REG> STBTM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Trigger mode 0: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.LIMIT."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbtm::Value1)
+        self.variant(STBTM_A::VALUE1)
     }
     #[doc = "Trigger mode 1: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.SIZE."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbtm::Value2)
+        self.variant(STBTM_A::VALUE2)
     }
 }
 #[doc = "Standard Transmit Buffer Trigger Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Stbten {
+pub enum STBTEN_A {
     #[doc = "0: The standard transmit buffer event trigger through bit TRBSR.STBT is disabled."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The standard transmit buffer event trigger through bit TRBSR.STBT is enabled."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Stbten> for bool {
+impl From<STBTEN_A> for bool {
     #[inline(always)]
-    fn from(variant: Stbten) -> Self {
+    fn from(variant: STBTEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `STBTEN` reader - Standard Transmit Buffer Trigger Enable"]
-pub type StbtenR = crate::BitReader<Stbten>;
-impl StbtenR {
+pub type STBTEN_R = crate::BitReader<STBTEN_A>;
+impl STBTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Stbten {
+    pub const fn variant(&self) -> STBTEN_A {
         match self.bits {
-            false => Stbten::Value1,
-            true => Stbten::Value2,
+            false => STBTEN_A::VALUE1,
+            true => STBTEN_A::VALUE2,
         }
     }
     #[doc = "The standard transmit buffer event trigger through bit TRBSR.STBT is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Stbten::Value1
+        *self == STBTEN_A::VALUE1
     }
     #[doc = "The standard transmit buffer event trigger through bit TRBSR.STBT is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Stbten::Value2
+        *self == STBTEN_A::VALUE2
     }
 }
 #[doc = "Field `STBTEN` writer - Standard Transmit Buffer Trigger Enable"]
-pub type StbtenW<'a, REG> = crate::BitWriter<'a, REG, Stbten>;
-impl<'a, REG> StbtenW<'a, REG>
+pub type STBTEN_W<'a, REG> = crate::BitWriter<'a, REG, STBTEN_A>;
+impl<'a, REG> STBTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The standard transmit buffer event trigger through bit TRBSR.STBT is disabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbten::Value1)
+        self.variant(STBTEN_A::VALUE1)
     }
     #[doc = "The standard transmit buffer event trigger through bit TRBSR.STBT is enabled."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbten::Value2)
+        self.variant(STBTEN_A::VALUE2)
     }
 }
 #[doc = "Standard Transmit Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Stbinp {
+pub enum STBINP_A {
     #[doc = "0: Output SR0 becomes activated."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Output SR1 becomes activated."]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Output SR2 becomes activated."]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Output SR3 becomes activated."]
-    Value4 = 3,
+    VALUE4 = 3,
     #[doc = "4: Output SR4 becomes activated."]
-    Value5 = 4,
+    VALUE5 = 4,
     #[doc = "5: Output SR5 becomes activated."]
-    Value6 = 5,
+    VALUE6 = 5,
 }
-impl From<Stbinp> for u8 {
+impl From<STBINP_A> for u8 {
     #[inline(always)]
-    fn from(variant: Stbinp) -> Self {
+    fn from(variant: STBINP_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Stbinp {
+impl crate::FieldSpec for STBINP_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Stbinp {}
+impl crate::IsEnum for STBINP_A {}
 #[doc = "Field `STBINP` reader - Standard Transmit Buffer Interrupt Node Pointer"]
-pub type StbinpR = crate::FieldReader<Stbinp>;
-impl StbinpR {
+pub type STBINP_R = crate::FieldReader<STBINP_A>;
+impl STBINP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Stbinp> {
+    pub const fn variant(&self) -> Option<STBINP_A> {
         match self.bits {
-            0 => Some(Stbinp::Value1),
-            1 => Some(Stbinp::Value2),
-            2 => Some(Stbinp::Value3),
-            3 => Some(Stbinp::Value4),
-            4 => Some(Stbinp::Value5),
-            5 => Some(Stbinp::Value6),
+            0 => Some(STBINP_A::VALUE1),
+            1 => Some(STBINP_A::VALUE2),
+            2 => Some(STBINP_A::VALUE3),
+            3 => Some(STBINP_A::VALUE4),
+            4 => Some(STBINP_A::VALUE5),
+            5 => Some(STBINP_A::VALUE6),
             _ => None,
         }
     }
     #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Stbinp::Value1
+        *self == STBINP_A::VALUE1
     }
     #[doc = "Output SR1 becomes activated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Stbinp::Value2
+        *self == STBINP_A::VALUE2
     }
     #[doc = "Output SR2 becomes activated."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Stbinp::Value3
+        *self == STBINP_A::VALUE3
     }
     #[doc = "Output SR3 becomes activated."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Stbinp::Value4
+        *self == STBINP_A::VALUE4
     }
     #[doc = "Output SR4 becomes activated."]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == Stbinp::Value5
+        *self == STBINP_A::VALUE5
     }
     #[doc = "Output SR5 becomes activated."]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == Stbinp::Value6
+        *self == STBINP_A::VALUE6
     }
 }
 #[doc = "Field `STBINP` writer - Standard Transmit Buffer Interrupt Node Pointer"]
-pub type StbinpW<'a, REG> = crate::FieldWriter<'a, REG, 3, Stbinp>;
-impl<'a, REG> StbinpW<'a, REG>
+pub type STBINP_W<'a, REG> = crate::FieldWriter<'a, REG, 3, STBINP_A>;
+impl<'a, REG> STBINP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -198,111 +198,111 @@ where
     #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbinp::Value1)
+        self.variant(STBINP_A::VALUE1)
     }
     #[doc = "Output SR1 becomes activated."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbinp::Value2)
+        self.variant(STBINP_A::VALUE2)
     }
     #[doc = "Output SR2 becomes activated."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbinp::Value3)
+        self.variant(STBINP_A::VALUE3)
     }
     #[doc = "Output SR3 becomes activated."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbinp::Value4)
+        self.variant(STBINP_A::VALUE4)
     }
     #[doc = "Output SR4 becomes activated."]
     #[inline(always)]
     pub fn value5(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbinp::Value5)
+        self.variant(STBINP_A::VALUE5)
     }
     #[doc = "Output SR5 becomes activated."]
     #[inline(always)]
     pub fn value6(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbinp::Value6)
+        self.variant(STBINP_A::VALUE6)
     }
 }
 #[doc = "Alternative Transmit Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Atbinp {
+pub enum ATBINP_A {
     #[doc = "0: Output SR0 becomes activated."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Output SR1 becomes activated."]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Output SR2 becomes activated."]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Output SR3 becomes activated."]
-    Value4 = 3,
+    VALUE4 = 3,
     #[doc = "4: Output SR4 becomes activated."]
-    Value5 = 4,
+    VALUE5 = 4,
     #[doc = "5: Output SR5 becomes activated."]
-    Value6 = 5,
+    VALUE6 = 5,
 }
-impl From<Atbinp> for u8 {
+impl From<ATBINP_A> for u8 {
     #[inline(always)]
-    fn from(variant: Atbinp) -> Self {
+    fn from(variant: ATBINP_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Atbinp {
+impl crate::FieldSpec for ATBINP_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Atbinp {}
+impl crate::IsEnum for ATBINP_A {}
 #[doc = "Field `ATBINP` reader - Alternative Transmit Buffer Interrupt Node Pointer"]
-pub type AtbinpR = crate::FieldReader<Atbinp>;
-impl AtbinpR {
+pub type ATBINP_R = crate::FieldReader<ATBINP_A>;
+impl ATBINP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Atbinp> {
+    pub const fn variant(&self) -> Option<ATBINP_A> {
         match self.bits {
-            0 => Some(Atbinp::Value1),
-            1 => Some(Atbinp::Value2),
-            2 => Some(Atbinp::Value3),
-            3 => Some(Atbinp::Value4),
-            4 => Some(Atbinp::Value5),
-            5 => Some(Atbinp::Value6),
+            0 => Some(ATBINP_A::VALUE1),
+            1 => Some(ATBINP_A::VALUE2),
+            2 => Some(ATBINP_A::VALUE3),
+            3 => Some(ATBINP_A::VALUE4),
+            4 => Some(ATBINP_A::VALUE5),
+            5 => Some(ATBINP_A::VALUE6),
             _ => None,
         }
     }
     #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Atbinp::Value1
+        *self == ATBINP_A::VALUE1
     }
     #[doc = "Output SR1 becomes activated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Atbinp::Value2
+        *self == ATBINP_A::VALUE2
     }
     #[doc = "Output SR2 becomes activated."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Atbinp::Value3
+        *self == ATBINP_A::VALUE3
     }
     #[doc = "Output SR3 becomes activated."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Atbinp::Value4
+        *self == ATBINP_A::VALUE4
     }
     #[doc = "Output SR4 becomes activated."]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == Atbinp::Value5
+        *self == ATBINP_A::VALUE5
     }
     #[doc = "Output SR5 becomes activated."]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == Atbinp::Value6
+        *self == ATBINP_A::VALUE6
     }
 }
 #[doc = "Field `ATBINP` writer - Alternative Transmit Buffer Interrupt Node Pointer"]
-pub type AtbinpW<'a, REG> = crate::FieldWriter<'a, REG, 3, Atbinp>;
-impl<'a, REG> AtbinpW<'a, REG>
+pub type ATBINP_W<'a, REG> = crate::FieldWriter<'a, REG, 3, ATBINP_A>;
+impl<'a, REG> ATBINP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -310,119 +310,119 @@ where
     #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Atbinp::Value1)
+        self.variant(ATBINP_A::VALUE1)
     }
     #[doc = "Output SR1 becomes activated."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Atbinp::Value2)
+        self.variant(ATBINP_A::VALUE2)
     }
     #[doc = "Output SR2 becomes activated."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Atbinp::Value3)
+        self.variant(ATBINP_A::VALUE3)
     }
     #[doc = "Output SR3 becomes activated."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Atbinp::Value4)
+        self.variant(ATBINP_A::VALUE4)
     }
     #[doc = "Output SR4 becomes activated."]
     #[inline(always)]
     pub fn value5(self) -> &'a mut crate::W<REG> {
-        self.variant(Atbinp::Value5)
+        self.variant(ATBINP_A::VALUE5)
     }
     #[doc = "Output SR5 becomes activated."]
     #[inline(always)]
     pub fn value6(self) -> &'a mut crate::W<REG> {
-        self.variant(Atbinp::Value6)
+        self.variant(ATBINP_A::VALUE6)
     }
 }
 #[doc = "Buffer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Size {
+pub enum SIZE_A {
     #[doc = "0: The FIFO mechanism is disabled. The buffer does not accept any request for data."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The FIFO buffer contains 2 entries."]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: The FIFO buffer contains 4 entries."]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: The FIFO buffer contains 8 entries."]
-    Value4 = 3,
+    VALUE4 = 3,
     #[doc = "4: The FIFO buffer contains 16 entries."]
-    Value5 = 4,
+    VALUE5 = 4,
     #[doc = "5: The FIFO buffer contains 32 entries."]
-    Value6 = 5,
+    VALUE6 = 5,
     #[doc = "6: The FIFO buffer contains 64 entries."]
-    Value7 = 6,
+    VALUE7 = 6,
 }
-impl From<Size> for u8 {
+impl From<SIZE_A> for u8 {
     #[inline(always)]
-    fn from(variant: Size) -> Self {
+    fn from(variant: SIZE_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Size {
+impl crate::FieldSpec for SIZE_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Size {}
+impl crate::IsEnum for SIZE_A {}
 #[doc = "Field `SIZE` reader - Buffer Size"]
-pub type SizeR = crate::FieldReader<Size>;
-impl SizeR {
+pub type SIZE_R = crate::FieldReader<SIZE_A>;
+impl SIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Size> {
+    pub const fn variant(&self) -> Option<SIZE_A> {
         match self.bits {
-            0 => Some(Size::Value1),
-            1 => Some(Size::Value2),
-            2 => Some(Size::Value3),
-            3 => Some(Size::Value4),
-            4 => Some(Size::Value5),
-            5 => Some(Size::Value6),
-            6 => Some(Size::Value7),
+            0 => Some(SIZE_A::VALUE1),
+            1 => Some(SIZE_A::VALUE2),
+            2 => Some(SIZE_A::VALUE3),
+            3 => Some(SIZE_A::VALUE4),
+            4 => Some(SIZE_A::VALUE5),
+            5 => Some(SIZE_A::VALUE6),
+            6 => Some(SIZE_A::VALUE7),
             _ => None,
         }
     }
     #[doc = "The FIFO mechanism is disabled. The buffer does not accept any request for data."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Size::Value1
+        *self == SIZE_A::VALUE1
     }
     #[doc = "The FIFO buffer contains 2 entries."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Size::Value2
+        *self == SIZE_A::VALUE2
     }
     #[doc = "The FIFO buffer contains 4 entries."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Size::Value3
+        *self == SIZE_A::VALUE3
     }
     #[doc = "The FIFO buffer contains 8 entries."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Size::Value4
+        *self == SIZE_A::VALUE4
     }
     #[doc = "The FIFO buffer contains 16 entries."]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == Size::Value5
+        *self == SIZE_A::VALUE5
     }
     #[doc = "The FIFO buffer contains 32 entries."]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == Size::Value6
+        *self == SIZE_A::VALUE6
     }
     #[doc = "The FIFO buffer contains 64 entries."]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == Size::Value7
+        *self == SIZE_A::VALUE7
     }
 }
 #[doc = "Field `SIZE` writer - Buffer Size"]
-pub type SizeW<'a, REG> = crate::FieldWriter<'a, REG, 3, Size>;
-impl<'a, REG> SizeW<'a, REG>
+pub type SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, SIZE_A>;
+impl<'a, REG> SIZE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -430,321 +430,321 @@ where
     #[doc = "The FIFO mechanism is disabled. The buffer does not accept any request for data."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Size::Value1)
+        self.variant(SIZE_A::VALUE1)
     }
     #[doc = "The FIFO buffer contains 2 entries."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Size::Value2)
+        self.variant(SIZE_A::VALUE2)
     }
     #[doc = "The FIFO buffer contains 4 entries."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Size::Value3)
+        self.variant(SIZE_A::VALUE3)
     }
     #[doc = "The FIFO buffer contains 8 entries."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Size::Value4)
+        self.variant(SIZE_A::VALUE4)
     }
     #[doc = "The FIFO buffer contains 16 entries."]
     #[inline(always)]
     pub fn value5(self) -> &'a mut crate::W<REG> {
-        self.variant(Size::Value5)
+        self.variant(SIZE_A::VALUE5)
     }
     #[doc = "The FIFO buffer contains 32 entries."]
     #[inline(always)]
     pub fn value6(self) -> &'a mut crate::W<REG> {
-        self.variant(Size::Value6)
+        self.variant(SIZE_A::VALUE6)
     }
     #[doc = "The FIFO buffer contains 64 entries."]
     #[inline(always)]
     pub fn value7(self) -> &'a mut crate::W<REG> {
-        self.variant(Size::Value7)
+        self.variant(SIZE_A::VALUE7)
     }
 }
 #[doc = "Buffer Event on Limit Overflow\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Lof {
+pub enum LOF_A {
     #[doc = "0: A standard transmit buffer event occurs when the filling level equals the limit value and gets lower due to transmission of a data word."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: A standard transmit buffer interrupt event occurs when the filling level equals the limit value and gets bigger due to a write access to a data input location INx."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Lof> for bool {
+impl From<LOF_A> for bool {
     #[inline(always)]
-    fn from(variant: Lof) -> Self {
+    fn from(variant: LOF_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LOF` reader - Buffer Event on Limit Overflow"]
-pub type LofR = crate::BitReader<Lof>;
-impl LofR {
+pub type LOF_R = crate::BitReader<LOF_A>;
+impl LOF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Lof {
+    pub const fn variant(&self) -> LOF_A {
         match self.bits {
-            false => Lof::Value1,
-            true => Lof::Value2,
+            false => LOF_A::VALUE1,
+            true => LOF_A::VALUE2,
         }
     }
     #[doc = "A standard transmit buffer event occurs when the filling level equals the limit value and gets lower due to transmission of a data word."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Lof::Value1
+        *self == LOF_A::VALUE1
     }
     #[doc = "A standard transmit buffer interrupt event occurs when the filling level equals the limit value and gets bigger due to a write access to a data input location INx."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Lof::Value2
+        *self == LOF_A::VALUE2
     }
 }
 #[doc = "Field `LOF` writer - Buffer Event on Limit Overflow"]
-pub type LofW<'a, REG> = crate::BitWriter<'a, REG, Lof>;
-impl<'a, REG> LofW<'a, REG>
+pub type LOF_W<'a, REG> = crate::BitWriter<'a, REG, LOF_A>;
+impl<'a, REG> LOF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "A standard transmit buffer event occurs when the filling level equals the limit value and gets lower due to transmission of a data word."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Lof::Value1)
+        self.variant(LOF_A::VALUE1)
     }
     #[doc = "A standard transmit buffer interrupt event occurs when the filling level equals the limit value and gets bigger due to a write access to a data input location INx."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Lof::Value2)
+        self.variant(LOF_A::VALUE2)
     }
 }
 #[doc = "Standard Transmit Buffer Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Stbien {
+pub enum STBIEN_A {
     #[doc = "0: The standard transmit buffer interrupt generation is disabled."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The standard transmit buffer interrupt generation is enabled."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Stbien> for bool {
+impl From<STBIEN_A> for bool {
     #[inline(always)]
-    fn from(variant: Stbien) -> Self {
+    fn from(variant: STBIEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `STBIEN` reader - Standard Transmit Buffer Interrupt Enable"]
-pub type StbienR = crate::BitReader<Stbien>;
-impl StbienR {
+pub type STBIEN_R = crate::BitReader<STBIEN_A>;
+impl STBIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Stbien {
+    pub const fn variant(&self) -> STBIEN_A {
         match self.bits {
-            false => Stbien::Value1,
-            true => Stbien::Value2,
+            false => STBIEN_A::VALUE1,
+            true => STBIEN_A::VALUE2,
         }
     }
     #[doc = "The standard transmit buffer interrupt generation is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Stbien::Value1
+        *self == STBIEN_A::VALUE1
     }
     #[doc = "The standard transmit buffer interrupt generation is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Stbien::Value2
+        *self == STBIEN_A::VALUE2
     }
 }
 #[doc = "Field `STBIEN` writer - Standard Transmit Buffer Interrupt Enable"]
-pub type StbienW<'a, REG> = crate::BitWriter<'a, REG, Stbien>;
-impl<'a, REG> StbienW<'a, REG>
+pub type STBIEN_W<'a, REG> = crate::BitWriter<'a, REG, STBIEN_A>;
+impl<'a, REG> STBIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The standard transmit buffer interrupt generation is disabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbien::Value1)
+        self.variant(STBIEN_A::VALUE1)
     }
     #[doc = "The standard transmit buffer interrupt generation is enabled."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Stbien::Value2)
+        self.variant(STBIEN_A::VALUE2)
     }
 }
 #[doc = "Transmit Buffer Error Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Tberien {
+pub enum TBERIEN_A {
     #[doc = "0: The transmit buffer error interrupt generation is disabled."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The transmit buffer error interrupt generation is enabled."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Tberien> for bool {
+impl From<TBERIEN_A> for bool {
     #[inline(always)]
-    fn from(variant: Tberien) -> Self {
+    fn from(variant: TBERIEN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TBERIEN` reader - Transmit Buffer Error Interrupt Enable"]
-pub type TberienR = crate::BitReader<Tberien>;
-impl TberienR {
+pub type TBERIEN_R = crate::BitReader<TBERIEN_A>;
+impl TBERIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Tberien {
+    pub const fn variant(&self) -> TBERIEN_A {
         match self.bits {
-            false => Tberien::Value1,
-            true => Tberien::Value2,
+            false => TBERIEN_A::VALUE1,
+            true => TBERIEN_A::VALUE2,
         }
     }
     #[doc = "The transmit buffer error interrupt generation is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Tberien::Value1
+        *self == TBERIEN_A::VALUE1
     }
     #[doc = "The transmit buffer error interrupt generation is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Tberien::Value2
+        *self == TBERIEN_A::VALUE2
     }
 }
 #[doc = "Field `TBERIEN` writer - Transmit Buffer Error Interrupt Enable"]
-pub type TberienW<'a, REG> = crate::BitWriter<'a, REG, Tberien>;
-impl<'a, REG> TberienW<'a, REG>
+pub type TBERIEN_W<'a, REG> = crate::BitWriter<'a, REG, TBERIEN_A>;
+impl<'a, REG> TBERIEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "The transmit buffer error interrupt generation is disabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Tberien::Value1)
+        self.variant(TBERIEN_A::VALUE1)
     }
     #[doc = "The transmit buffer error interrupt generation is enabled."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Tberien::Value2)
+        self.variant(TBERIEN_A::VALUE2)
     }
 }
 impl R {
     #[doc = "Bits 8:13 - Limit For Interrupt Generation"]
     #[inline(always)]
-    pub fn limit(&self) -> LimitR {
-        LimitR::new(((self.bits >> 8) & 0x3f) as u8)
+    pub fn limit(&self) -> LIMIT_R {
+        LIMIT_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bit 14 - Standard Transmit Buffer Trigger Mode"]
     #[inline(always)]
-    pub fn stbtm(&self) -> StbtmR {
-        StbtmR::new(((self.bits >> 14) & 1) != 0)
+    pub fn stbtm(&self) -> STBTM_R {
+        STBTM_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Standard Transmit Buffer Trigger Enable"]
     #[inline(always)]
-    pub fn stbten(&self) -> StbtenR {
-        StbtenR::new(((self.bits >> 15) & 1) != 0)
+    pub fn stbten(&self) -> STBTEN_R {
+        STBTEN_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:18 - Standard Transmit Buffer Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn stbinp(&self) -> StbinpR {
-        StbinpR::new(((self.bits >> 16) & 7) as u8)
+    pub fn stbinp(&self) -> STBINP_R {
+        STBINP_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 19:21 - Alternative Transmit Buffer Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn atbinp(&self) -> AtbinpR {
-        AtbinpR::new(((self.bits >> 19) & 7) as u8)
+    pub fn atbinp(&self) -> ATBINP_R {
+        ATBINP_R::new(((self.bits >> 19) & 7) as u8)
     }
     #[doc = "Bits 24:26 - Buffer Size"]
     #[inline(always)]
-    pub fn size(&self) -> SizeR {
-        SizeR::new(((self.bits >> 24) & 7) as u8)
+    pub fn size(&self) -> SIZE_R {
+        SIZE_R::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bit 28 - Buffer Event on Limit Overflow"]
     #[inline(always)]
-    pub fn lof(&self) -> LofR {
-        LofR::new(((self.bits >> 28) & 1) != 0)
+    pub fn lof(&self) -> LOF_R {
+        LOF_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 30 - Standard Transmit Buffer Interrupt Enable"]
     #[inline(always)]
-    pub fn stbien(&self) -> StbienR {
-        StbienR::new(((self.bits >> 30) & 1) != 0)
+    pub fn stbien(&self) -> STBIEN_R {
+        STBIEN_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Transmit Buffer Error Interrupt Enable"]
     #[inline(always)]
-    pub fn tberien(&self) -> TberienR {
-        TberienR::new(((self.bits >> 31) & 1) != 0)
+    pub fn tberien(&self) -> TBERIEN_R {
+        TBERIEN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:5 - Data Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn dptr(&mut self) -> DptrW<TbctrSpec> {
-        DptrW::new(self, 0)
+    pub fn dptr(&mut self) -> DPTR_W<TBCTR_SPEC> {
+        DPTR_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - Limit For Interrupt Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn limit(&mut self) -> LimitW<TbctrSpec> {
-        LimitW::new(self, 8)
+    pub fn limit(&mut self) -> LIMIT_W<TBCTR_SPEC> {
+        LIMIT_W::new(self, 8)
     }
     #[doc = "Bit 14 - Standard Transmit Buffer Trigger Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn stbtm(&mut self) -> StbtmW<TbctrSpec> {
-        StbtmW::new(self, 14)
+    pub fn stbtm(&mut self) -> STBTM_W<TBCTR_SPEC> {
+        STBTM_W::new(self, 14)
     }
     #[doc = "Bit 15 - Standard Transmit Buffer Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn stbten(&mut self) -> StbtenW<TbctrSpec> {
-        StbtenW::new(self, 15)
+    pub fn stbten(&mut self) -> STBTEN_W<TBCTR_SPEC> {
+        STBTEN_W::new(self, 15)
     }
     #[doc = "Bits 16:18 - Standard Transmit Buffer Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn stbinp(&mut self) -> StbinpW<TbctrSpec> {
-        StbinpW::new(self, 16)
+    pub fn stbinp(&mut self) -> STBINP_W<TBCTR_SPEC> {
+        STBINP_W::new(self, 16)
     }
     #[doc = "Bits 19:21 - Alternative Transmit Buffer Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn atbinp(&mut self) -> AtbinpW<TbctrSpec> {
-        AtbinpW::new(self, 19)
+    pub fn atbinp(&mut self) -> ATBINP_W<TBCTR_SPEC> {
+        ATBINP_W::new(self, 19)
     }
     #[doc = "Bits 24:26 - Buffer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn size(&mut self) -> SizeW<TbctrSpec> {
-        SizeW::new(self, 24)
+    pub fn size(&mut self) -> SIZE_W<TBCTR_SPEC> {
+        SIZE_W::new(self, 24)
     }
     #[doc = "Bit 28 - Buffer Event on Limit Overflow"]
     #[inline(always)]
     #[must_use]
-    pub fn lof(&mut self) -> LofW<TbctrSpec> {
-        LofW::new(self, 28)
+    pub fn lof(&mut self) -> LOF_W<TBCTR_SPEC> {
+        LOF_W::new(self, 28)
     }
     #[doc = "Bit 30 - Standard Transmit Buffer Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn stbien(&mut self) -> StbienW<TbctrSpec> {
-        StbienW::new(self, 30)
+    pub fn stbien(&mut self) -> STBIEN_W<TBCTR_SPEC> {
+        STBIEN_W::new(self, 30)
     }
     #[doc = "Bit 31 - Transmit Buffer Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tberien(&mut self) -> TberienW<TbctrSpec> {
-        TberienW::new(self, 31)
+    pub fn tberien(&mut self) -> TBERIEN_W<TBCTR_SPEC> {
+        TBERIEN_W::new(self, 31)
     }
 }
 #[doc = "Transmitter Buffer Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tbctr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tbctr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct TbctrSpec;
-impl crate::RegisterSpec for TbctrSpec {
+pub struct TBCTR_SPEC;
+impl crate::RegisterSpec for TBCTR_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`tbctr::R`](R) reader structure"]
-impl crate::Readable for TbctrSpec {}
+impl crate::Readable for TBCTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`tbctr::W`](W) writer structure"]
-impl crate::Writable for TbctrSpec {
+impl crate::Writable for TBCTR_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TBCTR to value 0"]
-impl crate::Resettable for TbctrSpec {
+impl crate::Resettable for TBCTR_SPEC {
     const RESET_VALUE: u32 = 0;
 }

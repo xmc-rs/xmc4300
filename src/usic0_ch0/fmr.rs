@@ -1,29 +1,29 @@
 #[doc = "Register `FMR` writer"]
-pub type W = crate::W<FmrSpec>;
+pub type W = crate::W<FMR_SPEC>;
 #[doc = "Modify Transmit Data Valid\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Mtdv {
+pub enum MTDV_A {
     #[doc = "0: No action."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Bit TDV is set, TE is unchanged."]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Bits TDV and TE are cleared."]
-    Value3 = 2,
+    VALUE3 = 2,
 }
-impl From<Mtdv> for u8 {
+impl From<MTDV_A> for u8 {
     #[inline(always)]
-    fn from(variant: Mtdv) -> Self {
+    fn from(variant: MTDV_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Mtdv {
+impl crate::FieldSpec for MTDV_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Mtdv {}
+impl crate::IsEnum for MTDV_A {}
 #[doc = "Field `MTDV` writer - Modify Transmit Data Valid"]
-pub type MtdvW<'a, REG> = crate::FieldWriter<'a, REG, 2, Mtdv>;
-impl<'a, REG> MtdvW<'a, REG>
+pub type MTDV_W<'a, REG> = crate::FieldWriter<'a, REG, 2, MTDV_A>;
+impl<'a, REG> MTDV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -31,372 +31,372 @@ where
     #[doc = "No action."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Mtdv::Value1)
+        self.variant(MTDV_A::VALUE1)
     }
     #[doc = "Bit TDV is set, TE is unchanged."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Mtdv::Value2)
+        self.variant(MTDV_A::VALUE2)
     }
     #[doc = "Bits TDV and TE are cleared."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Mtdv::Value3)
+        self.variant(MTDV_A::VALUE3)
     }
 }
 #[doc = "Activate Bit TVC\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Atvc {
+pub enum ATVC_A {
     #[doc = "0: No action."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Bit TCSR.TVC is set."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Atvc> for bool {
+impl From<ATVC_A> for bool {
     #[inline(always)]
-    fn from(variant: Atvc) -> Self {
+    fn from(variant: ATVC_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ATVC` writer - Activate Bit TVC"]
-pub type AtvcW<'a, REG> = crate::BitWriter<'a, REG, Atvc>;
-impl<'a, REG> AtvcW<'a, REG>
+pub type ATVC_W<'a, REG> = crate::BitWriter<'a, REG, ATVC_A>;
+impl<'a, REG> ATVC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Atvc::Value1)
+        self.variant(ATVC_A::VALUE1)
     }
     #[doc = "Bit TCSR.TVC is set."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Atvc::Value2)
+        self.variant(ATVC_A::VALUE2)
     }
 }
 #[doc = "Clear Bits RDV for RBUF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Crdv0 {
+pub enum CRDV0_A {
     #[doc = "0: No action."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Bits RBUF01SR.RDV00 and RBUF01SR.RDV10 are cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Crdv0> for bool {
+impl From<CRDV0_A> for bool {
     #[inline(always)]
-    fn from(variant: Crdv0) -> Self {
+    fn from(variant: CRDV0_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CRDV0` writer - Clear Bits RDV for RBUF0"]
-pub type Crdv0W<'a, REG> = crate::BitWriter<'a, REG, Crdv0>;
-impl<'a, REG> Crdv0W<'a, REG>
+pub type CRDV0_W<'a, REG> = crate::BitWriter<'a, REG, CRDV0_A>;
+impl<'a, REG> CRDV0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Crdv0::Value1)
+        self.variant(CRDV0_A::VALUE1)
     }
     #[doc = "Bits RBUF01SR.RDV00 and RBUF01SR.RDV10 are cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Crdv0::Value2)
+        self.variant(CRDV0_A::VALUE2)
     }
 }
 #[doc = "Clear Bit RDV for RBUF1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Crdv1 {
+pub enum CRDV1_A {
     #[doc = "0: No action."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Bits RBUF01SR.RDV01 and RBUF01SR.RDV11 are cleared."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Crdv1> for bool {
+impl From<CRDV1_A> for bool {
     #[inline(always)]
-    fn from(variant: Crdv1) -> Self {
+    fn from(variant: CRDV1_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CRDV1` writer - Clear Bit RDV for RBUF1"]
-pub type Crdv1W<'a, REG> = crate::BitWriter<'a, REG, Crdv1>;
-impl<'a, REG> Crdv1W<'a, REG>
+pub type CRDV1_W<'a, REG> = crate::BitWriter<'a, REG, CRDV1_A>;
+impl<'a, REG> CRDV1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Crdv1::Value1)
+        self.variant(CRDV1_A::VALUE1)
     }
     #[doc = "Bits RBUF01SR.RDV01 and RBUF01SR.RDV11 are cleared."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Crdv1::Value2)
+        self.variant(CRDV1_A::VALUE2)
     }
 }
 #[doc = "Set Interrupt Output SRx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Sio0 {
+pub enum SIO0_A {
     #[doc = "0: No action."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The service request output SRx is activated."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Sio0> for bool {
+impl From<SIO0_A> for bool {
     #[inline(always)]
-    fn from(variant: Sio0) -> Self {
+    fn from(variant: SIO0_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SIO0` writer - Set Interrupt Output SRx"]
-pub type Sio0W<'a, REG> = crate::BitWriter<'a, REG, Sio0>;
-impl<'a, REG> Sio0W<'a, REG>
+pub type SIO0_W<'a, REG> = crate::BitWriter<'a, REG, SIO0_A>;
+impl<'a, REG> SIO0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Sio0::Value1)
+        self.variant(SIO0_A::VALUE1)
     }
     #[doc = "The service request output SRx is activated."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Sio0::Value2)
+        self.variant(SIO0_A::VALUE2)
     }
 }
 #[doc = "Set Interrupt Output SRx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Sio1 {
+pub enum SIO1_A {
     #[doc = "0: No action."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The service request output SRx is activated."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Sio1> for bool {
+impl From<SIO1_A> for bool {
     #[inline(always)]
-    fn from(variant: Sio1) -> Self {
+    fn from(variant: SIO1_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SIO1` writer - Set Interrupt Output SRx"]
-pub type Sio1W<'a, REG> = crate::BitWriter<'a, REG, Sio1>;
-impl<'a, REG> Sio1W<'a, REG>
+pub type SIO1_W<'a, REG> = crate::BitWriter<'a, REG, SIO1_A>;
+impl<'a, REG> SIO1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Sio1::Value1)
+        self.variant(SIO1_A::VALUE1)
     }
     #[doc = "The service request output SRx is activated."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Sio1::Value2)
+        self.variant(SIO1_A::VALUE2)
     }
 }
 #[doc = "Set Interrupt Output SRx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Sio2 {
+pub enum SIO2_A {
     #[doc = "0: No action."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The service request output SRx is activated."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Sio2> for bool {
+impl From<SIO2_A> for bool {
     #[inline(always)]
-    fn from(variant: Sio2) -> Self {
+    fn from(variant: SIO2_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SIO2` writer - Set Interrupt Output SRx"]
-pub type Sio2W<'a, REG> = crate::BitWriter<'a, REG, Sio2>;
-impl<'a, REG> Sio2W<'a, REG>
+pub type SIO2_W<'a, REG> = crate::BitWriter<'a, REG, SIO2_A>;
+impl<'a, REG> SIO2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Sio2::Value1)
+        self.variant(SIO2_A::VALUE1)
     }
     #[doc = "The service request output SRx is activated."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Sio2::Value2)
+        self.variant(SIO2_A::VALUE2)
     }
 }
 #[doc = "Set Interrupt Output SRx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Sio3 {
+pub enum SIO3_A {
     #[doc = "0: No action."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The service request output SRx is activated."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Sio3> for bool {
+impl From<SIO3_A> for bool {
     #[inline(always)]
-    fn from(variant: Sio3) -> Self {
+    fn from(variant: SIO3_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SIO3` writer - Set Interrupt Output SRx"]
-pub type Sio3W<'a, REG> = crate::BitWriter<'a, REG, Sio3>;
-impl<'a, REG> Sio3W<'a, REG>
+pub type SIO3_W<'a, REG> = crate::BitWriter<'a, REG, SIO3_A>;
+impl<'a, REG> SIO3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Sio3::Value1)
+        self.variant(SIO3_A::VALUE1)
     }
     #[doc = "The service request output SRx is activated."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Sio3::Value2)
+        self.variant(SIO3_A::VALUE2)
     }
 }
 #[doc = "Set Interrupt Output SRx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Sio4 {
+pub enum SIO4_A {
     #[doc = "0: No action."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The service request output SRx is activated."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Sio4> for bool {
+impl From<SIO4_A> for bool {
     #[inline(always)]
-    fn from(variant: Sio4) -> Self {
+    fn from(variant: SIO4_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SIO4` writer - Set Interrupt Output SRx"]
-pub type Sio4W<'a, REG> = crate::BitWriter<'a, REG, Sio4>;
-impl<'a, REG> Sio4W<'a, REG>
+pub type SIO4_W<'a, REG> = crate::BitWriter<'a, REG, SIO4_A>;
+impl<'a, REG> SIO4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Sio4::Value1)
+        self.variant(SIO4_A::VALUE1)
     }
     #[doc = "The service request output SRx is activated."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Sio4::Value2)
+        self.variant(SIO4_A::VALUE2)
     }
 }
 #[doc = "Set Interrupt Output SRx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Sio5 {
+pub enum SIO5_A {
     #[doc = "0: No action."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: The service request output SRx is activated."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Sio5> for bool {
+impl From<SIO5_A> for bool {
     #[inline(always)]
-    fn from(variant: Sio5) -> Self {
+    fn from(variant: SIO5_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SIO5` writer - Set Interrupt Output SRx"]
-pub type Sio5W<'a, REG> = crate::BitWriter<'a, REG, Sio5>;
-impl<'a, REG> Sio5W<'a, REG>
+pub type SIO5_W<'a, REG> = crate::BitWriter<'a, REG, SIO5_A>;
+impl<'a, REG> SIO5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No action."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Sio5::Value1)
+        self.variant(SIO5_A::VALUE1)
     }
     #[doc = "The service request output SRx is activated."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Sio5::Value2)
+        self.variant(SIO5_A::VALUE2)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Modify Transmit Data Valid"]
     #[inline(always)]
     #[must_use]
-    pub fn mtdv(&mut self) -> MtdvW<FmrSpec> {
-        MtdvW::new(self, 0)
+    pub fn mtdv(&mut self) -> MTDV_W<FMR_SPEC> {
+        MTDV_W::new(self, 0)
     }
     #[doc = "Bit 4 - Activate Bit TVC"]
     #[inline(always)]
     #[must_use]
-    pub fn atvc(&mut self) -> AtvcW<FmrSpec> {
-        AtvcW::new(self, 4)
+    pub fn atvc(&mut self) -> ATVC_W<FMR_SPEC> {
+        ATVC_W::new(self, 4)
     }
     #[doc = "Bit 14 - Clear Bits RDV for RBUF0"]
     #[inline(always)]
     #[must_use]
-    pub fn crdv0(&mut self) -> Crdv0W<FmrSpec> {
-        Crdv0W::new(self, 14)
+    pub fn crdv0(&mut self) -> CRDV0_W<FMR_SPEC> {
+        CRDV0_W::new(self, 14)
     }
     #[doc = "Bit 15 - Clear Bit RDV for RBUF1"]
     #[inline(always)]
     #[must_use]
-    pub fn crdv1(&mut self) -> Crdv1W<FmrSpec> {
-        Crdv1W::new(self, 15)
+    pub fn crdv1(&mut self) -> CRDV1_W<FMR_SPEC> {
+        CRDV1_W::new(self, 15)
     }
     #[doc = "Bit 16 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio0(&mut self) -> Sio0W<FmrSpec> {
-        Sio0W::new(self, 16)
+    pub fn sio0(&mut self) -> SIO0_W<FMR_SPEC> {
+        SIO0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio1(&mut self) -> Sio1W<FmrSpec> {
-        Sio1W::new(self, 17)
+    pub fn sio1(&mut self) -> SIO1_W<FMR_SPEC> {
+        SIO1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio2(&mut self) -> Sio2W<FmrSpec> {
-        Sio2W::new(self, 18)
+    pub fn sio2(&mut self) -> SIO2_W<FMR_SPEC> {
+        SIO2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio3(&mut self) -> Sio3W<FmrSpec> {
-        Sio3W::new(self, 19)
+    pub fn sio3(&mut self) -> SIO3_W<FMR_SPEC> {
+        SIO3_W::new(self, 19)
     }
     #[doc = "Bit 20 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio4(&mut self) -> Sio4W<FmrSpec> {
-        Sio4W::new(self, 20)
+    pub fn sio4(&mut self) -> SIO4_W<FMR_SPEC> {
+        SIO4_W::new(self, 20)
     }
     #[doc = "Bit 21 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio5(&mut self) -> Sio5W<FmrSpec> {
-        Sio5W::new(self, 21)
+    pub fn sio5(&mut self) -> SIO5_W<FMR_SPEC> {
+        SIO5_W::new(self, 21)
     }
 }
 #[doc = "Flag Modification Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fmr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct FmrSpec;
-impl crate::RegisterSpec for FmrSpec {
+pub struct FMR_SPEC;
+impl crate::RegisterSpec for FMR_SPEC {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`fmr::W`](W) writer structure"]
-impl crate::Writable for FmrSpec {
+impl crate::Writable for FMR_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FMR to value 0"]
-impl crate::Resettable for FmrSpec {
+impl crate::Resettable for FMR_SPEC {
     const RESET_VALUE: u32 = 0;
 }

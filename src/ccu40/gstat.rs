@@ -1,220 +1,220 @@
 #[doc = "Register `GSTAT` reader"]
-pub type R = crate::R<GstatSpec>;
+pub type R = crate::R<GSTAT_SPEC>;
 #[doc = "CC40 IDLE status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S0i {
+pub enum S0I_A {
     #[doc = "0: Running"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Idle"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<S0i> for bool {
+impl From<S0I_A> for bool {
     #[inline(always)]
-    fn from(variant: S0i) -> Self {
+    fn from(variant: S0I_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S0I` reader - CC40 IDLE status"]
-pub type S0iR = crate::BitReader<S0i>;
-impl S0iR {
+pub type S0I_R = crate::BitReader<S0I_A>;
+impl S0I_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S0i {
+    pub const fn variant(&self) -> S0I_A {
         match self.bits {
-            false => S0i::Value1,
-            true => S0i::Value2,
+            false => S0I_A::VALUE1,
+            true => S0I_A::VALUE2,
         }
     }
     #[doc = "Running"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S0i::Value1
+        *self == S0I_A::VALUE1
     }
     #[doc = "Idle"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S0i::Value2
+        *self == S0I_A::VALUE2
     }
 }
 #[doc = "CC41 IDLE status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S1i {
+pub enum S1I_A {
     #[doc = "0: Running"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Idle"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<S1i> for bool {
+impl From<S1I_A> for bool {
     #[inline(always)]
-    fn from(variant: S1i) -> Self {
+    fn from(variant: S1I_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S1I` reader - CC41 IDLE status"]
-pub type S1iR = crate::BitReader<S1i>;
-impl S1iR {
+pub type S1I_R = crate::BitReader<S1I_A>;
+impl S1I_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S1i {
+    pub const fn variant(&self) -> S1I_A {
         match self.bits {
-            false => S1i::Value1,
-            true => S1i::Value2,
+            false => S1I_A::VALUE1,
+            true => S1I_A::VALUE2,
         }
     }
     #[doc = "Running"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S1i::Value1
+        *self == S1I_A::VALUE1
     }
     #[doc = "Idle"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S1i::Value2
+        *self == S1I_A::VALUE2
     }
 }
 #[doc = "CC42 IDLE status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S2i {
+pub enum S2I_A {
     #[doc = "0: Running"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Idle"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<S2i> for bool {
+impl From<S2I_A> for bool {
     #[inline(always)]
-    fn from(variant: S2i) -> Self {
+    fn from(variant: S2I_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S2I` reader - CC42 IDLE status"]
-pub type S2iR = crate::BitReader<S2i>;
-impl S2iR {
+pub type S2I_R = crate::BitReader<S2I_A>;
+impl S2I_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S2i {
+    pub const fn variant(&self) -> S2I_A {
         match self.bits {
-            false => S2i::Value1,
-            true => S2i::Value2,
+            false => S2I_A::VALUE1,
+            true => S2I_A::VALUE2,
         }
     }
     #[doc = "Running"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S2i::Value1
+        *self == S2I_A::VALUE1
     }
     #[doc = "Idle"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S2i::Value2
+        *self == S2I_A::VALUE2
     }
 }
 #[doc = "CC43 IDLE status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S3i {
+pub enum S3I_A {
     #[doc = "0: Running"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Idle"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<S3i> for bool {
+impl From<S3I_A> for bool {
     #[inline(always)]
-    fn from(variant: S3i) -> Self {
+    fn from(variant: S3I_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S3I` reader - CC43 IDLE status"]
-pub type S3iR = crate::BitReader<S3i>;
-impl S3iR {
+pub type S3I_R = crate::BitReader<S3I_A>;
+impl S3I_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S3i {
+    pub const fn variant(&self) -> S3I_A {
         match self.bits {
-            false => S3i::Value1,
-            true => S3i::Value2,
+            false => S3I_A::VALUE1,
+            true => S3I_A::VALUE2,
         }
     }
     #[doc = "Running"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S3i::Value1
+        *self == S3I_A::VALUE1
     }
     #[doc = "Idle"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S3i::Value2
+        *self == S3I_A::VALUE2
     }
 }
 #[doc = "Prescaler Run Bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Prb {
+pub enum PRB_A {
     #[doc = "0: Prescaler is stopped"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Prescaler is running"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Prb> for bool {
+impl From<PRB_A> for bool {
     #[inline(always)]
-    fn from(variant: Prb) -> Self {
+    fn from(variant: PRB_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PRB` reader - Prescaler Run Bit"]
-pub type PrbR = crate::BitReader<Prb>;
-impl PrbR {
+pub type PRB_R = crate::BitReader<PRB_A>;
+impl PRB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Prb {
+    pub const fn variant(&self) -> PRB_A {
         match self.bits {
-            false => Prb::Value1,
-            true => Prb::Value2,
+            false => PRB_A::VALUE1,
+            true => PRB_A::VALUE2,
         }
     }
     #[doc = "Prescaler is stopped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Prb::Value1
+        *self == PRB_A::VALUE1
     }
     #[doc = "Prescaler is running"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Prb::Value2
+        *self == PRB_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - CC40 IDLE status"]
     #[inline(always)]
-    pub fn s0i(&self) -> S0iR {
-        S0iR::new((self.bits & 1) != 0)
+    pub fn s0i(&self) -> S0I_R {
+        S0I_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - CC41 IDLE status"]
     #[inline(always)]
-    pub fn s1i(&self) -> S1iR {
-        S1iR::new(((self.bits >> 1) & 1) != 0)
+    pub fn s1i(&self) -> S1I_R {
+        S1I_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - CC42 IDLE status"]
     #[inline(always)]
-    pub fn s2i(&self) -> S2iR {
-        S2iR::new(((self.bits >> 2) & 1) != 0)
+    pub fn s2i(&self) -> S2I_R {
+        S2I_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - CC43 IDLE status"]
     #[inline(always)]
-    pub fn s3i(&self) -> S3iR {
-        S3iR::new(((self.bits >> 3) & 1) != 0)
+    pub fn s3i(&self) -> S3I_R {
+        S3I_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 8 - Prescaler Run Bit"]
     #[inline(always)]
-    pub fn prb(&self) -> PrbR {
-        PrbR::new(((self.bits >> 8) & 1) != 0)
+    pub fn prb(&self) -> PRB_R {
+        PRB_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 #[doc = "Global Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct GstatSpec;
-impl crate::RegisterSpec for GstatSpec {
+pub struct GSTAT_SPEC;
+impl crate::RegisterSpec for GSTAT_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`gstat::R`](R) reader structure"]
-impl crate::Readable for GstatSpec {}
+impl crate::Readable for GSTAT_SPEC {}
 #[doc = "`reset()` method sets GSTAT to value 0x0f"]
-impl crate::Resettable for GstatSpec {
+impl crate::Resettable for GSTAT_SPEC {
     const RESET_VALUE: u32 = 0x0f;
 }

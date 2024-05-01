@@ -1,227 +1,227 @@
 #[doc = "Register `GLOBCTL` reader"]
-pub type R = crate::R<GlobctlSpec>;
+pub type R = crate::R<GLOBCTL_SPEC>;
 #[doc = "Register `GLOBCTL` writer"]
-pub type W = crate::W<GlobctlSpec>;
+pub type W = crate::W<GLOBCTL_SPEC>;
 #[doc = "Field `TS_EN` reader - Touch-Sense Function Enable"]
-pub type TsEnR = crate::BitReader;
+pub type TS_EN_R = crate::BitReader;
 #[doc = "Field `TS_EN` writer - Touch-Sense Function Enable"]
-pub type TsEnW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type TS_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `LD_EN` reader - LED Function Enable"]
-pub type LdEnR = crate::BitReader;
+pub type LD_EN_R = crate::BitReader;
 #[doc = "Field `LD_EN` writer - LED Function Enable"]
-pub type LdEnW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type LD_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Clock Master Disable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cmtr {
+pub enum CMTR_A {
     #[doc = "0: Kernel generates its own clock for LEDTS-counter based on SFR setting"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: LEDTS-counter takes its clock from another master kernel"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cmtr> for bool {
+impl From<CMTR_A> for bool {
     #[inline(always)]
-    fn from(variant: Cmtr) -> Self {
+    fn from(variant: CMTR_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CMTR` reader - Clock Master Disable"]
-pub type CmtrR = crate::BitReader<Cmtr>;
-impl CmtrR {
+pub type CMTR_R = crate::BitReader<CMTR_A>;
+impl CMTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Cmtr {
+    pub const fn variant(&self) -> CMTR_A {
         match self.bits {
-            false => Cmtr::Value1,
-            true => Cmtr::Value2,
+            false => CMTR_A::VALUE1,
+            true => CMTR_A::VALUE2,
         }
     }
     #[doc = "Kernel generates its own clock for LEDTS-counter based on SFR setting"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Cmtr::Value1
+        *self == CMTR_A::VALUE1
     }
     #[doc = "LEDTS-counter takes its clock from another master kernel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Cmtr::Value2
+        *self == CMTR_A::VALUE2
     }
 }
 #[doc = "Field `CMTR` writer - Clock Master Disable"]
-pub type CmtrW<'a, REG> = crate::BitWriter<'a, REG, Cmtr>;
-impl<'a, REG> CmtrW<'a, REG>
+pub type CMTR_W<'a, REG> = crate::BitWriter<'a, REG, CMTR_A>;
+impl<'a, REG> CMTR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Kernel generates its own clock for LEDTS-counter based on SFR setting"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cmtr::Value1)
+        self.variant(CMTR_A::VALUE1)
     }
     #[doc = "LEDTS-counter takes its clock from another master kernel"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cmtr::Value2)
+        self.variant(CMTR_A::VALUE2)
     }
 }
 #[doc = "Enable Autoscan Time Period Synchronization\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ensync {
+pub enum ENSYNC_A {
     #[doc = "0: No synchronization"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Synchronization enabled on Kernel0 autoscan time period"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ensync> for bool {
+impl From<ENSYNC_A> for bool {
     #[inline(always)]
-    fn from(variant: Ensync) -> Self {
+    fn from(variant: ENSYNC_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ENSYNC` reader - Enable Autoscan Time Period Synchronization"]
-pub type EnsyncR = crate::BitReader<Ensync>;
-impl EnsyncR {
+pub type ENSYNC_R = crate::BitReader<ENSYNC_A>;
+impl ENSYNC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ensync {
+    pub const fn variant(&self) -> ENSYNC_A {
         match self.bits {
-            false => Ensync::Value1,
-            true => Ensync::Value2,
+            false => ENSYNC_A::VALUE1,
+            true => ENSYNC_A::VALUE2,
         }
     }
     #[doc = "No synchronization"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ensync::Value1
+        *self == ENSYNC_A::VALUE1
     }
     #[doc = "Synchronization enabled on Kernel0 autoscan time period"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ensync::Value2
+        *self == ENSYNC_A::VALUE2
     }
 }
 #[doc = "Field `ENSYNC` writer - Enable Autoscan Time Period Synchronization"]
-pub type EnsyncW<'a, REG> = crate::BitWriter<'a, REG, Ensync>;
-impl<'a, REG> EnsyncW<'a, REG>
+pub type ENSYNC_W<'a, REG> = crate::BitWriter<'a, REG, ENSYNC_A>;
+impl<'a, REG> ENSYNC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No synchronization"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ensync::Value1)
+        self.variant(ENSYNC_A::VALUE1)
     }
     #[doc = "Synchronization enabled on Kernel0 autoscan time period"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ensync::Value2)
+        self.variant(ENSYNC_A::VALUE2)
     }
 }
 #[doc = "Suspend Request Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Suscfg {
+pub enum SUSCFG_A {
     #[doc = "0: Ignore suspend request"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enable suspend according to request"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Suscfg> for bool {
+impl From<SUSCFG_A> for bool {
     #[inline(always)]
-    fn from(variant: Suscfg) -> Self {
+    fn from(variant: SUSCFG_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SUSCFG` reader - Suspend Request Configuration"]
-pub type SuscfgR = crate::BitReader<Suscfg>;
-impl SuscfgR {
+pub type SUSCFG_R = crate::BitReader<SUSCFG_A>;
+impl SUSCFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Suscfg {
+    pub const fn variant(&self) -> SUSCFG_A {
         match self.bits {
-            false => Suscfg::Value1,
-            true => Suscfg::Value2,
+            false => SUSCFG_A::VALUE1,
+            true => SUSCFG_A::VALUE2,
         }
     }
     #[doc = "Ignore suspend request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Suscfg::Value1
+        *self == SUSCFG_A::VALUE1
     }
     #[doc = "Enable suspend according to request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Suscfg::Value2
+        *self == SUSCFG_A::VALUE2
     }
 }
 #[doc = "Field `SUSCFG` writer - Suspend Request Configuration"]
-pub type SuscfgW<'a, REG> = crate::BitWriter<'a, REG, Suscfg>;
-impl<'a, REG> SuscfgW<'a, REG>
+pub type SUSCFG_W<'a, REG> = crate::BitWriter<'a, REG, SUSCFG_A>;
+impl<'a, REG> SUSCFG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Ignore suspend request"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Suscfg::Value1)
+        self.variant(SUSCFG_A::VALUE1)
     }
     #[doc = "Enable suspend according to request"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Suscfg::Value2)
+        self.variant(SUSCFG_A::VALUE2)
     }
 }
 #[doc = "Mask Number of LSB Bits for Event Validation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Maskval {
+pub enum MASKVAL_A {
     #[doc = "0: Mask LSB bit"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Mask 2 LSB bits"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "7: Mask 8 LSB bits"]
-    Value3 = 7,
+    VALUE3 = 7,
 }
-impl From<Maskval> for u8 {
+impl From<MASKVAL_A> for u8 {
     #[inline(always)]
-    fn from(variant: Maskval) -> Self {
+    fn from(variant: MASKVAL_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Maskval {
+impl crate::FieldSpec for MASKVAL_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Maskval {}
+impl crate::IsEnum for MASKVAL_A {}
 #[doc = "Field `MASKVAL` reader - Mask Number of LSB Bits for Event Validation"]
-pub type MaskvalR = crate::FieldReader<Maskval>;
-impl MaskvalR {
+pub type MASKVAL_R = crate::FieldReader<MASKVAL_A>;
+impl MASKVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Maskval> {
+    pub const fn variant(&self) -> Option<MASKVAL_A> {
         match self.bits {
-            0 => Some(Maskval::Value1),
-            1 => Some(Maskval::Value2),
-            7 => Some(Maskval::Value3),
+            0 => Some(MASKVAL_A::VALUE1),
+            1 => Some(MASKVAL_A::VALUE2),
+            7 => Some(MASKVAL_A::VALUE3),
             _ => None,
         }
     }
     #[doc = "Mask LSB bit"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Maskval::Value1
+        *self == MASKVAL_A::VALUE1
     }
     #[doc = "Mask 2 LSB bits"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Maskval::Value2
+        *self == MASKVAL_A::VALUE2
     }
     #[doc = "Mask 8 LSB bits"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Maskval::Value3
+        *self == MASKVAL_A::VALUE3
     }
 }
 #[doc = "Field `MASKVAL` writer - Mask Number of LSB Bits for Event Validation"]
-pub type MaskvalW<'a, REG> = crate::FieldWriter<'a, REG, 3, Maskval>;
-impl<'a, REG> MaskvalW<'a, REG>
+pub type MASKVAL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, MASKVAL_A>;
+impl<'a, REG> MASKVAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -229,374 +229,374 @@ where
     #[doc = "Mask LSB bit"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Maskval::Value1)
+        self.variant(MASKVAL_A::VALUE1)
     }
     #[doc = "Mask 2 LSB bits"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Maskval::Value2)
+        self.variant(MASKVAL_A::VALUE2)
     }
     #[doc = "Mask 8 LSB bits"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Maskval::Value3)
+        self.variant(MASKVAL_A::VALUE3)
     }
 }
 #[doc = "Enable (Extended) Time Frame Validation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Fenval {
+pub enum FENVAL_A {
     #[doc = "0: Disable"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Fenval> for bool {
+impl From<FENVAL_A> for bool {
     #[inline(always)]
-    fn from(variant: Fenval) -> Self {
+    fn from(variant: FENVAL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `FENVAL` reader - Enable (Extended) Time Frame Validation"]
-pub type FenvalR = crate::BitReader<Fenval>;
-impl FenvalR {
+pub type FENVAL_R = crate::BitReader<FENVAL_A>;
+impl FENVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Fenval {
+    pub const fn variant(&self) -> FENVAL_A {
         match self.bits {
-            false => Fenval::Value1,
-            true => Fenval::Value2,
+            false => FENVAL_A::VALUE1,
+            true => FENVAL_A::VALUE2,
         }
     }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Fenval::Value1
+        *self == FENVAL_A::VALUE1
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Fenval::Value2
+        *self == FENVAL_A::VALUE2
     }
 }
 #[doc = "Field `FENVAL` writer - Enable (Extended) Time Frame Validation"]
-pub type FenvalW<'a, REG> = crate::BitWriter<'a, REG, Fenval>;
-impl<'a, REG> FenvalW<'a, REG>
+pub type FENVAL_W<'a, REG> = crate::BitWriter<'a, REG, FENVAL_A>;
+impl<'a, REG> FENVAL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Fenval::Value1)
+        self.variant(FENVAL_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Fenval::Value2)
+        self.variant(FENVAL_A::VALUE2)
     }
 }
 #[doc = "Enable Time Slice Interrupt\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ItsEn {
+pub enum ITS_EN_A {
     #[doc = "0: Disable"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<ItsEn> for bool {
+impl From<ITS_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: ItsEn) -> Self {
+    fn from(variant: ITS_EN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ITS_EN` reader - Enable Time Slice Interrupt"]
-pub type ItsEnR = crate::BitReader<ItsEn>;
-impl ItsEnR {
+pub type ITS_EN_R = crate::BitReader<ITS_EN_A>;
+impl ITS_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ItsEn {
+    pub const fn variant(&self) -> ITS_EN_A {
         match self.bits {
-            false => ItsEn::Value1,
-            true => ItsEn::Value2,
+            false => ITS_EN_A::VALUE1,
+            true => ITS_EN_A::VALUE2,
         }
     }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ItsEn::Value1
+        *self == ITS_EN_A::VALUE1
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ItsEn::Value2
+        *self == ITS_EN_A::VALUE2
     }
 }
 #[doc = "Field `ITS_EN` writer - Enable Time Slice Interrupt"]
-pub type ItsEnW<'a, REG> = crate::BitWriter<'a, REG, ItsEn>;
-impl<'a, REG> ItsEnW<'a, REG>
+pub type ITS_EN_W<'a, REG> = crate::BitWriter<'a, REG, ITS_EN_A>;
+impl<'a, REG> ITS_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(ItsEn::Value1)
+        self.variant(ITS_EN_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(ItsEn::Value2)
+        self.variant(ITS_EN_A::VALUE2)
     }
 }
 #[doc = "Enable (Extended) Time Frame Interrupt\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ItfEn {
+pub enum ITF_EN_A {
     #[doc = "0: Disable"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<ItfEn> for bool {
+impl From<ITF_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: ItfEn) -> Self {
+    fn from(variant: ITF_EN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ITF_EN` reader - Enable (Extended) Time Frame Interrupt"]
-pub type ItfEnR = crate::BitReader<ItfEn>;
-impl ItfEnR {
+pub type ITF_EN_R = crate::BitReader<ITF_EN_A>;
+impl ITF_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ItfEn {
+    pub const fn variant(&self) -> ITF_EN_A {
         match self.bits {
-            false => ItfEn::Value1,
-            true => ItfEn::Value2,
+            false => ITF_EN_A::VALUE1,
+            true => ITF_EN_A::VALUE2,
         }
     }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ItfEn::Value1
+        *self == ITF_EN_A::VALUE1
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ItfEn::Value2
+        *self == ITF_EN_A::VALUE2
     }
 }
 #[doc = "Field `ITF_EN` writer - Enable (Extended) Time Frame Interrupt"]
-pub type ItfEnW<'a, REG> = crate::BitWriter<'a, REG, ItfEn>;
-impl<'a, REG> ItfEnW<'a, REG>
+pub type ITF_EN_W<'a, REG> = crate::BitWriter<'a, REG, ITF_EN_A>;
+impl<'a, REG> ITF_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(ItfEn::Value1)
+        self.variant(ITF_EN_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(ItfEn::Value2)
+        self.variant(ITF_EN_A::VALUE2)
     }
 }
 #[doc = "Enable Autoscan Time Period Interrupt\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ItpEn {
+pub enum ITP_EN_A {
     #[doc = "0: Disable"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enable (valid only for case of hardware-enabled pad turn control)"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<ItpEn> for bool {
+impl From<ITP_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: ItpEn) -> Self {
+    fn from(variant: ITP_EN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ITP_EN` reader - Enable Autoscan Time Period Interrupt"]
-pub type ItpEnR = crate::BitReader<ItpEn>;
-impl ItpEnR {
+pub type ITP_EN_R = crate::BitReader<ITP_EN_A>;
+impl ITP_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ItpEn {
+    pub const fn variant(&self) -> ITP_EN_A {
         match self.bits {
-            false => ItpEn::Value1,
-            true => ItpEn::Value2,
+            false => ITP_EN_A::VALUE1,
+            true => ITP_EN_A::VALUE2,
         }
     }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ItpEn::Value1
+        *self == ITP_EN_A::VALUE1
     }
     #[doc = "Enable (valid only for case of hardware-enabled pad turn control)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ItpEn::Value2
+        *self == ITP_EN_A::VALUE2
     }
 }
 #[doc = "Field `ITP_EN` writer - Enable Autoscan Time Period Interrupt"]
-pub type ItpEnW<'a, REG> = crate::BitWriter<'a, REG, ItpEn>;
-impl<'a, REG> ItpEnW<'a, REG>
+pub type ITP_EN_W<'a, REG> = crate::BitWriter<'a, REG, ITP_EN_A>;
+impl<'a, REG> ITP_EN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(ItpEn::Value1)
+        self.variant(ITP_EN_A::VALUE1)
     }
     #[doc = "Enable (valid only for case of hardware-enabled pad turn control)"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(ItpEn::Value2)
+        self.variant(ITP_EN_A::VALUE2)
     }
 }
 #[doc = "Field `CLK_PS` reader - LEDTS-Counter Clock Pre-Scale Factor"]
-pub type ClkPsR = crate::FieldReader<u16>;
+pub type CLK_PS_R = crate::FieldReader<u16>;
 #[doc = "Field `CLK_PS` writer - LEDTS-Counter Clock Pre-Scale Factor"]
-pub type ClkPsW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+pub type CLK_PS_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0 - Touch-Sense Function Enable"]
     #[inline(always)]
-    pub fn ts_en(&self) -> TsEnR {
-        TsEnR::new((self.bits & 1) != 0)
+    pub fn ts_en(&self) -> TS_EN_R {
+        TS_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - LED Function Enable"]
     #[inline(always)]
-    pub fn ld_en(&self) -> LdEnR {
-        LdEnR::new(((self.bits >> 1) & 1) != 0)
+    pub fn ld_en(&self) -> LD_EN_R {
+        LD_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Clock Master Disable"]
     #[inline(always)]
-    pub fn cmtr(&self) -> CmtrR {
-        CmtrR::new(((self.bits >> 2) & 1) != 0)
+    pub fn cmtr(&self) -> CMTR_R {
+        CMTR_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable Autoscan Time Period Synchronization"]
     #[inline(always)]
-    pub fn ensync(&self) -> EnsyncR {
-        EnsyncR::new(((self.bits >> 3) & 1) != 0)
+    pub fn ensync(&self) -> ENSYNC_R {
+        ENSYNC_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 8 - Suspend Request Configuration"]
     #[inline(always)]
-    pub fn suscfg(&self) -> SuscfgR {
-        SuscfgR::new(((self.bits >> 8) & 1) != 0)
+    pub fn suscfg(&self) -> SUSCFG_R {
+        SUSCFG_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 9:11 - Mask Number of LSB Bits for Event Validation"]
     #[inline(always)]
-    pub fn maskval(&self) -> MaskvalR {
-        MaskvalR::new(((self.bits >> 9) & 7) as u8)
+    pub fn maskval(&self) -> MASKVAL_R {
+        MASKVAL_R::new(((self.bits >> 9) & 7) as u8)
     }
     #[doc = "Bit 12 - Enable (Extended) Time Frame Validation"]
     #[inline(always)]
-    pub fn fenval(&self) -> FenvalR {
-        FenvalR::new(((self.bits >> 12) & 1) != 0)
+    pub fn fenval(&self) -> FENVAL_R {
+        FENVAL_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Enable Time Slice Interrupt"]
     #[inline(always)]
-    pub fn its_en(&self) -> ItsEnR {
-        ItsEnR::new(((self.bits >> 13) & 1) != 0)
+    pub fn its_en(&self) -> ITS_EN_R {
+        ITS_EN_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Enable (Extended) Time Frame Interrupt"]
     #[inline(always)]
-    pub fn itf_en(&self) -> ItfEnR {
-        ItfEnR::new(((self.bits >> 14) & 1) != 0)
+    pub fn itf_en(&self) -> ITF_EN_R {
+        ITF_EN_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Enable Autoscan Time Period Interrupt"]
     #[inline(always)]
-    pub fn itp_en(&self) -> ItpEnR {
-        ItpEnR::new(((self.bits >> 15) & 1) != 0)
+    pub fn itp_en(&self) -> ITP_EN_R {
+        ITP_EN_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:31 - LEDTS-Counter Clock Pre-Scale Factor"]
     #[inline(always)]
-    pub fn clk_ps(&self) -> ClkPsR {
-        ClkPsR::new(((self.bits >> 16) & 0xffff) as u16)
+    pub fn clk_ps(&self) -> CLK_PS_R {
+        CLK_PS_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
     #[doc = "Bit 0 - Touch-Sense Function Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ts_en(&mut self) -> TsEnW<GlobctlSpec> {
-        TsEnW::new(self, 0)
+    pub fn ts_en(&mut self) -> TS_EN_W<GLOBCTL_SPEC> {
+        TS_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - LED Function Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ld_en(&mut self) -> LdEnW<GlobctlSpec> {
-        LdEnW::new(self, 1)
+    pub fn ld_en(&mut self) -> LD_EN_W<GLOBCTL_SPEC> {
+        LD_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clock Master Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmtr(&mut self) -> CmtrW<GlobctlSpec> {
-        CmtrW::new(self, 2)
+    pub fn cmtr(&mut self) -> CMTR_W<GLOBCTL_SPEC> {
+        CMTR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable Autoscan Time Period Synchronization"]
     #[inline(always)]
     #[must_use]
-    pub fn ensync(&mut self) -> EnsyncW<GlobctlSpec> {
-        EnsyncW::new(self, 3)
+    pub fn ensync(&mut self) -> ENSYNC_W<GLOBCTL_SPEC> {
+        ENSYNC_W::new(self, 3)
     }
     #[doc = "Bit 8 - Suspend Request Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn suscfg(&mut self) -> SuscfgW<GlobctlSpec> {
-        SuscfgW::new(self, 8)
+    pub fn suscfg(&mut self) -> SUSCFG_W<GLOBCTL_SPEC> {
+        SUSCFG_W::new(self, 8)
     }
     #[doc = "Bits 9:11 - Mask Number of LSB Bits for Event Validation"]
     #[inline(always)]
     #[must_use]
-    pub fn maskval(&mut self) -> MaskvalW<GlobctlSpec> {
-        MaskvalW::new(self, 9)
+    pub fn maskval(&mut self) -> MASKVAL_W<GLOBCTL_SPEC> {
+        MASKVAL_W::new(self, 9)
     }
     #[doc = "Bit 12 - Enable (Extended) Time Frame Validation"]
     #[inline(always)]
     #[must_use]
-    pub fn fenval(&mut self) -> FenvalW<GlobctlSpec> {
-        FenvalW::new(self, 12)
+    pub fn fenval(&mut self) -> FENVAL_W<GLOBCTL_SPEC> {
+        FENVAL_W::new(self, 12)
     }
     #[doc = "Bit 13 - Enable Time Slice Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn its_en(&mut self) -> ItsEnW<GlobctlSpec> {
-        ItsEnW::new(self, 13)
+    pub fn its_en(&mut self) -> ITS_EN_W<GLOBCTL_SPEC> {
+        ITS_EN_W::new(self, 13)
     }
     #[doc = "Bit 14 - Enable (Extended) Time Frame Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn itf_en(&mut self) -> ItfEnW<GlobctlSpec> {
-        ItfEnW::new(self, 14)
+    pub fn itf_en(&mut self) -> ITF_EN_W<GLOBCTL_SPEC> {
+        ITF_EN_W::new(self, 14)
     }
     #[doc = "Bit 15 - Enable Autoscan Time Period Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn itp_en(&mut self) -> ItpEnW<GlobctlSpec> {
-        ItpEnW::new(self, 15)
+    pub fn itp_en(&mut self) -> ITP_EN_W<GLOBCTL_SPEC> {
+        ITP_EN_W::new(self, 15)
     }
     #[doc = "Bits 16:31 - LEDTS-Counter Clock Pre-Scale Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_ps(&mut self) -> ClkPsW<GlobctlSpec> {
-        ClkPsW::new(self, 16)
+    pub fn clk_ps(&mut self) -> CLK_PS_W<GLOBCTL_SPEC> {
+        CLK_PS_W::new(self, 16)
     }
 }
 #[doc = "Global Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`globctl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`globctl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct GlobctlSpec;
-impl crate::RegisterSpec for GlobctlSpec {
+pub struct GLOBCTL_SPEC;
+impl crate::RegisterSpec for GLOBCTL_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`globctl::R`](R) reader structure"]
-impl crate::Readable for GlobctlSpec {}
+impl crate::Readable for GLOBCTL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`globctl::W`](W) writer structure"]
-impl crate::Writable for GlobctlSpec {
+impl crate::Writable for GLOBCTL_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GLOBCTL to value 0"]
-impl crate::Resettable for GlobctlSpec {
+impl crate::Resettable for GLOBCTL_SPEC {
     const RESET_VALUE: u32 = 0;
 }

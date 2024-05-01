@@ -1,232 +1,232 @@
 #[doc = "Register `SM_CONTROL` reader"]
-pub type R = crate::R<SmControlSpec>;
+pub type R = crate::R<SM_CONTROL_SPEC>;
 #[doc = "Operation Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum OpMode {
+pub enum OP_MODE_A {
     #[doc = "0: Buffered (3 buffer mode)"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "2: Mailbox (Single buffer mode)"]
-    Value3 = 2,
+    VALUE3 = 2,
 }
-impl From<OpMode> for u8 {
+impl From<OP_MODE_A> for u8 {
     #[inline(always)]
-    fn from(variant: OpMode) -> Self {
+    fn from(variant: OP_MODE_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for OpMode {
+impl crate::FieldSpec for OP_MODE_A {
     type Ux = u8;
 }
-impl crate::IsEnum for OpMode {}
+impl crate::IsEnum for OP_MODE_A {}
 #[doc = "Field `OP_MODE` reader - Operation Mode"]
-pub type OpModeR = crate::FieldReader<OpMode>;
-impl OpModeR {
+pub type OP_MODE_R = crate::FieldReader<OP_MODE_A>;
+impl OP_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<OpMode> {
+    pub const fn variant(&self) -> Option<OP_MODE_A> {
         match self.bits {
-            0 => Some(OpMode::Value1),
-            2 => Some(OpMode::Value3),
+            0 => Some(OP_MODE_A::VALUE1),
+            2 => Some(OP_MODE_A::VALUE3),
             _ => None,
         }
     }
     #[doc = "Buffered (3 buffer mode)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == OpMode::Value1
+        *self == OP_MODE_A::VALUE1
     }
     #[doc = "Mailbox (Single buffer mode)"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == OpMode::Value3
+        *self == OP_MODE_A::VALUE3
     }
 }
 #[doc = "Direction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Dir {
+pub enum DIR_A {
     #[doc = "0: Read: ECAT read access, PDI write access"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Write: ECAT write access, PDI read access"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Dir> for u8 {
+impl From<DIR_A> for u8 {
     #[inline(always)]
-    fn from(variant: Dir) -> Self {
+    fn from(variant: DIR_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Dir {
+impl crate::FieldSpec for DIR_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Dir {}
+impl crate::IsEnum for DIR_A {}
 #[doc = "Field `DIR` reader - Direction"]
-pub type DirR = crate::FieldReader<Dir>;
-impl DirR {
+pub type DIR_R = crate::FieldReader<DIR_A>;
+impl DIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Dir> {
+    pub const fn variant(&self) -> Option<DIR_A> {
         match self.bits {
-            0 => Some(Dir::Value1),
-            1 => Some(Dir::Value2),
+            0 => Some(DIR_A::VALUE1),
+            1 => Some(DIR_A::VALUE2),
             _ => None,
         }
     }
     #[doc = "Read: ECAT read access, PDI write access"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Dir::Value1
+        *self == DIR_A::VALUE1
     }
     #[doc = "Write: ECAT write access, PDI read access"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Dir::Value2
+        *self == DIR_A::VALUE2
     }
 }
 #[doc = "Interrupt in ECAT Event Request Register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IntEcat {
+pub enum INT_ECAT_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<IntEcat> for bool {
+impl From<INT_ECAT_A> for bool {
     #[inline(always)]
-    fn from(variant: IntEcat) -> Self {
+    fn from(variant: INT_ECAT_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `INT_ECAT` reader - Interrupt in ECAT Event Request Register"]
-pub type IntEcatR = crate::BitReader<IntEcat>;
-impl IntEcatR {
+pub type INT_ECAT_R = crate::BitReader<INT_ECAT_A>;
+impl INT_ECAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> IntEcat {
+    pub const fn variant(&self) -> INT_ECAT_A {
         match self.bits {
-            false => IntEcat::Value1,
-            true => IntEcat::Value2,
+            false => INT_ECAT_A::VALUE1,
+            true => INT_ECAT_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == IntEcat::Value1
+        *self == INT_ECAT_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == IntEcat::Value2
+        *self == INT_ECAT_A::VALUE2
     }
 }
 #[doc = "Interrupt in PDI Event Request Register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IntPdi {
+pub enum INT_PDI_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<IntPdi> for bool {
+impl From<INT_PDI_A> for bool {
     #[inline(always)]
-    fn from(variant: IntPdi) -> Self {
+    fn from(variant: INT_PDI_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `INT_PDI` reader - Interrupt in PDI Event Request Register"]
-pub type IntPdiR = crate::BitReader<IntPdi>;
-impl IntPdiR {
+pub type INT_PDI_R = crate::BitReader<INT_PDI_A>;
+impl INT_PDI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> IntPdi {
+    pub const fn variant(&self) -> INT_PDI_A {
         match self.bits {
-            false => IntPdi::Value1,
-            true => IntPdi::Value2,
+            false => INT_PDI_A::VALUE1,
+            true => INT_PDI_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == IntPdi::Value1
+        *self == INT_PDI_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == IntPdi::Value2
+        *self == INT_PDI_A::VALUE2
     }
 }
 #[doc = "Watchdog Trigger Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WdTrg {
+pub enum WD_TRG_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<WdTrg> for bool {
+impl From<WD_TRG_A> for bool {
     #[inline(always)]
-    fn from(variant: WdTrg) -> Self {
+    fn from(variant: WD_TRG_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WD_TRG` reader - Watchdog Trigger Enable"]
-pub type WdTrgR = crate::BitReader<WdTrg>;
-impl WdTrgR {
+pub type WD_TRG_R = crate::BitReader<WD_TRG_A>;
+impl WD_TRG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WdTrg {
+    pub const fn variant(&self) -> WD_TRG_A {
         match self.bits {
-            false => WdTrg::Value1,
-            true => WdTrg::Value2,
+            false => WD_TRG_A::VALUE1,
+            true => WD_TRG_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WdTrg::Value1
+        *self == WD_TRG_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WdTrg::Value2
+        *self == WD_TRG_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Operation Mode"]
     #[inline(always)]
-    pub fn op_mode(&self) -> OpModeR {
-        OpModeR::new(self.bits & 3)
+    pub fn op_mode(&self) -> OP_MODE_R {
+        OP_MODE_R::new(self.bits & 3)
     }
     #[doc = "Bits 2:3 - Direction"]
     #[inline(always)]
-    pub fn dir(&self) -> DirR {
-        DirR::new((self.bits >> 2) & 3)
+    pub fn dir(&self) -> DIR_R {
+        DIR_R::new((self.bits >> 2) & 3)
     }
     #[doc = "Bit 4 - Interrupt in ECAT Event Request Register"]
     #[inline(always)]
-    pub fn int_ecat(&self) -> IntEcatR {
-        IntEcatR::new(((self.bits >> 4) & 1) != 0)
+    pub fn int_ecat(&self) -> INT_ECAT_R {
+        INT_ECAT_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Interrupt in PDI Event Request Register"]
     #[inline(always)]
-    pub fn int_pdi(&self) -> IntPdiR {
-        IntPdiR::new(((self.bits >> 5) & 1) != 0)
+    pub fn int_pdi(&self) -> INT_PDI_R {
+        INT_PDI_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Watchdog Trigger Enable"]
     #[inline(always)]
-    pub fn wd_trg(&self) -> WdTrgR {
-        WdTrgR::new(((self.bits >> 6) & 1) != 0)
+    pub fn wd_trg(&self) -> WD_TRG_R {
+        WD_TRG_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
 #[doc = "Control Register SyncManager 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sm_control::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct SmControlSpec;
-impl crate::RegisterSpec for SmControlSpec {
+pub struct SM_CONTROL_SPEC;
+impl crate::RegisterSpec for SM_CONTROL_SPEC {
     type Ux = u8;
 }
 #[doc = "`read()` method returns [`sm_control::R`](R) reader structure"]
-impl crate::Readable for SmControlSpec {}
+impl crate::Readable for SM_CONTROL_SPEC {}
 #[doc = "`reset()` method sets SM_CONTROL to value 0"]
-impl crate::Resettable for SmControlSpec {
+impl crate::Resettable for SM_CONTROL_SPEC {
     const RESET_VALUE: u8 = 0;
 }
