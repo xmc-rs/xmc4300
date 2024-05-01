@@ -1,261 +1,261 @@
 #[doc = "Register `CCFG` reader"]
-pub type R = crate::R<CCFG_SPEC>;
+pub type R = crate::R<CcfgSpec>;
 #[doc = "SSC Protocol Available\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SSC_A {
+pub enum Ssc {
     #[doc = "0: The SSC protocol is not available."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The SSC protocol is available."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<SSC_A> for bool {
+impl From<Ssc> for bool {
     #[inline(always)]
-    fn from(variant: SSC_A) -> Self {
+    fn from(variant: Ssc) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SSC` reader - SSC Protocol Available"]
-pub type SSC_R = crate::BitReader<SSC_A>;
-impl SSC_R {
+pub type SscR = crate::BitReader<Ssc>;
+impl SscR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SSC_A {
+    pub const fn variant(&self) -> Ssc {
         match self.bits {
-            false => SSC_A::VALUE1,
-            true => SSC_A::VALUE2,
+            false => Ssc::Value1,
+            true => Ssc::Value2,
         }
     }
     #[doc = "The SSC protocol is not available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SSC_A::VALUE1
+        *self == Ssc::Value1
     }
     #[doc = "The SSC protocol is available."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SSC_A::VALUE2
+        *self == Ssc::Value2
     }
 }
 #[doc = "ASC Protocol Available\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ASC_A {
+pub enum Asc {
     #[doc = "0: The ASC protocol is not available."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The ASC protocol is available."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<ASC_A> for bool {
+impl From<Asc> for bool {
     #[inline(always)]
-    fn from(variant: ASC_A) -> Self {
+    fn from(variant: Asc) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ASC` reader - ASC Protocol Available"]
-pub type ASC_R = crate::BitReader<ASC_A>;
-impl ASC_R {
+pub type AscR = crate::BitReader<Asc>;
+impl AscR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ASC_A {
+    pub const fn variant(&self) -> Asc {
         match self.bits {
-            false => ASC_A::VALUE1,
-            true => ASC_A::VALUE2,
+            false => Asc::Value1,
+            true => Asc::Value2,
         }
     }
     #[doc = "The ASC protocol is not available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ASC_A::VALUE1
+        *self == Asc::Value1
     }
     #[doc = "The ASC protocol is available."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ASC_A::VALUE2
+        *self == Asc::Value2
     }
 }
 #[doc = "IIC Protocol Available\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IIC_A {
+pub enum Iic {
     #[doc = "0: The IIC protocol is not available."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The IIC protocol is available."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<IIC_A> for bool {
+impl From<Iic> for bool {
     #[inline(always)]
-    fn from(variant: IIC_A) -> Self {
+    fn from(variant: Iic) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `IIC` reader - IIC Protocol Available"]
-pub type IIC_R = crate::BitReader<IIC_A>;
-impl IIC_R {
+pub type IicR = crate::BitReader<Iic>;
+impl IicR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> IIC_A {
+    pub const fn variant(&self) -> Iic {
         match self.bits {
-            false => IIC_A::VALUE1,
-            true => IIC_A::VALUE2,
+            false => Iic::Value1,
+            true => Iic::Value2,
         }
     }
     #[doc = "The IIC protocol is not available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == IIC_A::VALUE1
+        *self == Iic::Value1
     }
     #[doc = "The IIC protocol is available."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == IIC_A::VALUE2
+        *self == Iic::Value2
     }
 }
 #[doc = "IIS Protocol Available\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IIS_A {
+pub enum Iis {
     #[doc = "0: The IIS protocol is not available."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: The IIS protocol is available."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<IIS_A> for bool {
+impl From<Iis> for bool {
     #[inline(always)]
-    fn from(variant: IIS_A) -> Self {
+    fn from(variant: Iis) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `IIS` reader - IIS Protocol Available"]
-pub type IIS_R = crate::BitReader<IIS_A>;
-impl IIS_R {
+pub type IisR = crate::BitReader<Iis>;
+impl IisR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> IIS_A {
+    pub const fn variant(&self) -> Iis {
         match self.bits {
-            false => IIS_A::VALUE1,
-            true => IIS_A::VALUE2,
+            false => Iis::Value1,
+            true => Iis::Value2,
         }
     }
     #[doc = "The IIS protocol is not available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == IIS_A::VALUE1
+        *self == Iis::Value1
     }
     #[doc = "The IIS protocol is available."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == IIS_A::VALUE2
+        *self == Iis::Value2
     }
 }
 #[doc = "Receive FIFO Buffer Available\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RB_A {
+pub enum Rb {
     #[doc = "0: A receive FIFO buffer is not available."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: A receive FIFO buffer is available."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<RB_A> for bool {
+impl From<Rb> for bool {
     #[inline(always)]
-    fn from(variant: RB_A) -> Self {
+    fn from(variant: Rb) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RB` reader - Receive FIFO Buffer Available"]
-pub type RB_R = crate::BitReader<RB_A>;
-impl RB_R {
+pub type RbR = crate::BitReader<Rb>;
+impl RbR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RB_A {
+    pub const fn variant(&self) -> Rb {
         match self.bits {
-            false => RB_A::VALUE1,
-            true => RB_A::VALUE2,
+            false => Rb::Value1,
+            true => Rb::Value2,
         }
     }
     #[doc = "A receive FIFO buffer is not available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RB_A::VALUE1
+        *self == Rb::Value1
     }
     #[doc = "A receive FIFO buffer is available."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RB_A::VALUE2
+        *self == Rb::Value2
     }
 }
 #[doc = "Transmit FIFO Buffer Available\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum TB_A {
+pub enum Tb {
     #[doc = "0: A transmit FIFO buffer is not available."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: A transmit FIFO buffer is available."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<TB_A> for bool {
+impl From<Tb> for bool {
     #[inline(always)]
-    fn from(variant: TB_A) -> Self {
+    fn from(variant: Tb) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TB` reader - Transmit FIFO Buffer Available"]
-pub type TB_R = crate::BitReader<TB_A>;
-impl TB_R {
+pub type TbR = crate::BitReader<Tb>;
+impl TbR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> TB_A {
+    pub const fn variant(&self) -> Tb {
         match self.bits {
-            false => TB_A::VALUE1,
-            true => TB_A::VALUE2,
+            false => Tb::Value1,
+            true => Tb::Value2,
         }
     }
     #[doc = "A transmit FIFO buffer is not available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TB_A::VALUE1
+        *self == Tb::Value1
     }
     #[doc = "A transmit FIFO buffer is available."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TB_A::VALUE2
+        *self == Tb::Value2
     }
 }
 impl R {
     #[doc = "Bit 0 - SSC Protocol Available"]
     #[inline(always)]
-    pub fn ssc(&self) -> SSC_R {
-        SSC_R::new((self.bits & 1) != 0)
+    pub fn ssc(&self) -> SscR {
+        SscR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - ASC Protocol Available"]
     #[inline(always)]
-    pub fn asc(&self) -> ASC_R {
-        ASC_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn asc(&self) -> AscR {
+        AscR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - IIC Protocol Available"]
     #[inline(always)]
-    pub fn iic(&self) -> IIC_R {
-        IIC_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn iic(&self) -> IicR {
+        IicR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - IIS Protocol Available"]
     #[inline(always)]
-    pub fn iis(&self) -> IIS_R {
-        IIS_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn iis(&self) -> IisR {
+        IisR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 6 - Receive FIFO Buffer Available"]
     #[inline(always)]
-    pub fn rb(&self) -> RB_R {
-        RB_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn rb(&self) -> RbR {
+        RbR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Transmit FIFO Buffer Available"]
     #[inline(always)]
-    pub fn tb(&self) -> TB_R {
-        TB_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn tb(&self) -> TbR {
+        TbR::new(((self.bits >> 7) & 1) != 0)
     }
 }
 #[doc = "Channel Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccfg::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CCFG_SPEC;
-impl crate::RegisterSpec for CCFG_SPEC {
+pub struct CcfgSpec;
+impl crate::RegisterSpec for CcfgSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`ccfg::R`](R) reader structure"]
-impl crate::Readable for CCFG_SPEC {}
+impl crate::Readable for CcfgSpec {}
 #[doc = "`reset()` method sets CCFG to value 0xcf"]
-impl crate::Resettable for CCFG_SPEC {
+impl crate::Resettable for CcfgSpec {
     const RESET_VALUE: u32 = 0xcf;
 }

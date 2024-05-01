@@ -1,833 +1,833 @@
 #[doc = "Register `LSTSRCREG` reader"]
-pub type R = crate::R<LSTSRCREG_SPEC>;
+pub type R = crate::R<LstsrcregSpec>;
 #[doc = "Register `LSTSRCREG` writer"]
-pub type W = crate::W<LSTSRCREG_SPEC>;
+pub type W = crate::W<LstsrcregSpec>;
 #[doc = "Source last request for channel 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH0_A {
+pub enum Ch0 {
     #[doc = "0: Not last transaction in current block"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Last transaction in current block"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CH0_A> for bool {
+impl From<Ch0> for bool {
     #[inline(always)]
-    fn from(variant: CH0_A) -> Self {
+    fn from(variant: Ch0) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH0` reader - Source last request for channel 0"]
-pub type CH0_R = crate::BitReader<CH0_A>;
-impl CH0_R {
+pub type Ch0R = crate::BitReader<Ch0>;
+impl Ch0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CH0_A {
+    pub const fn variant(&self) -> Ch0 {
         match self.bits {
-            false => CH0_A::VALUE1,
-            true => CH0_A::VALUE2,
+            false => Ch0::Value1,
+            true => Ch0::Value2,
         }
     }
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH0_A::VALUE1
+        *self == Ch0::Value1
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH0_A::VALUE2
+        *self == Ch0::Value2
     }
 }
 #[doc = "Field `CH0` writer - Source last request for channel 0"]
-pub type CH0_W<'a, REG> = crate::BitWriter<'a, REG, CH0_A>;
-impl<'a, REG> CH0_W<'a, REG>
+pub type Ch0W<'a, REG> = crate::BitWriter<'a, REG, Ch0>;
+impl<'a, REG> Ch0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CH0_A::VALUE1)
+        self.variant(Ch0::Value1)
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CH0_A::VALUE2)
+        self.variant(Ch0::Value2)
     }
 }
 #[doc = "Source last request for channel 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH1_A {
+pub enum Ch1 {
     #[doc = "0: Not last transaction in current block"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Last transaction in current block"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CH1_A> for bool {
+impl From<Ch1> for bool {
     #[inline(always)]
-    fn from(variant: CH1_A) -> Self {
+    fn from(variant: Ch1) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH1` reader - Source last request for channel 1"]
-pub type CH1_R = crate::BitReader<CH1_A>;
-impl CH1_R {
+pub type Ch1R = crate::BitReader<Ch1>;
+impl Ch1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CH1_A {
+    pub const fn variant(&self) -> Ch1 {
         match self.bits {
-            false => CH1_A::VALUE1,
-            true => CH1_A::VALUE2,
+            false => Ch1::Value1,
+            true => Ch1::Value2,
         }
     }
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH1_A::VALUE1
+        *self == Ch1::Value1
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH1_A::VALUE2
+        *self == Ch1::Value2
     }
 }
 #[doc = "Field `CH1` writer - Source last request for channel 1"]
-pub type CH1_W<'a, REG> = crate::BitWriter<'a, REG, CH1_A>;
-impl<'a, REG> CH1_W<'a, REG>
+pub type Ch1W<'a, REG> = crate::BitWriter<'a, REG, Ch1>;
+impl<'a, REG> Ch1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CH1_A::VALUE1)
+        self.variant(Ch1::Value1)
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CH1_A::VALUE2)
+        self.variant(Ch1::Value2)
     }
 }
 #[doc = "Source last request for channel 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH2_A {
+pub enum Ch2 {
     #[doc = "0: Not last transaction in current block"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Last transaction in current block"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CH2_A> for bool {
+impl From<Ch2> for bool {
     #[inline(always)]
-    fn from(variant: CH2_A) -> Self {
+    fn from(variant: Ch2) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH2` reader - Source last request for channel 2"]
-pub type CH2_R = crate::BitReader<CH2_A>;
-impl CH2_R {
+pub type Ch2R = crate::BitReader<Ch2>;
+impl Ch2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CH2_A {
+    pub const fn variant(&self) -> Ch2 {
         match self.bits {
-            false => CH2_A::VALUE1,
-            true => CH2_A::VALUE2,
+            false => Ch2::Value1,
+            true => Ch2::Value2,
         }
     }
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH2_A::VALUE1
+        *self == Ch2::Value1
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH2_A::VALUE2
+        *self == Ch2::Value2
     }
 }
 #[doc = "Field `CH2` writer - Source last request for channel 2"]
-pub type CH2_W<'a, REG> = crate::BitWriter<'a, REG, CH2_A>;
-impl<'a, REG> CH2_W<'a, REG>
+pub type Ch2W<'a, REG> = crate::BitWriter<'a, REG, Ch2>;
+impl<'a, REG> Ch2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CH2_A::VALUE1)
+        self.variant(Ch2::Value1)
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CH2_A::VALUE2)
+        self.variant(Ch2::Value2)
     }
 }
 #[doc = "Source last request for channel 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH3_A {
+pub enum Ch3 {
     #[doc = "0: Not last transaction in current block"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Last transaction in current block"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CH3_A> for bool {
+impl From<Ch3> for bool {
     #[inline(always)]
-    fn from(variant: CH3_A) -> Self {
+    fn from(variant: Ch3) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH3` reader - Source last request for channel 3"]
-pub type CH3_R = crate::BitReader<CH3_A>;
-impl CH3_R {
+pub type Ch3R = crate::BitReader<Ch3>;
+impl Ch3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CH3_A {
+    pub const fn variant(&self) -> Ch3 {
         match self.bits {
-            false => CH3_A::VALUE1,
-            true => CH3_A::VALUE2,
+            false => Ch3::Value1,
+            true => Ch3::Value2,
         }
     }
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH3_A::VALUE1
+        *self == Ch3::Value1
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH3_A::VALUE2
+        *self == Ch3::Value2
     }
 }
 #[doc = "Field `CH3` writer - Source last request for channel 3"]
-pub type CH3_W<'a, REG> = crate::BitWriter<'a, REG, CH3_A>;
-impl<'a, REG> CH3_W<'a, REG>
+pub type Ch3W<'a, REG> = crate::BitWriter<'a, REG, Ch3>;
+impl<'a, REG> Ch3W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CH3_A::VALUE1)
+        self.variant(Ch3::Value1)
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CH3_A::VALUE2)
+        self.variant(Ch3::Value2)
     }
 }
 #[doc = "Source last request for channel 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH4_A {
+pub enum Ch4 {
     #[doc = "0: Not last transaction in current block"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Last transaction in current block"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CH4_A> for bool {
+impl From<Ch4> for bool {
     #[inline(always)]
-    fn from(variant: CH4_A) -> Self {
+    fn from(variant: Ch4) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH4` reader - Source last request for channel 4"]
-pub type CH4_R = crate::BitReader<CH4_A>;
-impl CH4_R {
+pub type Ch4R = crate::BitReader<Ch4>;
+impl Ch4R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CH4_A {
+    pub const fn variant(&self) -> Ch4 {
         match self.bits {
-            false => CH4_A::VALUE1,
-            true => CH4_A::VALUE2,
+            false => Ch4::Value1,
+            true => Ch4::Value2,
         }
     }
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH4_A::VALUE1
+        *self == Ch4::Value1
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH4_A::VALUE2
+        *self == Ch4::Value2
     }
 }
 #[doc = "Field `CH4` writer - Source last request for channel 4"]
-pub type CH4_W<'a, REG> = crate::BitWriter<'a, REG, CH4_A>;
-impl<'a, REG> CH4_W<'a, REG>
+pub type Ch4W<'a, REG> = crate::BitWriter<'a, REG, Ch4>;
+impl<'a, REG> Ch4W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CH4_A::VALUE1)
+        self.variant(Ch4::Value1)
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CH4_A::VALUE2)
+        self.variant(Ch4::Value2)
     }
 }
 #[doc = "Source last request for channel 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH5_A {
+pub enum Ch5 {
     #[doc = "0: Not last transaction in current block"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Last transaction in current block"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CH5_A> for bool {
+impl From<Ch5> for bool {
     #[inline(always)]
-    fn from(variant: CH5_A) -> Self {
+    fn from(variant: Ch5) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH5` reader - Source last request for channel 5"]
-pub type CH5_R = crate::BitReader<CH5_A>;
-impl CH5_R {
+pub type Ch5R = crate::BitReader<Ch5>;
+impl Ch5R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CH5_A {
+    pub const fn variant(&self) -> Ch5 {
         match self.bits {
-            false => CH5_A::VALUE1,
-            true => CH5_A::VALUE2,
+            false => Ch5::Value1,
+            true => Ch5::Value2,
         }
     }
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH5_A::VALUE1
+        *self == Ch5::Value1
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH5_A::VALUE2
+        *self == Ch5::Value2
     }
 }
 #[doc = "Field `CH5` writer - Source last request for channel 5"]
-pub type CH5_W<'a, REG> = crate::BitWriter<'a, REG, CH5_A>;
-impl<'a, REG> CH5_W<'a, REG>
+pub type Ch5W<'a, REG> = crate::BitWriter<'a, REG, Ch5>;
+impl<'a, REG> Ch5W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CH5_A::VALUE1)
+        self.variant(Ch5::Value1)
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CH5_A::VALUE2)
+        self.variant(Ch5::Value2)
     }
 }
 #[doc = "Source last request for channel 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH6_A {
+pub enum Ch6 {
     #[doc = "0: Not last transaction in current block"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Last transaction in current block"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CH6_A> for bool {
+impl From<Ch6> for bool {
     #[inline(always)]
-    fn from(variant: CH6_A) -> Self {
+    fn from(variant: Ch6) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH6` reader - Source last request for channel 6"]
-pub type CH6_R = crate::BitReader<CH6_A>;
-impl CH6_R {
+pub type Ch6R = crate::BitReader<Ch6>;
+impl Ch6R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CH6_A {
+    pub const fn variant(&self) -> Ch6 {
         match self.bits {
-            false => CH6_A::VALUE1,
-            true => CH6_A::VALUE2,
+            false => Ch6::Value1,
+            true => Ch6::Value2,
         }
     }
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH6_A::VALUE1
+        *self == Ch6::Value1
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH6_A::VALUE2
+        *self == Ch6::Value2
     }
 }
 #[doc = "Field `CH6` writer - Source last request for channel 6"]
-pub type CH6_W<'a, REG> = crate::BitWriter<'a, REG, CH6_A>;
-impl<'a, REG> CH6_W<'a, REG>
+pub type Ch6W<'a, REG> = crate::BitWriter<'a, REG, Ch6>;
+impl<'a, REG> Ch6W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CH6_A::VALUE1)
+        self.variant(Ch6::Value1)
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CH6_A::VALUE2)
+        self.variant(Ch6::Value2)
     }
 }
 #[doc = "Source last request for channel 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH7_A {
+pub enum Ch7 {
     #[doc = "0: Not last transaction in current block"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Last transaction in current block"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CH7_A> for bool {
+impl From<Ch7> for bool {
     #[inline(always)]
-    fn from(variant: CH7_A) -> Self {
+    fn from(variant: Ch7) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH7` reader - Source last request for channel 7"]
-pub type CH7_R = crate::BitReader<CH7_A>;
-impl CH7_R {
+pub type Ch7R = crate::BitReader<Ch7>;
+impl Ch7R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CH7_A {
+    pub const fn variant(&self) -> Ch7 {
         match self.bits {
-            false => CH7_A::VALUE1,
-            true => CH7_A::VALUE2,
+            false => Ch7::Value1,
+            true => Ch7::Value2,
         }
     }
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH7_A::VALUE1
+        *self == Ch7::Value1
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH7_A::VALUE2
+        *self == Ch7::Value2
     }
 }
 #[doc = "Field `CH7` writer - Source last request for channel 7"]
-pub type CH7_W<'a, REG> = crate::BitWriter<'a, REG, CH7_A>;
-impl<'a, REG> CH7_W<'a, REG>
+pub type Ch7W<'a, REG> = crate::BitWriter<'a, REG, Ch7>;
+impl<'a, REG> Ch7W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CH7_A::VALUE1)
+        self.variant(Ch7::Value1)
     }
     #[doc = "Last transaction in current block"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CH7_A::VALUE2)
+        self.variant(Ch7::Value2)
     }
 }
 #[doc = "Source last transaction request write enable for channel 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WE_CH0_A {
+pub enum WeCh0 {
     #[doc = "0: write disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WE_CH0_A> for bool {
+impl From<WeCh0> for bool {
     #[inline(always)]
-    fn from(variant: WE_CH0_A) -> Self {
+    fn from(variant: WeCh0) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WE_CH0` writer - Source last transaction request write enable for channel 0"]
-pub type WE_CH0_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH0_A>;
-impl<'a, REG> WE_CH0_W<'a, REG>
+pub type WeCh0W<'a, REG> = crate::BitWriter<'a, REG, WeCh0>;
+impl<'a, REG> WeCh0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "write disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH0_A::VALUE1)
+        self.variant(WeCh0::Value1)
     }
     #[doc = "write enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH0_A::VALUE2)
+        self.variant(WeCh0::Value2)
     }
 }
 #[doc = "Source last transaction request write enable for channel 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WE_CH1_A {
+pub enum WeCh1 {
     #[doc = "0: write disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WE_CH1_A> for bool {
+impl From<WeCh1> for bool {
     #[inline(always)]
-    fn from(variant: WE_CH1_A) -> Self {
+    fn from(variant: WeCh1) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WE_CH1` writer - Source last transaction request write enable for channel 1"]
-pub type WE_CH1_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH1_A>;
-impl<'a, REG> WE_CH1_W<'a, REG>
+pub type WeCh1W<'a, REG> = crate::BitWriter<'a, REG, WeCh1>;
+impl<'a, REG> WeCh1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "write disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH1_A::VALUE1)
+        self.variant(WeCh1::Value1)
     }
     #[doc = "write enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH1_A::VALUE2)
+        self.variant(WeCh1::Value2)
     }
 }
 #[doc = "Source last transaction request write enable for channel 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WE_CH2_A {
+pub enum WeCh2 {
     #[doc = "0: write disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WE_CH2_A> for bool {
+impl From<WeCh2> for bool {
     #[inline(always)]
-    fn from(variant: WE_CH2_A) -> Self {
+    fn from(variant: WeCh2) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WE_CH2` writer - Source last transaction request write enable for channel 2"]
-pub type WE_CH2_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH2_A>;
-impl<'a, REG> WE_CH2_W<'a, REG>
+pub type WeCh2W<'a, REG> = crate::BitWriter<'a, REG, WeCh2>;
+impl<'a, REG> WeCh2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "write disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH2_A::VALUE1)
+        self.variant(WeCh2::Value1)
     }
     #[doc = "write enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH2_A::VALUE2)
+        self.variant(WeCh2::Value2)
     }
 }
 #[doc = "Source last transaction request write enable for channel 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WE_CH3_A {
+pub enum WeCh3 {
     #[doc = "0: write disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WE_CH3_A> for bool {
+impl From<WeCh3> for bool {
     #[inline(always)]
-    fn from(variant: WE_CH3_A) -> Self {
+    fn from(variant: WeCh3) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WE_CH3` writer - Source last transaction request write enable for channel 3"]
-pub type WE_CH3_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH3_A>;
-impl<'a, REG> WE_CH3_W<'a, REG>
+pub type WeCh3W<'a, REG> = crate::BitWriter<'a, REG, WeCh3>;
+impl<'a, REG> WeCh3W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "write disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH3_A::VALUE1)
+        self.variant(WeCh3::Value1)
     }
     #[doc = "write enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH3_A::VALUE2)
+        self.variant(WeCh3::Value2)
     }
 }
 #[doc = "Source last transaction request write enable for channel 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WE_CH4_A {
+pub enum WeCh4 {
     #[doc = "0: write disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WE_CH4_A> for bool {
+impl From<WeCh4> for bool {
     #[inline(always)]
-    fn from(variant: WE_CH4_A) -> Self {
+    fn from(variant: WeCh4) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WE_CH4` writer - Source last transaction request write enable for channel 4"]
-pub type WE_CH4_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH4_A>;
-impl<'a, REG> WE_CH4_W<'a, REG>
+pub type WeCh4W<'a, REG> = crate::BitWriter<'a, REG, WeCh4>;
+impl<'a, REG> WeCh4W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "write disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH4_A::VALUE1)
+        self.variant(WeCh4::Value1)
     }
     #[doc = "write enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH4_A::VALUE2)
+        self.variant(WeCh4::Value2)
     }
 }
 #[doc = "Source last transaction request write enable for channel 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WE_CH5_A {
+pub enum WeCh5 {
     #[doc = "0: write disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WE_CH5_A> for bool {
+impl From<WeCh5> for bool {
     #[inline(always)]
-    fn from(variant: WE_CH5_A) -> Self {
+    fn from(variant: WeCh5) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WE_CH5` writer - Source last transaction request write enable for channel 5"]
-pub type WE_CH5_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH5_A>;
-impl<'a, REG> WE_CH5_W<'a, REG>
+pub type WeCh5W<'a, REG> = crate::BitWriter<'a, REG, WeCh5>;
+impl<'a, REG> WeCh5W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "write disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH5_A::VALUE1)
+        self.variant(WeCh5::Value1)
     }
     #[doc = "write enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH5_A::VALUE2)
+        self.variant(WeCh5::Value2)
     }
 }
 #[doc = "Source last transaction request write enable for channel 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WE_CH6_A {
+pub enum WeCh6 {
     #[doc = "0: write disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WE_CH6_A> for bool {
+impl From<WeCh6> for bool {
     #[inline(always)]
-    fn from(variant: WE_CH6_A) -> Self {
+    fn from(variant: WeCh6) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WE_CH6` writer - Source last transaction request write enable for channel 6"]
-pub type WE_CH6_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH6_A>;
-impl<'a, REG> WE_CH6_W<'a, REG>
+pub type WeCh6W<'a, REG> = crate::BitWriter<'a, REG, WeCh6>;
+impl<'a, REG> WeCh6W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "write disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH6_A::VALUE1)
+        self.variant(WeCh6::Value1)
     }
     #[doc = "write enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH6_A::VALUE2)
+        self.variant(WeCh6::Value2)
     }
 }
 #[doc = "Source last transaction request write enable for channel 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WE_CH7_A {
+pub enum WeCh7 {
     #[doc = "0: write disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WE_CH7_A> for bool {
+impl From<WeCh7> for bool {
     #[inline(always)]
-    fn from(variant: WE_CH7_A) -> Self {
+    fn from(variant: WeCh7) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WE_CH7` writer - Source last transaction request write enable for channel 7"]
-pub type WE_CH7_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH7_A>;
-impl<'a, REG> WE_CH7_W<'a, REG>
+pub type WeCh7W<'a, REG> = crate::BitWriter<'a, REG, WeCh7>;
+impl<'a, REG> WeCh7W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "write disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH7_A::VALUE1)
+        self.variant(WeCh7::Value1)
     }
     #[doc = "write enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH7_A::VALUE2)
+        self.variant(WeCh7::Value2)
     }
 }
 impl R {
     #[doc = "Bit 0 - Source last request for channel 0"]
     #[inline(always)]
-    pub fn ch0(&self) -> CH0_R {
-        CH0_R::new((self.bits & 1) != 0)
+    pub fn ch0(&self) -> Ch0R {
+        Ch0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Source last request for channel 1"]
     #[inline(always)]
-    pub fn ch1(&self) -> CH1_R {
-        CH1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn ch1(&self) -> Ch1R {
+        Ch1R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Source last request for channel 2"]
     #[inline(always)]
-    pub fn ch2(&self) -> CH2_R {
-        CH2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn ch2(&self) -> Ch2R {
+        Ch2R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Source last request for channel 3"]
     #[inline(always)]
-    pub fn ch3(&self) -> CH3_R {
-        CH3_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn ch3(&self) -> Ch3R {
+        Ch3R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Source last request for channel 4"]
     #[inline(always)]
-    pub fn ch4(&self) -> CH4_R {
-        CH4_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn ch4(&self) -> Ch4R {
+        Ch4R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Source last request for channel 5"]
     #[inline(always)]
-    pub fn ch5(&self) -> CH5_R {
-        CH5_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn ch5(&self) -> Ch5R {
+        Ch5R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Source last request for channel 6"]
     #[inline(always)]
-    pub fn ch6(&self) -> CH6_R {
-        CH6_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn ch6(&self) -> Ch6R {
+        Ch6R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Source last request for channel 7"]
     #[inline(always)]
-    pub fn ch7(&self) -> CH7_R {
-        CH7_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn ch7(&self) -> Ch7R {
+        Ch7R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Source last request for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0(&mut self) -> CH0_W<LSTSRCREG_SPEC> {
-        CH0_W::new(self, 0)
+    pub fn ch0(&mut self) -> Ch0W<LstsrcregSpec> {
+        Ch0W::new(self, 0)
     }
     #[doc = "Bit 1 - Source last request for channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1(&mut self) -> CH1_W<LSTSRCREG_SPEC> {
-        CH1_W::new(self, 1)
+    pub fn ch1(&mut self) -> Ch1W<LstsrcregSpec> {
+        Ch1W::new(self, 1)
     }
     #[doc = "Bit 2 - Source last request for channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn ch2(&mut self) -> CH2_W<LSTSRCREG_SPEC> {
-        CH2_W::new(self, 2)
+    pub fn ch2(&mut self) -> Ch2W<LstsrcregSpec> {
+        Ch2W::new(self, 2)
     }
     #[doc = "Bit 3 - Source last request for channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ch3(&mut self) -> CH3_W<LSTSRCREG_SPEC> {
-        CH3_W::new(self, 3)
+    pub fn ch3(&mut self) -> Ch3W<LstsrcregSpec> {
+        Ch3W::new(self, 3)
     }
     #[doc = "Bit 4 - Source last request for channel 4"]
     #[inline(always)]
     #[must_use]
-    pub fn ch4(&mut self) -> CH4_W<LSTSRCREG_SPEC> {
-        CH4_W::new(self, 4)
+    pub fn ch4(&mut self) -> Ch4W<LstsrcregSpec> {
+        Ch4W::new(self, 4)
     }
     #[doc = "Bit 5 - Source last request for channel 5"]
     #[inline(always)]
     #[must_use]
-    pub fn ch5(&mut self) -> CH5_W<LSTSRCREG_SPEC> {
-        CH5_W::new(self, 5)
+    pub fn ch5(&mut self) -> Ch5W<LstsrcregSpec> {
+        Ch5W::new(self, 5)
     }
     #[doc = "Bit 6 - Source last request for channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn ch6(&mut self) -> CH6_W<LSTSRCREG_SPEC> {
-        CH6_W::new(self, 6)
+    pub fn ch6(&mut self) -> Ch6W<LstsrcregSpec> {
+        Ch6W::new(self, 6)
     }
     #[doc = "Bit 7 - Source last request for channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn ch7(&mut self) -> CH7_W<LSTSRCREG_SPEC> {
-        CH7_W::new(self, 7)
+    pub fn ch7(&mut self) -> Ch7W<LstsrcregSpec> {
+        Ch7W::new(self, 7)
     }
     #[doc = "Bit 8 - Source last transaction request write enable for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch0(&mut self) -> WE_CH0_W<LSTSRCREG_SPEC> {
-        WE_CH0_W::new(self, 8)
+    pub fn we_ch0(&mut self) -> WeCh0W<LstsrcregSpec> {
+        WeCh0W::new(self, 8)
     }
     #[doc = "Bit 9 - Source last transaction request write enable for channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch1(&mut self) -> WE_CH1_W<LSTSRCREG_SPEC> {
-        WE_CH1_W::new(self, 9)
+    pub fn we_ch1(&mut self) -> WeCh1W<LstsrcregSpec> {
+        WeCh1W::new(self, 9)
     }
     #[doc = "Bit 10 - Source last transaction request write enable for channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch2(&mut self) -> WE_CH2_W<LSTSRCREG_SPEC> {
-        WE_CH2_W::new(self, 10)
+    pub fn we_ch2(&mut self) -> WeCh2W<LstsrcregSpec> {
+        WeCh2W::new(self, 10)
     }
     #[doc = "Bit 11 - Source last transaction request write enable for channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch3(&mut self) -> WE_CH3_W<LSTSRCREG_SPEC> {
-        WE_CH3_W::new(self, 11)
+    pub fn we_ch3(&mut self) -> WeCh3W<LstsrcregSpec> {
+        WeCh3W::new(self, 11)
     }
     #[doc = "Bit 12 - Source last transaction request write enable for channel 4"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch4(&mut self) -> WE_CH4_W<LSTSRCREG_SPEC> {
-        WE_CH4_W::new(self, 12)
+    pub fn we_ch4(&mut self) -> WeCh4W<LstsrcregSpec> {
+        WeCh4W::new(self, 12)
     }
     #[doc = "Bit 13 - Source last transaction request write enable for channel 5"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch5(&mut self) -> WE_CH5_W<LSTSRCREG_SPEC> {
-        WE_CH5_W::new(self, 13)
+    pub fn we_ch5(&mut self) -> WeCh5W<LstsrcregSpec> {
+        WeCh5W::new(self, 13)
     }
     #[doc = "Bit 14 - Source last transaction request write enable for channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch6(&mut self) -> WE_CH6_W<LSTSRCREG_SPEC> {
-        WE_CH6_W::new(self, 14)
+    pub fn we_ch6(&mut self) -> WeCh6W<LstsrcregSpec> {
+        WeCh6W::new(self, 14)
     }
     #[doc = "Bit 15 - Source last transaction request write enable for channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch7(&mut self) -> WE_CH7_W<LSTSRCREG_SPEC> {
-        WE_CH7_W::new(self, 15)
+    pub fn we_ch7(&mut self) -> WeCh7W<LstsrcregSpec> {
+        WeCh7W::new(self, 15)
     }
 }
 #[doc = "Last Source Transaction Request Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lstsrcreg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lstsrcreg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct LSTSRCREG_SPEC;
-impl crate::RegisterSpec for LSTSRCREG_SPEC {
+pub struct LstsrcregSpec;
+impl crate::RegisterSpec for LstsrcregSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`lstsrcreg::R`](R) reader structure"]
-impl crate::Readable for LSTSRCREG_SPEC {}
+impl crate::Readable for LstsrcregSpec {}
 #[doc = "`write(|w| ..)` method takes [`lstsrcreg::W`](W) writer structure"]
-impl crate::Writable for LSTSRCREG_SPEC {
+impl crate::Writable for LstsrcregSpec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets LSTSRCREG to value 0"]
-impl crate::Resettable for LSTSRCREG_SPEC {
+impl crate::Resettable for LstsrcregSpec {
     const RESET_VALUE: u32 = 0;
 }

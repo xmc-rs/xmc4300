@@ -1,801 +1,801 @@
 #[doc = "Register `FSR` reader"]
-pub type R = crate::R<FSR_SPEC>;
+pub type R = crate::R<FsrSpec>;
 #[doc = "Program Flash Busy\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PBUSY_A {
+pub enum Pbusy {
     #[doc = "0: PFLASH ready, not busy; PFLASH in read mode."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: PFLASH busy; PFLASH not in read mode."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<PBUSY_A> for bool {
+impl From<Pbusy> for bool {
     #[inline(always)]
-    fn from(variant: PBUSY_A) -> Self {
+    fn from(variant: Pbusy) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PBUSY` reader - Program Flash Busy"]
-pub type PBUSY_R = crate::BitReader<PBUSY_A>;
-impl PBUSY_R {
+pub type PbusyR = crate::BitReader<Pbusy>;
+impl PbusyR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PBUSY_A {
+    pub const fn variant(&self) -> Pbusy {
         match self.bits {
-            false => PBUSY_A::VALUE1,
-            true => PBUSY_A::VALUE2,
+            false => Pbusy::Value1,
+            true => Pbusy::Value2,
         }
     }
     #[doc = "PFLASH ready, not busy; PFLASH in read mode."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PBUSY_A::VALUE1
+        *self == Pbusy::Value1
     }
     #[doc = "PFLASH busy; PFLASH not in read mode."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PBUSY_A::VALUE2
+        *self == Pbusy::Value2
     }
 }
 #[doc = "Field `FABUSY` reader - Flash Array Busy"]
-pub type FABUSY_R = crate::BitReader;
+pub type FabusyR = crate::BitReader;
 #[doc = "Programming State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PROG_A {
+pub enum Prog {
     #[doc = "0: There is no program operation requested or in progress or just finished."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Programming operation (write page) requested (from FIM) or in action or finished."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<PROG_A> for bool {
+impl From<Prog> for bool {
     #[inline(always)]
-    fn from(variant: PROG_A) -> Self {
+    fn from(variant: Prog) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PROG` reader - Programming State"]
-pub type PROG_R = crate::BitReader<PROG_A>;
-impl PROG_R {
+pub type ProgR = crate::BitReader<Prog>;
+impl ProgR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PROG_A {
+    pub const fn variant(&self) -> Prog {
         match self.bits {
-            false => PROG_A::VALUE1,
-            true => PROG_A::VALUE2,
+            false => Prog::Value1,
+            true => Prog::Value2,
         }
     }
     #[doc = "There is no program operation requested or in progress or just finished."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PROG_A::VALUE1
+        *self == Prog::Value1
     }
     #[doc = "Programming operation (write page) requested (from FIM) or in action or finished."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PROG_A::VALUE2
+        *self == Prog::Value2
     }
 }
 #[doc = "Erase State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ERASE_A {
+pub enum Erase {
     #[doc = "0: There is no erase operation requested or in progress or just finished"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Erase operation requested (from FIM) or in action or finished."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<ERASE_A> for bool {
+impl From<Erase> for bool {
     #[inline(always)]
-    fn from(variant: ERASE_A) -> Self {
+    fn from(variant: Erase) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ERASE` reader - Erase State"]
-pub type ERASE_R = crate::BitReader<ERASE_A>;
-impl ERASE_R {
+pub type EraseR = crate::BitReader<Erase>;
+impl EraseR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ERASE_A {
+    pub const fn variant(&self) -> Erase {
         match self.bits {
-            false => ERASE_A::VALUE1,
-            true => ERASE_A::VALUE2,
+            false => Erase::Value1,
+            true => Erase::Value2,
         }
     }
     #[doc = "There is no erase operation requested or in progress or just finished"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ERASE_A::VALUE1
+        *self == Erase::Value1
     }
     #[doc = "Erase operation requested (from FIM) or in action or finished."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ERASE_A::VALUE2
+        *self == Erase::Value2
     }
 }
 #[doc = "Program Flash in Page Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PFPAGE_A {
+pub enum Pfpage {
     #[doc = "0: Program Flash not in page mode"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Program Flash in page mode; assembly buffer of PFLASH (256 byte) is in use (being filled up)"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<PFPAGE_A> for bool {
+impl From<Pfpage> for bool {
     #[inline(always)]
-    fn from(variant: PFPAGE_A) -> Self {
+    fn from(variant: Pfpage) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PFPAGE` reader - Program Flash in Page Mode"]
-pub type PFPAGE_R = crate::BitReader<PFPAGE_A>;
-impl PFPAGE_R {
+pub type PfpageR = crate::BitReader<Pfpage>;
+impl PfpageR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PFPAGE_A {
+    pub const fn variant(&self) -> Pfpage {
         match self.bits {
-            false => PFPAGE_A::VALUE1,
-            true => PFPAGE_A::VALUE2,
+            false => Pfpage::Value1,
+            true => Pfpage::Value2,
         }
     }
     #[doc = "Program Flash not in page mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PFPAGE_A::VALUE1
+        *self == Pfpage::Value1
     }
     #[doc = "Program Flash in page mode; assembly buffer of PFLASH (256 byte) is in use (being filled up)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PFPAGE_A::VALUE2
+        *self == Pfpage::Value2
     }
 }
 #[doc = "Program Flash Operation Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PFOPER_A {
+pub enum Pfoper {
     #[doc = "0: No operation error reported by Program Flash"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Flash array operation aborted, because of a Flash array failure, e.g. an ECC error in microcode."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<PFOPER_A> for bool {
+impl From<Pfoper> for bool {
     #[inline(always)]
-    fn from(variant: PFOPER_A) -> Self {
+    fn from(variant: Pfoper) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PFOPER` reader - Program Flash Operation Error"]
-pub type PFOPER_R = crate::BitReader<PFOPER_A>;
-impl PFOPER_R {
+pub type PfoperR = crate::BitReader<Pfoper>;
+impl PfoperR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PFOPER_A {
+    pub const fn variant(&self) -> Pfoper {
         match self.bits {
-            false => PFOPER_A::VALUE1,
-            true => PFOPER_A::VALUE2,
+            false => Pfoper::Value1,
+            true => Pfoper::Value2,
         }
     }
     #[doc = "No operation error reported by Program Flash"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PFOPER_A::VALUE1
+        *self == Pfoper::Value1
     }
     #[doc = "Flash array operation aborted, because of a Flash array failure, e.g. an ECC error in microcode."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PFOPER_A::VALUE2
+        *self == Pfoper::Value2
     }
 }
 #[doc = "Command Sequence Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SQER_A {
+pub enum Sqer {
     #[doc = "0: No sequence error"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Command state machine operation unsuccessful because of improper address or command sequence."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<SQER_A> for bool {
+impl From<Sqer> for bool {
     #[inline(always)]
-    fn from(variant: SQER_A) -> Self {
+    fn from(variant: Sqer) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SQER` reader - Command Sequence Error"]
-pub type SQER_R = crate::BitReader<SQER_A>;
-impl SQER_R {
+pub type SqerR = crate::BitReader<Sqer>;
+impl SqerR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SQER_A {
+    pub const fn variant(&self) -> Sqer {
         match self.bits {
-            false => SQER_A::VALUE1,
-            true => SQER_A::VALUE2,
+            false => Sqer::Value1,
+            true => Sqer::Value2,
         }
     }
     #[doc = "No sequence error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SQER_A::VALUE1
+        *self == Sqer::Value1
     }
     #[doc = "Command state machine operation unsuccessful because of improper address or command sequence."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SQER_A::VALUE2
+        *self == Sqer::Value2
     }
 }
 #[doc = "Protection Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PROER_A {
+pub enum Proer {
     #[doc = "0: No protection error"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Protection error."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<PROER_A> for bool {
+impl From<Proer> for bool {
     #[inline(always)]
-    fn from(variant: PROER_A) -> Self {
+    fn from(variant: Proer) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PROER` reader - Protection Error"]
-pub type PROER_R = crate::BitReader<PROER_A>;
-impl PROER_R {
+pub type ProerR = crate::BitReader<Proer>;
+impl ProerR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PROER_A {
+    pub const fn variant(&self) -> Proer {
         match self.bits {
-            false => PROER_A::VALUE1,
-            true => PROER_A::VALUE2,
+            false => Proer::Value1,
+            true => Proer::Value2,
         }
     }
     #[doc = "No protection error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PROER_A::VALUE1
+        *self == Proer::Value1
     }
     #[doc = "Protection error."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PROER_A::VALUE2
+        *self == Proer::Value2
     }
 }
 #[doc = "PFLASH Single-Bit Error and Correction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PFSBER_A {
+pub enum Pfsber {
     #[doc = "0: No Single-Bit Error detected during read access to PFLASH"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Single-Bit Error detected and corrected"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<PFSBER_A> for bool {
+impl From<Pfsber> for bool {
     #[inline(always)]
-    fn from(variant: PFSBER_A) -> Self {
+    fn from(variant: Pfsber) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PFSBER` reader - PFLASH Single-Bit Error and Correction"]
-pub type PFSBER_R = crate::BitReader<PFSBER_A>;
-impl PFSBER_R {
+pub type PfsberR = crate::BitReader<Pfsber>;
+impl PfsberR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PFSBER_A {
+    pub const fn variant(&self) -> Pfsber {
         match self.bits {
-            false => PFSBER_A::VALUE1,
-            true => PFSBER_A::VALUE2,
+            false => Pfsber::Value1,
+            true => Pfsber::Value2,
         }
     }
     #[doc = "No Single-Bit Error detected during read access to PFLASH"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PFSBER_A::VALUE1
+        *self == Pfsber::Value1
     }
     #[doc = "Single-Bit Error detected and corrected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PFSBER_A::VALUE2
+        *self == Pfsber::Value2
     }
 }
 #[doc = "PFLASH Double-Bit Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PFDBER_A {
+pub enum Pfdber {
     #[doc = "0: No Double-Bit Error detected during read access to PFLASH"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Double-Bit Error detected in PFLASH"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<PFDBER_A> for bool {
+impl From<Pfdber> for bool {
     #[inline(always)]
-    fn from(variant: PFDBER_A) -> Self {
+    fn from(variant: Pfdber) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PFDBER` reader - PFLASH Double-Bit Error"]
-pub type PFDBER_R = crate::BitReader<PFDBER_A>;
-impl PFDBER_R {
+pub type PfdberR = crate::BitReader<Pfdber>;
+impl PfdberR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PFDBER_A {
+    pub const fn variant(&self) -> Pfdber {
         match self.bits {
-            false => PFDBER_A::VALUE1,
-            true => PFDBER_A::VALUE2,
+            false => Pfdber::Value1,
+            true => Pfdber::Value2,
         }
     }
     #[doc = "No Double-Bit Error detected during read access to PFLASH"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PFDBER_A::VALUE1
+        *self == Pfdber::Value1
     }
     #[doc = "Double-Bit Error detected in PFLASH"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PFDBER_A::VALUE2
+        *self == Pfdber::Value2
     }
 }
 #[doc = "Protection Installed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum PROIN_A {
+pub enum Proin {
     #[doc = "0: No protection is installed"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Read or/and write protection for one or more users is configured and correctly confirmed in the User Configuration Block(s)."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<PROIN_A> for bool {
+impl From<Proin> for bool {
     #[inline(always)]
-    fn from(variant: PROIN_A) -> Self {
+    fn from(variant: Proin) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PROIN` reader - Protection Installed"]
-pub type PROIN_R = crate::BitReader<PROIN_A>;
-impl PROIN_R {
+pub type ProinR = crate::BitReader<Proin>;
+impl ProinR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> PROIN_A {
+    pub const fn variant(&self) -> Proin {
         match self.bits {
-            false => PROIN_A::VALUE1,
-            true => PROIN_A::VALUE2,
+            false => Proin::Value1,
+            true => Proin::Value2,
         }
     }
     #[doc = "No protection is installed"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PROIN_A::VALUE1
+        *self == Proin::Value1
     }
     #[doc = "Read or/and write protection for one or more users is configured and correctly confirmed in the User Configuration Block(s)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PROIN_A::VALUE2
+        *self == Proin::Value2
     }
 }
 #[doc = "Read Protection Installed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RPROIN_A {
+pub enum Rproin {
     #[doc = "0: No read protection installed"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Read protection and global write protection is configured and correctly confirmed in the User Configuration Block 0."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<RPROIN_A> for bool {
+impl From<Rproin> for bool {
     #[inline(always)]
-    fn from(variant: RPROIN_A) -> Self {
+    fn from(variant: Rproin) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RPROIN` reader - Read Protection Installed"]
-pub type RPROIN_R = crate::BitReader<RPROIN_A>;
-impl RPROIN_R {
+pub type RproinR = crate::BitReader<Rproin>;
+impl RproinR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RPROIN_A {
+    pub const fn variant(&self) -> Rproin {
         match self.bits {
-            false => RPROIN_A::VALUE1,
-            true => RPROIN_A::VALUE2,
+            false => Rproin::Value1,
+            true => Rproin::Value2,
         }
     }
     #[doc = "No read protection installed"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RPROIN_A::VALUE1
+        *self == Rproin::Value1
     }
     #[doc = "Read protection and global write protection is configured and correctly confirmed in the User Configuration Block 0."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RPROIN_A::VALUE2
+        *self == Rproin::Value2
     }
 }
 #[doc = "Read Protection Disable State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RPRODIS_A {
+pub enum Rprodis {
     #[doc = "0: Read protection (if installed) is not disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Read and global write protection is temporarily disabled."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<RPRODIS_A> for bool {
+impl From<Rprodis> for bool {
     #[inline(always)]
-    fn from(variant: RPRODIS_A) -> Self {
+    fn from(variant: Rprodis) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RPRODIS` reader - Read Protection Disable State"]
-pub type RPRODIS_R = crate::BitReader<RPRODIS_A>;
-impl RPRODIS_R {
+pub type RprodisR = crate::BitReader<Rprodis>;
+impl RprodisR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RPRODIS_A {
+    pub const fn variant(&self) -> Rprodis {
         match self.bits {
-            false => RPRODIS_A::VALUE1,
-            true => RPRODIS_A::VALUE2,
+            false => Rprodis::Value1,
+            true => Rprodis::Value2,
         }
     }
     #[doc = "Read protection (if installed) is not disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RPRODIS_A::VALUE1
+        *self == Rprodis::Value1
     }
     #[doc = "Read and global write protection is temporarily disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RPRODIS_A::VALUE2
+        *self == Rprodis::Value2
     }
 }
 #[doc = "Sector Write Protection Installed for User 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WPROIN0_A {
+pub enum Wproin0 {
     #[doc = "0: No write protection installed for user 0"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Sector write protection for user 0 is configured and correctly confirmed in the User Configuration Block 0."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WPROIN0_A> for bool {
+impl From<Wproin0> for bool {
     #[inline(always)]
-    fn from(variant: WPROIN0_A) -> Self {
+    fn from(variant: Wproin0) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WPROIN0` reader - Sector Write Protection Installed for User 0"]
-pub type WPROIN0_R = crate::BitReader<WPROIN0_A>;
-impl WPROIN0_R {
+pub type Wproin0R = crate::BitReader<Wproin0>;
+impl Wproin0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WPROIN0_A {
+    pub const fn variant(&self) -> Wproin0 {
         match self.bits {
-            false => WPROIN0_A::VALUE1,
-            true => WPROIN0_A::VALUE2,
+            false => Wproin0::Value1,
+            true => Wproin0::Value2,
         }
     }
     #[doc = "No write protection installed for user 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WPROIN0_A::VALUE1
+        *self == Wproin0::Value1
     }
     #[doc = "Sector write protection for user 0 is configured and correctly confirmed in the User Configuration Block 0."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WPROIN0_A::VALUE2
+        *self == Wproin0::Value2
     }
 }
 #[doc = "Sector Write Protection Installed for User 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WPROIN1_A {
+pub enum Wproin1 {
     #[doc = "0: No write protection installed for user 1"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Sector write protection for user 1 is configured and correctly confirmed in the User Configuration Block 1."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WPROIN1_A> for bool {
+impl From<Wproin1> for bool {
     #[inline(always)]
-    fn from(variant: WPROIN1_A) -> Self {
+    fn from(variant: Wproin1) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WPROIN1` reader - Sector Write Protection Installed for User 1"]
-pub type WPROIN1_R = crate::BitReader<WPROIN1_A>;
-impl WPROIN1_R {
+pub type Wproin1R = crate::BitReader<Wproin1>;
+impl Wproin1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WPROIN1_A {
+    pub const fn variant(&self) -> Wproin1 {
         match self.bits {
-            false => WPROIN1_A::VALUE1,
-            true => WPROIN1_A::VALUE2,
+            false => Wproin1::Value1,
+            true => Wproin1::Value2,
         }
     }
     #[doc = "No write protection installed for user 1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WPROIN1_A::VALUE1
+        *self == Wproin1::Value1
     }
     #[doc = "Sector write protection for user 1 is configured and correctly confirmed in the User Configuration Block 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WPROIN1_A::VALUE2
+        *self == Wproin1::Value2
     }
 }
 #[doc = "Sector OTP Protection Installed for User 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WPROIN2_A {
+pub enum Wproin2 {
     #[doc = "0: No OTP write protection installed for user 2"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Sector OTP write protection with ROM functionality is configured and correctly confirmed in the UCB2. The protection is locked for ever."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WPROIN2_A> for bool {
+impl From<Wproin2> for bool {
     #[inline(always)]
-    fn from(variant: WPROIN2_A) -> Self {
+    fn from(variant: Wproin2) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WPROIN2` reader - Sector OTP Protection Installed for User 2"]
-pub type WPROIN2_R = crate::BitReader<WPROIN2_A>;
-impl WPROIN2_R {
+pub type Wproin2R = crate::BitReader<Wproin2>;
+impl Wproin2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WPROIN2_A {
+    pub const fn variant(&self) -> Wproin2 {
         match self.bits {
-            false => WPROIN2_A::VALUE1,
-            true => WPROIN2_A::VALUE2,
+            false => Wproin2::Value1,
+            true => Wproin2::Value2,
         }
     }
     #[doc = "No OTP write protection installed for user 2"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WPROIN2_A::VALUE1
+        *self == Wproin2::Value1
     }
     #[doc = "Sector OTP write protection with ROM functionality is configured and correctly confirmed in the UCB2. The protection is locked for ever."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WPROIN2_A::VALUE2
+        *self == Wproin2::Value2
     }
 }
 #[doc = "Sector Write Protection Disabled for User 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WPRODIS0_A {
+pub enum Wprodis0 {
     #[doc = "0: All protected sectors of user 0 are locked if write protection is installed"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: All write-protected sectors of user 0 are temporarily unlocked, if not coincidently locked by user 2 or via read protection."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WPRODIS0_A> for bool {
+impl From<Wprodis0> for bool {
     #[inline(always)]
-    fn from(variant: WPRODIS0_A) -> Self {
+    fn from(variant: Wprodis0) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WPRODIS0` reader - Sector Write Protection Disabled for User 0"]
-pub type WPRODIS0_R = crate::BitReader<WPRODIS0_A>;
-impl WPRODIS0_R {
+pub type Wprodis0R = crate::BitReader<Wprodis0>;
+impl Wprodis0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WPRODIS0_A {
+    pub const fn variant(&self) -> Wprodis0 {
         match self.bits {
-            false => WPRODIS0_A::VALUE1,
-            true => WPRODIS0_A::VALUE2,
+            false => Wprodis0::Value1,
+            true => Wprodis0::Value2,
         }
     }
     #[doc = "All protected sectors of user 0 are locked if write protection is installed"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WPRODIS0_A::VALUE1
+        *self == Wprodis0::Value1
     }
     #[doc = "All write-protected sectors of user 0 are temporarily unlocked, if not coincidently locked by user 2 or via read protection."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WPRODIS0_A::VALUE2
+        *self == Wprodis0::Value2
     }
 }
 #[doc = "Sector Write Protection Disabled for User 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WPRODIS1_A {
+pub enum Wprodis1 {
     #[doc = "0: All protected sectors of user 1 are locked if write protection is installed"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: All write-protected sectors of user 1 are temporarily unlocked, if not coincidently locked by user 0 or user 2 or via read protection."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WPRODIS1_A> for bool {
+impl From<Wprodis1> for bool {
     #[inline(always)]
-    fn from(variant: WPRODIS1_A) -> Self {
+    fn from(variant: Wprodis1) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WPRODIS1` reader - Sector Write Protection Disabled for User 1"]
-pub type WPRODIS1_R = crate::BitReader<WPRODIS1_A>;
-impl WPRODIS1_R {
+pub type Wprodis1R = crate::BitReader<Wprodis1>;
+impl Wprodis1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WPRODIS1_A {
+    pub const fn variant(&self) -> Wprodis1 {
         match self.bits {
-            false => WPRODIS1_A::VALUE1,
-            true => WPRODIS1_A::VALUE2,
+            false => Wprodis1::Value1,
+            true => Wprodis1::Value2,
         }
     }
     #[doc = "All protected sectors of user 1 are locked if write protection is installed"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WPRODIS1_A::VALUE1
+        *self == Wprodis1::Value1
     }
     #[doc = "All write-protected sectors of user 1 are temporarily unlocked, if not coincidently locked by user 0 or user 2 or via read protection."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WPRODIS1_A::VALUE2
+        *self == Wprodis1::Value2
     }
 }
 #[doc = "Flash Sleep Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SLM_A {
+pub enum Slm {
     #[doc = "0: Flash not in sleep mode"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Flash is in sleep or shut down mode"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<SLM_A> for bool {
+impl From<Slm> for bool {
     #[inline(always)]
-    fn from(variant: SLM_A) -> Self {
+    fn from(variant: Slm) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SLM` reader - Flash Sleep Mode"]
-pub type SLM_R = crate::BitReader<SLM_A>;
-impl SLM_R {
+pub type SlmR = crate::BitReader<Slm>;
+impl SlmR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SLM_A {
+    pub const fn variant(&self) -> Slm {
         match self.bits {
-            false => SLM_A::VALUE1,
-            true => SLM_A::VALUE2,
+            false => Slm::Value1,
+            true => Slm::Value2,
         }
     }
     #[doc = "Flash not in sleep mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SLM_A::VALUE1
+        *self == Slm::Value1
     }
     #[doc = "Flash is in sleep or shut down mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SLM_A::VALUE2
+        *self == Slm::Value2
     }
 }
 #[doc = "Verify Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum VER_A {
+pub enum Ver {
     #[doc = "0: The page is correctly programmed or the sector correctly erased. All programmed or erased bits have full expected quality."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: A program verify error or an erase verify error has been detected. Full quality (retention time) of all programmed (\"1\") or erased (\"0\") bits cannot be guaranteed."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<VER_A> for bool {
+impl From<Ver> for bool {
     #[inline(always)]
-    fn from(variant: VER_A) -> Self {
+    fn from(variant: Ver) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `VER` reader - Verify Error"]
-pub type VER_R = crate::BitReader<VER_A>;
-impl VER_R {
+pub type VerR = crate::BitReader<Ver>;
+impl VerR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> VER_A {
+    pub const fn variant(&self) -> Ver {
         match self.bits {
-            false => VER_A::VALUE1,
-            true => VER_A::VALUE2,
+            false => Ver::Value1,
+            true => Ver::Value2,
         }
     }
     #[doc = "The page is correctly programmed or the sector correctly erased. All programmed or erased bits have full expected quality."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VER_A::VALUE1
+        *self == Ver::Value1
     }
     #[doc = "A program verify error or an erase verify error has been detected. Full quality (retention time) of all programmed (\"1\") or erased (\"0\") bits cannot be guaranteed."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VER_A::VALUE2
+        *self == Ver::Value2
     }
 }
 impl R {
     #[doc = "Bit 0 - Program Flash Busy"]
     #[inline(always)]
-    pub fn pbusy(&self) -> PBUSY_R {
-        PBUSY_R::new((self.bits & 1) != 0)
+    pub fn pbusy(&self) -> PbusyR {
+        PbusyR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Flash Array Busy"]
     #[inline(always)]
-    pub fn fabusy(&self) -> FABUSY_R {
-        FABUSY_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn fabusy(&self) -> FabusyR {
+        FabusyR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 4 - Programming State"]
     #[inline(always)]
-    pub fn prog(&self) -> PROG_R {
-        PROG_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn prog(&self) -> ProgR {
+        ProgR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Erase State"]
     #[inline(always)]
-    pub fn erase(&self) -> ERASE_R {
-        ERASE_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn erase(&self) -> EraseR {
+        EraseR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Program Flash in Page Mode"]
     #[inline(always)]
-    pub fn pfpage(&self) -> PFPAGE_R {
-        PFPAGE_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn pfpage(&self) -> PfpageR {
+        PfpageR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 8 - Program Flash Operation Error"]
     #[inline(always)]
-    pub fn pfoper(&self) -> PFOPER_R {
-        PFOPER_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn pfoper(&self) -> PfoperR {
+        PfoperR::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 10 - Command Sequence Error"]
     #[inline(always)]
-    pub fn sqer(&self) -> SQER_R {
-        SQER_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn sqer(&self) -> SqerR {
+        SqerR::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Protection Error"]
     #[inline(always)]
-    pub fn proer(&self) -> PROER_R {
-        PROER_R::new(((self.bits >> 11) & 1) != 0)
+    pub fn proer(&self) -> ProerR {
+        ProerR::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - PFLASH Single-Bit Error and Correction"]
     #[inline(always)]
-    pub fn pfsber(&self) -> PFSBER_R {
-        PFSBER_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn pfsber(&self) -> PfsberR {
+        PfsberR::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 14 - PFLASH Double-Bit Error"]
     #[inline(always)]
-    pub fn pfdber(&self) -> PFDBER_R {
-        PFDBER_R::new(((self.bits >> 14) & 1) != 0)
+    pub fn pfdber(&self) -> PfdberR {
+        PfdberR::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 16 - Protection Installed"]
     #[inline(always)]
-    pub fn proin(&self) -> PROIN_R {
-        PROIN_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn proin(&self) -> ProinR {
+        ProinR::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 18 - Read Protection Installed"]
     #[inline(always)]
-    pub fn rproin(&self) -> RPROIN_R {
-        RPROIN_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn rproin(&self) -> RproinR {
+        RproinR::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Read Protection Disable State"]
     #[inline(always)]
-    pub fn rprodis(&self) -> RPRODIS_R {
-        RPRODIS_R::new(((self.bits >> 19) & 1) != 0)
+    pub fn rprodis(&self) -> RprodisR {
+        RprodisR::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 21 - Sector Write Protection Installed for User 0"]
     #[inline(always)]
-    pub fn wproin0(&self) -> WPROIN0_R {
-        WPROIN0_R::new(((self.bits >> 21) & 1) != 0)
+    pub fn wproin0(&self) -> Wproin0R {
+        Wproin0R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Sector Write Protection Installed for User 1"]
     #[inline(always)]
-    pub fn wproin1(&self) -> WPROIN1_R {
-        WPROIN1_R::new(((self.bits >> 22) & 1) != 0)
+    pub fn wproin1(&self) -> Wproin1R {
+        Wproin1R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - Sector OTP Protection Installed for User 2"]
     #[inline(always)]
-    pub fn wproin2(&self) -> WPROIN2_R {
-        WPROIN2_R::new(((self.bits >> 23) & 1) != 0)
+    pub fn wproin2(&self) -> Wproin2R {
+        Wproin2R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 25 - Sector Write Protection Disabled for User 0"]
     #[inline(always)]
-    pub fn wprodis0(&self) -> WPRODIS0_R {
-        WPRODIS0_R::new(((self.bits >> 25) & 1) != 0)
+    pub fn wprodis0(&self) -> Wprodis0R {
+        Wprodis0R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - Sector Write Protection Disabled for User 1"]
     #[inline(always)]
-    pub fn wprodis1(&self) -> WPRODIS1_R {
-        WPRODIS1_R::new(((self.bits >> 26) & 1) != 0)
+    pub fn wprodis1(&self) -> Wprodis1R {
+        Wprodis1R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 28 - Flash Sleep Mode"]
     #[inline(always)]
-    pub fn slm(&self) -> SLM_R {
-        SLM_R::new(((self.bits >> 28) & 1) != 0)
+    pub fn slm(&self) -> SlmR {
+        SlmR::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 31 - Verify Error"]
     #[inline(always)]
-    pub fn ver(&self) -> VER_R {
-        VER_R::new(((self.bits >> 31) & 1) != 0)
+    pub fn ver(&self) -> VerR {
+        VerR::new(((self.bits >> 31) & 1) != 0)
     }
 }
 #[doc = "Flash Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct FSR_SPEC;
-impl crate::RegisterSpec for FSR_SPEC {
+pub struct FsrSpec;
+impl crate::RegisterSpec for FsrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`fsr::R`](R) reader structure"]
-impl crate::Readable for FSR_SPEC {}
+impl crate::Readable for FsrSpec {}
 #[doc = "`reset()` method sets FSR to value 0"]
-impl crate::Resettable for FSR_SPEC {
+impl crate::Resettable for FsrSpec {
     const RESET_VALUE: u32 = 0;
 }

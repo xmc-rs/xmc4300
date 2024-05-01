@@ -1,425 +1,425 @@
 #[doc = "Register `PROCON0` reader"]
-pub type R = crate::R<PROCON0_SPEC>;
+pub type R = crate::R<Procon0Spec>;
 #[doc = "Sector 0 Locked for Write Protection by User 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S0L_A {
+pub enum S0l {
     #[doc = "0: No write protection is configured for sector n."]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<S0L_A> for bool {
+impl From<S0l> for bool {
     #[inline(always)]
-    fn from(variant: S0L_A) -> Self {
+    fn from(variant: S0l) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S0L` reader - Sector 0 Locked for Write Protection by User 0"]
-pub type S0L_R = crate::BitReader<S0L_A>;
-impl S0L_R {
+pub type S0lR = crate::BitReader<S0l>;
+impl S0lR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S0L_A {
+    pub const fn variant(&self) -> S0l {
         match self.bits {
-            false => S0L_A::CONST_0,
-            true => S0L_A::CONST_1,
+            false => S0l::Const0,
+            true => S0l::Const1,
         }
     }
     #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S0L_A::CONST_0
+        *self == S0l::Const0
     }
     #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S0L_A::CONST_1
+        *self == S0l::Const1
     }
 }
 #[doc = "Sector 1 Locked for Write Protection by User 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S1L_A {
+pub enum S1l {
     #[doc = "0: No write protection is configured for sector n."]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<S1L_A> for bool {
+impl From<S1l> for bool {
     #[inline(always)]
-    fn from(variant: S1L_A) -> Self {
+    fn from(variant: S1l) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S1L` reader - Sector 1 Locked for Write Protection by User 0"]
-pub type S1L_R = crate::BitReader<S1L_A>;
-impl S1L_R {
+pub type S1lR = crate::BitReader<S1l>;
+impl S1lR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S1L_A {
+    pub const fn variant(&self) -> S1l {
         match self.bits {
-            false => S1L_A::CONST_0,
-            true => S1L_A::CONST_1,
+            false => S1l::Const0,
+            true => S1l::Const1,
         }
     }
     #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S1L_A::CONST_0
+        *self == S1l::Const0
     }
     #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S1L_A::CONST_1
+        *self == S1l::Const1
     }
 }
 #[doc = "Sector 2 Locked for Write Protection by User 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S2L_A {
+pub enum S2l {
     #[doc = "0: No write protection is configured for sector n."]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<S2L_A> for bool {
+impl From<S2l> for bool {
     #[inline(always)]
-    fn from(variant: S2L_A) -> Self {
+    fn from(variant: S2l) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S2L` reader - Sector 2 Locked for Write Protection by User 0"]
-pub type S2L_R = crate::BitReader<S2L_A>;
-impl S2L_R {
+pub type S2lR = crate::BitReader<S2l>;
+impl S2lR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S2L_A {
+    pub const fn variant(&self) -> S2l {
         match self.bits {
-            false => S2L_A::CONST_0,
-            true => S2L_A::CONST_1,
+            false => S2l::Const0,
+            true => S2l::Const1,
         }
     }
     #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S2L_A::CONST_0
+        *self == S2l::Const0
     }
     #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S2L_A::CONST_1
+        *self == S2l::Const1
     }
 }
 #[doc = "Sector 3 Locked for Write Protection by User 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S3L_A {
+pub enum S3l {
     #[doc = "0: No write protection is configured for sector n."]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<S3L_A> for bool {
+impl From<S3l> for bool {
     #[inline(always)]
-    fn from(variant: S3L_A) -> Self {
+    fn from(variant: S3l) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S3L` reader - Sector 3 Locked for Write Protection by User 0"]
-pub type S3L_R = crate::BitReader<S3L_A>;
-impl S3L_R {
+pub type S3lR = crate::BitReader<S3l>;
+impl S3lR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S3L_A {
+    pub const fn variant(&self) -> S3l {
         match self.bits {
-            false => S3L_A::CONST_0,
-            true => S3L_A::CONST_1,
+            false => S3l::Const0,
+            true => S3l::Const1,
         }
     }
     #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S3L_A::CONST_0
+        *self == S3l::Const0
     }
     #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S3L_A::CONST_1
+        *self == S3l::Const1
     }
 }
 #[doc = "Sector 4 Locked for Write Protection by User 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S4L_A {
+pub enum S4l {
     #[doc = "0: No write protection is configured for sector n."]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<S4L_A> for bool {
+impl From<S4l> for bool {
     #[inline(always)]
-    fn from(variant: S4L_A) -> Self {
+    fn from(variant: S4l) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S4L` reader - Sector 4 Locked for Write Protection by User 0"]
-pub type S4L_R = crate::BitReader<S4L_A>;
-impl S4L_R {
+pub type S4lR = crate::BitReader<S4l>;
+impl S4lR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S4L_A {
+    pub const fn variant(&self) -> S4l {
         match self.bits {
-            false => S4L_A::CONST_0,
-            true => S4L_A::CONST_1,
+            false => S4l::Const0,
+            true => S4l::Const1,
         }
     }
     #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S4L_A::CONST_0
+        *self == S4l::Const0
     }
     #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S4L_A::CONST_1
+        *self == S4l::Const1
     }
 }
 #[doc = "Sector 5 Locked for Write Protection by User 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S5L_A {
+pub enum S5l {
     #[doc = "0: No write protection is configured for sector n."]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<S5L_A> for bool {
+impl From<S5l> for bool {
     #[inline(always)]
-    fn from(variant: S5L_A) -> Self {
+    fn from(variant: S5l) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S5L` reader - Sector 5 Locked for Write Protection by User 0"]
-pub type S5L_R = crate::BitReader<S5L_A>;
-impl S5L_R {
+pub type S5lR = crate::BitReader<S5l>;
+impl S5lR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S5L_A {
+    pub const fn variant(&self) -> S5l {
         match self.bits {
-            false => S5L_A::CONST_0,
-            true => S5L_A::CONST_1,
+            false => S5l::Const0,
+            true => S5l::Const1,
         }
     }
     #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S5L_A::CONST_0
+        *self == S5l::Const0
     }
     #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S5L_A::CONST_1
+        *self == S5l::Const1
     }
 }
 #[doc = "Sector 6 Locked for Write Protection by User 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S6L_A {
+pub enum S6l {
     #[doc = "0: No write protection is configured for sector n."]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<S6L_A> for bool {
+impl From<S6l> for bool {
     #[inline(always)]
-    fn from(variant: S6L_A) -> Self {
+    fn from(variant: S6l) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S6L` reader - Sector 6 Locked for Write Protection by User 0"]
-pub type S6L_R = crate::BitReader<S6L_A>;
-impl S6L_R {
+pub type S6lR = crate::BitReader<S6l>;
+impl S6lR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S6L_A {
+    pub const fn variant(&self) -> S6l {
         match self.bits {
-            false => S6L_A::CONST_0,
-            true => S6L_A::CONST_1,
+            false => S6l::Const0,
+            true => S6l::Const1,
         }
     }
     #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S6L_A::CONST_0
+        *self == S6l::Const0
     }
     #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S6L_A::CONST_1
+        *self == S6l::Const1
     }
 }
 #[doc = "Sector 7 Locked for Write Protection by User 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S7L_A {
+pub enum S7l {
     #[doc = "0: No write protection is configured for sector n."]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<S7L_A> for bool {
+impl From<S7l> for bool {
     #[inline(always)]
-    fn from(variant: S7L_A) -> Self {
+    fn from(variant: S7l) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S7L` reader - Sector 7 Locked for Write Protection by User 0"]
-pub type S7L_R = crate::BitReader<S7L_A>;
-impl S7L_R {
+pub type S7lR = crate::BitReader<S7l>;
+impl S7lR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S7L_A {
+    pub const fn variant(&self) -> S7l {
         match self.bits {
-            false => S7L_A::CONST_0,
-            true => S7L_A::CONST_1,
+            false => S7l::Const0,
+            true => S7l::Const1,
         }
     }
     #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S7L_A::CONST_0
+        *self == S7l::Const0
     }
     #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S7L_A::CONST_1
+        *self == S7l::Const1
     }
 }
 #[doc = "Sector 8 Locked for Write Protection by User 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum S8L_A {
+pub enum S8l {
     #[doc = "0: No write protection is configured for sector n."]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<S8L_A> for bool {
+impl From<S8l> for bool {
     #[inline(always)]
-    fn from(variant: S8L_A) -> Self {
+    fn from(variant: S8l) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `S8L` reader - Sector 8 Locked for Write Protection by User 0"]
-pub type S8L_R = crate::BitReader<S8L_A>;
-impl S8L_R {
+pub type S8lR = crate::BitReader<S8l>;
+impl S8lR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> S8L_A {
+    pub const fn variant(&self) -> S8l {
         match self.bits {
-            false => S8L_A::CONST_0,
-            true => S8L_A::CONST_1,
+            false => S8l::Const0,
+            true => S8l::Const1,
         }
     }
     #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == S8L_A::CONST_0
+        *self == S8l::Const0
     }
     #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == S8L_A::CONST_1
+        *self == S8l::Const1
     }
 }
 #[doc = "Read Protection Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RPRO_A {
+pub enum Rpro {
     #[doc = "0: No read protection configured"]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Read protection and global write protection is configured by user 0 (master user)"]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<RPRO_A> for bool {
+impl From<Rpro> for bool {
     #[inline(always)]
-    fn from(variant: RPRO_A) -> Self {
+    fn from(variant: Rpro) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RPRO` reader - Read Protection Configuration"]
-pub type RPRO_R = crate::BitReader<RPRO_A>;
-impl RPRO_R {
+pub type RproR = crate::BitReader<Rpro>;
+impl RproR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RPRO_A {
+    pub const fn variant(&self) -> Rpro {
         match self.bits {
-            false => RPRO_A::CONST_0,
-            true => RPRO_A::CONST_1,
+            false => Rpro::Const0,
+            true => Rpro::Const1,
         }
     }
     #[doc = "No read protection configured"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RPRO_A::CONST_0
+        *self == Rpro::Const0
     }
     #[doc = "Read protection and global write protection is configured by user 0 (master user)"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RPRO_A::CONST_1
+        *self == Rpro::Const1
     }
 }
 impl R {
     #[doc = "Bit 0 - Sector 0 Locked for Write Protection by User 0"]
     #[inline(always)]
-    pub fn s0l(&self) -> S0L_R {
-        S0L_R::new((self.bits & 1) != 0)
+    pub fn s0l(&self) -> S0lR {
+        S0lR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Sector 1 Locked for Write Protection by User 0"]
     #[inline(always)]
-    pub fn s1l(&self) -> S1L_R {
-        S1L_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn s1l(&self) -> S1lR {
+        S1lR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Sector 2 Locked for Write Protection by User 0"]
     #[inline(always)]
-    pub fn s2l(&self) -> S2L_R {
-        S2L_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn s2l(&self) -> S2lR {
+        S2lR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Sector 3 Locked for Write Protection by User 0"]
     #[inline(always)]
-    pub fn s3l(&self) -> S3L_R {
-        S3L_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn s3l(&self) -> S3lR {
+        S3lR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Sector 4 Locked for Write Protection by User 0"]
     #[inline(always)]
-    pub fn s4l(&self) -> S4L_R {
-        S4L_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn s4l(&self) -> S4lR {
+        S4lR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Sector 5 Locked for Write Protection by User 0"]
     #[inline(always)]
-    pub fn s5l(&self) -> S5L_R {
-        S5L_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn s5l(&self) -> S5lR {
+        S5lR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Sector 6 Locked for Write Protection by User 0"]
     #[inline(always)]
-    pub fn s6l(&self) -> S6L_R {
-        S6L_R::new(((self.bits >> 6) & 1) != 0)
+    pub fn s6l(&self) -> S6lR {
+        S6lR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Sector 7 Locked for Write Protection by User 0"]
     #[inline(always)]
-    pub fn s7l(&self) -> S7L_R {
-        S7L_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn s7l(&self) -> S7lR {
+        S7lR::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Sector 8 Locked for Write Protection by User 0"]
     #[inline(always)]
-    pub fn s8l(&self) -> S8L_R {
-        S8L_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn s8l(&self) -> S8lR {
+        S8lR::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 15 - Read Protection Configuration"]
     #[inline(always)]
-    pub fn rpro(&self) -> RPRO_R {
-        RPRO_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn rpro(&self) -> RproR {
+        RproR::new(((self.bits >> 15) & 1) != 0)
     }
 }
 #[doc = "Flash Protection Configuration Register User 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`procon0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PROCON0_SPEC;
-impl crate::RegisterSpec for PROCON0_SPEC {
+pub struct Procon0Spec;
+impl crate::RegisterSpec for Procon0Spec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`procon0::R`](R) reader structure"]
-impl crate::Readable for PROCON0_SPEC {}
+impl crate::Readable for Procon0Spec {}
 #[doc = "`reset()` method sets PROCON0 to value 0"]
-impl crate::Resettable for PROCON0_SPEC {
+impl crate::Resettable for Procon0Spec {
     const RESET_VALUE: u32 = 0;
 }

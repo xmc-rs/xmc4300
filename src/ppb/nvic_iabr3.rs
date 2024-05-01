@@ -1,52 +1,52 @@
 #[doc = "Register `NVIC_IABR3` reader"]
-pub type R = crate::R<NVIC_IABR3_SPEC>;
+pub type R = crate::R<NvicIabr3Spec>;
 #[doc = "Register `NVIC_IABR3` writer"]
-pub type W = crate::W<NVIC_IABR3_SPEC>;
+pub type W = crate::W<NvicIabr3Spec>;
 #[doc = "Interrupt active flags:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
-pub enum ACTIVE_A {
+pub enum Active {
     #[doc = "0: interrupt not active"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: interrupt active"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<ACTIVE_A> for u32 {
+impl From<Active> for u32 {
     #[inline(always)]
-    fn from(variant: ACTIVE_A) -> Self {
+    fn from(variant: Active) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for ACTIVE_A {
+impl crate::FieldSpec for Active {
     type Ux = u32;
 }
-impl crate::IsEnum for ACTIVE_A {}
+impl crate::IsEnum for Active {}
 #[doc = "Field `ACTIVE` reader - Interrupt active flags:"]
-pub type ACTIVE_R = crate::FieldReader<ACTIVE_A>;
-impl ACTIVE_R {
+pub type ActiveR = crate::FieldReader<Active>;
+impl ActiveR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<ACTIVE_A> {
+    pub const fn variant(&self) -> Option<Active> {
         match self.bits {
-            0 => Some(ACTIVE_A::VALUE1),
-            1 => Some(ACTIVE_A::VALUE2),
+            0 => Some(Active::Value1),
+            1 => Some(Active::Value2),
             _ => None,
         }
     }
     #[doc = "interrupt not active"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ACTIVE_A::VALUE1
+        *self == Active::Value1
     }
     #[doc = "interrupt active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ACTIVE_A::VALUE2
+        *self == Active::Value2
     }
 }
 #[doc = "Field `ACTIVE` writer - Interrupt active flags:"]
-pub type ACTIVE_W<'a, REG> = crate::FieldWriter<'a, REG, 32, ACTIVE_A>;
-impl<'a, REG> ACTIVE_W<'a, REG>
+pub type ActiveW<'a, REG> = crate::FieldWriter<'a, REG, 32, Active>;
+impl<'a, REG> ActiveW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u32>,
@@ -54,43 +54,43 @@ where
     #[doc = "interrupt not active"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(ACTIVE_A::VALUE1)
+        self.variant(Active::Value1)
     }
     #[doc = "interrupt active"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(ACTIVE_A::VALUE2)
+        self.variant(Active::Value2)
     }
 }
 impl R {
     #[doc = "Bits 0:31 - Interrupt active flags:"]
     #[inline(always)]
-    pub fn active(&self) -> ACTIVE_R {
-        ACTIVE_R::new(self.bits)
+    pub fn active(&self) -> ActiveR {
+        ActiveR::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Interrupt active flags:"]
     #[inline(always)]
     #[must_use]
-    pub fn active(&mut self) -> ACTIVE_W<NVIC_IABR3_SPEC> {
-        ACTIVE_W::new(self, 0)
+    pub fn active(&mut self) -> ActiveW<NvicIabr3Spec> {
+        ActiveW::new(self, 0)
     }
 }
 #[doc = "Interrupt Active Bit Register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`nvic_iabr3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`nvic_iabr3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct NVIC_IABR3_SPEC;
-impl crate::RegisterSpec for NVIC_IABR3_SPEC {
+pub struct NvicIabr3Spec;
+impl crate::RegisterSpec for NvicIabr3Spec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`nvic_iabr3::R`](R) reader structure"]
-impl crate::Readable for NVIC_IABR3_SPEC {}
+impl crate::Readable for NvicIabr3Spec {}
 #[doc = "`write(|w| ..)` method takes [`nvic_iabr3::W`](W) writer structure"]
-impl crate::Writable for NVIC_IABR3_SPEC {
+impl crate::Writable for NvicIabr3Spec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NVIC_IABR3 to value 0"]
-impl crate::Resettable for NVIC_IABR3_SPEC {
+impl crate::Resettable for NvicIabr3Spec {
     const RESET_VALUE: u32 = 0;
 }

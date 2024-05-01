@@ -1,220 +1,220 @@
 #[doc = "Register `CLKSTAT` reader"]
-pub type R = crate::R<CLKSTAT_SPEC>;
+pub type R = crate::R<ClkstatSpec>;
 #[doc = "USB Clock Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum USBCST_A {
+pub enum Usbcst {
     #[doc = "0: Clock disabled"]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Clock enabled"]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<USBCST_A> for bool {
+impl From<Usbcst> for bool {
     #[inline(always)]
-    fn from(variant: USBCST_A) -> Self {
+    fn from(variant: Usbcst) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `USBCST` reader - USB Clock Status"]
-pub type USBCST_R = crate::BitReader<USBCST_A>;
-impl USBCST_R {
+pub type UsbcstR = crate::BitReader<Usbcst>;
+impl UsbcstR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> USBCST_A {
+    pub const fn variant(&self) -> Usbcst {
         match self.bits {
-            false => USBCST_A::CONST_0,
-            true => USBCST_A::CONST_1,
+            false => Usbcst::Const0,
+            true => Usbcst::Const1,
         }
     }
     #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == USBCST_A::CONST_0
+        *self == Usbcst::Const0
     }
     #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == USBCST_A::CONST_1
+        *self == Usbcst::Const1
     }
 }
 #[doc = "MMC Clock Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MMCCST_A {
+pub enum Mmccst {
     #[doc = "0: Clock disabled"]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Clock enabled"]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<MMCCST_A> for bool {
+impl From<Mmccst> for bool {
     #[inline(always)]
-    fn from(variant: MMCCST_A) -> Self {
+    fn from(variant: Mmccst) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MMCCST` reader - MMC Clock Status"]
-pub type MMCCST_R = crate::BitReader<MMCCST_A>;
-impl MMCCST_R {
+pub type MmccstR = crate::BitReader<Mmccst>;
+impl MmccstR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MMCCST_A {
+    pub const fn variant(&self) -> Mmccst {
         match self.bits {
-            false => MMCCST_A::CONST_0,
-            true => MMCCST_A::CONST_1,
+            false => Mmccst::Const0,
+            true => Mmccst::Const1,
         }
     }
     #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == MMCCST_A::CONST_0
+        *self == Mmccst::Const0
     }
     #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == MMCCST_A::CONST_1
+        *self == Mmccst::Const1
     }
 }
 #[doc = "Ethernet Clock Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ETH0CST_A {
+pub enum Eth0cst {
     #[doc = "0: Clock disabled"]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Clock enabled"]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<ETH0CST_A> for bool {
+impl From<Eth0cst> for bool {
     #[inline(always)]
-    fn from(variant: ETH0CST_A) -> Self {
+    fn from(variant: Eth0cst) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ETH0CST` reader - Ethernet Clock Status"]
-pub type ETH0CST_R = crate::BitReader<ETH0CST_A>;
-impl ETH0CST_R {
+pub type Eth0cstR = crate::BitReader<Eth0cst>;
+impl Eth0cstR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ETH0CST_A {
+    pub const fn variant(&self) -> Eth0cst {
         match self.bits {
-            false => ETH0CST_A::CONST_0,
-            true => ETH0CST_A::CONST_1,
+            false => Eth0cst::Const0,
+            true => Eth0cst::Const1,
         }
     }
     #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ETH0CST_A::CONST_0
+        *self == Eth0cst::Const0
     }
     #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ETH0CST_A::CONST_1
+        *self == Eth0cst::Const1
     }
 }
 #[doc = "CCU Clock Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CCUCST_A {
+pub enum Ccucst {
     #[doc = "0: Clock disabled"]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Clock enabled"]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<CCUCST_A> for bool {
+impl From<Ccucst> for bool {
     #[inline(always)]
-    fn from(variant: CCUCST_A) -> Self {
+    fn from(variant: Ccucst) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CCUCST` reader - CCU Clock Status"]
-pub type CCUCST_R = crate::BitReader<CCUCST_A>;
-impl CCUCST_R {
+pub type CcucstR = crate::BitReader<Ccucst>;
+impl CcucstR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CCUCST_A {
+    pub const fn variant(&self) -> Ccucst {
         match self.bits {
-            false => CCUCST_A::CONST_0,
-            true => CCUCST_A::CONST_1,
+            false => Ccucst::Const0,
+            true => Ccucst::Const1,
         }
     }
     #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == CCUCST_A::CONST_0
+        *self == Ccucst::Const0
     }
     #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == CCUCST_A::CONST_1
+        *self == Ccucst::Const1
     }
 }
 #[doc = "WDT Clock Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WDTCST_A {
+pub enum Wdtcst {
     #[doc = "0: Clock disabled"]
-    CONST_0 = 0,
+    Const0 = 0,
     #[doc = "1: Clock enabled"]
-    CONST_1 = 1,
+    Const1 = 1,
 }
-impl From<WDTCST_A> for bool {
+impl From<Wdtcst> for bool {
     #[inline(always)]
-    fn from(variant: WDTCST_A) -> Self {
+    fn from(variant: Wdtcst) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WDTCST` reader - WDT Clock Status"]
-pub type WDTCST_R = crate::BitReader<WDTCST_A>;
-impl WDTCST_R {
+pub type WdtcstR = crate::BitReader<Wdtcst>;
+impl WdtcstR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WDTCST_A {
+    pub const fn variant(&self) -> Wdtcst {
         match self.bits {
-            false => WDTCST_A::CONST_0,
-            true => WDTCST_A::CONST_1,
+            false => Wdtcst::Const0,
+            true => Wdtcst::Const1,
         }
     }
     #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == WDTCST_A::CONST_0
+        *self == Wdtcst::Const0
     }
     #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == WDTCST_A::CONST_1
+        *self == Wdtcst::Const1
     }
 }
 impl R {
     #[doc = "Bit 0 - USB Clock Status"]
     #[inline(always)]
-    pub fn usbcst(&self) -> USBCST_R {
-        USBCST_R::new((self.bits & 1) != 0)
+    pub fn usbcst(&self) -> UsbcstR {
+        UsbcstR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - MMC Clock Status"]
     #[inline(always)]
-    pub fn mmccst(&self) -> MMCCST_R {
-        MMCCST_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn mmccst(&self) -> MmccstR {
+        MmccstR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Ethernet Clock Status"]
     #[inline(always)]
-    pub fn eth0cst(&self) -> ETH0CST_R {
-        ETH0CST_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn eth0cst(&self) -> Eth0cstR {
+        Eth0cstR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 4 - CCU Clock Status"]
     #[inline(always)]
-    pub fn ccucst(&self) -> CCUCST_R {
-        CCUCST_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn ccucst(&self) -> CcucstR {
+        CcucstR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - WDT Clock Status"]
     #[inline(always)]
-    pub fn wdtcst(&self) -> WDTCST_R {
-        WDTCST_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn wdtcst(&self) -> WdtcstR {
+        WdtcstR::new(((self.bits >> 5) & 1) != 0)
     }
 }
 #[doc = "Clock Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CLKSTAT_SPEC;
-impl crate::RegisterSpec for CLKSTAT_SPEC {
+pub struct ClkstatSpec;
+impl crate::RegisterSpec for ClkstatSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`clkstat::R`](R) reader structure"]
-impl crate::Readable for CLKSTAT_SPEC {}
+impl crate::Readable for ClkstatSpec {}
 #[doc = "`reset()` method sets CLKSTAT to value 0"]
-impl crate::Resettable for CLKSTAT_SPEC {
+impl crate::Resettable for ClkstatSpec {
     const RESET_VALUE: u32 = 0;
 }
