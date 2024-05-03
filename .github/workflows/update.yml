@@ -16,13 +16,8 @@ jobs:
       - uses: oleksiyrudenko/gha-git-credentials@v2.1.2
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
-      - run: |
-          rm -r src/
-          svd2rust -i XMC4300.svd --ident-formats-theme legacy
-          mkdir src
-          form -i lib.rs -o src/
-          cargo fmt
-          rm lib.rs
+      - shell: bash
+        run: ./svd.sh
       - uses: tibdex/github-app-token@v2
         id: generate-token
         with:
