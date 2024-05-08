@@ -9,7 +9,7 @@ jobs:
     name: Build Docs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.4
+      - uses: actions/checkout@v4.1.5
       - name: Install Toolchain
         uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
