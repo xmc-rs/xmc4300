@@ -38,7 +38,7 @@ pub trait RegisterSpec {
 #[doc = " Raw field type"]
 pub trait FieldSpec: Sized {
     #[doc = " Raw field type (`u8`, `u16`, `u32`, ...)."]
-    type Ux: Copy + PartialEq + From<Self>;
+    type Ux: Copy + core::fmt::Debug + PartialEq + From<Self>;
 }
 #[doc = " Marker for fields with fixed values"]
 pub trait IsEnum: FieldSpec {}
@@ -198,6 +198,14 @@ impl<REG: Readable + Writable> Reg<REG> {
         self.register.set(f(&R { bits, _reg: marker::PhantomData }, &mut W { bits: bits & !REG::ONE_TO_MODIFY_FIELDS_BITMAP | REG::ZERO_TO_MODIFY_FIELDS_BITMAP, _reg: marker::PhantomData }).bits);
     }
 }
+impl<REG: Readable> core::fmt::Debug for crate::generic::Reg<REG>
+where
+    R<REG>: core::fmt::Debug,
+{
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        core::fmt::Debug::fmt(&self.read(), f)
+    }
+}
 #[doc(hidden)]
 pub mod raw;
 #[doc = " Register reader."]
@@ -263,6 +271,11 @@ impl<FI: FieldSpec> FieldReader<FI> {
         self.bits
     }
 }
+impl<FI: FieldSpec> core::fmt::Debug for FieldReader<FI> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        core::fmt::Debug::fmt(&self.bits, f)
+    }
+}
 impl<FI> PartialEq<FI> for FieldReader<FI>
 where
     FI: FieldSpec + Copy,
@@ -297,6 +310,11 @@ impl<FI> BitReader<FI> {
     #[inline(always)]
     pub const fn bit_is_set(&self) -> bool {
         self.bit()
+    }
+}
+impl<FI> core::fmt::Debug for BitReader<FI> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        core::fmt::Debug::fmt(&self.bits, f)
     }
 }
 #[doc = " Marker for register/field writers which can take any value of specified width"]
