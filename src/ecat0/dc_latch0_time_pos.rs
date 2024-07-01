@@ -9,7 +9,7 @@ impl R {
         DC_LATCH0_TIME_POS_R::new(self.bits)
     }
 }
-#[doc = "Register captures System time at the positive edge of the Latch0 signal\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_latch0_time_pos::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Register captures System time at the positive edge of the Latch0 signal\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_latch0_time_pos::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_LATCH0_TIME_POS_SPEC;
 impl crate::RegisterSpec for DC_LATCH0_TIME_POS_SPEC {
     type Ux = u32;

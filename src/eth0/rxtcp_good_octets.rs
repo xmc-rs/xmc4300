@@ -9,7 +9,7 @@ impl R {
         RXTCPGDOCT_R::new(self.bits)
     }
 }
-#[doc = "Receive TCP Good Octets Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxtcp_good_octets::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive TCP Good Octets Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxtcp_good_octets::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXTCP_GOOD_OCTETS_SPEC;
 impl crate::RegisterSpec for RXTCP_GOOD_OCTETS_SPEC {
     type Ux = u32;

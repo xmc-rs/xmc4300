@@ -658,7 +658,7 @@ impl R {
         PDIS15_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Port 5 Pin Function Decision Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdisc::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Port 5 Pin Function Decision Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pdisc::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PDISC_SPEC;
 impl crate::RegisterSpec for PDISC_SPEC {
     type Ux = u32;

@@ -14,7 +14,7 @@ impl From<P0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P0` reader - Port n Input Bit 0\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P0` reader - Port n Input Bit 0\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P0_R = crate::BitReader<P0_A>;
 impl P0_R {
     #[doc = "Get enumerated values variant"]
@@ -50,7 +50,7 @@ impl From<P1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P1` reader - Port n Input Bit 1\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P1` reader - Port n Input Bit 1\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P1_R = crate::BitReader<P1_A>;
 impl P1_R {
     #[doc = "Get enumerated values variant"]
@@ -86,7 +86,7 @@ impl From<P2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P2` reader - Port n Input Bit 2\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P2` reader - Port n Input Bit 2\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P2_R = crate::BitReader<P2_A>;
 impl P2_R {
     #[doc = "Get enumerated values variant"]
@@ -122,7 +122,7 @@ impl From<P3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P3` reader - Port n Input Bit 3\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P3` reader - Port n Input Bit 3\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P3_R = crate::BitReader<P3_A>;
 impl P3_R {
     #[doc = "Get enumerated values variant"]
@@ -158,7 +158,7 @@ impl From<P4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P4` reader - Port n Input Bit 4\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P4` reader - Port n Input Bit 4\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P4_R = crate::BitReader<P4_A>;
 impl P4_R {
     #[doc = "Get enumerated values variant"]
@@ -194,7 +194,7 @@ impl From<P5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P5` reader - Port n Input Bit 5\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P5` reader - Port n Input Bit 5\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P5_R = crate::BitReader<P5_A>;
 impl P5_R {
     #[doc = "Get enumerated values variant"]
@@ -230,7 +230,7 @@ impl From<P6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P6` reader - Port n Input Bit 6\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P6` reader - Port n Input Bit 6\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P6_R = crate::BitReader<P6_A>;
 impl P6_R {
     #[doc = "Get enumerated values variant"]
@@ -266,7 +266,7 @@ impl From<P7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P7` reader - Port n Input Bit 7\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P7` reader - Port n Input Bit 7\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P7_R = crate::BitReader<P7_A>;
 impl P7_R {
     #[doc = "Get enumerated values variant"]
@@ -302,7 +302,7 @@ impl From<P8_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P8` reader - Port n Input Bit 8\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P8` reader - Port n Input Bit 8\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P8_R = crate::BitReader<P8_A>;
 impl P8_R {
     #[doc = "Get enumerated values variant"]
@@ -338,7 +338,7 @@ impl From<P9_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P9` reader - Port n Input Bit 9\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P9` reader - Port n Input Bit 9\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P9_R = crate::BitReader<P9_A>;
 impl P9_R {
     #[doc = "Get enumerated values variant"]
@@ -374,7 +374,7 @@ impl From<P10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P10` reader - Port n Input Bit 10\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P10` reader - Port n Input Bit 10\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P10_R = crate::BitReader<P10_A>;
 impl P10_R {
     #[doc = "Get enumerated values variant"]
@@ -410,7 +410,7 @@ impl From<P11_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P11` reader - Port n Input Bit 11\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P11` reader - Port n Input Bit 11\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P11_R = crate::BitReader<P11_A>;
 impl P11_R {
     #[doc = "Get enumerated values variant"]
@@ -446,7 +446,7 @@ impl From<P12_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P12` reader - Port n Input Bit 12\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P12` reader - Port n Input Bit 12\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P12_R = crate::BitReader<P12_A>;
 impl P12_R {
     #[doc = "Get enumerated values variant"]
@@ -482,7 +482,7 @@ impl From<P13_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P13` reader - Port n Input Bit 13\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P13` reader - Port n Input Bit 13\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P13_R = crate::BitReader<P13_A>;
 impl P13_R {
     #[doc = "Get enumerated values variant"]
@@ -518,7 +518,7 @@ impl From<P14_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P14` reader - Port n Input Bit 14\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P14` reader - Port n Input Bit 14\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P14_R = crate::BitReader<P14_A>;
 impl P14_R {
     #[doc = "Get enumerated values variant"]
@@ -554,7 +554,7 @@ impl From<P15_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `P15` reader - Port n Input Bit 15\n\nThe field is **modified** in some way after a read operation."]
+#[doc = "Field `P15` reader - Port n Input Bit 15\n\n<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type P15_R = crate::BitReader<P15_A>;
 impl P15_R {
     #[doc = "Get enumerated values variant"]
@@ -658,7 +658,7 @@ impl R {
         P15_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Port 4 Input Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`in_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Port 4 Input Register\n\nYou can [`read`](crate::Reg::read) this register and get [`in_::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IN_SPEC;
 impl crate::RegisterSpec for IN_SPEC {
     type Ux = u32;

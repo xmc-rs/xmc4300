@@ -58,7 +58,7 @@ impl R {
         LN7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "Overrun Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ovrstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Overrun Status\n\nYou can [`read`](crate::Reg::read) this register and get [`ovrstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OVRSTAT_SPEC;
 impl crate::RegisterSpec for OVRSTAT_SPEC {
     type Ux = u32;

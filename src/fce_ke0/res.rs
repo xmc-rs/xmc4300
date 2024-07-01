@@ -9,7 +9,7 @@ impl R {
         RES_R::new(self.bits)
     }
 }
-#[doc = "CRC Result Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`res::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CRC Result Register\n\nYou can [`read`](crate::Reg::read) this register and get [`res::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RES_SPEC;
 impl crate::RegisterSpec for RES_SPEC {
     type Ux = u32;

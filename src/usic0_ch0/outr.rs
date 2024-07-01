@@ -16,7 +16,7 @@ impl R {
         RCI_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
 }
-#[doc = "Receiver Buffer Output Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`outr::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receiver Buffer Output Register\n\nYou can [`read`](crate::Reg::read) this register and get [`outr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>"]
 pub struct OUTR_SPEC;
 impl crate::RegisterSpec for OUTR_SPEC {
     type Ux = u32;

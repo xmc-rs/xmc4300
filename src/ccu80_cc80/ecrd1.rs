@@ -224,7 +224,7 @@ impl R {
         LCV_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
-#[doc = "Extended Read Back 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecrd1::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Extended Read Back 1\n\nYou can [`read`](crate::Reg::read) this register and get [`ecrd1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>"]
 pub struct ECRD1_SPEC;
 impl crate::RegisterSpec for ECRD1_SPEC {
     type Ux = u32;

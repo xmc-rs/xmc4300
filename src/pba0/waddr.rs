@@ -9,7 +9,7 @@ impl R {
         WADDR_R::new(self.bits)
     }
 }
-#[doc = "PBA Write Error Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`waddr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PBA Write Error Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`waddr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct WADDR_SPEC;
 impl crate::RegisterSpec for WADDR_SPEC {
     type Ux = u32;

@@ -9,7 +9,7 @@ impl R {
         RXJABERR_R::new(self.bits)
     }
 }
-#[doc = "Receive Frame Count for Jabber Error Frames\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rx_jabber_error_frames::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Frame Count for Jabber Error Frames\n\nYou can [`read`](crate::Reg::read) this register and get [`rx_jabber_error_frames::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RX_JABBER_ERROR_FRAMES_SPEC;
 impl crate::RegisterSpec for RX_JABBER_ERROR_FRAMES_SPEC {
     type Ux = u32;

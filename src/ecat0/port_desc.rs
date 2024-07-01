@@ -254,7 +254,7 @@ impl R {
         PORT3_R::new((self.bits >> 6) & 3)
     }
 }
-#[doc = "Port Descriptor\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`port_desc::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Port Descriptor\n\nYou can [`read`](crate::Reg::read) this register and get [`port_desc::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PORT_DESC_SPEC;
 impl crate::RegisterSpec for PORT_DESC_SPEC {
     type Ux = u8;

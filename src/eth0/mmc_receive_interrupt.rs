@@ -184,7 +184,7 @@ impl R {
         RXCTRLFIS_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
-#[doc = "MMC Receive Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mmc_receive_interrupt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "MMC Receive Interrupt Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mmc_receive_interrupt::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MMC_RECEIVE_INTERRUPT_SPEC;
 impl crate::RegisterSpec for MMC_RECEIVE_INTERRUPT_SPEC {
     type Ux = u32;

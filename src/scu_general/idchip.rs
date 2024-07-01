@@ -9,7 +9,7 @@ impl R {
         IDCHIP_R::new(self.bits)
     }
 }
-#[doc = "Chip ID Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`idchip::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Chip ID Register\n\nYou can [`read`](crate::Reg::read) this register and get [`idchip::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IDCHIP_SPEC;
 impl crate::RegisterSpec for IDCHIP_SPEC {
     type Ux = u32;

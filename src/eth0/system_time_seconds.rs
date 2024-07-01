@@ -9,7 +9,7 @@ impl R {
         TSS_R::new(self.bits)
     }
 }
-#[doc = "System Time - Seconds Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`system_time_seconds::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "System Time - Seconds Register\n\nYou can [`read`](crate::Reg::read) this register and get [`system_time_seconds::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SYSTEM_TIME_SECONDS_SPEC;
 impl crate::RegisterSpec for SYSTEM_TIME_SECONDS_SPEC {
     type Ux = u32;

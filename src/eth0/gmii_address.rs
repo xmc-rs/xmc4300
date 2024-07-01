@@ -81,7 +81,7 @@ impl W {
         PA_W::new(self, 11)
     }
 }
-#[doc = "MII Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gmii_address::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gmii_address::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "MII Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`gmii_address::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gmii_address::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GMII_ADDRESS_SPEC;
 impl crate::RegisterSpec for GMII_ADDRESS_SPEC {
     type Ux = u32;

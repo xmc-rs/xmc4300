@@ -9,7 +9,7 @@ impl R {
         BUFFER_ADDRESS_R::new(self.bits)
     }
 }
-#[doc = "Host Channel DMA Buffer Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hcdmab::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Host Channel DMA Buffer Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`hcdmab::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HCDMAB_SPEC;
 impl crate::RegisterSpec for HCDMAB_SPEC {
     type Ux = u32;

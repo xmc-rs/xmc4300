@@ -9,7 +9,7 @@ impl R {
         TYPE_R::new(self.bits)
     }
 }
-#[doc = "Type of EtherCAT Controller\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`type_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Type of EtherCAT Controller\n\nYou can [`read`](crate::Reg::read) this register and get [`type_::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TYPE_SPEC;
 impl crate::RegisterSpec for TYPE_SPEC {
     type Ux = u8;

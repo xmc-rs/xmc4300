@@ -9,7 +9,7 @@ impl R {
         DSR_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Receiver Buffer Register for Debugger\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rbufd::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receiver Buffer Register for Debugger\n\nYou can [`read`](crate::Reg::read) this register and get [`rbufd::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RBUFD_SPEC;
 impl crate::RegisterSpec for RBUFD_SPEC {
     type Ux = u32;

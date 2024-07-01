@@ -37,7 +37,7 @@ impl R {
         ERR_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
-#[doc = "Combined Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`statusint::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Combined Interrupt Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`statusint::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STATUSINT_SPEC;
 impl crate::RegisterSpec for STATUSINT_SPEC {
     type Ux = u32;

@@ -9,7 +9,7 @@ impl R {
         P_START_BIT_R::new(self.bits & 7)
     }
 }
-#[doc = "Ph0sical Start bit FMMU y\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmmu_p_start_bit::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Ph0sical Start bit FMMU y\n\nYou can [`read`](crate::Reg::read) this register and get [`fmmu_p_start_bit::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FMMU_P_START_BIT_SPEC;
 impl crate::RegisterSpec for FMMU_P_START_BIT_SPEC {
     type Ux = u8;

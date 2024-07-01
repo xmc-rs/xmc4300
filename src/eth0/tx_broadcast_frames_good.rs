@@ -9,7 +9,7 @@ impl R {
         TXBCASTG_R::new(self.bits)
     }
 }
-#[doc = "Transmit Frame Count for Good Broadcast Frames\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_broadcast_frames_good::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Transmit Frame Count for Good Broadcast Frames\n\nYou can [`read`](crate::Reg::read) this register and get [`tx_broadcast_frames_good::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TX_BROADCAST_FRAMES_GOOD_SPEC;
 impl crate::RegisterSpec for TX_BROADCAST_FRAMES_GOOD_SPEC {
     type Ux = u32;

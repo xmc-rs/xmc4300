@@ -9,7 +9,7 @@ impl R {
         DC_NEXT_SYNC1_PULSE_R::new(self.bits)
     }
 }
-#[doc = "System time of next SYNC1 pulse in ns\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_next_sync1_pulse::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "System time of next SYNC1 pulse in ns\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_next_sync1_pulse::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_NEXT_SYNC1_PULSE_SPEC;
 impl crate::RegisterSpec for DC_NEXT_SYNC1_PULSE_SPEC {
     type Ux = u32;

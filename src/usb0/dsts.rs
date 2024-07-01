@@ -62,7 +62,7 @@ impl R {
         SOFFN_R::new(((self.bits >> 8) & 0x3fff) as u16)
     }
 }
-#[doc = "Device Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dsts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dsts::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DSTS_SPEC;
 impl crate::RegisterSpec for DSTS_SPEC {
     type Ux = u32;

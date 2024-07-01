@@ -91,7 +91,7 @@ impl R {
         L0_PIN_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "Latch0 Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_latch0_stat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Latch0 Status\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_latch0_stat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_LATCH0_STAT_SPEC;
 impl crate::RegisterSpec for DC_LATCH0_STAT_SPEC {
     type Ux = u8;

@@ -9,7 +9,7 @@ impl R {
         TIM_R::new(self.bits)
     }
 }
-#[doc = "WDT Timer Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tim::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "WDT Timer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`tim::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TIM_SPEC;
 impl crate::RegisterSpec for TIM_SPEC {
     type Ux = u32;

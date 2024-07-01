@@ -167,7 +167,7 @@ impl R {
         NPTX_QTOP_R::new(((self.bits >> 24) & 0x7f) as u8)
     }
 }
-#[doc = "Non-Periodic Transmit FIFO/Queue Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gnptxsts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Non-Periodic Transmit FIFO/Queue Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`gnptxsts::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GNPTXSTS_SPEC;
 impl crate::RegisterSpec for GNPTXSTS_SPEC {
     type Ux = u32;

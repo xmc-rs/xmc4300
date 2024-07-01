@@ -253,7 +253,7 @@ impl R {
         ECAT0RS_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
-#[doc = "RCU Reset Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rststat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "RCU Reset Status\n\nYou can [`read`](crate::Reg::read) this register and get [`rststat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RSTSTAT_SPEC;
 impl crate::RegisterSpec for RSTSTAT_SPEC {
     type Ux = u32;

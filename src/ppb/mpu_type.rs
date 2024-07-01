@@ -23,7 +23,7 @@ impl R {
         IREGION_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
-#[doc = "MPU Type Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mpu_type::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "MPU Type Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mpu_type::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MPU_TYPE_SPEC;
 impl crate::RegisterSpec for MPU_TYPE_SPEC {
     type Ux = u32;

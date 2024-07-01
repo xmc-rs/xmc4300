@@ -43,7 +43,7 @@ impl R {
         WD_STAT_PD_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Watchdog Status Process Data\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wd_stat_pdata::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Watchdog Status Process Data\n\nYou can [`read`](crate::Reg::read) this register and get [`wd_stat_pdata::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct WD_STAT_PDATA_SPEC;
 impl crate::RegisterSpec for WD_STAT_PDATA_SPEC {
     type Ux = u16;

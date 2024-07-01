@@ -9,7 +9,7 @@ impl R {
         CALIBCONST_R::new((self.bits & 0x0f) as u8)
     }
 }
-#[doc = "Clock Calibration Constant Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkcalconst::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Clock Calibration Constant Register\n\nYou can [`read`](crate::Reg::read) this register and get [`clkcalconst::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CLKCALCONST_SPEC;
 impl crate::RegisterSpec for CLKCALCONST_SPEC {
     type Ux = u32;

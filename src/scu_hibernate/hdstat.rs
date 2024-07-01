@@ -207,7 +207,7 @@ impl R {
         HIBNOUT_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
-#[doc = "Hibernate Domain Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Hibernate Domain Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`hdstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HDSTAT_SPEC;
 impl crate::RegisterSpec for HDSTAT_SPEC {
     type Ux = u32;

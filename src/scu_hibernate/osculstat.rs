@@ -9,7 +9,7 @@ impl R {
         X1D_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "OSC_ULP Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`osculstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "OSC_ULP Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`osculstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OSCULSTAT_SPEC;
 impl crate::RegisterSpec for OSCULSTAT_SPEC {
     type Ux = u32;

@@ -9,7 +9,7 @@ impl R {
         RXIPV6HDRERRFRM_R::new(self.bits)
     }
 }
-#[doc = "Receive IPV6 Header Error Frame Counter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxipv6_header_error_frames::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive IPV6 Header Error Frame Counter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxipv6_header_error_frames::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXIPV6_HEADER_ERROR_FRAMES_SPEC;
 impl crate::RegisterSpec for RXIPV6_HEADER_ERROR_FRAMES_SPEC {
     type Ux = u32;

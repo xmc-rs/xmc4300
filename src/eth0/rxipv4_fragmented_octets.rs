@@ -9,7 +9,7 @@ impl R {
         RXIPV4FRAGOCT_R::new(self.bits)
     }
 }
-#[doc = "Receive IPV4 Fragmented Octet Counter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxipv4_fragmented_octets::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive IPV4 Fragmented Octet Counter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxipv4_fragmented_octets::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXIPV4_FRAGMENTED_OCTETS_SPEC;
 impl crate::RegisterSpec for RXIPV4_FRAGMENTED_OCTETS_SPEC {
     type Ux = u32;

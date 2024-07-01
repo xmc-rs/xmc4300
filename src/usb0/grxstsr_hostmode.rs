@@ -142,7 +142,7 @@ impl R {
         PKT_STS_R::new(((self.bits >> 17) & 0x0f) as u8)
     }
 }
-#[doc = "Receive Status Debug Read Register \\[HOSTMODE\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`grxstsr_hostmode::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Status Debug Read Register \\[HOSTMODE\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`grxstsr_hostmode::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GRXSTSR_HOSTMODE_SPEC;
 impl crate::RegisterSpec for GRXSTSR_HOSTMODE_SPEC {
     type Ux = u32;

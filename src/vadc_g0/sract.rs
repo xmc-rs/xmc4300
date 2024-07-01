@@ -298,7 +298,7 @@ impl W {
         ASSR3_W::new(self, 11)
     }
 }
-#[doc = "Service Request Software Activation Trigger\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sract::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Service Request Software Activation Trigger\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sract::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SRACT_SPEC;
 impl crate::RegisterSpec for SRACT_SPEC {
     type Ux = u32;

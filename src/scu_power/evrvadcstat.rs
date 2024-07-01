@@ -16,7 +16,7 @@ impl R {
         VADC33V_R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
-#[doc = "EVR VADC Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`evrvadcstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "EVR VADC Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`evrvadcstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EVRVADCSTAT_SPEC;
 impl crate::RegisterSpec for EVRVADCSTAT_SPEC {
     type Ux = u32;

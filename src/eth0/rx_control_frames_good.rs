@@ -9,7 +9,7 @@ impl R {
         RXCTRLG_R::new(self.bits)
     }
 }
-#[doc = "Receive Frame Count for Good Control Frames Frames\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rx_control_frames_good::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Frame Count for Good Control Frames Frames\n\nYou can [`read`](crate::Reg::read) this register and get [`rx_control_frames_good::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RX_CONTROL_FRAMES_GOOD_SPEC;
 impl crate::RegisterSpec for RX_CONTROL_FRAMES_GOOD_SPEC {
     type Ux = u32;

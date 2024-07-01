@@ -21,7 +21,7 @@ impl W {
         TDESLA_32BIT_W::new(self, 2)
     }
 }
-#[doc = "Transmit descripter Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`transmit_descriptor_list_address::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`transmit_descriptor_list_address::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Transmit descripter Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`transmit_descriptor_list_address::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`transmit_descriptor_list_address::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC;
 impl crate::RegisterSpec for TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC {
     type Ux = u32;

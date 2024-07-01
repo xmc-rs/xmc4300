@@ -9,7 +9,7 @@ impl R {
         TSSS_R::new(self.bits & 0x7fff_ffff)
     }
 }
-#[doc = "System Time Nanoseconds Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`system_time_nanoseconds::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "System Time Nanoseconds Register\n\nYou can [`read`](crate::Reg::read) this register and get [`system_time_nanoseconds::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SYSTEM_TIME_NANOSECONDS_SPEC;
 impl crate::RegisterSpec for SYSTEM_TIME_NANOSECONDS_SPEC {
     type Ux = u32;

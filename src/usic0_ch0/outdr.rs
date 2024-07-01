@@ -16,7 +16,7 @@ impl R {
         RCI_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
 }
-#[doc = "Receiver Buffer Output Register L for Debugger\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`outdr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receiver Buffer Output Register L for Debugger\n\nYou can [`read`](crate::Reg::read) this register and get [`outdr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OUTDR_SPEC;
 impl crate::RegisterSpec for OUTDR_SPEC {
     type Ux = u32;

@@ -23,7 +23,7 @@ impl R {
         MODN_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
-#[doc = "Module Identification\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`midr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Module Identification\n\nYou can [`read`](crate::Reg::read) this register and get [`midr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MIDR_SPEC;
 impl crate::RegisterSpec for MIDR_SPEC {
     type Ux = u32;

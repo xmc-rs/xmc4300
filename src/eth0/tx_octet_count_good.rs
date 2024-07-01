@@ -9,7 +9,7 @@ impl R {
         TXOCTG_R::new(self.bits)
     }
 }
-#[doc = "Tx Octet Count Good Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_octet_count_good::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Tx Octet Count Good Register\n\nYou can [`read`](crate::Reg::read) this register and get [`tx_octet_count_good::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TX_OCTET_COUNT_GOOD_SPEC;
 impl crate::RegisterSpec for TX_OCTET_COUNT_GOOD_SPEC {
     type Ux = u32;

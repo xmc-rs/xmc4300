@@ -142,7 +142,7 @@ impl R {
         PKT_STS_R::new(((self.bits >> 17) & 0x0f) as u8)
     }
 }
-#[doc = "Receive Status Read and Pop Register \\[HOSTMODE\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`grxstsp_hostmode::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Status Read and Pop Register \\[HOSTMODE\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`grxstsp_hostmode::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>"]
 pub struct GRXSTSP_HOSTMODE_SPEC;
 impl crate::RegisterSpec for GRXSTSP_HOSTMODE_SPEC {
     type Ux = u32;

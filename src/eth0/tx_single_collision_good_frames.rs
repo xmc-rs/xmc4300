@@ -9,7 +9,7 @@ impl R {
         TXSNGLCOLG_R::new(self.bits)
     }
 }
-#[doc = "Transmit Frame Count for Frames Transmitted after Single Collision\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_single_collision_good_frames::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Transmit Frame Count for Frames Transmitted after Single Collision\n\nYou can [`read`](crate::Reg::read) this register and get [`tx_single_collision_good_frames::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TX_SINGLE_COLLISION_GOOD_FRAMES_SPEC;
 impl crate::RegisterSpec for TX_SINGLE_COLLISION_GOOD_FRAMES_SPEC {
     type Ux = u32;

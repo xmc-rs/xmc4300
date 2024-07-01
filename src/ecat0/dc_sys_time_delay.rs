@@ -21,7 +21,7 @@ impl W {
         CLK_DELAY_W::new(self, 0)
     }
 }
-#[doc = "System Time Delay\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_sys_time_delay::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dc_sys_time_delay::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "System Time Delay\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_sys_time_delay::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dc_sys_time_delay::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_SYS_TIME_DELAY_SPEC;
 impl crate::RegisterSpec for DC_SYS_TIME_DELAY_SPEC {
     type Ux = u32;

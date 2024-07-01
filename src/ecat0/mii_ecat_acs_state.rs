@@ -43,7 +43,7 @@ impl R {
         EN_ACS_MII_BY_PDI_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "MII ECAT ACS STATE\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mii_ecat_acs_state::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "MII ECAT ACS STATE\n\nYou can [`read`](crate::Reg::read) this register and get [`mii_ecat_acs_state::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MII_ECAT_ACS_STATE_SPEC;
 impl crate::RegisterSpec for MII_ECAT_ACS_STATE_SPEC {
     type Ux = u8;

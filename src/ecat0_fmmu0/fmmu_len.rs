@@ -9,7 +9,7 @@ impl R {
         OFFSET_R::new(self.bits)
     }
 }
-#[doc = "Length FMMU 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmmu_len::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Length FMMU 0\n\nYou can [`read`](crate::Reg::read) this register and get [`fmmu_len::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FMMU_LEN_SPEC;
 impl crate::RegisterSpec for FMMU_LEN_SPEC {
     type Ux = u16;

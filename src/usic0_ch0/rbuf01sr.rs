@@ -480,7 +480,7 @@ impl R {
         DS1_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Receiver Buffer 01 Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rbuf01sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receiver Buffer 01 Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rbuf01sr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RBUF01SR_SPEC;
 impl crate::RegisterSpec for RBUF01SR_SPEC {
     type Ux = u32;

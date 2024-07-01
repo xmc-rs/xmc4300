@@ -36,7 +36,7 @@ impl W {
         SGC_W::new(self, 20)
     }
 }
-#[doc = "Source Gather Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sgr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sgr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Source Gather Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sgr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sgr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SGR_SPEC;
 impl crate::RegisterSpec for SGR_SPEC {
     type Ux = u32;

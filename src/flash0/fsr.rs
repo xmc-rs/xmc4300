@@ -788,7 +788,7 @@ impl R {
         VER_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Flash Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Flash Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`fsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FSR_SPEC;
 impl crate::RegisterSpec for FSR_SPEC {
     type Ux = u32;

@@ -57,7 +57,7 @@ impl R {
         INEPTX_FSPC_AVAIL_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Device IN Endpoint Transmit FIFO Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtxfsts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dtxfsts::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DTXFSTS_SPEC;
 impl crate::RegisterSpec for DTXFSTS_SPEC {
     type Ux = u32;

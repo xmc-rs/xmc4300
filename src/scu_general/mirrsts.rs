@@ -535,7 +535,7 @@ impl R {
         RTC_CLRSR_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Mirror Write Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mirrsts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Mirror Write Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mirrsts::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MIRRSTS_SPEC;
 impl crate::RegisterSpec for MIRRSTS_SPEC {
     type Ux = u32;

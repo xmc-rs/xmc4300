@@ -157,7 +157,7 @@ impl R {
         FN_R::new(((self.bits >> 21) & 0x0f) as u8)
     }
 }
-#[doc = "Receive Status Debug Read Register \\[DEVICEMODE\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`grxstsr_devicemode::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Status Debug Read Register \\[DEVICEMODE\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`grxstsr_devicemode::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GRXSTSR_DEVICEMODE_SPEC;
 impl crate::RegisterSpec for GRXSTSR_DEVICEMODE_SPEC {
     type Ux = u32;

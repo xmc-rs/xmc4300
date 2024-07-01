@@ -9,7 +9,7 @@ impl R {
         RXUCASTG_R::new(self.bits)
     }
 }
-#[doc = "Receive Frame Count for Good Unicast Frames\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rx_unicast_frames_good::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Frame Count for Good Unicast Frames\n\nYou can [`read`](crate::Reg::read) this register and get [`rx_unicast_frames_good::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RX_UNICAST_FRAMES_GOOD_SPEC;
 impl crate::RegisterSpec for RX_UNICAST_FRAMES_GOOD_SPEC {
     type Ux = u32;

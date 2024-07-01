@@ -41,7 +41,7 @@ impl R {
         SLOT_INT_STATUS_R::new((self.bits & 0xff) as u8)
     }
 }
-#[doc = "Slot Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`slot_int_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Slot Interrupt Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`slot_int_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SLOT_INT_STATUS_SPEC;
 impl crate::RegisterSpec for SLOT_INT_STATUS_SPEC {
     type Ux = u16;

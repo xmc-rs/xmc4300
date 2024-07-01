@@ -330,7 +330,7 @@ impl R {
         EHLD_P3_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "ESC Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`esc_config::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "ESC Configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`esc_config::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ESC_CONFIG_SPEC;
 impl crate::RegisterSpec for ESC_CONFIG_SPEC {
     type Ux = u8;

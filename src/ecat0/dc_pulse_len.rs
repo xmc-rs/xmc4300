@@ -43,7 +43,7 @@ impl R {
         PULS_LENGTH_R::new(self.bits)
     }
 }
-#[doc = "Pulse Length of SyncSignals\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_pulse_len::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Pulse Length of SyncSignals\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_pulse_len::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_PULSE_LEN_SPEC;
 impl crate::RegisterSpec for DC_PULSE_LEN_SPEC {
     type Ux = u16;

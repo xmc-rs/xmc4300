@@ -9,7 +9,7 @@ impl R {
         OFFSET_R::new(self.bits)
     }
 }
-#[doc = "Physical Read/Write Offset\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`physical_rw_offset::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Physical Read/Write Offset\n\nYou can [`read`](crate::Reg::read) this register and get [`physical_rw_offset::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PHYSICAL_RW_OFFSET_SPEC;
 impl crate::RegisterSpec for PHYSICAL_RW_OFFSET_SPEC {
     type Ux = u16;

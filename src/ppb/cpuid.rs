@@ -165,7 +165,7 @@ impl R {
         IMPLEMENTER_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
-#[doc = "CPUID Base Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cpuid::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CPUID Base Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cpuid::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CPUID_SPEC;
 impl crate::RegisterSpec for CPUID_SPEC {
     type Ux = u32;

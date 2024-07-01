@@ -9,7 +9,7 @@ impl R {
         TXEXSCOL_R::new(self.bits)
     }
 }
-#[doc = "Transmit Frame Count for Excessive Collision Error Frames\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_excessive_collision_frames::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Transmit Frame Count for Excessive Collision Error Frames\n\nYou can [`read`](crate::Reg::read) this register and get [`tx_excessive_collision_frames::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TX_EXCESSIVE_COLLISION_FRAMES_SPEC;
 impl crate::RegisterSpec for TX_EXCESSIVE_COLLISION_FRAMES_SPEC {
     type Ux = u32;

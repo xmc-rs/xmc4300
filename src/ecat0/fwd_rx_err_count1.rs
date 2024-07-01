@@ -9,7 +9,7 @@ impl R {
         FORW_ERROR_R::new(self.bits)
     }
 }
-#[doc = "Forwarded RX Error Counter Port 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fwd_rx_err_count1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Forwarded RX Error Counter Port 1\n\nYou can [`read`](crate::Reg::read) this register and get [`fwd_rx_err_count1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FWD_RX_ERR_COUNT1_SPEC;
 impl crate::RegisterSpec for FWD_RX_ERR_COUNT1_SPEC {
     type Ux = u8;

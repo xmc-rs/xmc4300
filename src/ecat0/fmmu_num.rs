@@ -9,7 +9,7 @@ impl R {
         NUM_FMMU_R::new(self.bits)
     }
 }
-#[doc = "FMMUs Supported\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmmu_num::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FMMUs Supported\n\nYou can [`read`](crate::Reg::read) this register and get [`fmmu_num::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FMMU_NUM_SPEC;
 impl crate::RegisterSpec for FMMU_NUM_SPEC {
     type Ux = u8;

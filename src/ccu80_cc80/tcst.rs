@@ -166,7 +166,7 @@ impl R {
         DTR2_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
-#[doc = "Slice Timer Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tcst::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Slice Timer Status\n\nYou can [`read`](crate::Reg::read) this register and get [`tcst::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TCST_SPEC;
 impl crate::RegisterSpec for TCST_SPEC {
     type Ux = u32;

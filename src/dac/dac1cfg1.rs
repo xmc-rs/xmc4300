@@ -442,7 +442,7 @@ impl W {
         REFCFGH_W::new(self, 28)
     }
 }
-#[doc = "DAC1 Configuration Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dac1cfg1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dac1cfg1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DAC1 Configuration Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`dac1cfg1::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dac1cfg1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DAC1CFG1_SPEC;
 impl crate::RegisterSpec for DAC1CFG1_SPEC {
     type Ux = u32;

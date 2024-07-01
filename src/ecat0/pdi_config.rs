@@ -112,7 +112,7 @@ impl R {
         OC_BUS_R::new((self.bits >> 5) & 7)
     }
 }
-#[doc = "PDI Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdi_config::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PDI Control\n\nYou can [`read`](crate::Reg::read) this register and get [`pdi_config::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PDI_CONFIG_SPEC;
 impl crate::RegisterSpec for PDI_CONFIG_SPEC {
     type Ux = u8;

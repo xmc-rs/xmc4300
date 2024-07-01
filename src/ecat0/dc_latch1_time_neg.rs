@@ -9,7 +9,7 @@ impl R {
         DC_LATCH1_TIME_NEG_R::new(self.bits)
     }
 }
-#[doc = "Register captures System time at the negative edge of the Latch1 signal\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_latch1_time_neg::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Register captures System time at the negative edge of the Latch1 signal\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_latch1_time_neg::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_LATCH1_TIME_NEG_SPEC;
 impl crate::RegisterSpec for DC_LATCH1_TIME_NEG_SPEC {
     type Ux = u32;

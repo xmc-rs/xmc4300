@@ -57,7 +57,7 @@ impl R {
         RESET_CMD_STATE_R::new(self.bits & 3)
     }
 }
-#[doc = "ESC Reset ECAT \\[READ Mode\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`readmode_esc_reset_ecat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "ESC Reset ECAT \\[READ Mode\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`readmode_esc_reset_ecat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct READMODE_ESC_RESET_ECAT_SPEC;
 impl crate::RegisterSpec for READMODE_ESC_RESET_ECAT_SPEC {
     type Ux = u8;

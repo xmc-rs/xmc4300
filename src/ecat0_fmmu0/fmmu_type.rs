@@ -84,7 +84,7 @@ impl R {
         W_ACC_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
-#[doc = "T0pe FMMU y\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmmu_type::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "T0pe FMMU y\n\nYou can [`read`](crate::Reg::read) this register and get [`fmmu_type::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FMMU_TYPE_SPEC;
 impl crate::RegisterSpec for FMMU_TYPE_SPEC {
     type Ux = u8;

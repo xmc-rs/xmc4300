@@ -322,7 +322,7 @@ impl W {
         EPENA_W::new(self, 31)
     }
 }
-#[doc = "Device Endpoint Control Register \\[INTBULK\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`doepctl_intbulk::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`doepctl_intbulk::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device Endpoint Control Register \\[INTBULK\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`doepctl_intbulk::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`doepctl_intbulk::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DOEPCTL_INTBULK_SPEC;
 impl crate::RegisterSpec for DOEPCTL_INTBULK_SPEC {
     type Ux = u32;

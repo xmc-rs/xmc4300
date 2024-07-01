@@ -99,7 +99,7 @@ impl W {
         PKT_CNT_W::new(self, 19)
     }
 }
-#[doc = "Device Endpoint Transfer Size Register \\[ISO\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`doeptsiz_iso::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`doeptsiz_iso::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device Endpoint Transfer Size Register \\[ISO\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`doeptsiz_iso::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`doeptsiz_iso::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DOEPTSIZ_ISO_SPEC;
 impl crate::RegisterSpec for DOEPTSIZ_ISO_SPEC {
     type Ux = u32;

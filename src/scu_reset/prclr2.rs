@@ -224,7 +224,7 @@ impl W {
         ECAT0RS_W::new(self, 10)
     }
 }
-#[doc = "RCU Peripheral 2 Reset Clear\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prclr2::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "RCU Peripheral 2 Reset Clear\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`prclr2::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRCLR2_SPEC;
 impl crate::RegisterSpec for PRCLR2_SPEC {
     type Ux = u32;

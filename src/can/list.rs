@@ -64,7 +64,7 @@ impl R {
         EMPTY_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
-#[doc = "List Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`list::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "List Register\n\nYou can [`read`](crate::Reg::read) this register and get [`list::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LIST_SPEC;
 impl crate::RegisterSpec for LIST_SPEC {
     type Ux = u32;

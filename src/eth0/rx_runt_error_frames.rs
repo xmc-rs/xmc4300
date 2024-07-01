@@ -9,7 +9,7 @@ impl R {
         RXRUNTERR_R::new(self.bits)
     }
 }
-#[doc = "Receive Frame Count for Runt Error Frames\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rx_runt_error_frames::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Frame Count for Runt Error Frames\n\nYou can [`read`](crate::Reg::read) this register and get [`rx_runt_error_frames::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RX_RUNT_ERROR_FRAMES_SPEC;
 impl crate::RegisterSpec for RX_RUNT_ERROR_FRAMES_SPEC {
     type Ux = u32;

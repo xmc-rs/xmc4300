@@ -550,7 +550,7 @@ impl R {
         CC83ST2_R::new(((self.bits >> 23) & 1) != 0)
     }
 }
-#[doc = "Global Channel status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gcst::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Global Channel status\n\nYou can [`read`](crate::Reg::read) this register and get [`gcst::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GCST_SPEC;
 impl crate::RegisterSpec for GCST_SPEC {
     type Ux = u32;

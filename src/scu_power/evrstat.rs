@@ -43,7 +43,7 @@ impl R {
         OV13_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
-#[doc = "EVR Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`evrstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "EVR Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`evrstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EVRSTAT_SPEC;
 impl crate::RegisterSpec for EVRSTAT_SPEC {
     type Ux = u32;

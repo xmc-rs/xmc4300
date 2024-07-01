@@ -9,7 +9,7 @@ impl R {
         INDEX_R::new((self.bits & 0x3f) as u8)
     }
 }
-#[doc = "Message Index Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`msid::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Message Index Register\n\nYou can [`read`](crate::Reg::read) this register and get [`msid::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MSID_SPEC;
 impl crate::RegisterSpec for MSID_SPEC {
     type Ux = u32;

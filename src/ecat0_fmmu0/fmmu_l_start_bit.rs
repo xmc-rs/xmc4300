@@ -9,7 +9,7 @@ impl R {
         L_START_BIT_R::new(self.bits & 7)
     }
 }
-#[doc = "Start bit FMMU 0 in logical address space\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmmu_l_start_bit::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Start bit FMMU 0 in logical address space\n\nYou can [`read`](crate::Reg::read) this register and get [`fmmu_l_start_bit::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FMMU_L_START_BIT_SPEC;
 impl crate::RegisterSpec for FMMU_L_START_BIT_SPEC {
     type Ux = u8;

@@ -90,7 +90,7 @@ of this register (valid values are 0-3)"]
         PHY_CADDR_W::new(self, 7)
     }
 }
-#[doc = "PHY Address\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mii_phy_adr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mii_phy_adr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PHY Address\n\nYou can [`read`](crate::Reg::read) this register and get [`mii_phy_adr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mii_phy_adr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MII_PHY_ADR_SPEC;
 impl crate::RegisterSpec for MII_PHY_ADR_SPEC {
     type Ux = u8;

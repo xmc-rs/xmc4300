@@ -9,7 +9,7 @@ impl R {
         WD_COUNTER_PDI_R::new(self.bits)
     }
 }
-#[doc = "Watchdog Counter PDI\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wd_count_pdi::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Watchdog Counter PDI\n\nYou can [`read`](crate::Reg::read) this register and get [`wd_count_pdi::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct WD_COUNT_PDI_SPEC;
 impl crate::RegisterSpec for WD_COUNT_PDI_SPEC {
     type Ux = u8;

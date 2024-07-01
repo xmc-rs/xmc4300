@@ -9,7 +9,7 @@ impl R {
         LOCAL_TIME_P1_R::new(self.bits)
     }
 }
-#[doc = "Receive Time Port 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_rcv_time_port1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Time Port 1\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_rcv_time_port1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_RCV_TIME_PORT1_SPEC;
 impl crate::RegisterSpec for DC_RCV_TIME_PORT1_SPEC {
     type Ux = u32;

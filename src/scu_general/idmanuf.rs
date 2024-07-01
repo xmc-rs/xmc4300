@@ -16,7 +16,7 @@ impl R {
         MANUF_R::new(((self.bits >> 5) & 0x07ff) as u16)
     }
 }
-#[doc = "Manufactory ID Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`idmanuf::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Manufactory ID Register\n\nYou can [`read`](crate::Reg::read) this register and get [`idmanuf::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IDMANUF_SPEC;
 impl crate::RegisterSpec for IDMANUF_SPEC {
     type Ux = u32;

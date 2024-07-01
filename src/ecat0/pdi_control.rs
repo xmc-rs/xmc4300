@@ -49,7 +49,7 @@ impl R {
         PDI_R::new(self.bits)
     }
 }
-#[doc = "PDI Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdi_control::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PDI Control\n\nYou can [`read`](crate::Reg::read) this register and get [`pdi_control::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PDI_CONTROL_SPEC;
 impl crate::RegisterSpec for PDI_CONTROL_SPEC {
     type Ux = u8;

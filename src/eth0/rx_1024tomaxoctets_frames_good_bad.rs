@@ -9,7 +9,7 @@ impl R {
         RX1024_MAXOCTGB_R::new(self.bits)
     }
 }
-#[doc = "Receive Frame Count for Good and Bad 1,024 to Maxsize Bytes Frames\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rx_1024tomaxoctets_frames_good_bad::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Frame Count for Good and Bad 1,024 to Maxsize Bytes Frames\n\nYou can [`read`](crate::Reg::read) this register and get [`rx_1024tomaxoctets_frames_good_bad::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RX_1024TOMAXOCTETS_FRAMES_GOOD_BAD_SPEC;
 impl crate::RegisterSpec for RX_1024TOMAXOCTETS_FRAMES_GOOD_BAD_SPEC {
     type Ux = u32;

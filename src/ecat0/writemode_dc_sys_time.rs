@@ -10,7 +10,7 @@ impl W {
         WRITE_ACCESS_W::new(self, 0)
     }
 }
-#[doc = "System Time \\[WRITE Mode\\]\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`writemode_dc_sys_time::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "System Time \\[WRITE Mode\\]\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`writemode_dc_sys_time::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct WRITEMODE_DC_SYS_TIME_SPEC;
 impl crate::RegisterSpec for WRITEMODE_DC_SYS_TIME_SPEC {
     type Ux = u32;

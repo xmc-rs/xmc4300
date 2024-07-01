@@ -9,7 +9,7 @@ impl R {
         DEVIATION_R::new(self.bits)
     }
 }
-#[doc = "Speed Counter Diff\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_speed_count_diff::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Speed Counter Diff\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_speed_count_diff::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_SPEED_COUNT_DIFF_SPEC;
 impl crate::RegisterSpec for DC_SPEED_COUNT_DIFF_SPEC {
     type Ux = u16;

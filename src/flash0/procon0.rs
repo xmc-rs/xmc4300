@@ -412,7 +412,7 @@ impl R {
         RPRO_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Flash Protection Configuration Register User 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`procon0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Flash Protection Configuration Register User 0\n\nYou can [`read`](crate::Reg::read) this register and get [`procon0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PROCON0_SPEC;
 impl crate::RegisterSpec for PROCON0_SPEC {
     type Ux = u32;

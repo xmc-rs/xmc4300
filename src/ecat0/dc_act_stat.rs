@@ -125,7 +125,7 @@ impl R {
         S_TIME_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "Activation Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_act_stat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Activation Status\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_act_stat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_ACT_STAT_SPEC;
 impl crate::RegisterSpec for DC_ACT_STAT_SPEC {
     type Ux = u8;

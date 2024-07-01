@@ -9,7 +9,7 @@ impl R {
         RXUDPGDFRM_R::new(self.bits)
     }
 }
-#[doc = "RxUDP Good Frames Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxudp_good_frames::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "RxUDP Good Frames Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxudp_good_frames::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXUDP_GOOD_FRAMES_SPEC;
 impl crate::RegisterSpec for RXUDP_GOOD_FRAMES_SPEC {
     type Ux = u32;

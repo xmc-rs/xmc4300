@@ -43,7 +43,7 @@ impl R {
         WR_REG_P_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Write Register Protection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wr_reg_protect::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Write Register Protection\n\nYou can [`read`](crate::Reg::read) this register and get [`wr_reg_protect::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct WR_REG_PROTECT_SPEC;
 impl crate::RegisterSpec for WR_REG_PROTECT_SPEC {
     type Ux = u8;

@@ -9,7 +9,7 @@ impl R {
         RXIPV6NOPAYOCT_R::new(self.bits)
     }
 }
-#[doc = "Receive IPV6 No Payload Octet Counter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxipv6_no_payload_octets::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive IPV6 No Payload Octet Counter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxipv6_no_payload_octets::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXIPV6_NO_PAYLOAD_OCTETS_SPEC;
 impl crate::RegisterSpec for RXIPV6_NO_PAYLOAD_OCTETS_SPEC {
     type Ux = u32;

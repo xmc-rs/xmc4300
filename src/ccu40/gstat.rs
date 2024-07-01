@@ -207,7 +207,7 @@ impl R {
         PRB_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
-#[doc = "Global Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Global Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`gstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GSTAT_SPEC;
 impl crate::RegisterSpec for GSTAT_SPEC {
     type Ux = u32;

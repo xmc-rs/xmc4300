@@ -84,7 +84,7 @@ impl R {
         FORCE_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
-#[doc = "EEPROM Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`eep_conf::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "EEPROM Configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`eep_conf::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EEP_CONF_SPEC;
 impl crate::RegisterSpec for EEP_CONF_SPEC {
     type Ux = u8;

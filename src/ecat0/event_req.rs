@@ -453,7 +453,7 @@ impl R {
         MIR_7_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
-#[doc = "ECAT Event Request\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`event_req::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "ECAT Event Request\n\nYou can [`read`](crate::Reg::read) this register and get [`event_req::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EVENT_REQ_SPEC;
 impl crate::RegisterSpec for EVENT_REQ_SPEC {
     type Ux = u16;
