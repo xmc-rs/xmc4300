@@ -16,7 +16,7 @@ impl R {
         RESPONSE3_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
-#[doc = "Response 2 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`response2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Response 2 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`response2::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RESPONSE2_SPEC;
 impl crate::RegisterSpec for RESPONSE2_SPEC {
     type Ux = u32;

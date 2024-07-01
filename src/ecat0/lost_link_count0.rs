@@ -9,7 +9,7 @@ impl R {
         LL_COUNTER_R::new(self.bits)
     }
 }
-#[doc = "Lost Link Counter Port 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lost_link_count0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Lost Link Counter Port 0\n\nYou can [`read`](crate::Reg::read) this register and get [`lost_link_count0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LOST_LINK_COUNT0_SPEC;
 impl crate::RegisterSpec for LOST_LINK_COUNT0_SPEC {
     type Ux = u8;

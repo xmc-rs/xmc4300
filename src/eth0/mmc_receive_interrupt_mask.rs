@@ -396,7 +396,7 @@ impl W {
         RXCTRLFIM_W::new(self, 25)
     }
 }
-#[doc = "MMC Reveive Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mmc_receive_interrupt_mask::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mmc_receive_interrupt_mask::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "MMC Reveive Interrupt Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mmc_receive_interrupt_mask::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mmc_receive_interrupt_mask::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MMC_RECEIVE_INTERRUPT_MASK_SPEC;
 impl crate::RegisterSpec for MMC_RECEIVE_INTERRUPT_MASK_SPEC {
     type Ux = u32;

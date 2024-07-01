@@ -71,7 +71,7 @@ impl R {
         V_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
-#[doc = "Queue 0 Backup Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`qbur0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Queue 0 Backup Register\n\nYou can [`read`](crate::Reg::read) this register and get [`qbur0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct QBUR0_SPEC;
 impl crate::RegisterSpec for QBUR0_SPEC {
     type Ux = u32;

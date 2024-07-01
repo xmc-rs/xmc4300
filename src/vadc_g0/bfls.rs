@@ -298,7 +298,7 @@ impl W {
         BFS3_W::new(self, 19)
     }
 }
-#[doc = "Boundary Flag Software Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`bfls::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Boundary Flag Software Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bfls::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BFLS_SPEC;
 impl crate::RegisterSpec for BFLS_SPEC {
     type Ux = u32;

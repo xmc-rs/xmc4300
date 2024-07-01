@@ -9,7 +9,7 @@ impl R {
         RXOCTGB_R::new(self.bits)
     }
 }
-#[doc = "Receive Octet Count for Good and Bad Frames\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rx_octet_count_good_bad::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Octet Count for Good and Bad Frames\n\nYou can [`read`](crate::Reg::read) this register and get [`rx_octet_count_good_bad::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RX_OCTET_COUNT_GOOD_BAD_SPEC;
 impl crate::RegisterSpec for RX_OCTET_COUNT_GOOD_BAD_SPEC {
     type Ux = u32;

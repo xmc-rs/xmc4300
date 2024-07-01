@@ -9,7 +9,7 @@ impl R {
         CR2_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Channel 2 Compare Value\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cr2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Channel 2 Compare Value\n\nYou can [`read`](crate::Reg::read) this register and get [`cr2::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CR2_SPEC;
 impl crate::RegisterSpec for CR2_SPEC {
     type Ux = u32;

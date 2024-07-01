@@ -21,7 +21,7 @@ impl W {
         TIME_SYNC1_SYNC0_W::new(self, 0)
     }
 }
-#[doc = "SYNC1 Cycle Time\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_sync1_cyc_time::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dc_sync1_cyc_time::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "SYNC1 Cycle Time\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_sync1_cyc_time::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dc_sync1_cyc_time::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_SYNC1_CYC_TIME_SPEC;
 impl crate::RegisterSpec for DC_SYNC1_CYC_TIME_SPEC {
     type Ux = u32;

@@ -9,7 +9,7 @@ impl R {
         READ_ACCESS_R::new(self.bits)
     }
 }
-#[doc = "System Time read access\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`readmode_dc_sys_time::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "System Time read access\n\nYou can [`read`](crate::Reg::read) this register and get [`readmode_dc_sys_time::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct READMODE_DC_SYS_TIME_SPEC;
 impl crate::RegisterSpec for READMODE_DC_SYS_TIME_SPEC {
     type Ux = u32;

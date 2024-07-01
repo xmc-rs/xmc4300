@@ -9,7 +9,7 @@ impl R {
         RXICMPGDFRM_R::new(self.bits)
     }
 }
-#[doc = "RxICMP Good Frames Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxicmp_good_frames::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "RxICMP Good Frames Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxicmp_good_frames::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXICMP_GOOD_FRAMES_SPEC;
 impl crate::RegisterSpec for RXICMP_GOOD_FRAMES_SPEC {
     type Ux = u32;

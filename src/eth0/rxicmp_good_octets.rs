@@ -9,7 +9,7 @@ impl R {
         RXICMPGDOCT_R::new(self.bits)
     }
 }
-#[doc = "Receive ICMP Good Octets Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxicmp_good_octets::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive ICMP Good Octets Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxicmp_good_octets::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXICMP_GOOD_OCTETS_SPEC;
 impl crate::RegisterSpec for RXICMP_GOOD_OCTETS_SPEC {
     type Ux = u32;

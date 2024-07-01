@@ -248,7 +248,7 @@ impl R {
         TB_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "Channel Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccfg::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Channel Configuration Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ccfg::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CCFG_SPEC;
 impl crate::RegisterSpec for CCFG_SPEC {
     type Ux = u32;

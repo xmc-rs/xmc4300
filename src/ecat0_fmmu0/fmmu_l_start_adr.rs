@@ -9,7 +9,7 @@ impl R {
         L_START_ADDR_R::new(self.bits)
     }
 }
-#[doc = "Logical Start address FMMU\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmmu_l_start_adr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Logical Start address FMMU\n\nYou can [`read`](crate::Reg::read) this register and get [`fmmu_l_start_adr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FMMU_L_START_ADR_SPEC;
 impl crate::RegisterSpec for FMMU_L_START_ADR_SPEC {
     type Ux = u32;

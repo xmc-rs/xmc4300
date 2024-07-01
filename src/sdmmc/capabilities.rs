@@ -532,7 +532,7 @@ impl R {
         SLOT_TYPE_R::new(((self.bits >> 30) & 3) as u8)
     }
 }
-#[doc = "Capabilities Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`capabilities::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Capabilities Register\n\nYou can [`read`](crate::Reg::read) this register and get [`capabilities::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CAPABILITIES_SPEC;
 impl crate::RegisterSpec for CAPABILITIES_SPEC {
     type Ux = u32;

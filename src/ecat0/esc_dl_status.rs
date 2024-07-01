@@ -617,7 +617,7 @@ impl R {
         COM_P3_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "ESC DL Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`esc_dl_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "ESC DL Status\n\nYou can [`read`](crate::Reg::read) this register and get [`esc_dl_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ESC_DL_STATUS_SPEC;
 impl crate::RegisterSpec for ESC_DL_STATUS_SPEC {
     type Ux = u16;

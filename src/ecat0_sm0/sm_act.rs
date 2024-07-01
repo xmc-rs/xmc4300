@@ -132,7 +132,7 @@ impl R {
         LE_PDI_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "Activate SyncManager 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sm_act::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Activate SyncManager 0\n\nYou can [`read`](crate::Reg::read) this register and get [`sm_act::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SM_ACT_SPEC;
 impl crate::RegisterSpec for SM_ACT_SPEC {
     type Ux = u8;

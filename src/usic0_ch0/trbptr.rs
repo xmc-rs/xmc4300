@@ -30,7 +30,7 @@ impl R {
         RDOPTR_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
-#[doc = "Transmit/Receive Buffer Pointer Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`trbptr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Transmit/Receive Buffer Pointer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`trbptr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TRBPTR_SPEC;
 impl crate::RegisterSpec for TRBPTR_SPEC {
     type Ux = u32;

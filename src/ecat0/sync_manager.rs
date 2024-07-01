@@ -9,7 +9,7 @@ impl R {
         NUM_SM_R::new(self.bits)
     }
 }
-#[doc = "SyncManagers Supported\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sync_manager::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "SyncManagers Supported\n\nYou can [`read`](crate::Reg::read) this register and get [`sync_manager::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SYNC_MANAGER_SPEC;
 impl crate::RegisterSpec for SYNC_MANAGER_SPEC {
     type Ux = u8;

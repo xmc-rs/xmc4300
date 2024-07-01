@@ -16,7 +16,7 @@ impl R {
         OUT_EPINT_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
-#[doc = "Device All Endpoints Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`daint::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Device All Endpoints Interrupt Register\n\nYou can [`read`](crate::Reg::read) this register and get [`daint::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DAINT_SPEC;
 impl crate::RegisterSpec for DAINT_SPEC {
     type Ux = u32;

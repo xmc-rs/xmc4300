@@ -155,7 +155,7 @@ impl R {
         DID_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
-#[doc = "AL Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`al_control::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "AL Control\n\nYou can [`read`](crate::Reg::read) this register and get [`al_control::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AL_CONTROL_SPEC;
 impl crate::RegisterSpec for AL_CONTROL_SPEC {
     type Ux = u16;

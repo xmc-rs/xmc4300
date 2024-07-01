@@ -296,7 +296,7 @@ impl R {
         TRPF_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
-#[doc = "Interrupt Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ints::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Status\n\nYou can [`read`](crate::Reg::read) this register and get [`ints::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INTS_SPEC;
 impl crate::RegisterSpec for INTS_SPEC {
     type Ux = u32;

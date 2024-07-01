@@ -50,7 +50,7 @@ impl R {
         CPY_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "System Time Difference\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_sys_time_diff::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "System Time Difference\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_sys_time_diff::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_SYS_TIME_DIFF_SPEC;
 impl crate::RegisterSpec for DC_SYS_TIME_DIFF_SPEC {
     type Ux = u32;

@@ -9,7 +9,7 @@ impl R {
         MAX_CURRENT_FOR_3_3V_R::new((self.bits & 0xff) as u8)
     }
 }
-#[doc = "Maximum Current Capabilities Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`max_current_cap::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Maximum Current Capabilities Register\n\nYou can [`read`](crate::Reg::read) this register and get [`max_current_cap::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MAX_CURRENT_CAP_SPEC;
 impl crate::RegisterSpec for MAX_CURRENT_CAP_SPEC {
     type Ux = u32;

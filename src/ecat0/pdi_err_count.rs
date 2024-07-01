@@ -9,7 +9,7 @@ impl R {
         PDI_ERROR_COUNTER_R::new(self.bits)
     }
 }
-#[doc = "PDI Error Counter\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdi_err_count::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PDI Error Counter\n\nYou can [`read`](crate::Reg::read) this register and get [`pdi_err_count::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PDI_ERR_COUNT_SPEC;
 impl crate::RegisterSpec for PDI_ERR_COUNT_SPEC {
     type Ux = u8;

@@ -9,7 +9,7 @@ impl R {
         RECEIVE_TIME_PU_R::new(self.bits)
     }
 }
-#[doc = "Local time of the beginning of a frame\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`receive_time_pu::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Local time of the beginning of a frame\n\nYou can [`read`](crate::Reg::read) this register and get [`receive_time_pu::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RECEIVE_TIME_PU_SPEC;
 impl crate::RegisterSpec for RECEIVE_TIME_PU_SPEC {
     type Ux = u32;

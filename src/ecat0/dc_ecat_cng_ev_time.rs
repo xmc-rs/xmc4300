@@ -9,7 +9,7 @@ impl R {
         ECAT_CNG_EV_TIME_R::new(self.bits)
     }
 }
-#[doc = "EtherCAT Buffer Change Event Time\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_ecat_cng_ev_time::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "EtherCAT Buffer Change Event Time\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_ecat_cng_ev_time::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_ECAT_CNG_EV_TIME_SPEC;
 impl crate::RegisterSpec for DC_ECAT_CNG_EV_TIME_SPEC {
     type Ux = u32;

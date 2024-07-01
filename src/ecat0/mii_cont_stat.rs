@@ -302,7 +302,7 @@ impl W {
         CMD_REG_W::new(self, 8)
     }
 }
-#[doc = "MII Management Control/Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mii_cont_stat::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mii_cont_stat::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "MII Management Control/Status\n\nYou can [`read`](crate::Reg::read) this register and get [`mii_cont_stat::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mii_cont_stat::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MII_CONT_STAT_SPEC;
 impl crate::RegisterSpec for MII_CONT_STAT_SPEC {
     type Ux = u16;

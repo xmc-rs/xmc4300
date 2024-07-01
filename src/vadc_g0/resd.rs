@@ -167,7 +167,7 @@ impl R {
         VF_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Result Register, Debug\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`resd::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Result Register, Debug\n\nYou can [`read`](crate::Reg::read) this register and get [`resd::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RESD_SPEC;
 impl crate::RegisterSpec for RESD_SPEC {
     type Ux = u32;

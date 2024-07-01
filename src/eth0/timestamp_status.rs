@@ -65,7 +65,7 @@ impl R {
         TSTRGTERR3_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
-#[doc = "Timestamp Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timestamp_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Timestamp Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`timestamp_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TIMESTAMP_STATUS_SPEC;
 impl crate::RegisterSpec for TIMESTAMP_STATUS_SPEC {
     type Ux = u32;

@@ -293,7 +293,7 @@ impl R {
     }
 }
 #[doc = "Sync/Latch\\[1:0\\]
-PDI Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sync_latch_config::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+PDI Configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`sync_latch_config::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SYNC_LATCH_CONFIG_SPEC;
 impl crate::RegisterSpec for SYNC_LATCH_CONFIG_SPEC {
     type Ux = u8;

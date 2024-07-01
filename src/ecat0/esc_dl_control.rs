@@ -554,7 +554,7 @@ impl R {
         S_ALIAS_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
-#[doc = "ESC DL Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`esc_dl_control::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "ESC DL Control\n\nYou can [`read`](crate::Reg::read) this register and get [`esc_dl_control::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ESC_DL_CONTROL_SPEC;
 impl crate::RegisterSpec for ESC_DL_CONTROL_SPEC {
     type Ux = u32;

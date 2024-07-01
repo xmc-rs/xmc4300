@@ -371,7 +371,7 @@ impl R {
         PLLSP_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
-#[doc = "PLL Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pllstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PLL Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pllstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PLLSTAT_SPEC;
 impl crate::RegisterSpec for PLLSTAT_SPEC {
     type Ux = u32;

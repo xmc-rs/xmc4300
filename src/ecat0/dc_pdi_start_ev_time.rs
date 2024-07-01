@@ -9,7 +9,7 @@ impl R {
         PDI_START_EV_TIME_R::new(self.bits)
     }
 }
-#[doc = "PDI Buffer Start Event Time\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_pdi_start_ev_time::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PDI Buffer Start Event Time\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_pdi_start_ev_time::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_PDI_START_EV_TIME_SPEC;
 impl crate::RegisterSpec for DC_PDI_START_EV_TIME_SPEC {
     type Ux = u32;

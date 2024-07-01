@@ -9,7 +9,7 @@ impl R {
         REVISION_R::new(self.bits)
     }
 }
-#[doc = "Revision of EtherCAT Controller\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`revision::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Revision of EtherCAT Controller\n\nYou can [`read`](crate::Reg::read) this register and get [`revision::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct REVISION_SPEC;
 impl crate::RegisterSpec for REVISION_SPEC {
     type Ux = u8;

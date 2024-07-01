@@ -16,7 +16,7 @@ impl R {
         USERVER_R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
-#[doc = "Version Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`version::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Version Register\n\nYou can [`read`](crate::Reg::read) this register and get [`version::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct VERSION_SPEC;
 impl crate::RegisterSpec for VERSION_SPEC {
     type Ux = u32;

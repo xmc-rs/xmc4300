@@ -9,7 +9,7 @@ impl R {
         RX256_511OCTGB_R::new(self.bits)
     }
 }
-#[doc = "Receive Frame Count for Good and Bad 256 to 511 Bytes Frames\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rx_256to511octets_frames_good_bad::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive Frame Count for Good and Bad 256 to 511 Bytes Frames\n\nYou can [`read`](crate::Reg::read) this register and get [`rx_256to511octets_frames_good_bad::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RX_256TO511OCTETS_FRAMES_GOOD_BAD_SPEC;
 impl crate::RegisterSpec for RX_256TO511OCTETS_FRAMES_GOOD_BAD_SPEC {
     type Ux = u32;

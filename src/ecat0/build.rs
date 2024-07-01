@@ -9,7 +9,7 @@ impl R {
         BUILD_R::new(self.bits)
     }
 }
-#[doc = "Build Version\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`build::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Build Version\n\nYou can [`read`](crate::Reg::read) this register and get [`build::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BUILD_SPEC;
 impl crate::RegisterSpec for BUILD_SPEC {
     type Ux = u16;

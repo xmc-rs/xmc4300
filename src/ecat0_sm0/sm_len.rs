@@ -9,7 +9,7 @@ impl R {
         NO_BYTES_R::new(self.bits)
     }
 }
-#[doc = "Length SyncManager 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sm_len::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Length SyncManager 0\n\nYou can [`read`](crate::Reg::read) this register and get [`sm_len::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SM_LEN_SPEC;
 impl crate::RegisterSpec for SM_LEN_SPEC {
     type Ux = u16;

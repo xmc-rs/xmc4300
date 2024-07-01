@@ -9,7 +9,7 @@ impl R {
         RXUDPERROCT_R::new(self.bits)
     }
 }
-#[doc = "Receive UDP Error Octets Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxudp_error_octets::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive UDP Error Octets Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxudp_error_octets::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXUDP_ERROR_OCTETS_SPEC;
 impl crate::RegisterSpec for RXUDP_ERROR_OCTETS_SPEC {
     type Ux = u32;

@@ -44,7 +44,7 @@ impl R {
         TSIS_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
-#[doc = "Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`interrupt_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Register\n\nYou can [`read`](crate::Reg::read) this register and get [`interrupt_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INTERRUPT_STATUS_SPEC;
 impl crate::RegisterSpec for INTERRUPT_STATUS_SPEC {
     type Ux = u32;

@@ -21,7 +21,7 @@ impl W {
         WKUPFRMFTR_W::new(self, 0)
     }
 }
-#[doc = "Remote Wake Up Frame Filter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`remote_wake_up_frame_filter::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`remote_wake_up_frame_filter::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Remote Wake Up Frame Filter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`remote_wake_up_frame_filter::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`remote_wake_up_frame_filter::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct REMOTE_WAKE_UP_FRAME_FILTER_SPEC;
 impl crate::RegisterSpec for REMOTE_WAKE_UP_FRAME_FILTER_SPEC {
     type Ux = u32;

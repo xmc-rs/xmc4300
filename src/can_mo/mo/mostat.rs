@@ -515,7 +515,7 @@ impl R {
         PNEXT_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
-#[doc = "Message Object Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mostat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Message Object Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mostat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MOSTAT_SPEC;
 impl crate::RegisterSpec for MOSTAT_SPEC {
     type Ux = u32;

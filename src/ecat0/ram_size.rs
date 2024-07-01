@@ -9,7 +9,7 @@ impl R {
         RAM_SIZE_R::new(self.bits)
     }
 }
-#[doc = "RAM Size\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram_size::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "RAM Size\n\nYou can [`read`](crate::Reg::read) this register and get [`ram_size::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RAM_SIZE_SPEC;
 impl crate::RegisterSpec for RAM_SIZE_SPEC {
     type Ux = u8;

@@ -188,7 +188,7 @@ impl R {
         EV_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
-#[doc = "Queue 0 Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`qsr0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Queue 0 Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`qsr0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct QSR0_SPEC;
 impl crate::RegisterSpec for QSR0_SPEC {
     type Ux = u32;

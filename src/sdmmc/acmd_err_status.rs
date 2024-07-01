@@ -248,7 +248,7 @@ impl R {
         CMD_NOT_ISSUED_BY_ACMD12_ERR_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "Auto CMD Error Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`acmd_err_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Auto CMD Error Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`acmd_err_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ACMD_ERR_STATUS_SPEC;
 impl crate::RegisterSpec for ACMD_ERR_STATUS_SPEC {
     type Ux = u16;

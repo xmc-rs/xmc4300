@@ -184,7 +184,7 @@ impl R {
         TXOSIZEGFIS_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
-#[doc = "MMC Transmit Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mmc_transmit_interrupt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "MMC Transmit Interrupt Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mmc_transmit_interrupt::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MMC_TRANSMIT_INTERRUPT_SPEC;
 impl crate::RegisterSpec for MMC_TRANSMIT_INTERRUPT_SPEC {
     type Ux = u32;

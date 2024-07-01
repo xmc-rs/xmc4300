@@ -9,7 +9,7 @@ impl R {
         RXTCPERRFRM_R::new(self.bits)
     }
 }
-#[doc = "RxTCP Error Frames Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxtcp_error_frames::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "RxTCP Error Frames Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxtcp_error_frames::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXTCP_ERROR_FRAMES_SPEC;
 impl crate::RegisterSpec for RXTCP_ERROR_FRAMES_SPEC {
     type Ux = u32;

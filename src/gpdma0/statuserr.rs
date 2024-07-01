@@ -58,7 +58,7 @@ impl R {
         CH7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "IntErr Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`statuserr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "IntErr Status\n\nYou can [`read`](crate::Reg::read) this register and get [`statuserr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STATUSERR_SPEC;
 impl crate::RegisterSpec for STATUSERR_SPEC {
     type Ux = u32;

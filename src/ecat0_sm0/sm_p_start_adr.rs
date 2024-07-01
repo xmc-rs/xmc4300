@@ -9,7 +9,7 @@ impl R {
         FIRST_BYTE_R::new(self.bits)
     }
 }
-#[doc = "Physical Start Address SyncManager 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sm_p_start_adr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Physical Start Address SyncManager 0\n\nYou can [`read`](crate::Reg::read) this register and get [`sm_p_start_adr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SM_P_START_ADR_SPEC;
 impl crate::RegisterSpec for SM_P_START_ADR_SPEC {
     type Ux = u16;

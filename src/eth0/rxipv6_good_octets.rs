@@ -9,7 +9,7 @@ impl R {
         RXIPV6GDOCT_R::new(self.bits)
     }
 }
-#[doc = "RxIPv6 Good Octets Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxipv6_good_octets::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "RxIPv6 Good Octets Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxipv6_good_octets::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXIPV6_GOOD_OCTETS_SPEC;
 impl crate::RegisterSpec for RXIPV6_GOOD_OCTETS_SPEC {
     type Ux = u32;

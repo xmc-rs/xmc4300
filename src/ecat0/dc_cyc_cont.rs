@@ -125,7 +125,7 @@ impl R {
         LATCH_U1_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
-#[doc = "Cyclic Unit Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_cyc_cont::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Cyclic Unit Control\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_cyc_cont::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_CYC_CONT_SPEC;
 impl crate::RegisterSpec for DC_CYC_CONT_SPEC {
     type Ux = u8;

@@ -112,7 +112,7 @@ impl R {
         SUB_TYPE_R::new(((self.bits >> 8) & 7) as u8)
     }
 }
-#[doc = "PDI Synchronous Microcontroller extended Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdi_ext_config::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PDI Synchronous Microcontroller extended Configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`pdi_ext_config::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PDI_EXT_CONFIG_SPEC;
 impl crate::RegisterSpec for PDI_EXT_CONFIG_SPEC {
     type Ux = u16;

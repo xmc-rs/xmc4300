@@ -9,7 +9,7 @@ impl R {
         S0_STATE_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "SYNC0 Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_sync0_stat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "SYNC0 Status\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_sync0_stat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_SYNC0_STAT_SPEC;
 impl crate::RegisterSpec for DC_SYNC0_STAT_SPEC {
     type Ux = u8;

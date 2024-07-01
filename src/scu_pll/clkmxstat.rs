@@ -49,7 +49,7 @@ impl R {
         SYSCLKMUX_R::new((self.bits & 3) as u8)
     }
 }
-#[doc = "Clock Multiplexing Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkmxstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Clock Multiplexing Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`clkmxstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CLKMXSTAT_SPEC;
 impl crate::RegisterSpec for CLKMXSTAT_SPEC {
     type Ux = u32;

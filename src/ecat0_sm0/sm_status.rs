@@ -270,7 +270,7 @@ impl R {
         W_BUF_IU_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "Status Register SyncManager 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sm_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Status Register SyncManager 0\n\nYou can [`read`](crate::Reg::read) this register and get [`sm_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SM_STATUS_SPEC;
 impl crate::RegisterSpec for SM_STATUS_SPEC {
     type Ux = u8;

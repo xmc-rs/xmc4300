@@ -9,7 +9,7 @@ impl R {
         PR_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Timer Period Value\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Timer Period Value\n\nYou can [`read`](crate::Reg::read) this register and get [`pr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PR_SPEC;
 impl crate::RegisterSpec for PR_SPEC {
     type Ux = u32;

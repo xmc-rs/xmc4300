@@ -646,7 +646,7 @@ impl W {
         CEATA_ERR_W::new(self, 13)
     }
 }
-#[doc = "Error Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`int_status_err::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`int_status_err::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Error Interrupt Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`int_status_err::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`int_status_err::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INT_STATUS_ERR_SPEC;
 impl crate::RegisterSpec for INT_STATUS_ERR_SPEC {
     type Ux = u16;

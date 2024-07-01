@@ -30,7 +30,7 @@ impl R {
         OVFCNTOVF_R::new(((self.bits >> 28) & 1) != 0)
     }
 }
-#[doc = "Missed Frame and Buffer Overflow Counter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`missed_frame_and_buffer_overflow_counter::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Missed Frame and Buffer Overflow Counter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`missed_frame_and_buffer_overflow_counter::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER_SPEC;
 impl crate::RegisterSpec for MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER_SPEC {
     type Ux = u32;

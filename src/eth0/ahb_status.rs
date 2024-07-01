@@ -9,7 +9,7 @@ impl R {
         AHBMS_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "AHB Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "AHB Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ahb_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AHB_STATUS_SPEC;
 impl crate::RegisterSpec for AHB_STATUS_SPEC {
     type Ux = u32;

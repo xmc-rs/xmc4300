@@ -51,7 +51,7 @@ impl R {
         SAI_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
-#[doc = "RTC Service Request Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`stssr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "RTC Service Request Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`stssr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STSSR_SPEC;
 impl crate::RegisterSpec for STSSR_SPEC {
     type Ux = u32;

@@ -9,7 +9,7 @@ impl R {
         X1D_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "OSC_HP Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`oschpstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "OSC_HP Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`oschpstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OSCHPSTAT_SPEC;
 impl crate::RegisterSpec for OSCHPSTAT_SPEC {
     type Ux = u32;

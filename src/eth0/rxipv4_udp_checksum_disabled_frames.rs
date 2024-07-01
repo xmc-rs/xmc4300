@@ -9,7 +9,7 @@ impl R {
         RXIPV4UDSBLFRM_R::new(self.bits)
     }
 }
-#[doc = "Receive IPV4 UDP Checksum Disabled Frame Counter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxipv4_udp_checksum_disabled_frames::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Receive IPV4 UDP Checksum Disabled Frame Counter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rxipv4_udp_checksum_disabled_frames::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXIPV4_UDP_CHECKSUM_DISABLED_FRAMES_SPEC;
 impl crate::RegisterSpec for RXIPV4_UDP_CHECKSUM_DISABLED_FRAMES_SPEC {
     type Ux = u32;

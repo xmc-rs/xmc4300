@@ -9,7 +9,7 @@ impl R {
         TX65_127OCTGB_R::new(self.bits)
     }
 }
-#[doc = "Transmit Octet Count for Good and Bad 65 to 127 Bytes Frames\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_65to127octets_frames_good_bad::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Transmit Octet Count for Good and Bad 65 to 127 Bytes Frames\n\nYou can [`read`](crate::Reg::read) this register and get [`tx_65to127octets_frames_good_bad::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TX_65TO127OCTETS_FRAMES_GOOD_BAD_SPEC;
 impl crate::RegisterSpec for TX_65TO127OCTETS_FRAMES_GOOD_BAD_SPEC {
     type Ux = u32;

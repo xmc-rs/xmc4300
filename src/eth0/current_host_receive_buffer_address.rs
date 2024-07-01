@@ -9,7 +9,7 @@ impl R {
         CURRBUFAPTR_R::new(self.bits)
     }
 }
-#[doc = "Current Host Receive Buffer Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`current_host_receive_buffer_address::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Current Host Receive Buffer Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`current_host_receive_buffer_address::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CURRENT_HOST_RECEIVE_BUFFER_ADDRESS_SPEC;
 impl crate::RegisterSpec for CURRENT_HOST_RECEIVE_BUFFER_ADDRESS_SPEC {
     type Ux = u32;

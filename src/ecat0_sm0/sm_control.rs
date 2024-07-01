@@ -219,7 +219,7 @@ impl R {
         WD_TRG_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
-#[doc = "Control Register SyncManager 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sm_control::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Control Register SyncManager 0\n\nYou can [`read`](crate::Reg::read) this register and get [`sm_control::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SM_CONTROL_SPEC;
 impl crate::RegisterSpec for SM_CONTROL_SPEC {
     type Ux = u8;

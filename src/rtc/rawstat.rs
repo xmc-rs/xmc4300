@@ -51,7 +51,7 @@ impl R {
         RAI_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
-#[doc = "RTC Raw Service Request Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rawstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "RTC Raw Service Request Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rawstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RAWSTAT_SPEC;
 impl crate::RegisterSpec for RAWSTAT_SPEC {
     type Ux = u32;

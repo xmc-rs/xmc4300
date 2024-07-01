@@ -9,7 +9,7 @@ impl R {
         RXOVERSZG_R::new(self.bits)
     }
 }
-#[doc = "Rx Oversize Frames Good Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rx_oversize_frames_good::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Rx Oversize Frames Good Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rx_oversize_frames_good::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RX_OVERSIZE_FRAMES_GOOD_SPEC;
 impl crate::RegisterSpec for RX_OVERSIZE_FRAMES_GOOD_SPEC {
     type Ux = u32;

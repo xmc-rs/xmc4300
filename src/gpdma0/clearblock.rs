@@ -298,7 +298,7 @@ impl W {
         CH7_W::new(self, 7)
     }
 }
-#[doc = "IntBlock Status\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clearblock::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "IntBlock Status\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clearblock::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CLEARBLOCK_SPEC;
 impl crate::RegisterSpec for CLEARBLOCK_SPEC {
     type Ux = u32;

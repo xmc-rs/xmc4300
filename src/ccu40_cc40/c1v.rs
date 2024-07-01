@@ -57,7 +57,7 @@ impl R {
         FFL_R::new(((self.bits >> 20) & 1) != 0)
     }
 }
-#[doc = "Capture Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`c1v::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Capture Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`c1v::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>"]
 pub struct C1V_SPEC;
 impl crate::RegisterSpec for C1V_SPEC {
     type Ux = u32;

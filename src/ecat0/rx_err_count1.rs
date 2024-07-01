@@ -16,7 +16,7 @@ impl R {
         RX_ERROR_R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
-#[doc = "RX Error Counter Port 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rx_err_count1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "RX Error Counter Port 1\n\nYou can [`read`](crate::Reg::read) this register and get [`rx_err_count1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RX_ERR_COUNT1_SPEC;
 impl crate::RegisterSpec for RX_ERR_COUNT1_SPEC {
     type Ux = u16;

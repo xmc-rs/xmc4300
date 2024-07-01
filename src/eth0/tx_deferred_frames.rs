@@ -9,7 +9,7 @@ impl R {
         TXDEFRD_R::new(self.bits)
     }
 }
-#[doc = "Tx Deferred Frames Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_deferred_frames::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Tx Deferred Frames Register\n\nYou can [`read`](crate::Reg::read) this register and get [`tx_deferred_frames::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TX_DEFERRED_FRAMES_SPEC;
 impl crate::RegisterSpec for TX_DEFERRED_FRAMES_SPEC {
     type Ux = u32;

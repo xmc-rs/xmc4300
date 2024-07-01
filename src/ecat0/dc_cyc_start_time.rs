@@ -21,7 +21,7 @@ impl W {
         DC_CYC_START_TIME_W::new(self, 0)
     }
 }
-#[doc = "Start Time Cyclic Operation\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_cyc_start_time::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dc_cyc_start_time::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Start Time Cyclic Operation\n\nYou can [`read`](crate::Reg::read) this register and get [`dc_cyc_start_time::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dc_cyc_start_time::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_CYC_START_TIME_SPEC;
 impl crate::RegisterSpec for DC_CYC_START_TIME_SPEC {
     type Ux = u32;

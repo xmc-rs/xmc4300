@@ -248,7 +248,7 @@ impl R {
         PPORTS_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
-#[doc = "Peripheral 1 Clock Gating Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cgatstat1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Peripheral 1 Clock Gating Status\n\nYou can [`read`](crate::Reg::read) this register and get [`cgatstat1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CGATSTAT1_SPEC;
 impl crate::RegisterSpec for CGATSTAT1_SPEC {
     type Ux = u32;

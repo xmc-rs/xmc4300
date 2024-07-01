@@ -9,7 +9,7 @@ impl R {
         TXCARR_R::new(self.bits)
     }
 }
-#[doc = "Transmit Frame Count for Carrier Sense Error Frames\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_carrier_error_frames::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Transmit Frame Count for Carrier Sense Error Frames\n\nYou can [`read`](crate::Reg::read) this register and get [`tx_carrier_error_frames::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TX_CARRIER_ERROR_FRAMES_SPEC;
 impl crate::RegisterSpec for TX_CARRIER_ERROR_FRAMES_SPEC {
     type Ux = u32;

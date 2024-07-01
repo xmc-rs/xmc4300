@@ -139,87 +139,87 @@ impl RegisterBlock {
         &self.emuxsel
     }
 }
-#[doc = "CLC (rw) register accessor: Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clc::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clc::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clc`]
+#[doc = "CLC (rw) register accessor: Clock Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`clc::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clc::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clc`]
 module"]
 pub type CLC = crate::Reg<clc::CLC_SPEC>;
 #[doc = "Clock Control Register"]
 pub mod clc;
-#[doc = "ID (r) register accessor: Module Identification Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@id`]
+#[doc = "ID (r) register accessor: Module Identification Register\n\nYou can [`read`](crate::Reg::read) this register and get [`id::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@id`]
 module"]
 pub type ID = crate::Reg<id::ID_SPEC>;
 #[doc = "Module Identification Register"]
 pub mod id;
-#[doc = "OCS (rw) register accessor: OCDS Control and Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ocs::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ocs::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ocs`]
+#[doc = "OCS (rw) register accessor: OCDS Control and Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ocs::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ocs::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ocs`]
 module"]
 pub type OCS = crate::Reg<ocs::OCS_SPEC>;
 #[doc = "OCDS Control and Status Register"]
 pub mod ocs;
-#[doc = "GLOBCFG (rw) register accessor: Global Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`globcfg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`globcfg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globcfg`]
+#[doc = "GLOBCFG (rw) register accessor: Global Configuration Register\n\nYou can [`read`](crate::Reg::read) this register and get [`globcfg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`globcfg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globcfg`]
 module"]
 pub type GLOBCFG = crate::Reg<globcfg::GLOBCFG_SPEC>;
 #[doc = "Global Configuration Register"]
 pub mod globcfg;
-#[doc = "GLOBICLASS (rw) register accessor: Input Class Register, Global\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`globiclass::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`globiclass::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globiclass`]
+#[doc = "GLOBICLASS (rw) register accessor: Input Class Register, Global\n\nYou can [`read`](crate::Reg::read) this register and get [`globiclass::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`globiclass::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globiclass`]
 module"]
 pub type GLOBICLASS = crate::Reg<globiclass::GLOBICLASS_SPEC>;
 #[doc = "Input Class Register, Global"]
 pub mod globiclass;
-#[doc = "GLOBBOUND (rw) register accessor: Global Boundary Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`globbound::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`globbound::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globbound`]
+#[doc = "GLOBBOUND (rw) register accessor: Global Boundary Select Register\n\nYou can [`read`](crate::Reg::read) this register and get [`globbound::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`globbound::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globbound`]
 module"]
 pub type GLOBBOUND = crate::Reg<globbound::GLOBBOUND_SPEC>;
 #[doc = "Global Boundary Select Register"]
 pub mod globbound;
-#[doc = "GLOBEFLAG (rw) register accessor: Global Event Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`globeflag::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`globeflag::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globeflag`]
+#[doc = "GLOBEFLAG (rw) register accessor: Global Event Flag Register\n\nYou can [`read`](crate::Reg::read) this register and get [`globeflag::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`globeflag::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globeflag`]
 module"]
 pub type GLOBEFLAG = crate::Reg<globeflag::GLOBEFLAG_SPEC>;
 #[doc = "Global Event Flag Register"]
 pub mod globeflag;
-#[doc = "GLOBEVNP (rw) register accessor: Global Event Node Pointer Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`globevnp::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`globevnp::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globevnp`]
+#[doc = "GLOBEVNP (rw) register accessor: Global Event Node Pointer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`globevnp::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`globevnp::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globevnp`]
 module"]
 pub type GLOBEVNP = crate::Reg<globevnp::GLOBEVNP_SPEC>;
 #[doc = "Global Event Node Pointer Register"]
 pub mod globevnp;
-#[doc = "GLOBTF (rw) register accessor: Global Test Functions Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`globtf::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`globtf::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globtf`]
+#[doc = "GLOBTF (rw) register accessor: Global Test Functions Register\n\nYou can [`read`](crate::Reg::read) this register and get [`globtf::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`globtf::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globtf`]
 module"]
 pub type GLOBTF = crate::Reg<globtf::GLOBTF_SPEC>;
 #[doc = "Global Test Functions Register"]
 pub mod globtf;
-#[doc = "BRSSEL (rw) register accessor: Background Request Source Channel Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`brssel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`brssel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@brssel`]
+#[doc = "BRSSEL (rw) register accessor: Background Request Source Channel Select Register\n\nYou can [`read`](crate::Reg::read) this register and get [`brssel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`brssel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@brssel`]
 module"]
 pub type BRSSEL = crate::Reg<brssel::BRSSEL_SPEC>;
 #[doc = "Background Request Source Channel Select Register"]
 pub mod brssel;
-#[doc = "BRSPND (rw) register accessor: Background Request Source Pending Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`brspnd::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`brspnd::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@brspnd`]
+#[doc = "BRSPND (rw) register accessor: Background Request Source Pending Register\n\nYou can [`read`](crate::Reg::read) this register and get [`brspnd::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`brspnd::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@brspnd`]
 module"]
 pub type BRSPND = crate::Reg<brspnd::BRSPND_SPEC>;
 #[doc = "Background Request Source Pending Register"]
 pub mod brspnd;
-#[doc = "BRSCTRL (rw) register accessor: Background Request Source Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`brsctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`brsctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@brsctrl`]
+#[doc = "BRSCTRL (rw) register accessor: Background Request Source Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`brsctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`brsctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@brsctrl`]
 module"]
 pub type BRSCTRL = crate::Reg<brsctrl::BRSCTRL_SPEC>;
 #[doc = "Background Request Source Control Register"]
 pub mod brsctrl;
-#[doc = "BRSMR (rw) register accessor: Background Request Source Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`brsmr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`brsmr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@brsmr`]
+#[doc = "BRSMR (rw) register accessor: Background Request Source Mode Register\n\nYou can [`read`](crate::Reg::read) this register and get [`brsmr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`brsmr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@brsmr`]
 module"]
 pub type BRSMR = crate::Reg<brsmr::BRSMR_SPEC>;
 #[doc = "Background Request Source Mode Register"]
 pub mod brsmr;
-#[doc = "GLOBRCR (rw) register accessor: Global Result Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`globrcr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`globrcr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globrcr`]
+#[doc = "GLOBRCR (rw) register accessor: Global Result Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`globrcr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`globrcr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globrcr`]
 module"]
 pub type GLOBRCR = crate::Reg<globrcr::GLOBRCR_SPEC>;
 #[doc = "Global Result Control Register"]
 pub mod globrcr;
-#[doc = "GLOBRES (rw) register accessor: Global Result Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`globres::R`]. WARN: One or more dependent resources other than the current register are immediately affected by a read operation. You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`globres::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globres`]
+#[doc = "GLOBRES (rw) register accessor: Global Result Register\n\nYou can [`read`](crate::Reg::read) this register and get [`globres::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`globres::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>\n\nFor information about available fields see [`mod@globres`]
 module"]
 pub type GLOBRES = crate::Reg<globres::GLOBRES_SPEC>;
 #[doc = "Global Result Register"]
 pub mod globres;
-#[doc = "GLOBRESD (rw) register accessor: Global Result Register, Debug\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`globresd::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`globresd::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globresd`]
+#[doc = "GLOBRESD (rw) register accessor: Global Result Register, Debug\n\nYou can [`read`](crate::Reg::read) this register and get [`globresd::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`globresd::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@globresd`]
 module"]
 pub type GLOBRESD = crate::Reg<globresd::GLOBRESD_SPEC>;
 #[doc = "Global Result Register, Debug"]
 pub mod globresd;
-#[doc = "EMUXSEL (rw) register accessor: External Multiplexer Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emuxsel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emuxsel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emuxsel`]
+#[doc = "EMUXSEL (rw) register accessor: External Multiplexer Select Register\n\nYou can [`read`](crate::Reg::read) this register and get [`emuxsel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`emuxsel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@emuxsel`]
 module"]
 pub type EMUXSEL = crate::Reg<emuxsel::EMUXSEL_SPEC>;
 #[doc = "External Multiplexer Select Register"]

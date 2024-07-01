@@ -43,7 +43,7 @@ impl R {
         ACT_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Activate FMMU 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmmu_act::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Activate FMMU 0\n\nYou can [`read`](crate::Reg::read) this register and get [`fmmu_act::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FMMU_ACT_SPEC;
 impl crate::RegisterSpec for FMMU_ACT_SPEC {
     type Ux = u8;

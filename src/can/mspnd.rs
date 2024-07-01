@@ -21,7 +21,7 @@ impl W {
         PND_W::new(self, 0)
     }
 }
-#[doc = "Message Pending Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mspnd::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mspnd::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Message Pending Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mspnd::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mspnd::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MSPND_SPEC;
 impl crate::RegisterSpec for MSPND_SPEC {
     type Ux = u32;

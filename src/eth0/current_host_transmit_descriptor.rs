@@ -9,7 +9,7 @@ impl R {
         CURTDESAPTR_R::new(self.bits)
     }
 }
-#[doc = "Current Host Transmit Descriptor Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`current_host_transmit_descriptor::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Current Host Transmit Descriptor Register\n\nYou can [`read`](crate::Reg::read) this register and get [`current_host_transmit_descriptor::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CURRENT_HOST_TRANSMIT_DESCRIPTOR_SPEC;
 impl crate::RegisterSpec for CURRENT_HOST_TRANSMIT_DESCRIPTOR_SPEC {
     type Ux = u32;

@@ -91,72 +91,72 @@ impl RegisterBlock {
         &self.doepdmab
     }
 }
-#[doc = "DIEPCTL_ISOCONT (rw) register accessor: Device Endpoint Control Register \\[ISOCONT\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`diepctl_isocont::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`diepctl_isocont::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@diepctl_isocont`]
+#[doc = "DIEPCTL_ISOCONT (rw) register accessor: Device Endpoint Control Register \\[ISOCONT\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`diepctl_isocont::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`diepctl_isocont::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@diepctl_isocont`]
 module"]
 pub type DIEPCTL_ISOCONT = crate::Reg<diepctl_isocont::DIEPCTL_ISOCONT_SPEC>;
 #[doc = "Device Endpoint Control Register \\[ISOCONT\\]"]
 pub mod diepctl_isocont;
-#[doc = "DIEPCTL_INTBULK (rw) register accessor: Device Endpoint Control Register \\[INTBULK\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`diepctl_intbulk::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`diepctl_intbulk::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@diepctl_intbulk`]
+#[doc = "DIEPCTL_INTBULK (rw) register accessor: Device Endpoint Control Register \\[INTBULK\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`diepctl_intbulk::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`diepctl_intbulk::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@diepctl_intbulk`]
 module"]
 pub type DIEPCTL_INTBULK = crate::Reg<diepctl_intbulk::DIEPCTL_INTBULK_SPEC>;
 #[doc = "Device Endpoint Control Register \\[INTBULK\\]"]
 pub mod diepctl_intbulk;
-#[doc = "DIEPINT (rw) register accessor: Device Endpoint Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`diepint::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`diepint::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@diepint`]
+#[doc = "DIEPINT (rw) register accessor: Device Endpoint Interrupt Register\n\nYou can [`read`](crate::Reg::read) this register and get [`diepint::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`diepint::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@diepint`]
 module"]
 pub type DIEPINT = crate::Reg<diepint::DIEPINT_SPEC>;
 #[doc = "Device Endpoint Interrupt Register"]
 pub mod diepint;
-#[doc = "DIEPTSIZ (rw) register accessor: Device Endpoint Transfer Size Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dieptsiz::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dieptsiz::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dieptsiz`]
+#[doc = "DIEPTSIZ (rw) register accessor: Device Endpoint Transfer Size Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dieptsiz::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dieptsiz::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dieptsiz`]
 module"]
 pub type DIEPTSIZ = crate::Reg<dieptsiz::DIEPTSIZ_SPEC>;
 #[doc = "Device Endpoint Transfer Size Register"]
 pub mod dieptsiz;
-#[doc = "DIEPDMA (rw) register accessor: Device Endpoint DMA Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`diepdma::R`]. WARN: One or more dependent resources other than the current register are immediately affected by a read operation. You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`diepdma::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@diepdma`]
+#[doc = "DIEPDMA (rw) register accessor: Device Endpoint DMA Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`diepdma::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`diepdma::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>\n\nFor information about available fields see [`mod@diepdma`]
 module"]
 pub type DIEPDMA = crate::Reg<diepdma::DIEPDMA_SPEC>;
 #[doc = "Device Endpoint DMA Address Register"]
 pub mod diepdma;
-#[doc = "DTXFSTS (r) register accessor: Device IN Endpoint Transmit FIFO Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtxfsts::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dtxfsts`]
+#[doc = "DTXFSTS (r) register accessor: Device IN Endpoint Transmit FIFO Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`dtxfsts::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dtxfsts`]
 module"]
 pub type DTXFSTS = crate::Reg<dtxfsts::DTXFSTS_SPEC>;
 #[doc = "Device IN Endpoint Transmit FIFO Status Register"]
 pub mod dtxfsts;
-#[doc = "DIEPDMAB (r) register accessor: Device Endpoint DMA Buffer Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`diepdmab::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@diepdmab`]
+#[doc = "DIEPDMAB (r) register accessor: Device Endpoint DMA Buffer Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`diepdmab::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@diepdmab`]
 module"]
 pub type DIEPDMAB = crate::Reg<diepdmab::DIEPDMAB_SPEC>;
 #[doc = "Device Endpoint DMA Buffer Address Register"]
 pub mod diepdmab;
-#[doc = "DOEPCTL_ISOCONT (rw) register accessor: Device Endpoint Control Register \\[ISOCONT\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`doepctl_isocont::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`doepctl_isocont::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@doepctl_isocont`]
+#[doc = "DOEPCTL_ISOCONT (rw) register accessor: Device Endpoint Control Register \\[ISOCONT\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`doepctl_isocont::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`doepctl_isocont::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@doepctl_isocont`]
 module"]
 pub type DOEPCTL_ISOCONT = crate::Reg<doepctl_isocont::DOEPCTL_ISOCONT_SPEC>;
 #[doc = "Device Endpoint Control Register \\[ISOCONT\\]"]
 pub mod doepctl_isocont;
-#[doc = "DOEPCTL_INTBULK (rw) register accessor: Device Endpoint Control Register \\[INTBULK\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`doepctl_intbulk::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`doepctl_intbulk::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@doepctl_intbulk`]
+#[doc = "DOEPCTL_INTBULK (rw) register accessor: Device Endpoint Control Register \\[INTBULK\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`doepctl_intbulk::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`doepctl_intbulk::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@doepctl_intbulk`]
 module"]
 pub type DOEPCTL_INTBULK = crate::Reg<doepctl_intbulk::DOEPCTL_INTBULK_SPEC>;
 #[doc = "Device Endpoint Control Register \\[INTBULK\\]"]
 pub mod doepctl_intbulk;
-#[doc = "DOEPINT (rw) register accessor: Device Endpoint Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`doepint::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`doepint::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@doepint`]
+#[doc = "DOEPINT (rw) register accessor: Device Endpoint Interrupt Register\n\nYou can [`read`](crate::Reg::read) this register and get [`doepint::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`doepint::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@doepint`]
 module"]
 pub type DOEPINT = crate::Reg<doepint::DOEPINT_SPEC>;
 #[doc = "Device Endpoint Interrupt Register"]
 pub mod doepint;
-#[doc = "DOEPTSIZ_ISO (rw) register accessor: Device Endpoint Transfer Size Register \\[ISO\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`doeptsiz_iso::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`doeptsiz_iso::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@doeptsiz_iso`]
+#[doc = "DOEPTSIZ_ISO (rw) register accessor: Device Endpoint Transfer Size Register \\[ISO\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`doeptsiz_iso::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`doeptsiz_iso::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@doeptsiz_iso`]
 module"]
 pub type DOEPTSIZ_ISO = crate::Reg<doeptsiz_iso::DOEPTSIZ_ISO_SPEC>;
 #[doc = "Device Endpoint Transfer Size Register \\[ISO\\]"]
 pub mod doeptsiz_iso;
-#[doc = "DOEPTSIZ_CONTROL (rw) register accessor: Device Endpoint Transfer Size Register \\[CONT\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`doeptsiz_control::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`doeptsiz_control::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@doeptsiz_control`]
+#[doc = "DOEPTSIZ_CONTROL (rw) register accessor: Device Endpoint Transfer Size Register \\[CONT\\]\n\nYou can [`read`](crate::Reg::read) this register and get [`doeptsiz_control::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`doeptsiz_control::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@doeptsiz_control`]
 module"]
 pub type DOEPTSIZ_CONTROL = crate::Reg<doeptsiz_control::DOEPTSIZ_CONTROL_SPEC>;
 #[doc = "Device Endpoint Transfer Size Register \\[CONT\\]"]
 pub mod doeptsiz_control;
-#[doc = "DOEPDMA (rw) register accessor: Device Endpoint DMA Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`doepdma::R`]. WARN: One or more dependent resources other than the current register are immediately affected by a read operation. You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`doepdma::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@doepdma`]
+#[doc = "DOEPDMA (rw) register accessor: Device Endpoint DMA Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`doepdma::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`doepdma::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\n<div class=\"warning\">One or more dependent resources other than the current register are immediately affected by a read operation.</div>\n\nFor information about available fields see [`mod@doepdma`]
 module"]
 pub type DOEPDMA = crate::Reg<doepdma::DOEPDMA_SPEC>;
 #[doc = "Device Endpoint DMA Address Register"]
 pub mod doepdma;
-#[doc = "DOEPDMAB (r) register accessor: Device Endpoint DMA Buffer Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`doepdmab::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@doepdmab`]
+#[doc = "DOEPDMAB (r) register accessor: Device Endpoint DMA Buffer Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`doepdmab::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@doepdmab`]
 module"]
 pub type DOEPDMAB = crate::Reg<doepdmab::DOEPDMAB_SPEC>;
 #[doc = "Device Endpoint DMA Buffer Address Register"]

@@ -198,7 +198,7 @@ impl R {
         RXICMPEROIS_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
-#[doc = "MMC Receive Checksum Offload Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mmc_ipc_receive_interrupt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "MMC Receive Checksum Offload Interrupt Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mmc_ipc_receive_interrupt::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MMC_IPC_RECEIVE_INTERRUPT_SPEC;
 impl crate::RegisterSpec for MMC_IPC_RECEIVE_INTERRUPT_SPEC {
     type Ux = u32;

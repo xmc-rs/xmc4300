@@ -9,7 +9,7 @@ impl R {
         TXFRMGB_R::new(self.bits)
     }
 }
-#[doc = "Transmit Frame Count for Goodand Bad Frames Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_frame_count_good_bad::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Transmit Frame Count for Goodand Bad Frames Register\n\nYou can [`read`](crate::Reg::read) this register and get [`tx_frame_count_good_bad::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TX_FRAME_COUNT_GOOD_BAD_SPEC;
 impl crate::RegisterSpec for TX_FRAME_COUNT_GOOD_BAD_SPEC {
     type Ux = u32;

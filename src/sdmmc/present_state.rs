@@ -440,7 +440,7 @@ impl R {
         DAT_7_4_PIN_LEVEL_R::new(((self.bits >> 25) & 0x0f) as u8)
     }
 }
-#[doc = "Present State Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`present_state::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Present State Register\n\nYou can [`read`](crate::Reg::read) this register and get [`present_state::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRESENT_STATE_SPEC;
 impl crate::RegisterSpec for PRESENT_STATE_SPEC {
     type Ux = u32;

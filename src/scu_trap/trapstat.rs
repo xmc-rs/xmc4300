@@ -371,7 +371,7 @@ impl R {
         ECAT0RST_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
-#[doc = "Trap Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`trapstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Trap Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`trapstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TRAPSTAT_SPEC;
 impl crate::RegisterSpec for TRAPSTAT_SPEC {
     type Ux = u32;

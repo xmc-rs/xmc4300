@@ -9,7 +9,7 @@ impl R {
         ALMS_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "WDT Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wdtsts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "WDT Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`wdtsts::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct WDTSTS_SPEC;
 impl crate::RegisterSpec for WDTSTS_SPEC {
     type Ux = u32;

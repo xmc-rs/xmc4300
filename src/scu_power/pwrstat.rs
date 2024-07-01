@@ -166,7 +166,7 @@ impl R {
         USBPUWQ_R::new(((self.bits >> 18) & 1) != 0)
     }
 }
-#[doc = "PCU Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PCU Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pwrstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PWRSTAT_SPEC;
 impl crate::RegisterSpec for PWRSTAT_SPEC {
     type Ux = u32;

@@ -16,7 +16,7 @@ impl R {
         DCNT_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }
-#[doc = "Dither Config\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dit::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Dither Config\n\nYou can [`read`](crate::Reg::read) this register and get [`dit::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DIT_SPEC;
 impl crate::RegisterSpec for DIT_SPEC {
     type Ux = u32;

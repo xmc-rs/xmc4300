@@ -289,7 +289,7 @@ impl R {
         ERU1_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
-#[doc = "Peripheral 0 Clock Gating Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cgatstat0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Peripheral 0 Clock Gating Status\n\nYou can [`read`](crate::Reg::read) this register and get [`cgatstat0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CGATSTAT0_SPEC;
 impl crate::RegisterSpec for CGATSTAT0_SPEC {
     type Ux = u32;

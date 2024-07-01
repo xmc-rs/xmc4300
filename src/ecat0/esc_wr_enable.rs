@@ -9,7 +9,7 @@ impl R {
         ESC_WR_PROT_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "ESC Write Enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`esc_wr_enable::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "ESC Write Enable\n\nYou can [`read`](crate::Reg::read) this register and get [`esc_wr_enable::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ESC_WR_ENABLE_SPEC;
 impl crate::RegisterSpec for ESC_WR_ENABLE_SPEC {
     type Ux = u8;
