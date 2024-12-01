@@ -371,25 +371,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Boundary Flag y Mode Control"]
     #[inline(always)]
-    #[must_use]
     pub fn bfm0(&mut self) -> BFM0_W<BFLC_SPEC> {
         BFM0_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Boundary Flag y Mode Control"]
     #[inline(always)]
-    #[must_use]
     pub fn bfm1(&mut self) -> BFM1_W<BFLC_SPEC> {
         BFM1_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Boundary Flag y Mode Control"]
     #[inline(always)]
-    #[must_use]
     pub fn bfm2(&mut self) -> BFM2_W<BFLC_SPEC> {
         BFM2_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Boundary Flag y Mode Control"]
     #[inline(always)]
-    #[must_use]
     pub fn bfm3(&mut self) -> BFM3_W<BFLC_SPEC> {
         BFM3_W::new(self, 12)
     }

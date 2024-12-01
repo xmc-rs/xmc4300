@@ -324,49 +324,41 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Node Initialization"]
     #[inline(always)]
-    #[must_use]
     pub fn init(&mut self) -> INIT_W<NCR_SPEC> {
         INIT_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transfer Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn trie(&mut self) -> TRIE_W<NCR_SPEC> {
         TRIE_W::new(self, 1)
     }
     #[doc = "Bit 2 - LEC Indicated Error Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn lecie(&mut self) -> LECIE_W<NCR_SPEC> {
         LECIE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Alert Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn alie(&mut self) -> ALIE_W<NCR_SPEC> {
         ALIE_W::new(self, 3)
     }
     #[doc = "Bit 4 - CAN Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn candis(&mut self) -> CANDIS_W<NCR_SPEC> {
         CANDIS_W::new(self, 4)
     }
     #[doc = "Bit 5 - Transmit Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn txdis(&mut self) -> TXDIS_W<NCR_SPEC> {
         TXDIS_W::new(self, 5)
     }
     #[doc = "Bit 6 - Configuration Change Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cce(&mut self) -> CCE_W<NCR_SPEC> {
         CCE_W::new(self, 6)
     }
     #[doc = "Bit 7 - CAN Analyzer Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn calm(&mut self) -> CALM_W<NCR_SPEC> {
         CALM_W::new(self, 7)
     }

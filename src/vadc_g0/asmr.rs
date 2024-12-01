@@ -491,49 +491,41 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Enable Gate"]
     #[inline(always)]
-    #[must_use]
     pub fn engt(&mut self) -> ENGT_W<ASMR_SPEC> {
         ENGT_W::new(self, 0)
     }
     #[doc = "Bit 2 - Enable External Trigger"]
     #[inline(always)]
-    #[must_use]
     pub fn entr(&mut self) -> ENTR_W<ASMR_SPEC> {
         ENTR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable Source Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn ensi(&mut self) -> ENSI_W<ASMR_SPEC> {
         ENSI_W::new(self, 3)
     }
     #[doc = "Bit 4 - Autoscan Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn scan(&mut self) -> SCAN_W<ASMR_SPEC> {
         SCAN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Autoscan Source Load Event Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn ldm(&mut self) -> LDM_W<ASMR_SPEC> {
         LDM_W::new(self, 5)
     }
     #[doc = "Bit 8 - Clear Pending Bits"]
     #[inline(always)]
-    #[must_use]
     pub fn clrpnd(&mut self) -> CLRPND_W<ASMR_SPEC> {
         CLRPND_W::new(self, 8)
     }
     #[doc = "Bit 9 - Generate Load Event"]
     #[inline(always)]
-    #[must_use]
     pub fn ldev(&mut self) -> LDEV_W<ASMR_SPEC> {
         LDEV_W::new(self, 9)
     }
     #[doc = "Bit 16 - Repeat Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn rptdis(&mut self) -> RPTDIS_W<ASMR_SPEC> {
         RPTDIS_W::new(self, 16)
     }

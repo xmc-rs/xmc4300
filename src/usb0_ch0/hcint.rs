@@ -133,85 +133,71 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transfer Completed"]
     #[inline(always)]
-    #[must_use]
     pub fn xfer_compl(&mut self) -> XFER_COMPL_W<HCINT_SPEC> {
         XFER_COMPL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel Halted"]
     #[inline(always)]
-    #[must_use]
     pub fn ch_hltd(&mut self) -> CH_HLTD_W<HCINT_SPEC> {
         CH_HLTD_W::new(self, 1)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
-    #[must_use]
     pub fn ahberr(&mut self) -> AHBERR_W<HCINT_SPEC> {
         AHBERR_W::new(self, 2)
     }
     #[doc = "Bit 3 - STALL Response Received Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn stall(&mut self) -> STALL_W<HCINT_SPEC> {
         STALL_W::new(self, 3)
     }
     #[doc = "Bit 4 - NAK Response Received Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn nak(&mut self) -> NAK_W<HCINT_SPEC> {
         NAK_W::new(self, 4)
     }
     #[doc = "Bit 5 - ACK Response Received/Transmitted Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn ack(&mut self) -> ACK_W<HCINT_SPEC> {
         ACK_W::new(self, 5)
     }
     #[doc = "Bit 6 - NYET Response Received Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn nyet(&mut self) -> NYET_W<HCINT_SPEC> {
         NYET_W::new(self, 6)
     }
     #[doc = "Bit 7 - Transaction Error"]
     #[inline(always)]
-    #[must_use]
     pub fn xact_err(&mut self) -> XACT_ERR_W<HCINT_SPEC> {
         XACT_ERR_W::new(self, 7)
     }
     #[doc = "Bit 8 - Babble Error"]
     #[inline(always)]
-    #[must_use]
     pub fn bbl_err(&mut self) -> BBL_ERR_W<HCINT_SPEC> {
         BBL_ERR_W::new(self, 8)
     }
     #[doc = "Bit 9 - Frame Overrun"]
     #[inline(always)]
-    #[must_use]
     pub fn frm_ovrun(&mut self) -> FRM_OVRUN_W<HCINT_SPEC> {
         FRM_OVRUN_W::new(self, 9)
     }
     #[doc = "Bit 10 - Data Toggle Error"]
     #[inline(always)]
-    #[must_use]
     pub fn data_tgl_err(&mut self) -> DATA_TGL_ERR_W<HCINT_SPEC> {
         DATA_TGL_ERR_W::new(self, 10)
     }
     #[doc = "Bit 11 - BNA (Buffer Not Available) Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn bnaintr(&mut self) -> BNAINTR_W<HCINT_SPEC> {
         BNAINTR_W::new(self, 11)
     }
     #[doc = "Bit 12 - Excessive Transaction Error"]
     #[inline(always)]
-    #[must_use]
     pub fn xcs_xact_err(&mut self) -> XCS_XACT_ERR_W<HCINT_SPEC> {
         XCS_XACT_ERR_W::new(self, 12)
     }
     #[doc = "Bit 13 - Descriptor rollover interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn desc_lst_rollintr(&mut self) -> DESC_LST_ROLLINTR_W<HCINT_SPEC> {
         DESC_LST_ROLLINTR_W::new(self, 13)
     }

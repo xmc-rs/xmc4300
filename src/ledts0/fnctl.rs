@@ -807,67 +807,56 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Touch-Sense TSIN Pad Turn"]
     #[inline(always)]
-    #[must_use]
     pub fn padt(&mut self) -> PADT_W<FNCTL_SPEC> {
         PADT_W::new(self, 0)
     }
     #[doc = "Bit 3 - Software Control for Touch-Sense Pad Turn"]
     #[inline(always)]
-    #[must_use]
     pub fn padtsw(&mut self) -> PADTSW_W<FNCTL_SPEC> {
         PADTSW_W::new(self, 3)
     }
     #[doc = "Bit 4 - Enable External Pull-up Configuration on Pin COLA"]
     #[inline(always)]
-    #[must_use]
     pub fn epull(&mut self) -> EPULL_W<FNCTL_SPEC> {
         EPULL_W::new(self, 4)
     }
     #[doc = "Bits 16:19 - Accumulate Count on Touch-Sense Input"]
     #[inline(always)]
-    #[must_use]
     pub fn acccnt(&mut self) -> ACCCNT_W<FNCTL_SPEC> {
         ACCCNT_W::new(self, 16)
     }
     #[doc = "Bit 20 - Common Compare Enable for Touch-Sense"]
     #[inline(always)]
-    #[must_use]
     pub fn tsccmp(&mut self) -> TSCCMP_W<FNCTL_SPEC> {
         TSCCMP_W::new(self, 20)
     }
     #[doc = "Bits 21:22 - Extension for Touch-Sense Output for Pin-Low-Level"]
     #[inline(always)]
-    #[must_use]
     pub fn tsoext(&mut self) -> TSOEXT_W<FNCTL_SPEC> {
         TSOEXT_W::new(self, 21)
     }
     #[doc = "Bit 23 - TS-Counter Auto Reset"]
     #[inline(always)]
-    #[must_use]
     pub fn tsctrr(&mut self) -> TSCTRR_W<FNCTL_SPEC> {
         TSCTRR_W::new(self, 23)
     }
     #[doc = "Bit 24 - Saturation of TS-Counter"]
     #[inline(always)]
-    #[must_use]
     pub fn tsctrsat(&mut self) -> TSCTRSAT_W<FNCTL_SPEC> {
         TSCTRSAT_W::new(self, 24)
     }
     #[doc = "Bits 25:27 - Number of Touch-Sense Input"]
     #[inline(always)]
-    #[must_use]
     pub fn nr_tsin(&mut self) -> NR_TSIN_W<FNCTL_SPEC> {
         NR_TSIN_W::new(self, 25)
     }
     #[doc = "Bit 28 - Active Level of LED Column"]
     #[inline(always)]
-    #[must_use]
     pub fn collev(&mut self) -> COLLEV_W<FNCTL_SPEC> {
         COLLEV_W::new(self, 28)
     }
     #[doc = "Bits 29:31 - Number of LED Columns"]
     #[inline(always)]
-    #[must_use]
     pub fn nr_ledcol(&mut self) -> NR_LEDCOL_W<FNCTL_SPEC> {
         NR_LEDCOL_W::new(self, 29)
     }

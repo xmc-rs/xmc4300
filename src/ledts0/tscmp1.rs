@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn cmp_ts4(&mut self) -> CMP_TS4_W<TSCMP1_SPEC> {
         CMP_TS4_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn cmp_ts5(&mut self) -> CMP_TS5_W<TSCMP1_SPEC> {
         CMP_TS5_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn cmp_ts6(&mut self) -> CMP_TS6_W<TSCMP1_SPEC> {
         CMP_TS6_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn cmp_ts7(&mut self) -> CMP_TS7_W<TSCMP1_SPEC> {
         CMP_TS7_W::new(self, 24)
     }

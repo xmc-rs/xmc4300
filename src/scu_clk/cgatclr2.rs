@@ -189,37 +189,31 @@ where
 impl W {
     #[doc = "Bit 1 - WDT Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn wdt(&mut self) -> WDT_W<CGATCLR2_SPEC> {
         WDT_W::new(self, 1)
     }
     #[doc = "Bit 2 - ETH0 Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn eth0(&mut self) -> ETH0_W<CGATCLR2_SPEC> {
         ETH0_W::new(self, 2)
     }
     #[doc = "Bit 4 - DMA0 Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn dma0(&mut self) -> DMA0_W<CGATCLR2_SPEC> {
         DMA0_W::new(self, 4)
     }
     #[doc = "Bit 6 - FCE Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn fce(&mut self) -> FCE_W<CGATCLR2_SPEC> {
         FCE_W::new(self, 6)
     }
     #[doc = "Bit 7 - USB Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn usb(&mut self) -> USB_W<CGATCLR2_SPEC> {
         USB_W::new(self, 7)
     }
     #[doc = "Bit 10 - ECAT0 Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ecat0(&mut self) -> ECAT0_W<CGATCLR2_SPEC> {
         ECAT0_W::new(self, 10)
     }

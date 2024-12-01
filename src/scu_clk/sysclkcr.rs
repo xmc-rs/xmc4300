@@ -74,13 +74,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - System Clock Division Value"]
     #[inline(always)]
-    #[must_use]
     pub fn sysdiv(&mut self) -> SYSDIV_W<SYSCLKCR_SPEC> {
         SYSDIV_W::new(self, 0)
     }
     #[doc = "Bit 16 - System Clock Selection Value"]
     #[inline(always)]
-    #[must_use]
     pub fn syssel(&mut self) -> SYSSEL_W<SYSCLKCR_SPEC> {
         SYSSEL_W::new(self, 16)
     }

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 3:31 - Address"]
     #[inline(always)]
-    #[must_use]
     pub fn address(&mut self) -> ADDRESS_W<FPCAR_SPEC> {
         ADDRESS_W::new(self, 3)
     }

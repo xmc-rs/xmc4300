@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Timestamp Higher Word Register"]
     #[inline(always)]
-    #[must_use]
     pub fn tshwr(&mut self) -> TSHWR_W<SYSTEM_TIME_HIGHER_WORD_SECONDS_SPEC> {
         TSHWR_W::new(self, 0)
     }

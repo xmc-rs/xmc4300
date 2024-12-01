@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 2:31 - Starting Address In Memory"]
     #[inline(always)]
-    #[must_use]
     pub fn loc(&mut self) -> LOC_W<LLP_SPEC> {
         LOC_W::new(self, 2)
     }

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Filter depth for averaging the received System Time deviation"]
     #[inline(always)]
-    #[must_use]
     pub fn filter_depth(&mut self) -> FILTER_DEPTH_W<DC_SYS_TIME_FIL_DEPTH_SPEC> {
         FILTER_DEPTH_W::new(self, 0)
     }

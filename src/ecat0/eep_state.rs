@@ -65,7 +65,6 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Access to EEPROM"]
     #[inline(always)]
-    #[must_use]
     pub fn access(&mut self) -> ACCESS_W<EEP_STATE_SPEC> {
         ACCESS_W::new(self, 0)
     }

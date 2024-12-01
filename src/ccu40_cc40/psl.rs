@@ -65,7 +65,6 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Output Passive Level"]
     #[inline(always)]
-    #[must_use]
     pub fn psl(&mut self) -> PSL_W<PSL_SPEC> {
         PSL_W::new(self, 0)
     }

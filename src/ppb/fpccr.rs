@@ -529,55 +529,46 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Lazy State Preservation Active"]
     #[inline(always)]
-    #[must_use]
     pub fn lspact(&mut self) -> LSPACT_W<FPCCR_SPEC> {
         LSPACT_W::new(self, 0)
     }
     #[doc = "Bit 1 - User allocated Stack Frame"]
     #[inline(always)]
-    #[must_use]
     pub fn user(&mut self) -> USER_W<FPCCR_SPEC> {
         USER_W::new(self, 1)
     }
     #[doc = "Bit 3 - Thread Mode allocated Stack Frame"]
     #[inline(always)]
-    #[must_use]
     pub fn thread(&mut self) -> THREAD_W<FPCCR_SPEC> {
         THREAD_W::new(self, 3)
     }
     #[doc = "Bit 4 - HardFault Ready"]
     #[inline(always)]
-    #[must_use]
     pub fn hfrdy(&mut self) -> HFRDY_W<FPCCR_SPEC> {
         HFRDY_W::new(self, 4)
     }
     #[doc = "Bit 5 - MemManage Ready"]
     #[inline(always)]
-    #[must_use]
     pub fn mmrdy(&mut self) -> MMRDY_W<FPCCR_SPEC> {
         MMRDY_W::new(self, 5)
     }
     #[doc = "Bit 6 - BusFault Ready"]
     #[inline(always)]
-    #[must_use]
     pub fn bfrdy(&mut self) -> BFRDY_W<FPCCR_SPEC> {
         BFRDY_W::new(self, 6)
     }
     #[doc = "Bit 8 - Monitor Ready"]
     #[inline(always)]
-    #[must_use]
     pub fn monrdy(&mut self) -> MONRDY_W<FPCCR_SPEC> {
         MONRDY_W::new(self, 8)
     }
     #[doc = "Bit 30 - Lazy State Preservation Enabled"]
     #[inline(always)]
-    #[must_use]
     pub fn lspen(&mut self) -> LSPEN_W<FPCCR_SPEC> {
         LSPEN_W::new(self, 30)
     }
     #[doc = "Bit 31 - Automatic State Preservation"]
     #[inline(always)]
-    #[must_use]
     pub fn aspen(&mut self) -> ASPEN_W<FPCCR_SPEC> {
         ASPEN_W::new(self, 31)
     }

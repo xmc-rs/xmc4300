@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Period Register"]
     #[inline(always)]
-    #[must_use]
     pub fn prs(&mut self) -> PRS_W<PRS_SPEC> {
         PRS_W::new(self, 0)
     }

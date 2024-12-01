@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Block Transfer Size"]
     #[inline(always)]
-    #[must_use]
     pub fn block_ts(&mut self) -> BLOCK_TS_W<CTLH_SPEC> {
         BLOCK_TS_W::new(self, 0)
     }
     #[doc = "Bit 12 - Done bit"]
     #[inline(always)]
-    #[must_use]
     pub fn done(&mut self) -> DONE_W<CTLH_SPEC> {
         DONE_W::new(self, 12)
     }

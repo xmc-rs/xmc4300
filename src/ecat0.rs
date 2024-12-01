@@ -203,22 +203,22 @@ impl RegisterBlock {
     #[doc = "0x40 - ESC Reset ECAT \\[READ Mode\\]"]
     #[inline(always)]
     pub const fn readmode_esc_reset_ecat(&self) -> &READMODE_ESC_RESET_ECAT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(64).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(64).cast() }
     }
     #[doc = "0x40 - ESC Reset ECAT \\[WRITE Mode\\]"]
     #[inline(always)]
     pub const fn writemode_esc_reset_ecat(&self) -> &WRITEMODE_ESC_RESET_ECAT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(64).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(64).cast() }
     }
     #[doc = "0x41 - ESC Reset PDI \\[READ Mode\\]"]
     #[inline(always)]
     pub const fn readmode_esc_reset_pdi(&self) -> &READMODE_ESC_RESET_PDI {
-        unsafe { &*(self as *const Self).cast::<u8>().add(65).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(65).cast() }
     }
     #[doc = "0x41 - ESC Reset PDI \\[WRITE Mode\\]"]
     #[inline(always)]
     pub const fn writemode_esc_reset_pdi(&self) -> &WRITEMODE_ESC_RESET_PDI {
-        unsafe { &*(self as *const Self).cast::<u8>().add(65).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(65).cast() }
     }
     #[doc = "0x100 - ESC DL Control"]
     #[inline(always)]
@@ -450,20 +450,20 @@ PDI Configuration"]
     #[doc = "0x910 - System Time \\[WRITE Mode\\]"]
     #[inline(always)]
     pub const fn writemode_dc_sys_time(&self) -> &WRITEMODE_DC_SYS_TIME {
-        unsafe { &*(self as *const Self).cast::<u8>().add(2320).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(2320).cast() }
     }
     #[doc = "0x910..0x918 - System Time read access"]
     #[inline(always)]
     pub const fn readmode_dc_sys_time(&self, n: usize) -> &READMODE_DC_SYS_TIME {
         #[allow(clippy::no_effect)]
         [(); 2][n];
-        unsafe { &*(self as *const Self).cast::<u8>().add(2320).add(4 * n).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(2320).add(4 * n).cast() }
     }
     #[doc = "Iterator for array of:"]
     #[doc = "0x910..0x918 - System Time read access"]
     #[inline(always)]
     pub fn readmode_dc_sys_time_iter(&self) -> impl Iterator<Item = &READMODE_DC_SYS_TIME> {
-        (0..2).map(move |n| unsafe { &*(self as *const Self).cast::<u8>().add(2320).add(4 * n).cast() })
+        (0..2).map(move |n| unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(2320).add(4 * n).cast() })
     }
     #[doc = "0x918..0x920 - Local time of the beginning of a frame"]
     #[inline(always)]

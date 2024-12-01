@@ -314,31 +314,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - XTAL1 Data Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn x1den(&mut self) -> X1DEN_W<OSCHPCTRL_SPEC> {
         X1DEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Shaper Bypass"]
     #[inline(always)]
-    #[must_use]
     pub fn shby(&mut self) -> SHBY_W<OSCHPCTRL_SPEC> {
         SHBY_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - Oscillator Gain Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn gainsel(&mut self) -> GAINSEL_W<OSCHPCTRL_SPEC> {
         GAINSEL_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn mode(&mut self) -> MODE_W<OSCHPCTRL_SPEC> {
         MODE_W::new(self, 4)
     }
     #[doc = "Bits 16:19 - OSC Frequency Value"]
     #[inline(always)]
-    #[must_use]
     pub fn oscval(&mut self) -> OSCVAL_W<OSCHPCTRL_SPEC> {
         OSCVAL_W::new(self, 16)
     }

@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - MAC Address2 \\[47:32\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn addrhi(&mut self) -> ADDRHI_W<MAC_ADDRESS2_HIGH_SPEC> {
         ADDRHI_W::new(self, 0)
     }
     #[doc = "Bits 24:29 - Mask Byte Control"]
     #[inline(always)]
-    #[must_use]
     pub fn mbc(&mut self) -> MBC_W<MAC_ADDRESS2_HIGH_SPEC> {
         MBC_W::new(self, 24)
     }
     #[doc = "Bit 30 - Source Address"]
     #[inline(always)]
-    #[must_use]
     pub fn sa(&mut self) -> SA_W<MAC_ADDRESS2_HIGH_SPEC> {
         SA_W::new(self, 30)
     }
     #[doc = "Bit 31 - Address Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ae(&mut self) -> AE_W<MAC_ADDRESS2_HIGH_SPEC> {
         AE_W::new(self, 31)
     }

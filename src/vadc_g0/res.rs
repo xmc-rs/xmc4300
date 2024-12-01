@@ -174,7 +174,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Result of Most Recent Conversion"]
     #[inline(always)]
-    #[must_use]
     pub fn result(&mut self) -> RESULT_W<RES_SPEC> {
         RESULT_W::new(self, 0)
     }

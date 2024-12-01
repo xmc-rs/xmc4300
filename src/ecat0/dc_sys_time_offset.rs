@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Difference between local time and System Time"]
     #[inline(always)]
-    #[must_use]
     pub fn dc_sys_time_offset(&mut self) -> DC_SYS_TIME_OFFSET_W<DC_SYS_TIME_OFFSET_SPEC> {
         DC_SYS_TIME_OFFSET_W::new(self, 0)
     }

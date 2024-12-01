@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Current Source Address of DMA transfer"]
     #[inline(always)]
-    #[must_use]
     pub fn sar(&mut self) -> SAR_W<SAR_SPEC> {
         SAR_W::new(self, 0)
     }

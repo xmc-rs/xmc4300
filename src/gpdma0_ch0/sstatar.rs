@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Source Status Address"]
     #[inline(always)]
-    #[must_use]
     pub fn sstatar(&mut self) -> SSTATAR_W<SSTATAR_SPEC> {
         SSTATAR_W::new(self, 0)
     }

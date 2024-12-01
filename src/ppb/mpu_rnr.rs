@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Region"]
     #[inline(always)]
-    #[must_use]
     pub fn region(&mut self) -> REGION_W<MPU_RNR_SPEC> {
         REGION_W::new(self, 0)
     }

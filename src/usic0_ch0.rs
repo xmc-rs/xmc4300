@@ -111,27 +111,27 @@ impl RegisterBlock {
     #[doc = "0x3c - Protocol Control Register \\[IIS Mode\\]"]
     #[inline(always)]
     pub const fn pcr_iismode(&self) -> &PCR_IISMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(60).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(60).cast() }
     }
     #[doc = "0x3c - Protocol Control Register \\[IIC Mode\\]"]
     #[inline(always)]
     pub const fn pcr_iicmode(&self) -> &PCR_IICMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(60).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(60).cast() }
     }
     #[doc = "0x3c - Protocol Control Register \\[SSC Mode\\]"]
     #[inline(always)]
     pub const fn pcr_sscmode(&self) -> &PCR_SSCMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(60).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(60).cast() }
     }
     #[doc = "0x3c - Protocol Control Register \\[ASC Mode\\]"]
     #[inline(always)]
     pub const fn pcr_ascmode(&self) -> &PCR_ASCMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(60).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(60).cast() }
     }
     #[doc = "0x3c - Protocol Control Register"]
     #[inline(always)]
     pub const fn pcr(&self) -> &PCR {
-        unsafe { &*(self as *const Self).cast::<u8>().add(60).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(60).cast() }
     }
     #[doc = "0x40 - Channel Control Register"]
     #[inline(always)]
@@ -146,27 +146,27 @@ impl RegisterBlock {
     #[doc = "0x48 - Protocol Status Register \\[IIS Mode\\]"]
     #[inline(always)]
     pub const fn psr_iismode(&self) -> &PSR_IISMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(72).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(72).cast() }
     }
     #[doc = "0x48 - Protocol Status Register \\[IIC Mode\\]"]
     #[inline(always)]
     pub const fn psr_iicmode(&self) -> &PSR_IICMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(72).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(72).cast() }
     }
     #[doc = "0x48 - Protocol Status Register \\[SSC Mode\\]"]
     #[inline(always)]
     pub const fn psr_sscmode(&self) -> &PSR_SSCMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(72).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(72).cast() }
     }
     #[doc = "0x48 - Protocol Status Register \\[ASC Mode\\]"]
     #[inline(always)]
     pub const fn psr_ascmode(&self) -> &PSR_ASCMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(72).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(72).cast() }
     }
     #[doc = "0x48 - Protocol Status Register"]
     #[inline(always)]
     pub const fn psr(&self) -> &PSR {
-        unsafe { &*(self as *const Self).cast::<u8>().add(72).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(72).cast() }
     }
     #[doc = "0x4c - Protocol Status Clear Register"]
     #[inline(always)]

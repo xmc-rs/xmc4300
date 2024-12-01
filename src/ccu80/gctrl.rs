@@ -603,49 +603,41 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Prescaler Clear Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn prbc(&mut self) -> PRBC_W<GCTRL_SPEC> {
         PRBC_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Prescaler Input Clock Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn pcis(&mut self) -> PCIS_W<GCTRL_SPEC> {
         PCIS_W::new(self, 4)
     }
     #[doc = "Bits 8:9 - Suspend Mode Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn suscfg(&mut self) -> SUSCFG_W<GCTRL_SPEC> {
         SUSCFG_W::new(self, 8)
     }
     #[doc = "Bit 10 - Slice 0 Multi Channel shadow transfer enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mse0(&mut self) -> MSE0_W<GCTRL_SPEC> {
         MSE0_W::new(self, 10)
     }
     #[doc = "Bit 11 - Slice 1 Multi Channel shadow transfer enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mse1(&mut self) -> MSE1_W<GCTRL_SPEC> {
         MSE1_W::new(self, 11)
     }
     #[doc = "Bit 12 - Slice 2 Multi Channel shadow transfer enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mse2(&mut self) -> MSE2_W<GCTRL_SPEC> {
         MSE2_W::new(self, 12)
     }
     #[doc = "Bit 13 - Slice 3 Multi Channel shadow transfer enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mse3(&mut self) -> MSE3_W<GCTRL_SPEC> {
         MSE3_W::new(self, 13)
     }
     #[doc = "Bits 14:15 - Multi Channel shadow transfer request configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn msde(&mut self) -> MSDE_W<GCTRL_SPEC> {
         MSDE_W::new(self, 14)
     }

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Dither Shadow Compare Value"]
     #[inline(always)]
-    #[must_use]
     pub fn dcvs(&mut self) -> DCVS_W<DITS_SPEC> {
         DCVS_W::new(self, 0)
     }

@@ -295,193 +295,161 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Protocol Control Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr0(&mut self) -> CTR0_W<PCR_SPEC> {
         CTR0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Protocol Control Bit 1"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr1(&mut self) -> CTR1_W<PCR_SPEC> {
         CTR1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Protocol Control Bit 2"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr2(&mut self) -> CTR2_W<PCR_SPEC> {
         CTR2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Protocol Control Bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr3(&mut self) -> CTR3_W<PCR_SPEC> {
         CTR3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Protocol Control Bit 4"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr4(&mut self) -> CTR4_W<PCR_SPEC> {
         CTR4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Protocol Control Bit 5"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr5(&mut self) -> CTR5_W<PCR_SPEC> {
         CTR5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Protocol Control Bit 6"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr6(&mut self) -> CTR6_W<PCR_SPEC> {
         CTR6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Protocol Control Bit 7"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr7(&mut self) -> CTR7_W<PCR_SPEC> {
         CTR7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Protocol Control Bit 8"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr8(&mut self) -> CTR8_W<PCR_SPEC> {
         CTR8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Protocol Control Bit 9"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr9(&mut self) -> CTR9_W<PCR_SPEC> {
         CTR9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Protocol Control Bit 10"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr10(&mut self) -> CTR10_W<PCR_SPEC> {
         CTR10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Protocol Control Bit 11"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr11(&mut self) -> CTR11_W<PCR_SPEC> {
         CTR11_W::new(self, 11)
     }
     #[doc = "Bit 12 - Protocol Control Bit 12"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr12(&mut self) -> CTR12_W<PCR_SPEC> {
         CTR12_W::new(self, 12)
     }
     #[doc = "Bit 13 - Protocol Control Bit 13"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr13(&mut self) -> CTR13_W<PCR_SPEC> {
         CTR13_W::new(self, 13)
     }
     #[doc = "Bit 14 - Protocol Control Bit 14"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr14(&mut self) -> CTR14_W<PCR_SPEC> {
         CTR14_W::new(self, 14)
     }
     #[doc = "Bit 15 - Protocol Control Bit 15"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr15(&mut self) -> CTR15_W<PCR_SPEC> {
         CTR15_W::new(self, 15)
     }
     #[doc = "Bit 16 - Protocol Control Bit 16"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr16(&mut self) -> CTR16_W<PCR_SPEC> {
         CTR16_W::new(self, 16)
     }
     #[doc = "Bit 17 - Protocol Control Bit 17"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr17(&mut self) -> CTR17_W<PCR_SPEC> {
         CTR17_W::new(self, 17)
     }
     #[doc = "Bit 18 - Protocol Control Bit 18"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr18(&mut self) -> CTR18_W<PCR_SPEC> {
         CTR18_W::new(self, 18)
     }
     #[doc = "Bit 19 - Protocol Control Bit 19"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr19(&mut self) -> CTR19_W<PCR_SPEC> {
         CTR19_W::new(self, 19)
     }
     #[doc = "Bit 20 - Protocol Control Bit 20"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr20(&mut self) -> CTR20_W<PCR_SPEC> {
         CTR20_W::new(self, 20)
     }
     #[doc = "Bit 21 - Protocol Control Bit 21"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr21(&mut self) -> CTR21_W<PCR_SPEC> {
         CTR21_W::new(self, 21)
     }
     #[doc = "Bit 22 - Protocol Control Bit 22"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr22(&mut self) -> CTR22_W<PCR_SPEC> {
         CTR22_W::new(self, 22)
     }
     #[doc = "Bit 23 - Protocol Control Bit 23"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr23(&mut self) -> CTR23_W<PCR_SPEC> {
         CTR23_W::new(self, 23)
     }
     #[doc = "Bit 24 - Protocol Control Bit 24"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr24(&mut self) -> CTR24_W<PCR_SPEC> {
         CTR24_W::new(self, 24)
     }
     #[doc = "Bit 25 - Protocol Control Bit 25"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr25(&mut self) -> CTR25_W<PCR_SPEC> {
         CTR25_W::new(self, 25)
     }
     #[doc = "Bit 26 - Protocol Control Bit 26"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr26(&mut self) -> CTR26_W<PCR_SPEC> {
         CTR26_W::new(self, 26)
     }
     #[doc = "Bit 27 - Protocol Control Bit 27"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr27(&mut self) -> CTR27_W<PCR_SPEC> {
         CTR27_W::new(self, 27)
     }
     #[doc = "Bit 28 - Protocol Control Bit 28"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr28(&mut self) -> CTR28_W<PCR_SPEC> {
         CTR28_W::new(self, 28)
     }
     #[doc = "Bit 29 - Protocol Control Bit 29"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr29(&mut self) -> CTR29_W<PCR_SPEC> {
         CTR29_W::new(self, 29)
     }
     #[doc = "Bit 30 - Protocol Control Bit 30"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr30(&mut self) -> CTR30_W<PCR_SPEC> {
         CTR30_W::new(self, 30)
     }
     #[doc = "Bit 31 - Protocol Control Bit 31"]
     #[inline(always)]
-    #[must_use]
     pub fn ctr31(&mut self) -> CTR31_W<PCR_SPEC> {
         CTR31_W::new(self, 31)
     }

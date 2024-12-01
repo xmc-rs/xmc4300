@@ -94,13 +94,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - WDT Clock Divider Value"]
     #[inline(always)]
-    #[must_use]
     pub fn wdtdiv(&mut self) -> WDTDIV_W<WDTCLKCR_SPEC> {
         WDTDIV_W::new(self, 0)
     }
     #[doc = "Bits 16:17 - WDT Clock Selection Value"]
     #[inline(always)]
-    #[must_use]
     pub fn wdtsel(&mut self) -> WDTSEL_W<WDTCLKCR_SPEC> {
         WDTSEL_W::new(self, 16)
     }

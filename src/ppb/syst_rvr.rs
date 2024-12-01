@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Reload Value"]
     #[inline(always)]
-    #[must_use]
     pub fn reload(&mut self) -> RELOAD_W<SYST_RVR_SPEC> {
         RELOAD_W::new(self, 0)
     }

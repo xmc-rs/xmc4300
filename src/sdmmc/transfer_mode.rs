@@ -304,31 +304,26 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Block Count Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn block_count_en(&mut self) -> BLOCK_COUNT_EN_W<TRANSFER_MODE_SPEC> {
         BLOCK_COUNT_EN_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - Auto CMD Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn acmd_en(&mut self) -> ACMD_EN_W<TRANSFER_MODE_SPEC> {
         ACMD_EN_W::new(self, 2)
     }
     #[doc = "Bit 4 - Data Transfer Direction Select"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_dir_select(&mut self) -> TX_DIR_SELECT_W<TRANSFER_MODE_SPEC> {
         TX_DIR_SELECT_W::new(self, 4)
     }
     #[doc = "Bit 5 - Multi / Single Block Select"]
     #[inline(always)]
-    #[must_use]
     pub fn multi_block_select(&mut self) -> MULTI_BLOCK_SELECT_W<TRANSFER_MODE_SPEC> {
         MULTI_BLOCK_SELECT_W::new(self, 5)
     }
     #[doc = "Bit 6 - Command Completion Signal Enable for CE-ATA Device"]
     #[inline(always)]
-    #[must_use]
     pub fn cmd_comp_ata(&mut self) -> CMD_COMP_ATA_W<TRANSFER_MODE_SPEC> {
         CMD_COMP_ATA_W::new(self, 6)
     }

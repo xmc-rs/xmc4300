@@ -34,19 +34,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:18 - Transfer Size"]
     #[inline(always)]
-    #[must_use]
     pub fn xfer_size(&mut self) -> XFER_SIZE_W<DOEPTSIZ_CONTROL_SPEC> {
         XFER_SIZE_W::new(self, 0)
     }
     #[doc = "Bits 19:28 - Packet Count"]
     #[inline(always)]
-    #[must_use]
     pub fn pkt_cnt(&mut self) -> PKT_CNT_W<DOEPTSIZ_CONTROL_SPEC> {
         PKT_CNT_W::new(self, 19)
     }
     #[doc = "Bits 29:30 - SETUP Packet Count: 0b00=1 packet, 0b00=2 packets, 0b00=3 packets,"]
     #[inline(always)]
-    #[must_use]
     pub fn supcnt(&mut self) -> SUPCNT_W<DOEPTSIZ_CONTROL_SPEC> {
         SUPCNT_W::new(self, 29)
     }

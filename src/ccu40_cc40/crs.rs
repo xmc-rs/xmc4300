@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Compare Register"]
     #[inline(always)]
-    #[must_use]
     pub fn crs(&mut self) -> CRS_W<CRS_SPEC> {
         CRS_W::new(self, 0)
     }

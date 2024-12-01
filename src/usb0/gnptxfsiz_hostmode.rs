@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Non-periodic Transmit RAM Start Address"]
     #[inline(always)]
-    #[must_use]
     pub fn nptx_fst_addr(&mut self) -> NPTX_FST_ADDR_W<GNPTXFSIZ_HOSTMODE_SPEC> {
         NPTX_FST_ADDR_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - Non-periodic TxFIFO Depth"]
     #[inline(always)]
-    #[must_use]
     pub fn nptx_fdep(&mut self) -> NPTX_FDEP_W<GNPTXFSIZ_HOSTMODE_SPEC> {
         NPTX_FDEP_W::new(self, 16)
     }

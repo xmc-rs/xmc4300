@@ -23,7 +23,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:30 - Target Timestamp Low Register"]
     #[inline(always)]
-    #[must_use]
     pub fn ttslo(&mut self) -> TTSLO_W<TARGET_TIME_NANOSECONDS_SPEC> {
         TTSLO_W::new(self, 0)
     }

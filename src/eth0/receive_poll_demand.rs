@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Receive Poll Demand"]
     #[inline(always)]
-    #[must_use]
     pub fn rpd(&mut self) -> RPD_W<RECEIVE_POLL_DEMAND_SPEC> {
         RPD_W::new(self, 0)
     }

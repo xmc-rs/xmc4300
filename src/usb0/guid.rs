@@ -34,19 +34,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Module Revision"]
     #[inline(always)]
-    #[must_use]
     pub fn mod_rev(&mut self) -> MOD_REV_W<GUID_SPEC> {
         MOD_REV_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Module Type"]
     #[inline(always)]
-    #[must_use]
     pub fn mod_type(&mut self) -> MOD_TYPE_W<GUID_SPEC> {
         MOD_TYPE_W::new(self, 8)
     }
     #[doc = "Bits 16:31 - Module Number"]
     #[inline(always)]
-    #[must_use]
     pub fn mod_number(&mut self) -> MOD_NUMBER_W<GUID_SPEC> {
         MOD_NUMBER_W::new(self, 16)
     }

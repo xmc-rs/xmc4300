@@ -338,43 +338,36 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Enable Gate"]
     #[inline(always)]
-    #[must_use]
     pub fn engt(&mut self) -> ENGT_W<QMR0_SPEC> {
         ENGT_W::new(self, 0)
     }
     #[doc = "Bit 2 - Enable External Trigger"]
     #[inline(always)]
-    #[must_use]
     pub fn entr(&mut self) -> ENTR_W<QMR0_SPEC> {
         ENTR_W::new(self, 2)
     }
     #[doc = "Bit 8 - Clear Valid Bit"]
     #[inline(always)]
-    #[must_use]
     pub fn clrv(&mut self) -> CLRV_W<QMR0_SPEC> {
         CLRV_W::new(self, 8)
     }
     #[doc = "Bit 9 - Trigger Event"]
     #[inline(always)]
-    #[must_use]
     pub fn trev(&mut self) -> TREV_W<QMR0_SPEC> {
         TREV_W::new(self, 9)
     }
     #[doc = "Bit 10 - Flush Queue"]
     #[inline(always)]
-    #[must_use]
     pub fn flush(&mut self) -> FLUSH_W<QMR0_SPEC> {
         FLUSH_W::new(self, 10)
     }
     #[doc = "Bit 11 - Clear Event Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn cev(&mut self) -> CEV_W<QMR0_SPEC> {
         CEV_W::new(self, 11)
     }
     #[doc = "Bit 16 - Repeat Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn rptdis(&mut self) -> RPTDIS_W<QMR0_SPEC> {
         RPTDIS_W::new(self, 16)
     }

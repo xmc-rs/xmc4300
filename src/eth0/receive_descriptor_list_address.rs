@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 2:31 - Start of Receive List"]
     #[inline(always)]
-    #[must_use]
     pub fn rdesla_32bit(&mut self) -> RDESLA_32BIT_W<RECEIVE_DESCRIPTOR_LIST_ADDRESS_SPEC> {
         RDESLA_32BIT_W::new(self, 2)
     }

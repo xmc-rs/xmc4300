@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - IN Endpoint FIFOn Transmit RAM Start Address"]
     #[inline(always)]
-    #[must_use]
     pub fn inepn_tx_fst_addr(&mut self) -> INEPN_TX_FST_ADDR_W<DIEPTXF1_SPEC> {
         INEPN_TX_FST_ADDR_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - IN Endpoint TxFIFO Depth"]
     #[inline(always)]
-    #[must_use]
     pub fn inepn_tx_fdep(&mut self) -> INEPN_TX_FDEP_W<DIEPTXF1_SPEC> {
         INEPN_TX_FDEP_W::new(self, 16)
     }

@@ -423,25 +423,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Boundary Flag y Node Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn bfl0np(&mut self) -> BFL0NP_W<BFLNP_SPEC> {
         BFL0NP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Boundary Flag y Node Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn bfl1np(&mut self) -> BFL1NP_W<BFLNP_SPEC> {
         BFL1NP_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Boundary Flag y Node Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn bfl2np(&mut self) -> BFL2NP_W<BFLNP_SPEC> {
         BFL2NP_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Boundary Flag y Node Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn bfl3np(&mut self) -> BFL3NP_W<BFLNP_SPEC> {
         BFL3NP_W::new(self, 12)
     }

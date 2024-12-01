@@ -79,49 +79,41 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.8"]
     #[inline(always)]
-    #[must_use]
     pub fn pd8(&mut self) -> PD8_W<PDR1_SPEC> {
         PD8_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Pad Driver Mode for Pn.9"]
     #[inline(always)]
-    #[must_use]
     pub fn pd9(&mut self) -> PD9_W<PDR1_SPEC> {
         PD9_W::new(self, 4)
     }
     #[doc = "Bits 8:10 - Pad Driver Mode for Pn.10"]
     #[inline(always)]
-    #[must_use]
     pub fn pd10(&mut self) -> PD10_W<PDR1_SPEC> {
         PD10_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - Pad Driver Mode for Pn.11"]
     #[inline(always)]
-    #[must_use]
     pub fn pd11(&mut self) -> PD11_W<PDR1_SPEC> {
         PD11_W::new(self, 12)
     }
     #[doc = "Bits 16:18 - Pad Driver Mode for Pn.12"]
     #[inline(always)]
-    #[must_use]
     pub fn pd12(&mut self) -> PD12_W<PDR1_SPEC> {
         PD12_W::new(self, 16)
     }
     #[doc = "Bits 20:22 - Pad Driver Mode for Pn.13"]
     #[inline(always)]
-    #[must_use]
     pub fn pd13(&mut self) -> PD13_W<PDR1_SPEC> {
         PD13_W::new(self, 20)
     }
     #[doc = "Bits 24:26 - Pad Driver Mode for Pn.14"]
     #[inline(always)]
-    #[must_use]
     pub fn pd14(&mut self) -> PD14_W<PDR1_SPEC> {
         PD14_W::new(self, 24)
     }
     #[doc = "Bits 28:30 - Pad Driver Mode for Pn.15"]
     #[inline(always)]
-    #[must_use]
     pub fn pd15(&mut self) -> PD15_W<PDR1_SPEC> {
         PD15_W::new(self, 28)
     }

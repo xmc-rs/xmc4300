@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Time between SYNC1 pulses and SYNC0 pulse"]
     #[inline(always)]
-    #[must_use]
     pub fn time_sync1_sync0(&mut self) -> TIME_SYNC1_SYNC0_W<DC_SYNC1_CYC_TIME_SPEC> {
         TIME_SYNC1_SYNC0_W::new(self, 0)
     }

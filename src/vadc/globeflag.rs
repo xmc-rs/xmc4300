@@ -185,25 +185,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Source Event (Background)"]
     #[inline(always)]
-    #[must_use]
     pub fn sevglb(&mut self) -> SEVGLB_W<GLOBEFLAG_SPEC> {
         SEVGLB_W::new(self, 0)
     }
     #[doc = "Bit 8 - Global Result Event"]
     #[inline(always)]
-    #[must_use]
     pub fn revglb(&mut self) -> REVGLB_W<GLOBEFLAG_SPEC> {
         REVGLB_W::new(self, 8)
     }
     #[doc = "Bit 16 - Clear Source Event (Background)"]
     #[inline(always)]
-    #[must_use]
     pub fn sevglbclr(&mut self) -> SEVGLBCLR_W<GLOBEFLAG_SPEC> {
         SEVGLBCLR_W::new(self, 16)
     }
     #[doc = "Bit 24 - Clear Global Result Event"]
     #[inline(always)]
-    #[must_use]
     pub fn revglbclr(&mut self) -> REVGLBCLR_W<GLOBEFLAG_SPEC> {
         REVGLBCLR_W::new(self, 24)
     }

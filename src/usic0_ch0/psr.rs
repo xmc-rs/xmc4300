@@ -503,103 +503,86 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Protocol Status Flag 0"]
     #[inline(always)]
-    #[must_use]
     pub fn st0(&mut self) -> ST0_W<PSR_SPEC> {
         ST0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Protocol Status Flag 1"]
     #[inline(always)]
-    #[must_use]
     pub fn st1(&mut self) -> ST1_W<PSR_SPEC> {
         ST1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Protocol Status Flag 2"]
     #[inline(always)]
-    #[must_use]
     pub fn st2(&mut self) -> ST2_W<PSR_SPEC> {
         ST2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Protocol Status Flag 3"]
     #[inline(always)]
-    #[must_use]
     pub fn st3(&mut self) -> ST3_W<PSR_SPEC> {
         ST3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Protocol Status Flag 4"]
     #[inline(always)]
-    #[must_use]
     pub fn st4(&mut self) -> ST4_W<PSR_SPEC> {
         ST4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Protocol Status Flag 5"]
     #[inline(always)]
-    #[must_use]
     pub fn st5(&mut self) -> ST5_W<PSR_SPEC> {
         ST5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Protocol Status Flag 6"]
     #[inline(always)]
-    #[must_use]
     pub fn st6(&mut self) -> ST6_W<PSR_SPEC> {
         ST6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Protocol Status Flag 7"]
     #[inline(always)]
-    #[must_use]
     pub fn st7(&mut self) -> ST7_W<PSR_SPEC> {
         ST7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Protocol Status Flag 8"]
     #[inline(always)]
-    #[must_use]
     pub fn st8(&mut self) -> ST8_W<PSR_SPEC> {
         ST8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Protocol Status Flag 9"]
     #[inline(always)]
-    #[must_use]
     pub fn st9(&mut self) -> ST9_W<PSR_SPEC> {
         ST9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Receiver Start Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn rsif(&mut self) -> RSIF_W<PSR_SPEC> {
         RSIF_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data Lost Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn dlif(&mut self) -> DLIF_W<PSR_SPEC> {
         DLIF_W::new(self, 11)
     }
     #[doc = "Bit 12 - Transmit Shift Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn tsif(&mut self) -> TSIF_W<PSR_SPEC> {
         TSIF_W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit Buffer Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn tbif(&mut self) -> TBIF_W<PSR_SPEC> {
         TBIF_W::new(self, 13)
     }
     #[doc = "Bit 14 - Receive Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn rif(&mut self) -> RIF_W<PSR_SPEC> {
         RIF_W::new(self, 14)
     }
     #[doc = "Bit 15 - Alternative Receive Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn aif(&mut self) -> AIF_W<PSR_SPEC> {
         AIF_W::new(self, 15)
     }
     #[doc = "Bit 16 - Baud Rate Generator Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn brgif(&mut self) -> BRGIF_W<PSR_SPEC> {
         BRGIF_W::new(self, 16)
     }

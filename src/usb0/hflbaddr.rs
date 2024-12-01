@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Starting Address"]
     #[inline(always)]
-    #[must_use]
     pub fn starting_address(&mut self) -> STARTING_ADDRESS_W<HFLBADDR_SPEC> {
         STARTING_ADDRESS_W::new(self, 0)
     }

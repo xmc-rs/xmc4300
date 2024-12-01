@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 8:11 - Alarm Month Compare Value"]
     #[inline(always)]
-    #[must_use]
     pub fn amo(&mut self) -> AMO_W<ATIM1_SPEC> {
         AMO_W::new(self, 8)
     }
     #[doc = "Bits 16:31 - Alarm Year Compare Value"]
     #[inline(always)]
-    #[must_use]
     pub fn aye(&mut self) -> AYE_W<ATIM1_SPEC> {
         AYE_W::new(self, 16)
     }

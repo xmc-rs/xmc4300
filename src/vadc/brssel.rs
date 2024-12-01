@@ -471,49 +471,41 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Channel Selection Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chselg0(&mut self) -> CHSELG0_W<BRSSEL_SPEC> {
         CHSELG0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel Selection Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chselg1(&mut self) -> CHSELG1_W<BRSSEL_SPEC> {
         CHSELG1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channel Selection Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chselg2(&mut self) -> CHSELG2_W<BRSSEL_SPEC> {
         CHSELG2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channel Selection Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chselg3(&mut self) -> CHSELG3_W<BRSSEL_SPEC> {
         CHSELG3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Channel Selection Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chselg4(&mut self) -> CHSELG4_W<BRSSEL_SPEC> {
         CHSELG4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Channel Selection Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chselg5(&mut self) -> CHSELG5_W<BRSSEL_SPEC> {
         CHSELG5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Channel Selection Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chselg6(&mut self) -> CHSELG6_W<BRSSEL_SPEC> {
         CHSELG6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Channel Selection Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chselg7(&mut self) -> CHSELG7_W<BRSSEL_SPEC> {
         CHSELG7_W::new(self, 7)
     }

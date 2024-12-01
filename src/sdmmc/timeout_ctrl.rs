@@ -85,7 +85,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Data Timeout Counter Value"]
     #[inline(always)]
-    #[must_use]
     pub fn dat_timeout_cnt_val(&mut self) -> DAT_TIMEOUT_CNT_VAL_W<TIMEOUT_CTRL_SPEC> {
         DAT_TIMEOUT_CNT_VAL_W::new(self, 0)
     }

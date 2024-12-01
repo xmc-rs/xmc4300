@@ -79,49 +79,41 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Raw Interrupt Status for channel 0"]
     #[inline(always)]
-    #[must_use]
     pub fn ch0(&mut self) -> CH0_W<RAWERR_SPEC> {
         CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Raw Interrupt Status for channel 1"]
     #[inline(always)]
-    #[must_use]
     pub fn ch1(&mut self) -> CH1_W<RAWERR_SPEC> {
         CH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Raw Interrupt Status for channel 2"]
     #[inline(always)]
-    #[must_use]
     pub fn ch2(&mut self) -> CH2_W<RAWERR_SPEC> {
         CH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Raw Interrupt Status for channel 3"]
     #[inline(always)]
-    #[must_use]
     pub fn ch3(&mut self) -> CH3_W<RAWERR_SPEC> {
         CH3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Raw Interrupt Status for channel 4"]
     #[inline(always)]
-    #[must_use]
     pub fn ch4(&mut self) -> CH4_W<RAWERR_SPEC> {
         CH4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Raw Interrupt Status for channel 5"]
     #[inline(always)]
-    #[must_use]
     pub fn ch5(&mut self) -> CH5_W<RAWERR_SPEC> {
         CH5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Raw Interrupt Status for channel 6"]
     #[inline(always)]
-    #[must_use]
     pub fn ch6(&mut self) -> CH6_W<RAWERR_SPEC> {
         CH6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Raw Interrupt Status for channel 7"]
     #[inline(always)]
-    #[must_use]
     pub fn ch7(&mut self) -> CH7_W<RAWERR_SPEC> {
         CH7_W::new(self, 7)
     }

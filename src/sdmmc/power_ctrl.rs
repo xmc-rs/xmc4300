@@ -126,19 +126,16 @@ impl R {
 impl W {
     #[doc = "Bit 0 - SD Bus Power"]
     #[inline(always)]
-    #[must_use]
     pub fn sd_bus_power(&mut self) -> SD_BUS_POWER_W<POWER_CTRL_SPEC> {
         SD_BUS_POWER_W::new(self, 0)
     }
     #[doc = "Bits 1:3 - SD Bus Voltage Select"]
     #[inline(always)]
-    #[must_use]
     pub fn sd_bus_voltage_sel(&mut self) -> SD_BUS_VOLTAGE_SEL_W<POWER_CTRL_SPEC> {
         SD_BUS_VOLTAGE_SEL_W::new(self, 1)
     }
     #[doc = "Bit 4 - Hardware reset"]
     #[inline(always)]
-    #[must_use]
     pub fn hardware_reset(&mut self) -> HARDWARE_RESET_W<POWER_CTRL_SPEC> {
         HARDWARE_RESET_W::new(self, 4)
     }

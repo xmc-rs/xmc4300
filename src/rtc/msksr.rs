@@ -70,43 +70,36 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Periodic Seconds Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn mpse(&mut self) -> MPSE_W<MSKSR_SPEC> {
         MPSE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Periodic Minutes Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn mpmi(&mut self) -> MPMI_W<MSKSR_SPEC> {
         MPMI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Periodic Hours Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn mpho(&mut self) -> MPHO_W<MSKSR_SPEC> {
         MPHO_W::new(self, 2)
     }
     #[doc = "Bit 3 - Periodic Days Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn mpda(&mut self) -> MPDA_W<MSKSR_SPEC> {
         MPDA_W::new(self, 3)
     }
     #[doc = "Bit 5 - Periodic Months Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn mpmo(&mut self) -> MPMO_W<MSKSR_SPEC> {
         MPMO_W::new(self, 5)
     }
     #[doc = "Bit 6 - Periodic Years Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn mpye(&mut self) -> MPYE_W<MSKSR_SPEC> {
         MPYE_W::new(self, 6)
     }
     #[doc = "Bit 8 - Alarm Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn mai(&mut self) -> MAI_W<MSKSR_SPEC> {
         MAI_W::new(self, 8)
     }

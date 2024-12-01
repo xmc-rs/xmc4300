@@ -132,19 +132,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Ten Milliseconds Reload Value"]
     #[inline(always)]
-    #[must_use]
     pub fn tenms(&mut self) -> TENMS_W<SYST_CALIB_SPEC> {
         TENMS_W::new(self, 0)
     }
     #[doc = "Bit 30 - Ten Milliseconds Skewed"]
     #[inline(always)]
-    #[must_use]
     pub fn skew(&mut self) -> SKEW_W<SYST_CALIB_SPEC> {
         SKEW_W::new(self, 30)
     }
     #[doc = "Bit 31 - No Reference Clock"]
     #[inline(always)]
-    #[must_use]
     pub fn noref(&mut self) -> NOREF_W<SYST_CALIB_SPEC> {
         NOREF_W::new(self, 31)
     }

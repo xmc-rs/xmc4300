@@ -380,61 +380,51 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Remote Wakeup Signaling"]
     #[inline(always)]
-    #[must_use]
     pub fn rmt_wk_up_sig(&mut self) -> RMT_WK_UP_SIG_W<DCTL_SPEC> {
         RMT_WK_UP_SIG_W::new(self, 0)
     }
     #[doc = "Bit 1 - Soft Disconnect"]
     #[inline(always)]
-    #[must_use]
     pub fn sft_discon(&mut self) -> SFT_DISCON_W<DCTL_SPEC> {
         SFT_DISCON_W::new(self, 1)
     }
     #[doc = "Bit 7 - Set Global Non-periodic IN NAK"]
     #[inline(always)]
-    #[must_use]
     pub fn sgnpin_nak(&mut self) -> SGNPIN_NAK_W<DCTL_SPEC> {
         SGNPIN_NAK_W::new(self, 7)
     }
     #[doc = "Bit 8 - Clear Global Non-periodic IN NAK"]
     #[inline(always)]
-    #[must_use]
     pub fn cgnpin_nak(&mut self) -> CGNPIN_NAK_W<DCTL_SPEC> {
         CGNPIN_NAK_W::new(self, 8)
     }
     #[doc = "Bit 9 - Set Global OUT NAK"]
     #[inline(always)]
-    #[must_use]
     pub fn sgoutnak(&mut self) -> SGOUTNAK_W<DCTL_SPEC> {
         SGOUTNAK_W::new(self, 9)
     }
     #[doc = "Bit 10 - Clear Global OUT NAK"]
     #[inline(always)]
-    #[must_use]
     pub fn cgoutnak(&mut self) -> CGOUTNAK_W<DCTL_SPEC> {
         CGOUTNAK_W::new(self, 10)
     }
     #[doc = "Bits 13:14 - Global Multi Count"]
     #[inline(always)]
-    #[must_use]
     pub fn gmc(&mut self) -> GMC_W<DCTL_SPEC> {
         GMC_W::new(self, 13)
     }
     #[doc = "Bit 15 - Ignore frame number for isochronous endpoints in case of Scatter/Gather DMA"]
     #[inline(always)]
-    #[must_use]
     pub fn ignr_frm_num(&mut self) -> IGNR_FRM_NUM_W<DCTL_SPEC> {
         IGNR_FRM_NUM_W::new(self, 15)
     }
     #[doc = "Bit 16 - Set NAK automatically on babble"]
     #[inline(always)]
-    #[must_use]
     pub fn nak_on_bble(&mut self) -> NAK_ON_BBLE_W<DCTL_SPEC> {
         NAK_ON_BBLE_W::new(self, 16)
     }
     #[doc = "Bit 17 - Enable continue on BNA"]
     #[inline(always)]
-    #[must_use]
     pub fn en_cont_on_bna(&mut self) -> EN_CONT_ON_BNA_W<DCTL_SPEC> {
         EN_CONT_ON_BNA_W::new(self, 17)
     }

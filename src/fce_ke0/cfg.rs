@@ -529,55 +529,46 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CRC Mismatch Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn cmi(&mut self) -> CMI_W<CFG_SPEC> {
         CMI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Configuration Error Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn cei(&mut self) -> CEI_W<CFG_SPEC> {
         CEI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Length Error Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn lei(&mut self) -> LEI_W<CFG_SPEC> {
         LEI_W::new(self, 2)
     }
     #[doc = "Bit 3 - Bus Error Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn bei(&mut self) -> BEI_W<CFG_SPEC> {
         BEI_W::new(self, 3)
     }
     #[doc = "Bit 4 - CRC Check Comparison"]
     #[inline(always)]
-    #[must_use]
     pub fn cce(&mut self) -> CCE_W<CFG_SPEC> {
         CCE_W::new(self, 4)
     }
     #[doc = "Bit 5 - Automatic Length Reload"]
     #[inline(always)]
-    #[must_use]
     pub fn alr(&mut self) -> ALR_W<CFG_SPEC> {
         ALR_W::new(self, 5)
     }
     #[doc = "Bit 8 - IR Byte Wise Reflection"]
     #[inline(always)]
-    #[must_use]
     pub fn refin(&mut self) -> REFIN_W<CFG_SPEC> {
         REFIN_W::new(self, 8)
     }
     #[doc = "Bit 9 - CRC 32-Bit Wise Reflection"]
     #[inline(always)]
-    #[must_use]
     pub fn refout(&mut self) -> REFOUT_W<CFG_SPEC> {
         REFOUT_W::new(self, 9)
     }
     #[doc = "Bit 10 - Selects the value to be xored with the final CRC"]
     #[inline(always)]
-    #[must_use]
     pub fn xsel(&mut self) -> XSEL_W<CFG_SPEC> {
         XSEL_W::new(self, 10)
     }

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Current Destination address of DMA transfer"]
     #[inline(always)]
-    #[must_use]
     pub fn dar(&mut self) -> DAR_W<DAR_SPEC> {
         DAR_W::new(self, 0)
     }

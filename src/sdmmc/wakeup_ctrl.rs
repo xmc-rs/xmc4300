@@ -181,19 +181,16 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Wakeup Event Enable On Card Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn wakeup_event_en_int(&mut self) -> WAKEUP_EVENT_EN_INT_W<WAKEUP_CTRL_SPEC> {
         WAKEUP_EVENT_EN_INT_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wakeup Event Enable On SD Card Insertion"]
     #[inline(always)]
-    #[must_use]
     pub fn wakeup_event_en_ins(&mut self) -> WAKEUP_EVENT_EN_INS_W<WAKEUP_CTRL_SPEC> {
         WAKEUP_EVENT_EN_INS_W::new(self, 1)
     }
     #[doc = "Bit 2 - Wakeup Event Enable On SD Card Removal"]
     #[inline(always)]
-    #[must_use]
     pub fn wakeup_event_en_rem(&mut self) -> WAKEUP_EVENT_EN_REM_W<WAKEUP_CTRL_SPEC> {
         WAKEUP_EVENT_EN_REM_W::new(self, 2)
     }

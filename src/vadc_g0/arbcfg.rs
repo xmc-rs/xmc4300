@@ -335,19 +335,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Analog Converter Control"]
     #[inline(always)]
-    #[must_use]
     pub fn anonc(&mut self) -> ANONC_W<ARBCFG_SPEC> {
         ANONC_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Arbitration Round Length"]
     #[inline(always)]
-    #[must_use]
     pub fn arbrnd(&mut self) -> ARBRND_W<ARBCFG_SPEC> {
         ARBRND_W::new(self, 4)
     }
     #[doc = "Bit 7 - Arbitration Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn arbm(&mut self) -> ARBM_W<ARBCFG_SPEC> {
         ARBM_W::new(self, 7)
     }

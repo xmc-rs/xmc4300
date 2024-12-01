@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Transmit Poll Demand"]
     #[inline(always)]
-    #[must_use]
     pub fn tpd(&mut self) -> TPD_W<TRANSMIT_POLL_DEMAND_SPEC> {
         TPD_W::new(self, 0)
     }

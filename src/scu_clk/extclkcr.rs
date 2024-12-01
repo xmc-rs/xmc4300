@@ -94,13 +94,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - External Clock Selection Value"]
     #[inline(always)]
-    #[must_use]
     pub fn ecksel(&mut self) -> ECKSEL_W<EXTCLKCR_SPEC> {
         ECKSEL_W::new(self, 0)
     }
     #[doc = "Bits 16:24 - External Clock Divider Value"]
     #[inline(always)]
-    #[must_use]
     pub fn eckdiv(&mut self) -> ECKDIV_W<EXTCLKCR_SPEC> {
         ECKDIV_W::new(self, 16)
     }

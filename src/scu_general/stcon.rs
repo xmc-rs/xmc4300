@@ -213,7 +213,6 @@ impl R {
 impl W {
     #[doc = "Bits 8:11 - SW Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn swcon(&mut self) -> SWCON_W<STCON_SPEC> {
         SWCON_W::new(self, 8)
     }

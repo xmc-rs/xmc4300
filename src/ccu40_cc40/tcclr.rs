@@ -9,19 +9,16 @@ pub type DITC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Timer Run Bit Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn trbc(&mut self) -> TRBC_W<TCCLR_SPEC> {
         TRBC_W::new(self, 0)
     }
     #[doc = "Bit 1 - Timer Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn tcc(&mut self) -> TCC_W<TCCLR_SPEC> {
         TCC_W::new(self, 1)
     }
     #[doc = "Bit 2 - Dither Counter Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ditc(&mut self) -> DITC_W<TCCLR_SPEC> {
         DITC_W::new(self, 2)
     }

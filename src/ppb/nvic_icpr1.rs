@@ -72,7 +72,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Interrupt set-pending bits."]
     #[inline(always)]
-    #[must_use]
     pub fn clrpend(&mut self) -> CLRPEND_W<NVIC_ICPR1_SPEC> {
         CLRPEND_W::new(self, 0)
     }

@@ -848,79 +848,66 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Wait States for read access to PFLASH"]
     #[inline(always)]
-    #[must_use]
     pub fn wspflash(&mut self) -> WSPFLASH_W<FCON_SPEC> {
         WSPFLASH_W::new(self, 0)
     }
     #[doc = "Bit 4 - Wait State for Error Correction of PFLASH"]
     #[inline(always)]
-    #[must_use]
     pub fn wsecpf(&mut self) -> WSECPF_W<FCON_SPEC> {
         WSECPF_W::new(self, 4)
     }
     #[doc = "Bit 13 - Dynamic Flash Idle"]
     #[inline(always)]
-    #[must_use]
     pub fn idle(&mut self) -> IDLE_W<FCON_SPEC> {
         IDLE_W::new(self, 13)
     }
     #[doc = "Bit 14 - External Sleep Request Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn esldis(&mut self) -> ESLDIS_W<FCON_SPEC> {
         ESLDIS_W::new(self, 14)
     }
     #[doc = "Bit 15 - Flash SLEEP"]
     #[inline(always)]
-    #[must_use]
     pub fn sleep(&mut self) -> SLEEP_W<FCON_SPEC> {
         SLEEP_W::new(self, 15)
     }
     #[doc = "Bit 17 - Disable Code Fetch from Flash Memory"]
     #[inline(always)]
-    #[must_use]
     pub fn dcf(&mut self) -> DCF_W<FCON_SPEC> {
         DCF_W::new(self, 17)
     }
     #[doc = "Bit 18 - Disable Any Data Fetch from Flash"]
     #[inline(always)]
-    #[must_use]
     pub fn ddf(&mut self) -> DDF_W<FCON_SPEC> {
         DDF_W::new(self, 18)
     }
     #[doc = "Bit 24 - Verify and Operation Error Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn voperm(&mut self) -> VOPERM_W<FCON_SPEC> {
         VOPERM_W::new(self, 24)
     }
     #[doc = "Bit 25 - Command Sequence Error Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn sqerm(&mut self) -> SQERM_W<FCON_SPEC> {
         SQERM_W::new(self, 25)
     }
     #[doc = "Bit 26 - Protection Error Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn proerm(&mut self) -> PROERM_W<FCON_SPEC> {
         PROERM_W::new(self, 26)
     }
     #[doc = "Bit 27 - PFLASH Single-Bit Error Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn pfsberm(&mut self) -> PFSBERM_W<FCON_SPEC> {
         PFSBERM_W::new(self, 27)
     }
     #[doc = "Bit 29 - PFLASH Double-Bit Error Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn pfdberm(&mut self) -> PFDBERM_W<FCON_SPEC> {
         PFDBERM_W::new(self, 29)
     }
     #[doc = "Bit 31 - End of Busy Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn eobm(&mut self) -> EOBM_W<FCON_SPEC> {
         EOBM_W::new(self, 31)
     }

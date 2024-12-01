@@ -78,14 +78,12 @@ of this register (valid values are 0-3)"]
 impl W {
     #[doc = "Bits 0:4 - PHY Address"]
     #[inline(always)]
-    #[must_use]
     pub fn phy_addr(&mut self) -> PHY_ADDR_W<MII_PHY_ADR_SPEC> {
         PHY_ADDR_W::new(self, 0)
     }
     #[doc = "Bit 7 - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
 of this register (valid values are 0-3)"]
     #[inline(always)]
-    #[must_use]
     pub fn phy_caddr(&mut self) -> PHY_CADDR_W<MII_PHY_ADR_SPEC> {
         PHY_CADDR_W::new(self, 7)
     }

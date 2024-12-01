@@ -81,13 +81,11 @@ impl R {
 impl W {
     #[doc = "Bits 3:8 - Current Transfer Desc:"]
     #[inline(always)]
-    #[must_use]
     pub fn ctd(&mut self) -> CTD_W<HCDMA_SCATGATHER_SPEC> {
         CTD_W::new(self, 3)
     }
     #[doc = "Bits 9:31 - DMA Address"]
     #[inline(always)]
-    #[must_use]
     pub fn dmaaddr(&mut self) -> DMAADDR_W<HCDMA_SCATGATHER_SPEC> {
         DMAADDR_W::new(self, 9)
     }

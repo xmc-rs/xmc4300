@@ -132,19 +132,16 @@ impl R {
 impl W {
     #[doc = "Bit 1 - BusFault on vector table read"]
     #[inline(always)]
-    #[must_use]
     pub fn vecttbl(&mut self) -> VECTTBL_W<HFSR_SPEC> {
         VECTTBL_W::new(self, 1)
     }
     #[doc = "Bit 30 - Forced HardFault"]
     #[inline(always)]
-    #[must_use]
     pub fn forced(&mut self) -> FORCED_W<HFSR_SPEC> {
         FORCED_W::new(self, 30)
     }
     #[doc = "Bit 31 - Reserved for Debug use"]
     #[inline(always)]
-    #[must_use]
     pub fn debugevt(&mut self) -> DEBUGEVT_W<HFSR_SPEC> {
         DEBUGEVT_W::new(self, 31)
     }

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - MII Data"]
     #[inline(always)]
-    #[must_use]
     pub fn md(&mut self) -> MD_W<GMII_DATA_SPEC> {
         MD_W::new(self, 0)
     }

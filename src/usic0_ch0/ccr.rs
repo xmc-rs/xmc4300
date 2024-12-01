@@ -689,61 +689,51 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Operating Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn mode(&mut self) -> MODE_W<CCR_SPEC> {
         MODE_W::new(self, 0)
     }
     #[doc = "Bits 6:7 - Hardware Port Control Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn hpcen(&mut self) -> HPCEN_W<CCR_SPEC> {
         HPCEN_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Parity Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn pm(&mut self) -> PM_W<CCR_SPEC> {
         PM_W::new(self, 8)
     }
     #[doc = "Bit 10 - Receiver Start Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rsien(&mut self) -> RSIEN_W<CCR_SPEC> {
         RSIEN_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data Lost Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dlien(&mut self) -> DLIEN_W<CCR_SPEC> {
         DLIEN_W::new(self, 11)
     }
     #[doc = "Bit 12 - Transmit Shift Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tsien(&mut self) -> TSIEN_W<CCR_SPEC> {
         TSIEN_W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit Buffer Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tbien(&mut self) -> TBIEN_W<CCR_SPEC> {
         TBIEN_W::new(self, 13)
     }
     #[doc = "Bit 14 - Receive Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rien(&mut self) -> RIEN_W<CCR_SPEC> {
         RIEN_W::new(self, 14)
     }
     #[doc = "Bit 15 - Alternative Receive Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn aien(&mut self) -> AIEN_W<CCR_SPEC> {
         AIEN_W::new(self, 15)
     }
     #[doc = "Bit 16 - Baud Rate Generator Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn brgien(&mut self) -> BRGIEN_W<CCR_SPEC> {
         BRGIEN_W::new(self, 16)
     }

@@ -184,91 +184,76 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transmit Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn ti(&mut self) -> TI_W<STATUS_SPEC> {
         TI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmit Process Stopped"]
     #[inline(always)]
-    #[must_use]
     pub fn tps(&mut self) -> TPS_W<STATUS_SPEC> {
         TPS_W::new(self, 1)
     }
     #[doc = "Bit 2 - Transmit Buffer Unavailable"]
     #[inline(always)]
-    #[must_use]
     pub fn tu(&mut self) -> TU_W<STATUS_SPEC> {
         TU_W::new(self, 2)
     }
     #[doc = "Bit 3 - Transmit Jabber Timeout"]
     #[inline(always)]
-    #[must_use]
     pub fn tjt(&mut self) -> TJT_W<STATUS_SPEC> {
         TJT_W::new(self, 3)
     }
     #[doc = "Bit 4 - Receive Overflow"]
     #[inline(always)]
-    #[must_use]
     pub fn ovf(&mut self) -> OVF_W<STATUS_SPEC> {
         OVF_W::new(self, 4)
     }
     #[doc = "Bit 5 - Transmit Underflow"]
     #[inline(always)]
-    #[must_use]
     pub fn unf(&mut self) -> UNF_W<STATUS_SPEC> {
         UNF_W::new(self, 5)
     }
     #[doc = "Bit 6 - Receive Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn ri(&mut self) -> RI_W<STATUS_SPEC> {
         RI_W::new(self, 6)
     }
     #[doc = "Bit 7 - Receive Buffer Unavailable"]
     #[inline(always)]
-    #[must_use]
     pub fn ru(&mut self) -> RU_W<STATUS_SPEC> {
         RU_W::new(self, 7)
     }
     #[doc = "Bit 8 - Receive Process Stopped"]
     #[inline(always)]
-    #[must_use]
     pub fn rps(&mut self) -> RPS_W<STATUS_SPEC> {
         RPS_W::new(self, 8)
     }
     #[doc = "Bit 9 - Receive Watchdog Timeout"]
     #[inline(always)]
-    #[must_use]
     pub fn rwt(&mut self) -> RWT_W<STATUS_SPEC> {
         RWT_W::new(self, 9)
     }
     #[doc = "Bit 10 - Early Transmit Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn eti(&mut self) -> ETI_W<STATUS_SPEC> {
         ETI_W::new(self, 10)
     }
     #[doc = "Bit 13 - Fatal Bus Error Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn fbi(&mut self) -> FBI_W<STATUS_SPEC> {
         FBI_W::new(self, 13)
     }
     #[doc = "Bit 14 - Early Receive Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn eri(&mut self) -> ERI_W<STATUS_SPEC> {
         ERI_W::new(self, 14)
     }
     #[doc = "Bit 15 - Abnormal Interrupt Summary"]
     #[inline(always)]
-    #[must_use]
     pub fn ais(&mut self) -> AIS_W<STATUS_SPEC> {
         AIS_W::new(self, 15)
     }
     #[doc = "Bit 16 - Normal Interrupt Summary"]
     #[inline(always)]
-    #[must_use]
     pub fn nis(&mut self) -> NIS_W<STATUS_SPEC> {
         NIS_W::new(self, 16)
     }

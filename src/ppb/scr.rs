@@ -181,19 +181,16 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Sleep on Exit"]
     #[inline(always)]
-    #[must_use]
     pub fn sleeponexit(&mut self) -> SLEEPONEXIT_W<SCR_SPEC> {
         SLEEPONEXIT_W::new(self, 1)
     }
     #[doc = "Bit 2 - Sleep or Deep Sleep"]
     #[inline(always)]
-    #[must_use]
     pub fn sleepdeep(&mut self) -> SLEEPDEEP_W<SCR_SPEC> {
         SLEEPDEEP_W::new(self, 2)
     }
     #[doc = "Bit 4 - Send Event on Pending bit:"]
     #[inline(always)]
-    #[must_use]
     pub fn sevonpend(&mut self) -> SEVONPEND_W<SCR_SPEC> {
         SEVONPEND_W::new(self, 4)
     }

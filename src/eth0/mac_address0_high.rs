@@ -23,7 +23,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - MAC Address0 \\[47:32\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn addrhi(&mut self) -> ADDRHI_W<MAC_ADDRESS0_HIGH_SPEC> {
         ADDRHI_W::new(self, 0)
     }

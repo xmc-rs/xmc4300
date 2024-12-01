@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Alarm Seconds Compare Value"]
     #[inline(always)]
-    #[must_use]
     pub fn ase(&mut self) -> ASE_W<ATIM0_SPEC> {
         ASE_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - Alarm Minutes Compare Value"]
     #[inline(always)]
-    #[must_use]
     pub fn ami(&mut self) -> AMI_W<ATIM0_SPEC> {
         AMI_W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Alarm Hours Compare Value"]
     #[inline(always)]
-    #[must_use]
     pub fn aho(&mut self) -> AHO_W<ATIM0_SPEC> {
         AHO_W::new(self, 16)
     }
     #[doc = "Bits 24:28 - Alarm Days Compare Value"]
     #[inline(always)]
-    #[must_use]
     pub fn ada(&mut self) -> ADA_W<ATIM0_SPEC> {
         ADA_W::new(self, 24)
     }

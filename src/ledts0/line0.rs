@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Output on LINE\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn line_0(&mut self) -> LINE_0_W<LINE0_SPEC> {
         LINE_0_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Output on LINE\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn line_1(&mut self) -> LINE_1_W<LINE0_SPEC> {
         LINE_1_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Output on LINE\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn line_2(&mut self) -> LINE_2_W<LINE0_SPEC> {
         LINE_2_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Output on LINE\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn line_3(&mut self) -> LINE_3_W<LINE0_SPEC> {
         LINE_3_W::new(self, 24)
     }

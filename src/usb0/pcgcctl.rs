@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Stop Pclk"]
     #[inline(always)]
-    #[must_use]
     pub fn stop_pclk(&mut self) -> STOP_PCLK_W<PCGCCTL_SPEC> {
         STOP_PCLK_W::new(self, 0)
     }
     #[doc = "Bit 1 - Gate Hclk"]
     #[inline(always)]
-    #[must_use]
     pub fn gate_hclk(&mut self) -> GATE_HCLK_W<PCGCCTL_SPEC> {
         GATE_HCLK_W::new(self, 1)
     }

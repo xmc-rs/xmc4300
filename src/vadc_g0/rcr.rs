@@ -275,31 +275,26 @@ impl R {
 impl W {
     #[doc = "Bits 16:19 - Data Reduction Control"]
     #[inline(always)]
-    #[must_use]
     pub fn drctr(&mut self) -> DRCTR_W<RCR_SPEC> {
         DRCTR_W::new(self, 16)
     }
     #[doc = "Bits 20:21 - Data Modification Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn dmm(&mut self) -> DMM_W<RCR_SPEC> {
         DMM_W::new(self, 20)
     }
     #[doc = "Bit 24 - Wait-for-Read Mode Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn wfr(&mut self) -> WFR_W<RCR_SPEC> {
         WFR_W::new(self, 24)
     }
     #[doc = "Bits 25:26 - FIFO Mode Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn fen(&mut self) -> FEN_W<RCR_SPEC> {
         FEN_W::new(self, 25)
     }
     #[doc = "Bit 31 - Service Request Generation Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn srgen(&mut self) -> SRGEN_W<RCR_SPEC> {
         SRGEN_W::new(self, 31)
     }

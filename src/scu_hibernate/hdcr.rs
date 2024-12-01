@@ -983,79 +983,66 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Wake-Up on Pin Event Positive Edge Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn wkpep(&mut self) -> WKPEP_W<HDCR_SPEC> {
         WKPEP_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wake-up on Pin Event Negative Edge Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn wkpen(&mut self) -> WKPEN_W<HDCR_SPEC> {
         WKPEN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Wake-up on RTC Event Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rtce(&mut self) -> RTCE_W<HDCR_SPEC> {
         RTCE_W::new(self, 2)
     }
     #[doc = "Bit 3 - ULP WDG Alarm Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ulpwdgen(&mut self) -> ULPWDGEN_W<HDCR_SPEC> {
         ULPWDGEN_W::new(self, 3)
     }
     #[doc = "Bit 4 - Hibernate Request Value Set"]
     #[inline(always)]
-    #[must_use]
     pub fn hib(&mut self) -> HIB_W<HDCR_SPEC> {
         HIB_W::new(self, 4)
     }
     #[doc = "Bit 6 - fRTC Clock Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn rcs(&mut self) -> RCS_W<HDCR_SPEC> {
         RCS_W::new(self, 6)
     }
     #[doc = "Bit 7 - fSTDBY Clock Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn stdbysel(&mut self) -> STDBYSEL_W<HDCR_SPEC> {
         STDBYSEL_W::new(self, 7)
     }
     #[doc = "Bit 8 - Wake-Up from Hibernate Trigger Input Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn wkupsel(&mut self) -> WKUPSEL_W<HDCR_SPEC> {
         WKUPSEL_W::new(self, 8)
     }
     #[doc = "Bit 10 - General Purpose Input 0 Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn gpi0sel(&mut self) -> GPI0SEL_W<HDCR_SPEC> {
         GPI0SEL_W::new(self, 10)
     }
     #[doc = "Bit 12 - HIBIO0 Polarity Set"]
     #[inline(always)]
-    #[must_use]
     pub fn hibio0pol(&mut self) -> HIBIO0POL_W<HDCR_SPEC> {
         HIBIO0POL_W::new(self, 12)
     }
     #[doc = "Bit 13 - HIBIO1 Polarity Set"]
     #[inline(always)]
-    #[must_use]
     pub fn hibio1pol(&mut self) -> HIBIO1POL_W<HDCR_SPEC> {
         HIBIO1POL_W::new(self, 13)
     }
     #[doc = "Bits 16:19 - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
     #[inline(always)]
-    #[must_use]
     pub fn hibio0sel(&mut self) -> HIBIO0SEL_W<HDCR_SPEC> {
         HIBIO0SEL_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - HIB_IO_1 Pin I/O Control (Default WKUP)"]
     #[inline(always)]
-    #[must_use]
     pub fn hibio1sel(&mut self) -> HIBIO1SEL_W<HDCR_SPEC> {
         HIBIO1SEL_W::new(self, 20)
     }

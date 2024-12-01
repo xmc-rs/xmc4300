@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - RI Watchdog Timer Count"]
     #[inline(always)]
-    #[must_use]
     pub fn riwt(&mut self) -> RIWT_W<RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC> {
         RIWT_W::new(self, 0)
     }

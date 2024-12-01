@@ -160,31 +160,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Transmit Shift Interrupt Node Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn tsinp(&mut self) -> TSINP_W<INPR_SPEC> {
         TSINP_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Transmit Buffer Interrupt Node Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn tbinp(&mut self) -> TBINP_W<INPR_SPEC> {
         TBINP_W::new(self, 4)
     }
     #[doc = "Bits 8:10 - Receive Interrupt Node Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn rinp(&mut self) -> RINP_W<INPR_SPEC> {
         RINP_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - Alternative Receive Interrupt Node Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn ainp(&mut self) -> AINP_W<INPR_SPEC> {
         AINP_W::new(self, 12)
     }
     #[doc = "Bits 16:18 - Transmit Shift Interrupt Node Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn pinp(&mut self) -> PINP_W<INPR_SPEC> {
         PINP_W::new(self, 16)
     }

@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - K1-Divider Value"]
     #[inline(always)]
-    #[must_use]
     pub fn k1div(&mut self) -> K1DIV_W<PLLCON1_SPEC> {
         K1DIV_W::new(self, 0)
     }
     #[doc = "Bits 8:14 - N-Divider Value"]
     #[inline(always)]
-    #[must_use]
     pub fn ndiv(&mut self) -> NDIV_W<PLLCON1_SPEC> {
         NDIV_W::new(self, 8)
     }
     #[doc = "Bits 16:22 - K2-Divider Value"]
     #[inline(always)]
-    #[must_use]
     pub fn k2div(&mut self) -> K2DIV_W<PLLCON1_SPEC> {
         K2DIV_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - P-Divider Value"]
     #[inline(always)]
-    #[must_use]
     pub fn pdiv(&mut self) -> PDIV_W<PLLCON1_SPEC> {
         PDIV_W::new(self, 24)
     }

@@ -163,13 +163,11 @@ impl R {
 impl W {
     #[doc = "Bits 20:21 - Access privileges for coprocessor 10"]
     #[inline(always)]
-    #[must_use]
     pub fn cp10(&mut self) -> CP10_W<CPACR_SPEC> {
         CP10_W::new(self, 20)
     }
     #[doc = "Bits 22:23 - Access privileges for coprocessor 11"]
     #[inline(always)]
-    #[must_use]
     pub fn cp11(&mut self) -> CP11_W<CPACR_SPEC> {
         CP11_W::new(self, 22)
     }

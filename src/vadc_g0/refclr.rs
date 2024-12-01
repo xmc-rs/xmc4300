@@ -499,97 +499,81 @@ where
 impl W {
     #[doc = "Bit 0 - Clear Result Event for Result Register 0"]
     #[inline(always)]
-    #[must_use]
     pub fn rev0(&mut self) -> REV0_W<REFCLR_SPEC> {
         REV0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Result Event for Result Register 1"]
     #[inline(always)]
-    #[must_use]
     pub fn rev1(&mut self) -> REV1_W<REFCLR_SPEC> {
         REV1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Result Event for Result Register 2"]
     #[inline(always)]
-    #[must_use]
     pub fn rev2(&mut self) -> REV2_W<REFCLR_SPEC> {
         REV2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Clear Result Event for Result Register 3"]
     #[inline(always)]
-    #[must_use]
     pub fn rev3(&mut self) -> REV3_W<REFCLR_SPEC> {
         REV3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Clear Result Event for Result Register 4"]
     #[inline(always)]
-    #[must_use]
     pub fn rev4(&mut self) -> REV4_W<REFCLR_SPEC> {
         REV4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Clear Result Event for Result Register 5"]
     #[inline(always)]
-    #[must_use]
     pub fn rev5(&mut self) -> REV5_W<REFCLR_SPEC> {
         REV5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Clear Result Event for Result Register 6"]
     #[inline(always)]
-    #[must_use]
     pub fn rev6(&mut self) -> REV6_W<REFCLR_SPEC> {
         REV6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Clear Result Event for Result Register 7"]
     #[inline(always)]
-    #[must_use]
     pub fn rev7(&mut self) -> REV7_W<REFCLR_SPEC> {
         REV7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Clear Result Event for Result Register 8"]
     #[inline(always)]
-    #[must_use]
     pub fn rev8(&mut self) -> REV8_W<REFCLR_SPEC> {
         REV8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear Result Event for Result Register 9"]
     #[inline(always)]
-    #[must_use]
     pub fn rev9(&mut self) -> REV9_W<REFCLR_SPEC> {
         REV9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Clear Result Event for Result Register 10"]
     #[inline(always)]
-    #[must_use]
     pub fn rev10(&mut self) -> REV10_W<REFCLR_SPEC> {
         REV10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Clear Result Event for Result Register 11"]
     #[inline(always)]
-    #[must_use]
     pub fn rev11(&mut self) -> REV11_W<REFCLR_SPEC> {
         REV11_W::new(self, 11)
     }
     #[doc = "Bit 12 - Clear Result Event for Result Register 12"]
     #[inline(always)]
-    #[must_use]
     pub fn rev12(&mut self) -> REV12_W<REFCLR_SPEC> {
         REV12_W::new(self, 12)
     }
     #[doc = "Bit 13 - Clear Result Event for Result Register 13"]
     #[inline(always)]
-    #[must_use]
     pub fn rev13(&mut self) -> REV13_W<REFCLR_SPEC> {
         REV13_W::new(self, 13)
     }
     #[doc = "Bit 14 - Clear Result Event for Result Register 14"]
     #[inline(always)]
-    #[must_use]
     pub fn rev14(&mut self) -> REV14_W<REFCLR_SPEC> {
         REV14_W::new(self, 14)
     }
     #[doc = "Bit 15 - Clear Result Event for Result Register 15"]
     #[inline(always)]
-    #[must_use]
     pub fn rev15(&mut self) -> REV15_W<REFCLR_SPEC> {
         REV15_W::new(self, 15)
     }

@@ -355,37 +355,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - System Clock Selection Value"]
     #[inline(always)]
-    #[must_use]
     pub fn syssel(&mut self) -> SYSSEL_W<SLEEPCR_SPEC> {
         SYSSEL_W::new(self, 0)
     }
     #[doc = "Bit 16 - USB Clock Control in Sleep Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn usbcr(&mut self) -> USBCR_W<SLEEPCR_SPEC> {
         USBCR_W::new(self, 16)
     }
     #[doc = "Bit 17 - MMC Clock Control in Sleep Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn mmccr(&mut self) -> MMCCR_W<SLEEPCR_SPEC> {
         MMCCR_W::new(self, 17)
     }
     #[doc = "Bit 18 - Ethernet Clock Control in Sleep Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn eth0cr(&mut self) -> ETH0CR_W<SLEEPCR_SPEC> {
         ETH0CR_W::new(self, 18)
     }
     #[doc = "Bit 20 - CCU Clock Control in Sleep Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn ccucr(&mut self) -> CCUCR_W<SLEEPCR_SPEC> {
         CCUCR_W::new(self, 20)
     }
     #[doc = "Bit 21 - WDT Clock Control in Sleep Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn wdtcr(&mut self) -> WDTCR_W<SLEEPCR_SPEC> {
         WDTCR_W::new(self, 21)
     }

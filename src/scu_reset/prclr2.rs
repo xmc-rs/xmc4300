@@ -189,37 +189,31 @@ where
 impl W {
     #[doc = "Bit 1 - WDT Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn wdtrs(&mut self) -> WDTRS_W<PRCLR2_SPEC> {
         WDTRS_W::new(self, 1)
     }
     #[doc = "Bit 2 - ETH0 Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn eth0rs(&mut self) -> ETH0RS_W<PRCLR2_SPEC> {
         ETH0RS_W::new(self, 2)
     }
     #[doc = "Bit 4 - DMA0 Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn dma0rs(&mut self) -> DMA0RS_W<PRCLR2_SPEC> {
         DMA0RS_W::new(self, 4)
     }
     #[doc = "Bit 6 - FCE Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn fcers(&mut self) -> FCERS_W<PRCLR2_SPEC> {
         FCERS_W::new(self, 6)
     }
     #[doc = "Bit 7 - USB Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn usbrs(&mut self) -> USBRS_W<PRCLR2_SPEC> {
         USBRS_W::new(self, 7)
     }
     #[doc = "Bit 10 - ECAT0 Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ecat0rs(&mut self) -> ECAT0RS_W<PRCLR2_SPEC> {
         ECAT0RS_W::new(self, 10)
     }

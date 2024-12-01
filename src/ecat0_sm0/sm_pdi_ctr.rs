@@ -74,13 +74,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Deactivate SyncManager"]
     #[inline(always)]
-    #[must_use]
     pub fn deact(&mut self) -> DEACT_W<SM_PDI_CTR_SPEC> {
         DEACT_W::new(self, 0)
     }
     #[doc = "Bit 1 - Repeat Ack"]
     #[inline(always)]
-    #[must_use]
     pub fn rep_ack(&mut self) -> REP_ACK_W<SM_PDI_CTR_SPEC> {
         REP_ACK_W::new(self, 1)
     }

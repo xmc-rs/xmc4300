@@ -193,55 +193,46 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Region enable bit."]
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<MPU_RASR_A3_SPEC> {
         ENABLE_W::new(self, 0)
     }
     #[doc = "Bits 1:5 - MPU protection region size"]
     #[inline(always)]
-    #[must_use]
     pub fn size(&mut self) -> SIZE_W<MPU_RASR_A3_SPEC> {
         SIZE_W::new(self, 1)
     }
     #[doc = "Bits 8:15 - Subregion disable bits"]
     #[inline(always)]
-    #[must_use]
     pub fn srd(&mut self) -> SRD_W<MPU_RASR_A3_SPEC> {
         SRD_W::new(self, 8)
     }
     #[doc = "Bit 16 - Memory access attribute"]
     #[inline(always)]
-    #[must_use]
     pub fn b(&mut self) -> B_W<MPU_RASR_A3_SPEC> {
         B_W::new(self, 16)
     }
     #[doc = "Bit 17 - Memory access attribute"]
     #[inline(always)]
-    #[must_use]
     pub fn c(&mut self) -> C_W<MPU_RASR_A3_SPEC> {
         C_W::new(self, 17)
     }
     #[doc = "Bit 18 - Shareable bit"]
     #[inline(always)]
-    #[must_use]
     pub fn s(&mut self) -> S_W<MPU_RASR_A3_SPEC> {
         S_W::new(self, 18)
     }
     #[doc = "Bits 19:21 - Memory access attribute"]
     #[inline(always)]
-    #[must_use]
     pub fn tex(&mut self) -> TEX_W<MPU_RASR_A3_SPEC> {
         TEX_W::new(self, 19)
     }
     #[doc = "Bits 24:26 - Access permission field"]
     #[inline(always)]
-    #[must_use]
     pub fn ap(&mut self) -> AP_W<MPU_RASR_A3_SPEC> {
         AP_W::new(self, 24)
     }
     #[doc = "Bit 28 - Instruction access disable bit"]
     #[inline(always)]
-    #[must_use]
     pub fn xn(&mut self) -> XN_W<MPU_RASR_A3_SPEC> {
         XN_W::new(self, 28)
     }

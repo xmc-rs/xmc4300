@@ -639,31 +639,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Standard Receive Buffer Event"]
     #[inline(always)]
-    #[must_use]
     pub fn srbi(&mut self) -> SRBI_W<TRBSR_SPEC> {
         SRBI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Receive Buffer Error Event"]
     #[inline(always)]
-    #[must_use]
     pub fn rberi(&mut self) -> RBERI_W<TRBSR_SPEC> {
         RBERI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Alternative Receive Buffer Event"]
     #[inline(always)]
-    #[must_use]
     pub fn arbi(&mut self) -> ARBI_W<TRBSR_SPEC> {
         ARBI_W::new(self, 2)
     }
     #[doc = "Bit 8 - Standard Transmit Buffer Event"]
     #[inline(always)]
-    #[must_use]
     pub fn stbi(&mut self) -> STBI_W<TRBSR_SPEC> {
         STBI_W::new(self, 8)
     }
     #[doc = "Bit 9 - Transmit Buffer Error Event"]
     #[inline(always)]
-    #[must_use]
     pub fn tberi(&mut self) -> TBERI_W<TRBSR_SPEC> {
         TBERI_W::new(self, 9)
     }

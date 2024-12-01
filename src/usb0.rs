@@ -82,42 +82,42 @@ impl RegisterBlock {
     #[doc = "0x14 - Interrupt Register \\[DEVICEMODE\\]"]
     #[inline(always)]
     pub const fn gintsts_devicemode(&self) -> &GINTSTS_DEVICEMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(20).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(20).cast() }
     }
     #[doc = "0x14 - Interrupt Register \\[HOSTMODE\\]"]
     #[inline(always)]
     pub const fn gintsts_hostmode(&self) -> &GINTSTS_HOSTMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(20).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(20).cast() }
     }
     #[doc = "0x18 - Interrupt Mask Register \\[DEVICEMODE\\]"]
     #[inline(always)]
     pub const fn gintmsk_devicemode(&self) -> &GINTMSK_DEVICEMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(24).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(24).cast() }
     }
     #[doc = "0x18 - Interrupt Mask Register \\[HOSTMODE\\]"]
     #[inline(always)]
     pub const fn gintmsk_hostmode(&self) -> &GINTMSK_HOSTMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(24).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(24).cast() }
     }
     #[doc = "0x1c - Receive Status Debug Read Register \\[DEVICEMODE\\]"]
     #[inline(always)]
     pub const fn grxstsr_devicemode(&self) -> &GRXSTSR_DEVICEMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(28).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(28).cast() }
     }
     #[doc = "0x1c - Receive Status Debug Read Register \\[HOSTMODE\\]"]
     #[inline(always)]
     pub const fn grxstsr_hostmode(&self) -> &GRXSTSR_HOSTMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(28).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(28).cast() }
     }
     #[doc = "0x20 - Receive Status Read and Pop Register \\[HOSTMODE\\]"]
     #[inline(always)]
     pub const fn grxstsp_hostmode(&self) -> &GRXSTSP_HOSTMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(32).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(32).cast() }
     }
     #[doc = "0x20 - Receive Status Read and Pop Register \\[DEVICEMODE\\]"]
     #[inline(always)]
     pub const fn grxstsp_devicemode(&self) -> &GRXSTSP_DEVICEMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(32).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(32).cast() }
     }
     #[doc = "0x24 - Receive FIFO Size Register"]
     #[inline(always)]
@@ -127,12 +127,12 @@ impl RegisterBlock {
     #[doc = "0x28 - Non-Periodic Transmit FIFO Size Register \\[DEVICEMODE\\]"]
     #[inline(always)]
     pub const fn gnptxfsiz_devicemode(&self) -> &GNPTXFSIZ_DEVICEMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(40).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(40).cast() }
     }
     #[doc = "0x28 - Non-Periodic Transmit FIFO Size Register \\[HOSTMODE\\]"]
     #[inline(always)]
     pub const fn gnptxfsiz_hostmode(&self) -> &GNPTXFSIZ_HOSTMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(40).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(40).cast() }
     }
     #[doc = "0x2c - Non-Periodic Transmit FIFO/Queue Status Register"]
     #[inline(always)]

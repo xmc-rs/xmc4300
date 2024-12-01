@@ -34,19 +34,16 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Global Start Control CCU40"]
     #[inline(always)]
-    #[must_use]
     pub fn gsc40(&mut self) -> GSC40_W<CCUCON_SPEC> {
         GSC40_W::new(self, 0)
     }
     #[doc = "Bit 1 - Global Start Control CCU41"]
     #[inline(always)]
-    #[must_use]
     pub fn gsc41(&mut self) -> GSC41_W<CCUCON_SPEC> {
         GSC41_W::new(self, 1)
     }
     #[doc = "Bit 8 - Global Start Control CCU80"]
     #[inline(always)]
-    #[must_use]
     pub fn gsc80(&mut self) -> GSC80_W<CCUCON_SPEC> {
         GSC80_W::new(self, 8)
     }

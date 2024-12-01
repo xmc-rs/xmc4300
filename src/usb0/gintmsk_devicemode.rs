@@ -187,121 +187,101 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Mode Mismatch Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn mode_mis_msk(&mut self) -> MODE_MIS_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         MODE_MIS_MSK_W::new(self, 1)
     }
     #[doc = "Bit 2 - OTG Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn otgint_msk(&mut self) -> OTGINT_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         OTGINT_MSK_W::new(self, 2)
     }
     #[doc = "Bit 3 - Start of Frame Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn sof_msk(&mut self) -> SOF_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         SOF_MSK_W::new(self, 3)
     }
     #[doc = "Bit 4 - Receive FIFO Non-Empty Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn rx_flvl_msk(&mut self) -> RX_FLVL_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         RX_FLVL_MSK_W::new(self, 4)
     }
     #[doc = "Bit 6 - Global Non-periodic IN NAK Effective Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn ginnak_eff_msk(&mut self) -> GINNAK_EFF_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         GINNAK_EFF_MSK_W::new(self, 6)
     }
     #[doc = "Bit 7 - Global OUT NAK Effective Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn goutnak_eff_msk(&mut self) -> GOUTNAK_EFF_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         GOUTNAK_EFF_MSK_W::new(self, 7)
     }
     #[doc = "Bit 10 - Early Suspend Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn erly_susp_msk(&mut self) -> ERLY_SUSP_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         ERLY_SUSP_MSK_W::new(self, 10)
     }
     #[doc = "Bit 11 - USB Suspend Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn usbsusp_msk(&mut self) -> USBSUSP_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         USBSUSP_MSK_W::new(self, 11)
     }
     #[doc = "Bit 12 - USB Reset Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn usbrst_msk(&mut self) -> USBRST_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         USBRST_MSK_W::new(self, 12)
     }
     #[doc = "Bit 13 - Enumeration Done Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn enum_done_msk(&mut self) -> ENUM_DONE_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         ENUM_DONE_MSK_W::new(self, 13)
     }
     #[doc = "Bit 14 - Isochronous OUT Packet Dropped Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn isoout_drop_msk(&mut self) -> ISOOUT_DROP_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         ISOOUT_DROP_MSK_W::new(self, 14)
     }
     #[doc = "Bit 15 - End of Periodic Frame Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn eopfmsk(&mut self) -> EOPFMSK_W<GINTMSK_DEVICEMODE_SPEC> {
         EOPFMSK_W::new(self, 15)
     }
     #[doc = "Bit 18 - IN Endpoints Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn iepint_msk(&mut self) -> IEPINT_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         IEPINT_MSK_W::new(self, 18)
     }
     #[doc = "Bit 19 - OUT Endpoints Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn oepint_msk(&mut self) -> OEPINT_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         OEPINT_MSK_W::new(self, 19)
     }
     #[doc = "Bit 20 - Incomplete Isochronous IN Transfer Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn incomp_isoinmsk(&mut self) -> INCOMP_ISOINMSK_W<GINTMSK_DEVICEMODE_SPEC> {
         INCOMP_ISOINMSK_W::new(self, 20)
     }
     #[doc = "Bit 21 - Incomplete Isochronous OUT Transfer Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn incompl_sooutmsk(&mut self) -> INCOMPL_SOOUTMSK_W<GINTMSK_DEVICEMODE_SPEC> {
         INCOMPL_SOOUTMSK_W::new(self, 21)
     }
     #[doc = "Bit 28 - Connector ID Status Change Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn con_idsts_chng_msk(&mut self) -> CON_IDSTS_CHNG_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         CON_IDSTS_CHNG_MSK_W::new(self, 28)
     }
     #[doc = "Bit 29 - Disconnect Detected Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn disconn_int_msk(&mut self) -> DISCONN_INT_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         DISCONN_INT_MSK_W::new(self, 29)
     }
     #[doc = "Bit 30 - Session Request/New Session Detected Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn sess_req_int_msk(&mut self) -> SESS_REQ_INT_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         SESS_REQ_INT_MSK_W::new(self, 30)
     }
     #[doc = "Bit 31 - Resume/Remote Wakeup Detected Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn wk_up_int_msk(&mut self) -> WK_UP_INT_MSK_W<GINTMSK_DEVICEMODE_SPEC> {
         WK_UP_INT_MSK_W::new(self, 31)
     }

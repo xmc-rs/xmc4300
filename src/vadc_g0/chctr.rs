@@ -791,67 +791,56 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Input Class Select"]
     #[inline(always)]
-    #[must_use]
     pub fn iclsel(&mut self) -> ICLSEL_W<CHCTR_SPEC> {
         ICLSEL_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Lower Boundary Select"]
     #[inline(always)]
-    #[must_use]
     pub fn bndsell(&mut self) -> BNDSELL_W<CHCTR_SPEC> {
         BNDSELL_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Upper Boundary Select"]
     #[inline(always)]
-    #[must_use]
     pub fn bndselu(&mut self) -> BNDSELU_W<CHCTR_SPEC> {
         BNDSELU_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Channel Event Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn chevmode(&mut self) -> CHEVMODE_W<CHCTR_SPEC> {
         CHEVMODE_W::new(self, 8)
     }
     #[doc = "Bit 10 - Synchronization Request"]
     #[inline(always)]
-    #[must_use]
     pub fn sync(&mut self) -> SYNC_W<CHCTR_SPEC> {
         SYNC_W::new(self, 10)
     }
     #[doc = "Bit 11 - Reference Input Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn refsel(&mut self) -> REFSEL_W<CHCTR_SPEC> {
         REFSEL_W::new(self, 11)
     }
     #[doc = "Bits 16:19 - Result Register"]
     #[inline(always)]
-    #[must_use]
     pub fn resreg(&mut self) -> RESREG_W<CHCTR_SPEC> {
         RESREG_W::new(self, 16)
     }
     #[doc = "Bit 20 - Result Target for Background Source"]
     #[inline(always)]
-    #[must_use]
     pub fn restbs(&mut self) -> RESTBS_W<CHCTR_SPEC> {
         RESTBS_W::new(self, 20)
     }
     #[doc = "Bit 21 - Result Position"]
     #[inline(always)]
-    #[must_use]
     pub fn respos(&mut self) -> RESPOS_W<CHCTR_SPEC> {
         RESPOS_W::new(self, 21)
     }
     #[doc = "Bits 28:29 - Broken Wire Detection Channel"]
     #[inline(always)]
-    #[must_use]
     pub fn bwdch(&mut self) -> BWDCH_W<CHCTR_SPEC> {
         BWDCH_W::new(self, 28)
     }
     #[doc = "Bit 30 - Broken Wire Detection Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn bwden(&mut self) -> BWDEN_W<CHCTR_SPEC> {
         BWDEN_W::new(self, 30)
     }

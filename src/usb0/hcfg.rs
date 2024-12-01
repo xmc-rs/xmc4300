@@ -226,31 +226,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - FS PHY Clock Select"]
     #[inline(always)]
-    #[must_use]
     pub fn fslspclk_sel(&mut self) -> FSLSPCLK_SEL_W<HCFG_SPEC> {
         FSLSPCLK_SEL_W::new(self, 0)
     }
     #[doc = "Bit 2 - FS-Only Support"]
     #[inline(always)]
-    #[must_use]
     pub fn fslssupp(&mut self) -> FSLSSUPP_W<HCFG_SPEC> {
         FSLSSUPP_W::new(self, 2)
     }
     #[doc = "Bit 23 - Enable Scatter/gather DMA in Host mode"]
     #[inline(always)]
-    #[must_use]
     pub fn desc_dma(&mut self) -> DESC_DMA_W<HCFG_SPEC> {
         DESC_DMA_W::new(self, 23)
     }
     #[doc = "Bits 24:25 - Frame List Entries"]
     #[inline(always)]
-    #[must_use]
     pub fn fr_list_en(&mut self) -> FR_LIST_EN_W<HCFG_SPEC> {
         FR_LIST_EN_W::new(self, 24)
     }
     #[doc = "Bit 26 - Enable Periodic Scheduling"]
     #[inline(always)]
-    #[must_use]
     pub fn per_sched_ena(&mut self) -> PER_SCHED_ENA_W<HCFG_SPEC> {
         PER_SCHED_ENA_W::new(self, 26)
     }

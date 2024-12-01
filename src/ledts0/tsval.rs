@@ -23,7 +23,6 @@ impl R {
 impl W {
     #[doc = "Bits 16:31 - TS-Counter Value"]
     #[inline(always)]
-    #[must_use]
     pub fn tsctrval(&mut self) -> TSCTRVAL_W<TSVAL_SPEC> {
         TSCTRVAL_W::new(self, 16)
     }

@@ -17,43 +17,36 @@ pub type RAI_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Periodic Seconds Interrupt Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rpse(&mut self) -> RPSE_W<CLRSR_SPEC> {
         RPSE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Periodic Minutes Interrupt Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rpmi(&mut self) -> RPMI_W<CLRSR_SPEC> {
         RPMI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Periodic Hours Interrupt Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rpho(&mut self) -> RPHO_W<CLRSR_SPEC> {
         RPHO_W::new(self, 2)
     }
     #[doc = "Bit 3 - Periodic Days Interrupt Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rpda(&mut self) -> RPDA_W<CLRSR_SPEC> {
         RPDA_W::new(self, 3)
     }
     #[doc = "Bit 5 - Periodic Months Interrupt Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rpmo(&mut self) -> RPMO_W<CLRSR_SPEC> {
         RPMO_W::new(self, 5)
     }
     #[doc = "Bit 6 - Periodic Years Interrupt Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rpye(&mut self) -> RPYE_W<CLRSR_SPEC> {
         RPYE_W::new(self, 6)
     }
     #[doc = "Bit 8 - Alarm Interrupt Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rai(&mut self) -> RAI_W<CLRSR_SPEC> {
         RAI_W::new(self, 8)
     }

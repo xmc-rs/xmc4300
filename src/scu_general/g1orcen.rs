@@ -123,13 +123,11 @@ impl R {
 impl W {
     #[doc = "Bit 6 - Enable Out of Range Comparator, Channel 6"]
     #[inline(always)]
-    #[must_use]
     pub fn enorc6(&mut self) -> ENORC6_W<G1ORCEN_SPEC> {
         ENORC6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Enable Out of Range Comparator, Channel 7"]
     #[inline(always)]
-    #[must_use]
     pub fn enorc7(&mut self) -> ENORC7_W<G1ORCEN_SPEC> {
         ENORC7_W::new(self, 7)
     }

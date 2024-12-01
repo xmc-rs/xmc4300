@@ -189,13 +189,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Service Request Node Pointer Source Event i"]
     #[inline(always)]
-    #[must_use]
     pub fn sev0np(&mut self) -> SEV0NP_W<SEVNP_SPEC> {
         SEV0NP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Service Request Node Pointer Source Event i"]
     #[inline(always)]
-    #[must_use]
     pub fn sev1np(&mut self) -> SEV1NP_W<SEVNP_SPEC> {
         SEV1NP_W::new(self, 4)
     }

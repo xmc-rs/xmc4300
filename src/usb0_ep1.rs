@@ -23,12 +23,12 @@ impl RegisterBlock {
     #[doc = "0x00 - Device Endpoint Control Register \\[INTBULK\\]"]
     #[inline(always)]
     pub const fn diepctl_intbulk(&self) -> &DIEPCTL_INTBULK {
-        unsafe { &*(self as *const Self).cast::<u8>().add(0).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().cast() }
     }
     #[doc = "0x00 - Device Endpoint Control Register \\[ISOCONT\\]"]
     #[inline(always)]
     pub const fn diepctl_isocont(&self) -> &DIEPCTL_ISOCONT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(0).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().cast() }
     }
     #[doc = "0x08 - Device Endpoint Interrupt Register"]
     #[inline(always)]
@@ -58,12 +58,12 @@ impl RegisterBlock {
     #[doc = "0x200 - Device Endpoint Control Register \\[INTBULK\\]"]
     #[inline(always)]
     pub const fn doepctl_intbulk(&self) -> &DOEPCTL_INTBULK {
-        unsafe { &*(self as *const Self).cast::<u8>().add(512).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(512).cast() }
     }
     #[doc = "0x200 - Device Endpoint Control Register \\[ISOCONT\\]"]
     #[inline(always)]
     pub const fn doepctl_isocont(&self) -> &DOEPCTL_ISOCONT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(512).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(512).cast() }
     }
     #[doc = "0x208 - Device Endpoint Interrupt Register"]
     #[inline(always)]
@@ -73,12 +73,12 @@ impl RegisterBlock {
     #[doc = "0x210 - Device Endpoint Transfer Size Register \\[CONT\\]"]
     #[inline(always)]
     pub const fn doeptsiz_control(&self) -> &DOEPTSIZ_CONTROL {
-        unsafe { &*(self as *const Self).cast::<u8>().add(528).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(528).cast() }
     }
     #[doc = "0x210 - Device Endpoint Transfer Size Register \\[ISO\\]"]
     #[inline(always)]
     pub const fn doeptsiz_iso(&self) -> &DOEPTSIZ_ISO {
-        unsafe { &*(self as *const Self).cast::<u8>().add(528).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(528).cast() }
     }
     #[doc = "0x214 - Device Endpoint DMA Address Register"]
     #[inline(always)]

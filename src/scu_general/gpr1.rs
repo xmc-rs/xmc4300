@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - User Data"]
     #[inline(always)]
-    #[must_use]
     pub fn dat(&mut self) -> DAT_W<GPR1_SPEC> {
         DAT_W::new(self, 0)
     }

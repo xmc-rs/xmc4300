@@ -72,7 +72,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Interrupt active flags:"]
     #[inline(always)]
-    #[must_use]
     pub fn active(&mut self) -> ACTIVE_W<NVIC_IABR3_SPEC> {
         ACTIVE_W::new(self, 0)
     }

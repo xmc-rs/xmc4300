@@ -65,7 +65,6 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Turn OFF the fOSI Clock Source"]
     #[inline(always)]
-    #[must_use]
     pub fn pwd(&mut self) -> PWD_W<OSCSICTRL_SPEC> {
         PWD_W::new(self, 0)
     }

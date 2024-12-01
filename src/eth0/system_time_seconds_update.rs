@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Timestamp Second"]
     #[inline(always)]
-    #[must_use]
     pub fn tss(&mut self) -> TSS_W<SYSTEM_TIME_SECONDS_UPDATE_SPEC> {
         TSS_W::new(self, 0)
     }

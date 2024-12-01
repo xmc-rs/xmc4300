@@ -935,97 +935,81 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Port n Output Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn p0(&mut self) -> P0_W<OUT_SPEC> {
         P0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Port n Output Bit 1"]
     #[inline(always)]
-    #[must_use]
     pub fn p1(&mut self) -> P1_W<OUT_SPEC> {
         P1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Port n Output Bit 2"]
     #[inline(always)]
-    #[must_use]
     pub fn p2(&mut self) -> P2_W<OUT_SPEC> {
         P2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Port n Output Bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn p3(&mut self) -> P3_W<OUT_SPEC> {
         P3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Port n Output Bit 4"]
     #[inline(always)]
-    #[must_use]
     pub fn p4(&mut self) -> P4_W<OUT_SPEC> {
         P4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Port n Output Bit 5"]
     #[inline(always)]
-    #[must_use]
     pub fn p5(&mut self) -> P5_W<OUT_SPEC> {
         P5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Port n Output Bit 6"]
     #[inline(always)]
-    #[must_use]
     pub fn p6(&mut self) -> P6_W<OUT_SPEC> {
         P6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Port n Output Bit 7"]
     #[inline(always)]
-    #[must_use]
     pub fn p7(&mut self) -> P7_W<OUT_SPEC> {
         P7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Port n Output Bit 8"]
     #[inline(always)]
-    #[must_use]
     pub fn p8(&mut self) -> P8_W<OUT_SPEC> {
         P8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Port n Output Bit 9"]
     #[inline(always)]
-    #[must_use]
     pub fn p9(&mut self) -> P9_W<OUT_SPEC> {
         P9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Port n Output Bit 10"]
     #[inline(always)]
-    #[must_use]
     pub fn p10(&mut self) -> P10_W<OUT_SPEC> {
         P10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Port n Output Bit 11"]
     #[inline(always)]
-    #[must_use]
     pub fn p11(&mut self) -> P11_W<OUT_SPEC> {
         P11_W::new(self, 11)
     }
     #[doc = "Bit 12 - Port n Output Bit 12"]
     #[inline(always)]
-    #[must_use]
     pub fn p12(&mut self) -> P12_W<OUT_SPEC> {
         P12_W::new(self, 12)
     }
     #[doc = "Bit 13 - Port n Output Bit 13"]
     #[inline(always)]
-    #[must_use]
     pub fn p13(&mut self) -> P13_W<OUT_SPEC> {
         P13_W::new(self, 13)
     }
     #[doc = "Bit 14 - Port n Output Bit 14"]
     #[inline(always)]
-    #[must_use]
     pub fn p14(&mut self) -> P14_W<OUT_SPEC> {
         P14_W::new(self, 14)
     }
     #[doc = "Bit 15 - Port n Output Bit 15"]
     #[inline(always)]
-    #[must_use]
     pub fn p15(&mut self) -> P15_W<OUT_SPEC> {
         P15_W::new(self, 15)
     }

@@ -976,97 +976,81 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transmission Idle"]
     #[inline(always)]
-    #[must_use]
     pub fn txidle(&mut self) -> TXIDLE_W<PSR_ASCMODE_SPEC> {
         TXIDLE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Reception Idle"]
     #[inline(always)]
-    #[must_use]
     pub fn rxidle(&mut self) -> RXIDLE_W<PSR_ASCMODE_SPEC> {
         RXIDLE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Synchronization Break Detected"]
     #[inline(always)]
-    #[must_use]
     pub fn sbd(&mut self) -> SBD_W<PSR_ASCMODE_SPEC> {
         SBD_W::new(self, 2)
     }
     #[doc = "Bit 3 - Collision Detected"]
     #[inline(always)]
-    #[must_use]
     pub fn col(&mut self) -> COL_W<PSR_ASCMODE_SPEC> {
         COL_W::new(self, 3)
     }
     #[doc = "Bit 4 - Receiver Noise Detected"]
     #[inline(always)]
-    #[must_use]
     pub fn rns(&mut self) -> RNS_W<PSR_ASCMODE_SPEC> {
         RNS_W::new(self, 4)
     }
     #[doc = "Bit 5 - Format Error in Stop Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn fer0(&mut self) -> FER0_W<PSR_ASCMODE_SPEC> {
         FER0_W::new(self, 5)
     }
     #[doc = "Bit 6 - Format Error in Stop Bit 1"]
     #[inline(always)]
-    #[must_use]
     pub fn fer1(&mut self) -> FER1_W<PSR_ASCMODE_SPEC> {
         FER1_W::new(self, 6)
     }
     #[doc = "Bit 7 - Receive Frame Finished"]
     #[inline(always)]
-    #[must_use]
     pub fn rff(&mut self) -> RFF_W<PSR_ASCMODE_SPEC> {
         RFF_W::new(self, 7)
     }
     #[doc = "Bit 8 - Transmitter Frame Finished"]
     #[inline(always)]
-    #[must_use]
     pub fn tff(&mut self) -> TFF_W<PSR_ASCMODE_SPEC> {
         TFF_W::new(self, 8)
     }
     #[doc = "Bit 10 - Receiver Start Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn rsif(&mut self) -> RSIF_W<PSR_ASCMODE_SPEC> {
         RSIF_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data Lost Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn dlif(&mut self) -> DLIF_W<PSR_ASCMODE_SPEC> {
         DLIF_W::new(self, 11)
     }
     #[doc = "Bit 12 - Transmit Shift Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn tsif(&mut self) -> TSIF_W<PSR_ASCMODE_SPEC> {
         TSIF_W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit Buffer Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn tbif(&mut self) -> TBIF_W<PSR_ASCMODE_SPEC> {
         TBIF_W::new(self, 13)
     }
     #[doc = "Bit 14 - Receive Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn rif(&mut self) -> RIF_W<PSR_ASCMODE_SPEC> {
         RIF_W::new(self, 14)
     }
     #[doc = "Bit 15 - Alternative Receive Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn aif(&mut self) -> AIF_W<PSR_ASCMODE_SPEC> {
         AIF_W::new(self, 15)
     }
     #[doc = "Bit 16 - Baud Rate Generator Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn brgif(&mut self) -> BRGIF_W<PSR_ASCMODE_SPEC> {
         BRGIF_W::new(self, 16)
     }

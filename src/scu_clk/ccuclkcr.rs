@@ -65,7 +65,6 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CCU Clock Divider Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ccudiv(&mut self) -> CCUDIV_W<CCUCLKCR_SPEC> {
         CCUDIV_W::new(self, 0)
     }

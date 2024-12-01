@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - EEPROM Data"]
     #[inline(always)]
-    #[must_use]
     pub fn eep_data(&mut self) -> EEP_DATA_W<EEP_DATA_SPEC> {
         EEP_DATA_W::new(self, 0)
     }

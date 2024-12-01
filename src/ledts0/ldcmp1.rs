@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn cmp_ld4(&mut self) -> CMP_LD4_W<LDCMP1_SPEC> {
         CMP_LD4_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn cmp_ld5(&mut self) -> CMP_LD5_W<LDCMP1_SPEC> {
         CMP_LD5_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn cmp_ld6(&mut self) -> CMP_LD6_W<LDCMP1_SPEC> {
         CMP_LD6_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Compare Value for LED COLA / Common Compare Value for Touch-sense Pad Turns"]
     #[inline(always)]
-    #[must_use]
     pub fn cmp_lda_tscom(&mut self) -> CMP_LDA_TSCOM_W<LDCMP1_SPEC> {
         CMP_LDA_TSCOM_W::new(self, 24)
     }

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Destination Status Address"]
     #[inline(always)]
-    #[must_use]
     pub fn dstatar(&mut self) -> DSTATAR_W<DSTATAR_SPEC> {
         DSTATAR_W::new(self, 0)
     }

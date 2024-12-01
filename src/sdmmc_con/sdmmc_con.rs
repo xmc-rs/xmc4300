@@ -239,25 +239,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - SDMMC Write Protection Input Multiplexer Control"]
     #[inline(always)]
-    #[must_use]
     pub fn wpsel(&mut self) -> WPSEL_W<SDMMC_CON_SPEC> {
         WPSEL_W::new(self, 0)
     }
     #[doc = "Bit 4 - SDMMC Write Protect Software Control"]
     #[inline(always)]
-    #[must_use]
     pub fn wpsval(&mut self) -> WPSVAL_W<SDMMC_CON_SPEC> {
         WPSVAL_W::new(self, 4)
     }
     #[doc = "Bit 16 - SDMMC Card Detection Control"]
     #[inline(always)]
-    #[must_use]
     pub fn cdsel(&mut self) -> CDSEL_W<SDMMC_CON_SPEC> {
         CDSEL_W::new(self, 16)
     }
     #[doc = "Bit 20 - SDMMC Write Protect Software Control"]
     #[inline(always)]
-    #[must_use]
     pub fn cdsval(&mut self) -> CDSVAL_W<SDMMC_CON_SPEC> {
         CDSVAL_W::new(self, 20)
     }

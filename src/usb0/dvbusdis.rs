@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Device Vbus Discharge Time"]
     #[inline(always)]
-    #[must_use]
     pub fn dvbusdis(&mut self) -> DVBUSDIS_W<DVBUSDIS_SPEC> {
         DVBUSDIS_W::new(self, 0)
     }

@@ -285,37 +285,31 @@ impl R {
 impl W {
     #[doc = "Bits 4:7 - Converter Diagnostics Group"]
     #[inline(always)]
-    #[must_use]
     pub fn cdgr(&mut self) -> CDGR_W<GLOBTF_SPEC> {
         CDGR_W::new(self, 4)
     }
     #[doc = "Bit 8 - Converter Diagnostics Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cden(&mut self) -> CDEN_W<GLOBTF_SPEC> {
         CDEN_W::new(self, 8)
     }
     #[doc = "Bits 9:10 - Converter Diagnostics Pull-Devices Select"]
     #[inline(always)]
-    #[must_use]
     pub fn cdsel(&mut self) -> CDSEL_W<GLOBTF_SPEC> {
         CDSEL_W::new(self, 9)
     }
     #[doc = "Bit 15 - Write Control for Conversion Diagnostics"]
     #[inline(always)]
-    #[must_use]
     pub fn cdwc(&mut self) -> CDWC_W<GLOBTF_SPEC> {
         CDWC_W::new(self, 15)
     }
     #[doc = "Bit 16 - Pull-Down Diagnostics Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn pdd(&mut self) -> PDD_W<GLOBTF_SPEC> {
         PDD_W::new(self, 16)
     }
     #[doc = "Bit 23 - Write Control for Multiplexer Diagnostics"]
     #[inline(always)]
-    #[must_use]
     pub fn mdwc(&mut self) -> MDWC_W<GLOBTF_SPEC> {
         MDWC_W::new(self, 23)
     }

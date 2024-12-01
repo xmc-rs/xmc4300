@@ -521,37 +521,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:19 - Integer Frequency Divider Value"]
     #[inline(always)]
-    #[must_use]
     pub fn freq(&mut self) -> FREQ_W<DAC1CFG0_SPEC> {
         FREQ_W::new(self, 0)
     }
     #[doc = "Bits 20:22 - Enables and sets the Mode for DAC1"]
     #[inline(always)]
-    #[must_use]
     pub fn mode(&mut self) -> MODE_W<DAC1CFG0_SPEC> {
         MODE_W::new(self, 20)
     }
     #[doc = "Bit 23 - Selects between signed and unsigned DAC1 mode"]
     #[inline(always)]
-    #[must_use]
     pub fn sign(&mut self) -> SIGN_W<DAC1CFG0_SPEC> {
         SIGN_W::new(self, 23)
     }
     #[doc = "Bit 28 - Negates the DAC1 output"]
     #[inline(always)]
-    #[must_use]
     pub fn negate(&mut self) -> NEGATE_W<DAC1CFG0_SPEC> {
         NEGATE_W::new(self, 28)
     }
     #[doc = "Bit 29 - Enable sign output of DAC1 pattern generator"]
     #[inline(always)]
-    #[must_use]
     pub fn signen(&mut self) -> SIGNEN_W<DAC1CFG0_SPEC> {
         SIGNEN_W::new(self, 29)
     }
     #[doc = "Bit 30 - Enable DAC1 service request interrupt generation"]
     #[inline(always)]
-    #[must_use]
     pub fn sren(&mut self) -> SREN_W<DAC1CFG0_SPEC> {
         SREN_W::new(self, 30)
     }

@@ -34,19 +34,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Priority of system handler 4, MemManage"]
     #[inline(always)]
-    #[must_use]
     pub fn pri_4(&mut self) -> PRI_4_W<SHPR1_SPEC> {
         PRI_4_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Priority of system handler 5, BusFault"]
     #[inline(always)]
-    #[must_use]
     pub fn pri_5(&mut self) -> PRI_5_W<SHPR1_SPEC> {
         PRI_5_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Priority of system handler 6, UsageFault"]
     #[inline(always)]
-    #[must_use]
     pub fn pri_6(&mut self) -> PRI_6_W<SHPR1_SPEC> {
         PRI_6_W::new(self, 16)
     }

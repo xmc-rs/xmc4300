@@ -718,85 +718,71 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Message Mode Control"]
     #[inline(always)]
-    #[must_use]
     pub fn mmc(&mut self) -> MMC_W<MOFCR_SPEC> {
         MMC_W::new(self, 0)
     }
     #[doc = "Bit 4 - Receive Time-Out Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rxtoe(&mut self) -> RXTOE_W<MOFCR_SPEC> {
         RXTOE_W::new(self, 4)
     }
     #[doc = "Bit 8 - Gateway Data Frame Send"]
     #[inline(always)]
-    #[must_use]
     pub fn gdfs(&mut self) -> GDFS_W<MOFCR_SPEC> {
         GDFS_W::new(self, 8)
     }
     #[doc = "Bit 9 - Identifier Copy"]
     #[inline(always)]
-    #[must_use]
     pub fn idc(&mut self) -> IDC_W<MOFCR_SPEC> {
         IDC_W::new(self, 9)
     }
     #[doc = "Bit 10 - Data Length Code Copy"]
     #[inline(always)]
-    #[must_use]
     pub fn dlcc(&mut self) -> DLCC_W<MOFCR_SPEC> {
         DLCC_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data Copy"]
     #[inline(always)]
-    #[must_use]
     pub fn datc(&mut self) -> DATC_W<MOFCR_SPEC> {
         DATC_W::new(self, 11)
     }
     #[doc = "Bit 16 - Receive Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rxie(&mut self) -> RXIE_W<MOFCR_SPEC> {
         RXIE_W::new(self, 16)
     }
     #[doc = "Bit 17 - Transmit Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn txie(&mut self) -> TXIE_W<MOFCR_SPEC> {
         TXIE_W::new(self, 17)
     }
     #[doc = "Bit 18 - Overflow Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ovie(&mut self) -> OVIE_W<MOFCR_SPEC> {
         OVIE_W::new(self, 18)
     }
     #[doc = "Bit 20 - Foreign Remote Request Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn frren(&mut self) -> FRREN_W<MOFCR_SPEC> {
         FRREN_W::new(self, 20)
     }
     #[doc = "Bit 21 - Transmit Object Remote Monitoring"]
     #[inline(always)]
-    #[must_use]
     pub fn rmm(&mut self) -> RMM_W<MOFCR_SPEC> {
         RMM_W::new(self, 21)
     }
     #[doc = "Bit 22 - Single Data Transfer"]
     #[inline(always)]
-    #[must_use]
     pub fn sdt(&mut self) -> SDT_W<MOFCR_SPEC> {
         SDT_W::new(self, 22)
     }
     #[doc = "Bit 23 - Single Transmit Trial"]
     #[inline(always)]
-    #[must_use]
     pub fn stt(&mut self) -> STT_W<MOFCR_SPEC> {
         STT_W::new(self, 23)
     }
     #[doc = "Bits 24:27 - Data Length Code"]
     #[inline(always)]
-    #[must_use]
     pub fn dlc(&mut self) -> DLC_W<MOFCR_SPEC> {
         DLC_W::new(self, 24)
     }

@@ -161,31 +161,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Core Soft Reset"]
     #[inline(always)]
-    #[must_use]
     pub fn csft_rst(&mut self) -> CSFT_RST_W<GRSTCTL_SPEC> {
         CSFT_RST_W::new(self, 0)
     }
     #[doc = "Bit 2 - Host Frame Counter Reset"]
     #[inline(always)]
-    #[must_use]
     pub fn frm_cntr_rst(&mut self) -> FRM_CNTR_RST_W<GRSTCTL_SPEC> {
         FRM_CNTR_RST_W::new(self, 2)
     }
     #[doc = "Bit 4 - RxFIFO Flush"]
     #[inline(always)]
-    #[must_use]
     pub fn rx_fflsh(&mut self) -> RX_FFLSH_W<GRSTCTL_SPEC> {
         RX_FFLSH_W::new(self, 4)
     }
     #[doc = "Bit 5 - TxFIFO Flush"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_fflsh(&mut self) -> TX_FFLSH_W<GRSTCTL_SPEC> {
         TX_FFLSH_W::new(self, 5)
     }
     #[doc = "Bits 6:10 - TxFIFO Number"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_fnum(&mut self) -> TX_FNUM_W<GRSTCTL_SPEC> {
         TX_FNUM_W::new(self, 6)
     }

@@ -471,49 +471,41 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Channel Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn chsel0(&mut self) -> CHSEL0_W<ASSEL_SPEC> {
         CHSEL0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn chsel1(&mut self) -> CHSEL1_W<ASSEL_SPEC> {
         CHSEL1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channel Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn chsel2(&mut self) -> CHSEL2_W<ASSEL_SPEC> {
         CHSEL2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channel Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn chsel3(&mut self) -> CHSEL3_W<ASSEL_SPEC> {
         CHSEL3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Channel Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn chsel4(&mut self) -> CHSEL4_W<ASSEL_SPEC> {
         CHSEL4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Channel Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn chsel5(&mut self) -> CHSEL5_W<ASSEL_SPEC> {
         CHSEL5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Channel Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn chsel6(&mut self) -> CHSEL6_W<ASSEL_SPEC> {
         CHSEL6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Channel Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn chsel7(&mut self) -> CHSEL7_W<ASSEL_SPEC> {
         CHSEL7_W::new(self, 7)
     }

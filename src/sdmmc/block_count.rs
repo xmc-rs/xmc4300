@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Blocks Count for Current Transfer"]
     #[inline(always)]
-    #[must_use]
     pub fn block_count(&mut self) -> BLOCK_COUNT_W<BLOCK_COUNT_SPEC> {
         BLOCK_COUNT_W::new(self, 0)
     }

@@ -114,13 +114,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Step Value"]
     #[inline(always)]
-    #[must_use]
     pub fn step(&mut self) -> STEP_W<FDR_SPEC> {
         STEP_W::new(self, 0)
     }
     #[doc = "Bits 14:15 - Divider Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn dm(&mut self) -> DM_W<FDR_SPEC> {
         DM_W::new(self, 14)
     }

@@ -65,7 +65,6 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Bufferable Write Access Error"]
     #[inline(always)]
-    #[must_use]
     pub fn werr(&mut self) -> WERR_W<STS_SPEC> {
         WERR_W::new(self, 0)
     }

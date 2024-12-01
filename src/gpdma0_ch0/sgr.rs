@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:19 - Source gather interval"]
     #[inline(always)]
-    #[must_use]
     pub fn sgi(&mut self) -> SGI_W<SGR_SPEC> {
         SGI_W::new(self, 0)
     }
     #[doc = "Bits 20:31 - Source gather count"]
     #[inline(always)]
-    #[must_use]
     pub fn sgc(&mut self) -> SGC_W<SGR_SPEC> {
         SGC_W::new(self, 20)
     }

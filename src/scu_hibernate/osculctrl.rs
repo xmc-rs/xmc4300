@@ -156,13 +156,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - XTAL1 Data General Purpose Input Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn x1den(&mut self) -> X1DEN_W<OSCULCTRL_SPEC> {
         X1DEN_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn mode(&mut self) -> MODE_W<OSCULCTRL_SPEC> {
         MODE_W::new(self, 4)
     }

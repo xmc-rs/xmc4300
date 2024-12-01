@@ -572,43 +572,36 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Data Selection for Input Signal"]
     #[inline(always)]
-    #[must_use]
     pub fn dsel(&mut self) -> DSEL_W<DX5CR_SPEC> {
         DSEL_W::new(self, 0)
     }
     #[doc = "Bit 4 - Input Switch"]
     #[inline(always)]
-    #[must_use]
     pub fn insw(&mut self) -> INSW_W<DX5CR_SPEC> {
         INSW_W::new(self, 4)
     }
     #[doc = "Bit 5 - Digital Filter Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dfen(&mut self) -> DFEN_W<DX5CR_SPEC> {
         DFEN_W::new(self, 5)
     }
     #[doc = "Bit 6 - Data Synchronization Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dsen(&mut self) -> DSEN_W<DX5CR_SPEC> {
         DSEN_W::new(self, 6)
     }
     #[doc = "Bit 8 - Data Polarity for DXn"]
     #[inline(always)]
-    #[must_use]
     pub fn dpol(&mut self) -> DPOL_W<DX5CR_SPEC> {
         DPOL_W::new(self, 8)
     }
     #[doc = "Bit 9 - Sampling Frequency Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn sfsel(&mut self) -> SFSEL_W<DX5CR_SPEC> {
         SFSEL_W::new(self, 9)
     }
     #[doc = "Bits 10:11 - Combination Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn cm(&mut self) -> CM_W<DX5CR_SPEC> {
         CM_W::new(self, 10)
     }

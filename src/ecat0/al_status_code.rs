@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - AL Status Code"]
     #[inline(always)]
-    #[must_use]
     pub fn al_s_code(&mut self) -> AL_S_CODE_W<AL_STATUS_CODE_SPEC> {
         AL_S_CODE_W::new(self, 0)
     }

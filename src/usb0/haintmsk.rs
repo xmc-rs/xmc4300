@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - Channel Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn haintmsk(&mut self) -> HAINTMSK_W<HAINTMSK_SPEC> {
         HAINTMSK_W::new(self, 0)
     }

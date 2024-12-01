@@ -23,7 +23,6 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Module Disable Request Bit"]
     #[inline(always)]
-    #[must_use]
     pub fn disr(&mut self) -> DISR_W<CLC_SPEC> {
         DISR_W::new(self, 0)
     }

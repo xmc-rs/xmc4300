@@ -326,61 +326,51 @@ where
 impl W {
     #[doc = "Bits 0:1 - Modify Transmit Data Valid"]
     #[inline(always)]
-    #[must_use]
     pub fn mtdv(&mut self) -> MTDV_W<FMR_SPEC> {
         MTDV_W::new(self, 0)
     }
     #[doc = "Bit 4 - Activate Bit TVC"]
     #[inline(always)]
-    #[must_use]
     pub fn atvc(&mut self) -> ATVC_W<FMR_SPEC> {
         ATVC_W::new(self, 4)
     }
     #[doc = "Bit 14 - Clear Bits RDV for RBUF0"]
     #[inline(always)]
-    #[must_use]
     pub fn crdv0(&mut self) -> CRDV0_W<FMR_SPEC> {
         CRDV0_W::new(self, 14)
     }
     #[doc = "Bit 15 - Clear Bit RDV for RBUF1"]
     #[inline(always)]
-    #[must_use]
     pub fn crdv1(&mut self) -> CRDV1_W<FMR_SPEC> {
         CRDV1_W::new(self, 15)
     }
     #[doc = "Bit 16 - Set Interrupt Output SRx"]
     #[inline(always)]
-    #[must_use]
     pub fn sio0(&mut self) -> SIO0_W<FMR_SPEC> {
         SIO0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Set Interrupt Output SRx"]
     #[inline(always)]
-    #[must_use]
     pub fn sio1(&mut self) -> SIO1_W<FMR_SPEC> {
         SIO1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Set Interrupt Output SRx"]
     #[inline(always)]
-    #[must_use]
     pub fn sio2(&mut self) -> SIO2_W<FMR_SPEC> {
         SIO2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Set Interrupt Output SRx"]
     #[inline(always)]
-    #[must_use]
     pub fn sio3(&mut self) -> SIO3_W<FMR_SPEC> {
         SIO3_W::new(self, 19)
     }
     #[doc = "Bit 20 - Set Interrupt Output SRx"]
     #[inline(always)]
-    #[must_use]
     pub fn sio4(&mut self) -> SIO4_W<FMR_SPEC> {
         SIO4_W::new(self, 20)
     }
     #[doc = "Bit 21 - Set Interrupt Output SRx"]
     #[inline(always)]
-    #[must_use]
     pub fn sio5(&mut self) -> SIO5_W<FMR_SPEC> {
         SIO5_W::new(self, 21)
     }

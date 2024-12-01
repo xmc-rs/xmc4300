@@ -553,37 +553,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Period/One match Service request selector"]
     #[inline(always)]
-    #[must_use]
     pub fn posr(&mut self) -> POSR_W<SRS_SPEC> {
         POSR_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Channel 1 Compare match Service request selector"]
     #[inline(always)]
-    #[must_use]
     pub fn cm1sr(&mut self) -> CM1SR_W<SRS_SPEC> {
         CM1SR_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Channel 2 Compare match Service request selector"]
     #[inline(always)]
-    #[must_use]
     pub fn cm2sr(&mut self) -> CM2SR_W<SRS_SPEC> {
         CM2SR_W::new(self, 4)
     }
     #[doc = "Bits 8:9 - Event 0 Service request selector"]
     #[inline(always)]
-    #[must_use]
     pub fn e0sr(&mut self) -> E0SR_W<SRS_SPEC> {
         E0SR_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Event 1 Service request selector"]
     #[inline(always)]
-    #[must_use]
     pub fn e1sr(&mut self) -> E1SR_W<SRS_SPEC> {
         E1SR_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Event 2 Service request selector"]
     #[inline(always)]
-    #[must_use]
     pub fn e2sr(&mut self) -> E2SR_W<SRS_SPEC> {
         E2SR_W::new(self, 12)
     }

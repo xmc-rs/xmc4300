@@ -471,49 +471,41 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Channels Pending"]
     #[inline(always)]
-    #[must_use]
     pub fn chpnd0(&mut self) -> CHPND0_W<ASPND_SPEC> {
         CHPND0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channels Pending"]
     #[inline(always)]
-    #[must_use]
     pub fn chpnd1(&mut self) -> CHPND1_W<ASPND_SPEC> {
         CHPND1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channels Pending"]
     #[inline(always)]
-    #[must_use]
     pub fn chpnd2(&mut self) -> CHPND2_W<ASPND_SPEC> {
         CHPND2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channels Pending"]
     #[inline(always)]
-    #[must_use]
     pub fn chpnd3(&mut self) -> CHPND3_W<ASPND_SPEC> {
         CHPND3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Channels Pending"]
     #[inline(always)]
-    #[must_use]
     pub fn chpnd4(&mut self) -> CHPND4_W<ASPND_SPEC> {
         CHPND4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Channels Pending"]
     #[inline(always)]
-    #[must_use]
     pub fn chpnd5(&mut self) -> CHPND5_W<ASPND_SPEC> {
         CHPND5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Channels Pending"]
     #[inline(always)]
-    #[must_use]
     pub fn chpnd6(&mut self) -> CHPND6_W<ASPND_SPEC> {
         CHPND6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Channels Pending"]
     #[inline(always)]
-    #[must_use]
     pub fn chpnd7(&mut self) -> CHPND7_W<ASPND_SPEC> {
         CHPND7_W::new(self, 7)
     }

@@ -495,43 +495,36 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Command Complete"]
     #[inline(always)]
-    #[must_use]
     pub fn cmd_complete(&mut self) -> CMD_COMPLETE_W<INT_STATUS_NORM_SPEC> {
         CMD_COMPLETE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transfer Complete"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_complete(&mut self) -> TX_COMPLETE_W<INT_STATUS_NORM_SPEC> {
         TX_COMPLETE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Block Gap Event"]
     #[inline(always)]
-    #[must_use]
     pub fn block_gap_event(&mut self) -> BLOCK_GAP_EVENT_W<INT_STATUS_NORM_SPEC> {
         BLOCK_GAP_EVENT_W::new(self, 2)
     }
     #[doc = "Bit 4 - Buffer Write Ready"]
     #[inline(always)]
-    #[must_use]
     pub fn buff_write_ready(&mut self) -> BUFF_WRITE_READY_W<INT_STATUS_NORM_SPEC> {
         BUFF_WRITE_READY_W::new(self, 4)
     }
     #[doc = "Bit 5 - Buffer Read Ready"]
     #[inline(always)]
-    #[must_use]
     pub fn buff_read_ready(&mut self) -> BUFF_READ_READY_W<INT_STATUS_NORM_SPEC> {
         BUFF_READ_READY_W::new(self, 5)
     }
     #[doc = "Bit 6 - Card Insertion"]
     #[inline(always)]
-    #[must_use]
     pub fn card_ins(&mut self) -> CARD_INS_W<INT_STATUS_NORM_SPEC> {
         CARD_INS_W::new(self, 6)
     }
     #[doc = "Bit 7 - Card Removal"]
     #[inline(always)]
-    #[must_use]
     pub fn card_removal(&mut self) -> CARD_REMOVAL_W<INT_STATUS_NORM_SPEC> {
         CARD_REMOVAL_W::new(self, 7)
     }

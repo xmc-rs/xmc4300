@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Floating Prescaler Shadow Compare Value"]
     #[inline(always)]
-    #[must_use]
     pub fn pcmp(&mut self) -> PCMP_W<FPCS_SPEC> {
         PCMP_W::new(self, 0)
     }

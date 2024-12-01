@@ -351,73 +351,61 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Interrupt Enable Bit"]
     #[inline(always)]
-    #[must_use]
     pub fn int_en(&mut self) -> INT_EN_W<CTLL_SPEC> {
         INT_EN_W::new(self, 0)
     }
     #[doc = "Bits 1:3 - Destination Transfer Width"]
     #[inline(always)]
-    #[must_use]
     pub fn dst_tr_width(&mut self) -> DST_TR_WIDTH_W<CTLL_SPEC> {
         DST_TR_WIDTH_W::new(self, 1)
     }
     #[doc = "Bits 4:6 - Source Transfer Width"]
     #[inline(always)]
-    #[must_use]
     pub fn src_tr_width(&mut self) -> SRC_TR_WIDTH_W<CTLL_SPEC> {
         SRC_TR_WIDTH_W::new(self, 4)
     }
     #[doc = "Bits 7:8 - Destination Address Increment"]
     #[inline(always)]
-    #[must_use]
     pub fn dinc(&mut self) -> DINC_W<CTLL_SPEC> {
         DINC_W::new(self, 7)
     }
     #[doc = "Bits 9:10 - Source Address Increment"]
     #[inline(always)]
-    #[must_use]
     pub fn sinc(&mut self) -> SINC_W<CTLL_SPEC> {
         SINC_W::new(self, 9)
     }
     #[doc = "Bits 11:13 - Destination Burst Transaction Length"]
     #[inline(always)]
-    #[must_use]
     pub fn dest_msize(&mut self) -> DEST_MSIZE_W<CTLL_SPEC> {
         DEST_MSIZE_W::new(self, 11)
     }
     #[doc = "Bits 14:16 - Source Burst Transaction Length"]
     #[inline(always)]
-    #[must_use]
     pub fn src_msize(&mut self) -> SRC_MSIZE_W<CTLL_SPEC> {
         SRC_MSIZE_W::new(self, 14)
     }
     #[doc = "Bit 17 - Source gather enable"]
     #[inline(always)]
-    #[must_use]
     pub fn src_gather_en(&mut self) -> SRC_GATHER_EN_W<CTLL_SPEC> {
         SRC_GATHER_EN_W::new(self, 17)
     }
     #[doc = "Bit 18 - Destination scatter enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dst_scatter_en(&mut self) -> DST_SCATTER_EN_W<CTLL_SPEC> {
         DST_SCATTER_EN_W::new(self, 18)
     }
     #[doc = "Bits 20:22 - Transfer Type and Flow Control"]
     #[inline(always)]
-    #[must_use]
     pub fn tt_fc(&mut self) -> TT_FC_W<CTLL_SPEC> {
         TT_FC_W::new(self, 20)
     }
     #[doc = "Bit 27 - Linked List Pointer for Destination Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn llp_dst_en(&mut self) -> LLP_DST_EN_W<CTLL_SPEC> {
         LLP_DST_EN_W::new(self, 27)
     }
     #[doc = "Bit 28 - Linked List Pointer for Source Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn llp_src_en(&mut self) -> LLP_SRC_EN_W<CTLL_SPEC> {
         LLP_SRC_EN_W::new(self, 28)
     }

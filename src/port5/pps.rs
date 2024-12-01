@@ -935,97 +935,81 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Port n Pin Power Save Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn pps0(&mut self) -> PPS0_W<PPS_SPEC> {
         PPS0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Port n Pin Power Save Bit 1"]
     #[inline(always)]
-    #[must_use]
     pub fn pps1(&mut self) -> PPS1_W<PPS_SPEC> {
         PPS1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Port n Pin Power Save Bit 2"]
     #[inline(always)]
-    #[must_use]
     pub fn pps2(&mut self) -> PPS2_W<PPS_SPEC> {
         PPS2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Port n Pin Power Save Bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn pps3(&mut self) -> PPS3_W<PPS_SPEC> {
         PPS3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Port n Pin Power Save Bit 4"]
     #[inline(always)]
-    #[must_use]
     pub fn pps4(&mut self) -> PPS4_W<PPS_SPEC> {
         PPS4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Port n Pin Power Save Bit 5"]
     #[inline(always)]
-    #[must_use]
     pub fn pps5(&mut self) -> PPS5_W<PPS_SPEC> {
         PPS5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Port n Pin Power Save Bit 6"]
     #[inline(always)]
-    #[must_use]
     pub fn pps6(&mut self) -> PPS6_W<PPS_SPEC> {
         PPS6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Port n Pin Power Save Bit 7"]
     #[inline(always)]
-    #[must_use]
     pub fn pps7(&mut self) -> PPS7_W<PPS_SPEC> {
         PPS7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Port n Pin Power Save Bit 8"]
     #[inline(always)]
-    #[must_use]
     pub fn pps8(&mut self) -> PPS8_W<PPS_SPEC> {
         PPS8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Port n Pin Power Save Bit 9"]
     #[inline(always)]
-    #[must_use]
     pub fn pps9(&mut self) -> PPS9_W<PPS_SPEC> {
         PPS9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Port n Pin Power Save Bit 10"]
     #[inline(always)]
-    #[must_use]
     pub fn pps10(&mut self) -> PPS10_W<PPS_SPEC> {
         PPS10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Port n Pin Power Save Bit 11"]
     #[inline(always)]
-    #[must_use]
     pub fn pps11(&mut self) -> PPS11_W<PPS_SPEC> {
         PPS11_W::new(self, 11)
     }
     #[doc = "Bit 12 - Port n Pin Power Save Bit 12"]
     #[inline(always)]
-    #[must_use]
     pub fn pps12(&mut self) -> PPS12_W<PPS_SPEC> {
         PPS12_W::new(self, 12)
     }
     #[doc = "Bit 13 - Port n Pin Power Save Bit 13"]
     #[inline(always)]
-    #[must_use]
     pub fn pps13(&mut self) -> PPS13_W<PPS_SPEC> {
         PPS13_W::new(self, 13)
     }
     #[doc = "Bit 14 - Port n Pin Power Save Bit 14"]
     #[inline(always)]
-    #[must_use]
     pub fn pps14(&mut self) -> PPS14_W<PPS_SPEC> {
         PPS14_W::new(self, 14)
     }
     #[doc = "Bit 15 - Port n Pin Power Save Bit 15"]
     #[inline(always)]
-    #[must_use]
     pub fn pps15(&mut self) -> PPS15_W<PPS_SPEC> {
         PPS15_W::new(self, 15)
     }

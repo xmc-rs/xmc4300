@@ -297,7 +297,6 @@ impl R {
 impl W {
     #[doc = "Bits 8:9 - Command register"]
     #[inline(always)]
-    #[must_use]
     pub fn cmd_reg(&mut self) -> CMD_REG_W<MII_CONT_STAT_SPEC> {
         CMD_REG_W::new(self, 8)
     }

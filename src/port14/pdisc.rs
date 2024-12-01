@@ -935,97 +935,81 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Pad Disable for Port n Pin 0"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis0(&mut self) -> PDIS0_W<PDISC_SPEC> {
         PDIS0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Pad Disable for Port n Pin 1"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis1(&mut self) -> PDIS1_W<PDISC_SPEC> {
         PDIS1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Pad Disable for Port n Pin 2"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis2(&mut self) -> PDIS2_W<PDISC_SPEC> {
         PDIS2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Pad Disable for Port n Pin 3"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis3(&mut self) -> PDIS3_W<PDISC_SPEC> {
         PDIS3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Pad Disable for Port n Pin 4"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis4(&mut self) -> PDIS4_W<PDISC_SPEC> {
         PDIS4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Pad Disable for Port n Pin 5"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis5(&mut self) -> PDIS5_W<PDISC_SPEC> {
         PDIS5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Pad Disable for Port n Pin 6"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis6(&mut self) -> PDIS6_W<PDISC_SPEC> {
         PDIS6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Pad Disable for Port n Pin 7"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis7(&mut self) -> PDIS7_W<PDISC_SPEC> {
         PDIS7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Pad Disable for Port n Pin 8"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis8(&mut self) -> PDIS8_W<PDISC_SPEC> {
         PDIS8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Pad Disable for Port n Pin 9"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis9(&mut self) -> PDIS9_W<PDISC_SPEC> {
         PDIS9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Pad Disable for Port n Pin 10"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis10(&mut self) -> PDIS10_W<PDISC_SPEC> {
         PDIS10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Pad Disable for Port n Pin 11"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis11(&mut self) -> PDIS11_W<PDISC_SPEC> {
         PDIS11_W::new(self, 11)
     }
     #[doc = "Bit 12 - Pad Disable for Port n Pin 12"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis12(&mut self) -> PDIS12_W<PDISC_SPEC> {
         PDIS12_W::new(self, 12)
     }
     #[doc = "Bit 13 - Pad Disable for Port n Pin 13"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis13(&mut self) -> PDIS13_W<PDISC_SPEC> {
         PDIS13_W::new(self, 13)
     }
     #[doc = "Bit 14 - Pad Disable for Port n Pin 14"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis14(&mut self) -> PDIS14_W<PDISC_SPEC> {
         PDIS14_W::new(self, 14)
     }
     #[doc = "Bit 15 - Pad Disable for Port n Pin 15"]
     #[inline(always)]
-    #[must_use]
     pub fn pdis15(&mut self) -> PDIS15_W<PDISC_SPEC> {
         PDIS15_W::new(self, 15)
     }

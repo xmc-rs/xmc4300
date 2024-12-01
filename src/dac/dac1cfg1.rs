@@ -389,55 +389,46 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Scale value for up- or downscale of the DAC1 input data in steps by the power of 2 (=shift operation)"]
     #[inline(always)]
-    #[must_use]
     pub fn scale(&mut self) -> SCALE_W<DAC1CFG1_SPEC> {
         SCALE_W::new(self, 0)
     }
     #[doc = "Bit 3 - Switch between up- and downscale of the DAC1 input data values"]
     #[inline(always)]
-    #[must_use]
     pub fn muldiv(&mut self) -> MULDIV_W<DAC1CFG1_SPEC> {
         MULDIV_W::new(self, 3)
     }
     #[doc = "Bits 4:11 - 8-bit offset value addition"]
     #[inline(always)]
-    #[must_use]
     pub fn offs(&mut self) -> OFFS_W<DAC1CFG1_SPEC> {
         OFFS_W::new(self, 4)
     }
     #[doc = "Bits 12:14 - Selects one of the eight external trigger sources for DAC1"]
     #[inline(always)]
-    #[must_use]
     pub fn trigsel(&mut self) -> TRIGSEL_W<DAC1CFG1_SPEC> {
         TRIGSEL_W::new(self, 12)
     }
     #[doc = "Bit 16 - Software Trigger"]
     #[inline(always)]
-    #[must_use]
     pub fn swtrig(&mut self) -> SWTRIG_W<DAC1CFG1_SPEC> {
         SWTRIG_W::new(self, 16)
     }
     #[doc = "Bits 17:18 - Select the trigger source for channel 1"]
     #[inline(always)]
-    #[must_use]
     pub fn trigmod(&mut self) -> TRIGMOD_W<DAC1CFG1_SPEC> {
         TRIGMOD_W::new(self, 17)
     }
     #[doc = "Bits 19:23 - DAC1 analog configuration/calibration parameters"]
     #[inline(always)]
-    #[must_use]
     pub fn anacfg(&mut self) -> ANACFG_W<DAC1CFG1_SPEC> {
         ANACFG_W::new(self, 19)
     }
     #[doc = "Bit 24 - Enable analog DAC for channel 1"]
     #[inline(always)]
-    #[must_use]
     pub fn anaen(&mut self) -> ANAEN_W<DAC1CFG1_SPEC> {
         ANAEN_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Higher 4 band-gap configuration/calibration parameters"]
     #[inline(always)]
-    #[must_use]
     pub fn refcfgh(&mut self) -> REFCFGH_W<DAC1CFG1_SPEC> {
         REFCFGH_W::new(self, 28)
     }

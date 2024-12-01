@@ -132,37 +132,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Sensor Power Down"]
     #[inline(always)]
-    #[must_use]
     pub fn pwd(&mut self) -> PWD_W<DTSCON_SPEC> {
         PWD_W::new(self, 0)
     }
     #[doc = "Bit 1 - Sensor Measurement Start"]
     #[inline(always)]
-    #[must_use]
     pub fn start(&mut self) -> START_W<DTSCON_SPEC> {
         START_W::new(self, 1)
     }
     #[doc = "Bits 4:10 - Offset Calibration Value"]
     #[inline(always)]
-    #[must_use]
     pub fn offset(&mut self) -> OFFSET_W<DTSCON_SPEC> {
         OFFSET_W::new(self, 4)
     }
     #[doc = "Bits 11:16 - Gain Calibration Value"]
     #[inline(always)]
-    #[must_use]
     pub fn gain(&mut self) -> GAIN_W<DTSCON_SPEC> {
         GAIN_W::new(self, 11)
     }
     #[doc = "Bits 17:19 - Reference Trim Calibration Value"]
     #[inline(always)]
-    #[must_use]
     pub fn reftrim(&mut self) -> REFTRIM_W<DTSCON_SPEC> {
         REFTRIM_W::new(self, 17)
     }
     #[doc = "Bits 20:23 - Bandgap Trim Calibration Value"]
     #[inline(always)]
-    #[must_use]
     pub fn bgtrim(&mut self) -> BGTRIM_W<DTSCON_SPEC> {
         BGTRIM_W::new(self, 20)
     }

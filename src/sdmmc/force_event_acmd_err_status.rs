@@ -189,37 +189,31 @@ where
 impl W {
     #[doc = "Bit 0 - Force Event for Auto CMD12 NOT Executed"]
     #[inline(always)]
-    #[must_use]
     pub fn fe_acmd_not_exec(&mut self) -> FE_ACMD_NOT_EXEC_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
         FE_ACMD_NOT_EXEC_W::new(self, 0)
     }
     #[doc = "Bit 1 - Force Event for Auto CMD timeout Error"]
     #[inline(always)]
-    #[must_use]
     pub fn fe_acmd_timeout_err(&mut self) -> FE_ACMD_TIMEOUT_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
         FE_ACMD_TIMEOUT_ERR_W::new(self, 1)
     }
     #[doc = "Bit 2 - Force Event for Auto CMD CRC Error"]
     #[inline(always)]
-    #[must_use]
     pub fn fe_acmd_crc_err(&mut self) -> FE_ACMD_CRC_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
         FE_ACMD_CRC_ERR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Force Event for Auto CMD End bit Error"]
     #[inline(always)]
-    #[must_use]
     pub fn fe_acmd_end_bit_err(&mut self) -> FE_ACMD_END_BIT_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
         FE_ACMD_END_BIT_ERR_W::new(self, 3)
     }
     #[doc = "Bit 4 - Force Event for Auto CMD Index Error"]
     #[inline(always)]
-    #[must_use]
     pub fn fe_acmd_ind_err(&mut self) -> FE_ACMD_IND_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
         FE_ACMD_IND_ERR_W::new(self, 4)
     }
     #[doc = "Bit 7 - Force Event for CMD not issued by Auto CMD12 Error"]
     #[inline(always)]
-    #[must_use]
     pub fn fe_cmd_not_issued_acmd12_err(&mut self) -> FE_CMD_NOT_ISSUED_ACMD12_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
         FE_CMD_NOT_ISSUED_ACMD12_ERR_W::new(self, 7)
     }

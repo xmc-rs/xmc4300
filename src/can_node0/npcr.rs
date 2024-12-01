@@ -74,13 +74,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Receive Select"]
     #[inline(always)]
-    #[must_use]
     pub fn rxsel(&mut self) -> RXSEL_W<NPCR_SPEC> {
         RXSEL_W::new(self, 0)
     }
     #[doc = "Bit 8 - Loop-Back Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn lbm(&mut self) -> LBM_W<NPCR_SPEC> {
         LBM_W::new(self, 8)
     }

@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 16:23 - Priority of system handler 14"]
     #[inline(always)]
-    #[must_use]
     pub fn pri_14(&mut self) -> PRI_14_W<SHPR3_SPEC> {
         PRI_14_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Priority of system handler 15"]
     #[inline(always)]
-    #[must_use]
     pub fn pri_15(&mut self) -> PRI_15_W<SHPR3_SPEC> {
         PRI_15_W::new(self, 24)
     }

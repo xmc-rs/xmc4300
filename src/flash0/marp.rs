@@ -143,13 +143,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - PFLASH Margin Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn margin(&mut self) -> MARGIN_W<MARP_SPEC> {
         MARGIN_W::new(self, 0)
     }
     #[doc = "Bit 15 - PFLASH Double-Bit Error Trap Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn trapdis(&mut self) -> TRAPDIS_W<MARP_SPEC> {
         TRAPDIS_W::new(self, 15)
     }

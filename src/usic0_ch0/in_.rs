@@ -5,7 +5,6 @@ pub type TDATA_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl W {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]
-    #[must_use]
     pub fn tdata(&mut self) -> TDATA_W<IN_SPEC> {
         TDATA_W::new(self, 0)
     }

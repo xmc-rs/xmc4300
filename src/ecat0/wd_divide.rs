@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Watchdog divider"]
     #[inline(always)]
-    #[must_use]
     pub fn wd_div(&mut self) -> WD_DIV_W<WD_DIVIDE_SPEC> {
         WD_DIV_W::new(self, 0)
     }

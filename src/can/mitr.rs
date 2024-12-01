@@ -5,7 +5,6 @@ pub type IT_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl W {
     #[doc = "Bits 0:7 - Interrupt Trigger"]
     #[inline(always)]
-    #[must_use]
     pub fn it(&mut self) -> IT_W<MITR_SPEC> {
         IT_W::new(self, 0)
     }

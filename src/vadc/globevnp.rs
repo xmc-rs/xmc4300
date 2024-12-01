@@ -189,13 +189,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Service Request Node Pointer Backgr. Source"]
     #[inline(always)]
-    #[must_use]
     pub fn sev0np(&mut self) -> SEV0NP_W<GLOBEVNP_SPEC> {
         SEV0NP_W::new(self, 0)
     }
     #[doc = "Bits 16:19 - Service Request Node Pointer Backgr. Result"]
     #[inline(always)]
-    #[must_use]
     pub fn rev0np(&mut self) -> REV0NP_W<GLOBEVNP_SPEC> {
         REV0NP_W::new(self, 16)
     }

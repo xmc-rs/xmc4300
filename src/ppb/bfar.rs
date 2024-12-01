@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Address causing the fault"]
     #[inline(always)]
-    #[must_use]
     pub fn address(&mut self) -> ADDRESS_W<BFAR_SPEC> {
         ADDRESS_W::new(self, 0)
     }

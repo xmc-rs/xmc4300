@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - RxFIFO Depth"]
     #[inline(always)]
-    #[must_use]
     pub fn rx_fdep(&mut self) -> RX_FDEP_W<GRXFSIZ_SPEC> {
         RX_FDEP_W::new(self, 0)
     }

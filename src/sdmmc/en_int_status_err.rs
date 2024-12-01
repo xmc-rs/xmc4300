@@ -645,67 +645,56 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Command Timeout Error Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cmd_timeout_err_en(&mut self) -> CMD_TIMEOUT_ERR_EN_W<EN_INT_STATUS_ERR_SPEC> {
         CMD_TIMEOUT_ERR_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Command CRC Error Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cmd_crc_err_en(&mut self) -> CMD_CRC_ERR_EN_W<EN_INT_STATUS_ERR_SPEC> {
         CMD_CRC_ERR_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Command End Bit Error Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cmd_end_bit_err_en(&mut self) -> CMD_END_BIT_ERR_EN_W<EN_INT_STATUS_ERR_SPEC> {
         CMD_END_BIT_ERR_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - Command Index Error Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cmd_ind_err_en(&mut self) -> CMD_IND_ERR_EN_W<EN_INT_STATUS_ERR_SPEC> {
         CMD_IND_ERR_EN_W::new(self, 3)
     }
     #[doc = "Bit 4 - Data Timeout Error Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn data_timeout_err_en(&mut self) -> DATA_TIMEOUT_ERR_EN_W<EN_INT_STATUS_ERR_SPEC> {
         DATA_TIMEOUT_ERR_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Data CRC Error Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn data_crc_err_en(&mut self) -> DATA_CRC_ERR_EN_W<EN_INT_STATUS_ERR_SPEC> {
         DATA_CRC_ERR_EN_W::new(self, 5)
     }
     #[doc = "Bit 6 - Data End Bit Error Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn data_end_bit_err_en(&mut self) -> DATA_END_BIT_ERR_EN_W<EN_INT_STATUS_ERR_SPEC> {
         DATA_END_BIT_ERR_EN_W::new(self, 6)
     }
     #[doc = "Bit 7 - Current Limit Error Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn current_limit_err_en(&mut self) -> CURRENT_LIMIT_ERR_EN_W<EN_INT_STATUS_ERR_SPEC> {
         CURRENT_LIMIT_ERR_EN_W::new(self, 7)
     }
     #[doc = "Bit 8 - Auto CMD12 Error Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn acmd_err_en(&mut self) -> ACMD_ERR_EN_W<EN_INT_STATUS_ERR_SPEC> {
         ACMD_ERR_EN_W::new(self, 8)
     }
     #[doc = "Bit 12 - Target Response Error Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn target_resp_err_en(&mut self) -> TARGET_RESP_ERR_EN_W<EN_INT_STATUS_ERR_SPEC> {
         TARGET_RESP_ERR_EN_W::new(self, 12)
     }
     #[doc = "Bit 13 - Ceata Error Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ceata_err_en(&mut self) -> CEATA_ERR_EN_W<EN_INT_STATUS_ERR_SPEC> {
         CEATA_ERR_EN_W::new(self, 13)
     }

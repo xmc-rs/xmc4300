@@ -65,7 +65,6 @@ impl R {
 impl W {
     #[doc = "Bit 0 - GPDMA Enable bit."]
     #[inline(always)]
-    #[must_use]
     pub fn dma_en(&mut self) -> DMA_EN_W<DMACFGREG_SPEC> {
         DMA_EN_W::new(self, 0)
     }

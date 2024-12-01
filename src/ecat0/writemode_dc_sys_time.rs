@@ -5,7 +5,6 @@ pub type WRITE_ACCESS_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl W {
     #[doc = "Bits 0:31 - Write access"]
     #[inline(always)]
-    #[must_use]
     pub fn write_access(&mut self) -> WRITE_ACCESS_W<WRITEMODE_DC_SYS_TIME_SPEC> {
         WRITE_ACCESS_W::new(self, 0)
     }

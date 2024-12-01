@@ -311,37 +311,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - External Multiplexer Start Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn emuxset(&mut self) -> EMUXSET_W<EMUXCTR_SPEC> {
         EMUXSET_W::new(self, 0)
     }
     #[doc = "Bits 16:25 - External Multiplexer Channel Select"]
     #[inline(always)]
-    #[must_use]
     pub fn emuxch(&mut self) -> EMUXCH_W<EMUXCTR_SPEC> {
         EMUXCH_W::new(self, 16)
     }
     #[doc = "Bits 26:27 - External Multiplexer Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn emuxmode(&mut self) -> EMUXMODE_W<EMUXCTR_SPEC> {
         EMUXMODE_W::new(self, 26)
     }
     #[doc = "Bit 28 - External Multiplexer Coding Scheme"]
     #[inline(always)]
-    #[must_use]
     pub fn emxcod(&mut self) -> EMXCOD_W<EMUXCTR_SPEC> {
         EMXCOD_W::new(self, 28)
     }
     #[doc = "Bit 29 - External Multiplexer Sample Time Control"]
     #[inline(always)]
-    #[must_use]
     pub fn emxst(&mut self) -> EMXST_W<EMUXCTR_SPEC> {
         EMXST_W::new(self, 29)
     }
     #[doc = "Bit 31 - Write Control for EMUX Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn emxwc(&mut self) -> EMXWC_W<EMUXCTR_SPEC> {
         EMXWC_W::new(self, 31)
     }

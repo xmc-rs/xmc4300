@@ -735,49 +735,41 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    #[must_use]
     pub fn rev8np(&mut self) -> REV8NP_W<REVNP1_SPEC> {
         REV8NP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    #[must_use]
     pub fn rev9np(&mut self) -> REV9NP_W<REVNP1_SPEC> {
         REV9NP_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    #[must_use]
     pub fn rev10np(&mut self) -> REV10NP_W<REVNP1_SPEC> {
         REV10NP_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    #[must_use]
     pub fn rev11np(&mut self) -> REV11NP_W<REVNP1_SPEC> {
         REV11NP_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    #[must_use]
     pub fn rev12np(&mut self) -> REV12NP_W<REVNP1_SPEC> {
         REV12NP_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    #[must_use]
     pub fn rev13np(&mut self) -> REV13NP_W<REVNP1_SPEC> {
         REV13NP_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    #[must_use]
     pub fn rev14np(&mut self) -> REV14NP_W<REVNP1_SPEC> {
         REV14NP_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    #[must_use]
     pub fn rev15np(&mut self) -> REV15NP_W<REVNP1_SPEC> {
         REV15NP_W::new(self, 28)
     }

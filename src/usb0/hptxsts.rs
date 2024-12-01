@@ -147,7 +147,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Periodic Transmit Data FIFO Space Available"]
     #[inline(always)]
-    #[must_use]
     pub fn ptx_fspc_avail(&mut self) -> PTX_FSPC_AVAIL_W<HPTXSTS_SPEC> {
         PTX_FSPC_AVAIL_W::new(self, 0)
     }

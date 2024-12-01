@@ -181,19 +181,16 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Sync Out Unit activation"]
     #[inline(always)]
-    #[must_use]
     pub fn sync_out(&mut self) -> SYNC_OUT_W<DC_ACT_SPEC> {
         SYNC_OUT_W::new(self, 0)
     }
     #[doc = "Bit 1 - SYNC0 generation"]
     #[inline(always)]
-    #[must_use]
     pub fn sync_0(&mut self) -> SYNC_0_W<DC_ACT_SPEC> {
         SYNC_0_W::new(self, 1)
     }
     #[doc = "Bit 2 - SYNC1 generation"]
     #[inline(always)]
-    #[must_use]
     pub fn sync_1(&mut self) -> SYNC_1_W<DC_ACT_SPEC> {
         SYNC_1_W::new(self, 2)
     }

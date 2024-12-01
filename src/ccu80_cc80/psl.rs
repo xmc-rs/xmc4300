@@ -239,25 +239,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Output Passive Level for CCU8x.OUTy0"]
     #[inline(always)]
-    #[must_use]
     pub fn psl11(&mut self) -> PSL11_W<PSL_SPEC> {
         PSL11_W::new(self, 0)
     }
     #[doc = "Bit 1 - Output Passive Level for CCU8x.OUTy1"]
     #[inline(always)]
-    #[must_use]
     pub fn psl12(&mut self) -> PSL12_W<PSL_SPEC> {
         PSL12_W::new(self, 1)
     }
     #[doc = "Bit 2 - Output Passive Level for CCU8x.OUTy2"]
     #[inline(always)]
-    #[must_use]
     pub fn psl21(&mut self) -> PSL21_W<PSL_SPEC> {
         PSL21_W::new(self, 2)
     }
     #[doc = "Bit 3 - Output Passive Level for CCU8x.OUTy3"]
     #[inline(always)]
-    #[must_use]
     pub fn psl22(&mut self) -> PSL22_W<PSL_SPEC> {
         PSL22_W::new(self, 3)
     }

@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Transfer Size"]
     #[inline(always)]
-    #[must_use]
     pub fn xfer_size(&mut self) -> XFER_SIZE_W<DIEPTSIZ0_SPEC> {
         XFER_SIZE_W::new(self, 0)
     }
     #[doc = "Bits 19:20 - Packet Count"]
     #[inline(always)]
-    #[must_use]
     pub fn pkt_cnt(&mut self) -> PKT_CNT_W<DIEPTSIZ0_SPEC> {
         PKT_CNT_W::new(self, 19)
     }

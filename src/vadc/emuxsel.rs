@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - External Multiplexer Group for Interface x"]
     #[inline(always)]
-    #[must_use]
     pub fn emuxgrp0(&mut self) -> EMUXGRP0_W<EMUXSEL_SPEC> {
         EMUXGRP0_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - External Multiplexer Group for Interface x"]
     #[inline(always)]
-    #[must_use]
     pub fn emuxgrp1(&mut self) -> EMUXGRP1_W<EMUXSEL_SPEC> {
         EMUXGRP1_W::new(self, 4)
     }

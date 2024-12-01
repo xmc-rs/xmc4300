@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Hibernate Retention Memory Data"]
     #[inline(always)]
-    #[must_use]
     pub fn data(&mut self) -> DATA_W<RMDATA_SPEC> {
         DATA_W::new(self, 0)
     }

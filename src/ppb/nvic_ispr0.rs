@@ -72,7 +72,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Interrupt set-pending bits."]
     #[inline(always)]
-    #[must_use]
     pub fn setpend(&mut self) -> SETPEND_W<NVIC_ISPR0_SPEC> {
         SETPEND_W::new(self, 0)
     }

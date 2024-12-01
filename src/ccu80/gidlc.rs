@@ -15,37 +15,31 @@ pub type SPCH_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - CC80 IDLE mode clear"]
     #[inline(always)]
-    #[must_use]
     pub fn cs0i(&mut self) -> CS0I_W<GIDLC_SPEC> {
         CS0I_W::new(self, 0)
     }
     #[doc = "Bit 1 - CC81 IDLE mode clear"]
     #[inline(always)]
-    #[must_use]
     pub fn cs1i(&mut self) -> CS1I_W<GIDLC_SPEC> {
         CS1I_W::new(self, 1)
     }
     #[doc = "Bit 2 - CC82 IDLE mode clear"]
     #[inline(always)]
-    #[must_use]
     pub fn cs2i(&mut self) -> CS2I_W<GIDLC_SPEC> {
         CS2I_W::new(self, 2)
     }
     #[doc = "Bit 3 - CC83 IDLE mode clear"]
     #[inline(always)]
-    #[must_use]
     pub fn cs3i(&mut self) -> CS3I_W<GIDLC_SPEC> {
         CS3I_W::new(self, 3)
     }
     #[doc = "Bit 8 - Prescaler Run Bit Set"]
     #[inline(always)]
-    #[must_use]
     pub fn sprb(&mut self) -> SPRB_W<GIDLC_SPEC> {
         SPRB_W::new(self, 8)
     }
     #[doc = "Bit 10 - Parity Checker run bit set"]
     #[inline(always)]
-    #[must_use]
     pub fn spch(&mut self) -> SPCH_W<GIDLC_SPEC> {
         SPCH_W::new(self, 10)
     }

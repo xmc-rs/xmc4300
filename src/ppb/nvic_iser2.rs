@@ -72,7 +72,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Interrupt set-enable bits"]
     #[inline(always)]
-    #[must_use]
     pub fn setena(&mut self) -> SETENA_W<NVIC_ISER2_SPEC> {
         SETENA_W::new(self, 0)
     }

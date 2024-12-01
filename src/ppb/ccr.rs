@@ -358,37 +358,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Non Base Thread Mode Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn nonbasethrdena(&mut self) -> NONBASETHRDENA_W<CCR_SPEC> {
         NONBASETHRDENA_W::new(self, 0)
     }
     #[doc = "Bit 1 - User Set Pending Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn usersetmpend(&mut self) -> USERSETMPEND_W<CCR_SPEC> {
         USERSETMPEND_W::new(self, 1)
     }
     #[doc = "Bit 3 - Unaligned Access Trap Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn unalign_trp(&mut self) -> UNALIGN_TRP_W<CCR_SPEC> {
         UNALIGN_TRP_W::new(self, 3)
     }
     #[doc = "Bit 4 - Divide by Zero Trap Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn div_0_trp(&mut self) -> DIV_0_TRP_W<CCR_SPEC> {
         DIV_0_TRP_W::new(self, 4)
     }
     #[doc = "Bit 8 - Bus Fault Hard Fault and NMI Ignore"]
     #[inline(always)]
-    #[must_use]
     pub fn bfhfnmign(&mut self) -> BFHFNMIGN_W<CCR_SPEC> {
         BFHFNMIGN_W::new(self, 8)
     }
     #[doc = "Bit 9 - Stack Alignment"]
     #[inline(always)]
-    #[must_use]
     pub fn stkalign(&mut self) -> STKALIGN_W<CCR_SPEC> {
         STKALIGN_W::new(self, 9)
     }

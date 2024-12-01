@@ -59,7 +59,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Time between two consecutive SYNC0 pulses"]
     #[inline(always)]
-    #[must_use]
     pub fn time_between_sync0(&mut self) -> TIME_BETWEEN_SYNC0_W<DC_SYNC0_CYC_TIME_SPEC> {
         TIME_BETWEEN_SYNC0_W::new(self, 0)
     }
