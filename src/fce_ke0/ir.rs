@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Input Register"]
     #[inline(always)]
-    #[must_use]
     pub fn ir(&mut self) -> IR_W<IR_SPEC> {
         IR_W::new(self, 0)
     }

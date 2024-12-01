@@ -413,43 +413,36 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Promote Pre-Warning Interrupt Request to NMI Request"]
     #[inline(always)]
-    #[must_use]
     pub fn prwarn(&mut self) -> PRWARN_W<NMIREQEN_SPEC> {
         PRWARN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Promote RTC Periodic Interrupt request to NMI Request"]
     #[inline(always)]
-    #[must_use]
     pub fn pi(&mut self) -> PI_W<NMIREQEN_SPEC> {
         PI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Promote RTC Alarm Interrupt Request to NMI Request"]
     #[inline(always)]
-    #[must_use]
     pub fn ai(&mut self) -> AI_W<NMIREQEN_SPEC> {
         AI_W::new(self, 2)
     }
     #[doc = "Bit 16 - Promote Channel 0 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
-    #[must_use]
     pub fn eru00(&mut self) -> ERU00_W<NMIREQEN_SPEC> {
         ERU00_W::new(self, 16)
     }
     #[doc = "Bit 17 - Promote Channel 1 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
-    #[must_use]
     pub fn eru01(&mut self) -> ERU01_W<NMIREQEN_SPEC> {
         ERU01_W::new(self, 17)
     }
     #[doc = "Bit 18 - Promote Channel 2 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
-    #[must_use]
     pub fn eru02(&mut self) -> ERU02_W<NMIREQEN_SPEC> {
         ERU02_W::new(self, 18)
     }
     #[doc = "Bit 19 - Promote Channel 3 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
-    #[must_use]
     pub fn eru03(&mut self) -> ERU03_W<NMIREQEN_SPEC> {
         ERU03_W::new(self, 19)
     }

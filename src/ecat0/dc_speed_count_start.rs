@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:14 - Bandwidth for adjustment of local copy of System Time"]
     #[inline(always)]
-    #[must_use]
     pub fn count_start(&mut self) -> COUNT_START_W<DC_SPEED_COUNT_START_SPEC> {
         COUNT_START_W::new(self, 0)
     }

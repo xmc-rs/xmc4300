@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Bottom Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn bot(&mut self) -> BOT_W<MOFGPR_SPEC> {
         BOT_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Top Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn top(&mut self) -> TOP_W<MOFGPR_SPEC> {
         TOP_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Current Object Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn cur(&mut self) -> CUR_W<MOFGPR_SPEC> {
         CUR_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Object Select Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn sel(&mut self) -> SEL_W<MOFGPR_SPEC> {
         SEL_W::new(self, 24)
     }

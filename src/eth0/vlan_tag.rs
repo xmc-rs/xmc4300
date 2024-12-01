@@ -50,25 +50,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - VLAN Tag Identifier for Receive Frames"]
     #[inline(always)]
-    #[must_use]
     pub fn vl(&mut self) -> VL_W<VLAN_TAG_SPEC> {
         VL_W::new(self, 0)
     }
     #[doc = "Bit 16 - Enable 12-Bit VLAN Tag Comparison"]
     #[inline(always)]
-    #[must_use]
     pub fn etv(&mut self) -> ETV_W<VLAN_TAG_SPEC> {
         ETV_W::new(self, 16)
     }
     #[doc = "Bit 17 - VLAN Tag Inverse Match Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn vtim(&mut self) -> VTIM_W<VLAN_TAG_SPEC> {
         VTIM_W::new(self, 17)
     }
     #[doc = "Bit 18 - Enable S-VLAN"]
     #[inline(always)]
-    #[must_use]
     pub fn esvl(&mut self) -> ESVL_W<VLAN_TAG_SPEC> {
         ESVL_W::new(self, 18)
     }

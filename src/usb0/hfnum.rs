@@ -23,7 +23,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Frame Number"]
     #[inline(always)]
-    #[must_use]
     pub fn fr_num(&mut self) -> FR_NUM_W<HFNUM_SPEC> {
         FR_NUM_W::new(self, 0)
     }

@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:19 - Destination scatter interval"]
     #[inline(always)]
-    #[must_use]
     pub fn dsi(&mut self) -> DSI_W<DSR_SPEC> {
         DSI_W::new(self, 0)
     }
     #[doc = "Bits 20:31 - Destination scatter count"]
     #[inline(always)]
-    #[must_use]
     pub fn dsc(&mut self) -> DSC_W<DSR_SPEC> {
         DSC_W::new(self, 20)
     }

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Window Lower Bound"]
     #[inline(always)]
-    #[must_use]
     pub fn wlb(&mut self) -> WLB_W<WLB_SPEC> {
         WLB_W::new(self, 0)
     }

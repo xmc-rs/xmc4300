@@ -88,55 +88,46 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transfer Completed Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn xfer_compl_msk(&mut self) -> XFER_COMPL_MSK_W<DIEPMSK_SPEC> {
         XFER_COMPL_MSK_W::new(self, 0)
     }
     #[doc = "Bit 1 - Endpoint Disabled Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn epdisbld_msk(&mut self) -> EPDISBLD_MSK_W<DIEPMSK_SPEC> {
         EPDISBLD_MSK_W::new(self, 1)
     }
     #[doc = "Bit 2 - AHB Error Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn ahberr_msk(&mut self) -> AHBERR_MSK_W<DIEPMSK_SPEC> {
         AHBERR_MSK_W::new(self, 2)
     }
     #[doc = "Bit 3 - Timeout Condition Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn time_outmsk(&mut self) -> TIME_OUTMSK_W<DIEPMSK_SPEC> {
         TIME_OUTMSK_W::new(self, 3)
     }
     #[doc = "Bit 4 - IN Token Received When TxFIFO Empty Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn intkn_txfemp_msk(&mut self) -> INTKN_TXFEMP_MSK_W<DIEPMSK_SPEC> {
         INTKN_TXFEMP_MSK_W::new(self, 4)
     }
     #[doc = "Bit 6 - IN Endpoint NAK Effective Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn inepnak_eff_msk(&mut self) -> INEPNAK_EFF_MSK_W<DIEPMSK_SPEC> {
         INEPNAK_EFF_MSK_W::new(self, 6)
     }
     #[doc = "Bit 8 - Fifo Underrun Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn txfifo_undrn_msk(&mut self) -> TXFIFO_UNDRN_MSK_W<DIEPMSK_SPEC> {
         TXFIFO_UNDRN_MSK_W::new(self, 8)
     }
     #[doc = "Bit 9 - BNA Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn bnain_intr_msk(&mut self) -> BNAIN_INTR_MSK_W<DIEPMSK_SPEC> {
         BNAIN_INTR_MSK_W::new(self, 9)
     }
     #[doc = "Bit 13 - NAK interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn nakmsk(&mut self) -> NAKMSK_W<DIEPMSK_SPEC> {
         NAKMSK_W::new(self, 13)
     }

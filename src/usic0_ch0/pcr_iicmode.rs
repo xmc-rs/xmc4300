@@ -721,85 +721,71 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Slave Address"]
     #[inline(always)]
-    #[must_use]
     pub fn slad(&mut self) -> SLAD_W<PCR_IICMODE_SPEC> {
         SLAD_W::new(self, 0)
     }
     #[doc = "Bit 16 - Acknowledge 00H"]
     #[inline(always)]
-    #[must_use]
     pub fn ack00(&mut self) -> ACK00_W<PCR_IICMODE_SPEC> {
         ACK00_W::new(self, 16)
     }
     #[doc = "Bit 17 - Symbol Timing"]
     #[inline(always)]
-    #[must_use]
     pub fn stim(&mut self) -> STIM_W<PCR_IICMODE_SPEC> {
         STIM_W::new(self, 17)
     }
     #[doc = "Bit 18 - Start Condition Received Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn scrien(&mut self) -> SCRIEN_W<PCR_IICMODE_SPEC> {
         SCRIEN_W::new(self, 18)
     }
     #[doc = "Bit 19 - Repeated Start Condition Received Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rscrien(&mut self) -> RSCRIEN_W<PCR_IICMODE_SPEC> {
         RSCRIEN_W::new(self, 19)
     }
     #[doc = "Bit 20 - Stop Condition Received Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn pcrien(&mut self) -> PCRIEN_W<PCR_IICMODE_SPEC> {
         PCRIEN_W::new(self, 20)
     }
     #[doc = "Bit 21 - Non-Acknowledge Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn nackien(&mut self) -> NACKIEN_W<PCR_IICMODE_SPEC> {
         NACKIEN_W::new(self, 21)
     }
     #[doc = "Bit 22 - Arbitration Lost Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn arlien(&mut self) -> ARLIEN_W<PCR_IICMODE_SPEC> {
         ARLIEN_W::new(self, 22)
     }
     #[doc = "Bit 23 - Slave Read Request Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn srrien(&mut self) -> SRRIEN_W<PCR_IICMODE_SPEC> {
         SRRIEN_W::new(self, 23)
     }
     #[doc = "Bit 24 - Error Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn errien(&mut self) -> ERRIEN_W<PCR_IICMODE_SPEC> {
         ERRIEN_W::new(self, 24)
     }
     #[doc = "Bit 25 - Slave Acknowledge Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn sackdis(&mut self) -> SACKDIS_W<PCR_IICMODE_SPEC> {
         SACKDIS_W::new(self, 25)
     }
     #[doc = "Bits 26:29 - Hardware Delay"]
     #[inline(always)]
-    #[must_use]
     pub fn hdel(&mut self) -> HDEL_W<PCR_IICMODE_SPEC> {
         HDEL_W::new(self, 26)
     }
     #[doc = "Bit 30 - Acknowledge Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ackien(&mut self) -> ACKIEN_W<PCR_IICMODE_SPEC> {
         ACKIEN_W::new(self, 30)
     }
     #[doc = "Bit 31 - Master Clock Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mclk(&mut self) -> MCLK_W<PCR_IICMODE_SPEC> {
         MCLK_W::new(self, 31)
     }

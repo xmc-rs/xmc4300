@@ -478,49 +478,41 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Command Complete Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cmd_complete_en(&mut self) -> CMD_COMPLETE_EN_W<EN_INT_STATUS_NORM_SPEC> {
         CMD_COMPLETE_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transfer Complete Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_complete_en(&mut self) -> TX_COMPLETE_EN_W<EN_INT_STATUS_NORM_SPEC> {
         TX_COMPLETE_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Block Gap Event Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn block_gap_event_en(&mut self) -> BLOCK_GAP_EVENT_EN_W<EN_INT_STATUS_NORM_SPEC> {
         BLOCK_GAP_EVENT_EN_W::new(self, 2)
     }
     #[doc = "Bit 4 - Buffer Write Ready Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn buff_write_ready_en(&mut self) -> BUFF_WRITE_READY_EN_W<EN_INT_STATUS_NORM_SPEC> {
         BUFF_WRITE_READY_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Buffer Read Ready Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn buff_read_ready_en(&mut self) -> BUFF_READ_READY_EN_W<EN_INT_STATUS_NORM_SPEC> {
         BUFF_READ_READY_EN_W::new(self, 5)
     }
     #[doc = "Bit 6 - Card Insertion Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn card_ins_en(&mut self) -> CARD_INS_EN_W<EN_INT_STATUS_NORM_SPEC> {
         CARD_INS_EN_W::new(self, 6)
     }
     #[doc = "Bit 7 - Card Removal Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn card_removal_en(&mut self) -> CARD_REMOVAL_EN_W<EN_INT_STATUS_NORM_SPEC> {
         CARD_REMOVAL_EN_W::new(self, 7)
     }
     #[doc = "Bit 8 - Card Interrupt Status Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn card_int_en(&mut self) -> CARD_INT_EN_W<EN_INT_STATUS_NORM_SPEC> {
         CARD_INT_EN_W::new(self, 8)
     }

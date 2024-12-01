@@ -190,25 +190,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<SYST_CSR_SPEC> {
         ENABLE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Tick Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tickint(&mut self) -> TICKINT_W<SYST_CSR_SPEC> {
         TICKINT_W::new(self, 1)
     }
     #[doc = "Bit 2 - Indicates the clock source:"]
     #[inline(always)]
-    #[must_use]
     pub fn clksource(&mut self) -> CLKSOURCE_W<SYST_CSR_SPEC> {
         CLKSOURCE_W::new(self, 2)
     }
     #[doc = "Bit 16 - Counter Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn countflag(&mut self) -> COUNTFLAG_W<SYST_CSR_SPEC> {
         COUNTFLAG_W::new(self, 16)
     }

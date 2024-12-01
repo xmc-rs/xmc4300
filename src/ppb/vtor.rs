@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 10:31 - Vector table base offset field"]
     #[inline(always)]
-    #[must_use]
     pub fn tbloff(&mut self) -> TBLOFF_W<VTOR_SPEC> {
         TBLOFF_W::new(self, 10)
     }

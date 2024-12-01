@@ -190,25 +190,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Stop At Block Gap Request"]
     #[inline(always)]
-    #[must_use]
     pub fn stop_at_block_gap(&mut self) -> STOP_AT_BLOCK_GAP_W<BLOCK_GAP_CTRL_SPEC> {
         STOP_AT_BLOCK_GAP_W::new(self, 0)
     }
     #[doc = "Bit 1 - Continue Request"]
     #[inline(always)]
-    #[must_use]
     pub fn continue_req(&mut self) -> CONTINUE_REQ_W<BLOCK_GAP_CTRL_SPEC> {
         CONTINUE_REQ_W::new(self, 1)
     }
     #[doc = "Bit 2 - Read Wait Control"]
     #[inline(always)]
-    #[must_use]
     pub fn read_wait_ctrl(&mut self) -> READ_WAIT_CTRL_W<BLOCK_GAP_CTRL_SPEC> {
         READ_WAIT_CTRL_W::new(self, 2)
     }
     #[doc = "Bit 3 - Interrupt At Block Gap"]
     #[inline(always)]
-    #[must_use]
     pub fn int_at_block_gap(&mut self) -> INT_AT_BLOCK_GAP_W<BLOCK_GAP_CTRL_SPEC> {
         INT_AT_BLOCK_GAP_W::new(self, 3)
     }

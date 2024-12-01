@@ -181,19 +181,16 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable MPU"]
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<MPU_CTRL_SPEC> {
         ENABLE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers"]
     #[inline(always)]
-    #[must_use]
     pub fn hfnmiena(&mut self) -> HFNMIENA_W<MPU_CTRL_SPEC> {
         HFNMIENA_W::new(self, 1)
     }
     #[doc = "Bit 2 - Enables privileged software access to the default memory map"]
     #[inline(always)]
-    #[must_use]
     pub fn privdefena(&mut self) -> PRIVDEFENA_W<MPU_CTRL_SPEC> {
         PRIVDEFENA_W::new(self, 2)
     }

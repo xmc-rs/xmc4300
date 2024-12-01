@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Remote Wake-Up Frame Filter"]
     #[inline(always)]
-    #[must_use]
     pub fn wkupfrmftr(&mut self) -> WKUPFRMFTR_W<REMOTE_WAKE_UP_FRAME_FILTER_SPEC> {
         WKUPFRMFTR_W::new(self, 0)
     }

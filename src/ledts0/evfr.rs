@@ -162,19 +162,16 @@ impl R {
 impl W {
     #[doc = "Bit 16 - Clear Time Slice Interrupt Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn ctsf(&mut self) -> CTSF_W<EVFR_SPEC> {
         CTSF_W::new(self, 16)
     }
     #[doc = "Bit 17 - Clear (Extended) Time Frame Interrupt Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn ctff(&mut self) -> CTFF_W<EVFR_SPEC> {
         CTFF_W::new(self, 17)
     }
     #[doc = "Bit 18 - Clear Autoscan Time Period Interrupt Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn ctpf(&mut self) -> CTPF_W<EVFR_SPEC> {
         CTPF_W::new(self, 18)
     }

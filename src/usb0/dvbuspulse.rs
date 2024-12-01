@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Device Vbus Pulsing Time"]
     #[inline(always)]
-    #[must_use]
     pub fn dvbuspulse(&mut self) -> DVBUSPULSE_W<DVBUSPULSE_SPEC> {
         DVBUSPULSE_W::new(self, 0)
     }

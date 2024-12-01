@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 2:31 - Start of Transmit List"]
     #[inline(always)]
-    #[must_use]
     pub fn tdesla_32bit(&mut self) -> TDESLA_32BIT_W<TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC> {
         TDESLA_32BIT_W::new(self, 2)
     }

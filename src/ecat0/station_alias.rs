@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Alias Address used for node addressing(FPxx commands)"]
     #[inline(always)]
-    #[must_use]
     pub fn alias_addr(&mut self) -> ALIAS_ADDR_W<STATION_ALIAS_SPEC> {
         ALIAS_ADDR_W::new(self, 0)
     }

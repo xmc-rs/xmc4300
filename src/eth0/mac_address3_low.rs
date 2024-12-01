@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - MAC Address3 \\[31:0\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn addrlo(&mut self) -> ADDRLO_W<MAC_ADDRESS3_LOW_SPEC> {
         ADDRLO_W::new(self, 0)
     }

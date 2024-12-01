@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Host Periodic TxFIFO Start Address"]
     #[inline(always)]
-    #[must_use]
     pub fn ptx_fst_addr(&mut self) -> PTX_FST_ADDR_W<HPTXFSIZ_SPEC> {
         PTX_FST_ADDR_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - Host Periodic TxFIFO Depth"]
     #[inline(always)]
-    #[must_use]
     pub fn ptx_fsize(&mut self) -> PTX_FSIZE_W<HPTXFSIZ_SPEC> {
         PTX_FSIZE_W::new(self, 16)
     }

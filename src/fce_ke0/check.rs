@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - CHECK Register"]
     #[inline(always)]
-    #[must_use]
     pub fn check(&mut self) -> CHECK_W<CHECK_SPEC> {
         CHECK_W::new(self, 0)
     }

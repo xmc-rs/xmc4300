@@ -915,79 +915,66 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Data Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn dptr(&mut self) -> DPTR_W<RBCTR_SPEC> {
         DPTR_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - Limit For Interrupt Generation"]
     #[inline(always)]
-    #[must_use]
     pub fn limit(&mut self) -> LIMIT_W<RBCTR_SPEC> {
         LIMIT_W::new(self, 8)
     }
     #[doc = "Bit 14 - Standard Receive Buffer Trigger Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn srbtm(&mut self) -> SRBTM_W<RBCTR_SPEC> {
         SRBTM_W::new(self, 14)
     }
     #[doc = "Bit 15 - Standard Receive Buffer Trigger Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn srbten(&mut self) -> SRBTEN_W<RBCTR_SPEC> {
         SRBTEN_W::new(self, 15)
     }
     #[doc = "Bits 16:18 - Standard Receive Buffer Interrupt Node Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn srbinp(&mut self) -> SRBINP_W<RBCTR_SPEC> {
         SRBINP_W::new(self, 16)
     }
     #[doc = "Bits 19:21 - Alternative Receive Buffer Interrupt Node Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn arbinp(&mut self) -> ARBINP_W<RBCTR_SPEC> {
         ARBINP_W::new(self, 19)
     }
     #[doc = "Bits 22:23 - Receiver Control Information Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn rcim(&mut self) -> RCIM_W<RBCTR_SPEC> {
         RCIM_W::new(self, 22)
     }
     #[doc = "Bits 24:26 - Buffer Size"]
     #[inline(always)]
-    #[must_use]
     pub fn size(&mut self) -> SIZE_W<RBCTR_SPEC> {
         SIZE_W::new(self, 24)
     }
     #[doc = "Bit 27 - Receiver Notification Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn rnm(&mut self) -> RNM_W<RBCTR_SPEC> {
         RNM_W::new(self, 27)
     }
     #[doc = "Bit 28 - Buffer Event on Limit Overflow"]
     #[inline(always)]
-    #[must_use]
     pub fn lof(&mut self) -> LOF_W<RBCTR_SPEC> {
         LOF_W::new(self, 28)
     }
     #[doc = "Bit 29 - Alternative Receive Buffer Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn arbien(&mut self) -> ARBIEN_W<RBCTR_SPEC> {
         ARBIEN_W::new(self, 29)
     }
     #[doc = "Bit 30 - Standard Receive Buffer Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn srbien(&mut self) -> SRBIEN_W<RBCTR_SPEC> {
         SRBIEN_W::new(self, 30)
     }
     #[doc = "Bit 31 - Receive Buffer Error Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rberien(&mut self) -> RBERIEN_W<RBCTR_SPEC> {
         RBERIEN_W::new(self, 31)
     }

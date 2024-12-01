@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 3:7 - Port Control for Port n Pin 12 to 15"]
     #[inline(always)]
-    #[must_use]
     pub fn pc12(&mut self) -> PC12_W<IOCR12_SPEC> {
         PC12_W::new(self, 3)
     }
     #[doc = "Bits 11:15 - Port Control for Port n Pin 12 to 15"]
     #[inline(always)]
-    #[must_use]
     pub fn pc13(&mut self) -> PC13_W<IOCR12_SPEC> {
         PC13_W::new(self, 11)
     }
     #[doc = "Bits 19:23 - Port Control for Port n Pin 12 to 15"]
     #[inline(always)]
-    #[must_use]
     pub fn pc14(&mut self) -> PC14_W<IOCR12_SPEC> {
         PC14_W::new(self, 19)
     }
     #[doc = "Bits 27:31 - Port Control for Port n Pin 12 to 15"]
     #[inline(always)]
-    #[must_use]
     pub fn pc15(&mut self) -> PC15_W<IOCR12_SPEC> {
         PC15_W::new(self, 27)
     }

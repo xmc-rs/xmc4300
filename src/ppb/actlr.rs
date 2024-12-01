@@ -52,31 +52,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Disable load/store multiple"]
     #[inline(always)]
-    #[must_use]
     pub fn dismcycint(&mut self) -> DISMCYCINT_W<ACTLR_SPEC> {
         DISMCYCINT_W::new(self, 0)
     }
     #[doc = "Bit 1 - Disable write buffer"]
     #[inline(always)]
-    #[must_use]
     pub fn disdefwbuf(&mut self) -> DISDEFWBUF_W<ACTLR_SPEC> {
         DISDEFWBUF_W::new(self, 1)
     }
     #[doc = "Bit 2 - Disable IT folding"]
     #[inline(always)]
-    #[must_use]
     pub fn disfold(&mut self) -> DISFOLD_W<ACTLR_SPEC> {
         DISFOLD_W::new(self, 2)
     }
     #[doc = "Bit 8 - Disable FPCA update"]
     #[inline(always)]
-    #[must_use]
     pub fn disfpca(&mut self) -> DISFPCA_W<ACTLR_SPEC> {
         DISFPCA_W::new(self, 8)
     }
     #[doc = "Bit 9 - Disable out of order FP execution"]
     #[inline(always)]
-    #[must_use]
     pub fn disoofp(&mut self) -> DISOOFP_W<ACTLR_SPEC> {
         DISOOFP_W::new(self, 9)
     }

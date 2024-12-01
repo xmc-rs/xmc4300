@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Rise Value for Dead Time of Channel 1"]
     #[inline(always)]
-    #[must_use]
     pub fn dt1r(&mut self) -> DT1R_W<DC1R_SPEC> {
         DT1R_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Fall Value for Dead Time of Channel 1"]
     #[inline(always)]
-    #[must_use]
     pub fn dt1f(&mut self) -> DT1F_W<DC1R_SPEC> {
         DT1F_W::new(self, 8)
     }

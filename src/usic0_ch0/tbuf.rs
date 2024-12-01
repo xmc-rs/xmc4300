@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]
-    #[must_use]
     pub fn tdata(&mut self) -> TDATA_W<TBUF_SPEC> {
         TDATA_W::new(self, 0)
     }

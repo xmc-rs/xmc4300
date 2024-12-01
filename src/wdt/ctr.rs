@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn enb(&mut self) -> ENB_W<CTR_SPEC> {
         ENB_W::new(self, 0)
     }
     #[doc = "Bit 1 - Pre-warning"]
     #[inline(always)]
-    #[must_use]
     pub fn pre(&mut self) -> PRE_W<CTR_SPEC> {
         PRE_W::new(self, 1)
     }
     #[doc = "Bit 4 - Debug Suspend"]
     #[inline(always)]
-    #[must_use]
     pub fn dsp(&mut self) -> DSP_W<CTR_SPEC> {
         DSP_W::new(self, 4)
     }
     #[doc = "Bits 8:15 - Service Indication Pulse Width"]
     #[inline(always)]
-    #[must_use]
     pub fn spw(&mut self) -> SPW_W<CTR_SPEC> {
         SPW_W::new(self, 8)
     }

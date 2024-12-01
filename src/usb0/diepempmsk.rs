@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - IN EP Tx FIFO Empty Interrupt Mask Bits"]
     #[inline(always)]
-    #[must_use]
     pub fn in_ep_txf_emp_msk(&mut self) -> IN_EP_TXF_EMP_MSK_W<DIEPEMPMSK_SPEC> {
         IN_EP_TXF_EMP_MSK_W::new(self, 0)
     }

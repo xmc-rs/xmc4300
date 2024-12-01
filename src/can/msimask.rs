@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Message Index Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn im(&mut self) -> IM_W<MSIMASK_SPEC> {
         IM_W::new(self, 0)
     }

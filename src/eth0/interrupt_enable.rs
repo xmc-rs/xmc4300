@@ -142,91 +142,76 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transmit Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tie(&mut self) -> TIE_W<INTERRUPT_ENABLE_SPEC> {
         TIE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmit Stopped Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tse(&mut self) -> TSE_W<INTERRUPT_ENABLE_SPEC> {
         TSE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Transmit Buffer Unvailable Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tue(&mut self) -> TUE_W<INTERRUPT_ENABLE_SPEC> {
         TUE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Transmit Jabber Timeout Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tje(&mut self) -> TJE_W<INTERRUPT_ENABLE_SPEC> {
         TJE_W::new(self, 3)
     }
     #[doc = "Bit 4 - Overflow Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ove(&mut self) -> OVE_W<INTERRUPT_ENABLE_SPEC> {
         OVE_W::new(self, 4)
     }
     #[doc = "Bit 5 - Underflow Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn une(&mut self) -> UNE_W<INTERRUPT_ENABLE_SPEC> {
         UNE_W::new(self, 5)
     }
     #[doc = "Bit 6 - Receive Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rie(&mut self) -> RIE_W<INTERRUPT_ENABLE_SPEC> {
         RIE_W::new(self, 6)
     }
     #[doc = "Bit 7 - Receive Buffer Unavailable Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rue(&mut self) -> RUE_W<INTERRUPT_ENABLE_SPEC> {
         RUE_W::new(self, 7)
     }
     #[doc = "Bit 8 - Receive Stopped Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rse(&mut self) -> RSE_W<INTERRUPT_ENABLE_SPEC> {
         RSE_W::new(self, 8)
     }
     #[doc = "Bit 9 - Receive Watchdog Timeout Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rwe(&mut self) -> RWE_W<INTERRUPT_ENABLE_SPEC> {
         RWE_W::new(self, 9)
     }
     #[doc = "Bit 10 - Early Transmit Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ete(&mut self) -> ETE_W<INTERRUPT_ENABLE_SPEC> {
         ETE_W::new(self, 10)
     }
     #[doc = "Bit 13 - Fatal Bus Error Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn fbe(&mut self) -> FBE_W<INTERRUPT_ENABLE_SPEC> {
         FBE_W::new(self, 13)
     }
     #[doc = "Bit 14 - Early Receive Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ere(&mut self) -> ERE_W<INTERRUPT_ENABLE_SPEC> {
         ERE_W::new(self, 14)
     }
     #[doc = "Bit 15 - Abnormal Interrupt Summary Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn aie(&mut self) -> AIE_W<INTERRUPT_ENABLE_SPEC> {
         AIE_W::new(self, 15)
     }
     #[doc = "Bit 16 - Normal Interrupt Summary Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn nie(&mut self) -> NIE_W<INTERRUPT_ENABLE_SPEC> {
         NIE_W::new(self, 16)
     }

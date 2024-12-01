@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Message Length Register"]
     #[inline(always)]
-    #[must_use]
     pub fn length(&mut self) -> LENGTH_W<LENGTH_SPEC> {
         LENGTH_W::new(self, 0)
     }

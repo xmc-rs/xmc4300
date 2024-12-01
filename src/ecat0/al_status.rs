@@ -227,19 +227,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Actual State of the Device State Machine"]
     #[inline(always)]
-    #[must_use]
     pub fn state(&mut self) -> STATE_W<AL_STATUS_SPEC> {
         STATE_W::new(self, 0)
     }
     #[doc = "Bit 4 - Error Ind"]
     #[inline(always)]
-    #[must_use]
     pub fn erri(&mut self) -> ERRI_W<AL_STATUS_SPEC> {
         ERRI_W::new(self, 4)
     }
     #[doc = "Bit 5 - Device Identification"]
     #[inline(always)]
-    #[must_use]
     pub fn did(&mut self) -> DID_W<AL_STATUS_SPEC> {
         DID_W::new(self, 5)
     }

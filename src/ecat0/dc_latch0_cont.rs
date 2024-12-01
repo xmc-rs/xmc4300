@@ -123,13 +123,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Latch0 positive edge"]
     #[inline(always)]
-    #[must_use]
     pub fn l0_pos(&mut self) -> L0_POS_W<DC_LATCH0_CONT_SPEC> {
         L0_POS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Latch0 negative edge"]
     #[inline(always)]
-    #[must_use]
     pub fn l0_neg(&mut self) -> L0_NEG_W<DC_LATCH0_CONT_SPEC> {
         L0_NEG_W::new(self, 1)
     }

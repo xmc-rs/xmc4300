@@ -144,12 +144,12 @@ impl RegisterBlock {
     #[doc = "0x110 - Queue 0 Backup Register"]
     #[inline(always)]
     pub const fn qbur0(&self) -> &QBUR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(272).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(272).cast() }
     }
     #[doc = "0x110 - Queue 0 Input Register"]
     #[inline(always)]
     pub const fn qinr0(&self) -> &QINR0 {
-        unsafe { &*(self as *const Self).cast::<u8>().add(272).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(272).cast() }
     }
     #[doc = "0x120 - Autoscan Source Control Register"]
     #[inline(always)]

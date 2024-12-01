@@ -189,37 +189,31 @@ where
 impl W {
     #[doc = "Bit 0 - VADC Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn vadcrs(&mut self) -> VADCRS_W<PRCLR0_SPEC> {
         VADCRS_W::new(self, 0)
     }
     #[doc = "Bit 2 - CCU40 Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ccu40rs(&mut self) -> CCU40RS_W<PRCLR0_SPEC> {
         CCU40RS_W::new(self, 2)
     }
     #[doc = "Bit 3 - CCU41 Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ccu41rs(&mut self) -> CCU41RS_W<PRCLR0_SPEC> {
         CCU41RS_W::new(self, 3)
     }
     #[doc = "Bit 7 - CCU80 Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ccu80rs(&mut self) -> CCU80RS_W<PRCLR0_SPEC> {
         CCU80RS_W::new(self, 7)
     }
     #[doc = "Bit 11 - USIC0 Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn usic0rs(&mut self) -> USIC0RS_W<PRCLR0_SPEC> {
         USIC0RS_W::new(self, 11)
     }
     #[doc = "Bit 16 - ERU1 Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn eru1rs(&mut self) -> ERU1RS_W<PRCLR0_SPEC> {
         ERU1RS_W::new(self, 16)
     }

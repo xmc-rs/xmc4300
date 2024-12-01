@@ -484,13 +484,11 @@ impl R {
 impl W {
     #[doc = "Bits 8:10 - Command register"]
     #[inline(always)]
-    #[must_use]
     pub fn cmd_reg(&mut self) -> CMD_REG_W<EEP_CONT_STAT_SPEC> {
         CMD_REG_W::new(self, 8)
     }
     #[doc = "Bit 13 - Error Acknowledge/Command"]
     #[inline(always)]
-    #[must_use]
     pub fn error_ac(&mut self) -> ERROR_AC_W<EEP_CONT_STAT_SPEC> {
         ERROR_AC_W::new(self, 13)
     }

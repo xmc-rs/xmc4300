@@ -5,7 +5,6 @@ pub type ALMC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Pre-warning Alarm"]
     #[inline(always)]
-    #[must_use]
     pub fn almc(&mut self) -> ALMC_W<WDTCLR_SPEC> {
         ALMC_W::new(self, 0)
     }

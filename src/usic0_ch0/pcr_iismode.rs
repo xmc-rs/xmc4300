@@ -480,55 +480,46 @@ impl R {
 impl W {
     #[doc = "Bit 0 - WA Generation Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn wagen(&mut self) -> WAGEN_W<PCR_IISMODE_SPEC> {
         WAGEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Data Transfers Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dten(&mut self) -> DTEN_W<PCR_IISMODE_SPEC> {
         DTEN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Select Inversion"]
     #[inline(always)]
-    #[must_use]
     pub fn selinv(&mut self) -> SELINV_W<PCR_IISMODE_SPEC> {
         SELINV_W::new(self, 2)
     }
     #[doc = "Bit 4 - WA Falling Edge Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn wafeien(&mut self) -> WAFEIEN_W<PCR_IISMODE_SPEC> {
         WAFEIEN_W::new(self, 4)
     }
     #[doc = "Bit 5 - WA Rising Edge Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn wareien(&mut self) -> WAREIEN_W<PCR_IISMODE_SPEC> {
         WAREIEN_W::new(self, 5)
     }
     #[doc = "Bit 6 - END Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn endien(&mut self) -> ENDIEN_W<PCR_IISMODE_SPEC> {
         ENDIEN_W::new(self, 6)
     }
     #[doc = "Bit 15 - DX2T Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dx2tien(&mut self) -> DX2TIEN_W<PCR_IISMODE_SPEC> {
         DX2TIEN_W::new(self, 15)
     }
     #[doc = "Bits 16:21 - Transfer Delay"]
     #[inline(always)]
-    #[must_use]
     pub fn tdel(&mut self) -> TDEL_W<PCR_IISMODE_SPEC> {
         TDEL_W::new(self, 16)
     }
     #[doc = "Bit 31 - Master Clock Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mclk(&mut self) -> MCLK_W<PCR_IISMODE_SPEC> {
         MCLK_W::new(self, 31)
     }

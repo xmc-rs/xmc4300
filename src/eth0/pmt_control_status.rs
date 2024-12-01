@@ -66,31 +66,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Power Down"]
     #[inline(always)]
-    #[must_use]
     pub fn pwrdwn(&mut self) -> PWRDWN_W<PMT_CONTROL_STATUS_SPEC> {
         PWRDWN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Magic Packet Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mgkpkten(&mut self) -> MGKPKTEN_W<PMT_CONTROL_STATUS_SPEC> {
         MGKPKTEN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Wake-Up Frame Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rwkpkten(&mut self) -> RWKPKTEN_W<PMT_CONTROL_STATUS_SPEC> {
         RWKPKTEN_W::new(self, 2)
     }
     #[doc = "Bit 9 - Global Unicast"]
     #[inline(always)]
-    #[must_use]
     pub fn glblucast(&mut self) -> GLBLUCAST_W<PMT_CONTROL_STATUS_SPEC> {
         GLBLUCAST_W::new(self, 9)
     }
     #[doc = "Bit 31 - Wake-Up Frame Filter Register Pointer Reset"]
     #[inline(always)]
-    #[must_use]
     pub fn rwkfiltrst(&mut self) -> RWKFILTRST_W<PMT_CONTROL_STATUS_SPEC> {
         RWKFILTRST_W::new(self, 31)
     }

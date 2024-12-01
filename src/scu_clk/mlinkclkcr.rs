@@ -335,43 +335,36 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - System Clock Division Value"]
     #[inline(always)]
-    #[must_use]
     pub fn sysdiv(&mut self) -> SYSDIV_W<MLINKCLKCR_SPEC> {
         SYSDIV_W::new(self, 0)
     }
     #[doc = "Bit 8 - System Clock Selection Value"]
     #[inline(always)]
-    #[must_use]
     pub fn syssel(&mut self) -> SYSSEL_W<MLINKCLKCR_SPEC> {
         SYSSEL_W::new(self, 8)
     }
     #[doc = "Bit 10 - CPU Clock Divider Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cpudiv(&mut self) -> CPUDIV_W<MLINKCLKCR_SPEC> {
         CPUDIV_W::new(self, 10)
     }
     #[doc = "Bit 12 - PB Clock Divider Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn pbdiv(&mut self) -> PBDIV_W<MLINKCLKCR_SPEC> {
         PBDIV_W::new(self, 12)
     }
     #[doc = "Bit 14 - CCU Clock Divider Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ccudiv(&mut self) -> CCUDIV_W<MLINKCLKCR_SPEC> {
         CCUDIV_W::new(self, 14)
     }
     #[doc = "Bits 16:23 - WDT Clock Divider Value"]
     #[inline(always)]
-    #[must_use]
     pub fn wdtdiv(&mut self) -> WDTDIV_W<MLINKCLKCR_SPEC> {
         WDTDIV_W::new(self, 16)
     }
     #[doc = "Bits 24:25 - WDT Clock Selection Value"]
     #[inline(always)]
-    #[must_use]
     pub fn wdtsel(&mut self) -> WDTSEL_W<MLINKCLKCR_SPEC> {
         WDTSEL_W::new(self, 24)
     }

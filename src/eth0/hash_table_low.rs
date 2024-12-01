@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Hash Table Low"]
     #[inline(always)]
-    #[must_use]
     pub fn htl(&mut self) -> HTL_W<HASH_TABLE_LOW_SPEC> {
         HTL_W::new(self, 0)
     }

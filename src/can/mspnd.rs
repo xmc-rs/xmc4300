@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Message Pending"]
     #[inline(always)]
-    #[must_use]
     pub fn pnd(&mut self) -> PND_W<MSPND_SPEC> {
         PND_W::new(self, 0)
     }

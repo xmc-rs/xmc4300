@@ -375,55 +375,46 @@ impl R {
 impl W {
     #[doc = "Bit 0 - VCO Bypass"]
     #[inline(always)]
-    #[must_use]
     pub fn vcobyp(&mut self) -> VCOBYP_W<USBPLLCON_SPEC> {
         VCOBYP_W::new(self, 0)
     }
     #[doc = "Bit 1 - VCO Power Saving Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn vcopwd(&mut self) -> VCOPWD_W<USBPLLCON_SPEC> {
         VCOPWD_W::new(self, 1)
     }
     #[doc = "Bit 2 - VCO Trim Control"]
     #[inline(always)]
-    #[must_use]
     pub fn vcotr(&mut self) -> VCOTR_W<USBPLLCON_SPEC> {
         VCOTR_W::new(self, 2)
     }
     #[doc = "Bit 4 - Disconnect Oscillator from VCO"]
     #[inline(always)]
-    #[must_use]
     pub fn findis(&mut self) -> FINDIS_W<USBPLLCON_SPEC> {
         FINDIS_W::new(self, 4)
     }
     #[doc = "Bit 6 - Oscillator Disconnect Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<USBPLLCON_SPEC> {
         OSCDISCDIS_W::new(self, 6)
     }
     #[doc = "Bits 8:14 - N-Divider Value"]
     #[inline(always)]
-    #[must_use]
     pub fn ndiv(&mut self) -> NDIV_W<USBPLLCON_SPEC> {
         NDIV_W::new(self, 8)
     }
     #[doc = "Bit 16 - PLL Power Saving Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn pllpwd(&mut self) -> PLLPWD_W<USBPLLCON_SPEC> {
         PLLPWD_W::new(self, 16)
     }
     #[doc = "Bit 18 - Restart VCO Lock Detection"]
     #[inline(always)]
-    #[must_use]
     pub fn resld(&mut self) -> RESLD_W<USBPLLCON_SPEC> {
         RESLD_W::new(self, 18)
     }
     #[doc = "Bits 24:27 - P-Divider Value"]
     #[inline(always)]
-    #[must_use]
     pub fn pdiv(&mut self) -> PDIV_W<USBPLLCON_SPEC> {
         PDIV_W::new(self, 24)
     }

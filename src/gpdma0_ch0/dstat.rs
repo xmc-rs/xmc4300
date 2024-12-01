@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Destination Status"]
     #[inline(always)]
-    #[must_use]
     pub fn dstat(&mut self) -> DSTAT_W<DSTAT_SPEC> {
         DSTAT_W::new(self, 0)
     }

@@ -258,37 +258,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Module Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn moden(&mut self) -> MODEN_W<KSCFG_SPEC> {
         MODEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Bit Protection for MODEN"]
     #[inline(always)]
-    #[must_use]
     pub fn bpmoden(&mut self) -> BPMODEN_W<KSCFG_SPEC> {
         BPMODEN_W::new(self, 1)
     }
     #[doc = "Bits 4:5 - Normal Operation Mode Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn nomcfg(&mut self) -> NOMCFG_W<KSCFG_SPEC> {
         NOMCFG_W::new(self, 4)
     }
     #[doc = "Bit 7 - Bit Protection for NOMCFG"]
     #[inline(always)]
-    #[must_use]
     pub fn bpnom(&mut self) -> BPNOM_W<KSCFG_SPEC> {
         BPNOM_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Suspend Mode Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn sumcfg(&mut self) -> SUMCFG_W<KSCFG_SPEC> {
         SUMCFG_W::new(self, 8)
     }
     #[doc = "Bit 11 - Bit Protection for SUMCFG"]
     #[inline(always)]
-    #[must_use]
     pub fn bpsum(&mut self) -> BPSUM_W<KSCFG_SPEC> {
         BPSUM_W::new(self, 11)
     }

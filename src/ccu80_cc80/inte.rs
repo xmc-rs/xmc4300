@@ -529,55 +529,46 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Period match while counting up enable"]
     #[inline(always)]
-    #[must_use]
     pub fn pme(&mut self) -> PME_W<INTE_SPEC> {
         PME_W::new(self, 0)
     }
     #[doc = "Bit 1 - One match while counting down enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ome(&mut self) -> OME_W<INTE_SPEC> {
         OME_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channel 1 Compare match while counting up enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cmu1e(&mut self) -> CMU1E_W<INTE_SPEC> {
         CMU1E_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channel 1 Compare match while counting down enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cmd1e(&mut self) -> CMD1E_W<INTE_SPEC> {
         CMD1E_W::new(self, 3)
     }
     #[doc = "Bit 4 - Channel 2 Compare match while counting up enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cmu2e(&mut self) -> CMU2E_W<INTE_SPEC> {
         CMU2E_W::new(self, 4)
     }
     #[doc = "Bit 5 - Channel 2 Compare match while counting down enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cmd2e(&mut self) -> CMD2E_W<INTE_SPEC> {
         CMD2E_W::new(self, 5)
     }
     #[doc = "Bit 8 - Event 0 interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn e0ae(&mut self) -> E0AE_W<INTE_SPEC> {
         E0AE_W::new(self, 8)
     }
     #[doc = "Bit 9 - Event 1 interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn e1ae(&mut self) -> E1AE_W<INTE_SPEC> {
         E1AE_W::new(self, 9)
     }
     #[doc = "Bit 10 - Event 2 interrupt enable"]
     #[inline(always)]
-    #[must_use]
     pub fn e2ae(&mut self) -> E2AE_W<INTE_SPEC> {
         E2AE_W::new(self, 10)
     }

@@ -251,49 +251,41 @@ where
 impl W {
     #[doc = "Bit 0 - Boundary Flag 0 Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn bfc0(&mut self) -> BFC0_W<BFLS_SPEC> {
         BFC0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Boundary Flag 1 Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn bfc1(&mut self) -> BFC1_W<BFLS_SPEC> {
         BFC1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Boundary Flag 2 Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn bfc2(&mut self) -> BFC2_W<BFLS_SPEC> {
         BFC2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Boundary Flag 3 Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn bfc3(&mut self) -> BFC3_W<BFLS_SPEC> {
         BFC3_W::new(self, 3)
     }
     #[doc = "Bit 16 - Boundary Flag 0 Set"]
     #[inline(always)]
-    #[must_use]
     pub fn bfs0(&mut self) -> BFS0_W<BFLS_SPEC> {
         BFS0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Boundary Flag 1 Set"]
     #[inline(always)]
-    #[must_use]
     pub fn bfs1(&mut self) -> BFS1_W<BFLS_SPEC> {
         BFS1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Boundary Flag 2 Set"]
     #[inline(always)]
-    #[must_use]
     pub fn bfs2(&mut self) -> BFS2_W<BFLS_SPEC> {
         BFS2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Boundary Flag 3 Set"]
     #[inline(always)]
-    #[must_use]
     pub fn bfs3(&mut self) -> BFS3_W<BFLS_SPEC> {
         BFS3_W::new(self, 19)
     }

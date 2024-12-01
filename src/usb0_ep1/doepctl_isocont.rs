@@ -251,73 +251,61 @@ impl R {
 impl W {
     #[doc = "Bits 0:10 - Maximum Packet Size"]
     #[inline(always)]
-    #[must_use]
     pub fn mps(&mut self) -> MPS_W<DOEPCTL_ISOCONT_SPEC> {
         MPS_W::new(self, 0)
     }
     #[doc = "Bit 15 - USB Active Endpoint"]
     #[inline(always)]
-    #[must_use]
     pub fn usbact_ep(&mut self) -> USBACT_EP_W<DOEPCTL_ISOCONT_SPEC> {
         USBACT_EP_W::new(self, 15)
     }
     #[doc = "Bits 18:19 - Endpoint Type"]
     #[inline(always)]
-    #[must_use]
     pub fn eptype(&mut self) -> EPTYPE_W<DOEPCTL_ISOCONT_SPEC> {
         EPTYPE_W::new(self, 18)
     }
     #[doc = "Bit 20 - Snoop Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn snp(&mut self) -> SNP_W<DOEPCTL_ISOCONT_SPEC> {
         SNP_W::new(self, 20)
     }
     #[doc = "Bit 21 - STALL Handshake"]
     #[inline(always)]
-    #[must_use]
     pub fn stall(&mut self) -> STALL_W<DOEPCTL_ISOCONT_SPEC> {
         STALL_W::new(self, 21)
     }
     #[doc = "Bits 22:25 - TxFIFO Number"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_fnum(&mut self) -> TX_FNUM_W<DOEPCTL_ISOCONT_SPEC> {
         TX_FNUM_W::new(self, 22)
     }
     #[doc = "Bit 26 - Clear NAK"]
     #[inline(always)]
-    #[must_use]
     pub fn cnak(&mut self) -> CNAK_W<DOEPCTL_ISOCONT_SPEC> {
         CNAK_W::new(self, 26)
     }
     #[doc = "Bit 27 - Set NAK"]
     #[inline(always)]
-    #[must_use]
     pub fn snak(&mut self) -> SNAK_W<DOEPCTL_ISOCONT_SPEC> {
         SNAK_W::new(self, 27)
     }
     #[doc = "Bit 28 - In non-Scatter/Gather DMA mode: Set Even frame"]
     #[inline(always)]
-    #[must_use]
     pub fn set_even_fr(&mut self) -> SET_EVEN_FR_W<DOEPCTL_ISOCONT_SPEC> {
         SET_EVEN_FR_W::new(self, 28)
     }
     #[doc = "Bit 29 - Set Odd frame"]
     #[inline(always)]
-    #[must_use]
     pub fn set_odd_fr(&mut self) -> SET_ODD_FR_W<DOEPCTL_ISOCONT_SPEC> {
         SET_ODD_FR_W::new(self, 29)
     }
     #[doc = "Bit 30 - Endpoint Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn epdis(&mut self) -> EPDIS_W<DOEPCTL_ISOCONT_SPEC> {
         EPDIS_W::new(self, 30)
     }
     #[doc = "Bit 31 - Endpoint Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn epena(&mut self) -> EPENA_W<DOEPCTL_ISOCONT_SPEC> {
         EPENA_W::new(self, 31)
     }

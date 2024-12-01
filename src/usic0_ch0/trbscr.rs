@@ -251,49 +251,41 @@ where
 impl W {
     #[doc = "Bit 0 - Clear Standard Receive Buffer Event"]
     #[inline(always)]
-    #[must_use]
     pub fn csrbi(&mut self) -> CSRBI_W<TRBSCR_SPEC> {
         CSRBI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Receive Buffer Error Event"]
     #[inline(always)]
-    #[must_use]
     pub fn crberi(&mut self) -> CRBERI_W<TRBSCR_SPEC> {
         CRBERI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Alternative Receive Buffer Event"]
     #[inline(always)]
-    #[must_use]
     pub fn carbi(&mut self) -> CARBI_W<TRBSCR_SPEC> {
         CARBI_W::new(self, 2)
     }
     #[doc = "Bit 8 - Clear Standard Transmit Buffer Event"]
     #[inline(always)]
-    #[must_use]
     pub fn cstbi(&mut self) -> CSTBI_W<TRBSCR_SPEC> {
         CSTBI_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear Transmit Buffer Error Event"]
     #[inline(always)]
-    #[must_use]
     pub fn ctberi(&mut self) -> CTBERI_W<TRBSCR_SPEC> {
         CTBERI_W::new(self, 9)
     }
     #[doc = "Bit 10 - Clear Bypass Data Valid"]
     #[inline(always)]
-    #[must_use]
     pub fn cbdv(&mut self) -> CBDV_W<TRBSCR_SPEC> {
         CBDV_W::new(self, 10)
     }
     #[doc = "Bit 14 - Flush Receive Buffer"]
     #[inline(always)]
-    #[must_use]
     pub fn flushrb(&mut self) -> FLUSHRB_W<TRBSCR_SPEC> {
         FLUSHRB_W::new(self, 14)
     }
     #[doc = "Bit 15 - Flush Transmit Buffer"]
     #[inline(always)]
-    #[must_use]
     pub fn flushtb(&mut self) -> FLUSHTB_W<TRBSCR_SPEC> {
         FLUSHTB_W::new(self, 15)
     }

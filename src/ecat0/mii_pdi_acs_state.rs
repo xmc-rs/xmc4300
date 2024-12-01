@@ -106,7 +106,6 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Access to MII management"]
     #[inline(always)]
-    #[must_use]
     pub fn acs_mii_by_pdi(&mut self) -> ACS_MII_BY_PDI_W<MII_PDI_ACS_STATE_SPEC> {
         ACS_MII_BY_PDI_W::new(self, 0)
     }

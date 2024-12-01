@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Start Time Cyclic Operation"]
     #[inline(always)]
-    #[must_use]
     pub fn dc_cyc_start_time(&mut self) -> DC_CYC_START_TIME_W<DC_CYC_START_TIME_SPEC> {
         DC_CYC_START_TIME_W::new(self, 0)
     }

@@ -98,25 +98,21 @@ where
 impl W {
     #[doc = "Bits 0:4 - Request Channel Number"]
     #[inline(always)]
-    #[must_use]
     pub fn reqchnr(&mut self) -> REQCHNR_W<QINR0_SPEC> {
         REQCHNR_W::new(self, 0)
     }
     #[doc = "Bit 5 - Refill"]
     #[inline(always)]
-    #[must_use]
     pub fn rf(&mut self) -> RF_W<QINR0_SPEC> {
         RF_W::new(self, 5)
     }
     #[doc = "Bit 6 - Enable Source Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn ensi(&mut self) -> ENSI_W<QINR0_SPEC> {
         ENSI_W::new(self, 6)
     }
     #[doc = "Bit 7 - External Trigger"]
     #[inline(always)]
-    #[must_use]
     pub fn extr(&mut self) -> EXTR_W<QINR0_SPEC> {
         EXTR_W::new(self, 7)
     }

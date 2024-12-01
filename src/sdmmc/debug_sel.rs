@@ -34,7 +34,6 @@ where
 impl W {
     #[doc = "Bit 0 - Debug_sel"]
     #[inline(always)]
-    #[must_use]
     pub fn debug_sel(&mut self) -> DEBUG_SEL_W<DEBUG_SEL_SPEC> {
         DEBUG_SEL_W::new(self, 0)
     }

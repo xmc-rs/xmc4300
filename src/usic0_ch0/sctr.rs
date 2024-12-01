@@ -521,49 +521,41 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Shift Direction"]
     #[inline(always)]
-    #[must_use]
     pub fn sdir(&mut self) -> SDIR_W<SCTR_SPEC> {
         SDIR_W::new(self, 0)
     }
     #[doc = "Bit 1 - Passive Data Level"]
     #[inline(always)]
-    #[must_use]
     pub fn pdl(&mut self) -> PDL_W<SCTR_SPEC> {
         PDL_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - Data Shift Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn dsm(&mut self) -> DSM_W<SCTR_SPEC> {
         DSM_W::new(self, 2)
     }
     #[doc = "Bit 4 - Port Control Direction"]
     #[inline(always)]
-    #[must_use]
     pub fn hpcdir(&mut self) -> HPCDIR_W<SCTR_SPEC> {
         HPCDIR_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Data Output Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn docfg(&mut self) -> DOCFG_W<SCTR_SPEC> {
         DOCFG_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Transmission Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn trm(&mut self) -> TRM_W<SCTR_SPEC> {
         TRM_W::new(self, 8)
     }
     #[doc = "Bits 16:21 - Frame Length"]
     #[inline(always)]
-    #[must_use]
     pub fn fle(&mut self) -> FLE_W<SCTR_SPEC> {
         FLE_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - Word Length"]
     #[inline(always)]
-    #[must_use]
     pub fn wle(&mut self) -> WLE_W<SCTR_SPEC> {
         WLE_W::new(self, 24)
     }

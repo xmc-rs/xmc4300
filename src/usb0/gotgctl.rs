@@ -891,67 +891,56 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Session Request"]
     #[inline(always)]
-    #[must_use]
     pub fn ses_req(&mut self) -> SES_REQ_W<GOTGCTL_SPEC> {
         SES_REQ_W::new(self, 1)
     }
     #[doc = "Bit 2 - VBUS Valid Override Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn vbvalid_ov_en(&mut self) -> VBVALID_OV_EN_W<GOTGCTL_SPEC> {
         VBVALID_OV_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - VBUS Valid Override Value"]
     #[inline(always)]
-    #[must_use]
     pub fn vbvalid_ov_val(&mut self) -> VBVALID_OV_VAL_W<GOTGCTL_SPEC> {
         VBVALID_OV_VAL_W::new(self, 3)
     }
     #[doc = "Bit 4 - A-Peripheral Session Valid Override Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn avalid_ov_en(&mut self) -> AVALID_OV_EN_W<GOTGCTL_SPEC> {
         AVALID_OV_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - A-Peripheral Session Valid Override Value"]
     #[inline(always)]
-    #[must_use]
     pub fn avalid_ov_val(&mut self) -> AVALID_OV_VAL_W<GOTGCTL_SPEC> {
         AVALID_OV_VAL_W::new(self, 5)
     }
     #[doc = "Bit 6 - B-Peripheral Session Valid Override Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn bvalid_ov_en(&mut self) -> BVALID_OV_EN_W<GOTGCTL_SPEC> {
         BVALID_OV_EN_W::new(self, 6)
     }
     #[doc = "Bit 7 - B-Peripheral Session Valid Override Value"]
     #[inline(always)]
-    #[must_use]
     pub fn bvalid_ov_val(&mut self) -> BVALID_OV_VAL_W<GOTGCTL_SPEC> {
         BVALID_OV_VAL_W::new(self, 7)
     }
     #[doc = "Bit 9 - HNP Request"]
     #[inline(always)]
-    #[must_use]
     pub fn hnpreq(&mut self) -> HNPREQ_W<GOTGCTL_SPEC> {
         HNPREQ_W::new(self, 9)
     }
     #[doc = "Bit 10 - Host Set HNP Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn hst_set_hnpen(&mut self) -> HST_SET_HNPEN_W<GOTGCTL_SPEC> {
         HST_SET_HNPEN_W::new(self, 10)
     }
     #[doc = "Bit 11 - Device HNP Enabled"]
     #[inline(always)]
-    #[must_use]
     pub fn dev_hnpen(&mut self) -> DEV_HNPEN_W<GOTGCTL_SPEC> {
         DEV_HNPEN_W::new(self, 11)
     }
     #[doc = "Bit 20 - OTG Version"]
     #[inline(always)]
-    #[must_use]
     pub fn otgver(&mut self) -> OTGVER_W<GOTGCTL_SPEC> {
         OTGVER_W::new(self, 20)
     }

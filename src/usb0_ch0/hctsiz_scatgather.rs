@@ -116,19 +116,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Schedule information"]
     #[inline(always)]
-    #[must_use]
     pub fn sched_info(&mut self) -> SCHED_INFO_W<HCTSIZ_SCATGATHER_SPEC> {
         SCHED_INFO_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Number of Transfer Descriptors: 0=1 descriptor, 63=64 descriptors, 1=2 descriptors, 3=4 descriptors, 7=8 descriptors, 15=16 descriptors, 31=32 descriptors, 63=64 descriptors,"]
     #[inline(always)]
-    #[must_use]
     pub fn ntd(&mut self) -> NTD_W<HCTSIZ_SCATGATHER_SPEC> {
         NTD_W::new(self, 8)
     }
     #[doc = "Bits 29:30 - PID"]
     #[inline(always)]
-    #[must_use]
     pub fn pid(&mut self) -> PID_W<HCTSIZ_SCATGATHER_SPEC> {
         PID_W::new(self, 29)
     }

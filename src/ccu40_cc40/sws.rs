@@ -19,49 +19,41 @@ pub type STRPF_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Period match while counting up set"]
     #[inline(always)]
-    #[must_use]
     pub fn spm(&mut self) -> SPM_W<SWS_SPEC> {
         SPM_W::new(self, 0)
     }
     #[doc = "Bit 1 - One match while counting down set"]
     #[inline(always)]
-    #[must_use]
     pub fn som(&mut self) -> SOM_W<SWS_SPEC> {
         SOM_W::new(self, 1)
     }
     #[doc = "Bit 2 - Compare match while counting up set"]
     #[inline(always)]
-    #[must_use]
     pub fn scmu(&mut self) -> SCMU_W<SWS_SPEC> {
         SCMU_W::new(self, 2)
     }
     #[doc = "Bit 3 - Compare match while counting down set"]
     #[inline(always)]
-    #[must_use]
     pub fn scmd(&mut self) -> SCMD_W<SWS_SPEC> {
         SCMD_W::new(self, 3)
     }
     #[doc = "Bit 8 - Event 0 detection set"]
     #[inline(always)]
-    #[must_use]
     pub fn se0a(&mut self) -> SE0A_W<SWS_SPEC> {
         SE0A_W::new(self, 8)
     }
     #[doc = "Bit 9 - Event 1 detection set"]
     #[inline(always)]
-    #[must_use]
     pub fn se1a(&mut self) -> SE1A_W<SWS_SPEC> {
         SE1A_W::new(self, 9)
     }
     #[doc = "Bit 10 - Event 2 detection set"]
     #[inline(always)]
-    #[must_use]
     pub fn se2a(&mut self) -> SE2A_W<SWS_SPEC> {
         SE2A_W::new(self, 10)
     }
     #[doc = "Bit 11 - Trap Flag status set"]
     #[inline(always)]
-    #[must_use]
     pub fn strpf(&mut self) -> STRPF_W<SWS_SPEC> {
         STRPF_W::new(self, 11)
     }

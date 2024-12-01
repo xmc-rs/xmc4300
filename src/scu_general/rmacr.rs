@@ -74,13 +74,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Hibernate Retention Memory Register Update Control"]
     #[inline(always)]
-    #[must_use]
     pub fn rdwr(&mut self) -> RDWR_W<RMACR_SPEC> {
         RDWR_W::new(self, 0)
     }
     #[doc = "Bits 16:19 - Hibernate Retention Memory Register Address Select"]
     #[inline(always)]
-    #[must_use]
     pub fn addr(&mut self) -> ADDR_W<RMACR_SPEC> {
         ADDR_W::new(self, 16)
     }

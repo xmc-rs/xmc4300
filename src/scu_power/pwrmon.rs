@@ -34,19 +34,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Threshold"]
     #[inline(always)]
-    #[must_use]
     pub fn thrs(&mut self) -> THRS_W<PWRMON_SPEC> {
         THRS_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Interval"]
     #[inline(always)]
-    #[must_use]
     pub fn intv(&mut self) -> INTV_W<PWRMON_SPEC> {
         INTV_W::new(self, 8)
     }
     #[doc = "Bit 16 - Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn enb(&mut self) -> ENB_W<PWRMON_SPEC> {
         ENB_W::new(self, 16)
     }

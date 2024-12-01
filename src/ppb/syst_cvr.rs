@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Current Value"]
     #[inline(always)]
-    #[must_use]
     pub fn current(&mut self) -> CURRENT_W<SYST_CVR_SPEC> {
         CURRENT_W::new(self, 0)
     }

@@ -19,49 +19,41 @@ pub type RTRPF_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Period match while counting up clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rpm(&mut self) -> RPM_W<SWR_SPEC> {
         RPM_W::new(self, 0)
     }
     #[doc = "Bit 1 - One match while counting down clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rom(&mut self) -> ROM_W<SWR_SPEC> {
         ROM_W::new(self, 1)
     }
     #[doc = "Bit 2 - Compare match while counting up clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rcmu(&mut self) -> RCMU_W<SWR_SPEC> {
         RCMU_W::new(self, 2)
     }
     #[doc = "Bit 3 - Compare match while counting down clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rcmd(&mut self) -> RCMD_W<SWR_SPEC> {
         RCMD_W::new(self, 3)
     }
     #[doc = "Bit 8 - Event 0 detection clear"]
     #[inline(always)]
-    #[must_use]
     pub fn re0a(&mut self) -> RE0A_W<SWR_SPEC> {
         RE0A_W::new(self, 8)
     }
     #[doc = "Bit 9 - Event 1 detection clear"]
     #[inline(always)]
-    #[must_use]
     pub fn re1a(&mut self) -> RE1A_W<SWR_SPEC> {
         RE1A_W::new(self, 9)
     }
     #[doc = "Bit 10 - Event 2 detection clear"]
     #[inline(always)]
-    #[must_use]
     pub fn re2a(&mut self) -> RE2A_W<SWR_SPEC> {
         RE2A_W::new(self, 10)
     }
     #[doc = "Bit 11 - Trap Flag status clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rtrpf(&mut self) -> RTRPF_W<SWR_SPEC> {
         RTRPF_W::new(self, 11)
     }

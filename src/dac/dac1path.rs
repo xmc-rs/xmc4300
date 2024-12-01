@@ -34,19 +34,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Pattern Number 6 for PATGEN of DAC1"]
     #[inline(always)]
-    #[must_use]
     pub fn pat6(&mut self) -> PAT6_W<DAC1PATH_SPEC> {
         PAT6_W::new(self, 0)
     }
     #[doc = "Bits 5:9 - Pattern Number 7 for PATGEN of DAC1"]
     #[inline(always)]
-    #[must_use]
     pub fn pat7(&mut self) -> PAT7_W<DAC1PATH_SPEC> {
         PAT7_W::new(self, 5)
     }
     #[doc = "Bits 10:14 - Pattern Number 8 for PATGEN of DAC1"]
     #[inline(always)]
-    #[must_use]
     pub fn pat8(&mut self) -> PAT8_W<DAC1PATH_SPEC> {
         PAT8_W::new(self, 10)
     }

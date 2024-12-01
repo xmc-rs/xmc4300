@@ -74,13 +74,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - USB Clock Divider Value"]
     #[inline(always)]
-    #[must_use]
     pub fn usbdiv(&mut self) -> USBDIV_W<USBCLKCR_SPEC> {
         USBDIV_W::new(self, 0)
     }
     #[doc = "Bit 16 - USB Clock Selection Value"]
     #[inline(always)]
-    #[must_use]
     pub fn usbsel(&mut self) -> USBSEL_W<USBCLKCR_SPEC> {
         USBSEL_W::new(self, 16)
     }

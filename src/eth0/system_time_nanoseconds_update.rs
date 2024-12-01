@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:30 - Timestamp Sub Second"]
     #[inline(always)]
-    #[must_use]
     pub fn tsss(&mut self) -> TSSS_W<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC> {
         TSSS_W::new(self, 0)
     }
     #[doc = "Bit 31 - Add or subtract time"]
     #[inline(always)]
-    #[must_use]
     pub fn addsub(&mut self) -> ADDSUB_W<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC> {
         ADDSUB_W::new(self, 31)
     }

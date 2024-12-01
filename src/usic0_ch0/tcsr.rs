@@ -889,67 +889,56 @@ impl R {
 impl W {
     #[doc = "Bit 0 - WLE Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn wlemd(&mut self) -> WLEMD_W<TCSR_SPEC> {
         WLEMD_W::new(self, 0)
     }
     #[doc = "Bit 1 - Select Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn selmd(&mut self) -> SELMD_W<TCSR_SPEC> {
         SELMD_W::new(self, 1)
     }
     #[doc = "Bit 2 - FLE Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn flemd(&mut self) -> FLEMD_W<TCSR_SPEC> {
         FLEMD_W::new(self, 2)
     }
     #[doc = "Bit 3 - WA Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn wamd(&mut self) -> WAMD_W<TCSR_SPEC> {
         WAMD_W::new(self, 3)
     }
     #[doc = "Bit 4 - Hardware Port Control Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn hpcmd(&mut self) -> HPCMD_W<TCSR_SPEC> {
         HPCMD_W::new(self, 4)
     }
     #[doc = "Bit 5 - Start Of Frame"]
     #[inline(always)]
-    #[must_use]
     pub fn sof(&mut self) -> SOF_W<TCSR_SPEC> {
         SOF_W::new(self, 5)
     }
     #[doc = "Bit 6 - End Of Frame"]
     #[inline(always)]
-    #[must_use]
     pub fn eof(&mut self) -> EOF_W<TCSR_SPEC> {
         EOF_W::new(self, 6)
     }
     #[doc = "Bit 8 - TBUF Data Single Shot Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn tdssm(&mut self) -> TDSSM_W<TCSR_SPEC> {
         TDSSM_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - TBUF Data Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tden(&mut self) -> TDEN_W<TCSR_SPEC> {
         TDEN_W::new(self, 10)
     }
     #[doc = "Bit 12 - TBUF Data Valid Trigger"]
     #[inline(always)]
-    #[must_use]
     pub fn tdvtr(&mut self) -> TDVTR_W<TCSR_SPEC> {
         TDVTR_W::new(self, 12)
     }
     #[doc = "Bit 13 - Word Address"]
     #[inline(always)]
-    #[must_use]
     pub fn wa(&mut self) -> WA_W<TCSR_SPEC> {
         WA_W::new(self, 13)
     }

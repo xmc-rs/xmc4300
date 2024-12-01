@@ -526,61 +526,51 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Clock Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn clksel(&mut self) -> CLKSEL_W<BRG_SPEC> {
         CLKSEL_W::new(self, 0)
     }
     #[doc = "Bit 3 - Timing Measurement Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tmen(&mut self) -> TMEN_W<BRG_SPEC> {
         TMEN_W::new(self, 3)
     }
     #[doc = "Bit 4 - Enable 2:1 Divider for fPPP"]
     #[inline(always)]
-    #[must_use]
     pub fn pppen(&mut self) -> PPPEN_W<BRG_SPEC> {
         PPPEN_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Input Selection for CTQ"]
     #[inline(always)]
-    #[must_use]
     pub fn ctqsel(&mut self) -> CTQSEL_W<BRG_SPEC> {
         CTQSEL_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Pre-Divider for Time Quanta Counter"]
     #[inline(always)]
-    #[must_use]
     pub fn pctq(&mut self) -> PCTQ_W<BRG_SPEC> {
         PCTQ_W::new(self, 8)
     }
     #[doc = "Bits 10:14 - Denominator for Time Quanta Counter"]
     #[inline(always)]
-    #[must_use]
     pub fn dctq(&mut self) -> DCTQ_W<BRG_SPEC> {
         DCTQ_W::new(self, 10)
     }
     #[doc = "Bits 16:25 - Divider Mode: Divider Factor to Generate fPDIV"]
     #[inline(always)]
-    #[must_use]
     pub fn pdiv(&mut self) -> PDIV_W<BRG_SPEC> {
         PDIV_W::new(self, 16)
     }
     #[doc = "Bit 28 - Shift Clock Output Select"]
     #[inline(always)]
-    #[must_use]
     pub fn sclkosel(&mut self) -> SCLKOSEL_W<BRG_SPEC> {
         SCLKOSEL_W::new(self, 28)
     }
     #[doc = "Bit 29 - Master Clock Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn mclkcfg(&mut self) -> MCLKCFG_W<BRG_SPEC> {
         MCLKCFG_W::new(self, 29)
     }
     #[doc = "Bits 30:31 - Shift Clock Output Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn sclkcfg(&mut self) -> SCLKCFG_W<BRG_SPEC> {
         SCLKCFG_W::new(self, 30)
     }

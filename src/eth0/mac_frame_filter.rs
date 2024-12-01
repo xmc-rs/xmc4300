@@ -129,73 +129,61 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Promiscuous Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn pr(&mut self) -> PR_W<MAC_FRAME_FILTER_SPEC> {
         PR_W::new(self, 0)
     }
     #[doc = "Bit 1 - Hash Unicast"]
     #[inline(always)]
-    #[must_use]
     pub fn huc(&mut self) -> HUC_W<MAC_FRAME_FILTER_SPEC> {
         HUC_W::new(self, 1)
     }
     #[doc = "Bit 2 - Hash Multicast"]
     #[inline(always)]
-    #[must_use]
     pub fn hmc(&mut self) -> HMC_W<MAC_FRAME_FILTER_SPEC> {
         HMC_W::new(self, 2)
     }
     #[doc = "Bit 3 - DA Inverse Filtering"]
     #[inline(always)]
-    #[must_use]
     pub fn daif(&mut self) -> DAIF_W<MAC_FRAME_FILTER_SPEC> {
         DAIF_W::new(self, 3)
     }
     #[doc = "Bit 4 - Pass All Multicast"]
     #[inline(always)]
-    #[must_use]
     pub fn pm(&mut self) -> PM_W<MAC_FRAME_FILTER_SPEC> {
         PM_W::new(self, 4)
     }
     #[doc = "Bit 5 - Disable Broadcast Frames"]
     #[inline(always)]
-    #[must_use]
     pub fn dbf(&mut self) -> DBF_W<MAC_FRAME_FILTER_SPEC> {
         DBF_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Pass Control Frames"]
     #[inline(always)]
-    #[must_use]
     pub fn pcf(&mut self) -> PCF_W<MAC_FRAME_FILTER_SPEC> {
         PCF_W::new(self, 6)
     }
     #[doc = "Bit 8 - SA Inverse Filtering"]
     #[inline(always)]
-    #[must_use]
     pub fn saif(&mut self) -> SAIF_W<MAC_FRAME_FILTER_SPEC> {
         SAIF_W::new(self, 8)
     }
     #[doc = "Bit 9 - Source Address Filter Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn saf(&mut self) -> SAF_W<MAC_FRAME_FILTER_SPEC> {
         SAF_W::new(self, 9)
     }
     #[doc = "Bit 10 - Hash or Perfect Filter"]
     #[inline(always)]
-    #[must_use]
     pub fn hpf(&mut self) -> HPF_W<MAC_FRAME_FILTER_SPEC> {
         HPF_W::new(self, 10)
     }
     #[doc = "Bit 16 - VLAN Tag Filter Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn vtfe(&mut self) -> VTFE_W<MAC_FRAME_FILTER_SPEC> {
         VTFE_W::new(self, 16)
     }
     #[doc = "Bit 31 - Receive All"]
     #[inline(always)]
-    #[must_use]
     pub fn ra(&mut self) -> RA_W<MAC_FRAME_FILTER_SPEC> {
         RA_W::new(self, 31)
     }

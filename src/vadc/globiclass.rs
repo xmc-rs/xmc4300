@@ -207,25 +207,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Sample Time Control for Standard Conversions"]
     #[inline(always)]
-    #[must_use]
     pub fn stcs(&mut self) -> STCS_W<GLOBICLASS_SPEC> {
         STCS_W::new(self, 0)
     }
     #[doc = "Bits 8:10 - Conversion Mode for Standard Conversions"]
     #[inline(always)]
-    #[must_use]
     pub fn cms(&mut self) -> CMS_W<GLOBICLASS_SPEC> {
         CMS_W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Sample Time Control for EMUX Conversions"]
     #[inline(always)]
-    #[must_use]
     pub fn stce(&mut self) -> STCE_W<GLOBICLASS_SPEC> {
         STCE_W::new(self, 16)
     }
     #[doc = "Bits 24:26 - Conversion Mode for EMUX Conversions"]
     #[inline(always)]
-    #[must_use]
     pub fn cme(&mut self) -> CME_W<GLOBICLASS_SPEC> {
         CME_W::new(self, 24)
     }

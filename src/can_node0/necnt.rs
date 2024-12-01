@@ -116,19 +116,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Receive Error Counter"]
     #[inline(always)]
-    #[must_use]
     pub fn rec(&mut self) -> REC_W<NECNT_SPEC> {
         REC_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Transmit Error Counter"]
     #[inline(always)]
-    #[must_use]
     pub fn tec(&mut self) -> TEC_W<NECNT_SPEC> {
         TEC_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Error Warning Level"]
     #[inline(always)]
-    #[must_use]
     pub fn ewrnlvl(&mut self) -> EWRNLVL_W<NECNT_SPEC> {
         EWRNLVL_W::new(self, 16)
     }

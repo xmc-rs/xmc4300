@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Transfer Block Size"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_block_size(&mut self) -> TX_BLOCK_SIZE_W<BLOCK_SIZE_SPEC> {
         TX_BLOCK_SIZE_W::new(self, 0)
     }
     #[doc = "Bit 15 - Transfer Block Size 12th bit."]
     #[inline(always)]
-    #[must_use]
     pub fn tx_block_size_12(&mut self) -> TX_BLOCK_SIZE_12_W<BLOCK_SIZE_SPEC> {
         TX_BLOCK_SIZE_12_W::new(self, 15)
     }

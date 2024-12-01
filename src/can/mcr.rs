@@ -120,13 +120,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Baud Rate Logic Clock Select"]
     #[inline(always)]
-    #[must_use]
     pub fn clksel(&mut self) -> CLKSEL_W<MCR_SPEC> {
         CLKSEL_W::new(self, 0)
     }
     #[doc = "Bits 12:15 - Message Pending Selector"]
     #[inline(always)]
-    #[must_use]
     pub fn mpsel(&mut self) -> MPSEL_W<MCR_SPEC> {
         MPSEL_W::new(self, 12)
     }

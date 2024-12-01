@@ -471,49 +471,41 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Assignment for Channel 0"]
     #[inline(always)]
-    #[must_use]
     pub fn assch0(&mut self) -> ASSCH0_W<CHASS_SPEC> {
         ASSCH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Assignment for Channel 1"]
     #[inline(always)]
-    #[must_use]
     pub fn assch1(&mut self) -> ASSCH1_W<CHASS_SPEC> {
         ASSCH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Assignment for Channel 2"]
     #[inline(always)]
-    #[must_use]
     pub fn assch2(&mut self) -> ASSCH2_W<CHASS_SPEC> {
         ASSCH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Assignment for Channel 3"]
     #[inline(always)]
-    #[must_use]
     pub fn assch3(&mut self) -> ASSCH3_W<CHASS_SPEC> {
         ASSCH3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Assignment for Channel 4"]
     #[inline(always)]
-    #[must_use]
     pub fn assch4(&mut self) -> ASSCH4_W<CHASS_SPEC> {
         ASSCH4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Assignment for Channel 5"]
     #[inline(always)]
-    #[must_use]
     pub fn assch5(&mut self) -> ASSCH5_W<CHASS_SPEC> {
         ASSCH5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Assignment for Channel 6"]
     #[inline(always)]
-    #[must_use]
     pub fn assch6(&mut self) -> ASSCH6_W<CHASS_SPEC> {
         ASSCH6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Assignment for Channel 7"]
     #[inline(always)]
-    #[must_use]
     pub fn assch7(&mut self) -> ASSCH7_W<CHASS_SPEC> {
         ASSCH7_W::new(self, 7)
     }

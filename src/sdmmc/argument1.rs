@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Command Argument"]
     #[inline(always)]
-    #[must_use]
     pub fn argument1(&mut self) -> ARGUMENT1_W<ARGUMENT1_SPEC> {
         ARGUMENT1_W::new(self, 0)
     }

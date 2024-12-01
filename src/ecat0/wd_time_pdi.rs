@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Watchdog Time PDI"]
     #[inline(always)]
-    #[must_use]
     pub fn wd_time_pdi(&mut self) -> WD_TIME_PDI_W<WD_TIME_PDI_SPEC> {
         WD_TIME_PDI_W::new(self, 0)
     }

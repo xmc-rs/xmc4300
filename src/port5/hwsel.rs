@@ -1255,97 +1255,81 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Port n Pin Hardware Select Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn hw0(&mut self) -> HW0_W<HWSEL_SPEC> {
         HW0_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Port n Pin Hardware Select Bit 1"]
     #[inline(always)]
-    #[must_use]
     pub fn hw1(&mut self) -> HW1_W<HWSEL_SPEC> {
         HW1_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Port n Pin Hardware Select Bit 2"]
     #[inline(always)]
-    #[must_use]
     pub fn hw2(&mut self) -> HW2_W<HWSEL_SPEC> {
         HW2_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Port n Pin Hardware Select Bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn hw3(&mut self) -> HW3_W<HWSEL_SPEC> {
         HW3_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Port n Pin Hardware Select Bit 4"]
     #[inline(always)]
-    #[must_use]
     pub fn hw4(&mut self) -> HW4_W<HWSEL_SPEC> {
         HW4_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Port n Pin Hardware Select Bit 5"]
     #[inline(always)]
-    #[must_use]
     pub fn hw5(&mut self) -> HW5_W<HWSEL_SPEC> {
         HW5_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Port n Pin Hardware Select Bit 6"]
     #[inline(always)]
-    #[must_use]
     pub fn hw6(&mut self) -> HW6_W<HWSEL_SPEC> {
         HW6_W::new(self, 12)
     }
     #[doc = "Bits 14:15 - Port n Pin Hardware Select Bit 7"]
     #[inline(always)]
-    #[must_use]
     pub fn hw7(&mut self) -> HW7_W<HWSEL_SPEC> {
         HW7_W::new(self, 14)
     }
     #[doc = "Bits 16:17 - Port n Pin Hardware Select Bit 8"]
     #[inline(always)]
-    #[must_use]
     pub fn hw8(&mut self) -> HW8_W<HWSEL_SPEC> {
         HW8_W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Port n Pin Hardware Select Bit 9"]
     #[inline(always)]
-    #[must_use]
     pub fn hw9(&mut self) -> HW9_W<HWSEL_SPEC> {
         HW9_W::new(self, 18)
     }
     #[doc = "Bits 20:21 - Port n Pin Hardware Select Bit 10"]
     #[inline(always)]
-    #[must_use]
     pub fn hw10(&mut self) -> HW10_W<HWSEL_SPEC> {
         HW10_W::new(self, 20)
     }
     #[doc = "Bits 22:23 - Port n Pin Hardware Select Bit 11"]
     #[inline(always)]
-    #[must_use]
     pub fn hw11(&mut self) -> HW11_W<HWSEL_SPEC> {
         HW11_W::new(self, 22)
     }
     #[doc = "Bits 24:25 - Port n Pin Hardware Select Bit 12"]
     #[inline(always)]
-    #[must_use]
     pub fn hw12(&mut self) -> HW12_W<HWSEL_SPEC> {
         HW12_W::new(self, 24)
     }
     #[doc = "Bits 26:27 - Port n Pin Hardware Select Bit 13"]
     #[inline(always)]
-    #[must_use]
     pub fn hw13(&mut self) -> HW13_W<HWSEL_SPEC> {
         HW13_W::new(self, 26)
     }
     #[doc = "Bits 28:29 - Port n Pin Hardware Select Bit 14"]
     #[inline(always)]
-    #[must_use]
     pub fn hw14(&mut self) -> HW14_W<HWSEL_SPEC> {
         HW14_W::new(self, 28)
     }
     #[doc = "Bits 30:31 - Port n Pin Hardware Select Bit 15"]
     #[inline(always)]
-    #[must_use]
     pub fn hw15(&mut self) -> HW15_W<HWSEL_SPEC> {
         HW15_W::new(self, 30)
     }

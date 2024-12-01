@@ -52,31 +52,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - MII Busy"]
     #[inline(always)]
-    #[must_use]
     pub fn mb(&mut self) -> MB_W<GMII_ADDRESS_SPEC> {
         MB_W::new(self, 0)
     }
     #[doc = "Bit 1 - MII Write"]
     #[inline(always)]
-    #[must_use]
     pub fn mw(&mut self) -> MW_W<GMII_ADDRESS_SPEC> {
         MW_W::new(self, 1)
     }
     #[doc = "Bits 2:5 - CSR Clock Range"]
     #[inline(always)]
-    #[must_use]
     pub fn cr(&mut self) -> CR_W<GMII_ADDRESS_SPEC> {
         CR_W::new(self, 2)
     }
     #[doc = "Bits 6:10 - MII Register"]
     #[inline(always)]
-    #[must_use]
     pub fn mr(&mut self) -> MR_W<GMII_ADDRESS_SPEC> {
         MR_W::new(self, 6)
     }
     #[doc = "Bits 11:15 - Physical Layer Address"]
     #[inline(always)]
-    #[must_use]
     pub fn pa(&mut self) -> PA_W<GMII_ADDRESS_SPEC> {
         PA_W::new(self, 11)
     }

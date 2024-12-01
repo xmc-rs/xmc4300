@@ -65,7 +65,6 @@ impl R {
 impl W {
     #[doc = "Bit 0 - PB Clock Divider Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn pbdiv(&mut self) -> PBDIV_W<PBCLKCR_SPEC> {
         PBDIV_W::new(self, 0)
     }

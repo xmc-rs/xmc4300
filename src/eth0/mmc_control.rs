@@ -70,43 +70,36 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Counters Reset"]
     #[inline(always)]
-    #[must_use]
     pub fn cntrst(&mut self) -> CNTRST_W<MMC_CONTROL_SPEC> {
         CNTRST_W::new(self, 0)
     }
     #[doc = "Bit 1 - Counters Stop Rollover"]
     #[inline(always)]
-    #[must_use]
     pub fn cntstopro(&mut self) -> CNTSTOPRO_W<MMC_CONTROL_SPEC> {
         CNTSTOPRO_W::new(self, 1)
     }
     #[doc = "Bit 2 - Reset on Read"]
     #[inline(always)]
-    #[must_use]
     pub fn rstonrd(&mut self) -> RSTONRD_W<MMC_CONTROL_SPEC> {
         RSTONRD_W::new(self, 2)
     }
     #[doc = "Bit 3 - MMC Counter Freeze"]
     #[inline(always)]
-    #[must_use]
     pub fn cntfreez(&mut self) -> CNTFREEZ_W<MMC_CONTROL_SPEC> {
         CNTFREEZ_W::new(self, 3)
     }
     #[doc = "Bit 4 - Counters Preset"]
     #[inline(always)]
-    #[must_use]
     pub fn cntprst(&mut self) -> CNTPRST_W<MMC_CONTROL_SPEC> {
         CNTPRST_W::new(self, 4)
     }
     #[doc = "Bit 5 - Full-Half Preset"]
     #[inline(always)]
-    #[must_use]
     pub fn cntprstlvl(&mut self) -> CNTPRSTLVL_W<MMC_CONTROL_SPEC> {
         CNTPRSTLVL_W::new(self, 5)
     }
     #[doc = "Bit 8 - Update MMC Counters for Dropped Broadcast Frames"]
     #[inline(always)]
-    #[must_use]
     pub fn ucdbc(&mut self) -> UCDBC_W<MMC_CONTROL_SPEC> {
         UCDBC_W::new(self, 8)
     }

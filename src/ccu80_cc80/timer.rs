@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Timer Value"]
     #[inline(always)]
-    #[must_use]
     pub fn tval(&mut self) -> TVAL_W<TIMER_SPEC> {
         TVAL_W::new(self, 0)
     }

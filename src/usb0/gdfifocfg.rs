@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - GDFIFOCfg"]
     #[inline(always)]
-    #[must_use]
     pub fn gdfifocfg(&mut self) -> GDFIFOCFG_W<GDFIFOCFG_SPEC> {
         GDFIFOCFG_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - EPInfoBaseAddr"]
     #[inline(always)]
-    #[must_use]
     pub fn epinfo_base_addr(&mut self) -> EPINFO_BASE_ADDR_W<GDFIFOCFG_SPEC> {
         EPINFO_BASE_ADDR_W::new(self, 16)
     }

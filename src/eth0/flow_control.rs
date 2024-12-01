@@ -70,43 +70,36 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Flow Control Busy or Backpressure Activate"]
     #[inline(always)]
-    #[must_use]
     pub fn fca_bpa(&mut self) -> FCA_BPA_W<FLOW_CONTROL_SPEC> {
         FCA_BPA_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmit Flow Control Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tfe(&mut self) -> TFE_W<FLOW_CONTROL_SPEC> {
         TFE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Receive Flow Control Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rfe(&mut self) -> RFE_W<FLOW_CONTROL_SPEC> {
         RFE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Unicast Pause Frame Detect"]
     #[inline(always)]
-    #[must_use]
     pub fn up(&mut self) -> UP_W<FLOW_CONTROL_SPEC> {
         UP_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Pause Low Threshold"]
     #[inline(always)]
-    #[must_use]
     pub fn plt(&mut self) -> PLT_W<FLOW_CONTROL_SPEC> {
         PLT_W::new(self, 4)
     }
     #[doc = "Bit 7 - Disable Zero-Quanta Pause"]
     #[inline(always)]
-    #[must_use]
     pub fn dzpq(&mut self) -> DZPQ_W<FLOW_CONTROL_SPEC> {
         DZPQ_W::new(self, 7)
     }
     #[doc = "Bits 16:31 - Pause Time"]
     #[inline(always)]
-    #[must_use]
     pub fn pt(&mut self) -> PT_W<FLOW_CONTROL_SPEC> {
         PT_W::new(self, 16)
     }

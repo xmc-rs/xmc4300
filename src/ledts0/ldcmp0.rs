@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn cmp_ld0(&mut self) -> CMP_LD0_W<LDCMP0_SPEC> {
         CMP_LD0_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn cmp_ld1(&mut self) -> CMP_LD1_W<LDCMP0_SPEC> {
         CMP_LD1_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn cmp_ld2(&mut self) -> CMP_LD2_W<LDCMP0_SPEC> {
         CMP_LD2_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
-    #[must_use]
     pub fn cmp_ld3(&mut self) -> CMP_LD3_W<LDCMP0_SPEC> {
         CMP_LD3_W::new(self, 24)
     }

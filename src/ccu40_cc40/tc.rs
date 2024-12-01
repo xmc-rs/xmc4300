@@ -1129,109 +1129,91 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Timer Counting Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn tcm(&mut self) -> TCM_W<TC_SPEC> {
         TCM_W::new(self, 0)
     }
     #[doc = "Bit 1 - Timer Single Shot Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn tssm(&mut self) -> TSSM_W<TC_SPEC> {
         TSSM_W::new(self, 1)
     }
     #[doc = "Bit 2 - Shadow Transfer on Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn clst(&mut self) -> CLST_W<TC_SPEC> {
         CLST_W::new(self, 2)
     }
     #[doc = "Bit 4 - Extended Capture Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn ecm(&mut self) -> ECM_W<TC_SPEC> {
         ECM_W::new(self, 4)
     }
     #[doc = "Bits 5:6 - Clear on Capture Control"]
     #[inline(always)]
-    #[must_use]
     pub fn capc(&mut self) -> CAPC_W<TC_SPEC> {
         CAPC_W::new(self, 5)
     }
     #[doc = "Bits 8:9 - Extended Stop Function Control"]
     #[inline(always)]
-    #[must_use]
     pub fn endm(&mut self) -> ENDM_W<TC_SPEC> {
         ENDM_W::new(self, 8)
     }
     #[doc = "Bit 10 - Extended Start Function Control"]
     #[inline(always)]
-    #[must_use]
     pub fn strm(&mut self) -> STRM_W<TC_SPEC> {
         STRM_W::new(self, 10)
     }
     #[doc = "Bit 11 - Equal Capture Event enable"]
     #[inline(always)]
-    #[must_use]
     pub fn sce(&mut self) -> SCE_W<TC_SPEC> {
         SCE_W::new(self, 11)
     }
     #[doc = "Bit 12 - Continuous Capture Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ccs(&mut self) -> CCS_W<TC_SPEC> {
         CCS_W::new(self, 12)
     }
     #[doc = "Bits 13:14 - Dither Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dithe(&mut self) -> DITHE_W<TC_SPEC> {
         DITHE_W::new(self, 13)
     }
     #[doc = "Bit 15 - Dither input selector"]
     #[inline(always)]
-    #[must_use]
     pub fn dim(&mut self) -> DIM_W<TC_SPEC> {
         DIM_W::new(self, 15)
     }
     #[doc = "Bit 16 - Floating Prescaler enable"]
     #[inline(always)]
-    #[must_use]
     pub fn fpe(&mut self) -> FPE_W<TC_SPEC> {
         FPE_W::new(self, 16)
     }
     #[doc = "Bit 17 - TRAP enable"]
     #[inline(always)]
-    #[must_use]
     pub fn trape(&mut self) -> TRAPE_W<TC_SPEC> {
         TRAPE_W::new(self, 17)
     }
     #[doc = "Bit 21 - TRAP Synchronization Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn trpse(&mut self) -> TRPSE_W<TC_SPEC> {
         TRPSE_W::new(self, 21)
     }
     #[doc = "Bit 22 - TRAP State Clear Control"]
     #[inline(always)]
-    #[must_use]
     pub fn trpsw(&mut self) -> TRPSW_W<TC_SPEC> {
         TRPSW_W::new(self, 22)
     }
     #[doc = "Bit 23 - External Modulation Synchronization"]
     #[inline(always)]
-    #[must_use]
     pub fn ems(&mut self) -> EMS_W<TC_SPEC> {
         EMS_W::new(self, 23)
     }
     #[doc = "Bit 24 - External Modulation Type"]
     #[inline(always)]
-    #[must_use]
     pub fn emt(&mut self) -> EMT_W<TC_SPEC> {
         EMT_W::new(self, 24)
     }
     #[doc = "Bit 25 - Multi Channel Mode Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mcme(&mut self) -> MCME_W<TC_SPEC> {
         MCME_W::new(self, 25)
     }

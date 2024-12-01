@@ -446,43 +446,36 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Dead Time Enable for Channel 1"]
     #[inline(always)]
-    #[must_use]
     pub fn dte1(&mut self) -> DTE1_W<DTC_SPEC> {
         DTE1_W::new(self, 0)
     }
     #[doc = "Bit 1 - Dead Time Enable for Channel 2"]
     #[inline(always)]
-    #[must_use]
     pub fn dte2(&mut self) -> DTE2_W<DTC_SPEC> {
         DTE2_W::new(self, 1)
     }
     #[doc = "Bit 2 - Dead Time Enable for CC8yST1"]
     #[inline(always)]
-    #[must_use]
     pub fn dcen1(&mut self) -> DCEN1_W<DTC_SPEC> {
         DCEN1_W::new(self, 2)
     }
     #[doc = "Bit 3 - Dead Time Enable for inverted CC8yST1"]
     #[inline(always)]
-    #[must_use]
     pub fn dcen2(&mut self) -> DCEN2_W<DTC_SPEC> {
         DCEN2_W::new(self, 3)
     }
     #[doc = "Bit 4 - Dead Time Enable for CC8yST2"]
     #[inline(always)]
-    #[must_use]
     pub fn dcen3(&mut self) -> DCEN3_W<DTC_SPEC> {
         DCEN3_W::new(self, 4)
     }
     #[doc = "Bit 5 - Dead Time Enable for inverted CC8yST2"]
     #[inline(always)]
-    #[must_use]
     pub fn dcen4(&mut self) -> DCEN4_W<DTC_SPEC> {
         DCEN4_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Dead Time clock control"]
     #[inline(always)]
-    #[must_use]
     pub fn dtcc(&mut self) -> DTCC_W<DTC_SPEC> {
         DTCC_W::new(self, 6)
     }

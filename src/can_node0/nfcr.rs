@@ -232,31 +232,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - CAN Frame Counter"]
     #[inline(always)]
-    #[must_use]
     pub fn cfc(&mut self) -> CFC_W<NFCR_SPEC> {
         CFC_W::new(self, 0)
     }
     #[doc = "Bits 16:18 - CAN Frame Count Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn cfsel(&mut self) -> CFSEL_W<NFCR_SPEC> {
         CFSEL_W::new(self, 16)
     }
     #[doc = "Bits 19:20 - CAN Frame Counter Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn cfmod(&mut self) -> CFMOD_W<NFCR_SPEC> {
         CFMOD_W::new(self, 19)
     }
     #[doc = "Bit 22 - CAN Frame Count Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cfcie(&mut self) -> CFCIE_W<NFCR_SPEC> {
         CFCIE_W::new(self, 22)
     }
     #[doc = "Bit 23 - CAN Frame Counter Overflow Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn cfcov(&mut self) -> CFCOV_W<NFCR_SPEC> {
         CFCOV_W::new(self, 23)
     }

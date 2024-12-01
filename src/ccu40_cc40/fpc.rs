@@ -23,7 +23,6 @@ impl R {
 impl W {
     #[doc = "Bits 8:11 - Actual Prescaler Value"]
     #[inline(always)]
-    #[must_use]
     pub fn pval(&mut self) -> PVAL_W<FPC_SPEC> {
         PVAL_W::new(self, 8)
     }

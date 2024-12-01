@@ -143,13 +143,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Result of most recent conversion"]
     #[inline(always)]
-    #[must_use]
     pub fn result(&mut self) -> RESULT_W<GLOBRES_SPEC> {
         RESULT_W::new(self, 0)
     }
     #[doc = "Bit 31 - Valid Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn vf(&mut self) -> VF_W<GLOBRES_SPEC> {
         VF_W::new(self, 31)
     }

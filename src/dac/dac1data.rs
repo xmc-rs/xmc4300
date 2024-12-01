@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - DAC1 Data Bits"]
     #[inline(always)]
-    #[must_use]
     pub fn data1(&mut self) -> DATA1_W<DAC1DATA_SPEC> {
         DATA1_W::new(self, 0)
     }

@@ -468,91 +468,76 @@ where
 impl W {
     #[doc = "Bit 0 - WDT pre-warning Interrupt Set"]
     #[inline(always)]
-    #[must_use]
     pub fn prwarn(&mut self) -> PRWARN_W<SRSET_SPEC> {
         PRWARN_W::new(self, 0)
     }
     #[doc = "Bit 1 - RTC Periodic Interrupt Set"]
     #[inline(always)]
-    #[must_use]
     pub fn pi(&mut self) -> PI_W<SRSET_SPEC> {
         PI_W::new(self, 1)
     }
     #[doc = "Bit 2 - RTC Alarm Interrupt Set"]
     #[inline(always)]
-    #[must_use]
     pub fn ai(&mut self) -> AI_W<SRSET_SPEC> {
         AI_W::new(self, 2)
     }
     #[doc = "Bit 3 - DLR Request Overrun Interrupt Set"]
     #[inline(always)]
-    #[must_use]
     pub fn dlrovr(&mut self) -> DLROVR_W<SRSET_SPEC> {
         DLROVR_W::new(self, 3)
     }
     #[doc = "Bit 17 - HDCRCLR Mirror Register Update Set"]
     #[inline(always)]
-    #[must_use]
     pub fn hdcrclr(&mut self) -> HDCRCLR_W<SRSET_SPEC> {
         HDCRCLR_W::new(self, 17)
     }
     #[doc = "Bit 18 - HDCRSET Mirror Register Update Set"]
     #[inline(always)]
-    #[must_use]
     pub fn hdcrset(&mut self) -> HDCRSET_W<SRSET_SPEC> {
         HDCRSET_W::new(self, 18)
     }
     #[doc = "Bit 19 - HDCR Mirror Register Update Set"]
     #[inline(always)]
-    #[must_use]
     pub fn hdcr(&mut self) -> HDCR_W<SRSET_SPEC> {
         HDCR_W::new(self, 19)
     }
     #[doc = "Bit 21 - OSCSICTRL Mirror Register Update Set"]
     #[inline(always)]
-    #[must_use]
     pub fn oscsictrl(&mut self) -> OSCSICTRL_W<SRSET_SPEC> {
         OSCSICTRL_W::new(self, 21)
     }
     #[doc = "Bit 23 - OSCULCTRL Mirror Register Update Set"]
     #[inline(always)]
-    #[must_use]
     pub fn osculctrl(&mut self) -> OSCULCTRL_W<SRSET_SPEC> {
         OSCULCTRL_W::new(self, 23)
     }
     #[doc = "Bit 24 - RTC CTR Mirror Register Update Set"]
     #[inline(always)]
-    #[must_use]
     pub fn rtc_ctr(&mut self) -> RTC_CTR_W<SRSET_SPEC> {
         RTC_CTR_W::new(self, 24)
     }
     #[doc = "Bit 25 - RTC ATIM0 Mirror Register Update Set"]
     #[inline(always)]
-    #[must_use]
     pub fn rtc_atim0(&mut self) -> RTC_ATIM0_W<SRSET_SPEC> {
         RTC_ATIM0_W::new(self, 25)
     }
     #[doc = "Bit 26 - RTC ATIM1 Mirror Register Update Set"]
     #[inline(always)]
-    #[must_use]
     pub fn rtc_atim1(&mut self) -> RTC_ATIM1_W<SRSET_SPEC> {
         RTC_ATIM1_W::new(self, 26)
     }
     #[doc = "Bit 27 - RTC TIM0 Mirror Register Update Set"]
     #[inline(always)]
-    #[must_use]
     pub fn rtc_tim0(&mut self) -> RTC_TIM0_W<SRSET_SPEC> {
         RTC_TIM0_W::new(self, 27)
     }
     #[doc = "Bit 28 - RTC TIM1 Mirror Register Update Set"]
     #[inline(always)]
-    #[must_use]
     pub fn rtc_tim1(&mut self) -> RTC_TIM1_W<SRSET_SPEC> {
         RTC_TIM1_W::new(self, 28)
     }
     #[doc = "Bit 29 - Retention Memory Mirror Register Update Set"]
     #[inline(always)]
-    #[must_use]
     pub fn rmx(&mut self) -> RMX_W<SRSET_SPEC> {
         RMX_W::new(self, 29)
     }

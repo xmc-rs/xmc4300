@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CRC Mismatch Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn cmf(&mut self) -> CMF_W<STS_SPEC> {
         CMF_W::new(self, 0)
     }
     #[doc = "Bit 1 - Configuration Error Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn cef(&mut self) -> CEF_W<STS_SPEC> {
         CEF_W::new(self, 1)
     }
     #[doc = "Bit 2 - Length Error Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn lef(&mut self) -> LEF_W<STS_SPEC> {
         LEF_W::new(self, 2)
     }
     #[doc = "Bit 3 - Bus Error Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn bef(&mut self) -> BEF_W<STS_SPEC> {
         BEF_W::new(self, 3)
     }

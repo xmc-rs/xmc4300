@@ -304,37 +304,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Device Speed"]
     #[inline(always)]
-    #[must_use]
     pub fn dev_spd(&mut self) -> DEV_SPD_W<DCFG_SPEC> {
         DEV_SPD_W::new(self, 0)
     }
     #[doc = "Bit 2 - Non-Zero-Length Status OUT Handshake"]
     #[inline(always)]
-    #[must_use]
     pub fn nzsts_outhshk(&mut self) -> NZSTS_OUTHSHK_W<DCFG_SPEC> {
         NZSTS_OUTHSHK_W::new(self, 2)
     }
     #[doc = "Bits 4:10 - Device Address"]
     #[inline(always)]
-    #[must_use]
     pub fn dev_addr(&mut self) -> DEV_ADDR_W<DCFG_SPEC> {
         DEV_ADDR_W::new(self, 4)
     }
     #[doc = "Bits 11:12 - Periodic Frame Interval"]
     #[inline(always)]
-    #[must_use]
     pub fn per_fr_int(&mut self) -> PER_FR_INT_W<DCFG_SPEC> {
         PER_FR_INT_W::new(self, 11)
     }
     #[doc = "Bit 23 - Enable Scatter/Gather DMA in Device mode."]
     #[inline(always)]
-    #[must_use]
     pub fn desc_dma(&mut self) -> DESC_DMA_W<DCFG_SPEC> {
         DESC_DMA_W::new(self, 23)
     }
     #[doc = "Bits 24:25 - Periodic Scheduling Interval"]
     #[inline(always)]
-    #[must_use]
     pub fn per_sch_intvl(&mut self) -> PER_SCH_INTVL_W<DCFG_SPEC> {
         PER_SCH_INTVL_W::new(self, 24)
     }

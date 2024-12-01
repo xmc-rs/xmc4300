@@ -74,13 +74,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable delay on the CMD/DAT out lines"]
     #[inline(always)]
-    #[must_use]
     pub fn tapen(&mut self) -> TAPEN_W<SDMMCDEL_SPEC> {
         TAPEN_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Number of Delay Elements Select"]
     #[inline(always)]
-    #[must_use]
     pub fn tapdel(&mut self) -> TAPDEL_W<SDMMCDEL_SPEC> {
         TAPDEL_W::new(self, 4)
     }

@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bit 3 - PMT Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn pmtim(&mut self) -> PMTIM_W<INTERRUPT_MASK_SPEC> {
         PMTIM_W::new(self, 3)
     }
     #[doc = "Bit 9 - Timestamp Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn tsim(&mut self) -> TSIM_W<INTERRUPT_MASK_SPEC> {
         TSIM_W::new(self, 9)
     }

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Delay between Reference Clock and the ESC"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_delay(&mut self) -> CLK_DELAY_W<DC_SYS_TIME_DELAY_SPEC> {
         CLK_DELAY_W::new(self, 0)
     }

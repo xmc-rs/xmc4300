@@ -917,61 +917,51 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Port1 Receive Input 0 Select"]
     #[inline(always)]
-    #[must_use]
     pub fn rxd0(&mut self) -> RXD0_W<CONP1_SPEC> {
         RXD0_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Port1 Receive Input 1 Select"]
     #[inline(always)]
-    #[must_use]
     pub fn rxd1(&mut self) -> RXD1_W<CONP1_SPEC> {
         RXD1_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Port1 Receive Input 2 Select"]
     #[inline(always)]
-    #[must_use]
     pub fn rxd2(&mut self) -> RXD2_W<CONP1_SPEC> {
         RXD2_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Port1 Receive Input 3 Select"]
     #[inline(always)]
-    #[must_use]
     pub fn rxd3(&mut self) -> RXD3_W<CONP1_SPEC> {
         RXD3_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Port1 MII RX ERROR Input Select"]
     #[inline(always)]
-    #[must_use]
     pub fn rx_err(&mut self) -> RX_ERR_W<CONP1_SPEC> {
         RX_ERR_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Port1 MII RX DV Input Select"]
     #[inline(always)]
-    #[must_use]
     pub fn rx_dv(&mut self) -> RX_DV_W<CONP1_SPEC> {
         RX_DV_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Port1 MII RX Clock Input Select"]
     #[inline(always)]
-    #[must_use]
     pub fn rx_clk(&mut self) -> RX_CLK_W<CONP1_SPEC> {
         RX_CLK_W::new(self, 12)
     }
     #[doc = "Bits 16:17 - Port1 PHY Link Input Select"]
     #[inline(always)]
-    #[must_use]
     pub fn link(&mut self) -> LINK_W<CONP1_SPEC> {
         LINK_W::new(self, 16)
     }
     #[doc = "Bits 28:29 - Port1 MII TX Clock Input Select"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_clk(&mut self) -> TX_CLK_W<CONP1_SPEC> {
         TX_CLK_W::new(self, 28)
     }
     #[doc = "Bits 30:31 - Port1 Manual TX Shift configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_shift(&mut self) -> TX_SHIFT_W<CONP1_SPEC> {
         TX_SHIFT_W::new(self, 30)
     }

@@ -518,67 +518,56 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Touch-Sense Function Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ts_en(&mut self) -> TS_EN_W<GLOBCTL_SPEC> {
         TS_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - LED Function Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ld_en(&mut self) -> LD_EN_W<GLOBCTL_SPEC> {
         LD_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clock Master Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn cmtr(&mut self) -> CMTR_W<GLOBCTL_SPEC> {
         CMTR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable Autoscan Time Period Synchronization"]
     #[inline(always)]
-    #[must_use]
     pub fn ensync(&mut self) -> ENSYNC_W<GLOBCTL_SPEC> {
         ENSYNC_W::new(self, 3)
     }
     #[doc = "Bit 8 - Suspend Request Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn suscfg(&mut self) -> SUSCFG_W<GLOBCTL_SPEC> {
         SUSCFG_W::new(self, 8)
     }
     #[doc = "Bits 9:11 - Mask Number of LSB Bits for Event Validation"]
     #[inline(always)]
-    #[must_use]
     pub fn maskval(&mut self) -> MASKVAL_W<GLOBCTL_SPEC> {
         MASKVAL_W::new(self, 9)
     }
     #[doc = "Bit 12 - Enable (Extended) Time Frame Validation"]
     #[inline(always)]
-    #[must_use]
     pub fn fenval(&mut self) -> FENVAL_W<GLOBCTL_SPEC> {
         FENVAL_W::new(self, 12)
     }
     #[doc = "Bit 13 - Enable Time Slice Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn its_en(&mut self) -> ITS_EN_W<GLOBCTL_SPEC> {
         ITS_EN_W::new(self, 13)
     }
     #[doc = "Bit 14 - Enable (Extended) Time Frame Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn itf_en(&mut self) -> ITF_EN_W<GLOBCTL_SPEC> {
         ITF_EN_W::new(self, 14)
     }
     #[doc = "Bit 15 - Enable Autoscan Time Period Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn itp_en(&mut self) -> ITP_EN_W<GLOBCTL_SPEC> {
         ITP_EN_W::new(self, 15)
     }
     #[doc = "Bits 16:31 - LEDTS-Counter Clock Pre-Scale Factor"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_ps(&mut self) -> CLK_PS_W<GLOBCTL_SPEC> {
         CLK_PS_W::new(self, 16)
     }

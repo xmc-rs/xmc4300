@@ -34,19 +34,16 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Force CRC Mismatch"]
     #[inline(always)]
-    #[must_use]
     pub fn fcm(&mut self) -> FCM_W<CTR_SPEC> {
         FCM_W::new(self, 0)
     }
     #[doc = "Bit 1 - Force CFG Register Mismatch"]
     #[inline(always)]
-    #[must_use]
     pub fn frm_cfg(&mut self) -> FRM_CFG_W<CTR_SPEC> {
         FRM_CFG_W::new(self, 1)
     }
     #[doc = "Bit 2 - Force Check Register Mismatch"]
     #[inline(always)]
-    #[must_use]
     pub fn frm_check(&mut self) -> FRM_CHECK_W<CTR_SPEC> {
         FRM_CHECK_W::new(self, 2)
     }

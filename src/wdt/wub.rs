@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Window Upper Bound"]
     #[inline(always)]
-    #[must_use]
     pub fn wub(&mut self) -> WUB_W<WUB_SPEC> {
         WUB_W::new(self, 0)
     }

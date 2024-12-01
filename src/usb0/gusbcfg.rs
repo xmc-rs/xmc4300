@@ -404,55 +404,46 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - FS Timeout Calibration"]
     #[inline(always)]
-    #[must_use]
     pub fn tout_cal(&mut self) -> TOUT_CAL_W<GUSBCFG_SPEC> {
         TOUT_CAL_W::new(self, 0)
     }
     #[doc = "Bit 8 - SRP-Capable"]
     #[inline(always)]
-    #[must_use]
     pub fn srpcap(&mut self) -> SRPCAP_W<GUSBCFG_SPEC> {
         SRPCAP_W::new(self, 8)
     }
     #[doc = "Bit 9 - HNP-Capable"]
     #[inline(always)]
-    #[must_use]
     pub fn hnpcap(&mut self) -> HNPCAP_W<GUSBCFG_SPEC> {
         HNPCAP_W::new(self, 9)
     }
     #[doc = "Bits 10:13 - USB Turnaround Time"]
     #[inline(always)]
-    #[must_use]
     pub fn usbtrd_tim(&mut self) -> USBTRD_TIM_W<GUSBCFG_SPEC> {
         USBTRD_TIM_W::new(self, 10)
     }
     #[doc = "Bit 16 - UTMIFS Interface Select"]
     #[inline(always)]
-    #[must_use]
     pub fn otg_i2csel(&mut self) -> OTG_I2CSEL_W<GUSBCFG_SPEC> {
         OTG_I2CSEL_W::new(self, 16)
     }
     #[doc = "Bit 28 - Tx End Delay"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_end_delay(&mut self) -> TX_END_DELAY_W<GUSBCFG_SPEC> {
         TX_END_DELAY_W::new(self, 28)
     }
     #[doc = "Bit 29 - Force Host Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn force_hst_mode(&mut self) -> FORCE_HST_MODE_W<GUSBCFG_SPEC> {
         FORCE_HST_MODE_W::new(self, 29)
     }
     #[doc = "Bit 30 - Force Device Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn force_dev_mode(&mut self) -> FORCE_DEV_MODE_W<GUSBCFG_SPEC> {
         FORCE_DEV_MODE_W::new(self, 30)
     }
     #[doc = "Bit 31 - Corrupt Tx packet"]
     #[inline(always)]
-    #[must_use]
     pub fn ctp(&mut self) -> CTP_W<GUSBCFG_SPEC> {
         CTP_W::new(self, 31)
     }

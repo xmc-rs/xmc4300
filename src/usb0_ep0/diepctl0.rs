@@ -193,43 +193,36 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Maximum Packet Size"]
     #[inline(always)]
-    #[must_use]
     pub fn mps(&mut self) -> MPS_W<DIEPCTL0_SPEC> {
         MPS_W::new(self, 0)
     }
     #[doc = "Bit 21 - STALL Handshake"]
     #[inline(always)]
-    #[must_use]
     pub fn stall(&mut self) -> STALL_W<DIEPCTL0_SPEC> {
         STALL_W::new(self, 21)
     }
     #[doc = "Bits 22:25 - TxFIFO Number"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_fnum(&mut self) -> TX_FNUM_W<DIEPCTL0_SPEC> {
         TX_FNUM_W::new(self, 22)
     }
     #[doc = "Bit 26 - Clear NAK"]
     #[inline(always)]
-    #[must_use]
     pub fn cnak(&mut self) -> CNAK_W<DIEPCTL0_SPEC> {
         CNAK_W::new(self, 26)
     }
     #[doc = "Bit 27 - Set NAK"]
     #[inline(always)]
-    #[must_use]
     pub fn snak(&mut self) -> SNAK_W<DIEPCTL0_SPEC> {
         SNAK_W::new(self, 27)
     }
     #[doc = "Bit 30 - Endpoint Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn epdis(&mut self) -> EPDIS_W<DIEPCTL0_SPEC> {
         EPDIS_W::new(self, 30)
     }
     #[doc = "Bit 31 - Endpoint Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn epena(&mut self) -> EPENA_W<DIEPCTL0_SPEC> {
         EPENA_W::new(self, 31)
     }

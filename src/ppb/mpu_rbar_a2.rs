@@ -83,19 +83,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - MPU region field"]
     #[inline(always)]
-    #[must_use]
     pub fn region(&mut self) -> REGION_W<MPU_RBAR_A2_SPEC> {
         REGION_W::new(self, 0)
     }
     #[doc = "Bit 4 - MPU Region Number valid bit"]
     #[inline(always)]
-    #[must_use]
     pub fn valid(&mut self) -> VALID_W<MPU_RBAR_A2_SPEC> {
         VALID_W::new(self, 4)
     }
     #[doc = "Bits 9:31 - Region base address field"]
     #[inline(always)]
-    #[must_use]
     pub fn addr(&mut self) -> ADDR_W<MPU_RBAR_A2_SPEC> {
         ADDR_W::new(self, 9)
     }

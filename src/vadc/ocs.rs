@@ -266,31 +266,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Trigger Set for OTGB0/1"]
     #[inline(always)]
-    #[must_use]
     pub fn tgs(&mut self) -> TGS_W<OCS_SPEC> {
         TGS_W::new(self, 0)
     }
     #[doc = "Bit 2 - OTGB0/1 Bus Select"]
     #[inline(always)]
-    #[must_use]
     pub fn tgb(&mut self) -> TGB_W<OCS_SPEC> {
         TGB_W::new(self, 2)
     }
     #[doc = "Bit 3 - TGS, TGB Write Protection"]
     #[inline(always)]
-    #[must_use]
     pub fn tg_p(&mut self) -> TG_P_W<OCS_SPEC> {
         TG_P_W::new(self, 3)
     }
     #[doc = "Bits 24:27 - OCDS Suspend Control"]
     #[inline(always)]
-    #[must_use]
     pub fn sus(&mut self) -> SUS_W<OCS_SPEC> {
         SUS_W::new(self, 24)
     }
     #[doc = "Bit 28 - SUS Write Protection"]
     #[inline(always)]
-    #[must_use]
     pub fn sus_p(&mut self) -> SUS_P_W<OCS_SPEC> {
         SUS_P_W::new(self, 28)
     }

@@ -132,19 +132,16 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Software Reset for All"]
     #[inline(always)]
-    #[must_use]
     pub fn sw_rst_all(&mut self) -> SW_RST_ALL_W<SW_RESET_SPEC> {
         SW_RST_ALL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Software Reset for CMD Line"]
     #[inline(always)]
-    #[must_use]
     pub fn sw_rst_cmd_line(&mut self) -> SW_RST_CMD_LINE_W<SW_RESET_SPEC> {
         SW_RST_CMD_LINE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Software Reset for DAT Line"]
     #[inline(always)]
-    #[must_use]
     pub fn sw_rst_dat_line(&mut self) -> SW_RST_DAT_LINE_W<SW_RESET_SPEC> {
         SW_RST_DAT_LINE_W::new(self, 2)
     }

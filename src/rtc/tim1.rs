@@ -34,19 +34,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Days of Week Time Value"]
     #[inline(always)]
-    #[must_use]
     pub fn dawe(&mut self) -> DAWE_W<TIM1_SPEC> {
         DAWE_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - Month Time Value"]
     #[inline(always)]
-    #[must_use]
     pub fn mo(&mut self) -> MO_W<TIM1_SPEC> {
         MO_W::new(self, 8)
     }
     #[doc = "Bits 16:31 - Year Time Value"]
     #[inline(always)]
-    #[must_use]
     pub fn ye(&mut self) -> YE_W<TIM1_SPEC> {
         YE_W::new(self, 16)
     }

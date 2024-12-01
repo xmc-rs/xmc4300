@@ -595,55 +595,46 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Output Trigger Pulse Enable for ETLx"]
     #[inline(always)]
-    #[must_use]
     pub fn pe(&mut self) -> PE_W<EXICON_SPEC> {
         PE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Rebuild Level Detection for Status Flag for ETLx"]
     #[inline(always)]
-    #[must_use]
     pub fn ld(&mut self) -> LD_W<EXICON_SPEC> {
         LD_W::new(self, 1)
     }
     #[doc = "Bit 2 - Rising Edge Detection Enable ETLx"]
     #[inline(always)]
-    #[must_use]
     pub fn re(&mut self) -> RE_W<EXICON_SPEC> {
         RE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Falling Edge Detection Enable ETLx"]
     #[inline(always)]
-    #[must_use]
     pub fn fe(&mut self) -> FE_W<EXICON_SPEC> {
         FE_W::new(self, 3)
     }
     #[doc = "Bits 4:6 - Output Channel Select for ETLx Output Trigger Pulse"]
     #[inline(always)]
-    #[must_use]
     pub fn ocs(&mut self) -> OCS_W<EXICON_SPEC> {
         OCS_W::new(self, 4)
     }
     #[doc = "Bit 7 - Status Flag for ETLx"]
     #[inline(always)]
-    #[must_use]
     pub fn fl(&mut self) -> FL_W<EXICON_SPEC> {
         FL_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Input Source Select for ERSx"]
     #[inline(always)]
-    #[must_use]
     pub fn ss(&mut self) -> SS_W<EXICON_SPEC> {
         SS_W::new(self, 8)
     }
     #[doc = "Bit 10 - Input A Negation Select for ERSx"]
     #[inline(always)]
-    #[must_use]
     pub fn na(&mut self) -> NA_W<EXICON_SPEC> {
         NA_W::new(self, 10)
     }
     #[doc = "Bit 11 - Input B Negation Select for ERSx"]
     #[inline(always)]
-    #[must_use]
     pub fn nb(&mut self) -> NB_W<EXICON_SPEC> {
         NB_W::new(self, 11)
     }

@@ -49,12 +49,12 @@ impl MO {
     #[doc = "0x1c - Message Object Status Register"]
     #[inline(always)]
     pub const fn mostat(&self) -> &MOSTAT {
-        unsafe { &*(self as *const Self).cast::<u8>().add(28).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(28).cast() }
     }
     #[doc = "0x1c - Message Object Control Register"]
     #[inline(always)]
     pub const fn moctr(&self) -> &MOCTR {
-        unsafe { &*(self as *const Self).cast::<u8>().add(28).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(28).cast() }
     }
 }
 #[doc = "MOFCR (rw) register accessor: Message Object Function Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mofcr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mofcr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mofcr`]

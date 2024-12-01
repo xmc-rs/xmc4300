@@ -198,7 +198,6 @@ impl R {
 impl W {
     #[doc = "Bit 19 - Rx FIFO > 2,048 Bytes"]
     #[inline(always)]
-    #[must_use]
     pub fn rxfifosize(&mut self) -> RXFIFOSIZE_W<HW_FEATURE_SPEC> {
         RXFIFOSIZE_W::new(self, 19)
     }

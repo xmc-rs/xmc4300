@@ -5,7 +5,6 @@ pub type TRBS_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Timer Run Bit set"]
     #[inline(always)]
-    #[must_use]
     pub fn trbs(&mut self) -> TRBS_W<TCSET_SPEC> {
         TRBS_W::new(self, 0)
     }

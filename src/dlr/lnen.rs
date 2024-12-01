@@ -471,49 +471,41 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Line 0 Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ln0(&mut self) -> LN0_W<LNEN_SPEC> {
         LN0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Line 1 Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ln1(&mut self) -> LN1_W<LNEN_SPEC> {
         LN1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Line 2 Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ln2(&mut self) -> LN2_W<LNEN_SPEC> {
         LN2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Line 3 Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ln3(&mut self) -> LN3_W<LNEN_SPEC> {
         LN3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Line 4 Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ln4(&mut self) -> LN4_W<LNEN_SPEC> {
         LN4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Line 5 Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ln5(&mut self) -> LN5_W<LNEN_SPEC> {
         LN5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Line 6 Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ln6(&mut self) -> LN6_W<LNEN_SPEC> {
         LN6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Line 7 Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ln7(&mut self) -> LN7_W<LNEN_SPEC> {
         LN7_W::new(self, 7)
     }

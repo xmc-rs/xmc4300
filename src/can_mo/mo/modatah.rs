@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Data Byte 4 of Message Object n"]
     #[inline(always)]
-    #[must_use]
     pub fn db4(&mut self) -> DB4_W<MODATAH_SPEC> {
         DB4_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Data Byte 5 of Message Object n"]
     #[inline(always)]
-    #[must_use]
     pub fn db5(&mut self) -> DB5_W<MODATAH_SPEC> {
         DB5_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Data Byte 6 of Message Object n"]
     #[inline(always)]
-    #[must_use]
     pub fn db6(&mut self) -> DB6_W<MODATAH_SPEC> {
         DB6_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Data Byte 7 of Message Object n"]
     #[inline(always)]
-    #[must_use]
     pub fn db7(&mut self) -> DB7_W<MODATAH_SPEC> {
         DB7_W::new(self, 24)
     }

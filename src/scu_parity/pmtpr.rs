@@ -23,7 +23,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Parity Write Values for Memory Test"]
     #[inline(always)]
-    #[must_use]
     pub fn pwr(&mut self) -> PWR_W<PMTPR_SPEC> {
         PWR_W::new(self, 0)
     }

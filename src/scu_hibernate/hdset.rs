@@ -127,25 +127,21 @@ where
 impl W {
     #[doc = "Bit 0 - Wake-up Pin Event Positive Edge Set"]
     #[inline(always)]
-    #[must_use]
     pub fn epev(&mut self) -> EPEV_W<HDSET_SPEC> {
         EPEV_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wake-up Pin Event Negative Edge Set"]
     #[inline(always)]
-    #[must_use]
     pub fn enev(&mut self) -> ENEV_W<HDSET_SPEC> {
         ENEV_W::new(self, 1)
     }
     #[doc = "Bit 2 - RTC Event Set"]
     #[inline(always)]
-    #[must_use]
     pub fn rtcev(&mut self) -> RTCEV_W<HDSET_SPEC> {
         RTCEV_W::new(self, 2)
     }
     #[doc = "Bit 3 - ULP WDG Alarm Set"]
     #[inline(always)]
-    #[must_use]
     pub fn ulpwdg(&mut self) -> ULPWDG_W<HDSET_SPEC> {
         ULPWDG_W::new(self, 3)
     }

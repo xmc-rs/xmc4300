@@ -993,103 +993,86 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Slave Select"]
     #[inline(always)]
-    #[must_use]
     pub fn slsel(&mut self) -> SLSEL_W<PSR_IICMODE_SPEC> {
         SLSEL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wrong TDF Code Found"]
     #[inline(always)]
-    #[must_use]
     pub fn wtdf(&mut self) -> WTDF_W<PSR_IICMODE_SPEC> {
         WTDF_W::new(self, 1)
     }
     #[doc = "Bit 2 - Start Condition Received"]
     #[inline(always)]
-    #[must_use]
     pub fn scr(&mut self) -> SCR_W<PSR_IICMODE_SPEC> {
         SCR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Repeated Start Condition Received"]
     #[inline(always)]
-    #[must_use]
     pub fn rscr(&mut self) -> RSCR_W<PSR_IICMODE_SPEC> {
         RSCR_W::new(self, 3)
     }
     #[doc = "Bit 4 - Stop Condition Received"]
     #[inline(always)]
-    #[must_use]
     pub fn pcr(&mut self) -> PCR_W<PSR_IICMODE_SPEC> {
         PCR_W::new(self, 4)
     }
     #[doc = "Bit 5 - Non-Acknowledge Received"]
     #[inline(always)]
-    #[must_use]
     pub fn nack(&mut self) -> NACK_W<PSR_IICMODE_SPEC> {
         NACK_W::new(self, 5)
     }
     #[doc = "Bit 6 - Arbitration Lost"]
     #[inline(always)]
-    #[must_use]
     pub fn arl(&mut self) -> ARL_W<PSR_IICMODE_SPEC> {
         ARL_W::new(self, 6)
     }
     #[doc = "Bit 7 - Slave Read Request"]
     #[inline(always)]
-    #[must_use]
     pub fn srr(&mut self) -> SRR_W<PSR_IICMODE_SPEC> {
         SRR_W::new(self, 7)
     }
     #[doc = "Bit 8 - Error"]
     #[inline(always)]
-    #[must_use]
     pub fn err(&mut self) -> ERR_W<PSR_IICMODE_SPEC> {
         ERR_W::new(self, 8)
     }
     #[doc = "Bit 9 - Acknowledge Received"]
     #[inline(always)]
-    #[must_use]
     pub fn ack(&mut self) -> ACK_W<PSR_IICMODE_SPEC> {
         ACK_W::new(self, 9)
     }
     #[doc = "Bit 10 - Receiver Start Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn rsif(&mut self) -> RSIF_W<PSR_IICMODE_SPEC> {
         RSIF_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data Lost Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn dlif(&mut self) -> DLIF_W<PSR_IICMODE_SPEC> {
         DLIF_W::new(self, 11)
     }
     #[doc = "Bit 12 - Transmit Shift Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn tsif(&mut self) -> TSIF_W<PSR_IICMODE_SPEC> {
         TSIF_W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit Buffer Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn tbif(&mut self) -> TBIF_W<PSR_IICMODE_SPEC> {
         TBIF_W::new(self, 13)
     }
     #[doc = "Bit 14 - Receive Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn rif(&mut self) -> RIF_W<PSR_IICMODE_SPEC> {
         RIF_W::new(self, 14)
     }
     #[doc = "Bit 15 - Alternative Receive Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn aif(&mut self) -> AIF_W<PSR_IICMODE_SPEC> {
         AIF_W::new(self, 15)
     }
     #[doc = "Bit 16 - Baud Rate Generator Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn brgif(&mut self) -> BRGIF_W<PSR_IICMODE_SPEC> {
         BRGIF_W::new(self, 16)
     }

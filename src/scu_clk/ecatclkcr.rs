@@ -74,13 +74,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - EtherCAT Clock Divider Value"]
     #[inline(always)]
-    #[must_use]
     pub fn ecadiv(&mut self) -> ECADIV_W<ECATCLKCR_SPEC> {
         ECADIV_W::new(self, 0)
     }
     #[doc = "Bit 16 - EtherCAT Clock Selection Value"]
     #[inline(always)]
-    #[must_use]
     pub fn ecatsel(&mut self) -> ECATSEL_W<ECATCLKCR_SPEC> {
         ECATSEL_W::new(self, 16)
     }

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Timestamp Addend Register"]
     #[inline(always)]
-    #[must_use]
     pub fn tsar(&mut self) -> TSAR_W<TIMESTAMP_ADDEND_SPEC> {
         TSAR_W::new(self, 0)
     }

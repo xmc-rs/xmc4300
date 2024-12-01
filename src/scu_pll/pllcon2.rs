@@ -123,13 +123,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - P-Divider Input Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn pinsel(&mut self) -> PINSEL_W<PLLCON2_SPEC> {
         PINSEL_W::new(self, 0)
     }
     #[doc = "Bit 8 - K1-Divider Input Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn k1insel(&mut self) -> K1INSEL_W<PLLCON2_SPEC> {
         K1INSEL_W::new(self, 8)
     }

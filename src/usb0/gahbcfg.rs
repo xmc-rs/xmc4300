@@ -401,37 +401,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Global Interrupt Mask"]
     #[inline(always)]
-    #[must_use]
     pub fn glbl_intr_msk(&mut self) -> GLBL_INTR_MSK_W<GAHBCFG_SPEC> {
         GLBL_INTR_MSK_W::new(self, 0)
     }
     #[doc = "Bits 1:4 - Burst Length/Type"]
     #[inline(always)]
-    #[must_use]
     pub fn hbst_len(&mut self) -> HBST_LEN_W<GAHBCFG_SPEC> {
         HBST_LEN_W::new(self, 1)
     }
     #[doc = "Bit 5 - DMA Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dmaen(&mut self) -> DMAEN_W<GAHBCFG_SPEC> {
         DMAEN_W::new(self, 5)
     }
     #[doc = "Bit 7 - Non-Periodic TxFIFO Empty Level"]
     #[inline(always)]
-    #[must_use]
     pub fn nptx_femp_lvl(&mut self) -> NPTX_FEMP_LVL_W<GAHBCFG_SPEC> {
         NPTX_FEMP_LVL_W::new(self, 7)
     }
     #[doc = "Bit 8 - Periodic TxFIFO Empty Level"]
     #[inline(always)]
-    #[must_use]
     pub fn ptx_femp_lvl(&mut self) -> PTX_FEMP_LVL_W<GAHBCFG_SPEC> {
         PTX_FEMP_LVL_W::new(self, 8)
     }
     #[doc = "Bit 23 - AHB Single Support"]
     #[inline(always)]
-    #[must_use]
     pub fn ahbsingle(&mut self) -> AHBSINGLE_W<GAHBCFG_SPEC> {
         AHBSINGLE_W::new(self, 23)
     }

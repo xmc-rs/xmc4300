@@ -175,19 +175,16 @@ impl R {
 impl W {
     #[doc = "Bits 16:19 - Data Reduction Control"]
     #[inline(always)]
-    #[must_use]
     pub fn drctr(&mut self) -> DRCTR_W<GLOBRCR_SPEC> {
         DRCTR_W::new(self, 16)
     }
     #[doc = "Bit 24 - Wait-for-Read Mode Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn wfr(&mut self) -> WFR_W<GLOBRCR_SPEC> {
         WFR_W::new(self, 24)
     }
     #[doc = "Bit 31 - Service Request Generation Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn srgen(&mut self) -> SRGEN_W<GLOBRCR_SPEC> {
         SRGEN_W::new(self, 31)
     }

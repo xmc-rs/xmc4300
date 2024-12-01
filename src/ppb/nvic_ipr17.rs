@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Priority value 0"]
     #[inline(always)]
-    #[must_use]
     pub fn pri_0(&mut self) -> PRI_0_W<NVIC_IPR17_SPEC> {
         PRI_0_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Priority value 1"]
     #[inline(always)]
-    #[must_use]
     pub fn pri_1(&mut self) -> PRI_1_W<NVIC_IPR17_SPEC> {
         PRI_1_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Priority value 2"]
     #[inline(always)]
-    #[must_use]
     pub fn pri_2(&mut self) -> PRI_2_W<NVIC_IPR17_SPEC> {
         PRI_2_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Priority value 3"]
     #[inline(always)]
-    #[must_use]
     pub fn pri_3(&mut self) -> PRI_3_W<NVIC_IPR17_SPEC> {
         PRI_3_W::new(self, 24)
     }

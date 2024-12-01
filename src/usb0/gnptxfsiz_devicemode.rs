@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - IN Endpoint FIFO0 Transmit RAM Start Address"]
     #[inline(always)]
-    #[must_use]
     pub fn ineptx_f0st_addr(&mut self) -> INEPTX_F0ST_ADDR_W<GNPTXFSIZ_DEVICEMODE_SPEC> {
         INEPTX_F0ST_ADDR_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - IN Endpoint TxFIFO 0 Depth"]
     #[inline(always)]
-    #[must_use]
     pub fn ineptx_f0dep(&mut self) -> INEPTX_F0DEP_W<GNPTXFSIZ_DEVICEMODE_SPEC> {
         INEPTX_F0DEP_W::new(self, 16)
     }

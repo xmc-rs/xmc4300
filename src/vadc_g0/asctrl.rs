@@ -359,49 +359,41 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Source-specific Result Register"]
     #[inline(always)]
-    #[must_use]
     pub fn srcresreg(&mut self) -> SRCRESREG_W<ASCTRL_SPEC> {
         SRCRESREG_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - External Trigger Input Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn xtsel(&mut self) -> XTSEL_W<ASCTRL_SPEC> {
         XTSEL_W::new(self, 8)
     }
     #[doc = "Bits 13:14 - Trigger Operating Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn xtmode(&mut self) -> XTMODE_W<ASCTRL_SPEC> {
         XTMODE_W::new(self, 13)
     }
     #[doc = "Bit 15 - Write Control for Trigger Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn xtwc(&mut self) -> XTWC_W<ASCTRL_SPEC> {
         XTWC_W::new(self, 15)
     }
     #[doc = "Bits 16:19 - Gate Input Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn gtsel(&mut self) -> GTSEL_W<ASCTRL_SPEC> {
         GTSEL_W::new(self, 16)
     }
     #[doc = "Bit 23 - Write Control for Gate Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn gtwc(&mut self) -> GTWC_W<ASCTRL_SPEC> {
         GTWC_W::new(self, 23)
     }
     #[doc = "Bit 28 - Timer Mode Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tmen(&mut self) -> TMEN_W<ASCTRL_SPEC> {
         TMEN_W::new(self, 28)
     }
     #[doc = "Bit 31 - Write Control for Timer Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn tmwc(&mut self) -> TMWC_W<ASCTRL_SPEC> {
         TMWC_W::new(self, 31)
     }

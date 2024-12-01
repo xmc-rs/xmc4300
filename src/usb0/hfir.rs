@@ -74,13 +74,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Frame Interval"]
     #[inline(always)]
-    #[must_use]
     pub fn fr_int(&mut self) -> FR_INT_W<HFIR_SPEC> {
         FR_INT_W::new(self, 0)
     }
     #[doc = "Bit 16 - Reload Control"]
     #[inline(always)]
-    #[must_use]
     pub fn hfirrld_ctrl(&mut self) -> HFIRRLD_CTRL_W<HFIR_SPEC> {
         HFIRRLD_CTRL_W::new(self, 16)
     }

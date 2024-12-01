@@ -207,25 +207,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Receive Interrupt Node Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn rxinp(&mut self) -> RXINP_W<MOIPR_SPEC> {
         RXINP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Transmit Interrupt Node Pointer"]
     #[inline(always)]
-    #[must_use]
     pub fn txinp(&mut self) -> TXINP_W<MOIPR_SPEC> {
         TXINP_W::new(self, 4)
     }
     #[doc = "Bits 8:15 - Message Pending Number"]
     #[inline(always)]
-    #[must_use]
     pub fn mpn(&mut self) -> MPN_W<MOIPR_SPEC> {
         MPN_W::new(self, 8)
     }
     #[doc = "Bits 16:31 - CAN Frame Counter Value"]
     #[inline(always)]
-    #[must_use]
     pub fn cfcval(&mut self) -> CFCVAL_W<MOIPR_SPEC> {
         CFCVAL_W::new(self, 16)
     }

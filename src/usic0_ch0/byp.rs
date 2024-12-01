@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Bypass Data"]
     #[inline(always)]
-    #[must_use]
     pub fn bdata(&mut self) -> BDATA_W<BYP_SPEC> {
         BDATA_W::new(self, 0)
     }

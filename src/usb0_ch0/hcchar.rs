@@ -386,55 +386,46 @@ impl R {
 impl W {
     #[doc = "Bits 0:10 - Maximum Packet Size"]
     #[inline(always)]
-    #[must_use]
     pub fn mps(&mut self) -> MPS_W<HCCHAR_SPEC> {
         MPS_W::new(self, 0)
     }
     #[doc = "Bits 11:14 - Endpoint Number"]
     #[inline(always)]
-    #[must_use]
     pub fn epnum(&mut self) -> EPNUM_W<HCCHAR_SPEC> {
         EPNUM_W::new(self, 11)
     }
     #[doc = "Bit 15 - Endpoint Direction"]
     #[inline(always)]
-    #[must_use]
     pub fn epdir(&mut self) -> EPDIR_W<HCCHAR_SPEC> {
         EPDIR_W::new(self, 15)
     }
     #[doc = "Bits 18:19 - Endpoint Type"]
     #[inline(always)]
-    #[must_use]
     pub fn eptype(&mut self) -> EPTYPE_W<HCCHAR_SPEC> {
         EPTYPE_W::new(self, 18)
     }
     #[doc = "Bits 20:21 - Multi Count / Error Count"]
     #[inline(always)]
-    #[must_use]
     pub fn mc_ec(&mut self) -> MC_EC_W<HCCHAR_SPEC> {
         MC_EC_W::new(self, 20)
     }
     #[doc = "Bits 22:28 - Device Address"]
     #[inline(always)]
-    #[must_use]
     pub fn dev_addr(&mut self) -> DEV_ADDR_W<HCCHAR_SPEC> {
         DEV_ADDR_W::new(self, 22)
     }
     #[doc = "Bit 29 - Odd Frame"]
     #[inline(always)]
-    #[must_use]
     pub fn odd_frm(&mut self) -> ODD_FRM_W<HCCHAR_SPEC> {
         ODD_FRM_W::new(self, 29)
     }
     #[doc = "Bit 30 - Channel Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn ch_dis(&mut self) -> CH_DIS_W<HCCHAR_SPEC> {
         CH_DIS_W::new(self, 30)
     }
     #[doc = "Bit 31 - Channel Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ch_ena(&mut self) -> CH_ENA_W<HCCHAR_SPEC> {
         CH_ENA_W::new(self, 31)
     }

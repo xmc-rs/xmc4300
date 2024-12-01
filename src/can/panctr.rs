@@ -116,19 +116,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Panel Command"]
     #[inline(always)]
-    #[must_use]
     pub fn pancmd(&mut self) -> PANCMD_W<PANCTR_SPEC> {
         PANCMD_W::new(self, 0)
     }
     #[doc = "Bits 16:23 - Panel Argument 1"]
     #[inline(always)]
-    #[must_use]
     pub fn panar1(&mut self) -> PANAR1_W<PANCTR_SPEC> {
         PANAR1_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Panel Argument 2"]
     #[inline(always)]
-    #[must_use]
     pub fn panar2(&mut self) -> PANAR2_W<PANCTR_SPEC> {
         PANAR2_W::new(self, 24)
     }

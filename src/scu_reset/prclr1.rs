@@ -189,37 +189,31 @@ where
 impl W {
     #[doc = "Bit 3 - LEDTS Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ledtscu0rs(&mut self) -> LEDTSCU0RS_W<PRCLR1_SPEC> {
         LEDTSCU0RS_W::new(self, 3)
     }
     #[doc = "Bit 4 - MultiCAN Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn mcan0rs(&mut self) -> MCAN0RS_W<PRCLR1_SPEC> {
         MCAN0RS_W::new(self, 4)
     }
     #[doc = "Bit 5 - DAC Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn dacrs(&mut self) -> DACRS_W<PRCLR1_SPEC> {
         DACRS_W::new(self, 5)
     }
     #[doc = "Bit 6 - MMC Interface Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn mmcirs(&mut self) -> MMCIRS_W<PRCLR1_SPEC> {
         MMCIRS_W::new(self, 6)
     }
     #[doc = "Bit 7 - USIC1 Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn usic1rs(&mut self) -> USIC1RS_W<PRCLR1_SPEC> {
         USIC1RS_W::new(self, 7)
     }
     #[doc = "Bit 9 - PORTS Reset Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn pportsrs(&mut self) -> PPORTSRS_W<PRCLR1_SPEC> {
         PPORTSRS_W::new(self, 9)
     }

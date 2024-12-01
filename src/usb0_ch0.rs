@@ -29,22 +29,22 @@ impl RegisterBlock {
     #[doc = "0x10 - Host Channel Transfer Size Register \\[SCATGATHER\\]"]
     #[inline(always)]
     pub const fn hctsiz_scatgather(&self) -> &HCTSIZ_SCATGATHER {
-        unsafe { &*(self as *const Self).cast::<u8>().add(16).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(16).cast() }
     }
     #[doc = "0x10 - Host Channel Transfer Size Register \\[BUFFERMODE\\]"]
     #[inline(always)]
     pub const fn hctsiz_buffermode(&self) -> &HCTSIZ_BUFFERMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(16).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(16).cast() }
     }
     #[doc = "0x14 - Host Channel DMA Address Register \\[SCATGATHER\\]"]
     #[inline(always)]
     pub const fn hcdma_scatgather(&self) -> &HCDMA_SCATGATHER {
-        unsafe { &*(self as *const Self).cast::<u8>().add(20).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(20).cast() }
     }
     #[doc = "0x14 - Host Channel DMA Address Register \\[BUFFERMODE\\]"]
     #[inline(always)]
     pub const fn hcdma_buffermode(&self) -> &HCDMA_BUFFERMODE {
-        unsafe { &*(self as *const Self).cast::<u8>().add(20).cast() }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(20).cast() }
     }
     #[doc = "0x1c - Host Channel DMA Buffer Address Register"]
     #[inline(always)]

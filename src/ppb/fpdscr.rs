@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 22:23 - Default value for FPSCR.RMode"]
     #[inline(always)]
-    #[must_use]
     pub fn rmode(&mut self) -> RMODE_W<FPDSCR_SPEC> {
         RMODE_W::new(self, 22)
     }
     #[doc = "Bit 24 - Default value for FPSCR.FZ"]
     #[inline(always)]
-    #[must_use]
     pub fn fz(&mut self) -> FZ_W<FPDSCR_SPEC> {
         FZ_W::new(self, 24)
     }
     #[doc = "Bit 25 - Default value for FPSCR.DN"]
     #[inline(always)]
-    #[must_use]
     pub fn dn(&mut self) -> DN_W<FPDSCR_SPEC> {
         DN_W::new(self, 25)
     }
     #[doc = "Bit 26 - Default value for FPSCR.AHP"]
     #[inline(always)]
-    #[must_use]
     pub fn ahp(&mut self) -> AHP_W<FPDSCR_SPEC> {
         AHP_W::new(self, 26)
     }

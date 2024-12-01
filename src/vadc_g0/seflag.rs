@@ -123,13 +123,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Source Event 0/1"]
     #[inline(always)]
-    #[must_use]
     pub fn sev0(&mut self) -> SEV0_W<SEFLAG_SPEC> {
         SEV0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Source Event 0/1"]
     #[inline(always)]
-    #[must_use]
     pub fn sev1(&mut self) -> SEV1_W<SEFLAG_SPEC> {
         SEV1_W::new(self, 1)
     }

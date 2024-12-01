@@ -115,73 +115,61 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transfer Completed Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn xfer_compl(&mut self) -> XFER_COMPL_W<DOEPINT0_SPEC> {
         XFER_COMPL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Endpoint Disabled Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn epdisbld(&mut self) -> EPDISBLD_W<DOEPINT0_SPEC> {
         EPDISBLD_W::new(self, 1)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
-    #[must_use]
     pub fn ahberr(&mut self) -> AHBERR_W<DOEPINT0_SPEC> {
         AHBERR_W::new(self, 2)
     }
     #[doc = "Bit 3 - SETUP Phase Done"]
     #[inline(always)]
-    #[must_use]
     pub fn set_up(&mut self) -> SET_UP_W<DOEPINT0_SPEC> {
         SET_UP_W::new(self, 3)
     }
     #[doc = "Bit 4 - OUT Token Received When Endpoint Disabled"]
     #[inline(always)]
-    #[must_use]
     pub fn outtkn_epdis(&mut self) -> OUTTKN_EPDIS_W<DOEPINT0_SPEC> {
         OUTTKN_EPDIS_W::new(self, 4)
     }
     #[doc = "Bit 5 - Status Phase Received For Control Write"]
     #[inline(always)]
-    #[must_use]
     pub fn sts_phse_rcvd(&mut self) -> STS_PHSE_RCVD_W<DOEPINT0_SPEC> {
         STS_PHSE_RCVD_W::new(self, 5)
     }
     #[doc = "Bit 6 - Back-to-Back SETUP Packets Received"]
     #[inline(always)]
-    #[must_use]
     pub fn back2back_setup(&mut self) -> BACK2BACK_SETUP_W<DOEPINT0_SPEC> {
         BACK2BACK_SETUP_W::new(self, 6)
     }
     #[doc = "Bit 9 - BNA (Buffer Not Available) Interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn bnaintr(&mut self) -> BNAINTR_W<DOEPINT0_SPEC> {
         BNAINTR_W::new(self, 9)
     }
     #[doc = "Bit 11 - Packet Dropped Status"]
     #[inline(always)]
-    #[must_use]
     pub fn pkt_drp_sts(&mut self) -> PKT_DRP_STS_W<DOEPINT0_SPEC> {
         PKT_DRP_STS_W::new(self, 11)
     }
     #[doc = "Bit 12 - BbleErr (Babble Error) interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn bble_err_intrpt(&mut self) -> BBLE_ERR_INTRPT_W<DOEPINT0_SPEC> {
         BBLE_ERR_INTRPT_W::new(self, 12)
     }
     #[doc = "Bit 13 - NAK interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn nakintrpt(&mut self) -> NAKINTRPT_W<DOEPINT0_SPEC> {
         NAKINTRPT_W::new(self, 13)
     }
     #[doc = "Bit 14 - NYET interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn nyetintrpt(&mut self) -> NYETINTRPT_W<DOEPINT0_SPEC> {
         NYETINTRPT_W::new(self, 14)
     }

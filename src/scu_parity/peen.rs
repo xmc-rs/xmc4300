@@ -703,73 +703,61 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Parity Error Enable for PSRAM"]
     #[inline(always)]
-    #[must_use]
     pub fn peenps(&mut self) -> PEENPS_W<PEEN_SPEC> {
         PEENPS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Parity Error Enable for DSRAM1"]
     #[inline(always)]
-    #[must_use]
     pub fn peends1(&mut self) -> PEENDS1_W<PEEN_SPEC> {
         PEENDS1_W::new(self, 1)
     }
     #[doc = "Bit 8 - Parity Error Enable for USIC0 Memory"]
     #[inline(always)]
-    #[must_use]
     pub fn peenu0(&mut self) -> PEENU0_W<PEEN_SPEC> {
         PEENU0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Parity Error Enable for USIC1 Memory"]
     #[inline(always)]
-    #[must_use]
     pub fn peenu1(&mut self) -> PEENU1_W<PEEN_SPEC> {
         PEENU1_W::new(self, 9)
     }
     #[doc = "Bit 12 - Parity Error Enable for MultiCAN Memory"]
     #[inline(always)]
-    #[must_use]
     pub fn peenmc(&mut self) -> PEENMC_W<PEEN_SPEC> {
         PEENMC_W::new(self, 12)
     }
     #[doc = "Bit 13 - Parity Error Enable for PMU Prefetch Memory"]
     #[inline(always)]
-    #[must_use]
     pub fn peenpprf(&mut self) -> PEENPPRF_W<PEEN_SPEC> {
         PEENPPRF_W::new(self, 13)
     }
     #[doc = "Bit 16 - Parity Error Enable for USB Memory"]
     #[inline(always)]
-    #[must_use]
     pub fn peenusb(&mut self) -> PEENUSB_W<PEEN_SPEC> {
         PEENUSB_W::new(self, 16)
     }
     #[doc = "Bit 17 - Parity Error Enable for ETH TX Memory"]
     #[inline(always)]
-    #[must_use]
     pub fn peeneth0tx(&mut self) -> PEENETH0TX_W<PEEN_SPEC> {
         PEENETH0TX_W::new(self, 17)
     }
     #[doc = "Bit 18 - Parity Error Enable for ETH RX Memory"]
     #[inline(always)]
-    #[must_use]
     pub fn peeneth0rx(&mut self) -> PEENETH0RX_W<PEEN_SPEC> {
         PEENETH0RX_W::new(self, 18)
     }
     #[doc = "Bit 19 - Parity Error Enable for SDMMC Memory 0"]
     #[inline(always)]
-    #[must_use]
     pub fn peensd0(&mut self) -> PEENSD0_W<PEEN_SPEC> {
         PEENSD0_W::new(self, 19)
     }
     #[doc = "Bit 20 - Parity Error Enable for SDMMC Memory 1"]
     #[inline(always)]
-    #[must_use]
     pub fn peensd1(&mut self) -> PEENSD1_W<PEEN_SPEC> {
         PEENSD1_W::new(self, 20)
     }
     #[doc = "Bit 24 - Parity Error Enable for ECAT0 Memory"]
     #[inline(always)]
-    #[must_use]
     pub fn peenecat0(&mut self) -> PEENECAT0_W<PEEN_SPEC> {
         PEENECAT0_W::new(self, 24)
     }

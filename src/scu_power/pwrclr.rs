@@ -127,25 +127,21 @@ where
 impl W {
     #[doc = "Bit 0 - Clear Disable Hibernate Domain"]
     #[inline(always)]
-    #[must_use]
     pub fn hib(&mut self) -> HIB_W<PWRCLR_SPEC> {
         HIB_W::new(self, 0)
     }
     #[doc = "Bit 16 - Clear USB PHY Transceiver Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn usbphypdq(&mut self) -> USBPHYPDQ_W<PWRCLR_SPEC> {
         USBPHYPDQ_W::new(self, 16)
     }
     #[doc = "Bit 17 - Clear USB On-The-Go Comparators Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn usbotgen(&mut self) -> USBOTGEN_W<PWRCLR_SPEC> {
         USBOTGEN_W::new(self, 17)
     }
     #[doc = "Bit 18 - Clear USB Weak Pull-Up at PADN Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn usbpuwq(&mut self) -> USBPUWQ_W<PWRCLR_SPEC> {
         USBPUWQ_W::new(self, 18)
     }

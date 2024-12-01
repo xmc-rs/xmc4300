@@ -74,13 +74,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:28 - Acceptance Mask for Message Identifier"]
     #[inline(always)]
-    #[must_use]
     pub fn am(&mut self) -> AM_W<MOAMR_SPEC> {
         AM_W::new(self, 0)
     }
     #[doc = "Bit 29 - Acceptance Mask Bit for Message IDE Bit"]
     #[inline(always)]
-    #[must_use]
     pub fn mide(&mut self) -> MIDE_W<MOAMR_SPEC> {
         MIDE_W::new(self, 29)
     }

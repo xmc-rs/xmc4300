@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Captured Timer Value"]
     #[inline(always)]
-    #[must_use]
     pub fn ctv(&mut self) -> CTV_W<CMTR_SPEC> {
         CTV_W::new(self, 0)
     }

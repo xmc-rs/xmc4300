@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Shadow Compare Register for Channel 2"]
     #[inline(always)]
-    #[must_use]
     pub fn cr2s(&mut self) -> CR2S_W<CR2S_SPEC> {
         CR2S_W::new(self, 0)
     }

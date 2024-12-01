@@ -520,43 +520,36 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Internal Trigger Source Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn iss(&mut self) -> ISS_W<EXOCON_SPEC> {
         ISS_W::new(self, 0)
     }
     #[doc = "Bit 2 - Gating Event Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn geen(&mut self) -> GEEN_W<EXOCON_SPEC> {
         GEEN_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Gating Selection for Pattern Detection Result"]
     #[inline(always)]
-    #[must_use]
     pub fn gp(&mut self) -> GP_W<EXOCON_SPEC> {
         GP_W::new(self, 4)
     }
     #[doc = "Bit 12 - Pattern Detection Enable for ETL0"]
     #[inline(always)]
-    #[must_use]
     pub fn ipen0(&mut self) -> IPEN0_W<EXOCON_SPEC> {
         IPEN0_W::new(self, 12)
     }
     #[doc = "Bit 13 - Pattern Detection Enable for ETL1"]
     #[inline(always)]
-    #[must_use]
     pub fn ipen1(&mut self) -> IPEN1_W<EXOCON_SPEC> {
         IPEN1_W::new(self, 13)
     }
     #[doc = "Bit 14 - Pattern Detection Enable for ETL2"]
     #[inline(always)]
-    #[must_use]
     pub fn ipen2(&mut self) -> IPEN2_W<EXOCON_SPEC> {
         IPEN2_W::new(self, 14)
     }
     #[doc = "Bit 15 - Pattern Detection Enable for ETL3"]
     #[inline(always)]
-    #[must_use]
     pub fn ipen3(&mut self) -> IPEN3_W<EXOCON_SPEC> {
         IPEN3_W::new(self, 15)
     }

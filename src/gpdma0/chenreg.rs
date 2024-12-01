@@ -74,13 +74,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Enables/Disables the channel"]
     #[inline(always)]
-    #[must_use]
     pub fn ch(&mut self) -> CH_W<CHENREG_SPEC> {
         CH_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Channel enable write enable"]
     #[inline(always)]
-    #[must_use]
     pub fn we_ch(&mut self) -> WE_CH_W<CHENREG_SPEC> {
         WE_CH_W::new(self, 8)
     }

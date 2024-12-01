@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Target Time Seconds Register"]
     #[inline(always)]
-    #[must_use]
     pub fn tstr(&mut self) -> TSTR_W<TARGET_TIME_SECONDS_SPEC> {
         TSTR_W::new(self, 0)
     }

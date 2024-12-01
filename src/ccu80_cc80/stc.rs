@@ -143,13 +143,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Cascaded shadow transfer enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cse(&mut self) -> CSE_W<STC_SPEC> {
         CSE_W::new(self, 0)
     }
     #[doc = "Bits 1:2 - Shadow transfer mode"]
     #[inline(always)]
-    #[must_use]
     pub fn stm(&mut self) -> STM_W<STC_SPEC> {
         STM_W::new(self, 1)
     }

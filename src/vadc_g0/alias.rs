@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Alias Value for CH0 Conversion Requests"]
     #[inline(always)]
-    #[must_use]
     pub fn alias0(&mut self) -> ALIAS0_W<ALIAS_SPEC> {
         ALIAS0_W::new(self, 0)
     }
     #[doc = "Bits 8:12 - Alias Value for CH1 Conversion Requests"]
     #[inline(always)]
-    #[must_use]
     pub fn alias1(&mut self) -> ALIAS1_W<ALIAS_SPEC> {
         ALIAS1_W::new(self, 8)
     }

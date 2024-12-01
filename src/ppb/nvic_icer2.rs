@@ -72,7 +72,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Interrupt clear-enable bits."]
     #[inline(always)]
-    #[must_use]
     pub fn clrena(&mut self) -> CLRENA_W<NVIC_ICER2_SPEC> {
         CLRENA_W::new(self, 0)
     }

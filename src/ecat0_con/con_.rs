@@ -361,31 +361,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable EtherCAT Reset Request"]
     #[inline(always)]
-    #[must_use]
     pub fn ecatrsten(&mut self) -> ECATRSTEN_W<CON_SPEC> {
         ECATRSTEN_W::new(self, 0)
     }
     #[doc = "Bits 8:9 - LATCHIN0 Input Select"]
     #[inline(always)]
-    #[must_use]
     pub fn latchin0sel(&mut self) -> LATCHIN0SEL_W<CON_SPEC> {
         LATCHIN0SEL_W::new(self, 8)
     }
     #[doc = "Bits 12:13 - LATCHIN1 Input Select"]
     #[inline(always)]
-    #[must_use]
     pub fn latchin1sel(&mut self) -> LATCHIN1SEL_W<CON_SPEC> {
         LATCHIN1SEL_W::new(self, 12)
     }
     #[doc = "Bits 16:20 - Ethernet PHY Address Offset"]
     #[inline(always)]
-    #[must_use]
     pub fn phyoffset(&mut self) -> PHYOFFSET_W<CON_SPEC> {
         PHYOFFSET_W::new(self, 16)
     }
     #[doc = "Bits 22:23 - MDIO Input Select"]
     #[inline(always)]
-    #[must_use]
     pub fn mdio(&mut self) -> MDIO_W<CON_SPEC> {
         MDIO_W::new(self, 22)
     }

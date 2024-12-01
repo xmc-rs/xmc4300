@@ -5,7 +5,6 @@ pub type SRV_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
 impl W {
     #[doc = "Bits 0:31 - Service"]
     #[inline(always)]
-    #[must_use]
     pub fn srv(&mut self) -> SRV_W<SRV_SPEC> {
         SRV_W::new(self, 0)
     }

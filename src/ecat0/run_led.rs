@@ -169,13 +169,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - LED Code"]
     #[inline(always)]
-    #[must_use]
     pub fn led_code(&mut self) -> LED_CODE_W<RUN_LED_SPEC> {
         LED_CODE_W::new(self, 0)
     }
     #[doc = "Bit 4 - Enable Override"]
     #[inline(always)]
-    #[must_use]
     pub fn en_overr(&mut self) -> EN_OVERR_W<RUN_LED_SPEC> {
         EN_OVERR_W::new(self, 4)
     }

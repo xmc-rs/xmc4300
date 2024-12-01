@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - IN EP Interrupt Mask Bits"]
     #[inline(always)]
-    #[must_use]
     pub fn in_ep_msk(&mut self) -> IN_EP_MSK_W<DAINTMSK_SPEC> {
         IN_EP_MSK_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - OUT EP Interrupt Mask Bits"]
     #[inline(always)]
-    #[must_use]
     pub fn out_ep_msk(&mut self) -> OUT_EP_MSK_W<DAINTMSK_SPEC> {
         OUT_EP_MSK_W::new(self, 16)
     }

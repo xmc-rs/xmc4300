@@ -5,7 +5,6 @@ pub type INTID_W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 impl W {
     #[doc = "Bits 0:8 - Interrupt ID of the interrupt to trigger"]
     #[inline(always)]
-    #[must_use]
     pub fn intid(&mut self) -> INTID_W<STIR_SPEC> {
         INTID_W::new(self, 0)
     }

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Data Buffer"]
     #[inline(always)]
-    #[must_use]
     pub fn data_buffer(&mut self) -> DATA_BUFFER_W<DATA_BUFFER_SPEC> {
         DATA_BUFFER_W::new(self, 0)
     }

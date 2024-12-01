@@ -471,49 +471,41 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Channels Pending Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chpndg0(&mut self) -> CHPNDG0_W<BRSPND_SPEC> {
         CHPNDG0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channels Pending Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chpndg1(&mut self) -> CHPNDG1_W<BRSPND_SPEC> {
         CHPNDG1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channels Pending Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chpndg2(&mut self) -> CHPNDG2_W<BRSPND_SPEC> {
         CHPNDG2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channels Pending Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chpndg3(&mut self) -> CHPNDG3_W<BRSPND_SPEC> {
         CHPNDG3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Channels Pending Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chpndg4(&mut self) -> CHPNDG4_W<BRSPND_SPEC> {
         CHPNDG4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Channels Pending Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chpndg5(&mut self) -> CHPNDG5_W<BRSPND_SPEC> {
         CHPNDG5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Channels Pending Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chpndg6(&mut self) -> CHPNDG6_W<BRSPND_SPEC> {
         CHPNDG6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Channels Pending Group x"]
     #[inline(always)]
-    #[must_use]
     pub fn chpndg7(&mut self) -> CHPNDG7_W<BRSPND_SPEC> {
         CHPNDG7_W::new(self, 7)
     }

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Hash Table High"]
     #[inline(always)]
-    #[must_use]
     pub fn hth(&mut self) -> HTH_W<HASH_TABLE_HIGH_SPEC> {
         HTH_W::new(self, 0)
     }

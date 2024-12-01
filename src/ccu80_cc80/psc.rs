@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Prescaler Initial Value"]
     #[inline(always)]
-    #[must_use]
     pub fn psiv(&mut self) -> PSIV_W<PSC_SPEC> {
         PSIV_W::new(self, 0)
     }

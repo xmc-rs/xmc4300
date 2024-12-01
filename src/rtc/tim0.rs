@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Seconds Time Value"]
     #[inline(always)]
-    #[must_use]
     pub fn se(&mut self) -> SE_W<TIM0_SPEC> {
         SE_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - Minutes Time Value"]
     #[inline(always)]
-    #[must_use]
     pub fn mi(&mut self) -> MI_W<TIM0_SPEC> {
         MI_W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Hours Time Value"]
     #[inline(always)]
-    #[must_use]
     pub fn ho(&mut self) -> HO_W<TIM0_SPEC> {
         HO_W::new(self, 16)
     }
     #[doc = "Bits 24:28 - Days Time Value"]
     #[inline(always)]
-    #[must_use]
     pub fn da(&mut self) -> DA_W<TIM0_SPEC> {
         DA_W::new(self, 24)
     }

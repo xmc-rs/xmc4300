@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Address of PHY Register that shall beread/written"]
     #[inline(always)]
-    #[must_use]
     pub fn phy_reg_addr(&mut self) -> PHY_REG_ADDR_W<MII_PHY_REG_ADR_SPEC> {
         PHY_REG_ADDR_W::new(self, 0)
     }

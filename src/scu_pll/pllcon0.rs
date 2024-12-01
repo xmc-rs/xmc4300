@@ -531,61 +531,51 @@ impl R {
 impl W {
     #[doc = "Bit 0 - VCO Bypass"]
     #[inline(always)]
-    #[must_use]
     pub fn vcobyp(&mut self) -> VCOBYP_W<PLLCON0_SPEC> {
         VCOBYP_W::new(self, 0)
     }
     #[doc = "Bit 1 - VCO Power Saving Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn vcopwd(&mut self) -> VCOPWD_W<PLLCON0_SPEC> {
         VCOPWD_W::new(self, 1)
     }
     #[doc = "Bit 2 - VCO Trim Control"]
     #[inline(always)]
-    #[must_use]
     pub fn vcotr(&mut self) -> VCOTR_W<PLLCON0_SPEC> {
         VCOTR_W::new(self, 2)
     }
     #[doc = "Bit 4 - Disconnect Oscillator from VCO"]
     #[inline(always)]
-    #[must_use]
     pub fn findis(&mut self) -> FINDIS_W<PLLCON0_SPEC> {
         FINDIS_W::new(self, 4)
     }
     #[doc = "Bit 6 - Oscillator Disconnect Disable"]
     #[inline(always)]
-    #[must_use]
     pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<PLLCON0_SPEC> {
         OSCDISCDIS_W::new(self, 6)
     }
     #[doc = "Bit 16 - PLL Power Saving Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn pllpwd(&mut self) -> PLLPWD_W<PLLCON0_SPEC> {
         PLLPWD_W::new(self, 16)
     }
     #[doc = "Bit 17 - Oscillator Watchdog Reset"]
     #[inline(always)]
-    #[must_use]
     pub fn oscres(&mut self) -> OSCRES_W<PLLCON0_SPEC> {
         OSCRES_W::new(self, 17)
     }
     #[doc = "Bit 18 - Restart VCO Lock Detection"]
     #[inline(always)]
-    #[must_use]
     pub fn resld(&mut self) -> RESLD_W<PLLCON0_SPEC> {
         RESLD_W::new(self, 18)
     }
     #[doc = "Bit 19 - Automatic Oscillator Calibration Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn aotren(&mut self) -> AOTREN_W<PLLCON0_SPEC> {
         AOTREN_W::new(self, 19)
     }
     #[doc = "Bit 20 - Factory Oscillator Calibration"]
     #[inline(always)]
-    #[must_use]
     pub fn fotr(&mut self) -> FOTR_W<PLLCON0_SPEC> {
         FOTR_W::new(self, 20)
     }

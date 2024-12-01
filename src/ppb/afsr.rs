@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Reserved"]
     #[inline(always)]
-    #[must_use]
     pub fn value(&mut self) -> VALUE_W<AFSR_SPEC> {
         VALUE_W::new(self, 0)
     }

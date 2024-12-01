@@ -65,7 +65,6 @@ impl R {
 impl W {
     #[doc = "Bit 0 - System Reset Enable upon Parity Error Trap"]
     #[inline(always)]
-    #[must_use]
     pub fn rsen(&mut self) -> RSEN_W<PERSTEN_SPEC> {
         RSEN_W::new(self, 0)
     }

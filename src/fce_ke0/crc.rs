@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - CRC Register"]
     #[inline(always)]
-    #[must_use]
     pub fn crc(&mut self) -> CRC_W<CRC_SPEC> {
         CRC_W::new(self, 0)
     }

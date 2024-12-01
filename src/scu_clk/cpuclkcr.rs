@@ -65,7 +65,6 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CPU Clock Divider Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cpudiv(&mut self) -> CPUDIV_W<CPUCLKCR_SPEC> {
         CPUDIV_W::new(self, 0)
     }

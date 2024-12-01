@@ -72,7 +72,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - EEPROM Address"]
     #[inline(always)]
-    #[must_use]
     pub fn eeprom_addr(&mut self) -> EEPROM_ADDR_W<EEP_ADR_SPEC> {
         EEPROM_ADDR_W::new(self, 0)
     }

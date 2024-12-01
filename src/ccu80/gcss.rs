@@ -43,121 +43,101 @@ pub type S3ST2S_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Slice 0 shadow transfer set enable"]
     #[inline(always)]
-    #[must_use]
     pub fn s0se(&mut self) -> S0SE_W<GCSS_SPEC> {
         S0SE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Slice 0 Dither shadow transfer set enable"]
     #[inline(always)]
-    #[must_use]
     pub fn s0dse(&mut self) -> S0DSE_W<GCSS_SPEC> {
         S0DSE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Slice 0 Prescaler shadow transfer set enable"]
     #[inline(always)]
-    #[must_use]
     pub fn s0pse(&mut self) -> S0PSE_W<GCSS_SPEC> {
         S0PSE_W::new(self, 2)
     }
     #[doc = "Bit 4 - Slice 1 shadow transfer set enable"]
     #[inline(always)]
-    #[must_use]
     pub fn s1se(&mut self) -> S1SE_W<GCSS_SPEC> {
         S1SE_W::new(self, 4)
     }
     #[doc = "Bit 5 - Slice 1 Dither shadow transfer set enable"]
     #[inline(always)]
-    #[must_use]
     pub fn s1dse(&mut self) -> S1DSE_W<GCSS_SPEC> {
         S1DSE_W::new(self, 5)
     }
     #[doc = "Bit 6 - Slice 1 Prescaler shadow transfer set enable"]
     #[inline(always)]
-    #[must_use]
     pub fn s1pse(&mut self) -> S1PSE_W<GCSS_SPEC> {
         S1PSE_W::new(self, 6)
     }
     #[doc = "Bit 8 - Slice 2 shadow transfer set enable"]
     #[inline(always)]
-    #[must_use]
     pub fn s2se(&mut self) -> S2SE_W<GCSS_SPEC> {
         S2SE_W::new(self, 8)
     }
     #[doc = "Bit 9 - Slice 2 Dither shadow transfer set enable"]
     #[inline(always)]
-    #[must_use]
     pub fn s2dse(&mut self) -> S2DSE_W<GCSS_SPEC> {
         S2DSE_W::new(self, 9)
     }
     #[doc = "Bit 10 - Slice 2 Prescaler shadow transfer set enable"]
     #[inline(always)]
-    #[must_use]
     pub fn s2pse(&mut self) -> S2PSE_W<GCSS_SPEC> {
         S2PSE_W::new(self, 10)
     }
     #[doc = "Bit 12 - Slice 3 shadow transfer set enable"]
     #[inline(always)]
-    #[must_use]
     pub fn s3se(&mut self) -> S3SE_W<GCSS_SPEC> {
         S3SE_W::new(self, 12)
     }
     #[doc = "Bit 13 - Slice 3 Dither shadow transfer set enable"]
     #[inline(always)]
-    #[must_use]
     pub fn s3dse(&mut self) -> S3DSE_W<GCSS_SPEC> {
         S3DSE_W::new(self, 13)
     }
     #[doc = "Bit 14 - Slice 3 Prescaler shadow transfer set enable"]
     #[inline(always)]
-    #[must_use]
     pub fn s3pse(&mut self) -> S3PSE_W<GCSS_SPEC> {
         S3PSE_W::new(self, 14)
     }
     #[doc = "Bit 16 - Slice 0 status bit 1 set"]
     #[inline(always)]
-    #[must_use]
     pub fn s0st1s(&mut self) -> S0ST1S_W<GCSS_SPEC> {
         S0ST1S_W::new(self, 16)
     }
     #[doc = "Bit 17 - Slice 1 status bit 1 set"]
     #[inline(always)]
-    #[must_use]
     pub fn s1st1s(&mut self) -> S1ST1S_W<GCSS_SPEC> {
         S1ST1S_W::new(self, 17)
     }
     #[doc = "Bit 18 - Slice 2 status bit 1 set"]
     #[inline(always)]
-    #[must_use]
     pub fn s2st1s(&mut self) -> S2ST1S_W<GCSS_SPEC> {
         S2ST1S_W::new(self, 18)
     }
     #[doc = "Bit 19 - Slice 3 status bit 1 set"]
     #[inline(always)]
-    #[must_use]
     pub fn s3st1s(&mut self) -> S3ST1S_W<GCSS_SPEC> {
         S3ST1S_W::new(self, 19)
     }
     #[doc = "Bit 20 - Slice 0 status bit 2 set"]
     #[inline(always)]
-    #[must_use]
     pub fn s0st2s(&mut self) -> S0ST2S_W<GCSS_SPEC> {
         S0ST2S_W::new(self, 20)
     }
     #[doc = "Bit 21 - Slice 1 status bit 2 set"]
     #[inline(always)]
-    #[must_use]
     pub fn s1st2s(&mut self) -> S1ST2S_W<GCSS_SPEC> {
         S1ST2S_W::new(self, 21)
     }
     #[doc = "Bit 22 - Slice 2 status bit 2 set"]
     #[inline(always)]
-    #[must_use]
     pub fn s2st2s(&mut self) -> S2ST2S_W<GCSS_SPEC> {
         S2ST2S_W::new(self, 22)
     }
     #[doc = "Bit 23 - Slice 3 status bit 2 set"]
     #[inline(always)]
-    #[must_use]
     pub fn s3st2s(&mut self) -> S3ST2S_W<GCSS_SPEC> {
         S3ST2S_W::new(self, 23)
     }

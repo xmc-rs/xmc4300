@@ -761,85 +761,71 @@ impl R {
 impl W {
     #[doc = "Bit 0 - MSLS Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mslsen(&mut self) -> MSLSEN_W<PCR_SSCMODE_SPEC> {
         MSLSEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Select Control"]
     #[inline(always)]
-    #[must_use]
     pub fn selctr(&mut self) -> SELCTR_W<PCR_SSCMODE_SPEC> {
         SELCTR_W::new(self, 1)
     }
     #[doc = "Bit 2 - Select Inversion"]
     #[inline(always)]
-    #[must_use]
     pub fn selinv(&mut self) -> SELINV_W<PCR_SSCMODE_SPEC> {
         SELINV_W::new(self, 2)
     }
     #[doc = "Bit 3 - Frame End Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn fem(&mut self) -> FEM_W<PCR_SSCMODE_SPEC> {
         FEM_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Input Frequency Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn ctqsel1(&mut self) -> CTQSEL1_W<PCR_SSCMODE_SPEC> {
         CTQSEL1_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Divider Factor PCTQ1 for Tiw and Tnf"]
     #[inline(always)]
-    #[must_use]
     pub fn pctq1(&mut self) -> PCTQ1_W<PCR_SSCMODE_SPEC> {
         PCTQ1_W::new(self, 6)
     }
     #[doc = "Bits 8:12 - Divider Factor DCTQ1 for Tiw and Tnf"]
     #[inline(always)]
-    #[must_use]
     pub fn dctq1(&mut self) -> DCTQ1_W<PCR_SSCMODE_SPEC> {
         DCTQ1_W::new(self, 8)
     }
     #[doc = "Bit 13 - Parity Error Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn parien(&mut self) -> PARIEN_W<PCR_SSCMODE_SPEC> {
         PARIEN_W::new(self, 13)
     }
     #[doc = "Bit 14 - MSLS Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mslsien(&mut self) -> MSLSIEN_W<PCR_SSCMODE_SPEC> {
         MSLSIEN_W::new(self, 14)
     }
     #[doc = "Bit 15 - DX2T Interrupt Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dx2tien(&mut self) -> DX2TIEN_W<PCR_SSCMODE_SPEC> {
         DX2TIEN_W::new(self, 15)
     }
     #[doc = "Bits 16:23 - Select Output"]
     #[inline(always)]
-    #[must_use]
     pub fn selo(&mut self) -> SELO_W<PCR_SSCMODE_SPEC> {
         SELO_W::new(self, 16)
     }
     #[doc = "Bit 24 - Enable Inter-Word Delay Tiw"]
     #[inline(always)]
-    #[must_use]
     pub fn tiwen(&mut self) -> TIWEN_W<PCR_SSCMODE_SPEC> {
         TIWEN_W::new(self, 24)
     }
     #[doc = "Bit 25 - Slave Mode Clock Phase Select"]
     #[inline(always)]
-    #[must_use]
     pub fn slphsel(&mut self) -> SLPHSEL_W<PCR_SSCMODE_SPEC> {
         SLPHSEL_W::new(self, 25)
     }
     #[doc = "Bit 31 - Master Clock Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mclk(&mut self) -> MCLK_W<PCR_SSCMODE_SPEC> {
         MCLK_W::new(self, 31)
     }

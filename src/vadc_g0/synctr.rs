@@ -272,25 +272,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Start Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn stsel(&mut self) -> STSEL_W<SYNCTR_SPEC> {
         STSEL_W::new(self, 0)
     }
     #[doc = "Bit 4 - Evaluate Ready Input Rx"]
     #[inline(always)]
-    #[must_use]
     pub fn evalr1(&mut self) -> EVALR1_W<SYNCTR_SPEC> {
         EVALR1_W::new(self, 4)
     }
     #[doc = "Bit 5 - Evaluate Ready Input Rx"]
     #[inline(always)]
-    #[must_use]
     pub fn evalr2(&mut self) -> EVALR2_W<SYNCTR_SPEC> {
         EVALR2_W::new(self, 5)
     }
     #[doc = "Bit 6 - Evaluate Ready Input Rx"]
     #[inline(always)]
-    #[must_use]
     pub fn evalr3(&mut self) -> EVALR3_W<SYNCTR_SPEC> {
         EVALR3_W::new(self, 6)
     }

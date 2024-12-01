@@ -339,37 +339,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Last Error Code"]
     #[inline(always)]
-    #[must_use]
     pub fn lec(&mut self) -> LEC_W<NSR_SPEC> {
         LEC_W::new(self, 0)
     }
     #[doc = "Bit 3 - Message Transmitted Successfully"]
     #[inline(always)]
-    #[must_use]
     pub fn txok(&mut self) -> TXOK_W<NSR_SPEC> {
         TXOK_W::new(self, 3)
     }
     #[doc = "Bit 4 - Message Received Successfully"]
     #[inline(always)]
-    #[must_use]
     pub fn rxok(&mut self) -> RXOK_W<NSR_SPEC> {
         RXOK_W::new(self, 4)
     }
     #[doc = "Bit 5 - Alert Warning"]
     #[inline(always)]
-    #[must_use]
     pub fn alert(&mut self) -> ALERT_W<NSR_SPEC> {
         ALERT_W::new(self, 5)
     }
     #[doc = "Bit 8 - List Length Error"]
     #[inline(always)]
-    #[must_use]
     pub fn lle(&mut self) -> LLE_W<NSR_SPEC> {
         LLE_W::new(self, 8)
     }
     #[doc = "Bit 9 - List Object Error"]
     #[inline(always)]
-    #[must_use]
     pub fn loe(&mut self) -> LOE_W<NSR_SPEC> {
         LOE_W::new(self, 9)
     }

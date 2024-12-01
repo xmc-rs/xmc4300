@@ -133,85 +133,71 @@ impl R {
 impl W {
     #[doc = "Bit 0 - MemManage exception active bit"]
     #[inline(always)]
-    #[must_use]
     pub fn memfaultact(&mut self) -> MEMFAULTACT_W<SHCSR_SPEC> {
         MEMFAULTACT_W::new(self, 0)
     }
     #[doc = "Bit 1 - BusFault exception active bit"]
     #[inline(always)]
-    #[must_use]
     pub fn busfaultact(&mut self) -> BUSFAULTACT_W<SHCSR_SPEC> {
         BUSFAULTACT_W::new(self, 1)
     }
     #[doc = "Bit 3 - UsageFault exception active bit"]
     #[inline(always)]
-    #[must_use]
     pub fn usgfaultact(&mut self) -> USGFAULTACT_W<SHCSR_SPEC> {
         USGFAULTACT_W::new(self, 3)
     }
     #[doc = "Bit 7 - SVCall active bit"]
     #[inline(always)]
-    #[must_use]
     pub fn svcallact(&mut self) -> SVCALLACT_W<SHCSR_SPEC> {
         SVCALLACT_W::new(self, 7)
     }
     #[doc = "Bit 8 - Debug monitor active bit"]
     #[inline(always)]
-    #[must_use]
     pub fn monitoract(&mut self) -> MONITORACT_W<SHCSR_SPEC> {
         MONITORACT_W::new(self, 8)
     }
     #[doc = "Bit 10 - PendSV exception active bit"]
     #[inline(always)]
-    #[must_use]
     pub fn pendsvact(&mut self) -> PENDSVACT_W<SHCSR_SPEC> {
         PENDSVACT_W::new(self, 10)
     }
     #[doc = "Bit 11 - SysTick exception active bit"]
     #[inline(always)]
-    #[must_use]
     pub fn systickact(&mut self) -> SYSTICKACT_W<SHCSR_SPEC> {
         SYSTICKACT_W::new(self, 11)
     }
     #[doc = "Bit 12 - UsageFault exception pending bit"]
     #[inline(always)]
-    #[must_use]
     pub fn usgfaultpended(&mut self) -> USGFAULTPENDED_W<SHCSR_SPEC> {
         USGFAULTPENDED_W::new(self, 12)
     }
     #[doc = "Bit 13 - MemManage exception pending bit"]
     #[inline(always)]
-    #[must_use]
     pub fn memfaultpended(&mut self) -> MEMFAULTPENDED_W<SHCSR_SPEC> {
         MEMFAULTPENDED_W::new(self, 13)
     }
     #[doc = "Bit 14 - BusFault exception pending bit"]
     #[inline(always)]
-    #[must_use]
     pub fn busfaultpended(&mut self) -> BUSFAULTPENDED_W<SHCSR_SPEC> {
         BUSFAULTPENDED_W::new(self, 14)
     }
     #[doc = "Bit 15 - SVCall pending bit"]
     #[inline(always)]
-    #[must_use]
     pub fn svcallpended(&mut self) -> SVCALLPENDED_W<SHCSR_SPEC> {
         SVCALLPENDED_W::new(self, 15)
     }
     #[doc = "Bit 16 - MemManage enable bit"]
     #[inline(always)]
-    #[must_use]
     pub fn memfaultena(&mut self) -> MEMFAULTENA_W<SHCSR_SPEC> {
         MEMFAULTENA_W::new(self, 16)
     }
     #[doc = "Bit 17 - BusFault enable bit"]
     #[inline(always)]
-    #[must_use]
     pub fn busfaultena(&mut self) -> BUSFAULTENA_W<SHCSR_SPEC> {
         BUSFAULTENA_W::new(self, 17)
     }
     #[doc = "Bit 18 - UsageFault enable bit"]
     #[inline(always)]
-    #[must_use]
     pub fn usgfaultena(&mut self) -> USGFAULTENA_W<SHCSR_SPEC> {
         USGFAULTENA_W::new(self, 18)
     }

@@ -101,31 +101,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Reserved for Debug use."]
     #[inline(always)]
-    #[must_use]
     pub fn vectreset(&mut self) -> VECTRESET_W<AIRCR_SPEC> {
         VECTRESET_W::new(self, 0)
     }
     #[doc = "Bit 1 - Reserved for Debug use."]
     #[inline(always)]
-    #[must_use]
     pub fn vectclractive(&mut self) -> VECTCLRACTIVE_W<AIRCR_SPEC> {
         VECTCLRACTIVE_W::new(self, 1)
     }
     #[doc = "Bit 2 - System reset request"]
     #[inline(always)]
-    #[must_use]
     pub fn sysresetreq(&mut self) -> SYSRESETREQ_W<AIRCR_SPEC> {
         SYSRESETREQ_W::new(self, 2)
     }
     #[doc = "Bits 8:10 - Interrupt priority grouping field"]
     #[inline(always)]
-    #[must_use]
     pub fn prigroup(&mut self) -> PRIGROUP_W<AIRCR_SPEC> {
         PRIGROUP_W::new(self, 8)
     }
     #[doc = "Bits 16:31 - Register key"]
     #[inline(always)]
-    #[must_use]
     pub fn vectkey(&mut self) -> VECTKEY_W<AIRCR_SPEC> {
         VECTKEY_W::new(self, 16)
     }

@@ -761,79 +761,66 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Word Address"]
     #[inline(always)]
-    #[must_use]
     pub fn wa(&mut self) -> WA_W<PSR_IISMODE_SPEC> {
         WA_W::new(self, 0)
     }
     #[doc = "Bit 1 - DX2S Status"]
     #[inline(always)]
-    #[must_use]
     pub fn dx2s(&mut self) -> DX2S_W<PSR_IISMODE_SPEC> {
         DX2S_W::new(self, 1)
     }
     #[doc = "Bit 3 - DX2T Event Detected"]
     #[inline(always)]
-    #[must_use]
     pub fn dx2tev(&mut self) -> DX2TEV_W<PSR_IISMODE_SPEC> {
         DX2TEV_W::new(self, 3)
     }
     #[doc = "Bit 4 - WA Falling Edge Event"]
     #[inline(always)]
-    #[must_use]
     pub fn wafe(&mut self) -> WAFE_W<PSR_IISMODE_SPEC> {
         WAFE_W::new(self, 4)
     }
     #[doc = "Bit 5 - WA Rising Edge Event"]
     #[inline(always)]
-    #[must_use]
     pub fn ware(&mut self) -> WARE_W<PSR_IISMODE_SPEC> {
         WARE_W::new(self, 5)
     }
     #[doc = "Bit 6 - WA Generation End"]
     #[inline(always)]
-    #[must_use]
     pub fn end(&mut self) -> END_W<PSR_IISMODE_SPEC> {
         END_W::new(self, 6)
     }
     #[doc = "Bit 10 - Receiver Start Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn rsif(&mut self) -> RSIF_W<PSR_IISMODE_SPEC> {
         RSIF_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data Lost Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn dlif(&mut self) -> DLIF_W<PSR_IISMODE_SPEC> {
         DLIF_W::new(self, 11)
     }
     #[doc = "Bit 12 - Transmit Shift Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn tsif(&mut self) -> TSIF_W<PSR_IISMODE_SPEC> {
         TSIF_W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit Buffer Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn tbif(&mut self) -> TBIF_W<PSR_IISMODE_SPEC> {
         TBIF_W::new(self, 13)
     }
     #[doc = "Bit 14 - Receive Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn rif(&mut self) -> RIF_W<PSR_IISMODE_SPEC> {
         RIF_W::new(self, 14)
     }
     #[doc = "Bit 15 - Alternative Receive Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn aif(&mut self) -> AIF_W<PSR_IISMODE_SPEC> {
         AIF_W::new(self, 15)
     }
     #[doc = "Bit 16 - Baud Rate Generator Indication Flag"]
     #[inline(always)]
-    #[must_use]
     pub fn brgif(&mut self) -> BRGIF_W<PSR_IISMODE_SPEC> {
         BRGIF_W::new(self, 16)
     }
