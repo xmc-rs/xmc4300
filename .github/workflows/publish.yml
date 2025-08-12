@@ -39,7 +39,7 @@ jobs:
     environment: crates.io
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: swatinem/rust-cache@v2
 
       - name: Publish
