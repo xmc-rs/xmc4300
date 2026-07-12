@@ -375,47 +375,47 @@ impl R {
 impl W {
     #[doc = "Bit 0 - VCO Bypass"]
     #[inline(always)]
-    pub fn vcobyp(&mut self) -> VCOBYP_W<USBPLLCON_SPEC> {
+    pub fn vcobyp(&mut self) -> VCOBYP_W<'_, USBPLLCON_SPEC> {
         VCOBYP_W::new(self, 0)
     }
     #[doc = "Bit 1 - VCO Power Saving Mode"]
     #[inline(always)]
-    pub fn vcopwd(&mut self) -> VCOPWD_W<USBPLLCON_SPEC> {
+    pub fn vcopwd(&mut self) -> VCOPWD_W<'_, USBPLLCON_SPEC> {
         VCOPWD_W::new(self, 1)
     }
     #[doc = "Bit 2 - VCO Trim Control"]
     #[inline(always)]
-    pub fn vcotr(&mut self) -> VCOTR_W<USBPLLCON_SPEC> {
+    pub fn vcotr(&mut self) -> VCOTR_W<'_, USBPLLCON_SPEC> {
         VCOTR_W::new(self, 2)
     }
     #[doc = "Bit 4 - Disconnect Oscillator from VCO"]
     #[inline(always)]
-    pub fn findis(&mut self) -> FINDIS_W<USBPLLCON_SPEC> {
+    pub fn findis(&mut self) -> FINDIS_W<'_, USBPLLCON_SPEC> {
         FINDIS_W::new(self, 4)
     }
     #[doc = "Bit 6 - Oscillator Disconnect Disable"]
     #[inline(always)]
-    pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<USBPLLCON_SPEC> {
+    pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<'_, USBPLLCON_SPEC> {
         OSCDISCDIS_W::new(self, 6)
     }
     #[doc = "Bits 8:14 - N-Divider Value"]
     #[inline(always)]
-    pub fn ndiv(&mut self) -> NDIV_W<USBPLLCON_SPEC> {
+    pub fn ndiv(&mut self) -> NDIV_W<'_, USBPLLCON_SPEC> {
         NDIV_W::new(self, 8)
     }
     #[doc = "Bit 16 - PLL Power Saving Mode"]
     #[inline(always)]
-    pub fn pllpwd(&mut self) -> PLLPWD_W<USBPLLCON_SPEC> {
+    pub fn pllpwd(&mut self) -> PLLPWD_W<'_, USBPLLCON_SPEC> {
         PLLPWD_W::new(self, 16)
     }
     #[doc = "Bit 18 - Restart VCO Lock Detection"]
     #[inline(always)]
-    pub fn resld(&mut self) -> RESLD_W<USBPLLCON_SPEC> {
+    pub fn resld(&mut self) -> RESLD_W<'_, USBPLLCON_SPEC> {
         RESLD_W::new(self, 18)
     }
     #[doc = "Bits 24:27 - P-Divider Value"]
     #[inline(always)]
-    pub fn pdiv(&mut self) -> PDIV_W<USBPLLCON_SPEC> {
+    pub fn pdiv(&mut self) -> PDIV_W<'_, USBPLLCON_SPEC> {
         PDIV_W::new(self, 24)
     }
 }
@@ -429,8 +429,6 @@ impl crate::Readable for USBPLLCON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`usbpllcon::W`](W) writer structure"]
 impl crate::Writable for USBPLLCON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets USBPLLCON to value 0x0001_0003"]
 impl crate::Resettable for USBPLLCON_SPEC {

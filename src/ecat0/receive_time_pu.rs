@@ -16,8 +16,5 @@ impl crate::RegisterSpec for RECEIVE_TIME_PU_SPEC {
 }
 #[doc = "`read()` method returns [`receive_time_pu::R`](R) reader structure"]
 impl crate::Readable for RECEIVE_TIME_PU_SPEC {}
-#[doc = "`reset()` method sets RECEIVE_TIME_PU[%s]
-to value 0"]
-impl crate::Resettable for RECEIVE_TIME_PU_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets RECEIVE_TIME_PU[%s] to value 0"]
+impl crate::Resettable for RECEIVE_TIME_PU_SPEC {}

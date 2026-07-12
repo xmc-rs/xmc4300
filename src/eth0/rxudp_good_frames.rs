@@ -17,6 +17,4 @@ impl crate::RegisterSpec for RXUDP_GOOD_FRAMES_SPEC {
 #[doc = "`read()` method returns [`rxudp_good_frames::R`](R) reader structure"]
 impl crate::Readable for RXUDP_GOOD_FRAMES_SPEC {}
 #[doc = "`reset()` method sets RXUDP_GOOD_FRAMES to value 0"]
-impl crate::Resettable for RXUDP_GOOD_FRAMES_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RXUDP_GOOD_FRAMES_SPEC {}

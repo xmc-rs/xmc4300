@@ -390,47 +390,47 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Parity Checker Automatic start/stop"]
     #[inline(always)]
-    pub fn pase(&mut self) -> PASE_W<GPCHK_SPEC> {
+    pub fn pase(&mut self) -> PASE_W<'_, GPCHK_SPEC> {
         PASE_W::new(self, 0)
     }
     #[doc = "Bits 1:2 - Parity Checker Automatic start/stop selector"]
     #[inline(always)]
-    pub fn pacs(&mut self) -> PACS_W<GPCHK_SPEC> {
+    pub fn pacs(&mut self) -> PACS_W<'_, GPCHK_SPEC> {
         PACS_W::new(self, 1)
     }
     #[doc = "Bits 3:4 - Driver Input signal selector"]
     #[inline(always)]
-    pub fn pisel(&mut self) -> PISEL_W<GPCHK_SPEC> {
+    pub fn pisel(&mut self) -> PISEL_W<'_, GPCHK_SPEC> {
         PISEL_W::new(self, 3)
     }
     #[doc = "Bits 5:6 - Parity Checker Delay Input Selector"]
     #[inline(always)]
-    pub fn pcds(&mut self) -> PCDS_W<GPCHK_SPEC> {
+    pub fn pcds(&mut self) -> PCDS_W<'_, GPCHK_SPEC> {
         PCDS_W::new(self, 5)
     }
     #[doc = "Bit 7 - Parity Checker type selector"]
     #[inline(always)]
-    pub fn pcts(&mut self) -> PCTS_W<GPCHK_SPEC> {
+    pub fn pcts(&mut self) -> PCTS_W<'_, GPCHK_SPEC> {
         PCTS_W::new(self, 7)
     }
     #[doc = "Bits 16:19 - Parity Checker Slice 0 output selection"]
     #[inline(always)]
-    pub fn pcsel0(&mut self) -> PCSEL0_W<GPCHK_SPEC> {
+    pub fn pcsel0(&mut self) -> PCSEL0_W<'_, GPCHK_SPEC> {
         PCSEL0_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Parity Checker Slice 1 output selection"]
     #[inline(always)]
-    pub fn pcsel1(&mut self) -> PCSEL1_W<GPCHK_SPEC> {
+    pub fn pcsel1(&mut self) -> PCSEL1_W<'_, GPCHK_SPEC> {
         PCSEL1_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Parity Checker Slice 2 output selection"]
     #[inline(always)]
-    pub fn pcsel2(&mut self) -> PCSEL2_W<GPCHK_SPEC> {
+    pub fn pcsel2(&mut self) -> PCSEL2_W<'_, GPCHK_SPEC> {
         PCSEL2_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Parity Checker Slice 3 output selection"]
     #[inline(always)]
-    pub fn pcsel3(&mut self) -> PCSEL3_W<GPCHK_SPEC> {
+    pub fn pcsel3(&mut self) -> PCSEL3_W<'_, GPCHK_SPEC> {
         PCSEL3_W::new(self, 28)
     }
 }
@@ -444,10 +444,6 @@ impl crate::Readable for GPCHK_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gpchk::W`](W) writer structure"]
 impl crate::Writable for GPCHK_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GPCHK to value 0"]
-impl crate::Resettable for GPCHK_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GPCHK_SPEC {}

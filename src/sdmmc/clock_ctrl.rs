@@ -320,17 +320,17 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Internal Clock Enable"]
     #[inline(always)]
-    pub fn internal_clock_en(&mut self) -> INTERNAL_CLOCK_EN_W<CLOCK_CTRL_SPEC> {
+    pub fn internal_clock_en(&mut self) -> INTERNAL_CLOCK_EN_W<'_, CLOCK_CTRL_SPEC> {
         INTERNAL_CLOCK_EN_W::new(self, 0)
     }
     #[doc = "Bit 2 - SD Clock Enable"]
     #[inline(always)]
-    pub fn sdclock_en(&mut self) -> SDCLOCK_EN_W<CLOCK_CTRL_SPEC> {
+    pub fn sdclock_en(&mut self) -> SDCLOCK_EN_W<'_, CLOCK_CTRL_SPEC> {
         SDCLOCK_EN_W::new(self, 2)
     }
     #[doc = "Bits 8:15 - SDCLK Frequency Select"]
     #[inline(always)]
-    pub fn sdclk_freq_sel(&mut self) -> SDCLK_FREQ_SEL_W<CLOCK_CTRL_SPEC> {
+    pub fn sdclk_freq_sel(&mut self) -> SDCLK_FREQ_SEL_W<'_, CLOCK_CTRL_SPEC> {
         SDCLK_FREQ_SEL_W::new(self, 8)
     }
 }
@@ -344,10 +344,6 @@ impl crate::Readable for CLOCK_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`clock_ctrl::W`](W) writer structure"]
 impl crate::Writable for CLOCK_CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets CLOCK_CTRL to value 0"]
-impl crate::Resettable for CLOCK_CTRL_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for CLOCK_CTRL_SPEC {}

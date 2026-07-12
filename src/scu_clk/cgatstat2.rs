@@ -256,6 +256,4 @@ impl crate::RegisterSpec for CGATSTAT2_SPEC {
 #[doc = "`read()` method returns [`cgatstat2::R`](R) reader structure"]
 impl crate::Readable for CGATSTAT2_SPEC {}
 #[doc = "`reset()` method sets CGATSTAT2 to value 0"]
-impl crate::Resettable for CGATSTAT2_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CGATSTAT2_SPEC {}

@@ -446,37 +446,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Dead Time Enable for Channel 1"]
     #[inline(always)]
-    pub fn dte1(&mut self) -> DTE1_W<DTC_SPEC> {
+    pub fn dte1(&mut self) -> DTE1_W<'_, DTC_SPEC> {
         DTE1_W::new(self, 0)
     }
     #[doc = "Bit 1 - Dead Time Enable for Channel 2"]
     #[inline(always)]
-    pub fn dte2(&mut self) -> DTE2_W<DTC_SPEC> {
+    pub fn dte2(&mut self) -> DTE2_W<'_, DTC_SPEC> {
         DTE2_W::new(self, 1)
     }
     #[doc = "Bit 2 - Dead Time Enable for CC8yST1"]
     #[inline(always)]
-    pub fn dcen1(&mut self) -> DCEN1_W<DTC_SPEC> {
+    pub fn dcen1(&mut self) -> DCEN1_W<'_, DTC_SPEC> {
         DCEN1_W::new(self, 2)
     }
     #[doc = "Bit 3 - Dead Time Enable for inverted CC8yST1"]
     #[inline(always)]
-    pub fn dcen2(&mut self) -> DCEN2_W<DTC_SPEC> {
+    pub fn dcen2(&mut self) -> DCEN2_W<'_, DTC_SPEC> {
         DCEN2_W::new(self, 3)
     }
     #[doc = "Bit 4 - Dead Time Enable for CC8yST2"]
     #[inline(always)]
-    pub fn dcen3(&mut self) -> DCEN3_W<DTC_SPEC> {
+    pub fn dcen3(&mut self) -> DCEN3_W<'_, DTC_SPEC> {
         DCEN3_W::new(self, 4)
     }
     #[doc = "Bit 5 - Dead Time Enable for inverted CC8yST2"]
     #[inline(always)]
-    pub fn dcen4(&mut self) -> DCEN4_W<DTC_SPEC> {
+    pub fn dcen4(&mut self) -> DCEN4_W<'_, DTC_SPEC> {
         DCEN4_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Dead Time clock control"]
     #[inline(always)]
-    pub fn dtcc(&mut self) -> DTCC_W<DTC_SPEC> {
+    pub fn dtcc(&mut self) -> DTCC_W<'_, DTC_SPEC> {
         DTCC_W::new(self, 6)
     }
 }
@@ -490,10 +490,6 @@ impl crate::Readable for DTC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dtc::W`](W) writer structure"]
 impl crate::Writable for DTC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DTC to value 0"]
-impl crate::Resettable for DTC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DTC_SPEC {}

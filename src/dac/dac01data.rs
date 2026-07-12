@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - DAC0 Data Bits"]
     #[inline(always)]
-    pub fn data0(&mut self) -> DATA0_W<DAC01DATA_SPEC> {
+    pub fn data0(&mut self) -> DATA0_W<'_, DAC01DATA_SPEC> {
         DATA0_W::new(self, 0)
     }
     #[doc = "Bits 16:27 - DAC1 Data Bits"]
     #[inline(always)]
-    pub fn data1(&mut self) -> DATA1_W<DAC01DATA_SPEC> {
+    pub fn data1(&mut self) -> DATA1_W<'_, DAC01DATA_SPEC> {
         DATA1_W::new(self, 16)
     }
 }
@@ -44,10 +44,6 @@ impl crate::Readable for DAC01DATA_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dac01data::W`](W) writer structure"]
 impl crate::Writable for DAC01DATA_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DAC01DATA to value 0"]
-impl crate::Resettable for DAC01DATA_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DAC01DATA_SPEC {}

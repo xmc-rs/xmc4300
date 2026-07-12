@@ -1341,117 +1341,117 @@ impl R {
 impl W {
     #[doc = "Bit 0 - AL Control event"]
     #[inline(always)]
-    pub fn al_ce_mask(&mut self) -> AL_CE_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn al_ce_mask(&mut self) -> AL_CE_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         AL_CE_MASK_W::new(self, 0)
     }
     #[doc = "Bit 1 - DC Latch event"]
     #[inline(always)]
-    pub fn dc_le_mask(&mut self) -> DC_LE_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn dc_le_mask(&mut self) -> DC_LE_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         DC_LE_MASK_W::new(self, 1)
     }
     #[doc = "Bit 2 - State of DC SYNC0"]
     #[inline(always)]
-    pub fn st_s0_mask(&mut self) -> ST_S0_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn st_s0_mask(&mut self) -> ST_S0_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         ST_S0_MASK_W::new(self, 2)
     }
     #[doc = "Bit 3 - State of DC SYNC1"]
     #[inline(always)]
-    pub fn st_s1_mask(&mut self) -> ST_S1_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn st_s1_mask(&mut self) -> ST_S1_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         ST_S1_MASK_W::new(self, 3)
     }
     #[doc = "Bit 4 - SyncManager activation register changed"]
     #[inline(always)]
-    pub fn sm_a_mask(&mut self) -> SM_A_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn sm_a_mask(&mut self) -> SM_A_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SM_A_MASK_W::new(self, 4)
     }
     #[doc = "Bit 5 - EEPROM Emulation"]
     #[inline(always)]
-    pub fn eep_e_mask(&mut self) -> EEP_E_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn eep_e_mask(&mut self) -> EEP_E_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         EEP_E_MASK_W::new(self, 5)
     }
     #[doc = "Bit 6 - Watchdog Process Data"]
     #[inline(always)]
-    pub fn wp_d_mask(&mut self) -> WP_D_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn wp_d_mask(&mut self) -> WP_D_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         WP_D_MASK_W::new(self, 6)
     }
     #[doc = "Bit 8 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_0_mask(&mut self) -> SMI_0_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_0_mask(&mut self) -> SMI_0_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_0_MASK_W::new(self, 8)
     }
     #[doc = "Bit 9 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_1_mask(&mut self) -> SMI_1_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_1_mask(&mut self) -> SMI_1_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_1_MASK_W::new(self, 9)
     }
     #[doc = "Bit 10 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_2_mask(&mut self) -> SMI_2_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_2_mask(&mut self) -> SMI_2_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_2_MASK_W::new(self, 10)
     }
     #[doc = "Bit 11 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_3_mask(&mut self) -> SMI_3_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_3_mask(&mut self) -> SMI_3_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_3_MASK_W::new(self, 11)
     }
     #[doc = "Bit 12 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_4_mask(&mut self) -> SMI_4_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_4_mask(&mut self) -> SMI_4_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_4_MASK_W::new(self, 12)
     }
     #[doc = "Bit 13 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_5_mask(&mut self) -> SMI_5_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_5_mask(&mut self) -> SMI_5_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_5_MASK_W::new(self, 13)
     }
     #[doc = "Bit 14 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_6_mask(&mut self) -> SMI_6_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_6_mask(&mut self) -> SMI_6_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_6_MASK_W::new(self, 14)
     }
     #[doc = "Bit 15 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_7_mask(&mut self) -> SMI_7_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_7_mask(&mut self) -> SMI_7_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_7_MASK_W::new(self, 15)
     }
     #[doc = "Bit 16 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_8_mask(&mut self) -> SMI_8_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_8_mask(&mut self) -> SMI_8_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_8_MASK_W::new(self, 16)
     }
     #[doc = "Bit 17 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_9_mask(&mut self) -> SMI_9_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_9_mask(&mut self) -> SMI_9_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_9_MASK_W::new(self, 17)
     }
     #[doc = "Bit 18 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_10_mask(&mut self) -> SMI_10_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_10_mask(&mut self) -> SMI_10_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_10_MASK_W::new(self, 18)
     }
     #[doc = "Bit 19 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_11_mask(&mut self) -> SMI_11_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_11_mask(&mut self) -> SMI_11_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_11_MASK_W::new(self, 19)
     }
     #[doc = "Bit 20 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_12_mask(&mut self) -> SMI_12_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_12_mask(&mut self) -> SMI_12_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_12_MASK_W::new(self, 20)
     }
     #[doc = "Bit 21 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_13_mask(&mut self) -> SMI_13_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_13_mask(&mut self) -> SMI_13_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_13_MASK_W::new(self, 21)
     }
     #[doc = "Bit 22 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_14_mask(&mut self) -> SMI_14_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_14_mask(&mut self) -> SMI_14_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_14_MASK_W::new(self, 22)
     }
     #[doc = "Bit 23 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_15_mask(&mut self) -> SMI_15_MASK_W<AL_EVENT_MASK_SPEC> {
+    pub fn smi_15_mask(&mut self) -> SMI_15_MASK_W<'_, AL_EVENT_MASK_SPEC> {
         SMI_15_MASK_W::new(self, 23)
     }
 }
@@ -1465,8 +1465,6 @@ impl crate::Readable for AL_EVENT_MASK_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`al_event_mask::W`](W) writer structure"]
 impl crate::Writable for AL_EVENT_MASK_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets AL_EVENT_MASK to value 0x00ff_ff2f"]
 impl crate::Resettable for AL_EVENT_MASK_SPEC {

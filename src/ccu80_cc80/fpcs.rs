@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Floating Prescaler Shadow Compare Value"]
     #[inline(always)]
-    pub fn pcmp(&mut self) -> PCMP_W<FPCS_SPEC> {
+    pub fn pcmp(&mut self) -> PCMP_W<'_, FPCS_SPEC> {
         PCMP_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for FPCS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fpcs::W`](W) writer structure"]
 impl crate::Writable for FPCS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FPCS to value 0"]
-impl crate::Resettable for FPCS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FPCS_SPEC {}

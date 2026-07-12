@@ -386,47 +386,47 @@ impl R {
 impl W {
     #[doc = "Bits 0:10 - Maximum Packet Size"]
     #[inline(always)]
-    pub fn mps(&mut self) -> MPS_W<HCCHAR_SPEC> {
+    pub fn mps(&mut self) -> MPS_W<'_, HCCHAR_SPEC> {
         MPS_W::new(self, 0)
     }
     #[doc = "Bits 11:14 - Endpoint Number"]
     #[inline(always)]
-    pub fn epnum(&mut self) -> EPNUM_W<HCCHAR_SPEC> {
+    pub fn epnum(&mut self) -> EPNUM_W<'_, HCCHAR_SPEC> {
         EPNUM_W::new(self, 11)
     }
     #[doc = "Bit 15 - Endpoint Direction"]
     #[inline(always)]
-    pub fn epdir(&mut self) -> EPDIR_W<HCCHAR_SPEC> {
+    pub fn epdir(&mut self) -> EPDIR_W<'_, HCCHAR_SPEC> {
         EPDIR_W::new(self, 15)
     }
     #[doc = "Bits 18:19 - Endpoint Type"]
     #[inline(always)]
-    pub fn eptype(&mut self) -> EPTYPE_W<HCCHAR_SPEC> {
+    pub fn eptype(&mut self) -> EPTYPE_W<'_, HCCHAR_SPEC> {
         EPTYPE_W::new(self, 18)
     }
     #[doc = "Bits 20:21 - Multi Count / Error Count"]
     #[inline(always)]
-    pub fn mc_ec(&mut self) -> MC_EC_W<HCCHAR_SPEC> {
+    pub fn mc_ec(&mut self) -> MC_EC_W<'_, HCCHAR_SPEC> {
         MC_EC_W::new(self, 20)
     }
     #[doc = "Bits 22:28 - Device Address"]
     #[inline(always)]
-    pub fn dev_addr(&mut self) -> DEV_ADDR_W<HCCHAR_SPEC> {
+    pub fn dev_addr(&mut self) -> DEV_ADDR_W<'_, HCCHAR_SPEC> {
         DEV_ADDR_W::new(self, 22)
     }
     #[doc = "Bit 29 - Odd Frame"]
     #[inline(always)]
-    pub fn odd_frm(&mut self) -> ODD_FRM_W<HCCHAR_SPEC> {
+    pub fn odd_frm(&mut self) -> ODD_FRM_W<'_, HCCHAR_SPEC> {
         ODD_FRM_W::new(self, 29)
     }
     #[doc = "Bit 30 - Channel Disable"]
     #[inline(always)]
-    pub fn ch_dis(&mut self) -> CH_DIS_W<HCCHAR_SPEC> {
+    pub fn ch_dis(&mut self) -> CH_DIS_W<'_, HCCHAR_SPEC> {
         CH_DIS_W::new(self, 30)
     }
     #[doc = "Bit 31 - Channel Enable"]
     #[inline(always)]
-    pub fn ch_ena(&mut self) -> CH_ENA_W<HCCHAR_SPEC> {
+    pub fn ch_ena(&mut self) -> CH_ENA_W<'_, HCCHAR_SPEC> {
         CH_ENA_W::new(self, 31)
     }
 }
@@ -440,10 +440,6 @@ impl crate::Readable for HCCHAR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hcchar::W`](W) writer structure"]
 impl crate::Writable for HCCHAR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HCCHAR to value 0"]
-impl crate::Resettable for HCCHAR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HCCHAR_SPEC {}

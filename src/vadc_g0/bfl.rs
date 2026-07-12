@@ -635,42 +635,42 @@ impl R {
 impl W {
     #[doc = "Bit 8 - Boundary Flag 0 Activation Select"]
     #[inline(always)]
-    pub fn bfa0(&mut self) -> BFA0_W<BFL_SPEC> {
+    pub fn bfa0(&mut self) -> BFA0_W<'_, BFL_SPEC> {
         BFA0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Boundary Flag 1 Activation Select"]
     #[inline(always)]
-    pub fn bfa1(&mut self) -> BFA1_W<BFL_SPEC> {
+    pub fn bfa1(&mut self) -> BFA1_W<'_, BFL_SPEC> {
         BFA1_W::new(self, 9)
     }
     #[doc = "Bit 10 - Boundary Flag 2 Activation Select"]
     #[inline(always)]
-    pub fn bfa2(&mut self) -> BFA2_W<BFL_SPEC> {
+    pub fn bfa2(&mut self) -> BFA2_W<'_, BFL_SPEC> {
         BFA2_W::new(self, 10)
     }
     #[doc = "Bit 11 - Boundary Flag 3 Activation Select"]
     #[inline(always)]
-    pub fn bfa3(&mut self) -> BFA3_W<BFL_SPEC> {
+    pub fn bfa3(&mut self) -> BFA3_W<'_, BFL_SPEC> {
         BFA3_W::new(self, 11)
     }
     #[doc = "Bit 16 - Boundary Flag 0 Inversion Control"]
     #[inline(always)]
-    pub fn bfi0(&mut self) -> BFI0_W<BFL_SPEC> {
+    pub fn bfi0(&mut self) -> BFI0_W<'_, BFL_SPEC> {
         BFI0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Boundary Flag 1 Inversion Control"]
     #[inline(always)]
-    pub fn bfi1(&mut self) -> BFI1_W<BFL_SPEC> {
+    pub fn bfi1(&mut self) -> BFI1_W<'_, BFL_SPEC> {
         BFI1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Boundary Flag 2 Inversion Control"]
     #[inline(always)]
-    pub fn bfi2(&mut self) -> BFI2_W<BFL_SPEC> {
+    pub fn bfi2(&mut self) -> BFI2_W<'_, BFL_SPEC> {
         BFI2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Boundary Flag 3 Inversion Control"]
     #[inline(always)]
-    pub fn bfi3(&mut self) -> BFI3_W<BFL_SPEC> {
+    pub fn bfi3(&mut self) -> BFI3_W<'_, BFL_SPEC> {
         BFI3_W::new(self, 19)
     }
 }
@@ -684,10 +684,6 @@ impl crate::Readable for BFL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`bfl::W`](W) writer structure"]
 impl crate::Writable for BFL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BFL to value 0"]
-impl crate::Resettable for BFL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for BFL_SPEC {}

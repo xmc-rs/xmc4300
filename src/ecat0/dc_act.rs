@@ -181,17 +181,17 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Sync Out Unit activation"]
     #[inline(always)]
-    pub fn sync_out(&mut self) -> SYNC_OUT_W<DC_ACT_SPEC> {
+    pub fn sync_out(&mut self) -> SYNC_OUT_W<'_, DC_ACT_SPEC> {
         SYNC_OUT_W::new(self, 0)
     }
     #[doc = "Bit 1 - SYNC0 generation"]
     #[inline(always)]
-    pub fn sync_0(&mut self) -> SYNC_0_W<DC_ACT_SPEC> {
+    pub fn sync_0(&mut self) -> SYNC_0_W<'_, DC_ACT_SPEC> {
         SYNC_0_W::new(self, 1)
     }
     #[doc = "Bit 2 - SYNC1 generation"]
     #[inline(always)]
-    pub fn sync_1(&mut self) -> SYNC_1_W<DC_ACT_SPEC> {
+    pub fn sync_1(&mut self) -> SYNC_1_W<'_, DC_ACT_SPEC> {
         SYNC_1_W::new(self, 2)
     }
 }
@@ -205,10 +205,6 @@ impl crate::Readable for DC_ACT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dc_act::W`](W) writer structure"]
 impl crate::Writable for DC_ACT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets DC_ACT to value 0"]
-impl crate::Resettable for DC_ACT_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for DC_ACT_SPEC {}

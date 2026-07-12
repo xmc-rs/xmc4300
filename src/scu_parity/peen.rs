@@ -703,62 +703,62 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Parity Error Enable for PSRAM"]
     #[inline(always)]
-    pub fn peenps(&mut self) -> PEENPS_W<PEEN_SPEC> {
+    pub fn peenps(&mut self) -> PEENPS_W<'_, PEEN_SPEC> {
         PEENPS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Parity Error Enable for DSRAM1"]
     #[inline(always)]
-    pub fn peends1(&mut self) -> PEENDS1_W<PEEN_SPEC> {
+    pub fn peends1(&mut self) -> PEENDS1_W<'_, PEEN_SPEC> {
         PEENDS1_W::new(self, 1)
     }
     #[doc = "Bit 8 - Parity Error Enable for USIC0 Memory"]
     #[inline(always)]
-    pub fn peenu0(&mut self) -> PEENU0_W<PEEN_SPEC> {
+    pub fn peenu0(&mut self) -> PEENU0_W<'_, PEEN_SPEC> {
         PEENU0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Parity Error Enable for USIC1 Memory"]
     #[inline(always)]
-    pub fn peenu1(&mut self) -> PEENU1_W<PEEN_SPEC> {
+    pub fn peenu1(&mut self) -> PEENU1_W<'_, PEEN_SPEC> {
         PEENU1_W::new(self, 9)
     }
     #[doc = "Bit 12 - Parity Error Enable for MultiCAN Memory"]
     #[inline(always)]
-    pub fn peenmc(&mut self) -> PEENMC_W<PEEN_SPEC> {
+    pub fn peenmc(&mut self) -> PEENMC_W<'_, PEEN_SPEC> {
         PEENMC_W::new(self, 12)
     }
     #[doc = "Bit 13 - Parity Error Enable for PMU Prefetch Memory"]
     #[inline(always)]
-    pub fn peenpprf(&mut self) -> PEENPPRF_W<PEEN_SPEC> {
+    pub fn peenpprf(&mut self) -> PEENPPRF_W<'_, PEEN_SPEC> {
         PEENPPRF_W::new(self, 13)
     }
     #[doc = "Bit 16 - Parity Error Enable for USB Memory"]
     #[inline(always)]
-    pub fn peenusb(&mut self) -> PEENUSB_W<PEEN_SPEC> {
+    pub fn peenusb(&mut self) -> PEENUSB_W<'_, PEEN_SPEC> {
         PEENUSB_W::new(self, 16)
     }
     #[doc = "Bit 17 - Parity Error Enable for ETH TX Memory"]
     #[inline(always)]
-    pub fn peeneth0tx(&mut self) -> PEENETH0TX_W<PEEN_SPEC> {
+    pub fn peeneth0tx(&mut self) -> PEENETH0TX_W<'_, PEEN_SPEC> {
         PEENETH0TX_W::new(self, 17)
     }
     #[doc = "Bit 18 - Parity Error Enable for ETH RX Memory"]
     #[inline(always)]
-    pub fn peeneth0rx(&mut self) -> PEENETH0RX_W<PEEN_SPEC> {
+    pub fn peeneth0rx(&mut self) -> PEENETH0RX_W<'_, PEEN_SPEC> {
         PEENETH0RX_W::new(self, 18)
     }
     #[doc = "Bit 19 - Parity Error Enable for SDMMC Memory 0"]
     #[inline(always)]
-    pub fn peensd0(&mut self) -> PEENSD0_W<PEEN_SPEC> {
+    pub fn peensd0(&mut self) -> PEENSD0_W<'_, PEEN_SPEC> {
         PEENSD0_W::new(self, 19)
     }
     #[doc = "Bit 20 - Parity Error Enable for SDMMC Memory 1"]
     #[inline(always)]
-    pub fn peensd1(&mut self) -> PEENSD1_W<PEEN_SPEC> {
+    pub fn peensd1(&mut self) -> PEENSD1_W<'_, PEEN_SPEC> {
         PEENSD1_W::new(self, 20)
     }
     #[doc = "Bit 24 - Parity Error Enable for ECAT0 Memory"]
     #[inline(always)]
-    pub fn peenecat0(&mut self) -> PEENECAT0_W<PEEN_SPEC> {
+    pub fn peenecat0(&mut self) -> PEENECAT0_W<'_, PEEN_SPEC> {
         PEENECAT0_W::new(self, 24)
     }
 }
@@ -772,10 +772,6 @@ impl crate::Readable for PEEN_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`peen::W`](W) writer structure"]
 impl crate::Writable for PEEN_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PEEN to value 0"]
-impl crate::Resettable for PEEN_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PEEN_SPEC {}

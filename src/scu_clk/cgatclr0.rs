@@ -220,37 +220,37 @@ where
 impl W {
     #[doc = "Bit 0 - VADC Gating Clear"]
     #[inline(always)]
-    pub fn vadc(&mut self) -> VADC_W<CGATCLR0_SPEC> {
+    pub fn vadc(&mut self) -> VADC_W<'_, CGATCLR0_SPEC> {
         VADC_W::new(self, 0)
     }
     #[doc = "Bit 2 - CCU40 Gating Clear"]
     #[inline(always)]
-    pub fn ccu40(&mut self) -> CCU40_W<CGATCLR0_SPEC> {
+    pub fn ccu40(&mut self) -> CCU40_W<'_, CGATCLR0_SPEC> {
         CCU40_W::new(self, 2)
     }
     #[doc = "Bit 3 - CCU41 Gating Clear"]
     #[inline(always)]
-    pub fn ccu41(&mut self) -> CCU41_W<CGATCLR0_SPEC> {
+    pub fn ccu41(&mut self) -> CCU41_W<'_, CGATCLR0_SPEC> {
         CCU41_W::new(self, 3)
     }
     #[doc = "Bit 7 - CCU80 Gating Clear"]
     #[inline(always)]
-    pub fn ccu80(&mut self) -> CCU80_W<CGATCLR0_SPEC> {
+    pub fn ccu80(&mut self) -> CCU80_W<'_, CGATCLR0_SPEC> {
         CCU80_W::new(self, 7)
     }
     #[doc = "Bit 9 - POSIF0 Gating Clear"]
     #[inline(always)]
-    pub fn posif0(&mut self) -> POSIF0_W<CGATCLR0_SPEC> {
+    pub fn posif0(&mut self) -> POSIF0_W<'_, CGATCLR0_SPEC> {
         POSIF0_W::new(self, 9)
     }
     #[doc = "Bit 11 - USIC0 Gating Clear"]
     #[inline(always)]
-    pub fn usic0(&mut self) -> USIC0_W<CGATCLR0_SPEC> {
+    pub fn usic0(&mut self) -> USIC0_W<'_, CGATCLR0_SPEC> {
         USIC0_W::new(self, 11)
     }
     #[doc = "Bit 16 - ERU1 Gating Clear"]
     #[inline(always)]
-    pub fn eru1(&mut self) -> ERU1_W<CGATCLR0_SPEC> {
+    pub fn eru1(&mut self) -> ERU1_W<'_, CGATCLR0_SPEC> {
         ERU1_W::new(self, 16)
     }
 }
@@ -262,10 +262,6 @@ impl crate::RegisterSpec for CGATCLR0_SPEC {
 #[doc = "`write(|w| ..)` method takes [`cgatclr0::W`](W) writer structure"]
 impl crate::Writable for CGATCLR0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CGATCLR0 to value 0"]
-impl crate::Resettable for CGATCLR0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CGATCLR0_SPEC {}

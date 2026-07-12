@@ -74,12 +74,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Receive Select"]
     #[inline(always)]
-    pub fn rxsel(&mut self) -> RXSEL_W<NPCR_SPEC> {
+    pub fn rxsel(&mut self) -> RXSEL_W<'_, NPCR_SPEC> {
         RXSEL_W::new(self, 0)
     }
     #[doc = "Bit 8 - Loop-Back Mode"]
     #[inline(always)]
-    pub fn lbm(&mut self) -> LBM_W<NPCR_SPEC> {
+    pub fn lbm(&mut self) -> LBM_W<'_, NPCR_SPEC> {
         LBM_W::new(self, 8)
     }
 }
@@ -93,10 +93,6 @@ impl crate::Readable for NPCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`npcr::W`](W) writer structure"]
 impl crate::Writable for NPCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NPCR to value 0"]
-impl crate::Resettable for NPCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for NPCR_SPEC {}

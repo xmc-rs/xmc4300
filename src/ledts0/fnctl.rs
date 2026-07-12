@@ -118,8 +118,7 @@ where
 #[doc = "Enable External Pull-up Configuration on Pin COLA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EPULL_A {
-    #[doc = "0: HW over-rule to enable internal pull-up is active on TSIN\\[x\\]
-for set duration in touch-sense time slice. With this setting, it is not specified to assign the COLA to any pin."]
+    #[doc = "0: HW over-rule to enable internal pull-up is active on TSIN\\[x\\] for set duration in touch-sense time slice. With this setting, it is not specified to assign the COLA to any pin."]
     VALUE1 = 0,
     #[doc = "1: Enable external pull-up: Output 1 on pin COLA for whole duration of touch-sense time slice."]
     VALUE2 = 1,
@@ -141,8 +140,7 @@ impl EPULL_R {
             true => EPULL_A::VALUE2,
         }
     }
-    #[doc = "HW over-rule to enable internal pull-up is active on TSIN\\[x\\]
-for set duration in touch-sense time slice. With this setting, it is not specified to assign the COLA to any pin."]
+    #[doc = "HW over-rule to enable internal pull-up is active on TSIN\\[x\\] for set duration in touch-sense time slice. With this setting, it is not specified to assign the COLA to any pin."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EPULL_A::VALUE1
@@ -159,8 +157,7 @@ impl<'a, REG> EPULL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "HW over-rule to enable internal pull-up is active on TSIN\\[x\\]
-for set duration in touch-sense time slice. With this setting, it is not specified to assign the COLA to any pin."]
+    #[doc = "HW over-rule to enable internal pull-up is active on TSIN\\[x\\] for set duration in touch-sense time slice. With this setting, it is not specified to assign the COLA to any pin."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EPULL_A::VALUE1)
@@ -807,57 +804,57 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Touch-Sense TSIN Pad Turn"]
     #[inline(always)]
-    pub fn padt(&mut self) -> PADT_W<FNCTL_SPEC> {
+    pub fn padt(&mut self) -> PADT_W<'_, FNCTL_SPEC> {
         PADT_W::new(self, 0)
     }
     #[doc = "Bit 3 - Software Control for Touch-Sense Pad Turn"]
     #[inline(always)]
-    pub fn padtsw(&mut self) -> PADTSW_W<FNCTL_SPEC> {
+    pub fn padtsw(&mut self) -> PADTSW_W<'_, FNCTL_SPEC> {
         PADTSW_W::new(self, 3)
     }
     #[doc = "Bit 4 - Enable External Pull-up Configuration on Pin COLA"]
     #[inline(always)]
-    pub fn epull(&mut self) -> EPULL_W<FNCTL_SPEC> {
+    pub fn epull(&mut self) -> EPULL_W<'_, FNCTL_SPEC> {
         EPULL_W::new(self, 4)
     }
     #[doc = "Bits 16:19 - Accumulate Count on Touch-Sense Input"]
     #[inline(always)]
-    pub fn acccnt(&mut self) -> ACCCNT_W<FNCTL_SPEC> {
+    pub fn acccnt(&mut self) -> ACCCNT_W<'_, FNCTL_SPEC> {
         ACCCNT_W::new(self, 16)
     }
     #[doc = "Bit 20 - Common Compare Enable for Touch-Sense"]
     #[inline(always)]
-    pub fn tsccmp(&mut self) -> TSCCMP_W<FNCTL_SPEC> {
+    pub fn tsccmp(&mut self) -> TSCCMP_W<'_, FNCTL_SPEC> {
         TSCCMP_W::new(self, 20)
     }
     #[doc = "Bits 21:22 - Extension for Touch-Sense Output for Pin-Low-Level"]
     #[inline(always)]
-    pub fn tsoext(&mut self) -> TSOEXT_W<FNCTL_SPEC> {
+    pub fn tsoext(&mut self) -> TSOEXT_W<'_, FNCTL_SPEC> {
         TSOEXT_W::new(self, 21)
     }
     #[doc = "Bit 23 - TS-Counter Auto Reset"]
     #[inline(always)]
-    pub fn tsctrr(&mut self) -> TSCTRR_W<FNCTL_SPEC> {
+    pub fn tsctrr(&mut self) -> TSCTRR_W<'_, FNCTL_SPEC> {
         TSCTRR_W::new(self, 23)
     }
     #[doc = "Bit 24 - Saturation of TS-Counter"]
     #[inline(always)]
-    pub fn tsctrsat(&mut self) -> TSCTRSAT_W<FNCTL_SPEC> {
+    pub fn tsctrsat(&mut self) -> TSCTRSAT_W<'_, FNCTL_SPEC> {
         TSCTRSAT_W::new(self, 24)
     }
     #[doc = "Bits 25:27 - Number of Touch-Sense Input"]
     #[inline(always)]
-    pub fn nr_tsin(&mut self) -> NR_TSIN_W<FNCTL_SPEC> {
+    pub fn nr_tsin(&mut self) -> NR_TSIN_W<'_, FNCTL_SPEC> {
         NR_TSIN_W::new(self, 25)
     }
     #[doc = "Bit 28 - Active Level of LED Column"]
     #[inline(always)]
-    pub fn collev(&mut self) -> COLLEV_W<FNCTL_SPEC> {
+    pub fn collev(&mut self) -> COLLEV_W<'_, FNCTL_SPEC> {
         COLLEV_W::new(self, 28)
     }
     #[doc = "Bits 29:31 - Number of LED Columns"]
     #[inline(always)]
-    pub fn nr_ledcol(&mut self) -> NR_LEDCOL_W<FNCTL_SPEC> {
+    pub fn nr_ledcol(&mut self) -> NR_LEDCOL_W<'_, FNCTL_SPEC> {
         NR_LEDCOL_W::new(self, 29)
     }
 }
@@ -871,10 +868,6 @@ impl crate::Readable for FNCTL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fnctl::W`](W) writer structure"]
 impl crate::Writable for FNCTL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FNCTL to value 0"]
-impl crate::Resettable for FNCTL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FNCTL_SPEC {}

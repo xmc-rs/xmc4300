@@ -272,22 +272,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Start Selection"]
     #[inline(always)]
-    pub fn stsel(&mut self) -> STSEL_W<SYNCTR_SPEC> {
+    pub fn stsel(&mut self) -> STSEL_W<'_, SYNCTR_SPEC> {
         STSEL_W::new(self, 0)
     }
     #[doc = "Bit 4 - Evaluate Ready Input Rx"]
     #[inline(always)]
-    pub fn evalr1(&mut self) -> EVALR1_W<SYNCTR_SPEC> {
+    pub fn evalr1(&mut self) -> EVALR1_W<'_, SYNCTR_SPEC> {
         EVALR1_W::new(self, 4)
     }
     #[doc = "Bit 5 - Evaluate Ready Input Rx"]
     #[inline(always)]
-    pub fn evalr2(&mut self) -> EVALR2_W<SYNCTR_SPEC> {
+    pub fn evalr2(&mut self) -> EVALR2_W<'_, SYNCTR_SPEC> {
         EVALR2_W::new(self, 5)
     }
     #[doc = "Bit 6 - Evaluate Ready Input Rx"]
     #[inline(always)]
-    pub fn evalr3(&mut self) -> EVALR3_W<SYNCTR_SPEC> {
+    pub fn evalr3(&mut self) -> EVALR3_W<'_, SYNCTR_SPEC> {
         EVALR3_W::new(self, 6)
     }
 }
@@ -301,10 +301,6 @@ impl crate::Readable for SYNCTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`synctr::W`](W) writer structure"]
 impl crate::Writable for SYNCTR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SYNCTR to value 0"]
-impl crate::Resettable for SYNCTR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SYNCTR_SPEC {}

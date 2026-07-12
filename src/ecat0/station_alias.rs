@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Alias Address used for node addressing(FPxx commands)"]
     #[inline(always)]
-    pub fn alias_addr(&mut self) -> ALIAS_ADDR_W<STATION_ALIAS_SPEC> {
+    pub fn alias_addr(&mut self) -> ALIAS_ADDR_W<'_, STATION_ALIAS_SPEC> {
         ALIAS_ADDR_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for STATION_ALIAS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`station_alias::W`](W) writer structure"]
 impl crate::Writable for STATION_ALIAS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets STATION_ALIAS to value 0"]
-impl crate::Resettable for STATION_ALIAS_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for STATION_ALIAS_SPEC {}

@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Filter depth for averaging the clock period deviation"]
     #[inline(always)]
-    pub fn filter_depth(&mut self) -> FILTER_DEPTH_W<DC_SPEED_COUNT_FIL_DEPTH_SPEC> {
+    pub fn filter_depth(&mut self) -> FILTER_DEPTH_W<'_, DC_SPEED_COUNT_FIL_DEPTH_SPEC> {
         FILTER_DEPTH_W::new(self, 0)
     }
 }
@@ -30,8 +30,6 @@ impl crate::Readable for DC_SPEED_COUNT_FIL_DEPTH_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dc_speed_count_fil_depth::W`](W) writer structure"]
 impl crate::Writable for DC_SPEED_COUNT_FIL_DEPTH_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets DC_SPEED_COUNT_FIL_DEPTH to value 0x0c"]
 impl crate::Resettable for DC_SPEED_COUNT_FIL_DEPTH_SPEC {

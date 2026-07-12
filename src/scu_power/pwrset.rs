@@ -127,22 +127,22 @@ where
 impl W {
     #[doc = "Bit 0 - Set Hibernate Domain Enable"]
     #[inline(always)]
-    pub fn hib(&mut self) -> HIB_W<PWRSET_SPEC> {
+    pub fn hib(&mut self) -> HIB_W<'_, PWRSET_SPEC> {
         HIB_W::new(self, 0)
     }
     #[doc = "Bit 16 - Set USB PHY Transceiver Disable"]
     #[inline(always)]
-    pub fn usbphypdq(&mut self) -> USBPHYPDQ_W<PWRSET_SPEC> {
+    pub fn usbphypdq(&mut self) -> USBPHYPDQ_W<'_, PWRSET_SPEC> {
         USBPHYPDQ_W::new(self, 16)
     }
     #[doc = "Bit 17 - Set USB On-The-Go Comparators Enable"]
     #[inline(always)]
-    pub fn usbotgen(&mut self) -> USBOTGEN_W<PWRSET_SPEC> {
+    pub fn usbotgen(&mut self) -> USBOTGEN_W<'_, PWRSET_SPEC> {
         USBOTGEN_W::new(self, 17)
     }
     #[doc = "Bit 18 - Set USB Weak Pull-Up at PADN Enable"]
     #[inline(always)]
-    pub fn usbpuwq(&mut self) -> USBPUWQ_W<PWRSET_SPEC> {
+    pub fn usbpuwq(&mut self) -> USBPUWQ_W<'_, PWRSET_SPEC> {
         USBPUWQ_W::new(self, 18)
     }
 }
@@ -154,10 +154,6 @@ impl crate::RegisterSpec for PWRSET_SPEC {
 #[doc = "`write(|w| ..)` method takes [`pwrset::W`](W) writer structure"]
 impl crate::Writable for PWRSET_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PWRSET to value 0"]
-impl crate::Resettable for PWRSET_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PWRSET_SPEC {}

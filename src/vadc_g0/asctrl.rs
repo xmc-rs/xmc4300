@@ -359,42 +359,42 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Source-specific Result Register"]
     #[inline(always)]
-    pub fn srcresreg(&mut self) -> SRCRESREG_W<ASCTRL_SPEC> {
+    pub fn srcresreg(&mut self) -> SRCRESREG_W<'_, ASCTRL_SPEC> {
         SRCRESREG_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - External Trigger Input Selection"]
     #[inline(always)]
-    pub fn xtsel(&mut self) -> XTSEL_W<ASCTRL_SPEC> {
+    pub fn xtsel(&mut self) -> XTSEL_W<'_, ASCTRL_SPEC> {
         XTSEL_W::new(self, 8)
     }
     #[doc = "Bits 13:14 - Trigger Operating Mode"]
     #[inline(always)]
-    pub fn xtmode(&mut self) -> XTMODE_W<ASCTRL_SPEC> {
+    pub fn xtmode(&mut self) -> XTMODE_W<'_, ASCTRL_SPEC> {
         XTMODE_W::new(self, 13)
     }
     #[doc = "Bit 15 - Write Control for Trigger Configuration"]
     #[inline(always)]
-    pub fn xtwc(&mut self) -> XTWC_W<ASCTRL_SPEC> {
+    pub fn xtwc(&mut self) -> XTWC_W<'_, ASCTRL_SPEC> {
         XTWC_W::new(self, 15)
     }
     #[doc = "Bits 16:19 - Gate Input Selection"]
     #[inline(always)]
-    pub fn gtsel(&mut self) -> GTSEL_W<ASCTRL_SPEC> {
+    pub fn gtsel(&mut self) -> GTSEL_W<'_, ASCTRL_SPEC> {
         GTSEL_W::new(self, 16)
     }
     #[doc = "Bit 23 - Write Control for Gate Configuration"]
     #[inline(always)]
-    pub fn gtwc(&mut self) -> GTWC_W<ASCTRL_SPEC> {
+    pub fn gtwc(&mut self) -> GTWC_W<'_, ASCTRL_SPEC> {
         GTWC_W::new(self, 23)
     }
     #[doc = "Bit 28 - Timer Mode Enable"]
     #[inline(always)]
-    pub fn tmen(&mut self) -> TMEN_W<ASCTRL_SPEC> {
+    pub fn tmen(&mut self) -> TMEN_W<'_, ASCTRL_SPEC> {
         TMEN_W::new(self, 28)
     }
     #[doc = "Bit 31 - Write Control for Timer Mode"]
     #[inline(always)]
-    pub fn tmwc(&mut self) -> TMWC_W<ASCTRL_SPEC> {
+    pub fn tmwc(&mut self) -> TMWC_W<'_, ASCTRL_SPEC> {
         TMWC_W::new(self, 31)
     }
 }
@@ -408,10 +408,6 @@ impl crate::Readable for ASCTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`asctrl::W`](W) writer structure"]
 impl crate::Writable for ASCTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ASCTRL to value 0"]
-impl crate::Resettable for ASCTRL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ASCTRL_SPEC {}

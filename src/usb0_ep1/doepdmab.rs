@@ -17,6 +17,4 @@ impl crate::RegisterSpec for DOEPDMAB_SPEC {
 #[doc = "`read()` method returns [`doepdmab::R`](R) reader structure"]
 impl crate::Readable for DOEPDMAB_SPEC {}
 #[doc = "`reset()` method sets DOEPDMAB to value 0"]
-impl crate::Resettable for DOEPDMAB_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DOEPDMAB_SPEC {}

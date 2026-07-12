@@ -359,42 +359,42 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Source-specific Result Register"]
     #[inline(always)]
-    pub fn srcresreg(&mut self) -> SRCRESREG_W<QCTRL0_SPEC> {
+    pub fn srcresreg(&mut self) -> SRCRESREG_W<'_, QCTRL0_SPEC> {
         SRCRESREG_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - External Trigger Input Selection"]
     #[inline(always)]
-    pub fn xtsel(&mut self) -> XTSEL_W<QCTRL0_SPEC> {
+    pub fn xtsel(&mut self) -> XTSEL_W<'_, QCTRL0_SPEC> {
         XTSEL_W::new(self, 8)
     }
     #[doc = "Bits 13:14 - Trigger Operating Mode"]
     #[inline(always)]
-    pub fn xtmode(&mut self) -> XTMODE_W<QCTRL0_SPEC> {
+    pub fn xtmode(&mut self) -> XTMODE_W<'_, QCTRL0_SPEC> {
         XTMODE_W::new(self, 13)
     }
     #[doc = "Bit 15 - Write Control for Trigger Configuration"]
     #[inline(always)]
-    pub fn xtwc(&mut self) -> XTWC_W<QCTRL0_SPEC> {
+    pub fn xtwc(&mut self) -> XTWC_W<'_, QCTRL0_SPEC> {
         XTWC_W::new(self, 15)
     }
     #[doc = "Bits 16:19 - Gate Input Selection"]
     #[inline(always)]
-    pub fn gtsel(&mut self) -> GTSEL_W<QCTRL0_SPEC> {
+    pub fn gtsel(&mut self) -> GTSEL_W<'_, QCTRL0_SPEC> {
         GTSEL_W::new(self, 16)
     }
     #[doc = "Bit 23 - Write Control for Gate Configuration"]
     #[inline(always)]
-    pub fn gtwc(&mut self) -> GTWC_W<QCTRL0_SPEC> {
+    pub fn gtwc(&mut self) -> GTWC_W<'_, QCTRL0_SPEC> {
         GTWC_W::new(self, 23)
     }
     #[doc = "Bit 28 - Timer Mode Enable"]
     #[inline(always)]
-    pub fn tmen(&mut self) -> TMEN_W<QCTRL0_SPEC> {
+    pub fn tmen(&mut self) -> TMEN_W<'_, QCTRL0_SPEC> {
         TMEN_W::new(self, 28)
     }
     #[doc = "Bit 31 - Write Control for Timer Mode"]
     #[inline(always)]
-    pub fn tmwc(&mut self) -> TMWC_W<QCTRL0_SPEC> {
+    pub fn tmwc(&mut self) -> TMWC_W<'_, QCTRL0_SPEC> {
         TMWC_W::new(self, 31)
     }
 }
@@ -408,10 +408,6 @@ impl crate::Readable for QCTRL0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`qctrl0::W`](W) writer structure"]
 impl crate::Writable for QCTRL0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets QCTRL0 to value 0"]
-impl crate::Resettable for QCTRL0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for QCTRL0_SPEC {}

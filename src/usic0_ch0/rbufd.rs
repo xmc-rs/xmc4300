@@ -17,6 +17,4 @@ impl crate::RegisterSpec for RBUFD_SPEC {
 #[doc = "`read()` method returns [`rbufd::R`](R) reader structure"]
 impl crate::Readable for RBUFD_SPEC {}
 #[doc = "`reset()` method sets RBUFD to value 0"]
-impl crate::Resettable for RBUFD_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RBUFD_SPEC {}

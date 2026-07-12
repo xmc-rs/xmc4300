@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Seconds Time Value"]
     #[inline(always)]
-    pub fn se(&mut self) -> SE_W<TIM0_SPEC> {
+    pub fn se(&mut self) -> SE_W<'_, TIM0_SPEC> {
         SE_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - Minutes Time Value"]
     #[inline(always)]
-    pub fn mi(&mut self) -> MI_W<TIM0_SPEC> {
+    pub fn mi(&mut self) -> MI_W<'_, TIM0_SPEC> {
         MI_W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Hours Time Value"]
     #[inline(always)]
-    pub fn ho(&mut self) -> HO_W<TIM0_SPEC> {
+    pub fn ho(&mut self) -> HO_W<'_, TIM0_SPEC> {
         HO_W::new(self, 16)
     }
     #[doc = "Bits 24:28 - Days Time Value"]
     #[inline(always)]
-    pub fn da(&mut self) -> DA_W<TIM0_SPEC> {
+    pub fn da(&mut self) -> DA_W<'_, TIM0_SPEC> {
         DA_W::new(self, 24)
     }
 }
@@ -72,10 +72,6 @@ impl crate::Readable for TIM0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`tim0::W`](W) writer structure"]
 impl crate::Writable for TIM0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TIM0 to value 0"]
-impl crate::Resettable for TIM0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TIM0_SPEC {}

@@ -174,6 +174,4 @@ impl crate::RegisterSpec for TCST_SPEC {
 #[doc = "`read()` method returns [`tcst::R`](R) reader structure"]
 impl crate::Readable for TCST_SPEC {}
 #[doc = "`reset()` method sets TCST to value 0"]
-impl crate::Resettable for TCST_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TCST_SPEC {}

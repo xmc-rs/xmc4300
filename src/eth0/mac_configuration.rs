@@ -199,97 +199,97 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Preamble Length for Transmit Frames"]
     #[inline(always)]
-    pub fn prelen(&mut self) -> PRELEN_W<MAC_CONFIGURATION_SPEC> {
+    pub fn prelen(&mut self) -> PRELEN_W<'_, MAC_CONFIGURATION_SPEC> {
         PRELEN_W::new(self, 0)
     }
     #[doc = "Bit 2 - Receiver Enable"]
     #[inline(always)]
-    pub fn re(&mut self) -> RE_W<MAC_CONFIGURATION_SPEC> {
+    pub fn re(&mut self) -> RE_W<'_, MAC_CONFIGURATION_SPEC> {
         RE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Transmitter Enable"]
     #[inline(always)]
-    pub fn te(&mut self) -> TE_W<MAC_CONFIGURATION_SPEC> {
+    pub fn te(&mut self) -> TE_W<'_, MAC_CONFIGURATION_SPEC> {
         TE_W::new(self, 3)
     }
     #[doc = "Bit 4 - Deferral Check"]
     #[inline(always)]
-    pub fn dc(&mut self) -> DC_W<MAC_CONFIGURATION_SPEC> {
+    pub fn dc(&mut self) -> DC_W<'_, MAC_CONFIGURATION_SPEC> {
         DC_W::new(self, 4)
     }
     #[doc = "Bits 5:6 - Back-Off Limit"]
     #[inline(always)]
-    pub fn bl(&mut self) -> BL_W<MAC_CONFIGURATION_SPEC> {
+    pub fn bl(&mut self) -> BL_W<'_, MAC_CONFIGURATION_SPEC> {
         BL_W::new(self, 5)
     }
     #[doc = "Bit 7 - Automatic Pad or CRC Stripping"]
     #[inline(always)]
-    pub fn acs(&mut self) -> ACS_W<MAC_CONFIGURATION_SPEC> {
+    pub fn acs(&mut self) -> ACS_W<'_, MAC_CONFIGURATION_SPEC> {
         ACS_W::new(self, 7)
     }
     #[doc = "Bit 9 - Disable Retry"]
     #[inline(always)]
-    pub fn dr(&mut self) -> DR_W<MAC_CONFIGURATION_SPEC> {
+    pub fn dr(&mut self) -> DR_W<'_, MAC_CONFIGURATION_SPEC> {
         DR_W::new(self, 9)
     }
     #[doc = "Bit 10 - Checksum Offload"]
     #[inline(always)]
-    pub fn ipc(&mut self) -> IPC_W<MAC_CONFIGURATION_SPEC> {
+    pub fn ipc(&mut self) -> IPC_W<'_, MAC_CONFIGURATION_SPEC> {
         IPC_W::new(self, 10)
     }
     #[doc = "Bit 11 - Duplex Mode"]
     #[inline(always)]
-    pub fn dm(&mut self) -> DM_W<MAC_CONFIGURATION_SPEC> {
+    pub fn dm(&mut self) -> DM_W<'_, MAC_CONFIGURATION_SPEC> {
         DM_W::new(self, 11)
     }
     #[doc = "Bit 12 - Loopback Mode"]
     #[inline(always)]
-    pub fn lm(&mut self) -> LM_W<MAC_CONFIGURATION_SPEC> {
+    pub fn lm(&mut self) -> LM_W<'_, MAC_CONFIGURATION_SPEC> {
         LM_W::new(self, 12)
     }
     #[doc = "Bit 13 - Disable Receive Own"]
     #[inline(always)]
-    pub fn do_(&mut self) -> DO_W<MAC_CONFIGURATION_SPEC> {
+    pub fn do_(&mut self) -> DO_W<'_, MAC_CONFIGURATION_SPEC> {
         DO_W::new(self, 13)
     }
     #[doc = "Bit 14 - Speed"]
     #[inline(always)]
-    pub fn fes(&mut self) -> FES_W<MAC_CONFIGURATION_SPEC> {
+    pub fn fes(&mut self) -> FES_W<'_, MAC_CONFIGURATION_SPEC> {
         FES_W::new(self, 14)
     }
     #[doc = "Bit 16 - Disable Carrier Sense During Transmission"]
     #[inline(always)]
-    pub fn dcrs(&mut self) -> DCRS_W<MAC_CONFIGURATION_SPEC> {
+    pub fn dcrs(&mut self) -> DCRS_W<'_, MAC_CONFIGURATION_SPEC> {
         DCRS_W::new(self, 16)
     }
     #[doc = "Bits 17:19 - Inter-Frame Gap"]
     #[inline(always)]
-    pub fn ifg(&mut self) -> IFG_W<MAC_CONFIGURATION_SPEC> {
+    pub fn ifg(&mut self) -> IFG_W<'_, MAC_CONFIGURATION_SPEC> {
         IFG_W::new(self, 17)
     }
     #[doc = "Bit 20 - Jumbo Frame Enable"]
     #[inline(always)]
-    pub fn je(&mut self) -> JE_W<MAC_CONFIGURATION_SPEC> {
+    pub fn je(&mut self) -> JE_W<'_, MAC_CONFIGURATION_SPEC> {
         JE_W::new(self, 20)
     }
     #[doc = "Bit 22 - Jabber Disable"]
     #[inline(always)]
-    pub fn jd(&mut self) -> JD_W<MAC_CONFIGURATION_SPEC> {
+    pub fn jd(&mut self) -> JD_W<'_, MAC_CONFIGURATION_SPEC> {
         JD_W::new(self, 22)
     }
     #[doc = "Bit 23 - Watchdog Disable"]
     #[inline(always)]
-    pub fn wd(&mut self) -> WD_W<MAC_CONFIGURATION_SPEC> {
+    pub fn wd(&mut self) -> WD_W<'_, MAC_CONFIGURATION_SPEC> {
         WD_W::new(self, 23)
     }
     #[doc = "Bit 25 - CRC Stripping of Type Frames"]
     #[inline(always)]
-    pub fn cst(&mut self) -> CST_W<MAC_CONFIGURATION_SPEC> {
+    pub fn cst(&mut self) -> CST_W<'_, MAC_CONFIGURATION_SPEC> {
         CST_W::new(self, 25)
     }
     #[doc = "Bit 27 - IEEE 802.3as support for 2K packets Enable"]
     #[inline(always)]
-    pub fn twokpe(&mut self) -> TWOKPE_W<MAC_CONFIGURATION_SPEC> {
+    pub fn twokpe(&mut self) -> TWOKPE_W<'_, MAC_CONFIGURATION_SPEC> {
         TWOKPE_W::new(self, 27)
     }
 }
@@ -303,8 +303,6 @@ impl crate::Readable for MAC_CONFIGURATION_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mac_configuration::W`](W) writer structure"]
 impl crate::Writable for MAC_CONFIGURATION_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MAC_CONFIGURATION to value 0x8000"]
 impl crate::Resettable for MAC_CONFIGURATION_SPEC {

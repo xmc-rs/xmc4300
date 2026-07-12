@@ -181,17 +181,17 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Sleep on Exit"]
     #[inline(always)]
-    pub fn sleeponexit(&mut self) -> SLEEPONEXIT_W<SCR_SPEC> {
+    pub fn sleeponexit(&mut self) -> SLEEPONEXIT_W<'_, SCR_SPEC> {
         SLEEPONEXIT_W::new(self, 1)
     }
     #[doc = "Bit 2 - Sleep or Deep Sleep"]
     #[inline(always)]
-    pub fn sleepdeep(&mut self) -> SLEEPDEEP_W<SCR_SPEC> {
+    pub fn sleepdeep(&mut self) -> SLEEPDEEP_W<'_, SCR_SPEC> {
         SLEEPDEEP_W::new(self, 2)
     }
     #[doc = "Bit 4 - Send Event on Pending bit:"]
     #[inline(always)]
-    pub fn sevonpend(&mut self) -> SEVONPEND_W<SCR_SPEC> {
+    pub fn sevonpend(&mut self) -> SEVONPEND_W<'_, SCR_SPEC> {
         SEVONPEND_W::new(self, 4)
     }
 }
@@ -205,10 +205,6 @@ impl crate::Readable for SCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`scr::W`](W) writer structure"]
 impl crate::Writable for SCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SCR to value 0"]
-impl crate::Resettable for SCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SCR_SPEC {}

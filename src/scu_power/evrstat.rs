@@ -51,6 +51,4 @@ impl crate::RegisterSpec for EVRSTAT_SPEC {
 #[doc = "`read()` method returns [`evrstat::R`](R) reader structure"]
 impl crate::Readable for EVRSTAT_SPEC {}
 #[doc = "`reset()` method sets EVRSTAT to value 0"]
-impl crate::Resettable for EVRSTAT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for EVRSTAT_SPEC {}

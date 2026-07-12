@@ -70,37 +70,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Counters Reset"]
     #[inline(always)]
-    pub fn cntrst(&mut self) -> CNTRST_W<MMC_CONTROL_SPEC> {
+    pub fn cntrst(&mut self) -> CNTRST_W<'_, MMC_CONTROL_SPEC> {
         CNTRST_W::new(self, 0)
     }
     #[doc = "Bit 1 - Counters Stop Rollover"]
     #[inline(always)]
-    pub fn cntstopro(&mut self) -> CNTSTOPRO_W<MMC_CONTROL_SPEC> {
+    pub fn cntstopro(&mut self) -> CNTSTOPRO_W<'_, MMC_CONTROL_SPEC> {
         CNTSTOPRO_W::new(self, 1)
     }
     #[doc = "Bit 2 - Reset on Read"]
     #[inline(always)]
-    pub fn rstonrd(&mut self) -> RSTONRD_W<MMC_CONTROL_SPEC> {
+    pub fn rstonrd(&mut self) -> RSTONRD_W<'_, MMC_CONTROL_SPEC> {
         RSTONRD_W::new(self, 2)
     }
     #[doc = "Bit 3 - MMC Counter Freeze"]
     #[inline(always)]
-    pub fn cntfreez(&mut self) -> CNTFREEZ_W<MMC_CONTROL_SPEC> {
+    pub fn cntfreez(&mut self) -> CNTFREEZ_W<'_, MMC_CONTROL_SPEC> {
         CNTFREEZ_W::new(self, 3)
     }
     #[doc = "Bit 4 - Counters Preset"]
     #[inline(always)]
-    pub fn cntprst(&mut self) -> CNTPRST_W<MMC_CONTROL_SPEC> {
+    pub fn cntprst(&mut self) -> CNTPRST_W<'_, MMC_CONTROL_SPEC> {
         CNTPRST_W::new(self, 4)
     }
     #[doc = "Bit 5 - Full-Half Preset"]
     #[inline(always)]
-    pub fn cntprstlvl(&mut self) -> CNTPRSTLVL_W<MMC_CONTROL_SPEC> {
+    pub fn cntprstlvl(&mut self) -> CNTPRSTLVL_W<'_, MMC_CONTROL_SPEC> {
         CNTPRSTLVL_W::new(self, 5)
     }
     #[doc = "Bit 8 - Update MMC Counters for Dropped Broadcast Frames"]
     #[inline(always)]
-    pub fn ucdbc(&mut self) -> UCDBC_W<MMC_CONTROL_SPEC> {
+    pub fn ucdbc(&mut self) -> UCDBC_W<'_, MMC_CONTROL_SPEC> {
         UCDBC_W::new(self, 8)
     }
 }
@@ -114,10 +114,6 @@ impl crate::Readable for MMC_CONTROL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mmc_control::W`](W) writer structure"]
 impl crate::Writable for MMC_CONTROL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MMC_CONTROL to value 0"]
-impl crate::Resettable for MMC_CONTROL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MMC_CONTROL_SPEC {}

@@ -61,32 +61,32 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Pattern Number 0 for PATGEN of DAC0"]
     #[inline(always)]
-    pub fn pat0(&mut self) -> PAT0_W<DAC0PATL_SPEC> {
+    pub fn pat0(&mut self) -> PAT0_W<'_, DAC0PATL_SPEC> {
         PAT0_W::new(self, 0)
     }
     #[doc = "Bits 5:9 - Pattern Number 1 for PATGEN of DAC0"]
     #[inline(always)]
-    pub fn pat1(&mut self) -> PAT1_W<DAC0PATL_SPEC> {
+    pub fn pat1(&mut self) -> PAT1_W<'_, DAC0PATL_SPEC> {
         PAT1_W::new(self, 5)
     }
     #[doc = "Bits 10:14 - Pattern Number 2 for PATGEN of DAC0"]
     #[inline(always)]
-    pub fn pat2(&mut self) -> PAT2_W<DAC0PATL_SPEC> {
+    pub fn pat2(&mut self) -> PAT2_W<'_, DAC0PATL_SPEC> {
         PAT2_W::new(self, 10)
     }
     #[doc = "Bits 15:19 - Pattern Number 3 for PATGEN of DAC0"]
     #[inline(always)]
-    pub fn pat3(&mut self) -> PAT3_W<DAC0PATL_SPEC> {
+    pub fn pat3(&mut self) -> PAT3_W<'_, DAC0PATL_SPEC> {
         PAT3_W::new(self, 15)
     }
     #[doc = "Bits 20:24 - Pattern Number 4 for PATGEN of DAC0"]
     #[inline(always)]
-    pub fn pat4(&mut self) -> PAT4_W<DAC0PATL_SPEC> {
+    pub fn pat4(&mut self) -> PAT4_W<'_, DAC0PATL_SPEC> {
         PAT4_W::new(self, 20)
     }
     #[doc = "Bits 25:29 - Pattern Number 5 for PATGEN of DAC0"]
     #[inline(always)]
-    pub fn pat5(&mut self) -> PAT5_W<DAC0PATL_SPEC> {
+    pub fn pat5(&mut self) -> PAT5_W<'_, DAC0PATL_SPEC> {
         PAT5_W::new(self, 25)
     }
 }
@@ -100,8 +100,6 @@ impl crate::Readable for DAC0PATL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dac0patl::W`](W) writer structure"]
 impl crate::Writable for DAC0PATL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DAC0PATL to value 0x3568_b0c0"]
 impl crate::Resettable for DAC0PATL_SPEC {

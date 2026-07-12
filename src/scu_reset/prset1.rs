@@ -189,32 +189,32 @@ where
 impl W {
     #[doc = "Bit 3 - LEDTS Reset Assert"]
     #[inline(always)]
-    pub fn ledtscu0rs(&mut self) -> LEDTSCU0RS_W<PRSET1_SPEC> {
+    pub fn ledtscu0rs(&mut self) -> LEDTSCU0RS_W<'_, PRSET1_SPEC> {
         LEDTSCU0RS_W::new(self, 3)
     }
     #[doc = "Bit 4 - MultiCAN Reset Assert"]
     #[inline(always)]
-    pub fn mcan0rs(&mut self) -> MCAN0RS_W<PRSET1_SPEC> {
+    pub fn mcan0rs(&mut self) -> MCAN0RS_W<'_, PRSET1_SPEC> {
         MCAN0RS_W::new(self, 4)
     }
     #[doc = "Bit 5 - DAC Reset Assert"]
     #[inline(always)]
-    pub fn dacrs(&mut self) -> DACRS_W<PRSET1_SPEC> {
+    pub fn dacrs(&mut self) -> DACRS_W<'_, PRSET1_SPEC> {
         DACRS_W::new(self, 5)
     }
     #[doc = "Bit 6 - MMC Interface Reset Assert"]
     #[inline(always)]
-    pub fn mmcirs(&mut self) -> MMCIRS_W<PRSET1_SPEC> {
+    pub fn mmcirs(&mut self) -> MMCIRS_W<'_, PRSET1_SPEC> {
         MMCIRS_W::new(self, 6)
     }
     #[doc = "Bit 7 - USIC1 Reset Assert"]
     #[inline(always)]
-    pub fn usic1rs(&mut self) -> USIC1RS_W<PRSET1_SPEC> {
+    pub fn usic1rs(&mut self) -> USIC1RS_W<'_, PRSET1_SPEC> {
         USIC1RS_W::new(self, 7)
     }
     #[doc = "Bit 9 - PORTS Reset Assert"]
     #[inline(always)]
-    pub fn pportsrs(&mut self) -> PPORTSRS_W<PRSET1_SPEC> {
+    pub fn pportsrs(&mut self) -> PPORTSRS_W<'_, PRSET1_SPEC> {
         PPORTSRS_W::new(self, 9)
     }
 }
@@ -226,10 +226,6 @@ impl crate::RegisterSpec for PRSET1_SPEC {
 #[doc = "`write(|w| ..)` method takes [`prset1::W`](W) writer structure"]
 impl crate::Writable for PRSET1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PRSET1 to value 0"]
-impl crate::Resettable for PRSET1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PRSET1_SPEC {}

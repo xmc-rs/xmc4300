@@ -88,47 +88,47 @@ impl R {
 impl W {
     #[doc = "Bit 0 - RTC Module Enable"]
     #[inline(always)]
-    pub fn enb(&mut self) -> ENB_W<CTR_SPEC> {
+    pub fn enb(&mut self) -> ENB_W<'_, CTR_SPEC> {
         ENB_W::new(self, 0)
     }
     #[doc = "Bit 2 - Timer Alarm Enable for Hibernation Wake-up"]
     #[inline(always)]
-    pub fn tae(&mut self) -> TAE_W<CTR_SPEC> {
+    pub fn tae(&mut self) -> TAE_W<'_, CTR_SPEC> {
         TAE_W::new(self, 2)
     }
     #[doc = "Bit 8 - Enable Seconds Comparison for Hibernation Wake-up"]
     #[inline(always)]
-    pub fn esec(&mut self) -> ESEC_W<CTR_SPEC> {
+    pub fn esec(&mut self) -> ESEC_W<'_, CTR_SPEC> {
         ESEC_W::new(self, 8)
     }
     #[doc = "Bit 9 - Enable Minutes Comparison for Hibernation Wake-up"]
     #[inline(always)]
-    pub fn emic(&mut self) -> EMIC_W<CTR_SPEC> {
+    pub fn emic(&mut self) -> EMIC_W<'_, CTR_SPEC> {
         EMIC_W::new(self, 9)
     }
     #[doc = "Bit 10 - Enable Hours Comparison for Hibernation Wake-up"]
     #[inline(always)]
-    pub fn ehoc(&mut self) -> EHOC_W<CTR_SPEC> {
+    pub fn ehoc(&mut self) -> EHOC_W<'_, CTR_SPEC> {
         EHOC_W::new(self, 10)
     }
     #[doc = "Bit 11 - Enable Days Comparison for Hibernation Wake-up"]
     #[inline(always)]
-    pub fn edac(&mut self) -> EDAC_W<CTR_SPEC> {
+    pub fn edac(&mut self) -> EDAC_W<'_, CTR_SPEC> {
         EDAC_W::new(self, 11)
     }
     #[doc = "Bit 13 - Enable Months Comparison for Hibernation Wake-up"]
     #[inline(always)]
-    pub fn emoc(&mut self) -> EMOC_W<CTR_SPEC> {
+    pub fn emoc(&mut self) -> EMOC_W<'_, CTR_SPEC> {
         EMOC_W::new(self, 13)
     }
     #[doc = "Bit 14 - Enable Years Comparison for Hibernation Wake-up"]
     #[inline(always)]
-    pub fn eyec(&mut self) -> EYEC_W<CTR_SPEC> {
+    pub fn eyec(&mut self) -> EYEC_W<'_, CTR_SPEC> {
         EYEC_W::new(self, 14)
     }
     #[doc = "Bits 16:31 - RTC Clock Divider Value"]
     #[inline(always)]
-    pub fn div(&mut self) -> DIV_W<CTR_SPEC> {
+    pub fn div(&mut self) -> DIV_W<'_, CTR_SPEC> {
         DIV_W::new(self, 16)
     }
 }
@@ -142,8 +142,6 @@ impl crate::Readable for CTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ctr::W`](W) writer structure"]
 impl crate::Writable for CTR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CTR to value 0x7fff_0000"]
 impl crate::Resettable for CTR_SPEC {

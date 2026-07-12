@@ -251,42 +251,42 @@ where
 impl W {
     #[doc = "Bit 0 - Clear Interrupt Status and Raw Status for channel 0"]
     #[inline(always)]
-    pub fn ch0(&mut self) -> CH0_W<CLEARDSTTRAN_SPEC> {
+    pub fn ch0(&mut self) -> CH0_W<'_, CLEARDSTTRAN_SPEC> {
         CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Interrupt Status and Raw Status for channel 1"]
     #[inline(always)]
-    pub fn ch1(&mut self) -> CH1_W<CLEARDSTTRAN_SPEC> {
+    pub fn ch1(&mut self) -> CH1_W<'_, CLEARDSTTRAN_SPEC> {
         CH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Interrupt Status and Raw Status for channel 2"]
     #[inline(always)]
-    pub fn ch2(&mut self) -> CH2_W<CLEARDSTTRAN_SPEC> {
+    pub fn ch2(&mut self) -> CH2_W<'_, CLEARDSTTRAN_SPEC> {
         CH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Clear Interrupt Status and Raw Status for channel 3"]
     #[inline(always)]
-    pub fn ch3(&mut self) -> CH3_W<CLEARDSTTRAN_SPEC> {
+    pub fn ch3(&mut self) -> CH3_W<'_, CLEARDSTTRAN_SPEC> {
         CH3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Clear Interrupt Status and Raw Status for channel 4"]
     #[inline(always)]
-    pub fn ch4(&mut self) -> CH4_W<CLEARDSTTRAN_SPEC> {
+    pub fn ch4(&mut self) -> CH4_W<'_, CLEARDSTTRAN_SPEC> {
         CH4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Clear Interrupt Status and Raw Status for channel 5"]
     #[inline(always)]
-    pub fn ch5(&mut self) -> CH5_W<CLEARDSTTRAN_SPEC> {
+    pub fn ch5(&mut self) -> CH5_W<'_, CLEARDSTTRAN_SPEC> {
         CH5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Clear Interrupt Status and Raw Status for channel 6"]
     #[inline(always)]
-    pub fn ch6(&mut self) -> CH6_W<CLEARDSTTRAN_SPEC> {
+    pub fn ch6(&mut self) -> CH6_W<'_, CLEARDSTTRAN_SPEC> {
         CH6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Clear Interrupt Status and Raw Status for channel 7"]
     #[inline(always)]
-    pub fn ch7(&mut self) -> CH7_W<CLEARDSTTRAN_SPEC> {
+    pub fn ch7(&mut self) -> CH7_W<'_, CLEARDSTTRAN_SPEC> {
         CH7_W::new(self, 7)
     }
 }
@@ -298,10 +298,6 @@ impl crate::RegisterSpec for CLEARDSTTRAN_SPEC {
 #[doc = "`write(|w| ..)` method takes [`cleardsttran::W`](W) writer structure"]
 impl crate::Writable for CLEARDSTTRAN_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CLEARDSTTRAN to value 0"]
-impl crate::Resettable for CLEARDSTTRAN_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CLEARDSTTRAN_SPEC {}

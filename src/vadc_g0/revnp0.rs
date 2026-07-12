@@ -735,42 +735,42 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    pub fn rev0np(&mut self) -> REV0NP_W<REVNP0_SPEC> {
+    pub fn rev0np(&mut self) -> REV0NP_W<'_, REVNP0_SPEC> {
         REV0NP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    pub fn rev1np(&mut self) -> REV1NP_W<REVNP0_SPEC> {
+    pub fn rev1np(&mut self) -> REV1NP_W<'_, REVNP0_SPEC> {
         REV1NP_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    pub fn rev2np(&mut self) -> REV2NP_W<REVNP0_SPEC> {
+    pub fn rev2np(&mut self) -> REV2NP_W<'_, REVNP0_SPEC> {
         REV2NP_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    pub fn rev3np(&mut self) -> REV3NP_W<REVNP0_SPEC> {
+    pub fn rev3np(&mut self) -> REV3NP_W<'_, REVNP0_SPEC> {
         REV3NP_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    pub fn rev4np(&mut self) -> REV4NP_W<REVNP0_SPEC> {
+    pub fn rev4np(&mut self) -> REV4NP_W<'_, REVNP0_SPEC> {
         REV4NP_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    pub fn rev5np(&mut self) -> REV5NP_W<REVNP0_SPEC> {
+    pub fn rev5np(&mut self) -> REV5NP_W<'_, REVNP0_SPEC> {
         REV5NP_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    pub fn rev6np(&mut self) -> REV6NP_W<REVNP0_SPEC> {
+    pub fn rev6np(&mut self) -> REV6NP_W<'_, REVNP0_SPEC> {
         REV6NP_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
-    pub fn rev7np(&mut self) -> REV7NP_W<REVNP0_SPEC> {
+    pub fn rev7np(&mut self) -> REV7NP_W<'_, REVNP0_SPEC> {
         REV7NP_W::new(self, 28)
     }
 }
@@ -784,10 +784,6 @@ impl crate::Readable for REVNP0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`revnp0::W`](W) writer structure"]
 impl crate::Writable for REVNP0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets REVNP0 to value 0"]
-impl crate::Resettable for REVNP0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for REVNP0_SPEC {}

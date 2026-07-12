@@ -156,12 +156,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - LED Code"]
     #[inline(always)]
-    pub fn led_code(&mut self) -> LED_CODE_W<ERR_LED_SPEC> {
+    pub fn led_code(&mut self) -> LED_CODE_W<'_, ERR_LED_SPEC> {
         LED_CODE_W::new(self, 0)
     }
     #[doc = "Bit 4 - Enable Override"]
     #[inline(always)]
-    pub fn en_overr(&mut self) -> EN_OVERR_W<ERR_LED_SPEC> {
+    pub fn en_overr(&mut self) -> EN_OVERR_W<'_, ERR_LED_SPEC> {
         EN_OVERR_W::new(self, 4)
     }
 }
@@ -175,10 +175,6 @@ impl crate::Readable for ERR_LED_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`err_led::W`](W) writer structure"]
 impl crate::Writable for ERR_LED_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets ERR_LED to value 0"]
-impl crate::Resettable for ERR_LED_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for ERR_LED_SPEC {}

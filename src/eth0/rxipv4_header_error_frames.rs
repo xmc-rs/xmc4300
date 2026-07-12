@@ -17,6 +17,4 @@ impl crate::RegisterSpec for RXIPV4_HEADER_ERROR_FRAMES_SPEC {
 #[doc = "`read()` method returns [`rxipv4_header_error_frames::R`](R) reader structure"]
 impl crate::Readable for RXIPV4_HEADER_ERROR_FRAMES_SPEC {}
 #[doc = "`reset()` method sets RXIPV4_HEADER_ERROR_FRAMES to value 0"]
-impl crate::Resettable for RXIPV4_HEADER_ERROR_FRAMES_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RXIPV4_HEADER_ERROR_FRAMES_SPEC {}

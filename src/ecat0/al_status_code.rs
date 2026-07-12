@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - AL Status Code"]
     #[inline(always)]
-    pub fn al_s_code(&mut self) -> AL_S_CODE_W<AL_STATUS_CODE_SPEC> {
+    pub fn al_s_code(&mut self) -> AL_S_CODE_W<'_, AL_STATUS_CODE_SPEC> {
         AL_S_CODE_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for AL_STATUS_CODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`al_status_code::W`](W) writer structure"]
 impl crate::Writable for AL_STATUS_CODE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets AL_STATUS_CODE to value 0"]
-impl crate::Resettable for AL_STATUS_CODE_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for AL_STATUS_CODE_SPEC {}

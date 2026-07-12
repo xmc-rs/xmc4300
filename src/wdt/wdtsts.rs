@@ -17,6 +17,4 @@ impl crate::RegisterSpec for WDTSTS_SPEC {
 #[doc = "`read()` method returns [`wdtsts::R`](R) reader structure"]
 impl crate::Readable for WDTSTS_SPEC {}
 #[doc = "`reset()` method sets WDTSTS to value 0"]
-impl crate::Resettable for WDTSTS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for WDTSTS_SPEC {}

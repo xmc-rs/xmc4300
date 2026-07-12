@@ -132,32 +132,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Sensor Power Down"]
     #[inline(always)]
-    pub fn pwd(&mut self) -> PWD_W<DTSCON_SPEC> {
+    pub fn pwd(&mut self) -> PWD_W<'_, DTSCON_SPEC> {
         PWD_W::new(self, 0)
     }
     #[doc = "Bit 1 - Sensor Measurement Start"]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W<DTSCON_SPEC> {
+    pub fn start(&mut self) -> START_W<'_, DTSCON_SPEC> {
         START_W::new(self, 1)
     }
     #[doc = "Bits 4:10 - Offset Calibration Value"]
     #[inline(always)]
-    pub fn offset(&mut self) -> OFFSET_W<DTSCON_SPEC> {
+    pub fn offset(&mut self) -> OFFSET_W<'_, DTSCON_SPEC> {
         OFFSET_W::new(self, 4)
     }
     #[doc = "Bits 11:16 - Gain Calibration Value"]
     #[inline(always)]
-    pub fn gain(&mut self) -> GAIN_W<DTSCON_SPEC> {
+    pub fn gain(&mut self) -> GAIN_W<'_, DTSCON_SPEC> {
         GAIN_W::new(self, 11)
     }
     #[doc = "Bits 17:19 - Reference Trim Calibration Value"]
     #[inline(always)]
-    pub fn reftrim(&mut self) -> REFTRIM_W<DTSCON_SPEC> {
+    pub fn reftrim(&mut self) -> REFTRIM_W<'_, DTSCON_SPEC> {
         REFTRIM_W::new(self, 17)
     }
     #[doc = "Bits 20:23 - Bandgap Trim Calibration Value"]
     #[inline(always)]
-    pub fn bgtrim(&mut self) -> BGTRIM_W<DTSCON_SPEC> {
+    pub fn bgtrim(&mut self) -> BGTRIM_W<'_, DTSCON_SPEC> {
         BGTRIM_W::new(self, 20)
     }
 }
@@ -171,8 +171,6 @@ impl crate::Readable for DTSCON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dtscon::W`](W) writer structure"]
 impl crate::Writable for DTSCON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DTSCON to value 0x01"]
 impl crate::Resettable for DTSCON_SPEC {

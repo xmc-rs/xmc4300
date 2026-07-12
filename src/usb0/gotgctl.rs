@@ -891,57 +891,57 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Session Request"]
     #[inline(always)]
-    pub fn ses_req(&mut self) -> SES_REQ_W<GOTGCTL_SPEC> {
+    pub fn ses_req(&mut self) -> SES_REQ_W<'_, GOTGCTL_SPEC> {
         SES_REQ_W::new(self, 1)
     }
     #[doc = "Bit 2 - VBUS Valid Override Enable"]
     #[inline(always)]
-    pub fn vbvalid_ov_en(&mut self) -> VBVALID_OV_EN_W<GOTGCTL_SPEC> {
+    pub fn vbvalid_ov_en(&mut self) -> VBVALID_OV_EN_W<'_, GOTGCTL_SPEC> {
         VBVALID_OV_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - VBUS Valid Override Value"]
     #[inline(always)]
-    pub fn vbvalid_ov_val(&mut self) -> VBVALID_OV_VAL_W<GOTGCTL_SPEC> {
+    pub fn vbvalid_ov_val(&mut self) -> VBVALID_OV_VAL_W<'_, GOTGCTL_SPEC> {
         VBVALID_OV_VAL_W::new(self, 3)
     }
     #[doc = "Bit 4 - A-Peripheral Session Valid Override Enable"]
     #[inline(always)]
-    pub fn avalid_ov_en(&mut self) -> AVALID_OV_EN_W<GOTGCTL_SPEC> {
+    pub fn avalid_ov_en(&mut self) -> AVALID_OV_EN_W<'_, GOTGCTL_SPEC> {
         AVALID_OV_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - A-Peripheral Session Valid Override Value"]
     #[inline(always)]
-    pub fn avalid_ov_val(&mut self) -> AVALID_OV_VAL_W<GOTGCTL_SPEC> {
+    pub fn avalid_ov_val(&mut self) -> AVALID_OV_VAL_W<'_, GOTGCTL_SPEC> {
         AVALID_OV_VAL_W::new(self, 5)
     }
     #[doc = "Bit 6 - B-Peripheral Session Valid Override Enable"]
     #[inline(always)]
-    pub fn bvalid_ov_en(&mut self) -> BVALID_OV_EN_W<GOTGCTL_SPEC> {
+    pub fn bvalid_ov_en(&mut self) -> BVALID_OV_EN_W<'_, GOTGCTL_SPEC> {
         BVALID_OV_EN_W::new(self, 6)
     }
     #[doc = "Bit 7 - B-Peripheral Session Valid Override Value"]
     #[inline(always)]
-    pub fn bvalid_ov_val(&mut self) -> BVALID_OV_VAL_W<GOTGCTL_SPEC> {
+    pub fn bvalid_ov_val(&mut self) -> BVALID_OV_VAL_W<'_, GOTGCTL_SPEC> {
         BVALID_OV_VAL_W::new(self, 7)
     }
     #[doc = "Bit 9 - HNP Request"]
     #[inline(always)]
-    pub fn hnpreq(&mut self) -> HNPREQ_W<GOTGCTL_SPEC> {
+    pub fn hnpreq(&mut self) -> HNPREQ_W<'_, GOTGCTL_SPEC> {
         HNPREQ_W::new(self, 9)
     }
     #[doc = "Bit 10 - Host Set HNP Enable"]
     #[inline(always)]
-    pub fn hst_set_hnpen(&mut self) -> HST_SET_HNPEN_W<GOTGCTL_SPEC> {
+    pub fn hst_set_hnpen(&mut self) -> HST_SET_HNPEN_W<'_, GOTGCTL_SPEC> {
         HST_SET_HNPEN_W::new(self, 10)
     }
     #[doc = "Bit 11 - Device HNP Enabled"]
     #[inline(always)]
-    pub fn dev_hnpen(&mut self) -> DEV_HNPEN_W<GOTGCTL_SPEC> {
+    pub fn dev_hnpen(&mut self) -> DEV_HNPEN_W<'_, GOTGCTL_SPEC> {
         DEV_HNPEN_W::new(self, 11)
     }
     #[doc = "Bit 20 - OTG Version"]
     #[inline(always)]
-    pub fn otgver(&mut self) -> OTGVER_W<GOTGCTL_SPEC> {
+    pub fn otgver(&mut self) -> OTGVER_W<'_, GOTGCTL_SPEC> {
         OTGVER_W::new(self, 20)
     }
 }
@@ -955,8 +955,6 @@ impl crate::Readable for GOTGCTL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gotgctl::W`](W) writer structure"]
 impl crate::Writable for GOTGCTL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GOTGCTL to value 0x0001_0000"]
 impl crate::Resettable for GOTGCTL_SPEC {

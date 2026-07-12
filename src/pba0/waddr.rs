@@ -17,6 +17,4 @@ impl crate::RegisterSpec for WADDR_SPEC {
 #[doc = "`read()` method returns [`waddr::R`](R) reader structure"]
 impl crate::Readable for WADDR_SPEC {}
 #[doc = "`reset()` method sets WADDR to value 0"]
-impl crate::Resettable for WADDR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for WADDR_SPEC {}

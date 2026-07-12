@@ -143,12 +143,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Result of most recent conversion"]
     #[inline(always)]
-    pub fn result(&mut self) -> RESULT_W<GLOBRES_SPEC> {
+    pub fn result(&mut self) -> RESULT_W<'_, GLOBRES_SPEC> {
         RESULT_W::new(self, 0)
     }
     #[doc = "Bit 31 - Valid Flag"]
     #[inline(always)]
-    pub fn vf(&mut self) -> VF_W<GLOBRES_SPEC> {
+    pub fn vf(&mut self) -> VF_W<'_, GLOBRES_SPEC> {
         VF_W::new(self, 31)
     }
 }
@@ -162,10 +162,6 @@ impl crate::Readable for GLOBRES_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`globres::W`](W) writer structure"]
 impl crate::Writable for GLOBRES_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GLOBRES to value 0"]
-impl crate::Resettable for GLOBRES_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GLOBRES_SPEC {}

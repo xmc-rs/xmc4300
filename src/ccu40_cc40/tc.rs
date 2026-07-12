@@ -1129,92 +1129,92 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Timer Counting Mode"]
     #[inline(always)]
-    pub fn tcm(&mut self) -> TCM_W<TC_SPEC> {
+    pub fn tcm(&mut self) -> TCM_W<'_, TC_SPEC> {
         TCM_W::new(self, 0)
     }
     #[doc = "Bit 1 - Timer Single Shot Mode"]
     #[inline(always)]
-    pub fn tssm(&mut self) -> TSSM_W<TC_SPEC> {
+    pub fn tssm(&mut self) -> TSSM_W<'_, TC_SPEC> {
         TSSM_W::new(self, 1)
     }
     #[doc = "Bit 2 - Shadow Transfer on Clear"]
     #[inline(always)]
-    pub fn clst(&mut self) -> CLST_W<TC_SPEC> {
+    pub fn clst(&mut self) -> CLST_W<'_, TC_SPEC> {
         CLST_W::new(self, 2)
     }
     #[doc = "Bit 4 - Extended Capture Mode"]
     #[inline(always)]
-    pub fn ecm(&mut self) -> ECM_W<TC_SPEC> {
+    pub fn ecm(&mut self) -> ECM_W<'_, TC_SPEC> {
         ECM_W::new(self, 4)
     }
     #[doc = "Bits 5:6 - Clear on Capture Control"]
     #[inline(always)]
-    pub fn capc(&mut self) -> CAPC_W<TC_SPEC> {
+    pub fn capc(&mut self) -> CAPC_W<'_, TC_SPEC> {
         CAPC_W::new(self, 5)
     }
     #[doc = "Bits 8:9 - Extended Stop Function Control"]
     #[inline(always)]
-    pub fn endm(&mut self) -> ENDM_W<TC_SPEC> {
+    pub fn endm(&mut self) -> ENDM_W<'_, TC_SPEC> {
         ENDM_W::new(self, 8)
     }
     #[doc = "Bit 10 - Extended Start Function Control"]
     #[inline(always)]
-    pub fn strm(&mut self) -> STRM_W<TC_SPEC> {
+    pub fn strm(&mut self) -> STRM_W<'_, TC_SPEC> {
         STRM_W::new(self, 10)
     }
     #[doc = "Bit 11 - Equal Capture Event enable"]
     #[inline(always)]
-    pub fn sce(&mut self) -> SCE_W<TC_SPEC> {
+    pub fn sce(&mut self) -> SCE_W<'_, TC_SPEC> {
         SCE_W::new(self, 11)
     }
     #[doc = "Bit 12 - Continuous Capture Enable"]
     #[inline(always)]
-    pub fn ccs(&mut self) -> CCS_W<TC_SPEC> {
+    pub fn ccs(&mut self) -> CCS_W<'_, TC_SPEC> {
         CCS_W::new(self, 12)
     }
     #[doc = "Bits 13:14 - Dither Enable"]
     #[inline(always)]
-    pub fn dithe(&mut self) -> DITHE_W<TC_SPEC> {
+    pub fn dithe(&mut self) -> DITHE_W<'_, TC_SPEC> {
         DITHE_W::new(self, 13)
     }
     #[doc = "Bit 15 - Dither input selector"]
     #[inline(always)]
-    pub fn dim(&mut self) -> DIM_W<TC_SPEC> {
+    pub fn dim(&mut self) -> DIM_W<'_, TC_SPEC> {
         DIM_W::new(self, 15)
     }
     #[doc = "Bit 16 - Floating Prescaler enable"]
     #[inline(always)]
-    pub fn fpe(&mut self) -> FPE_W<TC_SPEC> {
+    pub fn fpe(&mut self) -> FPE_W<'_, TC_SPEC> {
         FPE_W::new(self, 16)
     }
     #[doc = "Bit 17 - TRAP enable"]
     #[inline(always)]
-    pub fn trape(&mut self) -> TRAPE_W<TC_SPEC> {
+    pub fn trape(&mut self) -> TRAPE_W<'_, TC_SPEC> {
         TRAPE_W::new(self, 17)
     }
     #[doc = "Bit 21 - TRAP Synchronization Enable"]
     #[inline(always)]
-    pub fn trpse(&mut self) -> TRPSE_W<TC_SPEC> {
+    pub fn trpse(&mut self) -> TRPSE_W<'_, TC_SPEC> {
         TRPSE_W::new(self, 21)
     }
     #[doc = "Bit 22 - TRAP State Clear Control"]
     #[inline(always)]
-    pub fn trpsw(&mut self) -> TRPSW_W<TC_SPEC> {
+    pub fn trpsw(&mut self) -> TRPSW_W<'_, TC_SPEC> {
         TRPSW_W::new(self, 22)
     }
     #[doc = "Bit 23 - External Modulation Synchronization"]
     #[inline(always)]
-    pub fn ems(&mut self) -> EMS_W<TC_SPEC> {
+    pub fn ems(&mut self) -> EMS_W<'_, TC_SPEC> {
         EMS_W::new(self, 23)
     }
     #[doc = "Bit 24 - External Modulation Type"]
     #[inline(always)]
-    pub fn emt(&mut self) -> EMT_W<TC_SPEC> {
+    pub fn emt(&mut self) -> EMT_W<'_, TC_SPEC> {
         EMT_W::new(self, 24)
     }
     #[doc = "Bit 25 - Multi Channel Mode Enable"]
     #[inline(always)]
-    pub fn mcme(&mut self) -> MCME_W<TC_SPEC> {
+    pub fn mcme(&mut self) -> MCME_W<'_, TC_SPEC> {
         MCME_W::new(self, 25)
     }
 }
@@ -1228,10 +1228,6 @@ impl crate::Readable for TC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`tc::W`](W) writer structure"]
 impl crate::Writable for TC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TC to value 0"]
-impl crate::Resettable for TC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TC_SPEC {}

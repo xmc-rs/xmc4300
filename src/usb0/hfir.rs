@@ -74,12 +74,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Frame Interval"]
     #[inline(always)]
-    pub fn fr_int(&mut self) -> FR_INT_W<HFIR_SPEC> {
+    pub fn fr_int(&mut self) -> FR_INT_W<'_, HFIR_SPEC> {
         FR_INT_W::new(self, 0)
     }
     #[doc = "Bit 16 - Reload Control"]
     #[inline(always)]
-    pub fn hfirrld_ctrl(&mut self) -> HFIRRLD_CTRL_W<HFIR_SPEC> {
+    pub fn hfirrld_ctrl(&mut self) -> HFIRRLD_CTRL_W<'_, HFIR_SPEC> {
         HFIRRLD_CTRL_W::new(self, 16)
     }
 }
@@ -93,8 +93,6 @@ impl crate::Readable for HFIR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hfir::W`](W) writer structure"]
 impl crate::Writable for HFIR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HFIR to value 0xea60"]
 impl crate::Resettable for HFIR_SPEC {

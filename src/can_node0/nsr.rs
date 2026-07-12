@@ -339,32 +339,32 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Last Error Code"]
     #[inline(always)]
-    pub fn lec(&mut self) -> LEC_W<NSR_SPEC> {
+    pub fn lec(&mut self) -> LEC_W<'_, NSR_SPEC> {
         LEC_W::new(self, 0)
     }
     #[doc = "Bit 3 - Message Transmitted Successfully"]
     #[inline(always)]
-    pub fn txok(&mut self) -> TXOK_W<NSR_SPEC> {
+    pub fn txok(&mut self) -> TXOK_W<'_, NSR_SPEC> {
         TXOK_W::new(self, 3)
     }
     #[doc = "Bit 4 - Message Received Successfully"]
     #[inline(always)]
-    pub fn rxok(&mut self) -> RXOK_W<NSR_SPEC> {
+    pub fn rxok(&mut self) -> RXOK_W<'_, NSR_SPEC> {
         RXOK_W::new(self, 4)
     }
     #[doc = "Bit 5 - Alert Warning"]
     #[inline(always)]
-    pub fn alert(&mut self) -> ALERT_W<NSR_SPEC> {
+    pub fn alert(&mut self) -> ALERT_W<'_, NSR_SPEC> {
         ALERT_W::new(self, 5)
     }
     #[doc = "Bit 8 - List Length Error"]
     #[inline(always)]
-    pub fn lle(&mut self) -> LLE_W<NSR_SPEC> {
+    pub fn lle(&mut self) -> LLE_W<'_, NSR_SPEC> {
         LLE_W::new(self, 8)
     }
     #[doc = "Bit 9 - List Object Error"]
     #[inline(always)]
-    pub fn loe(&mut self) -> LOE_W<NSR_SPEC> {
+    pub fn loe(&mut self) -> LOE_W<'_, NSR_SPEC> {
         LOE_W::new(self, 9)
     }
 }
@@ -378,10 +378,6 @@ impl crate::Readable for NSR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`nsr::W`](W) writer structure"]
 impl crate::Writable for NSR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NSR to value 0"]
-impl crate::Resettable for NSR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for NSR_SPEC {}

@@ -529,47 +529,47 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Period match while counting up enable"]
     #[inline(always)]
-    pub fn pme(&mut self) -> PME_W<INTE_SPEC> {
+    pub fn pme(&mut self) -> PME_W<'_, INTE_SPEC> {
         PME_W::new(self, 0)
     }
     #[doc = "Bit 1 - One match while counting down enable"]
     #[inline(always)]
-    pub fn ome(&mut self) -> OME_W<INTE_SPEC> {
+    pub fn ome(&mut self) -> OME_W<'_, INTE_SPEC> {
         OME_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channel 1 Compare match while counting up enable"]
     #[inline(always)]
-    pub fn cmu1e(&mut self) -> CMU1E_W<INTE_SPEC> {
+    pub fn cmu1e(&mut self) -> CMU1E_W<'_, INTE_SPEC> {
         CMU1E_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channel 1 Compare match while counting down enable"]
     #[inline(always)]
-    pub fn cmd1e(&mut self) -> CMD1E_W<INTE_SPEC> {
+    pub fn cmd1e(&mut self) -> CMD1E_W<'_, INTE_SPEC> {
         CMD1E_W::new(self, 3)
     }
     #[doc = "Bit 4 - Channel 2 Compare match while counting up enable"]
     #[inline(always)]
-    pub fn cmu2e(&mut self) -> CMU2E_W<INTE_SPEC> {
+    pub fn cmu2e(&mut self) -> CMU2E_W<'_, INTE_SPEC> {
         CMU2E_W::new(self, 4)
     }
     #[doc = "Bit 5 - Channel 2 Compare match while counting down enable"]
     #[inline(always)]
-    pub fn cmd2e(&mut self) -> CMD2E_W<INTE_SPEC> {
+    pub fn cmd2e(&mut self) -> CMD2E_W<'_, INTE_SPEC> {
         CMD2E_W::new(self, 5)
     }
     #[doc = "Bit 8 - Event 0 interrupt enable"]
     #[inline(always)]
-    pub fn e0ae(&mut self) -> E0AE_W<INTE_SPEC> {
+    pub fn e0ae(&mut self) -> E0AE_W<'_, INTE_SPEC> {
         E0AE_W::new(self, 8)
     }
     #[doc = "Bit 9 - Event 1 interrupt enable"]
     #[inline(always)]
-    pub fn e1ae(&mut self) -> E1AE_W<INTE_SPEC> {
+    pub fn e1ae(&mut self) -> E1AE_W<'_, INTE_SPEC> {
         E1AE_W::new(self, 9)
     }
     #[doc = "Bit 10 - Event 2 interrupt enable"]
     #[inline(always)]
-    pub fn e2ae(&mut self) -> E2AE_W<INTE_SPEC> {
+    pub fn e2ae(&mut self) -> E2AE_W<'_, INTE_SPEC> {
         E2AE_W::new(self, 10)
     }
 }
@@ -583,10 +583,6 @@ impl crate::Readable for INTE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`inte::W`](W) writer structure"]
 impl crate::Writable for INTE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INTE to value 0"]
-impl crate::Resettable for INTE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INTE_SPEC {}

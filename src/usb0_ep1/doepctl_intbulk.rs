@@ -251,62 +251,62 @@ impl R {
 impl W {
     #[doc = "Bits 0:10 - Maximum Packet Size"]
     #[inline(always)]
-    pub fn mps(&mut self) -> MPS_W<DOEPCTL_INTBULK_SPEC> {
+    pub fn mps(&mut self) -> MPS_W<'_, DOEPCTL_INTBULK_SPEC> {
         MPS_W::new(self, 0)
     }
     #[doc = "Bit 15 - USB Active Endpoint"]
     #[inline(always)]
-    pub fn usbact_ep(&mut self) -> USBACT_EP_W<DOEPCTL_INTBULK_SPEC> {
+    pub fn usbact_ep(&mut self) -> USBACT_EP_W<'_, DOEPCTL_INTBULK_SPEC> {
         USBACT_EP_W::new(self, 15)
     }
     #[doc = "Bits 18:19 - Endpoint Type"]
     #[inline(always)]
-    pub fn eptype(&mut self) -> EPTYPE_W<DOEPCTL_INTBULK_SPEC> {
+    pub fn eptype(&mut self) -> EPTYPE_W<'_, DOEPCTL_INTBULK_SPEC> {
         EPTYPE_W::new(self, 18)
     }
     #[doc = "Bit 20 - Snoop Mode"]
     #[inline(always)]
-    pub fn snp(&mut self) -> SNP_W<DOEPCTL_INTBULK_SPEC> {
+    pub fn snp(&mut self) -> SNP_W<'_, DOEPCTL_INTBULK_SPEC> {
         SNP_W::new(self, 20)
     }
     #[doc = "Bit 21 - STALL Handshake"]
     #[inline(always)]
-    pub fn stall(&mut self) -> STALL_W<DOEPCTL_INTBULK_SPEC> {
+    pub fn stall(&mut self) -> STALL_W<'_, DOEPCTL_INTBULK_SPEC> {
         STALL_W::new(self, 21)
     }
     #[doc = "Bits 22:25 - TxFIFO Number"]
     #[inline(always)]
-    pub fn tx_fnum(&mut self) -> TX_FNUM_W<DOEPCTL_INTBULK_SPEC> {
+    pub fn tx_fnum(&mut self) -> TX_FNUM_W<'_, DOEPCTL_INTBULK_SPEC> {
         TX_FNUM_W::new(self, 22)
     }
     #[doc = "Bit 26 - Clear NAK"]
     #[inline(always)]
-    pub fn cnak(&mut self) -> CNAK_W<DOEPCTL_INTBULK_SPEC> {
+    pub fn cnak(&mut self) -> CNAK_W<'_, DOEPCTL_INTBULK_SPEC> {
         CNAK_W::new(self, 26)
     }
     #[doc = "Bit 27 - Set NAK"]
     #[inline(always)]
-    pub fn snak(&mut self) -> SNAK_W<DOEPCTL_INTBULK_SPEC> {
+    pub fn snak(&mut self) -> SNAK_W<'_, DOEPCTL_INTBULK_SPEC> {
         SNAK_W::new(self, 27)
     }
     #[doc = "Bit 28 - Set DATA0 PID"]
     #[inline(always)]
-    pub fn set_d0pid(&mut self) -> SET_D0PID_W<DOEPCTL_INTBULK_SPEC> {
+    pub fn set_d0pid(&mut self) -> SET_D0PID_W<'_, DOEPCTL_INTBULK_SPEC> {
         SET_D0PID_W::new(self, 28)
     }
     #[doc = "Bit 29 - 29 Set DATA1 PID"]
     #[inline(always)]
-    pub fn set_d1pid(&mut self) -> SET_D1PID_W<DOEPCTL_INTBULK_SPEC> {
+    pub fn set_d1pid(&mut self) -> SET_D1PID_W<'_, DOEPCTL_INTBULK_SPEC> {
         SET_D1PID_W::new(self, 29)
     }
     #[doc = "Bit 30 - Endpoint Disable"]
     #[inline(always)]
-    pub fn epdis(&mut self) -> EPDIS_W<DOEPCTL_INTBULK_SPEC> {
+    pub fn epdis(&mut self) -> EPDIS_W<'_, DOEPCTL_INTBULK_SPEC> {
         EPDIS_W::new(self, 30)
     }
     #[doc = "Bit 31 - Endpoint Enable"]
     #[inline(always)]
-    pub fn epena(&mut self) -> EPENA_W<DOEPCTL_INTBULK_SPEC> {
+    pub fn epena(&mut self) -> EPENA_W<'_, DOEPCTL_INTBULK_SPEC> {
         EPENA_W::new(self, 31)
     }
 }
@@ -320,10 +320,6 @@ impl crate::Readable for DOEPCTL_INTBULK_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`doepctl_intbulk::W`](W) writer structure"]
 impl crate::Writable for DOEPCTL_INTBULK_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DOEPCTL_INTBULK to value 0"]
-impl crate::Resettable for DOEPCTL_INTBULK_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DOEPCTL_INTBULK_SPEC {}

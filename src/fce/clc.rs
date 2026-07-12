@@ -23,7 +23,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Module Disable Request Bit"]
     #[inline(always)]
-    pub fn disr(&mut self) -> DISR_W<CLC_SPEC> {
+    pub fn disr(&mut self) -> DISR_W<'_, CLC_SPEC> {
         DISR_W::new(self, 0)
     }
 }
@@ -37,8 +37,6 @@ impl crate::Readable for CLC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`clc::W`](W) writer structure"]
 impl crate::Writable for CLC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CLC to value 0x03"]
 impl crate::Resettable for CLC_SPEC {

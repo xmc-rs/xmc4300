@@ -23,7 +23,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Frame Number"]
     #[inline(always)]
-    pub fn fr_num(&mut self) -> FR_NUM_W<HFNUM_SPEC> {
+    pub fn fr_num(&mut self) -> FR_NUM_W<'_, HFNUM_SPEC> {
         FR_NUM_W::new(self, 0)
     }
 }
@@ -37,8 +37,6 @@ impl crate::Readable for HFNUM_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hfnum::W`](W) writer structure"]
 impl crate::Writable for HFNUM_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HFNUM to value 0x3fff"]
 impl crate::Resettable for HFNUM_SPEC {

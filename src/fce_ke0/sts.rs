@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CRC Mismatch Flag"]
     #[inline(always)]
-    pub fn cmf(&mut self) -> CMF_W<STS_SPEC> {
+    pub fn cmf(&mut self) -> CMF_W<'_, STS_SPEC> {
         CMF_W::new(self, 0)
     }
     #[doc = "Bit 1 - Configuration Error Flag"]
     #[inline(always)]
-    pub fn cef(&mut self) -> CEF_W<STS_SPEC> {
+    pub fn cef(&mut self) -> CEF_W<'_, STS_SPEC> {
         CEF_W::new(self, 1)
     }
     #[doc = "Bit 2 - Length Error Flag"]
     #[inline(always)]
-    pub fn lef(&mut self) -> LEF_W<STS_SPEC> {
+    pub fn lef(&mut self) -> LEF_W<'_, STS_SPEC> {
         LEF_W::new(self, 2)
     }
     #[doc = "Bit 3 - Bus Error Flag"]
     #[inline(always)]
-    pub fn bef(&mut self) -> BEF_W<STS_SPEC> {
+    pub fn bef(&mut self) -> BEF_W<'_, STS_SPEC> {
         BEF_W::new(self, 3)
     }
 }
@@ -72,10 +72,6 @@ impl crate::Readable for STS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sts::W`](W) writer structure"]
 impl crate::Writable for STS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets STS to value 0"]
-impl crate::Resettable for STS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for STS_SPEC {}

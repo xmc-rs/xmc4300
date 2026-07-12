@@ -413,37 +413,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Promote Pre-Warning Interrupt Request to NMI Request"]
     #[inline(always)]
-    pub fn prwarn(&mut self) -> PRWARN_W<NMIREQEN_SPEC> {
+    pub fn prwarn(&mut self) -> PRWARN_W<'_, NMIREQEN_SPEC> {
         PRWARN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Promote RTC Periodic Interrupt request to NMI Request"]
     #[inline(always)]
-    pub fn pi(&mut self) -> PI_W<NMIREQEN_SPEC> {
+    pub fn pi(&mut self) -> PI_W<'_, NMIREQEN_SPEC> {
         PI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Promote RTC Alarm Interrupt Request to NMI Request"]
     #[inline(always)]
-    pub fn ai(&mut self) -> AI_W<NMIREQEN_SPEC> {
+    pub fn ai(&mut self) -> AI_W<'_, NMIREQEN_SPEC> {
         AI_W::new(self, 2)
     }
     #[doc = "Bit 16 - Promote Channel 0 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
-    pub fn eru00(&mut self) -> ERU00_W<NMIREQEN_SPEC> {
+    pub fn eru00(&mut self) -> ERU00_W<'_, NMIREQEN_SPEC> {
         ERU00_W::new(self, 16)
     }
     #[doc = "Bit 17 - Promote Channel 1 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
-    pub fn eru01(&mut self) -> ERU01_W<NMIREQEN_SPEC> {
+    pub fn eru01(&mut self) -> ERU01_W<'_, NMIREQEN_SPEC> {
         ERU01_W::new(self, 17)
     }
     #[doc = "Bit 18 - Promote Channel 2 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
-    pub fn eru02(&mut self) -> ERU02_W<NMIREQEN_SPEC> {
+    pub fn eru02(&mut self) -> ERU02_W<'_, NMIREQEN_SPEC> {
         ERU02_W::new(self, 18)
     }
     #[doc = "Bit 19 - Promote Channel 3 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
-    pub fn eru03(&mut self) -> ERU03_W<NMIREQEN_SPEC> {
+    pub fn eru03(&mut self) -> ERU03_W<'_, NMIREQEN_SPEC> {
         ERU03_W::new(self, 19)
     }
 }
@@ -457,10 +457,6 @@ impl crate::Readable for NMIREQEN_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`nmireqen::W`](W) writer structure"]
 impl crate::Writable for NMIREQEN_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NMIREQEN to value 0"]
-impl crate::Resettable for NMIREQEN_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for NMIREQEN_SPEC {}

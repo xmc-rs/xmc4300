@@ -74,12 +74,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Enables/Disables the channel"]
     #[inline(always)]
-    pub fn ch(&mut self) -> CH_W<CHENREG_SPEC> {
+    pub fn ch(&mut self) -> CH_W<'_, CHENREG_SPEC> {
         CH_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Channel enable write enable"]
     #[inline(always)]
-    pub fn we_ch(&mut self) -> WE_CH_W<CHENREG_SPEC> {
+    pub fn we_ch(&mut self) -> WE_CH_W<'_, CHENREG_SPEC> {
         WE_CH_W::new(self, 8)
     }
 }
@@ -93,10 +93,6 @@ impl crate::Readable for CHENREG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`chenreg::W`](W) writer structure"]
 impl crate::Writable for CHENREG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CHENREG to value 0"]
-impl crate::Resettable for CHENREG_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CHENREG_SPEC {}

@@ -17,6 +17,4 @@ impl crate::RegisterSpec for IDCHIP_SPEC {
 #[doc = "`read()` method returns [`idchip::R`](R) reader structure"]
 impl crate::Readable for IDCHIP_SPEC {}
 #[doc = "`reset()` method sets IDCHIP to value 0"]
-impl crate::Resettable for IDCHIP_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IDCHIP_SPEC {}

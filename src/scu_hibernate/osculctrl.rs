@@ -156,12 +156,12 @@ impl R {
 impl W {
     #[doc = "Bit 0 - XTAL1 Data General Purpose Input Enable"]
     #[inline(always)]
-    pub fn x1den(&mut self) -> X1DEN_W<OSCULCTRL_SPEC> {
+    pub fn x1den(&mut self) -> X1DEN_W<'_, OSCULCTRL_SPEC> {
         X1DEN_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W<OSCULCTRL_SPEC> {
+    pub fn mode(&mut self) -> MODE_W<'_, OSCULCTRL_SPEC> {
         MODE_W::new(self, 4)
     }
 }
@@ -175,8 +175,6 @@ impl crate::Readable for OSCULCTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`osculctrl::W`](W) writer structure"]
 impl crate::Writable for OSCULCTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets OSCULCTRL to value 0x20"]
 impl crate::Resettable for OSCULCTRL_SPEC {

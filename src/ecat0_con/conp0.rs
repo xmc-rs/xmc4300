@@ -917,52 +917,52 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - PORT0 Receive Input 0 Select"]
     #[inline(always)]
-    pub fn rxd0(&mut self) -> RXD0_W<CONP0_SPEC> {
+    pub fn rxd0(&mut self) -> RXD0_W<'_, CONP0_SPEC> {
         RXD0_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Port0 Receive Input 1 Select"]
     #[inline(always)]
-    pub fn rxd1(&mut self) -> RXD1_W<CONP0_SPEC> {
+    pub fn rxd1(&mut self) -> RXD1_W<'_, CONP0_SPEC> {
         RXD1_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Port0 Receive Input 2 Select"]
     #[inline(always)]
-    pub fn rxd2(&mut self) -> RXD2_W<CONP0_SPEC> {
+    pub fn rxd2(&mut self) -> RXD2_W<'_, CONP0_SPEC> {
         RXD2_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Port0 Receive Input 3 Select"]
     #[inline(always)]
-    pub fn rxd3(&mut self) -> RXD3_W<CONP0_SPEC> {
+    pub fn rxd3(&mut self) -> RXD3_W<'_, CONP0_SPEC> {
         RXD3_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Port0 MII RX ERROR Input Select"]
     #[inline(always)]
-    pub fn rx_err(&mut self) -> RX_ERR_W<CONP0_SPEC> {
+    pub fn rx_err(&mut self) -> RX_ERR_W<'_, CONP0_SPEC> {
         RX_ERR_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Port0 MII RX DV Input Select"]
     #[inline(always)]
-    pub fn rx_dv(&mut self) -> RX_DV_W<CONP0_SPEC> {
+    pub fn rx_dv(&mut self) -> RX_DV_W<'_, CONP0_SPEC> {
         RX_DV_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Port0 MII RX Clock Input Select"]
     #[inline(always)]
-    pub fn rx_clk(&mut self) -> RX_CLK_W<CONP0_SPEC> {
+    pub fn rx_clk(&mut self) -> RX_CLK_W<'_, CONP0_SPEC> {
         RX_CLK_W::new(self, 12)
     }
     #[doc = "Bits 16:17 - Port0 PHY Link Input Select"]
     #[inline(always)]
-    pub fn link(&mut self) -> LINK_W<CONP0_SPEC> {
+    pub fn link(&mut self) -> LINK_W<'_, CONP0_SPEC> {
         LINK_W::new(self, 16)
     }
     #[doc = "Bits 28:29 - Port0 MII TX Clock Input Select"]
     #[inline(always)]
-    pub fn tx_clk(&mut self) -> TX_CLK_W<CONP0_SPEC> {
+    pub fn tx_clk(&mut self) -> TX_CLK_W<'_, CONP0_SPEC> {
         TX_CLK_W::new(self, 28)
     }
     #[doc = "Bits 30:31 - Port0 Manual TX Shift configuration"]
     #[inline(always)]
-    pub fn tx_shift(&mut self) -> TX_SHIFT_W<CONP0_SPEC> {
+    pub fn tx_shift(&mut self) -> TX_SHIFT_W<'_, CONP0_SPEC> {
         TX_SHIFT_W::new(self, 30)
     }
 }
@@ -976,10 +976,6 @@ impl crate::Readable for CONP0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`conp0::W`](W) writer structure"]
 impl crate::Writable for CONP0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CONP0 to value 0"]
-impl crate::Resettable for CONP0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CONP0_SPEC {}

@@ -217,42 +217,42 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Interrupt Enable Bit"]
     #[inline(always)]
-    pub fn int_en(&mut self) -> INT_EN_W<CTLL_SPEC> {
+    pub fn int_en(&mut self) -> INT_EN_W<'_, CTLL_SPEC> {
         INT_EN_W::new(self, 0)
     }
     #[doc = "Bits 1:3 - Destination Transfer Width"]
     #[inline(always)]
-    pub fn dst_tr_width(&mut self) -> DST_TR_WIDTH_W<CTLL_SPEC> {
+    pub fn dst_tr_width(&mut self) -> DST_TR_WIDTH_W<'_, CTLL_SPEC> {
         DST_TR_WIDTH_W::new(self, 1)
     }
     #[doc = "Bits 4:6 - Source Transfer Width"]
     #[inline(always)]
-    pub fn src_tr_width(&mut self) -> SRC_TR_WIDTH_W<CTLL_SPEC> {
+    pub fn src_tr_width(&mut self) -> SRC_TR_WIDTH_W<'_, CTLL_SPEC> {
         SRC_TR_WIDTH_W::new(self, 4)
     }
     #[doc = "Bits 7:8 - Destination Address Increment"]
     #[inline(always)]
-    pub fn dinc(&mut self) -> DINC_W<CTLL_SPEC> {
+    pub fn dinc(&mut self) -> DINC_W<'_, CTLL_SPEC> {
         DINC_W::new(self, 7)
     }
     #[doc = "Bits 9:10 - Source Address Increment"]
     #[inline(always)]
-    pub fn sinc(&mut self) -> SINC_W<CTLL_SPEC> {
+    pub fn sinc(&mut self) -> SINC_W<'_, CTLL_SPEC> {
         SINC_W::new(self, 9)
     }
     #[doc = "Bits 11:13 - Destination Burst Transaction Length"]
     #[inline(always)]
-    pub fn dest_msize(&mut self) -> DEST_MSIZE_W<CTLL_SPEC> {
+    pub fn dest_msize(&mut self) -> DEST_MSIZE_W<'_, CTLL_SPEC> {
         DEST_MSIZE_W::new(self, 11)
     }
     #[doc = "Bits 14:16 - Source Burst Transaction Length"]
     #[inline(always)]
-    pub fn src_msize(&mut self) -> SRC_MSIZE_W<CTLL_SPEC> {
+    pub fn src_msize(&mut self) -> SRC_MSIZE_W<'_, CTLL_SPEC> {
         SRC_MSIZE_W::new(self, 14)
     }
     #[doc = "Bits 20:22 - Transfer Type and Flow Control"]
     #[inline(always)]
-    pub fn tt_fc(&mut self) -> TT_FC_W<CTLL_SPEC> {
+    pub fn tt_fc(&mut self) -> TT_FC_W<'_, CTLL_SPEC> {
         TT_FC_W::new(self, 20)
     }
 }
@@ -266,8 +266,6 @@ impl crate::Readable for CTLL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ctll::W`](W) writer structure"]
 impl crate::Writable for CTLL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CTLL to value 0x0030_4801"]
 impl crate::Resettable for CTLL_SPEC {

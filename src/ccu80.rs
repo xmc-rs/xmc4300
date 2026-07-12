@@ -59,48 +59,39 @@ impl RegisterBlock {
         &self.midr
     }
 }
-#[doc = "GCTRL (rw) register accessor: Global Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`gctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gctrl`]
-module"]
+#[doc = "GCTRL (rw) register accessor: Global Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`gctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gctrl`] module"]
 pub type GCTRL = crate::Reg<gctrl::GCTRL_SPEC>;
 #[doc = "Global Control Register"]
 pub mod gctrl;
-#[doc = "GSTAT (r) register accessor: Global Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`gstat::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gstat`]
-module"]
+#[doc = "GSTAT (r) register accessor: Global Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`gstat::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gstat`] module"]
 pub type GSTAT = crate::Reg<gstat::GSTAT_SPEC>;
 #[doc = "Global Status Register"]
 pub mod gstat;
-#[doc = "GIDLS (w) register accessor: Global Idle Set\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gidls::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gidls`]
-module"]
+#[doc = "GIDLS (w) register accessor: Global Idle Set\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gidls::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gidls`] module"]
 pub type GIDLS = crate::Reg<gidls::GIDLS_SPEC>;
 #[doc = "Global Idle Set"]
 pub mod gidls;
-#[doc = "GIDLC (w) register accessor: Global Idle Clear\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gidlc::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gidlc`]
-module"]
+#[doc = "GIDLC (w) register accessor: Global Idle Clear\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gidlc::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gidlc`] module"]
 pub type GIDLC = crate::Reg<gidlc::GIDLC_SPEC>;
 #[doc = "Global Idle Clear"]
 pub mod gidlc;
-#[doc = "GCSS (w) register accessor: Global Channel Set\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gcss::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gcss`]
-module"]
+#[doc = "GCSS (w) register accessor: Global Channel Set\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gcss::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gcss`] module"]
 pub type GCSS = crate::Reg<gcss::GCSS_SPEC>;
 #[doc = "Global Channel Set"]
 pub mod gcss;
-#[doc = "GCSC (w) register accessor: Global Channel Clear\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gcsc::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gcsc`]
-module"]
+#[doc = "GCSC (w) register accessor: Global Channel Clear\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gcsc::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gcsc`] module"]
 pub type GCSC = crate::Reg<gcsc::GCSC_SPEC>;
 #[doc = "Global Channel Clear"]
 pub mod gcsc;
-#[doc = "GCST (r) register accessor: Global Channel status\n\nYou can [`read`](crate::Reg::read) this register and get [`gcst::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gcst`]
-module"]
+#[doc = "GCST (r) register accessor: Global Channel status\n\nYou can [`read`](crate::Reg::read) this register and get [`gcst::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gcst`] module"]
 pub type GCST = crate::Reg<gcst::GCST_SPEC>;
 #[doc = "Global Channel status"]
 pub mod gcst;
-#[doc = "GPCHK (rw) register accessor: Parity Checker Configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`gpchk::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gpchk::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpchk`]
-module"]
+#[doc = "GPCHK (rw) register accessor: Parity Checker Configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`gpchk::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gpchk::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpchk`] module"]
 pub type GPCHK = crate::Reg<gpchk::GPCHK_SPEC>;
 #[doc = "Parity Checker Configuration"]
 pub mod gpchk;
-#[doc = "MIDR (r) register accessor: Module Identification\n\nYou can [`read`](crate::Reg::read) this register and get [`midr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@midr`]
-module"]
+#[doc = "MIDR (r) register accessor: Module Identification\n\nYou can [`read`](crate::Reg::read) this register and get [`midr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@midr`] module"]
 pub type MIDR = crate::Reg<midr::MIDR_SPEC>;
 #[doc = "Module Identification"]
 pub mod midr;

@@ -17,6 +17,4 @@ impl crate::RegisterSpec for RXIPV6_GOOD_OCTETS_SPEC {
 #[doc = "`read()` method returns [`rxipv6_good_octets::R`](R) reader structure"]
 impl crate::Readable for RXIPV6_GOOD_OCTETS_SPEC {}
 #[doc = "`reset()` method sets RXIPV6_GOOD_OCTETS to value 0"]
-impl crate::Resettable for RXIPV6_GOOD_OCTETS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RXIPV6_GOOD_OCTETS_SPEC {}

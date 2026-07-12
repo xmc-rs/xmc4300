@@ -74,12 +74,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:28 - Acceptance Mask for Message Identifier"]
     #[inline(always)]
-    pub fn am(&mut self) -> AM_W<MOAMR_SPEC> {
+    pub fn am(&mut self) -> AM_W<'_, MOAMR_SPEC> {
         AM_W::new(self, 0)
     }
     #[doc = "Bit 29 - Acceptance Mask Bit for Message IDE Bit"]
     #[inline(always)]
-    pub fn mide(&mut self) -> MIDE_W<MOAMR_SPEC> {
+    pub fn mide(&mut self) -> MIDE_W<'_, MOAMR_SPEC> {
         MIDE_W::new(self, 29)
     }
 }
@@ -93,8 +93,6 @@ impl crate::Readable for MOAMR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`moamr::W`](W) writer structure"]
 impl crate::Writable for MOAMR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MOAMR to value 0x3fff_ffff"]
 impl crate::Resettable for MOAMR_SPEC {

@@ -124,67 +124,67 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transfer Completed Mask"]
     #[inline(always)]
-    pub fn xfer_compl_msk(&mut self) -> XFER_COMPL_MSK_W<HCINTMSK_SPEC> {
+    pub fn xfer_compl_msk(&mut self) -> XFER_COMPL_MSK_W<'_, HCINTMSK_SPEC> {
         XFER_COMPL_MSK_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel Halted Mask"]
     #[inline(always)]
-    pub fn ch_hltd_msk(&mut self) -> CH_HLTD_MSK_W<HCINTMSK_SPEC> {
+    pub fn ch_hltd_msk(&mut self) -> CH_HLTD_MSK_W<'_, HCINTMSK_SPEC> {
         CH_HLTD_MSK_W::new(self, 1)
     }
     #[doc = "Bit 2 - AHB Error Mask"]
     #[inline(always)]
-    pub fn ahberr_msk(&mut self) -> AHBERR_MSK_W<HCINTMSK_SPEC> {
+    pub fn ahberr_msk(&mut self) -> AHBERR_MSK_W<'_, HCINTMSK_SPEC> {
         AHBERR_MSK_W::new(self, 2)
     }
     #[doc = "Bit 3 - STALL Response Received Interrupt Mask"]
     #[inline(always)]
-    pub fn stall_msk(&mut self) -> STALL_MSK_W<HCINTMSK_SPEC> {
+    pub fn stall_msk(&mut self) -> STALL_MSK_W<'_, HCINTMSK_SPEC> {
         STALL_MSK_W::new(self, 3)
     }
     #[doc = "Bit 4 - NAK Response Received Interrupt Mask"]
     #[inline(always)]
-    pub fn nak_msk(&mut self) -> NAK_MSK_W<HCINTMSK_SPEC> {
+    pub fn nak_msk(&mut self) -> NAK_MSK_W<'_, HCINTMSK_SPEC> {
         NAK_MSK_W::new(self, 4)
     }
     #[doc = "Bit 5 - ACK Response Received/Transmitted Interrupt Mask"]
     #[inline(always)]
-    pub fn ack_msk(&mut self) -> ACK_MSK_W<HCINTMSK_SPEC> {
+    pub fn ack_msk(&mut self) -> ACK_MSK_W<'_, HCINTMSK_SPEC> {
         ACK_MSK_W::new(self, 5)
     }
     #[doc = "Bit 6 - NYET Response Received Interrupt Mask"]
     #[inline(always)]
-    pub fn nyet_msk(&mut self) -> NYET_MSK_W<HCINTMSK_SPEC> {
+    pub fn nyet_msk(&mut self) -> NYET_MSK_W<'_, HCINTMSK_SPEC> {
         NYET_MSK_W::new(self, 6)
     }
     #[doc = "Bit 7 - Transaction Error Mask"]
     #[inline(always)]
-    pub fn xact_err_msk(&mut self) -> XACT_ERR_MSK_W<HCINTMSK_SPEC> {
+    pub fn xact_err_msk(&mut self) -> XACT_ERR_MSK_W<'_, HCINTMSK_SPEC> {
         XACT_ERR_MSK_W::new(self, 7)
     }
     #[doc = "Bit 8 - Babble Error Mask"]
     #[inline(always)]
-    pub fn bbl_err_msk(&mut self) -> BBL_ERR_MSK_W<HCINTMSK_SPEC> {
+    pub fn bbl_err_msk(&mut self) -> BBL_ERR_MSK_W<'_, HCINTMSK_SPEC> {
         BBL_ERR_MSK_W::new(self, 8)
     }
     #[doc = "Bit 9 - Frame Overrun Mask"]
     #[inline(always)]
-    pub fn frm_ovrun_msk(&mut self) -> FRM_OVRUN_MSK_W<HCINTMSK_SPEC> {
+    pub fn frm_ovrun_msk(&mut self) -> FRM_OVRUN_MSK_W<'_, HCINTMSK_SPEC> {
         FRM_OVRUN_MSK_W::new(self, 9)
     }
     #[doc = "Bit 10 - Data Toggle Error Mask"]
     #[inline(always)]
-    pub fn data_tgl_err_msk(&mut self) -> DATA_TGL_ERR_MSK_W<HCINTMSK_SPEC> {
+    pub fn data_tgl_err_msk(&mut self) -> DATA_TGL_ERR_MSK_W<'_, HCINTMSK_SPEC> {
         DATA_TGL_ERR_MSK_W::new(self, 10)
     }
     #[doc = "Bit 11 - BNA (Buffer Not Available) Interrupt mask register"]
     #[inline(always)]
-    pub fn bnaintr_msk(&mut self) -> BNAINTR_MSK_W<HCINTMSK_SPEC> {
+    pub fn bnaintr_msk(&mut self) -> BNAINTR_MSK_W<'_, HCINTMSK_SPEC> {
         BNAINTR_MSK_W::new(self, 11)
     }
     #[doc = "Bit 13 - Descriptor rollover interrupt Mask register"]
     #[inline(always)]
-    pub fn desc_lst_rollintr_msk(&mut self) -> DESC_LST_ROLLINTR_MSK_W<HCINTMSK_SPEC> {
+    pub fn desc_lst_rollintr_msk(&mut self) -> DESC_LST_ROLLINTR_MSK_W<'_, HCINTMSK_SPEC> {
         DESC_LST_ROLLINTR_MSK_W::new(self, 13)
     }
 }
@@ -198,10 +198,6 @@ impl crate::Readable for HCINTMSK_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hcintmsk::W`](W) writer structure"]
 impl crate::Writable for HCINTMSK_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HCINTMSK to value 0"]
-impl crate::Resettable for HCINTMSK_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HCINTMSK_SPEC {}

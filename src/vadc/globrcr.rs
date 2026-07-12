@@ -175,17 +175,17 @@ impl R {
 impl W {
     #[doc = "Bits 16:19 - Data Reduction Control"]
     #[inline(always)]
-    pub fn drctr(&mut self) -> DRCTR_W<GLOBRCR_SPEC> {
+    pub fn drctr(&mut self) -> DRCTR_W<'_, GLOBRCR_SPEC> {
         DRCTR_W::new(self, 16)
     }
     #[doc = "Bit 24 - Wait-for-Read Mode Enable"]
     #[inline(always)]
-    pub fn wfr(&mut self) -> WFR_W<GLOBRCR_SPEC> {
+    pub fn wfr(&mut self) -> WFR_W<'_, GLOBRCR_SPEC> {
         WFR_W::new(self, 24)
     }
     #[doc = "Bit 31 - Service Request Generation Enable"]
     #[inline(always)]
-    pub fn srgen(&mut self) -> SRGEN_W<GLOBRCR_SPEC> {
+    pub fn srgen(&mut self) -> SRGEN_W<'_, GLOBRCR_SPEC> {
         SRGEN_W::new(self, 31)
     }
 }
@@ -199,10 +199,6 @@ impl crate::Readable for GLOBRCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`globrcr::W`](W) writer structure"]
 impl crate::Writable for GLOBRCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GLOBRCR to value 0"]
-impl crate::Resettable for GLOBRCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GLOBRCR_SPEC {}

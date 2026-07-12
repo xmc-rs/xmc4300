@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Destination Status Address"]
     #[inline(always)]
-    pub fn dstatar(&mut self) -> DSTATAR_W<DSTATAR_SPEC> {
+    pub fn dstatar(&mut self) -> DSTATAR_W<'_, DSTATAR_SPEC> {
         DSTATAR_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for DSTATAR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dstatar::W`](W) writer structure"]
 impl crate::Writable for DSTATAR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DSTATAR to value 0"]
-impl crate::Resettable for DSTATAR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DSTATAR_SPEC {}

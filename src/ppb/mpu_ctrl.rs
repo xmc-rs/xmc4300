@@ -181,17 +181,17 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable MPU"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W<MPU_CTRL_SPEC> {
+    pub fn enable(&mut self) -> ENABLE_W<'_, MPU_CTRL_SPEC> {
         ENABLE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers"]
     #[inline(always)]
-    pub fn hfnmiena(&mut self) -> HFNMIENA_W<MPU_CTRL_SPEC> {
+    pub fn hfnmiena(&mut self) -> HFNMIENA_W<'_, MPU_CTRL_SPEC> {
         HFNMIENA_W::new(self, 1)
     }
     #[doc = "Bit 2 - Enables privileged software access to the default memory map"]
     #[inline(always)]
-    pub fn privdefena(&mut self) -> PRIVDEFENA_W<MPU_CTRL_SPEC> {
+    pub fn privdefena(&mut self) -> PRIVDEFENA_W<'_, MPU_CTRL_SPEC> {
         PRIVDEFENA_W::new(self, 2)
     }
 }
@@ -205,10 +205,6 @@ impl crate::Readable for MPU_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mpu_ctrl::W`](W) writer structure"]
 impl crate::Writable for MPU_CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MPU_CTRL to value 0"]
-impl crate::Resettable for MPU_CTRL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MPU_CTRL_SPEC {}

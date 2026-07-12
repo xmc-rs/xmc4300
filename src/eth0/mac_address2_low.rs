@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - MAC Address2 \\[31:0\\]"]
     #[inline(always)]
-    pub fn addrlo(&mut self) -> ADDRLO_W<MAC_ADDRESS2_LOW_SPEC> {
+    pub fn addrlo(&mut self) -> ADDRLO_W<'_, MAC_ADDRESS2_LOW_SPEC> {
         ADDRLO_W::new(self, 0)
     }
 }
@@ -30,8 +30,6 @@ impl crate::Readable for MAC_ADDRESS2_LOW_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mac_address2_low::W`](W) writer structure"]
 impl crate::Writable for MAC_ADDRESS2_LOW_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MAC_ADDRESS2_LOW to value 0xffff_ffff"]
 impl crate::Resettable for MAC_ADDRESS2_LOW_SPEC {

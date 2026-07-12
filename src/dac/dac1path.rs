@@ -34,17 +34,17 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Pattern Number 6 for PATGEN of DAC1"]
     #[inline(always)]
-    pub fn pat6(&mut self) -> PAT6_W<DAC1PATH_SPEC> {
+    pub fn pat6(&mut self) -> PAT6_W<'_, DAC1PATH_SPEC> {
         PAT6_W::new(self, 0)
     }
     #[doc = "Bits 5:9 - Pattern Number 7 for PATGEN of DAC1"]
     #[inline(always)]
-    pub fn pat7(&mut self) -> PAT7_W<DAC1PATH_SPEC> {
+    pub fn pat7(&mut self) -> PAT7_W<'_, DAC1PATH_SPEC> {
         PAT7_W::new(self, 5)
     }
     #[doc = "Bits 10:14 - Pattern Number 8 for PATGEN of DAC1"]
     #[inline(always)]
-    pub fn pat8(&mut self) -> PAT8_W<DAC1PATH_SPEC> {
+    pub fn pat8(&mut self) -> PAT8_W<'_, DAC1PATH_SPEC> {
         PAT8_W::new(self, 10)
     }
 }
@@ -58,8 +58,6 @@ impl crate::Readable for DAC1PATH_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dac1path::W`](W) writer structure"]
 impl crate::Writable for DAC1PATH_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DAC1PATH to value 0x7fdd"]
 impl crate::Resettable for DAC1PATH_SPEC {

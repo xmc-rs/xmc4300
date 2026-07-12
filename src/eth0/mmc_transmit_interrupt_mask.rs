@@ -241,132 +241,132 @@ impl R {
 impl W {
     #[doc = "Bit 0 - MMC Transmit Good Bad Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txgboctim(&mut self) -> TXGBOCTIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txgboctim(&mut self) -> TXGBOCTIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXGBOCTIM_W::new(self, 0)
     }
     #[doc = "Bit 1 - MMC Transmit Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txgbfrmim(&mut self) -> TXGBFRMIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txgbfrmim(&mut self) -> TXGBFRMIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXGBFRMIM_W::new(self, 1)
     }
     #[doc = "Bit 2 - MMC Transmit Broadcast Good Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txbcgfim(&mut self) -> TXBCGFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txbcgfim(&mut self) -> TXBCGFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXBCGFIM_W::new(self, 2)
     }
     #[doc = "Bit 3 - MMC Transmit Multicast Good Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txmcgfim(&mut self) -> TXMCGFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txmcgfim(&mut self) -> TXMCGFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXMCGFIM_W::new(self, 3)
     }
     #[doc = "Bit 4 - MMC Transmit 64 Octet Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn tx64octgbfim(&mut self) -> TX64OCTGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn tx64octgbfim(&mut self) -> TX64OCTGBFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TX64OCTGBFIM_W::new(self, 4)
     }
     #[doc = "Bit 5 - MMC Transmit 65 to 127 Octet Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn tx65t127octgbfim(&mut self) -> TX65T127OCTGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn tx65t127octgbfim(&mut self) -> TX65T127OCTGBFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TX65T127OCTGBFIM_W::new(self, 5)
     }
     #[doc = "Bit 6 - MMC Transmit 128 to 255 Octet Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn tx128t255octgbfim(&mut self) -> TX128T255OCTGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn tx128t255octgbfim(&mut self) -> TX128T255OCTGBFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TX128T255OCTGBFIM_W::new(self, 6)
     }
     #[doc = "Bit 7 - MMC Transmit 256 to 511 Octet Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn tx256t511octgbfim(&mut self) -> TX256T511OCTGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn tx256t511octgbfim(&mut self) -> TX256T511OCTGBFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TX256T511OCTGBFIM_W::new(self, 7)
     }
     #[doc = "Bit 8 - MMC Transmit 512 to 1023 Octet Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn tx512t1023octgbfim(&mut self) -> TX512T1023OCTGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn tx512t1023octgbfim(&mut self) -> TX512T1023OCTGBFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TX512T1023OCTGBFIM_W::new(self, 8)
     }
     #[doc = "Bit 9 - MMC Transmit 1024 to Maximum Octet Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn tx1024tmaxoctgbfim(&mut self) -> TX1024TMAXOCTGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn tx1024tmaxoctgbfim(&mut self) -> TX1024TMAXOCTGBFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TX1024TMAXOCTGBFIM_W::new(self, 9)
     }
     #[doc = "Bit 10 - MMC Transmit Unicast Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txucgbfim(&mut self) -> TXUCGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txucgbfim(&mut self) -> TXUCGBFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXUCGBFIM_W::new(self, 10)
     }
     #[doc = "Bit 11 - MMC Transmit Multicast Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txmcgbfim(&mut self) -> TXMCGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txmcgbfim(&mut self) -> TXMCGBFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXMCGBFIM_W::new(self, 11)
     }
     #[doc = "Bit 12 - MMC Transmit Broadcast Good Bad Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txbcgbfim(&mut self) -> TXBCGBFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txbcgbfim(&mut self) -> TXBCGBFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXBCGBFIM_W::new(self, 12)
     }
     #[doc = "Bit 13 - MMC Transmit Underflow Error Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txuflowerfim(&mut self) -> TXUFLOWERFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txuflowerfim(&mut self) -> TXUFLOWERFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXUFLOWERFIM_W::new(self, 13)
     }
     #[doc = "Bit 14 - MMC Transmit Single Collision Good Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txscolgfim(&mut self) -> TXSCOLGFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txscolgfim(&mut self) -> TXSCOLGFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXSCOLGFIM_W::new(self, 14)
     }
     #[doc = "Bit 15 - MMC Transmit Multiple Collision Good Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txmcolgfim(&mut self) -> TXMCOLGFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txmcolgfim(&mut self) -> TXMCOLGFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXMCOLGFIM_W::new(self, 15)
     }
     #[doc = "Bit 16 - MMC Transmit Deferred Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txdeffim(&mut self) -> TXDEFFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txdeffim(&mut self) -> TXDEFFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXDEFFIM_W::new(self, 16)
     }
     #[doc = "Bit 17 - MMC Transmit Late Collision Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txlatcolfim(&mut self) -> TXLATCOLFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txlatcolfim(&mut self) -> TXLATCOLFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXLATCOLFIM_W::new(self, 17)
     }
     #[doc = "Bit 18 - MMC Transmit Excessive Collision Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txexcolfim(&mut self) -> TXEXCOLFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txexcolfim(&mut self) -> TXEXCOLFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXEXCOLFIM_W::new(self, 18)
     }
     #[doc = "Bit 19 - MMC Transmit Carrier Error Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txcarerfim(&mut self) -> TXCARERFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txcarerfim(&mut self) -> TXCARERFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXCARERFIM_W::new(self, 19)
     }
     #[doc = "Bit 20 - MMC Transmit Good Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txgoctim(&mut self) -> TXGOCTIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txgoctim(&mut self) -> TXGOCTIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXGOCTIM_W::new(self, 20)
     }
     #[doc = "Bit 21 - MMC Transmit Good Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txgfrmim(&mut self) -> TXGFRMIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txgfrmim(&mut self) -> TXGFRMIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXGFRMIM_W::new(self, 21)
     }
     #[doc = "Bit 22 - MMC Transmit Excessive Deferral Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txexdeffim(&mut self) -> TXEXDEFFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txexdeffim(&mut self) -> TXEXDEFFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXEXDEFFIM_W::new(self, 22)
     }
     #[doc = "Bit 23 - MMC Transmit Pause Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txpausfim(&mut self) -> TXPAUSFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txpausfim(&mut self) -> TXPAUSFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXPAUSFIM_W::new(self, 23)
     }
     #[doc = "Bit 24 - MMC Transmit VLAN Good Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txvlangfim(&mut self) -> TXVLANGFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txvlangfim(&mut self) -> TXVLANGFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXVLANGFIM_W::new(self, 24)
     }
     #[doc = "Bit 25 - MMC Transmit Oversize Good Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn txosizegfim(&mut self) -> TXOSIZEGFIM_W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
+    pub fn txosizegfim(&mut self) -> TXOSIZEGFIM_W<'_, MMC_TRANSMIT_INTERRUPT_MASK_SPEC> {
         TXOSIZEGFIM_W::new(self, 25)
     }
 }
@@ -380,10 +380,6 @@ impl crate::Readable for MMC_TRANSMIT_INTERRUPT_MASK_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mmc_transmit_interrupt_mask::W`](W) writer structure"]
 impl crate::Writable for MMC_TRANSMIT_INTERRUPT_MASK_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MMC_TRANSMIT_INTERRUPT_MASK to value 0"]
-impl crate::Resettable for MMC_TRANSMIT_INTERRUPT_MASK_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MMC_TRANSMIT_INTERRUPT_MASK_SPEC {}

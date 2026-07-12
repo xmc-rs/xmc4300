@@ -17,6 +17,4 @@ impl crate::RegisterSpec for TX_MULTIPLE_COLLISION_GOOD_FRAMES_SPEC {
 #[doc = "`read()` method returns [`tx_multiple_collision_good_frames::R`](R) reader structure"]
 impl crate::Readable for TX_MULTIPLE_COLLISION_GOOD_FRAMES_SPEC {}
 #[doc = "`reset()` method sets TX_MULTIPLE_COLLISION_GOOD_FRAMES to value 0"]
-impl crate::Resettable for TX_MULTIPLE_COLLISION_GOOD_FRAMES_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TX_MULTIPLE_COLLISION_GOOD_FRAMES_SPEC {}

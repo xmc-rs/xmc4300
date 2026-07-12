@@ -529,47 +529,47 @@ impl R {
 impl W {
     #[doc = "Bit 0 - OSC_HP Oscillator Watchdog Trap Disable"]
     #[inline(always)]
-    pub fn soscwdgt(&mut self) -> SOSCWDGT_W<TRAPDIS_SPEC> {
+    pub fn soscwdgt(&mut self) -> SOSCWDGT_W<'_, TRAPDIS_SPEC> {
         SOSCWDGT_W::new(self, 0)
     }
     #[doc = "Bit 2 - System VCO Lock Trap Disable"]
     #[inline(always)]
-    pub fn svcolckt(&mut self) -> SVCOLCKT_W<TRAPDIS_SPEC> {
+    pub fn svcolckt(&mut self) -> SVCOLCKT_W<'_, TRAPDIS_SPEC> {
         SVCOLCKT_W::new(self, 2)
     }
     #[doc = "Bit 3 - USB VCO Lock Trap Disable"]
     #[inline(always)]
-    pub fn uvcolckt(&mut self) -> UVCOLCKT_W<TRAPDIS_SPEC> {
+    pub fn uvcolckt(&mut self) -> UVCOLCKT_W<'_, TRAPDIS_SPEC> {
         UVCOLCKT_W::new(self, 3)
     }
     #[doc = "Bit 4 - Parity Error Trap Disable"]
     #[inline(always)]
-    pub fn pet(&mut self) -> PET_W<TRAPDIS_SPEC> {
+    pub fn pet(&mut self) -> PET_W<'_, TRAPDIS_SPEC> {
         PET_W::new(self, 4)
     }
     #[doc = "Bit 5 - Brown Out Trap Disable"]
     #[inline(always)]
-    pub fn brwnt(&mut self) -> BRWNT_W<TRAPDIS_SPEC> {
+    pub fn brwnt(&mut self) -> BRWNT_W<'_, TRAPDIS_SPEC> {
         BRWNT_W::new(self, 5)
     }
     #[doc = "Bit 6 - OSC_ULP Oscillator Watchdog Trap Disable"]
     #[inline(always)]
-    pub fn ulpwdgt(&mut self) -> ULPWDGT_W<TRAPDIS_SPEC> {
+    pub fn ulpwdgt(&mut self) -> ULPWDGT_W<'_, TRAPDIS_SPEC> {
         ULPWDGT_W::new(self, 6)
     }
     #[doc = "Bit 7 - Peripheral Bridge 0 Trap Disable"]
     #[inline(always)]
-    pub fn bwerr0t(&mut self) -> BWERR0T_W<TRAPDIS_SPEC> {
+    pub fn bwerr0t(&mut self) -> BWERR0T_W<'_, TRAPDIS_SPEC> {
         BWERR0T_W::new(self, 7)
     }
     #[doc = "Bit 8 - Peripheral Bridge 1 Trap Disable"]
     #[inline(always)]
-    pub fn bwerr1t(&mut self) -> BWERR1T_W<TRAPDIS_SPEC> {
+    pub fn bwerr1t(&mut self) -> BWERR1T_W<'_, TRAPDIS_SPEC> {
         BWERR1T_W::new(self, 8)
     }
     #[doc = "Bit 16 - EtherCat Reset 0 Trap Disable"]
     #[inline(always)]
-    pub fn ecat0rst(&mut self) -> ECAT0RST_W<TRAPDIS_SPEC> {
+    pub fn ecat0rst(&mut self) -> ECAT0RST_W<'_, TRAPDIS_SPEC> {
         ECAT0RST_W::new(self, 16)
     }
 }
@@ -583,8 +583,6 @@ impl crate::Readable for TRAPDIS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`trapdis::W`](W) writer structure"]
 impl crate::Writable for TRAPDIS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TRAPDIS to value 0x0001_01fd"]
 impl crate::Resettable for TRAPDIS_SPEC {

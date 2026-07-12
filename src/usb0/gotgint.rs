@@ -61,32 +61,32 @@ impl R {
 impl W {
     #[doc = "Bit 2 - Session End Detected"]
     #[inline(always)]
-    pub fn ses_end_det(&mut self) -> SES_END_DET_W<GOTGINT_SPEC> {
+    pub fn ses_end_det(&mut self) -> SES_END_DET_W<'_, GOTGINT_SPEC> {
         SES_END_DET_W::new(self, 2)
     }
     #[doc = "Bit 8 - Session Request Success Status Change"]
     #[inline(always)]
-    pub fn ses_req_suc_sts_chng(&mut self) -> SES_REQ_SUC_STS_CHNG_W<GOTGINT_SPEC> {
+    pub fn ses_req_suc_sts_chng(&mut self) -> SES_REQ_SUC_STS_CHNG_W<'_, GOTGINT_SPEC> {
         SES_REQ_SUC_STS_CHNG_W::new(self, 8)
     }
     #[doc = "Bit 9 - Host Negotiation Success Status Change"]
     #[inline(always)]
-    pub fn hst_neg_suc_sts_chng(&mut self) -> HST_NEG_SUC_STS_CHNG_W<GOTGINT_SPEC> {
+    pub fn hst_neg_suc_sts_chng(&mut self) -> HST_NEG_SUC_STS_CHNG_W<'_, GOTGINT_SPEC> {
         HST_NEG_SUC_STS_CHNG_W::new(self, 9)
     }
     #[doc = "Bit 17 - Host Negotiation Detected"]
     #[inline(always)]
-    pub fn hst_neg_det(&mut self) -> HST_NEG_DET_W<GOTGINT_SPEC> {
+    pub fn hst_neg_det(&mut self) -> HST_NEG_DET_W<'_, GOTGINT_SPEC> {
         HST_NEG_DET_W::new(self, 17)
     }
     #[doc = "Bit 18 - A-Device Timeout Change"]
     #[inline(always)]
-    pub fn adev_toutchg(&mut self) -> ADEV_TOUTCHG_W<GOTGINT_SPEC> {
+    pub fn adev_toutchg(&mut self) -> ADEV_TOUTCHG_W<'_, GOTGINT_SPEC> {
         ADEV_TOUTCHG_W::new(self, 18)
     }
     #[doc = "Bit 19 - Debounce Done"]
     #[inline(always)]
-    pub fn dbnce_done(&mut self) -> DBNCE_DONE_W<GOTGINT_SPEC> {
+    pub fn dbnce_done(&mut self) -> DBNCE_DONE_W<'_, GOTGINT_SPEC> {
         DBNCE_DONE_W::new(self, 19)
     }
 }
@@ -100,10 +100,6 @@ impl crate::Readable for GOTGINT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gotgint::W`](W) writer structure"]
 impl crate::Writable for GOTGINT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GOTGINT to value 0"]
-impl crate::Resettable for GOTGINT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GOTGINT_SPEC {}

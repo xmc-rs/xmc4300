@@ -16,8 +16,5 @@ impl crate::RegisterSpec for DC_LATCH0_TIME_NEG_SPEC {
 }
 #[doc = "`read()` method returns [`dc_latch0_time_neg::R`](R) reader structure"]
 impl crate::Readable for DC_LATCH0_TIME_NEG_SPEC {}
-#[doc = "`reset()` method sets DC_LATCH0_TIME_NEG[%s]
-to value 0"]
-impl crate::Resettable for DC_LATCH0_TIME_NEG_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets DC_LATCH0_TIME_NEG[%s] to value 0"]
+impl crate::Resettable for DC_LATCH0_TIME_NEG_SPEC {}

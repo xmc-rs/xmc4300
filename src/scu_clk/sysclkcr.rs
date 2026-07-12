@@ -74,12 +74,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - System Clock Division Value"]
     #[inline(always)]
-    pub fn sysdiv(&mut self) -> SYSDIV_W<SYSCLKCR_SPEC> {
+    pub fn sysdiv(&mut self) -> SYSDIV_W<'_, SYSCLKCR_SPEC> {
         SYSDIV_W::new(self, 0)
     }
     #[doc = "Bit 16 - System Clock Selection Value"]
     #[inline(always)]
-    pub fn syssel(&mut self) -> SYSSEL_W<SYSCLKCR_SPEC> {
+    pub fn syssel(&mut self) -> SYSSEL_W<'_, SYSCLKCR_SPEC> {
         SYSSEL_W::new(self, 16)
     }
 }
@@ -93,10 +93,6 @@ impl crate::Readable for SYSCLKCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sysclkcr::W`](W) writer structure"]
 impl crate::Writable for SYSCLKCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SYSCLKCR to value 0"]
-impl crate::Resettable for SYSCLKCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SYSCLKCR_SPEC {}

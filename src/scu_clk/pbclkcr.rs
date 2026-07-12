@@ -65,7 +65,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - PB Clock Divider Enable"]
     #[inline(always)]
-    pub fn pbdiv(&mut self) -> PBDIV_W<PBCLKCR_SPEC> {
+    pub fn pbdiv(&mut self) -> PBDIV_W<'_, PBCLKCR_SPEC> {
         PBDIV_W::new(self, 0)
     }
 }
@@ -79,10 +79,6 @@ impl crate::Readable for PBCLKCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pbclkcr::W`](W) writer structure"]
 impl crate::Writable for PBCLKCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PBCLKCR to value 0"]
-impl crate::Resettable for PBCLKCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PBCLKCR_SPEC {}

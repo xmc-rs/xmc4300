@@ -17,6 +17,4 @@ impl crate::RegisterSpec for WR_REG_ENABLE_SPEC {
 #[doc = "`read()` method returns [`wr_reg_enable::R`](R) reader structure"]
 impl crate::Readable for WR_REG_ENABLE_SPEC {}
 #[doc = "`reset()` method sets WR_REG_ENABLE to value 0"]
-impl crate::Resettable for WR_REG_ENABLE_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for WR_REG_ENABLE_SPEC {}

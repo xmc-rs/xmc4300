@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - IN Endpoint FIFOn Transmit RAM Start Address"]
     #[inline(always)]
-    pub fn inepn_tx_fst_addr(&mut self) -> INEPN_TX_FST_ADDR_W<DIEPTXF1_SPEC> {
+    pub fn inepn_tx_fst_addr(&mut self) -> INEPN_TX_FST_ADDR_W<'_, DIEPTXF1_SPEC> {
         INEPN_TX_FST_ADDR_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - IN Endpoint TxFIFO Depth"]
     #[inline(always)]
-    pub fn inepn_tx_fdep(&mut self) -> INEPN_TX_FDEP_W<DIEPTXF1_SPEC> {
+    pub fn inepn_tx_fdep(&mut self) -> INEPN_TX_FDEP_W<'_, DIEPTXF1_SPEC> {
         INEPN_TX_FDEP_W::new(self, 16)
     }
 }
@@ -44,8 +44,6 @@ impl crate::Readable for DIEPTXF1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dieptxf1::W`](W) writer structure"]
 impl crate::Writable for DIEPTXF1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DIEPTXF1 to value 0x0100_012a"]
 impl crate::Resettable for DIEPTXF1_SPEC {

@@ -65,12 +65,12 @@ where
 impl W {
     #[doc = "Bit 0 - Clear Source Event 0/1"]
     #[inline(always)]
-    pub fn sev0(&mut self) -> SEV0_W<SEFCLR_SPEC> {
+    pub fn sev0(&mut self) -> SEV0_W<'_, SEFCLR_SPEC> {
         SEV0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Source Event 0/1"]
     #[inline(always)]
-    pub fn sev1(&mut self) -> SEV1_W<SEFCLR_SPEC> {
+    pub fn sev1(&mut self) -> SEV1_W<'_, SEFCLR_SPEC> {
         SEV1_W::new(self, 1)
     }
 }
@@ -82,10 +82,6 @@ impl crate::RegisterSpec for SEFCLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [`sefclr::W`](W) writer structure"]
 impl crate::Writable for SEFCLR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SEFCLR to value 0"]
-impl crate::Resettable for SEFCLR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SEFCLR_SPEC {}

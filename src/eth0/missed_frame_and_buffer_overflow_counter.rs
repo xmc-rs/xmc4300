@@ -38,6 +38,4 @@ impl crate::RegisterSpec for MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER_SPEC {
 #[doc = "`read()` method returns [`missed_frame_and_buffer_overflow_counter::R`](R) reader structure"]
 impl crate::Readable for MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER_SPEC {}
 #[doc = "`reset()` method sets MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER to value 0"]
-impl crate::Resettable for MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER_SPEC {}

@@ -251,42 +251,42 @@ where
 impl W {
     #[doc = "Bit 0 - Activate Group Service Request Node 0"]
     #[inline(always)]
-    pub fn agsr0(&mut self) -> AGSR0_W<SRACT_SPEC> {
+    pub fn agsr0(&mut self) -> AGSR0_W<'_, SRACT_SPEC> {
         AGSR0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Activate Group Service Request Node 1"]
     #[inline(always)]
-    pub fn agsr1(&mut self) -> AGSR1_W<SRACT_SPEC> {
+    pub fn agsr1(&mut self) -> AGSR1_W<'_, SRACT_SPEC> {
         AGSR1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Activate Group Service Request Node 2"]
     #[inline(always)]
-    pub fn agsr2(&mut self) -> AGSR2_W<SRACT_SPEC> {
+    pub fn agsr2(&mut self) -> AGSR2_W<'_, SRACT_SPEC> {
         AGSR2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Activate Group Service Request Node 3"]
     #[inline(always)]
-    pub fn agsr3(&mut self) -> AGSR3_W<SRACT_SPEC> {
+    pub fn agsr3(&mut self) -> AGSR3_W<'_, SRACT_SPEC> {
         AGSR3_W::new(self, 3)
     }
     #[doc = "Bit 8 - Activate Shared Service Request Node 0"]
     #[inline(always)]
-    pub fn assr0(&mut self) -> ASSR0_W<SRACT_SPEC> {
+    pub fn assr0(&mut self) -> ASSR0_W<'_, SRACT_SPEC> {
         ASSR0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Activate Shared Service Request Node 1"]
     #[inline(always)]
-    pub fn assr1(&mut self) -> ASSR1_W<SRACT_SPEC> {
+    pub fn assr1(&mut self) -> ASSR1_W<'_, SRACT_SPEC> {
         ASSR1_W::new(self, 9)
     }
     #[doc = "Bit 10 - Activate Shared Service Request Node 2"]
     #[inline(always)]
-    pub fn assr2(&mut self) -> ASSR2_W<SRACT_SPEC> {
+    pub fn assr2(&mut self) -> ASSR2_W<'_, SRACT_SPEC> {
         ASSR2_W::new(self, 10)
     }
     #[doc = "Bit 11 - Activate Shared Service Request Node 3"]
     #[inline(always)]
-    pub fn assr3(&mut self) -> ASSR3_W<SRACT_SPEC> {
+    pub fn assr3(&mut self) -> ASSR3_W<'_, SRACT_SPEC> {
         ASSR3_W::new(self, 11)
     }
 }
@@ -298,10 +298,6 @@ impl crate::RegisterSpec for SRACT_SPEC {
 #[doc = "`write(|w| ..)` method takes [`sract::W`](W) writer structure"]
 impl crate::Writable for SRACT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SRACT to value 0"]
-impl crate::Resettable for SRACT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SRACT_SPEC {}

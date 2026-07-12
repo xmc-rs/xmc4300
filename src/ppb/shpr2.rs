@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 24:31 - Priority of system handler 11, SVCall"]
     #[inline(always)]
-    pub fn pri_11(&mut self) -> PRI_11_W<SHPR2_SPEC> {
+    pub fn pri_11(&mut self) -> PRI_11_W<'_, SHPR2_SPEC> {
         PRI_11_W::new(self, 24)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for SHPR2_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`shpr2::W`](W) writer structure"]
 impl crate::Writable for SHPR2_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SHPR2 to value 0"]
-impl crate::Resettable for SHPR2_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SHPR2_SPEC {}

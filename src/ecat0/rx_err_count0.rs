@@ -24,6 +24,4 @@ impl crate::RegisterSpec for RX_ERR_COUNT0_SPEC {
 #[doc = "`read()` method returns [`rx_err_count0::R`](R) reader structure"]
 impl crate::Readable for RX_ERR_COUNT0_SPEC {}
 #[doc = "`reset()` method sets RX_ERR_COUNT0 to value 0"]
-impl crate::Resettable for RX_ERR_COUNT0_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for RX_ERR_COUNT0_SPEC {}

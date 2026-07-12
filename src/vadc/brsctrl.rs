@@ -270,32 +270,32 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Source-specific Result Register"]
     #[inline(always)]
-    pub fn srcresreg(&mut self) -> SRCRESREG_W<BRSCTRL_SPEC> {
+    pub fn srcresreg(&mut self) -> SRCRESREG_W<'_, BRSCTRL_SPEC> {
         SRCRESREG_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - External Trigger Input Selection"]
     #[inline(always)]
-    pub fn xtsel(&mut self) -> XTSEL_W<BRSCTRL_SPEC> {
+    pub fn xtsel(&mut self) -> XTSEL_W<'_, BRSCTRL_SPEC> {
         XTSEL_W::new(self, 8)
     }
     #[doc = "Bits 13:14 - Trigger Operating Mode"]
     #[inline(always)]
-    pub fn xtmode(&mut self) -> XTMODE_W<BRSCTRL_SPEC> {
+    pub fn xtmode(&mut self) -> XTMODE_W<'_, BRSCTRL_SPEC> {
         XTMODE_W::new(self, 13)
     }
     #[doc = "Bit 15 - Write Control for Trigger Configuration"]
     #[inline(always)]
-    pub fn xtwc(&mut self) -> XTWC_W<BRSCTRL_SPEC> {
+    pub fn xtwc(&mut self) -> XTWC_W<'_, BRSCTRL_SPEC> {
         XTWC_W::new(self, 15)
     }
     #[doc = "Bits 16:19 - Gate Input Selection"]
     #[inline(always)]
-    pub fn gtsel(&mut self) -> GTSEL_W<BRSCTRL_SPEC> {
+    pub fn gtsel(&mut self) -> GTSEL_W<'_, BRSCTRL_SPEC> {
         GTSEL_W::new(self, 16)
     }
     #[doc = "Bit 23 - Write Control for Gate Configuration"]
     #[inline(always)]
-    pub fn gtwc(&mut self) -> GTWC_W<BRSCTRL_SPEC> {
+    pub fn gtwc(&mut self) -> GTWC_W<'_, BRSCTRL_SPEC> {
         GTWC_W::new(self, 23)
     }
 }
@@ -309,10 +309,6 @@ impl crate::Readable for BRSCTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`brsctrl::W`](W) writer structure"]
 impl crate::Writable for BRSCTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BRSCTRL to value 0"]
-impl crate::Resettable for BRSCTRL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for BRSCTRL_SPEC {}

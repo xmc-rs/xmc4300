@@ -143,12 +143,12 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Cascaded shadow transfer enable"]
     #[inline(always)]
-    pub fn cse(&mut self) -> CSE_W<STC_SPEC> {
+    pub fn cse(&mut self) -> CSE_W<'_, STC_SPEC> {
         CSE_W::new(self, 0)
     }
     #[doc = "Bits 1:2 - Shadow transfer mode"]
     #[inline(always)]
-    pub fn stm(&mut self) -> STM_W<STC_SPEC> {
+    pub fn stm(&mut self) -> STM_W<'_, STC_SPEC> {
         STM_W::new(self, 1)
     }
 }
@@ -162,10 +162,6 @@ impl crate::Readable for STC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`stc::W`](W) writer structure"]
 impl crate::Writable for STC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets STC to value 0"]
-impl crate::Resettable for STC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for STC_SPEC {}

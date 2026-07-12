@@ -92,6 +92,4 @@ impl crate::RegisterSpec for EEP_CONF_SPEC {
 #[doc = "`read()` method returns [`eep_conf::R`](R) reader structure"]
 impl crate::Readable for EEP_CONF_SPEC {}
 #[doc = "`reset()` method sets EEP_CONF to value 0"]
-impl crate::Resettable for EEP_CONF_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for EEP_CONF_SPEC {}

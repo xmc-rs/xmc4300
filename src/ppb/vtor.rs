@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 10:31 - Vector table base offset field"]
     #[inline(always)]
-    pub fn tbloff(&mut self) -> TBLOFF_W<VTOR_SPEC> {
+    pub fn tbloff(&mut self) -> TBLOFF_W<'_, VTOR_SPEC> {
         TBLOFF_W::new(self, 10)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for VTOR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`vtor::W`](W) writer structure"]
 impl crate::Writable for VTOR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets VTOR to value 0"]
-impl crate::Resettable for VTOR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for VTOR_SPEC {}

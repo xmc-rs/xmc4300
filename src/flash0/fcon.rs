@@ -848,67 +848,67 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Wait States for read access to PFLASH"]
     #[inline(always)]
-    pub fn wspflash(&mut self) -> WSPFLASH_W<FCON_SPEC> {
+    pub fn wspflash(&mut self) -> WSPFLASH_W<'_, FCON_SPEC> {
         WSPFLASH_W::new(self, 0)
     }
     #[doc = "Bit 4 - Wait State for Error Correction of PFLASH"]
     #[inline(always)]
-    pub fn wsecpf(&mut self) -> WSECPF_W<FCON_SPEC> {
+    pub fn wsecpf(&mut self) -> WSECPF_W<'_, FCON_SPEC> {
         WSECPF_W::new(self, 4)
     }
     #[doc = "Bit 13 - Dynamic Flash Idle"]
     #[inline(always)]
-    pub fn idle(&mut self) -> IDLE_W<FCON_SPEC> {
+    pub fn idle(&mut self) -> IDLE_W<'_, FCON_SPEC> {
         IDLE_W::new(self, 13)
     }
     #[doc = "Bit 14 - External Sleep Request Disable"]
     #[inline(always)]
-    pub fn esldis(&mut self) -> ESLDIS_W<FCON_SPEC> {
+    pub fn esldis(&mut self) -> ESLDIS_W<'_, FCON_SPEC> {
         ESLDIS_W::new(self, 14)
     }
     #[doc = "Bit 15 - Flash SLEEP"]
     #[inline(always)]
-    pub fn sleep(&mut self) -> SLEEP_W<FCON_SPEC> {
+    pub fn sleep(&mut self) -> SLEEP_W<'_, FCON_SPEC> {
         SLEEP_W::new(self, 15)
     }
     #[doc = "Bit 17 - Disable Code Fetch from Flash Memory"]
     #[inline(always)]
-    pub fn dcf(&mut self) -> DCF_W<FCON_SPEC> {
+    pub fn dcf(&mut self) -> DCF_W<'_, FCON_SPEC> {
         DCF_W::new(self, 17)
     }
     #[doc = "Bit 18 - Disable Any Data Fetch from Flash"]
     #[inline(always)]
-    pub fn ddf(&mut self) -> DDF_W<FCON_SPEC> {
+    pub fn ddf(&mut self) -> DDF_W<'_, FCON_SPEC> {
         DDF_W::new(self, 18)
     }
     #[doc = "Bit 24 - Verify and Operation Error Interrupt Mask"]
     #[inline(always)]
-    pub fn voperm(&mut self) -> VOPERM_W<FCON_SPEC> {
+    pub fn voperm(&mut self) -> VOPERM_W<'_, FCON_SPEC> {
         VOPERM_W::new(self, 24)
     }
     #[doc = "Bit 25 - Command Sequence Error Interrupt Mask"]
     #[inline(always)]
-    pub fn sqerm(&mut self) -> SQERM_W<FCON_SPEC> {
+    pub fn sqerm(&mut self) -> SQERM_W<'_, FCON_SPEC> {
         SQERM_W::new(self, 25)
     }
     #[doc = "Bit 26 - Protection Error Interrupt Mask"]
     #[inline(always)]
-    pub fn proerm(&mut self) -> PROERM_W<FCON_SPEC> {
+    pub fn proerm(&mut self) -> PROERM_W<'_, FCON_SPEC> {
         PROERM_W::new(self, 26)
     }
     #[doc = "Bit 27 - PFLASH Single-Bit Error Interrupt Mask"]
     #[inline(always)]
-    pub fn pfsberm(&mut self) -> PFSBERM_W<FCON_SPEC> {
+    pub fn pfsberm(&mut self) -> PFSBERM_W<'_, FCON_SPEC> {
         PFSBERM_W::new(self, 27)
     }
     #[doc = "Bit 29 - PFLASH Double-Bit Error Interrupt Mask"]
     #[inline(always)]
-    pub fn pfdberm(&mut self) -> PFDBERM_W<FCON_SPEC> {
+    pub fn pfdberm(&mut self) -> PFDBERM_W<'_, FCON_SPEC> {
         PFDBERM_W::new(self, 29)
     }
     #[doc = "Bit 31 - End of Busy Interrupt Mask"]
     #[inline(always)]
-    pub fn eobm(&mut self) -> EOBM_W<FCON_SPEC> {
+    pub fn eobm(&mut self) -> EOBM_W<'_, FCON_SPEC> {
         EOBM_W::new(self, 31)
     }
 }
@@ -922,8 +922,6 @@ impl crate::Readable for FCON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fcon::W`](W) writer structure"]
 impl crate::Writable for FCON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FCON to value 0x06"]
 impl crate::Resettable for FCON_SPEC {

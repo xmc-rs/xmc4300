@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Data Byte 4 of Message Object n"]
     #[inline(always)]
-    pub fn db4(&mut self) -> DB4_W<MODATAH_SPEC> {
+    pub fn db4(&mut self) -> DB4_W<'_, MODATAH_SPEC> {
         DB4_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Data Byte 5 of Message Object n"]
     #[inline(always)]
-    pub fn db5(&mut self) -> DB5_W<MODATAH_SPEC> {
+    pub fn db5(&mut self) -> DB5_W<'_, MODATAH_SPEC> {
         DB5_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Data Byte 6 of Message Object n"]
     #[inline(always)]
-    pub fn db6(&mut self) -> DB6_W<MODATAH_SPEC> {
+    pub fn db6(&mut self) -> DB6_W<'_, MODATAH_SPEC> {
         DB6_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Data Byte 7 of Message Object n"]
     #[inline(always)]
-    pub fn db7(&mut self) -> DB7_W<MODATAH_SPEC> {
+    pub fn db7(&mut self) -> DB7_W<'_, MODATAH_SPEC> {
         DB7_W::new(self, 24)
     }
 }
@@ -72,10 +72,6 @@ impl crate::Readable for MODATAH_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`modatah::W`](W) writer structure"]
 impl crate::Writable for MODATAH_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MODATAH to value 0"]
-impl crate::Resettable for MODATAH_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MODATAH_SPEC {}

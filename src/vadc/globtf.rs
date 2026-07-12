@@ -285,32 +285,32 @@ impl R {
 impl W {
     #[doc = "Bits 4:7 - Converter Diagnostics Group"]
     #[inline(always)]
-    pub fn cdgr(&mut self) -> CDGR_W<GLOBTF_SPEC> {
+    pub fn cdgr(&mut self) -> CDGR_W<'_, GLOBTF_SPEC> {
         CDGR_W::new(self, 4)
     }
     #[doc = "Bit 8 - Converter Diagnostics Enable"]
     #[inline(always)]
-    pub fn cden(&mut self) -> CDEN_W<GLOBTF_SPEC> {
+    pub fn cden(&mut self) -> CDEN_W<'_, GLOBTF_SPEC> {
         CDEN_W::new(self, 8)
     }
     #[doc = "Bits 9:10 - Converter Diagnostics Pull-Devices Select"]
     #[inline(always)]
-    pub fn cdsel(&mut self) -> CDSEL_W<GLOBTF_SPEC> {
+    pub fn cdsel(&mut self) -> CDSEL_W<'_, GLOBTF_SPEC> {
         CDSEL_W::new(self, 9)
     }
     #[doc = "Bit 15 - Write Control for Conversion Diagnostics"]
     #[inline(always)]
-    pub fn cdwc(&mut self) -> CDWC_W<GLOBTF_SPEC> {
+    pub fn cdwc(&mut self) -> CDWC_W<'_, GLOBTF_SPEC> {
         CDWC_W::new(self, 15)
     }
     #[doc = "Bit 16 - Pull-Down Diagnostics Enable"]
     #[inline(always)]
-    pub fn pdd(&mut self) -> PDD_W<GLOBTF_SPEC> {
+    pub fn pdd(&mut self) -> PDD_W<'_, GLOBTF_SPEC> {
         PDD_W::new(self, 16)
     }
     #[doc = "Bit 23 - Write Control for Multiplexer Diagnostics"]
     #[inline(always)]
-    pub fn mdwc(&mut self) -> MDWC_W<GLOBTF_SPEC> {
+    pub fn mdwc(&mut self) -> MDWC_W<'_, GLOBTF_SPEC> {
         MDWC_W::new(self, 23)
     }
 }
@@ -324,10 +324,6 @@ impl crate::Readable for GLOBTF_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`globtf::W`](W) writer structure"]
 impl crate::Writable for GLOBTF_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GLOBTF to value 0"]
-impl crate::Resettable for GLOBTF_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GLOBTF_SPEC {}

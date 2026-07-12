@@ -74,12 +74,12 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable delay on the CMD/DAT out lines"]
     #[inline(always)]
-    pub fn tapen(&mut self) -> TAPEN_W<SDMMCDEL_SPEC> {
+    pub fn tapen(&mut self) -> TAPEN_W<'_, SDMMCDEL_SPEC> {
         TAPEN_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Number of Delay Elements Select"]
     #[inline(always)]
-    pub fn tapdel(&mut self) -> TAPDEL_W<SDMMCDEL_SPEC> {
+    pub fn tapdel(&mut self) -> TAPDEL_W<'_, SDMMCDEL_SPEC> {
         TAPDEL_W::new(self, 4)
     }
 }
@@ -93,10 +93,6 @@ impl crate::Readable for SDMMCDEL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sdmmcdel::W`](W) writer structure"]
 impl crate::Writable for SDMMCDEL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SDMMCDEL to value 0"]
-impl crate::Resettable for SDMMCDEL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SDMMCDEL_SPEC {}

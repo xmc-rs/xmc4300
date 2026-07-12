@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - IN Endpoint FIFO0 Transmit RAM Start Address"]
     #[inline(always)]
-    pub fn ineptx_f0st_addr(&mut self) -> INEPTX_F0ST_ADDR_W<GNPTXFSIZ_DEVICEMODE_SPEC> {
+    pub fn ineptx_f0st_addr(&mut self) -> INEPTX_F0ST_ADDR_W<'_, GNPTXFSIZ_DEVICEMODE_SPEC> {
         INEPTX_F0ST_ADDR_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - IN Endpoint TxFIFO 0 Depth"]
     #[inline(always)]
-    pub fn ineptx_f0dep(&mut self) -> INEPTX_F0DEP_W<GNPTXFSIZ_DEVICEMODE_SPEC> {
+    pub fn ineptx_f0dep(&mut self) -> INEPTX_F0DEP_W<'_, GNPTXFSIZ_DEVICEMODE_SPEC> {
         INEPTX_F0DEP_W::new(self, 16)
     }
 }
@@ -44,8 +44,6 @@ impl crate::Readable for GNPTXFSIZ_DEVICEMODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gnptxfsiz_devicemode::W`](W) writer structure"]
 impl crate::Writable for GNPTXFSIZ_DEVICEMODE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GNPTXFSIZ_DEVICEMODE to value 0x0010_0000"]
 impl crate::Resettable for GNPTXFSIZ_DEVICEMODE_SPEC {
