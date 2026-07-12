@@ -340,37 +340,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Bypass Word Length"]
     #[inline(always)]
-    pub fn bwle(&mut self) -> BWLE_W<BYPCR_SPEC> {
+    pub fn bwle(&mut self) -> BWLE_W<'_, BYPCR_SPEC> {
         BWLE_W::new(self, 0)
     }
     #[doc = "Bit 8 - Bypass Data Single Shot Mode"]
     #[inline(always)]
-    pub fn bdssm(&mut self) -> BDSSM_W<BYPCR_SPEC> {
+    pub fn bdssm(&mut self) -> BDSSM_W<'_, BYPCR_SPEC> {
         BDSSM_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Bypass Data Enable"]
     #[inline(always)]
-    pub fn bden(&mut self) -> BDEN_W<BYPCR_SPEC> {
+    pub fn bden(&mut self) -> BDEN_W<'_, BYPCR_SPEC> {
         BDEN_W::new(self, 10)
     }
     #[doc = "Bit 12 - Bypass Data Valid Trigger"]
     #[inline(always)]
-    pub fn bdvtr(&mut self) -> BDVTR_W<BYPCR_SPEC> {
+    pub fn bdvtr(&mut self) -> BDVTR_W<'_, BYPCR_SPEC> {
         BDVTR_W::new(self, 12)
     }
     #[doc = "Bit 13 - Bypass Priority"]
     #[inline(always)]
-    pub fn bprio(&mut self) -> BPRIO_W<BYPCR_SPEC> {
+    pub fn bprio(&mut self) -> BPRIO_W<'_, BYPCR_SPEC> {
         BPRIO_W::new(self, 13)
     }
     #[doc = "Bits 16:20 - Bypass Select Outputs"]
     #[inline(always)]
-    pub fn bselo(&mut self) -> BSELO_W<BYPCR_SPEC> {
+    pub fn bselo(&mut self) -> BSELO_W<'_, BYPCR_SPEC> {
         BSELO_W::new(self, 16)
     }
     #[doc = "Bits 21:23 - Bypass Hardware Port Control"]
     #[inline(always)]
-    pub fn bhpc(&mut self) -> BHPC_W<BYPCR_SPEC> {
+    pub fn bhpc(&mut self) -> BHPC_W<'_, BYPCR_SPEC> {
         BHPC_W::new(self, 21)
     }
 }
@@ -384,10 +384,6 @@ impl crate::Readable for BYPCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`bypcr::W`](W) writer structure"]
 impl crate::Writable for BYPCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BYPCR to value 0"]
-impl crate::Resettable for BYPCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for BYPCR_SPEC {}

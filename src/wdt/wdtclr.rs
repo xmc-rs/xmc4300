@@ -5,7 +5,7 @@ pub type ALMC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Pre-warning Alarm"]
     #[inline(always)]
-    pub fn almc(&mut self) -> ALMC_W<WDTCLR_SPEC> {
+    pub fn almc(&mut self) -> ALMC_W<'_, WDTCLR_SPEC> {
         ALMC_W::new(self, 0)
     }
 }
@@ -17,10 +17,6 @@ impl crate::RegisterSpec for WDTCLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [`wdtclr::W`](W) writer structure"]
 impl crate::Writable for WDTCLR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets WDTCLR to value 0"]
-impl crate::Resettable for WDTCLR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for WDTCLR_SPEC {}

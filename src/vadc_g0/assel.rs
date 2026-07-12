@@ -471,42 +471,42 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Channel Selection"]
     #[inline(always)]
-    pub fn chsel0(&mut self) -> CHSEL0_W<ASSEL_SPEC> {
+    pub fn chsel0(&mut self) -> CHSEL0_W<'_, ASSEL_SPEC> {
         CHSEL0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel Selection"]
     #[inline(always)]
-    pub fn chsel1(&mut self) -> CHSEL1_W<ASSEL_SPEC> {
+    pub fn chsel1(&mut self) -> CHSEL1_W<'_, ASSEL_SPEC> {
         CHSEL1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channel Selection"]
     #[inline(always)]
-    pub fn chsel2(&mut self) -> CHSEL2_W<ASSEL_SPEC> {
+    pub fn chsel2(&mut self) -> CHSEL2_W<'_, ASSEL_SPEC> {
         CHSEL2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channel Selection"]
     #[inline(always)]
-    pub fn chsel3(&mut self) -> CHSEL3_W<ASSEL_SPEC> {
+    pub fn chsel3(&mut self) -> CHSEL3_W<'_, ASSEL_SPEC> {
         CHSEL3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Channel Selection"]
     #[inline(always)]
-    pub fn chsel4(&mut self) -> CHSEL4_W<ASSEL_SPEC> {
+    pub fn chsel4(&mut self) -> CHSEL4_W<'_, ASSEL_SPEC> {
         CHSEL4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Channel Selection"]
     #[inline(always)]
-    pub fn chsel5(&mut self) -> CHSEL5_W<ASSEL_SPEC> {
+    pub fn chsel5(&mut self) -> CHSEL5_W<'_, ASSEL_SPEC> {
         CHSEL5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Channel Selection"]
     #[inline(always)]
-    pub fn chsel6(&mut self) -> CHSEL6_W<ASSEL_SPEC> {
+    pub fn chsel6(&mut self) -> CHSEL6_W<'_, ASSEL_SPEC> {
         CHSEL6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Channel Selection"]
     #[inline(always)]
-    pub fn chsel7(&mut self) -> CHSEL7_W<ASSEL_SPEC> {
+    pub fn chsel7(&mut self) -> CHSEL7_W<'_, ASSEL_SPEC> {
         CHSEL7_W::new(self, 7)
     }
 }
@@ -520,10 +520,6 @@ impl crate::Readable for ASSEL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`assel::W`](W) writer structure"]
 impl crate::Writable for ASSEL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ASSEL to value 0"]
-impl crate::Resettable for ASSEL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ASSEL_SPEC {}

@@ -17,6 +17,4 @@ impl crate::RegisterSpec for RX_MULTICAST_FRAMES_GOOD_SPEC {
 #[doc = "`read()` method returns [`rx_multicast_frames_good::R`](R) reader structure"]
 impl crate::Readable for RX_MULTICAST_FRAMES_GOOD_SPEC {}
 #[doc = "`reset()` method sets RX_MULTICAST_FRAMES_GOOD to value 0"]
-impl crate::Resettable for RX_MULTICAST_FRAMES_GOOD_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RX_MULTICAST_FRAMES_GOOD_SPEC {}

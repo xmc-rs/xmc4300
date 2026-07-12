@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - RI Watchdog Timer Count"]
     #[inline(always)]
-    pub fn riwt(&mut self) -> RIWT_W<RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC> {
+    pub fn riwt(&mut self) -> RIWT_W<'_, RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC> {
         RIWT_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`receive_interrupt_watchdog_timer::W`](W) writer structure"]
 impl crate::Writable for RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RECEIVE_INTERRUPT_WATCHDOG_TIMER to value 0"]
-impl crate::Resettable for RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC {}

@@ -185,22 +185,22 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Source Event (Background)"]
     #[inline(always)]
-    pub fn sevglb(&mut self) -> SEVGLB_W<GLOBEFLAG_SPEC> {
+    pub fn sevglb(&mut self) -> SEVGLB_W<'_, GLOBEFLAG_SPEC> {
         SEVGLB_W::new(self, 0)
     }
     #[doc = "Bit 8 - Global Result Event"]
     #[inline(always)]
-    pub fn revglb(&mut self) -> REVGLB_W<GLOBEFLAG_SPEC> {
+    pub fn revglb(&mut self) -> REVGLB_W<'_, GLOBEFLAG_SPEC> {
         REVGLB_W::new(self, 8)
     }
     #[doc = "Bit 16 - Clear Source Event (Background)"]
     #[inline(always)]
-    pub fn sevglbclr(&mut self) -> SEVGLBCLR_W<GLOBEFLAG_SPEC> {
+    pub fn sevglbclr(&mut self) -> SEVGLBCLR_W<'_, GLOBEFLAG_SPEC> {
         SEVGLBCLR_W::new(self, 16)
     }
     #[doc = "Bit 24 - Clear Global Result Event"]
     #[inline(always)]
-    pub fn revglbclr(&mut self) -> REVGLBCLR_W<GLOBEFLAG_SPEC> {
+    pub fn revglbclr(&mut self) -> REVGLBCLR_W<'_, GLOBEFLAG_SPEC> {
         REVGLBCLR_W::new(self, 24)
     }
 }
@@ -214,10 +214,6 @@ impl crate::Readable for GLOBEFLAG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`globeflag::W`](W) writer structure"]
 impl crate::Writable for GLOBEFLAG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GLOBEFLAG to value 0"]
-impl crate::Resettable for GLOBEFLAG_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GLOBEFLAG_SPEC {}

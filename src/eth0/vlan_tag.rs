@@ -50,22 +50,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - VLAN Tag Identifier for Receive Frames"]
     #[inline(always)]
-    pub fn vl(&mut self) -> VL_W<VLAN_TAG_SPEC> {
+    pub fn vl(&mut self) -> VL_W<'_, VLAN_TAG_SPEC> {
         VL_W::new(self, 0)
     }
     #[doc = "Bit 16 - Enable 12-Bit VLAN Tag Comparison"]
     #[inline(always)]
-    pub fn etv(&mut self) -> ETV_W<VLAN_TAG_SPEC> {
+    pub fn etv(&mut self) -> ETV_W<'_, VLAN_TAG_SPEC> {
         ETV_W::new(self, 16)
     }
     #[doc = "Bit 17 - VLAN Tag Inverse Match Enable"]
     #[inline(always)]
-    pub fn vtim(&mut self) -> VTIM_W<VLAN_TAG_SPEC> {
+    pub fn vtim(&mut self) -> VTIM_W<'_, VLAN_TAG_SPEC> {
         VTIM_W::new(self, 17)
     }
     #[doc = "Bit 18 - Enable S-VLAN"]
     #[inline(always)]
-    pub fn esvl(&mut self) -> ESVL_W<VLAN_TAG_SPEC> {
+    pub fn esvl(&mut self) -> ESVL_W<'_, VLAN_TAG_SPEC> {
         ESVL_W::new(self, 18)
     }
 }
@@ -79,10 +79,6 @@ impl crate::Readable for VLAN_TAG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`vlan_tag::W`](W) writer structure"]
 impl crate::Writable for VLAN_TAG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets VLAN_TAG to value 0"]
-impl crate::Resettable for VLAN_TAG_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for VLAN_TAG_SPEC {}

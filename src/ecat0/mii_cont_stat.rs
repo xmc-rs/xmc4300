@@ -297,7 +297,7 @@ impl R {
 impl W {
     #[doc = "Bits 8:9 - Command register"]
     #[inline(always)]
-    pub fn cmd_reg(&mut self) -> CMD_REG_W<MII_CONT_STAT_SPEC> {
+    pub fn cmd_reg(&mut self) -> CMD_REG_W<'_, MII_CONT_STAT_SPEC> {
         CMD_REG_W::new(self, 8)
     }
 }
@@ -311,10 +311,6 @@ impl crate::Readable for MII_CONT_STAT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mii_cont_stat::W`](W) writer structure"]
 impl crate::Writable for MII_CONT_STAT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets MII_CONT_STAT to value 0"]
-impl crate::Resettable for MII_CONT_STAT_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for MII_CONT_STAT_SPEC {}

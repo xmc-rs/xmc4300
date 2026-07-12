@@ -17,6 +17,4 @@ impl crate::RegisterSpec for PROC_ERR_COUNT_SPEC {
 #[doc = "`read()` method returns [`proc_err_count::R`](R) reader structure"]
 impl crate::Readable for PROC_ERR_COUNT_SPEC {}
 #[doc = "`reset()` method sets PROC_ERR_COUNT to value 0"]
-impl crate::Resettable for PROC_ERR_COUNT_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for PROC_ERR_COUNT_SPEC {}

@@ -17,6 +17,4 @@ impl crate::RegisterSpec for SM_P_START_ADR_SPEC {
 #[doc = "`read()` method returns [`sm_p_start_adr::R`](R) reader structure"]
 impl crate::Readable for SM_P_START_ADR_SPEC {}
 #[doc = "`reset()` method sets SM_P_START_ADR to value 0"]
-impl crate::Resettable for SM_P_START_ADR_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for SM_P_START_ADR_SPEC {}

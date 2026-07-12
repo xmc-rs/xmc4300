@@ -530,87 +530,87 @@ where
 impl W {
     #[doc = "Bit 0 - Clear Status Flag 0 in PSR"]
     #[inline(always)]
-    pub fn cst0(&mut self) -> CST0_W<PSCR_SPEC> {
+    pub fn cst0(&mut self) -> CST0_W<'_, PSCR_SPEC> {
         CST0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Status Flag 1 in PSR"]
     #[inline(always)]
-    pub fn cst1(&mut self) -> CST1_W<PSCR_SPEC> {
+    pub fn cst1(&mut self) -> CST1_W<'_, PSCR_SPEC> {
         CST1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Status Flag 2 in PSR"]
     #[inline(always)]
-    pub fn cst2(&mut self) -> CST2_W<PSCR_SPEC> {
+    pub fn cst2(&mut self) -> CST2_W<'_, PSCR_SPEC> {
         CST2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Clear Status Flag 3 in PSR"]
     #[inline(always)]
-    pub fn cst3(&mut self) -> CST3_W<PSCR_SPEC> {
+    pub fn cst3(&mut self) -> CST3_W<'_, PSCR_SPEC> {
         CST3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Clear Status Flag 4 in PSR"]
     #[inline(always)]
-    pub fn cst4(&mut self) -> CST4_W<PSCR_SPEC> {
+    pub fn cst4(&mut self) -> CST4_W<'_, PSCR_SPEC> {
         CST4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Clear Status Flag 5 in PSR"]
     #[inline(always)]
-    pub fn cst5(&mut self) -> CST5_W<PSCR_SPEC> {
+    pub fn cst5(&mut self) -> CST5_W<'_, PSCR_SPEC> {
         CST5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Clear Status Flag 6 in PSR"]
     #[inline(always)]
-    pub fn cst6(&mut self) -> CST6_W<PSCR_SPEC> {
+    pub fn cst6(&mut self) -> CST6_W<'_, PSCR_SPEC> {
         CST6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Clear Status Flag 7 in PSR"]
     #[inline(always)]
-    pub fn cst7(&mut self) -> CST7_W<PSCR_SPEC> {
+    pub fn cst7(&mut self) -> CST7_W<'_, PSCR_SPEC> {
         CST7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Clear Status Flag 8 in PSR"]
     #[inline(always)]
-    pub fn cst8(&mut self) -> CST8_W<PSCR_SPEC> {
+    pub fn cst8(&mut self) -> CST8_W<'_, PSCR_SPEC> {
         CST8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear Status Flag 9 in PSR"]
     #[inline(always)]
-    pub fn cst9(&mut self) -> CST9_W<PSCR_SPEC> {
+    pub fn cst9(&mut self) -> CST9_W<'_, PSCR_SPEC> {
         CST9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Clear Receiver Start Indication Flag"]
     #[inline(always)]
-    pub fn crsif(&mut self) -> CRSIF_W<PSCR_SPEC> {
+    pub fn crsif(&mut self) -> CRSIF_W<'_, PSCR_SPEC> {
         CRSIF_W::new(self, 10)
     }
     #[doc = "Bit 11 - Clear Data Lost Indication Flag"]
     #[inline(always)]
-    pub fn cdlif(&mut self) -> CDLIF_W<PSCR_SPEC> {
+    pub fn cdlif(&mut self) -> CDLIF_W<'_, PSCR_SPEC> {
         CDLIF_W::new(self, 11)
     }
     #[doc = "Bit 12 - Clear Transmit Shift Indication Flag"]
     #[inline(always)]
-    pub fn ctsif(&mut self) -> CTSIF_W<PSCR_SPEC> {
+    pub fn ctsif(&mut self) -> CTSIF_W<'_, PSCR_SPEC> {
         CTSIF_W::new(self, 12)
     }
     #[doc = "Bit 13 - Clear Transmit Buffer Indication Flag"]
     #[inline(always)]
-    pub fn ctbif(&mut self) -> CTBIF_W<PSCR_SPEC> {
+    pub fn ctbif(&mut self) -> CTBIF_W<'_, PSCR_SPEC> {
         CTBIF_W::new(self, 13)
     }
     #[doc = "Bit 14 - Clear Receive Indication Flag"]
     #[inline(always)]
-    pub fn crif(&mut self) -> CRIF_W<PSCR_SPEC> {
+    pub fn crif(&mut self) -> CRIF_W<'_, PSCR_SPEC> {
         CRIF_W::new(self, 14)
     }
     #[doc = "Bit 15 - Clear Alternative Receive Indication Flag"]
     #[inline(always)]
-    pub fn caif(&mut self) -> CAIF_W<PSCR_SPEC> {
+    pub fn caif(&mut self) -> CAIF_W<'_, PSCR_SPEC> {
         CAIF_W::new(self, 15)
     }
     #[doc = "Bit 16 - Clear Baud Rate Generator Indication Flag"]
     #[inline(always)]
-    pub fn cbrgif(&mut self) -> CBRGIF_W<PSCR_SPEC> {
+    pub fn cbrgif(&mut self) -> CBRGIF_W<'_, PSCR_SPEC> {
         CBRGIF_W::new(self, 16)
     }
 }
@@ -622,10 +622,6 @@ impl crate::RegisterSpec for PSCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [`pscr::W`](W) writer structure"]
 impl crate::Writable for PSCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PSCR to value 0"]
-impl crate::Resettable for PSCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PSCR_SPEC {}

@@ -129,62 +129,62 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Promiscuous Mode"]
     #[inline(always)]
-    pub fn pr(&mut self) -> PR_W<MAC_FRAME_FILTER_SPEC> {
+    pub fn pr(&mut self) -> PR_W<'_, MAC_FRAME_FILTER_SPEC> {
         PR_W::new(self, 0)
     }
     #[doc = "Bit 1 - Hash Unicast"]
     #[inline(always)]
-    pub fn huc(&mut self) -> HUC_W<MAC_FRAME_FILTER_SPEC> {
+    pub fn huc(&mut self) -> HUC_W<'_, MAC_FRAME_FILTER_SPEC> {
         HUC_W::new(self, 1)
     }
     #[doc = "Bit 2 - Hash Multicast"]
     #[inline(always)]
-    pub fn hmc(&mut self) -> HMC_W<MAC_FRAME_FILTER_SPEC> {
+    pub fn hmc(&mut self) -> HMC_W<'_, MAC_FRAME_FILTER_SPEC> {
         HMC_W::new(self, 2)
     }
     #[doc = "Bit 3 - DA Inverse Filtering"]
     #[inline(always)]
-    pub fn daif(&mut self) -> DAIF_W<MAC_FRAME_FILTER_SPEC> {
+    pub fn daif(&mut self) -> DAIF_W<'_, MAC_FRAME_FILTER_SPEC> {
         DAIF_W::new(self, 3)
     }
     #[doc = "Bit 4 - Pass All Multicast"]
     #[inline(always)]
-    pub fn pm(&mut self) -> PM_W<MAC_FRAME_FILTER_SPEC> {
+    pub fn pm(&mut self) -> PM_W<'_, MAC_FRAME_FILTER_SPEC> {
         PM_W::new(self, 4)
     }
     #[doc = "Bit 5 - Disable Broadcast Frames"]
     #[inline(always)]
-    pub fn dbf(&mut self) -> DBF_W<MAC_FRAME_FILTER_SPEC> {
+    pub fn dbf(&mut self) -> DBF_W<'_, MAC_FRAME_FILTER_SPEC> {
         DBF_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Pass Control Frames"]
     #[inline(always)]
-    pub fn pcf(&mut self) -> PCF_W<MAC_FRAME_FILTER_SPEC> {
+    pub fn pcf(&mut self) -> PCF_W<'_, MAC_FRAME_FILTER_SPEC> {
         PCF_W::new(self, 6)
     }
     #[doc = "Bit 8 - SA Inverse Filtering"]
     #[inline(always)]
-    pub fn saif(&mut self) -> SAIF_W<MAC_FRAME_FILTER_SPEC> {
+    pub fn saif(&mut self) -> SAIF_W<'_, MAC_FRAME_FILTER_SPEC> {
         SAIF_W::new(self, 8)
     }
     #[doc = "Bit 9 - Source Address Filter Enable"]
     #[inline(always)]
-    pub fn saf(&mut self) -> SAF_W<MAC_FRAME_FILTER_SPEC> {
+    pub fn saf(&mut self) -> SAF_W<'_, MAC_FRAME_FILTER_SPEC> {
         SAF_W::new(self, 9)
     }
     #[doc = "Bit 10 - Hash or Perfect Filter"]
     #[inline(always)]
-    pub fn hpf(&mut self) -> HPF_W<MAC_FRAME_FILTER_SPEC> {
+    pub fn hpf(&mut self) -> HPF_W<'_, MAC_FRAME_FILTER_SPEC> {
         HPF_W::new(self, 10)
     }
     #[doc = "Bit 16 - VLAN Tag Filter Enable"]
     #[inline(always)]
-    pub fn vtfe(&mut self) -> VTFE_W<MAC_FRAME_FILTER_SPEC> {
+    pub fn vtfe(&mut self) -> VTFE_W<'_, MAC_FRAME_FILTER_SPEC> {
         VTFE_W::new(self, 16)
     }
     #[doc = "Bit 31 - Receive All"]
     #[inline(always)]
-    pub fn ra(&mut self) -> RA_W<MAC_FRAME_FILTER_SPEC> {
+    pub fn ra(&mut self) -> RA_W<'_, MAC_FRAME_FILTER_SPEC> {
         RA_W::new(self, 31)
     }
 }
@@ -198,10 +198,6 @@ impl crate::Readable for MAC_FRAME_FILTER_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mac_frame_filter::W`](W) writer structure"]
 impl crate::Writable for MAC_FRAME_FILTER_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MAC_FRAME_FILTER to value 0"]
-impl crate::Resettable for MAC_FRAME_FILTER_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MAC_FRAME_FILTER_SPEC {}

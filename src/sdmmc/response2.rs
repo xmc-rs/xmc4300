@@ -24,6 +24,4 @@ impl crate::RegisterSpec for RESPONSE2_SPEC {
 #[doc = "`read()` method returns [`response2::R`](R) reader structure"]
 impl crate::Readable for RESPONSE2_SPEC {}
 #[doc = "`reset()` method sets RESPONSE2 to value 0"]
-impl crate::Resettable for RESPONSE2_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RESPONSE2_SPEC {}

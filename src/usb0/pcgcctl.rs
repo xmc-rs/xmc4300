@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Stop Pclk"]
     #[inline(always)]
-    pub fn stop_pclk(&mut self) -> STOP_PCLK_W<PCGCCTL_SPEC> {
+    pub fn stop_pclk(&mut self) -> STOP_PCLK_W<'_, PCGCCTL_SPEC> {
         STOP_PCLK_W::new(self, 0)
     }
     #[doc = "Bit 1 - Gate Hclk"]
     #[inline(always)]
-    pub fn gate_hclk(&mut self) -> GATE_HCLK_W<PCGCCTL_SPEC> {
+    pub fn gate_hclk(&mut self) -> GATE_HCLK_W<'_, PCGCCTL_SPEC> {
         GATE_HCLK_W::new(self, 1)
     }
 }
@@ -44,8 +44,6 @@ impl crate::Readable for PCGCCTL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pcgcctl::W`](W) writer structure"]
 impl crate::Writable for PCGCCTL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PCGCCTL to value 0x0100"]
 impl crate::Resettable for PCGCCTL_SPEC {

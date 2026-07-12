@@ -4,8 +4,7 @@ pub type R = crate::R<DC_PULSE_LEN_SPEC>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum PULS_LENGTH_A {
-    #[doc = "0: Acknowledge mode: SyncSignal will be cleared by reading SYNC\\[1:0\\]
-Status register"]
+    #[doc = "0: Acknowledge mode: SyncSignal will be cleared by reading SYNC\\[1:0\\] Status register"]
     VALUE1 = 0,
 }
 impl From<PULS_LENGTH_A> for u16 {
@@ -29,8 +28,7 @@ impl PULS_LENGTH_R {
             _ => None,
         }
     }
-    #[doc = "Acknowledge mode: SyncSignal will be cleared by reading SYNC\\[1:0\\]
-Status register"]
+    #[doc = "Acknowledge mode: SyncSignal will be cleared by reading SYNC\\[1:0\\] Status register"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PULS_LENGTH_A::VALUE1
@@ -51,6 +49,4 @@ impl crate::RegisterSpec for DC_PULSE_LEN_SPEC {
 #[doc = "`read()` method returns [`dc_pulse_len::R`](R) reader structure"]
 impl crate::Readable for DC_PULSE_LEN_SPEC {}
 #[doc = "`reset()` method sets DC_PULSE_LEN to value 0"]
-impl crate::Resettable for DC_PULSE_LEN_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for DC_PULSE_LEN_SPEC {}

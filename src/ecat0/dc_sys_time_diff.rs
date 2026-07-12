@@ -58,6 +58,4 @@ impl crate::RegisterSpec for DC_SYS_TIME_DIFF_SPEC {
 #[doc = "`read()` method returns [`dc_sys_time_diff::R`](R) reader structure"]
 impl crate::Readable for DC_SYS_TIME_DIFF_SPEC {}
 #[doc = "`reset()` method sets DC_SYS_TIME_DIFF to value 0"]
-impl crate::Resettable for DC_SYS_TIME_DIFF_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DC_SYS_TIME_DIFF_SPEC {}

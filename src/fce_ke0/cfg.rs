@@ -529,47 +529,47 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CRC Mismatch Interrupt"]
     #[inline(always)]
-    pub fn cmi(&mut self) -> CMI_W<CFG_SPEC> {
+    pub fn cmi(&mut self) -> CMI_W<'_, CFG_SPEC> {
         CMI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Configuration Error Interrupt"]
     #[inline(always)]
-    pub fn cei(&mut self) -> CEI_W<CFG_SPEC> {
+    pub fn cei(&mut self) -> CEI_W<'_, CFG_SPEC> {
         CEI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Length Error Interrupt"]
     #[inline(always)]
-    pub fn lei(&mut self) -> LEI_W<CFG_SPEC> {
+    pub fn lei(&mut self) -> LEI_W<'_, CFG_SPEC> {
         LEI_W::new(self, 2)
     }
     #[doc = "Bit 3 - Bus Error Interrupt"]
     #[inline(always)]
-    pub fn bei(&mut self) -> BEI_W<CFG_SPEC> {
+    pub fn bei(&mut self) -> BEI_W<'_, CFG_SPEC> {
         BEI_W::new(self, 3)
     }
     #[doc = "Bit 4 - CRC Check Comparison"]
     #[inline(always)]
-    pub fn cce(&mut self) -> CCE_W<CFG_SPEC> {
+    pub fn cce(&mut self) -> CCE_W<'_, CFG_SPEC> {
         CCE_W::new(self, 4)
     }
     #[doc = "Bit 5 - Automatic Length Reload"]
     #[inline(always)]
-    pub fn alr(&mut self) -> ALR_W<CFG_SPEC> {
+    pub fn alr(&mut self) -> ALR_W<'_, CFG_SPEC> {
         ALR_W::new(self, 5)
     }
     #[doc = "Bit 8 - IR Byte Wise Reflection"]
     #[inline(always)]
-    pub fn refin(&mut self) -> REFIN_W<CFG_SPEC> {
+    pub fn refin(&mut self) -> REFIN_W<'_, CFG_SPEC> {
         REFIN_W::new(self, 8)
     }
     #[doc = "Bit 9 - CRC 32-Bit Wise Reflection"]
     #[inline(always)]
-    pub fn refout(&mut self) -> REFOUT_W<CFG_SPEC> {
+    pub fn refout(&mut self) -> REFOUT_W<'_, CFG_SPEC> {
         REFOUT_W::new(self, 9)
     }
     #[doc = "Bit 10 - Selects the value to be xored with the final CRC"]
     #[inline(always)]
-    pub fn xsel(&mut self) -> XSEL_W<CFG_SPEC> {
+    pub fn xsel(&mut self) -> XSEL_W<'_, CFG_SPEC> {
         XSEL_W::new(self, 10)
     }
 }
@@ -583,8 +583,6 @@ impl crate::Readable for CFG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`cfg::W`](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0x0700"]
 impl crate::Resettable for CFG_SPEC {

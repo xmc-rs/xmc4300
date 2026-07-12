@@ -1,10 +1,49 @@
 use core::marker;
+#[doc = " Generic peripheral accessor"]
+pub struct Periph<RB, const A: usize> {
+    _marker: marker::PhantomData<RB>,
+}
+unsafe impl<RB, const A: usize> Send for Periph<RB, A> {}
+impl<RB, const A: usize> Periph<RB, A> {
+    #[doc = "Pointer to the register block"]
+    pub const PTR: *const RB = A as *const _;
+    #[doc = "Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const RB {
+        Self::PTR
+    }
+    #[doc = " Steal an instance of this peripheral"]
+    #[doc = ""]
+    #[doc = " # Safety"]
+    #[doc = ""]
+    #[doc = " Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = " that may race with any existing instances, for example by only"]
+    #[doc = " accessing read-only or write-only registers, or by consuming the"]
+    #[doc = " original peripheral and using critical sections to coordinate"]
+    #[doc = " access between multiple new instances."]
+    #[doc = ""]
+    #[doc = " Additionally, other software such as HALs may rely on only one"]
+    #[doc = " peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = " no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self { _marker: marker::PhantomData }
+    }
+}
+impl<RB, const A: usize> core::ops::Deref for Periph<RB, A> {
+    type Target = RB;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
 #[doc = " Raw register type (`u8`, `u16`, `u32`, ...)"]
-pub trait RawReg: Copy + Default + From<bool> + core::ops::BitOr<Output = Self> + core::ops::BitAnd<Output = Self> + core::ops::BitOrAssign + core::ops::BitAndAssign + core::ops::Not<Output = Self> + core::ops::Shl<u8, Output = Self> {
+pub trait RawReg: Copy + From<bool> + core::ops::BitOr<Output = Self> + core::ops::BitAnd<Output = Self> + core::ops::BitOrAssign + core::ops::BitAndAssign + core::ops::Not<Output = Self> + core::ops::Shl<u8, Output = Self> {
     #[doc = " Mask for bits of width `WI`"]
     fn mask<const WI: u8>() -> Self;
-    #[doc = " Mask for bits of width 1"]
-    fn one() -> Self;
+    #[doc = " `0`"]
+    const ZERO: Self;
+    #[doc = " `1`"]
+    const ONE: Self;
 }
 macro_rules! raw_reg {
     ($ U : ty , $ size : literal , $ mask : ident) => {
@@ -13,10 +52,8 @@ macro_rules! raw_reg {
             fn mask<const WI: u8>() -> Self {
                 $mask::<WI>()
             }
-            #[inline(always)]
-            fn one() -> Self {
-                1
-            }
+            const ZERO: Self = 0;
+            const ONE: Self = 1;
         }
         const fn $mask<const WI: u8>() -> $U {
             <$U>::MAX >> ($size - WI)
@@ -55,9 +92,9 @@ pub trait Writable: RegisterSpec {
     #[doc = " Is it safe to write any bits to register"]
     type Safety;
     #[doc = " Specifies the register bits that are not changed if you pass `1` and are changed if you pass `0`"]
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = Self::Ux::ZERO;
     #[doc = " Specifies the register bits that are not changed if you pass `0` and are changed if you pass `1`"]
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = Self::Ux::ZERO;
 }
 #[doc = " Reset value of the register."]
 #[doc = ""]
@@ -65,7 +102,7 @@ pub trait Writable: RegisterSpec {
 #[doc = " register by using the `reset` method."]
 pub trait Resettable: RegisterSpec {
     #[doc = " Reset value of the register."]
-    const RESET_VALUE: Self::Ux;
+    const RESET_VALUE: Self::Ux = Self::Ux::ZERO;
     #[doc = " Reset value of the register."]
     #[inline(always)]
     fn reset_value() -> Self::Ux {
@@ -195,7 +232,7 @@ pub struct RangeFrom<const MIN: u64>;
 pub struct RangeTo<const MAX: u64>;
 #[doc = " Write field Proxy"]
 pub type FieldWriter<'a, REG, const WI: u8, FI = u8, Safety = Unsafe> = raw::FieldWriter<'a, REG, WI, FI, Safety>;
-impl<'a, REG, const WI: u8, FI, Safety> FieldWriter<'a, REG, WI, FI, Safety>
+impl<REG, const WI: u8, FI, Safety> FieldWriter<'_, REG, WI, FI, Safety>
 where
     REG: Writable + RegisterSpec,
     FI: FieldSpec,
@@ -332,8 +369,8 @@ macro_rules! bit_proxy {
             #[doc = " Writes bit to the field"]
             #[inline(always)]
             pub fn bit(self, value: bool) -> &'a mut W<REG> {
-                self.w.bits &= !(REG::Ux::one() << self.o);
-                self.w.bits |= (REG::Ux::from(value) & REG::Ux::one()) << self.o;
+                self.w.bits &= !(REG::Ux::ONE << self.o);
+                self.w.bits |= (REG::Ux::from(value) & REG::Ux::ONE) << self.o;
                 self.w
             }
             #[doc = " Writes `variant` to the field"]
@@ -359,13 +396,13 @@ where
     #[doc = " Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W<REG> {
-        self.w.bits |= REG::Ux::one() << self.o;
+        self.w.bits |= REG::Ux::ONE << self.o;
         self.w
     }
     #[doc = " Clears the field bit"]
     #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W<REG> {
-        self.w.bits &= !(REG::Ux::one() << self.o);
+        self.w.bits &= !(REG::Ux::ONE << self.o);
         self.w
     }
 }
@@ -377,7 +414,7 @@ where
     #[doc = " Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W<REG> {
-        self.w.bits |= REG::Ux::one() << self.o;
+        self.w.bits |= REG::Ux::ONE << self.o;
         self.w
     }
 }
@@ -389,7 +426,7 @@ where
     #[doc = " Clears the field bit"]
     #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W<REG> {
-        self.w.bits &= !(REG::Ux::one() << self.o);
+        self.w.bits &= !(REG::Ux::ONE << self.o);
         self.w
     }
 }
@@ -401,7 +438,7 @@ where
     #[doc = "Clears the field bit by passing one"]
     #[inline(always)]
     pub fn clear_bit_by_one(self) -> &'a mut W<REG> {
-        self.w.bits |= REG::Ux::one() << self.o;
+        self.w.bits |= REG::Ux::ONE << self.o;
         self.w
     }
 }
@@ -413,7 +450,7 @@ where
     #[doc = "Sets the field bit by passing zero"]
     #[inline(always)]
     pub fn set_bit_by_zero(self) -> &'a mut W<REG> {
-        self.w.bits &= !(REG::Ux::one() << self.o);
+        self.w.bits &= !(REG::Ux::ONE << self.o);
         self.w
     }
 }
@@ -425,7 +462,7 @@ where
     #[doc = "Toggle the field bit by passing one"]
     #[inline(always)]
     pub fn toggle_bit(self) -> &'a mut W<REG> {
-        self.w.bits |= REG::Ux::one() << self.o;
+        self.w.bits |= REG::Ux::ONE << self.o;
         self.w
     }
 }
@@ -437,7 +474,7 @@ where
     #[doc = "Toggle the field bit by passing zero"]
     #[inline(always)]
     pub fn toggle_bit(self) -> &'a mut W<REG> {
-        self.w.bits &= !(REG::Ux::one() << self.o);
+        self.w.bits &= !(REG::Ux::ONE << self.o);
         self.w
     }
 }
@@ -569,7 +606,7 @@ impl<REG: Writable> Reg<REG> {
     where
         F: FnOnce(&mut W<REG>) -> &mut W<REG>,
     {
-        let value = f(&mut W { bits: REG::Ux::default(), _reg: marker::PhantomData }).bits;
+        let value = f(&mut W { bits: REG::Ux::ZERO, _reg: marker::PhantomData }).bits;
         self.register.set(value);
         value
     }
@@ -585,7 +622,7 @@ impl<REG: Writable> Reg<REG> {
     where
         F: FnOnce(&mut W<REG>) -> T,
     {
-        let mut writer = W { bits: REG::Ux::default(), _reg: marker::PhantomData };
+        let mut writer = W { bits: REG::Ux::ZERO, _reg: marker::PhantomData };
         let result = f(&mut writer);
         self.register.set(writer.bits);
         result

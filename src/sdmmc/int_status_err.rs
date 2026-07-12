@@ -587,52 +587,52 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Command Timeout Error"]
     #[inline(always)]
-    pub fn cmd_timeout_err(&mut self) -> CMD_TIMEOUT_ERR_W<INT_STATUS_ERR_SPEC> {
+    pub fn cmd_timeout_err(&mut self) -> CMD_TIMEOUT_ERR_W<'_, INT_STATUS_ERR_SPEC> {
         CMD_TIMEOUT_ERR_W::new(self, 0)
     }
     #[doc = "Bit 1 - Command CRC Error"]
     #[inline(always)]
-    pub fn cmd_crc_err(&mut self) -> CMD_CRC_ERR_W<INT_STATUS_ERR_SPEC> {
+    pub fn cmd_crc_err(&mut self) -> CMD_CRC_ERR_W<'_, INT_STATUS_ERR_SPEC> {
         CMD_CRC_ERR_W::new(self, 1)
     }
     #[doc = "Bit 2 - Command End Bit Error"]
     #[inline(always)]
-    pub fn cmd_end_bit_err(&mut self) -> CMD_END_BIT_ERR_W<INT_STATUS_ERR_SPEC> {
+    pub fn cmd_end_bit_err(&mut self) -> CMD_END_BIT_ERR_W<'_, INT_STATUS_ERR_SPEC> {
         CMD_END_BIT_ERR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Command Index Error"]
     #[inline(always)]
-    pub fn cmd_ind_err(&mut self) -> CMD_IND_ERR_W<INT_STATUS_ERR_SPEC> {
+    pub fn cmd_ind_err(&mut self) -> CMD_IND_ERR_W<'_, INT_STATUS_ERR_SPEC> {
         CMD_IND_ERR_W::new(self, 3)
     }
     #[doc = "Bit 4 - Data Timeout Error"]
     #[inline(always)]
-    pub fn data_timeout_err(&mut self) -> DATA_TIMEOUT_ERR_W<INT_STATUS_ERR_SPEC> {
+    pub fn data_timeout_err(&mut self) -> DATA_TIMEOUT_ERR_W<'_, INT_STATUS_ERR_SPEC> {
         DATA_TIMEOUT_ERR_W::new(self, 4)
     }
     #[doc = "Bit 5 - Data CRC Error"]
     #[inline(always)]
-    pub fn data_crc_err(&mut self) -> DATA_CRC_ERR_W<INT_STATUS_ERR_SPEC> {
+    pub fn data_crc_err(&mut self) -> DATA_CRC_ERR_W<'_, INT_STATUS_ERR_SPEC> {
         DATA_CRC_ERR_W::new(self, 5)
     }
     #[doc = "Bit 6 - Data End Bit Error"]
     #[inline(always)]
-    pub fn data_end_bit_err(&mut self) -> DATA_END_BIT_ERR_W<INT_STATUS_ERR_SPEC> {
+    pub fn data_end_bit_err(&mut self) -> DATA_END_BIT_ERR_W<'_, INT_STATUS_ERR_SPEC> {
         DATA_END_BIT_ERR_W::new(self, 6)
     }
     #[doc = "Bit 7 - Current Limit Error"]
     #[inline(always)]
-    pub fn current_limit_err(&mut self) -> CURRENT_LIMIT_ERR_W<INT_STATUS_ERR_SPEC> {
+    pub fn current_limit_err(&mut self) -> CURRENT_LIMIT_ERR_W<'_, INT_STATUS_ERR_SPEC> {
         CURRENT_LIMIT_ERR_W::new(self, 7)
     }
     #[doc = "Bit 8 - Auto CMD Error"]
     #[inline(always)]
-    pub fn acmd_err(&mut self) -> ACMD_ERR_W<INT_STATUS_ERR_SPEC> {
+    pub fn acmd_err(&mut self) -> ACMD_ERR_W<'_, INT_STATUS_ERR_SPEC> {
         ACMD_ERR_W::new(self, 8)
     }
     #[doc = "Bit 13 - Ceata Error Status"]
     #[inline(always)]
-    pub fn ceata_err(&mut self) -> CEATA_ERR_W<INT_STATUS_ERR_SPEC> {
+    pub fn ceata_err(&mut self) -> CEATA_ERR_W<'_, INT_STATUS_ERR_SPEC> {
         CEATA_ERR_W::new(self, 13)
     }
 }
@@ -646,10 +646,6 @@ impl crate::Readable for INT_STATUS_ERR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`int_status_err::W`](W) writer structure"]
 impl crate::Writable for INT_STATUS_ERR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets INT_STATUS_ERR to value 0"]
-impl crate::Resettable for INT_STATUS_ERR_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for INT_STATUS_ERR_SPEC {}

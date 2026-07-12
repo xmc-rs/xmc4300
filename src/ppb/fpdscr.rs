@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bits 22:23 - Default value for FPSCR.RMode"]
     #[inline(always)]
-    pub fn rmode(&mut self) -> RMODE_W<FPDSCR_SPEC> {
+    pub fn rmode(&mut self) -> RMODE_W<'_, FPDSCR_SPEC> {
         RMODE_W::new(self, 22)
     }
     #[doc = "Bit 24 - Default value for FPSCR.FZ"]
     #[inline(always)]
-    pub fn fz(&mut self) -> FZ_W<FPDSCR_SPEC> {
+    pub fn fz(&mut self) -> FZ_W<'_, FPDSCR_SPEC> {
         FZ_W::new(self, 24)
     }
     #[doc = "Bit 25 - Default value for FPSCR.DN"]
     #[inline(always)]
-    pub fn dn(&mut self) -> DN_W<FPDSCR_SPEC> {
+    pub fn dn(&mut self) -> DN_W<'_, FPDSCR_SPEC> {
         DN_W::new(self, 25)
     }
     #[doc = "Bit 26 - Default value for FPSCR.AHP"]
     #[inline(always)]
-    pub fn ahp(&mut self) -> AHP_W<FPDSCR_SPEC> {
+    pub fn ahp(&mut self) -> AHP_W<'_, FPDSCR_SPEC> {
         AHP_W::new(self, 26)
     }
 }
@@ -72,10 +72,6 @@ impl crate::Readable for FPDSCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fpdscr::W`](W) writer structure"]
 impl crate::Writable for FPDSCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FPDSCR to value 0"]
-impl crate::Resettable for FPDSCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FPDSCR_SPEC {}

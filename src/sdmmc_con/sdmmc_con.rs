@@ -239,22 +239,22 @@ impl R {
 impl W {
     #[doc = "Bit 0 - SDMMC Write Protection Input Multiplexer Control"]
     #[inline(always)]
-    pub fn wpsel(&mut self) -> WPSEL_W<SDMMC_CON_SPEC> {
+    pub fn wpsel(&mut self) -> WPSEL_W<'_, SDMMC_CON_SPEC> {
         WPSEL_W::new(self, 0)
     }
     #[doc = "Bit 4 - SDMMC Write Protect Software Control"]
     #[inline(always)]
-    pub fn wpsval(&mut self) -> WPSVAL_W<SDMMC_CON_SPEC> {
+    pub fn wpsval(&mut self) -> WPSVAL_W<'_, SDMMC_CON_SPEC> {
         WPSVAL_W::new(self, 4)
     }
     #[doc = "Bit 16 - SDMMC Card Detection Control"]
     #[inline(always)]
-    pub fn cdsel(&mut self) -> CDSEL_W<SDMMC_CON_SPEC> {
+    pub fn cdsel(&mut self) -> CDSEL_W<'_, SDMMC_CON_SPEC> {
         CDSEL_W::new(self, 16)
     }
     #[doc = "Bit 20 - SDMMC Write Protect Software Control"]
     #[inline(always)]
-    pub fn cdsval(&mut self) -> CDSVAL_W<SDMMC_CON_SPEC> {
+    pub fn cdsval(&mut self) -> CDSVAL_W<'_, SDMMC_CON_SPEC> {
         CDSVAL_W::new(self, 20)
     }
 }
@@ -268,10 +268,6 @@ impl crate::Readable for SDMMC_CON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sdmmc_con::W`](W) writer structure"]
 impl crate::Writable for SDMMC_CON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SDMMC_CON to value 0"]
-impl crate::Resettable for SDMMC_CON_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SDMMC_CON_SPEC {}

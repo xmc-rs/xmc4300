@@ -16,8 +16,5 @@ impl crate::RegisterSpec for DC_LATCH1_TIME_POS_SPEC {
 }
 #[doc = "`read()` method returns [`dc_latch1_time_pos::R`](R) reader structure"]
 impl crate::Readable for DC_LATCH1_TIME_POS_SPEC {}
-#[doc = "`reset()` method sets DC_LATCH1_TIME_POS[%s]
-to value 0"]
-impl crate::Resettable for DC_LATCH1_TIME_POS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets DC_LATCH1_TIME_POS[%s] to value 0"]
+impl crate::Resettable for DC_LATCH1_TIME_POS_SPEC {}

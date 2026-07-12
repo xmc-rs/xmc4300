@@ -150,27 +150,27 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Flow Control Mode"]
     #[inline(always)]
-    pub fn fcmode(&mut self) -> FCMODE_W<CFGH_SPEC> {
+    pub fn fcmode(&mut self) -> FCMODE_W<'_, CFGH_SPEC> {
         FCMODE_W::new(self, 0)
     }
     #[doc = "Bit 1 - FIFO Mode Select"]
     #[inline(always)]
-    pub fn fifo_mode(&mut self) -> FIFO_MODE_W<CFGH_SPEC> {
+    pub fn fifo_mode(&mut self) -> FIFO_MODE_W<'_, CFGH_SPEC> {
         FIFO_MODE_W::new(self, 1)
     }
     #[doc = "Bits 2:4 - Protection Control"]
     #[inline(always)]
-    pub fn protctl(&mut self) -> PROTCTL_W<CFGH_SPEC> {
+    pub fn protctl(&mut self) -> PROTCTL_W<'_, CFGH_SPEC> {
         PROTCTL_W::new(self, 2)
     }
     #[doc = "Bits 7:10 - Source Peripheral"]
     #[inline(always)]
-    pub fn src_per(&mut self) -> SRC_PER_W<CFGH_SPEC> {
+    pub fn src_per(&mut self) -> SRC_PER_W<'_, CFGH_SPEC> {
         SRC_PER_W::new(self, 7)
     }
     #[doc = "Bits 11:14 - Destination Peripheral"]
     #[inline(always)]
-    pub fn dest_per(&mut self) -> DEST_PER_W<CFGH_SPEC> {
+    pub fn dest_per(&mut self) -> DEST_PER_W<'_, CFGH_SPEC> {
         DEST_PER_W::new(self, 11)
     }
 }
@@ -184,8 +184,6 @@ impl crate::Readable for CFGH_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`cfgh::W`](W) writer structure"]
 impl crate::Writable for CFGH_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CFGH to value 0x04"]
 impl crate::Resettable for CFGH_SPEC {

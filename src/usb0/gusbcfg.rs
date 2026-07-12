@@ -404,47 +404,47 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - FS Timeout Calibration"]
     #[inline(always)]
-    pub fn tout_cal(&mut self) -> TOUT_CAL_W<GUSBCFG_SPEC> {
+    pub fn tout_cal(&mut self) -> TOUT_CAL_W<'_, GUSBCFG_SPEC> {
         TOUT_CAL_W::new(self, 0)
     }
     #[doc = "Bit 8 - SRP-Capable"]
     #[inline(always)]
-    pub fn srpcap(&mut self) -> SRPCAP_W<GUSBCFG_SPEC> {
+    pub fn srpcap(&mut self) -> SRPCAP_W<'_, GUSBCFG_SPEC> {
         SRPCAP_W::new(self, 8)
     }
     #[doc = "Bit 9 - HNP-Capable"]
     #[inline(always)]
-    pub fn hnpcap(&mut self) -> HNPCAP_W<GUSBCFG_SPEC> {
+    pub fn hnpcap(&mut self) -> HNPCAP_W<'_, GUSBCFG_SPEC> {
         HNPCAP_W::new(self, 9)
     }
     #[doc = "Bits 10:13 - USB Turnaround Time"]
     #[inline(always)]
-    pub fn usbtrd_tim(&mut self) -> USBTRD_TIM_W<GUSBCFG_SPEC> {
+    pub fn usbtrd_tim(&mut self) -> USBTRD_TIM_W<'_, GUSBCFG_SPEC> {
         USBTRD_TIM_W::new(self, 10)
     }
     #[doc = "Bit 16 - UTMIFS Interface Select"]
     #[inline(always)]
-    pub fn otg_i2csel(&mut self) -> OTG_I2CSEL_W<GUSBCFG_SPEC> {
+    pub fn otg_i2csel(&mut self) -> OTG_I2CSEL_W<'_, GUSBCFG_SPEC> {
         OTG_I2CSEL_W::new(self, 16)
     }
     #[doc = "Bit 28 - Tx End Delay"]
     #[inline(always)]
-    pub fn tx_end_delay(&mut self) -> TX_END_DELAY_W<GUSBCFG_SPEC> {
+    pub fn tx_end_delay(&mut self) -> TX_END_DELAY_W<'_, GUSBCFG_SPEC> {
         TX_END_DELAY_W::new(self, 28)
     }
     #[doc = "Bit 29 - Force Host Mode"]
     #[inline(always)]
-    pub fn force_hst_mode(&mut self) -> FORCE_HST_MODE_W<GUSBCFG_SPEC> {
+    pub fn force_hst_mode(&mut self) -> FORCE_HST_MODE_W<'_, GUSBCFG_SPEC> {
         FORCE_HST_MODE_W::new(self, 29)
     }
     #[doc = "Bit 30 - Force Device Mode"]
     #[inline(always)]
-    pub fn force_dev_mode(&mut self) -> FORCE_DEV_MODE_W<GUSBCFG_SPEC> {
+    pub fn force_dev_mode(&mut self) -> FORCE_DEV_MODE_W<'_, GUSBCFG_SPEC> {
         FORCE_DEV_MODE_W::new(self, 30)
     }
     #[doc = "Bit 31 - Corrupt Tx packet"]
     #[inline(always)]
-    pub fn ctp(&mut self) -> CTP_W<GUSBCFG_SPEC> {
+    pub fn ctp(&mut self) -> CTP_W<'_, GUSBCFG_SPEC> {
         CTP_W::new(self, 31)
     }
 }
@@ -458,8 +458,6 @@ impl crate::Readable for GUSBCFG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gusbcfg::W`](W) writer structure"]
 impl crate::Writable for GUSBCFG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GUSBCFG to value 0x1440"]
 impl crate::Resettable for GUSBCFG_SPEC {

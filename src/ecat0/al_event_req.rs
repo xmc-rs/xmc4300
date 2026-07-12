@@ -1103,67 +1103,67 @@ impl R {
 impl W {
     #[doc = "Bit 10 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_2(&mut self) -> SMI_2_W<AL_EVENT_REQ_SPEC> {
+    pub fn smi_2(&mut self) -> SMI_2_W<'_, AL_EVENT_REQ_SPEC> {
         SMI_2_W::new(self, 10)
     }
     #[doc = "Bit 11 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_3(&mut self) -> SMI_3_W<AL_EVENT_REQ_SPEC> {
+    pub fn smi_3(&mut self) -> SMI_3_W<'_, AL_EVENT_REQ_SPEC> {
         SMI_3_W::new(self, 11)
     }
     #[doc = "Bit 12 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_4(&mut self) -> SMI_4_W<AL_EVENT_REQ_SPEC> {
+    pub fn smi_4(&mut self) -> SMI_4_W<'_, AL_EVENT_REQ_SPEC> {
         SMI_4_W::new(self, 12)
     }
     #[doc = "Bit 13 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_5(&mut self) -> SMI_5_W<AL_EVENT_REQ_SPEC> {
+    pub fn smi_5(&mut self) -> SMI_5_W<'_, AL_EVENT_REQ_SPEC> {
         SMI_5_W::new(self, 13)
     }
     #[doc = "Bit 14 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_6(&mut self) -> SMI_6_W<AL_EVENT_REQ_SPEC> {
+    pub fn smi_6(&mut self) -> SMI_6_W<'_, AL_EVENT_REQ_SPEC> {
         SMI_6_W::new(self, 14)
     }
     #[doc = "Bit 15 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_7(&mut self) -> SMI_7_W<AL_EVENT_REQ_SPEC> {
+    pub fn smi_7(&mut self) -> SMI_7_W<'_, AL_EVENT_REQ_SPEC> {
         SMI_7_W::new(self, 15)
     }
     #[doc = "Bit 16 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_8(&mut self) -> SMI_8_W<AL_EVENT_REQ_SPEC> {
+    pub fn smi_8(&mut self) -> SMI_8_W<'_, AL_EVENT_REQ_SPEC> {
         SMI_8_W::new(self, 16)
     }
     #[doc = "Bit 17 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_9(&mut self) -> SMI_9_W<AL_EVENT_REQ_SPEC> {
+    pub fn smi_9(&mut self) -> SMI_9_W<'_, AL_EVENT_REQ_SPEC> {
         SMI_9_W::new(self, 17)
     }
     #[doc = "Bit 18 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_10(&mut self) -> SMI_10_W<AL_EVENT_REQ_SPEC> {
+    pub fn smi_10(&mut self) -> SMI_10_W<'_, AL_EVENT_REQ_SPEC> {
         SMI_10_W::new(self, 18)
     }
     #[doc = "Bit 19 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_11(&mut self) -> SMI_11_W<AL_EVENT_REQ_SPEC> {
+    pub fn smi_11(&mut self) -> SMI_11_W<'_, AL_EVENT_REQ_SPEC> {
         SMI_11_W::new(self, 19)
     }
     #[doc = "Bit 20 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_12(&mut self) -> SMI_12_W<AL_EVENT_REQ_SPEC> {
+    pub fn smi_12(&mut self) -> SMI_12_W<'_, AL_EVENT_REQ_SPEC> {
         SMI_12_W::new(self, 20)
     }
     #[doc = "Bit 21 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_13(&mut self) -> SMI_13_W<AL_EVENT_REQ_SPEC> {
+    pub fn smi_13(&mut self) -> SMI_13_W<'_, AL_EVENT_REQ_SPEC> {
         SMI_13_W::new(self, 21)
     }
     #[doc = "Bit 22 - SyncManager interrupt"]
     #[inline(always)]
-    pub fn smi_14(&mut self) -> SMI_14_W<AL_EVENT_REQ_SPEC> {
+    pub fn smi_14(&mut self) -> SMI_14_W<'_, AL_EVENT_REQ_SPEC> {
         SMI_14_W::new(self, 22)
     }
 }
@@ -1177,8 +1177,6 @@ impl crate::Readable for AL_EVENT_REQ_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`al_event_req::W`](W) writer structure"]
 impl crate::Writable for AL_EVENT_REQ_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets AL_EVENT_REQ to value 0x20"]
 impl crate::Resettable for AL_EVENT_REQ_SPEC {

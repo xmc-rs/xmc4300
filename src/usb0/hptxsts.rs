@@ -147,7 +147,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Periodic Transmit Data FIFO Space Available"]
     #[inline(always)]
-    pub fn ptx_fspc_avail(&mut self) -> PTX_FSPC_AVAIL_W<HPTXSTS_SPEC> {
+    pub fn ptx_fspc_avail(&mut self) -> PTX_FSPC_AVAIL_W<'_, HPTXSTS_SPEC> {
         PTX_FSPC_AVAIL_W::new(self, 0)
     }
 }
@@ -161,8 +161,6 @@ impl crate::Readable for HPTXSTS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hptxsts::W`](W) writer structure"]
 impl crate::Writable for HPTXSTS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HPTXSTS to value 0x0008_0100"]
 impl crate::Resettable for HPTXSTS_SPEC {

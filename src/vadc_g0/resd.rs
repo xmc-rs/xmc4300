@@ -174,8 +174,5 @@ impl crate::RegisterSpec for RESD_SPEC {
 }
 #[doc = "`read()` method returns [`resd::R`](R) reader structure"]
 impl crate::Readable for RESD_SPEC {}
-#[doc = "`reset()` method sets RESD[%s]
-to value 0"]
-impl crate::Resettable for RESD_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets RESD[%s] to value 0"]
+impl crate::Resettable for RESD_SPEC {}

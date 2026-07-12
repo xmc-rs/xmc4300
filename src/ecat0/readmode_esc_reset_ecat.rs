@@ -65,6 +65,4 @@ impl crate::RegisterSpec for READMODE_ESC_RESET_ECAT_SPEC {
 #[doc = "`read()` method returns [`readmode_esc_reset_ecat::R`](R) reader structure"]
 impl crate::Readable for READMODE_ESC_RESET_ECAT_SPEC {}
 #[doc = "`reset()` method sets ESC_RESET_ECAT to value 0"]
-impl crate::Resettable for READMODE_ESC_RESET_ECAT_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for READMODE_ESC_RESET_ECAT_SPEC {}

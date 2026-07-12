@@ -220,37 +220,37 @@ where
 impl W {
     #[doc = "Bit 0 - VADC Gating Set"]
     #[inline(always)]
-    pub fn vadc(&mut self) -> VADC_W<CGATSET0_SPEC> {
+    pub fn vadc(&mut self) -> VADC_W<'_, CGATSET0_SPEC> {
         VADC_W::new(self, 0)
     }
     #[doc = "Bit 2 - CCU40 Gating Set"]
     #[inline(always)]
-    pub fn ccu40(&mut self) -> CCU40_W<CGATSET0_SPEC> {
+    pub fn ccu40(&mut self) -> CCU40_W<'_, CGATSET0_SPEC> {
         CCU40_W::new(self, 2)
     }
     #[doc = "Bit 3 - CCU41 Gating Set"]
     #[inline(always)]
-    pub fn ccu41(&mut self) -> CCU41_W<CGATSET0_SPEC> {
+    pub fn ccu41(&mut self) -> CCU41_W<'_, CGATSET0_SPEC> {
         CCU41_W::new(self, 3)
     }
     #[doc = "Bit 7 - CCU80 Gating Set"]
     #[inline(always)]
-    pub fn ccu80(&mut self) -> CCU80_W<CGATSET0_SPEC> {
+    pub fn ccu80(&mut self) -> CCU80_W<'_, CGATSET0_SPEC> {
         CCU80_W::new(self, 7)
     }
     #[doc = "Bit 9 - POSIF0 Gating Set"]
     #[inline(always)]
-    pub fn posif0(&mut self) -> POSIF0_W<CGATSET0_SPEC> {
+    pub fn posif0(&mut self) -> POSIF0_W<'_, CGATSET0_SPEC> {
         POSIF0_W::new(self, 9)
     }
     #[doc = "Bit 11 - USIC0 Gating Set"]
     #[inline(always)]
-    pub fn usic0(&mut self) -> USIC0_W<CGATSET0_SPEC> {
+    pub fn usic0(&mut self) -> USIC0_W<'_, CGATSET0_SPEC> {
         USIC0_W::new(self, 11)
     }
     #[doc = "Bit 16 - ERU1 Gating Set"]
     #[inline(always)]
-    pub fn eru1(&mut self) -> ERU1_W<CGATSET0_SPEC> {
+    pub fn eru1(&mut self) -> ERU1_W<'_, CGATSET0_SPEC> {
         ERU1_W::new(self, 16)
     }
 }
@@ -262,10 +262,6 @@ impl crate::RegisterSpec for CGATSET0_SPEC {
 #[doc = "`write(|w| ..)` method takes [`cgatset0::W`](W) writer structure"]
 impl crate::Writable for CGATSET0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CGATSET0 to value 0"]
-impl crate::Resettable for CGATSET0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CGATSET0_SPEC {}

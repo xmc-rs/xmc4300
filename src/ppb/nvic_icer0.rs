@@ -72,7 +72,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Interrupt clear-enable bits."]
     #[inline(always)]
-    pub fn clrena(&mut self) -> CLRENA_W<NVIC_ICER0_SPEC> {
+    pub fn clrena(&mut self) -> CLRENA_W<'_, NVIC_ICER0_SPEC> {
         CLRENA_W::new(self, 0)
     }
 }
@@ -86,10 +86,6 @@ impl crate::Readable for NVIC_ICER0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`nvic_icer0::W`](W) writer structure"]
 impl crate::Writable for NVIC_ICER0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NVIC_ICER0 to value 0"]
-impl crate::Resettable for NVIC_ICER0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for NVIC_ICER0_SPEC {}

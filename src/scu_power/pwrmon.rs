@@ -34,17 +34,17 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Threshold"]
     #[inline(always)]
-    pub fn thrs(&mut self) -> THRS_W<PWRMON_SPEC> {
+    pub fn thrs(&mut self) -> THRS_W<'_, PWRMON_SPEC> {
         THRS_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Interval"]
     #[inline(always)]
-    pub fn intv(&mut self) -> INTV_W<PWRMON_SPEC> {
+    pub fn intv(&mut self) -> INTV_W<'_, PWRMON_SPEC> {
         INTV_W::new(self, 8)
     }
     #[doc = "Bit 16 - Enable"]
     #[inline(always)]
-    pub fn enb(&mut self) -> ENB_W<PWRMON_SPEC> {
+    pub fn enb(&mut self) -> ENB_W<'_, PWRMON_SPEC> {
         ENB_W::new(self, 16)
     }
 }
@@ -58,10 +58,6 @@ impl crate::Readable for PWRMON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pwrmon::W`](W) writer structure"]
 impl crate::Writable for PWRMON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PWRMON to value 0"]
-impl crate::Resettable for PWRMON_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PWRMON_SPEC {}

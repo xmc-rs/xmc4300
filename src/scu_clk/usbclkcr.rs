@@ -74,12 +74,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - USB Clock Divider Value"]
     #[inline(always)]
-    pub fn usbdiv(&mut self) -> USBDIV_W<USBCLKCR_SPEC> {
+    pub fn usbdiv(&mut self) -> USBDIV_W<'_, USBCLKCR_SPEC> {
         USBDIV_W::new(self, 0)
     }
     #[doc = "Bit 16 - USB Clock Selection Value"]
     #[inline(always)]
-    pub fn usbsel(&mut self) -> USBSEL_W<USBCLKCR_SPEC> {
+    pub fn usbsel(&mut self) -> USBSEL_W<'_, USBCLKCR_SPEC> {
         USBSEL_W::new(self, 16)
     }
 }
@@ -93,10 +93,6 @@ impl crate::Readable for USBCLKCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`usbclkcr::W`](W) writer structure"]
 impl crate::Writable for USBCLKCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets USBCLKCR to value 0"]
-impl crate::Resettable for USBCLKCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for USBCLKCR_SPEC {}

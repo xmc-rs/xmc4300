@@ -158,27 +158,27 @@ where
 impl W {
     #[doc = "Bit 0 - Clear Reset Status"]
     #[inline(always)]
-    pub fn rsclr(&mut self) -> RSCLR_W<RSTCLR_SPEC> {
+    pub fn rsclr(&mut self) -> RSCLR_W<'_, RSTCLR_SPEC> {
         RSCLR_W::new(self, 0)
     }
     #[doc = "Bit 8 - Clear Hibernate Wake-up Reset Status"]
     #[inline(always)]
-    pub fn hibwk(&mut self) -> HIBWK_W<RSTCLR_SPEC> {
+    pub fn hibwk(&mut self) -> HIBWK_W<'_, RSTCLR_SPEC> {
         HIBWK_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear Hibernate Reset"]
     #[inline(always)]
-    pub fn hibrs(&mut self) -> HIBRS_W<RSTCLR_SPEC> {
+    pub fn hibrs(&mut self) -> HIBRS_W<'_, RSTCLR_SPEC> {
         HIBRS_W::new(self, 9)
     }
     #[doc = "Bit 10 - Enable Lockup Reset"]
     #[inline(always)]
-    pub fn lcken(&mut self) -> LCKEN_W<RSTCLR_SPEC> {
+    pub fn lcken(&mut self) -> LCKEN_W<'_, RSTCLR_SPEC> {
         LCKEN_W::new(self, 10)
     }
     #[doc = "Bit 12 - ECAT0 Reset Status Information"]
     #[inline(always)]
-    pub fn ecat0rs(&mut self) -> ECAT0RS_W<RSTCLR_SPEC> {
+    pub fn ecat0rs(&mut self) -> ECAT0RS_W<'_, RSTCLR_SPEC> {
         ECAT0RS_W::new(self, 12)
     }
 }
@@ -190,10 +190,6 @@ impl crate::RegisterSpec for RSTCLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [`rstclr::W`](W) writer structure"]
 impl crate::Writable for RSTCLR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RSTCLR to value 0"]
-impl crate::Resettable for RSTCLR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RSTCLR_SPEC {}

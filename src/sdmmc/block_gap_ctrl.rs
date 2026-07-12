@@ -190,22 +190,22 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Stop At Block Gap Request"]
     #[inline(always)]
-    pub fn stop_at_block_gap(&mut self) -> STOP_AT_BLOCK_GAP_W<BLOCK_GAP_CTRL_SPEC> {
+    pub fn stop_at_block_gap(&mut self) -> STOP_AT_BLOCK_GAP_W<'_, BLOCK_GAP_CTRL_SPEC> {
         STOP_AT_BLOCK_GAP_W::new(self, 0)
     }
     #[doc = "Bit 1 - Continue Request"]
     #[inline(always)]
-    pub fn continue_req(&mut self) -> CONTINUE_REQ_W<BLOCK_GAP_CTRL_SPEC> {
+    pub fn continue_req(&mut self) -> CONTINUE_REQ_W<'_, BLOCK_GAP_CTRL_SPEC> {
         CONTINUE_REQ_W::new(self, 1)
     }
     #[doc = "Bit 2 - Read Wait Control"]
     #[inline(always)]
-    pub fn read_wait_ctrl(&mut self) -> READ_WAIT_CTRL_W<BLOCK_GAP_CTRL_SPEC> {
+    pub fn read_wait_ctrl(&mut self) -> READ_WAIT_CTRL_W<'_, BLOCK_GAP_CTRL_SPEC> {
         READ_WAIT_CTRL_W::new(self, 2)
     }
     #[doc = "Bit 3 - Interrupt At Block Gap"]
     #[inline(always)]
-    pub fn int_at_block_gap(&mut self) -> INT_AT_BLOCK_GAP_W<BLOCK_GAP_CTRL_SPEC> {
+    pub fn int_at_block_gap(&mut self) -> INT_AT_BLOCK_GAP_W<'_, BLOCK_GAP_CTRL_SPEC> {
         INT_AT_BLOCK_GAP_W::new(self, 3)
     }
 }
@@ -219,10 +219,6 @@ impl crate::Readable for BLOCK_GAP_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`block_gap_ctrl::W`](W) writer structure"]
 impl crate::Writable for BLOCK_GAP_CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets BLOCK_GAP_CTRL to value 0"]
-impl crate::Resettable for BLOCK_GAP_CTRL_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for BLOCK_GAP_CTRL_SPEC {}

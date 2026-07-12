@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Timestamp Second"]
     #[inline(always)]
-    pub fn tss(&mut self) -> TSS_W<SYSTEM_TIME_SECONDS_UPDATE_SPEC> {
+    pub fn tss(&mut self) -> TSS_W<'_, SYSTEM_TIME_SECONDS_UPDATE_SPEC> {
         TSS_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for SYSTEM_TIME_SECONDS_UPDATE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`system_time_seconds_update::W`](W) writer structure"]
 impl crate::Writable for SYSTEM_TIME_SECONDS_UPDATE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SYSTEM_TIME_SECONDS_UPDATE to value 0"]
-impl crate::Resettable for SYSTEM_TIME_SECONDS_UPDATE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SYSTEM_TIME_SECONDS_UPDATE_SPEC {}

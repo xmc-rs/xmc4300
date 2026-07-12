@@ -58,11 +58,9 @@ where
 #[doc = "Select Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SELMD_A {
-    #[doc = "0: The automatic update of PCR.CTR\\[23:16\\]
-is disabled."]
+    #[doc = "0: The automatic update of PCR.CTR\\[23:16\\] is disabled."]
     VALUE1 = 0,
-    #[doc = "1: The automatic update of PCR.CTR\\[23:16\\]
-is disabled."]
+    #[doc = "1: The automatic update of PCR.CTR\\[23:16\\] is disabled."]
     VALUE2 = 1,
 }
 impl From<SELMD_A> for bool {
@@ -82,14 +80,12 @@ impl SELMD_R {
             true => SELMD_A::VALUE2,
         }
     }
-    #[doc = "The automatic update of PCR.CTR\\[23:16\\]
-is disabled."]
+    #[doc = "The automatic update of PCR.CTR\\[23:16\\] is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SELMD_A::VALUE1
     }
-    #[doc = "The automatic update of PCR.CTR\\[23:16\\]
-is disabled."]
+    #[doc = "The automatic update of PCR.CTR\\[23:16\\] is disabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SELMD_A::VALUE2
@@ -101,14 +97,12 @@ impl<'a, REG> SELMD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "The automatic update of PCR.CTR\\[23:16\\]
-is disabled."]
+    #[doc = "The automatic update of PCR.CTR\\[23:16\\] is disabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SELMD_A::VALUE1)
     }
-    #[doc = "The automatic update of PCR.CTR\\[23:16\\]
-is disabled."]
+    #[doc = "The automatic update of PCR.CTR\\[23:16\\] is disabled."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SELMD_A::VALUE2)
@@ -889,57 +883,57 @@ impl R {
 impl W {
     #[doc = "Bit 0 - WLE Mode"]
     #[inline(always)]
-    pub fn wlemd(&mut self) -> WLEMD_W<TCSR_SPEC> {
+    pub fn wlemd(&mut self) -> WLEMD_W<'_, TCSR_SPEC> {
         WLEMD_W::new(self, 0)
     }
     #[doc = "Bit 1 - Select Mode"]
     #[inline(always)]
-    pub fn selmd(&mut self) -> SELMD_W<TCSR_SPEC> {
+    pub fn selmd(&mut self) -> SELMD_W<'_, TCSR_SPEC> {
         SELMD_W::new(self, 1)
     }
     #[doc = "Bit 2 - FLE Mode"]
     #[inline(always)]
-    pub fn flemd(&mut self) -> FLEMD_W<TCSR_SPEC> {
+    pub fn flemd(&mut self) -> FLEMD_W<'_, TCSR_SPEC> {
         FLEMD_W::new(self, 2)
     }
     #[doc = "Bit 3 - WA Mode"]
     #[inline(always)]
-    pub fn wamd(&mut self) -> WAMD_W<TCSR_SPEC> {
+    pub fn wamd(&mut self) -> WAMD_W<'_, TCSR_SPEC> {
         WAMD_W::new(self, 3)
     }
     #[doc = "Bit 4 - Hardware Port Control Mode"]
     #[inline(always)]
-    pub fn hpcmd(&mut self) -> HPCMD_W<TCSR_SPEC> {
+    pub fn hpcmd(&mut self) -> HPCMD_W<'_, TCSR_SPEC> {
         HPCMD_W::new(self, 4)
     }
     #[doc = "Bit 5 - Start Of Frame"]
     #[inline(always)]
-    pub fn sof(&mut self) -> SOF_W<TCSR_SPEC> {
+    pub fn sof(&mut self) -> SOF_W<'_, TCSR_SPEC> {
         SOF_W::new(self, 5)
     }
     #[doc = "Bit 6 - End Of Frame"]
     #[inline(always)]
-    pub fn eof(&mut self) -> EOF_W<TCSR_SPEC> {
+    pub fn eof(&mut self) -> EOF_W<'_, TCSR_SPEC> {
         EOF_W::new(self, 6)
     }
     #[doc = "Bit 8 - TBUF Data Single Shot Mode"]
     #[inline(always)]
-    pub fn tdssm(&mut self) -> TDSSM_W<TCSR_SPEC> {
+    pub fn tdssm(&mut self) -> TDSSM_W<'_, TCSR_SPEC> {
         TDSSM_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - TBUF Data Enable"]
     #[inline(always)]
-    pub fn tden(&mut self) -> TDEN_W<TCSR_SPEC> {
+    pub fn tden(&mut self) -> TDEN_W<'_, TCSR_SPEC> {
         TDEN_W::new(self, 10)
     }
     #[doc = "Bit 12 - TBUF Data Valid Trigger"]
     #[inline(always)]
-    pub fn tdvtr(&mut self) -> TDVTR_W<TCSR_SPEC> {
+    pub fn tdvtr(&mut self) -> TDVTR_W<'_, TCSR_SPEC> {
         TDVTR_W::new(self, 12)
     }
     #[doc = "Bit 13 - Word Address"]
     #[inline(always)]
-    pub fn wa(&mut self) -> WA_W<TCSR_SPEC> {
+    pub fn wa(&mut self) -> WA_W<'_, TCSR_SPEC> {
         WA_W::new(self, 13)
     }
 }
@@ -953,10 +947,6 @@ impl crate::Readable for TCSR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`tcsr::W`](W) writer structure"]
 impl crate::Writable for TCSR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TCSR to value 0"]
-impl crate::Resettable for TCSR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TCSR_SPEC {}

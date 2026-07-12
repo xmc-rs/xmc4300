@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:14 - Bandwidth for adjustment of local copy of System Time"]
     #[inline(always)]
-    pub fn count_start(&mut self) -> COUNT_START_W<DC_SPEED_COUNT_START_SPEC> {
+    pub fn count_start(&mut self) -> COUNT_START_W<'_, DC_SPEED_COUNT_START_SPEC> {
         COUNT_START_W::new(self, 0)
     }
 }
@@ -30,8 +30,6 @@ impl crate::Readable for DC_SPEED_COUNT_START_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dc_speed_count_start::W`](W) writer structure"]
 impl crate::Writable for DC_SPEED_COUNT_START_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets DC_SPEED_COUNT_START to value 0x1000"]
 impl crate::Resettable for DC_SPEED_COUNT_START_SPEC {

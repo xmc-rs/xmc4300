@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Prescaler Initial Value"]
     #[inline(always)]
-    pub fn psiv(&mut self) -> PSIV_W<PSC_SPEC> {
+    pub fn psiv(&mut self) -> PSIV_W<'_, PSC_SPEC> {
         PSIV_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for PSC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`psc::W`](W) writer structure"]
 impl crate::Writable for PSC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PSC to value 0"]
-impl crate::Resettable for PSC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PSC_SPEC {}

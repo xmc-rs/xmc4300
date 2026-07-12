@@ -5,7 +5,7 @@ pub type TRBS_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Timer Run Bit set"]
     #[inline(always)]
-    pub fn trbs(&mut self) -> TRBS_W<TCSET_SPEC> {
+    pub fn trbs(&mut self) -> TRBS_W<'_, TCSET_SPEC> {
         TRBS_W::new(self, 0)
     }
 }
@@ -17,10 +17,6 @@ impl crate::RegisterSpec for TCSET_SPEC {
 #[doc = "`write(|w| ..)` method takes [`tcset::W`](W) writer structure"]
 impl crate::Writable for TCSET_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TCSET to value 0"]
-impl crate::Resettable for TCSET_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TCSET_SPEC {}

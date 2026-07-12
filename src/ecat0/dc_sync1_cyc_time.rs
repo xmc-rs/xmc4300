@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Time between SYNC1 pulses and SYNC0 pulse"]
     #[inline(always)]
-    pub fn time_sync1_sync0(&mut self) -> TIME_SYNC1_SYNC0_W<DC_SYNC1_CYC_TIME_SPEC> {
+    pub fn time_sync1_sync0(&mut self) -> TIME_SYNC1_SYNC0_W<'_, DC_SYNC1_CYC_TIME_SPEC> {
         TIME_SYNC1_SYNC0_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for DC_SYNC1_CYC_TIME_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dc_sync1_cyc_time::W`](W) writer structure"]
 impl crate::Writable for DC_SYNC1_CYC_TIME_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DC_SYNC1_CYC_TIME to value 0"]
-impl crate::Resettable for DC_SYNC1_CYC_TIME_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DC_SYNC1_CYC_TIME_SPEC {}

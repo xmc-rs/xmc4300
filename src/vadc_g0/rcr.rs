@@ -275,27 +275,27 @@ impl R {
 impl W {
     #[doc = "Bits 16:19 - Data Reduction Control"]
     #[inline(always)]
-    pub fn drctr(&mut self) -> DRCTR_W<RCR_SPEC> {
+    pub fn drctr(&mut self) -> DRCTR_W<'_, RCR_SPEC> {
         DRCTR_W::new(self, 16)
     }
     #[doc = "Bits 20:21 - Data Modification Mode"]
     #[inline(always)]
-    pub fn dmm(&mut self) -> DMM_W<RCR_SPEC> {
+    pub fn dmm(&mut self) -> DMM_W<'_, RCR_SPEC> {
         DMM_W::new(self, 20)
     }
     #[doc = "Bit 24 - Wait-for-Read Mode Enable"]
     #[inline(always)]
-    pub fn wfr(&mut self) -> WFR_W<RCR_SPEC> {
+    pub fn wfr(&mut self) -> WFR_W<'_, RCR_SPEC> {
         WFR_W::new(self, 24)
     }
     #[doc = "Bits 25:26 - FIFO Mode Enable"]
     #[inline(always)]
-    pub fn fen(&mut self) -> FEN_W<RCR_SPEC> {
+    pub fn fen(&mut self) -> FEN_W<'_, RCR_SPEC> {
         FEN_W::new(self, 25)
     }
     #[doc = "Bit 31 - Service Request Generation Enable"]
     #[inline(always)]
-    pub fn srgen(&mut self) -> SRGEN_W<RCR_SPEC> {
+    pub fn srgen(&mut self) -> SRGEN_W<'_, RCR_SPEC> {
         SRGEN_W::new(self, 31)
     }
 }
@@ -309,11 +309,6 @@ impl crate::Readable for RCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`rcr::W`](W) writer structure"]
 impl crate::Writable for RCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets RCR[%s]
-to value 0"]
-impl crate::Resettable for RCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets RCR[%s] to value 0"]
+impl crate::Resettable for RCR_SPEC {}

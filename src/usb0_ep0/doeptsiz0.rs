@@ -103,17 +103,17 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Transfer Size"]
     #[inline(always)]
-    pub fn xfer_size(&mut self) -> XFER_SIZE_W<DOEPTSIZ0_SPEC> {
+    pub fn xfer_size(&mut self) -> XFER_SIZE_W<'_, DOEPTSIZ0_SPEC> {
         XFER_SIZE_W::new(self, 0)
     }
     #[doc = "Bits 19:20 - Packet Count"]
     #[inline(always)]
-    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<DOEPTSIZ0_SPEC> {
+    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<'_, DOEPTSIZ0_SPEC> {
         PKT_CNT_W::new(self, 19)
     }
     #[doc = "Bits 29:30 - SETUP Packet Count"]
     #[inline(always)]
-    pub fn supcnt(&mut self) -> SUPCNT_W<DOEPTSIZ0_SPEC> {
+    pub fn supcnt(&mut self) -> SUPCNT_W<'_, DOEPTSIZ0_SPEC> {
         SUPCNT_W::new(self, 29)
     }
 }
@@ -127,10 +127,6 @@ impl crate::Readable for DOEPTSIZ0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`doeptsiz0::W`](W) writer structure"]
 impl crate::Writable for DOEPTSIZ0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DOEPTSIZ0 to value 0"]
-impl crate::Resettable for DOEPTSIZ0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DOEPTSIZ0_SPEC {}

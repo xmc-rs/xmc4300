@@ -520,37 +520,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Internal Trigger Source Selection"]
     #[inline(always)]
-    pub fn iss(&mut self) -> ISS_W<EXOCON_SPEC> {
+    pub fn iss(&mut self) -> ISS_W<'_, EXOCON_SPEC> {
         ISS_W::new(self, 0)
     }
     #[doc = "Bit 2 - Gating Event Enable"]
     #[inline(always)]
-    pub fn geen(&mut self) -> GEEN_W<EXOCON_SPEC> {
+    pub fn geen(&mut self) -> GEEN_W<'_, EXOCON_SPEC> {
         GEEN_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Gating Selection for Pattern Detection Result"]
     #[inline(always)]
-    pub fn gp(&mut self) -> GP_W<EXOCON_SPEC> {
+    pub fn gp(&mut self) -> GP_W<'_, EXOCON_SPEC> {
         GP_W::new(self, 4)
     }
     #[doc = "Bit 12 - Pattern Detection Enable for ETL0"]
     #[inline(always)]
-    pub fn ipen0(&mut self) -> IPEN0_W<EXOCON_SPEC> {
+    pub fn ipen0(&mut self) -> IPEN0_W<'_, EXOCON_SPEC> {
         IPEN0_W::new(self, 12)
     }
     #[doc = "Bit 13 - Pattern Detection Enable for ETL1"]
     #[inline(always)]
-    pub fn ipen1(&mut self) -> IPEN1_W<EXOCON_SPEC> {
+    pub fn ipen1(&mut self) -> IPEN1_W<'_, EXOCON_SPEC> {
         IPEN1_W::new(self, 13)
     }
     #[doc = "Bit 14 - Pattern Detection Enable for ETL2"]
     #[inline(always)]
-    pub fn ipen2(&mut self) -> IPEN2_W<EXOCON_SPEC> {
+    pub fn ipen2(&mut self) -> IPEN2_W<'_, EXOCON_SPEC> {
         IPEN2_W::new(self, 14)
     }
     #[doc = "Bit 15 - Pattern Detection Enable for ETL3"]
     #[inline(always)]
-    pub fn ipen3(&mut self) -> IPEN3_W<EXOCON_SPEC> {
+    pub fn ipen3(&mut self) -> IPEN3_W<'_, EXOCON_SPEC> {
         IPEN3_W::new(self, 15)
     }
 }
@@ -564,11 +564,8 @@ impl crate::Readable for EXOCON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`exocon::W`](W) writer structure"]
 impl crate::Writable for EXOCON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets EXOCON[%s]
-to value 0x08"]
+#[doc = "`reset()` method sets EXOCON[%s] to value 0x08"]
 impl crate::Resettable for EXOCON_SPEC {
     const RESET_VALUE: u32 = 0x08;
 }

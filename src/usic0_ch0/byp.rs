@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Bypass Data"]
     #[inline(always)]
-    pub fn bdata(&mut self) -> BDATA_W<BYP_SPEC> {
+    pub fn bdata(&mut self) -> BDATA_W<'_, BYP_SPEC> {
         BDATA_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for BYP_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`byp::W`](W) writer structure"]
 impl crate::Writable for BYP_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BYP to value 0"]
-impl crate::Resettable for BYP_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for BYP_SPEC {}

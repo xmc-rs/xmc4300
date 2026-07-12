@@ -703,62 +703,62 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Parity Error Trap Enable for PSRAM"]
     #[inline(always)]
-    pub fn peteps(&mut self) -> PETEPS_W<PETE_SPEC> {
+    pub fn peteps(&mut self) -> PETEPS_W<'_, PETE_SPEC> {
         PETEPS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Parity Error Trap Enable for DSRAM1"]
     #[inline(always)]
-    pub fn peteds1(&mut self) -> PETEDS1_W<PETE_SPEC> {
+    pub fn peteds1(&mut self) -> PETEDS1_W<'_, PETE_SPEC> {
         PETEDS1_W::new(self, 1)
     }
     #[doc = "Bit 8 - Parity Error Trap Enable for USIC0 Memory"]
     #[inline(always)]
-    pub fn peteu0(&mut self) -> PETEU0_W<PETE_SPEC> {
+    pub fn peteu0(&mut self) -> PETEU0_W<'_, PETE_SPEC> {
         PETEU0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Parity Error Trap Enable for USIC1 Memory"]
     #[inline(always)]
-    pub fn peteu1(&mut self) -> PETEU1_W<PETE_SPEC> {
+    pub fn peteu1(&mut self) -> PETEU1_W<'_, PETE_SPEC> {
         PETEU1_W::new(self, 9)
     }
     #[doc = "Bit 12 - Parity Error Trap Enable for MultiCAN Memory"]
     #[inline(always)]
-    pub fn petemc(&mut self) -> PETEMC_W<PETE_SPEC> {
+    pub fn petemc(&mut self) -> PETEMC_W<'_, PETE_SPEC> {
         PETEMC_W::new(self, 12)
     }
     #[doc = "Bit 13 - Parity Error Trap Enable for PMU Prefetch Memory"]
     #[inline(always)]
-    pub fn petepprf(&mut self) -> PETEPPRF_W<PETE_SPEC> {
+    pub fn petepprf(&mut self) -> PETEPPRF_W<'_, PETE_SPEC> {
         PETEPPRF_W::new(self, 13)
     }
     #[doc = "Bit 16 - Parity Error Trap Enable for USB Memory"]
     #[inline(always)]
-    pub fn peteusb(&mut self) -> PETEUSB_W<PETE_SPEC> {
+    pub fn peteusb(&mut self) -> PETEUSB_W<'_, PETE_SPEC> {
         PETEUSB_W::new(self, 16)
     }
     #[doc = "Bit 17 - Parity Error Trap Enable for ETH 0TX Memory"]
     #[inline(always)]
-    pub fn peteeth0tx(&mut self) -> PETEETH0TX_W<PETE_SPEC> {
+    pub fn peteeth0tx(&mut self) -> PETEETH0TX_W<'_, PETE_SPEC> {
         PETEETH0TX_W::new(self, 17)
     }
     #[doc = "Bit 18 - Parity Error Trap Enable for ETH0 RX Memory"]
     #[inline(always)]
-    pub fn peteeth0rx(&mut self) -> PETEETH0RX_W<PETE_SPEC> {
+    pub fn peteeth0rx(&mut self) -> PETEETH0RX_W<'_, PETE_SPEC> {
         PETEETH0RX_W::new(self, 18)
     }
     #[doc = "Bit 19 - Parity Error Trap Enable for SDMMC SRAM 0 Memory"]
     #[inline(always)]
-    pub fn petesd0(&mut self) -> PETESD0_W<PETE_SPEC> {
+    pub fn petesd0(&mut self) -> PETESD0_W<'_, PETE_SPEC> {
         PETESD0_W::new(self, 19)
     }
     #[doc = "Bit 20 - Parity Error Trap Enable for SDMMC SRAM 1 Memory"]
     #[inline(always)]
-    pub fn petesd1(&mut self) -> PETESD1_W<PETE_SPEC> {
+    pub fn petesd1(&mut self) -> PETESD1_W<'_, PETE_SPEC> {
         PETESD1_W::new(self, 20)
     }
     #[doc = "Bit 24 - Parity Error Trap Enable for ECAT0 SRAM Memory"]
     #[inline(always)]
-    pub fn peteecat0(&mut self) -> PETEECAT0_W<PETE_SPEC> {
+    pub fn peteecat0(&mut self) -> PETEECAT0_W<'_, PETE_SPEC> {
         PETEECAT0_W::new(self, 24)
     }
 }
@@ -772,10 +772,6 @@ impl crate::Readable for PETE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pete::W`](W) writer structure"]
 impl crate::Writable for PETE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PETE to value 0"]
-impl crate::Resettable for PETE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PETE_SPEC {}

@@ -266,27 +266,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Trigger Set for OTGB0/1"]
     #[inline(always)]
-    pub fn tgs(&mut self) -> TGS_W<OCS_SPEC> {
+    pub fn tgs(&mut self) -> TGS_W<'_, OCS_SPEC> {
         TGS_W::new(self, 0)
     }
     #[doc = "Bit 2 - OTGB0/1 Bus Select"]
     #[inline(always)]
-    pub fn tgb(&mut self) -> TGB_W<OCS_SPEC> {
+    pub fn tgb(&mut self) -> TGB_W<'_, OCS_SPEC> {
         TGB_W::new(self, 2)
     }
     #[doc = "Bit 3 - TGS, TGB Write Protection"]
     #[inline(always)]
-    pub fn tg_p(&mut self) -> TG_P_W<OCS_SPEC> {
+    pub fn tg_p(&mut self) -> TG_P_W<'_, OCS_SPEC> {
         TG_P_W::new(self, 3)
     }
     #[doc = "Bits 24:27 - OCDS Suspend Control"]
     #[inline(always)]
-    pub fn sus(&mut self) -> SUS_W<OCS_SPEC> {
+    pub fn sus(&mut self) -> SUS_W<'_, OCS_SPEC> {
         SUS_W::new(self, 24)
     }
     #[doc = "Bit 28 - SUS Write Protection"]
     #[inline(always)]
-    pub fn sus_p(&mut self) -> SUS_P_W<OCS_SPEC> {
+    pub fn sus_p(&mut self) -> SUS_P_W<'_, OCS_SPEC> {
         SUS_P_W::new(self, 28)
     }
 }
@@ -300,10 +300,6 @@ impl crate::Readable for OCS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ocs::W`](W) writer structure"]
 impl crate::Writable for OCS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets OCS to value 0"]
-impl crate::Resettable for OCS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for OCS_SPEC {}

@@ -74,12 +74,12 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Deactivate SyncManager"]
     #[inline(always)]
-    pub fn deact(&mut self) -> DEACT_W<SM_PDI_CTR_SPEC> {
+    pub fn deact(&mut self) -> DEACT_W<'_, SM_PDI_CTR_SPEC> {
         DEACT_W::new(self, 0)
     }
     #[doc = "Bit 1 - Repeat Ack"]
     #[inline(always)]
-    pub fn rep_ack(&mut self) -> REP_ACK_W<SM_PDI_CTR_SPEC> {
+    pub fn rep_ack(&mut self) -> REP_ACK_W<'_, SM_PDI_CTR_SPEC> {
         REP_ACK_W::new(self, 1)
     }
 }
@@ -93,10 +93,6 @@ impl crate::Readable for SM_PDI_CTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sm_pdi_ctr::W`](W) writer structure"]
 impl crate::Writable for SM_PDI_CTR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets SM_PDI_CTR to value 0"]
-impl crate::Resettable for SM_PDI_CTR_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for SM_PDI_CTR_SPEC {}

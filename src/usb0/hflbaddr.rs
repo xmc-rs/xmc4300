@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Starting Address"]
     #[inline(always)]
-    pub fn starting_address(&mut self) -> STARTING_ADDRESS_W<HFLBADDR_SPEC> {
+    pub fn starting_address(&mut self) -> STARTING_ADDRESS_W<'_, HFLBADDR_SPEC> {
         STARTING_ADDRESS_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for HFLBADDR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hflbaddr::W`](W) writer structure"]
 impl crate::Writable for HFLBADDR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HFLBADDR to value 0"]
-impl crate::Resettable for HFLBADDR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HFLBADDR_SPEC {}

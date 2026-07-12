@@ -207,67 +207,67 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Mode Mismatch Interrupt"]
     #[inline(always)]
-    pub fn mode_mis(&mut self) -> MODE_MIS_W<GINTSTS_DEVICEMODE_SPEC> {
+    pub fn mode_mis(&mut self) -> MODE_MIS_W<'_, GINTSTS_DEVICEMODE_SPEC> {
         MODE_MIS_W::new(self, 1)
     }
     #[doc = "Bit 3 - Start of Frame"]
     #[inline(always)]
-    pub fn sof(&mut self) -> SOF_W<GINTSTS_DEVICEMODE_SPEC> {
+    pub fn sof(&mut self) -> SOF_W<'_, GINTSTS_DEVICEMODE_SPEC> {
         SOF_W::new(self, 3)
     }
     #[doc = "Bit 10 - Early Suspend"]
     #[inline(always)]
-    pub fn erly_susp(&mut self) -> ERLY_SUSP_W<GINTSTS_DEVICEMODE_SPEC> {
+    pub fn erly_susp(&mut self) -> ERLY_SUSP_W<'_, GINTSTS_DEVICEMODE_SPEC> {
         ERLY_SUSP_W::new(self, 10)
     }
     #[doc = "Bit 11 - USB Suspend"]
     #[inline(always)]
-    pub fn usbsusp(&mut self) -> USBSUSP_W<GINTSTS_DEVICEMODE_SPEC> {
+    pub fn usbsusp(&mut self) -> USBSUSP_W<'_, GINTSTS_DEVICEMODE_SPEC> {
         USBSUSP_W::new(self, 11)
     }
     #[doc = "Bit 12 - USB Reset"]
     #[inline(always)]
-    pub fn usbrst(&mut self) -> USBRST_W<GINTSTS_DEVICEMODE_SPEC> {
+    pub fn usbrst(&mut self) -> USBRST_W<'_, GINTSTS_DEVICEMODE_SPEC> {
         USBRST_W::new(self, 12)
     }
     #[doc = "Bit 13 - Enumeration Done"]
     #[inline(always)]
-    pub fn enum_done(&mut self) -> ENUM_DONE_W<GINTSTS_DEVICEMODE_SPEC> {
+    pub fn enum_done(&mut self) -> ENUM_DONE_W<'_, GINTSTS_DEVICEMODE_SPEC> {
         ENUM_DONE_W::new(self, 13)
     }
     #[doc = "Bit 14 - Isochronous OUT Packet Dropped Interrupt"]
     #[inline(always)]
-    pub fn isoout_drop(&mut self) -> ISOOUT_DROP_W<GINTSTS_DEVICEMODE_SPEC> {
+    pub fn isoout_drop(&mut self) -> ISOOUT_DROP_W<'_, GINTSTS_DEVICEMODE_SPEC> {
         ISOOUT_DROP_W::new(self, 14)
     }
     #[doc = "Bit 15 - End of Periodic Frame Interrupt"]
     #[inline(always)]
-    pub fn eopf(&mut self) -> EOPF_W<GINTSTS_DEVICEMODE_SPEC> {
+    pub fn eopf(&mut self) -> EOPF_W<'_, GINTSTS_DEVICEMODE_SPEC> {
         EOPF_W::new(self, 15)
     }
     #[doc = "Bit 20 - Incomplete Isochronous IN Transfer"]
     #[inline(always)]
-    pub fn incomp_isoin(&mut self) -> INCOMP_ISOIN_W<GINTSTS_DEVICEMODE_SPEC> {
+    pub fn incomp_isoin(&mut self) -> INCOMP_ISOIN_W<'_, GINTSTS_DEVICEMODE_SPEC> {
         INCOMP_ISOIN_W::new(self, 20)
     }
     #[doc = "Bit 21 - Incomplete Isochronous OUT Transfer"]
     #[inline(always)]
-    pub fn incompl_soout(&mut self) -> INCOMPL_SOOUT_W<GINTSTS_DEVICEMODE_SPEC> {
+    pub fn incompl_soout(&mut self) -> INCOMPL_SOOUT_W<'_, GINTSTS_DEVICEMODE_SPEC> {
         INCOMPL_SOOUT_W::new(self, 21)
     }
     #[doc = "Bit 28 - Connector ID Status Change"]
     #[inline(always)]
-    pub fn con_idsts_chng(&mut self) -> CON_IDSTS_CHNG_W<GINTSTS_DEVICEMODE_SPEC> {
+    pub fn con_idsts_chng(&mut self) -> CON_IDSTS_CHNG_W<'_, GINTSTS_DEVICEMODE_SPEC> {
         CON_IDSTS_CHNG_W::new(self, 28)
     }
     #[doc = "Bit 30 - Session Request/New Session Detected Interrupt"]
     #[inline(always)]
-    pub fn sess_req_int(&mut self) -> SESS_REQ_INT_W<GINTSTS_DEVICEMODE_SPEC> {
+    pub fn sess_req_int(&mut self) -> SESS_REQ_INT_W<'_, GINTSTS_DEVICEMODE_SPEC> {
         SESS_REQ_INT_W::new(self, 30)
     }
     #[doc = "Bit 31 - Resume/Remote Wakeup Detected Interrupt"]
     #[inline(always)]
-    pub fn wk_up_int(&mut self) -> WK_UP_INT_W<GINTSTS_DEVICEMODE_SPEC> {
+    pub fn wk_up_int(&mut self) -> WK_UP_INT_W<'_, GINTSTS_DEVICEMODE_SPEC> {
         WK_UP_INT_W::new(self, 31)
     }
 }
@@ -281,8 +281,6 @@ impl crate::Readable for GINTSTS_DEVICEMODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gintsts_devicemode::W`](W) writer structure"]
 impl crate::Writable for GINTSTS_DEVICEMODE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GINTSTS_DEVICEMODE to value 0x1400_0020"]
 impl crate::Resettable for GINTSTS_DEVICEMODE_SPEC {

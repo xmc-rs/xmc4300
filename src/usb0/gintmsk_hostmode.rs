@@ -115,62 +115,62 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Mode Mismatch Interrupt Mask"]
     #[inline(always)]
-    pub fn mode_mis_msk(&mut self) -> MODE_MIS_MSK_W<GINTMSK_HOSTMODE_SPEC> {
+    pub fn mode_mis_msk(&mut self) -> MODE_MIS_MSK_W<'_, GINTMSK_HOSTMODE_SPEC> {
         MODE_MIS_MSK_W::new(self, 1)
     }
     #[doc = "Bit 2 - OTG Interrupt Mask"]
     #[inline(always)]
-    pub fn otgint_msk(&mut self) -> OTGINT_MSK_W<GINTMSK_HOSTMODE_SPEC> {
+    pub fn otgint_msk(&mut self) -> OTGINT_MSK_W<'_, GINTMSK_HOSTMODE_SPEC> {
         OTGINT_MSK_W::new(self, 2)
     }
     #[doc = "Bit 3 - Start of Frame Mask"]
     #[inline(always)]
-    pub fn sof_msk(&mut self) -> SOF_MSK_W<GINTMSK_HOSTMODE_SPEC> {
+    pub fn sof_msk(&mut self) -> SOF_MSK_W<'_, GINTMSK_HOSTMODE_SPEC> {
         SOF_MSK_W::new(self, 3)
     }
     #[doc = "Bit 4 - Receive FIFO Non-Empty Mask"]
     #[inline(always)]
-    pub fn rx_flvl_msk(&mut self) -> RX_FLVL_MSK_W<GINTMSK_HOSTMODE_SPEC> {
+    pub fn rx_flvl_msk(&mut self) -> RX_FLVL_MSK_W<'_, GINTMSK_HOSTMODE_SPEC> {
         RX_FLVL_MSK_W::new(self, 4)
     }
     #[doc = "Bit 21 - Incomplete Periodic Transfer Mask"]
     #[inline(always)]
-    pub fn incompl_pmsk(&mut self) -> INCOMPL_PMSK_W<GINTMSK_HOSTMODE_SPEC> {
+    pub fn incompl_pmsk(&mut self) -> INCOMPL_PMSK_W<'_, GINTMSK_HOSTMODE_SPEC> {
         INCOMPL_PMSK_W::new(self, 21)
     }
     #[doc = "Bit 24 - Host Port Interrupt Mask"]
     #[inline(always)]
-    pub fn prt_int_msk(&mut self) -> PRT_INT_MSK_W<GINTMSK_HOSTMODE_SPEC> {
+    pub fn prt_int_msk(&mut self) -> PRT_INT_MSK_W<'_, GINTMSK_HOSTMODE_SPEC> {
         PRT_INT_MSK_W::new(self, 24)
     }
     #[doc = "Bit 25 - Host Channels Interrupt Mask"]
     #[inline(always)]
-    pub fn hch_int_msk(&mut self) -> HCH_INT_MSK_W<GINTMSK_HOSTMODE_SPEC> {
+    pub fn hch_int_msk(&mut self) -> HCH_INT_MSK_W<'_, GINTMSK_HOSTMODE_SPEC> {
         HCH_INT_MSK_W::new(self, 25)
     }
     #[doc = "Bit 26 - Periodic TxFIFO Empty Mask"]
     #[inline(always)]
-    pub fn ptx_femp_msk(&mut self) -> PTX_FEMP_MSK_W<GINTMSK_HOSTMODE_SPEC> {
+    pub fn ptx_femp_msk(&mut self) -> PTX_FEMP_MSK_W<'_, GINTMSK_HOSTMODE_SPEC> {
         PTX_FEMP_MSK_W::new(self, 26)
     }
     #[doc = "Bit 28 - Connector ID Status Change Mask"]
     #[inline(always)]
-    pub fn con_idsts_chng_msk(&mut self) -> CON_IDSTS_CHNG_MSK_W<GINTMSK_HOSTMODE_SPEC> {
+    pub fn con_idsts_chng_msk(&mut self) -> CON_IDSTS_CHNG_MSK_W<'_, GINTMSK_HOSTMODE_SPEC> {
         CON_IDSTS_CHNG_MSK_W::new(self, 28)
     }
     #[doc = "Bit 29 - Disconnect Detected Interrupt Mask"]
     #[inline(always)]
-    pub fn disconn_int_msk(&mut self) -> DISCONN_INT_MSK_W<GINTMSK_HOSTMODE_SPEC> {
+    pub fn disconn_int_msk(&mut self) -> DISCONN_INT_MSK_W<'_, GINTMSK_HOSTMODE_SPEC> {
         DISCONN_INT_MSK_W::new(self, 29)
     }
     #[doc = "Bit 30 - Session Request/New Session Detected Interrupt Mask"]
     #[inline(always)]
-    pub fn sess_req_int_msk(&mut self) -> SESS_REQ_INT_MSK_W<GINTMSK_HOSTMODE_SPEC> {
+    pub fn sess_req_int_msk(&mut self) -> SESS_REQ_INT_MSK_W<'_, GINTMSK_HOSTMODE_SPEC> {
         SESS_REQ_INT_MSK_W::new(self, 30)
     }
     #[doc = "Bit 31 - Resume/Remote Wakeup Detected Interrupt Mask"]
     #[inline(always)]
-    pub fn wk_up_int_msk(&mut self) -> WK_UP_INT_MSK_W<GINTMSK_HOSTMODE_SPEC> {
+    pub fn wk_up_int_msk(&mut self) -> WK_UP_INT_MSK_W<'_, GINTMSK_HOSTMODE_SPEC> {
         WK_UP_INT_MSK_W::new(self, 31)
     }
 }
@@ -184,10 +184,6 @@ impl crate::Readable for GINTMSK_HOSTMODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gintmsk_hostmode::W`](W) writer structure"]
 impl crate::Writable for GINTMSK_HOSTMODE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GINTMSK_HOSTMODE to value 0"]
-impl crate::Resettable for GINTMSK_HOSTMODE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GINTMSK_HOSTMODE_SPEC {}

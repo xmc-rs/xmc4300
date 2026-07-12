@@ -23,7 +23,7 @@ impl R {
 impl W {
     #[doc = "Bits 16:31 - TS-Counter Value"]
     #[inline(always)]
-    pub fn tsctrval(&mut self) -> TSCTRVAL_W<TSVAL_SPEC> {
+    pub fn tsctrval(&mut self) -> TSCTRVAL_W<'_, TSVAL_SPEC> {
         TSCTRVAL_W::new(self, 16)
     }
 }
@@ -37,10 +37,6 @@ impl crate::Readable for TSVAL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`tsval::W`](W) writer structure"]
 impl crate::Writable for TSVAL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TSVAL to value 0"]
-impl crate::Resettable for TSVAL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TSVAL_SPEC {}

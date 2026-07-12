@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 2:31 - Start of Transmit List"]
     #[inline(always)]
-    pub fn tdesla_32bit(&mut self) -> TDESLA_32BIT_W<TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC> {
+    pub fn tdesla_32bit(&mut self) -> TDESLA_32BIT_W<'_, TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC> {
         TDESLA_32BIT_W::new(self, 2)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`transmit_descriptor_list_address::W`](W) writer structure"]
 impl crate::Writable for TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TRANSMIT_DESCRIPTOR_LIST_ADDRESS to value 0"]
-impl crate::Resettable for TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC {}

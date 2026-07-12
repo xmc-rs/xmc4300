@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Output on LINE\\[x\\]"]
     #[inline(always)]
-    pub fn line_4(&mut self) -> LINE_4_W<LINE1_SPEC> {
+    pub fn line_4(&mut self) -> LINE_4_W<'_, LINE1_SPEC> {
         LINE_4_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Output on LINE\\[x\\]"]
     #[inline(always)]
-    pub fn line_5(&mut self) -> LINE_5_W<LINE1_SPEC> {
+    pub fn line_5(&mut self) -> LINE_5_W<'_, LINE1_SPEC> {
         LINE_5_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Output on LINE\\[x\\]"]
     #[inline(always)]
-    pub fn line_6(&mut self) -> LINE_6_W<LINE1_SPEC> {
+    pub fn line_6(&mut self) -> LINE_6_W<'_, LINE1_SPEC> {
         LINE_6_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Output on LINE\\[x\\]"]
     #[inline(always)]
-    pub fn line_a(&mut self) -> LINE_A_W<LINE1_SPEC> {
+    pub fn line_a(&mut self) -> LINE_A_W<'_, LINE1_SPEC> {
         LINE_A_W::new(self, 24)
     }
 }
@@ -72,10 +72,6 @@ impl crate::Readable for LINE1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`line1::W`](W) writer structure"]
 impl crate::Writable for LINE1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets LINE1 to value 0"]
-impl crate::Resettable for LINE1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for LINE1_SPEC {}

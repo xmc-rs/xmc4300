@@ -23,7 +23,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - MAC Address0 \\[47:32\\]"]
     #[inline(always)]
-    pub fn addrhi(&mut self) -> ADDRHI_W<MAC_ADDRESS0_HIGH_SPEC> {
+    pub fn addrhi(&mut self) -> ADDRHI_W<'_, MAC_ADDRESS0_HIGH_SPEC> {
         ADDRHI_W::new(self, 0)
     }
 }
@@ -37,8 +37,6 @@ impl crate::Readable for MAC_ADDRESS0_HIGH_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mac_address0_high::W`](W) writer structure"]
 impl crate::Writable for MAC_ADDRESS0_HIGH_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MAC_ADDRESS0_HIGH to value 0x8000_ffff"]
 impl crate::Resettable for MAC_ADDRESS0_HIGH_SPEC {

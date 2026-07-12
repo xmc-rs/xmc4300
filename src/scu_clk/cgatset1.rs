@@ -189,32 +189,32 @@ where
 impl W {
     #[doc = "Bit 3 - LEDTS Gating Set"]
     #[inline(always)]
-    pub fn ledtscu0(&mut self) -> LEDTSCU0_W<CGATSET1_SPEC> {
+    pub fn ledtscu0(&mut self) -> LEDTSCU0_W<'_, CGATSET1_SPEC> {
         LEDTSCU0_W::new(self, 3)
     }
     #[doc = "Bit 4 - MultiCAN Gating Set"]
     #[inline(always)]
-    pub fn mcan0(&mut self) -> MCAN0_W<CGATSET1_SPEC> {
+    pub fn mcan0(&mut self) -> MCAN0_W<'_, CGATSET1_SPEC> {
         MCAN0_W::new(self, 4)
     }
     #[doc = "Bit 5 - DAC Gating Set"]
     #[inline(always)]
-    pub fn dac(&mut self) -> DAC_W<CGATSET1_SPEC> {
+    pub fn dac(&mut self) -> DAC_W<'_, CGATSET1_SPEC> {
         DAC_W::new(self, 5)
     }
     #[doc = "Bit 6 - MMC Interface Gating Set"]
     #[inline(always)]
-    pub fn mmci(&mut self) -> MMCI_W<CGATSET1_SPEC> {
+    pub fn mmci(&mut self) -> MMCI_W<'_, CGATSET1_SPEC> {
         MMCI_W::new(self, 6)
     }
     #[doc = "Bit 7 - USIC1 Gating Set"]
     #[inline(always)]
-    pub fn usic1(&mut self) -> USIC1_W<CGATSET1_SPEC> {
+    pub fn usic1(&mut self) -> USIC1_W<'_, CGATSET1_SPEC> {
         USIC1_W::new(self, 7)
     }
     #[doc = "Bit 9 - PORTS Gating Set"]
     #[inline(always)]
-    pub fn pports(&mut self) -> PPORTS_W<CGATSET1_SPEC> {
+    pub fn pports(&mut self) -> PPORTS_W<'_, CGATSET1_SPEC> {
         PPORTS_W::new(self, 9)
     }
 }
@@ -226,10 +226,6 @@ impl crate::RegisterSpec for CGATSET1_SPEC {
 #[doc = "`write(|w| ..)` method takes [`cgatset1::W`](W) writer structure"]
 impl crate::Writable for CGATSET1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CGATSET1 to value 0"]
-impl crate::Resettable for CGATSET1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CGATSET1_SPEC {}

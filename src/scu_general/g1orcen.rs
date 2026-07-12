@@ -123,12 +123,12 @@ impl R {
 impl W {
     #[doc = "Bit 6 - Enable Out of Range Comparator, Channel 6"]
     #[inline(always)]
-    pub fn enorc6(&mut self) -> ENORC6_W<G1ORCEN_SPEC> {
+    pub fn enorc6(&mut self) -> ENORC6_W<'_, G1ORCEN_SPEC> {
         ENORC6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Enable Out of Range Comparator, Channel 7"]
     #[inline(always)]
-    pub fn enorc7(&mut self) -> ENORC7_W<G1ORCEN_SPEC> {
+    pub fn enorc7(&mut self) -> ENORC7_W<'_, G1ORCEN_SPEC> {
         ENORC7_W::new(self, 7)
     }
 }
@@ -142,10 +142,6 @@ impl crate::Readable for G1ORCEN_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`g1orcen::W`](W) writer structure"]
 impl crate::Writable for G1ORCEN_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets G1ORCEN to value 0"]
-impl crate::Resettable for G1ORCEN_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for G1ORCEN_SPEC {}

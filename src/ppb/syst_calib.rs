@@ -132,17 +132,17 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Ten Milliseconds Reload Value"]
     #[inline(always)]
-    pub fn tenms(&mut self) -> TENMS_W<SYST_CALIB_SPEC> {
+    pub fn tenms(&mut self) -> TENMS_W<'_, SYST_CALIB_SPEC> {
         TENMS_W::new(self, 0)
     }
     #[doc = "Bit 30 - Ten Milliseconds Skewed"]
     #[inline(always)]
-    pub fn skew(&mut self) -> SKEW_W<SYST_CALIB_SPEC> {
+    pub fn skew(&mut self) -> SKEW_W<'_, SYST_CALIB_SPEC> {
         SKEW_W::new(self, 30)
     }
     #[doc = "Bit 31 - No Reference Clock"]
     #[inline(always)]
-    pub fn noref(&mut self) -> NOREF_W<SYST_CALIB_SPEC> {
+    pub fn noref(&mut self) -> NOREF_W<'_, SYST_CALIB_SPEC> {
         NOREF_W::new(self, 31)
     }
 }
@@ -156,8 +156,6 @@ impl crate::Readable for SYST_CALIB_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`syst_calib::W`](W) writer structure"]
 impl crate::Writable for SYST_CALIB_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SYST_CALIB to value 0xc000_0000"]
 impl crate::Resettable for SYST_CALIB_SPEC {

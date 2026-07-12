@@ -162,17 +162,17 @@ impl R {
 impl W {
     #[doc = "Bit 16 - Clear Time Slice Interrupt Flag"]
     #[inline(always)]
-    pub fn ctsf(&mut self) -> CTSF_W<EVFR_SPEC> {
+    pub fn ctsf(&mut self) -> CTSF_W<'_, EVFR_SPEC> {
         CTSF_W::new(self, 16)
     }
     #[doc = "Bit 17 - Clear (Extended) Time Frame Interrupt Flag"]
     #[inline(always)]
-    pub fn ctff(&mut self) -> CTFF_W<EVFR_SPEC> {
+    pub fn ctff(&mut self) -> CTFF_W<'_, EVFR_SPEC> {
         CTFF_W::new(self, 17)
     }
     #[doc = "Bit 18 - Clear Autoscan Time Period Interrupt Flag"]
     #[inline(always)]
-    pub fn ctpf(&mut self) -> CTPF_W<EVFR_SPEC> {
+    pub fn ctpf(&mut self) -> CTPF_W<'_, EVFR_SPEC> {
         CTPF_W::new(self, 18)
     }
 }
@@ -186,10 +186,6 @@ impl crate::Readable for EVFR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`evfr::W`](W) writer structure"]
 impl crate::Writable for EVFR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets EVFR to value 0"]
-impl crate::Resettable for EVFR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for EVFR_SPEC {}

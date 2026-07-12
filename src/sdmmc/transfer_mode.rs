@@ -304,27 +304,27 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Block Count Enable"]
     #[inline(always)]
-    pub fn block_count_en(&mut self) -> BLOCK_COUNT_EN_W<TRANSFER_MODE_SPEC> {
+    pub fn block_count_en(&mut self) -> BLOCK_COUNT_EN_W<'_, TRANSFER_MODE_SPEC> {
         BLOCK_COUNT_EN_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - Auto CMD Enable"]
     #[inline(always)]
-    pub fn acmd_en(&mut self) -> ACMD_EN_W<TRANSFER_MODE_SPEC> {
+    pub fn acmd_en(&mut self) -> ACMD_EN_W<'_, TRANSFER_MODE_SPEC> {
         ACMD_EN_W::new(self, 2)
     }
     #[doc = "Bit 4 - Data Transfer Direction Select"]
     #[inline(always)]
-    pub fn tx_dir_select(&mut self) -> TX_DIR_SELECT_W<TRANSFER_MODE_SPEC> {
+    pub fn tx_dir_select(&mut self) -> TX_DIR_SELECT_W<'_, TRANSFER_MODE_SPEC> {
         TX_DIR_SELECT_W::new(self, 4)
     }
     #[doc = "Bit 5 - Multi / Single Block Select"]
     #[inline(always)]
-    pub fn multi_block_select(&mut self) -> MULTI_BLOCK_SELECT_W<TRANSFER_MODE_SPEC> {
+    pub fn multi_block_select(&mut self) -> MULTI_BLOCK_SELECT_W<'_, TRANSFER_MODE_SPEC> {
         MULTI_BLOCK_SELECT_W::new(self, 5)
     }
     #[doc = "Bit 6 - Command Completion Signal Enable for CE-ATA Device"]
     #[inline(always)]
-    pub fn cmd_comp_ata(&mut self) -> CMD_COMP_ATA_W<TRANSFER_MODE_SPEC> {
+    pub fn cmd_comp_ata(&mut self) -> CMD_COMP_ATA_W<'_, TRANSFER_MODE_SPEC> {
         CMD_COMP_ATA_W::new(self, 6)
     }
 }
@@ -338,10 +338,6 @@ impl crate::Readable for TRANSFER_MODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`transfer_mode::W`](W) writer structure"]
 impl crate::Writable for TRANSFER_MODE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets TRANSFER_MODE to value 0"]
-impl crate::Resettable for TRANSFER_MODE_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for TRANSFER_MODE_SPEC {}

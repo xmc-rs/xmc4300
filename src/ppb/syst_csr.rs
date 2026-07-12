@@ -190,22 +190,22 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W<SYST_CSR_SPEC> {
+    pub fn enable(&mut self) -> ENABLE_W<'_, SYST_CSR_SPEC> {
         ENABLE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Tick Interrupt Enable"]
     #[inline(always)]
-    pub fn tickint(&mut self) -> TICKINT_W<SYST_CSR_SPEC> {
+    pub fn tickint(&mut self) -> TICKINT_W<'_, SYST_CSR_SPEC> {
         TICKINT_W::new(self, 1)
     }
     #[doc = "Bit 2 - Indicates the clock source:"]
     #[inline(always)]
-    pub fn clksource(&mut self) -> CLKSOURCE_W<SYST_CSR_SPEC> {
+    pub fn clksource(&mut self) -> CLKSOURCE_W<'_, SYST_CSR_SPEC> {
         CLKSOURCE_W::new(self, 2)
     }
     #[doc = "Bit 16 - Counter Flag"]
     #[inline(always)]
-    pub fn countflag(&mut self) -> COUNTFLAG_W<SYST_CSR_SPEC> {
+    pub fn countflag(&mut self) -> COUNTFLAG_W<'_, SYST_CSR_SPEC> {
         COUNTFLAG_W::new(self, 16)
     }
 }
@@ -219,8 +219,6 @@ impl crate::Readable for SYST_CSR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`syst_csr::W`](W) writer structure"]
 impl crate::Writable for SYST_CSR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SYST_CSR to value 0x04"]
 impl crate::Resettable for SYST_CSR_SPEC {

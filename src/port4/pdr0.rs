@@ -79,42 +79,42 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.0"]
     #[inline(always)]
-    pub fn pd0(&mut self) -> PD0_W<PDR0_SPEC> {
+    pub fn pd0(&mut self) -> PD0_W<'_, PDR0_SPEC> {
         PD0_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Pad Driver Mode for Pn.1"]
     #[inline(always)]
-    pub fn pd1(&mut self) -> PD1_W<PDR0_SPEC> {
+    pub fn pd1(&mut self) -> PD1_W<'_, PDR0_SPEC> {
         PD1_W::new(self, 4)
     }
     #[doc = "Bits 8:10 - Pad Driver Mode for Pn.2"]
     #[inline(always)]
-    pub fn pd2(&mut self) -> PD2_W<PDR0_SPEC> {
+    pub fn pd2(&mut self) -> PD2_W<'_, PDR0_SPEC> {
         PD2_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - Pad Driver Mode for Pn.3"]
     #[inline(always)]
-    pub fn pd3(&mut self) -> PD3_W<PDR0_SPEC> {
+    pub fn pd3(&mut self) -> PD3_W<'_, PDR0_SPEC> {
         PD3_W::new(self, 12)
     }
     #[doc = "Bits 16:18 - Pad Driver Mode for Pn.4"]
     #[inline(always)]
-    pub fn pd4(&mut self) -> PD4_W<PDR0_SPEC> {
+    pub fn pd4(&mut self) -> PD4_W<'_, PDR0_SPEC> {
         PD4_W::new(self, 16)
     }
     #[doc = "Bits 20:22 - Pad Driver Mode for Pn.5"]
     #[inline(always)]
-    pub fn pd5(&mut self) -> PD5_W<PDR0_SPEC> {
+    pub fn pd5(&mut self) -> PD5_W<'_, PDR0_SPEC> {
         PD5_W::new(self, 20)
     }
     #[doc = "Bits 24:26 - Pad Driver Mode for Pn.6"]
     #[inline(always)]
-    pub fn pd6(&mut self) -> PD6_W<PDR0_SPEC> {
+    pub fn pd6(&mut self) -> PD6_W<'_, PDR0_SPEC> {
         PD6_W::new(self, 24)
     }
     #[doc = "Bits 28:30 - Pad Driver Mode for Pn.7"]
     #[inline(always)]
-    pub fn pd7(&mut self) -> PD7_W<PDR0_SPEC> {
+    pub fn pd7(&mut self) -> PD7_W<'_, PDR0_SPEC> {
         PD7_W::new(self, 28)
     }
 }
@@ -128,8 +128,6 @@ impl crate::Readable for PDR0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pdr0::W`](W) writer structure"]
 impl crate::Writable for PDR0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PDR0 to value 0x2222_2222"]
 impl crate::Resettable for PDR0_SPEC {

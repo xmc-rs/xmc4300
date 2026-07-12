@@ -24,6 +24,4 @@ impl crate::RegisterSpec for OUTR_SPEC {
 #[doc = "`read()` method returns [`outr::R`](R) reader structure"]
 impl crate::Readable for OUTR_SPEC {}
 #[doc = "`reset()` method sets OUTR to value 0"]
-impl crate::Resettable for OUTR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for OUTR_SPEC {}

@@ -17,6 +17,4 @@ impl crate::RegisterSpec for TX_EXCESSIVE_DEFERRAL_ERROR_SPEC {
 #[doc = "`read()` method returns [`tx_excessive_deferral_error::R`](R) reader structure"]
 impl crate::Readable for TX_EXCESSIVE_DEFERRAL_ERROR_SPEC {}
 #[doc = "`reset()` method sets TX_EXCESSIVE_DEFERRAL_ERROR to value 0"]
-impl crate::Resettable for TX_EXCESSIVE_DEFERRAL_ERROR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TX_EXCESSIVE_DEFERRAL_ERROR_SPEC {}

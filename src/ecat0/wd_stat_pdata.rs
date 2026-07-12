@@ -51,6 +51,4 @@ impl crate::RegisterSpec for WD_STAT_PDATA_SPEC {
 #[doc = "`read()` method returns [`wd_stat_pdata::R`](R) reader structure"]
 impl crate::Readable for WD_STAT_PDATA_SPEC {}
 #[doc = "`reset()` method sets WD_STAT_PDATA to value 0"]
-impl crate::Resettable for WD_STAT_PDATA_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for WD_STAT_PDATA_SPEC {}

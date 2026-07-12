@@ -77,37 +77,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transfer Completed Interrupt"]
     #[inline(always)]
-    pub fn xfer_compl(&mut self) -> XFER_COMPL_W<DIEPINT_SPEC> {
+    pub fn xfer_compl(&mut self) -> XFER_COMPL_W<'_, DIEPINT_SPEC> {
         XFER_COMPL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Endpoint Disabled Interrupt"]
     #[inline(always)]
-    pub fn epdisbld(&mut self) -> EPDISBLD_W<DIEPINT_SPEC> {
+    pub fn epdisbld(&mut self) -> EPDISBLD_W<'_, DIEPINT_SPEC> {
         EPDISBLD_W::new(self, 1)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
-    pub fn ahberr(&mut self) -> AHBERR_W<DIEPINT_SPEC> {
+    pub fn ahberr(&mut self) -> AHBERR_W<'_, DIEPINT_SPEC> {
         AHBERR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Timeout Condition"]
     #[inline(always)]
-    pub fn time_out(&mut self) -> TIME_OUT_W<DIEPINT_SPEC> {
+    pub fn time_out(&mut self) -> TIME_OUT_W<'_, DIEPINT_SPEC> {
         TIME_OUT_W::new(self, 3)
     }
     #[doc = "Bit 4 - IN Token Received When TxFIFO is Empty"]
     #[inline(always)]
-    pub fn intkn_txfemp(&mut self) -> INTKN_TXFEMP_W<DIEPINT_SPEC> {
+    pub fn intkn_txfemp(&mut self) -> INTKN_TXFEMP_W<'_, DIEPINT_SPEC> {
         INTKN_TXFEMP_W::new(self, 4)
     }
     #[doc = "Bit 6 - IN Endpoint NAK Effective"]
     #[inline(always)]
-    pub fn inepnak_eff(&mut self) -> INEPNAK_EFF_W<DIEPINT_SPEC> {
+    pub fn inepnak_eff(&mut self) -> INEPNAK_EFF_W<'_, DIEPINT_SPEC> {
         INEPNAK_EFF_W::new(self, 6)
     }
     #[doc = "Bit 9 - BNA (Buffer Not Available) Interrupt"]
     #[inline(always)]
-    pub fn bnaintr(&mut self) -> BNAINTR_W<DIEPINT_SPEC> {
+    pub fn bnaintr(&mut self) -> BNAINTR_W<'_, DIEPINT_SPEC> {
         BNAINTR_W::new(self, 9)
     }
 }
@@ -121,8 +121,6 @@ impl crate::Readable for DIEPINT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`diepint::W`](W) writer structure"]
 impl crate::Writable for DIEPINT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DIEPINT to value 0x80"]
 impl crate::Resettable for DIEPINT_SPEC {

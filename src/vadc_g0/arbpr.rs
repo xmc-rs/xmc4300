@@ -550,47 +550,47 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Priority of Request Source x"]
     #[inline(always)]
-    pub fn prio0(&mut self) -> PRIO0_W<ARBPR_SPEC> {
+    pub fn prio0(&mut self) -> PRIO0_W<'_, ARBPR_SPEC> {
         PRIO0_W::new(self, 0)
     }
     #[doc = "Bit 3 - Conversion Start Mode of Request Source x"]
     #[inline(always)]
-    pub fn csm0(&mut self) -> CSM0_W<ARBPR_SPEC> {
+    pub fn csm0(&mut self) -> CSM0_W<'_, ARBPR_SPEC> {
         CSM0_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Priority of Request Source x"]
     #[inline(always)]
-    pub fn prio1(&mut self) -> PRIO1_W<ARBPR_SPEC> {
+    pub fn prio1(&mut self) -> PRIO1_W<'_, ARBPR_SPEC> {
         PRIO1_W::new(self, 4)
     }
     #[doc = "Bit 7 - Conversion Start Mode of Request Source x"]
     #[inline(always)]
-    pub fn csm1(&mut self) -> CSM1_W<ARBPR_SPEC> {
+    pub fn csm1(&mut self) -> CSM1_W<'_, ARBPR_SPEC> {
         CSM1_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Priority of Request Source x"]
     #[inline(always)]
-    pub fn prio2(&mut self) -> PRIO2_W<ARBPR_SPEC> {
+    pub fn prio2(&mut self) -> PRIO2_W<'_, ARBPR_SPEC> {
         PRIO2_W::new(self, 8)
     }
     #[doc = "Bit 11 - Conversion Start Mode of Request Source x"]
     #[inline(always)]
-    pub fn csm2(&mut self) -> CSM2_W<ARBPR_SPEC> {
+    pub fn csm2(&mut self) -> CSM2_W<'_, ARBPR_SPEC> {
         CSM2_W::new(self, 11)
     }
     #[doc = "Bit 24 - Arbitration Slot 0 Enable"]
     #[inline(always)]
-    pub fn asen0(&mut self) -> ASEN0_W<ARBPR_SPEC> {
+    pub fn asen0(&mut self) -> ASEN0_W<'_, ARBPR_SPEC> {
         ASEN0_W::new(self, 24)
     }
     #[doc = "Bit 25 - Arbitration Slot 1 Enable"]
     #[inline(always)]
-    pub fn asen1(&mut self) -> ASEN1_W<ARBPR_SPEC> {
+    pub fn asen1(&mut self) -> ASEN1_W<'_, ARBPR_SPEC> {
         ASEN1_W::new(self, 25)
     }
     #[doc = "Bit 26 - Arbitration Slot 2 Enable"]
     #[inline(always)]
-    pub fn asen2(&mut self) -> ASEN2_W<ARBPR_SPEC> {
+    pub fn asen2(&mut self) -> ASEN2_W<'_, ARBPR_SPEC> {
         ASEN2_W::new(self, 26)
     }
 }
@@ -604,10 +604,6 @@ impl crate::Readable for ARBPR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`arbpr::W`](W) writer structure"]
 impl crate::Writable for ARBPR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ARBPR to value 0"]
-impl crate::Resettable for ARBPR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ARBPR_SPEC {}

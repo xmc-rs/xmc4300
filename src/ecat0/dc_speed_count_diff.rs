@@ -17,6 +17,4 @@ impl crate::RegisterSpec for DC_SPEED_COUNT_DIFF_SPEC {
 #[doc = "`read()` method returns [`dc_speed_count_diff::R`](R) reader structure"]
 impl crate::Readable for DC_SPEED_COUNT_DIFF_SPEC {}
 #[doc = "`reset()` method sets DC_SPEED_COUNT_DIFF to value 0"]
-impl crate::Resettable for DC_SPEED_COUNT_DIFF_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for DC_SPEED_COUNT_DIFF_SPEC {}

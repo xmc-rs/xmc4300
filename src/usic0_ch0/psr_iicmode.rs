@@ -993,87 +993,87 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Slave Select"]
     #[inline(always)]
-    pub fn slsel(&mut self) -> SLSEL_W<PSR_IICMODE_SPEC> {
+    pub fn slsel(&mut self) -> SLSEL_W<'_, PSR_IICMODE_SPEC> {
         SLSEL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wrong TDF Code Found"]
     #[inline(always)]
-    pub fn wtdf(&mut self) -> WTDF_W<PSR_IICMODE_SPEC> {
+    pub fn wtdf(&mut self) -> WTDF_W<'_, PSR_IICMODE_SPEC> {
         WTDF_W::new(self, 1)
     }
     #[doc = "Bit 2 - Start Condition Received"]
     #[inline(always)]
-    pub fn scr(&mut self) -> SCR_W<PSR_IICMODE_SPEC> {
+    pub fn scr(&mut self) -> SCR_W<'_, PSR_IICMODE_SPEC> {
         SCR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Repeated Start Condition Received"]
     #[inline(always)]
-    pub fn rscr(&mut self) -> RSCR_W<PSR_IICMODE_SPEC> {
+    pub fn rscr(&mut self) -> RSCR_W<'_, PSR_IICMODE_SPEC> {
         RSCR_W::new(self, 3)
     }
     #[doc = "Bit 4 - Stop Condition Received"]
     #[inline(always)]
-    pub fn pcr(&mut self) -> PCR_W<PSR_IICMODE_SPEC> {
+    pub fn pcr(&mut self) -> PCR_W<'_, PSR_IICMODE_SPEC> {
         PCR_W::new(self, 4)
     }
     #[doc = "Bit 5 - Non-Acknowledge Received"]
     #[inline(always)]
-    pub fn nack(&mut self) -> NACK_W<PSR_IICMODE_SPEC> {
+    pub fn nack(&mut self) -> NACK_W<'_, PSR_IICMODE_SPEC> {
         NACK_W::new(self, 5)
     }
     #[doc = "Bit 6 - Arbitration Lost"]
     #[inline(always)]
-    pub fn arl(&mut self) -> ARL_W<PSR_IICMODE_SPEC> {
+    pub fn arl(&mut self) -> ARL_W<'_, PSR_IICMODE_SPEC> {
         ARL_W::new(self, 6)
     }
     #[doc = "Bit 7 - Slave Read Request"]
     #[inline(always)]
-    pub fn srr(&mut self) -> SRR_W<PSR_IICMODE_SPEC> {
+    pub fn srr(&mut self) -> SRR_W<'_, PSR_IICMODE_SPEC> {
         SRR_W::new(self, 7)
     }
     #[doc = "Bit 8 - Error"]
     #[inline(always)]
-    pub fn err(&mut self) -> ERR_W<PSR_IICMODE_SPEC> {
+    pub fn err(&mut self) -> ERR_W<'_, PSR_IICMODE_SPEC> {
         ERR_W::new(self, 8)
     }
     #[doc = "Bit 9 - Acknowledge Received"]
     #[inline(always)]
-    pub fn ack(&mut self) -> ACK_W<PSR_IICMODE_SPEC> {
+    pub fn ack(&mut self) -> ACK_W<'_, PSR_IICMODE_SPEC> {
         ACK_W::new(self, 9)
     }
     #[doc = "Bit 10 - Receiver Start Indication Flag"]
     #[inline(always)]
-    pub fn rsif(&mut self) -> RSIF_W<PSR_IICMODE_SPEC> {
+    pub fn rsif(&mut self) -> RSIF_W<'_, PSR_IICMODE_SPEC> {
         RSIF_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data Lost Indication Flag"]
     #[inline(always)]
-    pub fn dlif(&mut self) -> DLIF_W<PSR_IICMODE_SPEC> {
+    pub fn dlif(&mut self) -> DLIF_W<'_, PSR_IICMODE_SPEC> {
         DLIF_W::new(self, 11)
     }
     #[doc = "Bit 12 - Transmit Shift Indication Flag"]
     #[inline(always)]
-    pub fn tsif(&mut self) -> TSIF_W<PSR_IICMODE_SPEC> {
+    pub fn tsif(&mut self) -> TSIF_W<'_, PSR_IICMODE_SPEC> {
         TSIF_W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit Buffer Indication Flag"]
     #[inline(always)]
-    pub fn tbif(&mut self) -> TBIF_W<PSR_IICMODE_SPEC> {
+    pub fn tbif(&mut self) -> TBIF_W<'_, PSR_IICMODE_SPEC> {
         TBIF_W::new(self, 13)
     }
     #[doc = "Bit 14 - Receive Indication Flag"]
     #[inline(always)]
-    pub fn rif(&mut self) -> RIF_W<PSR_IICMODE_SPEC> {
+    pub fn rif(&mut self) -> RIF_W<'_, PSR_IICMODE_SPEC> {
         RIF_W::new(self, 14)
     }
     #[doc = "Bit 15 - Alternative Receive Indication Flag"]
     #[inline(always)]
-    pub fn aif(&mut self) -> AIF_W<PSR_IICMODE_SPEC> {
+    pub fn aif(&mut self) -> AIF_W<'_, PSR_IICMODE_SPEC> {
         AIF_W::new(self, 15)
     }
     #[doc = "Bit 16 - Baud Rate Generator Indication Flag"]
     #[inline(always)]
-    pub fn brgif(&mut self) -> BRGIF_W<PSR_IICMODE_SPEC> {
+    pub fn brgif(&mut self) -> BRGIF_W<'_, PSR_IICMODE_SPEC> {
         BRGIF_W::new(self, 16)
     }
 }
@@ -1087,10 +1087,6 @@ impl crate::Readable for PSR_IICMODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`psr_iicmode::W`](W) writer structure"]
 impl crate::Writable for PSR_IICMODE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PSR_IICMode to value 0"]
-impl crate::Resettable for PSR_IICMODE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PSR_IICMODE_SPEC {}

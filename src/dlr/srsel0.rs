@@ -79,42 +79,42 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Request Source for Line 0"]
     #[inline(always)]
-    pub fn rs0(&mut self) -> RS0_W<SRSEL0_SPEC> {
+    pub fn rs0(&mut self) -> RS0_W<'_, SRSEL0_SPEC> {
         RS0_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Request Source for Line 1"]
     #[inline(always)]
-    pub fn rs1(&mut self) -> RS1_W<SRSEL0_SPEC> {
+    pub fn rs1(&mut self) -> RS1_W<'_, SRSEL0_SPEC> {
         RS1_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Request Source for Line 2"]
     #[inline(always)]
-    pub fn rs2(&mut self) -> RS2_W<SRSEL0_SPEC> {
+    pub fn rs2(&mut self) -> RS2_W<'_, SRSEL0_SPEC> {
         RS2_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Request Source for Line 3"]
     #[inline(always)]
-    pub fn rs3(&mut self) -> RS3_W<SRSEL0_SPEC> {
+    pub fn rs3(&mut self) -> RS3_W<'_, SRSEL0_SPEC> {
         RS3_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Request Source for Line 4"]
     #[inline(always)]
-    pub fn rs4(&mut self) -> RS4_W<SRSEL0_SPEC> {
+    pub fn rs4(&mut self) -> RS4_W<'_, SRSEL0_SPEC> {
         RS4_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Request Source for Line 5"]
     #[inline(always)]
-    pub fn rs5(&mut self) -> RS5_W<SRSEL0_SPEC> {
+    pub fn rs5(&mut self) -> RS5_W<'_, SRSEL0_SPEC> {
         RS5_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Request Source for Line 6"]
     #[inline(always)]
-    pub fn rs6(&mut self) -> RS6_W<SRSEL0_SPEC> {
+    pub fn rs6(&mut self) -> RS6_W<'_, SRSEL0_SPEC> {
         RS6_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Request Source for Line 7"]
     #[inline(always)]
-    pub fn rs7(&mut self) -> RS7_W<SRSEL0_SPEC> {
+    pub fn rs7(&mut self) -> RS7_W<'_, SRSEL0_SPEC> {
         RS7_W::new(self, 28)
     }
 }
@@ -128,10 +128,6 @@ impl crate::Readable for SRSEL0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`srsel0::W`](W) writer structure"]
 impl crate::Writable for SRSEL0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SRSEL0 to value 0"]
-impl crate::Resettable for SRSEL0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SRSEL0_SPEC {}

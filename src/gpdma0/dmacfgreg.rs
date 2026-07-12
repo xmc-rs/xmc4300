@@ -65,7 +65,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - GPDMA Enable bit."]
     #[inline(always)]
-    pub fn dma_en(&mut self) -> DMA_EN_W<DMACFGREG_SPEC> {
+    pub fn dma_en(&mut self) -> DMA_EN_W<'_, DMACFGREG_SPEC> {
         DMA_EN_W::new(self, 0)
     }
 }
@@ -79,10 +79,6 @@ impl crate::Readable for DMACFGREG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dmacfgreg::W`](W) writer structure"]
 impl crate::Writable for DMACFGREG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DMACFGREG to value 0"]
-impl crate::Resettable for DMACFGREG_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DMACFGREG_SPEC {}

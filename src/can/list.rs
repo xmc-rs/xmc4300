@@ -71,8 +71,5 @@ impl crate::RegisterSpec for LIST_SPEC {
 }
 #[doc = "`read()` method returns [`list::R`](R) reader structure"]
 impl crate::Readable for LIST_SPEC {}
-#[doc = "`reset()` method sets LIST[%s]
-to value 0"]
-impl crate::Resettable for LIST_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets LIST[%s] to value 0"]
+impl crate::Resettable for LIST_SPEC {}

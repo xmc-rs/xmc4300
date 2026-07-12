@@ -143,12 +143,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - PFLASH Margin Selection"]
     #[inline(always)]
-    pub fn margin(&mut self) -> MARGIN_W<MARP_SPEC> {
+    pub fn margin(&mut self) -> MARGIN_W<'_, MARP_SPEC> {
         MARGIN_W::new(self, 0)
     }
     #[doc = "Bit 15 - PFLASH Double-Bit Error Trap Disable"]
     #[inline(always)]
-    pub fn trapdis(&mut self) -> TRAPDIS_W<MARP_SPEC> {
+    pub fn trapdis(&mut self) -> TRAPDIS_W<'_, MARP_SPEC> {
         TRAPDIS_W::new(self, 15)
     }
 }
@@ -162,10 +162,6 @@ impl crate::Readable for MARP_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`marp::W`](W) writer structure"]
 impl crate::Writable for MARP_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MARP to value 0"]
-impl crate::Resettable for MARP_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MARP_SPEC {}

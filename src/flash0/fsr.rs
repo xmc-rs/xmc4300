@@ -796,6 +796,4 @@ impl crate::RegisterSpec for FSR_SPEC {
 #[doc = "`read()` method returns [`fsr::R`](R) reader structure"]
 impl crate::Readable for FSR_SPEC {}
 #[doc = "`reset()` method sets FSR to value 0"]
-impl crate::Resettable for FSR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FSR_SPEC {}

@@ -324,42 +324,42 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Node Initialization"]
     #[inline(always)]
-    pub fn init(&mut self) -> INIT_W<NCR_SPEC> {
+    pub fn init(&mut self) -> INIT_W<'_, NCR_SPEC> {
         INIT_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transfer Interrupt Enable"]
     #[inline(always)]
-    pub fn trie(&mut self) -> TRIE_W<NCR_SPEC> {
+    pub fn trie(&mut self) -> TRIE_W<'_, NCR_SPEC> {
         TRIE_W::new(self, 1)
     }
     #[doc = "Bit 2 - LEC Indicated Error Interrupt Enable"]
     #[inline(always)]
-    pub fn lecie(&mut self) -> LECIE_W<NCR_SPEC> {
+    pub fn lecie(&mut self) -> LECIE_W<'_, NCR_SPEC> {
         LECIE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Alert Interrupt Enable"]
     #[inline(always)]
-    pub fn alie(&mut self) -> ALIE_W<NCR_SPEC> {
+    pub fn alie(&mut self) -> ALIE_W<'_, NCR_SPEC> {
         ALIE_W::new(self, 3)
     }
     #[doc = "Bit 4 - CAN Disable"]
     #[inline(always)]
-    pub fn candis(&mut self) -> CANDIS_W<NCR_SPEC> {
+    pub fn candis(&mut self) -> CANDIS_W<'_, NCR_SPEC> {
         CANDIS_W::new(self, 4)
     }
     #[doc = "Bit 5 - Transmit Disable"]
     #[inline(always)]
-    pub fn txdis(&mut self) -> TXDIS_W<NCR_SPEC> {
+    pub fn txdis(&mut self) -> TXDIS_W<'_, NCR_SPEC> {
         TXDIS_W::new(self, 5)
     }
     #[doc = "Bit 6 - Configuration Change Enable"]
     #[inline(always)]
-    pub fn cce(&mut self) -> CCE_W<NCR_SPEC> {
+    pub fn cce(&mut self) -> CCE_W<'_, NCR_SPEC> {
         CCE_W::new(self, 6)
     }
     #[doc = "Bit 7 - CAN Analyzer Mode"]
     #[inline(always)]
-    pub fn calm(&mut self) -> CALM_W<NCR_SPEC> {
+    pub fn calm(&mut self) -> CALM_W<'_, NCR_SPEC> {
         CALM_W::new(self, 7)
     }
 }
@@ -373,8 +373,6 @@ impl crate::Readable for NCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ncr::W`](W) writer structure"]
 impl crate::Writable for NCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NCR to value 0x41"]
 impl crate::Resettable for NCR_SPEC {

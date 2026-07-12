@@ -49,6 +49,4 @@ impl crate::RegisterSpec for SLOT_INT_STATUS_SPEC {
 #[doc = "`read()` method returns [`slot_int_status::R`](R) reader structure"]
 impl crate::Readable for SLOT_INT_STATUS_SPEC {}
 #[doc = "`reset()` method sets SLOT_INT_STATUS to value 0"]
-impl crate::Resettable for SLOT_INT_STATUS_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for SLOT_INT_STATUS_SPEC {}

@@ -116,17 +116,17 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Receive Error Counter"]
     #[inline(always)]
-    pub fn rec(&mut self) -> REC_W<NECNT_SPEC> {
+    pub fn rec(&mut self) -> REC_W<'_, NECNT_SPEC> {
         REC_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Transmit Error Counter"]
     #[inline(always)]
-    pub fn tec(&mut self) -> TEC_W<NECNT_SPEC> {
+    pub fn tec(&mut self) -> TEC_W<'_, NECNT_SPEC> {
         TEC_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Error Warning Level"]
     #[inline(always)]
-    pub fn ewrnlvl(&mut self) -> EWRNLVL_W<NECNT_SPEC> {
+    pub fn ewrnlvl(&mut self) -> EWRNLVL_W<'_, NECNT_SPEC> {
         EWRNLVL_W::new(self, 16)
     }
 }
@@ -140,8 +140,6 @@ impl crate::Readable for NECNT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`necnt::W`](W) writer structure"]
 impl crate::Writable for NECNT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NECNT to value 0x0060_0000"]
 impl crate::Resettable for NECNT_SPEC {

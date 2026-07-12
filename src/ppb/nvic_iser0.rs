@@ -72,7 +72,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Interrupt set-enable bits"]
     #[inline(always)]
-    pub fn setena(&mut self) -> SETENA_W<NVIC_ISER0_SPEC> {
+    pub fn setena(&mut self) -> SETENA_W<'_, NVIC_ISER0_SPEC> {
         SETENA_W::new(self, 0)
     }
 }
@@ -86,10 +86,6 @@ impl crate::Readable for NVIC_ISER0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`nvic_iser0::W`](W) writer structure"]
 impl crate::Writable for NVIC_ISER0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NVIC_ISER0 to value 0"]
-impl crate::Resettable for NVIC_ISER0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for NVIC_ISER0_SPEC {}

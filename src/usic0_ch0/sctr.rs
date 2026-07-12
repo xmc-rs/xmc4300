@@ -114,11 +114,9 @@ where
 pub enum DSM_A {
     #[doc = "0: Receive and transmit data is shifted in and out one bit at a time through DX0 and DOUT0."]
     VALUE1 = 0,
-    #[doc = "2: Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\]
-respectively."]
+    #[doc = "2: Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\] respectively."]
     VALUE3 = 2,
-    #[doc = "3: Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\]
-respectively."]
+    #[doc = "3: Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\] respectively."]
     VALUE4 = 3,
 }
 impl From<DSM_A> for u8 {
@@ -149,14 +147,12 @@ impl DSM_R {
     pub fn is_value1(&self) -> bool {
         *self == DSM_A::VALUE1
     }
-    #[doc = "Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\]
-respectively."]
+    #[doc = "Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\] respectively."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == DSM_A::VALUE3
     }
-    #[doc = "Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\]
-respectively."]
+    #[doc = "Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\] respectively."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == DSM_A::VALUE4
@@ -174,14 +170,12 @@ where
     pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DSM_A::VALUE1)
     }
-    #[doc = "Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\]
-respectively."]
+    #[doc = "Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\] respectively."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(DSM_A::VALUE3)
     }
-    #[doc = "Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\]
-respectively."]
+    #[doc = "Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\] respectively."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(DSM_A::VALUE4)
@@ -521,42 +515,42 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Shift Direction"]
     #[inline(always)]
-    pub fn sdir(&mut self) -> SDIR_W<SCTR_SPEC> {
+    pub fn sdir(&mut self) -> SDIR_W<'_, SCTR_SPEC> {
         SDIR_W::new(self, 0)
     }
     #[doc = "Bit 1 - Passive Data Level"]
     #[inline(always)]
-    pub fn pdl(&mut self) -> PDL_W<SCTR_SPEC> {
+    pub fn pdl(&mut self) -> PDL_W<'_, SCTR_SPEC> {
         PDL_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - Data Shift Mode"]
     #[inline(always)]
-    pub fn dsm(&mut self) -> DSM_W<SCTR_SPEC> {
+    pub fn dsm(&mut self) -> DSM_W<'_, SCTR_SPEC> {
         DSM_W::new(self, 2)
     }
     #[doc = "Bit 4 - Port Control Direction"]
     #[inline(always)]
-    pub fn hpcdir(&mut self) -> HPCDIR_W<SCTR_SPEC> {
+    pub fn hpcdir(&mut self) -> HPCDIR_W<'_, SCTR_SPEC> {
         HPCDIR_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Data Output Configuration"]
     #[inline(always)]
-    pub fn docfg(&mut self) -> DOCFG_W<SCTR_SPEC> {
+    pub fn docfg(&mut self) -> DOCFG_W<'_, SCTR_SPEC> {
         DOCFG_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Transmission Mode"]
     #[inline(always)]
-    pub fn trm(&mut self) -> TRM_W<SCTR_SPEC> {
+    pub fn trm(&mut self) -> TRM_W<'_, SCTR_SPEC> {
         TRM_W::new(self, 8)
     }
     #[doc = "Bits 16:21 - Frame Length"]
     #[inline(always)]
-    pub fn fle(&mut self) -> FLE_W<SCTR_SPEC> {
+    pub fn fle(&mut self) -> FLE_W<'_, SCTR_SPEC> {
         FLE_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - Word Length"]
     #[inline(always)]
-    pub fn wle(&mut self) -> WLE_W<SCTR_SPEC> {
+    pub fn wle(&mut self) -> WLE_W<'_, SCTR_SPEC> {
         WLE_W::new(self, 24)
     }
 }
@@ -570,10 +564,6 @@ impl crate::Readable for SCTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sctr::W`](W) writer structure"]
 impl crate::Writable for SCTR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SCTR to value 0"]
-impl crate::Resettable for SCTR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SCTR_SPEC {}

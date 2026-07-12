@@ -371,22 +371,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Alert Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn alinp(&mut self) -> ALINP_W<NIPR_SPEC> {
+    pub fn alinp(&mut self) -> ALINP_W<'_, NIPR_SPEC> {
         ALINP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Last Error Code Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn lecinp(&mut self) -> LECINP_W<NIPR_SPEC> {
+    pub fn lecinp(&mut self) -> LECINP_W<'_, NIPR_SPEC> {
         LECINP_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Transfer OK Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn trinp(&mut self) -> TRINP_W<NIPR_SPEC> {
+    pub fn trinp(&mut self) -> TRINP_W<'_, NIPR_SPEC> {
         TRINP_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Frame Counter Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn cfcinp(&mut self) -> CFCINP_W<NIPR_SPEC> {
+    pub fn cfcinp(&mut self) -> CFCINP_W<'_, NIPR_SPEC> {
         CFCINP_W::new(self, 12)
     }
 }
@@ -400,10 +400,6 @@ impl crate::Readable for NIPR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`nipr::W`](W) writer structure"]
 impl crate::Writable for NIPR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NIPR to value 0"]
-impl crate::Resettable for NIPR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for NIPR_SPEC {}

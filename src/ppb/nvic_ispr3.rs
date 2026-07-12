@@ -72,7 +72,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Interrupt set-pending bits."]
     #[inline(always)]
-    pub fn setpend(&mut self) -> SETPEND_W<NVIC_ISPR3_SPEC> {
+    pub fn setpend(&mut self) -> SETPEND_W<'_, NVIC_ISPR3_SPEC> {
         SETPEND_W::new(self, 0)
     }
 }
@@ -86,10 +86,6 @@ impl crate::Readable for NVIC_ISPR3_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`nvic_ispr3::W`](W) writer structure"]
 impl crate::Writable for NVIC_ISPR3_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NVIC_ISPR3 to value 0"]
-impl crate::Resettable for NVIC_ISPR3_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for NVIC_ISPR3_SPEC {}

@@ -98,22 +98,22 @@ where
 impl W {
     #[doc = "Bits 0:4 - Request Channel Number"]
     #[inline(always)]
-    pub fn reqchnr(&mut self) -> REQCHNR_W<QINR0_SPEC> {
+    pub fn reqchnr(&mut self) -> REQCHNR_W<'_, QINR0_SPEC> {
         REQCHNR_W::new(self, 0)
     }
     #[doc = "Bit 5 - Refill"]
     #[inline(always)]
-    pub fn rf(&mut self) -> RF_W<QINR0_SPEC> {
+    pub fn rf(&mut self) -> RF_W<'_, QINR0_SPEC> {
         RF_W::new(self, 5)
     }
     #[doc = "Bit 6 - Enable Source Interrupt"]
     #[inline(always)]
-    pub fn ensi(&mut self) -> ENSI_W<QINR0_SPEC> {
+    pub fn ensi(&mut self) -> ENSI_W<'_, QINR0_SPEC> {
         ENSI_W::new(self, 6)
     }
     #[doc = "Bit 7 - External Trigger"]
     #[inline(always)]
-    pub fn extr(&mut self) -> EXTR_W<QINR0_SPEC> {
+    pub fn extr(&mut self) -> EXTR_W<'_, QINR0_SPEC> {
         EXTR_W::new(self, 7)
     }
 }
@@ -125,10 +125,6 @@ impl crate::RegisterSpec for QINR0_SPEC {
 #[doc = "`write(|w| ..)` method takes [`qinr0::W`](W) writer structure"]
 impl crate::Writable for QINR0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets QINR0 to value 0"]
-impl crate::Resettable for QINR0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for QINR0_SPEC {}

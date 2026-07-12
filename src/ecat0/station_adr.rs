@@ -17,6 +17,4 @@ impl crate::RegisterSpec for STATION_ADR_SPEC {
 #[doc = "`read()` method returns [`station_adr::R`](R) reader structure"]
 impl crate::Readable for STATION_ADR_SPEC {}
 #[doc = "`reset()` method sets STATION_ADR to value 0"]
-impl crate::Resettable for STATION_ADR_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for STATION_ADR_SPEC {}

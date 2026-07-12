@@ -5,7 +5,7 @@ pub type TDATA_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl W {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]
-    pub fn tdata(&mut self) -> TDATA_W<IN_SPEC> {
+    pub fn tdata(&mut self) -> TDATA_W<'_, IN_SPEC> {
         TDATA_W::new(self, 0)
     }
 }
@@ -17,11 +17,6 @@ impl crate::RegisterSpec for IN_SPEC {
 #[doc = "`write(|w| ..)` method takes [`in_::W`](W) writer structure"]
 impl crate::Writable for IN_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets IN[%s]
-to value 0"]
-impl crate::Resettable for IN_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets IN[%s] to value 0"]
+impl crate::Resettable for IN_SPEC {}

@@ -189,32 +189,32 @@ where
 impl W {
     #[doc = "Bit 0 - Force Event for Auto CMD12 NOT Executed"]
     #[inline(always)]
-    pub fn fe_acmd_not_exec(&mut self) -> FE_ACMD_NOT_EXEC_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
+    pub fn fe_acmd_not_exec(&mut self) -> FE_ACMD_NOT_EXEC_W<'_, FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
         FE_ACMD_NOT_EXEC_W::new(self, 0)
     }
     #[doc = "Bit 1 - Force Event for Auto CMD timeout Error"]
     #[inline(always)]
-    pub fn fe_acmd_timeout_err(&mut self) -> FE_ACMD_TIMEOUT_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
+    pub fn fe_acmd_timeout_err(&mut self) -> FE_ACMD_TIMEOUT_ERR_W<'_, FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
         FE_ACMD_TIMEOUT_ERR_W::new(self, 1)
     }
     #[doc = "Bit 2 - Force Event for Auto CMD CRC Error"]
     #[inline(always)]
-    pub fn fe_acmd_crc_err(&mut self) -> FE_ACMD_CRC_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
+    pub fn fe_acmd_crc_err(&mut self) -> FE_ACMD_CRC_ERR_W<'_, FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
         FE_ACMD_CRC_ERR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Force Event for Auto CMD End bit Error"]
     #[inline(always)]
-    pub fn fe_acmd_end_bit_err(&mut self) -> FE_ACMD_END_BIT_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
+    pub fn fe_acmd_end_bit_err(&mut self) -> FE_ACMD_END_BIT_ERR_W<'_, FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
         FE_ACMD_END_BIT_ERR_W::new(self, 3)
     }
     #[doc = "Bit 4 - Force Event for Auto CMD Index Error"]
     #[inline(always)]
-    pub fn fe_acmd_ind_err(&mut self) -> FE_ACMD_IND_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
+    pub fn fe_acmd_ind_err(&mut self) -> FE_ACMD_IND_ERR_W<'_, FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
         FE_ACMD_IND_ERR_W::new(self, 4)
     }
     #[doc = "Bit 7 - Force Event for CMD not issued by Auto CMD12 Error"]
     #[inline(always)]
-    pub fn fe_cmd_not_issued_acmd12_err(&mut self) -> FE_CMD_NOT_ISSUED_ACMD12_ERR_W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
+    pub fn fe_cmd_not_issued_acmd12_err(&mut self) -> FE_CMD_NOT_ISSUED_ACMD12_ERR_W<'_, FORCE_EVENT_ACMD_ERR_STATUS_SPEC> {
         FE_CMD_NOT_ISSUED_ACMD12_ERR_W::new(self, 7)
     }
 }
@@ -226,10 +226,6 @@ impl crate::RegisterSpec for FORCE_EVENT_ACMD_ERR_STATUS_SPEC {
 #[doc = "`write(|w| ..)` method takes [`force_event_acmd_err_status::W`](W) writer structure"]
 impl crate::Writable for FORCE_EVENT_ACMD_ERR_STATUS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets FORCE_EVENT_ACMD_ERR_STATUS to value 0"]
-impl crate::Resettable for FORCE_EVENT_ACMD_ERR_STATUS_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for FORCE_EVENT_ACMD_ERR_STATUS_SPEC {}

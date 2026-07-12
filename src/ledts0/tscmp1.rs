@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
-    pub fn cmp_ts4(&mut self) -> CMP_TS4_W<TSCMP1_SPEC> {
+    pub fn cmp_ts4(&mut self) -> CMP_TS4_W<'_, TSCMP1_SPEC> {
         CMP_TS4_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
-    pub fn cmp_ts5(&mut self) -> CMP_TS5_W<TSCMP1_SPEC> {
+    pub fn cmp_ts5(&mut self) -> CMP_TS5_W<'_, TSCMP1_SPEC> {
         CMP_TS5_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
-    pub fn cmp_ts6(&mut self) -> CMP_TS6_W<TSCMP1_SPEC> {
+    pub fn cmp_ts6(&mut self) -> CMP_TS6_W<'_, TSCMP1_SPEC> {
         CMP_TS6_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
-    pub fn cmp_ts7(&mut self) -> CMP_TS7_W<TSCMP1_SPEC> {
+    pub fn cmp_ts7(&mut self) -> CMP_TS7_W<'_, TSCMP1_SPEC> {
         CMP_TS7_W::new(self, 24)
     }
 }
@@ -72,10 +72,6 @@ impl crate::Readable for TSCMP1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`tscmp1::W`](W) writer structure"]
 impl crate::Writable for TSCMP1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TSCMP1 to value 0"]
-impl crate::Resettable for TSCMP1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TSCMP1_SPEC {}

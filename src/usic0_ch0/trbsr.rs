@@ -639,27 +639,27 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Standard Receive Buffer Event"]
     #[inline(always)]
-    pub fn srbi(&mut self) -> SRBI_W<TRBSR_SPEC> {
+    pub fn srbi(&mut self) -> SRBI_W<'_, TRBSR_SPEC> {
         SRBI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Receive Buffer Error Event"]
     #[inline(always)]
-    pub fn rberi(&mut self) -> RBERI_W<TRBSR_SPEC> {
+    pub fn rberi(&mut self) -> RBERI_W<'_, TRBSR_SPEC> {
         RBERI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Alternative Receive Buffer Event"]
     #[inline(always)]
-    pub fn arbi(&mut self) -> ARBI_W<TRBSR_SPEC> {
+    pub fn arbi(&mut self) -> ARBI_W<'_, TRBSR_SPEC> {
         ARBI_W::new(self, 2)
     }
     #[doc = "Bit 8 - Standard Transmit Buffer Event"]
     #[inline(always)]
-    pub fn stbi(&mut self) -> STBI_W<TRBSR_SPEC> {
+    pub fn stbi(&mut self) -> STBI_W<'_, TRBSR_SPEC> {
         STBI_W::new(self, 8)
     }
     #[doc = "Bit 9 - Transmit Buffer Error Event"]
     #[inline(always)]
-    pub fn tberi(&mut self) -> TBERI_W<TRBSR_SPEC> {
+    pub fn tberi(&mut self) -> TBERI_W<'_, TRBSR_SPEC> {
         TBERI_W::new(self, 9)
     }
 }
@@ -673,8 +673,6 @@ impl crate::Readable for TRBSR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`trbsr::W`](W) writer structure"]
 impl crate::Writable for TRBSR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TRBSR to value 0x0808"]
 impl crate::Resettable for TRBSR_SPEC {

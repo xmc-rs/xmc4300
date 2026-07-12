@@ -251,42 +251,42 @@ where
 impl W {
     #[doc = "Bit 0 - Clear Standard Receive Buffer Event"]
     #[inline(always)]
-    pub fn csrbi(&mut self) -> CSRBI_W<TRBSCR_SPEC> {
+    pub fn csrbi(&mut self) -> CSRBI_W<'_, TRBSCR_SPEC> {
         CSRBI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Receive Buffer Error Event"]
     #[inline(always)]
-    pub fn crberi(&mut self) -> CRBERI_W<TRBSCR_SPEC> {
+    pub fn crberi(&mut self) -> CRBERI_W<'_, TRBSCR_SPEC> {
         CRBERI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Alternative Receive Buffer Event"]
     #[inline(always)]
-    pub fn carbi(&mut self) -> CARBI_W<TRBSCR_SPEC> {
+    pub fn carbi(&mut self) -> CARBI_W<'_, TRBSCR_SPEC> {
         CARBI_W::new(self, 2)
     }
     #[doc = "Bit 8 - Clear Standard Transmit Buffer Event"]
     #[inline(always)]
-    pub fn cstbi(&mut self) -> CSTBI_W<TRBSCR_SPEC> {
+    pub fn cstbi(&mut self) -> CSTBI_W<'_, TRBSCR_SPEC> {
         CSTBI_W::new(self, 8)
     }
     #[doc = "Bit 9 - Clear Transmit Buffer Error Event"]
     #[inline(always)]
-    pub fn ctberi(&mut self) -> CTBERI_W<TRBSCR_SPEC> {
+    pub fn ctberi(&mut self) -> CTBERI_W<'_, TRBSCR_SPEC> {
         CTBERI_W::new(self, 9)
     }
     #[doc = "Bit 10 - Clear Bypass Data Valid"]
     #[inline(always)]
-    pub fn cbdv(&mut self) -> CBDV_W<TRBSCR_SPEC> {
+    pub fn cbdv(&mut self) -> CBDV_W<'_, TRBSCR_SPEC> {
         CBDV_W::new(self, 10)
     }
     #[doc = "Bit 14 - Flush Receive Buffer"]
     #[inline(always)]
-    pub fn flushrb(&mut self) -> FLUSHRB_W<TRBSCR_SPEC> {
+    pub fn flushrb(&mut self) -> FLUSHRB_W<'_, TRBSCR_SPEC> {
         FLUSHRB_W::new(self, 14)
     }
     #[doc = "Bit 15 - Flush Transmit Buffer"]
     #[inline(always)]
-    pub fn flushtb(&mut self) -> FLUSHTB_W<TRBSCR_SPEC> {
+    pub fn flushtb(&mut self) -> FLUSHTB_W<'_, TRBSCR_SPEC> {
         FLUSHTB_W::new(self, 15)
     }
 }
@@ -298,10 +298,6 @@ impl crate::RegisterSpec for TRBSCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [`trbscr::W`](W) writer structure"]
 impl crate::Writable for TRBSCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TRBSCR to value 0"]
-impl crate::Resettable for TRBSCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TRBSCR_SPEC {}

@@ -595,47 +595,47 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Output Trigger Pulse Enable for ETLx"]
     #[inline(always)]
-    pub fn pe(&mut self) -> PE_W<EXICON_SPEC> {
+    pub fn pe(&mut self) -> PE_W<'_, EXICON_SPEC> {
         PE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Rebuild Level Detection for Status Flag for ETLx"]
     #[inline(always)]
-    pub fn ld(&mut self) -> LD_W<EXICON_SPEC> {
+    pub fn ld(&mut self) -> LD_W<'_, EXICON_SPEC> {
         LD_W::new(self, 1)
     }
     #[doc = "Bit 2 - Rising Edge Detection Enable ETLx"]
     #[inline(always)]
-    pub fn re(&mut self) -> RE_W<EXICON_SPEC> {
+    pub fn re(&mut self) -> RE_W<'_, EXICON_SPEC> {
         RE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Falling Edge Detection Enable ETLx"]
     #[inline(always)]
-    pub fn fe(&mut self) -> FE_W<EXICON_SPEC> {
+    pub fn fe(&mut self) -> FE_W<'_, EXICON_SPEC> {
         FE_W::new(self, 3)
     }
     #[doc = "Bits 4:6 - Output Channel Select for ETLx Output Trigger Pulse"]
     #[inline(always)]
-    pub fn ocs(&mut self) -> OCS_W<EXICON_SPEC> {
+    pub fn ocs(&mut self) -> OCS_W<'_, EXICON_SPEC> {
         OCS_W::new(self, 4)
     }
     #[doc = "Bit 7 - Status Flag for ETLx"]
     #[inline(always)]
-    pub fn fl(&mut self) -> FL_W<EXICON_SPEC> {
+    pub fn fl(&mut self) -> FL_W<'_, EXICON_SPEC> {
         FL_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Input Source Select for ERSx"]
     #[inline(always)]
-    pub fn ss(&mut self) -> SS_W<EXICON_SPEC> {
+    pub fn ss(&mut self) -> SS_W<'_, EXICON_SPEC> {
         SS_W::new(self, 8)
     }
     #[doc = "Bit 10 - Input A Negation Select for ERSx"]
     #[inline(always)]
-    pub fn na(&mut self) -> NA_W<EXICON_SPEC> {
+    pub fn na(&mut self) -> NA_W<'_, EXICON_SPEC> {
         NA_W::new(self, 10)
     }
     #[doc = "Bit 11 - Input B Negation Select for ERSx"]
     #[inline(always)]
-    pub fn nb(&mut self) -> NB_W<EXICON_SPEC> {
+    pub fn nb(&mut self) -> NB_W<'_, EXICON_SPEC> {
         NB_W::new(self, 11)
     }
 }
@@ -649,11 +649,6 @@ impl crate::Readable for EXICON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`exicon::W`](W) writer structure"]
 impl crate::Writable for EXICON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets EXICON[%s]
-to value 0"]
-impl crate::Resettable for EXICON_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets EXICON[%s] to value 0"]
+impl crate::Resettable for EXICON_SPEC {}
