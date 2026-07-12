@@ -735,42 +735,42 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
-    pub fn cev0np(&mut self) -> CEV0NP_W<CEVNP0_SPEC> {
+    pub fn cev0np(&mut self) -> CEV0NP_W<'_, CEVNP0_SPEC> {
         CEV0NP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
-    pub fn cev1np(&mut self) -> CEV1NP_W<CEVNP0_SPEC> {
+    pub fn cev1np(&mut self) -> CEV1NP_W<'_, CEVNP0_SPEC> {
         CEV1NP_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
-    pub fn cev2np(&mut self) -> CEV2NP_W<CEVNP0_SPEC> {
+    pub fn cev2np(&mut self) -> CEV2NP_W<'_, CEVNP0_SPEC> {
         CEV2NP_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
-    pub fn cev3np(&mut self) -> CEV3NP_W<CEVNP0_SPEC> {
+    pub fn cev3np(&mut self) -> CEV3NP_W<'_, CEVNP0_SPEC> {
         CEV3NP_W::new(self, 12)
     }
     #[doc = "Bits 16:19 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
-    pub fn cev4np(&mut self) -> CEV4NP_W<CEVNP0_SPEC> {
+    pub fn cev4np(&mut self) -> CEV4NP_W<'_, CEVNP0_SPEC> {
         CEV4NP_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
-    pub fn cev5np(&mut self) -> CEV5NP_W<CEVNP0_SPEC> {
+    pub fn cev5np(&mut self) -> CEV5NP_W<'_, CEVNP0_SPEC> {
         CEV5NP_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
-    pub fn cev6np(&mut self) -> CEV6NP_W<CEVNP0_SPEC> {
+    pub fn cev6np(&mut self) -> CEV6NP_W<'_, CEVNP0_SPEC> {
         CEV6NP_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Service Request Node Pointer Channel Event i"]
     #[inline(always)]
-    pub fn cev7np(&mut self) -> CEV7NP_W<CEVNP0_SPEC> {
+    pub fn cev7np(&mut self) -> CEV7NP_W<'_, CEVNP0_SPEC> {
         CEV7NP_W::new(self, 28)
     }
 }
@@ -784,10 +784,6 @@ impl crate::Readable for CEVNP0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`cevnp0::W`](W) writer structure"]
 impl crate::Writable for CEVNP0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CEVNP0 to value 0"]
-impl crate::Resettable for CEVNP0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CEVNP0_SPEC {}

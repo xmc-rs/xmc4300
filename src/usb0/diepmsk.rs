@@ -88,47 +88,47 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transfer Completed Interrupt Mask"]
     #[inline(always)]
-    pub fn xfer_compl_msk(&mut self) -> XFER_COMPL_MSK_W<DIEPMSK_SPEC> {
+    pub fn xfer_compl_msk(&mut self) -> XFER_COMPL_MSK_W<'_, DIEPMSK_SPEC> {
         XFER_COMPL_MSK_W::new(self, 0)
     }
     #[doc = "Bit 1 - Endpoint Disabled Interrupt Mask"]
     #[inline(always)]
-    pub fn epdisbld_msk(&mut self) -> EPDISBLD_MSK_W<DIEPMSK_SPEC> {
+    pub fn epdisbld_msk(&mut self) -> EPDISBLD_MSK_W<'_, DIEPMSK_SPEC> {
         EPDISBLD_MSK_W::new(self, 1)
     }
     #[doc = "Bit 2 - AHB Error Mask"]
     #[inline(always)]
-    pub fn ahberr_msk(&mut self) -> AHBERR_MSK_W<DIEPMSK_SPEC> {
+    pub fn ahberr_msk(&mut self) -> AHBERR_MSK_W<'_, DIEPMSK_SPEC> {
         AHBERR_MSK_W::new(self, 2)
     }
     #[doc = "Bit 3 - Timeout Condition Mask"]
     #[inline(always)]
-    pub fn time_outmsk(&mut self) -> TIME_OUTMSK_W<DIEPMSK_SPEC> {
+    pub fn time_outmsk(&mut self) -> TIME_OUTMSK_W<'_, DIEPMSK_SPEC> {
         TIME_OUTMSK_W::new(self, 3)
     }
     #[doc = "Bit 4 - IN Token Received When TxFIFO Empty Mask"]
     #[inline(always)]
-    pub fn intkn_txfemp_msk(&mut self) -> INTKN_TXFEMP_MSK_W<DIEPMSK_SPEC> {
+    pub fn intkn_txfemp_msk(&mut self) -> INTKN_TXFEMP_MSK_W<'_, DIEPMSK_SPEC> {
         INTKN_TXFEMP_MSK_W::new(self, 4)
     }
     #[doc = "Bit 6 - IN Endpoint NAK Effective Mask"]
     #[inline(always)]
-    pub fn inepnak_eff_msk(&mut self) -> INEPNAK_EFF_MSK_W<DIEPMSK_SPEC> {
+    pub fn inepnak_eff_msk(&mut self) -> INEPNAK_EFF_MSK_W<'_, DIEPMSK_SPEC> {
         INEPNAK_EFF_MSK_W::new(self, 6)
     }
     #[doc = "Bit 8 - Fifo Underrun Mask"]
     #[inline(always)]
-    pub fn txfifo_undrn_msk(&mut self) -> TXFIFO_UNDRN_MSK_W<DIEPMSK_SPEC> {
+    pub fn txfifo_undrn_msk(&mut self) -> TXFIFO_UNDRN_MSK_W<'_, DIEPMSK_SPEC> {
         TXFIFO_UNDRN_MSK_W::new(self, 8)
     }
     #[doc = "Bit 9 - BNA Interrupt Mask"]
     #[inline(always)]
-    pub fn bnain_intr_msk(&mut self) -> BNAIN_INTR_MSK_W<DIEPMSK_SPEC> {
+    pub fn bnain_intr_msk(&mut self) -> BNAIN_INTR_MSK_W<'_, DIEPMSK_SPEC> {
         BNAIN_INTR_MSK_W::new(self, 9)
     }
     #[doc = "Bit 13 - NAK interrupt Mask"]
     #[inline(always)]
-    pub fn nakmsk(&mut self) -> NAKMSK_W<DIEPMSK_SPEC> {
+    pub fn nakmsk(&mut self) -> NAKMSK_W<'_, DIEPMSK_SPEC> {
         NAKMSK_W::new(self, 13)
     }
 }
@@ -142,10 +142,6 @@ impl crate::Readable for DIEPMSK_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`diepmsk::W`](W) writer structure"]
 impl crate::Writable for DIEPMSK_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DIEPMSK to value 0"]
-impl crate::Resettable for DIEPMSK_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DIEPMSK_SPEC {}

@@ -338,37 +338,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Enable Gate"]
     #[inline(always)]
-    pub fn engt(&mut self) -> ENGT_W<QMR0_SPEC> {
+    pub fn engt(&mut self) -> ENGT_W<'_, QMR0_SPEC> {
         ENGT_W::new(self, 0)
     }
     #[doc = "Bit 2 - Enable External Trigger"]
     #[inline(always)]
-    pub fn entr(&mut self) -> ENTR_W<QMR0_SPEC> {
+    pub fn entr(&mut self) -> ENTR_W<'_, QMR0_SPEC> {
         ENTR_W::new(self, 2)
     }
     #[doc = "Bit 8 - Clear Valid Bit"]
     #[inline(always)]
-    pub fn clrv(&mut self) -> CLRV_W<QMR0_SPEC> {
+    pub fn clrv(&mut self) -> CLRV_W<'_, QMR0_SPEC> {
         CLRV_W::new(self, 8)
     }
     #[doc = "Bit 9 - Trigger Event"]
     #[inline(always)]
-    pub fn trev(&mut self) -> TREV_W<QMR0_SPEC> {
+    pub fn trev(&mut self) -> TREV_W<'_, QMR0_SPEC> {
         TREV_W::new(self, 9)
     }
     #[doc = "Bit 10 - Flush Queue"]
     #[inline(always)]
-    pub fn flush(&mut self) -> FLUSH_W<QMR0_SPEC> {
+    pub fn flush(&mut self) -> FLUSH_W<'_, QMR0_SPEC> {
         FLUSH_W::new(self, 10)
     }
     #[doc = "Bit 11 - Clear Event Flag"]
     #[inline(always)]
-    pub fn cev(&mut self) -> CEV_W<QMR0_SPEC> {
+    pub fn cev(&mut self) -> CEV_W<'_, QMR0_SPEC> {
         CEV_W::new(self, 11)
     }
     #[doc = "Bit 16 - Repeat Disable"]
     #[inline(always)]
-    pub fn rptdis(&mut self) -> RPTDIS_W<QMR0_SPEC> {
+    pub fn rptdis(&mut self) -> RPTDIS_W<'_, QMR0_SPEC> {
         RPTDIS_W::new(self, 16)
     }
 }
@@ -382,10 +382,6 @@ impl crate::Readable for QMR0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`qmr0::W`](W) writer structure"]
 impl crate::Writable for QMR0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets QMR0 to value 0"]
-impl crate::Resettable for QMR0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for QMR0_SPEC {}

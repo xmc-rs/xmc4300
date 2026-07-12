@@ -115,62 +115,62 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Start or Stop Receive"]
     #[inline(always)]
-    pub fn sr(&mut self) -> SR_W<OPERATION_MODE_SPEC> {
+    pub fn sr(&mut self) -> SR_W<'_, OPERATION_MODE_SPEC> {
         SR_W::new(self, 1)
     }
     #[doc = "Bit 2 - Operate on Second Frame"]
     #[inline(always)]
-    pub fn osf(&mut self) -> OSF_W<OPERATION_MODE_SPEC> {
+    pub fn osf(&mut self) -> OSF_W<'_, OPERATION_MODE_SPEC> {
         OSF_W::new(self, 2)
     }
     #[doc = "Bits 3:4 - Receive Threshold Control"]
     #[inline(always)]
-    pub fn rtc(&mut self) -> RTC_W<OPERATION_MODE_SPEC> {
+    pub fn rtc(&mut self) -> RTC_W<'_, OPERATION_MODE_SPEC> {
         RTC_W::new(self, 3)
     }
     #[doc = "Bit 6 - Forward Undersized Good Frames"]
     #[inline(always)]
-    pub fn fuf(&mut self) -> FUF_W<OPERATION_MODE_SPEC> {
+    pub fn fuf(&mut self) -> FUF_W<'_, OPERATION_MODE_SPEC> {
         FUF_W::new(self, 6)
     }
     #[doc = "Bit 7 - Forward Error Frames"]
     #[inline(always)]
-    pub fn fef(&mut self) -> FEF_W<OPERATION_MODE_SPEC> {
+    pub fn fef(&mut self) -> FEF_W<'_, OPERATION_MODE_SPEC> {
         FEF_W::new(self, 7)
     }
     #[doc = "Bit 13 - Start or Stop Transmission Command"]
     #[inline(always)]
-    pub fn st(&mut self) -> ST_W<OPERATION_MODE_SPEC> {
+    pub fn st(&mut self) -> ST_W<'_, OPERATION_MODE_SPEC> {
         ST_W::new(self, 13)
     }
     #[doc = "Bits 14:16 - Transmit Threshold Control"]
     #[inline(always)]
-    pub fn ttc(&mut self) -> TTC_W<OPERATION_MODE_SPEC> {
+    pub fn ttc(&mut self) -> TTC_W<'_, OPERATION_MODE_SPEC> {
         TTC_W::new(self, 14)
     }
     #[doc = "Bit 20 - Flush Transmit FIFO"]
     #[inline(always)]
-    pub fn ftf(&mut self) -> FTF_W<OPERATION_MODE_SPEC> {
+    pub fn ftf(&mut self) -> FTF_W<'_, OPERATION_MODE_SPEC> {
         FTF_W::new(self, 20)
     }
     #[doc = "Bit 21 - Transmit Store and Forward"]
     #[inline(always)]
-    pub fn tsf(&mut self) -> TSF_W<OPERATION_MODE_SPEC> {
+    pub fn tsf(&mut self) -> TSF_W<'_, OPERATION_MODE_SPEC> {
         TSF_W::new(self, 21)
     }
     #[doc = "Bit 24 - Disable Flushing of Received Frames"]
     #[inline(always)]
-    pub fn dff(&mut self) -> DFF_W<OPERATION_MODE_SPEC> {
+    pub fn dff(&mut self) -> DFF_W<'_, OPERATION_MODE_SPEC> {
         DFF_W::new(self, 24)
     }
     #[doc = "Bit 25 - Receive Store and Forward"]
     #[inline(always)]
-    pub fn rsf(&mut self) -> RSF_W<OPERATION_MODE_SPEC> {
+    pub fn rsf(&mut self) -> RSF_W<'_, OPERATION_MODE_SPEC> {
         RSF_W::new(self, 25)
     }
     #[doc = "Bit 26 - Disable Dropping of TCP/IP Checksum Error Frames"]
     #[inline(always)]
-    pub fn dt(&mut self) -> DT_W<OPERATION_MODE_SPEC> {
+    pub fn dt(&mut self) -> DT_W<'_, OPERATION_MODE_SPEC> {
         DT_W::new(self, 26)
     }
 }
@@ -184,10 +184,6 @@ impl crate::Readable for OPERATION_MODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`operation_mode::W`](W) writer structure"]
 impl crate::Writable for OPERATION_MODE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets OPERATION_MODE to value 0"]
-impl crate::Resettable for OPERATION_MODE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for OPERATION_MODE_SPEC {}

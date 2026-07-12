@@ -116,17 +116,17 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Panel Command"]
     #[inline(always)]
-    pub fn pancmd(&mut self) -> PANCMD_W<PANCTR_SPEC> {
+    pub fn pancmd(&mut self) -> PANCMD_W<'_, PANCTR_SPEC> {
         PANCMD_W::new(self, 0)
     }
     #[doc = "Bits 16:23 - Panel Argument 1"]
     #[inline(always)]
-    pub fn panar1(&mut self) -> PANAR1_W<PANCTR_SPEC> {
+    pub fn panar1(&mut self) -> PANAR1_W<'_, PANCTR_SPEC> {
         PANAR1_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Panel Argument 2"]
     #[inline(always)]
-    pub fn panar2(&mut self) -> PANAR2_W<PANCTR_SPEC> {
+    pub fn panar2(&mut self) -> PANAR2_W<'_, PANCTR_SPEC> {
         PANAR2_W::new(self, 24)
     }
 }
@@ -140,8 +140,6 @@ impl crate::Readable for PANCTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`panctr::W`](W) writer structure"]
 impl crate::Writable for PANCTR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PANCTR to value 0x0301"]
 impl crate::Resettable for PANCTR_SPEC {

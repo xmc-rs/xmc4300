@@ -530,6 +530,4 @@ impl crate::RegisterSpec for GCST_SPEC {
 #[doc = "`read()` method returns [`gcst::R`](R) reader structure"]
 impl crate::Readable for GCST_SPEC {}
 #[doc = "`reset()` method sets GCST to value 0"]
-impl crate::Resettable for GCST_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GCST_SPEC {}

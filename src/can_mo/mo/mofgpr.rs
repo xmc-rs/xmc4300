@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Bottom Pointer"]
     #[inline(always)]
-    pub fn bot(&mut self) -> BOT_W<MOFGPR_SPEC> {
+    pub fn bot(&mut self) -> BOT_W<'_, MOFGPR_SPEC> {
         BOT_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Top Pointer"]
     #[inline(always)]
-    pub fn top(&mut self) -> TOP_W<MOFGPR_SPEC> {
+    pub fn top(&mut self) -> TOP_W<'_, MOFGPR_SPEC> {
         TOP_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Current Object Pointer"]
     #[inline(always)]
-    pub fn cur(&mut self) -> CUR_W<MOFGPR_SPEC> {
+    pub fn cur(&mut self) -> CUR_W<'_, MOFGPR_SPEC> {
         CUR_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Object Select Pointer"]
     #[inline(always)]
-    pub fn sel(&mut self) -> SEL_W<MOFGPR_SPEC> {
+    pub fn sel(&mut self) -> SEL_W<'_, MOFGPR_SPEC> {
         SEL_W::new(self, 24)
     }
 }
@@ -72,10 +72,6 @@ impl crate::Readable for MOFGPR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mofgpr::W`](W) writer structure"]
 impl crate::Writable for MOFGPR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MOFGPR to value 0"]
-impl crate::Resettable for MOFGPR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MOFGPR_SPEC {}

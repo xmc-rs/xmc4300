@@ -17,6 +17,4 @@ impl crate::RegisterSpec for FMMU_LEN_SPEC {
 #[doc = "`read()` method returns [`fmmu_len::R`](R) reader structure"]
 impl crate::Readable for FMMU_LEN_SPEC {}
 #[doc = "`reset()` method sets FMMU_LEN to value 0"]
-impl crate::Resettable for FMMU_LEN_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for FMMU_LEN_SPEC {}

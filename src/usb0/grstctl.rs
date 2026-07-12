@@ -161,27 +161,27 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Core Soft Reset"]
     #[inline(always)]
-    pub fn csft_rst(&mut self) -> CSFT_RST_W<GRSTCTL_SPEC> {
+    pub fn csft_rst(&mut self) -> CSFT_RST_W<'_, GRSTCTL_SPEC> {
         CSFT_RST_W::new(self, 0)
     }
     #[doc = "Bit 2 - Host Frame Counter Reset"]
     #[inline(always)]
-    pub fn frm_cntr_rst(&mut self) -> FRM_CNTR_RST_W<GRSTCTL_SPEC> {
+    pub fn frm_cntr_rst(&mut self) -> FRM_CNTR_RST_W<'_, GRSTCTL_SPEC> {
         FRM_CNTR_RST_W::new(self, 2)
     }
     #[doc = "Bit 4 - RxFIFO Flush"]
     #[inline(always)]
-    pub fn rx_fflsh(&mut self) -> RX_FFLSH_W<GRSTCTL_SPEC> {
+    pub fn rx_fflsh(&mut self) -> RX_FFLSH_W<'_, GRSTCTL_SPEC> {
         RX_FFLSH_W::new(self, 4)
     }
     #[doc = "Bit 5 - TxFIFO Flush"]
     #[inline(always)]
-    pub fn tx_fflsh(&mut self) -> TX_FFLSH_W<GRSTCTL_SPEC> {
+    pub fn tx_fflsh(&mut self) -> TX_FFLSH_W<'_, GRSTCTL_SPEC> {
         TX_FFLSH_W::new(self, 5)
     }
     #[doc = "Bits 6:10 - TxFIFO Number"]
     #[inline(always)]
-    pub fn tx_fnum(&mut self) -> TX_FNUM_W<GRSTCTL_SPEC> {
+    pub fn tx_fnum(&mut self) -> TX_FNUM_W<'_, GRSTCTL_SPEC> {
         TX_FNUM_W::new(self, 6)
     }
 }
@@ -195,8 +195,6 @@ impl crate::Readable for GRSTCTL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`grstctl::W`](W) writer structure"]
 impl crate::Writable for GRSTCTL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GRSTCTL to value 0x1000_0000"]
 impl crate::Resettable for GRSTCTL_SPEC {

@@ -355,32 +355,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - LED Control"]
     #[inline(always)]
-    pub fn led_ctrl(&mut self) -> LED_CTRL_W<HOST_CTRL_SPEC> {
+    pub fn led_ctrl(&mut self) -> LED_CTRL_W<'_, HOST_CTRL_SPEC> {
         LED_CTRL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Data Transfer Width (SD1 or SD4)"]
     #[inline(always)]
-    pub fn data_tx_width(&mut self) -> DATA_TX_WIDTH_W<HOST_CTRL_SPEC> {
+    pub fn data_tx_width(&mut self) -> DATA_TX_WIDTH_W<'_, HOST_CTRL_SPEC> {
         DATA_TX_WIDTH_W::new(self, 1)
     }
     #[doc = "Bit 2 - High Speed Enable"]
     #[inline(always)]
-    pub fn high_speed_en(&mut self) -> HIGH_SPEED_EN_W<HOST_CTRL_SPEC> {
+    pub fn high_speed_en(&mut self) -> HIGH_SPEED_EN_W<'_, HOST_CTRL_SPEC> {
         HIGH_SPEED_EN_W::new(self, 2)
     }
     #[doc = "Bit 5 - Extended Data Transfer Width"]
     #[inline(always)]
-    pub fn sd_8bit_mode(&mut self) -> SD_8BIT_MODE_W<HOST_CTRL_SPEC> {
+    pub fn sd_8bit_mode(&mut self) -> SD_8BIT_MODE_W<'_, HOST_CTRL_SPEC> {
         SD_8BIT_MODE_W::new(self, 5)
     }
     #[doc = "Bit 6 - Card Detect Test Level"]
     #[inline(always)]
-    pub fn card_detect_test_level(&mut self) -> CARD_DETECT_TEST_LEVEL_W<HOST_CTRL_SPEC> {
+    pub fn card_detect_test_level(&mut self) -> CARD_DETECT_TEST_LEVEL_W<'_, HOST_CTRL_SPEC> {
         CARD_DETECT_TEST_LEVEL_W::new(self, 6)
     }
     #[doc = "Bit 7 - Card detect signal detetction"]
     #[inline(always)]
-    pub fn card_det_signal_detect(&mut self) -> CARD_DET_SIGNAL_DETECT_W<HOST_CTRL_SPEC> {
+    pub fn card_det_signal_detect(&mut self) -> CARD_DET_SIGNAL_DETECT_W<'_, HOST_CTRL_SPEC> {
         CARD_DET_SIGNAL_DETECT_W::new(self, 7)
     }
 }
@@ -394,10 +394,6 @@ impl crate::Readable for HOST_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`host_ctrl::W`](W) writer structure"]
 impl crate::Writable for HOST_CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets HOST_CTRL to value 0"]
-impl crate::Resettable for HOST_CTRL_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for HOST_CTRL_SPEC {}

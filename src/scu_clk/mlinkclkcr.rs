@@ -335,37 +335,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - System Clock Division Value"]
     #[inline(always)]
-    pub fn sysdiv(&mut self) -> SYSDIV_W<MLINKCLKCR_SPEC> {
+    pub fn sysdiv(&mut self) -> SYSDIV_W<'_, MLINKCLKCR_SPEC> {
         SYSDIV_W::new(self, 0)
     }
     #[doc = "Bit 8 - System Clock Selection Value"]
     #[inline(always)]
-    pub fn syssel(&mut self) -> SYSSEL_W<MLINKCLKCR_SPEC> {
+    pub fn syssel(&mut self) -> SYSSEL_W<'_, MLINKCLKCR_SPEC> {
         SYSSEL_W::new(self, 8)
     }
     #[doc = "Bit 10 - CPU Clock Divider Enable"]
     #[inline(always)]
-    pub fn cpudiv(&mut self) -> CPUDIV_W<MLINKCLKCR_SPEC> {
+    pub fn cpudiv(&mut self) -> CPUDIV_W<'_, MLINKCLKCR_SPEC> {
         CPUDIV_W::new(self, 10)
     }
     #[doc = "Bit 12 - PB Clock Divider Enable"]
     #[inline(always)]
-    pub fn pbdiv(&mut self) -> PBDIV_W<MLINKCLKCR_SPEC> {
+    pub fn pbdiv(&mut self) -> PBDIV_W<'_, MLINKCLKCR_SPEC> {
         PBDIV_W::new(self, 12)
     }
     #[doc = "Bit 14 - CCU Clock Divider Enable"]
     #[inline(always)]
-    pub fn ccudiv(&mut self) -> CCUDIV_W<MLINKCLKCR_SPEC> {
+    pub fn ccudiv(&mut self) -> CCUDIV_W<'_, MLINKCLKCR_SPEC> {
         CCUDIV_W::new(self, 14)
     }
     #[doc = "Bits 16:23 - WDT Clock Divider Value"]
     #[inline(always)]
-    pub fn wdtdiv(&mut self) -> WDTDIV_W<MLINKCLKCR_SPEC> {
+    pub fn wdtdiv(&mut self) -> WDTDIV_W<'_, MLINKCLKCR_SPEC> {
         WDTDIV_W::new(self, 16)
     }
     #[doc = "Bits 24:25 - WDT Clock Selection Value"]
     #[inline(always)]
-    pub fn wdtsel(&mut self) -> WDTSEL_W<MLINKCLKCR_SPEC> {
+    pub fn wdtsel(&mut self) -> WDTSEL_W<'_, MLINKCLKCR_SPEC> {
         WDTSEL_W::new(self, 24)
     }
 }
@@ -379,10 +379,6 @@ impl crate::Readable for MLINKCLKCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mlinkclkcr::W`](W) writer structure"]
 impl crate::Writable for MLINKCLKCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MLINKCLKCR to value 0"]
-impl crate::Resettable for MLINKCLKCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MLINKCLKCR_SPEC {}

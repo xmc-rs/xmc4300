@@ -19,42 +19,42 @@ pub type RTRPF_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Period match while counting up clear"]
     #[inline(always)]
-    pub fn rpm(&mut self) -> RPM_W<SWR_SPEC> {
+    pub fn rpm(&mut self) -> RPM_W<'_, SWR_SPEC> {
         RPM_W::new(self, 0)
     }
     #[doc = "Bit 1 - One match while counting down clear"]
     #[inline(always)]
-    pub fn rom(&mut self) -> ROM_W<SWR_SPEC> {
+    pub fn rom(&mut self) -> ROM_W<'_, SWR_SPEC> {
         ROM_W::new(self, 1)
     }
     #[doc = "Bit 2 - Compare match while counting up clear"]
     #[inline(always)]
-    pub fn rcmu(&mut self) -> RCMU_W<SWR_SPEC> {
+    pub fn rcmu(&mut self) -> RCMU_W<'_, SWR_SPEC> {
         RCMU_W::new(self, 2)
     }
     #[doc = "Bit 3 - Compare match while counting down clear"]
     #[inline(always)]
-    pub fn rcmd(&mut self) -> RCMD_W<SWR_SPEC> {
+    pub fn rcmd(&mut self) -> RCMD_W<'_, SWR_SPEC> {
         RCMD_W::new(self, 3)
     }
     #[doc = "Bit 8 - Event 0 detection clear"]
     #[inline(always)]
-    pub fn re0a(&mut self) -> RE0A_W<SWR_SPEC> {
+    pub fn re0a(&mut self) -> RE0A_W<'_, SWR_SPEC> {
         RE0A_W::new(self, 8)
     }
     #[doc = "Bit 9 - Event 1 detection clear"]
     #[inline(always)]
-    pub fn re1a(&mut self) -> RE1A_W<SWR_SPEC> {
+    pub fn re1a(&mut self) -> RE1A_W<'_, SWR_SPEC> {
         RE1A_W::new(self, 9)
     }
     #[doc = "Bit 10 - Event 2 detection clear"]
     #[inline(always)]
-    pub fn re2a(&mut self) -> RE2A_W<SWR_SPEC> {
+    pub fn re2a(&mut self) -> RE2A_W<'_, SWR_SPEC> {
         RE2A_W::new(self, 10)
     }
     #[doc = "Bit 11 - Trap Flag status clear"]
     #[inline(always)]
-    pub fn rtrpf(&mut self) -> RTRPF_W<SWR_SPEC> {
+    pub fn rtrpf(&mut self) -> RTRPF_W<'_, SWR_SPEC> {
         RTRPF_W::new(self, 11)
     }
 }
@@ -66,10 +66,6 @@ impl crate::RegisterSpec for SWR_SPEC {
 #[doc = "`write(|w| ..)` method takes [`swr::W`](W) writer structure"]
 impl crate::Writable for SWR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SWR to value 0"]
-impl crate::Resettable for SWR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SWR_SPEC {}

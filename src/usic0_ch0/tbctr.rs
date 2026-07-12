@@ -672,52 +672,52 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Data Pointer"]
     #[inline(always)]
-    pub fn dptr(&mut self) -> DPTR_W<TBCTR_SPEC> {
+    pub fn dptr(&mut self) -> DPTR_W<'_, TBCTR_SPEC> {
         DPTR_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - Limit For Interrupt Generation"]
     #[inline(always)]
-    pub fn limit(&mut self) -> LIMIT_W<TBCTR_SPEC> {
+    pub fn limit(&mut self) -> LIMIT_W<'_, TBCTR_SPEC> {
         LIMIT_W::new(self, 8)
     }
     #[doc = "Bit 14 - Standard Transmit Buffer Trigger Mode"]
     #[inline(always)]
-    pub fn stbtm(&mut self) -> STBTM_W<TBCTR_SPEC> {
+    pub fn stbtm(&mut self) -> STBTM_W<'_, TBCTR_SPEC> {
         STBTM_W::new(self, 14)
     }
     #[doc = "Bit 15 - Standard Transmit Buffer Trigger Enable"]
     #[inline(always)]
-    pub fn stbten(&mut self) -> STBTEN_W<TBCTR_SPEC> {
+    pub fn stbten(&mut self) -> STBTEN_W<'_, TBCTR_SPEC> {
         STBTEN_W::new(self, 15)
     }
     #[doc = "Bits 16:18 - Standard Transmit Buffer Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn stbinp(&mut self) -> STBINP_W<TBCTR_SPEC> {
+    pub fn stbinp(&mut self) -> STBINP_W<'_, TBCTR_SPEC> {
         STBINP_W::new(self, 16)
     }
     #[doc = "Bits 19:21 - Alternative Transmit Buffer Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn atbinp(&mut self) -> ATBINP_W<TBCTR_SPEC> {
+    pub fn atbinp(&mut self) -> ATBINP_W<'_, TBCTR_SPEC> {
         ATBINP_W::new(self, 19)
     }
     #[doc = "Bits 24:26 - Buffer Size"]
     #[inline(always)]
-    pub fn size(&mut self) -> SIZE_W<TBCTR_SPEC> {
+    pub fn size(&mut self) -> SIZE_W<'_, TBCTR_SPEC> {
         SIZE_W::new(self, 24)
     }
     #[doc = "Bit 28 - Buffer Event on Limit Overflow"]
     #[inline(always)]
-    pub fn lof(&mut self) -> LOF_W<TBCTR_SPEC> {
+    pub fn lof(&mut self) -> LOF_W<'_, TBCTR_SPEC> {
         LOF_W::new(self, 28)
     }
     #[doc = "Bit 30 - Standard Transmit Buffer Interrupt Enable"]
     #[inline(always)]
-    pub fn stbien(&mut self) -> STBIEN_W<TBCTR_SPEC> {
+    pub fn stbien(&mut self) -> STBIEN_W<'_, TBCTR_SPEC> {
         STBIEN_W::new(self, 30)
     }
     #[doc = "Bit 31 - Transmit Buffer Error Interrupt Enable"]
     #[inline(always)]
-    pub fn tberien(&mut self) -> TBERIEN_W<TBCTR_SPEC> {
+    pub fn tberien(&mut self) -> TBERIEN_W<'_, TBCTR_SPEC> {
         TBERIEN_W::new(self, 31)
     }
 }
@@ -731,10 +731,6 @@ impl crate::Readable for TBCTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`tbctr::W`](W) writer structure"]
 impl crate::Writable for TBCTR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TBCTR to value 0"]
-impl crate::Resettable for TBCTR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TBCTR_SPEC {}

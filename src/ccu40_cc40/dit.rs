@@ -24,6 +24,4 @@ impl crate::RegisterSpec for DIT_SPEC {
 #[doc = "`read()` method returns [`dit::R`](R) reader structure"]
 impl crate::Readable for DIT_SPEC {}
 #[doc = "`reset()` method sets DIT to value 0"]
-impl crate::Resettable for DIT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DIT_SPEC {}

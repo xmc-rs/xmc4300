@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - User Data"]
     #[inline(always)]
-    pub fn dat(&mut self) -> DAT_W<GPR1_SPEC> {
+    pub fn dat(&mut self) -> DAT_W<'_, GPR1_SPEC> {
         DAT_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for GPR1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gpr1::W`](W) writer structure"]
 impl crate::Writable for GPR1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GPR1 to value 0"]
-impl crate::Resettable for GPR1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GPR1_SPEC {}

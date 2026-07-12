@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - GDFIFOCfg"]
     #[inline(always)]
-    pub fn gdfifocfg(&mut self) -> GDFIFOCFG_W<GDFIFOCFG_SPEC> {
+    pub fn gdfifocfg(&mut self) -> GDFIFOCFG_W<'_, GDFIFOCFG_SPEC> {
         GDFIFOCFG_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - EPInfoBaseAddr"]
     #[inline(always)]
-    pub fn epinfo_base_addr(&mut self) -> EPINFO_BASE_ADDR_W<GDFIFOCFG_SPEC> {
+    pub fn epinfo_base_addr(&mut self) -> EPINFO_BASE_ADDR_W<'_, GDFIFOCFG_SPEC> {
         EPINFO_BASE_ADDR_W::new(self, 16)
     }
 }
@@ -44,8 +44,6 @@ impl crate::Readable for GDFIFOCFG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gdfifocfg::W`](W) writer structure"]
 impl crate::Writable for GDFIFOCFG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GDFIFOCFG to value 0x027a_02b2"]
 impl crate::Resettable for GDFIFOCFG_SPEC {

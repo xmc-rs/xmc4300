@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bit 3 - PMT Interrupt Mask"]
     #[inline(always)]
-    pub fn pmtim(&mut self) -> PMTIM_W<INTERRUPT_MASK_SPEC> {
+    pub fn pmtim(&mut self) -> PMTIM_W<'_, INTERRUPT_MASK_SPEC> {
         PMTIM_W::new(self, 3)
     }
     #[doc = "Bit 9 - Timestamp Interrupt Mask"]
     #[inline(always)]
-    pub fn tsim(&mut self) -> TSIM_W<INTERRUPT_MASK_SPEC> {
+    pub fn tsim(&mut self) -> TSIM_W<'_, INTERRUPT_MASK_SPEC> {
         TSIM_W::new(self, 9)
     }
 }
@@ -44,10 +44,6 @@ impl crate::Readable for INTERRUPT_MASK_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`interrupt_mask::W`](W) writer structure"]
 impl crate::Writable for INTERRUPT_MASK_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INTERRUPT_MASK to value 0"]
-impl crate::Resettable for INTERRUPT_MASK_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INTERRUPT_MASK_SPEC {}

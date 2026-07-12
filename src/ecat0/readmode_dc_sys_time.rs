@@ -16,8 +16,5 @@ impl crate::RegisterSpec for READMODE_DC_SYS_TIME_SPEC {
 }
 #[doc = "`read()` method returns [`readmode_dc_sys_time::R`](R) reader structure"]
 impl crate::Readable for READMODE_DC_SYS_TIME_SPEC {}
-#[doc = "`reset()` method sets DC_SYS_TIME[%s]
-to value 0"]
-impl crate::Resettable for READMODE_DC_SYS_TIME_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets DC_SYS_TIME[%s] to value 0"]
+impl crate::Resettable for READMODE_DC_SYS_TIME_SPEC {}

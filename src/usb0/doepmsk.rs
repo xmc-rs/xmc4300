@@ -106,57 +106,57 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transfer Completed Interrupt Mask"]
     #[inline(always)]
-    pub fn xfer_compl_msk(&mut self) -> XFER_COMPL_MSK_W<DOEPMSK_SPEC> {
+    pub fn xfer_compl_msk(&mut self) -> XFER_COMPL_MSK_W<'_, DOEPMSK_SPEC> {
         XFER_COMPL_MSK_W::new(self, 0)
     }
     #[doc = "Bit 1 - Endpoint Disabled Interrupt Mask"]
     #[inline(always)]
-    pub fn epdisbld_msk(&mut self) -> EPDISBLD_MSK_W<DOEPMSK_SPEC> {
+    pub fn epdisbld_msk(&mut self) -> EPDISBLD_MSK_W<'_, DOEPMSK_SPEC> {
         EPDISBLD_MSK_W::new(self, 1)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
-    pub fn ahberr_msk(&mut self) -> AHBERR_MSK_W<DOEPMSK_SPEC> {
+    pub fn ahberr_msk(&mut self) -> AHBERR_MSK_W<'_, DOEPMSK_SPEC> {
         AHBERR_MSK_W::new(self, 2)
     }
     #[doc = "Bit 3 - SETUP Phase Done Mask"]
     #[inline(always)]
-    pub fn set_upmsk(&mut self) -> SET_UPMSK_W<DOEPMSK_SPEC> {
+    pub fn set_upmsk(&mut self) -> SET_UPMSK_W<'_, DOEPMSK_SPEC> {
         SET_UPMSK_W::new(self, 3)
     }
     #[doc = "Bit 4 - OUT Token Received when Endpoint Disabled Mask"]
     #[inline(always)]
-    pub fn outtkn_epdis_msk(&mut self) -> OUTTKN_EPDIS_MSK_W<DOEPMSK_SPEC> {
+    pub fn outtkn_epdis_msk(&mut self) -> OUTTKN_EPDIS_MSK_W<'_, DOEPMSK_SPEC> {
         OUTTKN_EPDIS_MSK_W::new(self, 4)
     }
     #[doc = "Bit 6 - Back-to-Back SETUP Packets Received Mask"]
     #[inline(always)]
-    pub fn back2back_setup(&mut self) -> BACK2BACK_SETUP_W<DOEPMSK_SPEC> {
+    pub fn back2back_setup(&mut self) -> BACK2BACK_SETUP_W<'_, DOEPMSK_SPEC> {
         BACK2BACK_SETUP_W::new(self, 6)
     }
     #[doc = "Bit 8 - OUT Packet Error Mask"]
     #[inline(always)]
-    pub fn out_pkt_err_msk(&mut self) -> OUT_PKT_ERR_MSK_W<DOEPMSK_SPEC> {
+    pub fn out_pkt_err_msk(&mut self) -> OUT_PKT_ERR_MSK_W<'_, DOEPMSK_SPEC> {
         OUT_PKT_ERR_MSK_W::new(self, 8)
     }
     #[doc = "Bit 9 - BNA interrupt Mask"]
     #[inline(always)]
-    pub fn bna_out_intr_msk(&mut self) -> BNA_OUT_INTR_MSK_W<DOEPMSK_SPEC> {
+    pub fn bna_out_intr_msk(&mut self) -> BNA_OUT_INTR_MSK_W<'_, DOEPMSK_SPEC> {
         BNA_OUT_INTR_MSK_W::new(self, 9)
     }
     #[doc = "Bit 12 - Babble Interrupt Mask"]
     #[inline(always)]
-    pub fn bble_err_msk(&mut self) -> BBLE_ERR_MSK_W<DOEPMSK_SPEC> {
+    pub fn bble_err_msk(&mut self) -> BBLE_ERR_MSK_W<'_, DOEPMSK_SPEC> {
         BBLE_ERR_MSK_W::new(self, 12)
     }
     #[doc = "Bit 13 - NAK Interrupt Mask"]
     #[inline(always)]
-    pub fn nakmsk(&mut self) -> NAKMSK_W<DOEPMSK_SPEC> {
+    pub fn nakmsk(&mut self) -> NAKMSK_W<'_, DOEPMSK_SPEC> {
         NAKMSK_W::new(self, 13)
     }
     #[doc = "Bit 14 - NYET Interrupt Mask"]
     #[inline(always)]
-    pub fn nyetmsk(&mut self) -> NYETMSK_W<DOEPMSK_SPEC> {
+    pub fn nyetmsk(&mut self) -> NYETMSK_W<'_, DOEPMSK_SPEC> {
         NYETMSK_W::new(self, 14)
     }
 }
@@ -170,10 +170,6 @@ impl crate::Readable for DOEPMSK_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`doepmsk::W`](W) writer structure"]
 impl crate::Writable for DOEPMSK_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DOEPMSK to value 0"]
-impl crate::Resettable for DOEPMSK_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DOEPMSK_SPEC {}

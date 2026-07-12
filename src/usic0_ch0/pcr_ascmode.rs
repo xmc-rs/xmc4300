@@ -519,11 +519,9 @@ where
 #[doc = "Receiver Status Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RSTEN_A {
-    #[doc = "0: Flag PSR\\[9\\]
-is not modified depending on the receiver status."]
+    #[doc = "0: Flag PSR\\[9\\] is not modified depending on the receiver status."]
     VALUE1 = 0,
-    #[doc = "1: Flag PSR\\[9\\]
-is set during the complete reception of a frame."]
+    #[doc = "1: Flag PSR\\[9\\] is set during the complete reception of a frame."]
     VALUE2 = 1,
 }
 impl From<RSTEN_A> for bool {
@@ -543,14 +541,12 @@ impl RSTEN_R {
             true => RSTEN_A::VALUE2,
         }
     }
-    #[doc = "Flag PSR\\[9\\]
-is not modified depending on the receiver status."]
+    #[doc = "Flag PSR\\[9\\] is not modified depending on the receiver status."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RSTEN_A::VALUE1
     }
-    #[doc = "Flag PSR\\[9\\]
-is set during the complete reception of a frame."]
+    #[doc = "Flag PSR\\[9\\] is set during the complete reception of a frame."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RSTEN_A::VALUE2
@@ -562,14 +558,12 @@ impl<'a, REG> RSTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Flag PSR\\[9\\]
-is not modified depending on the receiver status."]
+    #[doc = "Flag PSR\\[9\\] is not modified depending on the receiver status."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RSTEN_A::VALUE1)
     }
-    #[doc = "Flag PSR\\[9\\]
-is set during the complete reception of a frame."]
+    #[doc = "Flag PSR\\[9\\] is set during the complete reception of a frame."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RSTEN_A::VALUE2)
@@ -578,11 +572,9 @@ is set during the complete reception of a frame."]
 #[doc = "Transmitter Status Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TSTEN_A {
-    #[doc = "0: Flag PSR\\[9\\]
-is not modified depending on the transmitter status."]
+    #[doc = "0: Flag PSR\\[9\\] is not modified depending on the transmitter status."]
     VALUE1 = 0,
-    #[doc = "1: Flag PSR\\[9\\]
-is set during the complete transmission of a frame."]
+    #[doc = "1: Flag PSR\\[9\\] is set during the complete transmission of a frame."]
     VALUE2 = 1,
 }
 impl From<TSTEN_A> for bool {
@@ -602,14 +594,12 @@ impl TSTEN_R {
             true => TSTEN_A::VALUE2,
         }
     }
-    #[doc = "Flag PSR\\[9\\]
-is not modified depending on the transmitter status."]
+    #[doc = "Flag PSR\\[9\\] is not modified depending on the transmitter status."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TSTEN_A::VALUE1
     }
-    #[doc = "Flag PSR\\[9\\]
-is set during the complete transmission of a frame."]
+    #[doc = "Flag PSR\\[9\\] is set during the complete transmission of a frame."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TSTEN_A::VALUE2
@@ -621,14 +611,12 @@ impl<'a, REG> TSTEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "Flag PSR\\[9\\]
-is not modified depending on the transmitter status."]
+    #[doc = "Flag PSR\\[9\\] is not modified depending on the transmitter status."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TSTEN_A::VALUE1)
     }
-    #[doc = "Flag PSR\\[9\\]
-is set during the complete transmission of a frame."]
+    #[doc = "Flag PSR\\[9\\] is set during the complete transmission of a frame."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TSTEN_A::VALUE2)
@@ -757,67 +745,67 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Sample Mode"]
     #[inline(always)]
-    pub fn smd(&mut self) -> SMD_W<PCR_ASCMODE_SPEC> {
+    pub fn smd(&mut self) -> SMD_W<'_, PCR_ASCMODE_SPEC> {
         SMD_W::new(self, 0)
     }
     #[doc = "Bit 1 - Stop Bits"]
     #[inline(always)]
-    pub fn stpb(&mut self) -> STPB_W<PCR_ASCMODE_SPEC> {
+    pub fn stpb(&mut self) -> STPB_W<'_, PCR_ASCMODE_SPEC> {
         STPB_W::new(self, 1)
     }
     #[doc = "Bit 2 - Idle Detection Mode"]
     #[inline(always)]
-    pub fn idm(&mut self) -> IDM_W<PCR_ASCMODE_SPEC> {
+    pub fn idm(&mut self) -> IDM_W<'_, PCR_ASCMODE_SPEC> {
         IDM_W::new(self, 2)
     }
     #[doc = "Bit 3 - Synchronization Break Interrupt Enable"]
     #[inline(always)]
-    pub fn sbien(&mut self) -> SBIEN_W<PCR_ASCMODE_SPEC> {
+    pub fn sbien(&mut self) -> SBIEN_W<'_, PCR_ASCMODE_SPEC> {
         SBIEN_W::new(self, 3)
     }
     #[doc = "Bit 4 - Collision Detection Enable"]
     #[inline(always)]
-    pub fn cden(&mut self) -> CDEN_W<PCR_ASCMODE_SPEC> {
+    pub fn cden(&mut self) -> CDEN_W<'_, PCR_ASCMODE_SPEC> {
         CDEN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Receiver Noise Detection Interrupt Enable"]
     #[inline(always)]
-    pub fn rnien(&mut self) -> RNIEN_W<PCR_ASCMODE_SPEC> {
+    pub fn rnien(&mut self) -> RNIEN_W<'_, PCR_ASCMODE_SPEC> {
         RNIEN_W::new(self, 5)
     }
     #[doc = "Bit 6 - Format Error Interrupt Enable"]
     #[inline(always)]
-    pub fn feien(&mut self) -> FEIEN_W<PCR_ASCMODE_SPEC> {
+    pub fn feien(&mut self) -> FEIEN_W<'_, PCR_ASCMODE_SPEC> {
         FEIEN_W::new(self, 6)
     }
     #[doc = "Bit 7 - Frame Finished Interrupt Enable"]
     #[inline(always)]
-    pub fn ffien(&mut self) -> FFIEN_W<PCR_ASCMODE_SPEC> {
+    pub fn ffien(&mut self) -> FFIEN_W<'_, PCR_ASCMODE_SPEC> {
         FFIEN_W::new(self, 7)
     }
     #[doc = "Bits 8:12 - Sample Point"]
     #[inline(always)]
-    pub fn sp(&mut self) -> SP_W<PCR_ASCMODE_SPEC> {
+    pub fn sp(&mut self) -> SP_W<'_, PCR_ASCMODE_SPEC> {
         SP_W::new(self, 8)
     }
     #[doc = "Bits 13:15 - Pulse Length"]
     #[inline(always)]
-    pub fn pl(&mut self) -> PL_W<PCR_ASCMODE_SPEC> {
+    pub fn pl(&mut self) -> PL_W<'_, PCR_ASCMODE_SPEC> {
         PL_W::new(self, 13)
     }
     #[doc = "Bit 16 - Receiver Status Enable"]
     #[inline(always)]
-    pub fn rsten(&mut self) -> RSTEN_W<PCR_ASCMODE_SPEC> {
+    pub fn rsten(&mut self) -> RSTEN_W<'_, PCR_ASCMODE_SPEC> {
         RSTEN_W::new(self, 16)
     }
     #[doc = "Bit 17 - Transmitter Status Enable"]
     #[inline(always)]
-    pub fn tsten(&mut self) -> TSTEN_W<PCR_ASCMODE_SPEC> {
+    pub fn tsten(&mut self) -> TSTEN_W<'_, PCR_ASCMODE_SPEC> {
         TSTEN_W::new(self, 17)
     }
     #[doc = "Bit 31 - Master Clock Enable"]
     #[inline(always)]
-    pub fn mclk(&mut self) -> MCLK_W<PCR_ASCMODE_SPEC> {
+    pub fn mclk(&mut self) -> MCLK_W<'_, PCR_ASCMODE_SPEC> {
         MCLK_W::new(self, 31)
     }
 }
@@ -831,10 +819,6 @@ impl crate::Readable for PCR_ASCMODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pcr_ascmode::W`](W) writer structure"]
 impl crate::Writable for PCR_ASCMODE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PCR_ASCMode to value 0"]
-impl crate::Resettable for PCR_ASCMODE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PCR_ASCMODE_SPEC {}

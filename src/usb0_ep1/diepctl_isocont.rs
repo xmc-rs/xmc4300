@@ -251,62 +251,62 @@ impl R {
 impl W {
     #[doc = "Bits 0:10 - Maximum Packet Size"]
     #[inline(always)]
-    pub fn mps(&mut self) -> MPS_W<DIEPCTL_ISOCONT_SPEC> {
+    pub fn mps(&mut self) -> MPS_W<'_, DIEPCTL_ISOCONT_SPEC> {
         MPS_W::new(self, 0)
     }
     #[doc = "Bit 15 - USB Active Endpoint"]
     #[inline(always)]
-    pub fn usbact_ep(&mut self) -> USBACT_EP_W<DIEPCTL_ISOCONT_SPEC> {
+    pub fn usbact_ep(&mut self) -> USBACT_EP_W<'_, DIEPCTL_ISOCONT_SPEC> {
         USBACT_EP_W::new(self, 15)
     }
     #[doc = "Bits 18:19 - Endpoint Type"]
     #[inline(always)]
-    pub fn eptype(&mut self) -> EPTYPE_W<DIEPCTL_ISOCONT_SPEC> {
+    pub fn eptype(&mut self) -> EPTYPE_W<'_, DIEPCTL_ISOCONT_SPEC> {
         EPTYPE_W::new(self, 18)
     }
     #[doc = "Bit 20 - Snoop Mode"]
     #[inline(always)]
-    pub fn snp(&mut self) -> SNP_W<DIEPCTL_ISOCONT_SPEC> {
+    pub fn snp(&mut self) -> SNP_W<'_, DIEPCTL_ISOCONT_SPEC> {
         SNP_W::new(self, 20)
     }
     #[doc = "Bit 21 - STALL Handshake"]
     #[inline(always)]
-    pub fn stall(&mut self) -> STALL_W<DIEPCTL_ISOCONT_SPEC> {
+    pub fn stall(&mut self) -> STALL_W<'_, DIEPCTL_ISOCONT_SPEC> {
         STALL_W::new(self, 21)
     }
     #[doc = "Bits 22:25 - TxFIFO Number"]
     #[inline(always)]
-    pub fn tx_fnum(&mut self) -> TX_FNUM_W<DIEPCTL_ISOCONT_SPEC> {
+    pub fn tx_fnum(&mut self) -> TX_FNUM_W<'_, DIEPCTL_ISOCONT_SPEC> {
         TX_FNUM_W::new(self, 22)
     }
     #[doc = "Bit 26 - Clear NAK"]
     #[inline(always)]
-    pub fn cnak(&mut self) -> CNAK_W<DIEPCTL_ISOCONT_SPEC> {
+    pub fn cnak(&mut self) -> CNAK_W<'_, DIEPCTL_ISOCONT_SPEC> {
         CNAK_W::new(self, 26)
     }
     #[doc = "Bit 27 - Set NAK"]
     #[inline(always)]
-    pub fn snak(&mut self) -> SNAK_W<DIEPCTL_ISOCONT_SPEC> {
+    pub fn snak(&mut self) -> SNAK_W<'_, DIEPCTL_ISOCONT_SPEC> {
         SNAK_W::new(self, 27)
     }
     #[doc = "Bit 28 - In non-Scatter/Gather DMA mode: Set Even frame"]
     #[inline(always)]
-    pub fn set_even_fr(&mut self) -> SET_EVEN_FR_W<DIEPCTL_ISOCONT_SPEC> {
+    pub fn set_even_fr(&mut self) -> SET_EVEN_FR_W<'_, DIEPCTL_ISOCONT_SPEC> {
         SET_EVEN_FR_W::new(self, 28)
     }
     #[doc = "Bit 29 - Set Odd frame"]
     #[inline(always)]
-    pub fn set_odd_fr(&mut self) -> SET_ODD_FR_W<DIEPCTL_ISOCONT_SPEC> {
+    pub fn set_odd_fr(&mut self) -> SET_ODD_FR_W<'_, DIEPCTL_ISOCONT_SPEC> {
         SET_ODD_FR_W::new(self, 29)
     }
     #[doc = "Bit 30 - Endpoint Disable"]
     #[inline(always)]
-    pub fn epdis(&mut self) -> EPDIS_W<DIEPCTL_ISOCONT_SPEC> {
+    pub fn epdis(&mut self) -> EPDIS_W<'_, DIEPCTL_ISOCONT_SPEC> {
         EPDIS_W::new(self, 30)
     }
     #[doc = "Bit 31 - Endpoint Enable"]
     #[inline(always)]
-    pub fn epena(&mut self) -> EPENA_W<DIEPCTL_ISOCONT_SPEC> {
+    pub fn epena(&mut self) -> EPENA_W<'_, DIEPCTL_ISOCONT_SPEC> {
         EPENA_W::new(self, 31)
     }
 }
@@ -320,10 +320,6 @@ impl crate::Readable for DIEPCTL_ISOCONT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`diepctl_isocont::W`](W) writer structure"]
 impl crate::Writable for DIEPCTL_ISOCONT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DIEPCTL_ISOCONT to value 0"]
-impl crate::Resettable for DIEPCTL_ISOCONT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DIEPCTL_ISOCONT_SPEC {}

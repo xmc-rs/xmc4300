@@ -227,6 +227,4 @@ impl crate::RegisterSpec for SM_CONTROL_SPEC {
 #[doc = "`read()` method returns [`sm_control::R`](R) reader structure"]
 impl crate::Readable for SM_CONTROL_SPEC {}
 #[doc = "`reset()` method sets SM_CONTROL to value 0"]
-impl crate::Resettable for SM_CONTROL_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for SM_CONTROL_SPEC {}

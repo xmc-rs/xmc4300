@@ -92,6 +92,4 @@ impl crate::RegisterSpec for FMMU_TYPE_SPEC {
 #[doc = "`read()` method returns [`fmmu_type::R`](R) reader structure"]
 impl crate::Readable for FMMU_TYPE_SPEC {}
 #[doc = "`reset()` method sets FMMU_TYPE to value 0"]
-impl crate::Resettable for FMMU_TYPE_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for FMMU_TYPE_SPEC {}

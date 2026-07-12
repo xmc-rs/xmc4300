@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - EEPROM Data"]
     #[inline(always)]
-    pub fn eep_data(&mut self) -> EEP_DATA_W<EEP_DATA_SPEC> {
+    pub fn eep_data(&mut self) -> EEP_DATA_W<'_, EEP_DATA_SPEC> {
         EEP_DATA_W::new(self, 0)
     }
 }
@@ -30,11 +30,6 @@ impl crate::Readable for EEP_DATA_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`eep_data::W`](W) writer structure"]
 impl crate::Writable for EEP_DATA_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets EEP_DATA[%s]
-to value 0"]
-impl crate::Resettable for EEP_DATA_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets EEP_DATA[%s] to value 0"]
+impl crate::Resettable for EEP_DATA_SPEC {}

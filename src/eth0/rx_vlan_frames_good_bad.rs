@@ -17,6 +17,4 @@ impl crate::RegisterSpec for RX_VLAN_FRAMES_GOOD_BAD_SPEC {
 #[doc = "`read()` method returns [`rx_vlan_frames_good_bad::R`](R) reader structure"]
 impl crate::Readable for RX_VLAN_FRAMES_GOOD_BAD_SPEC {}
 #[doc = "`reset()` method sets RX_VLAN_FRAMES_GOOD_BAD to value 0"]
-impl crate::Resettable for RX_VLAN_FRAMES_GOOD_BAD_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RX_VLAN_FRAMES_GOOD_BAD_SPEC {}

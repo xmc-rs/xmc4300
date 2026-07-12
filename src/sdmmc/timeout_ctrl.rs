@@ -85,7 +85,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Data Timeout Counter Value"]
     #[inline(always)]
-    pub fn dat_timeout_cnt_val(&mut self) -> DAT_TIMEOUT_CNT_VAL_W<TIMEOUT_CTRL_SPEC> {
+    pub fn dat_timeout_cnt_val(&mut self) -> DAT_TIMEOUT_CNT_VAL_W<'_, TIMEOUT_CTRL_SPEC> {
         DAT_TIMEOUT_CNT_VAL_W::new(self, 0)
     }
 }
@@ -99,10 +99,6 @@ impl crate::Readable for TIMEOUT_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`timeout_ctrl::W`](W) writer structure"]
 impl crate::Writable for TIMEOUT_CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets TIMEOUT_CTRL to value 0"]
-impl crate::Resettable for TIMEOUT_CTRL_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for TIMEOUT_CTRL_SPEC {}

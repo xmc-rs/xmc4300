@@ -297,27 +297,27 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Asymmetric PWM mode Enable"]
     #[inline(always)]
-    pub fn ase(&mut self) -> ASE_W<CHC_SPEC> {
+    pub fn ase(&mut self) -> ASE_W<'_, CHC_SPEC> {
         ASE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Output selector for CCU8x.OUTy0"]
     #[inline(always)]
-    pub fn ocs1(&mut self) -> OCS1_W<CHC_SPEC> {
+    pub fn ocs1(&mut self) -> OCS1_W<'_, CHC_SPEC> {
         OCS1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Output selector for CCU8x.OUTy1"]
     #[inline(always)]
-    pub fn ocs2(&mut self) -> OCS2_W<CHC_SPEC> {
+    pub fn ocs2(&mut self) -> OCS2_W<'_, CHC_SPEC> {
         OCS2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Output selector for CCU8x.OUTy2"]
     #[inline(always)]
-    pub fn ocs3(&mut self) -> OCS3_W<CHC_SPEC> {
+    pub fn ocs3(&mut self) -> OCS3_W<'_, CHC_SPEC> {
         OCS3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Output selector for CCU8x.OUTy3"]
     #[inline(always)]
-    pub fn ocs4(&mut self) -> OCS4_W<CHC_SPEC> {
+    pub fn ocs4(&mut self) -> OCS4_W<'_, CHC_SPEC> {
         OCS4_W::new(self, 4)
     }
 }
@@ -331,10 +331,6 @@ impl crate::Readable for CHC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`chc::W`](W) writer structure"]
 impl crate::Writable for CHC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CHC to value 0"]
-impl crate::Resettable for CHC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CHC_SPEC {}

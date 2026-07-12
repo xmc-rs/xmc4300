@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Window Lower Bound"]
     #[inline(always)]
-    pub fn wlb(&mut self) -> WLB_W<WLB_SPEC> {
+    pub fn wlb(&mut self) -> WLB_W<'_, WLB_SPEC> {
         WLB_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for WLB_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`wlb::W`](W) writer structure"]
 impl crate::Writable for WLB_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets WLB to value 0"]
-impl crate::Resettable for WLB_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for WLB_SPEC {}

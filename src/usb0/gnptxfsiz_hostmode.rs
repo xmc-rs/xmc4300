@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Non-periodic Transmit RAM Start Address"]
     #[inline(always)]
-    pub fn nptx_fst_addr(&mut self) -> NPTX_FST_ADDR_W<GNPTXFSIZ_HOSTMODE_SPEC> {
+    pub fn nptx_fst_addr(&mut self) -> NPTX_FST_ADDR_W<'_, GNPTXFSIZ_HOSTMODE_SPEC> {
         NPTX_FST_ADDR_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - Non-periodic TxFIFO Depth"]
     #[inline(always)]
-    pub fn nptx_fdep(&mut self) -> NPTX_FDEP_W<GNPTXFSIZ_HOSTMODE_SPEC> {
+    pub fn nptx_fdep(&mut self) -> NPTX_FDEP_W<'_, GNPTXFSIZ_HOSTMODE_SPEC> {
         NPTX_FDEP_W::new(self, 16)
     }
 }
@@ -44,8 +44,6 @@ impl crate::Readable for GNPTXFSIZ_HOSTMODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gnptxfsiz_hostmode::W`](W) writer structure"]
 impl crate::Writable for GNPTXFSIZ_HOSTMODE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GNPTXFSIZ_HOSTMODE to value 0x0010_011a"]
 impl crate::Resettable for GNPTXFSIZ_HOSTMODE_SPEC {

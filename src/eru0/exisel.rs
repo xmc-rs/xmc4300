@@ -735,42 +735,42 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Event Source Select for A0 (ERS0)"]
     #[inline(always)]
-    pub fn exs0a(&mut self) -> EXS0A_W<EXISEL_SPEC> {
+    pub fn exs0a(&mut self) -> EXS0A_W<'_, EXISEL_SPEC> {
         EXS0A_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Event Source Select for B0 (ERS0)"]
     #[inline(always)]
-    pub fn exs0b(&mut self) -> EXS0B_W<EXISEL_SPEC> {
+    pub fn exs0b(&mut self) -> EXS0B_W<'_, EXISEL_SPEC> {
         EXS0B_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Event Source Select for A1 (ERS1)"]
     #[inline(always)]
-    pub fn exs1a(&mut self) -> EXS1A_W<EXISEL_SPEC> {
+    pub fn exs1a(&mut self) -> EXS1A_W<'_, EXISEL_SPEC> {
         EXS1A_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - Event Source Select for B1 (ERS1)"]
     #[inline(always)]
-    pub fn exs1b(&mut self) -> EXS1B_W<EXISEL_SPEC> {
+    pub fn exs1b(&mut self) -> EXS1B_W<'_, EXISEL_SPEC> {
         EXS1B_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Event Source Select for A2 (ERS2)"]
     #[inline(always)]
-    pub fn exs2a(&mut self) -> EXS2A_W<EXISEL_SPEC> {
+    pub fn exs2a(&mut self) -> EXS2A_W<'_, EXISEL_SPEC> {
         EXS2A_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Event Source Select for B2 (ERS2)"]
     #[inline(always)]
-    pub fn exs2b(&mut self) -> EXS2B_W<EXISEL_SPEC> {
+    pub fn exs2b(&mut self) -> EXS2B_W<'_, EXISEL_SPEC> {
         EXS2B_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Event Source Select for A3 (ERS3)"]
     #[inline(always)]
-    pub fn exs3a(&mut self) -> EXS3A_W<EXISEL_SPEC> {
+    pub fn exs3a(&mut self) -> EXS3A_W<'_, EXISEL_SPEC> {
         EXS3A_W::new(self, 12)
     }
     #[doc = "Bits 14:15 - Event Source Select for B3 (ERS3)"]
     #[inline(always)]
-    pub fn exs3b(&mut self) -> EXS3B_W<EXISEL_SPEC> {
+    pub fn exs3b(&mut self) -> EXS3B_W<'_, EXISEL_SPEC> {
         EXS3B_W::new(self, 14)
     }
 }
@@ -784,10 +784,6 @@ impl crate::Readable for EXISEL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`exisel::W`](W) writer structure"]
 impl crate::Writable for EXISEL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets EXISEL to value 0"]
-impl crate::Resettable for EXISEL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for EXISEL_SPEC {}

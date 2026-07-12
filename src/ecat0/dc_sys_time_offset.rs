@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Difference between local time and System Time"]
     #[inline(always)]
-    pub fn dc_sys_time_offset(&mut self) -> DC_SYS_TIME_OFFSET_W<DC_SYS_TIME_OFFSET_SPEC> {
+    pub fn dc_sys_time_offset(&mut self) -> DC_SYS_TIME_OFFSET_W<'_, DC_SYS_TIME_OFFSET_SPEC> {
         DC_SYS_TIME_OFFSET_W::new(self, 0)
     }
 }
@@ -30,11 +30,6 @@ impl crate::Readable for DC_SYS_TIME_OFFSET_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dc_sys_time_offset::W`](W) writer structure"]
 impl crate::Writable for DC_SYS_TIME_OFFSET_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets DC_SYS_TIME_OFFSET[%s]
-to value 0"]
-impl crate::Resettable for DC_SYS_TIME_OFFSET_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets DC_SYS_TIME_OFFSET[%s] to value 0"]
+impl crate::Resettable for DC_SYS_TIME_OFFSET_SPEC {}

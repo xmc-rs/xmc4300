@@ -227,17 +227,17 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Actual State of the Device State Machine"]
     #[inline(always)]
-    pub fn state(&mut self) -> STATE_W<AL_STATUS_SPEC> {
+    pub fn state(&mut self) -> STATE_W<'_, AL_STATUS_SPEC> {
         STATE_W::new(self, 0)
     }
     #[doc = "Bit 4 - Error Ind"]
     #[inline(always)]
-    pub fn erri(&mut self) -> ERRI_W<AL_STATUS_SPEC> {
+    pub fn erri(&mut self) -> ERRI_W<'_, AL_STATUS_SPEC> {
         ERRI_W::new(self, 4)
     }
     #[doc = "Bit 5 - Device Identification"]
     #[inline(always)]
-    pub fn did(&mut self) -> DID_W<AL_STATUS_SPEC> {
+    pub fn did(&mut self) -> DID_W<'_, AL_STATUS_SPEC> {
         DID_W::new(self, 5)
     }
 }
@@ -251,8 +251,6 @@ impl crate::Readable for AL_STATUS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`al_status::W`](W) writer structure"]
 impl crate::Writable for AL_STATUS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets AL_STATUS to value 0x01"]
 impl crate::Resettable for AL_STATUS_SPEC {

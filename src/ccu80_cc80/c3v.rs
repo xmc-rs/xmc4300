@@ -65,6 +65,4 @@ impl crate::RegisterSpec for C3V_SPEC {
 #[doc = "`read()` method returns [`c3v::R`](R) reader structure"]
 impl crate::Readable for C3V_SPEC {}
 #[doc = "`reset()` method sets C3V to value 0"]
-impl crate::Resettable for C3V_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for C3V_SPEC {}

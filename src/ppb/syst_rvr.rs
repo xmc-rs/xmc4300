@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Reload Value"]
     #[inline(always)]
-    pub fn reload(&mut self) -> RELOAD_W<SYST_RVR_SPEC> {
+    pub fn reload(&mut self) -> RELOAD_W<'_, SYST_RVR_SPEC> {
         RELOAD_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for SYST_RVR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`syst_rvr::W`](W) writer structure"]
 impl crate::Writable for SYST_RVR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SYST_RVR to value 0"]
-impl crate::Resettable for SYST_RVR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SYST_RVR_SPEC {}

@@ -423,22 +423,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Boundary Flag y Node Pointer"]
     #[inline(always)]
-    pub fn bfl0np(&mut self) -> BFL0NP_W<BFLNP_SPEC> {
+    pub fn bfl0np(&mut self) -> BFL0NP_W<'_, BFLNP_SPEC> {
         BFL0NP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Boundary Flag y Node Pointer"]
     #[inline(always)]
-    pub fn bfl1np(&mut self) -> BFL1NP_W<BFLNP_SPEC> {
+    pub fn bfl1np(&mut self) -> BFL1NP_W<'_, BFLNP_SPEC> {
         BFL1NP_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Boundary Flag y Node Pointer"]
     #[inline(always)]
-    pub fn bfl2np(&mut self) -> BFL2NP_W<BFLNP_SPEC> {
+    pub fn bfl2np(&mut self) -> BFL2NP_W<'_, BFLNP_SPEC> {
         BFL2NP_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Boundary Flag y Node Pointer"]
     #[inline(always)]
-    pub fn bfl3np(&mut self) -> BFL3NP_W<BFLNP_SPEC> {
+    pub fn bfl3np(&mut self) -> BFL3NP_W<'_, BFLNP_SPEC> {
         BFL3NP_W::new(self, 12)
     }
 }
@@ -452,8 +452,6 @@ impl crate::Readable for BFLNP_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`bflnp::W`](W) writer structure"]
 impl crate::Writable for BFLNP_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BFLNP to value 0xffff"]
 impl crate::Resettable for BFLNP_SPEC {

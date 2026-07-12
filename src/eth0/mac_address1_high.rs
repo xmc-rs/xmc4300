@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - MAC Address1 \\[47:32\\]"]
     #[inline(always)]
-    pub fn addrhi(&mut self) -> ADDRHI_W<MAC_ADDRESS1_HIGH_SPEC> {
+    pub fn addrhi(&mut self) -> ADDRHI_W<'_, MAC_ADDRESS1_HIGH_SPEC> {
         ADDRHI_W::new(self, 0)
     }
     #[doc = "Bits 24:29 - Mask Byte Control"]
     #[inline(always)]
-    pub fn mbc(&mut self) -> MBC_W<MAC_ADDRESS1_HIGH_SPEC> {
+    pub fn mbc(&mut self) -> MBC_W<'_, MAC_ADDRESS1_HIGH_SPEC> {
         MBC_W::new(self, 24)
     }
     #[doc = "Bit 30 - Source Address"]
     #[inline(always)]
-    pub fn sa(&mut self) -> SA_W<MAC_ADDRESS1_HIGH_SPEC> {
+    pub fn sa(&mut self) -> SA_W<'_, MAC_ADDRESS1_HIGH_SPEC> {
         SA_W::new(self, 30)
     }
     #[doc = "Bit 31 - Address Enable"]
     #[inline(always)]
-    pub fn ae(&mut self) -> AE_W<MAC_ADDRESS1_HIGH_SPEC> {
+    pub fn ae(&mut self) -> AE_W<'_, MAC_ADDRESS1_HIGH_SPEC> {
         AE_W::new(self, 31)
     }
 }
@@ -72,8 +72,6 @@ impl crate::Readable for MAC_ADDRESS1_HIGH_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mac_address1_high::W`](W) writer structure"]
 impl crate::Writable for MAC_ADDRESS1_HIGH_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MAC_ADDRESS1_HIGH to value 0xffff"]
 impl crate::Resettable for MAC_ADDRESS1_HIGH_SPEC {

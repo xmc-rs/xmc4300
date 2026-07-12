@@ -52,27 +52,27 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Disable load/store multiple"]
     #[inline(always)]
-    pub fn dismcycint(&mut self) -> DISMCYCINT_W<ACTLR_SPEC> {
+    pub fn dismcycint(&mut self) -> DISMCYCINT_W<'_, ACTLR_SPEC> {
         DISMCYCINT_W::new(self, 0)
     }
     #[doc = "Bit 1 - Disable write buffer"]
     #[inline(always)]
-    pub fn disdefwbuf(&mut self) -> DISDEFWBUF_W<ACTLR_SPEC> {
+    pub fn disdefwbuf(&mut self) -> DISDEFWBUF_W<'_, ACTLR_SPEC> {
         DISDEFWBUF_W::new(self, 1)
     }
     #[doc = "Bit 2 - Disable IT folding"]
     #[inline(always)]
-    pub fn disfold(&mut self) -> DISFOLD_W<ACTLR_SPEC> {
+    pub fn disfold(&mut self) -> DISFOLD_W<'_, ACTLR_SPEC> {
         DISFOLD_W::new(self, 2)
     }
     #[doc = "Bit 8 - Disable FPCA update"]
     #[inline(always)]
-    pub fn disfpca(&mut self) -> DISFPCA_W<ACTLR_SPEC> {
+    pub fn disfpca(&mut self) -> DISFPCA_W<'_, ACTLR_SPEC> {
         DISFPCA_W::new(self, 8)
     }
     #[doc = "Bit 9 - Disable out of order FP execution"]
     #[inline(always)]
-    pub fn disoofp(&mut self) -> DISOOFP_W<ACTLR_SPEC> {
+    pub fn disoofp(&mut self) -> DISOOFP_W<'_, ACTLR_SPEC> {
         DISOOFP_W::new(self, 9)
     }
 }
@@ -86,10 +86,6 @@ impl crate::Readable for ACTLR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`actlr::W`](W) writer structure"]
 impl crate::Writable for ACTLR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ACTLR to value 0"]
-impl crate::Resettable for ACTLR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ACTLR_SPEC {}

@@ -106,7 +106,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Access to MII management"]
     #[inline(always)]
-    pub fn acs_mii_by_pdi(&mut self) -> ACS_MII_BY_PDI_W<MII_PDI_ACS_STATE_SPEC> {
+    pub fn acs_mii_by_pdi(&mut self) -> ACS_MII_BY_PDI_W<'_, MII_PDI_ACS_STATE_SPEC> {
         ACS_MII_BY_PDI_W::new(self, 0)
     }
 }
@@ -120,10 +120,6 @@ impl crate::Readable for MII_PDI_ACS_STATE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mii_pdi_acs_state::W`](W) writer structure"]
 impl crate::Writable for MII_PDI_ACS_STATE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets MII_PDI_ACS_STATE to value 0"]
-impl crate::Resettable for MII_PDI_ACS_STATE_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for MII_PDI_ACS_STATE_SPEC {}

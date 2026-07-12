@@ -140,6 +140,4 @@ impl crate::RegisterSpec for SM_ACT_SPEC {
 #[doc = "`read()` method returns [`sm_act::R`](R) reader structure"]
 impl crate::Readable for SM_ACT_SPEC {}
 #[doc = "`reset()` method sets SM_ACT to value 0"]
-impl crate::Resettable for SM_ACT_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for SM_ACT_SPEC {}

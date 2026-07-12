@@ -152,17 +152,17 @@ impl R {
 impl W {
     #[doc = "Bits 0:28 - CAN Identifier of Message Object n"]
     #[inline(always)]
-    pub fn id(&mut self) -> ID_W<MOAR_SPEC> {
+    pub fn id(&mut self) -> ID_W<'_, MOAR_SPEC> {
         ID_W::new(self, 0)
     }
     #[doc = "Bit 29 - Identifier Extension Bit of Message Object n"]
     #[inline(always)]
-    pub fn ide(&mut self) -> IDE_W<MOAR_SPEC> {
+    pub fn ide(&mut self) -> IDE_W<'_, MOAR_SPEC> {
         IDE_W::new(self, 29)
     }
     #[doc = "Bits 30:31 - Priority Class"]
     #[inline(always)]
-    pub fn pri(&mut self) -> PRI_W<MOAR_SPEC> {
+    pub fn pri(&mut self) -> PRI_W<'_, MOAR_SPEC> {
         PRI_W::new(self, 30)
     }
 }
@@ -176,10 +176,6 @@ impl crate::Readable for MOAR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`moar::W`](W) writer structure"]
 impl crate::Writable for MOAR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MOAR to value 0"]
-impl crate::Resettable for MOAR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MOAR_SPEC {}

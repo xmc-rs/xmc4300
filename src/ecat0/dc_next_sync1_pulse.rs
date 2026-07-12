@@ -16,8 +16,5 @@ impl crate::RegisterSpec for DC_NEXT_SYNC1_PULSE_SPEC {
 }
 #[doc = "`read()` method returns [`dc_next_sync1_pulse::R`](R) reader structure"]
 impl crate::Readable for DC_NEXT_SYNC1_PULSE_SPEC {}
-#[doc = "`reset()` method sets DC_NEXT_SYNC1_PULSE[%s]
-to value 0"]
-impl crate::Resettable for DC_NEXT_SYNC1_PULSE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets DC_NEXT_SYNC1_PULSE[%s] to value 0"]
+impl crate::Resettable for DC_NEXT_SYNC1_PULSE_SPEC {}

@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Host Periodic TxFIFO Start Address"]
     #[inline(always)]
-    pub fn ptx_fst_addr(&mut self) -> PTX_FST_ADDR_W<HPTXFSIZ_SPEC> {
+    pub fn ptx_fst_addr(&mut self) -> PTX_FST_ADDR_W<'_, HPTXFSIZ_SPEC> {
         PTX_FST_ADDR_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - Host Periodic TxFIFO Depth"]
     #[inline(always)]
-    pub fn ptx_fsize(&mut self) -> PTX_FSIZE_W<HPTXFSIZ_SPEC> {
+    pub fn ptx_fsize(&mut self) -> PTX_FSIZE_W<'_, HPTXFSIZ_SPEC> {
         PTX_FSIZE_W::new(self, 16)
     }
 }
@@ -44,8 +44,6 @@ impl crate::Readable for HPTXFSIZ_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hptxfsiz::W`](W) writer structure"]
 impl crate::Writable for HPTXFSIZ_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HPTXFSIZ to value 0x0100_012a"]
 impl crate::Resettable for HPTXFSIZ_SPEC {

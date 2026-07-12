@@ -198,7 +198,7 @@ impl R {
 impl W {
     #[doc = "Bit 19 - Rx FIFO > 2,048 Bytes"]
     #[inline(always)]
-    pub fn rxfifosize(&mut self) -> RXFIFOSIZE_W<HW_FEATURE_SPEC> {
+    pub fn rxfifosize(&mut self) -> RXFIFOSIZE_W<'_, HW_FEATURE_SPEC> {
         RXFIFOSIZE_W::new(self, 19)
     }
 }
@@ -212,8 +212,6 @@ impl crate::Readable for HW_FEATURE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hw_feature::W`](W) writer structure"]
 impl crate::Writable for HW_FEATURE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HW_FEATURE to value 0x0305_2f35"]
 impl crate::Resettable for HW_FEATURE_SPEC {

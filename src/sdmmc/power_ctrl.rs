@@ -126,17 +126,17 @@ impl R {
 impl W {
     #[doc = "Bit 0 - SD Bus Power"]
     #[inline(always)]
-    pub fn sd_bus_power(&mut self) -> SD_BUS_POWER_W<POWER_CTRL_SPEC> {
+    pub fn sd_bus_power(&mut self) -> SD_BUS_POWER_W<'_, POWER_CTRL_SPEC> {
         SD_BUS_POWER_W::new(self, 0)
     }
     #[doc = "Bits 1:3 - SD Bus Voltage Select"]
     #[inline(always)]
-    pub fn sd_bus_voltage_sel(&mut self) -> SD_BUS_VOLTAGE_SEL_W<POWER_CTRL_SPEC> {
+    pub fn sd_bus_voltage_sel(&mut self) -> SD_BUS_VOLTAGE_SEL_W<'_, POWER_CTRL_SPEC> {
         SD_BUS_VOLTAGE_SEL_W::new(self, 1)
     }
     #[doc = "Bit 4 - Hardware reset"]
     #[inline(always)]
-    pub fn hardware_reset(&mut self) -> HARDWARE_RESET_W<POWER_CTRL_SPEC> {
+    pub fn hardware_reset(&mut self) -> HARDWARE_RESET_W<'_, POWER_CTRL_SPEC> {
         HARDWARE_RESET_W::new(self, 4)
     }
 }
@@ -150,10 +150,6 @@ impl crate::Readable for POWER_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`power_ctrl::W`](W) writer structure"]
 impl crate::Writable for POWER_CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets POWER_CTRL to value 0"]
-impl crate::Resettable for POWER_CTRL_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for POWER_CTRL_SPEC {}

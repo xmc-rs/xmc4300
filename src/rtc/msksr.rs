@@ -70,37 +70,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Periodic Seconds Interrupt Mask"]
     #[inline(always)]
-    pub fn mpse(&mut self) -> MPSE_W<MSKSR_SPEC> {
+    pub fn mpse(&mut self) -> MPSE_W<'_, MSKSR_SPEC> {
         MPSE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Periodic Minutes Interrupt Mask"]
     #[inline(always)]
-    pub fn mpmi(&mut self) -> MPMI_W<MSKSR_SPEC> {
+    pub fn mpmi(&mut self) -> MPMI_W<'_, MSKSR_SPEC> {
         MPMI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Periodic Hours Interrupt Mask"]
     #[inline(always)]
-    pub fn mpho(&mut self) -> MPHO_W<MSKSR_SPEC> {
+    pub fn mpho(&mut self) -> MPHO_W<'_, MSKSR_SPEC> {
         MPHO_W::new(self, 2)
     }
     #[doc = "Bit 3 - Periodic Days Interrupt Mask"]
     #[inline(always)]
-    pub fn mpda(&mut self) -> MPDA_W<MSKSR_SPEC> {
+    pub fn mpda(&mut self) -> MPDA_W<'_, MSKSR_SPEC> {
         MPDA_W::new(self, 3)
     }
     #[doc = "Bit 5 - Periodic Months Interrupt Mask"]
     #[inline(always)]
-    pub fn mpmo(&mut self) -> MPMO_W<MSKSR_SPEC> {
+    pub fn mpmo(&mut self) -> MPMO_W<'_, MSKSR_SPEC> {
         MPMO_W::new(self, 5)
     }
     #[doc = "Bit 6 - Periodic Years Interrupt Mask"]
     #[inline(always)]
-    pub fn mpye(&mut self) -> MPYE_W<MSKSR_SPEC> {
+    pub fn mpye(&mut self) -> MPYE_W<'_, MSKSR_SPEC> {
         MPYE_W::new(self, 6)
     }
     #[doc = "Bit 8 - Alarm Interrupt Mask"]
     #[inline(always)]
-    pub fn mai(&mut self) -> MAI_W<MSKSR_SPEC> {
+    pub fn mai(&mut self) -> MAI_W<'_, MSKSR_SPEC> {
         MAI_W::new(self, 8)
     }
 }
@@ -114,10 +114,6 @@ impl crate::Readable for MSKSR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`msksr::W`](W) writer structure"]
 impl crate::Writable for MSKSR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MSKSR to value 0"]
-impl crate::Resettable for MSKSR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MSKSR_SPEC {}

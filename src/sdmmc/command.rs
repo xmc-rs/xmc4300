@@ -372,32 +372,32 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Response Type Select"]
     #[inline(always)]
-    pub fn resp_type_select(&mut self) -> RESP_TYPE_SELECT_W<COMMAND_SPEC> {
+    pub fn resp_type_select(&mut self) -> RESP_TYPE_SELECT_W<'_, COMMAND_SPEC> {
         RESP_TYPE_SELECT_W::new(self, 0)
     }
     #[doc = "Bit 3 - Command CRC Check Enable"]
     #[inline(always)]
-    pub fn cmd_crc_check_en(&mut self) -> CMD_CRC_CHECK_EN_W<COMMAND_SPEC> {
+    pub fn cmd_crc_check_en(&mut self) -> CMD_CRC_CHECK_EN_W<'_, COMMAND_SPEC> {
         CMD_CRC_CHECK_EN_W::new(self, 3)
     }
     #[doc = "Bit 4 - Command Index Check Enable"]
     #[inline(always)]
-    pub fn cmd_ind_check_en(&mut self) -> CMD_IND_CHECK_EN_W<COMMAND_SPEC> {
+    pub fn cmd_ind_check_en(&mut self) -> CMD_IND_CHECK_EN_W<'_, COMMAND_SPEC> {
         CMD_IND_CHECK_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Data Present Select"]
     #[inline(always)]
-    pub fn data_present_select(&mut self) -> DATA_PRESENT_SELECT_W<COMMAND_SPEC> {
+    pub fn data_present_select(&mut self) -> DATA_PRESENT_SELECT_W<'_, COMMAND_SPEC> {
         DATA_PRESENT_SELECT_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Command Type"]
     #[inline(always)]
-    pub fn cmd_type(&mut self) -> CMD_TYPE_W<COMMAND_SPEC> {
+    pub fn cmd_type(&mut self) -> CMD_TYPE_W<'_, COMMAND_SPEC> {
         CMD_TYPE_W::new(self, 6)
     }
     #[doc = "Bits 8:13 - Command Index"]
     #[inline(always)]
-    pub fn cmd_ind(&mut self) -> CMD_IND_W<COMMAND_SPEC> {
+    pub fn cmd_ind(&mut self) -> CMD_IND_W<'_, COMMAND_SPEC> {
         CMD_IND_W::new(self, 8)
     }
 }
@@ -411,10 +411,6 @@ impl crate::Readable for COMMAND_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`command::W`](W) writer structure"]
 impl crate::Writable for COMMAND_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets COMMAND to value 0"]
-impl crate::Resettable for COMMAND_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for COMMAND_SPEC {}

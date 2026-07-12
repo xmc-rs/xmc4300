@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Message Pending"]
     #[inline(always)]
-    pub fn pnd(&mut self) -> PND_W<MSPND_SPEC> {
+    pub fn pnd(&mut self) -> PND_W<'_, MSPND_SPEC> {
         PND_W::new(self, 0)
     }
 }
@@ -30,11 +30,6 @@ impl crate::Readable for MSPND_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mspnd::W`](W) writer structure"]
 impl crate::Writable for MSPND_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets MSPND[%s]
-to value 0"]
-impl crate::Resettable for MSPND_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets MSPND[%s] to value 0"]
+impl crate::Resettable for MSPND_SPEC {}

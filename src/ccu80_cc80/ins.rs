@@ -1468,62 +1468,62 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Event 0 signal selection"]
     #[inline(always)]
-    pub fn ev0is(&mut self) -> EV0IS_W<INS_SPEC> {
+    pub fn ev0is(&mut self) -> EV0IS_W<'_, INS_SPEC> {
         EV0IS_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Event 1 signal selection"]
     #[inline(always)]
-    pub fn ev1is(&mut self) -> EV1IS_W<INS_SPEC> {
+    pub fn ev1is(&mut self) -> EV1IS_W<'_, INS_SPEC> {
         EV1IS_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Event 2 signal selection"]
     #[inline(always)]
-    pub fn ev2is(&mut self) -> EV2IS_W<INS_SPEC> {
+    pub fn ev2is(&mut self) -> EV2IS_W<'_, INS_SPEC> {
         EV2IS_W::new(self, 8)
     }
     #[doc = "Bits 16:17 - Event 0 Edge Selection"]
     #[inline(always)]
-    pub fn ev0em(&mut self) -> EV0EM_W<INS_SPEC> {
+    pub fn ev0em(&mut self) -> EV0EM_W<'_, INS_SPEC> {
         EV0EM_W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Event 1 Edge Selection"]
     #[inline(always)]
-    pub fn ev1em(&mut self) -> EV1EM_W<INS_SPEC> {
+    pub fn ev1em(&mut self) -> EV1EM_W<'_, INS_SPEC> {
         EV1EM_W::new(self, 18)
     }
     #[doc = "Bits 20:21 - Event 2 Edge Selection"]
     #[inline(always)]
-    pub fn ev2em(&mut self) -> EV2EM_W<INS_SPEC> {
+    pub fn ev2em(&mut self) -> EV2EM_W<'_, INS_SPEC> {
         EV2EM_W::new(self, 20)
     }
     #[doc = "Bit 22 - Event 0 Level Selection"]
     #[inline(always)]
-    pub fn ev0lm(&mut self) -> EV0LM_W<INS_SPEC> {
+    pub fn ev0lm(&mut self) -> EV0LM_W<'_, INS_SPEC> {
         EV0LM_W::new(self, 22)
     }
     #[doc = "Bit 23 - Event 1 Level Selection"]
     #[inline(always)]
-    pub fn ev1lm(&mut self) -> EV1LM_W<INS_SPEC> {
+    pub fn ev1lm(&mut self) -> EV1LM_W<'_, INS_SPEC> {
         EV1LM_W::new(self, 23)
     }
     #[doc = "Bit 24 - Event 2 Level Selection"]
     #[inline(always)]
-    pub fn ev2lm(&mut self) -> EV2LM_W<INS_SPEC> {
+    pub fn ev2lm(&mut self) -> EV2LM_W<'_, INS_SPEC> {
         EV2LM_W::new(self, 24)
     }
     #[doc = "Bits 25:26 - Event 0 Low Pass Filter Configuration"]
     #[inline(always)]
-    pub fn lpf0m(&mut self) -> LPF0M_W<INS_SPEC> {
+    pub fn lpf0m(&mut self) -> LPF0M_W<'_, INS_SPEC> {
         LPF0M_W::new(self, 25)
     }
     #[doc = "Bits 27:28 - Event 1 Low Pass Filter Configuration"]
     #[inline(always)]
-    pub fn lpf1m(&mut self) -> LPF1M_W<INS_SPEC> {
+    pub fn lpf1m(&mut self) -> LPF1M_W<'_, INS_SPEC> {
         LPF1M_W::new(self, 27)
     }
     #[doc = "Bits 29:30 - Event 2 Low Pass Filter Configuration"]
     #[inline(always)]
-    pub fn lpf2m(&mut self) -> LPF2M_W<INS_SPEC> {
+    pub fn lpf2m(&mut self) -> LPF2M_W<'_, INS_SPEC> {
         LPF2M_W::new(self, 29)
     }
 }
@@ -1537,10 +1537,6 @@ impl crate::Readable for INS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ins::W`](W) writer structure"]
 impl crate::Writable for INS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INS to value 0"]
-impl crate::Resettable for INS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INS_SPEC {}

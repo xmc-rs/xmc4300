@@ -447,52 +447,52 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Scale value for up- or downscale of the DAC0 input data in steps by the power of 2 (=shift operation)"]
     #[inline(always)]
-    pub fn scale(&mut self) -> SCALE_W<DAC0CFG1_SPEC> {
+    pub fn scale(&mut self) -> SCALE_W<'_, DAC0CFG1_SPEC> {
         SCALE_W::new(self, 0)
     }
     #[doc = "Bit 3 - Switch between up- and downscale of the DAC0 input data values"]
     #[inline(always)]
-    pub fn muldiv(&mut self) -> MULDIV_W<DAC0CFG1_SPEC> {
+    pub fn muldiv(&mut self) -> MULDIV_W<'_, DAC0CFG1_SPEC> {
         MULDIV_W::new(self, 3)
     }
     #[doc = "Bits 4:11 - 8-bit offset value addition"]
     #[inline(always)]
-    pub fn offs(&mut self) -> OFFS_W<DAC0CFG1_SPEC> {
+    pub fn offs(&mut self) -> OFFS_W<'_, DAC0CFG1_SPEC> {
         OFFS_W::new(self, 4)
     }
     #[doc = "Bits 12:14 - Selects one of the eight external trigger sources for DAC0"]
     #[inline(always)]
-    pub fn trigsel(&mut self) -> TRIGSEL_W<DAC0CFG1_SPEC> {
+    pub fn trigsel(&mut self) -> TRIGSEL_W<'_, DAC0CFG1_SPEC> {
         TRIGSEL_W::new(self, 12)
     }
     #[doc = "Bit 15 - Switch between independent or simultaneous DAC mode and select the input data register for DAC0 and DAC1"]
     #[inline(always)]
-    pub fn datmod(&mut self) -> DATMOD_W<DAC0CFG1_SPEC> {
+    pub fn datmod(&mut self) -> DATMOD_W<'_, DAC0CFG1_SPEC> {
         DATMOD_W::new(self, 15)
     }
     #[doc = "Bit 16 - Software Trigger"]
     #[inline(always)]
-    pub fn swtrig(&mut self) -> SWTRIG_W<DAC0CFG1_SPEC> {
+    pub fn swtrig(&mut self) -> SWTRIG_W<'_, DAC0CFG1_SPEC> {
         SWTRIG_W::new(self, 16)
     }
     #[doc = "Bits 17:18 - Select the trigger source for channel 0"]
     #[inline(always)]
-    pub fn trigmod(&mut self) -> TRIGMOD_W<DAC0CFG1_SPEC> {
+    pub fn trigmod(&mut self) -> TRIGMOD_W<'_, DAC0CFG1_SPEC> {
         TRIGMOD_W::new(self, 17)
     }
     #[doc = "Bits 19:23 - DAC0 analog configuration/calibration parameters"]
     #[inline(always)]
-    pub fn anacfg(&mut self) -> ANACFG_W<DAC0CFG1_SPEC> {
+    pub fn anacfg(&mut self) -> ANACFG_W<'_, DAC0CFG1_SPEC> {
         ANACFG_W::new(self, 19)
     }
     #[doc = "Bit 24 - Enable analog DAC for channel 0"]
     #[inline(always)]
-    pub fn anaen(&mut self) -> ANAEN_W<DAC0CFG1_SPEC> {
+    pub fn anaen(&mut self) -> ANAEN_W<'_, DAC0CFG1_SPEC> {
         ANAEN_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Lower 4 band-gap configuration/calibration parameters"]
     #[inline(always)]
-    pub fn refcfgl(&mut self) -> REFCFGL_W<DAC0CFG1_SPEC> {
+    pub fn refcfgl(&mut self) -> REFCFGL_W<'_, DAC0CFG1_SPEC> {
         REFCFGL_W::new(self, 28)
     }
 }
@@ -506,10 +506,6 @@ impl crate::Readable for DAC0CFG1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dac0cfg1::W`](W) writer structure"]
 impl crate::Writable for DAC0CFG1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DAC0CFG1 to value 0"]
-impl crate::Resettable for DAC0CFG1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DAC0CFG1_SPEC {}

@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Watchdog divider"]
     #[inline(always)]
-    pub fn wd_div(&mut self) -> WD_DIV_W<WD_DIVIDE_SPEC> {
+    pub fn wd_div(&mut self) -> WD_DIV_W<'_, WD_DIVIDE_SPEC> {
         WD_DIV_W::new(self, 0)
     }
 }
@@ -30,8 +30,6 @@ impl crate::Readable for WD_DIVIDE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`wd_divide::W`](W) writer structure"]
 impl crate::Writable for WD_DIVIDE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets WD_DIVIDE to value 0x09c2"]
 impl crate::Resettable for WD_DIVIDE_SPEC {

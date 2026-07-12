@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
-    pub fn enb(&mut self) -> ENB_W<CTR_SPEC> {
+    pub fn enb(&mut self) -> ENB_W<'_, CTR_SPEC> {
         ENB_W::new(self, 0)
     }
     #[doc = "Bit 1 - Pre-warning"]
     #[inline(always)]
-    pub fn pre(&mut self) -> PRE_W<CTR_SPEC> {
+    pub fn pre(&mut self) -> PRE_W<'_, CTR_SPEC> {
         PRE_W::new(self, 1)
     }
     #[doc = "Bit 4 - Debug Suspend"]
     #[inline(always)]
-    pub fn dsp(&mut self) -> DSP_W<CTR_SPEC> {
+    pub fn dsp(&mut self) -> DSP_W<'_, CTR_SPEC> {
         DSP_W::new(self, 4)
     }
     #[doc = "Bits 8:15 - Service Indication Pulse Width"]
     #[inline(always)]
-    pub fn spw(&mut self) -> SPW_W<CTR_SPEC> {
+    pub fn spw(&mut self) -> SPW_W<'_, CTR_SPEC> {
         SPW_W::new(self, 8)
     }
 }
@@ -72,10 +72,6 @@ impl crate::Readable for CTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ctr::W`](W) writer structure"]
 impl crate::Writable for CTR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CTR to value 0"]
-impl crate::Resettable for CTR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTR_SPEC {}

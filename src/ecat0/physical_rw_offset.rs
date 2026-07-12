@@ -17,6 +17,4 @@ impl crate::RegisterSpec for PHYSICAL_RW_OFFSET_SPEC {
 #[doc = "`read()` method returns [`physical_rw_offset::R`](R) reader structure"]
 impl crate::Readable for PHYSICAL_RW_OFFSET_SPEC {}
 #[doc = "`reset()` method sets PHYSICAL_RW_OFFSET to value 0"]
-impl crate::Resettable for PHYSICAL_RW_OFFSET_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for PHYSICAL_RW_OFFSET_SPEC {}

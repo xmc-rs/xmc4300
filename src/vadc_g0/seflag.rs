@@ -123,12 +123,12 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Source Event 0/1"]
     #[inline(always)]
-    pub fn sev0(&mut self) -> SEV0_W<SEFLAG_SPEC> {
+    pub fn sev0(&mut self) -> SEV0_W<'_, SEFLAG_SPEC> {
         SEV0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Source Event 0/1"]
     #[inline(always)]
-    pub fn sev1(&mut self) -> SEV1_W<SEFLAG_SPEC> {
+    pub fn sev1(&mut self) -> SEV1_W<'_, SEFLAG_SPEC> {
         SEV1_W::new(self, 1)
     }
 }
@@ -142,10 +142,6 @@ impl crate::Readable for SEFLAG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`seflag::W`](W) writer structure"]
 impl crate::Writable for SEFLAG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SEFLAG to value 0"]
-impl crate::Resettable for SEFLAG_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SEFLAG_SPEC {}

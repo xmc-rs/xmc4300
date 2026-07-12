@@ -132,17 +132,17 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Software Reset for All"]
     #[inline(always)]
-    pub fn sw_rst_all(&mut self) -> SW_RST_ALL_W<SW_RESET_SPEC> {
+    pub fn sw_rst_all(&mut self) -> SW_RST_ALL_W<'_, SW_RESET_SPEC> {
         SW_RST_ALL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Software Reset for CMD Line"]
     #[inline(always)]
-    pub fn sw_rst_cmd_line(&mut self) -> SW_RST_CMD_LINE_W<SW_RESET_SPEC> {
+    pub fn sw_rst_cmd_line(&mut self) -> SW_RST_CMD_LINE_W<'_, SW_RESET_SPEC> {
         SW_RST_CMD_LINE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Software Reset for DAT Line"]
     #[inline(always)]
-    pub fn sw_rst_dat_line(&mut self) -> SW_RST_DAT_LINE_W<SW_RESET_SPEC> {
+    pub fn sw_rst_dat_line(&mut self) -> SW_RST_DAT_LINE_W<'_, SW_RESET_SPEC> {
         SW_RST_DAT_LINE_W::new(self, 2)
     }
 }
@@ -156,10 +156,6 @@ impl crate::Readable for SW_RESET_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sw_reset::W`](W) writer structure"]
 impl crate::Writable for SW_RESET_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets SW_RESET to value 0"]
-impl crate::Resettable for SW_RESET_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for SW_RESET_SPEC {}

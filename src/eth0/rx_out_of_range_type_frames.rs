@@ -17,6 +17,4 @@ impl crate::RegisterSpec for RX_OUT_OF_RANGE_TYPE_FRAMES_SPEC {
 #[doc = "`read()` method returns [`rx_out_of_range_type_frames::R`](R) reader structure"]
 impl crate::Readable for RX_OUT_OF_RANGE_TYPE_FRAMES_SPEC {}
 #[doc = "`reset()` method sets RX_OUT_OF_RANGE_TYPE_FRAMES to value 0"]
-impl crate::Resettable for RX_OUT_OF_RANGE_TYPE_FRAMES_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RX_OUT_OF_RANGE_TYPE_FRAMES_SPEC {}

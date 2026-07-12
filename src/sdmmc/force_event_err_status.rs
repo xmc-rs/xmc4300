@@ -344,57 +344,57 @@ where
 impl W {
     #[doc = "Bit 0 - Force Event for Command Timeout Error"]
     #[inline(always)]
-    pub fn fe_cmd_timeout_err(&mut self) -> FE_CMD_TIMEOUT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+    pub fn fe_cmd_timeout_err(&mut self) -> FE_CMD_TIMEOUT_ERR_W<'_, FORCE_EVENT_ERR_STATUS_SPEC> {
         FE_CMD_TIMEOUT_ERR_W::new(self, 0)
     }
     #[doc = "Bit 1 - Force Event for Command CRC Error"]
     #[inline(always)]
-    pub fn fe_cmd_crc_err(&mut self) -> FE_CMD_CRC_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+    pub fn fe_cmd_crc_err(&mut self) -> FE_CMD_CRC_ERR_W<'_, FORCE_EVENT_ERR_STATUS_SPEC> {
         FE_CMD_CRC_ERR_W::new(self, 1)
     }
     #[doc = "Bit 2 - Force Event for Command End Bit Error"]
     #[inline(always)]
-    pub fn fe_cmd_end_bit_err(&mut self) -> FE_CMD_END_BIT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+    pub fn fe_cmd_end_bit_err(&mut self) -> FE_CMD_END_BIT_ERR_W<'_, FORCE_EVENT_ERR_STATUS_SPEC> {
         FE_CMD_END_BIT_ERR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Force Event for Command Index Error"]
     #[inline(always)]
-    pub fn fe_cmd_ind_err(&mut self) -> FE_CMD_IND_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+    pub fn fe_cmd_ind_err(&mut self) -> FE_CMD_IND_ERR_W<'_, FORCE_EVENT_ERR_STATUS_SPEC> {
         FE_CMD_IND_ERR_W::new(self, 3)
     }
     #[doc = "Bit 4 - Force Event for Data Timeout Error"]
     #[inline(always)]
-    pub fn fe_data_timeout_err(&mut self) -> FE_DATA_TIMEOUT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+    pub fn fe_data_timeout_err(&mut self) -> FE_DATA_TIMEOUT_ERR_W<'_, FORCE_EVENT_ERR_STATUS_SPEC> {
         FE_DATA_TIMEOUT_ERR_W::new(self, 4)
     }
     #[doc = "Bit 5 - Force Event for Data CRC Error"]
     #[inline(always)]
-    pub fn fe_data_crc_err(&mut self) -> FE_DATA_CRC_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+    pub fn fe_data_crc_err(&mut self) -> FE_DATA_CRC_ERR_W<'_, FORCE_EVENT_ERR_STATUS_SPEC> {
         FE_DATA_CRC_ERR_W::new(self, 5)
     }
     #[doc = "Bit 6 - Force Event for Data End Bit Error"]
     #[inline(always)]
-    pub fn fe_data_end_bit_err(&mut self) -> FE_DATA_END_BIT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+    pub fn fe_data_end_bit_err(&mut self) -> FE_DATA_END_BIT_ERR_W<'_, FORCE_EVENT_ERR_STATUS_SPEC> {
         FE_DATA_END_BIT_ERR_W::new(self, 6)
     }
     #[doc = "Bit 7 - Force Event for Current Limit Error"]
     #[inline(always)]
-    pub fn fe_current_limit_err(&mut self) -> FE_CURRENT_LIMIT_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+    pub fn fe_current_limit_err(&mut self) -> FE_CURRENT_LIMIT_ERR_W<'_, FORCE_EVENT_ERR_STATUS_SPEC> {
         FE_CURRENT_LIMIT_ERR_W::new(self, 7)
     }
     #[doc = "Bit 8 - Force Event for Auto CMD Error"]
     #[inline(always)]
-    pub fn fe_acmd12_err(&mut self) -> FE_ACMD12_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+    pub fn fe_acmd12_err(&mut self) -> FE_ACMD12_ERR_W<'_, FORCE_EVENT_ERR_STATUS_SPEC> {
         FE_ACMD12_ERR_W::new(self, 8)
     }
     #[doc = "Bit 12 - Force event for Target Response Error"]
     #[inline(always)]
-    pub fn fe_target_response_err(&mut self) -> FE_TARGET_RESPONSE_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+    pub fn fe_target_response_err(&mut self) -> FE_TARGET_RESPONSE_ERR_W<'_, FORCE_EVENT_ERR_STATUS_SPEC> {
         FE_TARGET_RESPONSE_ERR_W::new(self, 12)
     }
     #[doc = "Bit 13 - Force Event for Ceata Error"]
     #[inline(always)]
-    pub fn fe_ceata_err(&mut self) -> FE_CEATA_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC> {
+    pub fn fe_ceata_err(&mut self) -> FE_CEATA_ERR_W<'_, FORCE_EVENT_ERR_STATUS_SPEC> {
         FE_CEATA_ERR_W::new(self, 13)
     }
 }
@@ -406,10 +406,6 @@ impl crate::RegisterSpec for FORCE_EVENT_ERR_STATUS_SPEC {
 #[doc = "`write(|w| ..)` method takes [`force_event_err_status::W`](W) writer structure"]
 impl crate::Writable for FORCE_EVENT_ERR_STATUS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets FORCE_EVENT_ERR_STATUS to value 0"]
-impl crate::Resettable for FORCE_EVENT_ERR_STATUS_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for FORCE_EVENT_ERR_STATUS_SPEC {}

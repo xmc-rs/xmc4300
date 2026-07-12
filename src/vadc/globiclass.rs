@@ -207,22 +207,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Sample Time Control for Standard Conversions"]
     #[inline(always)]
-    pub fn stcs(&mut self) -> STCS_W<GLOBICLASS_SPEC> {
+    pub fn stcs(&mut self) -> STCS_W<'_, GLOBICLASS_SPEC> {
         STCS_W::new(self, 0)
     }
     #[doc = "Bits 8:10 - Conversion Mode for Standard Conversions"]
     #[inline(always)]
-    pub fn cms(&mut self) -> CMS_W<GLOBICLASS_SPEC> {
+    pub fn cms(&mut self) -> CMS_W<'_, GLOBICLASS_SPEC> {
         CMS_W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Sample Time Control for EMUX Conversions"]
     #[inline(always)]
-    pub fn stce(&mut self) -> STCE_W<GLOBICLASS_SPEC> {
+    pub fn stce(&mut self) -> STCE_W<'_, GLOBICLASS_SPEC> {
         STCE_W::new(self, 16)
     }
     #[doc = "Bits 24:26 - Conversion Mode for EMUX Conversions"]
     #[inline(always)]
-    pub fn cme(&mut self) -> CME_W<GLOBICLASS_SPEC> {
+    pub fn cme(&mut self) -> CME_W<'_, GLOBICLASS_SPEC> {
         CME_W::new(self, 24)
     }
 }
@@ -236,11 +236,6 @@ impl crate::Readable for GLOBICLASS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`globiclass::W`](W) writer structure"]
 impl crate::Writable for GLOBICLASS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets GLOBICLASS[%s]
-to value 0"]
-impl crate::Resettable for GLOBICLASS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets GLOBICLASS[%s] to value 0"]
+impl crate::Resettable for GLOBICLASS_SPEC {}

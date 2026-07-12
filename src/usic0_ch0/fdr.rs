@@ -114,12 +114,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Step Value"]
     #[inline(always)]
-    pub fn step(&mut self) -> STEP_W<FDR_SPEC> {
+    pub fn step(&mut self) -> STEP_W<'_, FDR_SPEC> {
         STEP_W::new(self, 0)
     }
     #[doc = "Bits 14:15 - Divider Mode"]
     #[inline(always)]
-    pub fn dm(&mut self) -> DM_W<FDR_SPEC> {
+    pub fn dm(&mut self) -> DM_W<'_, FDR_SPEC> {
         DM_W::new(self, 14)
     }
 }
@@ -133,10 +133,6 @@ impl crate::Readable for FDR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fdr::W`](W) writer structure"]
 impl crate::Writable for FDR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FDR to value 0"]
-impl crate::Resettable for FDR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FDR_SPEC {}

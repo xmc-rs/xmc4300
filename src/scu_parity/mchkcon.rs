@@ -703,62 +703,62 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Select Memory Check for PSRAM"]
     #[inline(always)]
-    pub fn selps(&mut self) -> SELPS_W<MCHKCON_SPEC> {
+    pub fn selps(&mut self) -> SELPS_W<'_, MCHKCON_SPEC> {
         SELPS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Select Memory Check for DSRAM1"]
     #[inline(always)]
-    pub fn selds1(&mut self) -> SELDS1_W<MCHKCON_SPEC> {
+    pub fn selds1(&mut self) -> SELDS1_W<'_, MCHKCON_SPEC> {
         SELDS1_W::new(self, 1)
     }
     #[doc = "Bit 8 - Select Memory Check for USIC0"]
     #[inline(always)]
-    pub fn usic0dra(&mut self) -> USIC0DRA_W<MCHKCON_SPEC> {
+    pub fn usic0dra(&mut self) -> USIC0DRA_W<'_, MCHKCON_SPEC> {
         USIC0DRA_W::new(self, 8)
     }
     #[doc = "Bit 9 - Select Memory Check for USIC1"]
     #[inline(always)]
-    pub fn usic1dra(&mut self) -> USIC1DRA_W<MCHKCON_SPEC> {
+    pub fn usic1dra(&mut self) -> USIC1DRA_W<'_, MCHKCON_SPEC> {
         USIC1DRA_W::new(self, 9)
     }
     #[doc = "Bit 12 - Select Memory Check for MultiCAN"]
     #[inline(always)]
-    pub fn mcandra(&mut self) -> MCANDRA_W<MCHKCON_SPEC> {
+    pub fn mcandra(&mut self) -> MCANDRA_W<'_, MCHKCON_SPEC> {
         MCANDRA_W::new(self, 12)
     }
     #[doc = "Bit 13 - Select Memory Check for PMU"]
     #[inline(always)]
-    pub fn pprfdra(&mut self) -> PPRFDRA_W<MCHKCON_SPEC> {
+    pub fn pprfdra(&mut self) -> PPRFDRA_W<'_, MCHKCON_SPEC> {
         PPRFDRA_W::new(self, 13)
     }
     #[doc = "Bit 16 - Select Memory Check for USB SRAM"]
     #[inline(always)]
-    pub fn selusb(&mut self) -> SELUSB_W<MCHKCON_SPEC> {
+    pub fn selusb(&mut self) -> SELUSB_W<'_, MCHKCON_SPEC> {
         SELUSB_W::new(self, 16)
     }
     #[doc = "Bit 17 - Select Memory Check for ETH0 TX SRAM"]
     #[inline(always)]
-    pub fn seleth0tx(&mut self) -> SELETH0TX_W<MCHKCON_SPEC> {
+    pub fn seleth0tx(&mut self) -> SELETH0TX_W<'_, MCHKCON_SPEC> {
         SELETH0TX_W::new(self, 17)
     }
     #[doc = "Bit 18 - Select Memory Check for ETH0 RX SRAM"]
     #[inline(always)]
-    pub fn seleth0rx(&mut self) -> SELETH0RX_W<MCHKCON_SPEC> {
+    pub fn seleth0rx(&mut self) -> SELETH0RX_W<'_, MCHKCON_SPEC> {
         SELETH0RX_W::new(self, 18)
     }
     #[doc = "Bit 19 - Select Memory Check for SDMMC SRAM 0"]
     #[inline(always)]
-    pub fn selsd0(&mut self) -> SELSD0_W<MCHKCON_SPEC> {
+    pub fn selsd0(&mut self) -> SELSD0_W<'_, MCHKCON_SPEC> {
         SELSD0_W::new(self, 19)
     }
     #[doc = "Bit 20 - Select Memory Check for SDMMC SRAM 1"]
     #[inline(always)]
-    pub fn selsd1(&mut self) -> SELSD1_W<MCHKCON_SPEC> {
+    pub fn selsd1(&mut self) -> SELSD1_W<'_, MCHKCON_SPEC> {
         SELSD1_W::new(self, 20)
     }
     #[doc = "Bit 24 - Select Memory Check for ECAT0 SRAM 1"]
     #[inline(always)]
-    pub fn selecat0(&mut self) -> SELECAT0_W<MCHKCON_SPEC> {
+    pub fn selecat0(&mut self) -> SELECAT0_W<'_, MCHKCON_SPEC> {
         SELECAT0_W::new(self, 24)
     }
 }
@@ -772,10 +772,6 @@ impl crate::Readable for MCHKCON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mchkcon::W`](W) writer structure"]
 impl crate::Writable for MCHKCON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MCHKCON to value 0"]
-impl crate::Resettable for MCHKCON_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MCHKCON_SPEC {}

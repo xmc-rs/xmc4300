@@ -361,27 +361,27 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable EtherCAT Reset Request"]
     #[inline(always)]
-    pub fn ecatrsten(&mut self) -> ECATRSTEN_W<CON_SPEC> {
+    pub fn ecatrsten(&mut self) -> ECATRSTEN_W<'_, CON_SPEC> {
         ECATRSTEN_W::new(self, 0)
     }
     #[doc = "Bits 8:9 - LATCHIN0 Input Select"]
     #[inline(always)]
-    pub fn latchin0sel(&mut self) -> LATCHIN0SEL_W<CON_SPEC> {
+    pub fn latchin0sel(&mut self) -> LATCHIN0SEL_W<'_, CON_SPEC> {
         LATCHIN0SEL_W::new(self, 8)
     }
     #[doc = "Bits 12:13 - LATCHIN1 Input Select"]
     #[inline(always)]
-    pub fn latchin1sel(&mut self) -> LATCHIN1SEL_W<CON_SPEC> {
+    pub fn latchin1sel(&mut self) -> LATCHIN1SEL_W<'_, CON_SPEC> {
         LATCHIN1SEL_W::new(self, 12)
     }
     #[doc = "Bits 16:20 - Ethernet PHY Address Offset"]
     #[inline(always)]
-    pub fn phyoffset(&mut self) -> PHYOFFSET_W<CON_SPEC> {
+    pub fn phyoffset(&mut self) -> PHYOFFSET_W<'_, CON_SPEC> {
         PHYOFFSET_W::new(self, 16)
     }
     #[doc = "Bits 22:23 - MDIO Input Select"]
     #[inline(always)]
-    pub fn mdio(&mut self) -> MDIO_W<CON_SPEC> {
+    pub fn mdio(&mut self) -> MDIO_W<'_, CON_SPEC> {
         MDIO_W::new(self, 22)
     }
 }
@@ -395,10 +395,6 @@ impl crate::Readable for CON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`con::W`](W) writer structure"]
 impl crate::Writable for CON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CON to value 0"]
-impl crate::Resettable for CON_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CON_SPEC {}

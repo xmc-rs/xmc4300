@@ -74,12 +74,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - EtherCAT Clock Divider Value"]
     #[inline(always)]
-    pub fn ecadiv(&mut self) -> ECADIV_W<ECATCLKCR_SPEC> {
+    pub fn ecadiv(&mut self) -> ECADIV_W<'_, ECATCLKCR_SPEC> {
         ECADIV_W::new(self, 0)
     }
     #[doc = "Bit 16 - EtherCAT Clock Selection Value"]
     #[inline(always)]
-    pub fn ecatsel(&mut self) -> ECATSEL_W<ECATCLKCR_SPEC> {
+    pub fn ecatsel(&mut self) -> ECATSEL_W<'_, ECATCLKCR_SPEC> {
         ECATSEL_W::new(self, 16)
     }
 }
@@ -93,10 +93,6 @@ impl crate::Readable for ECATCLKCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ecatclkcr::W`](W) writer structure"]
 impl crate::Writable for ECATCLKCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ECATCLKCR to value 0"]
-impl crate::Resettable for ECATCLKCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ECATCLKCR_SPEC {}

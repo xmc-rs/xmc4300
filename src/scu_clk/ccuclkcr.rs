@@ -65,7 +65,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CCU Clock Divider Enable"]
     #[inline(always)]
-    pub fn ccudiv(&mut self) -> CCUDIV_W<CCUCLKCR_SPEC> {
+    pub fn ccudiv(&mut self) -> CCUDIV_W<'_, CCUCLKCR_SPEC> {
         CCUDIV_W::new(self, 0)
     }
 }
@@ -79,10 +79,6 @@ impl crate::Readable for CCUCLKCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ccuclkcr::W`](W) writer structure"]
 impl crate::Writable for CCUCLKCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CCUCLKCR to value 0"]
-impl crate::Resettable for CCUCLKCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CCUCLKCR_SPEC {}

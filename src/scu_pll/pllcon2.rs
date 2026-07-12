@@ -123,12 +123,12 @@ impl R {
 impl W {
     #[doc = "Bit 0 - P-Divider Input Selection"]
     #[inline(always)]
-    pub fn pinsel(&mut self) -> PINSEL_W<PLLCON2_SPEC> {
+    pub fn pinsel(&mut self) -> PINSEL_W<'_, PLLCON2_SPEC> {
         PINSEL_W::new(self, 0)
     }
     #[doc = "Bit 8 - K1-Divider Input Selection"]
     #[inline(always)]
-    pub fn k1insel(&mut self) -> K1INSEL_W<PLLCON2_SPEC> {
+    pub fn k1insel(&mut self) -> K1INSEL_W<'_, PLLCON2_SPEC> {
         K1INSEL_W::new(self, 8)
     }
 }
@@ -142,8 +142,6 @@ impl crate::Readable for PLLCON2_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pllcon2::W`](W) writer structure"]
 impl crate::Writable for PLLCON2_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PLLCON2 to value 0x01"]
 impl crate::Resettable for PLLCON2_SPEC {

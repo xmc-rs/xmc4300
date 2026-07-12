@@ -703,62 +703,62 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Parity Error Flag for PSRAM"]
     #[inline(always)]
-    pub fn pefps(&mut self) -> PEFPS_W<PEFLAG_SPEC> {
+    pub fn pefps(&mut self) -> PEFPS_W<'_, PEFLAG_SPEC> {
         PEFPS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Parity Error Flag for DSRAM1"]
     #[inline(always)]
-    pub fn pefds1(&mut self) -> PEFDS1_W<PEFLAG_SPEC> {
+    pub fn pefds1(&mut self) -> PEFDS1_W<'_, PEFLAG_SPEC> {
         PEFDS1_W::new(self, 1)
     }
     #[doc = "Bit 8 - Parity Error Flag for USIC0 Memory"]
     #[inline(always)]
-    pub fn pefu0(&mut self) -> PEFU0_W<PEFLAG_SPEC> {
+    pub fn pefu0(&mut self) -> PEFU0_W<'_, PEFLAG_SPEC> {
         PEFU0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Parity Error Flag for USIC1 Memory"]
     #[inline(always)]
-    pub fn pefu1(&mut self) -> PEFU1_W<PEFLAG_SPEC> {
+    pub fn pefu1(&mut self) -> PEFU1_W<'_, PEFLAG_SPEC> {
         PEFU1_W::new(self, 9)
     }
     #[doc = "Bit 12 - Parity Error Flag for MultiCAN Memory"]
     #[inline(always)]
-    pub fn pefmc(&mut self) -> PEFMC_W<PEFLAG_SPEC> {
+    pub fn pefmc(&mut self) -> PEFMC_W<'_, PEFLAG_SPEC> {
         PEFMC_W::new(self, 12)
     }
     #[doc = "Bit 13 - Parity Error Flag for PMU Prefetch Memory"]
     #[inline(always)]
-    pub fn pefpprf(&mut self) -> PEFPPRF_W<PEFLAG_SPEC> {
+    pub fn pefpprf(&mut self) -> PEFPPRF_W<'_, PEFLAG_SPEC> {
         PEFPPRF_W::new(self, 13)
     }
     #[doc = "Bit 16 - Parity Error Flag for USB Memory"]
     #[inline(always)]
-    pub fn peusb(&mut self) -> PEUSB_W<PEFLAG_SPEC> {
+    pub fn peusb(&mut self) -> PEUSB_W<'_, PEFLAG_SPEC> {
         PEUSB_W::new(self, 16)
     }
     #[doc = "Bit 17 - Parity Error Flag for ETH TX Memory"]
     #[inline(always)]
-    pub fn peeth0tx(&mut self) -> PEETH0TX_W<PEFLAG_SPEC> {
+    pub fn peeth0tx(&mut self) -> PEETH0TX_W<'_, PEFLAG_SPEC> {
         PEETH0TX_W::new(self, 17)
     }
     #[doc = "Bit 18 - Parity Error Flag for ETH RX Memory"]
     #[inline(always)]
-    pub fn peeth0rx(&mut self) -> PEETH0RX_W<PEFLAG_SPEC> {
+    pub fn peeth0rx(&mut self) -> PEETH0RX_W<'_, PEFLAG_SPEC> {
         PEETH0RX_W::new(self, 18)
     }
     #[doc = "Bit 19 - Parity Error Flag for SDMMC Memory 0"]
     #[inline(always)]
-    pub fn pesd0(&mut self) -> PESD0_W<PEFLAG_SPEC> {
+    pub fn pesd0(&mut self) -> PESD0_W<'_, PEFLAG_SPEC> {
         PESD0_W::new(self, 19)
     }
     #[doc = "Bit 20 - Parity Error Flag for SDMMC Memory 1"]
     #[inline(always)]
-    pub fn pesd1(&mut self) -> PESD1_W<PEFLAG_SPEC> {
+    pub fn pesd1(&mut self) -> PESD1_W<'_, PEFLAG_SPEC> {
         PESD1_W::new(self, 20)
     }
     #[doc = "Bit 24 - Parity Error Flag for ECAT0 Memory"]
     #[inline(always)]
-    pub fn peecat0(&mut self) -> PEECAT0_W<PEFLAG_SPEC> {
+    pub fn peecat0(&mut self) -> PEECAT0_W<'_, PEFLAG_SPEC> {
         PEECAT0_W::new(self, 24)
     }
 }
@@ -772,10 +772,6 @@ impl crate::Readable for PEFLAG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`peflag::W`](W) writer structure"]
 impl crate::Writable for PEFLAG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PEFLAG to value 0"]
-impl crate::Resettable for PEFLAG_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PEFLAG_SPEC {}

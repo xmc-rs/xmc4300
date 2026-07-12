@@ -17,6 +17,4 @@ impl crate::RegisterSpec for CURRENT_HOST_TRANSMIT_DESCRIPTOR_SPEC {
 #[doc = "`read()` method returns [`current_host_transmit_descriptor::R`](R) reader structure"]
 impl crate::Readable for CURRENT_HOST_TRANSMIT_DESCRIPTOR_SPEC {}
 #[doc = "`reset()` method sets CURRENT_HOST_TRANSMIT_DESCRIPTOR to value 0"]
-impl crate::Resettable for CURRENT_HOST_TRANSMIT_DESCRIPTOR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CURRENT_HOST_TRANSMIT_DESCRIPTOR_SPEC {}

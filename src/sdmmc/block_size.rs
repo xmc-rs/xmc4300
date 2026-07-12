@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Transfer Block Size"]
     #[inline(always)]
-    pub fn tx_block_size(&mut self) -> TX_BLOCK_SIZE_W<BLOCK_SIZE_SPEC> {
+    pub fn tx_block_size(&mut self) -> TX_BLOCK_SIZE_W<'_, BLOCK_SIZE_SPEC> {
         TX_BLOCK_SIZE_W::new(self, 0)
     }
     #[doc = "Bit 15 - Transfer Block Size 12th bit."]
     #[inline(always)]
-    pub fn tx_block_size_12(&mut self) -> TX_BLOCK_SIZE_12_W<BLOCK_SIZE_SPEC> {
+    pub fn tx_block_size_12(&mut self) -> TX_BLOCK_SIZE_12_W<'_, BLOCK_SIZE_SPEC> {
         TX_BLOCK_SIZE_12_W::new(self, 15)
     }
 }
@@ -44,10 +44,6 @@ impl crate::Readable for BLOCK_SIZE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`block_size::W`](W) writer structure"]
 impl crate::Writable for BLOCK_SIZE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets BLOCK_SIZE to value 0"]
-impl crate::Resettable for BLOCK_SIZE_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for BLOCK_SIZE_SPEC {}

@@ -386,6 +386,4 @@ impl crate::RegisterSpec for INTS_SPEC {
 #[doc = "`read()` method returns [`ints::R`](R) reader structure"]
 impl crate::Readable for INTS_SPEC {}
 #[doc = "`reset()` method sets INTS to value 0"]
-impl crate::Resettable for INTS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INTS_SPEC {}

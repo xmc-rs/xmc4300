@@ -232,27 +232,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - CAN Frame Counter"]
     #[inline(always)]
-    pub fn cfc(&mut self) -> CFC_W<NFCR_SPEC> {
+    pub fn cfc(&mut self) -> CFC_W<'_, NFCR_SPEC> {
         CFC_W::new(self, 0)
     }
     #[doc = "Bits 16:18 - CAN Frame Count Selection"]
     #[inline(always)]
-    pub fn cfsel(&mut self) -> CFSEL_W<NFCR_SPEC> {
+    pub fn cfsel(&mut self) -> CFSEL_W<'_, NFCR_SPEC> {
         CFSEL_W::new(self, 16)
     }
     #[doc = "Bits 19:20 - CAN Frame Counter Mode"]
     #[inline(always)]
-    pub fn cfmod(&mut self) -> CFMOD_W<NFCR_SPEC> {
+    pub fn cfmod(&mut self) -> CFMOD_W<'_, NFCR_SPEC> {
         CFMOD_W::new(self, 19)
     }
     #[doc = "Bit 22 - CAN Frame Count Interrupt Enable"]
     #[inline(always)]
-    pub fn cfcie(&mut self) -> CFCIE_W<NFCR_SPEC> {
+    pub fn cfcie(&mut self) -> CFCIE_W<'_, NFCR_SPEC> {
         CFCIE_W::new(self, 22)
     }
     #[doc = "Bit 23 - CAN Frame Counter Overflow Flag"]
     #[inline(always)]
-    pub fn cfcov(&mut self) -> CFCOV_W<NFCR_SPEC> {
+    pub fn cfcov(&mut self) -> CFCOV_W<'_, NFCR_SPEC> {
         CFCOV_W::new(self, 23)
     }
 }
@@ -266,10 +266,6 @@ impl crate::Readable for NFCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`nfcr::W`](W) writer structure"]
 impl crate::Writable for NFCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NFCR to value 0"]
-impl crate::Resettable for NFCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for NFCR_SPEC {}

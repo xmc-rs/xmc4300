@@ -17,6 +17,4 @@ impl crate::RegisterSpec for AHB_STATUS_SPEC {
 #[doc = "`read()` method returns [`ahb_status::R`](R) reader structure"]
 impl crate::Readable for AHB_STATUS_SPEC {}
 #[doc = "`reset()` method sets AHB_STATUS to value 0"]
-impl crate::Resettable for AHB_STATUS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for AHB_STATUS_SPEC {}

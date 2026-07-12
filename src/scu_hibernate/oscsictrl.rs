@@ -65,7 +65,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Turn OFF the fOSI Clock Source"]
     #[inline(always)]
-    pub fn pwd(&mut self) -> PWD_W<OSCSICTRL_SPEC> {
+    pub fn pwd(&mut self) -> PWD_W<'_, OSCSICTRL_SPEC> {
         PWD_W::new(self, 0)
     }
 }
@@ -79,8 +79,6 @@ impl crate::Readable for OSCSICTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`oscsictrl::W`](W) writer structure"]
 impl crate::Writable for OSCSICTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets OSCSICTRL to value 0x01"]
 impl crate::Resettable for OSCSICTRL_SPEC {

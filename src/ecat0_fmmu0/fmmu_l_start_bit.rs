@@ -17,6 +17,4 @@ impl crate::RegisterSpec for FMMU_L_START_BIT_SPEC {
 #[doc = "`read()` method returns [`fmmu_l_start_bit::R`](R) reader structure"]
 impl crate::Readable for FMMU_L_START_BIT_SPEC {}
 #[doc = "`reset()` method sets FMMU_L_START_BIT to value 0"]
-impl crate::Resettable for FMMU_L_START_BIT_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for FMMU_L_START_BIT_SPEC {}

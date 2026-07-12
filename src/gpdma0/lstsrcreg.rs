@@ -719,82 +719,82 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Source last request for channel 0"]
     #[inline(always)]
-    pub fn ch0(&mut self) -> CH0_W<LSTSRCREG_SPEC> {
+    pub fn ch0(&mut self) -> CH0_W<'_, LSTSRCREG_SPEC> {
         CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Source last request for channel 1"]
     #[inline(always)]
-    pub fn ch1(&mut self) -> CH1_W<LSTSRCREG_SPEC> {
+    pub fn ch1(&mut self) -> CH1_W<'_, LSTSRCREG_SPEC> {
         CH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Source last request for channel 2"]
     #[inline(always)]
-    pub fn ch2(&mut self) -> CH2_W<LSTSRCREG_SPEC> {
+    pub fn ch2(&mut self) -> CH2_W<'_, LSTSRCREG_SPEC> {
         CH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Source last request for channel 3"]
     #[inline(always)]
-    pub fn ch3(&mut self) -> CH3_W<LSTSRCREG_SPEC> {
+    pub fn ch3(&mut self) -> CH3_W<'_, LSTSRCREG_SPEC> {
         CH3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Source last request for channel 4"]
     #[inline(always)]
-    pub fn ch4(&mut self) -> CH4_W<LSTSRCREG_SPEC> {
+    pub fn ch4(&mut self) -> CH4_W<'_, LSTSRCREG_SPEC> {
         CH4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Source last request for channel 5"]
     #[inline(always)]
-    pub fn ch5(&mut self) -> CH5_W<LSTSRCREG_SPEC> {
+    pub fn ch5(&mut self) -> CH5_W<'_, LSTSRCREG_SPEC> {
         CH5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Source last request for channel 6"]
     #[inline(always)]
-    pub fn ch6(&mut self) -> CH6_W<LSTSRCREG_SPEC> {
+    pub fn ch6(&mut self) -> CH6_W<'_, LSTSRCREG_SPEC> {
         CH6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Source last request for channel 7"]
     #[inline(always)]
-    pub fn ch7(&mut self) -> CH7_W<LSTSRCREG_SPEC> {
+    pub fn ch7(&mut self) -> CH7_W<'_, LSTSRCREG_SPEC> {
         CH7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Source last transaction request write enable for channel 0"]
     #[inline(always)]
-    pub fn we_ch0(&mut self) -> WE_CH0_W<LSTSRCREG_SPEC> {
+    pub fn we_ch0(&mut self) -> WE_CH0_W<'_, LSTSRCREG_SPEC> {
         WE_CH0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Source last transaction request write enable for channel 1"]
     #[inline(always)]
-    pub fn we_ch1(&mut self) -> WE_CH1_W<LSTSRCREG_SPEC> {
+    pub fn we_ch1(&mut self) -> WE_CH1_W<'_, LSTSRCREG_SPEC> {
         WE_CH1_W::new(self, 9)
     }
     #[doc = "Bit 10 - Source last transaction request write enable for channel 2"]
     #[inline(always)]
-    pub fn we_ch2(&mut self) -> WE_CH2_W<LSTSRCREG_SPEC> {
+    pub fn we_ch2(&mut self) -> WE_CH2_W<'_, LSTSRCREG_SPEC> {
         WE_CH2_W::new(self, 10)
     }
     #[doc = "Bit 11 - Source last transaction request write enable for channel 3"]
     #[inline(always)]
-    pub fn we_ch3(&mut self) -> WE_CH3_W<LSTSRCREG_SPEC> {
+    pub fn we_ch3(&mut self) -> WE_CH3_W<'_, LSTSRCREG_SPEC> {
         WE_CH3_W::new(self, 11)
     }
     #[doc = "Bit 12 - Source last transaction request write enable for channel 4"]
     #[inline(always)]
-    pub fn we_ch4(&mut self) -> WE_CH4_W<LSTSRCREG_SPEC> {
+    pub fn we_ch4(&mut self) -> WE_CH4_W<'_, LSTSRCREG_SPEC> {
         WE_CH4_W::new(self, 12)
     }
     #[doc = "Bit 13 - Source last transaction request write enable for channel 5"]
     #[inline(always)]
-    pub fn we_ch5(&mut self) -> WE_CH5_W<LSTSRCREG_SPEC> {
+    pub fn we_ch5(&mut self) -> WE_CH5_W<'_, LSTSRCREG_SPEC> {
         WE_CH5_W::new(self, 13)
     }
     #[doc = "Bit 14 - Source last transaction request write enable for channel 6"]
     #[inline(always)]
-    pub fn we_ch6(&mut self) -> WE_CH6_W<LSTSRCREG_SPEC> {
+    pub fn we_ch6(&mut self) -> WE_CH6_W<'_, LSTSRCREG_SPEC> {
         WE_CH6_W::new(self, 14)
     }
     #[doc = "Bit 15 - Source last transaction request write enable for channel 7"]
     #[inline(always)]
-    pub fn we_ch7(&mut self) -> WE_CH7_W<LSTSRCREG_SPEC> {
+    pub fn we_ch7(&mut self) -> WE_CH7_W<'_, LSTSRCREG_SPEC> {
         WE_CH7_W::new(self, 15)
     }
 }
@@ -808,10 +808,6 @@ impl crate::Readable for LSTSRCREG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`lstsrcreg::W`](W) writer structure"]
 impl crate::Writable for LSTSRCREG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets LSTSRCREG to value 0"]
-impl crate::Resettable for LSTSRCREG_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for LSTSRCREG_SPEC {}

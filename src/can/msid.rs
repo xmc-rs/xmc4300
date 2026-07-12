@@ -16,8 +16,7 @@ impl crate::RegisterSpec for MSID_SPEC {
 }
 #[doc = "`read()` method returns [`msid::R`](R) reader structure"]
 impl crate::Readable for MSID_SPEC {}
-#[doc = "`reset()` method sets MSID[%s]
-to value 0x20"]
+#[doc = "`reset()` method sets MSID[%s] to value 0x20"]
 impl crate::Resettable for MSID_SPEC {
     const RESET_VALUE: u32 = 0x20;
 }

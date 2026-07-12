@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Timestamp Higher Word Register"]
     #[inline(always)]
-    pub fn tshwr(&mut self) -> TSHWR_W<SYSTEM_TIME_HIGHER_WORD_SECONDS_SPEC> {
+    pub fn tshwr(&mut self) -> TSHWR_W<'_, SYSTEM_TIME_HIGHER_WORD_SECONDS_SPEC> {
         TSHWR_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for SYSTEM_TIME_HIGHER_WORD_SECONDS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`system_time_higher_word_seconds::W`](W) writer structure"]
 impl crate::Writable for SYSTEM_TIME_HIGHER_WORD_SECONDS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SYSTEM_TIME_HIGHER_WORD_SECONDS to value 0"]
-impl crate::Resettable for SYSTEM_TIME_HIGHER_WORD_SECONDS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SYSTEM_TIME_HIGHER_WORD_SECONDS_SPEC {}

@@ -17,6 +17,4 @@ impl crate::RegisterSpec for FMMU_L_START_ADR_SPEC {
 #[doc = "`read()` method returns [`fmmu_l_start_adr::R`](R) reader structure"]
 impl crate::Readable for FMMU_L_START_ADR_SPEC {}
 #[doc = "`reset()` method sets FMMU_L_START_ADR to value 0"]
-impl crate::Resettable for FMMU_L_START_ADR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FMMU_L_START_ADR_SPEC {}

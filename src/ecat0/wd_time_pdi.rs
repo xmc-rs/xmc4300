@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Watchdog Time PDI"]
     #[inline(always)]
-    pub fn wd_time_pdi(&mut self) -> WD_TIME_PDI_W<WD_TIME_PDI_SPEC> {
+    pub fn wd_time_pdi(&mut self) -> WD_TIME_PDI_W<'_, WD_TIME_PDI_SPEC> {
         WD_TIME_PDI_W::new(self, 0)
     }
 }
@@ -30,8 +30,6 @@ impl crate::Readable for WD_TIME_PDI_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`wd_time_pdi::W`](W) writer structure"]
 impl crate::Writable for WD_TIME_PDI_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets WD_TIME_PDI to value 0x03e8"]
 impl crate::Resettable for WD_TIME_PDI_SPEC {

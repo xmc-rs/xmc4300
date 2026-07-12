@@ -70,37 +70,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Flow Control Busy or Backpressure Activate"]
     #[inline(always)]
-    pub fn fca_bpa(&mut self) -> FCA_BPA_W<FLOW_CONTROL_SPEC> {
+    pub fn fca_bpa(&mut self) -> FCA_BPA_W<'_, FLOW_CONTROL_SPEC> {
         FCA_BPA_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmit Flow Control Enable"]
     #[inline(always)]
-    pub fn tfe(&mut self) -> TFE_W<FLOW_CONTROL_SPEC> {
+    pub fn tfe(&mut self) -> TFE_W<'_, FLOW_CONTROL_SPEC> {
         TFE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Receive Flow Control Enable"]
     #[inline(always)]
-    pub fn rfe(&mut self) -> RFE_W<FLOW_CONTROL_SPEC> {
+    pub fn rfe(&mut self) -> RFE_W<'_, FLOW_CONTROL_SPEC> {
         RFE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Unicast Pause Frame Detect"]
     #[inline(always)]
-    pub fn up(&mut self) -> UP_W<FLOW_CONTROL_SPEC> {
+    pub fn up(&mut self) -> UP_W<'_, FLOW_CONTROL_SPEC> {
         UP_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Pause Low Threshold"]
     #[inline(always)]
-    pub fn plt(&mut self) -> PLT_W<FLOW_CONTROL_SPEC> {
+    pub fn plt(&mut self) -> PLT_W<'_, FLOW_CONTROL_SPEC> {
         PLT_W::new(self, 4)
     }
     #[doc = "Bit 7 - Disable Zero-Quanta Pause"]
     #[inline(always)]
-    pub fn dzpq(&mut self) -> DZPQ_W<FLOW_CONTROL_SPEC> {
+    pub fn dzpq(&mut self) -> DZPQ_W<'_, FLOW_CONTROL_SPEC> {
         DZPQ_W::new(self, 7)
     }
     #[doc = "Bits 16:31 - Pause Time"]
     #[inline(always)]
-    pub fn pt(&mut self) -> PT_W<FLOW_CONTROL_SPEC> {
+    pub fn pt(&mut self) -> PT_W<'_, FLOW_CONTROL_SPEC> {
         PT_W::new(self, 16)
     }
 }
@@ -114,10 +114,6 @@ impl crate::Readable for FLOW_CONTROL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`flow_control::W`](W) writer structure"]
 impl crate::Writable for FLOW_CONTROL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FLOW_CONTROL to value 0"]
-impl crate::Resettable for FLOW_CONTROL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FLOW_CONTROL_SPEC {}

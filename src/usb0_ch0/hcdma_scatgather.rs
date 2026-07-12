@@ -81,12 +81,12 @@ impl R {
 impl W {
     #[doc = "Bits 3:8 - Current Transfer Desc:"]
     #[inline(always)]
-    pub fn ctd(&mut self) -> CTD_W<HCDMA_SCATGATHER_SPEC> {
+    pub fn ctd(&mut self) -> CTD_W<'_, HCDMA_SCATGATHER_SPEC> {
         CTD_W::new(self, 3)
     }
     #[doc = "Bits 9:31 - DMA Address"]
     #[inline(always)]
-    pub fn dmaaddr(&mut self) -> DMAADDR_W<HCDMA_SCATGATHER_SPEC> {
+    pub fn dmaaddr(&mut self) -> DMAADDR_W<'_, HCDMA_SCATGATHER_SPEC> {
         DMAADDR_W::new(self, 9)
     }
 }
@@ -100,10 +100,6 @@ impl crate::Readable for HCDMA_SCATGATHER_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hcdma_scatgather::W`](W) writer structure"]
 impl crate::Writable for HCDMA_SCATGATHER_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HCDMA_SCATGATHER to value 0"]
-impl crate::Resettable for HCDMA_SCATGATHER_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HCDMA_SCATGATHER_SPEC {}

@@ -160,27 +160,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Transmit Shift Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn tsinp(&mut self) -> TSINP_W<INPR_SPEC> {
+    pub fn tsinp(&mut self) -> TSINP_W<'_, INPR_SPEC> {
         TSINP_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Transmit Buffer Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn tbinp(&mut self) -> TBINP_W<INPR_SPEC> {
+    pub fn tbinp(&mut self) -> TBINP_W<'_, INPR_SPEC> {
         TBINP_W::new(self, 4)
     }
     #[doc = "Bits 8:10 - Receive Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn rinp(&mut self) -> RINP_W<INPR_SPEC> {
+    pub fn rinp(&mut self) -> RINP_W<'_, INPR_SPEC> {
         RINP_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - Alternative Receive Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn ainp(&mut self) -> AINP_W<INPR_SPEC> {
+    pub fn ainp(&mut self) -> AINP_W<'_, INPR_SPEC> {
         AINP_W::new(self, 12)
     }
     #[doc = "Bits 16:18 - Transmit Shift Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn pinp(&mut self) -> PINP_W<INPR_SPEC> {
+    pub fn pinp(&mut self) -> PINP_W<'_, INPR_SPEC> {
         PINP_W::new(self, 16)
     }
 }
@@ -194,10 +194,6 @@ impl crate::Readable for INPR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`inpr::W`](W) writer structure"]
 impl crate::Writable for INPR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INPR to value 0"]
-impl crate::Resettable for INPR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INPR_SPEC {}

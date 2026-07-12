@@ -484,12 +484,12 @@ impl R {
 impl W {
     #[doc = "Bits 8:10 - Command register"]
     #[inline(always)]
-    pub fn cmd_reg(&mut self) -> CMD_REG_W<EEP_CONT_STAT_SPEC> {
+    pub fn cmd_reg(&mut self) -> CMD_REG_W<'_, EEP_CONT_STAT_SPEC> {
         CMD_REG_W::new(self, 8)
     }
     #[doc = "Bit 13 - Error Acknowledge/Command"]
     #[inline(always)]
-    pub fn error_ac(&mut self) -> ERROR_AC_W<EEP_CONT_STAT_SPEC> {
+    pub fn error_ac(&mut self) -> ERROR_AC_W<'_, EEP_CONT_STAT_SPEC> {
         ERROR_AC_W::new(self, 13)
     }
 }
@@ -503,8 +503,6 @@ impl crate::Readable for EEP_CONT_STAT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`eep_cont_stat::W`](W) writer structure"]
 impl crate::Writable for EEP_CONT_STAT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u16 = 0;
 }
 #[doc = "`reset()` method sets EEP_CONT_STAT to value 0x9460"]
 impl crate::Resettable for EEP_CONT_STAT_SPEC {

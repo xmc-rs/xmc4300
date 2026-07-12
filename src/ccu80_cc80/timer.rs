@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Timer Value"]
     #[inline(always)]
-    pub fn tval(&mut self) -> TVAL_W<TIMER_SPEC> {
+    pub fn tval(&mut self) -> TVAL_W<'_, TIMER_SPEC> {
         TVAL_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for TIMER_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`timer::W`](W) writer structure"]
 impl crate::Writable for TIMER_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TIMER to value 0"]
-impl crate::Resettable for TIMER_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TIMER_SPEC {}

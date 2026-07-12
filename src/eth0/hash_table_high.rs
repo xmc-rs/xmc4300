@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Hash Table High"]
     #[inline(always)]
-    pub fn hth(&mut self) -> HTH_W<HASH_TABLE_HIGH_SPEC> {
+    pub fn hth(&mut self) -> HTH_W<'_, HASH_TABLE_HIGH_SPEC> {
         HTH_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for HASH_TABLE_HIGH_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hash_table_high::W`](W) writer structure"]
 impl crate::Writable for HASH_TABLE_HIGH_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HASH_TABLE_HIGH to value 0"]
-impl crate::Resettable for HASH_TABLE_HIGH_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HASH_TABLE_HIGH_SPEC {}

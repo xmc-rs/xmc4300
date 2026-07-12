@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - K1-Divider Value"]
     #[inline(always)]
-    pub fn k1div(&mut self) -> K1DIV_W<PLLCON1_SPEC> {
+    pub fn k1div(&mut self) -> K1DIV_W<'_, PLLCON1_SPEC> {
         K1DIV_W::new(self, 0)
     }
     #[doc = "Bits 8:14 - N-Divider Value"]
     #[inline(always)]
-    pub fn ndiv(&mut self) -> NDIV_W<PLLCON1_SPEC> {
+    pub fn ndiv(&mut self) -> NDIV_W<'_, PLLCON1_SPEC> {
         NDIV_W::new(self, 8)
     }
     #[doc = "Bits 16:22 - K2-Divider Value"]
     #[inline(always)]
-    pub fn k2div(&mut self) -> K2DIV_W<PLLCON1_SPEC> {
+    pub fn k2div(&mut self) -> K2DIV_W<'_, PLLCON1_SPEC> {
         K2DIV_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - P-Divider Value"]
     #[inline(always)]
-    pub fn pdiv(&mut self) -> PDIV_W<PLLCON1_SPEC> {
+    pub fn pdiv(&mut self) -> PDIV_W<'_, PLLCON1_SPEC> {
         PDIV_W::new(self, 24)
     }
 }
@@ -72,10 +72,6 @@ impl crate::Readable for PLLCON1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pllcon1::W`](W) writer structure"]
 impl crate::Writable for PLLCON1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PLLCON1 to value 0"]
-impl crate::Resettable for PLLCON1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PLLCON1_SPEC {}

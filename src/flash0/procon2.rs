@@ -379,6 +379,4 @@ impl crate::RegisterSpec for PROCON2_SPEC {
 #[doc = "`read()` method returns [`procon2::R`](R) reader structure"]
 impl crate::Readable for PROCON2_SPEC {}
 #[doc = "`reset()` method sets PROCON2 to value 0"]
-impl crate::Resettable for PROCON2_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PROCON2_SPEC {}

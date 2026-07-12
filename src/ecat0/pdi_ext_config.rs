@@ -120,6 +120,4 @@ impl crate::RegisterSpec for PDI_EXT_CONFIG_SPEC {
 #[doc = "`read()` method returns [`pdi_ext_config::R`](R) reader structure"]
 impl crate::Readable for PDI_EXT_CONFIG_SPEC {}
 #[doc = "`reset()` method sets PDI_EXT_CONFIG to value 0"]
-impl crate::Resettable for PDI_EXT_CONFIG_SPEC {
-    const RESET_VALUE: u16 = 0;
-}
+impl crate::Resettable for PDI_EXT_CONFIG_SPEC {}

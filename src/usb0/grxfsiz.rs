@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - RxFIFO Depth"]
     #[inline(always)]
-    pub fn rx_fdep(&mut self) -> RX_FDEP_W<GRXFSIZ_SPEC> {
+    pub fn rx_fdep(&mut self) -> RX_FDEP_W<'_, GRXFSIZ_SPEC> {
         RX_FDEP_W::new(self, 0)
     }
 }
@@ -30,8 +30,6 @@ impl crate::Readable for GRXFSIZ_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`grxfsiz::W`](W) writer structure"]
 impl crate::Writable for GRXFSIZ_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GRXFSIZ to value 0x011a"]
 impl crate::Resettable for GRXFSIZ_SPEC {

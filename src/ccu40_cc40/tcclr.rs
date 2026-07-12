@@ -9,17 +9,17 @@ pub type DITC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Timer Run Bit Clear"]
     #[inline(always)]
-    pub fn trbc(&mut self) -> TRBC_W<TCCLR_SPEC> {
+    pub fn trbc(&mut self) -> TRBC_W<'_, TCCLR_SPEC> {
         TRBC_W::new(self, 0)
     }
     #[doc = "Bit 1 - Timer Clear"]
     #[inline(always)]
-    pub fn tcc(&mut self) -> TCC_W<TCCLR_SPEC> {
+    pub fn tcc(&mut self) -> TCC_W<'_, TCCLR_SPEC> {
         TCC_W::new(self, 1)
     }
     #[doc = "Bit 2 - Dither Counter Clear"]
     #[inline(always)]
-    pub fn ditc(&mut self) -> DITC_W<TCCLR_SPEC> {
+    pub fn ditc(&mut self) -> DITC_W<'_, TCCLR_SPEC> {
         DITC_W::new(self, 2)
     }
 }
@@ -31,10 +31,6 @@ impl crate::RegisterSpec for TCCLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [`tcclr::W`](W) writer structure"]
 impl crate::Writable for TCCLR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TCCLR to value 0"]
-impl crate::Resettable for TCCLR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TCCLR_SPEC {}

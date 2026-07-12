@@ -471,42 +471,42 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Channels Pending Group x"]
     #[inline(always)]
-    pub fn chpndg0(&mut self) -> CHPNDG0_W<BRSPND_SPEC> {
+    pub fn chpndg0(&mut self) -> CHPNDG0_W<'_, BRSPND_SPEC> {
         CHPNDG0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channels Pending Group x"]
     #[inline(always)]
-    pub fn chpndg1(&mut self) -> CHPNDG1_W<BRSPND_SPEC> {
+    pub fn chpndg1(&mut self) -> CHPNDG1_W<'_, BRSPND_SPEC> {
         CHPNDG1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channels Pending Group x"]
     #[inline(always)]
-    pub fn chpndg2(&mut self) -> CHPNDG2_W<BRSPND_SPEC> {
+    pub fn chpndg2(&mut self) -> CHPNDG2_W<'_, BRSPND_SPEC> {
         CHPNDG2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channels Pending Group x"]
     #[inline(always)]
-    pub fn chpndg3(&mut self) -> CHPNDG3_W<BRSPND_SPEC> {
+    pub fn chpndg3(&mut self) -> CHPNDG3_W<'_, BRSPND_SPEC> {
         CHPNDG3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Channels Pending Group x"]
     #[inline(always)]
-    pub fn chpndg4(&mut self) -> CHPNDG4_W<BRSPND_SPEC> {
+    pub fn chpndg4(&mut self) -> CHPNDG4_W<'_, BRSPND_SPEC> {
         CHPNDG4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Channels Pending Group x"]
     #[inline(always)]
-    pub fn chpndg5(&mut self) -> CHPNDG5_W<BRSPND_SPEC> {
+    pub fn chpndg5(&mut self) -> CHPNDG5_W<'_, BRSPND_SPEC> {
         CHPNDG5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Channels Pending Group x"]
     #[inline(always)]
-    pub fn chpndg6(&mut self) -> CHPNDG6_W<BRSPND_SPEC> {
+    pub fn chpndg6(&mut self) -> CHPNDG6_W<'_, BRSPND_SPEC> {
         CHPNDG6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Channels Pending Group x"]
     #[inline(always)]
-    pub fn chpndg7(&mut self) -> CHPNDG7_W<BRSPND_SPEC> {
+    pub fn chpndg7(&mut self) -> CHPNDG7_W<'_, BRSPND_SPEC> {
         CHPNDG7_W::new(self, 7)
     }
 }
@@ -520,11 +520,6 @@ impl crate::Readable for BRSPND_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`brspnd::W`](W) writer structure"]
 impl crate::Writable for BRSPND_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets BRSPND[%s]
-to value 0"]
-impl crate::Resettable for BRSPND_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets BRSPND[%s] to value 0"]
+impl crate::Resettable for BRSPND_SPEC {}
