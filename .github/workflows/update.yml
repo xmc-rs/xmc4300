@@ -9,7 +9,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v4.3.1
       - uses: actions-rust-lang/setup-rust-toolchain@v1
       - run:  cargo install svd2rust
       - run:  cargo install form
@@ -23,7 +23,7 @@ jobs:
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.APP_SECRET_KEY }}
-      - uses: peter-evans/create-pull-request@v7
+      - uses: peter-evans/create-pull-request@v8
         with:
           branch: svd-update
           commit-message: "feat: updating from newer svd2rust"
