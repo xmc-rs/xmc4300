@@ -529,47 +529,47 @@ impl R {
 impl W {
     #[doc = "Bit 0 - System Clock Selection Value"]
     #[inline(always)]
-    pub fn syssel(&mut self) -> SYSSEL_W<DSLEEPCR_SPEC> {
+    pub fn syssel(&mut self) -> SYSSEL_W<'_, DSLEEPCR_SPEC> {
         SYSSEL_W::new(self, 0)
     }
     #[doc = "Bit 11 - Flash Power Down"]
     #[inline(always)]
-    pub fn fpdn(&mut self) -> FPDN_W<DSLEEPCR_SPEC> {
+    pub fn fpdn(&mut self) -> FPDN_W<'_, DSLEEPCR_SPEC> {
         FPDN_W::new(self, 11)
     }
     #[doc = "Bit 12 - PLL Power Down"]
     #[inline(always)]
-    pub fn pllpdn(&mut self) -> PLLPDN_W<DSLEEPCR_SPEC> {
+    pub fn pllpdn(&mut self) -> PLLPDN_W<'_, DSLEEPCR_SPEC> {
         PLLPDN_W::new(self, 12)
     }
     #[doc = "Bit 13 - VCO Power Down"]
     #[inline(always)]
-    pub fn vcopdn(&mut self) -> VCOPDN_W<DSLEEPCR_SPEC> {
+    pub fn vcopdn(&mut self) -> VCOPDN_W<'_, DSLEEPCR_SPEC> {
         VCOPDN_W::new(self, 13)
     }
     #[doc = "Bit 16 - USB Clock Control in Deep Sleep Mode"]
     #[inline(always)]
-    pub fn usbcr(&mut self) -> USBCR_W<DSLEEPCR_SPEC> {
+    pub fn usbcr(&mut self) -> USBCR_W<'_, DSLEEPCR_SPEC> {
         USBCR_W::new(self, 16)
     }
     #[doc = "Bit 17 - MMC Clock Control in Deep Sleep Mode"]
     #[inline(always)]
-    pub fn mmccr(&mut self) -> MMCCR_W<DSLEEPCR_SPEC> {
+    pub fn mmccr(&mut self) -> MMCCR_W<'_, DSLEEPCR_SPEC> {
         MMCCR_W::new(self, 17)
     }
     #[doc = "Bit 18 - Ethernet Clock Control in Deep Sleep Mode"]
     #[inline(always)]
-    pub fn eth0cr(&mut self) -> ETH0CR_W<DSLEEPCR_SPEC> {
+    pub fn eth0cr(&mut self) -> ETH0CR_W<'_, DSLEEPCR_SPEC> {
         ETH0CR_W::new(self, 18)
     }
     #[doc = "Bit 20 - CCU Clock Control in Deep Sleep Mode"]
     #[inline(always)]
-    pub fn ccucr(&mut self) -> CCUCR_W<DSLEEPCR_SPEC> {
+    pub fn ccucr(&mut self) -> CCUCR_W<'_, DSLEEPCR_SPEC> {
         CCUCR_W::new(self, 20)
     }
     #[doc = "Bit 21 - WDT Clock Control in Deep Sleep Mode"]
     #[inline(always)]
-    pub fn wdtcr(&mut self) -> WDTCR_W<DSLEEPCR_SPEC> {
+    pub fn wdtcr(&mut self) -> WDTCR_W<'_, DSLEEPCR_SPEC> {
         WDTCR_W::new(self, 21)
     }
 }
@@ -583,10 +583,6 @@ impl crate::Readable for DSLEEPCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dsleepcr::W`](W) writer structure"]
 impl crate::Writable for DSLEEPCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DSLEEPCR to value 0"]
-impl crate::Resettable for DSLEEPCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DSLEEPCR_SPEC {}

@@ -189,32 +189,32 @@ where
 impl W {
     #[doc = "Bit 1 - WDT Reset Clear"]
     #[inline(always)]
-    pub fn wdtrs(&mut self) -> WDTRS_W<PRCLR2_SPEC> {
+    pub fn wdtrs(&mut self) -> WDTRS_W<'_, PRCLR2_SPEC> {
         WDTRS_W::new(self, 1)
     }
     #[doc = "Bit 2 - ETH0 Reset Clear"]
     #[inline(always)]
-    pub fn eth0rs(&mut self) -> ETH0RS_W<PRCLR2_SPEC> {
+    pub fn eth0rs(&mut self) -> ETH0RS_W<'_, PRCLR2_SPEC> {
         ETH0RS_W::new(self, 2)
     }
     #[doc = "Bit 4 - DMA0 Reset Clear"]
     #[inline(always)]
-    pub fn dma0rs(&mut self) -> DMA0RS_W<PRCLR2_SPEC> {
+    pub fn dma0rs(&mut self) -> DMA0RS_W<'_, PRCLR2_SPEC> {
         DMA0RS_W::new(self, 4)
     }
     #[doc = "Bit 6 - FCE Reset Clear"]
     #[inline(always)]
-    pub fn fcers(&mut self) -> FCERS_W<PRCLR2_SPEC> {
+    pub fn fcers(&mut self) -> FCERS_W<'_, PRCLR2_SPEC> {
         FCERS_W::new(self, 6)
     }
     #[doc = "Bit 7 - USB Reset Clear"]
     #[inline(always)]
-    pub fn usbrs(&mut self) -> USBRS_W<PRCLR2_SPEC> {
+    pub fn usbrs(&mut self) -> USBRS_W<'_, PRCLR2_SPEC> {
         USBRS_W::new(self, 7)
     }
     #[doc = "Bit 10 - ECAT0 Reset Clear"]
     #[inline(always)]
-    pub fn ecat0rs(&mut self) -> ECAT0RS_W<PRCLR2_SPEC> {
+    pub fn ecat0rs(&mut self) -> ECAT0RS_W<'_, PRCLR2_SPEC> {
         ECAT0RS_W::new(self, 10)
     }
 }
@@ -226,10 +226,6 @@ impl crate::RegisterSpec for PRCLR2_SPEC {
 #[doc = "`write(|w| ..)` method takes [`prclr2::W`](W) writer structure"]
 impl crate::Writable for PRCLR2_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PRCLR2 to value 0"]
-impl crate::Resettable for PRCLR2_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PRCLR2_SPEC {}

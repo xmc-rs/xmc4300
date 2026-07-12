@@ -127,22 +127,22 @@ where
 impl W {
     #[doc = "Bit 8 - Set Hibernate Wake-up Reset Status"]
     #[inline(always)]
-    pub fn hibwk(&mut self) -> HIBWK_W<RSTSET_SPEC> {
+    pub fn hibwk(&mut self) -> HIBWK_W<'_, RSTSET_SPEC> {
         HIBWK_W::new(self, 8)
     }
     #[doc = "Bit 9 - Set Hibernate Reset"]
     #[inline(always)]
-    pub fn hibrs(&mut self) -> HIBRS_W<RSTSET_SPEC> {
+    pub fn hibrs(&mut self) -> HIBRS_W<'_, RSTSET_SPEC> {
         HIBRS_W::new(self, 9)
     }
     #[doc = "Bit 10 - Enable Lockup Reset"]
     #[inline(always)]
-    pub fn lcken(&mut self) -> LCKEN_W<RSTSET_SPEC> {
+    pub fn lcken(&mut self) -> LCKEN_W<'_, RSTSET_SPEC> {
         LCKEN_W::new(self, 10)
     }
     #[doc = "Bit 12 - ECAT0 Reset Status Information"]
     #[inline(always)]
-    pub fn ecat0rs(&mut self) -> ECAT0RS_W<RSTSET_SPEC> {
+    pub fn ecat0rs(&mut self) -> ECAT0RS_W<'_, RSTSET_SPEC> {
         ECAT0RS_W::new(self, 12)
     }
 }
@@ -154,10 +154,6 @@ impl crate::RegisterSpec for RSTSET_SPEC {
 #[doc = "`write(|w| ..)` method takes [`rstset::W`](W) writer structure"]
 impl crate::Writable for RSTSET_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RSTSET to value 0"]
-impl crate::Resettable for RSTSET_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RSTSET_SPEC {}

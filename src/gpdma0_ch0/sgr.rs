@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:19 - Source gather interval"]
     #[inline(always)]
-    pub fn sgi(&mut self) -> SGI_W<SGR_SPEC> {
+    pub fn sgi(&mut self) -> SGI_W<'_, SGR_SPEC> {
         SGI_W::new(self, 0)
     }
     #[doc = "Bits 20:31 - Source gather count"]
     #[inline(always)]
-    pub fn sgc(&mut self) -> SGC_W<SGR_SPEC> {
+    pub fn sgc(&mut self) -> SGC_W<'_, SGR_SPEC> {
         SGC_W::new(self, 20)
     }
 }
@@ -44,10 +44,6 @@ impl crate::Readable for SGR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sgr::W`](W) writer structure"]
 impl crate::Writable for SGR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SGR to value 0"]
-impl crate::Resettable for SGR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SGR_SPEC {}

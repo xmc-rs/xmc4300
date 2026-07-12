@@ -491,42 +491,42 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Enable Gate"]
     #[inline(always)]
-    pub fn engt(&mut self) -> ENGT_W<ASMR_SPEC> {
+    pub fn engt(&mut self) -> ENGT_W<'_, ASMR_SPEC> {
         ENGT_W::new(self, 0)
     }
     #[doc = "Bit 2 - Enable External Trigger"]
     #[inline(always)]
-    pub fn entr(&mut self) -> ENTR_W<ASMR_SPEC> {
+    pub fn entr(&mut self) -> ENTR_W<'_, ASMR_SPEC> {
         ENTR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable Source Interrupt"]
     #[inline(always)]
-    pub fn ensi(&mut self) -> ENSI_W<ASMR_SPEC> {
+    pub fn ensi(&mut self) -> ENSI_W<'_, ASMR_SPEC> {
         ENSI_W::new(self, 3)
     }
     #[doc = "Bit 4 - Autoscan Enable"]
     #[inline(always)]
-    pub fn scan(&mut self) -> SCAN_W<ASMR_SPEC> {
+    pub fn scan(&mut self) -> SCAN_W<'_, ASMR_SPEC> {
         SCAN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Autoscan Source Load Event Mode"]
     #[inline(always)]
-    pub fn ldm(&mut self) -> LDM_W<ASMR_SPEC> {
+    pub fn ldm(&mut self) -> LDM_W<'_, ASMR_SPEC> {
         LDM_W::new(self, 5)
     }
     #[doc = "Bit 8 - Clear Pending Bits"]
     #[inline(always)]
-    pub fn clrpnd(&mut self) -> CLRPND_W<ASMR_SPEC> {
+    pub fn clrpnd(&mut self) -> CLRPND_W<'_, ASMR_SPEC> {
         CLRPND_W::new(self, 8)
     }
     #[doc = "Bit 9 - Generate Load Event"]
     #[inline(always)]
-    pub fn ldev(&mut self) -> LDEV_W<ASMR_SPEC> {
+    pub fn ldev(&mut self) -> LDEV_W<'_, ASMR_SPEC> {
         LDEV_W::new(self, 9)
     }
     #[doc = "Bit 16 - Repeat Disable"]
     #[inline(always)]
-    pub fn rptdis(&mut self) -> RPTDIS_W<ASMR_SPEC> {
+    pub fn rptdis(&mut self) -> RPTDIS_W<'_, ASMR_SPEC> {
         RPTDIS_W::new(self, 16)
     }
 }
@@ -540,10 +540,6 @@ impl crate::Readable for ASMR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`asmr::W`](W) writer structure"]
 impl crate::Writable for ASMR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ASMR to value 0"]
-impl crate::Resettable for ASMR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ASMR_SPEC {}

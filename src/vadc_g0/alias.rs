@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Alias Value for CH0 Conversion Requests"]
     #[inline(always)]
-    pub fn alias0(&mut self) -> ALIAS0_W<ALIAS_SPEC> {
+    pub fn alias0(&mut self) -> ALIAS0_W<'_, ALIAS_SPEC> {
         ALIAS0_W::new(self, 0)
     }
     #[doc = "Bits 8:12 - Alias Value for CH1 Conversion Requests"]
     #[inline(always)]
-    pub fn alias1(&mut self) -> ALIAS1_W<ALIAS_SPEC> {
+    pub fn alias1(&mut self) -> ALIAS1_W<'_, ALIAS_SPEC> {
         ALIAS1_W::new(self, 8)
     }
 }
@@ -44,8 +44,6 @@ impl crate::Readable for ALIAS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`alias::W`](W) writer structure"]
 impl crate::Writable for ALIAS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ALIAS to value 0x0100"]
 impl crate::Resettable for ALIAS_SPEC {

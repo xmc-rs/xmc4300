@@ -17,6 +17,4 @@ impl crate::RegisterSpec for RX_CRC_ERROR_FRAMES_SPEC {
 #[doc = "`read()` method returns [`rx_crc_error_frames::R`](R) reader structure"]
 impl crate::Readable for RX_CRC_ERROR_FRAMES_SPEC {}
 #[doc = "`reset()` method sets RX_CRC_ERROR_FRAMES to value 0"]
-impl crate::Resettable for RX_CRC_ERROR_FRAMES_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RX_CRC_ERROR_FRAMES_SPEC {}

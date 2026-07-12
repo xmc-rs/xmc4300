@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Current Source Address of DMA transfer"]
     #[inline(always)]
-    pub fn sar(&mut self) -> SAR_W<SAR_SPEC> {
+    pub fn sar(&mut self) -> SAR_W<'_, SAR_SPEC> {
         SAR_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for SAR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sar::W`](W) writer structure"]
 impl crate::Writable for SAR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SAR to value 0"]
-impl crate::Resettable for SAR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SAR_SPEC {}

@@ -251,42 +251,42 @@ where
 impl W {
     #[doc = "Bit 0 - Clear Channel Event for Channel 0"]
     #[inline(always)]
-    pub fn cev0(&mut self) -> CEV0_W<CEFCLR_SPEC> {
+    pub fn cev0(&mut self) -> CEV0_W<'_, CEFCLR_SPEC> {
         CEV0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Channel Event for Channel 1"]
     #[inline(always)]
-    pub fn cev1(&mut self) -> CEV1_W<CEFCLR_SPEC> {
+    pub fn cev1(&mut self) -> CEV1_W<'_, CEFCLR_SPEC> {
         CEV1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Channel Event for Channel 2"]
     #[inline(always)]
-    pub fn cev2(&mut self) -> CEV2_W<CEFCLR_SPEC> {
+    pub fn cev2(&mut self) -> CEV2_W<'_, CEFCLR_SPEC> {
         CEV2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Clear Channel Event for Channel 3"]
     #[inline(always)]
-    pub fn cev3(&mut self) -> CEV3_W<CEFCLR_SPEC> {
+    pub fn cev3(&mut self) -> CEV3_W<'_, CEFCLR_SPEC> {
         CEV3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Clear Channel Event for Channel 4"]
     #[inline(always)]
-    pub fn cev4(&mut self) -> CEV4_W<CEFCLR_SPEC> {
+    pub fn cev4(&mut self) -> CEV4_W<'_, CEFCLR_SPEC> {
         CEV4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Clear Channel Event for Channel 5"]
     #[inline(always)]
-    pub fn cev5(&mut self) -> CEV5_W<CEFCLR_SPEC> {
+    pub fn cev5(&mut self) -> CEV5_W<'_, CEFCLR_SPEC> {
         CEV5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Clear Channel Event for Channel 6"]
     #[inline(always)]
-    pub fn cev6(&mut self) -> CEV6_W<CEFCLR_SPEC> {
+    pub fn cev6(&mut self) -> CEV6_W<'_, CEFCLR_SPEC> {
         CEV6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Clear Channel Event for Channel 7"]
     #[inline(always)]
-    pub fn cev7(&mut self) -> CEV7_W<CEFCLR_SPEC> {
+    pub fn cev7(&mut self) -> CEV7_W<'_, CEFCLR_SPEC> {
         CEV7_W::new(self, 7)
     }
 }
@@ -298,10 +298,6 @@ impl crate::RegisterSpec for CEFCLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [`cefclr::W`](W) writer structure"]
 impl crate::Writable for CEFCLR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CEFCLR to value 0"]
-impl crate::Resettable for CEFCLR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CEFCLR_SPEC {}

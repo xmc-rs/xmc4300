@@ -239,22 +239,22 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Output Passive Level for CCU8x.OUTy0"]
     #[inline(always)]
-    pub fn psl11(&mut self) -> PSL11_W<PSL_SPEC> {
+    pub fn psl11(&mut self) -> PSL11_W<'_, PSL_SPEC> {
         PSL11_W::new(self, 0)
     }
     #[doc = "Bit 1 - Output Passive Level for CCU8x.OUTy1"]
     #[inline(always)]
-    pub fn psl12(&mut self) -> PSL12_W<PSL_SPEC> {
+    pub fn psl12(&mut self) -> PSL12_W<'_, PSL_SPEC> {
         PSL12_W::new(self, 1)
     }
     #[doc = "Bit 2 - Output Passive Level for CCU8x.OUTy2"]
     #[inline(always)]
-    pub fn psl21(&mut self) -> PSL21_W<PSL_SPEC> {
+    pub fn psl21(&mut self) -> PSL21_W<'_, PSL_SPEC> {
         PSL21_W::new(self, 2)
     }
     #[doc = "Bit 3 - Output Passive Level for CCU8x.OUTy3"]
     #[inline(always)]
-    pub fn psl22(&mut self) -> PSL22_W<PSL_SPEC> {
+    pub fn psl22(&mut self) -> PSL22_W<'_, PSL_SPEC> {
         PSL22_W::new(self, 3)
     }
 }
@@ -268,10 +268,6 @@ impl crate::Readable for PSL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`psl::W`](W) writer structure"]
 impl crate::Writable for PSL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PSL to value 0"]
-impl crate::Resettable for PSL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PSL_SPEC {}

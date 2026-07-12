@@ -51,6 +51,4 @@ impl crate::RegisterSpec for WR_REG_PROTECT_SPEC {
 #[doc = "`read()` method returns [`wr_reg_protect::R`](R) reader structure"]
 impl crate::Readable for WR_REG_PROTECT_SPEC {}
 #[doc = "`reset()` method sets WR_REG_PROTECT to value 0"]
-impl crate::Resettable for WR_REG_PROTECT_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for WR_REG_PROTECT_SPEC {}

@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Hibernate Retention Memory Data"]
     #[inline(always)]
-    pub fn data(&mut self) -> DATA_W<RMDATA_SPEC> {
+    pub fn data(&mut self) -> DATA_W<'_, RMDATA_SPEC> {
         DATA_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for RMDATA_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`rmdata::W`](W) writer structure"]
 impl crate::Writable for RMDATA_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RMDATA to value 0"]
-impl crate::Resettable for RMDATA_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RMDATA_SPEC {}

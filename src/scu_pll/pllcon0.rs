@@ -531,52 +531,52 @@ impl R {
 impl W {
     #[doc = "Bit 0 - VCO Bypass"]
     #[inline(always)]
-    pub fn vcobyp(&mut self) -> VCOBYP_W<PLLCON0_SPEC> {
+    pub fn vcobyp(&mut self) -> VCOBYP_W<'_, PLLCON0_SPEC> {
         VCOBYP_W::new(self, 0)
     }
     #[doc = "Bit 1 - VCO Power Saving Mode"]
     #[inline(always)]
-    pub fn vcopwd(&mut self) -> VCOPWD_W<PLLCON0_SPEC> {
+    pub fn vcopwd(&mut self) -> VCOPWD_W<'_, PLLCON0_SPEC> {
         VCOPWD_W::new(self, 1)
     }
     #[doc = "Bit 2 - VCO Trim Control"]
     #[inline(always)]
-    pub fn vcotr(&mut self) -> VCOTR_W<PLLCON0_SPEC> {
+    pub fn vcotr(&mut self) -> VCOTR_W<'_, PLLCON0_SPEC> {
         VCOTR_W::new(self, 2)
     }
     #[doc = "Bit 4 - Disconnect Oscillator from VCO"]
     #[inline(always)]
-    pub fn findis(&mut self) -> FINDIS_W<PLLCON0_SPEC> {
+    pub fn findis(&mut self) -> FINDIS_W<'_, PLLCON0_SPEC> {
         FINDIS_W::new(self, 4)
     }
     #[doc = "Bit 6 - Oscillator Disconnect Disable"]
     #[inline(always)]
-    pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<PLLCON0_SPEC> {
+    pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<'_, PLLCON0_SPEC> {
         OSCDISCDIS_W::new(self, 6)
     }
     #[doc = "Bit 16 - PLL Power Saving Mode"]
     #[inline(always)]
-    pub fn pllpwd(&mut self) -> PLLPWD_W<PLLCON0_SPEC> {
+    pub fn pllpwd(&mut self) -> PLLPWD_W<'_, PLLCON0_SPEC> {
         PLLPWD_W::new(self, 16)
     }
     #[doc = "Bit 17 - Oscillator Watchdog Reset"]
     #[inline(always)]
-    pub fn oscres(&mut self) -> OSCRES_W<PLLCON0_SPEC> {
+    pub fn oscres(&mut self) -> OSCRES_W<'_, PLLCON0_SPEC> {
         OSCRES_W::new(self, 17)
     }
     #[doc = "Bit 18 - Restart VCO Lock Detection"]
     #[inline(always)]
-    pub fn resld(&mut self) -> RESLD_W<PLLCON0_SPEC> {
+    pub fn resld(&mut self) -> RESLD_W<'_, PLLCON0_SPEC> {
         RESLD_W::new(self, 18)
     }
     #[doc = "Bit 19 - Automatic Oscillator Calibration Enable"]
     #[inline(always)]
-    pub fn aotren(&mut self) -> AOTREN_W<PLLCON0_SPEC> {
+    pub fn aotren(&mut self) -> AOTREN_W<'_, PLLCON0_SPEC> {
         AOTREN_W::new(self, 19)
     }
     #[doc = "Bit 20 - Factory Oscillator Calibration"]
     #[inline(always)]
-    pub fn fotr(&mut self) -> FOTR_W<PLLCON0_SPEC> {
+    pub fn fotr(&mut self) -> FOTR_W<'_, PLLCON0_SPEC> {
         FOTR_W::new(self, 20)
     }
 }
@@ -590,8 +590,6 @@ impl crate::Readable for PLLCON0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pllcon0::W`](W) writer structure"]
 impl crate::Writable for PLLCON0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PLLCON0 to value 0x0003_0003"]
 impl crate::Resettable for PLLCON0_SPEC {

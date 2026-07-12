@@ -123,12 +123,12 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Latch0 positive edge"]
     #[inline(always)]
-    pub fn l0_pos(&mut self) -> L0_POS_W<DC_LATCH0_CONT_SPEC> {
+    pub fn l0_pos(&mut self) -> L0_POS_W<'_, DC_LATCH0_CONT_SPEC> {
         L0_POS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Latch0 negative edge"]
     #[inline(always)]
-    pub fn l0_neg(&mut self) -> L0_NEG_W<DC_LATCH0_CONT_SPEC> {
+    pub fn l0_neg(&mut self) -> L0_NEG_W<'_, DC_LATCH0_CONT_SPEC> {
         L0_NEG_W::new(self, 1)
     }
 }
@@ -142,10 +142,6 @@ impl crate::Readable for DC_LATCH0_CONT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dc_latch0_cont::W`](W) writer structure"]
 impl crate::Writable for DC_LATCH0_CONT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u8 = 0;
 }
 #[doc = "`reset()` method sets DC_LATCH0_CONT to value 0"]
-impl crate::Resettable for DC_LATCH0_CONT_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for DC_LATCH0_CONT_SPEC {}

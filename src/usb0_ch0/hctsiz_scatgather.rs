@@ -116,17 +116,17 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Schedule information"]
     #[inline(always)]
-    pub fn sched_info(&mut self) -> SCHED_INFO_W<HCTSIZ_SCATGATHER_SPEC> {
+    pub fn sched_info(&mut self) -> SCHED_INFO_W<'_, HCTSIZ_SCATGATHER_SPEC> {
         SCHED_INFO_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Number of Transfer Descriptors: 0=1 descriptor, 63=64 descriptors, 1=2 descriptors, 3=4 descriptors, 7=8 descriptors, 15=16 descriptors, 31=32 descriptors, 63=64 descriptors,"]
     #[inline(always)]
-    pub fn ntd(&mut self) -> NTD_W<HCTSIZ_SCATGATHER_SPEC> {
+    pub fn ntd(&mut self) -> NTD_W<'_, HCTSIZ_SCATGATHER_SPEC> {
         NTD_W::new(self, 8)
     }
     #[doc = "Bits 29:30 - PID"]
     #[inline(always)]
-    pub fn pid(&mut self) -> PID_W<HCTSIZ_SCATGATHER_SPEC> {
+    pub fn pid(&mut self) -> PID_W<'_, HCTSIZ_SCATGATHER_SPEC> {
         PID_W::new(self, 29)
     }
 }
@@ -140,10 +140,6 @@ impl crate::Readable for HCTSIZ_SCATGATHER_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hctsiz_scatgather::W`](W) writer structure"]
 impl crate::Writable for HCTSIZ_SCATGATHER_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HCTSIZ_SCATGATHER to value 0"]
-impl crate::Resettable for HCTSIZ_SCATGATHER_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HCTSIZ_SCATGATHER_SPEC {}

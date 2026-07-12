@@ -935,82 +935,82 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf0(&mut self) -> VF0_W<VFR_SPEC> {
+    pub fn vf0(&mut self) -> VF0_W<'_, VFR_SPEC> {
         VF0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf1(&mut self) -> VF1_W<VFR_SPEC> {
+    pub fn vf1(&mut self) -> VF1_W<'_, VFR_SPEC> {
         VF1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf2(&mut self) -> VF2_W<VFR_SPEC> {
+    pub fn vf2(&mut self) -> VF2_W<'_, VFR_SPEC> {
         VF2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf3(&mut self) -> VF3_W<VFR_SPEC> {
+    pub fn vf3(&mut self) -> VF3_W<'_, VFR_SPEC> {
         VF3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf4(&mut self) -> VF4_W<VFR_SPEC> {
+    pub fn vf4(&mut self) -> VF4_W<'_, VFR_SPEC> {
         VF4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf5(&mut self) -> VF5_W<VFR_SPEC> {
+    pub fn vf5(&mut self) -> VF5_W<'_, VFR_SPEC> {
         VF5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf6(&mut self) -> VF6_W<VFR_SPEC> {
+    pub fn vf6(&mut self) -> VF6_W<'_, VFR_SPEC> {
         VF6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf7(&mut self) -> VF7_W<VFR_SPEC> {
+    pub fn vf7(&mut self) -> VF7_W<'_, VFR_SPEC> {
         VF7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf8(&mut self) -> VF8_W<VFR_SPEC> {
+    pub fn vf8(&mut self) -> VF8_W<'_, VFR_SPEC> {
         VF8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf9(&mut self) -> VF9_W<VFR_SPEC> {
+    pub fn vf9(&mut self) -> VF9_W<'_, VFR_SPEC> {
         VF9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf10(&mut self) -> VF10_W<VFR_SPEC> {
+    pub fn vf10(&mut self) -> VF10_W<'_, VFR_SPEC> {
         VF10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf11(&mut self) -> VF11_W<VFR_SPEC> {
+    pub fn vf11(&mut self) -> VF11_W<'_, VFR_SPEC> {
         VF11_W::new(self, 11)
     }
     #[doc = "Bit 12 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf12(&mut self) -> VF12_W<VFR_SPEC> {
+    pub fn vf12(&mut self) -> VF12_W<'_, VFR_SPEC> {
         VF12_W::new(self, 12)
     }
     #[doc = "Bit 13 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf13(&mut self) -> VF13_W<VFR_SPEC> {
+    pub fn vf13(&mut self) -> VF13_W<'_, VFR_SPEC> {
         VF13_W::new(self, 13)
     }
     #[doc = "Bit 14 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf14(&mut self) -> VF14_W<VFR_SPEC> {
+    pub fn vf14(&mut self) -> VF14_W<'_, VFR_SPEC> {
         VF14_W::new(self, 14)
     }
     #[doc = "Bit 15 - Valid Flag of Result Register x"]
     #[inline(always)]
-    pub fn vf15(&mut self) -> VF15_W<VFR_SPEC> {
+    pub fn vf15(&mut self) -> VF15_W<'_, VFR_SPEC> {
         VF15_W::new(self, 15)
     }
 }
@@ -1024,10 +1024,6 @@ impl crate::Readable for VFR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`vfr::W`](W) writer structure"]
 impl crate::Writable for VFR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets VFR to value 0"]
-impl crate::Resettable for VFR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for VFR_SPEC {}

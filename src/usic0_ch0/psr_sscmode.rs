@@ -703,62 +703,62 @@ impl R {
 impl W {
     #[doc = "Bit 0 - MSLS Status"]
     #[inline(always)]
-    pub fn msls(&mut self) -> MSLS_W<PSR_SSCMODE_SPEC> {
+    pub fn msls(&mut self) -> MSLS_W<'_, PSR_SSCMODE_SPEC> {
         MSLS_W::new(self, 0)
     }
     #[doc = "Bit 1 - DX2S Status"]
     #[inline(always)]
-    pub fn dx2s(&mut self) -> DX2S_W<PSR_SSCMODE_SPEC> {
+    pub fn dx2s(&mut self) -> DX2S_W<'_, PSR_SSCMODE_SPEC> {
         DX2S_W::new(self, 1)
     }
     #[doc = "Bit 2 - MSLS Event Detected"]
     #[inline(always)]
-    pub fn mslsev(&mut self) -> MSLSEV_W<PSR_SSCMODE_SPEC> {
+    pub fn mslsev(&mut self) -> MSLSEV_W<'_, PSR_SSCMODE_SPEC> {
         MSLSEV_W::new(self, 2)
     }
     #[doc = "Bit 3 - DX2T Event Detected"]
     #[inline(always)]
-    pub fn dx2tev(&mut self) -> DX2TEV_W<PSR_SSCMODE_SPEC> {
+    pub fn dx2tev(&mut self) -> DX2TEV_W<'_, PSR_SSCMODE_SPEC> {
         DX2TEV_W::new(self, 3)
     }
     #[doc = "Bit 4 - Parity Error Event Detected"]
     #[inline(always)]
-    pub fn parerr(&mut self) -> PARERR_W<PSR_SSCMODE_SPEC> {
+    pub fn parerr(&mut self) -> PARERR_W<'_, PSR_SSCMODE_SPEC> {
         PARERR_W::new(self, 4)
     }
     #[doc = "Bit 10 - Receiver Start Indication Flag"]
     #[inline(always)]
-    pub fn rsif(&mut self) -> RSIF_W<PSR_SSCMODE_SPEC> {
+    pub fn rsif(&mut self) -> RSIF_W<'_, PSR_SSCMODE_SPEC> {
         RSIF_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data Lost Indication Flag"]
     #[inline(always)]
-    pub fn dlif(&mut self) -> DLIF_W<PSR_SSCMODE_SPEC> {
+    pub fn dlif(&mut self) -> DLIF_W<'_, PSR_SSCMODE_SPEC> {
         DLIF_W::new(self, 11)
     }
     #[doc = "Bit 12 - Transmit Shift Indication Flag"]
     #[inline(always)]
-    pub fn tsif(&mut self) -> TSIF_W<PSR_SSCMODE_SPEC> {
+    pub fn tsif(&mut self) -> TSIF_W<'_, PSR_SSCMODE_SPEC> {
         TSIF_W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit Buffer Indication Flag"]
     #[inline(always)]
-    pub fn tbif(&mut self) -> TBIF_W<PSR_SSCMODE_SPEC> {
+    pub fn tbif(&mut self) -> TBIF_W<'_, PSR_SSCMODE_SPEC> {
         TBIF_W::new(self, 13)
     }
     #[doc = "Bit 14 - Receive Indication Flag"]
     #[inline(always)]
-    pub fn rif(&mut self) -> RIF_W<PSR_SSCMODE_SPEC> {
+    pub fn rif(&mut self) -> RIF_W<'_, PSR_SSCMODE_SPEC> {
         RIF_W::new(self, 14)
     }
     #[doc = "Bit 15 - Alternative Receive Indication Flag"]
     #[inline(always)]
-    pub fn aif(&mut self) -> AIF_W<PSR_SSCMODE_SPEC> {
+    pub fn aif(&mut self) -> AIF_W<'_, PSR_SSCMODE_SPEC> {
         AIF_W::new(self, 15)
     }
     #[doc = "Bit 16 - Baud Rate Generator Indication Flag"]
     #[inline(always)]
-    pub fn brgif(&mut self) -> BRGIF_W<PSR_SSCMODE_SPEC> {
+    pub fn brgif(&mut self) -> BRGIF_W<'_, PSR_SSCMODE_SPEC> {
         BRGIF_W::new(self, 16)
     }
 }
@@ -772,10 +772,6 @@ impl crate::Readable for PSR_SSCMODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`psr_sscmode::W`](W) writer structure"]
 impl crate::Writable for PSR_SSCMODE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PSR_SSCMode to value 0"]
-impl crate::Resettable for PSR_SSCMODE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PSR_SSCMODE_SPEC {}

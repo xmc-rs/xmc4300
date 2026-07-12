@@ -17,6 +17,4 @@ impl crate::RegisterSpec for TX_128TO255OCTETS_FRAMES_GOOD_BAD_SPEC {
 #[doc = "`read()` method returns [`tx_128to255octets_frames_good_bad::R`](R) reader structure"]
 impl crate::Readable for TX_128TO255OCTETS_FRAMES_GOOD_BAD_SPEC {}
 #[doc = "`reset()` method sets TX_128TO255OCTETS_FRAMES_GOOD_BAD to value 0"]
-impl crate::Resettable for TX_128TO255OCTETS_FRAMES_GOOD_BAD_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TX_128TO255OCTETS_FRAMES_GOOD_BAD_SPEC {}

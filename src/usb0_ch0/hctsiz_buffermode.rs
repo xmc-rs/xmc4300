@@ -116,17 +116,17 @@ impl R {
 impl W {
     #[doc = "Bits 0:18 - Transfer Size"]
     #[inline(always)]
-    pub fn xfer_size(&mut self) -> XFER_SIZE_W<HCTSIZ_BUFFERMODE_SPEC> {
+    pub fn xfer_size(&mut self) -> XFER_SIZE_W<'_, HCTSIZ_BUFFERMODE_SPEC> {
         XFER_SIZE_W::new(self, 0)
     }
     #[doc = "Bits 19:28 - Packet Count"]
     #[inline(always)]
-    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<HCTSIZ_BUFFERMODE_SPEC> {
+    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<'_, HCTSIZ_BUFFERMODE_SPEC> {
         PKT_CNT_W::new(self, 19)
     }
     #[doc = "Bits 29:30 - PID"]
     #[inline(always)]
-    pub fn pid(&mut self) -> PID_W<HCTSIZ_BUFFERMODE_SPEC> {
+    pub fn pid(&mut self) -> PID_W<'_, HCTSIZ_BUFFERMODE_SPEC> {
         PID_W::new(self, 29)
     }
 }
@@ -140,10 +140,6 @@ impl crate::Readable for HCTSIZ_BUFFERMODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hctsiz_buffermode::W`](W) writer structure"]
 impl crate::Writable for HCTSIZ_BUFFERMODE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HCTSIZ_BUFFERMODE to value 0"]
-impl crate::Resettable for HCTSIZ_BUFFERMODE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HCTSIZ_BUFFERMODE_SPEC {}

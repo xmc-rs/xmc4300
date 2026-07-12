@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Block Transfer Size"]
     #[inline(always)]
-    pub fn block_ts(&mut self) -> BLOCK_TS_W<CTLH_SPEC> {
+    pub fn block_ts(&mut self) -> BLOCK_TS_W<'_, CTLH_SPEC> {
         BLOCK_TS_W::new(self, 0)
     }
     #[doc = "Bit 12 - Done bit"]
     #[inline(always)]
-    pub fn done(&mut self) -> DONE_W<CTLH_SPEC> {
+    pub fn done(&mut self) -> DONE_W<'_, CTLH_SPEC> {
         DONE_W::new(self, 12)
     }
 }
@@ -44,8 +44,6 @@ impl crate::Readable for CTLH_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ctlh::W`](W) writer structure"]
 impl crate::Writable for CTLH_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CTLH to value 0x02"]
 impl crate::Resettable for CTLH_SPEC {

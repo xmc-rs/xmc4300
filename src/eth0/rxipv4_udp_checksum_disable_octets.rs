@@ -17,6 +17,4 @@ impl crate::RegisterSpec for RXIPV4_UDP_CHECKSUM_DISABLE_OCTETS_SPEC {
 #[doc = "`read()` method returns [`rxipv4_udp_checksum_disable_octets::R`](R) reader structure"]
 impl crate::Readable for RXIPV4_UDP_CHECKSUM_DISABLE_OCTETS_SPEC {}
 #[doc = "`reset()` method sets RXIPV4_UDP_CHECKSUM_DISABLE_OCTETS to value 0"]
-impl crate::Resettable for RXIPV4_UDP_CHECKSUM_DISABLE_OCTETS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RXIPV4_UDP_CHECKSUM_DISABLE_OCTETS_SPEC {}

@@ -66,27 +66,27 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Power Down"]
     #[inline(always)]
-    pub fn pwrdwn(&mut self) -> PWRDWN_W<PMT_CONTROL_STATUS_SPEC> {
+    pub fn pwrdwn(&mut self) -> PWRDWN_W<'_, PMT_CONTROL_STATUS_SPEC> {
         PWRDWN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Magic Packet Enable"]
     #[inline(always)]
-    pub fn mgkpkten(&mut self) -> MGKPKTEN_W<PMT_CONTROL_STATUS_SPEC> {
+    pub fn mgkpkten(&mut self) -> MGKPKTEN_W<'_, PMT_CONTROL_STATUS_SPEC> {
         MGKPKTEN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Wake-Up Frame Enable"]
     #[inline(always)]
-    pub fn rwkpkten(&mut self) -> RWKPKTEN_W<PMT_CONTROL_STATUS_SPEC> {
+    pub fn rwkpkten(&mut self) -> RWKPKTEN_W<'_, PMT_CONTROL_STATUS_SPEC> {
         RWKPKTEN_W::new(self, 2)
     }
     #[doc = "Bit 9 - Global Unicast"]
     #[inline(always)]
-    pub fn glblucast(&mut self) -> GLBLUCAST_W<PMT_CONTROL_STATUS_SPEC> {
+    pub fn glblucast(&mut self) -> GLBLUCAST_W<'_, PMT_CONTROL_STATUS_SPEC> {
         GLBLUCAST_W::new(self, 9)
     }
     #[doc = "Bit 31 - Wake-Up Frame Filter Register Pointer Reset"]
     #[inline(always)]
-    pub fn rwkfiltrst(&mut self) -> RWKFILTRST_W<PMT_CONTROL_STATUS_SPEC> {
+    pub fn rwkfiltrst(&mut self) -> RWKFILTRST_W<'_, PMT_CONTROL_STATUS_SPEC> {
         RWKFILTRST_W::new(self, 31)
     }
 }
@@ -100,10 +100,6 @@ impl crate::Readable for PMT_CONTROL_STATUS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pmt_control_status::W`](W) writer structure"]
 impl crate::Writable for PMT_CONTROL_STATUS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PMT_CONTROL_STATUS to value 0"]
-impl crate::Resettable for PMT_CONTROL_STATUS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PMT_CONTROL_STATUS_SPEC {}

@@ -65,6 +65,4 @@ impl crate::RegisterSpec for C0V_SPEC {
 #[doc = "`read()` method returns [`c0v::R`](R) reader structure"]
 impl crate::Readable for C0V_SPEC {}
 #[doc = "`reset()` method sets C0V to value 0"]
-impl crate::Resettable for C0V_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for C0V_SPEC {}

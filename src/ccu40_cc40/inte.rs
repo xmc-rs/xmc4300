@@ -413,37 +413,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Period match while counting up enable"]
     #[inline(always)]
-    pub fn pme(&mut self) -> PME_W<INTE_SPEC> {
+    pub fn pme(&mut self) -> PME_W<'_, INTE_SPEC> {
         PME_W::new(self, 0)
     }
     #[doc = "Bit 1 - One match while counting down enable"]
     #[inline(always)]
-    pub fn ome(&mut self) -> OME_W<INTE_SPEC> {
+    pub fn ome(&mut self) -> OME_W<'_, INTE_SPEC> {
         OME_W::new(self, 1)
     }
     #[doc = "Bit 2 - Compare match while counting up enable"]
     #[inline(always)]
-    pub fn cmue(&mut self) -> CMUE_W<INTE_SPEC> {
+    pub fn cmue(&mut self) -> CMUE_W<'_, INTE_SPEC> {
         CMUE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Compare match while counting down enable"]
     #[inline(always)]
-    pub fn cmde(&mut self) -> CMDE_W<INTE_SPEC> {
+    pub fn cmde(&mut self) -> CMDE_W<'_, INTE_SPEC> {
         CMDE_W::new(self, 3)
     }
     #[doc = "Bit 8 - Event 0 interrupt enable"]
     #[inline(always)]
-    pub fn e0ae(&mut self) -> E0AE_W<INTE_SPEC> {
+    pub fn e0ae(&mut self) -> E0AE_W<'_, INTE_SPEC> {
         E0AE_W::new(self, 8)
     }
     #[doc = "Bit 9 - Event 1 interrupt enable"]
     #[inline(always)]
-    pub fn e1ae(&mut self) -> E1AE_W<INTE_SPEC> {
+    pub fn e1ae(&mut self) -> E1AE_W<'_, INTE_SPEC> {
         E1AE_W::new(self, 9)
     }
     #[doc = "Bit 10 - Event 2 interrupt enable"]
     #[inline(always)]
-    pub fn e2ae(&mut self) -> E2AE_W<INTE_SPEC> {
+    pub fn e2ae(&mut self) -> E2AE_W<'_, INTE_SPEC> {
         E2AE_W::new(self, 10)
     }
 }
@@ -457,10 +457,6 @@ impl crate::Readable for INTE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`inte::W`](W) writer structure"]
 impl crate::Writable for INTE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INTE to value 0"]
-impl crate::Resettable for INTE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INTE_SPEC {}

@@ -17,6 +17,4 @@ impl crate::RegisterSpec for SYSTEM_TIME_NANOSECONDS_SPEC {
 #[doc = "`read()` method returns [`system_time_nanoseconds::R`](R) reader structure"]
 impl crate::Readable for SYSTEM_TIME_NANOSECONDS_SPEC {}
 #[doc = "`reset()` method sets SYSTEM_TIME_NANOSECONDS to value 0"]
-impl crate::Resettable for SYSTEM_TIME_NANOSECONDS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SYSTEM_TIME_NANOSECONDS_SPEC {}

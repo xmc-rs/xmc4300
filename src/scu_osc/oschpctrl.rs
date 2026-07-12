@@ -314,27 +314,27 @@ impl R {
 impl W {
     #[doc = "Bit 0 - XTAL1 Data Enable"]
     #[inline(always)]
-    pub fn x1den(&mut self) -> X1DEN_W<OSCHPCTRL_SPEC> {
+    pub fn x1den(&mut self) -> X1DEN_W<'_, OSCHPCTRL_SPEC> {
         X1DEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Shaper Bypass"]
     #[inline(always)]
-    pub fn shby(&mut self) -> SHBY_W<OSCHPCTRL_SPEC> {
+    pub fn shby(&mut self) -> SHBY_W<'_, OSCHPCTRL_SPEC> {
         SHBY_W::new(self, 1)
     }
     #[doc = "Bits 2:3 - Oscillator Gain Selection"]
     #[inline(always)]
-    pub fn gainsel(&mut self) -> GAINSEL_W<OSCHPCTRL_SPEC> {
+    pub fn gainsel(&mut self) -> GAINSEL_W<'_, OSCHPCTRL_SPEC> {
         GAINSEL_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W<OSCHPCTRL_SPEC> {
+    pub fn mode(&mut self) -> MODE_W<'_, OSCHPCTRL_SPEC> {
         MODE_W::new(self, 4)
     }
     #[doc = "Bits 16:19 - OSC Frequency Value"]
     #[inline(always)]
-    pub fn oscval(&mut self) -> OSCVAL_W<OSCHPCTRL_SPEC> {
+    pub fn oscval(&mut self) -> OSCVAL_W<'_, OSCHPCTRL_SPEC> {
         OSCVAL_W::new(self, 16)
     }
 }
@@ -348,8 +348,6 @@ impl crate::Readable for OSCHPCTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`oschpctrl::W`](W) writer structure"]
 impl crate::Writable for OSCHPCTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets OSCHPCTRL to value 0x3c"]
 impl crate::Resettable for OSCHPCTRL_SPEC {

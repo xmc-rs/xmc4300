@@ -184,77 +184,77 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transmit Interrupt"]
     #[inline(always)]
-    pub fn ti(&mut self) -> TI_W<STATUS_SPEC> {
+    pub fn ti(&mut self) -> TI_W<'_, STATUS_SPEC> {
         TI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmit Process Stopped"]
     #[inline(always)]
-    pub fn tps(&mut self) -> TPS_W<STATUS_SPEC> {
+    pub fn tps(&mut self) -> TPS_W<'_, STATUS_SPEC> {
         TPS_W::new(self, 1)
     }
     #[doc = "Bit 2 - Transmit Buffer Unavailable"]
     #[inline(always)]
-    pub fn tu(&mut self) -> TU_W<STATUS_SPEC> {
+    pub fn tu(&mut self) -> TU_W<'_, STATUS_SPEC> {
         TU_W::new(self, 2)
     }
     #[doc = "Bit 3 - Transmit Jabber Timeout"]
     #[inline(always)]
-    pub fn tjt(&mut self) -> TJT_W<STATUS_SPEC> {
+    pub fn tjt(&mut self) -> TJT_W<'_, STATUS_SPEC> {
         TJT_W::new(self, 3)
     }
     #[doc = "Bit 4 - Receive Overflow"]
     #[inline(always)]
-    pub fn ovf(&mut self) -> OVF_W<STATUS_SPEC> {
+    pub fn ovf(&mut self) -> OVF_W<'_, STATUS_SPEC> {
         OVF_W::new(self, 4)
     }
     #[doc = "Bit 5 - Transmit Underflow"]
     #[inline(always)]
-    pub fn unf(&mut self) -> UNF_W<STATUS_SPEC> {
+    pub fn unf(&mut self) -> UNF_W<'_, STATUS_SPEC> {
         UNF_W::new(self, 5)
     }
     #[doc = "Bit 6 - Receive Interrupt"]
     #[inline(always)]
-    pub fn ri(&mut self) -> RI_W<STATUS_SPEC> {
+    pub fn ri(&mut self) -> RI_W<'_, STATUS_SPEC> {
         RI_W::new(self, 6)
     }
     #[doc = "Bit 7 - Receive Buffer Unavailable"]
     #[inline(always)]
-    pub fn ru(&mut self) -> RU_W<STATUS_SPEC> {
+    pub fn ru(&mut self) -> RU_W<'_, STATUS_SPEC> {
         RU_W::new(self, 7)
     }
     #[doc = "Bit 8 - Receive Process Stopped"]
     #[inline(always)]
-    pub fn rps(&mut self) -> RPS_W<STATUS_SPEC> {
+    pub fn rps(&mut self) -> RPS_W<'_, STATUS_SPEC> {
         RPS_W::new(self, 8)
     }
     #[doc = "Bit 9 - Receive Watchdog Timeout"]
     #[inline(always)]
-    pub fn rwt(&mut self) -> RWT_W<STATUS_SPEC> {
+    pub fn rwt(&mut self) -> RWT_W<'_, STATUS_SPEC> {
         RWT_W::new(self, 9)
     }
     #[doc = "Bit 10 - Early Transmit Interrupt"]
     #[inline(always)]
-    pub fn eti(&mut self) -> ETI_W<STATUS_SPEC> {
+    pub fn eti(&mut self) -> ETI_W<'_, STATUS_SPEC> {
         ETI_W::new(self, 10)
     }
     #[doc = "Bit 13 - Fatal Bus Error Interrupt"]
     #[inline(always)]
-    pub fn fbi(&mut self) -> FBI_W<STATUS_SPEC> {
+    pub fn fbi(&mut self) -> FBI_W<'_, STATUS_SPEC> {
         FBI_W::new(self, 13)
     }
     #[doc = "Bit 14 - Early Receive Interrupt"]
     #[inline(always)]
-    pub fn eri(&mut self) -> ERI_W<STATUS_SPEC> {
+    pub fn eri(&mut self) -> ERI_W<'_, STATUS_SPEC> {
         ERI_W::new(self, 14)
     }
     #[doc = "Bit 15 - Abnormal Interrupt Summary"]
     #[inline(always)]
-    pub fn ais(&mut self) -> AIS_W<STATUS_SPEC> {
+    pub fn ais(&mut self) -> AIS_W<'_, STATUS_SPEC> {
         AIS_W::new(self, 15)
     }
     #[doc = "Bit 16 - Normal Interrupt Summary"]
     #[inline(always)]
-    pub fn nis(&mut self) -> NIS_W<STATUS_SPEC> {
+    pub fn nis(&mut self) -> NIS_W<'_, STATUS_SPEC> {
         NIS_W::new(self, 16)
     }
 }
@@ -268,10 +268,6 @@ impl crate::Readable for STATUS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`status::W`](W) writer structure"]
 impl crate::Writable for STATUS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets STATUS to value 0"]
-impl crate::Resettable for STATUS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for STATUS_SPEC {}

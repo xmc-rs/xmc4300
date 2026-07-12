@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Input Register"]
     #[inline(always)]
-    pub fn ir(&mut self) -> IR_W<IR_SPEC> {
+    pub fn ir(&mut self) -> IR_W<'_, IR_SPEC> {
         IR_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for IR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ir::W`](W) writer structure"]
 impl crate::Writable for IR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IR to value 0"]
-impl crate::Resettable for IR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IR_SPEC {}

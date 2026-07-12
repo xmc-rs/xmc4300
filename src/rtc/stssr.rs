@@ -59,6 +59,4 @@ impl crate::RegisterSpec for STSSR_SPEC {
 #[doc = "`read()` method returns [`stssr::R`](R) reader structure"]
 impl crate::Readable for STSSR_SPEC {}
 #[doc = "`reset()` method sets STSSR to value 0"]
-impl crate::Resettable for STSSR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for STSSR_SPEC {}

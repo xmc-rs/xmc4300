@@ -17,6 +17,4 @@ impl crate::RegisterSpec for LOST_LINK_COUNT0_SPEC {
 #[doc = "`read()` method returns [`lost_link_count0::R`](R) reader structure"]
 impl crate::Readable for LOST_LINK_COUNT0_SPEC {}
 #[doc = "`reset()` method sets LOST_LINK_COUNT0 to value 0"]
-impl crate::Resettable for LOST_LINK_COUNT0_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for LOST_LINK_COUNT0_SPEC {}

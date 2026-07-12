@@ -189,12 +189,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Service Request Node Pointer Backgr. Source"]
     #[inline(always)]
-    pub fn sev0np(&mut self) -> SEV0NP_W<GLOBEVNP_SPEC> {
+    pub fn sev0np(&mut self) -> SEV0NP_W<'_, GLOBEVNP_SPEC> {
         SEV0NP_W::new(self, 0)
     }
     #[doc = "Bits 16:19 - Service Request Node Pointer Backgr. Result"]
     #[inline(always)]
-    pub fn rev0np(&mut self) -> REV0NP_W<GLOBEVNP_SPEC> {
+    pub fn rev0np(&mut self) -> REV0NP_W<'_, GLOBEVNP_SPEC> {
         REV0NP_W::new(self, 16)
     }
 }
@@ -208,10 +208,6 @@ impl crate::Readable for GLOBEVNP_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`globevnp::W`](W) writer structure"]
 impl crate::Writable for GLOBEVNP_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GLOBEVNP to value 0"]
-impl crate::Resettable for GLOBEVNP_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GLOBEVNP_SPEC {}

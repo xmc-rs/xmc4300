@@ -111,8 +111,7 @@ pub enum HPCEN_A {
     VALUE2 = 1,
     #[doc = "2: The hardware port control is enabled for DX3, DX0 and DOUT\\[1:0\\]."]
     VALUE3 = 2,
-    #[doc = "3: The hardware port control is enabled for DX0, DX\\[5:3\\]
-and DOUT\\[3:0\\]."]
+    #[doc = "3: The hardware port control is enabled for DX0, DX\\[5:3\\] and DOUT\\[3:0\\]."]
     VALUE4 = 3,
 }
 impl From<HPCEN_A> for u8 {
@@ -154,8 +153,7 @@ impl HPCEN_R {
     pub fn is_value3(&self) -> bool {
         *self == HPCEN_A::VALUE3
     }
-    #[doc = "The hardware port control is enabled for DX0, DX\\[5:3\\]
-and DOUT\\[3:0\\]."]
+    #[doc = "The hardware port control is enabled for DX0, DX\\[5:3\\] and DOUT\\[3:0\\]."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == HPCEN_A::VALUE4
@@ -183,8 +181,7 @@ where
     pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(HPCEN_A::VALUE3)
     }
-    #[doc = "The hardware port control is enabled for DX0, DX\\[5:3\\]
-and DOUT\\[3:0\\]."]
+    #[doc = "The hardware port control is enabled for DX0, DX\\[5:3\\] and DOUT\\[3:0\\]."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(HPCEN_A::VALUE4)
@@ -689,52 +686,52 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Operating Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W<CCR_SPEC> {
+    pub fn mode(&mut self) -> MODE_W<'_, CCR_SPEC> {
         MODE_W::new(self, 0)
     }
     #[doc = "Bits 6:7 - Hardware Port Control Enable"]
     #[inline(always)]
-    pub fn hpcen(&mut self) -> HPCEN_W<CCR_SPEC> {
+    pub fn hpcen(&mut self) -> HPCEN_W<'_, CCR_SPEC> {
         HPCEN_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - Parity Mode"]
     #[inline(always)]
-    pub fn pm(&mut self) -> PM_W<CCR_SPEC> {
+    pub fn pm(&mut self) -> PM_W<'_, CCR_SPEC> {
         PM_W::new(self, 8)
     }
     #[doc = "Bit 10 - Receiver Start Interrupt Enable"]
     #[inline(always)]
-    pub fn rsien(&mut self) -> RSIEN_W<CCR_SPEC> {
+    pub fn rsien(&mut self) -> RSIEN_W<'_, CCR_SPEC> {
         RSIEN_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data Lost Interrupt Enable"]
     #[inline(always)]
-    pub fn dlien(&mut self) -> DLIEN_W<CCR_SPEC> {
+    pub fn dlien(&mut self) -> DLIEN_W<'_, CCR_SPEC> {
         DLIEN_W::new(self, 11)
     }
     #[doc = "Bit 12 - Transmit Shift Interrupt Enable"]
     #[inline(always)]
-    pub fn tsien(&mut self) -> TSIEN_W<CCR_SPEC> {
+    pub fn tsien(&mut self) -> TSIEN_W<'_, CCR_SPEC> {
         TSIEN_W::new(self, 12)
     }
     #[doc = "Bit 13 - Transmit Buffer Interrupt Enable"]
     #[inline(always)]
-    pub fn tbien(&mut self) -> TBIEN_W<CCR_SPEC> {
+    pub fn tbien(&mut self) -> TBIEN_W<'_, CCR_SPEC> {
         TBIEN_W::new(self, 13)
     }
     #[doc = "Bit 14 - Receive Interrupt Enable"]
     #[inline(always)]
-    pub fn rien(&mut self) -> RIEN_W<CCR_SPEC> {
+    pub fn rien(&mut self) -> RIEN_W<'_, CCR_SPEC> {
         RIEN_W::new(self, 14)
     }
     #[doc = "Bit 15 - Alternative Receive Interrupt Enable"]
     #[inline(always)]
-    pub fn aien(&mut self) -> AIEN_W<CCR_SPEC> {
+    pub fn aien(&mut self) -> AIEN_W<'_, CCR_SPEC> {
         AIEN_W::new(self, 15)
     }
     #[doc = "Bit 16 - Baud Rate Generator Interrupt Enable"]
     #[inline(always)]
-    pub fn brgien(&mut self) -> BRGIEN_W<CCR_SPEC> {
+    pub fn brgien(&mut self) -> BRGIEN_W<'_, CCR_SPEC> {
         BRGIEN_W::new(self, 16)
     }
 }
@@ -748,10 +745,6 @@ impl crate::Readable for CCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ccr::W`](W) writer structure"]
 impl crate::Writable for CCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CCR to value 0"]
-impl crate::Resettable for CCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CCR_SPEC {}

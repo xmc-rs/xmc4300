@@ -17,6 +17,4 @@ impl crate::RegisterSpec for HCDMAB_SPEC {
 #[doc = "`read()` method returns [`hcdmab::R`](R) reader structure"]
 impl crate::Readable for HCDMAB_SPEC {}
 #[doc = "`reset()` method sets HCDMAB to value 0"]
-impl crate::Resettable for HCDMAB_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HCDMAB_SPEC {}

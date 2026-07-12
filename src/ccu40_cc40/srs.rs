@@ -462,27 +462,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Period/One match Service request selector"]
     #[inline(always)]
-    pub fn posr(&mut self) -> POSR_W<SRS_SPEC> {
+    pub fn posr(&mut self) -> POSR_W<'_, SRS_SPEC> {
         POSR_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Compare match Service request selector"]
     #[inline(always)]
-    pub fn cmsr(&mut self) -> CMSR_W<SRS_SPEC> {
+    pub fn cmsr(&mut self) -> CMSR_W<'_, SRS_SPEC> {
         CMSR_W::new(self, 2)
     }
     #[doc = "Bits 8:9 - Event 0 Service request selector"]
     #[inline(always)]
-    pub fn e0sr(&mut self) -> E0SR_W<SRS_SPEC> {
+    pub fn e0sr(&mut self) -> E0SR_W<'_, SRS_SPEC> {
         E0SR_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Event 1 Service request selector"]
     #[inline(always)]
-    pub fn e1sr(&mut self) -> E1SR_W<SRS_SPEC> {
+    pub fn e1sr(&mut self) -> E1SR_W<'_, SRS_SPEC> {
         E1SR_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Event 2 Service request selector"]
     #[inline(always)]
-    pub fn e2sr(&mut self) -> E2SR_W<SRS_SPEC> {
+    pub fn e2sr(&mut self) -> E2SR_W<'_, SRS_SPEC> {
         E2SR_W::new(self, 12)
     }
 }
@@ -496,10 +496,6 @@ impl crate::Readable for SRS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`srs::W`](W) writer structure"]
 impl crate::Writable for SRS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SRS to value 0"]
-impl crate::Resettable for SRS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SRS_SPEC {}

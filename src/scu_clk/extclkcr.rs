@@ -94,12 +94,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - External Clock Selection Value"]
     #[inline(always)]
-    pub fn ecksel(&mut self) -> ECKSEL_W<EXTCLKCR_SPEC> {
+    pub fn ecksel(&mut self) -> ECKSEL_W<'_, EXTCLKCR_SPEC> {
         ECKSEL_W::new(self, 0)
     }
     #[doc = "Bits 16:24 - External Clock Divider Value"]
     #[inline(always)]
-    pub fn eckdiv(&mut self) -> ECKDIV_W<EXTCLKCR_SPEC> {
+    pub fn eckdiv(&mut self) -> ECKDIV_W<'_, EXTCLKCR_SPEC> {
         ECKDIV_W::new(self, 16)
     }
 }
@@ -113,10 +113,6 @@ impl crate::Readable for EXTCLKCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`extclkcr::W`](W) writer structure"]
 impl crate::Writable for EXTCLKCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets EXTCLKCR to value 0"]
-impl crate::Resettable for EXTCLKCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for EXTCLKCR_SPEC {}

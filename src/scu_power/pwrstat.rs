@@ -174,6 +174,4 @@ impl crate::RegisterSpec for PWRSTAT_SPEC {
 #[doc = "`read()` method returns [`pwrstat::R`](R) reader structure"]
 impl crate::Readable for PWRSTAT_SPEC {}
 #[doc = "`reset()` method sets PWRSTAT to value 0"]
-impl crate::Resettable for PWRSTAT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PWRSTAT_SPEC {}

@@ -836,62 +836,62 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - External Start Functionality Selector"]
     #[inline(always)]
-    pub fn strts(&mut self) -> STRTS_W<CMC_SPEC> {
+    pub fn strts(&mut self) -> STRTS_W<'_, CMC_SPEC> {
         STRTS_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - External Stop Functionality Selector"]
     #[inline(always)]
-    pub fn ends(&mut self) -> ENDS_W<CMC_SPEC> {
+    pub fn ends(&mut self) -> ENDS_W<'_, CMC_SPEC> {
         ENDS_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - External Capture 0 Functionality Selector"]
     #[inline(always)]
-    pub fn cap0s(&mut self) -> CAP0S_W<CMC_SPEC> {
+    pub fn cap0s(&mut self) -> CAP0S_W<'_, CMC_SPEC> {
         CAP0S_W::new(self, 4)
     }
     #[doc = "Bits 6:7 - External Capture 1 Functionality Selector"]
     #[inline(always)]
-    pub fn cap1s(&mut self) -> CAP1S_W<CMC_SPEC> {
+    pub fn cap1s(&mut self) -> CAP1S_W<'_, CMC_SPEC> {
         CAP1S_W::new(self, 6)
     }
     #[doc = "Bits 8:9 - External Gate Functionality Selector"]
     #[inline(always)]
-    pub fn gates(&mut self) -> GATES_W<CMC_SPEC> {
+    pub fn gates(&mut self) -> GATES_W<'_, CMC_SPEC> {
         GATES_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - External Up/Down Functionality Selector"]
     #[inline(always)]
-    pub fn uds(&mut self) -> UDS_W<CMC_SPEC> {
+    pub fn uds(&mut self) -> UDS_W<'_, CMC_SPEC> {
         UDS_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - External Timer Load Functionality Selector"]
     #[inline(always)]
-    pub fn lds(&mut self) -> LDS_W<CMC_SPEC> {
+    pub fn lds(&mut self) -> LDS_W<'_, CMC_SPEC> {
         LDS_W::new(self, 12)
     }
     #[doc = "Bits 14:15 - External Count Selector"]
     #[inline(always)]
-    pub fn cnts(&mut self) -> CNTS_W<CMC_SPEC> {
+    pub fn cnts(&mut self) -> CNTS_W<'_, CMC_SPEC> {
         CNTS_W::new(self, 14)
     }
     #[doc = "Bit 16 - Override Function Selector"]
     #[inline(always)]
-    pub fn ofs(&mut self) -> OFS_W<CMC_SPEC> {
+    pub fn ofs(&mut self) -> OFS_W<'_, CMC_SPEC> {
         OFS_W::new(self, 16)
     }
     #[doc = "Bit 17 - Trap Function Selector"]
     #[inline(always)]
-    pub fn ts(&mut self) -> TS_W<CMC_SPEC> {
+    pub fn ts(&mut self) -> TS_W<'_, CMC_SPEC> {
         TS_W::new(self, 17)
     }
     #[doc = "Bits 18:19 - External Modulation Functionality Selector"]
     #[inline(always)]
-    pub fn mos(&mut self) -> MOS_W<CMC_SPEC> {
+    pub fn mos(&mut self) -> MOS_W<'_, CMC_SPEC> {
         MOS_W::new(self, 18)
     }
     #[doc = "Bit 20 - Timer Concatenation Enable"]
     #[inline(always)]
-    pub fn tce(&mut self) -> TCE_W<CMC_SPEC> {
+    pub fn tce(&mut self) -> TCE_W<'_, CMC_SPEC> {
         TCE_W::new(self, 20)
     }
 }
@@ -905,10 +905,6 @@ impl crate::Readable for CMC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`cmc::W`](W) writer structure"]
 impl crate::Writable for CMC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CMC to value 0"]
-impl crate::Resettable for CMC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CMC_SPEC {}

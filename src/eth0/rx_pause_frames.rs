@@ -17,6 +17,4 @@ impl crate::RegisterSpec for RX_PAUSE_FRAMES_SPEC {
 #[doc = "`read()` method returns [`rx_pause_frames::R`](R) reader structure"]
 impl crate::Readable for RX_PAUSE_FRAMES_SPEC {}
 #[doc = "`reset()` method sets RX_PAUSE_FRAMES to value 0"]
-impl crate::Resettable for RX_PAUSE_FRAMES_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RX_PAUSE_FRAMES_SPEC {}

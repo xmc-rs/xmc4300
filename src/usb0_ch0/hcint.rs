@@ -133,72 +133,72 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transfer Completed"]
     #[inline(always)]
-    pub fn xfer_compl(&mut self) -> XFER_COMPL_W<HCINT_SPEC> {
+    pub fn xfer_compl(&mut self) -> XFER_COMPL_W<'_, HCINT_SPEC> {
         XFER_COMPL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel Halted"]
     #[inline(always)]
-    pub fn ch_hltd(&mut self) -> CH_HLTD_W<HCINT_SPEC> {
+    pub fn ch_hltd(&mut self) -> CH_HLTD_W<'_, HCINT_SPEC> {
         CH_HLTD_W::new(self, 1)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
-    pub fn ahberr(&mut self) -> AHBERR_W<HCINT_SPEC> {
+    pub fn ahberr(&mut self) -> AHBERR_W<'_, HCINT_SPEC> {
         AHBERR_W::new(self, 2)
     }
     #[doc = "Bit 3 - STALL Response Received Interrupt"]
     #[inline(always)]
-    pub fn stall(&mut self) -> STALL_W<HCINT_SPEC> {
+    pub fn stall(&mut self) -> STALL_W<'_, HCINT_SPEC> {
         STALL_W::new(self, 3)
     }
     #[doc = "Bit 4 - NAK Response Received Interrupt"]
     #[inline(always)]
-    pub fn nak(&mut self) -> NAK_W<HCINT_SPEC> {
+    pub fn nak(&mut self) -> NAK_W<'_, HCINT_SPEC> {
         NAK_W::new(self, 4)
     }
     #[doc = "Bit 5 - ACK Response Received/Transmitted Interrupt"]
     #[inline(always)]
-    pub fn ack(&mut self) -> ACK_W<HCINT_SPEC> {
+    pub fn ack(&mut self) -> ACK_W<'_, HCINT_SPEC> {
         ACK_W::new(self, 5)
     }
     #[doc = "Bit 6 - NYET Response Received Interrupt"]
     #[inline(always)]
-    pub fn nyet(&mut self) -> NYET_W<HCINT_SPEC> {
+    pub fn nyet(&mut self) -> NYET_W<'_, HCINT_SPEC> {
         NYET_W::new(self, 6)
     }
     #[doc = "Bit 7 - Transaction Error"]
     #[inline(always)]
-    pub fn xact_err(&mut self) -> XACT_ERR_W<HCINT_SPEC> {
+    pub fn xact_err(&mut self) -> XACT_ERR_W<'_, HCINT_SPEC> {
         XACT_ERR_W::new(self, 7)
     }
     #[doc = "Bit 8 - Babble Error"]
     #[inline(always)]
-    pub fn bbl_err(&mut self) -> BBL_ERR_W<HCINT_SPEC> {
+    pub fn bbl_err(&mut self) -> BBL_ERR_W<'_, HCINT_SPEC> {
         BBL_ERR_W::new(self, 8)
     }
     #[doc = "Bit 9 - Frame Overrun"]
     #[inline(always)]
-    pub fn frm_ovrun(&mut self) -> FRM_OVRUN_W<HCINT_SPEC> {
+    pub fn frm_ovrun(&mut self) -> FRM_OVRUN_W<'_, HCINT_SPEC> {
         FRM_OVRUN_W::new(self, 9)
     }
     #[doc = "Bit 10 - Data Toggle Error"]
     #[inline(always)]
-    pub fn data_tgl_err(&mut self) -> DATA_TGL_ERR_W<HCINT_SPEC> {
+    pub fn data_tgl_err(&mut self) -> DATA_TGL_ERR_W<'_, HCINT_SPEC> {
         DATA_TGL_ERR_W::new(self, 10)
     }
     #[doc = "Bit 11 - BNA (Buffer Not Available) Interrupt"]
     #[inline(always)]
-    pub fn bnaintr(&mut self) -> BNAINTR_W<HCINT_SPEC> {
+    pub fn bnaintr(&mut self) -> BNAINTR_W<'_, HCINT_SPEC> {
         BNAINTR_W::new(self, 11)
     }
     #[doc = "Bit 12 - Excessive Transaction Error"]
     #[inline(always)]
-    pub fn xcs_xact_err(&mut self) -> XCS_XACT_ERR_W<HCINT_SPEC> {
+    pub fn xcs_xact_err(&mut self) -> XCS_XACT_ERR_W<'_, HCINT_SPEC> {
         XCS_XACT_ERR_W::new(self, 12)
     }
     #[doc = "Bit 13 - Descriptor rollover interrupt"]
     #[inline(always)]
-    pub fn desc_lst_rollintr(&mut self) -> DESC_LST_ROLLINTR_W<HCINT_SPEC> {
+    pub fn desc_lst_rollintr(&mut self) -> DESC_LST_ROLLINTR_W<'_, HCINT_SPEC> {
         DESC_LST_ROLLINTR_W::new(self, 13)
     }
 }
@@ -212,10 +212,6 @@ impl crate::Readable for HCINT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hcint::W`](W) writer structure"]
 impl crate::Writable for HCINT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HCINT to value 0"]
-impl crate::Resettable for HCINT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HCINT_SPEC {}

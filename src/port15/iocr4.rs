@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bits 3:7 - Port Control for Port n Pin 4 to 7"]
     #[inline(always)]
-    pub fn pc4(&mut self) -> PC4_W<IOCR4_SPEC> {
+    pub fn pc4(&mut self) -> PC4_W<'_, IOCR4_SPEC> {
         PC4_W::new(self, 3)
     }
     #[doc = "Bits 11:15 - Port Control for Port n Pin 4 to 7"]
     #[inline(always)]
-    pub fn pc5(&mut self) -> PC5_W<IOCR4_SPEC> {
+    pub fn pc5(&mut self) -> PC5_W<'_, IOCR4_SPEC> {
         PC5_W::new(self, 11)
     }
     #[doc = "Bits 19:23 - Port Control for Port n Pin 4 to 7"]
     #[inline(always)]
-    pub fn pc6(&mut self) -> PC6_W<IOCR4_SPEC> {
+    pub fn pc6(&mut self) -> PC6_W<'_, IOCR4_SPEC> {
         PC6_W::new(self, 19)
     }
     #[doc = "Bits 27:31 - Port Control for Port n Pin 4 to 7"]
     #[inline(always)]
-    pub fn pc7(&mut self) -> PC7_W<IOCR4_SPEC> {
+    pub fn pc7(&mut self) -> PC7_W<'_, IOCR4_SPEC> {
         PC7_W::new(self, 27)
     }
 }
@@ -72,10 +72,6 @@ impl crate::Readable for IOCR4_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`iocr4::W`](W) writer structure"]
 impl crate::Writable for IOCR4_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IOCR4 to value 0"]
-impl crate::Resettable for IOCR4_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IOCR4_SPEC {}

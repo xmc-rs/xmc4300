@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 2:31 - Starting Address In Memory"]
     #[inline(always)]
-    pub fn loc(&mut self) -> LOC_W<LLP_SPEC> {
+    pub fn loc(&mut self) -> LOC_W<'_, LLP_SPEC> {
         LOC_W::new(self, 2)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for LLP_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`llp::W`](W) writer structure"]
 impl crate::Writable for LLP_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets LLP to value 0"]
-impl crate::Resettable for LLP_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for LLP_SPEC {}

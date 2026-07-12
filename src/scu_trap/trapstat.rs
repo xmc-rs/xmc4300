@@ -379,6 +379,4 @@ impl crate::RegisterSpec for TRAPSTAT_SPEC {
 #[doc = "`read()` method returns [`trapstat::R`](R) reader structure"]
 impl crate::Readable for TRAPSTAT_SPEC {}
 #[doc = "`reset()` method sets TRAPSTAT to value 0"]
-impl crate::Resettable for TRAPSTAT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TRAPSTAT_SPEC {}

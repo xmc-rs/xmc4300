@@ -518,57 +518,57 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Touch-Sense Function Enable"]
     #[inline(always)]
-    pub fn ts_en(&mut self) -> TS_EN_W<GLOBCTL_SPEC> {
+    pub fn ts_en(&mut self) -> TS_EN_W<'_, GLOBCTL_SPEC> {
         TS_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - LED Function Enable"]
     #[inline(always)]
-    pub fn ld_en(&mut self) -> LD_EN_W<GLOBCTL_SPEC> {
+    pub fn ld_en(&mut self) -> LD_EN_W<'_, GLOBCTL_SPEC> {
         LD_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clock Master Disable"]
     #[inline(always)]
-    pub fn cmtr(&mut self) -> CMTR_W<GLOBCTL_SPEC> {
+    pub fn cmtr(&mut self) -> CMTR_W<'_, GLOBCTL_SPEC> {
         CMTR_W::new(self, 2)
     }
     #[doc = "Bit 3 - Enable Autoscan Time Period Synchronization"]
     #[inline(always)]
-    pub fn ensync(&mut self) -> ENSYNC_W<GLOBCTL_SPEC> {
+    pub fn ensync(&mut self) -> ENSYNC_W<'_, GLOBCTL_SPEC> {
         ENSYNC_W::new(self, 3)
     }
     #[doc = "Bit 8 - Suspend Request Configuration"]
     #[inline(always)]
-    pub fn suscfg(&mut self) -> SUSCFG_W<GLOBCTL_SPEC> {
+    pub fn suscfg(&mut self) -> SUSCFG_W<'_, GLOBCTL_SPEC> {
         SUSCFG_W::new(self, 8)
     }
     #[doc = "Bits 9:11 - Mask Number of LSB Bits for Event Validation"]
     #[inline(always)]
-    pub fn maskval(&mut self) -> MASKVAL_W<GLOBCTL_SPEC> {
+    pub fn maskval(&mut self) -> MASKVAL_W<'_, GLOBCTL_SPEC> {
         MASKVAL_W::new(self, 9)
     }
     #[doc = "Bit 12 - Enable (Extended) Time Frame Validation"]
     #[inline(always)]
-    pub fn fenval(&mut self) -> FENVAL_W<GLOBCTL_SPEC> {
+    pub fn fenval(&mut self) -> FENVAL_W<'_, GLOBCTL_SPEC> {
         FENVAL_W::new(self, 12)
     }
     #[doc = "Bit 13 - Enable Time Slice Interrupt"]
     #[inline(always)]
-    pub fn its_en(&mut self) -> ITS_EN_W<GLOBCTL_SPEC> {
+    pub fn its_en(&mut self) -> ITS_EN_W<'_, GLOBCTL_SPEC> {
         ITS_EN_W::new(self, 13)
     }
     #[doc = "Bit 14 - Enable (Extended) Time Frame Interrupt"]
     #[inline(always)]
-    pub fn itf_en(&mut self) -> ITF_EN_W<GLOBCTL_SPEC> {
+    pub fn itf_en(&mut self) -> ITF_EN_W<'_, GLOBCTL_SPEC> {
         ITF_EN_W::new(self, 14)
     }
     #[doc = "Bit 15 - Enable Autoscan Time Period Interrupt"]
     #[inline(always)]
-    pub fn itp_en(&mut self) -> ITP_EN_W<GLOBCTL_SPEC> {
+    pub fn itp_en(&mut self) -> ITP_EN_W<'_, GLOBCTL_SPEC> {
         ITP_EN_W::new(self, 15)
     }
     #[doc = "Bits 16:31 - LEDTS-Counter Clock Pre-Scale Factor"]
     #[inline(always)]
-    pub fn clk_ps(&mut self) -> CLK_PS_W<GLOBCTL_SPEC> {
+    pub fn clk_ps(&mut self) -> CLK_PS_W<'_, GLOBCTL_SPEC> {
         CLK_PS_W::new(self, 16)
     }
 }
@@ -582,10 +582,6 @@ impl crate::Readable for GLOBCTL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`globctl::W`](W) writer structure"]
 impl crate::Writable for GLOBCTL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GLOBCTL to value 0"]
-impl crate::Resettable for GLOBCTL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GLOBCTL_SPEC {}

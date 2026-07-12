@@ -305,27 +305,27 @@ impl R {
 impl W {
     #[doc = "Bit 25 - SysTick exception clear-pending bit"]
     #[inline(always)]
-    pub fn pendstclr(&mut self) -> PENDSTCLR_W<ICSR_SPEC> {
+    pub fn pendstclr(&mut self) -> PENDSTCLR_W<'_, ICSR_SPEC> {
         PENDSTCLR_W::new(self, 25)
     }
     #[doc = "Bit 26 - SysTick exception set-pending bit"]
     #[inline(always)]
-    pub fn pendstset(&mut self) -> PENDSTSET_W<ICSR_SPEC> {
+    pub fn pendstset(&mut self) -> PENDSTSET_W<'_, ICSR_SPEC> {
         PENDSTSET_W::new(self, 26)
     }
     #[doc = "Bit 27 - PendSV clear-pending bit"]
     #[inline(always)]
-    pub fn pendsvclr(&mut self) -> PENDSVCLR_W<ICSR_SPEC> {
+    pub fn pendsvclr(&mut self) -> PENDSVCLR_W<'_, ICSR_SPEC> {
         PENDSVCLR_W::new(self, 27)
     }
     #[doc = "Bit 28 - PendSV set-pending bit: 0b0=no effect, 0b1=changes PendSV exception state to pending., 0b0=PendSV exception is not pending, 0b1=PendSV exception is pending.,"]
     #[inline(always)]
-    pub fn pendsvset(&mut self) -> PENDSVSET_W<ICSR_SPEC> {
+    pub fn pendsvset(&mut self) -> PENDSVSET_W<'_, ICSR_SPEC> {
         PENDSVSET_W::new(self, 28)
     }
     #[doc = "Bit 31 - NMI set-pending bit: 0b0=no effect, 0b1=changes NMI exception state to pending., 0b0=NMI exception is not pending, 0b1=NMI exception is pending.,"]
     #[inline(always)]
-    pub fn nmipendset(&mut self) -> NMIPENDSET_W<ICSR_SPEC> {
+    pub fn nmipendset(&mut self) -> NMIPENDSET_W<'_, ICSR_SPEC> {
         NMIPENDSET_W::new(self, 31)
     }
 }
@@ -339,10 +339,6 @@ impl crate::Readable for ICSR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`icsr::W`](W) writer structure"]
 impl crate::Writable for ICSR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ICSR to value 0"]
-impl crate::Resettable for ICSR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ICSR_SPEC {}

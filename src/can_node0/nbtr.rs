@@ -101,27 +101,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Baud Rate Prescaler"]
     #[inline(always)]
-    pub fn brp(&mut self) -> BRP_W<NBTR_SPEC> {
+    pub fn brp(&mut self) -> BRP_W<'_, NBTR_SPEC> {
         BRP_W::new(self, 0)
     }
     #[doc = "Bits 6:7 - (Re) Synchronization Jump Width"]
     #[inline(always)]
-    pub fn sjw(&mut self) -> SJW_W<NBTR_SPEC> {
+    pub fn sjw(&mut self) -> SJW_W<'_, NBTR_SPEC> {
         SJW_W::new(self, 6)
     }
     #[doc = "Bits 8:11 - Time Segment Before Sample Point"]
     #[inline(always)]
-    pub fn tseg1(&mut self) -> TSEG1_W<NBTR_SPEC> {
+    pub fn tseg1(&mut self) -> TSEG1_W<'_, NBTR_SPEC> {
         TSEG1_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - Time Segment After Sample Point"]
     #[inline(always)]
-    pub fn tseg2(&mut self) -> TSEG2_W<NBTR_SPEC> {
+    pub fn tseg2(&mut self) -> TSEG2_W<'_, NBTR_SPEC> {
         TSEG2_W::new(self, 12)
     }
     #[doc = "Bit 15 - Divide Prescaler Clock by 8"]
     #[inline(always)]
-    pub fn div8(&mut self) -> DIV8_W<NBTR_SPEC> {
+    pub fn div8(&mut self) -> DIV8_W<'_, NBTR_SPEC> {
         DIV8_W::new(self, 15)
     }
 }
@@ -135,10 +135,6 @@ impl crate::Readable for NBTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`nbtr::W`](W) writer structure"]
 impl crate::Writable for NBTR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NBTR to value 0"]
-impl crate::Resettable for NBTR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for NBTR_SPEC {}

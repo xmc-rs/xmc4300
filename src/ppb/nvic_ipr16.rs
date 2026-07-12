@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Priority value 0"]
     #[inline(always)]
-    pub fn pri_0(&mut self) -> PRI_0_W<NVIC_IPR16_SPEC> {
+    pub fn pri_0(&mut self) -> PRI_0_W<'_, NVIC_IPR16_SPEC> {
         PRI_0_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Priority value 1"]
     #[inline(always)]
-    pub fn pri_1(&mut self) -> PRI_1_W<NVIC_IPR16_SPEC> {
+    pub fn pri_1(&mut self) -> PRI_1_W<'_, NVIC_IPR16_SPEC> {
         PRI_1_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Priority value 2"]
     #[inline(always)]
-    pub fn pri_2(&mut self) -> PRI_2_W<NVIC_IPR16_SPEC> {
+    pub fn pri_2(&mut self) -> PRI_2_W<'_, NVIC_IPR16_SPEC> {
         PRI_2_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Priority value 3"]
     #[inline(always)]
-    pub fn pri_3(&mut self) -> PRI_3_W<NVIC_IPR16_SPEC> {
+    pub fn pri_3(&mut self) -> PRI_3_W<'_, NVIC_IPR16_SPEC> {
         PRI_3_W::new(self, 24)
     }
 }
@@ -72,10 +72,6 @@ impl crate::Readable for NVIC_IPR16_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`nvic_ipr16::W`](W) writer structure"]
 impl crate::Writable for NVIC_IPR16_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NVIC_IPR16 to value 0"]
-impl crate::Resettable for NVIC_IPR16_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for NVIC_IPR16_SPEC {}

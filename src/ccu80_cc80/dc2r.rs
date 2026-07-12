@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Rise Value for Dead Time of Channel 2"]
     #[inline(always)]
-    pub fn dt2r(&mut self) -> DT2R_W<DC2R_SPEC> {
+    pub fn dt2r(&mut self) -> DT2R_W<'_, DC2R_SPEC> {
         DT2R_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Fall Value for Dead Time of Channel 2"]
     #[inline(always)]
-    pub fn dt2f(&mut self) -> DT2F_W<DC2R_SPEC> {
+    pub fn dt2f(&mut self) -> DT2F_W<'_, DC2R_SPEC> {
         DT2F_W::new(self, 8)
     }
 }
@@ -44,10 +44,6 @@ impl crate::Readable for DC2R_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dc2r::W`](W) writer structure"]
 impl crate::Writable for DC2R_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DC2R to value 0"]
-impl crate::Resettable for DC2R_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DC2R_SPEC {}

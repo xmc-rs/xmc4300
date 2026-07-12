@@ -34,7 +34,7 @@ where
 impl W {
     #[doc = "Bit 0 - Debug_sel"]
     #[inline(always)]
-    pub fn debug_sel(&mut self) -> DEBUG_SEL_W<DEBUG_SEL_SPEC> {
+    pub fn debug_sel(&mut self) -> DEBUG_SEL_W<'_, DEBUG_SEL_SPEC> {
         DEBUG_SEL_W::new(self, 0)
     }
 }
@@ -46,10 +46,6 @@ impl crate::RegisterSpec for DEBUG_SEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [`debug_sel::W`](W) writer structure"]
 impl crate::Writable for DEBUG_SEL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DEBUG_SEL to value 0"]
-impl crate::Resettable for DEBUG_SEL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DEBUG_SEL_SPEC {}

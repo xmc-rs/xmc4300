@@ -189,12 +189,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Service Request Node Pointer Source Event i"]
     #[inline(always)]
-    pub fn sev0np(&mut self) -> SEV0NP_W<SEVNP_SPEC> {
+    pub fn sev0np(&mut self) -> SEV0NP_W<'_, SEVNP_SPEC> {
         SEV0NP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Service Request Node Pointer Source Event i"]
     #[inline(always)]
-    pub fn sev1np(&mut self) -> SEV1NP_W<SEVNP_SPEC> {
+    pub fn sev1np(&mut self) -> SEV1NP_W<'_, SEVNP_SPEC> {
         SEV1NP_W::new(self, 4)
     }
 }
@@ -208,10 +208,6 @@ impl crate::Readable for SEVNP_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sevnp::W`](W) writer structure"]
 impl crate::Writable for SEVNP_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SEVNP to value 0"]
-impl crate::Resettable for SEVNP_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SEVNP_SPEC {}

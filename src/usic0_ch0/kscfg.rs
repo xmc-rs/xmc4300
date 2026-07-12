@@ -258,32 +258,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Module Enable"]
     #[inline(always)]
-    pub fn moden(&mut self) -> MODEN_W<KSCFG_SPEC> {
+    pub fn moden(&mut self) -> MODEN_W<'_, KSCFG_SPEC> {
         MODEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Bit Protection for MODEN"]
     #[inline(always)]
-    pub fn bpmoden(&mut self) -> BPMODEN_W<KSCFG_SPEC> {
+    pub fn bpmoden(&mut self) -> BPMODEN_W<'_, KSCFG_SPEC> {
         BPMODEN_W::new(self, 1)
     }
     #[doc = "Bits 4:5 - Normal Operation Mode Configuration"]
     #[inline(always)]
-    pub fn nomcfg(&mut self) -> NOMCFG_W<KSCFG_SPEC> {
+    pub fn nomcfg(&mut self) -> NOMCFG_W<'_, KSCFG_SPEC> {
         NOMCFG_W::new(self, 4)
     }
     #[doc = "Bit 7 - Bit Protection for NOMCFG"]
     #[inline(always)]
-    pub fn bpnom(&mut self) -> BPNOM_W<KSCFG_SPEC> {
+    pub fn bpnom(&mut self) -> BPNOM_W<'_, KSCFG_SPEC> {
         BPNOM_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Suspend Mode Configuration"]
     #[inline(always)]
-    pub fn sumcfg(&mut self) -> SUMCFG_W<KSCFG_SPEC> {
+    pub fn sumcfg(&mut self) -> SUMCFG_W<'_, KSCFG_SPEC> {
         SUMCFG_W::new(self, 8)
     }
     #[doc = "Bit 11 - Bit Protection for SUMCFG"]
     #[inline(always)]
-    pub fn bpsum(&mut self) -> BPSUM_W<KSCFG_SPEC> {
+    pub fn bpsum(&mut self) -> BPSUM_W<'_, KSCFG_SPEC> {
         BPSUM_W::new(self, 11)
     }
 }
@@ -297,10 +297,6 @@ impl crate::Readable for KSCFG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`kscfg::W`](W) writer structure"]
 impl crate::Writable for KSCFG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets KSCFG to value 0"]
-impl crate::Resettable for KSCFG_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for KSCFG_SPEC {}

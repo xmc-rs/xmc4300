@@ -207,22 +207,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Receive Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn rxinp(&mut self) -> RXINP_W<MOIPR_SPEC> {
+    pub fn rxinp(&mut self) -> RXINP_W<'_, MOIPR_SPEC> {
         RXINP_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Transmit Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn txinp(&mut self) -> TXINP_W<MOIPR_SPEC> {
+    pub fn txinp(&mut self) -> TXINP_W<'_, MOIPR_SPEC> {
         TXINP_W::new(self, 4)
     }
     #[doc = "Bits 8:15 - Message Pending Number"]
     #[inline(always)]
-    pub fn mpn(&mut self) -> MPN_W<MOIPR_SPEC> {
+    pub fn mpn(&mut self) -> MPN_W<'_, MOIPR_SPEC> {
         MPN_W::new(self, 8)
     }
     #[doc = "Bits 16:31 - CAN Frame Counter Value"]
     #[inline(always)]
-    pub fn cfcval(&mut self) -> CFCVAL_W<MOIPR_SPEC> {
+    pub fn cfcval(&mut self) -> CFCVAL_W<'_, MOIPR_SPEC> {
         CFCVAL_W::new(self, 16)
     }
 }
@@ -236,10 +236,6 @@ impl crate::Readable for MOIPR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`moipr::W`](W) writer structure"]
 impl crate::Writable for MOIPR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MOIPR to value 0"]
-impl crate::Resettable for MOIPR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MOIPR_SPEC {}

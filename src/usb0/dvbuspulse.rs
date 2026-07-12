@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Device Vbus Pulsing Time"]
     #[inline(always)]
-    pub fn dvbuspulse(&mut self) -> DVBUSPULSE_W<DVBUSPULSE_SPEC> {
+    pub fn dvbuspulse(&mut self) -> DVBUSPULSE_W<'_, DVBUSPULSE_SPEC> {
         DVBUSPULSE_W::new(self, 0)
     }
 }
@@ -30,8 +30,6 @@ impl crate::Readable for DVBUSPULSE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dvbuspulse::W`](W) writer structure"]
 impl crate::Writable for DVBUSPULSE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DVBUSPULSE to value 0x05b8"]
 impl crate::Resettable for DVBUSPULSE_SPEC {

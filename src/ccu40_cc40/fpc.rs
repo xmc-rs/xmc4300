@@ -23,7 +23,7 @@ impl R {
 impl W {
     #[doc = "Bits 8:11 - Actual Prescaler Value"]
     #[inline(always)]
-    pub fn pval(&mut self) -> PVAL_W<FPC_SPEC> {
+    pub fn pval(&mut self) -> PVAL_W<'_, FPC_SPEC> {
         PVAL_W::new(self, 8)
     }
 }
@@ -37,10 +37,6 @@ impl crate::Readable for FPC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fpc::W`](W) writer structure"]
 impl crate::Writable for FPC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FPC to value 0"]
-impl crate::Resettable for FPC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FPC_SPEC {}

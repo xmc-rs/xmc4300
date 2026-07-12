@@ -193,47 +193,47 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Region enable bit."]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W<MPU_RASR_A3_SPEC> {
+    pub fn enable(&mut self) -> ENABLE_W<'_, MPU_RASR_A3_SPEC> {
         ENABLE_W::new(self, 0)
     }
     #[doc = "Bits 1:5 - MPU protection region size"]
     #[inline(always)]
-    pub fn size(&mut self) -> SIZE_W<MPU_RASR_A3_SPEC> {
+    pub fn size(&mut self) -> SIZE_W<'_, MPU_RASR_A3_SPEC> {
         SIZE_W::new(self, 1)
     }
     #[doc = "Bits 8:15 - Subregion disable bits"]
     #[inline(always)]
-    pub fn srd(&mut self) -> SRD_W<MPU_RASR_A3_SPEC> {
+    pub fn srd(&mut self) -> SRD_W<'_, MPU_RASR_A3_SPEC> {
         SRD_W::new(self, 8)
     }
     #[doc = "Bit 16 - Memory access attribute"]
     #[inline(always)]
-    pub fn b(&mut self) -> B_W<MPU_RASR_A3_SPEC> {
+    pub fn b(&mut self) -> B_W<'_, MPU_RASR_A3_SPEC> {
         B_W::new(self, 16)
     }
     #[doc = "Bit 17 - Memory access attribute"]
     #[inline(always)]
-    pub fn c(&mut self) -> C_W<MPU_RASR_A3_SPEC> {
+    pub fn c(&mut self) -> C_W<'_, MPU_RASR_A3_SPEC> {
         C_W::new(self, 17)
     }
     #[doc = "Bit 18 - Shareable bit"]
     #[inline(always)]
-    pub fn s(&mut self) -> S_W<MPU_RASR_A3_SPEC> {
+    pub fn s(&mut self) -> S_W<'_, MPU_RASR_A3_SPEC> {
         S_W::new(self, 18)
     }
     #[doc = "Bits 19:21 - Memory access attribute"]
     #[inline(always)]
-    pub fn tex(&mut self) -> TEX_W<MPU_RASR_A3_SPEC> {
+    pub fn tex(&mut self) -> TEX_W<'_, MPU_RASR_A3_SPEC> {
         TEX_W::new(self, 19)
     }
     #[doc = "Bits 24:26 - Access permission field"]
     #[inline(always)]
-    pub fn ap(&mut self) -> AP_W<MPU_RASR_A3_SPEC> {
+    pub fn ap(&mut self) -> AP_W<'_, MPU_RASR_A3_SPEC> {
         AP_W::new(self, 24)
     }
     #[doc = "Bit 28 - Instruction access disable bit"]
     #[inline(always)]
-    pub fn xn(&mut self) -> XN_W<MPU_RASR_A3_SPEC> {
+    pub fn xn(&mut self) -> XN_W<'_, MPU_RASR_A3_SPEC> {
         XN_W::new(self, 28)
     }
 }
@@ -247,10 +247,6 @@ impl crate::Readable for MPU_RASR_A3_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mpu_rasr_a3::W`](W) writer structure"]
 impl crate::Writable for MPU_RASR_A3_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MPU_RASR_A3 to value 0"]
-impl crate::Resettable for MPU_RASR_A3_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MPU_RASR_A3_SPEC {}

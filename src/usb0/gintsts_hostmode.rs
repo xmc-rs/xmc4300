@@ -146,37 +146,37 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Mode Mismatch Interrupt"]
     #[inline(always)]
-    pub fn mode_mis(&mut self) -> MODE_MIS_W<GINTSTS_HOSTMODE_SPEC> {
+    pub fn mode_mis(&mut self) -> MODE_MIS_W<'_, GINTSTS_HOSTMODE_SPEC> {
         MODE_MIS_W::new(self, 1)
     }
     #[doc = "Bit 3 - Start of Frame"]
     #[inline(always)]
-    pub fn sof(&mut self) -> SOF_W<GINTSTS_HOSTMODE_SPEC> {
+    pub fn sof(&mut self) -> SOF_W<'_, GINTSTS_HOSTMODE_SPEC> {
         SOF_W::new(self, 3)
     }
     #[doc = "Bit 21 - Incomplete Periodic Transfer"]
     #[inline(always)]
-    pub fn incompl_p(&mut self) -> INCOMPL_P_W<GINTSTS_HOSTMODE_SPEC> {
+    pub fn incompl_p(&mut self) -> INCOMPL_P_W<'_, GINTSTS_HOSTMODE_SPEC> {
         INCOMPL_P_W::new(self, 21)
     }
     #[doc = "Bit 28 - Connector ID Status Change"]
     #[inline(always)]
-    pub fn con_idsts_chng(&mut self) -> CON_IDSTS_CHNG_W<GINTSTS_HOSTMODE_SPEC> {
+    pub fn con_idsts_chng(&mut self) -> CON_IDSTS_CHNG_W<'_, GINTSTS_HOSTMODE_SPEC> {
         CON_IDSTS_CHNG_W::new(self, 28)
     }
     #[doc = "Bit 29 - Disconnect Detected Interrupt"]
     #[inline(always)]
-    pub fn disconn_int(&mut self) -> DISCONN_INT_W<GINTSTS_HOSTMODE_SPEC> {
+    pub fn disconn_int(&mut self) -> DISCONN_INT_W<'_, GINTSTS_HOSTMODE_SPEC> {
         DISCONN_INT_W::new(self, 29)
     }
     #[doc = "Bit 30 - Session Request/New Session Detected Interrupt"]
     #[inline(always)]
-    pub fn sess_req_int(&mut self) -> SESS_REQ_INT_W<GINTSTS_HOSTMODE_SPEC> {
+    pub fn sess_req_int(&mut self) -> SESS_REQ_INT_W<'_, GINTSTS_HOSTMODE_SPEC> {
         SESS_REQ_INT_W::new(self, 30)
     }
     #[doc = "Bit 31 - Resume/Remote Wakeup Detected Interrupt"]
     #[inline(always)]
-    pub fn wk_up_int(&mut self) -> WK_UP_INT_W<GINTSTS_HOSTMODE_SPEC> {
+    pub fn wk_up_int(&mut self) -> WK_UP_INT_W<'_, GINTSTS_HOSTMODE_SPEC> {
         WK_UP_INT_W::new(self, 31)
     }
 }
@@ -190,8 +190,6 @@ impl crate::Readable for GINTSTS_HOSTMODE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gintsts_hostmode::W`](W) writer structure"]
 impl crate::Writable for GINTSTS_HOSTMODE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GINTSTS_HOSTMODE to value 0x1400_0020"]
 impl crate::Resettable for GINTSTS_HOSTMODE_SPEC {

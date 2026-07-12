@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Sub-second Increment Value"]
     #[inline(always)]
-    pub fn ssinc(&mut self) -> SSINC_W<SUB_SECOND_INCREMENT_SPEC> {
+    pub fn ssinc(&mut self) -> SSINC_W<'_, SUB_SECOND_INCREMENT_SPEC> {
         SSINC_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for SUB_SECOND_INCREMENT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sub_second_increment::W`](W) writer structure"]
 impl crate::Writable for SUB_SECOND_INCREMENT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SUB_SECOND_INCREMENT to value 0"]
-impl crate::Resettable for SUB_SECOND_INCREMENT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SUB_SECOND_INCREMENT_SPEC {}

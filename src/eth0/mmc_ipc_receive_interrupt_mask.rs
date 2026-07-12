@@ -259,142 +259,142 @@ impl R {
 impl W {
     #[doc = "Bit 0 - MMC Receive IPV4 Good Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv4gfim(&mut self) -> RXIPV4GFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv4gfim(&mut self) -> RXIPV4GFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV4GFIM_W::new(self, 0)
     }
     #[doc = "Bit 1 - MMC Receive IPV4 Header Error Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv4herfim(&mut self) -> RXIPV4HERFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv4herfim(&mut self) -> RXIPV4HERFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV4HERFIM_W::new(self, 1)
     }
     #[doc = "Bit 2 - MMC Receive IPV4 No Payload Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv4nopayfim(&mut self) -> RXIPV4NOPAYFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv4nopayfim(&mut self) -> RXIPV4NOPAYFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV4NOPAYFIM_W::new(self, 2)
     }
     #[doc = "Bit 3 - MMC Receive IPV4 Fragmented Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv4fragfim(&mut self) -> RXIPV4FRAGFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv4fragfim(&mut self) -> RXIPV4FRAGFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV4FRAGFIM_W::new(self, 3)
     }
     #[doc = "Bit 4 - MMC Receive IPV4 UDP Checksum Disabled Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv4udsblfim(&mut self) -> RXIPV4UDSBLFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv4udsblfim(&mut self) -> RXIPV4UDSBLFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV4UDSBLFIM_W::new(self, 4)
     }
     #[doc = "Bit 5 - MMC Receive IPV6 Good Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv6gfim(&mut self) -> RXIPV6GFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv6gfim(&mut self) -> RXIPV6GFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV6GFIM_W::new(self, 5)
     }
     #[doc = "Bit 6 - MMC Receive IPV6 Header Error Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv6herfim(&mut self) -> RXIPV6HERFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv6herfim(&mut self) -> RXIPV6HERFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV6HERFIM_W::new(self, 6)
     }
     #[doc = "Bit 7 - MMC Receive IPV6 No Payload Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv6nopayfim(&mut self) -> RXIPV6NOPAYFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv6nopayfim(&mut self) -> RXIPV6NOPAYFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV6NOPAYFIM_W::new(self, 7)
     }
     #[doc = "Bit 8 - MMC Receive UDP Good Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxudpgfim(&mut self) -> RXUDPGFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxudpgfim(&mut self) -> RXUDPGFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXUDPGFIM_W::new(self, 8)
     }
     #[doc = "Bit 9 - MMC Receive UDP Error Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxudperfim(&mut self) -> RXUDPERFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxudperfim(&mut self) -> RXUDPERFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXUDPERFIM_W::new(self, 9)
     }
     #[doc = "Bit 10 - MMC Receive TCP Good Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxtcpgfim(&mut self) -> RXTCPGFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxtcpgfim(&mut self) -> RXTCPGFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXTCPGFIM_W::new(self, 10)
     }
     #[doc = "Bit 11 - MMC Receive TCP Error Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxtcperfim(&mut self) -> RXTCPERFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxtcperfim(&mut self) -> RXTCPERFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXTCPERFIM_W::new(self, 11)
     }
     #[doc = "Bit 12 - MMC Receive ICMP Good Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxicmpgfim(&mut self) -> RXICMPGFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxicmpgfim(&mut self) -> RXICMPGFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXICMPGFIM_W::new(self, 12)
     }
     #[doc = "Bit 13 - MMC Receive ICMP Error Frame Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxicmperfim(&mut self) -> RXICMPERFIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxicmperfim(&mut self) -> RXICMPERFIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXICMPERFIM_W::new(self, 13)
     }
     #[doc = "Bit 16 - MMC Receive IPV4 Good Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv4goim(&mut self) -> RXIPV4GOIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv4goim(&mut self) -> RXIPV4GOIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV4GOIM_W::new(self, 16)
     }
     #[doc = "Bit 17 - MMC Receive IPV4 Header Error Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv4heroim(&mut self) -> RXIPV4HEROIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv4heroim(&mut self) -> RXIPV4HEROIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV4HEROIM_W::new(self, 17)
     }
     #[doc = "Bit 18 - MMC Receive IPV4 No Payload Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv4nopayoim(&mut self) -> RXIPV4NOPAYOIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv4nopayoim(&mut self) -> RXIPV4NOPAYOIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV4NOPAYOIM_W::new(self, 18)
     }
     #[doc = "Bit 19 - MMC Receive IPV4 Fragmented Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv4fragoim(&mut self) -> RXIPV4FRAGOIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv4fragoim(&mut self) -> RXIPV4FRAGOIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV4FRAGOIM_W::new(self, 19)
     }
     #[doc = "Bit 20 - MMC Receive IPV4 UDP Checksum Disabled Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv4udsbloim(&mut self) -> RXIPV4UDSBLOIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv4udsbloim(&mut self) -> RXIPV4UDSBLOIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV4UDSBLOIM_W::new(self, 20)
     }
     #[doc = "Bit 21 - MMC Receive IPV6 Good Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv6goim(&mut self) -> RXIPV6GOIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv6goim(&mut self) -> RXIPV6GOIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV6GOIM_W::new(self, 21)
     }
     #[doc = "Bit 22 - MMC Receive IPV6 Header Error Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv6heroim(&mut self) -> RXIPV6HEROIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv6heroim(&mut self) -> RXIPV6HEROIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV6HEROIM_W::new(self, 22)
     }
     #[doc = "Bit 23 - MMC Receive IPV6 No Payload Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxipv6nopayoim(&mut self) -> RXIPV6NOPAYOIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxipv6nopayoim(&mut self) -> RXIPV6NOPAYOIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXIPV6NOPAYOIM_W::new(self, 23)
     }
     #[doc = "Bit 24 - MMC Receive UDP Good Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxudpgoim(&mut self) -> RXUDPGOIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxudpgoim(&mut self) -> RXUDPGOIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXUDPGOIM_W::new(self, 24)
     }
     #[doc = "Bit 25 - MMC Receive UDP Error Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxudperoim(&mut self) -> RXUDPEROIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxudperoim(&mut self) -> RXUDPEROIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXUDPEROIM_W::new(self, 25)
     }
     #[doc = "Bit 26 - MMC Receive TCP Good Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxtcpgoim(&mut self) -> RXTCPGOIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxtcpgoim(&mut self) -> RXTCPGOIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXTCPGOIM_W::new(self, 26)
     }
     #[doc = "Bit 27 - MMC Receive TCP Error Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxtcperoim(&mut self) -> RXTCPEROIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxtcperoim(&mut self) -> RXTCPEROIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXTCPEROIM_W::new(self, 27)
     }
     #[doc = "Bit 28 - MMC Receive ICMP Good Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxicmpgoim(&mut self) -> RXICMPGOIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxicmpgoim(&mut self) -> RXICMPGOIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXICMPGOIM_W::new(self, 28)
     }
     #[doc = "Bit 29 - MMC Receive ICMP Error Octet Counter Interrupt Mask"]
     #[inline(always)]
-    pub fn rxicmperoim(&mut self) -> RXICMPEROIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
+    pub fn rxicmperoim(&mut self) -> RXICMPEROIM_W<'_, MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC> {
         RXICMPEROIM_W::new(self, 29)
     }
 }
@@ -408,10 +408,6 @@ impl crate::Readable for MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mmc_ipc_receive_interrupt_mask::W`](W) writer structure"]
 impl crate::Writable for MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MMC_IPC_RECEIVE_INTERRUPT_MASK to value 0"]
-impl crate::Resettable for MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC {}

@@ -541,47 +541,47 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Divider Factor for the Analog Internal Clock"]
     #[inline(always)]
-    pub fn diva(&mut self) -> DIVA_W<GLOBCFG_SPEC> {
+    pub fn diva(&mut self) -> DIVA_W<'_, GLOBCFG_SPEC> {
         DIVA_W::new(self, 0)
     }
     #[doc = "Bit 7 - Double Clock for the MSB Conversion"]
     #[inline(always)]
-    pub fn dcmsb(&mut self) -> DCMSB_W<GLOBCFG_SPEC> {
+    pub fn dcmsb(&mut self) -> DCMSB_W<'_, GLOBCFG_SPEC> {
         DCMSB_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Divider Factor for the Arbiter Clock"]
     #[inline(always)]
-    pub fn divd(&mut self) -> DIVD_W<GLOBCFG_SPEC> {
+    pub fn divd(&mut self) -> DIVD_W<'_, GLOBCFG_SPEC> {
         DIVD_W::new(self, 8)
     }
     #[doc = "Bit 15 - Write Control for Divider Parameters"]
     #[inline(always)]
-    pub fn divwc(&mut self) -> DIVWC_W<GLOBCFG_SPEC> {
+    pub fn divwc(&mut self) -> DIVWC_W<'_, GLOBCFG_SPEC> {
         DIVWC_W::new(self, 15)
     }
     #[doc = "Bit 16 - Disable Post-Calibration"]
     #[inline(always)]
-    pub fn dpcal0(&mut self) -> DPCAL0_W<GLOBCFG_SPEC> {
+    pub fn dpcal0(&mut self) -> DPCAL0_W<'_, GLOBCFG_SPEC> {
         DPCAL0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Disable Post-Calibration"]
     #[inline(always)]
-    pub fn dpcal1(&mut self) -> DPCAL1_W<GLOBCFG_SPEC> {
+    pub fn dpcal1(&mut self) -> DPCAL1_W<'_, GLOBCFG_SPEC> {
         DPCAL1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Disable Post-Calibration"]
     #[inline(always)]
-    pub fn dpcal2(&mut self) -> DPCAL2_W<GLOBCFG_SPEC> {
+    pub fn dpcal2(&mut self) -> DPCAL2_W<'_, GLOBCFG_SPEC> {
         DPCAL2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Disable Post-Calibration"]
     #[inline(always)]
-    pub fn dpcal3(&mut self) -> DPCAL3_W<GLOBCFG_SPEC> {
+    pub fn dpcal3(&mut self) -> DPCAL3_W<'_, GLOBCFG_SPEC> {
         DPCAL3_W::new(self, 19)
     }
     #[doc = "Bit 31 - Start-Up Calibration"]
     #[inline(always)]
-    pub fn sucal(&mut self) -> SUCAL_W<GLOBCFG_SPEC> {
+    pub fn sucal(&mut self) -> SUCAL_W<'_, GLOBCFG_SPEC> {
         SUCAL_W::new(self, 31)
     }
 }
@@ -595,8 +595,6 @@ impl crate::Readable for GLOBCFG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`globcfg::W`](W) writer structure"]
 impl crate::Writable for GLOBCFG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GLOBCFG to value 0x0f"]
 impl crate::Resettable for GLOBCFG_SPEC {

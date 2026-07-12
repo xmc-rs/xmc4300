@@ -17,6 +17,4 @@ impl crate::RegisterSpec for CR2_SPEC {
 #[doc = "`read()` method returns [`cr2::R`](R) reader structure"]
 impl crate::Readable for CR2_SPEC {}
 #[doc = "`reset()` method sets CR2 to value 0"]
-impl crate::Resettable for CR2_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CR2_SPEC {}

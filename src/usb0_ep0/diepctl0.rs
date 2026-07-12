@@ -193,37 +193,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Maximum Packet Size"]
     #[inline(always)]
-    pub fn mps(&mut self) -> MPS_W<DIEPCTL0_SPEC> {
+    pub fn mps(&mut self) -> MPS_W<'_, DIEPCTL0_SPEC> {
         MPS_W::new(self, 0)
     }
     #[doc = "Bit 21 - STALL Handshake"]
     #[inline(always)]
-    pub fn stall(&mut self) -> STALL_W<DIEPCTL0_SPEC> {
+    pub fn stall(&mut self) -> STALL_W<'_, DIEPCTL0_SPEC> {
         STALL_W::new(self, 21)
     }
     #[doc = "Bits 22:25 - TxFIFO Number"]
     #[inline(always)]
-    pub fn tx_fnum(&mut self) -> TX_FNUM_W<DIEPCTL0_SPEC> {
+    pub fn tx_fnum(&mut self) -> TX_FNUM_W<'_, DIEPCTL0_SPEC> {
         TX_FNUM_W::new(self, 22)
     }
     #[doc = "Bit 26 - Clear NAK"]
     #[inline(always)]
-    pub fn cnak(&mut self) -> CNAK_W<DIEPCTL0_SPEC> {
+    pub fn cnak(&mut self) -> CNAK_W<'_, DIEPCTL0_SPEC> {
         CNAK_W::new(self, 26)
     }
     #[doc = "Bit 27 - Set NAK"]
     #[inline(always)]
-    pub fn snak(&mut self) -> SNAK_W<DIEPCTL0_SPEC> {
+    pub fn snak(&mut self) -> SNAK_W<'_, DIEPCTL0_SPEC> {
         SNAK_W::new(self, 27)
     }
     #[doc = "Bit 30 - Endpoint Disable"]
     #[inline(always)]
-    pub fn epdis(&mut self) -> EPDIS_W<DIEPCTL0_SPEC> {
+    pub fn epdis(&mut self) -> EPDIS_W<'_, DIEPCTL0_SPEC> {
         EPDIS_W::new(self, 30)
     }
     #[doc = "Bit 31 - Endpoint Enable"]
     #[inline(always)]
-    pub fn epena(&mut self) -> EPENA_W<DIEPCTL0_SPEC> {
+    pub fn epena(&mut self) -> EPENA_W<'_, DIEPCTL0_SPEC> {
         EPENA_W::new(self, 31)
     }
 }
@@ -237,8 +237,6 @@ impl crate::Readable for DIEPCTL0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`diepctl0::W`](W) writer structure"]
 impl crate::Writable for DIEPCTL0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DIEPCTL0 to value 0x8000"]
 impl crate::Resettable for DIEPCTL0_SPEC {

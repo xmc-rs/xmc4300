@@ -165,6 +165,4 @@ impl crate::RegisterSpec for GRXSTSP_DEVICEMODE_SPEC {
 #[doc = "`read()` method returns [`grxstsp_devicemode::R`](R) reader structure"]
 impl crate::Readable for GRXSTSP_DEVICEMODE_SPEC {}
 #[doc = "`reset()` method sets GRXSTSP_DEVICEMODE to value 0"]
-impl crate::Resettable for GRXSTSP_DEVICEMODE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GRXSTSP_DEVICEMODE_SPEC {}

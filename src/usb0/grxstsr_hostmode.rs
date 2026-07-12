@@ -150,6 +150,4 @@ impl crate::RegisterSpec for GRXSTSR_HOSTMODE_SPEC {
 #[doc = "`read()` method returns [`grxstsr_hostmode::R`](R) reader structure"]
 impl crate::Readable for GRXSTSR_HOSTMODE_SPEC {}
 #[doc = "`reset()` method sets GRXSTSR_HOSTMODE to value 0"]
-impl crate::Resettable for GRXSTSR_HOSTMODE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GRXSTSR_HOSTMODE_SPEC {}

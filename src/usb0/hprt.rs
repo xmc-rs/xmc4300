@@ -452,42 +452,42 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Port Connect Detected"]
     #[inline(always)]
-    pub fn prt_conn_det(&mut self) -> PRT_CONN_DET_W<HPRT_SPEC> {
+    pub fn prt_conn_det(&mut self) -> PRT_CONN_DET_W<'_, HPRT_SPEC> {
         PRT_CONN_DET_W::new(self, 1)
     }
     #[doc = "Bit 2 - Port Enable"]
     #[inline(always)]
-    pub fn prt_ena(&mut self) -> PRT_ENA_W<HPRT_SPEC> {
+    pub fn prt_ena(&mut self) -> PRT_ENA_W<'_, HPRT_SPEC> {
         PRT_ENA_W::new(self, 2)
     }
     #[doc = "Bit 3 - Port Enable/Disable Change"]
     #[inline(always)]
-    pub fn prt_en_chng(&mut self) -> PRT_EN_CHNG_W<HPRT_SPEC> {
+    pub fn prt_en_chng(&mut self) -> PRT_EN_CHNG_W<'_, HPRT_SPEC> {
         PRT_EN_CHNG_W::new(self, 3)
     }
     #[doc = "Bit 5 - Port Overcurrent Change"]
     #[inline(always)]
-    pub fn prt_ovr_curr_chng(&mut self) -> PRT_OVR_CURR_CHNG_W<HPRT_SPEC> {
+    pub fn prt_ovr_curr_chng(&mut self) -> PRT_OVR_CURR_CHNG_W<'_, HPRT_SPEC> {
         PRT_OVR_CURR_CHNG_W::new(self, 5)
     }
     #[doc = "Bit 6 - Port Resume"]
     #[inline(always)]
-    pub fn prt_res(&mut self) -> PRT_RES_W<HPRT_SPEC> {
+    pub fn prt_res(&mut self) -> PRT_RES_W<'_, HPRT_SPEC> {
         PRT_RES_W::new(self, 6)
     }
     #[doc = "Bit 7 - Port Suspend"]
     #[inline(always)]
-    pub fn prt_susp(&mut self) -> PRT_SUSP_W<HPRT_SPEC> {
+    pub fn prt_susp(&mut self) -> PRT_SUSP_W<'_, HPRT_SPEC> {
         PRT_SUSP_W::new(self, 7)
     }
     #[doc = "Bit 8 - Port Reset"]
     #[inline(always)]
-    pub fn prt_rst(&mut self) -> PRT_RST_W<HPRT_SPEC> {
+    pub fn prt_rst(&mut self) -> PRT_RST_W<'_, HPRT_SPEC> {
         PRT_RST_W::new(self, 8)
     }
     #[doc = "Bit 12 - Port Power"]
     #[inline(always)]
-    pub fn prt_pwr(&mut self) -> PRT_PWR_W<HPRT_SPEC> {
+    pub fn prt_pwr(&mut self) -> PRT_PWR_W<'_, HPRT_SPEC> {
         PRT_PWR_W::new(self, 12)
     }
 }
@@ -501,10 +501,6 @@ impl crate::Readable for HPRT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`hprt::W`](W) writer structure"]
 impl crate::Writable for HPRT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HPRT to value 0"]
-impl crate::Resettable for HPRT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HPRT_SPEC {}

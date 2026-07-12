@@ -51,6 +51,4 @@ impl crate::RegisterSpec for MII_ECAT_ACS_STATE_SPEC {
 #[doc = "`read()` method returns [`mii_ecat_acs_state::R`](R) reader structure"]
 impl crate::Readable for MII_ECAT_ACS_STATE_SPEC {}
 #[doc = "`reset()` method sets MII_ECAT_ACS_STATE to value 0"]
-impl crate::Resettable for MII_ECAT_ACS_STATE_SPEC {
-    const RESET_VALUE: u8 = 0;
-}
+impl crate::Resettable for MII_ECAT_ACS_STATE_SPEC {}

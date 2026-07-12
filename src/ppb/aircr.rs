@@ -101,27 +101,27 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Reserved for Debug use."]
     #[inline(always)]
-    pub fn vectreset(&mut self) -> VECTRESET_W<AIRCR_SPEC> {
+    pub fn vectreset(&mut self) -> VECTRESET_W<'_, AIRCR_SPEC> {
         VECTRESET_W::new(self, 0)
     }
     #[doc = "Bit 1 - Reserved for Debug use."]
     #[inline(always)]
-    pub fn vectclractive(&mut self) -> VECTCLRACTIVE_W<AIRCR_SPEC> {
+    pub fn vectclractive(&mut self) -> VECTCLRACTIVE_W<'_, AIRCR_SPEC> {
         VECTCLRACTIVE_W::new(self, 1)
     }
     #[doc = "Bit 2 - System reset request"]
     #[inline(always)]
-    pub fn sysresetreq(&mut self) -> SYSRESETREQ_W<AIRCR_SPEC> {
+    pub fn sysresetreq(&mut self) -> SYSRESETREQ_W<'_, AIRCR_SPEC> {
         SYSRESETREQ_W::new(self, 2)
     }
     #[doc = "Bits 8:10 - Interrupt priority grouping field"]
     #[inline(always)]
-    pub fn prigroup(&mut self) -> PRIGROUP_W<AIRCR_SPEC> {
+    pub fn prigroup(&mut self) -> PRIGROUP_W<'_, AIRCR_SPEC> {
         PRIGROUP_W::new(self, 8)
     }
     #[doc = "Bits 16:31 - Register key"]
     #[inline(always)]
-    pub fn vectkey(&mut self) -> VECTKEY_W<AIRCR_SPEC> {
+    pub fn vectkey(&mut self) -> VECTKEY_W<'_, AIRCR_SPEC> {
         VECTKEY_W::new(self, 16)
     }
 }
@@ -135,8 +135,6 @@ impl crate::Readable for AIRCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`aircr::W`](W) writer structure"]
 impl crate::Writable for AIRCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets AIRCR to value 0xfa05_0000"]
 impl crate::Resettable for AIRCR_SPEC {

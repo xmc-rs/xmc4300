@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]
-    pub fn tdata(&mut self) -> TDATA_W<TBUF_SPEC> {
+    pub fn tdata(&mut self) -> TDATA_W<'_, TBUF_SPEC> {
         TDATA_W::new(self, 0)
     }
 }
@@ -30,11 +30,6 @@ impl crate::Readable for TBUF_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`tbuf::W`](W) writer structure"]
 impl crate::Writable for TBUF_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets TBUF[%s]
-to value 0"]
-impl crate::Resettable for TBUF_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+#[doc = "`reset()` method sets TBUF[%s] to value 0"]
+impl crate::Resettable for TBUF_SPEC {}

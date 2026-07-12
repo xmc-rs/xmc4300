@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Shadow Compare Register for Channel 2"]
     #[inline(always)]
-    pub fn cr2s(&mut self) -> CR2S_W<CR2S_SPEC> {
+    pub fn cr2s(&mut self) -> CR2S_W<'_, CR2S_SPEC> {
         CR2S_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for CR2S_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`cr2s::W`](W) writer structure"]
 impl crate::Writable for CR2S_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CR2S to value 0"]
-impl crate::Resettable for CR2S_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CR2S_SPEC {}

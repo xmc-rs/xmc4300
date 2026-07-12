@@ -17,6 +17,4 @@ impl crate::RegisterSpec for RX_FIFO_OVERFLOW_FRAMES_SPEC {
 #[doc = "`read()` method returns [`rx_fifo_overflow_frames::R`](R) reader structure"]
 impl crate::Readable for RX_FIFO_OVERFLOW_FRAMES_SPEC {}
 #[doc = "`reset()` method sets RX_FIFO_OVERFLOW_FRAMES to value 0"]
-impl crate::Resettable for RX_FIFO_OVERFLOW_FRAMES_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RX_FIFO_OVERFLOW_FRAMES_SPEC {}

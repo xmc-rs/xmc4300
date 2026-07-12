@@ -342,23 +342,13 @@ where
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RCIM_A {
-    #[doc = "0: RCI\\[4\\]
-= PERR, RCI\\[3:0\\]
-= WLEN"]
+    #[doc = "0: RCI\\[4\\] = PERR, RCI\\[3:0\\] = WLEN"]
     VALUE1 = 0,
-    #[doc = "1: RCI\\[4\\]
-= SOF, RCI\\[3:0\\]
-= WLEN"]
+    #[doc = "1: RCI\\[4\\] = SOF, RCI\\[3:0\\] = WLEN"]
     VALUE2 = 1,
-    #[doc = "2: RCI\\[4\\]
-= 0, RCI\\[3:0\\]
-= WLEN"]
+    #[doc = "2: RCI\\[4\\] = 0, RCI\\[3:0\\] = WLEN"]
     VALUE3 = 2,
-    #[doc = "3: RCI\\[4\\]
-= PERR, RCI\\[3\\]
-= PAR, RCI\\[2:1\\]
-= 00B, RCI\\[0\\]
-= SOF"]
+    #[doc = "3: RCI\\[4\\] = PERR, RCI\\[3\\] = PAR, RCI\\[2:1\\] = 00B, RCI\\[0\\] = SOF"]
     VALUE4 = 3,
 }
 impl From<RCIM_A> for u8 {
@@ -385,32 +375,22 @@ impl RCIM_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "RCI\\[4\\]
-= PERR, RCI\\[3:0\\]
-= WLEN"]
+    #[doc = "RCI\\[4\\] = PERR, RCI\\[3:0\\] = WLEN"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RCIM_A::VALUE1
     }
-    #[doc = "RCI\\[4\\]
-= SOF, RCI\\[3:0\\]
-= WLEN"]
+    #[doc = "RCI\\[4\\] = SOF, RCI\\[3:0\\] = WLEN"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RCIM_A::VALUE2
     }
-    #[doc = "RCI\\[4\\]
-= 0, RCI\\[3:0\\]
-= WLEN"]
+    #[doc = "RCI\\[4\\] = 0, RCI\\[3:0\\] = WLEN"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == RCIM_A::VALUE3
     }
-    #[doc = "RCI\\[4\\]
-= PERR, RCI\\[3\\]
-= PAR, RCI\\[2:1\\]
-= 00B, RCI\\[0\\]
-= SOF"]
+    #[doc = "RCI\\[4\\] = PERR, RCI\\[3\\] = PAR, RCI\\[2:1\\] = 00B, RCI\\[0\\] = SOF"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == RCIM_A::VALUE4
@@ -423,32 +403,22 @@ where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
 {
-    #[doc = "RCI\\[4\\]
-= PERR, RCI\\[3:0\\]
-= WLEN"]
+    #[doc = "RCI\\[4\\] = PERR, RCI\\[3:0\\] = WLEN"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RCIM_A::VALUE1)
     }
-    #[doc = "RCI\\[4\\]
-= SOF, RCI\\[3:0\\]
-= WLEN"]
+    #[doc = "RCI\\[4\\] = SOF, RCI\\[3:0\\] = WLEN"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RCIM_A::VALUE2)
     }
-    #[doc = "RCI\\[4\\]
-= 0, RCI\\[3:0\\]
-= WLEN"]
+    #[doc = "RCI\\[4\\] = 0, RCI\\[3:0\\] = WLEN"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(RCIM_A::VALUE3)
     }
-    #[doc = "RCI\\[4\\]
-= PERR, RCI\\[3\\]
-= PAR, RCI\\[2:1\\]
-= 00B, RCI\\[0\\]
-= SOF"]
+    #[doc = "RCI\\[4\\] = PERR, RCI\\[3\\] = PAR, RCI\\[2:1\\] = 00B, RCI\\[0\\] = SOF"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(RCIM_A::VALUE4)
@@ -584,9 +554,7 @@ where
 pub enum RNM_A {
     #[doc = "0: Filling level mode: A standard receive buffer event occurs when the filling level equals the limit value and changes, either due to a read access from OUTR (LOF = 0) or due to a new received data word (LOF = 1)."]
     VALUE1 = 0,
-    #[doc = "1: RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\]
-= 0. If OUTR.RCI\\[4\\]
-= 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
+    #[doc = "1: RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\] = 0. If OUTR.RCI\\[4\\] = 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
     VALUE2 = 1,
 }
 impl From<RNM_A> for bool {
@@ -611,9 +579,7 @@ impl RNM_R {
     pub fn is_value1(&self) -> bool {
         *self == RNM_A::VALUE1
     }
-    #[doc = "RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\]
-= 0. If OUTR.RCI\\[4\\]
-= 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
+    #[doc = "RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\] = 0. If OUTR.RCI\\[4\\] = 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RNM_A::VALUE2
@@ -630,9 +596,7 @@ where
     pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RNM_A::VALUE1)
     }
-    #[doc = "RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\]
-= 0. If OUTR.RCI\\[4\\]
-= 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
+    #[doc = "RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\] = 0. If OUTR.RCI\\[4\\] = 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RNM_A::VALUE2)
@@ -915,67 +879,67 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Data Pointer"]
     #[inline(always)]
-    pub fn dptr(&mut self) -> DPTR_W<RBCTR_SPEC> {
+    pub fn dptr(&mut self) -> DPTR_W<'_, RBCTR_SPEC> {
         DPTR_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - Limit For Interrupt Generation"]
     #[inline(always)]
-    pub fn limit(&mut self) -> LIMIT_W<RBCTR_SPEC> {
+    pub fn limit(&mut self) -> LIMIT_W<'_, RBCTR_SPEC> {
         LIMIT_W::new(self, 8)
     }
     #[doc = "Bit 14 - Standard Receive Buffer Trigger Mode"]
     #[inline(always)]
-    pub fn srbtm(&mut self) -> SRBTM_W<RBCTR_SPEC> {
+    pub fn srbtm(&mut self) -> SRBTM_W<'_, RBCTR_SPEC> {
         SRBTM_W::new(self, 14)
     }
     #[doc = "Bit 15 - Standard Receive Buffer Trigger Enable"]
     #[inline(always)]
-    pub fn srbten(&mut self) -> SRBTEN_W<RBCTR_SPEC> {
+    pub fn srbten(&mut self) -> SRBTEN_W<'_, RBCTR_SPEC> {
         SRBTEN_W::new(self, 15)
     }
     #[doc = "Bits 16:18 - Standard Receive Buffer Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn srbinp(&mut self) -> SRBINP_W<RBCTR_SPEC> {
+    pub fn srbinp(&mut self) -> SRBINP_W<'_, RBCTR_SPEC> {
         SRBINP_W::new(self, 16)
     }
     #[doc = "Bits 19:21 - Alternative Receive Buffer Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn arbinp(&mut self) -> ARBINP_W<RBCTR_SPEC> {
+    pub fn arbinp(&mut self) -> ARBINP_W<'_, RBCTR_SPEC> {
         ARBINP_W::new(self, 19)
     }
     #[doc = "Bits 22:23 - Receiver Control Information Mode"]
     #[inline(always)]
-    pub fn rcim(&mut self) -> RCIM_W<RBCTR_SPEC> {
+    pub fn rcim(&mut self) -> RCIM_W<'_, RBCTR_SPEC> {
         RCIM_W::new(self, 22)
     }
     #[doc = "Bits 24:26 - Buffer Size"]
     #[inline(always)]
-    pub fn size(&mut self) -> SIZE_W<RBCTR_SPEC> {
+    pub fn size(&mut self) -> SIZE_W<'_, RBCTR_SPEC> {
         SIZE_W::new(self, 24)
     }
     #[doc = "Bit 27 - Receiver Notification Mode"]
     #[inline(always)]
-    pub fn rnm(&mut self) -> RNM_W<RBCTR_SPEC> {
+    pub fn rnm(&mut self) -> RNM_W<'_, RBCTR_SPEC> {
         RNM_W::new(self, 27)
     }
     #[doc = "Bit 28 - Buffer Event on Limit Overflow"]
     #[inline(always)]
-    pub fn lof(&mut self) -> LOF_W<RBCTR_SPEC> {
+    pub fn lof(&mut self) -> LOF_W<'_, RBCTR_SPEC> {
         LOF_W::new(self, 28)
     }
     #[doc = "Bit 29 - Alternative Receive Buffer Interrupt Enable"]
     #[inline(always)]
-    pub fn arbien(&mut self) -> ARBIEN_W<RBCTR_SPEC> {
+    pub fn arbien(&mut self) -> ARBIEN_W<'_, RBCTR_SPEC> {
         ARBIEN_W::new(self, 29)
     }
     #[doc = "Bit 30 - Standard Receive Buffer Interrupt Enable"]
     #[inline(always)]
-    pub fn srbien(&mut self) -> SRBIEN_W<RBCTR_SPEC> {
+    pub fn srbien(&mut self) -> SRBIEN_W<'_, RBCTR_SPEC> {
         SRBIEN_W::new(self, 30)
     }
     #[doc = "Bit 31 - Receive Buffer Error Interrupt Enable"]
     #[inline(always)]
-    pub fn rberien(&mut self) -> RBERIEN_W<RBCTR_SPEC> {
+    pub fn rberien(&mut self) -> RBERIEN_W<'_, RBCTR_SPEC> {
         RBERIEN_W::new(self, 31)
     }
 }
@@ -989,10 +953,6 @@ impl crate::Readable for RBCTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`rbctr::W`](W) writer structure"]
 impl crate::Writable for RBCTR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RBCTR to value 0"]
-impl crate::Resettable for RBCTR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RBCTR_SPEC {}

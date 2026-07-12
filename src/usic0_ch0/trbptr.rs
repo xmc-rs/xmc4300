@@ -38,6 +38,4 @@ impl crate::RegisterSpec for TRBPTR_SPEC {
 #[doc = "`read()` method returns [`trbptr::R`](R) reader structure"]
 impl crate::Readable for TRBPTR_SPEC {}
 #[doc = "`reset()` method sets TRBPTR to value 0"]
-impl crate::Resettable for TRBPTR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TRBPTR_SPEC {}

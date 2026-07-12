@@ -1109,97 +1109,97 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Instruction access violation flag"]
     #[inline(always)]
-    pub fn iaccviol(&mut self) -> IACCVIOL_W<CFSR_SPEC> {
+    pub fn iaccviol(&mut self) -> IACCVIOL_W<'_, CFSR_SPEC> {
         IACCVIOL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Data access violation flag"]
     #[inline(always)]
-    pub fn daccviol(&mut self) -> DACCVIOL_W<CFSR_SPEC> {
+    pub fn daccviol(&mut self) -> DACCVIOL_W<'_, CFSR_SPEC> {
         DACCVIOL_W::new(self, 1)
     }
     #[doc = "Bit 3 - MemManage fault on unstacking for a return from exception"]
     #[inline(always)]
-    pub fn munstkerr(&mut self) -> MUNSTKERR_W<CFSR_SPEC> {
+    pub fn munstkerr(&mut self) -> MUNSTKERR_W<'_, CFSR_SPEC> {
         MUNSTKERR_W::new(self, 3)
     }
     #[doc = "Bit 4 - MemManage fault on stacking for exception entry"]
     #[inline(always)]
-    pub fn mstkerr(&mut self) -> MSTKERR_W<CFSR_SPEC> {
+    pub fn mstkerr(&mut self) -> MSTKERR_W<'_, CFSR_SPEC> {
         MSTKERR_W::new(self, 4)
     }
     #[doc = "Bit 5 - MemManage fault during floating point lazy state preservation"]
     #[inline(always)]
-    pub fn mlsperr(&mut self) -> MLSPERR_W<CFSR_SPEC> {
+    pub fn mlsperr(&mut self) -> MLSPERR_W<'_, CFSR_SPEC> {
         MLSPERR_W::new(self, 5)
     }
     #[doc = "Bit 7 - MemManage Fault Address Register (MMFAR) valid flag"]
     #[inline(always)]
-    pub fn mmarvalid(&mut self) -> MMARVALID_W<CFSR_SPEC> {
+    pub fn mmarvalid(&mut self) -> MMARVALID_W<'_, CFSR_SPEC> {
         MMARVALID_W::new(self, 7)
     }
     #[doc = "Bit 8 - Instruction bus error"]
     #[inline(always)]
-    pub fn ibuserr(&mut self) -> IBUSERR_W<CFSR_SPEC> {
+    pub fn ibuserr(&mut self) -> IBUSERR_W<'_, CFSR_SPEC> {
         IBUSERR_W::new(self, 8)
     }
     #[doc = "Bit 9 - Precise data bus error"]
     #[inline(always)]
-    pub fn preciserr(&mut self) -> PRECISERR_W<CFSR_SPEC> {
+    pub fn preciserr(&mut self) -> PRECISERR_W<'_, CFSR_SPEC> {
         PRECISERR_W::new(self, 9)
     }
     #[doc = "Bit 10 - Imprecise data bus error"]
     #[inline(always)]
-    pub fn impreciserr(&mut self) -> IMPRECISERR_W<CFSR_SPEC> {
+    pub fn impreciserr(&mut self) -> IMPRECISERR_W<'_, CFSR_SPEC> {
         IMPRECISERR_W::new(self, 10)
     }
     #[doc = "Bit 11 - BusFault on unstacking for a return from exception"]
     #[inline(always)]
-    pub fn unstkerr(&mut self) -> UNSTKERR_W<CFSR_SPEC> {
+    pub fn unstkerr(&mut self) -> UNSTKERR_W<'_, CFSR_SPEC> {
         UNSTKERR_W::new(self, 11)
     }
     #[doc = "Bit 12 - BusFault on stacking for exception entry"]
     #[inline(always)]
-    pub fn stkerr(&mut self) -> STKERR_W<CFSR_SPEC> {
+    pub fn stkerr(&mut self) -> STKERR_W<'_, CFSR_SPEC> {
         STKERR_W::new(self, 12)
     }
     #[doc = "Bit 13 - BusFault during floating point lazy state preservation"]
     #[inline(always)]
-    pub fn lsperr(&mut self) -> LSPERR_W<CFSR_SPEC> {
+    pub fn lsperr(&mut self) -> LSPERR_W<'_, CFSR_SPEC> {
         LSPERR_W::new(self, 13)
     }
     #[doc = "Bit 15 - BusFault Address Register (BFAR) valid flag"]
     #[inline(always)]
-    pub fn bfarvalid(&mut self) -> BFARVALID_W<CFSR_SPEC> {
+    pub fn bfarvalid(&mut self) -> BFARVALID_W<'_, CFSR_SPEC> {
         BFARVALID_W::new(self, 15)
     }
     #[doc = "Bit 16 - Undefined instruction UsageFault"]
     #[inline(always)]
-    pub fn undefinstr(&mut self) -> UNDEFINSTR_W<CFSR_SPEC> {
+    pub fn undefinstr(&mut self) -> UNDEFINSTR_W<'_, CFSR_SPEC> {
         UNDEFINSTR_W::new(self, 16)
     }
     #[doc = "Bit 17 - Invalid state UsageFault"]
     #[inline(always)]
-    pub fn invstate(&mut self) -> INVSTATE_W<CFSR_SPEC> {
+    pub fn invstate(&mut self) -> INVSTATE_W<'_, CFSR_SPEC> {
         INVSTATE_W::new(self, 17)
     }
     #[doc = "Bit 18 - Invalid PC load UsageFault"]
     #[inline(always)]
-    pub fn invpc(&mut self) -> INVPC_W<CFSR_SPEC> {
+    pub fn invpc(&mut self) -> INVPC_W<'_, CFSR_SPEC> {
         INVPC_W::new(self, 18)
     }
     #[doc = "Bit 19 - No coprocessor UsageFault"]
     #[inline(always)]
-    pub fn nocp(&mut self) -> NOCP_W<CFSR_SPEC> {
+    pub fn nocp(&mut self) -> NOCP_W<'_, CFSR_SPEC> {
         NOCP_W::new(self, 19)
     }
     #[doc = "Bit 24 - Unaligned access UsageFault"]
     #[inline(always)]
-    pub fn unaligned(&mut self) -> UNALIGNED_W<CFSR_SPEC> {
+    pub fn unaligned(&mut self) -> UNALIGNED_W<'_, CFSR_SPEC> {
         UNALIGNED_W::new(self, 24)
     }
     #[doc = "Bit 25 - Divide by zero UsageFault"]
     #[inline(always)]
-    pub fn divbyzero(&mut self) -> DIVBYZERO_W<CFSR_SPEC> {
+    pub fn divbyzero(&mut self) -> DIVBYZERO_W<'_, CFSR_SPEC> {
         DIVBYZERO_W::new(self, 25)
     }
 }
@@ -1213,10 +1213,6 @@ impl crate::Readable for CFSR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`cfsr::W`](W) writer structure"]
 impl crate::Writable for CFSR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CFSR to value 0"]
-impl crate::Resettable for CFSR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CFSR_SPEC {}

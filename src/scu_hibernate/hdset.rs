@@ -127,22 +127,22 @@ where
 impl W {
     #[doc = "Bit 0 - Wake-up Pin Event Positive Edge Set"]
     #[inline(always)]
-    pub fn epev(&mut self) -> EPEV_W<HDSET_SPEC> {
+    pub fn epev(&mut self) -> EPEV_W<'_, HDSET_SPEC> {
         EPEV_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wake-up Pin Event Negative Edge Set"]
     #[inline(always)]
-    pub fn enev(&mut self) -> ENEV_W<HDSET_SPEC> {
+    pub fn enev(&mut self) -> ENEV_W<'_, HDSET_SPEC> {
         ENEV_W::new(self, 1)
     }
     #[doc = "Bit 2 - RTC Event Set"]
     #[inline(always)]
-    pub fn rtcev(&mut self) -> RTCEV_W<HDSET_SPEC> {
+    pub fn rtcev(&mut self) -> RTCEV_W<'_, HDSET_SPEC> {
         RTCEV_W::new(self, 2)
     }
     #[doc = "Bit 3 - ULP WDG Alarm Set"]
     #[inline(always)]
-    pub fn ulpwdg(&mut self) -> ULPWDG_W<HDSET_SPEC> {
+    pub fn ulpwdg(&mut self) -> ULPWDG_W<'_, HDSET_SPEC> {
         ULPWDG_W::new(self, 3)
     }
 }
@@ -154,10 +154,6 @@ impl crate::RegisterSpec for HDSET_SPEC {
 #[doc = "`write(|w| ..)` method takes [`hdset::W`](W) writer structure"]
 impl crate::Writable for HDSET_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HDSET to value 0"]
-impl crate::Resettable for HDSET_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HDSET_SPEC {}

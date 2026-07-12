@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
-    pub fn cmp_ld4(&mut self) -> CMP_LD4_W<LDCMP1_SPEC> {
+    pub fn cmp_ld4(&mut self) -> CMP_LD4_W<'_, LDCMP1_SPEC> {
         CMP_LD4_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
-    pub fn cmp_ld5(&mut self) -> CMP_LD5_W<LDCMP1_SPEC> {
+    pub fn cmp_ld5(&mut self) -> CMP_LD5_W<'_, LDCMP1_SPEC> {
         CMP_LD5_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]
-    pub fn cmp_ld6(&mut self) -> CMP_LD6_W<LDCMP1_SPEC> {
+    pub fn cmp_ld6(&mut self) -> CMP_LD6_W<'_, LDCMP1_SPEC> {
         CMP_LD6_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Compare Value for LED COLA / Common Compare Value for Touch-sense Pad Turns"]
     #[inline(always)]
-    pub fn cmp_lda_tscom(&mut self) -> CMP_LDA_TSCOM_W<LDCMP1_SPEC> {
+    pub fn cmp_lda_tscom(&mut self) -> CMP_LDA_TSCOM_W<'_, LDCMP1_SPEC> {
         CMP_LDA_TSCOM_W::new(self, 24)
     }
 }
@@ -72,10 +72,6 @@ impl crate::Readable for LDCMP1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ldcmp1::W`](W) writer structure"]
 impl crate::Writable for LDCMP1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets LDCMP1 to value 0"]
-impl crate::Resettable for LDCMP1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for LDCMP1_SPEC {}
